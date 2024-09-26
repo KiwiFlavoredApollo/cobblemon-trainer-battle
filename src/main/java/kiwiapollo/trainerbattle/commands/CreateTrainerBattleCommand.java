@@ -15,7 +15,7 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.trainerbattle.TrainerBattle;
 import kiwiapollo.trainerbattle.exceptions.InvalidPlayerPartyException;
-import kiwiapollo.trainerbattle.exceptions.NotRunByPlayerException;
+import kiwiapollo.trainerbattle.exceptions.NotExecutedByPlayerException;
 import kotlin.Unit;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -36,7 +36,7 @@ public class CreateTrainerBattleCommand extends LiteralArgumentBuilder<ServerCom
 
     public int createTrainerBattle(CommandContext<ServerCommandSource> context) {
         try {
-            assertRunByPlayer(context);
+            assertExecutedByPlayer(context);
             assertNotEmptyPlayerParty(context.getSource().getPlayer());
             assertNotAllFaintPokemon(context.getSource().getPlayer());
 
@@ -44,22 +44,13 @@ public class CreateTrainerBattleCommand extends LiteralArgumentBuilder<ServerCom
                     Cobblemon.INSTANCE.getStorage().getParty(context.getSource().getPlayer());
             PlayerBattleActor playerBattleActor = new PlayerBattleActor(
                     context.getSource().getPlayer().getUuid(),
-                    playerPartyStore.toBattleTeam(
-                            true,
-                            true,
-                            playerPartyStore.toGappyList().stream().findFirst().get().getUuid()
-                    )
+                    getPlayerPartyBattleTeam(playerPartyStore)
             );
 
-            Pokemon pokemon = PokemonSpecies.INSTANCE.getByIdentifier(
-                    Identifier.of("cobblemon", "pikachu")
-            ).create(10);
             TrainerBattleActor trainerBattleActor = new TrainerBattleActor(
                     "MyTrainer",
                     UUID.randomUUID(),
-                    List.of(
-                            new BattlePokemon(pokemon, pokemon, pokemonEntity -> Unit.INSTANCE)
-                    ),
+                    getTrainerPartyBattleTeam(),
                     new RandomBattleAI()
             );
 
@@ -72,7 +63,7 @@ public class CreateTrainerBattleCommand extends LiteralArgumentBuilder<ServerCom
 
             return Command.SINGLE_SUCCESS;
 
-        } catch (NotRunByPlayerException e) {
+        } catch (NotExecutedByPlayerException e) {
             return 0;
 
         } catch (InvalidPlayerPartyException e) {
@@ -80,9 +71,38 @@ public class CreateTrainerBattleCommand extends LiteralArgumentBuilder<ServerCom
         }
     }
 
-    private void assertRunByPlayer(CommandContext<ServerCommandSource> context) throws NotRunByPlayerException {
+    private List<? extends BattlePokemon> getTrainerPartyBattleTeam() {
+        Pokemon pikachu = PokemonSpecies.INSTANCE.getByIdentifier(
+                Identifier.of("cobblemon", "pikachu")
+        ).create(20);
+
+        return List.of(
+                new BattlePokemon(pikachu, pikachu, pokemonEntity -> Unit.INSTANCE)
+        );
+    }
+
+    private List<? extends BattlePokemon> getPlayerPartyBattleTeam(PlayerPartyStore playerPartyStore) {
+        Pokemon firstNotFaintedPokemon = playerPartyStore.toGappyList().stream().filter(
+                pokemon -> !pokemon.isFainted()
+        ).findFirst().get();
+
+        List<BattlePokemon> playerPartyBattleTeam = playerPartyStore.toBattleTeam(
+                true,
+                true,
+                firstNotFaintedPokemon.getUuid()
+        );
+
+        for (BattlePokemon pokemon : playerPartyBattleTeam) {
+            pokemon.getEffectedPokemon().heal();
+            pokemon.getEffectedPokemon().setLevel(20);
+        };
+
+        return playerPartyBattleTeam;
+    }
+
+    private void assertExecutedByPlayer(CommandContext<ServerCommandSource> context) throws NotExecutedByPlayerException {
         if (!context.getSource().isExecutedByPlayer()) {
-            throw new NotRunByPlayerException();
+            throw new NotExecutedByPlayerException();
         }
     }
 
