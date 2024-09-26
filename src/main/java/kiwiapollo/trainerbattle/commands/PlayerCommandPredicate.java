@@ -10,11 +10,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class TrainerCommandPredicate implements Predicate<ServerCommandSource> {
+public class PlayerCommandPredicate implements Predicate<ServerCommandSource> {
     private static final int OP_LEVEL = 2;
     private final List<String> permissions;
 
-    public TrainerCommandPredicate(String... permissions) {
+    public PlayerCommandPredicate(String... permissions) {
         this.permissions = Arrays.asList(permissions);
     }
 

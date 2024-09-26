@@ -1,23 +1,21 @@
 package kiwiapollo.trainerbattle;
 
-import com.mojang.brigadier.builder.LiteralArgumentBuilder;
-import kiwiapollo.trainerbattle.commands.CreateTrainerBattleCommand;
+import kiwiapollo.trainerbattle.commands.BattleFrontierCommand;
+import kiwiapollo.trainerbattle.commands.TrainerBattleCommand;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
-import net.minecraft.server.command.CommandManager;
-import net.minecraft.server.command.ServerCommandSource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class TrainerBattle implements ModInitializer {
-	public static String NAMESPACE = "trainerbattle";
+	public static final String NAMESPACE = "trainerbattle";
+	public static final Logger LOGGER = LoggerFactory.getLogger(NAMESPACE);
 
 	@Override
 	public void onInitialize() {
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
-			LiteralArgumentBuilder<ServerCommandSource> rootCommand = CommandManager.literal(NAMESPACE);
-
-			rootCommand.then(new CreateTrainerBattleCommand());
-
-			dispatcher.register(rootCommand);
+			dispatcher.register(new TrainerBattleCommand());
+			dispatcher.register(new BattleFrontierCommand());
 		});
 	}
 }
