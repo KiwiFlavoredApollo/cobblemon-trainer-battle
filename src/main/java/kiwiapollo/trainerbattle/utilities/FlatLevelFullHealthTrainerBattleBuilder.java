@@ -1,7 +1,9 @@
 package kiwiapollo.trainerbattle.utilities;
 
 import com.cobblemon.mod.common.Cobblemon;
+import com.cobblemon.mod.common.CobblemonClientImplementation;
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
+import com.cobblemon.mod.common.api.storage.party.PartyPosition;
 import com.cobblemon.mod.common.api.storage.party.PlayerPartyStore;
 import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.BattleSide;
@@ -10,6 +12,7 @@ import com.cobblemon.mod.common.battles.actor.TrainerBattleActor;
 import com.cobblemon.mod.common.battles.ai.RandomBattleAI;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
+import kiwiapollo.trainerbattle.TrainerBattle;
 import kiwiapollo.trainerbattle.exceptions.EmptyPlayerPartyException;
 import kotlin.Unit;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -37,12 +40,17 @@ public class FlatLevelFullHealthTrainerBattleBuilder {
                     new RandomBattleAI()
             );
 
+            Cobblemon.INSTANCE.getStorage().getParty(player).forEach(Pokemon::recall);
+
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
                     new BattleSide(playerBattleActor),
                     new BattleSide(trainerBattleActor),
                     false
-            );
+            ).ifSuccessful(pokemonBattle -> {
+                TrainerBattle.TRAINER_BATTLES.add(pokemonBattle);
+                return Unit.INSTANCE;
+            });
 
         } catch (EmptyPlayerPartyException e) {
             return;
@@ -63,7 +71,7 @@ public class FlatLevelFullHealthTrainerBattleBuilder {
         List<BattlePokemon> playerPartyBattleTeam = playerPartyStore.toBattleTeam(
                 true,
                 true,
-                playerPartyStore.toGappyList().get(0).getUuid()
+                playerPartyStore.get(0).getUuid()
         );
 
         for (BattlePokemon pokemon : playerPartyBattleTeam) {

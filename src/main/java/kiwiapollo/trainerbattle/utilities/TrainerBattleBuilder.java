@@ -46,7 +46,10 @@ public class TrainerBattleBuilder {
                     new BattleSide(playerBattleActor),
                     new BattleSide(trainerBattleActor),
                     false
-            );
+            ).ifSuccessful(pokemonBattle -> {
+                TrainerBattle.TRAINER_BATTLES.add(pokemonBattle);
+                return Unit.INSTANCE;
+            });
 
         } catch (EmptyPlayerPartyException e) {
             TrainerBattle.LOGGER.error("%s has no Pokemon");
