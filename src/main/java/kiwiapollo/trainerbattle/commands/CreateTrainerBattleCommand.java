@@ -67,7 +67,7 @@ public class CreateTrainerBattleCommand extends LiteralArgumentBuilder<ServerCom
                     BattleFormat.Companion.getGEN_9_SINGLES(),
                     new BattleSide(playerBattleActor),
                     new BattleSide(trainerBattleActor),
-                    true
+                    false
             );
 
             return Command.SINGLE_SUCCESS;

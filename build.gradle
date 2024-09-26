@@ -1,6 +1,7 @@
 plugins {
 	id 'fabric-loom' version '1.5-SNAPSHOT'
 	id 'maven-publish'
+	id 'org.jetbrains.kotlin.jvm' version '2.0.20'
 }
 
 version = project.mod_version
@@ -17,6 +18,9 @@ repositories {
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
 	maven {
+		url = "https://api.modrinth.com/maven"
+	}
+	maven {
 		name = "Cobblemon"
 		url = "https://maven.impactdev.net/repository/development/"
 	}
@@ -26,7 +30,7 @@ loom {
     splitEnvironmentSourceSets()
 
 	mods {
-		"template-mod" {
+		"trainerbattle" {
 			sourceSet sourceSets.main
 			sourceSet sourceSets.client
 		}
@@ -48,6 +52,7 @@ dependencies {
 
 	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
 	modImplementation("com.cobblemon:fabric:${project.cobblemon_version}")
+	modImplementation("net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}")
 	compileOnly("net.luckperms:api:${project.luckperms_version}")
 }
 

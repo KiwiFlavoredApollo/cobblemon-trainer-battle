@@ -2,7 +2,6 @@ package kiwiapollo.trainerbattle;
 
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import kiwiapollo.trainerbattle.commands.CreateTrainerBattleCommand;
-import kiwiapollo.trainerbattle.commands.TrainerCommandPredicate;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.server.command.CommandManager;

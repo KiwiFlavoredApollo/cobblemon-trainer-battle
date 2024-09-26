@@ -1,8 +1,8 @@
 {
 	"schemaVersion": 1,
-	"id": "template-mod",
+	"id": "trainerbattle",
 	"version": "${version}",
-	"name": "Template Mod",
+	"name": "Cobblemon Trainer Battle",
 	"description": "This is an example description! Tell everyone what your mod is about!",
 	"authors": [
 		"Me!"
@@ -12,7 +12,7 @@
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/template-mod/icon.png",
+	"icon": "assets/trainerbattle/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
@@ -25,7 +25,7 @@
 	"mixins": [
 		"trainerbattle.mixins.json",
 		{
-			"config": "template-mod.client.mixins.json",
+			"config": "trainerbattle.client.mixins.json",
 			"environment": "client"
 		}
 	],
