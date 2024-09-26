@@ -19,7 +19,10 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
 
 public class FlatLevelFullHealthTrainerBattleBuilder {
     public void build(ServerPlayerEntity player) {
@@ -68,10 +71,13 @@ public class FlatLevelFullHealthTrainerBattleBuilder {
     }
 
     private List<? extends BattlePokemon> getPlayerPartyBattleTeam(PlayerPartyStore playerPartyStore) {
+        Stream<Pokemon> pokemons = playerPartyStore.toGappyList().stream()
+                .filter(Objects::nonNull);
+
         List<BattlePokemon> playerPartyBattleTeam = playerPartyStore.toBattleTeam(
                 true,
                 true,
-                playerPartyStore.get(0).getUuid()
+                pokemons.findFirst().get().getUuid()
         );
 
         for (BattlePokemon pokemon : playerPartyBattleTeam) {

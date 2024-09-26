@@ -1,5 +1,6 @@
 package kiwiapollo.trainerbattle;
 
+import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.Priority;
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.api.events.CobblemonEvents;
@@ -50,7 +51,8 @@ public class TrainerBattle implements ModInitializer {
 
 		CobblemonEvents.LOOT_DROPPED.subscribe(Priority.HIGHEST, lootDroppedEvent -> {
 			try {
-				// TODO Does LOOT_DROPPED event fire before BATTLE_VICTORY event?
+				// LOOT_DROPPED event fires before BATTLE_VICTORY event
+				LOGGER.info("Loot Dropped Event");
 
 				assertTrainerBattlePokemon(lootDroppedEvent);
 

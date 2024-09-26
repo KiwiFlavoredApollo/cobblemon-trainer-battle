@@ -18,6 +18,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 import java.util.stream.Stream;
 
@@ -70,14 +71,14 @@ public class TrainerBattleBuilder {
     }
 
     private List<? extends BattlePokemon> getPlayerPartyBattleTeam(PlayerPartyStore playerPartyStore) {
-        Pokemon firstNotFaintedPokemon = playerPartyStore.toGappyList().stream().filter(
-                pokemon -> !pokemon.isFainted()
-        ).findFirst().get();
+        Stream<Pokemon> pokemons = playerPartyStore.toGappyList().stream()
+                .filter(Objects::nonNull)
+                .filter(pokemon -> !pokemon.isFainted());
 
         List<BattlePokemon> playerPartyBattleTeam = playerPartyStore.toBattleTeam(
                 false,
                 false,
-                firstNotFaintedPokemon.getUuid()
+                pokemons.findFirst().get().getUuid()
         );
 
         return playerPartyBattleTeam;
@@ -92,7 +93,7 @@ public class TrainerBattleBuilder {
 
     private void assertNotFaintPlayerParty(ServerPlayerEntity player) throws FaintPlayerPartyException {
         PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
-        Stream<Pokemon> pokemons = playerPartyStore.toGappyList().stream();
+        Stream<Pokemon> pokemons = playerPartyStore.toGappyList().stream().filter(Objects::nonNull);
         if (pokemons.allMatch(Pokemon::isFainted)) {
             throw new FaintPlayerPartyException();
         }
