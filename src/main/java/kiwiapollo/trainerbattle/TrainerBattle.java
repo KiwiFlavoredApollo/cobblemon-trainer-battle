@@ -1,10 +1,11 @@
 package kiwiapollo.trainerbattle;
 
-import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.Priority;
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.api.events.CobblemonEvents;
 import com.cobblemon.mod.common.api.events.drops.LootDroppedEvent;
+import com.cobblemon.mod.common.battles.ActiveBattlePokemon;
+import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import kiwiapollo.trainerbattle.commands.BattleFrontierCommand;
 import kiwiapollo.trainerbattle.commands.TrainerBattleCommand;
@@ -17,7 +18,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.*;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
@@ -36,10 +36,9 @@ public class TrainerBattle implements ModInitializer {
 		CobblemonEvents.BATTLE_VICTORY.subscribe(Priority.NORMAL, battleVictoryEvent -> {
 			try {
 				// BATTLE_VICTORY event fires even if the player loses
+				LOGGER.info("BATTLE_VICTORY event");
 
 				assertTrainerBattle(battleVictoryEvent.getBattle());
-
-				LOGGER.info("Battle Victory Event");
 				TRAINER_BATTLES.remove(battleVictoryEvent.getBattle());
 
 				return Unit.INSTANCE;
@@ -52,10 +51,11 @@ public class TrainerBattle implements ModInitializer {
 		CobblemonEvents.LOOT_DROPPED.subscribe(Priority.HIGHEST, lootDroppedEvent -> {
 			try {
 				// LOOT_DROPPED event fires before BATTLE_VICTORY event
-				LOGGER.info("Loot Dropped Event");
+				// Cobblemon Discord, Hiroku: It's only used if the player kills the pokemon by hand, not by battle
+				// However Pokemons drop loot when defeated in battles, at least on 1.5.1
+				LOGGER.info("LOOT_DROPPED event");
 
 				assertTrainerBattlePokemon(lootDroppedEvent);
-
 				lootDroppedEvent.cancel();
 
 				return Unit.INSTANCE;
@@ -74,6 +74,15 @@ public class TrainerBattle implements ModInitializer {
 	}
 
 	private void assertTrainerBattlePokemon(LootDroppedEvent lootDroppedEvent) throws NotTrainerPokemonException {
-		throw new NotTrainerPokemonException();
+		Stream<BattlePokemon> battlePokemons = TRAINER_BATTLES.stream()
+				.map(pokemonBattle -> pokemonBattle.getActivePokemon().spliterator())
+				.flatMap(spliterator -> StreamSupport.stream(spliterator, false))
+				.map(ActiveBattlePokemon::getBattlePokemon)
+				.filter(Objects::nonNull);
+
+		Stream<UUID> pokemonUuids = battlePokemons.map(BattlePokemon::getUuid);
+		if (pokemonUuids.noneMatch(uuid -> uuid == lootDroppedEvent.getEntity().getUuid())) {
+			throw new NotTrainerPokemonException();
+		}
 	}
 }
