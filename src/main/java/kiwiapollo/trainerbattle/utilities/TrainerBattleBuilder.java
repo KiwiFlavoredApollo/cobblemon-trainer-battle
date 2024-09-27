@@ -53,17 +53,19 @@ public class TrainerBattleBuilder {
             });
 
         } catch (EmptyPlayerPartyException e) {
-            TrainerBattle.LOGGER.error("%s has no Pokemon");
+            TrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
+            TrainerBattle.LOGGER.error(String.format("%s has no Pokemon", player.getGameProfile().getName()));
 
         } catch (FaintPlayerPartyException e) {
-            TrainerBattle.LOGGER.error("%s Pokemons are all fainted");
+            TrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
+            TrainerBattle.LOGGER.error(String.format("%s Pokemons are all fainted", player.getGameProfile().getName()));
         }
     }
 
     private List<? extends BattlePokemon> getTrainerPartyBattleTeam() {
-        Pokemon pikachu = PokemonSpecies.INSTANCE.getByIdentifier(
-                Identifier.of("cobblemon", "pikachu")
-        ).create(20);
+        Pokemon pikachu = PokemonSpecies.INSTANCE
+                .getByIdentifier(Identifier.of("cobblemon", "pikachu"))
+                .create(20);
 
         return List.of(
                 new BattlePokemon(pikachu, pikachu, pokemonEntity -> Unit.INSTANCE)

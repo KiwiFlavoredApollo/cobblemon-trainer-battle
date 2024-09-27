@@ -56,14 +56,15 @@ public class FlatLevelFullHealthTrainerBattleBuilder {
             });
 
         } catch (EmptyPlayerPartyException e) {
-            return;
+            TrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
+            TrainerBattle.LOGGER.error(String.format("%s has no Pokemon", player.getGameProfile().getName()));
         }
     }
 
     private List<? extends BattlePokemon> getTrainerPartyBattleTeam() {
-        Pokemon pikachu = PokemonSpecies.INSTANCE.getByIdentifier(
-                Identifier.of("cobblemon", "pikachu")
-        ).create(100);
+        Pokemon pikachu = PokemonSpecies.INSTANCE
+                .getByIdentifier(Identifier.of("cobblemon", "pikachu"))
+                .create(100);
 
         return List.of(
                 new BattlePokemon(pikachu, pikachu, pokemonEntity -> Unit.INSTANCE)
