@@ -4,8 +4,6 @@ import com.cobblemon.mod.common.api.Priority;
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.api.events.CobblemonEvents;
 import com.cobblemon.mod.common.api.events.drops.LootDroppedEvent;
-import com.cobblemon.mod.common.battles.ActiveBattlePokemon;
-import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import kiwiapollo.trainerbattle.commands.BattleFrontierCommand;
 import kiwiapollo.trainerbattle.commands.TrainerBattleCommand;
@@ -19,7 +17,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.*;
 import java.util.stream.Stream;
-import java.util.stream.StreamSupport;
 
 public class TrainerBattle implements ModInitializer {
 	public static final String NAMESPACE = "trainerbattle";
@@ -57,6 +54,7 @@ public class TrainerBattle implements ModInitializer {
 
 				assertTrainerBattlePokemon(lootDroppedEvent);
 				lootDroppedEvent.cancel();
+				LOGGER.info("Cancelled LOOT_DROPPED event");
 
 				return Unit.INSTANCE;
 
@@ -74,15 +72,16 @@ public class TrainerBattle implements ModInitializer {
 	}
 
 	private void assertTrainerBattlePokemon(LootDroppedEvent lootDroppedEvent) throws NotTrainerPokemonException {
-		Stream<BattlePokemon> battlePokemons = TRAINER_BATTLES.stream()
-				.map(pokemonBattle -> pokemonBattle.getActivePokemon().spliterator())
-				.flatMap(spliterator -> StreamSupport.stream(spliterator, false))
-				.map(ActiveBattlePokemon::getBattlePokemon)
-				.filter(Objects::nonNull);
-
-		Stream<UUID> pokemonUuids = battlePokemons.map(BattlePokemon::getUuid);
-		if (pokemonUuids.noneMatch(uuid -> uuid == lootDroppedEvent.getEntity().getUuid())) {
+		if (!(lootDroppedEvent.getEntity() instanceof PokemonEntity)) {
 			throw new NotTrainerPokemonException();
+		};
+
+		PokemonEntity pokemonEntity = (PokemonEntity) lootDroppedEvent.getEntity();
+		List<UUID> battleIds = TRAINER_BATTLES.stream().map(PokemonBattle::getBattleId).toList();
+		if (battleIds.contains(pokemonEntity.getBattleId())) {
+			return;
 		}
+
+		throw new NotTrainerPokemonException();
 	}
 }
