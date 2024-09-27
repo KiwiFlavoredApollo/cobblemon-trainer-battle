@@ -1,9 +1,7 @@
 package kiwiapollo.trainerbattle.utilities;
 
 import com.cobblemon.mod.common.Cobblemon;
-import com.cobblemon.mod.common.CobblemonClientImplementation;
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
-import com.cobblemon.mod.common.api.storage.party.PartyPosition;
 import com.cobblemon.mod.common.api.storage.party.PlayerPartyStore;
 import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.BattleSide;
@@ -22,7 +20,6 @@ import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 import java.util.stream.Stream;
-import java.util.stream.StreamSupport;
 
 public class FlatLevelFullHealthTrainerBattleBuilder {
     public void build(ServerPlayerEntity player) {
