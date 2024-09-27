@@ -13,6 +13,7 @@
   - `/battletower start`
   - `/battletower stop`
   - `/battletower save`
+  - `/battletower resume`
   - `/battletower trade`
 
 ### Economy Mod Integration
@@ -21,4 +22,7 @@
 
 ### Fix bug 
   - [ ] Pokemon entity duplicates when the Pokemon is taken out of Pokeball before battle
-  - [ ] Player/Trainer Pokemon entity drop item when defeated 
+  - [ ] Player/Trainer Pokemon entity drop item when defeated
+
+## Reference
+- [Pokemon Showdown Team Formats - Cobblemon Showdown](https://gitlab.com/cable-mc/cobblemon-showdown/-/blob/master/sim/TEAMS.md#packed-format)
