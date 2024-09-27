@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Haunter",
+        "item": "None",
+        "ability": "Levitate",
+        "gender": "F",
+        "nature": "Bold",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 37,
+        "moves": [
+            "Night Shade",
+            "Confuse Ray",
+            "Sucker Punch",
+            "Shadow Ball"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Lampent",
+        "item": "None",
+        "ability": "Flash Fire",
+        "gender": "F",
+        "nature": "Gentle",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 39,
+        "moves": [
+            "Imprison",
+            "Hex",
+            "Memento",
+            "Inferno"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Shedinja",
+        "item": "None",
+        "ability": "Wonder Guard",
+        "gender": "",
+        "nature": "Brave",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 37,
+        "moves": [
+            "Mind Reader",
+            "Confuse Ray",
+            "Shadow Ball",
+            "Grudge"
+        ]
+    }
+]

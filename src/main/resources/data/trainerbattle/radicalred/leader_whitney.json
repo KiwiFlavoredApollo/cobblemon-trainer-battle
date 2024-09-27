@@ -1,0 +1,185 @@
+[
+    {
+        "name": "",
+        "species": "Zangoose",
+        "item": "Toxic Orb",
+        "ability": "Toxic Boost",
+        "gender": "M",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Facade",
+            "Close Combat",
+            "Quick Attack",
+            "Fake Out"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Miltank",
+        "item": "Kasib Berry",
+        "ability": "Thick Fat",
+        "gender": "F",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Body Slam",
+            "Thunder Wave",
+            "Stealth Rock",
+            "Milk Drink"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Exploud",
+        "item": "Choice Scarf",
+        "ability": "Punk Rock",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Boomburst"
+        ]
+    },
+    {
+        "name": "",
+        "species": "zoroarksevii",
+        "item": "Focus Sash",
+        "ability": "Illusion",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Shadow Ball",
+            "Hyper Voice",
+            "Flamethrower",
+            "U-turn"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Ursaluna",
+        "item": "Flame Orb",
+        "ability": "Guts",
+        "gender": "F",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Facade",
+            "Earthquake",
+            "Sucker Punch",
+            "Shadow Claw"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Snorlax",
+        "item": "Leftovers",
+        "ability": "Thick Fat",
+        "gender": "F",
+        "nature": "Impish",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Curse",
+            "Rest",
+            "Sleep Talk",
+            "Body Slam"
+        ]
+    }
+]

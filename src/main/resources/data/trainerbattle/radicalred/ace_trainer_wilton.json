@@ -1,0 +1,157 @@
+[
+    {
+        "name": "",
+        "species": "Dragapult",
+        "item": "Focus Sash",
+        "ability": "Cursed Body",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Shadow Ball",
+            "Thunder",
+            "Draco Meteor",
+            "U-turn"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Kabutops",
+        "item": "Mystic Water",
+        "ability": "Swift Swim",
+        "gender": "F",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Waterfall",
+            "Stone Axe",
+            "Sacred Sword",
+            "Aqua Jet"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Pinsir",
+        "item": "Pinsirite",
+        "ability": "Hyper Cutter",
+        "gender": "M",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "X-Scissor",
+            "Double-Edge",
+            "Quick Attack",
+            "Close Combat"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Omastar",
+        "item": "White Herb",
+        "ability": "Swift Swim",
+        "gender": "F",
+        "nature": "Modest",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Shell Smash",
+            "Hydro Pump",
+            "Ice Beam",
+            "Power Gem"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Rotom-Wash",
+        "item": "Sitrus Berry",
+        "ability": "-------",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 30,
+            "def": 30,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Thunder",
+            "Hydro Pump",
+            "Hidden Power",
+            "Nasty Plot"
+        ]
+    }
+]

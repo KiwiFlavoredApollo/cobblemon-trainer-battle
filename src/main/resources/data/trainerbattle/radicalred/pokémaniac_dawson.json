@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Lapras",
+        "item": "None",
+        "ability": "Water Absorb",
+        "gender": "F",
+        "nature": "Brave",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 80,
+        "moves": [
+            "Dragon Pulse",
+            "Wish",
+            "Boomburst",
+            "Draco Hammer"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Lickilicky",
+        "item": "None",
+        "ability": "Own Tempo",
+        "gender": "F",
+        "nature": "Sassy",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 81,
+        "moves": [
+            "Screech",
+            "Power Whip",
+            "Wring Out",
+            "Gyro Ball"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Flareon",
+        "item": "None",
+        "ability": "Flash Fire",
+        "gender": "F",
+        "nature": "Serious",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 80,
+        "moves": [
+            "Lava Plume",
+            "Last Resort",
+            "Flare Blitz",
+            "Sacred Fire"
+        ]
+    }
+]

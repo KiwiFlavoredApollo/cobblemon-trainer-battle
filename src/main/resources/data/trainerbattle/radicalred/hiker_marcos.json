@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Geodude",
+        "item": "None",
+        "ability": "Rock Head",
+        "gender": "F",
+        "nature": "Gentle",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 14,
+        "moves": [
+            "Mud Sport",
+            "Rock Polish",
+            "Rollout",
+            "Magnitude"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Drilbur",
+        "item": "None",
+        "ability": "Sand Rush",
+        "gender": "F",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 16,
+        "moves": [
+            "Rapid Spin",
+            "Mud-Slap",
+            "Fury Swipes",
+            "Metal Claw"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Nosepass",
+        "item": "None",
+        "ability": "Sturdy",
+        "gender": "M",
+        "nature": "Bold",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 15,
+        "moves": [
+            "Harden",
+            "Block",
+            "Bulldoze",
+            "Thunder Wave"
+        ]
+    }
+]

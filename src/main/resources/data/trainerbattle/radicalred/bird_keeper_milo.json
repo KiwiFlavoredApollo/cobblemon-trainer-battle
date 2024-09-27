@@ -1,0 +1,64 @@
+[
+    {
+        "name": "",
+        "species": "Pidgeotto",
+        "item": "None",
+        "ability": "Frisk",
+        "gender": "F",
+        "nature": "Quirky",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 53,
+        "moves": [
+            "Agility",
+            "Air Slash",
+            "Mirror Move",
+            "Tailwind"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Pidgeot",
+        "item": "None",
+        "ability": "Frisk",
+        "gender": "F",
+        "nature": "Naughty",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 55,
+        "moves": [
+            "Agility",
+            "Air Slash",
+            "Mirror Move",
+            "Tailwind"
+        ]
+    }
+]

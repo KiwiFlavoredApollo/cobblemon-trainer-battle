@@ -1,0 +1,64 @@
+[
+    {
+        "name": "",
+        "species": "Pelipper",
+        "item": "None",
+        "ability": "Frisk",
+        "gender": "F",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 57,
+        "moves": [
+            "Roost",
+            "Tailwind",
+            "Hydro Pump",
+            "Hurricane"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Staravia",
+        "item": "None",
+        "ability": "Intimidate",
+        "gender": "F",
+        "nature": "Quirky",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 56,
+        "moves": [
+            "Take Down",
+            "Agility",
+            "Brave Bird",
+            "Final Gambit"
+        ]
+    }
+]

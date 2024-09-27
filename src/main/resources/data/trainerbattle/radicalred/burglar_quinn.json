@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Incineroar",
+        "item": "None",
+        "ability": "Blaze",
+        "gender": "F",
+        "nature": "Naughty",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 72,
+        "moves": [
+            "Scary Face",
+            "Flare Blitz",
+            "Outrage",
+            "Cross Chop"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Delphox",
+        "item": "None",
+        "ability": "Blaze",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 73,
+        "moves": [
+            "Wish",
+            "Psychic",
+            "Sunny Day",
+            "Magic Room"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Emboar",
+        "item": "None",
+        "ability": "Reckless",
+        "gender": "F",
+        "nature": "Bold",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 74,
+        "moves": [
+            "Flamethrower",
+            "Head Smash",
+            "Jump Kick",
+            "Flare Blitz"
+        ]
+    }
+]

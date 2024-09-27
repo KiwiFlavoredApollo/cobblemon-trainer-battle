@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Cherrim",
+        "item": "Focus Sash",
+        "ability": "Flower Gift",
+        "gender": "M",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Petal Storm",
+            "Safeguard",
+            "X-Scissor",
+            "Return"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Venusaur",
+        "item": "Sitrus Berry",
+        "ability": "Chlorophyll",
+        "gender": "F",
+        "nature": "Naive",
+        "evs": {
+            "hp": 0,
+            "atk": 4,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Petal Storm",
+            "Safeguard",
+            "Earth Power",
+            "Weather Ball"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Florges",
+        "item": "Assault Vest",
+        "ability": "Natural Cure",
+        "gender": "F",
+        "nature": "Calm",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 4,
+            "spd": 252,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 30,
+            "def": 31,
+            "spa": 30,
+            "spd": 31,
+            "spe": 30
+        },
+        "level": null,
+        "moves": [
+            "Petal Storm",
+            "Moonblast",
+            "Safeguard",
+            "Hidden Power"
+        ]
+    }
+]

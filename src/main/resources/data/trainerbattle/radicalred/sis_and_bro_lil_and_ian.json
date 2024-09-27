@@ -1,0 +1,64 @@
+[
+    {
+        "name": "",
+        "species": "Seadra",
+        "item": "None",
+        "ability": "Sniper",
+        "gender": "M",
+        "nature": "Lax",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 55,
+        "moves": [
+            "Brine",
+            "Agility",
+            "Dragon Pulse",
+            "Dragon Dance"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Starmie",
+        "item": "None",
+        "ability": "Illuminate",
+        "gender": "",
+        "nature": "Quirky",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 55,
+        "moves": [
+            "Rapid Spin",
+            "Recover",
+            "Psybeam",
+            "Confuse Ray"
+        ]
+    }
+]

@@ -1,0 +1,126 @@
+[
+    {
+        "name": "",
+        "species": "Oddish",
+        "item": "None",
+        "ability": "Chlorophyll",
+        "gender": "F",
+        "nature": "Calm",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 37,
+        "moves": [
+            "Sludge",
+            "Moonlight",
+            "Giga Drain",
+            "Toxic"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Bellsprout",
+        "item": "None",
+        "ability": "Chlorophyll",
+        "gender": "F",
+        "nature": "Serious",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 37,
+        "moves": [
+            "Sludge",
+            "Mega Drain",
+            "Knock Off",
+            "Gastro Acid"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Cherubi",
+        "item": "None",
+        "ability": "Chlorophyll",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 37,
+        "moves": [
+            "Sunny Day",
+            "Worry Seed",
+            "Take Down",
+            "Solar Beam"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Roselia",
+        "item": "None",
+        "ability": "Poison Touch",
+        "gender": "F",
+        "nature": "Naughty",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 38,
+        "moves": [
+            "Toxic Spikes",
+            "Sleep Powder",
+            "Ingrain",
+            "Petal Storm"
+        ]
+    }
+]

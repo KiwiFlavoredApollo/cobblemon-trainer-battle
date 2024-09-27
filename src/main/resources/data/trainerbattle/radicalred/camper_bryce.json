@@ -1,0 +1,157 @@
+[
+    {
+        "name": "",
+        "species": "Bisharp",
+        "item": "Focus Sash",
+        "ability": "Defiant",
+        "gender": "F",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Sucker Punch",
+            "Psycho Cut",
+            "Iron Head",
+            "Swords Dance"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Floatzel",
+        "item": "Mystic Water",
+        "ability": "Technician",
+        "gender": "F",
+        "nature": "Naive",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Fake Out",
+            "SurgeStrikes",
+            "Icy Wind",
+            "Rock Smash"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Butterfree",
+        "item": "Butterfrite",
+        "ability": "Compound Eyes",
+        "gender": "M",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 36,
+            "atk": 0,
+            "def": 56,
+            "spa": 252,
+            "spd": 0,
+            "spe": 164
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Bug Buzz",
+            "Sleep Powder",
+            "Hurricane",
+            "U-turn"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Magnezone",
+        "item": "Magnet",
+        "ability": "Magnet Pull",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 48,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 208
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Thunderbolt",
+            "Steel Beam",
+            "Volt Switch",
+            "Body Press"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Delphox",
+        "item": "Life Orb",
+        "ability": "Magic Guard",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Mind Blown",
+            "Psychic",
+            "Heat Wave",
+            "Foul Play"
+        ]
+    }
+]

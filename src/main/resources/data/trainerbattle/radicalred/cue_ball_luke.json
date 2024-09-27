@@ -1,0 +1,64 @@
+[
+    {
+        "name": "",
+        "species": "Dugtrio",
+        "item": "Life Orb",
+        "ability": "Arena Trap",
+        "gender": "M",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 4,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Earthquake",
+            "Stone Edge",
+            "Aerial Ace",
+            "Sucker Punch"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Hariyama",
+        "item": "Assault Vest",
+        "ability": "Thick Fat",
+        "gender": "F",
+        "nature": "Careful",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Fake Out",
+            "Knock Off",
+            "Drain Punch",
+            "Heavy Slam"
+        ]
+    }
+]

@@ -1,0 +1,126 @@
+[
+    {
+        "name": "",
+        "species": "Inteleon",
+        "item": "Scope Lens",
+        "ability": "Sniper",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 30,
+            "def": 31,
+            "spa": 30,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Snipe Shot",
+            "Ice Beam",
+            "U-turn",
+            "Hidden Power"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Dragalge",
+        "item": "Choice Specs",
+        "ability": "Adaptability",
+        "gender": "M",
+        "nature": "Modest",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "DracoBarrage",
+            "Sludge Wave",
+            "Flip Turn",
+            "Scald"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Starmie",
+        "item": "Life Orb",
+        "ability": "Illuminate",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Hydro Pump",
+            "Thunder",
+            "Blizzard",
+            "Psyshock"
+        ]
+    },
+    {
+        "name": "",
+        "species": "basclegionf",
+        "item": "Life Orb",
+        "ability": "Adaptability",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Hydro Pump",
+            "Shadow Ball",
+            "Ice Beam",
+            "Flip Turn"
+        ]
+    }
+]

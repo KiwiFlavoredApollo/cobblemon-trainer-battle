@@ -1,0 +1,126 @@
+[
+    {
+        "name": "",
+        "species": "Heatmor",
+        "item": "None",
+        "ability": "Gluttony",
+        "gender": "F",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 15,
+            "atk": 15,
+            "def": 15,
+            "spa": 15,
+            "spd": 15,
+            "spe": 15
+        },
+        "level": 72,
+        "moves": [
+            "Spit Up",
+            "Swallow",
+            "Flare Blitz",
+            "Inferno"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Charizard",
+        "item": "None",
+        "ability": "Blaze",
+        "gender": "F",
+        "nature": "Docile",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 15,
+            "atk": 15,
+            "def": 15,
+            "spa": 15,
+            "spd": 15,
+            "spe": 15
+        },
+        "level": 71,
+        "moves": [
+            "Flamethrower",
+            "Fire Spin",
+            "Inferno",
+            "Heat Wave"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Talonflame",
+        "item": "None",
+        "ability": "Flame Body",
+        "gender": "M",
+        "nature": "Docile",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 15,
+            "atk": 15,
+            "def": 15,
+            "spa": 15,
+            "spd": 15,
+            "spe": 15
+        },
+        "level": 73,
+        "moves": [
+            "Me First",
+            "Tailwind",
+            "Steel Wing",
+            "Brave Bird"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Oricorio",
+        "item": "None",
+        "ability": "Dancer",
+        "gender": "M",
+        "nature": "Serious",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 15,
+            "atk": 15,
+            "def": 15,
+            "spa": 15,
+            "spd": 15,
+            "spe": 15
+        },
+        "level": 72,
+        "moves": [
+            "Mirror Move",
+            "Agility",
+            "Hurricane",
+            "Quiver Dance"
+        ]
+    }
+]

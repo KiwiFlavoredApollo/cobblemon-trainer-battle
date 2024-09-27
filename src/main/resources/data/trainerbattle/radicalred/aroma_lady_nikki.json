@@ -1,0 +1,188 @@
+[
+    {
+        "name": "",
+        "species": "Sableye",
+        "item": "Sablenite",
+        "ability": "Prankster",
+        "gender": "F",
+        "nature": "Calm",
+        "evs": {
+            "hp": 248,
+            "atk": 0,
+            "def": 8,
+            "spa": 0,
+            "spd": 252,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 30,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Recover",
+            "Toxic",
+            "Foul Play",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Tangrowth",
+        "item": "Assault Vest",
+        "ability": "Regenerator",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 252,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Giga Drain",
+            "Earthquake",
+            "Knock Off",
+            "Focus Blast"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Blissey",
+        "item": "Leftovers",
+        "ability": "Natural Cure",
+        "gender": "F",
+        "nature": "Bold",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 252,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Teleport",
+            "Soft-Boiled",
+            "Seismic Toss",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Toxapex",
+        "item": "Black Sludge",
+        "ability": "Regenerator",
+        "gender": "M",
+        "nature": "Impish",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 252,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Toxic Spikes",
+            "Scald",
+            "Knock Off",
+            "Recover"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Reuniclus",
+        "item": "Leftovers",
+        "ability": "Regenerator",
+        "gender": "M",
+        "nature": "Modest",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Future Sight",
+            "Psyshock",
+            "Focus Blast",
+            "Teleport"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Drapion",
+        "item": "Choice Band",
+        "ability": "Sniper",
+        "gender": "F",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Wicked Blow",
+            "Poison Jab",
+            "Earthquake",
+            "Leech Life"
+        ]
+    }
+]

@@ -1,0 +1,188 @@
+[
+    {
+        "name": "",
+        "species": "Serperior",
+        "item": "Leftovers",
+        "ability": "Contrary",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Glare",
+            "Leaf Storm",
+            "Substitute",
+            "Leech Seed"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Volcarona",
+        "item": "Leftovers",
+        "ability": "Flame Body",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 4,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Quiver Dance",
+            "Fiery Dance",
+            "Bug Buzz",
+            "Roost"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Zoroark",
+        "item": "Focus Sash",
+        "ability": "-------",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Dark Hole",
+            "Nasty Plot",
+            "Sludge Bomb",
+            "Flamethrower"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Dugtrio",
+        "item": "Groundium Z",
+        "ability": "Arena Trap",
+        "gender": "M",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Earthquake",
+            "Stone Edge",
+            "Sucker Punch",
+            "Shadow Claw"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Absol",
+        "item": "Absolite",
+        "ability": "Super Luck",
+        "gender": "M",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Night Slash",
+            "Psycho Cut",
+            "Close Combat",
+            "Sucker Punch"
+        ]
+    },
+    {
+        "name": "",
+        "species": "mantinesevii",
+        "item": "Air Balloon",
+        "ability": "Storm Drain",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 30,
+            "def": 31,
+            "spa": 30,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Thunderbolt",
+            "Sludge Wave",
+            "Volt Switch",
+            "Hidden Power"
+        ]
+    }
+]

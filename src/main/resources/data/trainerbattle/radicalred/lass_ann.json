@@ -1,0 +1,64 @@
+[
+    {
+        "name": "",
+        "species": "Dewott",
+        "item": "Eviolite",
+        "ability": "Battle Armor",
+        "gender": "F",
+        "nature": "Bashful",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 30,
+            "def": 31,
+            "spa": 30,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Water Pledge",
+            "Flash Cannon",
+            "Ice Beam",
+            "Hidden Power"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Simisear",
+        "item": "Charcoal",
+        "ability": "Gluttony",
+        "gender": "F",
+        "nature": "Naive",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 30,
+            "def": 30,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Fire Pledge",
+            "Low Kick",
+            "Grass Knot",
+            "Hidden Power"
+        ]
+    }
+]

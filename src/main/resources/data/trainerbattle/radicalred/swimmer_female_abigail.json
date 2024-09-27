@@ -1,0 +1,126 @@
+[
+    {
+        "name": "",
+        "species": "Azumarill",
+        "item": "Sitrus Berry",
+        "ability": "Huge Power",
+        "gender": "M",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Waterfall",
+            "Play Rough",
+            "Superpower",
+            "Aqua Jet"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Octillery",
+        "item": "Sitrus Berry",
+        "ability": "Mega Launcher",
+        "gender": "F",
+        "nature": "Modest",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Snipe Shot",
+            "Aura Sphere",
+            "Ice Beam",
+            "Flamethrower"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Golisopod",
+        "item": "Sitrus Berry",
+        "ability": "Emergency Exit",
+        "gender": "M",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "FirstImpress",
+            "Liquidation",
+            "Knock Off",
+            "Close Combat"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Wishiwashi",
+        "item": "Sitrus Berry",
+        "ability": "Schooling",
+        "gender": "M",
+        "nature": "Modest",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Hydro Pump",
+            "Ice Beam",
+            "U-turn",
+            "Earthquake"
+        ]
+    }
+]

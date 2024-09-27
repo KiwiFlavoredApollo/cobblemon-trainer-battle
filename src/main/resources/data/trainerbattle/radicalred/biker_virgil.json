@@ -1,0 +1,94 @@
+[
+    {
+        "name": "",
+        "species": "Klinklang",
+        "item": "None",
+        "ability": "Clear Body",
+        "gender": "",
+        "nature": "Bashful",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 54,
+        "moves": [
+            "Smokescreen",
+            "Gear Grind",
+            "Wild Charge",
+            "Shift Gear"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Seismitoad",
+        "item": "None",
+        "ability": "Swift Swim",
+        "gender": "F",
+        "nature": "Naughty",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 54,
+        "moves": [
+            "Smokescreen",
+            "Scald",
+            "Earth Power",
+            "Sludge Bomb"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Bouffalant",
+        "item": "None",
+        "ability": "Reckless",
+        "gender": "M",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 55,
+        "moves": [
+            "Smokescreen",
+            "Head Charge",
+            "Earthquake"
+        ]
+    }
+]

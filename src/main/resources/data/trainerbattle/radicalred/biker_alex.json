@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Drapion",
+        "item": "None",
+        "ability": "Battle Armor",
+        "gender": "F",
+        "nature": "Lax",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 57,
+        "moves": [
+            "Smokescreen",
+            "Wicked Blow",
+            "Poison Jab",
+            "Earthquake"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Toxicroak",
+        "item": "None",
+        "ability": "Anticipation",
+        "gender": "F",
+        "nature": "Docile",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 57,
+        "moves": [
+            "Screech",
+            "Sludge Bomb",
+            "Vacuum Wave",
+            "Nasty Plot"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Weavile",
+        "item": "None",
+        "ability": "Pressure",
+        "gender": "M",
+        "nature": "Lax",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 57,
+        "moves": [
+            "Smokescreen",
+            "Triple Axel",
+            "Ice Shard",
+            "Night Slash"
+        ]
+    }
+]

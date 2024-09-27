@@ -1,0 +1,188 @@
+[
+    {
+        "name": "",
+        "species": "Ninetales-Alola",
+        "item": "Light Clay",
+        "ability": "Snow Warning",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Freeze-Dry",
+            "Moonblast",
+            "Aurora Veil",
+            "Frost Breath"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Garchomp",
+        "item": "Garchompite",
+        "ability": "Sand Veil",
+        "gender": "F",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 0,
+            "spa": 4,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Swords Dance",
+            "Earthquake",
+            "Scale Shot",
+            "Stone Edge"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Dragapult",
+        "item": "WeaknessPol.",
+        "ability": "Clear Body",
+        "gender": "M",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 120,
+            "atk": 252,
+            "def": 0,
+            "spa": 4,
+            "spd": 0,
+            "spe": 132
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Dragon Dance",
+            "PhantomForce",
+            "Dragon Darts",
+            "Fire Blast"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Heatran",
+        "item": "Air Balloon",
+        "ability": "Flash Fire",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 184,
+            "atk": 0,
+            "def": 4,
+            "spa": 96,
+            "spd": 0,
+            "spe": 224
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Magma Storm",
+            "Earth Power",
+            "Flash Cannon",
+            "Protect"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Arctozolt",
+        "item": "Ice Gem",
+        "ability": "Slush Rush",
+        "gender": "",
+        "nature": "Naive",
+        "evs": {
+            "hp": 0,
+            "atk": 200,
+            "def": 4,
+            "spa": 76,
+            "spd": 0,
+            "spe": 232
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Bolt Beak",
+            "Blizzard",
+            "Freeze-Dry",
+            "Low Kick"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Zapdos-Galar",
+        "item": "Flyinium Z",
+        "ability": "Defiant",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 30,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Close Combat",
+            "Brave Bird",
+            "U-turn",
+            "Bad Tantrum"
+        ]
+    }
+]

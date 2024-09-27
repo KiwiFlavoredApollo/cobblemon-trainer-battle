@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Mienshao",
+        "item": "Life Orb",
+        "ability": "Inner Focus",
+        "gender": "M",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 4,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Fake Out",
+            "Close Combat",
+            "Knock Off",
+            "U-turn"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Heliolisk",
+        "item": "Focus Sash",
+        "ability": "Sand Veil",
+        "gender": "M",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Volt Switch",
+            "Boomburst",
+            "Weather Ball",
+            "Surf"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Dugtrio-Alola",
+        "item": "Life Orb",
+        "ability": "Sand Force",
+        "gender": "M",
+        "nature": "Naive",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 4,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Earthquake",
+            "Iron Head",
+            "Sucker Punch",
+            "Stone Edge"
+        ]
+    }
+]

@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Magneton",
+        "item": "None",
+        "ability": "Magnet Pull",
+        "gender": "",
+        "nature": "Modest",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 28,
+        "moves": [
+            "Sonic Boom",
+            "Spark",
+            "Mirror Shot",
+            "Metal Sound"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Magneton",
+        "item": "None",
+        "ability": "Magnet Pull",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 28,
+        "moves": [
+            "Sonic Boom",
+            "Spark",
+            "Mirror Shot",
+            "Metal Sound"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Magneton",
+        "item": "None",
+        "ability": "Magnet Pull",
+        "gender": "",
+        "nature": "Calm",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 28,
+        "moves": [
+            "Sonic Boom",
+            "Spark",
+            "Mirror Shot",
+            "Metal Sound"
+        ]
+    }
+]

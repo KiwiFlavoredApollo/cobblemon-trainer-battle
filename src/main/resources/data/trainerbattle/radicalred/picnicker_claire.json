@@ -1,0 +1,126 @@
+[
+    {
+        "name": "",
+        "species": "Alakazam",
+        "item": "Alakazite",
+        "ability": "Synchronize",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Expand Force",
+            "Shadow Ball",
+            "Nasty Plot",
+            "Focus Blast"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Indeedee",
+        "item": "Tanga Berry",
+        "ability": "Psychic Surge",
+        "gender": "M",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Expand Force",
+            "Follow Me",
+            "Fake Out",
+            "Hyper Voice"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Dugtrio",
+        "item": "Focus Sash",
+        "ability": "Arena Trap",
+        "gender": "M",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Earthquake",
+            "Bad Tantrum",
+            "Reversal",
+            "Stone Edge"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Lucario",
+        "item": "Life Orb",
+        "ability": "Justified",
+        "gender": "F",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Crunch",
+            "Close Combat",
+            "Meteor Mash",
+            "Ice Punch"
+        ]
+    }
+]

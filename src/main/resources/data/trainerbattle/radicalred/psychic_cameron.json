@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Slowbro",
+        "item": "None",
+        "ability": "Own Tempo",
+        "gender": "F",
+        "nature": "Hasty",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 15,
+            "atk": 15,
+            "def": 15,
+            "spa": 15,
+            "spd": 15,
+            "spe": 15
+        },
+        "level": 54,
+        "moves": [
+            "Zen Headbutt",
+            "Slack Off",
+            "Amnesia",
+            "Psychic"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Slowking",
+        "item": "None",
+        "ability": "Own Tempo",
+        "gender": "F",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 15,
+            "atk": 15,
+            "def": 15,
+            "spa": 15,
+            "spd": 15,
+            "spe": 15
+        },
+        "level": 53,
+        "moves": [
+            "Nasty Plot",
+            "Swagger",
+            "Psychic",
+            "Trump Card"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Golduck",
+        "item": "None",
+        "ability": "Cloud Nine",
+        "gender": "F",
+        "nature": "Quiet",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 15,
+            "atk": 15,
+            "def": 15,
+            "spa": 15,
+            "spd": 15,
+            "spe": 15
+        },
+        "level": 53,
+        "moves": [
+            "Psych Up",
+            "Nasty Plot",
+            "Hydro Pump",
+            "Wonder Room"
+        ]
+    }
+]

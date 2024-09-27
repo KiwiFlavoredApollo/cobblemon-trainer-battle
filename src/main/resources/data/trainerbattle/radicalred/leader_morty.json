@@ -1,0 +1,188 @@
+[
+    {
+        "name": "",
+        "species": "Mimikyu",
+        "item": "Lum Berry",
+        "ability": "Disguise",
+        "gender": "F",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Play Rough",
+            "Shadow Claw",
+            "Shadow Sneak",
+            "Swords Dance"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Dusknoir",
+        "item": "Reaper Cloth",
+        "ability": "Hustle",
+        "gender": "F",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Shadow Punch",
+            "Shadow Sneak",
+            "DynamicPunch",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "name": "",
+        "species": "zoroarksevii",
+        "item": "Colbur Berry",
+        "ability": "Illusion",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Hyper Voice",
+            "Shadow Ball",
+            "Flamethrower",
+            "Nasty Plot"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Typhlosion-Hisui",
+        "item": "Charcoal",
+        "ability": "Flash Fire",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 30,
+            "def": 31,
+            "spa": 30,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Flamethrower",
+            "InfernoMarch",
+            "Focus Blast",
+            "Hidden Power"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Gengar",
+        "item": "Gengarite",
+        "ability": "Levitate",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": null,
+        "moves": [
+            "Sludge Wave",
+            "Shadow Ball",
+            "Focus Blast",
+            "Nasty Plot"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Weavile",
+        "item": "Focus Sash",
+        "ability": "Infiltrator",
+        "gender": "M",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 44,
+        "moves": [
+            "Knock Off",
+            "Triple Axel",
+            "Ice Shard",
+            "Swords Dance"
+        ]
+    }
+]

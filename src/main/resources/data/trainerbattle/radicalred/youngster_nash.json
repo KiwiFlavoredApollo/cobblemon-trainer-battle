@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Weepinbell",
+        "item": "None",
+        "ability": "Chlorophyll",
+        "gender": "F",
+        "nature": "Docile",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "level": 47,
+        "moves": [
+            "Knock Off",
+            "Gastro Acid",
+            "Razor Leaf",
+            "Poison Jab"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Weepinbell",
+        "item": "None",
+        "ability": "Chlorophyll",
+        "gender": "F",
+        "nature": "Sassy",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "level": 47,
+        "moves": [
+            "Knock Off",
+            "Gastro Acid",
+            "Razor Leaf",
+            "Poison Jab"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Victreebel",
+        "item": "None",
+        "ability": "Chlorophyll",
+        "gender": "M",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "level": 49,
+        "moves": [
+            "Poison Jab",
+            "Leaf Storm",
+            "Leaf Blade",
+            "Sludge Bomb"
+        ]
+    }
+]
