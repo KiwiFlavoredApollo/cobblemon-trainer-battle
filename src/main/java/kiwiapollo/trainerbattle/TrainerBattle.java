@@ -65,8 +65,8 @@ public class TrainerBattle implements ModInitializer {
 	}
 
 	private void assertTrainerBattle(PokemonBattle battle) throws NotTrainerBattleException {
-		Stream<UUID> trainerBattleUuids = TRAINER_BATTLES.stream().map(PokemonBattle::getBattleId);
-		if (trainerBattleUuids.noneMatch(uuid -> uuid == battle.getBattleId())) {
+		List<UUID> battleIds = TRAINER_BATTLES.stream().map(PokemonBattle::getBattleId).toList();
+		if (battleIds.contains(battle.getBattleId())) {
 			throw new NotTrainerBattleException();
 		}
 	}
