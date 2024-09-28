@@ -5,8 +5,8 @@ import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
-import kiwiapollo.trainerbattle.utilities.FlatLevelFullHealthTrainerBattleBuilder;
-import kiwiapollo.trainerbattle.utilities.TrainerBattleBuilder;
+import kiwiapollo.trainerbattle.battlebuilders.FlatLevelFullHealthTrainerBattleBuilder;
+import kiwiapollo.trainerbattle.battlebuilders.TrainerBattleBuilder;
 import net.minecraft.server.command.ServerCommandSource;
 
 public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSource> {
@@ -37,7 +37,6 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
                             new FlatLevelFullHealthTrainerBattleBuilder().build(context.getSource().getPlayer());
 
                             return Command.SINGLE_SUCCESS;
-                        })
-                );
+                        }));
     }
 }
