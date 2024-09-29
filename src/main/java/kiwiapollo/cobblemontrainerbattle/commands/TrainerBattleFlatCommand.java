@@ -5,6 +5,7 @@ import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import kiwiapollo.cobblemontrainerbattle.common.RadicalRedTrainerFileScanner;
+import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import net.minecraft.server.command.ServerCommandSource;
 
@@ -22,6 +23,11 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
                         })
                         .executes(context -> {
                             TrainerBattle.battleWithFlatLevelAndFullHealth(context, StringArgumentType.getString(context, "trainer"));
+                            return Command.SINGLE_SUCCESS;
+                        }))
+                .then(LiteralArgumentBuilder.<ServerCommandSource>literal("random")
+                        .executes(context -> {
+                            TrainerBattle.battleWithFlatLevelAndFullHealth(context, new RandomTrainerFactory().create().name);
                             return Command.SINGLE_SUCCESS;
                         }));
     }
