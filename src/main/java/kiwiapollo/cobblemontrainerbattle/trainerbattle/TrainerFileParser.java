@@ -29,6 +29,8 @@ import java.util.Objects;
 import java.util.function.BiConsumer;
 
 public class TrainerFileParser {
+    public static final int LEVEL = 50;
+
     public Trainer parse(Path resourcePath) {
         try {
             InputStream resourceInputStream = new FileInputStream(resourcePath.toString());
@@ -65,7 +67,7 @@ public class TrainerFileParser {
     private Pokemon createPokemon(JsonObject jsonObject) {
         Identifier identifier = Identifier.of(
                 "cobblemon", jsonObject.get("species").getAsString().toLowerCase());
-        Pokemon pokemon = PokemonSpecies.INSTANCE.getByIdentifier(identifier).create(30);
+        Pokemon pokemon = PokemonSpecies.INSTANCE.getByIdentifier(identifier).create(LEVEL);
 
         if (jsonObject.get("evs") != null && !jsonObject.get("evs").isJsonNull()) {
             setPokemonStats(pokemon::setEV, jsonObject.get("evs").getAsJsonObject());

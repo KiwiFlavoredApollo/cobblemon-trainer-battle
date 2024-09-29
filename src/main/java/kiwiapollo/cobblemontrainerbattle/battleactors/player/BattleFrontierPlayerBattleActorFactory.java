@@ -10,10 +10,10 @@ import kotlin.Unit;
 import net.minecraft.server.network.ServerPlayerEntity;
 
 public class BattleFrontierPlayerBattleActorFactory {
-    public BattleActor create(ServerPlayerEntity player, int level) {
+    public BattleActor create(ServerPlayerEntity player) {
         BattleFrontierSession session = BattleFrontier.SESSIONS.get(player.getUuid());
         session.partyPokemons.forEach(Pokemon::heal);
-        session.partyPokemons.forEach(pokemon -> pokemon.setLevel(level));
+        session.partyPokemons.forEach(pokemon -> pokemon.setLevel(BattleFrontier.LEVEL));
 
         return new PlayerBattleActor(
                 player.getUuid(),

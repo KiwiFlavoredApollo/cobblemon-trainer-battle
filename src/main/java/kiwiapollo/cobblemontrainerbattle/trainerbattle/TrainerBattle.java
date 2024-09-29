@@ -9,7 +9,8 @@ import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactors.player.FlatLevelFullHealthPlayerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactors.player.StatusQuoPlayerBattleActorFactory;
-import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.NameTrainerBattleActorFactory;
+import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.FlatLevelFullHealthNameTrainerBattleActorFactory;
+import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.TrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.exceptions.EmptyPlayerPartyException;
 import kiwiapollo.cobblemontrainerbattle.exceptions.FaintPlayerPartyException;
 import kotlin.Unit;
@@ -21,6 +22,8 @@ import java.util.Objects;
 import java.util.stream.Stream;
 
 public class TrainerBattle {
+    public static final int LEVEL = 100;
+
     public static void battleWithStatusQuo(CommandContext<ServerCommandSource> context, Trainer trainer) {
         try {
             assertNotEmptyPlayerParty(context.getSource().getPlayer());
@@ -29,7 +32,7 @@ public class TrainerBattle {
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
                     new BattleSide(new StatusQuoPlayerBattleActorFactory().create(context.getSource().getPlayer())),
-                    new BattleSide(new NameTrainerBattleActorFactory().create(trainer)),
+                    new BattleSide(new TrainerBattleActorFactory().create(trainer)),
                     false
             ).ifSuccessful(pokemonBattle -> {
                 CobblemonTrainerBattle.TRAINER_BATTLES.put(context.getSource().getPlayer().getUuid(), pokemonBattle);
@@ -60,8 +63,8 @@ public class TrainerBattle {
 
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
-                    new BattleSide(new FlatLevelFullHealthPlayerBattleActorFactory().create(context.getSource().getPlayer(), 100)),
-                    new BattleSide(new NameTrainerBattleActorFactory().create(trainer)),
+                    new BattleSide(new FlatLevelFullHealthPlayerBattleActorFactory().create(context.getSource().getPlayer(), LEVEL)),
+                    new BattleSide(new FlatLevelFullHealthNameTrainerBattleActorFactory().create(trainer, LEVEL)),
                     false
             ).ifSuccessful(pokemonBattle -> {
                 CobblemonTrainerBattle.TRAINER_BATTLES.put(context.getSource().getPlayer().getUuid(), pokemonBattle);

@@ -12,7 +12,7 @@ import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactors.player.BattleFrontierPlayerBattleActorFactory;
-import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.NameTrainerBattleActorFactory;
+import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.BattleFrontierNameTrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.exceptions.BattleFrontierDefeatedPlayerException;
 import kiwiapollo.cobblemontrainerbattle.exceptions.DefeatedTrainerNotExistException;
 import kiwiapollo.cobblemontrainerbattle.exceptions.ValidBattleFrontierSessionExistException;
@@ -31,6 +31,7 @@ import java.time.Instant;
 import java.util.*;
 
 public class BattleFrontier {
+    public static final int LEVEL = 100;
     public static Map<UUID, BattleFrontierSession> SESSIONS = new HashMap<>();
 
     public static void startSession(CommandContext<ServerCommandSource> context) {
@@ -71,8 +72,8 @@ public class BattleFrontier {
 
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
-                    new BattleSide(new BattleFrontierPlayerBattleActorFactory().create(context.getSource().getPlayer(), 100)),
-                    new BattleSide(new NameTrainerBattleActorFactory().create(new RandomTrainerFactory().create())),
+                    new BattleSide(new BattleFrontierPlayerBattleActorFactory().create(context.getSource().getPlayer())),
+                    new BattleSide(new BattleFrontierNameTrainerBattleActorFactory().create(new RandomTrainerFactory().create())),
                     false
             ).ifSuccessful(pokemonBattle -> {
                 CobblemonTrainerBattle.TRAINER_BATTLES.put(context.getSource().getPlayer().getUuid(), pokemonBattle);

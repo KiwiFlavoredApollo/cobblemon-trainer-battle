@@ -9,7 +9,7 @@ import kotlin.Unit;
 
 import java.util.UUID;
 
-public class NameTrainerBattleActorFactory {
+public class TrainerBattleActorFactory {
     public BattleActor create(Trainer trainer) {
         return new TrainerBattleActor(
                 trainer.name,
