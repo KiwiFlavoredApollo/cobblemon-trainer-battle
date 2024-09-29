@@ -8,12 +8,10 @@ import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactors.player.FlatLevelFullHealthPlayerBattleActorFactory;
-import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.NameTrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactors.player.StatusQuoPlayerBattleActorFactory;
-import kiwiapollo.cobblemontrainerbattle.common.NameTrainerFactory;
+import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.NameTrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.exceptions.EmptyPlayerPartyException;
 import kiwiapollo.cobblemontrainerbattle.exceptions.FaintPlayerPartyException;
-import kiwiapollo.cobblemontrainerbattle.exceptions.TrainerNameNotExistException;
 import kotlin.Unit;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -23,7 +21,7 @@ import java.util.Objects;
 import java.util.stream.Stream;
 
 public class TrainerBattle {
-    public static void battleWithStatusQuo(CommandContext<ServerCommandSource> context, String trainer) {
+    public static void battleWithStatusQuo(CommandContext<ServerCommandSource> context, Trainer trainer) {
         try {
             assertNotEmptyPlayerParty(context.getSource().getPlayer());
             assertNotFaintPlayerParty(context.getSource().getPlayer());
@@ -31,7 +29,7 @@ public class TrainerBattle {
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
                     new BattleSide(new StatusQuoPlayerBattleActorFactory().create(context.getSource().getPlayer())),
-                    new BattleSide(new NameTrainerBattleActorFactory().create(new NameTrainerFactory().create(trainer))),
+                    new BattleSide(new NameTrainerBattleActorFactory().create(trainer)),
                     false
             ).ifSuccessful(pokemonBattle -> {
                 CobblemonTrainerBattle.TRAINER_BATTLES.put(context.getSource().getPlayer().getUuid(), pokemonBattle);
@@ -51,16 +49,10 @@ public class TrainerBattle {
             CobblemonTrainerBattle.LOGGER.error(
                     String.format("%s: Pokemons are all fainted",
                             context.getSource().getPlayer().getGameProfile().getName()));
-
-        } catch (TrainerNameNotExistException e) {
-            context.getSource().getPlayer().sendMessage(
-                    Text.literal(String.format("Unknown trainer %s", trainer)));
-            CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Unknown trainer", trainer));
         }
     }
 
-    public static void battleWithFlatLevelAndFullHealth(CommandContext<ServerCommandSource> context, String trainer) {
+    public static void battleWithFlatLevelAndFullHealth(CommandContext<ServerCommandSource> context, Trainer trainer) {
         try {
             assertNotEmptyPlayerParty(context.getSource().getPlayer());
 
@@ -69,7 +61,7 @@ public class TrainerBattle {
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
                     new BattleSide(new FlatLevelFullHealthPlayerBattleActorFactory().create(context.getSource().getPlayer(), 100)),
-                    new BattleSide(new NameTrainerBattleActorFactory().create(new NameTrainerFactory().create(trainer))),
+                    new BattleSide(new NameTrainerBattleActorFactory().create(trainer)),
                     false
             ).ifSuccessful(pokemonBattle -> {
                 CobblemonTrainerBattle.TRAINER_BATTLES.put(context.getSource().getPlayer().getUuid(), pokemonBattle);
@@ -83,11 +75,6 @@ public class TrainerBattle {
                     String.format("%s: Player has no Pokemon",
                             context.getSource().getPlayer().getGameProfile().getName()));
 
-        } catch (TrainerNameNotExistException e) {
-            context.getSource().getPlayer().sendMessage(
-                    Text.literal(String.format("Unknown trainer %s", trainer)));
-            CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Unknown trainer", trainer));
         }
     }
 
