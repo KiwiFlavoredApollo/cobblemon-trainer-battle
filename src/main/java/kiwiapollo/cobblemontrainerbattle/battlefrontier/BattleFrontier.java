@@ -175,9 +175,19 @@ public class BattleFrontier {
     }
 
     public static void showTradeablePokemons(CommandContext<ServerCommandSource> context) {
-        BattleFrontierSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
-        Trainer lastDefeatedTrainer = session.defeatedTrainers.get(session.defeatedTrainers.size() - 1);
-        printPokemons(context, lastDefeatedTrainer.pokemons);
+        try {
+            assertExistValidSession(context.getSource().getPlayer());
+
+            BattleFrontierSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
+            Trainer lastDefeatedTrainer = session.defeatedTrainers.get(session.defeatedTrainers.size() - 1);
+            printPokemons(context, lastDefeatedTrainer.pokemons);
+
+        } catch (ValidBattleFrontierSessionNotExistException e) {
+            context.getSource().getPlayer().sendMessage(
+                    Text.literal("You do not have active Battle Frontier session"));
+            CobblemonTrainerBattle.LOGGER.error(String.format("%s : Valid Battle Frontier session does not exists",
+                    context.getSource().getPlayer().getGameProfile().getName()));
+        }
     }
 
     public static void showPartyPokemons(CommandContext<ServerCommandSource> context) {
@@ -231,11 +241,21 @@ public class BattleFrontier {
     };
 
     public static void rerollPokemons(CommandContext<ServerCommandSource> context) {
-        BattleFrontierSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
-        if (session.isRerolled) return;
+        try {
+            assertExistValidSession(context.getSource().getPlayer());
 
-        session.partyPokemons = new RandomPartyPokemonsFactory().create();
-        session.isRerolled = true;
-        context.getSource().getPlayer().sendMessage(Text.literal("Rerolled Pokemons"));
+            BattleFrontierSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
+            if (session.isRerolled) return;
+
+            session.partyPokemons = new RandomPartyPokemonsFactory().create();
+            session.isRerolled = true;
+            context.getSource().getPlayer().sendMessage(Text.literal("Rerolled Pokemons"));
+
+        } catch (ValidBattleFrontierSessionNotExistException e) {
+            context.getSource().getPlayer().sendMessage(
+                    Text.literal("You do not have active Battle Frontier session"));
+            CobblemonTrainerBattle.LOGGER.error(String.format("%s : Valid Battle Frontier session does not exists",
+                    context.getSource().getPlayer().getGameProfile().getName()));
+        }
     }
 }
