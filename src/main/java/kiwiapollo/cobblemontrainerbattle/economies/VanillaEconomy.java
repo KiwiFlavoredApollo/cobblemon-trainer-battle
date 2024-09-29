@@ -1,8 +1,8 @@
 package kiwiapollo.cobblemontrainerbattle.economies;
 
-import kiwiapollo.fcgymbadges.FractalCoffeeGymBadges;
-import kiwiapollo.fcgymbadges.exceptions.InvalidCurrencyAmountException;
-import kiwiapollo.fcgymbadges.exceptions.InvalidVanillaCurrencyItemException;
+import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidCurrencyAmountException;
+import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidVanillaCurrencyItemException;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -12,40 +12,56 @@ import net.minecraft.util.Identifier;
 
 public class VanillaEconomy implements Economy {
     private static final Item currencyItem =
-            Registries.ITEM.get(new Identifier(FractalCoffeeGymBadges.CONFIG.vanillaCurrencyItem));
+            Registries.ITEM.get(new Identifier(CobblemonTrainerBattle.CONFIG.vanillaCurrencyItem));
 
     public VanillaEconomy() throws InvalidVanillaCurrencyItemException, InvalidCurrencyAmountException {
         assertValidCurrencyItem();
-        assertValidCurrencyAmount();
+        assertValidVictoryCurrencyAmount();
+        assertValidDefeatCurrencyAmount();
 
-        FractalCoffeeGymBadges.LOGGER.info("Loaded VanillaEconomy");
+        CobblemonTrainerBattle.LOGGER.info("Loaded VanillaEconomy");
     }
 
-    private void assertValidCurrencyAmount() throws InvalidCurrencyAmountException {
-        int currencyItemCount = (int) Math.floor(FractalCoffeeGymBadges.CONFIG.gymBadgeCreatePrice);
-        if (currencyItemCount < 0) {
-            FractalCoffeeGymBadges.LOGGER.error(
+    private void assertValidVictoryCurrencyAmount() throws InvalidCurrencyAmountException {
+        int victoryCurrencyItemCount = (int) Math.floor(CobblemonTrainerBattle.CONFIG.victoryCurrencyAmount);
+        if (victoryCurrencyItemCount < 0) {
+            CobblemonTrainerBattle.LOGGER.error(
                     String.format(
-                            "Invalid value set to gymBadgeCreatePrice: %d",
-                            currencyItemCount
+                            "Invalid value set to victoryCurrencyItemCount: %d",
+                            victoryCurrencyItemCount
                     )
             );
 
-            FractalCoffeeGymBadges.LOGGER.error("Failed to load VanillaEconomy");
+            CobblemonTrainerBattle.LOGGER.error("Failed to load VanillaEconomy");
+            throw new InvalidCurrencyAmountException();
+        }
+    }
+
+    private void assertValidDefeatCurrencyAmount() throws InvalidCurrencyAmountException {
+        int defeatCurrencyItemCount = (int) Math.floor(CobblemonTrainerBattle.CONFIG.defeatCurrencyAmount);
+        if (defeatCurrencyItemCount < 0) {
+            CobblemonTrainerBattle.LOGGER.error(
+                    String.format(
+                            "Invalid value set to defeaetCurrencyItemCount: %d",
+                            defeatCurrencyItemCount
+                    )
+            );
+
+            CobblemonTrainerBattle.LOGGER.error("Failed to load VanillaEconomy");
             throw new InvalidCurrencyAmountException();
         }
     }
 
     private void assertValidCurrencyItem() throws InvalidVanillaCurrencyItemException {
         if (currencyItem == Items.AIR) {
-            FractalCoffeeGymBadges.LOGGER.error(
+            CobblemonTrainerBattle.LOGGER.error(
                     String.format(
                             "Invalid item set to vanillaCurrencyItem: %s",
-                            FractalCoffeeGymBadges.CONFIG.vanillaCurrencyItem
+                            CobblemonTrainerBattle.CONFIG.vanillaCurrencyItem
                     )
             );
 
-            FractalCoffeeGymBadges.LOGGER.error("Failed to load VanillaEconomy");
+            CobblemonTrainerBattle.LOGGER.error("Failed to load VanillaEconomy");
             throw new InvalidVanillaCurrencyItemException();
         }
     }
@@ -128,12 +144,6 @@ public class VanillaEconomy implements Economy {
 
     @Override
     public String getNotEnoughBalanceMessage() {
-        int currencyItemCount = (int) Math.floor(FractalCoffeeGymBadges.CONFIG.gymBadgeCreatePrice);
-        return String.format(
-                "Not enough item: %s %d",
-                Registries.ITEM.get(new Identifier(
-                        FractalCoffeeGymBadges.CONFIG.vanillaCurrencyItem)).getName().getString(),
-                currencyItemCount
-        );
+        return String.format("Not enough currency item: %s", CobblemonTrainerBattle.CONFIG.vanillaCurrencyItem);
     }
 }

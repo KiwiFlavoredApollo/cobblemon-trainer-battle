@@ -1,28 +1,43 @@
 package kiwiapollo.cobblemontrainerbattle.economies;
 
-import kiwiapollo.fcgymbadges.FractalCoffeeGymBadges;
-import kiwiapollo.fcgymbadges.exceptions.EconomyNotLoadedException;
-import kiwiapollo.fcgymbadges.exceptions.InvalidCurrencyAmountException;
+import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.exceptions.EconomyNotLoadedException;
+import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidCurrencyAmountException;
 import net.minecraft.server.network.ServerPlayerEntity;
 
 public class OctoEconomy implements Economy {
     public OctoEconomy() throws EconomyNotLoadedException, InvalidCurrencyAmountException {
         assertOctoEconomyLoaded();
-        assertValidCurrencyAmount();
+        assertValidVictoryCurrencyAmount();
+        assertValidDefeatCurrencyAmount();
 
-        FractalCoffeeGymBadges.LOGGER.info("Loaded OctoEconomy");
+        CobblemonTrainerBattle.LOGGER.info("Loaded OctoEconomy");
     }
 
-    private void assertValidCurrencyAmount() throws InvalidCurrencyAmountException {
-        if (FractalCoffeeGymBadges.CONFIG.gymBadgeCreatePrice < 0) {
-            FractalCoffeeGymBadges.LOGGER.error(
+    private void assertValidVictoryCurrencyAmount() throws InvalidCurrencyAmountException {
+        if (CobblemonTrainerBattle.CONFIG.victoryCurrencyAmount < 0) {
+            CobblemonTrainerBattle.LOGGER.error(
                     String.format(
-                            "Invalid value set to gymBadgeCreatePrice: %f",
-                            FractalCoffeeGymBadges.CONFIG.gymBadgeCreatePrice
+                            "Invalid value set to victoryCurrencyAmount: %f",
+                            CobblemonTrainerBattle.CONFIG.victoryCurrencyAmount
                     )
             );
 
-            FractalCoffeeGymBadges.LOGGER.error("Failed to load OctoEconomy");
+            CobblemonTrainerBattle.LOGGER.error("Failed to load OctoEconomy");
+            throw new InvalidCurrencyAmountException();
+        }
+    }
+
+    private void assertValidDefeatCurrencyAmount() throws InvalidCurrencyAmountException {
+        if (CobblemonTrainerBattle.CONFIG.defeatCurrencyAmount < 0) {
+            CobblemonTrainerBattle.LOGGER.error(
+                    String.format(
+                            "Invalid value set to defeatCurrencyAmount: %f",
+                            CobblemonTrainerBattle.CONFIG.defeatCurrencyAmount
+                    )
+            );
+
+            CobblemonTrainerBattle.LOGGER.error("Failed to load OctoEconomy");
             throw new InvalidCurrencyAmountException();
         }
     }
@@ -32,7 +47,7 @@ public class OctoEconomy implements Economy {
             Class.forName("com.epherical.octoecon.OctoEconomy");
 
         } catch (ClassNotFoundException e) {
-            FractalCoffeeGymBadges.LOGGER.error("Failed to load OctoEconomy");
+            CobblemonTrainerBattle.LOGGER.error("Failed to load OctoEconomy");
             throw new EconomyNotLoadedException();
         }
     }
@@ -67,9 +82,6 @@ public class OctoEconomy implements Economy {
 
     @Override
     public String getNotEnoughBalanceMessage() {
-        return String.format(
-                "Not enough balance: $%.2f",
-                FractalCoffeeGymBadges.CONFIG.gymBadgeCreatePrice
-        );
+        return String.format("Not enough balance");
     }
 }

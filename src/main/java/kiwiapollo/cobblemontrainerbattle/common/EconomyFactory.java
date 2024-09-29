@@ -1,12 +1,13 @@
 package kiwiapollo.cobblemontrainerbattle.common;
 
-import kiwiapollo.fcgymbadges.economies.Economy;
-import kiwiapollo.fcgymbadges.economies.NullEconomy;
-import kiwiapollo.fcgymbadges.economies.OctoEconomy;
-import kiwiapollo.fcgymbadges.economies.VanillaEconomy;
-import kiwiapollo.fcgymbadges.exceptions.EconomyNotLoadedException;
-import kiwiapollo.fcgymbadges.exceptions.InvalidCurrencyAmountException;
-import kiwiapollo.fcgymbadges.exceptions.InvalidVanillaCurrencyItemException;
+
+import kiwiapollo.cobblemontrainerbattle.economies.Economy;
+import kiwiapollo.cobblemontrainerbattle.economies.NullEconomy;
+import kiwiapollo.cobblemontrainerbattle.economies.OctoEconomy;
+import kiwiapollo.cobblemontrainerbattle.economies.VanillaEconomy;
+import kiwiapollo.cobblemontrainerbattle.exceptions.EconomyNotLoadedException;
+import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidCurrencyAmountException;
+import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidVanillaCurrencyItemException;
 
 public class EconomyFactory {
     public static Economy create(String identifier) {

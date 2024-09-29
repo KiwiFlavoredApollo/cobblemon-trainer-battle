@@ -1,11 +1,11 @@
 package kiwiapollo.cobblemontrainerbattle.economies;
 
-import kiwiapollo.fcgymbadges.FractalCoffeeGymBadges;
+import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import net.minecraft.server.network.ServerPlayerEntity;
 
 public class NullEconomy implements Economy {
     public NullEconomy() {
-        FractalCoffeeGymBadges.LOGGER.info("Loaded NullEconomy");
+        CobblemonTrainerBattle.LOGGER.info("Loaded NullEconomy");
     }
 
     @Override
