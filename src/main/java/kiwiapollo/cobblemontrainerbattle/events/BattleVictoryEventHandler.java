@@ -23,7 +23,24 @@ public class BattleVictoryEventHandler {
 
     private void handleTrainerBattleVictoryEvent(BattleVictoryEvent battleVictoryEvent) {
         List<UUID> battleIds = CobblemonTrainerBattle.TRAINER_BATTLES.values().stream().map(PokemonBattle::getBattleId).toList();
-        if (battleIds.contains(battleVictoryEvent.getBattle().getBattleId())) return;
+        if (!battleIds.contains(battleVictoryEvent.getBattle().getBattleId())) return;
+
+        ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
+        BattleActor playerBattleActor = battleVictoryEvent.getBattle().getActor(player);
+        String trainerName = StreamSupport.stream(battleVictoryEvent.getBattle().getActors().spliterator(), false)
+                .filter(battleActor -> !battleActor.isForPlayer(player))
+                .findFirst().get().getName().getString();
+
+        if (battleVictoryEvent.getWinners().contains(playerBattleActor)) {
+            CobblemonTrainerBattle.ECONOMY.addBalance(player, CobblemonTrainerBattle.CONFIG.victoryCurrencyAmount);
+            CobblemonTrainerBattle.LOGGER.info(String.format(
+                    "%s: Victory against %s", player.getGameProfile().getName(), trainerName));
+
+        } else {
+            CobblemonTrainerBattle.ECONOMY.addBalance(player, CobblemonTrainerBattle.CONFIG.defeatCurrencyAmount);
+            CobblemonTrainerBattle.LOGGER.info(String.format(
+                    "%s: Defeat against %s", player.getGameProfile().getName(), trainerName));
+        }
 
         CobblemonTrainerBattle.TRAINER_BATTLES.remove(battleVictoryEvent.getBattle());
     }
