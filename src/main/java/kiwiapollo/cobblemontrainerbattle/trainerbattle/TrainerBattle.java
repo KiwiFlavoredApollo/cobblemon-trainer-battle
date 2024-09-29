@@ -93,7 +93,7 @@ public class TrainerBattle {
 
     private static void assertNotEmptyPlayerParty(ServerPlayerEntity player) throws EmptyPlayerPartyException {
         PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
-        if (playerPartyStore.toGappyList().isEmpty()) {
+        if (playerPartyStore.toGappyList().stream().allMatch(Objects::nonNull)) {
             throw new EmptyPlayerPartyException();
         }
     }
