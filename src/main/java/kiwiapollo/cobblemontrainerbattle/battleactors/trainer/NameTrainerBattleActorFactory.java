@@ -1,19 +1,16 @@
-package kiwiapollo.cobblemontrainerbattle.battleactors;
+package kiwiapollo.cobblemontrainerbattle.battleactors.trainer;
 
 import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import com.cobblemon.mod.common.battles.actor.TrainerBattleActor;
 import com.cobblemon.mod.common.battles.ai.RandomBattleAI;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
-import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.common.Trainer;
 import kotlin.Unit;
 
 import java.util.UUID;
 
-public class RandomTrainerBattleActorFactory {
-    public BattleActor create(int level) {
-        Trainer trainer = new RandomTrainerFactory().create();
-
+public class NameTrainerBattleActorFactory {
+    public BattleActor create(Trainer trainer) {
         return new TrainerBattleActor(
                 trainer.name,
                 UUID.randomUUID(),
