@@ -136,7 +136,7 @@ public class BattleFrontier {
             BattleFrontierSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
             Trainer lastDefeatedTrainer = session.defeatedTrainers.get(session.defeatedTrainers.size() - 1);
             Pokemon trainerPokemon = lastDefeatedTrainer.pokemons.get(trainerslot - 1);
-            Pokemon playerPokemon = session.partyPokemons.get(playerslot);
+            Pokemon playerPokemon = session.partyPokemons.get(playerslot - 1);
 
             session.partyPokemons = new ArrayList<>(session.partyPokemons);
             session.partyPokemons.set(playerslot - 1, trainerPokemon.clone(true, true));
@@ -181,7 +181,16 @@ public class BattleFrontier {
     }
 
     public static void showPartyPokemons(CommandContext<ServerCommandSource> context) {
-        printPokemons(context, SESSIONS.get(context.getSource().getPlayer().getUuid()).partyPokemons);
+        try {
+            assertExistValidSession(context.getSource().getPlayer());
+            printPokemons(context, SESSIONS.get(context.getSource().getPlayer().getUuid()).partyPokemons);
+
+        } catch (ValidBattleFrontierSessionNotExistException e) {
+            context.getSource().getPlayer().sendMessage(
+                    Text.literal("You do not have active Battle Frontier session"));
+            CobblemonTrainerBattle.LOGGER.error(String.format("%s : Valid Battle Frontier session does not exists",
+                    context.getSource().getPlayer().getGameProfile().getName()));
+        }
     }
 
     private static void printPokemons(CommandContext<ServerCommandSource> context, List<Pokemon> pokemons) {
