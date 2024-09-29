@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.common;
+package kiwiapollo.cobblemontrainerbattle.trainerbattle;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.exceptions.TrainerNameNotExistException;
@@ -12,10 +12,14 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RadicalRedTrainerFileScanner {
-    public static final String RESOURCE_PATH = "data/cobblemontrainerbattle/radicalred";
+public class TrainerFileScanner {
+    private final String resourcePath;
 
-    public static Path toTrainerFilePath(String trainerName) throws TrainerNameNotExistException {
+    public TrainerFileScanner(String resourcePath) {
+        this.resourcePath = resourcePath;
+    }
+
+    public Path toTrainerFilePath(String trainerName) throws TrainerNameNotExistException {
         assertExistTrainerName(trainerName);
         return getTrainerFiles().stream().filter(path -> toTrainerName(path).equals(trainerName)).toList().get(0);
     }
@@ -24,16 +28,16 @@ public class RadicalRedTrainerFileScanner {
         return trainerFilePath.getFileName().toString().replace(".json", "");
     }
 
-    public static void assertExistTrainerName(String name) throws TrainerNameNotExistException {
-        List<String> trainerNames = getTrainerFiles().stream().map(RadicalRedTrainerFileScanner::toTrainerName).toList();
+    public void assertExistTrainerName(String name) throws TrainerNameNotExistException {
+        List<String> trainerNames = getTrainerFiles().stream().map(TrainerFileScanner::toTrainerName).toList();
         if (!trainerNames.contains(name)) {
             throw new TrainerNameNotExistException();
         }
     }
 
-    public static List<Path> getTrainerFiles() {
+    public List<Path> getTrainerFiles() {
         try {
-            URL resource = CobblemonTrainerBattle.class.getClassLoader().getResource(RESOURCE_PATH);
+            URL resource = CobblemonTrainerBattle.class.getClassLoader().getResource(this.resourcePath);
 
             Path path = Paths.get(resource.toURI());
 
