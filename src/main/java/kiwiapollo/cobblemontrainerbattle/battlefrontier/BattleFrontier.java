@@ -14,7 +14,10 @@ import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactors.player.BattleFrontierPlayerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.RandomTrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.common.Trainer;
-import kiwiapollo.cobblemontrainerbattle.exceptions.*;
+import kiwiapollo.cobblemontrainerbattle.exceptions.BattleFrontierDefeatedPlayerException;
+import kiwiapollo.cobblemontrainerbattle.exceptions.DefeatedTrainerNotExistException;
+import kiwiapollo.cobblemontrainerbattle.exceptions.ValidBattleFrontierSessionExistException;
+import kiwiapollo.cobblemontrainerbattle.exceptions.ValidBattleFrontierSessionNotExistException;
 import kotlin.Unit;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -143,9 +146,10 @@ public class BattleFrontier {
 
             context.getSource().getPlayer().sendMessage(
                     Text.literal("Traded ")
-                            .append(playerPokemon.getDisplayName()).formatted(Formatting.YELLOW)
+                            .append(playerPokemon.getDisplayName())
                             .append(Text.literal(" for "))
-                            .append(trainerPokemon.getDisplayName()).formatted(Formatting.YELLOW));
+                            .append(trainerPokemon.getDisplayName())
+                            .formatted(Formatting.YELLOW));
 
         } catch (ValidBattleFrontierSessionNotExistException e) {
             context.getSource().getPlayer().sendMessage(
@@ -209,7 +213,7 @@ public class BattleFrontier {
             Pokemon pokemon = pokemons.get(i);
 
             context.getSource().getPlayer().sendMessage(
-                    Text.literal(String.format("[%d] ", i + 1)).formatted(Formatting.YELLOW).append(pokemon.getDisplayName()));
+                    Text.literal("[" + (i + 1) + "] ").append(pokemon.getDisplayName()).formatted(Formatting.YELLOW));
             context.getSource().getPlayer().sendMessage(
                     Text.literal("Ability ").append(Text.translatable(pokemon.getAbility().getDisplayName())));
             context.getSource().getPlayer().sendMessage(
