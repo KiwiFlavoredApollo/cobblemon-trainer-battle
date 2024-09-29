@@ -23,6 +23,7 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
                         String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "random")))
                 .then(getRadicalRedTrainerBattleFlatCommand())
                 .then(getInclementEmeraldTrainerBattleFlatCommand())
+                .then(getCustomTrainerBattleFlatCommand())
                 .then(LiteralArgumentBuilder.<ServerCommandSource>literal("random")
                         .requires(new PlayerCommandPredicate(String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "random")))
                         .executes(context -> {
@@ -75,6 +76,35 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
                                 String trainer = StringArgumentType.getString(context, "trainer");
                                 TrainerBattle.battleWithFlatLevelAndFullHealth(context,
                                         new InclementEmeraldNameTrainerFactory().create(context.getSource().getPlayer(), trainer));
+                                return Command.SINGLE_SUCCESS;
+
+                            } catch (TrainerNameNotExistException e) {
+                                String trainer = StringArgumentType.getString(context, "trainer");
+
+                                context.getSource().getPlayer().sendMessage(
+                                        Text.literal(String.format("Unknown trainer %s", trainer)));
+                                CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
+                                CobblemonTrainerBattle.LOGGER.error(String.format("%s: Unknown trainer", trainer));
+
+                                return -1;
+                            }
+                        }));
+    }
+
+    private ArgumentBuilder<ServerCommandSource, ?> getCustomTrainerBattleFlatCommand() {
+        return LiteralArgumentBuilder.<ServerCommandSource>literal("custom")
+                .then(RequiredArgumentBuilder.<ServerCommandSource, String>argument("trainer", StringArgumentType.string())
+                        .requires(new PlayerCommandPredicate(String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "trainer")))
+                        .suggests((context, builder) -> {
+                            new CustomTrainerFileScanner().getTrainerFiles().stream()
+                                    .map(TrainerFileScanner::toTrainerName)
+                                    .forEach(builder::suggest);
+                            return builder.buildFuture();
+                        })
+                        .executes(context -> {
+                            try {
+                                String trainer = StringArgumentType.getString(context, "trainer");
+                                TrainerBattle.battleWithFlatLevelAndFullHealth(context, new CustomNameTrainerFactory().create(context.getSource().getPlayer(), trainer));
                                 return Command.SINGLE_SUCCESS;
 
                             } catch (TrainerNameNotExistException e) {

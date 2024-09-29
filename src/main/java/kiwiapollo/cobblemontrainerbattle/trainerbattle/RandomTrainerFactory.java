@@ -9,7 +9,8 @@ public class RandomTrainerFactory {
     public Trainer create(ServerPlayerEntity player) {
         List<Trainer> trainers = List.of(
                 new RadicalRedRandomTrainerFactory().create(player),
-                new InclementEmeraldRandomTrainerFactory().create(player)
+                new InclementEmeraldRandomTrainerFactory().create(player),
+                new CustomRandomTrainerFactory().create(player)
         );
 
         int random = new Random().nextInt(trainers.size());
