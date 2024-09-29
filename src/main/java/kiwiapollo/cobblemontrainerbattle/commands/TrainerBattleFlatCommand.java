@@ -14,8 +14,11 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
     public TrainerBattleFlatCommand() {
         super("trainerbattleflat");
 
-        this.requires(new PlayerCommandPredicate(String.format("%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral())))
+        this.requires(new PlayerCommandPredicate(
+                String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "trainer"),
+                        String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "random")))
                 .then(RequiredArgumentBuilder.<ServerCommandSource, String>argument("trainer", StringArgumentType.string())
+                        .requires(new PlayerCommandPredicate(String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "trainer")))
                         .suggests((context, builder) -> {
                             RadicalRedTrainerFileScanner.getTrainerFiles().stream()
                                     .map(RadicalRedTrainerFileScanner::toTrainerName)
@@ -27,6 +30,7 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
                             return Command.SINGLE_SUCCESS;
                         }))
                 .then(LiteralArgumentBuilder.<ServerCommandSource>literal("random")
+                        .requires(new PlayerCommandPredicate(String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "random")))
                         .executes(context -> {
                             TrainerBattle.battleWithFlatLevelAndFullHealth(context, new RandomTrainerFactory().create().name);
                             return Command.SINGLE_SUCCESS;
