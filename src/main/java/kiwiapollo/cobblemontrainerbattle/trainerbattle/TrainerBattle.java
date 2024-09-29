@@ -68,7 +68,7 @@ public class TrainerBattle {
 
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
-                    new BattleSide(new FlatLevelFullHealthPlayerBattleActorFactory().create(context.getSource().getPlayer())),
+                    new BattleSide(new FlatLevelFullHealthPlayerBattleActorFactory().create(context.getSource().getPlayer(), 100)),
                     new BattleSide(new NameTrainerBattleActorFactory().create(new NameTrainerFactory().create(trainer))),
                     false
             ).ifSuccessful(pokemonBattle -> {
