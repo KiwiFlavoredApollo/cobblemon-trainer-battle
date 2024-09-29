@@ -188,7 +188,8 @@ public class TrainerFileParser {
 
     private String getExceptionalCobblemonMoveName(String moveName) {
         Map<String, String> moveNameExceptions = Map.of(
-                "Drain Kiss", "drainingkiss"
+                "Drain Kiss", "drainingkiss",
+                "Bad Tantrum", "stompingtantrum"
         );
 
         if (!moveNameExceptions.containsKey(moveName)) {
