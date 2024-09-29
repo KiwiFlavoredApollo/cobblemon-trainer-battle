@@ -25,7 +25,7 @@ public class BattleFrontierCommand extends LiteralArgumentBuilder<ServerCommandS
     private ArgumentBuilder<ServerCommandSource, ?> getBattleFrontierStartCommand() {
         return LiteralArgumentBuilder.<ServerCommandSource>literal("start")
                 .executes(context -> {
-                    BattleFrontier.start(context);
+                    BattleFrontier.startSession(context);
                     return Command.SINGLE_SUCCESS;
                 });
     }
@@ -33,7 +33,7 @@ public class BattleFrontierCommand extends LiteralArgumentBuilder<ServerCommandS
     private ArgumentBuilder<ServerCommandSource, ?> getBattleFrontierStopCommand() {
         return LiteralArgumentBuilder.<ServerCommandSource>literal("stop")
                 .executes(context -> {
-                    BattleFrontier.stop(context);
+                    BattleFrontier.stopSession(context);
                     return Command.SINGLE_SUCCESS;
                 });
     }
@@ -41,7 +41,7 @@ public class BattleFrontierCommand extends LiteralArgumentBuilder<ServerCommandS
     private ArgumentBuilder<ServerCommandSource, ?> getBattleFrontierBattleCommand() {
         return LiteralArgumentBuilder.<ServerCommandSource>literal("battle")
                 .executes(context -> {
-                    BattleFrontier.battle(context);
+                    BattleFrontier.startBattle(context);
                     return Command.SINGLE_SUCCESS;
                 });
     }

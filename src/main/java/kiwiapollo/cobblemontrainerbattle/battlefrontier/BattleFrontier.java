@@ -29,7 +29,7 @@ import java.util.*;
 public class BattleFrontier {
     public static Map<UUID, BattleFrontierSession> SESSIONS = new HashMap<>();
 
-    public static void start(CommandContext<ServerCommandSource> context) {
+    public static void startSession(CommandContext<ServerCommandSource> context) {
         try {
             assertNotExistValidSession(context.getSource().getPlayer());
 
@@ -44,7 +44,7 @@ public class BattleFrontier {
         }
     }
 
-    public static void stop(CommandContext<ServerCommandSource> context) {
+    public static void stopSession(CommandContext<ServerCommandSource> context) {
         try {
             assertExistValidSession(context.getSource().getPlayer());
 
@@ -60,7 +60,7 @@ public class BattleFrontier {
         }
     }
 
-    public static void battle(CommandContext<ServerCommandSource> context) {
+    public static void startBattle(CommandContext<ServerCommandSource> context) {
         try {
             assertExistValidSession(context.getSource().getPlayer());
             assertPlayerNotDefeated(context.getSource().getPlayer());
