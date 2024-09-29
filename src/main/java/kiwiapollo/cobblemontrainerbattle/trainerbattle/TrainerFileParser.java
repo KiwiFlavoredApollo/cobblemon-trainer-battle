@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.common;
+package kiwiapollo.cobblemontrainerbattle.trainerbattle;
 
 import com.cobblemon.mod.common.api.abilities.Abilities;
 import com.cobblemon.mod.common.api.moves.Moves;
@@ -15,6 +15,7 @@ import com.google.gson.JsonObject;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidPokemonStatsException;
 import kiwiapollo.cobblemontrainerbattle.exceptions.NotCobblemonMoveNameException;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;

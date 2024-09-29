@@ -8,7 +8,7 @@ import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battlefrontier.BattleFrontier;
-import kiwiapollo.cobblemontrainerbattle.common.Trainer;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
 import net.minecraft.server.network.ServerPlayerEntity;
 
 import java.util.List;

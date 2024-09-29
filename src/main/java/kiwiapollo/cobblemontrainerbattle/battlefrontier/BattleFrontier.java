@@ -13,7 +13,7 @@ import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactors.player.BattleFrontierPlayerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.RandomTrainerBattleActorFactory;
-import kiwiapollo.cobblemontrainerbattle.common.Trainer;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
 import kiwiapollo.cobblemontrainerbattle.exceptions.BattleFrontierDefeatedPlayerException;
 import kiwiapollo.cobblemontrainerbattle.exceptions.DefeatedTrainerNotExistException;
 import kiwiapollo.cobblemontrainerbattle.exceptions.ValidBattleFrontierSessionExistException;

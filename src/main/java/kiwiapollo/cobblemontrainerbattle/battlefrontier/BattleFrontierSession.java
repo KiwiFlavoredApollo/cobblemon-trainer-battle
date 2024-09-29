@@ -1,7 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.battlefrontier;
 
 import com.cobblemon.mod.common.pokemon.Pokemon;
-import kiwiapollo.cobblemontrainerbattle.common.Trainer;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
 
 import java.time.Instant;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.common;
+package kiwiapollo.cobblemontrainerbattle.trainerbattle;
 
 import com.cobblemon.mod.common.pokemon.Pokemon;
 
