@@ -98,8 +98,13 @@ public class TrainerFileParser {
     }
 
     private void setPokemonAbility(Pokemon pokemon, String ability) {
-        pokemon.updateAbility(Abilities.INSTANCE.getOrException(
-                ability.replace(" ", "").toLowerCase()).create(false));
+        try {
+            pokemon.updateAbility(Abilities.INSTANCE.getOrException(
+                    ability.replace(" ", "").toLowerCase()).create(false));
+
+        } catch (IllegalArgumentException ignored) {
+
+        }
     }
 
     private void setPokemonStats(BiConsumer<Stats, Integer> consumer, JsonObject stats) {
