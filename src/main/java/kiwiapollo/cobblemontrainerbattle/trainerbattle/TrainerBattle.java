@@ -34,7 +34,7 @@ public class TrainerBattle {
                     new BattleSide(new NameTrainerBattleActorFactory().create(new NameTrainerFactory().create(trainer))),
                     false
             ).ifSuccessful(pokemonBattle -> {
-                CobblemonTrainerBattle.TRAINER_BATTLES.add(pokemonBattle);
+                CobblemonTrainerBattle.TRAINER_BATTLES.put(context.getSource().getPlayer().getUuid(), pokemonBattle);
                 return Unit.INSTANCE;
             });
 
@@ -72,7 +72,7 @@ public class TrainerBattle {
                     new BattleSide(new NameTrainerBattleActorFactory().create(new NameTrainerFactory().create(trainer))),
                     false
             ).ifSuccessful(pokemonBattle -> {
-                CobblemonTrainerBattle.TRAINER_BATTLES.add(pokemonBattle);
+                CobblemonTrainerBattle.TRAINER_BATTLES.put(context.getSource().getPlayer().getUuid(), pokemonBattle);
                 return Unit.INSTANCE;
             });
 

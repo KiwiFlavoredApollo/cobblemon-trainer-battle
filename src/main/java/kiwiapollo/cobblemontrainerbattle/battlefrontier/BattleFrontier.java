@@ -74,7 +74,7 @@ public class BattleFrontier {
                     new BattleSide(new RandomTrainerBattleActorFactory().create(10)),
                     false
             ).ifSuccessful(pokemonBattle -> {
-                CobblemonTrainerBattle.TRAINER_BATTLES.add(pokemonBattle);
+                CobblemonTrainerBattle.TRAINER_BATTLES.put(context.getSource().getPlayer().getUuid(), pokemonBattle);
 
                 UUID playerUuid = context.getSource().getPlayer().getUuid();
                 BattleFrontier.SESSIONS.get(playerUuid).battleUuid = pokemonBattle.getBattleId();

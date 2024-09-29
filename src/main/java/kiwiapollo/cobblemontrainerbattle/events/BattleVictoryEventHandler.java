@@ -22,7 +22,7 @@ public class BattleVictoryEventHandler {
     }
 
     private void handleTrainerBattleVictoryEvent(BattleVictoryEvent battleVictoryEvent) {
-        List<UUID> battleIds = CobblemonTrainerBattle.TRAINER_BATTLES.stream().map(PokemonBattle::getBattleId).toList();
+        List<UUID> battleIds = CobblemonTrainerBattle.TRAINER_BATTLES.values().stream().map(PokemonBattle::getBattleId).toList();
         if (battleIds.contains(battleVictoryEvent.getBattle().getBattleId())) return;
 
         CobblemonTrainerBattle.TRAINER_BATTLES.remove(battleVictoryEvent.getBattle());

@@ -3,6 +3,7 @@ package kiwiapollo.cobblemontrainerbattle;
 import com.cobblemon.mod.common.api.Priority;
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.api.events.CobblemonEvents;
+import com.cobblemon.mod.common.battles.ActiveBattlePokemon;
 import kiwiapollo.cobblemontrainerbattle.commands.BattleFrontierCommand;
 import kiwiapollo.cobblemontrainerbattle.commands.TrainerBattleCommand;
 import kiwiapollo.cobblemontrainerbattle.commands.TrainerBattleFlatCommand;
@@ -11,16 +12,18 @@ import kiwiapollo.cobblemontrainerbattle.events.LootDroppedEventHandler;
 import kotlin.Unit;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
+import net.minecraft.server.network.ServerPlayerEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.StreamSupport;
 
 public class CobblemonTrainerBattle implements ModInitializer {
 	public static final String NAMESPACE = "cobblemontrainerbattle";
 	public static final Logger LOGGER = LoggerFactory.getLogger(NAMESPACE);
-	public static final Set<PokemonBattle> TRAINER_BATTLES = new HashSet<>();
+	public static final Map<UUID, PokemonBattle> TRAINER_BATTLES = new HashMap<>();
 
 	@Override
 	public void onInitialize() {
@@ -45,5 +48,9 @@ public class CobblemonTrainerBattle implements ModInitializer {
 			new LootDroppedEventHandler().run(lootDroppedEvent);
 			return Unit.INSTANCE;
         });
+
+		ServerPlayConnectionEvents.DISCONNECT.register((handler, server) -> {
+			TRAINER_BATTLES.get(handler.getPlayer().getUuid()).end();
+		});
 	}
 }
