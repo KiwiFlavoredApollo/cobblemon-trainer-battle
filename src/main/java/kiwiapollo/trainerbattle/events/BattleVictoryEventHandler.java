@@ -42,7 +42,7 @@ public class BattleVictoryEventHandler {
 
         } else {
             handleBattleFrontierPlayerDefeatEvent(battleVictoryEvent);
-        };
+        }
     }
 
     private void handleBattleFrontierPlayerDefeatEvent(BattleVictoryEvent battleVictoryEvent) {

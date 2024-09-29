@@ -3,7 +3,6 @@ package kiwiapollo.trainerbattle.battlefrontier;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.trainerbattle.common.Trainer;
 
-import java.nio.file.Path;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
