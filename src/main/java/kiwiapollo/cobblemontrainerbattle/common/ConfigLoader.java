@@ -1,8 +1,8 @@
 package kiwiapollo.cobblemontrainerbattle.common;
 
 import com.google.gson.Gson;
-import kiwiapollo.fcgymbadges.FractalCoffeeGymBadges;
-import kiwiapollo.fcgymbadges.exceptions.LoadingConfigFailedException;
+import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.exceptions.LoadingConfigFailedException;
 import net.fabricmc.loader.api.FabricLoader;
 
 import java.io.*;
@@ -11,7 +11,7 @@ import java.nio.file.StandardCopyOption;
 
 public class ConfigLoader {
     private static final File CONFIG_DIR =
-            new File(FabricLoader.getInstance().getConfigDir().toFile(), FractalCoffeeGymBadges.NAMESPACE);
+            new File(FabricLoader.getInstance().getConfigDir().toFile(), CobblemonTrainerBattle.NAMESPACE);
     private static final File CONFIG_FILE = new File(CONFIG_DIR, "config.json");
     private static final Gson GSON = new Gson();
 
