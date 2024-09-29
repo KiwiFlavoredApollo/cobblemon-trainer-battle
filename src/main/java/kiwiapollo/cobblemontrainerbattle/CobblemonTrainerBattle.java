@@ -3,26 +3,31 @@ package kiwiapollo.cobblemontrainerbattle;
 import com.cobblemon.mod.common.api.Priority;
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.api.events.CobblemonEvents;
-import com.cobblemon.mod.common.battles.ActiveBattlePokemon;
 import kiwiapollo.cobblemontrainerbattle.commands.BattleFrontierCommand;
 import kiwiapollo.cobblemontrainerbattle.commands.TrainerBattleCommand;
 import kiwiapollo.cobblemontrainerbattle.commands.TrainerBattleFlatCommand;
+import kiwiapollo.cobblemontrainerbattle.common.Config;
+import kiwiapollo.cobblemontrainerbattle.common.ConfigLoader;
+import kiwiapollo.cobblemontrainerbattle.common.EconomyFactory;
+import kiwiapollo.cobblemontrainerbattle.economies.Economy;
 import kiwiapollo.cobblemontrainerbattle.events.BattleVictoryEventHandler;
 import kiwiapollo.cobblemontrainerbattle.events.LootDroppedEventHandler;
 import kotlin.Unit;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
-import net.minecraft.server.network.ServerPlayerEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.*;
-import java.util.stream.StreamSupport;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 public class CobblemonTrainerBattle implements ModInitializer {
 	public static final String NAMESPACE = "cobblemontrainerbattle";
 	public static final Logger LOGGER = LoggerFactory.getLogger(NAMESPACE);
+	public static final Config CONFIG = ConfigLoader.load();
+	public static final Economy ECONOMY = EconomyFactory.create(CONFIG.economy);
 	public static final Map<UUID, PokemonBattle> TRAINER_BATTLES = new HashMap<>();
 
 	@Override
