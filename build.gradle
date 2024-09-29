@@ -30,7 +30,7 @@ loom {
     splitEnvironmentSourceSets()
 
 	mods {
-		"trainerbattle" {
+		"cobblemontrainerbattle" {
 			sourceSet sourceSets.main
 			sourceSet sourceSets.client
 		}
