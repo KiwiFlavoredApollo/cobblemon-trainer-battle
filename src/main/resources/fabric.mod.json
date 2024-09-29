@@ -17,17 +17,10 @@
 	"entrypoints": {
 		"main": [
 			"kiwiapollo.trainerbattle.TrainerBattle"
-		],
-		"client": [
-			"kiwiapollo.trainerbattle.TemplateModClient"
 		]
 	},
 	"mixins": [
-		"trainerbattle.mixins.json",
-		{
-			"config": "trainerbattle.client.mixins.json",
-			"environment": "client"
-		}
+		"trainerbattle.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.15.7",
