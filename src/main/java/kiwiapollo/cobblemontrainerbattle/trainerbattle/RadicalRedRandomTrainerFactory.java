@@ -9,7 +9,7 @@ public class RadicalRedRandomTrainerFactory {
     TrainerFileScanner trainerFileScanner;
 
     public RadicalRedRandomTrainerFactory() {
-        this.trainerFileScanner = new InclementEmeraldTrainerFileScanner();
+        this.trainerFileScanner = new RadicalRedTrainerFileScanner();
     }
 
     public Trainer create(ServerPlayerEntity player) {
