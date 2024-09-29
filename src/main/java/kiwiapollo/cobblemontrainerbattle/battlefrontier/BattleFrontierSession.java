@@ -18,8 +18,7 @@ public class BattleFrontierSession {
     public List<Pokemon> partyPokemons;
     public Instant timestamp;
     public boolean isDefeated;
-
-    public List<Pokemon> startingPokemons;
+    public boolean isRerolled;
 
     public BattleFrontierSession() {
         this.uuid = UUID.randomUUID();
@@ -28,10 +27,9 @@ public class BattleFrontierSession {
         this.battleUuid = null;
         this.battleCount = 0;
         this.defeatedTrainers = new ArrayList<>();
-        this.partyPokemons = new ArrayList<>();
+        this.partyPokemons = new RandomPartyPokemonsFactory().create();
         this.timestamp = Instant.now();
         this.isDefeated = false;
-
-        this.startingPokemons = new StartingPokemonsFactory().create();
+        this.isRerolled = false;
     }
 }

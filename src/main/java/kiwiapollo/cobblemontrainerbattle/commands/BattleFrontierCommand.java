@@ -17,7 +17,7 @@ public class BattleFrontierCommand extends LiteralArgumentBuilder<ServerCommandS
                 .then(getBattleFrontierStartCommand())
                 .then(getBattleFrontierStopCommand())
                 .then(getBattleFrontierBattleCommand())
-                .then(getBattleFrontierStartingPokemonsCommand())
+                .then(getBattleFrontierRerollPokemonsCommand())
                 .then(getBattleFrontierTradePokemonCommand())
                 .then(getBattleFrontierShowPokemonsCommand());
     }
@@ -46,30 +46,11 @@ public class BattleFrontierCommand extends LiteralArgumentBuilder<ServerCommandS
                 });
     }
 
-    private ArgumentBuilder<ServerCommandSource, ?> getBattleFrontierStartingPokemonsCommand() {
-        return LiteralArgumentBuilder.<ServerCommandSource>literal("startingpokemons")
-                .then(getBattleFrontierRerollStartingPokemonCommand())
-                .then(getBattleFrontierConfirmStartingPokemonCommand())
-                .executes(context -> {
-                    BattleFrontier.showStartingPokemons(context);
-                    return Command.SINGLE_SUCCESS;
-                });
-    }
-
-    private ArgumentBuilder<ServerCommandSource, ?> getBattleFrontierRerollStartingPokemonCommand() {
+    private ArgumentBuilder<ServerCommandSource, ?> getBattleFrontierRerollPokemonsCommand() {
         return LiteralArgumentBuilder
                 .<ServerCommandSource>literal("reroll")
                 .executes(context -> {
-                    BattleFrontier.rerollStartingPokemons(context);
-                    return Command.SINGLE_SUCCESS;
-                });
-    }
-
-    private ArgumentBuilder<ServerCommandSource, ?> getBattleFrontierConfirmStartingPokemonCommand() {
-        return LiteralArgumentBuilder
-                .<ServerCommandSource>literal("confirm")
-                .executes(context -> {
-                    BattleFrontier.confirmStartingPokemons(context);
+                    BattleFrontier.rerollPokemons(context);
                     return Command.SINGLE_SUCCESS;
                 });
     }

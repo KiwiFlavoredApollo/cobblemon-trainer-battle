@@ -11,8 +11,8 @@ import com.cobblemon.mod.common.pokemon.PokemonStats;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battleactors.BattleFrontierPlayerBattleActorFactory;
-import kiwiapollo.cobblemontrainerbattle.battleactors.RandomTrainerBattleActorFactory;
+import kiwiapollo.cobblemontrainerbattle.battleactors.player.BattleFrontierPlayerBattleActorFactory;
+import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.RandomTrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.common.Trainer;
 import kiwiapollo.cobblemontrainerbattle.exceptions.*;
 import kotlin.Unit;
@@ -193,10 +193,6 @@ public class BattleFrontier {
         printPokemons(context, SESSIONS.get(context.getSource().getPlayer().getUuid()).partyPokemons);
     }
 
-    public static void showStartingPokemons(CommandContext<ServerCommandSource> context) {
-        printPokemons(context, SESSIONS.get(context.getSource().getPlayer().getUuid()).startingPokemons);
-    }
-
     private static void printPokemons(CommandContext<ServerCommandSource> context, List<Pokemon> pokemons) {
         for (int i = 0; i < pokemons.size(); i++) {
             Pokemon pokemon = pokemons.get(i);
@@ -234,21 +230,11 @@ public class BattleFrontier {
                 stats.get(Stats.SPECIAL_ATTACK), stats.get(Stats.SPECIAL_DEFENCE), stats.get(Stats.SPEED));
     };
 
-    public static void rerollStartingPokemons(CommandContext<ServerCommandSource> context) {
+    public static void rerollPokemons(CommandContext<ServerCommandSource> context) {
         BattleFrontierSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
+        if (session.isRerolled) return;
 
-        if (!session.partyPokemons.isEmpty()) return;
-
-        session.startingPokemons = new StartingPokemonsFactory().create();
-        session.partyPokemons = session.startingPokemons;
-
-        context.getSource().getPlayer().sendMessage(Text.literal("Rerolled starting Pokemons"));
-    }
-
-    public static void confirmStartingPokemons(CommandContext<ServerCommandSource> context) {
-        BattleFrontierSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
-        session.partyPokemons = session.startingPokemons;
-
-        context.getSource().getPlayer().sendMessage(Text.literal("Confirmed starting Pokemons"));
+        session.partyPokemons = new RandomPartyPokemonsFactory().create();
+        context.getSource().getPlayer().sendMessage(Text.literal("Rerolled Pokemons"));
     }
 }

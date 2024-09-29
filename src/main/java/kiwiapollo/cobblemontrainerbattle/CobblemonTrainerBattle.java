@@ -5,6 +5,7 @@ import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.api.events.CobblemonEvents;
 import kiwiapollo.cobblemontrainerbattle.commands.BattleFrontierCommand;
 import kiwiapollo.cobblemontrainerbattle.commands.TrainerBattleCommand;
+import kiwiapollo.cobblemontrainerbattle.commands.TrainerBattleFlatCommand;
 import kiwiapollo.cobblemontrainerbattle.events.BattleVictoryEventHandler;
 import kiwiapollo.cobblemontrainerbattle.events.LootDroppedEventHandler;
 import kotlin.Unit;
@@ -25,6 +26,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 	public void onInitialize() {
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
 			dispatcher.register(new TrainerBattleCommand());
+			dispatcher.register(new TrainerBattleFlatCommand());
 			dispatcher.register(new BattleFrontierCommand());
 		});
 
