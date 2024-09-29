@@ -42,7 +42,7 @@ public class BattleFrontier {
 
         } catch (ValidBattleFrontierSessionExistException e) {
             context.getSource().getPlayer().sendMessage(Text.literal("Battle Frontier session already exists"));
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s : Valid Battle Frontier session exists",
+            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Valid Battle Frontier session exists",
                     context.getSource().getPlayer().getGameProfile().getName()));
         }
     }
@@ -58,7 +58,7 @@ public class BattleFrontier {
         } catch (ValidBattleFrontierSessionNotExistException e) {
             context.getSource().getPlayer().sendMessage(
                     Text.literal("You do not have active Battle Frontier session"));
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s : Valid Battle Frontier session does not exists",
+            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Valid Battle Frontier session does not exists",
                     context.getSource().getPlayer().getGameProfile().getName()));
         }
     }
@@ -86,13 +86,13 @@ public class BattleFrontier {
         } catch (ValidBattleFrontierSessionNotExistException e) {
             context.getSource().getPlayer().sendMessage(
                     Text.literal("You must create Battle Frontier session first"));
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s : Valid Battle Frontier session does not exists",
+            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Valid Battle Frontier session does not exists",
                     context.getSource().getPlayer().getGameProfile().getName()));
 
         } catch (BattleFrontierDefeatedPlayerException e) {
             context.getSource().getPlayer().sendMessage(
                     Text.literal("You are defeated. Please create another Battle Frontier session"));
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s : Battle Frontier session expired due to defeat",
+            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Battle Frontier session expired due to defeat",
                     context.getSource().getPlayer().getGameProfile().getName()));
         }
     }
@@ -154,19 +154,19 @@ public class BattleFrontier {
         } catch (ValidBattleFrontierSessionNotExistException e) {
             context.getSource().getPlayer().sendMessage(
                     Text.literal("You do not have active Battle Frontier session"));
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s : Valid Battle Frontier session does not exists",
+            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Valid Battle Frontier session does not exists",
                     context.getSource().getPlayer().getGameProfile().getName()));
 
         } catch (BattleFrontierDefeatedPlayerException e) {
             context.getSource().getPlayer().sendMessage(
                     Text.literal("You are defeated. Please create another Battle Frontier session"));
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s : Battle Frontier session expired due to defeat",
+            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Battle Frontier session expired due to defeat",
                     context.getSource().getPlayer().getGameProfile().getName()));
 
         }catch (DefeatedTrainerNotExistException e) {
             context.getSource().getPlayer().sendMessage(
                     Text.literal("You do not have any defeated trainers"));
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s : Defeated trainers do not exist",
+            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Defeated trainers do not exist",
                     context.getSource().getPlayer().getGameProfile().getName()));
         }
     }
@@ -190,7 +190,7 @@ public class BattleFrontier {
         } catch (ValidBattleFrontierSessionNotExistException e) {
             context.getSource().getPlayer().sendMessage(
                     Text.literal("You do not have active Battle Frontier session"));
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s : Valid Battle Frontier session does not exists",
+            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Valid Battle Frontier session does not exists",
                     context.getSource().getPlayer().getGameProfile().getName()));
         }
     }
@@ -203,7 +203,7 @@ public class BattleFrontier {
         } catch (ValidBattleFrontierSessionNotExistException e) {
             context.getSource().getPlayer().sendMessage(
                     Text.literal("You do not have active Battle Frontier session"));
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s : Valid Battle Frontier session does not exists",
+            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Valid Battle Frontier session does not exists",
                     context.getSource().getPlayer().getGameProfile().getName()));
         }
     }
@@ -259,7 +259,7 @@ public class BattleFrontier {
         } catch (ValidBattleFrontierSessionNotExistException e) {
             context.getSource().getPlayer().sendMessage(
                     Text.literal("You do not have active Battle Frontier session"));
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s : Valid Battle Frontier session does not exists",
+            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Valid Battle Frontier session does not exists",
                     context.getSource().getPlayer().getGameProfile().getName()));
         }
     }

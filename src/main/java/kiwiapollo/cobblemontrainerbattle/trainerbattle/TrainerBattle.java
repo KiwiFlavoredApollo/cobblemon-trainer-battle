@@ -42,21 +42,21 @@ public class TrainerBattle {
             context.getSource().getPlayer().sendMessage(Text.literal("You have no Pokemon"));
             CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
             CobblemonTrainerBattle.LOGGER.error(
-                    String.format("%s : Player has no Pokemon",
+                    String.format("%s: Player has no Pokemon",
                             context.getSource().getPlayer().getGameProfile().getName()));
 
         } catch (FaintPlayerPartyException e) {
             context.getSource().getPlayer().sendMessage(Text.literal("Your Pokemons are all fainted"));
             CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
             CobblemonTrainerBattle.LOGGER.error(
-                    String.format("%s : Pokemons are all fainted",
+                    String.format("%s: Pokemons are all fainted",
                             context.getSource().getPlayer().getGameProfile().getName()));
 
         } catch (TrainerNameNotExistException e) {
             context.getSource().getPlayer().sendMessage(
                     Text.literal(String.format("Unknown trainer %s", trainer)));
             CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s : Unknown trainer", trainer));
+            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Unknown trainer", trainer));
         }
     }
 
@@ -80,14 +80,14 @@ public class TrainerBattle {
             context.getSource().getPlayer().sendMessage(Text.literal("You have no Pokemon"));
             CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
             CobblemonTrainerBattle.LOGGER.error(
-                    String.format("%s : Player has no Pokemon",
+                    String.format("%s: Player has no Pokemon",
                             context.getSource().getPlayer().getGameProfile().getName()));
 
         } catch (TrainerNameNotExistException e) {
             context.getSource().getPlayer().sendMessage(
                     Text.literal(String.format("Unknown trainer %s", trainer)));
             CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s : Unknown trainer", trainer));
+            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Unknown trainer", trainer));
         }
     }
 
