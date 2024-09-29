@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import com.cobblemon.mod.common.battles.actor.TrainerBattleActor;
 import com.cobblemon.mod.common.battles.ai.RandomBattleAI;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
+import kiwiapollo.cobblemontrainerbattle.common.Generation5AI;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
 import kotlin.Unit;
 
@@ -24,7 +25,7 @@ public class TrainerBattleActorFactory {
                                 }
                         ))
                         .toList(),
-                new RandomBattleAI()
+                new Generation5AI()
         );
     }
 }
