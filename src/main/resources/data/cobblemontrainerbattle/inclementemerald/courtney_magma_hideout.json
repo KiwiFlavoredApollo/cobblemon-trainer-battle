@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Ninetales",
+        "item": "Fire Gem",
+        "ability": "Drought",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Heat Wave",
+            "Moonblast",
+            "Solar Beam",
+            "Hypnosis"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Krookodile",
+        "item": "Assault Vest",
+        "ability": "Intimidate",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Crunch",
+            "High Horsepower",
+            "Stone Edge",
+            "Thunder Fang"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Houndoom",
+        "item": "Houndoominite",
+        "ability": "Flash Fire",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 2,
+        "moves": [
+            "Dark Pulse",
+            "Heat Wave",
+            "Solar Beam",
+            "Sludge Bomb"
+        ]
+    }
+]

@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Chansey",
+        "item": "Eviolite",
+        "ability": "",
+        "gender": "",
+        "nature": "Bold",
+        "evs": {
+            "hp": 4,
+            "atk": 0,
+            "def": 252,
+            "spa": 0,
+            "spd": 252,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Minimize",
+            "Soft Boiled",
+            "Seismic Toss",
+            "Aromatherapy"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Dunsparce",
+        "item": "Leftovers",
+        "ability": "",
+        "gender": "",
+        "nature": "Impish",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 252,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Coil",
+            "Headbutt",
+            "Thunder Wave",
+            "Roost"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Porygon2",
+        "item": "Eviolite",
+        "ability": "Analytic",
+        "gender": "",
+        "nature": "Bold",
+        "evs": {
+            "hp": 4,
+            "atk": 0,
+            "def": 252,
+            "spa": 0,
+            "spd": 252,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Tri Attack",
+            "Recover",
+            "Ice Beam",
+            "Thunderbolt"
+        ]
+    }
+]

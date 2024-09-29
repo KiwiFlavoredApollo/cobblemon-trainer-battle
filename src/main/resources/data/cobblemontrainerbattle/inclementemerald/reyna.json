@@ -1,0 +1,64 @@
+[
+    {
+        "name": "",
+        "species": "Bewear",
+        "item": "",
+        "ability": "Defiant",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Darkest Lariat",
+            "Close Combat",
+            "Ice Punch",
+            "Iron Head"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Passimian",
+        "item": "",
+        "ability": "No Guard",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Close Combat",
+            "U Turn",
+            "Acrobatics",
+            "Gunk Shot"
+        ]
+    }
+]

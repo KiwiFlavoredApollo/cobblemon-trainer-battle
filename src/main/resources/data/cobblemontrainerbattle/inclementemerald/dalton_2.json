@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Noivern",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Dragon Pulse",
+            "Air Slash",
+            "Moonlight",
+            "Dark Pulse"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Exploud",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Hyper Voice",
+            "Extrasensory",
+            "Surf",
+            "Crunch"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Toxel",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Tearful Look",
+            "Nuzzle",
+            "Acid",
+            "Flail"
+        ]
+    }
+]

@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Charizard",
+        "item": "Charizardite X",
+        "ability": "",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Dragon Claw",
+            "Flare Blitz",
+            "Thunder Punch",
+            "Brick Break"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Lilligant",
+        "item": "Grass Gem",
+        "ability": "Own Tempo",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Petal Dance",
+            "Moonblast",
+            "Sleep Powder",
+            "Quiver Dance"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Porygon-Z",
+        "item": "Silk Scarf",
+        "ability": "",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Techno Blast",
+            "Thunderbolt",
+            "Ice Beam",
+            "Dark Pulse"
+        ]
+    }
+]

@@ -1,0 +1,157 @@
+[
+    {
+        "name": "",
+        "species": "Rhyperior",
+        "item": "Rindo Berry",
+        "ability": "Solid Rock",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Stone Edge",
+            "Earthquake",
+            "Metal Burst",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Sigilyph",
+        "item": "Flame Orb",
+        "ability": "Magic Guard",
+        "gender": "",
+        "nature": "Calm",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 0,
+            "spd": 252,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Stored Power",
+            "Cosmic Power",
+            "Roost",
+            "Psycho Shift"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Sableye",
+        "item": "Sablenite",
+        "ability": "Prankster",
+        "gender": "",
+        "nature": "Bold",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 252,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Dark Pulse",
+            "Will O Wisp",
+            "Calm Mind",
+            "Recover"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Weavile",
+        "item": "Life Orb",
+        "ability": "",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Knock Off",
+            "Icicle Crash",
+            "Low Kick",
+            "Poison Jab"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Conkeldurr",
+        "item": "Flame Orb",
+        "ability": "Guts",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Knock Off",
+            "Drain Punch",
+            "Facade",
+            "Mach Punch"
+        ]
+    }
+]

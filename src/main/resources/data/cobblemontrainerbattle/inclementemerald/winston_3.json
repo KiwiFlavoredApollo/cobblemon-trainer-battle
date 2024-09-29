@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Bibarel",
+        "item": "Nugget",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Swords Dance",
+            "Quick Attack",
+            "Crunch",
+            "Aqua Jet"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Pidgeot",
+        "item": "Nugget",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Hurricane",
+            "Roost",
+            "Quick Attack",
+            "Feather Dance"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Luxray",
+        "item": "Nugget",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Wild Charge",
+            "Crunch",
+            "Play Rough",
+            "Ice Fang"
+        ]
+    }
+]

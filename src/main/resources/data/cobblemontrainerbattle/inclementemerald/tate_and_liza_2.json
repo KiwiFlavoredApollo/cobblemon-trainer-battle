@@ -1,0 +1,188 @@
+[
+    {
+        "name": "",
+        "species": "Slowbro",
+        "item": "Slowbronite",
+        "ability": "",
+        "gender": "",
+        "nature": "Quiet",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 0
+        },
+        "level": 2,
+        "moves": [
+            "Surf",
+            "Psychic",
+            "Ice Beam",
+            "Calm Mind"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Claydol",
+        "item": "Absorb Bulb",
+        "ability": "",
+        "gender": "",
+        "nature": "Sassy",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 104,
+            "spa": 0,
+            "spd": 152,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 0
+        },
+        "level": 2,
+        "moves": [
+            "Earth Power",
+            "Signal Beam",
+            "Psychic",
+            "Trick Room"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Exeggutor",
+        "item": "Expert Belt",
+        "ability": "Chloroplast",
+        "gender": "",
+        "nature": "Quiet",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 0
+        },
+        "level": 2,
+        "moves": [
+            "Psychic",
+            "Sludge Bomb",
+            "Solar Beam",
+            "Trick Room"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Reuniclus",
+        "item": "Life Orb",
+        "ability": "Magic Guard",
+        "gender": "",
+        "nature": "Quiet",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 0
+        },
+        "level": 2,
+        "moves": [
+            "Psychic",
+            "Aura Sphere",
+            "Thunder",
+            "Calm Mind"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Lunatone",
+        "item": "Ghost Gem",
+        "ability": "",
+        "gender": "",
+        "nature": "Quiet",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 0
+        },
+        "level": 3,
+        "moves": [
+            "Power Gem",
+            "Shadow Ball",
+            "Grass Knot",
+            "Calm Mind"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Solrock",
+        "item": "Weakness Policy",
+        "ability": "",
+        "gender": "",
+        "nature": "Brave",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 0
+        },
+        "level": 3,
+        "moves": [
+            "Flare Blitz",
+            "Rock Slide",
+            "Zen Headbutt",
+            "Rock Polish"
+        ]
+    }
+]

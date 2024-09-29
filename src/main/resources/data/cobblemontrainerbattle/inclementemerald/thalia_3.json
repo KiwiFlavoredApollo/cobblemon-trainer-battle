@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Florges",
+        "item": "",
+        "ability": "Misty Surge",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Moonblast",
+            "Energy Ball",
+            "Earth Power",
+            "Calm Mind"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Gardevoir",
+        "item": "",
+        "ability": "Trace",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Psychic",
+            "Draining Kiss",
+            "Mystical Fire",
+            "Calm Mind"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Luvdisc",
+        "item": "",
+        "ability": "Soul-Heart",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Hydro Pump",
+            "Draining Kiss",
+            "Lovely Kiss",
+            "Ice Beam"
+        ]
+    }
+]

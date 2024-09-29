@@ -1,0 +1,126 @@
+[
+    {
+        "name": "",
+        "species": "Shiftry",
+        "item": "Lum Berry",
+        "ability": "",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Leaf Blade",
+            "Sucker Punch",
+            "Low Kick",
+            "Swords Dance"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Seviper",
+        "item": "Salac Berry",
+        "ability": "",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Poison Jab",
+            "Crunch",
+            "Earthquake",
+            "Coil"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Nidoking",
+        "item": "Shuca Berry",
+        "ability": "",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Earthquake",
+            "Poison Jab",
+            "Ice Punch",
+            "Megahorn"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Cloyster",
+        "item": "White Herb",
+        "ability": "Skill Link",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Icicle Spear",
+            "Rock Blast",
+            "Razor Shell",
+            "Shell Smash"
+        ]
+    }
+]

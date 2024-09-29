@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Blaziken",
+        "item": "Sitrus Berry",
+        "ability": "Blaze",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Blaze Kick",
+            "Sky Uppercut",
+            "Shadow Claw",
+            "Quick Attack"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Araquanid",
+        "item": "Life Orb",
+        "ability": "Water Bubble",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Liquidation",
+            "Leech Life",
+            "Ice Fang",
+            "Aqua Ring"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Mimikyu",
+        "item": "Lum Berry",
+        "ability": "",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Play Rough",
+            "Shadow Claw",
+            "Swords Dance",
+            "Shadow Sneak"
+        ]
+    }
+]

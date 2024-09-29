@@ -1,0 +1,126 @@
+[
+    {
+        "name": "",
+        "species": "Sableye",
+        "item": "",
+        "ability": "Prankster",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Fake Out",
+            "Recover",
+            "Will O Wisp",
+            "Foul Play"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Dusknoir",
+        "item": "",
+        "ability": "Iron Fist",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Shadow Punch",
+            "Ice Punch",
+            "Fire Punch",
+            "Thunder Punch"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Spiritomb",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Hypnosis",
+            "Dream Eater",
+            "Dark Pulse",
+            "Calm Mind"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Grumpig",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Toxic",
+            "Bounce",
+            "Protect",
+            "Extrasensory"
+        ]
+    }
+]

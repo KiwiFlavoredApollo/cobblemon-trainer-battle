@@ -1,0 +1,126 @@
+[
+    {
+        "name": "",
+        "species": "Gothitelle",
+        "item": "Sitrus Berry",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Future Sight",
+            "Fake Tears",
+            "Protect",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Gogoat",
+        "item": "Sitrus Berry",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Horn Leech",
+            "Earthquake",
+            "Bulk Up",
+            "Milk Drink"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Staraptor",
+        "item": "Sitrus Berry",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Quick Attack",
+            "Wing Attack",
+            "Close Combat",
+            "Double Team"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Floatzel",
+        "item": "Sitrus Berry",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Aqua Jet",
+            "Aqua Tail",
+            "Crunch",
+            "Ice Fang"
+        ]
+    }
+]

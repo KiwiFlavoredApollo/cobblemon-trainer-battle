@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Camerupt",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Earth Power",
+            "Lava Plume",
+            "Rock Slide",
+            "Sunny Day"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Tropius",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Leaf Blade",
+            "Air Slash",
+            "Dragon Hammer",
+            "Whirlwind"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Walrein",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Aqua Tail",
+            "Ice Fang",
+            "Hail",
+            "Crunch"
+        ]
+    }
+]

@@ -1,0 +1,126 @@
+[
+    {
+        "name": "",
+        "species": "Archeops",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Acrobatics",
+            "Rock Slide",
+            "Dragon Claw",
+            "Endeavor"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Aurorus",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Hyper Voice",
+            "Power Gem",
+            "Discharge",
+            "Roar"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Probopass",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Power Gem",
+            "Earth Power",
+            "Flash Cannon",
+            "Zap Cannon"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Arctovish",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Icicle Crash",
+            "Fishious Rend",
+            "Super Fang",
+            "Crunch"
+        ]
+    }
+]

@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Camerupt",
+        "item": "Rocky Helmet",
+        "ability": "Solid Rock",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 40,
+            "atk": 40,
+            "def": 40,
+            "spa": 40,
+            "spd": 40,
+            "spe": 40
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Earth Power",
+            "Rock Slide",
+            "Flash Cannon",
+            "Flame Burst"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Marowak-Alola",
+        "item": "Sitrus Berry",
+        "ability": "Lightningrod",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 40,
+            "atk": 40,
+            "def": 40,
+            "spa": 40,
+            "spd": 40,
+            "spe": 40
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Fire Punch",
+            "Shadow Bone",
+            "Bonemerang",
+            "Iron Head"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Simisear",
+        "item": "Petaya Berry",
+        "ability": "Blaze",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 40,
+            "atk": 40,
+            "def": 40,
+            "spa": 40,
+            "spd": 40,
+            "spe": 40
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Flamethrower",
+            "Grass Knot",
+            "Acrobatics",
+            "Substitute"
+        ]
+    }
+]

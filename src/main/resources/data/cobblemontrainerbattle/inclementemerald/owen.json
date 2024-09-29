@@ -1,0 +1,157 @@
+[
+    {
+        "name": "",
+        "species": "Torterra",
+        "item": "Rocky Helmet",
+        "ability": "Solid Rock",
+        "gender": "",
+        "nature": "Impish",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 252,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Earthquake",
+            "Stealth Rock",
+            "Wood Hammer",
+            "Roar"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Staraptor",
+        "item": "Sitrus Berry",
+        "ability": "Reckless",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Brave Bird",
+            "Double Edge",
+            "Close Combat",
+            "U Turn"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Sylveon",
+        "item": "Leftovers",
+        "ability": "",
+        "gender": "",
+        "nature": "Modest",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Psychic",
+            "Draining Kiss",
+            "Mystical Fire",
+            "Calm Mind"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Lucario",
+        "item": "Lucarionite",
+        "ability": "Justified",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Meteor Mash",
+            "Close Combat",
+            "Ice Punch",
+            "Bullet Punch"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Tentacruel",
+        "item": "Life Orb",
+        "ability": "Clear Body",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Hydro Pump",
+            "Sludge Wave",
+            "Ice Beam",
+            "Giga Drain"
+        ]
+    }
+]

@@ -1,0 +1,188 @@
+[
+    {
+        "name": "",
+        "species": "Ninetales-Alola",
+        "item": "Light Clay",
+        "ability": "Snow Warning",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Blizzard",
+            "Moonblast",
+            "Water Pulse",
+            "Aurora Veil"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Empoleon",
+        "item": "Petaya Berry",
+        "ability": "Slush Rush",
+        "gender": "",
+        "nature": "Modest",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Hydro Pump",
+            "Blizzard",
+            "Flash Cannon",
+            "Grass Knot"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Crawdaunt",
+        "item": "Ice Gem",
+        "ability": "Adaptability",
+        "gender": "",
+        "nature": "Naive",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 0,
+            "spa": 4,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Crabhammer",
+            "Crunch",
+            "Dragon Dance",
+            "Blizzard"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Clefable",
+        "item": "Leftovers",
+        "ability": "Magic Guard",
+        "gender": "",
+        "nature": "Bold",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 252,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Flamethrower",
+            "Blizzard",
+            "Calm Mind",
+            "Soft Boiled"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Ludicolo",
+        "item": "Safety Goggles",
+        "ability": "Swift Swim",
+        "gender": "",
+        "nature": "Modest",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Scald",
+            "Giga Drain",
+            "Leech Seed",
+            "Blizzard"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Beedrill",
+        "item": "Beedrillite",
+        "ability": "",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 2,
+        "moves": [
+            "X Scissor",
+            "Poison Jab",
+            "Drill Run",
+            "Drill Peck"
+        ]
+    }
+]

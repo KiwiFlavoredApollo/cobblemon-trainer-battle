@@ -1,0 +1,64 @@
+[
+    {
+        "name": "",
+        "species": "Heatmor",
+        "item": "Sitrus Berry",
+        "ability": "Tough Claws",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 40,
+            "atk": 40,
+            "def": 40,
+            "spa": 40,
+            "spd": 40,
+            "spe": 40
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Fire Lash",
+            "Iron Tail",
+            "Throat Chop",
+            "Stomping Tantrum"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Lampent",
+        "item": "White Herb",
+        "ability": "Flame Body",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 40,
+            "atk": 40,
+            "def": 40,
+            "spa": 40,
+            "spd": 40,
+            "spe": 40
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Overheat",
+            "Hex",
+            "Pain Split",
+            "Will O Wisp"
+        ]
+    }
+]

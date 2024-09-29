@@ -1,0 +1,157 @@
+[
+    {
+        "name": "",
+        "species": "Archeops",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Naughty",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 0,
+            "spa": 4,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Acrobatics",
+            "Stone Edge",
+            "Earthquake",
+            "Heat Wave"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Aurorus",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Modest",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Hyper Voice",
+            "Power Gem",
+            "Discharge",
+            "Roar"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Probopass",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Modest",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Power Gem",
+            "Earth Power",
+            "Flash Cannon",
+            "Zap Cannon"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Runerigus",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Shadow Claw",
+            "Earthquake",
+            "Revenge",
+            "Curse"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Arctovish",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Icicle Crash",
+            "Fishious Rend",
+            "Super Fang",
+            "Crunch"
+        ]
+    }
+]

@@ -1,0 +1,64 @@
+[
+    {
+        "name": "",
+        "species": "Skarmory",
+        "item": "",
+        "ability": "Sturdy",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 60,
+            "atk": 60,
+            "def": 60,
+            "spa": 60,
+            "spd": 60,
+            "spe": 60
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Drill Peck",
+            "Steel Wing",
+            "Swords Dance",
+            "Roost"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Honchkrow",
+        "item": "",
+        "ability": "Super Luck",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 60,
+            "atk": 60,
+            "def": 60,
+            "spa": 60,
+            "spd": 60,
+            "spe": 60
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Drill Peck",
+            "Night Slash",
+            "Roost",
+            "Thunder Wave"
+        ]
+    }
+]

@@ -1,0 +1,64 @@
+[
+    {
+        "name": "",
+        "species": "Delcatty",
+        "item": "Sitrus Berry",
+        "ability": "Normalize",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": -2,
+        "moves": [
+            "Fake Out",
+            "Play Rough",
+            "Wake Up Slap",
+            "Sing"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Meowth",
+        "item": "Oran Berry",
+        "ability": "Technician",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": -2,
+        "moves": [
+            "Feint Attack",
+            "Slash",
+            "Screech",
+            "Growl"
+        ]
+    }
+]

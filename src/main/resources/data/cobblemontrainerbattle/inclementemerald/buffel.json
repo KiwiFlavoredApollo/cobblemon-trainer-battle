@@ -1,0 +1,188 @@
+[
+    {
+        "name": "",
+        "species": "Mienshao",
+        "item": "Choice Scarf",
+        "ability": "Regenerator",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Close Combat",
+            "Strength",
+            "Knock Off",
+            "U Turn"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Milotic",
+        "item": "Leftovers",
+        "ability": "Multiscale",
+        "gender": "",
+        "nature": "Bold",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 252,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Scald",
+            "Ice Beam",
+            "Recover",
+            "Toxic"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Haxorus",
+        "item": "Dragon Gem",
+        "ability": "Mold Breaker",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Outrage",
+            "Close Combat",
+            "Poison Jab",
+            "Dragon Dance"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Scizor",
+        "item": "Choice Band",
+        "ability": "Technician",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Bullet Punch",
+            "U Turn",
+            "Superpower",
+            "Pursuit"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Togekiss",
+        "item": "Shell Bell",
+        "ability": "Serene Grace",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Air Slash",
+            "Aura Sphere",
+            "Thunder Wave",
+            "Roost"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Gardevoir",
+        "item": "Gardevoirite",
+        "ability": "Trace",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Hyper Voice",
+            "Psyshock",
+            "Mystical Fire",
+            "Shadow Ball"
+        ]
+    }
+]

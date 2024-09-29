@@ -1,0 +1,188 @@
+[
+    {
+        "name": "",
+        "species": "Avalugg",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -4,
+        "moves": [
+            "Avalanche",
+            "High Horsepower",
+            "Recover",
+            "Mirror Coat"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Meganium",
+        "item": "",
+        "ability": "Triage",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -4,
+        "moves": [
+            "Giga Drain",
+            "Draining Kiss",
+            "Grassy Terrain",
+            "Ancient Power"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Raichu-Alola",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -4,
+        "moves": [
+            "Psychic",
+            "Thunderbolt",
+            "Electric Terrain",
+            "Fake Out"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Donphan",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -4,
+        "moves": [
+            "Earthquake",
+            "Ice Shard",
+            "Play Rough",
+            "Head Smash"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Gorebyss",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -4,
+        "moves": [
+            "Muddy Water",
+            "Draining Kiss",
+            "Ice Beam",
+            "Shell Smash"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Kommo-o",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -4,
+        "moves": [
+            "Clanging Scales",
+            "Aura Sphere",
+            "Flash Cannon",
+            "Flamethrower"
+        ]
+    }
+]

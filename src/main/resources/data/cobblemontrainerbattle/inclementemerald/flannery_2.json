@@ -1,0 +1,188 @@
+[
+    {
+        "name": "",
+        "species": "Torkoal",
+        "item": "White Herb",
+        "ability": "Drought",
+        "gender": "",
+        "nature": "Modest",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 3,
+        "moves": [
+            "Overheat",
+            "Stealth Rock",
+            "Yawn",
+            "Attract"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Houndoom",
+        "item": "Life Orb",
+        "ability": "Flash Fire",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Fire Blast",
+            "Dark Pulse",
+            "Solar Beam",
+            "Nasty Plot"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Arcanine",
+        "item": "Assault Vest",
+        "ability": "Intimidate",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Flare Blitz",
+            "Play Rough",
+            "Close Combat",
+            "Extreme Speed"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Blaziken",
+        "item": "Blazikenite",
+        "ability": "Speed Boost",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Flare Blitz",
+            "Close Combat",
+            "Stone Edge",
+            "Swords Dance"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Chandelure",
+        "item": "Choice Scarf",
+        "ability": "Flame Body",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Overheat",
+            "Shadow Ball",
+            "Energy Ball",
+            "Will O Wisp"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Talonflame",
+        "item": "Leftovers",
+        "ability": "Gale Wings",
+        "gender": "",
+        "nature": "Careful",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 0,
+            "spd": 252,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Flare Blitz",
+            "Brave Bird",
+            "Bulk Up",
+            "Roost"
+        ]
+    }
+]

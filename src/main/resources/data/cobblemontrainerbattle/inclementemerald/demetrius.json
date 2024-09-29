@@ -1,0 +1,64 @@
+[
+    {
+        "name": "",
+        "species": "Luxray",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 60,
+            "atk": 60,
+            "def": 60,
+            "spa": 60,
+            "spd": 60,
+            "spe": 60
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Wild Charge",
+            "Crunch",
+            "Ice Fang",
+            "Scary Face"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Stoutland",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 60,
+            "atk": 60,
+            "def": 60,
+            "spa": 60,
+            "spd": 60,
+            "spe": 60
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Retaliate",
+            "Crunch",
+            "Play Rough",
+            "Work Up"
+        ]
+    }
+]

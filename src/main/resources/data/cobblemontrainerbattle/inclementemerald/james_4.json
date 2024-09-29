@@ -1,0 +1,157 @@
+[
+    {
+        "name": "",
+        "species": "Ninjask",
+        "item": "Liechi Berry",
+        "ability": "",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Swords Dance",
+            "Leech Life",
+            "Double Team",
+            "Baton Pass"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Shedinja",
+        "item": "Focus Sash",
+        "ability": "",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Phantom Force",
+            "X Scissor",
+            "Shadow Sneak",
+            "Dig"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Vespiquen",
+        "item": "Flying Gem",
+        "ability": "",
+        "gender": "",
+        "nature": "Naive",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 4,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Attack Order",
+            "Power Gem",
+            "Acrobatics",
+            "Heal Order"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Araquanid",
+        "item": "Chesto Berry",
+        "ability": "",
+        "gender": "",
+        "nature": "Impish",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 252,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Leech Life",
+            "Liquidation",
+            "Curse",
+            "Rest"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Parasect",
+        "item": "Leftovers",
+        "ability": "Dry Skin",
+        "gender": "",
+        "nature": "Careful",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 0,
+            "spd": 252,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Spore",
+            "Leech Life",
+            "Seed Bomb",
+            "Substitute"
+        ]
+    }
+]

@@ -1,0 +1,64 @@
+[
+    {
+        "name": "",
+        "species": "Oranguru",
+        "item": "Dark Gem",
+        "ability": "",
+        "gender": "",
+        "nature": "Quiet",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 0
+        },
+        "level": -2,
+        "moves": [
+            "Trick Room",
+            "Psychic",
+            "Foul Play",
+            "Hyper Beam"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Gothitelle",
+        "item": "Leftovers",
+        "ability": "Shadow Tag",
+        "gender": "",
+        "nature": "Quiet",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 0
+        },
+        "level": -2,
+        "moves": [
+            "Psychic",
+            "Thunderbolt",
+            "Charm",
+            "Calm Mind"
+        ]
+    }
+]

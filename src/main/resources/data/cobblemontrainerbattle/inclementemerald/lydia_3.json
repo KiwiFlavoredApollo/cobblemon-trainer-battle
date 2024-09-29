@@ -1,0 +1,188 @@
+[
+    {
+        "name": "",
+        "species": "Greninja",
+        "item": "",
+        "ability": "Protean",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Water Pledge",
+            "Icy Wind",
+            "Toxic Spikes",
+            "Grass Knot"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Electivire",
+        "item": "",
+        "ability": "Iron Fist",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Thunder Punch",
+            "Fire Punch",
+            "Cross Chop",
+            "Ice Punch"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Magmortar",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Thunder Punch",
+            "Fire Punch",
+            "Cross Chop",
+            "Mach Punch"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Jynx",
+        "item": "",
+        "ability": "Dry Skin",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Fake Out",
+            "Nasty Plot",
+            "Ice Beam",
+            "Psyshock"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Chansey",
+        "item": "Eviolite",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Seismic Toss",
+            "Aromatherapy",
+            "Counter",
+            "Soft Boiled"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Dragonair",
+        "item": "",
+        "ability": "Marvel Scale",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Extreme Speed",
+            "Aqua Jet",
+            "Iron Tail",
+            "Outrage"
+        ]
+    }
+]

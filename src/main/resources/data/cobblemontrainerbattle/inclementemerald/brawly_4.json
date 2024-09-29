@@ -1,0 +1,188 @@
+[
+    {
+        "name": "",
+        "species": "Conkeldurr",
+        "item": "Persim Berry",
+        "ability": "Sheer Force",
+        "gender": "",
+        "nature": "Careful",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 0,
+            "spd": 252,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Drain Punch",
+            "Rock Slide",
+            "Poison Jab",
+            "Mach Punch"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Scrafty",
+        "item": "Sitrus Berry",
+        "ability": "Intimidate",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Drain Punch",
+            "Fake Out",
+            "Knock Off",
+            "Swagger"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Toxicroak",
+        "item": "Shell Bell",
+        "ability": "Dry Skin",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 4,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Drain Punch",
+            "Fake Out",
+            "Gunk Shot",
+            "Sucker Punch"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Chesnaught",
+        "item": "Light Clay",
+        "ability": "Filter",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Drain Punch",
+            "Seed Bomb",
+            "Reflect",
+            "Spiky Shield"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Hawlucha",
+        "item": "Flying Gem",
+        "ability": "Unburden",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Acrobatics",
+            "Close Combat",
+            "Helping Hand",
+            "Tailwind"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Hariyama",
+        "item": "Flame Orb",
+        "ability": "Guts",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 2,
+        "moves": [
+            "Close Combat",
+            "Fake Out",
+            "Knock Off",
+            "Facade"
+        ]
+    }
+]

@@ -1,0 +1,157 @@
+[
+    {
+        "name": "",
+        "species": "Gastrodon",
+        "item": "Rindo Berry",
+        "ability": "",
+        "gender": "",
+        "nature": "Bold",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 252,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Scald",
+            "Earth Power",
+            "Recover",
+            "Toxic"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Infernape",
+        "item": "Life Orb",
+        "ability": "",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Close Combat",
+            "Flare Blitz",
+            "Thunder Punch",
+            "Stone Edge"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Roserade",
+        "item": "Big Root",
+        "ability": "Technician",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 4,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 30,
+            "spd": 31,
+            "spe": 30
+        },
+        "level": -1,
+        "moves": [
+            "Mega Drain",
+            "Hidden Power",
+            "Sleep Powder",
+            "Sludge Bomb"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Haxorus",
+        "item": "Focus Sash",
+        "ability": "Mold Breaker",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Outrage",
+            "Earthquake",
+            "Crunch",
+            "Dragon Dance"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Frosmoth",
+        "item": "Weakness Policy",
+        "ability": "Ice Scales",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Ice Beam",
+            "Bug Buzz",
+            "Water Pulse",
+            "Quiver Dance"
+        ]
+    }
+]

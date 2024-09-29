@@ -1,0 +1,126 @@
+[
+    {
+        "name": "",
+        "species": "Braviary",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Wing Attack",
+            "Crush Claw",
+            "Superpower",
+            "Tailwind"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Sandslash",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Spiky Shield",
+            "Drill Run",
+            "Swords Dance",
+            "Rock Slide"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Golduck",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Zen Headbutt",
+            "Aqua Tail",
+            "Cross Chop",
+            "Hone Claws"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Boltund",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Thunder Fang",
+            "Fire Fang",
+            "Crunch",
+            "Play Rough"
+        ]
+    }
+]

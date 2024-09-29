@@ -1,0 +1,188 @@
+[
+    {
+        "name": "",
+        "species": "Swampert",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -4,
+        "moves": [
+            "Avalanche",
+            "Earthquake",
+            "Counter",
+            "Yawn"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Bouffalant",
+        "item": "",
+        "ability": "Sap Sipper",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -4,
+        "moves": [
+            "Cotton Guard",
+            "Amnesia",
+            "Iron Head",
+            "Body Slam"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Electivire",
+        "item": "",
+        "ability": "Vital Spirit",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -4,
+        "moves": [
+            "Substitute",
+            "Focus Punch",
+            "Thunder Punch",
+            "Fire Punch"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Tropius",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -4,
+        "moves": [
+            "Dragon Hammer",
+            "Leaf Blade",
+            "Synthesis",
+            "Leech Seed"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Simisear",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -4,
+        "moves": [
+            "Heat Wave",
+            "Focus Blast",
+            "Grass Knot",
+            "Nasty Plot"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Lycanroc-Dusk",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -4,
+        "moves": [
+            "Thrash",
+            "Sucker Punch",
+            "Stone Edge",
+            "Fire Fang"
+        ]
+    }
+]

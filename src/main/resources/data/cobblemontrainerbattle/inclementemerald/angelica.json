@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Meowstic",
+        "item": "Damp Rock",
+        "ability": "Prankster",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Rain Dance",
+            "Thunder Wave",
+            "Psychic",
+            "Shadow Ball"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Castform",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Thunder",
+            "Hurricane",
+            "Weather Ball",
+            "Ice Beam"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Emolga",
+        "item": "Petaya Berry",
+        "ability": "Lightning Rod",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Thunder",
+            "Hurricane",
+            "Agility",
+            "Nuzzle"
+        ]
+    }
+]

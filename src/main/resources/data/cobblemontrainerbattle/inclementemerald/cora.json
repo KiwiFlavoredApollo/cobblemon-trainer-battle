@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Medicham",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "High Jump Kick",
+            "Zen Headbutt",
+            "Bulk Up",
+            "Recover"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Hawlucha",
+        "item": "Flying Gem",
+        "ability": "",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Acrobatics",
+            "High Jump Kick",
+            "Swords Dance",
+            "Roost"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Toxicroak",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Quiet",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 0
+        },
+        "level": -3,
+        "moves": [
+            "Focus Blast",
+            "Sludge Bomb",
+            "Dark Pulse",
+            "Sucker Punch"
+        ]
+    }
+]

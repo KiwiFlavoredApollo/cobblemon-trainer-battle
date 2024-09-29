@@ -1,0 +1,188 @@
+[
+    {
+        "name": "",
+        "species": "Slurpuff",
+        "item": "Focus Sash",
+        "ability": "Unburden",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Play Rough",
+            "Drain Punch",
+            "Flamethrower",
+            "Sticky Web"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Mawile",
+        "item": "Mawilite",
+        "ability": "Intimidate",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Play Rough",
+            "Iron Head",
+            "Crunch",
+            "Swords Dance"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Salamence",
+        "item": "Dragon Gem",
+        "ability": "Moxie",
+        "gender": "",
+        "nature": "Naughty",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 0,
+            "spa": 4,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Outrage",
+            "Dual Wingbeat",
+            "Earthquake",
+            "Fire Blast"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Crawdaunt",
+        "item": "Life Orb",
+        "ability": "Poison Heal",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Crabhammer",
+            "Knock Off",
+            "Close Combat",
+            "Swords Dance"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Porygon-Z",
+        "item": "Choice Specs",
+        "ability": "Adaptability",
+        "gender": "",
+        "nature": "Modest",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Techno Blast",
+            "Ice Beam",
+            "Thunderbolt",
+            "Dark Pulse"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Heracross",
+        "item": "Assault Vest",
+        "ability": "Moxie",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Megahorn",
+            "Close Combat",
+            "Earthquake",
+            "Stone Edge"
+        ]
+    }
+]

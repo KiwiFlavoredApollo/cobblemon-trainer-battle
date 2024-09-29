@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Audino",
+        "item": "Audinite",
+        "ability": "",
+        "gender": "",
+        "nature": "Bold",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 252,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Skill Swap",
+            "Moonblast",
+            "Heal Pulse",
+            "Helping Hand"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Slaking",
+        "item": "Leftovers",
+        "ability": "",
+        "gender": "",
+        "nature": "Careful",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 0,
+            "spd": 252,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Double Edge",
+            "Slack Off",
+            "Bulk Up",
+            "Night Slash"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Infernape",
+        "item": "Fire Gem",
+        "ability": "Blaze",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Fake Out",
+            "Heat Wave",
+            "Focus Blast",
+            "Grass Knot"
+        ]
+    }
+]

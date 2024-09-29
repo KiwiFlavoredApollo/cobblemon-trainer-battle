@@ -1,0 +1,64 @@
+[
+    {
+        "name": "",
+        "species": "Growlithe",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 15,
+            "atk": 15,
+            "def": 15,
+            "spa": 15,
+            "spd": 15,
+            "spe": 15
+        },
+        "level": -1,
+        "moves": [
+            "Flame Burst",
+            "Take Down",
+            "Reversal",
+            "Agility"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Lycanroc",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 15,
+            "atk": 15,
+            "def": 15,
+            "spa": 15,
+            "spd": 15,
+            "spe": 15
+        },
+        "level": -1,
+        "moves": [
+            "Accelerock",
+            "Rock Tomb",
+            "Bite",
+            "Roar"
+        ]
+    }
+]

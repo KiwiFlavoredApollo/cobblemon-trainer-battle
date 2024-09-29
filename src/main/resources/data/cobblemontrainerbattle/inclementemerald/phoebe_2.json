@@ -1,0 +1,188 @@
+[
+    {
+        "name": "",
+        "species": "Cofagrigus",
+        "item": "Wiki Berry",
+        "ability": "Mummy",
+        "gender": "",
+        "nature": "Quiet",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 0
+        },
+        "level": 1,
+        "moves": [
+            "Will O Wisp",
+            "Shadow Ball",
+            "Aura Sphere",
+            "Trick Room"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Jellicent",
+        "item": "Water Gem",
+        "ability": "Cursed Body",
+        "gender": "",
+        "nature": "Quiet",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 0
+        },
+        "level": 1,
+        "moves": [
+            "Shadow Ball",
+            "Water Spout",
+            "Strength Sap",
+            "Ice Beam"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Chandelure",
+        "item": "Iron Ball",
+        "ability": "Flash Fire",
+        "gender": "",
+        "nature": "Quiet",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 0
+        },
+        "level": 1,
+        "moves": [
+            "Shadow Ball",
+            "Heat Wave",
+            "Energy Ball",
+            "Psychic"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Dusknoir",
+        "item": "Shell Bell",
+        "ability": "Iron Fist",
+        "gender": "",
+        "nature": "Brave",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 0
+        },
+        "level": 1,
+        "moves": [
+            "Shadow Punch",
+            "Ice Punch",
+            "Thunder Punch",
+            "Drain Punch"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Gourgeist-Super",
+        "item": "Flame Orb",
+        "ability": "Flare Boost",
+        "gender": "",
+        "nature": "Quiet",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 0
+        },
+        "level": 1,
+        "moves": [
+            "Giga Drain",
+            "Trick",
+            "Moonblast",
+            "Trick Room"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Sableye",
+        "item": "Sablenite",
+        "ability": "",
+        "gender": "",
+        "nature": "Bold",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 252,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 2,
+        "moves": [
+            "Dark Pulse",
+            "Will O Wisp",
+            "Foul Play",
+            "Recover"
+        ]
+    }
+]

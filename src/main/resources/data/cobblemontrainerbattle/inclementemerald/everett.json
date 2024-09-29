@@ -1,0 +1,64 @@
+[
+    {
+        "name": "",
+        "species": "Wobbuffet",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Counter",
+            "Mirror Coat",
+            "Encore",
+            "Destiny Bond"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Beheeyem",
+        "item": "",
+        "ability": "Psychic Surge",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Skill Swap",
+            "Psychic",
+            "Protect",
+            "Recover"
+        ]
+    }
+]

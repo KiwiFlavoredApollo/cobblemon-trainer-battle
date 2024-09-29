@@ -1,0 +1,64 @@
+[
+    {
+        "name": "",
+        "species": "Machamp",
+        "item": "",
+        "ability": "No Guard",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Dynamic Punch",
+            "Stone Edge",
+            "Knock Off",
+            "Dual Chop"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Basculin",
+        "item": "",
+        "ability": "Adaptability",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Liquidation",
+            "Crunch",
+            "Aqua Jet",
+            "Psychic Fangs"
+        ]
+    }
+]

@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Scizor",
+        "item": "Leftovers",
+        "ability": "Technician",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Bullet Punch",
+            "Thief",
+            "Bug Bite",
+            "Roost"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Donphan",
+        "item": "Rocky Helmet",
+        "ability": "",
+        "gender": "",
+        "nature": "Impish",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 252,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Earthquake",
+            "Defense Curl",
+            "Rollout",
+            "Ice Shard"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Dunsparce",
+        "item": "Leftovers",
+        "ability": "",
+        "gender": "",
+        "nature": "Careful",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 0,
+            "spd": 252,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Headbutt",
+            "Coil",
+            "Glare",
+            "Roost"
+        ]
+    }
+]

@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Magcargo",
+        "item": "White Herb",
+        "ability": "Simple",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 40,
+            "atk": 40,
+            "def": 40,
+            "spa": 40,
+            "spd": 40,
+            "spe": 40
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Shell Smash",
+            "Lava Plume",
+            "Rock Slide",
+            "Earth Power"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Delphox",
+        "item": "Life Orb",
+        "ability": "Magic Guard",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 40,
+            "atk": 40,
+            "def": 40,
+            "spa": 40,
+            "spd": 40,
+            "spe": 40
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Mystical Fire",
+            "Psyshock",
+            "Dazzling Gleam",
+            "Will O Wisp"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Gourgeist",
+        "item": "Flame Orb",
+        "ability": "Flare Boost",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 40,
+            "atk": 40,
+            "def": 40,
+            "spa": 40,
+            "spd": 40,
+            "spe": 40
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Flamethrower",
+            "Giga Drain",
+            "Shadow Ball",
+            "Trick Or Treat"
+        ]
+    }
+]

@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Rampardos",
+        "item": "Life Orb",
+        "ability": "Sheer Force",
+        "gender": "",
+        "nature": "Naive",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 0,
+            "spa": 4,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Rock Slide",
+            "Fire Blast",
+            "Blizzard",
+            "Crunch"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Charizard",
+        "item": "Charizardite Y",
+        "ability": "",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Heat Wave",
+            "Air Slash",
+            "Solar Beam",
+            "Dragon Pulse"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Sawsbuck",
+        "item": "Sitrus Berry",
+        "ability": "",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Horn Leech",
+            "Double Edge",
+            "Wild Charge",
+            "Jump Kick"
+        ]
+    }
+]

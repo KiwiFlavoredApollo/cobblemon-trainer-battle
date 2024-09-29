@@ -1,0 +1,126 @@
+[
+    {
+        "name": "",
+        "species": "Carbink",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Explosion",
+            "Moonblast",
+            "Reflect",
+            "Light Screen"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Lycanroc-Midnight",
+        "item": "",
+        "ability": "No Guard",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Stone Edge",
+            "Crunch",
+            "Close Combat",
+            "Counter"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Abomasnow",
+        "item": "",
+        "ability": "Soundproof",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Ice Shard",
+            "Wood Hammer",
+            "Earth Power",
+            "Avalanche"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Stonjourner",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Stone Edge",
+            "Heavy Slam",
+            "Heat Crash",
+            "Earthquake"
+        ]
+    }
+]

@@ -1,0 +1,157 @@
+[
+    {
+        "name": "",
+        "species": "Accelgor",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Water Shuriken",
+            "Bug Buzz",
+            "Giga Drain",
+            "Focus Blast"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Greninja",
+        "item": "",
+        "ability": "Protean",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Waterfall",
+            "Gunk Shot",
+            "Toxic Spikes",
+            "U Turn"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Weezing",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Quiet",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 0
+        },
+        "level": -2,
+        "moves": [
+            "Sludge Bomb",
+            "Toxic",
+            "Explosion",
+            "Heat Wave"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Arbok",
+        "item": "",
+        "ability": "Shed Skin",
+        "gender": "",
+        "nature": "Careful",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 0,
+            "spd": 252,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Gunk Shot",
+            "Earthquake",
+            "Coil",
+            "Rest"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Drapion",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Crunch",
+            "Poison Jab",
+            "Earthquake",
+            "Swords Dance"
+        ]
+    }
+]

@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Hitmonchan",
+        "item": "",
+        "ability": "Iron Fist",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Bullet Punch",
+            "Close Combat",
+            "Ice Punch",
+            "Thunder Punch"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Machamp",
+        "item": "",
+        "ability": "No Guard",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Dynamic Punch",
+            "Grass Knot",
+            "Acrobatics",
+            "Focus Blast"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Crabominable",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Ice Hammer",
+            "Close Combat",
+            "Crabhammer",
+            "Ice Shard"
+        ]
+    }
+]

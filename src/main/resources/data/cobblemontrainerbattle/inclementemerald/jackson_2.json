@@ -1,0 +1,157 @@
+[
+    {
+        "name": "",
+        "species": "Mantine",
+        "item": "Mystic Water",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Hydro Pump",
+            "Hurricane",
+            "Signal Beam",
+            "Roost"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Rotom-Fan",
+        "item": "Salac Berry",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Hurricane",
+            "Thunder",
+            "Shadow Ball",
+            "Nasty Plot"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Parasect",
+        "item": "Leftovers",
+        "ability": "Dry Skin",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Spore",
+            "Substitute",
+            "Leech Seed",
+            "Leech Life"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Lapras",
+        "item": "Sitrus Berry",
+        "ability": "Hydration",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Liquidation",
+            "Drill Run",
+            "Curse",
+            "Rest"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Toxicroak",
+        "item": "Black Sludge",
+        "ability": "Dry Skin",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Drain Punch",
+            "Poison Jab",
+            "Bulk Up",
+            "Protect"
+        ]
+    }
+]

@@ -1,0 +1,64 @@
+[
+    {
+        "name": "",
+        "species": "Ninjask",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 60,
+            "atk": 60,
+            "def": 60,
+            "spa": 60,
+            "spd": 60,
+            "spe": 60
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Leech Life",
+            "Substitute",
+            "Double Team",
+            "Baton Pass"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Shedinja",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 60,
+            "atk": 60,
+            "def": 60,
+            "spa": 60,
+            "spd": 60,
+            "spe": 60
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Shadow Claw",
+            "Swords Dance",
+            "X Scissor",
+            "Dig"
+        ]
+    }
+]

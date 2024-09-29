@@ -1,0 +1,64 @@
+[
+    {
+        "name": "",
+        "species": "Emboar",
+        "item": "Sitrus Berry",
+        "ability": "Blaze",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 40,
+            "atk": 40,
+            "def": 40,
+            "spa": 40,
+            "spd": 40,
+            "spe": 40
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Yawn",
+            "Heat Crash",
+            "Sucker Punch",
+            "Hammer Arm"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Flareon",
+        "item": "Toxic Orb",
+        "ability": "Guts",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 40,
+            "atk": 40,
+            "def": 40,
+            "spa": 40,
+            "spd": 40,
+            "spe": 40
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Blaze Kick",
+            "Facade",
+            "Quick Attack",
+            "Dig"
+        ]
+    }
+]

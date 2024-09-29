@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Amoonguss",
+        "item": "Black Sludge",
+        "ability": "",
+        "gender": "",
+        "nature": "Bold",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 252,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Spore",
+            "Rage Powder",
+            "Foul Play",
+            "Giga Drain"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Medicham",
+        "item": "Life Orb",
+        "ability": "",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "High Jump Kick",
+            "Zen Headbutt",
+            "Ice Punch",
+            "Bullet Punch"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Flareon",
+        "item": "Toxic Orb",
+        "ability": "Guts",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Flare Blitz",
+            "Facade",
+            "Superpower",
+            "Protect"
+        ]
+    }
+]

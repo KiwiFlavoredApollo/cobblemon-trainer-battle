@@ -1,0 +1,188 @@
+[
+    {
+        "name": "",
+        "species": "Kyogre",
+        "item": "",
+        "ability": "Drizzle",
+        "gender": "",
+        "nature": "Modest",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Origin Pulse",
+            "Thunder",
+            "Ice Beam",
+            "Calm Mind"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Goodra",
+        "item": "Leftovers",
+        "ability": "Hydration",
+        "gender": "",
+        "nature": "Careful",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 0,
+            "spd": 252,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Dragon Rush",
+            "Aqua Tail",
+            "Rest",
+            "Curse"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Tentacruel",
+        "item": "Black Sludge",
+        "ability": "Rain Dish",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Waterfall",
+            "Poison Jab",
+            "Swords Dance",
+            "Protect"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Poliwrath",
+        "item": "Life Orb",
+        "ability": "Swift Swim",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Waterfall",
+            "Close Combat",
+            "Ice Punch",
+            "Hypnosis"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Eelektross",
+        "item": "Assault Vest",
+        "ability": "Swift Swim",
+        "gender": "",
+        "nature": "Modest",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Thunder",
+            "Grass Knot",
+            "Flash Cannon",
+            "Acid Spray"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Sharpedo",
+        "item": "Sharpedonite",
+        "ability": "Speed Boost-> Strong Jaw",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 2,
+        "moves": [
+            "Liquidation",
+            "Crunch",
+            "Psychic Fangs",
+            "Close Combat"
+        ]
+    }
+]

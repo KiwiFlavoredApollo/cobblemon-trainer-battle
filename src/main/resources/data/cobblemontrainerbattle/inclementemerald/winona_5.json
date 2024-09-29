@@ -1,0 +1,188 @@
+[
+    {
+        "name": "",
+        "species": "Landorus-Therian",
+        "item": "Assault Vest",
+        "ability": "",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Rock Slide",
+            "Earthquake",
+            "U Turn",
+            "Knock Off"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Shaymin-Sky",
+        "item": "Grass Gem",
+        "ability": "",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Seed Flare",
+            "Air Slash",
+            "Earth Power",
+            "Psychic"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Yveltal",
+        "item": "Shell Bell",
+        "ability": "",
+        "gender": "",
+        "nature": "Hasty",
+        "evs": {
+            "hp": 0,
+            "atk": 4,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Sucker Punch",
+            "Oblivion Wing",
+            "Dark Pulse",
+            "Roost"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Lugia",
+        "item": "Sitrus Berry",
+        "ability": "Multiscale",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 4,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Aeroblast",
+            "Psychic",
+            "Tailwind",
+            "Roost"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Celesteela",
+        "item": "Big Root",
+        "ability": "",
+        "gender": "",
+        "nature": "Calm",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 0,
+            "spd": 252,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Leech Seed",
+            "Flash Cannon",
+            "Giga Drain",
+            "Protect"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Rayquaza",
+        "item": "White Herb",
+        "ability": "",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 2,
+        "moves": [
+            "Dragon Ascent",
+            "Earthquake",
+            "Extreme Speed",
+            "V Create"
+        ]
+    }
+]

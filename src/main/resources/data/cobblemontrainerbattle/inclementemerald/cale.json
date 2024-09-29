@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Wormadam-Trash",
+        "item": "",
+        "ability": "Overcoat",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Quiver Dance",
+            "Bug Buzz",
+            "Flash Cannon",
+            "Psychic"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Wormadam-Sandy",
+        "item": "",
+        "ability": "Overcoat",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Quiver Dance",
+            "Bug Buzz",
+            "Earth Power",
+            "Psychic"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Wormadam",
+        "item": "",
+        "ability": "Overcoat",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Quiver Dance",
+            "Bug Buzz",
+            "Leaf Storm",
+            "Psychic"
+        ]
+    }
+]

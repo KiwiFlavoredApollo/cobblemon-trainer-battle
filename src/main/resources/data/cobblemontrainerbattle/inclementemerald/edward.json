@@ -1,0 +1,33 @@
+[
+    {
+        "name": "",
+        "species": "Abra",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Quiet",
+        "evs": {
+            "hp": 4,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 30,
+            "atk": 30,
+            "def": 30,
+            "spa": 30,
+            "spd": 30,
+            "spe": 30
+        },
+        "level": 1,
+        "moves": [
+            "Hidden Power",
+            "Shock Wave",
+            "Signal Beam",
+            "None"
+        ]
+    }
+]

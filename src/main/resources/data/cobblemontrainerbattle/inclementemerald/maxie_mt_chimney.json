@@ -1,0 +1,157 @@
+[
+    {
+        "name": "",
+        "species": "Crobat",
+        "item": "Assault Vest",
+        "ability": "Infiltrator",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Brave Bird",
+            "Cross Poison",
+            "Crunch",
+            "U Turn"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Zweilous",
+        "item": "Choice Scarf",
+        "ability": "",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Outrage",
+            "Crunch",
+            "Head Smash",
+            "Superpower"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Weezing",
+        "item": "Black Sludge",
+        "ability": "Levitate",
+        "gender": "",
+        "nature": "Modest",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Venoshock",
+            "Thunderbolt",
+            "Toxic",
+            "Heat Wave"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Victreebel",
+        "item": "Scope Lens",
+        "ability": "Chlorophyll",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Leaf Blade",
+            "Poison Jab",
+            "Sucker Punch",
+            "Sleep Powder"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Camerupt",
+        "item": "Power Herb",
+        "ability": "Sheer Force",
+        "gender": "",
+        "nature": "Quiet",
+        "evs": {
+            "hp": 252,
+            "atk": 4,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 3,
+        "moves": [
+            "Earth Power",
+            "Fire Blast",
+            "Rock Slide",
+            "Solar Beam"
+        ]
+    }
+]

@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Snorlax",
+        "item": "Leftovers",
+        "ability": "Thick Fat",
+        "gender": "",
+        "nature": "Impish",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 252,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Body Slam",
+            "Curse",
+            "Rest",
+            "Sleep Talk"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Furfrou",
+        "item": "Leftovers",
+        "ability": "",
+        "gender": "",
+        "nature": "Impish",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 252,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Thunder Wave",
+            "Headbutt",
+            "Cotton Guard",
+            "Bite"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Miltank",
+        "item": "Leftovers",
+        "ability": "Scrappy",
+        "gender": "",
+        "nature": "Impish",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 252,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Defense Curl",
+            "Rollout",
+            "Body Slam",
+            "Milk Drink"
+        ]
+    }
+]

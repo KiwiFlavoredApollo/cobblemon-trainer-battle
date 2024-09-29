@@ -1,0 +1,64 @@
+[
+    {
+        "name": "",
+        "species": "Illumise",
+        "item": "Magnet",
+        "ability": "Prankster",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 25,
+            "atk": 25,
+            "def": 25,
+            "spa": 25,
+            "spd": 25,
+            "spe": 25
+        },
+        "level": -1,
+        "moves": [
+            "Shock Wave",
+            "Dazzling Gleam",
+            "Charm",
+            "Struggle Bug"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Volbeat",
+        "item": "Silver Powder",
+        "ability": "Prankster",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 25,
+            "atk": 25,
+            "def": 25,
+            "spa": 25,
+            "spd": 25,
+            "spe": 25
+        },
+        "level": -1,
+        "moves": [
+            "Shock Wave",
+            "Quick Attack",
+            "Confuse Ray",
+            "Struggle Bug"
+        ]
+    }
+]

@@ -1,0 +1,188 @@
+[
+    {
+        "name": "",
+        "species": "Bisharp",
+        "item": "Focus Sash",
+        "ability": "",
+        "gender": "",
+        "nature": "Brave",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 0
+        },
+        "level": -1,
+        "moves": [
+            "Metal Burst",
+            "Sucker Punch",
+            "Stealth Rock",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Delphox",
+        "item": "Power Herb",
+        "ability": "Pyromancy",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Fire Blast",
+            "Psychic",
+            "Solar Beam",
+            "Nasty Plot"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Dodrio",
+        "item": "Fighting Gem",
+        "ability": "Moxie",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Double Edge",
+            "Brave Bird",
+            "Jump Kick",
+            "Swords Dance"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Electivire",
+        "item": "Life Orb",
+        "ability": "Motor Drive",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Close Combat",
+            "Volt Tackle",
+            "Fire Punch",
+            "Ice Punch"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Lurantis",
+        "item": "Assault Vest",
+        "ability": "Contrary",
+        "gender": "",
+        "nature": "Brave",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 0
+        },
+        "level": -1,
+        "moves": [
+            "Leaf Storm",
+            "Superpower",
+            "Leech Life",
+            "Knock Off"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Flygon",
+        "item": "Flygonite",
+        "ability": "",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Boomburst",
+            "Draco Meteor",
+            "Fire Blast",
+            "Quiver Dance"
+        ]
+    }
+]

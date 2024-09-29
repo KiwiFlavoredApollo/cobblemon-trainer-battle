@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Beheeyem",
+        "item": "",
+        "ability": "Psychic Surge",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Psychic",
+            "Shadow Ball",
+            "Trick Room",
+            "Nasty Plot"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Gardevoir",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Psychic",
+            "Moonblast",
+            "Mystical Fire",
+            "Calm Mind"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Gallade",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Close Combat",
+            "Psycho Cut",
+            "Leaf Blade",
+            "Swords Dance"
+        ]
+    }
+]

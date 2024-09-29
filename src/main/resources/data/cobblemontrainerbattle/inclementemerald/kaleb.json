@@ -1,0 +1,64 @@
+[
+    {
+        "name": "",
+        "species": "Minun",
+        "item": "Oran Berry",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": -3,
+        "moves": [
+            "Electro Ball",
+            "Nuzzle",
+            "Helping Hand",
+            "Fake Tears"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Emolga",
+        "item": "Oran Berry",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": -3,
+        "moves": [
+            "Shock Wave",
+            "Nuzzle",
+            "Acrobatics",
+            "Nasty Plot"
+        ]
+    }
+]

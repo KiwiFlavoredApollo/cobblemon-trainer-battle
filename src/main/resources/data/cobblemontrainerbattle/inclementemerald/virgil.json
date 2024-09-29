@@ -1,0 +1,64 @@
+[
+    {
+        "name": "",
+        "species": "Medicham",
+        "item": "Rock Gem",
+        "ability": "",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Drain Punch",
+            "Poison Jab",
+            "Fake Out",
+            "Rock Slide"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Bronzong",
+        "item": "Air Balloon",
+        "ability": "Heavy Metal",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Heavy Slam",
+            "Payback",
+            "Hypnosis",
+            "Rock Slide"
+        ]
+    }
+]

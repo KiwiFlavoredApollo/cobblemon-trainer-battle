@@ -1,0 +1,64 @@
+[
+    {
+        "name": "",
+        "species": "Marill",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -4,
+        "moves": [
+            "Aqua Jet",
+            "Defense Curl",
+            "Rollout",
+            "Helping Hand"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Bounsweet",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -4,
+        "moves": [
+            "Razor Leaf",
+            "Rapid Spin",
+            "Play Nice",
+            "Splash"
+        ]
+    }
+]

@@ -1,0 +1,188 @@
+[
+    {
+        "name": "",
+        "species": "Cobalion",
+        "item": "Focus Sash",
+        "ability": "",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Close Combat",
+            "Iron Head",
+            "Stealth Rock",
+            "Volt Switch"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Marshadow",
+        "item": "Leftovers",
+        "ability": "",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Focus Punch",
+            "Spectral Thief",
+            "Shadow Sneak",
+            "Substitute"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Hariyama",
+        "item": "Flame Orb",
+        "ability": "Guts",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 2,
+        "moves": [
+            "Close Combat",
+            "Fake Out",
+            "Knock Off",
+            "Stone Edge"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Buzzwole",
+        "item": "Leftovers",
+        "ability": "",
+        "gender": "",
+        "nature": "Careful",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 0,
+            "spd": 252,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Drain Punch",
+            "Leech Life",
+            "Bulk Up",
+            "Roost"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Keldeo",
+        "item": "Choice Specs",
+        "ability": "",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Hydro Pump",
+            "Secret Sword",
+            "Icy Wind",
+            "Air Slash"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Mewtwo",
+        "item": "Mewtwonite X",
+        "ability": "",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Psystrike",
+            "Aura Sphere",
+            "Ice Beam",
+            "Nasty Plot"
+        ]
+    }
+]
