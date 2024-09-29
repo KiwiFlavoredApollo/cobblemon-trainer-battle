@@ -1,32 +1,36 @@
 package kiwiapollo.trainerbattle.battleactors;
 
 import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
+import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
 import com.cobblemon.mod.common.battles.actor.TrainerBattleActor;
 import com.cobblemon.mod.common.battles.ai.RandomBattleAI;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
-import kiwiapollo.trainerbattle.common.RandomTrainerFactory;
-import kiwiapollo.trainerbattle.common.Trainer;
+import com.cobblemon.mod.common.pokemon.Pokemon;
 import kotlin.Unit;
+import net.minecraft.util.Identifier;
 
+import java.util.List;
 import java.util.UUID;
 
-public class RandomTrainerBattleActorFactory {
+public class TestTrainerBattleActorFactory {
     public BattleActor create(int level) {
-        Trainer trainer = new RandomTrainerFactory().create();
+        Pokemon pikachu = PokemonSpecies.INSTANCE
+                .getByIdentifier(Identifier.of("cobblemon", "pikachu"))
+                .create(level);
 
         return new TrainerBattleActor(
-                trainer.name,
+                "MyTrainer",
                 UUID.randomUUID(),
-                trainer.pokemons.stream()
-                        .map(pokemon -> new BattlePokemon(
-                                pokemon,
-                                pokemon,
+                List.of(
+                        new BattlePokemon(
+                                pikachu,
+                                pikachu,
                                 pokemonEntity -> {
                                     pokemonEntity.discard();
                                     return Unit.INSTANCE;
                                 }
-                        ))
-                        .toList(),
+                        )
+                ),
                 new RandomBattleAI()
         );
     }

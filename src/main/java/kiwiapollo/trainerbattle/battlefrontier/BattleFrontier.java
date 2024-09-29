@@ -1,26 +1,26 @@
 package kiwiapollo.trainerbattle.battlefrontier;
 
 import com.cobblemon.mod.common.Cobblemon;
+import com.cobblemon.mod.common.api.moves.Move;
 import com.cobblemon.mod.common.api.moves.MoveSet;
 import com.cobblemon.mod.common.api.pokemon.stats.Stats;
 import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.BattleSide;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.cobblemon.mod.common.pokemon.PokemonStats;
-import com.cobblemon.mod.common.pokemon.Species;
-import com.mojang.brigadier.arguments.StringArgumentType;
+import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.trainerbattle.TrainerBattle;
-import kiwiapollo.trainerbattle.exceptions.PokemonNotExistException;
-import kiwiapollo.trainerbattle.exceptions.StartingPokemonsNotSelectedException;
-import kiwiapollo.trainerbattle.exceptions.ValidBattleFrontierSessionExistException;
-import kiwiapollo.trainerbattle.exceptions.ValidBattleFrontierSessionNotExistException;
-import kiwiapollo.trainerbattle.battleactors.RandomPlayerBattleActorFactory;
+import kiwiapollo.trainerbattle.battleactors.BattleFrontierPlayerBattleActorFactory;
 import kiwiapollo.trainerbattle.battleactors.RandomTrainerBattleActorFactory;
 import kiwiapollo.trainerbattle.common.Trainer;
+import kiwiapollo.trainerbattle.exceptions.*;
+import kotlin.Unit;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 
 import java.time.Duration;
 import java.time.Instant;
@@ -54,6 +54,8 @@ public class BattleFrontier {
             context.getSource().getPlayer().sendMessage(Text.literal("Battle Frontier session is removed"));
 
         } catch (ValidBattleFrontierSessionNotExistException e) {
+            context.getSource().getPlayer().sendMessage(
+                    Text.literal("You do not have active Battle Frontier session"));
             TrainerBattle.LOGGER.error(String.format("%s : Valid Battle Frontier session does not exists",
                     context.getSource().getPlayer().getGameProfile().getName()));
         }
@@ -62,14 +64,21 @@ public class BattleFrontier {
     public static void battle(CommandContext<ServerCommandSource> context) {
         try {
             assertExistValidSession(context.getSource().getPlayer());
+            assertPlayerNotDefeated(context.getSource().getPlayer());
             assertSelectedStartingPokemons(context.getSource().getPlayer());
 
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
-                    new BattleSide(new RandomPlayerBattleActorFactory().create(context.getSource().getPlayer())),
+                    new BattleSide(new BattleFrontierPlayerBattleActorFactory().create(context.getSource().getPlayer())),
                     new BattleSide(new RandomTrainerBattleActorFactory().create(30)),
                     false
-            );
+            ).ifSuccessful(pokemonBattle -> {
+                TrainerBattle.TRAINER_BATTLES.add(pokemonBattle);
+
+                UUID playerUuid = context.getSource().getPlayer().getUuid();
+                BattleFrontier.SESSIONS.get(playerUuid).battleUuid = pokemonBattle.getBattleId();
+                return Unit.INSTANCE;
+            });
 
             context.getSource().getPlayer().sendMessage(Text.literal("Battle Frontier battle started"));
 
@@ -79,10 +88,23 @@ public class BattleFrontier {
             TrainerBattle.LOGGER.error(String.format("%s : Valid Battle Frontier session does not exists",
                     context.getSource().getPlayer().getGameProfile().getName()));
 
+        } catch (BattleFrontierDefeatedPlayerException e) {
+            context.getSource().getPlayer().sendMessage(
+                    Text.literal("You are defeated. Please create another Battle Frontier session"));
+            TrainerBattle.LOGGER.error(String.format("%s : Battle Frontier session expired due to defeat",
+                    context.getSource().getPlayer().getGameProfile().getName()));
+
         } catch (StartingPokemonsNotSelectedException e) {
             context.getSource().getPlayer().sendMessage(Text.literal("Please select starting Pokemons"));
             TrainerBattle.LOGGER.error(String.format("%s : Starting Pokemons are not selected",
                     context.getSource().getPlayer().getGameProfile().getName()));
+        }
+    }
+
+    private static void assertPlayerNotDefeated(ServerPlayerEntity player) throws BattleFrontierDefeatedPlayerException {
+        BattleFrontierSession session = SESSIONS.get(player.getUuid());
+        if (session.isDefeated) {
+            throw new BattleFrontierDefeatedPlayerException();
         }
     }
 
@@ -120,49 +142,51 @@ public class BattleFrontier {
     public static void tradePokemon(CommandContext<ServerCommandSource> context) {
         try {
             assertExistValidSession(context.getSource().getPlayer());
+            assertPlayerNotDefeated(context.getSource().getPlayer());
+            assertExistDefeatedTrainer(context);
 
-            String playerPokemon = StringArgumentType.getString(context, "playerpokemon");
-            assertExistPlayerPokemon(context, playerPokemon);
+            int playerslot = IntegerArgumentType.getInteger(context, "playerslot");
+            int trainerslot = IntegerArgumentType.getInteger(context, "trainerslot");
 
-            String trainerPokemon = StringArgumentType.getString(context, "trainerpokemon");
-            assertExistTrainerPokemon(context, trainerPokemon);
+            BattleFrontierSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
+            Trainer lastDefeatedTrainer = session.defeatedTrainers.get(session.defeatedTrainers.size() - 1);
+            Pokemon trainerPokemon = lastDefeatedTrainer.pokemons.get(trainerslot - 1);
+
+            session.partyPokemons = new ArrayList<>(session.partyPokemons);
+            session.partyPokemons.set(playerslot - 1, trainerPokemon.clone(true, true));
 
         } catch (ValidBattleFrontierSessionNotExistException e) {
-            throw new RuntimeException(e);
+            context.getSource().getPlayer().sendMessage(
+                    Text.literal("You do not have active Battle Frontier session"));
+            TrainerBattle.LOGGER.error(String.format("%s : Valid Battle Frontier session does not exists",
+                    context.getSource().getPlayer().getGameProfile().getName()));
 
-        } catch (PokemonNotExistException e) {
-            throw new RuntimeException(e);
+        } catch (BattleFrontierDefeatedPlayerException e) {
+            context.getSource().getPlayer().sendMessage(
+                    Text.literal("You are defeated. Please create another Battle Frontier session"));
+            TrainerBattle.LOGGER.error(String.format("%s : Battle Frontier session expired due to defeat",
+                    context.getSource().getPlayer().getGameProfile().getName()));
+
+        }catch (DefeatedTrainerNotExistException e) {
+            context.getSource().getPlayer().sendMessage(
+                    Text.literal("You do not have any defeated trainers"));
+            TrainerBattle.LOGGER.error(String.format("%s : Defeated trainers do not exist",
+                    context.getSource().getPlayer().getGameProfile().getName()));
         }
     }
 
-    private static void assertExistTrainerPokemon(CommandContext<ServerCommandSource> context, String pokemonName)
-            throws PokemonNotExistException {
+    private static void assertExistDefeatedTrainer(CommandContext<ServerCommandSource> context)
+            throws DefeatedTrainerNotExistException {
         BattleFrontierSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
-        String lastDefeatedTrainer = session.defeatedTrainers.get(session.defeatedTrainers.size() - 1);
-        List<Pokemon> trainerPokemons = new Trainer(lastDefeatedTrainer).getPokemons();
-        List<String> trainerPokemonNames = trainerPokemons.stream()
-                .map(Pokemon::getSpecies)
-                .map(Species::getName).toList();
-
-        if (!trainerPokemonNames.contains(pokemonName)) {
-            throw new PokemonNotExistException();
-        };
-    }
-
-    private static void assertExistPlayerPokemon(CommandContext<ServerCommandSource> context, String pokemonName)
-            throws PokemonNotExistException {
-        BattleFrontierSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
-        List<String> partyPokemonNames = session.partyPokemons.stream()
-                .map(Pokemon::getSpecies)
-                .map(Species::getName).toList();
-
-        if (!partyPokemonNames.contains(pokemonName)) {
-            throw new PokemonNotExistException();
-        };
+        if (session.defeatedTrainers.isEmpty()) {
+            throw new DefeatedTrainerNotExistException();
+        }
     }
 
     public static void showTradeablePokemons(CommandContext<ServerCommandSource> context) {
-
+        BattleFrontierSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
+        Trainer lastDefeatedTrainer = session.defeatedTrainers.get(session.defeatedTrainers.size() - 1);
+        printPokemons(context, lastDefeatedTrainer.pokemons);
     }
 
     public static void showPartyPokemons(CommandContext<ServerCommandSource> context) {
@@ -174,29 +198,34 @@ public class BattleFrontier {
     }
 
     private static void printPokemons(CommandContext<ServerCommandSource> context, List<Pokemon> pokemons) {
-        pokemons.forEach(pokemon -> {
-            context.getSource().getPlayer().sendMessage(pokemon.getDisplayName());
+        for (int i = 0; i < pokemons.size(); i++) {
+            Pokemon pokemon = pokemons.get(i);
+
             context.getSource().getPlayer().sendMessage(
-                    Text.literal("Ability" + pokemon.getAbility().getDisplayName()));
+                    Text.literal(String.format("[%d] ", i + 1)).formatted(Formatting.YELLOW).append(pokemon.getDisplayName()));
             context.getSource().getPlayer().sendMessage(
-                    Text.literal("Nature " + pokemon.getNature().getDisplayName()));
+                    Text.literal("Ability ").append(Text.translatable(pokemon.getAbility().getDisplayName())));
             context.getSource().getPlayer().sendMessage(
-                    Text.literal("MoveSet " + getPokemonMovesetReport(pokemon.getMoveSet())));
+                    Text.literal("Nature ").append(Text.translatable(pokemon.getNature().getDisplayName())));
             context.getSource().getPlayer().sendMessage(
-                    Text.literal("EVs " + getPokemonStatsReport(pokemon.getEvs())));
+                    Text.literal("MoveSet ").append(getPokemonMoveSetReport(pokemon.getMoveSet())));
             context.getSource().getPlayer().sendMessage(
-                    Text.literal("IVs " + getPokemonStatsReport(pokemon.getIvs())));
-        });
+                    Text.literal("EVs ").append(Text.literal(getPokemonStatsReport(pokemon.getEvs()))));
+            context.getSource().getPlayer().sendMessage(
+                    Text.literal("IVs ").append(Text.literal(getPokemonStatsReport(pokemon.getIvs()))));
+        }
     }
 
-    private static String getPokemonMovesetReport(MoveSet moveset) {
-        return switch (moveset.getMoves().size()) {
-            case 1 -> String.format("%s", moveset.getMoves().toArray());
-            case 2 -> String.format("%s / %s", moveset.getMoves().toArray());
-            case 3 -> String.format("%s / %s / %s", moveset.getMoves().toArray());
-            case 4 -> String.format("%s / %s / %s / %s", moveset.getMoves().toArray());
-            default -> "";
-        };
+    private static Text getPokemonMoveSetReport(MoveSet moveSet) {
+        MutableText moveSetReport = Text.literal("");
+        for (Move move : moveSet.getMoves()) {
+            if (moveSetReport.equals(Text.literal(""))) {
+                moveSetReport.append(move.getDisplayName());
+            } else {
+                moveSetReport.append(Text.literal(" / ")).append(move.getDisplayName());
+            }
+        }
+        return moveSetReport;
     }
 
     private static String getPokemonStatsReport(PokemonStats stats) {

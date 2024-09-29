@@ -78,9 +78,9 @@ public class BattleFrontierCommand extends LiteralArgumentBuilder<ServerCommandS
     private ArgumentBuilder<ServerCommandSource, ?> getBattleFrontierTradePokemonCommand() {
         return LiteralArgumentBuilder.<ServerCommandSource>literal("tradepokemon")
                 .then(RequiredArgumentBuilder
-                        .<ServerCommandSource, String>argument("playerpokemon", StringArgumentType.word())
+                        .<ServerCommandSource, Integer>argument("playerslot", IntegerArgumentType.integer(1, 3))
                         .then(RequiredArgumentBuilder
-                                .<ServerCommandSource, String>argument("trainerpokemon", StringArgumentType.word())
+                                .<ServerCommandSource, Integer>argument("trainerslot", IntegerArgumentType.integer(1, 3))
                                 .executes(context -> {
                                     BattleFrontier.tradePokemon(context);
                                     return Command.SINGLE_SUCCESS;
