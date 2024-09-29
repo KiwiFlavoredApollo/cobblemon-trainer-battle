@@ -4,6 +4,7 @@ import com.mojang.brigadier.Command;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
+import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.common.RadicalRedTrainerFileScanner;
 import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
@@ -13,7 +14,7 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
     public TrainerBattleCommand() {
         super("trainerbattle");
 
-        this.requires(new PlayerCommandPredicate(getLiteral()))
+        this.requires(new PlayerCommandPredicate(String.format("%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral())))
                 .then(RequiredArgumentBuilder.<ServerCommandSource, String>argument("trainer", StringArgumentType.string())
                         .suggests((context, builder) -> {
                             RadicalRedTrainerFileScanner.getTrainerFiles().stream()

@@ -5,6 +5,7 @@ import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
+import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battlefrontier.BattleFrontier;
 import net.minecraft.server.command.ServerCommandSource;
 
@@ -13,7 +14,7 @@ public class BattleFrontierCommand extends LiteralArgumentBuilder<ServerCommandS
     public BattleFrontierCommand() {
         super("battlefrontier");
 
-        this.requires(new PlayerCommandPredicate(getLiteral()))
+        this.requires(new PlayerCommandPredicate(String.format("%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral())))
                 .then(getBattleFrontierStartCommand())
                 .then(getBattleFrontierStopCommand())
                 .then(getBattleFrontierBattleCommand())
