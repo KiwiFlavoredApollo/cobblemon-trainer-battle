@@ -142,9 +142,10 @@ public class BattleFrontier {
             session.partyPokemons.set(playerslot - 1, trainerPokemon.clone(true, true));
 
             context.getSource().getPlayer().sendMessage(
-                    Text.literal(String.format("Traded %s for %s",
-                            playerPokemon.getSpecies().getName(),
-                            trainerPokemon.getSpecies().getName())));
+                    Text.literal("Traded ")
+                            .append(playerPokemon.getDisplayName()).formatted(Formatting.YELLOW)
+                            .append(Text.literal(" for "))
+                            .append(trainerPokemon.getDisplayName()).formatted(Formatting.YELLOW));
 
         } catch (ValidBattleFrontierSessionNotExistException e) {
             context.getSource().getPlayer().sendMessage(
