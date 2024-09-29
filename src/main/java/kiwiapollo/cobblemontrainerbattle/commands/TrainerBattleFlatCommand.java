@@ -26,7 +26,7 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
                 .then(LiteralArgumentBuilder.<ServerCommandSource>literal("random")
                         .requires(new PlayerCommandPredicate(String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "random")))
                         .executes(context -> {
-                            TrainerBattle.battleWithFlatLevelAndFullHealth(context, new RandomTrainerFactory().create());
+                            TrainerBattle.battleWithFlatLevelAndFullHealth(context, new RandomTrainerFactory().create(context.getSource().getPlayer()));
                             return Command.SINGLE_SUCCESS;
                         }));
     }
@@ -44,7 +44,7 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
                         .executes(context -> {
                             try {
                                 String trainer = StringArgumentType.getString(context, "trainer");
-                                TrainerBattle.battleWithFlatLevelAndFullHealth(context, new RadicalRedNameTrainerFactory().create(trainer));
+                                TrainerBattle.battleWithFlatLevelAndFullHealth(context, new RadicalRedNameTrainerFactory().create(context.getSource().getPlayer(), trainer));
                                 return Command.SINGLE_SUCCESS;
 
                             } catch (TrainerNameNotExistException e) {
@@ -73,7 +73,8 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
                         .executes(context -> {
                             try {
                                 String trainer = StringArgumentType.getString(context, "trainer");
-                                TrainerBattle.battleWithFlatLevelAndFullHealth(context, new InclementEmeraldNameTrainerFactory().create(trainer));
+                                TrainerBattle.battleWithFlatLevelAndFullHealth(context,
+                                        new InclementEmeraldNameTrainerFactory().create(context.getSource().getPlayer(), trainer));
                                 return Command.SINGLE_SUCCESS;
 
                             } catch (TrainerNameNotExistException e) {

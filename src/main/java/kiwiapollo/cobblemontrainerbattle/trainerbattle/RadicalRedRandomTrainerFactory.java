@@ -1,5 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.trainerbattle;
 
+import net.minecraft.server.network.ServerPlayerEntity;
+
 import java.nio.file.Path;
 import java.util.Random;
 
@@ -10,8 +12,8 @@ public class RadicalRedRandomTrainerFactory {
         this.trainerFileScanner = new InclementEmeraldTrainerFileScanner();
     }
 
-    public Trainer create() {
-        return new TrainerFileParser().parse(getRandomTrainerFile());
+    public Trainer create(ServerPlayerEntity player) {
+        return new TrainerFileParser(player).parse(getRandomTrainerFile());
     }
 
     private Path getRandomTrainerFile() {

@@ -73,7 +73,7 @@ public class BattleFrontier {
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
                     new BattleSide(new BattleFrontierPlayerBattleActorFactory().create(context.getSource().getPlayer())),
-                    new BattleSide(new BattleFrontierNameTrainerBattleActorFactory().create(new RandomTrainerFactory().create())),
+                    new BattleSide(new BattleFrontierNameTrainerBattleActorFactory().create(new RandomTrainerFactory().create(context.getSource().getPlayer()))),
                     false
             ).ifSuccessful(pokemonBattle -> {
                 CobblemonTrainerBattle.TRAINER_BATTLES.put(context.getSource().getPlayer().getUuid(), pokemonBattle);

@@ -26,7 +26,7 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
                 .then(LiteralArgumentBuilder.<ServerCommandSource>literal("random")
                         .requires(new PlayerCommandPredicate(String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "random")))
                         .executes(context -> {
-                            TrainerBattle.battleWithStatusQuo(context, new RandomTrainerFactory().create());
+                            TrainerBattle.battleWithStatusQuo(context, new RandomTrainerFactory().create(context.getSource().getPlayer()));
                             return Command.SINGLE_SUCCESS;
                         }));
     }
@@ -44,7 +44,7 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
                         .executes(context -> {
                             try {
                                 String trainer = StringArgumentType.getString(context, "trainer");
-                                TrainerBattle.battleWithStatusQuo(context, new RadicalRedNameTrainerFactory().create(trainer));
+                                TrainerBattle.battleWithStatusQuo(context, new RadicalRedNameTrainerFactory().create(context.getSource().getPlayer(), trainer));
                                 return Command.SINGLE_SUCCESS;
 
                             } catch (TrainerNameNotExistException e) {
@@ -73,7 +73,8 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
                         .executes(context -> {
                             try {
                                 String trainer = StringArgumentType.getString(context, "trainer");
-                                TrainerBattle.battleWithStatusQuo(context, new InclementEmeraldNameTrainerFactory().create(trainer));
+                                TrainerBattle.battleWithStatusQuo(context,
+                                        new InclementEmeraldNameTrainerFactory().create(context.getSource().getPlayer(), trainer));
                                 return Command.SINGLE_SUCCESS;
 
                             } catch (TrainerNameNotExistException e) {

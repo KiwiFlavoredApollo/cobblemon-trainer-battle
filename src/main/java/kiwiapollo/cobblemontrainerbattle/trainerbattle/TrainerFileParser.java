@@ -1,5 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.trainerbattle;
 
+import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.abilities.Abilities;
 import com.cobblemon.mod.common.api.moves.Moves;
 import com.cobblemon.mod.common.api.pokemon.Natures;
@@ -15,14 +16,16 @@ import com.google.gson.JsonObject;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidPokemonStatsException;
 import kiwiapollo.cobblemontrainerbattle.exceptions.NotCobblemonMoveNameException;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
+import kiwiapollo.cobblemontrainerbattle.exceptions.RelativePokemonLevelException;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
 import java.io.*;
 import java.nio.file.Path;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -30,6 +33,11 @@ import java.util.function.BiConsumer;
 
 public class TrainerFileParser {
     public static final int LEVEL = 50;
+    private final ServerPlayerEntity player;
+
+    public TrainerFileParser(ServerPlayerEntity player) {
+        this.player = player;
+    }
 
     public Trainer parse(Path resourcePath) {
         try {
@@ -97,7 +105,32 @@ public class TrainerFileParser {
             setPokemonAbility(pokemon, jsonObject.get("ability").getAsString());
         }
 
+        if (jsonObject.get("level") != null && !jsonObject.get("level").isJsonNull()) {
+            setPokemonLevel(pokemon, jsonObject.get("level").getAsInt());
+        }
+
         return pokemon;
+    }
+
+    private void setPokemonLevel(Pokemon pokemon, int level) {
+        try {
+            assertNotRelativeLevel(level);
+            pokemon.setLevel(level);
+        } catch (RelativePokemonLevelException e) {
+            List<Pokemon> playerPokemons = Cobblemon.INSTANCE.getStorage().getParty(player).toGappyList();
+            if (playerPokemons.stream().allMatch(Objects::isNull)) return;
+            int playerMaximumLevel = playerPokemons.stream()
+                    .filter(Objects::nonNull)
+                    .map(Pokemon::getLevel)
+                    .max(Comparator.naturalOrder()).get();
+            pokemon.setLevel(playerMaximumLevel + level);
+        }
+    }
+
+    private void assertNotRelativeLevel(int level) throws RelativePokemonLevelException {
+        if (level < 10) {
+            throw new RelativePokemonLevelException();
+        }
     }
 
     private void setPokemonAbility(Pokemon pokemon, String ability) {
