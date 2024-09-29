@@ -6,8 +6,10 @@ import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.BattleSide;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.trainerbattle.TrainerBattle;
+import kiwiapollo.trainerbattle.battleactors.NameTrainerBattleActorFactory;
 import kiwiapollo.trainerbattle.battleactors.PlayerBattleActorFactory;
 import kiwiapollo.trainerbattle.battleactors.RandomTrainerBattleActorFactory;
+import kiwiapollo.trainerbattle.common.Trainer;
 import kiwiapollo.trainerbattle.exceptions.EmptyPlayerPartyException;
 import kiwiapollo.trainerbattle.exceptions.FaintPlayerPartyException;
 import kotlin.Unit;
@@ -17,7 +19,7 @@ import java.util.Objects;
 import java.util.stream.Stream;
 
 public class TrainerBattleBuilder {
-    public void build(ServerPlayerEntity player) {
+    public void build(ServerPlayerEntity player, Trainer trainer) {
         try {
             assertNotEmptyPlayerParty(player);
             assertNotFaintPlayerParty(player);
@@ -25,7 +27,7 @@ public class TrainerBattleBuilder {
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
                     new BattleSide(new PlayerBattleActorFactory().create(player)),
-                    new BattleSide(new RandomTrainerBattleActorFactory().create(20)),
+                    new BattleSide(new NameTrainerBattleActorFactory().create(trainer)),
                     false
             ).ifSuccessful(pokemonBattle -> {
                 TrainerBattle.TRAINER_BATTLES.add(pokemonBattle);
