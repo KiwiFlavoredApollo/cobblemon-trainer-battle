@@ -36,7 +36,6 @@ public class BattleFrontier {
             BattleFrontier.SESSIONS.put(context.getSource().getPlayer().getUuid(), new BattleFrontierSession());
 
             context.getSource().getPlayer().sendMessage(Text.literal("Battle Frontier session is created"));
-            context.getSource().getPlayer().sendMessage(Text.literal("Please select starting Pokemons"));
 
         } catch (ValidBattleFrontierSessionExistException e) {
             context.getSource().getPlayer().sendMessage(Text.literal("Battle Frontier session already exists"));
@@ -65,7 +64,6 @@ public class BattleFrontier {
         try {
             assertExistValidSession(context.getSource().getPlayer());
             assertPlayerNotDefeated(context.getSource().getPlayer());
-            assertSelectedStartingPokemons(context.getSource().getPlayer());
 
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
@@ -93,11 +91,6 @@ public class BattleFrontier {
                     Text.literal("You are defeated. Please create another Battle Frontier session"));
             CobblemonTrainerBattle.LOGGER.error(String.format("%s : Battle Frontier session expired due to defeat",
                     context.getSource().getPlayer().getGameProfile().getName()));
-
-        } catch (StartingPokemonsNotSelectedException e) {
-            context.getSource().getPlayer().sendMessage(Text.literal("Please select starting Pokemons"));
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s : Starting Pokemons are not selected",
-                    context.getSource().getPlayer().getGameProfile().getName()));
         }
     }
 
@@ -105,14 +98,6 @@ public class BattleFrontier {
         BattleFrontierSession session = SESSIONS.get(player.getUuid());
         if (session.isDefeated) {
             throw new BattleFrontierDefeatedPlayerException();
-        }
-    }
-
-    private static void assertSelectedStartingPokemons(ServerPlayerEntity player)
-            throws StartingPokemonsNotSelectedException {
-        BattleFrontierSession session = SESSIONS.get(player.getUuid());
-        if (session.partyPokemons.isEmpty()) {
-            throw new StartingPokemonsNotSelectedException();
         }
     }
 
@@ -151,9 +136,15 @@ public class BattleFrontier {
             BattleFrontierSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
             Trainer lastDefeatedTrainer = session.defeatedTrainers.get(session.defeatedTrainers.size() - 1);
             Pokemon trainerPokemon = lastDefeatedTrainer.pokemons.get(trainerslot - 1);
+            Pokemon playerPokemon = session.partyPokemons.get(playerslot);
 
             session.partyPokemons = new ArrayList<>(session.partyPokemons);
             session.partyPokemons.set(playerslot - 1, trainerPokemon.clone(true, true));
+
+            context.getSource().getPlayer().sendMessage(
+                    Text.literal(String.format("Traded %s for %s",
+                            playerPokemon.getSpecies().getName(),
+                            trainerPokemon.getSpecies().getName())));
 
         } catch (ValidBattleFrontierSessionNotExistException e) {
             context.getSource().getPlayer().sendMessage(
@@ -235,6 +226,7 @@ public class BattleFrontier {
         if (session.isRerolled) return;
 
         session.partyPokemons = new RandomPartyPokemonsFactory().create();
+        session.isRerolled = true;
         context.getSource().getPlayer().sendMessage(Text.literal("Rerolled Pokemons"));
     }
 }

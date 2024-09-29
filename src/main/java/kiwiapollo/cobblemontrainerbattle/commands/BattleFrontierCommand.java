@@ -56,7 +56,7 @@ public class BattleFrontierCommand extends LiteralArgumentBuilder<ServerCommandS
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getBattleFrontierTradePokemonCommand() {
-        return LiteralArgumentBuilder.<ServerCommandSource>literal("tradepokemon")
+        return LiteralArgumentBuilder.<ServerCommandSource>literal("trade")
                 .then(RequiredArgumentBuilder
                         .<ServerCommandSource, Integer>argument("playerslot", IntegerArgumentType.integer(1, 3))
                         .then(RequiredArgumentBuilder
@@ -72,7 +72,7 @@ public class BattleFrontierCommand extends LiteralArgumentBuilder<ServerCommandS
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getBattleFrontierShowPokemonsCommand() {
-        return LiteralArgumentBuilder.<ServerCommandSource>literal("showpokemons")
+        return LiteralArgumentBuilder.<ServerCommandSource>literal("pokemons")
                 .executes(context -> {
                     BattleFrontier.showPartyPokemons(context);
                     return Command.SINGLE_SUCCESS;
