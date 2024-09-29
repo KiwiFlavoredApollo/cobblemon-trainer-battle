@@ -12,12 +12,13 @@ import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactors.player.BattleFrontierPlayerBattleActorFactory;
-import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.RandomTrainerBattleActorFactory;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
+import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.NameTrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.exceptions.BattleFrontierDefeatedPlayerException;
 import kiwiapollo.cobblemontrainerbattle.exceptions.DefeatedTrainerNotExistException;
 import kiwiapollo.cobblemontrainerbattle.exceptions.ValidBattleFrontierSessionExistException;
 import kiwiapollo.cobblemontrainerbattle.exceptions.ValidBattleFrontierSessionNotExistException;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.RandomTrainerFactory;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
 import kotlin.Unit;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -71,7 +72,7 @@ public class BattleFrontier {
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
                     new BattleSide(new BattleFrontierPlayerBattleActorFactory().create(context.getSource().getPlayer(), 100)),
-                    new BattleSide(new RandomTrainerBattleActorFactory().create(10)),
+                    new BattleSide(new NameTrainerBattleActorFactory().create(new RandomTrainerFactory().create())),
                     false
             ).ifSuccessful(pokemonBattle -> {
                 CobblemonTrainerBattle.TRAINER_BATTLES.put(context.getSource().getPlayer().getUuid(), pokemonBattle);
