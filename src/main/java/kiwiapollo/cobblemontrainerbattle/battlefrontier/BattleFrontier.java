@@ -16,6 +16,7 @@ import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.BattleFrontierName
 import kiwiapollo.cobblemontrainerbattle.exceptions.*;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TotalRandomTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kotlin.Unit;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -71,6 +72,7 @@ public class BattleFrontier {
         try {
             assertExistValidSession(context.getSource().getPlayer());
             assertPlayerNotDefeated(context.getSource().getPlayer());
+            TrainerBattle.assertNotExistPlayerParticipatingPokemonBattle(context.getSource().getPlayer());
 
             Trainer trainer = new TotalRandomTrainerFactory().create(context.getSource().getPlayer());
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
@@ -100,6 +102,13 @@ public class BattleFrontier {
             context.getSource().getPlayer().sendMessage(
                     Text.literal("You are defeated. Please create another Battle Frontier session"));
             CobblemonTrainerBattle.LOGGER.error(String.format("%s: Battle Frontier session expired due to defeat",
+                    context.getSource().getPlayer().getGameProfile().getName()));
+
+        } catch (PlayerParticipatingPokemonBattleExistException e) {
+            context.getSource().getPlayer().sendMessage(
+                    Text.literal("You cannot start Pokemon battle while on another"));
+            CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
+            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Already participating in another Pokemon battle",
                     context.getSource().getPlayer().getGameProfile().getName()));
         }
     }

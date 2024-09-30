@@ -13,6 +13,7 @@ import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.FlatLevelFullHealt
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.TrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.exceptions.EmptyPlayerPartyException;
 import kiwiapollo.cobblemontrainerbattle.exceptions.FaintPlayerPartyException;
+import kiwiapollo.cobblemontrainerbattle.exceptions.PlayerParticipatingPokemonBattleExistException;
 import kotlin.Unit;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -28,6 +29,7 @@ public class TrainerBattle {
         try {
             assertNotEmptyPlayerParty(context.getSource().getPlayer());
             assertNotFaintPlayerParty(context.getSource().getPlayer());
+            assertNotExistPlayerParticipatingPokemonBattle(context.getSource().getPlayer());
 
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
@@ -58,12 +60,20 @@ public class TrainerBattle {
             CobblemonTrainerBattle.LOGGER.error(
                     String.format("%s: Pokemons are all fainted",
                             context.getSource().getPlayer().getGameProfile().getName()));
+
+        } catch (PlayerParticipatingPokemonBattleExistException e) {
+            context.getSource().getPlayer().sendMessage(
+                    Text.literal("You cannot start Pokemon battle while on another"));
+            CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
+            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Already participating in another Pokemon battle",
+                    context.getSource().getPlayer().getGameProfile().getName()));
         }
     }
 
     public static void battleWithFlatLevelAndFullHealth(CommandContext<ServerCommandSource> context, Trainer trainer) {
         try {
             assertNotEmptyPlayerParty(context.getSource().getPlayer());
+            assertNotExistPlayerParticipatingPokemonBattle(context.getSource().getPlayer());
 
             Cobblemon.INSTANCE.getStorage().getParty(context.getSource().getPlayer()).forEach(Pokemon::recall);
 
@@ -90,6 +100,12 @@ public class TrainerBattle {
                     String.format("%s: Player has no Pokemon",
                             context.getSource().getPlayer().getGameProfile().getName()));
 
+        } catch (PlayerParticipatingPokemonBattleExistException e) {
+            context.getSource().getPlayer().sendMessage(
+                    Text.literal("You cannot start Pokemon battle while on another"));
+            CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
+            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Already participating in another Pokemon battle",
+                    context.getSource().getPlayer().getGameProfile().getName()));
         }
     }
 
@@ -105,6 +121,13 @@ public class TrainerBattle {
         Stream<Pokemon> pokemons = playerPartyStore.toGappyList().stream().filter(Objects::nonNull);
         if (pokemons.allMatch(Pokemon::isFainted)) {
             throw new FaintPlayerPartyException();
+        }
+    }
+
+    public static void assertNotExistPlayerParticipatingPokemonBattle(ServerPlayerEntity player)
+            throws PlayerParticipatingPokemonBattleExistException {
+        if (Cobblemon.INSTANCE.getBattleRegistry().getBattleByParticipatingPlayer(player) == null) {
+            throw new PlayerParticipatingPokemonBattleExistException();
         }
     }
 }
