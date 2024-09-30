@@ -39,7 +39,7 @@ public class BattleVictoryEventHandler {
         } else {
             CobblemonTrainerBattle.ECONOMY.addBalance(player, CobblemonTrainerBattle.CONFIG.defeatCurrencyAmount);
             CobblemonTrainerBattle.LOGGER.info(String.format(
-                    "%s: Defeat against %s", player.getGameProfile().getName(), trainerName));
+                    "%s: Defeated by %s", player.getGameProfile().getName(), trainerName));
         }
 
         CobblemonTrainerBattle.TRAINER_BATTLES.remove(battleVictoryEvent.getBattle());

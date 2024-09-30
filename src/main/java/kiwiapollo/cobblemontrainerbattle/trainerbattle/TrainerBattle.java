@@ -36,6 +36,12 @@ public class TrainerBattle {
                     false
             ).ifSuccessful(pokemonBattle -> {
                 CobblemonTrainerBattle.TRAINER_BATTLES.put(context.getSource().getPlayer().getUuid(), pokemonBattle);
+
+                context.getSource().getPlayer().sendMessage(
+                        Text.literal("Status Quo Pokemon Battle started"));
+                CobblemonTrainerBattle.LOGGER.error(String.format("%s: versus %s",
+                        context.getSource().getPlayer().getGameProfile().getName(), trainer.name));
+
                 return Unit.INSTANCE;
             });
 
@@ -68,6 +74,12 @@ public class TrainerBattle {
                     false
             ).ifSuccessful(pokemonBattle -> {
                 CobblemonTrainerBattle.TRAINER_BATTLES.put(context.getSource().getPlayer().getUuid(), pokemonBattle);
+
+                context.getSource().getPlayer().sendMessage(
+                        Text.literal("Flat Level Full Health Pokemon Battle started"));
+                CobblemonTrainerBattle.LOGGER.error(String.format("%s: versus %s",
+                        context.getSource().getPlayer().getGameProfile().getName(), trainer.name));
+
                 return Unit.INSTANCE;
             });
 
@@ -83,7 +95,7 @@ public class TrainerBattle {
 
     private static void assertNotEmptyPlayerParty(ServerPlayerEntity player) throws EmptyPlayerPartyException {
         PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
-        if (playerPartyStore.toGappyList().stream().allMatch(Objects::nonNull)) {
+        if (playerPartyStore.toGappyList().stream().allMatch(Objects::isNull)) {
             throw new EmptyPlayerPartyException();
         }
     }
