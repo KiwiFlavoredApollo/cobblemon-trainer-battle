@@ -92,25 +92,7 @@ Amount of money players lose when they lose against trainers
 - Trainer files can be added via data packs
 - Custom trainer files must be located under `<data pack>/data/cobblemontrainerbattle/custom`
 - Please make sure trainer files(`.json`) are in Smogon Teams JSON format
-- Trainer Pokemon levels can be set relative to player Pokemons like following:
-
-```json
-[
-    {
-        "name": "",
-        "species": "Infernape",
-        "item": "Focus Sash",
-        "ability": "Blaze",
-        "gender": "F",
-        "nature": "Jolly",
-        "evs": { ... },
-        "ivs": { ... },
-        "level": -2,
-        "moves": [ ... ]
-    },
-    ...
-]
-```
+- Trainer Pokemon levels can be set relative to player Pokemons
 
 ## TODOs
 
