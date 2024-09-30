@@ -219,7 +219,8 @@ public class TrainerFileParser {
         Map<String, String> moveNameExceptions = Map.of(
                 "Drain Kiss", "drainingkiss",
                 "Bad Tantrum", "stompingtantrum",
-                "FirstImpress", "firstimpression"
+                "FirstImpress", "firstimpression",
+                "Dark Hole", "darkvoid"
         );
 
         if (!moveNameExceptions.containsKey(moveName)) {
