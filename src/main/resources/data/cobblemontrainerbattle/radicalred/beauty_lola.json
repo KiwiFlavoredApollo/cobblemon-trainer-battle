@@ -22,7 +22,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -5,
         "moves": [
             "Petal Storm",
             "Safeguard",
@@ -53,7 +53,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -5,
         "moves": [
             "Petal Storm",
             "Safeguard",
@@ -84,7 +84,7 @@
             "spd": 31,
             "spe": 30
         },
-        "level": null,
+        "level": -5,
         "moves": [
             "Petal Storm",
             "Moonblast",

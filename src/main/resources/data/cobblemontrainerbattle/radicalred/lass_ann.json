@@ -22,7 +22,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -2,
         "moves": [
             "Water Pledge",
             "Flash Cannon",
@@ -53,7 +53,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -2,
         "moves": [
             "Fire Pledge",
             "Low Kick",

@@ -22,7 +22,7 @@
             "spd": 31,
             "spe": 30
         },
-        "level": null,
+        "level": -4,
         "moves": [
             "Shadow Sneak",
             "Grass Pledge",
@@ -53,7 +53,7 @@
             "spd": 31,
             "spe": 30
         },
-        "level": null,
+        "level": -4,
         "moves": [
             "Grass Pledge",
             "Focus Blast",
@@ -84,7 +84,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -4,
         "moves": [
             "Drain Kiss",
             "Shock Wave",

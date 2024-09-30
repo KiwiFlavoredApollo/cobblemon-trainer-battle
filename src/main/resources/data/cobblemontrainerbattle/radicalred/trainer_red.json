@@ -22,7 +22,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -2,
         "moves": [
             "Fake Out",
             "Aura Wheel",
@@ -53,7 +53,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -2,
         "moves": [
             "Giga Drain",
             "Sludge Bomb",
@@ -84,7 +84,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -2,
         "moves": [
             "Shell Smash",
             "Ice Beam",
@@ -115,7 +115,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -2,
         "moves": [
             "Dragon Dance",
             "Flare Blitz",
@@ -146,7 +146,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -2,
         "moves": [
             "Body Slam",
             "Earthquake",
@@ -177,7 +177,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -2,
         "moves": [
             "Bulk Up",
             "Zen Headbutt",

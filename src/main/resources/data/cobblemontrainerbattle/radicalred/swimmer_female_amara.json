@@ -22,7 +22,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -2,
         "moves": [
             "Hydro Pump",
             "Ice Beam",
@@ -53,7 +53,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -3,
         "moves": [
             "Scorch Sands",
             "Moonblast",
@@ -84,7 +84,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -2,
         "moves": [
             "Scald",
             "Ice Beam",

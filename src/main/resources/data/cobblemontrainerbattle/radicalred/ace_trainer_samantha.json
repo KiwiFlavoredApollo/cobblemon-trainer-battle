@@ -22,7 +22,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -2,
         "moves": [
             "Stealth Rock",
             "Lava Plume",
@@ -53,7 +53,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -2,
         "moves": [
             "Solar Beam",
             "Weather Ball",
@@ -84,7 +84,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -2,
         "moves": [
             "Weather Ball",
             "Ice Beam",
@@ -115,7 +115,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -2,
         "moves": [
             "HeadlongRush",
             "Flare Blitz",
@@ -146,7 +146,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -2,
         "moves": [
             "Fire Blast",
             "Solar Beam",
@@ -177,7 +177,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -2,
         "moves": [
             "Swords Dance",
             "Scale Shot",

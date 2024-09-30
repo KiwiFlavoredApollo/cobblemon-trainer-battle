@@ -22,7 +22,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -2,
         "moves": [
             "Freeze-Dry",
             "Moonblast",
@@ -53,7 +53,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -2,
         "moves": [
             "Swords Dance",
             "Earthquake",
@@ -84,7 +84,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -2,
         "moves": [
             "Dragon Dance",
             "PhantomForce",
@@ -115,7 +115,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -2,
         "moves": [
             "Magma Storm",
             "Earth Power",
@@ -146,7 +146,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -2,
         "moves": [
             "Bolt Beak",
             "Blizzard",
@@ -177,7 +177,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -2,
         "moves": [
             "Close Combat",
             "Brave Bird",

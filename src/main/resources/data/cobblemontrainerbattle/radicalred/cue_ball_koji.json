@@ -22,7 +22,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -5,
         "moves": [
             "Liquidation",
             "Meteor Mash",
@@ -53,7 +53,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -5,
         "moves": [
             "Bolt Beak",
             "Dragon Claw",

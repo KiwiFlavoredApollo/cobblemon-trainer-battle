@@ -22,7 +22,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -5,
         "moves": [
             "Fake Out",
             "Close Combat",
@@ -53,7 +53,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -5,
         "moves": [
             "Volt Switch",
             "Boomburst",
@@ -84,7 +84,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -5,
         "moves": [
             "Earthquake",
             "Iron Head",

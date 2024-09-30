@@ -22,7 +22,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -5,
         "moves": [
             "Stealth Rock",
             "Wicked Blow",
@@ -53,7 +53,7 @@
             "spd": 31,
             "spe": 30
         },
-        "level": null,
+        "level": -5,
         "moves": [
             "Solar Beam",
             "Hidden Power",
@@ -84,7 +84,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -5,
         "moves": [
             "Thunder Wave",
             "Seismic Toss",
@@ -115,7 +115,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -5,
         "moves": [
             "Fire Blast",
             "Solar Beam",
@@ -146,7 +146,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -5,
         "moves": [
             "Fire Blast",
             "Hyper Voice",

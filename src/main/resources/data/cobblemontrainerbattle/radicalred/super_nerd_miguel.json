@@ -22,7 +22,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -3,
         "moves": [
             "Fake Out",
             "Razor Leaf",
@@ -53,7 +53,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -5,
         "moves": [
             "Magical Leaf",
             "Selfdestruct",
@@ -84,7 +84,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -4,
         "moves": [
             "Headbutt",
             "Aqua Jet",
@@ -115,7 +115,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -4,
         "moves": [
             "Will-O-Wisp",
             "Recover",

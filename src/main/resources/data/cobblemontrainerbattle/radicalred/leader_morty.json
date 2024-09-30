@@ -22,7 +22,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -4,
         "moves": [
             "Play Rough",
             "Shadow Claw",
@@ -53,7 +53,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -4,
         "moves": [
             "Shadow Punch",
             "Shadow Sneak",
@@ -84,7 +84,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -4,
         "moves": [
             "Hyper Voice",
             "Shadow Ball",
@@ -115,7 +115,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -4,
         "moves": [
             "Flamethrower",
             "InfernoMarch",
@@ -146,7 +146,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -4,
         "moves": [
             "Sludge Wave",
             "Shadow Ball",

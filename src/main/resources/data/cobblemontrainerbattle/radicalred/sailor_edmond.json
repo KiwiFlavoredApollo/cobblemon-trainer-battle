@@ -22,7 +22,7 @@
             "spd": 31,
             "spe": 30
         },
-        "level": null,
+        "level": -2,
         "moves": [
             "AncientPower",
             "Giga Drain",
@@ -53,7 +53,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -4,
         "moves": [
             "Scald",
             "Ice Beam",
@@ -84,7 +84,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -4,
         "moves": [
             "Scald",
             "Earth Power",

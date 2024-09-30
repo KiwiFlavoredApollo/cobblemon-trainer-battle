@@ -22,7 +22,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -2,
         "moves": [
             "Draco Meteor",
             "Grav Apple",
@@ -52,7 +52,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -3,
         "moves": [
             "Head Smash",
             "Flare Blitz",
@@ -83,7 +83,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -2,
         "moves": [
             "Earthquake",
             "Stone Edge",
@@ -114,7 +114,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -2,
         "moves": [
             "Flamethrower",
             "Shadow Ball",
@@ -145,7 +145,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -2,
         "moves": [
             "Calm Mind",
             "Substitute",

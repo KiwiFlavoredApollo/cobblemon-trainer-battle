@@ -22,7 +22,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -4,
         "moves": [
             "Metronome"
         ]
@@ -50,7 +50,7 @@
             "spd": 31,
             "spe": 31
         },
-        "level": null,
+        "level": -5,
         "moves": [
             "Metronome"
         ]
@@ -78,7 +78,7 @@
             "spd": 0,
             "spe": 31
         },
-        "level": null,
+        "level": -3,
         "moves": [
             "Swagger",
             "Protect",
