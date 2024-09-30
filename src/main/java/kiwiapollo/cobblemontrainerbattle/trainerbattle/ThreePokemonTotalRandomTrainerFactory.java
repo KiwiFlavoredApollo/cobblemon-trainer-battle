@@ -1,8 +1,11 @@
 package kiwiapollo.cobblemontrainerbattle.trainerbattle;
 
+import com.cobblemon.mod.common.pokemon.Pokemon;
 import net.minecraft.server.network.ServerPlayerEntity;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class ThreePokemonTotalRandomTrainerFactory {
     public Trainer create(ServerPlayerEntity player) {
@@ -13,8 +16,10 @@ public class ThreePokemonTotalRandomTrainerFactory {
             trainer = new TotalRandomTrainerFactory().create(player);
         }
 
-        Collections.shuffle(trainer.pokemons);
-        trainer.pokemons = trainer.pokemons.subList(0, partySize);
+        List<Pokemon> pokemons = new ArrayList<>(trainer.pokemons);
+        Collections.shuffle(pokemons);
+        trainer.pokemons = pokemons.subList(0, partySize);
+
         return trainer;
     }
 }
