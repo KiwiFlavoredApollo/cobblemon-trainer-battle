@@ -112,6 +112,10 @@ Amount of money players lose when they lose against trainers
 ]
 ```
 
+## TODOs
+
+- [ ] Fix bug SimpleTM TM/TR drop
+
 ## Reference
 - [Pokemon Showdown Team Formats - Cobblemon Showdown](https://gitlab.com/cable-mc/cobblemon-showdown/-/blob/master/sim/TEAMS.md#packed-format)
 - [Cobblemon - Gitlab](https://gitlab.com/cable-mc/cobblemon)
