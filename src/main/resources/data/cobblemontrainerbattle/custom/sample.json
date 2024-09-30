@@ -1,0 +1,188 @@
+[
+    {
+        "name": "",
+        "species": "Infernape",
+        "item": "Focus Sash",
+        "ability": "Blaze",
+        "gender": "F",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Pyro Ball",
+            "Close Combat",
+            "ThunderPunch",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Sceptile",
+        "item": "Sceptilite",
+        "ability": "Overgrow",
+        "gender": "F",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Swords Dance",
+            "Bullet Seed",
+            "Scale Shot",
+            "Rock Tomb"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Torterra",
+        "item": "Yache Berry",
+        "ability": "Rock Head",
+        "gender": "F",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Shell Smash",
+            "Wood Hammer",
+            "HeadlongRush",
+            "Head Smash"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Blaziken",
+        "item": "Blazikenite",
+        "ability": "Striker",
+        "gender": "F",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Close Combat",
+            "Flare Blitz",
+            "Knock Off",
+            "U-turn"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Greninja",
+        "item": "Life Orb",
+        "ability": "Battle Bond",
+        "gender": "M",
+        "nature": "Careful",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Hydro Cannon",
+            "Dark Hole",
+            "Ice Beam",
+            "U-turn"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Inteleon",
+        "item": "Scope Lens",
+        "ability": "Sniper",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 30,
+            "def": 31,
+            "spa": 30,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Snipe Shot",
+            "Ice Beam",
+            "Hidden Power",
+            "U-turn"
+        ]
+    }
+]
