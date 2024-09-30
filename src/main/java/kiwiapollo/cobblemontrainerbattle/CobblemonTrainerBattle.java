@@ -5,6 +5,7 @@ import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.api.events.CobblemonEvents;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonSyntaxException;
 import kiwiapollo.cobblemontrainerbattle.commands.BattleFrontierCommand;
 import kiwiapollo.cobblemontrainerbattle.commands.TrainerBattleCommand;
 import kiwiapollo.cobblemontrainerbattle.commands.TrainerBattleFlatCommand;
@@ -76,50 +77,28 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
 			@Override
 			public void reload(ResourceManager manager) {
-				RADICAL_RED_TRAINERS.clear();
-				manager.findResources("radicalred", path -> path.toString().endsWith(".json"))
-						.forEach((identifier, resource) -> {
-							try (InputStream stream = resource.getInputStream()) {
-								BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(stream));
-								JsonArray jsonArray = new Gson().fromJson(bufferedReader, JsonArray.class);
-								RADICAL_RED_TRAINERS.add(new TrainerFile(identifier, jsonArray));
+				Map<String, List<TrainerFile>> resourceMap = Map.of(
+						"radicalred", RADICAL_RED_TRAINERS,
+						"inclementemerald", INCLEMENT_EMERALD_TRAINERS,
+						"custom", CUSTOM_TRAINERS
+				);
 
-							} catch (IOException e) {
-								LOGGER.error(String.format(
-										"Error occurred while loading trainer file %s", identifier.toString()));
-							}
-						});
-				LOGGER.info(String.format("Loaded radicalred trainers"));
+				for (Map.Entry<String, List<TrainerFile>> resourceEntry : resourceMap.entrySet()) {
+					resourceEntry.getValue().clear();
+					manager.findResources(resourceEntry.getKey(), path -> path.toString().endsWith(".json"))
+							.forEach((identifier, resource) -> {
+								try (InputStream stream = resource.getInputStream()) {
+									BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(stream));
+									JsonArray jsonArray = new Gson().fromJson(bufferedReader, JsonArray.class);
+									resourceEntry.getValue().add(new TrainerFile(identifier, jsonArray));
 
-				INCLEMENT_EMERALD_TRAINERS.clear();
-				manager.findResources("inclementemerald", path -> path.toString().endsWith(".json"))
-						.forEach((identifier, resource) -> {
-							try (InputStream stream = resource.getInputStream()) {
-								BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(stream));
-								JsonArray jsonArray = new Gson().fromJson(bufferedReader, JsonArray.class);
-								INCLEMENT_EMERALD_TRAINERS.add(new TrainerFile(identifier, jsonArray));
-
-							} catch (IOException e) {
-								LOGGER.error(String.format(
-										"Error occurred while loading trainer file %s", identifier.toString()));
-							}
-						});
-				LOGGER.info(String.format("Loaded inclementemerald trainers"));
-
-				CUSTOM_TRAINERS.clear();
-				manager.findResources("custom", path -> path.toString().endsWith(".json"))
-						.forEach((identifier, resource) -> {
-							try (InputStream stream = resource.getInputStream()) {
-								BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(stream));
-								JsonArray jsonArray = new Gson().fromJson(bufferedReader, JsonArray.class);
-								CUSTOM_TRAINERS.add(new TrainerFile(identifier, jsonArray));
-
-							} catch (IOException e) {
-								LOGGER.error(String.format(
-										"Error occurred while loading trainer file %s", identifier.toString()));
-							}
-						});
-				LOGGER.info(String.format("Loaded custom trainers"));
+								} catch (IOException | JsonSyntaxException e) {
+									LOGGER.error(String.format(
+											"Error occurred while loading trainer file %s", identifier.toString()));
+								}
+							});
+					LOGGER.info(String.format("Loaded %s trainers", resourceEntry.getKey()));
+				}
 			}
 		});
 	}
