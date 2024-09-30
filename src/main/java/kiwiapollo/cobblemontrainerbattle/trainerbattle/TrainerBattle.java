@@ -39,7 +39,7 @@ public class TrainerBattle {
 
                 context.getSource().getPlayer().sendMessage(
                         Text.literal("Status Quo Pokemon Battle started"));
-                CobblemonTrainerBattle.LOGGER.error(String.format("%s: versus %s",
+                CobblemonTrainerBattle.LOGGER.info(String.format("%s: versus %s",
                         context.getSource().getPlayer().getGameProfile().getName(), trainer.name));
 
                 return Unit.INSTANCE;
@@ -77,7 +77,7 @@ public class TrainerBattle {
 
                 context.getSource().getPlayer().sendMessage(
                         Text.literal("Flat Level Full Health Pokemon Battle started"));
-                CobblemonTrainerBattle.LOGGER.error(String.format("%s: versus %s",
+                CobblemonTrainerBattle.LOGGER.info(String.format("%s: versus %s",
                         context.getSource().getPlayer().getGameProfile().getName(), trainer.name));
 
                 return Unit.INSTANCE;

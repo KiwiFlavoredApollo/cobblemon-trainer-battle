@@ -84,8 +84,8 @@ public class BattleFrontier {
                 BattleFrontier.SESSIONS.get(playerUuid).battleUuid = pokemonBattle.getBattleId();
 
                 context.getSource().getPlayer().sendMessage(Text.literal("Battle Frontier Pokemon Battle started"));
-                CobblemonTrainerBattle.LOGGER.error(String.format("%s: versus %s",
-                        context.getSource().getPlayer().getGameProfile().getName()), trainer.name);
+                CobblemonTrainerBattle.LOGGER.info(String.format("%s: versus %s",
+                        context.getSource().getPlayer().getGameProfile().getName(), trainer.name));
 
                 return Unit.INSTANCE;
             });
@@ -170,7 +170,7 @@ public class BattleFrontier {
             CobblemonTrainerBattle.LOGGER.error(String.format("%s: Battle Frontier session expired due to defeat",
                     context.getSource().getPlayer().getGameProfile().getName()));
 
-        }catch (DefeatedTrainerNotExistException e) {
+        } catch (DefeatedTrainerNotExistException e) {
             context.getSource().getPlayer().sendMessage(
                     Text.literal("You do not have any defeated trainers"));
             CobblemonTrainerBattle.LOGGER.error(String.format("%s: Defeated trainers do not exist",
@@ -181,6 +181,7 @@ public class BattleFrontier {
     public static void showTradeablePokemons(CommandContext<ServerCommandSource> context) {
         try {
             assertExistValidSession(context.getSource().getPlayer());
+            assertExistDefeatedTrainer(context.getSource().getPlayer());
 
             BattleFrontierSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
             Trainer lastDefeatedTrainer = session.defeatedTrainers.get(session.defeatedTrainers.size() - 1);
@@ -190,6 +191,12 @@ public class BattleFrontier {
             context.getSource().getPlayer().sendMessage(
                     Text.literal("You do not have active Battle Frontier session"));
             CobblemonTrainerBattle.LOGGER.error(String.format("%s: Valid Battle Frontier session does not exists",
+                    context.getSource().getPlayer().getGameProfile().getName()));
+
+        } catch (DefeatedTrainerNotExistException e) {
+            context.getSource().getPlayer().sendMessage(
+                    Text.literal("You do not have any defeated trainers"));
+            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Defeated trainers do not exist",
                     context.getSource().getPlayer().getGameProfile().getName()));
         }
     }
