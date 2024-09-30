@@ -14,7 +14,7 @@ import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactors.player.BattleFrontierPlayerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.BattleFrontierNameTrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.exceptions.*;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.TotalRandomTrainerFactory;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.ThreePokemonTotalRandomTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kotlin.Unit;
@@ -74,7 +74,7 @@ public class BattleFrontier {
             assertNotPlayerDefeated(context.getSource().getPlayer());
             TrainerBattle.assertNotExistPlayerParticipatingPokemonBattle(context.getSource().getPlayer());
 
-            Trainer trainer = new TotalRandomTrainerFactory().create(context.getSource().getPlayer());
+            Trainer trainer = new ThreePokemonTotalRandomTrainerFactory().create(context.getSource().getPlayer());
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
                     new BattleSide(new BattleFrontierPlayerBattleActorFactory().create(context.getSource().getPlayer())),
