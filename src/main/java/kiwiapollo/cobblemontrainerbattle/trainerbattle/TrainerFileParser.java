@@ -9,7 +9,6 @@ import com.cobblemon.mod.common.api.pokemon.stats.Stats;
 import com.cobblemon.mod.common.pokemon.Gender;
 import com.cobblemon.mod.common.pokemon.Nature;
 import com.cobblemon.mod.common.pokemon.Pokemon;
-import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -23,8 +22,6 @@ import net.minecraft.registry.Registries;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
-import java.io.*;
-import java.nio.file.Path;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
@@ -32,7 +29,8 @@ import java.util.Objects;
 import java.util.function.BiConsumer;
 
 public class TrainerFileParser {
-    public static final int LEVEL = 50;
+    public static final int DEFAULT_LEVEL = 50;
+    public static final int MINIMUM_LEVEL = 10;
     private final ServerPlayerEntity player;
 
     public TrainerFileParser(ServerPlayerEntity player) {
@@ -63,7 +61,7 @@ public class TrainerFileParser {
     private Pokemon createPokemon(JsonObject jsonObject) {
         Identifier identifier = Identifier.of(
                 "cobblemon", jsonObject.get("species").getAsString().toLowerCase());
-        Pokemon pokemon = PokemonSpecies.INSTANCE.getByIdentifier(identifier).create(LEVEL);
+        Pokemon pokemon = PokemonSpecies.INSTANCE.getByIdentifier(identifier).create(DEFAULT_LEVEL);
 
         if (jsonObject.get("evs") != null && !jsonObject.get("evs").isJsonNull()) {
             setPokemonStats(pokemon::setEV, jsonObject.get("evs").getAsJsonObject());
@@ -116,7 +114,7 @@ public class TrainerFileParser {
     }
 
     private void assertNotRelativeLevel(int level) throws RelativePokemonLevelException {
-        if (level < 10) {
+        if (level < MINIMUM_LEVEL) {
             throw new RelativePokemonLevelException();
         }
     }

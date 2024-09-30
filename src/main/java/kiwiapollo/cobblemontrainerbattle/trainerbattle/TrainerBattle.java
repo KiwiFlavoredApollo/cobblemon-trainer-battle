@@ -14,6 +14,7 @@ import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.TrainerBattleActor
 import kiwiapollo.cobblemontrainerbattle.exceptions.EmptyPlayerPartyException;
 import kiwiapollo.cobblemontrainerbattle.exceptions.FaintPlayerPartyException;
 import kiwiapollo.cobblemontrainerbattle.exceptions.PlayerParticipatingPokemonBattleExistException;
+import kiwiapollo.cobblemontrainerbattle.exceptions.PlayerPartyBelowMinimumLevelException;
 import kotlin.Unit;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -29,6 +30,7 @@ public class TrainerBattle {
     public static void battleWithStatusQuo(CommandContext<ServerCommandSource> context, Trainer trainer) {
         try {
             assertNotEmptyPlayerParty(context.getSource().getPlayer());
+            assertPlayerPartyAtOrAboveMinimumLevel(context.getSource().getPlayer());
             assertNotFaintPlayerParty(context.getSource().getPlayer());
             assertNotExistPlayerParticipatingPokemonBattle(context.getSource().getPlayer());
 
@@ -53,6 +55,15 @@ public class TrainerBattle {
             CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
             CobblemonTrainerBattle.LOGGER.error(
                     String.format("%s: Player has no Pokemon",
+                            context.getSource().getPlayer().getGameProfile().getName()));
+
+        } catch (PlayerPartyBelowMinimumLevelException e) {
+            context.getSource().getPlayer().sendMessage(
+                    Text.literal(String.format("You must have at least one Pokemon at or above level %d", TrainerFileParser.MINIMUM_LEVEL))
+                            .formatted(Formatting.RED));
+            CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
+            CobblemonTrainerBattle.LOGGER.error(
+                    String.format("%s: Pokemons under leveled",
                             context.getSource().getPlayer().getGameProfile().getName()));
 
         } catch (FaintPlayerPartyException e) {
@@ -80,8 +91,10 @@ public class TrainerBattle {
 
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
-                    new BattleSide(new FlatLevelFullHealthPlayerBattleActorFactory().create(context.getSource().getPlayer(), LEVEL)),
-                    new BattleSide(new FlatLevelFullHealthNameTrainerBattleActorFactory().create(trainer, LEVEL)),
+                    new BattleSide(new FlatLevelFullHealthPlayerBattleActorFactory()
+                            .create(context.getSource().getPlayer(), LEVEL)),
+                    new BattleSide(new FlatLevelFullHealthNameTrainerBattleActorFactory()
+                            .create(trainer, LEVEL)),
                     false
             ).ifSuccessful(pokemonBattle -> {
                 CobblemonTrainerBattle.TRAINER_BATTLES.put(context.getSource().getPlayer().getUuid(), pokemonBattle);
@@ -114,6 +127,14 @@ public class TrainerBattle {
         PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
         if (playerPartyStore.toGappyList().stream().allMatch(Objects::isNull)) {
             throw new EmptyPlayerPartyException();
+        }
+    }
+
+    private static void assertPlayerPartyAtOrAboveMinimumLevel(ServerPlayerEntity player) throws PlayerPartyBelowMinimumLevelException {
+        PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
+        Stream<Pokemon> pokemons = playerPartyStore.toGappyList().stream().filter(Objects::nonNull);
+        if (pokemons.map(Pokemon::getLevel).allMatch(level -> level < TrainerFileParser.MINIMUM_LEVEL)) {
+            throw new PlayerPartyBelowMinimumLevelException();
         }
     }
 
