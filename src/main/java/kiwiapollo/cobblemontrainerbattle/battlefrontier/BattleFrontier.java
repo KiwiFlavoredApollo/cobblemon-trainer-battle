@@ -148,6 +148,7 @@ public class BattleFrontier {
             assertExistValidSession(context.getSource().getPlayer());
             assertNotPlayerDefeated(context.getSource().getPlayer());
             assertExistDefeatedTrainer(context.getSource().getPlayer());
+            assertNotPlayerTradedPokemon(context.getSource().getPlayer());
 
             int playerslot = IntegerArgumentType.getInteger(context, "playerslot");
             int trainerslot = IntegerArgumentType.getInteger(context, "trainerslot");
@@ -159,6 +160,7 @@ public class BattleFrontier {
 
             session.partyPokemons = new ArrayList<>(session.partyPokemons);
             session.partyPokemons.set(playerslot - 1, trainerPokemon.clone(true, true));
+            session.isTradedPokemon = true;
 
             context.getSource().getPlayer().sendMessage(
                     Text.literal("Traded ")
@@ -184,6 +186,19 @@ public class BattleFrontier {
                     Text.literal("You do not have any defeated trainers"));
             CobblemonTrainerBattle.LOGGER.error(String.format("%s: Defeated trainers do not exist",
                     context.getSource().getPlayer().getGameProfile().getName()));
+
+        } catch (PlayerTradedPokemonException e) {
+            context.getSource().getPlayer().sendMessage(
+                    Text.literal("You already traded your Pokemon"));
+            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Already traded Pokemon",
+                    context.getSource().getPlayer().getGameProfile().getName()));
+        }
+    }
+
+    private static void assertNotPlayerTradedPokemon(ServerPlayerEntity player)
+            throws PlayerTradedPokemonException {
+        if (SESSIONS.get(player.getUuid()).isTradedPokemon) {
+            throw new PlayerTradedPokemonException();
         }
     }
 

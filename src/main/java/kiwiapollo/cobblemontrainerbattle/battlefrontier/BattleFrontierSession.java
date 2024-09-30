@@ -18,6 +18,7 @@ public class BattleFrontierSession {
     public List<Pokemon> partyPokemons;
     public Instant timestamp;
     public boolean isDefeated;
+    public boolean isTradedPokemon;
 
     public BattleFrontierSession() {
         this.uuid = UUID.randomUUID();
@@ -29,5 +30,6 @@ public class BattleFrontierSession {
         this.partyPokemons = new RandomPartyPokemonsFactory().create();
         this.timestamp = Instant.now();
         this.isDefeated = false;
+        this.isTradedPokemon = false;
     }
 }

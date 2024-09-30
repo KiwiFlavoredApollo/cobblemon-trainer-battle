@@ -72,7 +72,9 @@ public class BattleVictoryEventHandler {
         ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
 
         BattleFrontier.SESSIONS.get(player.getUuid()).battleCount += 1;
-        BattleFrontier.SESSIONS.get(player.getUuid()).defeatedTrainers.add(getDefeatedTrainer(battleVictoryEvent));
+        BattleFrontier.SESSIONS.get(player.getUuid()).defeatedTrainers
+                .add(getDefeatedTrainer(battleVictoryEvent));
+        BattleFrontier.SESSIONS.get(player.getUuid()).isTradedPokemon = false;
     }
 
     private Trainer getDefeatedTrainer(BattleVictoryEvent battleVictoryEvent) {
