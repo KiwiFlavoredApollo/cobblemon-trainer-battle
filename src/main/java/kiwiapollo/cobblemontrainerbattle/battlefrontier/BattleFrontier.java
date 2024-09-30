@@ -71,7 +71,7 @@ public class BattleFrontier {
     public static void startBattle(CommandContext<ServerCommandSource> context) {
         try {
             assertExistValidSession(context.getSource().getPlayer());
-            assertPlayerNotDefeated(context.getSource().getPlayer());
+            assertNotPlayerDefeated(context.getSource().getPlayer());
             TrainerBattle.assertNotExistPlayerParticipatingPokemonBattle(context.getSource().getPlayer());
 
             Trainer trainer = new TotalRandomTrainerFactory().create(context.getSource().getPlayer());
@@ -113,7 +113,7 @@ public class BattleFrontier {
         }
     }
 
-    private static void assertPlayerNotDefeated(ServerPlayerEntity player) throws BattleFrontierDefeatedPlayerException {
+    private static void assertNotPlayerDefeated(ServerPlayerEntity player) throws BattleFrontierDefeatedPlayerException {
         BattleFrontierSession session = SESSIONS.get(player.getUuid());
         if (session.isDefeated) {
             throw new BattleFrontierDefeatedPlayerException();
@@ -146,7 +146,7 @@ public class BattleFrontier {
     public static void tradePokemon(CommandContext<ServerCommandSource> context) {
         try {
             assertExistValidSession(context.getSource().getPlayer());
-            assertPlayerNotDefeated(context.getSource().getPlayer());
+            assertNotPlayerDefeated(context.getSource().getPlayer());
             assertExistDefeatedTrainer(context.getSource().getPlayer());
 
             int playerslot = IntegerArgumentType.getInteger(context, "playerslot");
