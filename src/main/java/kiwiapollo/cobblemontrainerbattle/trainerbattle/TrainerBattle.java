@@ -126,7 +126,7 @@ public class TrainerBattle {
 
     public static void assertNotExistPlayerParticipatingPokemonBattle(ServerPlayerEntity player)
             throws PlayerParticipatingPokemonBattleExistException {
-        if (Cobblemon.INSTANCE.getBattleRegistry().getBattleByParticipatingPlayer(player) == null) {
+        if (Cobblemon.INSTANCE.getBattleRegistry().getBattleByParticipatingPlayer(player) != null) {
             throw new PlayerParticipatingPokemonBattleExistException();
         }
     }
