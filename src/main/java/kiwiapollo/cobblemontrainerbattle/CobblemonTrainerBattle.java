@@ -89,7 +89,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 										"Error occurred while loading trainer file %s", identifier.toString()));
 							}
 						});
-				LOGGER.info(String.format("Loaded Redical Red trainers"));
+				LOGGER.info(String.format("Loaded radicalred trainers"));
 
 				INCLEMENT_EMERALD_TRAINERS.clear();
 				manager.findResources("inclementemerald", path -> path.toString().endsWith(".json"))
@@ -104,7 +104,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 										"Error occurred while loading trainer file %s", identifier.toString()));
 							}
 						});
-				LOGGER.info(String.format("Loaded Inclement Emerald trainers"));
+				LOGGER.info(String.format("Loaded inclementemerald trainers"));
 
 				CUSTOM_TRAINERS.clear();
 				manager.findResources("custom", path -> path.toString().endsWith(".json"))
