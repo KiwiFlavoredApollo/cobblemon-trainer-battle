@@ -37,6 +37,7 @@
 		"cobblemon": "~1.5.1"
 	},
 	"suggests": {
-		"another-mod": "*"
+		"eights_economy_p":  "~1.1.2",
+		"luckperms": "*"
 	}
 }
