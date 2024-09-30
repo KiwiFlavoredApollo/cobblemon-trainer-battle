@@ -18,6 +18,7 @@ import kotlin.Unit;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 
 import java.util.Objects;
 import java.util.stream.Stream;
@@ -48,14 +49,14 @@ public class TrainerBattle {
             });
 
         } catch (EmptyPlayerPartyException e) {
-            context.getSource().getPlayer().sendMessage(Text.literal("You have no Pokemon"));
+            context.getSource().getPlayer().sendMessage(Text.literal("You have no Pokemon").formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
             CobblemonTrainerBattle.LOGGER.error(
                     String.format("%s: Player has no Pokemon",
                             context.getSource().getPlayer().getGameProfile().getName()));
 
         } catch (FaintPlayerPartyException e) {
-            context.getSource().getPlayer().sendMessage(Text.literal("Your Pokemons are all fainted"));
+            context.getSource().getPlayer().sendMessage(Text.literal("Your Pokemons are all fainted").formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
             CobblemonTrainerBattle.LOGGER.error(
                     String.format("%s: Pokemons are all fainted",
@@ -63,7 +64,7 @@ public class TrainerBattle {
 
         } catch (PlayerParticipatingPokemonBattleExistException e) {
             context.getSource().getPlayer().sendMessage(
-                    Text.literal("You cannot start Pokemon battle while on another"));
+                    Text.literal("You cannot start Pokemon battle while on another").formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
             CobblemonTrainerBattle.LOGGER.error(String.format("%s: Already participating in another Pokemon battle",
                     context.getSource().getPlayer().getGameProfile().getName()));

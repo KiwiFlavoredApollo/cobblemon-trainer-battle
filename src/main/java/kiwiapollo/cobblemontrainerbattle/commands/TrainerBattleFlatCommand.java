@@ -10,6 +10,7 @@ import kiwiapollo.cobblemontrainerbattle.exceptions.TrainerNameNotExistException
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.*;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 
 public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerCommandSource> {
     public TrainerBattleFlatCommand() {
@@ -49,7 +50,7 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
                                 String trainer = StringArgumentType.getString(context, "trainer");
 
                                 context.getSource().getPlayer().sendMessage(
-                                        Text.literal(String.format("Unknown trainer %s", trainer)));
+                                        Text.literal(String.format("Unknown trainer %s", trainer)).formatted(Formatting.RED));
                                 CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
                                 CobblemonTrainerBattle.LOGGER.error(String.format("%s: Unknown trainer", trainer));
 
@@ -79,7 +80,7 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
                                 String trainer = StringArgumentType.getString(context, "trainer");
 
                                 context.getSource().getPlayer().sendMessage(
-                                        Text.literal(String.format("Unknown trainer %s", trainer)));
+                                        Text.literal(String.format("Unknown trainer %s", trainer)).formatted(Formatting.RED));
                                 CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
                                 CobblemonTrainerBattle.LOGGER.error(String.format("%s: Unknown trainer", trainer));
 
@@ -108,7 +109,7 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
                                 String trainer = StringArgumentType.getString(context, "trainer");
 
                                 context.getSource().getPlayer().sendMessage(
-                                        Text.literal(String.format("Unknown trainer %s", trainer)));
+                                        Text.literal(String.format("Unknown trainer %s", trainer)).formatted(Formatting.RED));
                                 CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
                                 CobblemonTrainerBattle.LOGGER.error(String.format("%s: Unknown trainer", trainer));
 
