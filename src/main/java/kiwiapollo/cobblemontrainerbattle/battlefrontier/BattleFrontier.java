@@ -17,7 +17,7 @@ import kiwiapollo.cobblemontrainerbattle.exceptions.BattleFrontierDefeatedPlayer
 import kiwiapollo.cobblemontrainerbattle.exceptions.DefeatedTrainerNotExistException;
 import kiwiapollo.cobblemontrainerbattle.exceptions.ValidBattleFrontierSessionExistException;
 import kiwiapollo.cobblemontrainerbattle.exceptions.ValidBattleFrontierSessionNotExistException;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.RandomTrainerFactory;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.TotalRandomTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
 import kotlin.Unit;
 import net.minecraft.server.command.ServerCommandSource;
@@ -73,7 +73,7 @@ public class BattleFrontier {
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
                     new BattleSide(new BattleFrontierPlayerBattleActorFactory().create(context.getSource().getPlayer())),
-                    new BattleSide(new BattleFrontierNameTrainerBattleActorFactory().create(new RandomTrainerFactory().create(context.getSource().getPlayer()))),
+                    new BattleSide(new BattleFrontierNameTrainerBattleActorFactory().create(new TotalRandomTrainerFactory().create(context.getSource().getPlayer()))),
                     false
             ).ifSuccessful(pokemonBattle -> {
                 CobblemonTrainerBattle.TRAINER_BATTLES.put(context.getSource().getPlayer().getUuid(), pokemonBattle);

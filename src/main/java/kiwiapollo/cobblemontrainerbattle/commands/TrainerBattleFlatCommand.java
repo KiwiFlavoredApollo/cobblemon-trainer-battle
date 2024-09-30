@@ -8,9 +8,6 @@ import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.exceptions.TrainerNameNotExistException;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.*;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.InclementEmeraldTrainerFileScanner;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.RadicalRedTrainerFileScanner;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerFileScanner;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.Text;
 
@@ -27,7 +24,7 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
                 .then(LiteralArgumentBuilder.<ServerCommandSource>literal("random")
                         .requires(new PlayerCommandPredicate(String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "random")))
                         .executes(context -> {
-                            TrainerBattle.battleWithFlatLevelAndFullHealth(context, new RandomTrainerFactory().create(context.getSource().getPlayer()));
+                            TrainerBattle.battleWithFlatLevelAndFullHealth(context, new TotalRandomTrainerFactory().create(context.getSource().getPlayer()));
                             return Command.SINGLE_SUCCESS;
                         }));
     }
@@ -37,8 +34,8 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
                 .then(RequiredArgumentBuilder.<ServerCommandSource, String>argument("trainer", StringArgumentType.string())
                         .requires(new PlayerCommandPredicate(String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "trainer")))
                         .suggests((context, builder) -> {
-                            new RadicalRedTrainerFileScanner().getTrainerFiles().stream()
-                                    .map(TrainerFileScanner::toTrainerName)
+                            CobblemonTrainerBattle.RADICAL_RED_TRAINERS.stream()
+                                    .map(TrainerFileHelper::toTrainerName)
                                     .forEach(builder::suggest);
                             return builder.buildFuture();
                         })
@@ -66,8 +63,8 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
                 .then(RequiredArgumentBuilder.<ServerCommandSource, String>argument("trainer", StringArgumentType.string())
                         .requires(new PlayerCommandPredicate(String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "trainer")))
                         .suggests((context, builder) -> {
-                            new InclementEmeraldTrainerFileScanner().getTrainerFiles().stream()
-                                    .map(TrainerFileScanner::toTrainerName)
+                            CobblemonTrainerBattle.INCLEMENT_EMERALD_TRAINERS.stream()
+                                    .map(TrainerFileHelper::toTrainerName)
                                     .forEach(builder::suggest);
                             return builder.buildFuture();
                         })
@@ -96,8 +93,8 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
                 .then(RequiredArgumentBuilder.<ServerCommandSource, String>argument("trainer", StringArgumentType.string())
                         .requires(new PlayerCommandPredicate(String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "trainer")))
                         .suggests((context, builder) -> {
-                            new CustomTrainerFileScanner().getTrainerFiles().stream()
-                                    .map(TrainerFileScanner::toTrainerName)
+                            CobblemonTrainerBattle.CUSTOM_TRAINERS.stream()
+                                    .map(TrainerFileHelper::toTrainerName)
                                     .forEach(builder::suggest);
                             return builder.buildFuture();
                         })

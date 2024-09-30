@@ -39,23 +39,11 @@ public class TrainerFileParser {
         this.player = player;
     }
 
-    public Trainer parse(Path resourcePath) {
-        try {
-            InputStream resourceInputStream = new FileInputStream(resourcePath.toString());
-            InputStreamReader reader = new InputStreamReader(resourceInputStream);
-
-            BufferedReader bufferedReader = new BufferedReader(reader);
-            JsonArray trainerJsonObject = new Gson().fromJson(bufferedReader, JsonArray.class);
-            bufferedReader.close();
-
-            return new Trainer(
-                    resourcePath.getFileName().toString().replace(".json", ""),
-                    getPokemons(trainerJsonObject)
-            );
-
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    public Trainer parse(TrainerFile trainerFile) {
+        return new Trainer(
+                trainerFile.identifier.getPath(),
+                getPokemons(trainerFile.jsonArray)
+        );
     }
 
     private List<Pokemon> getPokemons(JsonArray trainer) {

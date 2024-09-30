@@ -1,17 +1,9 @@
 package kiwiapollo.cobblemontrainerbattle.trainerbattle;
 
-import kiwiapollo.cobblemontrainerbattle.exceptions.TrainerNameNotExistException;
-import net.minecraft.server.network.ServerPlayerEntity;
+import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 
-public class InclementEmeraldNameTrainerFactory {
-    TrainerFileScanner trainerFileScanner;
-
+public class InclementEmeraldNameTrainerFactory extends NameTrainerFactory {
     public InclementEmeraldNameTrainerFactory() {
-        this.trainerFileScanner = new InclementEmeraldTrainerFileScanner();
-    }
-
-    public Trainer create(ServerPlayerEntity player, String name) throws TrainerNameNotExistException {
-        trainerFileScanner.assertExistTrainerName(name);
-        return new TrainerFileParser(player).parse(trainerFileScanner.toTrainerFilePath(name));
+        super(CobblemonTrainerBattle.INCLEMENT_EMERALD_TRAINERS);
     }
 }

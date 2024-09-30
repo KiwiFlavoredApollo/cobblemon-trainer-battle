@@ -1,17 +1,9 @@
 package kiwiapollo.cobblemontrainerbattle.trainerbattle;
 
-import kiwiapollo.cobblemontrainerbattle.exceptions.TrainerNameNotExistException;
-import net.minecraft.server.network.ServerPlayerEntity;
+import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 
-public class RadicalRedNameTrainerFactory {
-    TrainerFileScanner trainerFileScanner;
-
+public class RadicalRedNameTrainerFactory extends NameTrainerFactory {
     public RadicalRedNameTrainerFactory() {
-        this.trainerFileScanner = new RadicalRedTrainerFileScanner();
-    }
-
-    public Trainer create(ServerPlayerEntity player, String name) throws TrainerNameNotExistException {
-        trainerFileScanner.assertExistTrainerName(name);
-        return new TrainerFileParser(player).parse(trainerFileScanner.toTrainerFilePath(name));
+        super(CobblemonTrainerBattle.RADICAL_RED_TRAINERS);
     }
 }

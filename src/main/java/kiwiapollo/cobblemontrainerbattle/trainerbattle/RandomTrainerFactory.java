@@ -6,14 +6,14 @@ import java.util.List;
 import java.util.Random;
 
 public class RandomTrainerFactory {
-    public Trainer create(ServerPlayerEntity player) {
-        List<Trainer> trainers = List.of(
-                new RadicalRedRandomTrainerFactory().create(player),
-                new InclementEmeraldRandomTrainerFactory().create(player),
-                new CustomRandomTrainerFactory().create(player)
-        );
+    private final List<TrainerFile> trainerFiles;
 
-        int random = new Random().nextInt(trainers.size());
-        return trainers.get(random);
+    public RandomTrainerFactory(List<TrainerFile> trainerFiles) {
+        this.trainerFiles = trainerFiles;
+    }
+
+    public Trainer create(ServerPlayerEntity player) {
+        int random = new Random().nextInt(trainerFiles.size() - 1);
+        return new TrainerFileParser(player).parse(trainerFiles.get(random));
     }
 }
