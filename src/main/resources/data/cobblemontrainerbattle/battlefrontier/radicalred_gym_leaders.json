@@ -1,0 +1,15 @@
+{
+  "trainers": [
+    "leader_brock",
+    "leader_misty",
+    "leader_lt_surge"
+  ],
+  "onVictory": {
+    "balance": 0,
+    "commands": []
+  },
+  "onDefeat": {
+    "balance": 0,
+    "commands": []
+  }
+}
