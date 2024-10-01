@@ -78,7 +78,7 @@ Trades Pokemons with trainers
 - Please make sure trainer files(`.json`) are in Smogon Teams JSON format
 - Trainer Pokemon levels can be set relative to player Pokemons
 
-### Custom Trainer Configuration (>=v1.2.0)
+### Custom Trainer Configuration (>=1.2.0)
 
 ```json
 {
@@ -112,6 +112,7 @@ Trades Pokemons with trainers
 - [ ] Add feature defining Battle Frontier trainer sequence by data pack
 - [ ] Refactor TrainerFileParser.createPokemon using JsonObject.has
 - [ ] When on Battle Frontier battle, player Pokemons are slightly damaged
+- [ ] Add subcommand for `/battlefrontier` showing winning streak
 
 ## Reference
 - [Pokemon Showdown Team Formats - Cobblemon Showdown](https://gitlab.com/cable-mc/cobblemon-showdown/-/blob/master/sim/TEAMS.md#packed-format)
