@@ -50,9 +50,17 @@ public class TrainerFileParser {
     }
 
     private boolean isExistPokemon(JsonObject pokemon) {
-        Identifier identifier = Identifier.of(
-                "cobblemon", pokemon.get("species").getAsString().toLowerCase());
-        return PokemonSpecies.INSTANCE.getByIdentifier(identifier) != null;
+        try {
+            Identifier identifier = Identifier.of(
+                    "cobblemon", pokemon.get("species").getAsString().toLowerCase());
+            return PokemonSpecies.INSTANCE.getByIdentifier(identifier) != null;
+
+        } catch (NullPointerException e) {
+            CobblemonTrainerBattle.LOGGER.error(
+                    String.format("Error occured while getting species data for %s",
+                            pokemon.get("species").getAsString()));
+            return false;
+        }
     }
 
     private Pokemon createPokemon(JsonObject jsonObject) {
