@@ -9,9 +9,9 @@
 - Trainer Pokemon levels may differ depending on their configuration
 
 ```
-/trainerbattle radicalred <trainer>
-/trainerbattle inclementemerald <trainer>
-/trainerbattle custom <trainer>
+/trainerbattle radicalred:<trainer>
+/trainerbattle inclementemerald:<trainer>
+/trainerbattle custom:<trainer>
 /trainerbattle random
 ```
 
@@ -19,12 +19,12 @@
 
 - Initiates Pokemon battle with trainers
 - Players will use Pokemons in their parties
-- Pokemon levels are set to 50 for both players and trainers
+- Pokemon levels are set to 100 for both players and trainers
 
 ```
-/trainerbattleflat radicalred <trainer>
-/trainerbattleflat inclementemerald <trainer>
-/trainerbattleflat custom <trainer>
+/trainerbattleflat radicalred:<trainer>
+/trainerbattleflat inclementemerald:<trainer>
+/trainerbattleflat custom:<trainer>
 /trainerbattleflat random
 ```
 
@@ -32,7 +32,7 @@
 
 - Mini-game for players who wants to test their luck and skills
 - Three random Pokemons are given to players
-- Players can trade Pokemons with trainers once obtain victory
+- Players can trade Pokemons with trainers once obtained victory
 
 ### 1. `/battlefrontier start`
 
@@ -63,29 +63,13 @@ Trades Pokemons with trainers
 ## Configuration
 
 ```
-"economy": "None",
-"vanillaCurrencyItem": "minecraft:diamond",
-"victoryCurrencyAmount": 0,
-"defeatCurrencyAmount": 0
+"economy": "None"
 ```
 
-### `economy`
+### Available `economy` Options
 
 - `None`
-- `Vanilla`
 - `OctoEconomy`
-
-### `vanillaCurrencyItem`
-
-Effective only when `"economy": "Vanilla"`
-
-### `victoryCurrencyAmount`
-
-Amount of money players receive when they win against trainers
-
-### `defeatCurrencyAmount`
-
-Amount of money players lose when they lose against trainers
 
 ## Custom Trainers
 
@@ -94,12 +78,40 @@ Amount of money players lose when they lose against trainers
 - Please make sure trainer files(`.json`) are in Smogon Teams JSON format
 - Trainer Pokemon levels can be set relative to player Pokemons
 
+### Custom Trainer Configuration (>=v1.2.0)
+
+```json
+{
+  "condition": {
+    "maximumPartyLevel": 100,
+    "minimumPartyLevel": 1
+  },
+  "onVictory": {
+    "balance": 0,
+    "commands": []
+  },
+  "onDefeat": {
+    "balance": 0,
+    "commands": []
+  }
+}
+```
+
+- Trainer-specific configuration files reside in separate directory from trainer files
+- Trainer-specific configuration file names must be the same as the trainer files
+- `<data pack>/data/cobblemontrainerbattle/configuration/<group>/<trainer>.json`
+- Multiple commands are supported
+- Configuration can be set globally by modifying `defaults.json`
+- `<data pack>/data/cobblemontrainerbattle/configuration/defaults.json`
+- Commands are run as server
+- `%player%` placeholder can be used to indicate player
+
 ## TODOs
 
 - [ ] Fix bug SimpleTM TM/TR drop
-- [ ] Add feature defining trainer specific configuration by data pack
 - [ ] Add feature defining Battle Frontier trainer sequence by data pack
 - [ ] Refactor TrainerFileParser.createPokemon using JsonObject.has
+- [ ] When on Battle Frontier battle, player Pokemons are slightly damaged
 
 ## Reference
 - [Pokemon Showdown Team Formats - Cobblemon Showdown](https://gitlab.com/cable-mc/cobblemon-showdown/-/blob/master/sim/TEAMS.md#packed-format)
