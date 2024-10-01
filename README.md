@@ -97,6 +97,8 @@ Amount of money players lose when they lose against trainers
 ## TODOs
 
 - [ ] Fix bug SimpleTM TM/TR drop
+- [ ] Add feature defining trainer specific configuration by data pack
+- [ ] Add feature defining Battle Frontier trainer sequence by data pack 
 
 ## Reference
 - [Pokemon Showdown Team Formats - Cobblemon Showdown](https://gitlab.com/cable-mc/cobblemon-showdown/-/blob/master/sim/TEAMS.md#packed-format)
