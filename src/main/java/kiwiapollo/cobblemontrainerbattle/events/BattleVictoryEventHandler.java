@@ -48,7 +48,7 @@ public class BattleVictoryEventHandler {
             handleOnDefeatEvent(battleVictoryEvent);
         }
 
-        CobblemonTrainerBattle.trainerBattles.remove(battleVictoryEvent.getBattle());
+        CobblemonTrainerBattle.trainerBattles.remove(battleVictoryEvent.getBattle().getBattleId());
     }
 
     private void handleOnDefeatEvent(BattleVictoryEvent battleVictoryEvent) {
@@ -57,14 +57,14 @@ public class BattleVictoryEventHandler {
                 .filter(battleActor -> !battleActor.isForPlayer(player))
                 .findFirst().get().getName().getString();
         JsonObject trainerConfiguration = CobblemonTrainerBattle.trainerFiles.get(new Identifier(trainerName)).configuration;
-        JsonObject onVictory = trainerConfiguration.get("onVictory").getAsJsonObject();
+        JsonObject onDefeat = trainerConfiguration.get("onDefeat").getAsJsonObject();
 
-        if (onVictory.has("balance") && onVictory.get("balance").isJsonPrimitive()) {
-            removePlayerBalance(onVictory.get("balance"), player);
+        if (onDefeat.has("balance") && onDefeat.get("balance").isJsonPrimitive()) {
+            removePlayerBalance(onDefeat.get("balance"), player);
         }
 
-        if (onVictory.has("commands") && onVictory.get("commands").isJsonArray()) {
-            for (JsonElement commandJsonElement : onVictory.get("commands").getAsJsonArray()) {
+        if (onDefeat.has("commands") && onDefeat.get("commands").isJsonArray()) {
+            for (JsonElement commandJsonElement : onDefeat.get("commands").getAsJsonArray()) {
                 runCommand(commandJsonElement, player);
             }
         }
@@ -92,6 +92,7 @@ public class BattleVictoryEventHandler {
     private void runCommand(JsonElement commandJsonElement, ServerPlayerEntity player) {
         try {
             String command = commandJsonElement.getAsString();
+            command = command.replace("%player%", player.getGameProfile().getName());
 
             MinecraftServer server = player.getCommandSource().getServer();
             CommandDispatcher<ServerCommandSource> dispatcher = server.getCommandManager().getDispatcher();
