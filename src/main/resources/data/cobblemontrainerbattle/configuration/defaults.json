@@ -1,11 +1,9 @@
 {
   "onVictory": {
-    "items": [],
     "balance": 0,
     "commands": []
   },
   "onDefeat": {
-    "items": [],
     "balance": 0,
     "commands": []
   }

@@ -12,16 +12,12 @@ import com.mojang.brigadier.CommandDispatcher;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battlefrontier.BattleFrontier;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.registry.Registries;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.UUID;
 import java.util.stream.StreamSupport;
 
@@ -82,12 +78,6 @@ public class BattleVictoryEventHandler {
         JsonObject trainerConfiguration = CobblemonTrainerBattle.trainerFiles.get(new Identifier(trainerName)).configuration;
         JsonObject onVictory = trainerConfiguration.get("onVictory").getAsJsonObject();
 
-        if (onVictory.has("items") && onVictory.get("items").isJsonArray()) {
-            for (JsonElement itemJsonElement : onVictory.get("items").getAsJsonArray()) {
-                giveItemToPlayer(itemJsonElement, player);
-            }
-        }
-
         if (onVictory.has("balance") && onVictory.get("balance").isJsonPrimitive()) {
             addPlayerBalance(onVictory.get("balance"), player);
         }
@@ -132,26 +122,6 @@ public class BattleVictoryEventHandler {
         } catch (UnsupportedOperationException e) {
             CobblemonTrainerBattle.LOGGER.error(
                     String.format("%s: Error occurred while removing balance from player", player.getGameProfile().getName()));
-        }
-    }
-
-    private void giveItemToPlayer(JsonElement itemJsonElement, ServerPlayerEntity player) {
-        try {
-            JsonObject itemJsonObject = itemJsonElement.getAsJsonObject();
-            Item item = Objects.requireNonNull(
-                    Registries.ITEM.get(new Identifier(itemJsonObject.get("item").getAsString())));
-            int itemCount = Objects.requireNonNull(itemJsonObject.get("count")).getAsInt();
-
-            if (!player.getInventory().insertStack(new ItemStack(item, itemCount))) {
-                player.dropItem(new ItemStack(item, itemCount), false);
-            }
-
-        } catch (IllegalStateException | NullPointerException e) {
-            CobblemonTrainerBattle.LOGGER.error(
-                    String.format("%s: Error occurred while giving item to player", player.getGameProfile().getName()));
-            if (itemJsonElement.isJsonObject()) {
-                CobblemonTrainerBattle.LOGGER.error(itemJsonElement.toString());
-            }
         }
     }
 
