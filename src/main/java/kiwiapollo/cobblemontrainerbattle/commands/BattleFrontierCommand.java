@@ -20,7 +20,8 @@ public class BattleFrontierCommand extends LiteralArgumentBuilder<ServerCommandS
                 .then(getBattleFrontierBattleCommand())
                 .then(getBattleFrontierRerollPokemonsCommand())
                 .then(getBattleFrontierTradePokemonCommand())
-                .then(getBattleFrontierShowPokemonsCommand());
+                .then(getBattleFrontierShowPokemonsCommand())
+                .then(getBattleFrontierShowWinningStreakCommand());
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getBattleFrontierStartCommand() {
@@ -76,6 +77,14 @@ public class BattleFrontierCommand extends LiteralArgumentBuilder<ServerCommandS
         return LiteralArgumentBuilder.<ServerCommandSource>literal("pokemons")
                 .executes(context -> {
                     BattleFrontier.showPartyPokemons(context);
+                    return Command.SINGLE_SUCCESS;
+                });
+    }
+
+    private ArgumentBuilder<ServerCommandSource, ?> getBattleFrontierShowWinningStreakCommand() {
+        return LiteralArgumentBuilder.<ServerCommandSource>literal("streak")
+                .executes(context -> {
+                    BattleFrontier.showWinningStreak(context);
                     return Command.SINGLE_SUCCESS;
                 });
     }
