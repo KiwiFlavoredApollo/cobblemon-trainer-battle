@@ -1,4 +1,8 @@
 {
+  "condition": {
+    "maximumPartyLevel": 100,
+    "minimumPartyLevel": 1
+  },
   "onVictory": {
     "balance": 0,
     "commands": []

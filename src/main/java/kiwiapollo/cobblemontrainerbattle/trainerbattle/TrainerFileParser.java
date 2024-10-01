@@ -30,7 +30,7 @@ import java.util.function.BiConsumer;
 
 public class TrainerFileParser {
     public static final int DEFAULT_LEVEL = 50;
-    public static final int MINIMUM_LEVEL = 10;
+    public static final int RELATIVE_LEVEL_THRESHOLD = 10;
     private final ServerPlayerEntity player;
 
     public TrainerFileParser(ServerPlayerEntity player) {
@@ -107,6 +107,7 @@ public class TrainerFileParser {
         try {
             assertNotRelativeLevel(level);
             pokemon.setLevel(level);
+
         } catch (RelativePokemonLevelException e) {
             List<Pokemon> playerPokemons = Cobblemon.INSTANCE.getStorage().getParty(player).toGappyList();
             if (playerPokemons.stream().allMatch(Objects::isNull)) return;
@@ -119,7 +120,7 @@ public class TrainerFileParser {
     }
 
     private void assertNotRelativeLevel(int level) throws RelativePokemonLevelException {
-        if (level < MINIMUM_LEVEL) {
+        if (level < RELATIVE_LEVEL_THRESHOLD) {
             throw new RelativePokemonLevelException();
         }
     }
