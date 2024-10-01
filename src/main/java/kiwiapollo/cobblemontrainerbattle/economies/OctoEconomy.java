@@ -8,38 +8,8 @@ import net.minecraft.server.network.ServerPlayerEntity;
 public class OctoEconomy implements Economy {
     public OctoEconomy() throws EconomyNotLoadedException, InvalidCurrencyAmountException {
         assertOctoEconomyLoaded();
-        assertValidVictoryCurrencyAmount();
-        assertValidDefeatCurrencyAmount();
 
         CobblemonTrainerBattle.LOGGER.info("Loaded OctoEconomy");
-    }
-
-    private void assertValidVictoryCurrencyAmount() throws InvalidCurrencyAmountException {
-        if (CobblemonTrainerBattle.CONFIG.victoryCurrencyAmount < 0) {
-            CobblemonTrainerBattle.LOGGER.error(
-                    String.format(
-                            "Invalid value set to victoryCurrencyAmount: %f",
-                            CobblemonTrainerBattle.CONFIG.victoryCurrencyAmount
-                    )
-            );
-
-            CobblemonTrainerBattle.LOGGER.error("Failed to load OctoEconomy");
-            throw new InvalidCurrencyAmountException();
-        }
-    }
-
-    private void assertValidDefeatCurrencyAmount() throws InvalidCurrencyAmountException {
-        if (CobblemonTrainerBattle.CONFIG.defeatCurrencyAmount < 0) {
-            CobblemonTrainerBattle.LOGGER.error(
-                    String.format(
-                            "Invalid value set to defeatCurrencyAmount: %f",
-                            CobblemonTrainerBattle.CONFIG.defeatCurrencyAmount
-                    )
-            );
-
-            CobblemonTrainerBattle.LOGGER.error("Failed to load OctoEconomy");
-            throw new InvalidCurrencyAmountException();
-        }
     }
 
     private void assertOctoEconomyLoaded() throws EconomyNotLoadedException {

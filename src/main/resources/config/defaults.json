@@ -1,6 +1,3 @@
 {
-  "economy": "None",
-  "vanillaCurrencyItem": "minecraft:diamond",
-  "victoryCurrencyAmount": 0,
-  "defeatCurrencyAmount": 0
+  "economy": "None"
 }
