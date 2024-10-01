@@ -13,7 +13,7 @@ public class RandomTrainerFactory {
                 CobblemonTrainerBattle.trainerFiles.keySet().stream().toList());
         Collections.shuffle(identifiers);
 
-        return new Trainer(identifiers.get(0).getPath(), new TrainerFileParser(player)
+        return new Trainer(identifiers.get(0).toString(), new TrainerFileParser(player)
                 .parse(CobblemonTrainerBattle.trainerFiles.get(identifiers.get(0))));
     }
 
