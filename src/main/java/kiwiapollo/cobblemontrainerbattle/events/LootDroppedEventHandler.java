@@ -13,7 +13,7 @@ public class LootDroppedEventHandler {
         if (!(lootDroppedEvent.getEntity() instanceof PokemonEntity)) return;
 
         PokemonEntity pokemonEntity = (PokemonEntity) lootDroppedEvent.getEntity();
-        List<UUID> battleIds = CobblemonTrainerBattle.TRAINER_BATTLES.values().stream().map(PokemonBattle::getBattleId).toList();
+        List<UUID> battleIds = CobblemonTrainerBattle.trainerBattles.values().stream().map(PokemonBattle::getBattleId).toList();
         if (!battleIds.contains(pokemonEntity.getBattleId())) return;
 
         lootDroppedEvent.cancel();

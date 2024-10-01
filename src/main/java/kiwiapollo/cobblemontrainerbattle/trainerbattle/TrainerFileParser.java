@@ -37,11 +37,8 @@ public class TrainerFileParser {
         this.player = player;
     }
 
-    public Trainer parse(TrainerFile trainerFile) {
-        return new Trainer(
-                trainerFile.identifier.getPath(),
-                getPokemons(trainerFile.jsonArray)
-        );
+    public List<Pokemon> parse(TrainerFile trainerFile) {
+        return getPokemons(trainerFile.pokemons);
     }
 
     private List<Pokemon> getPokemons(JsonArray trainer) {

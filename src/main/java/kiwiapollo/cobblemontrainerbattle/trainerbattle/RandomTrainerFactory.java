@@ -1,25 +1,29 @@
 package kiwiapollo.cobblemontrainerbattle.trainerbattle;
 
+import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.exceptions.CreateTrainerFailedException;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.util.Identifier;
 
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class RandomTrainerFactory {
-    private final List<TrainerFile> trainerFiles;
+    public Trainer create(ServerPlayerEntity player) {
+        List<Identifier> identifiers = new ArrayList<>(
+                CobblemonTrainerBattle.trainerFiles.keySet().stream().toList());
+        Collections.shuffle(identifiers);
 
-    public RandomTrainerFactory(List<TrainerFile> trainerFiles) {
-        this.trainerFiles = trainerFiles;
+        return new Trainer(identifiers.get(0).getPath(), new TrainerFileParser(player)
+                .parse(CobblemonTrainerBattle.trainerFiles.get(identifiers.get(0))));
     }
 
-    public Trainer create(ServerPlayerEntity player) throws CreateTrainerFailedException {
-        try {
-            int random = new Random().nextInt(trainerFiles.size() - 1);
-            return new TrainerFileParser(player).parse(trainerFiles.get(random));
+    public Trainer create(ServerPlayerEntity player, String group) {
+        List<Identifier> identifiers = new ArrayList<>(
+                CobblemonTrainerBattle.trainerFiles.keySet().stream()
+                .filter(identifier -> identifier.getNamespace().equals(group)).toList());
+        Collections.shuffle(identifiers);
 
-        } catch (IllegalArgumentException e) {
-            throw new CreateTrainerFailedException();
-        }
+        return new Trainer(identifiers.get(0).toString(), new TrainerFileParser(player)
+                .parse(CobblemonTrainerBattle.trainerFiles.get(identifiers.get(0))));
     }
 }

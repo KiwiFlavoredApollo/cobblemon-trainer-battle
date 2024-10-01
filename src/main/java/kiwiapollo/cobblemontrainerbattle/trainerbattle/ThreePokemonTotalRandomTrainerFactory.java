@@ -11,9 +11,9 @@ public class ThreePokemonTotalRandomTrainerFactory {
     public Trainer create(ServerPlayerEntity player) {
         int partySize = 3;
 
-        Trainer trainer = new TotalRandomTrainerFactory().create(player);
+        Trainer trainer = new RandomTrainerFactory().create(player);
         while (trainer.pokemons.size() < partySize) {
-            trainer = new TotalRandomTrainerFactory().create(player);
+            trainer = new RandomTrainerFactory().create(player);
         }
 
         List<Pokemon> pokemons = new ArrayList<>(trainer.pokemons);

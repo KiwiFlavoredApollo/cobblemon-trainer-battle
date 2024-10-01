@@ -40,7 +40,7 @@ public class TrainerBattle {
                     new BattleSide(new TrainerBattleActorFactory().create(trainer)),
                     false
             ).ifSuccessful(pokemonBattle -> {
-                CobblemonTrainerBattle.TRAINER_BATTLES.put(context.getSource().getPlayer().getUuid(), pokemonBattle);
+                CobblemonTrainerBattle.trainerBattles.put(context.getSource().getPlayer().getUuid(), pokemonBattle);
 
                 context.getSource().getPlayer().sendMessage(
                         Text.literal("Status Quo Pokemon Battle started"));
@@ -97,7 +97,7 @@ public class TrainerBattle {
                             .create(trainer, LEVEL)),
                     false
             ).ifSuccessful(pokemonBattle -> {
-                CobblemonTrainerBattle.TRAINER_BATTLES.put(context.getSource().getPlayer().getUuid(), pokemonBattle);
+                CobblemonTrainerBattle.trainerBattles.put(context.getSource().getPlayer().getUuid(), pokemonBattle);
 
                 context.getSource().getPlayer().sendMessage(
                         Text.literal("Flat Level Full Health Pokemon Battle started"));
