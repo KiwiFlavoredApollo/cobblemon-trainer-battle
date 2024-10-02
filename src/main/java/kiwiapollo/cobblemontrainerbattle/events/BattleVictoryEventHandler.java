@@ -11,11 +11,11 @@ import com.google.gson.JsonObject;
 import com.mojang.brigadier.CommandDispatcher;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battlefrontier.BattleFrontier;
+import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.util.Identifier;
 
 import java.util.List;
 import java.util.UUID;
@@ -24,12 +24,14 @@ import java.util.stream.StreamSupport;
 public class BattleVictoryEventHandler {
     public void run(BattleVictoryEvent battleVictoryEvent) {
         handleTrainerBattleVictoryEvent(battleVictoryEvent);
-        handleBattleFrontierBattleVictoryEvent(battleVictoryEvent);
+        handleGroupBattleVictoryEvent(battleVictoryEvent);
+        handleBattleFrontierVictoryEvent(battleVictoryEvent);
     }
 
     private void handleTrainerBattleVictoryEvent(BattleVictoryEvent battleVictoryEvent) {
         List<UUID> battleIds = CobblemonTrainerBattle.trainerBattles.values().stream().map(PokemonBattle::getBattleId).toList();
-        if (!battleIds.contains(battleVictoryEvent.getBattle().getBattleId())) return;
+        boolean isTrainerBattle = battleIds.contains(battleVictoryEvent.getBattle().getBattleId());
+        if (!isTrainerBattle) return;
 
         ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
         BattleActor playerBattleActor = battleVictoryEvent.getBattle().getActor(player);
@@ -126,7 +128,26 @@ public class BattleVictoryEventHandler {
         }
     }
 
-    private void handleBattleFrontierBattleVictoryEvent(BattleVictoryEvent battleVictoryEvent) {
+    private void handleGroupBattleVictoryEvent(BattleVictoryEvent battleVictoryEvent) {
+        boolean isGroupBattle = GroupBattle.SESSIONS.values().stream()
+                .map(session -> session.battleUuid)
+                .anyMatch(uuid -> uuid == battleVictoryEvent.getBattle().getBattleId());
+        if (!isGroupBattle) return;
+
+        ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
+        BattleActor playerBattleActor = battleVictoryEvent.getBattle().getActor(player);
+
+        if (battleVictoryEvent.getWinners().contains(playerBattleActor)) {
+            handleOnVictoryEvent(battleVictoryEvent);
+
+        } else {
+            handleOnDefeatEvent(battleVictoryEvent);
+        }
+
+        CobblemonTrainerBattle.trainerBattles.remove(battleVictoryEvent.getBattle().getBattleId());
+    }
+
+    private void handleBattleFrontierVictoryEvent(BattleVictoryEvent battleVictoryEvent) {
         boolean isBattleFrontierBattle = BattleFrontier.SESSIONS.values().stream()
                 .map(session -> session.battleUuid)
                 .anyMatch(uuid -> uuid == battleVictoryEvent.getBattle().getBattleId());

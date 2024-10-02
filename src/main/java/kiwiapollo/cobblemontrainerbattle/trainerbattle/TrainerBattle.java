@@ -90,7 +90,7 @@ public class TrainerBattle {
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
             return -1;
 
-        } catch (IllegalPlayerStateException e) {
+        } catch (InvalidPlayerStateException e) {
             context.getSource().getPlayer().sendMessage(
                     Text.literal("").formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
@@ -151,7 +151,7 @@ public class TrainerBattle {
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
             return -1;
 
-        } catch (IllegalPlayerStateException e) {
+        } catch (InvalidPlayerStateException e) {
             context.getSource().getPlayer().sendMessage(
                     Text.literal("").formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
@@ -215,37 +215,37 @@ public class TrainerBattle {
         }
     }
 
-    private static void assertNotEmptyPlayerParty(ServerPlayerEntity player) throws IllegalPlayerStateException {
+    private static void assertNotEmptyPlayerParty(ServerPlayerEntity player) throws InvalidPlayerStateException {
         PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
         if (playerPartyStore.toGappyList().stream().allMatch(Objects::isNull)) {
-            throw new IllegalPlayerStateException(
+            throw new InvalidPlayerStateException(
                     String.format("Player has no Pokemon: %s", player.getGameProfile().getName()));
         }
     }
 
     private static void assertPlayerPartyAtOrAboveRelativeLevelThreshold(ServerPlayerEntity player)
-            throws IllegalPlayerStateException {
+            throws InvalidPlayerStateException {
         PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
         Stream<Pokemon> pokemons = playerPartyStore.toGappyList().stream().filter(Objects::nonNull);
         if (pokemons.map(Pokemon::getLevel).allMatch(level -> level < TrainerFileParser.RELATIVE_LEVEL_THRESHOLD)) {
-            throw new IllegalPlayerStateException(
+            throw new InvalidPlayerStateException(
                     String.format("Pokemons are under leveled: %s", player.getGameProfile().getName()));
         }
     }
 
-    private static void assertNotFaintPlayerParty(ServerPlayerEntity player) throws IllegalPlayerStateException {
+    private static void assertNotFaintPlayerParty(ServerPlayerEntity player) throws InvalidPlayerStateException {
         PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
         Stream<Pokemon> pokemons = playerPartyStore.toGappyList().stream().filter(Objects::nonNull);
         if (pokemons.allMatch(Pokemon::isFainted)) {
-            throw new IllegalPlayerStateException(
+            throw new InvalidPlayerStateException(
                     String.format("Pokemons are all fainted: %s", player.getGameProfile().getName()));
         }
     }
 
     public static void assertNotExistPlayerParticipatingPokemonBattle(ServerPlayerEntity player)
-            throws IllegalPlayerStateException {
+            throws InvalidPlayerStateException {
         if (Cobblemon.INSTANCE.getBattleRegistry().getBattleByParticipatingPlayer(player) != null) {
-            throw new IllegalPlayerStateException(
+            throw new InvalidPlayerStateException(
                     String.format("Already participating in another Pokemon battle: %s",
                             player.getGameProfile().getName()));
         }
