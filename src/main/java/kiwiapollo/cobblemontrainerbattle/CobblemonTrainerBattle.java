@@ -48,7 +48,6 @@ public class CobblemonTrainerBattle implements ModInitializer {
 	public static Map<UUID, PokemonBattle> trainerBattles = new HashMap<>();
 	public static JsonObject defaultTrainerConfiguration = new JsonObject();
 	public static Map<String, TrainerFile> trainerFiles = new HashMap<>();
-	public static JsonObject defaultGroupConfiguration = new JsonObject();
 	public static Map<String, GroupFile> groupFiles = new HashMap<>();
 
 	@Override
@@ -91,8 +90,6 @@ public class CobblemonTrainerBattle implements ModInitializer {
 			public void reload(ResourceManager resourceManager) {
 				defaultTrainerConfiguration = loadDefaultTrainerConfiguration(resourceManager);
 				trainerFiles = loadTrainerFiles(resourceManager);
-
-				defaultGroupConfiguration = loadDefaultGroupConfiguration(resourceManager);
 				groupFiles = loadGroupFiles(resourceManager);
 			}
 		});
@@ -101,17 +98,6 @@ public class CobblemonTrainerBattle implements ModInitializer {
 	private JsonObject loadDefaultTrainerConfiguration(ResourceManager resourceManager) {
 		try (InputStream inputStream = resourceManager.getResourceOrThrow(
 				Identifier.of(NAMESPACE, "battletrainer/defaults.json")).getInputStream()) {
-			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-			return new Gson().fromJson(bufferedReader, JsonObject.class);
-
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
-	}
-
-	private JsonObject loadDefaultGroupConfiguration(ResourceManager resourceManager) {
-		try (InputStream inputStream = resourceManager.getResourceOrThrow(
-				Identifier.of(NAMESPACE, "battlegroup/defaults.json")).getInputStream()) {
 			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
 			return new Gson().fromJson(bufferedReader, JsonObject.class);
 

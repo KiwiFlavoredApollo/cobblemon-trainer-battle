@@ -6,7 +6,7 @@ import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battlegroup.BattleGroup;
+import kiwiapollo.cobblemontrainerbattle.battlegroup.GroupBattle;
 import kiwiapollo.cobblemontrainerbattle.exceptions.ExecuteCommandFaildException;
 import net.minecraft.server.command.ServerCommandSource;
 
@@ -16,12 +16,12 @@ public class BattleGroupCommand extends LiteralArgumentBuilder<ServerCommandSour
         super("battlegroup");
 
         this.requires(new PlayerCommandPredicate(String.format("%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral())))
-                .then(getBattleGroupStartCommand())
-                .then(getBattleGroupStopCommand())
-                .then(getBattleGroupBattleCommand());
+                .then(getStartSessionCommand())
+                .then(getStopSessionCommand())
+                .then(getStartBattleCommand());
     }
 
-    private ArgumentBuilder<ServerCommandSource, ?> getBattleGroupStartCommand() {
+    private ArgumentBuilder<ServerCommandSource, ?> getStartSessionCommand() {
         return LiteralArgumentBuilder.<ServerCommandSource>literal("start")
                 .then(RequiredArgumentBuilder.<ServerCommandSource, String>argument("group", StringArgumentType.greedyString())
                         .suggests((context, builder) -> {
@@ -30,7 +30,8 @@ public class BattleGroupCommand extends LiteralArgumentBuilder<ServerCommandSour
                         })
                         .executes(context -> {
                             try {
-                                BattleGroup.startSession(context);
+                                GroupBattle.startSession(context);
+                                GroupBattle.battleGroupWithStatusQuo(context);
                                 return Command.SINGLE_SUCCESS;
 
                             } catch (ExecuteCommandFaildException e) {
@@ -39,11 +40,11 @@ public class BattleGroupCommand extends LiteralArgumentBuilder<ServerCommandSour
                         }));
     }
 
-    private ArgumentBuilder<ServerCommandSource, ?> getBattleGroupStopCommand() {
+    private ArgumentBuilder<ServerCommandSource, ?> getStopSessionCommand() {
         return LiteralArgumentBuilder.<ServerCommandSource>literal("stop")
                 .executes(context -> {
                     try {
-                        BattleGroup.stopSession(context);
+                        GroupBattle.stopSession(context);
                         return Command.SINGLE_SUCCESS;
 
                     } catch (ExecuteCommandFaildException e) {
@@ -52,11 +53,11 @@ public class BattleGroupCommand extends LiteralArgumentBuilder<ServerCommandSour
                 });
     }
 
-    private ArgumentBuilder<ServerCommandSource, ?> getBattleGroupBattleCommand() {
+    private ArgumentBuilder<ServerCommandSource, ?> getStartBattleCommand() {
         return LiteralArgumentBuilder.<ServerCommandSource>literal("battle")
                 .executes(context -> {
                     try {
-                        BattleGroup.battleGroupWithStatusQuo(context);
+                        GroupBattle.battleGroupWithStatusQuo(context);
                         return Command.SINGLE_SUCCESS;
 
                     } catch (ExecuteCommandFaildException e) {

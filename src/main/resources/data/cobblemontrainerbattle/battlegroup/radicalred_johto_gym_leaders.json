@@ -1,0 +1,20 @@
+{
+  "trainers": [
+    "radicalred/leader_falkner.json",
+    "radicalred/leader_bugsy.json",
+    "radicalred/leader_whitney.json",
+    "radicalred/leader_morty.json",
+    "radicalred/leader_chuck.json",
+    "radicalred/leader_jasmine.json",
+    "radicalred/leader_pryce.json",
+    "radicalred/leader_clair.json"
+  ],
+  "onVictory": {
+    "balance": 0,
+    "commands": []
+  },
+  "onDefeat": {
+    "balance": 0,
+    "commands": []
+  }
+}

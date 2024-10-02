@@ -5,17 +5,18 @@ import com.cobblemon.mod.common.api.storage.party.PlayerPartyStore;
 import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.BattleSide;
 import com.cobblemon.mod.common.pokemon.Pokemon;
+import com.google.gson.JsonElement;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battleactors.player.BattleFrontierPlayerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactors.player.FlatLevelFullHealthPlayerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactors.player.StatusQuoPlayerBattleActorFactory;
-import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.BattleFrontierNameTrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.FlatLevelFullHealthTrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.TrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.exceptions.*;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.*;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.SpecificTrainerFactory;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerFileParser;
 import kotlin.Unit;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -24,10 +25,13 @@ import net.minecraft.util.Formatting;
 
 import java.time.Duration;
 import java.time.Instant;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+import java.util.UUID;
 import java.util.stream.Stream;
 
-public class BattleGroup {
+public class GroupBattle {
     public static final int FLAT_LEVEL = 100;
     public static Map<UUID, BattleGroupSession> SESSIONS = new HashMap<>();
 
@@ -36,14 +40,20 @@ public class BattleGroup {
             assertNotExistValidSession(context.getSource().getPlayer());
 
             String groupFilePath = StringArgumentType.getString(context, "group");
-            BattleGroup.SESSIONS.put(context.getSource().getPlayer().getUuid(), new BattleGroupSession(groupFilePath));
+            assertValidGroupFile(groupFilePath);
 
-            context.getSource().getPlayer().sendMessage(Text.literal("battle group session is started"));
+            GroupBattle.SESSIONS.put(context.getSource().getPlayer().getUuid(), new BattleGroupSession(groupFilePath));
+
+            context.getSource().getPlayer().sendMessage(Text.literal("Battle group session is started"));
             CobblemonTrainerBattle.LOGGER.info(String.format("%s: Started battle group session",
                     context.getSource().getPlayer().getGameProfile().getName()));
 
         } catch (ValidBattleFrontierSessionExistException e) {
             printValidBattleGroupSessionExistErrorMessage(context);
+            throw new ExecuteCommandFaildException();
+
+        } catch (InvalidGroupFileException e) {
+            printInvalidGroupFileErrorMessage(context);
             throw new ExecuteCommandFaildException();
         }
     }
@@ -52,9 +62,9 @@ public class BattleGroup {
         try {
             assertExistValidSession(context.getSource().getPlayer());
 
-            BattleGroup.SESSIONS.remove(context.getSource().getPlayer().getUuid());
+            GroupBattle.SESSIONS.remove(context.getSource().getPlayer().getUuid());
 
-            context.getSource().getPlayer().sendMessage(Text.literal("battle group session is stopped"));
+            context.getSource().getPlayer().sendMessage(Text.literal("Battle group session is stopped"));
             CobblemonTrainerBattle.LOGGER.info(String.format("%s: Stopped battle group session",
                     context.getSource().getPlayer().getGameProfile().getName()));
 
@@ -84,7 +94,7 @@ public class BattleGroup {
             ).ifSuccessful(pokemonBattle -> {
                 UUID playerUuid = context.getSource().getPlayer().getUuid();
                 CobblemonTrainerBattle.trainerBattles.put(playerUuid, pokemonBattle);
-                BattleGroup.SESSIONS.get(playerUuid).battleUuid = pokemonBattle.getBattleId();
+                GroupBattle.SESSIONS.get(playerUuid).battleUuid = pokemonBattle.getBattleId();
 
                 context.getSource().getPlayer().sendMessage(
                         Text.literal("battlegroup Pokemon battle started"));
@@ -142,7 +152,7 @@ public class BattleGroup {
             ).ifSuccessful(pokemonBattle -> {
                 UUID playerUuid = context.getSource().getPlayer().getUuid();
                 CobblemonTrainerBattle.trainerBattles.put(playerUuid, pokemonBattle);
-                BattleGroup.SESSIONS.get(playerUuid).battleUuid = pokemonBattle.getBattleId();
+                GroupBattle.SESSIONS.get(playerUuid).battleUuid = pokemonBattle.getBattleId();
 
                 context.getSource().getPlayer().sendMessage(
                         Text.literal("battlegroup Pokemon battle started"));
@@ -199,7 +209,7 @@ public class BattleGroup {
 
     private static void printValidBattleGroupSessionExistErrorMessage(CommandContext<ServerCommandSource> context) {
         context.getSource().getPlayer().sendMessage(
-                Text.literal("battle group session already exists").formatted(Formatting.RED));
+                Text.literal("Battle group session already exists").formatted(Formatting.RED));
         CobblemonTrainerBattle.LOGGER.error("An error occurred while executing battlegroup command");
         CobblemonTrainerBattle.LOGGER.error(String.format("%s: Valid Battle Group session exists",
                 context.getSource().getPlayer().getGameProfile().getName()));
@@ -252,6 +262,28 @@ public class BattleGroup {
                 String.format("%s: Player has defeated all trainers", context.getSource().getPlayer().getGameProfile().getName()));
     }
 
+    private static void printInvalidGroupFileErrorMessage(CommandContext<ServerCommandSource> context) {
+        String groupFilePath = StringArgumentType.getString(context, "group");
+        context.getSource().getPlayer().sendMessage(
+                Text.literal(String.format("Invalid group file: %s", groupFilePath)).formatted(Formatting.RED));
+        CobblemonTrainerBattle.LOGGER.error("An error occurred while executing battlegroup command");
+        CobblemonTrainerBattle.LOGGER.error("Invalid group file");
+    }
+
+    private static void assertValidGroupFile(String groupFilePath) throws InvalidGroupFileException {
+        try {
+            if (!CobblemonTrainerBattle.groupFiles.get(groupFilePath).configuration
+                    .get("trainers").getAsJsonArray()
+                    .asList().stream()
+                    .map(JsonElement::getAsString)
+                    .allMatch(CobblemonTrainerBattle.trainerFiles::containsKey)) {
+                throw new InvalidGroupFileException();
+            };
+        } catch (NullPointerException | IllegalStateException | AssertionError | ClassCastException e) {
+            throw new InvalidGroupFileException();
+        }
+    }
+
     private static void assertNotPlayerDefeated(ServerPlayerEntity player) throws BattleFrontierDefeatedPlayerException {
         BattleGroupSession session = SESSIONS.get(player.getUuid());
         if (session.isDefeated) {
@@ -282,7 +314,7 @@ public class BattleGroup {
         return Instant.now().isBefore(session.timestamp.plus(Duration.ofHours(24)));
     }
 
-    public static void assertNotExistPlayerParticipatingPokemonBattle(ServerPlayerEntity player)
+    private static void assertNotExistPlayerParticipatingPokemonBattle(ServerPlayerEntity player)
             throws PlayerParticipatingPokemonBattleExistException {
         if (Cobblemon.INSTANCE.getBattleRegistry().getBattleByParticipatingPlayer(player) != null) {
             throw new PlayerParticipatingPokemonBattleExistException();
