@@ -6,6 +6,6 @@ import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
 
 public class BattleFrontierNameTrainerBattleActorFactory {
     public BattleActor create(Trainer trainer) {
-        return new FlatLevelFullHealthNameTrainerBattleActorFactory().create(trainer, BattleFrontier.LEVEL);
+        return new FlatLevelFullHealthTrainerBattleActorFactory().create(trainer, BattleFrontier.LEVEL);
     }
 }

@@ -4,7 +4,7 @@ import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
 
-public class FlatLevelFullHealthNameTrainerBattleActorFactory {
+public class FlatLevelFullHealthTrainerBattleActorFactory {
     public BattleActor create(Trainer trainer, int level) {
         trainer.pokemons.forEach(Pokemon::heal);
         trainer.pokemons.forEach(pokemon -> pokemon.setLevel(level));

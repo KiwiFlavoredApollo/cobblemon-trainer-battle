@@ -1,17 +1,16 @@
 package kiwiapollo.cobblemontrainerbattle.trainerbattle;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.exceptions.TrainerIdentifierNotExistException;
+import kiwiapollo.cobblemontrainerbattle.exceptions.CreateTrainerFailedException;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.util.Identifier;
 
 public class SpecificTrainerFactory {
-    public Trainer create(ServerPlayerEntity player, Identifier identifier) throws TrainerIdentifierNotExistException {
-        if (!CobblemonTrainerBattle.trainerFiles.containsKey(identifier)) {
-            throw new TrainerIdentifierNotExistException();
+    public Trainer create(ServerPlayerEntity player, String resourcePath) throws CreateTrainerFailedException {
+        if (!CobblemonTrainerBattle.trainerFiles.containsKey(resourcePath)) {
+            throw new CreateTrainerFailedException();
         }
 
-        TrainerFile trainerFile = CobblemonTrainerBattle.trainerFiles.get(identifier);
-        return new Trainer(identifier.toString(), new TrainerFileParser(player).parse(trainerFile));
+        TrainerFile trainerFile = CobblemonTrainerBattle.trainerFiles.get(resourcePath);
+        return new Trainer(resourcePath, new TrainerFileParser(player).parse(trainerFile));
     }
 }

@@ -118,6 +118,11 @@ Trades Pokemons with trainers
 - [ ] New battlefrontier replaces battlestreak
 - [ ] Create BattleFrontierArcadeSession
 
+```
+/battletrainer
+/battlegroup
+```
+
 ## Reference
 - [Pokemon Showdown Team Formats - Cobblemon Showdown](https://gitlab.com/cable-mc/cobblemon-showdown/-/blob/master/sim/TEAMS.md#packed-format)
 - [Cobblemon - Gitlab](https://gitlab.com/cable-mc/cobblemon)

@@ -1,29 +1,29 @@
 package kiwiapollo.cobblemontrainerbattle.trainerbattle;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.exceptions.CreateTrainerFailedException;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.util.Identifier;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class RandomTrainerFactory {
     public Trainer create(ServerPlayerEntity player) {
-        List<Identifier> identifiers = new ArrayList<>(
+        List<String> trainerFilePaths = new ArrayList<>(
                 CobblemonTrainerBattle.trainerFiles.keySet().stream().toList());
-        Collections.shuffle(identifiers);
+        Collections.shuffle(trainerFilePaths);
 
-        return new Trainer(identifiers.get(0).toString(), new TrainerFileParser(player)
-                .parse(CobblemonTrainerBattle.trainerFiles.get(identifiers.get(0))));
+        return new Trainer(trainerFilePaths.get(0), new TrainerFileParser(player)
+                .parse(CobblemonTrainerBattle.trainerFiles.get(trainerFilePaths.get(0))));
     }
 
     public Trainer create(ServerPlayerEntity player, String group) {
-        List<Identifier> identifiers = new ArrayList<>(
+        List<String> trainerFilePaths = new ArrayList<>(
                 CobblemonTrainerBattle.trainerFiles.keySet().stream()
-                .filter(identifier -> identifier.getNamespace().equals(group)).toList());
-        Collections.shuffle(identifiers);
+                        .filter(identifier -> identifier.equals(group)).toList());
+        Collections.shuffle(trainerFilePaths);
 
-        return new Trainer(identifiers.get(0).toString(), new TrainerFileParser(player)
-                .parse(CobblemonTrainerBattle.trainerFiles.get(identifiers.get(0))));
+        return new Trainer(trainerFilePaths.get(0), new TrainerFileParser(player)
+                .parse(CobblemonTrainerBattle.trainerFiles.get(trainerFilePaths.get(0))));
     }
 }

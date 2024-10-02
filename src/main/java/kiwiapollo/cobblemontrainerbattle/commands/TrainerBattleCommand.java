@@ -6,12 +6,13 @@ import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.exceptions.TrainerIdentifierNotExistException;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.*;
+import kiwiapollo.cobblemontrainerbattle.exceptions.CreateTrainerFailedException;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.RandomTrainerFactory;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.SpecificTrainerFactory;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
-import net.minecraft.util.Identifier;
 
 public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSource> {
     public TrainerBattleCommand() {
@@ -39,10 +40,10 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
                 .executes(context -> {
                     try {
                         String trainer = StringArgumentType.getString(context, "trainer");
-                        TrainerBattle.battleWithStatusQuo(context, new SpecificTrainerFactory().create(context.getSource().getPlayer(), new Identifier(trainer)));
+                        TrainerBattle.battleWithStatusQuo(context, new SpecificTrainerFactory().create(context.getSource().getPlayer(), trainer));
                         return Command.SINGLE_SUCCESS;
 
-                    } catch (TrainerIdentifierNotExistException e) {
+                    } catch (CreateTrainerFailedException e) {
                         String trainer = StringArgumentType.getString(context, "trainer");
                         context.getSource().getPlayer().sendMessage(
                                 Text.literal(String.format("Unknown trainer %s", trainer)).formatted(Formatting.RED));

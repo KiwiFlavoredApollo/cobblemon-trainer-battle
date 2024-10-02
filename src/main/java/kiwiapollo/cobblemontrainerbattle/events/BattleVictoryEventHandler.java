@@ -56,7 +56,7 @@ public class BattleVictoryEventHandler {
         String trainerName = StreamSupport.stream(battleVictoryEvent.getBattle().getActors().spliterator(), false)
                 .filter(battleActor -> !battleActor.isForPlayer(player))
                 .findFirst().get().getName().getString();
-        JsonObject trainerConfiguration = CobblemonTrainerBattle.trainerFiles.get(new Identifier(trainerName)).configuration;
+        JsonObject trainerConfiguration = CobblemonTrainerBattle.trainerFiles.get(trainerName).configuration;
         JsonObject onDefeat = trainerConfiguration.get("onDefeat").getAsJsonObject();
 
         if (onDefeat.has("balance") && onDefeat.get("balance").isJsonPrimitive()) {
@@ -75,7 +75,7 @@ public class BattleVictoryEventHandler {
         String trainerName = StreamSupport.stream(battleVictoryEvent.getBattle().getActors().spliterator(), false)
                 .filter(battleActor -> !battleActor.isForPlayer(player))
                 .findFirst().get().getName().getString();
-        JsonObject trainerConfiguration = CobblemonTrainerBattle.trainerFiles.get(new Identifier(trainerName)).configuration;
+        JsonObject trainerConfiguration = CobblemonTrainerBattle.trainerFiles.get(trainerName).configuration;
         JsonObject onVictory = trainerConfiguration.get("onVictory").getAsJsonObject();
 
         if (onVictory.has("balance") && onVictory.get("balance").isJsonPrimitive()) {

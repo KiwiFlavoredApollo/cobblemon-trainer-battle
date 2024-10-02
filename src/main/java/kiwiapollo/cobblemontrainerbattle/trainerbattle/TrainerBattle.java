@@ -9,7 +9,7 @@ import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactors.player.FlatLevelFullHealthPlayerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactors.player.StatusQuoPlayerBattleActorFactory;
-import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.FlatLevelFullHealthNameTrainerBattleActorFactory;
+import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.FlatLevelFullHealthTrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.TrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.exceptions.*;
 import kotlin.Unit;
@@ -99,7 +99,7 @@ public class TrainerBattle {
                     BattleFormat.Companion.getGEN_9_SINGLES(),
                     new BattleSide(new FlatLevelFullHealthPlayerBattleActorFactory()
                             .create(context.getSource().getPlayer(), LEVEL)),
-                    new BattleSide(new FlatLevelFullHealthNameTrainerBattleActorFactory()
+                    new BattleSide(new FlatLevelFullHealthTrainerBattleActorFactory()
                             .create(trainer, LEVEL)),
                     false
             ).ifSuccessful(pokemonBattle -> {

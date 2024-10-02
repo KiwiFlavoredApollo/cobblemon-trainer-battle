@@ -7,16 +7,15 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
-import kiwiapollo.cobblemontrainerbattle.commands.BattleFrontierCommand;
-import kiwiapollo.cobblemontrainerbattle.commands.TrainerBattleCommand;
-import kiwiapollo.cobblemontrainerbattle.commands.TrainerBattleFlatCommand;
+import kiwiapollo.cobblemontrainerbattle.battlegroup.GroupFile;
+import kiwiapollo.cobblemontrainerbattle.commands.*;
 import kiwiapollo.cobblemontrainerbattle.common.Config;
 import kiwiapollo.cobblemontrainerbattle.common.ConfigLoader;
 import kiwiapollo.cobblemontrainerbattle.common.EconomyFactory;
 import kiwiapollo.cobblemontrainerbattle.economies.Economy;
 import kiwiapollo.cobblemontrainerbattle.events.BattleVictoryEventHandler;
 import kiwiapollo.cobblemontrainerbattle.events.LootDroppedEventHandler;
-import kiwiapollo.cobblemontrainerbattle.exceptions.LoadingTrainerFileFailedException;
+import kiwiapollo.cobblemontrainerbattle.exceptions.LoadingResourceFailedException;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerFile;
 import kotlin.Unit;
 import net.fabricmc.api.ModInitializer;
@@ -31,10 +30,14 @@ import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.*;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 public class CobblemonTrainerBattle implements ModInitializer {
 	public static final String NAMESPACE = "cobblemontrainerbattle";
@@ -43,9 +46,10 @@ public class CobblemonTrainerBattle implements ModInitializer {
 	public static final Economy ECONOMY = EconomyFactory.create(CONFIG.economy);
 
 	public static Map<UUID, PokemonBattle> trainerBattles = new HashMap<>();
-	public static Map<Identifier, TrainerFile> trainerFiles = new HashMap<>();
 	public static JsonObject defaultTrainerConfiguration = new JsonObject();
-	public static Map<Identifier, JsonObject> battleStreaks = new HashMap<>();
+	public static Map<String, TrainerFile> trainerFiles = new HashMap<>();
+	public static JsonObject defaultGroupConfiguration = new JsonObject();
+	public static Map<String, GroupFile> groupFiles = new HashMap<>();
 
 	@Override
 	public void onInitialize() {
@@ -53,6 +57,8 @@ public class CobblemonTrainerBattle implements ModInitializer {
 			dispatcher.register(new TrainerBattleCommand());
 			dispatcher.register(new TrainerBattleFlatCommand());
 			dispatcher.register(new BattleFrontierCommand());
+			dispatcher.register(new BattleGroupCommand());
+			dispatcher.register(new BattleGroupFlatCommand());
 		});
 
 		CobblemonEvents.BATTLE_VICTORY.subscribe(Priority.NORMAL, battleVictoryEvent -> {
@@ -83,44 +89,96 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
 			@Override
 			public void reload(ResourceManager resourceManager) {
-				try (InputStream inputStream = resourceManager.getResourceOrThrow(
-						Identifier.of(NAMESPACE, "configuration/defaults.json")).getInputStream()) {
-					BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-					defaultTrainerConfiguration = new Gson().fromJson(bufferedReader, JsonObject.class);
+				defaultTrainerConfiguration = loadDefaultTrainerConfiguration(resourceManager);
+				trainerFiles = loadTrainerFiles(resourceManager);
 
-				} catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-
-                List<String> trainerGroups = List.of(
-						"radicalred",
-						"inclementemerald",
-						"custom"
-				);
-
-				trainerFiles.clear();
-				for (String trainerGroup : trainerGroups) {
-					resourceManager.findResources(trainerGroup, path -> path.toString().endsWith(".json"))
-							.forEach((identifier, resource) -> {
-								try {
-									JsonArray pokemons = loadTrainerPokemons(resource);
-									JsonObject configuration = loadTrainerConfiguration(resourceManager, identifier);
-									trainerFiles.put(toTrainerIdentifier(identifier), new TrainerFile(pokemons, configuration));
-
-								} catch (LoadingTrainerFileFailedException e) {
-									LOGGER.error(String.format(
-											"Error occurred while loading trainer file %s", identifier.toString()));
-								}
-							});
-					LOGGER.info(String.format("Loaded %s trainers", trainerGroup));
-				}
+				defaultGroupConfiguration = loadDefaultGroupConfiguration(resourceManager);
+				groupFiles = loadGroupFiles(resourceManager);
 			}
 		});
 	}
 
+	private JsonObject loadDefaultTrainerConfiguration(ResourceManager resourceManager) {
+		try (InputStream inputStream = resourceManager.getResourceOrThrow(
+				Identifier.of(NAMESPACE, "battletrainer/defaults.json")).getInputStream()) {
+			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+			return new Gson().fromJson(bufferedReader, JsonObject.class);
+
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	private JsonObject loadDefaultGroupConfiguration(ResourceManager resourceManager) {
+		try (InputStream inputStream = resourceManager.getResourceOrThrow(
+				Identifier.of(NAMESPACE, "battlegroup/defaults.json")).getInputStream()) {
+			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+			return new Gson().fromJson(bufferedReader, JsonObject.class);
+
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	private Map<String, TrainerFile> loadTrainerFiles(ResourceManager resourceManager) {
+		List<String> namespaces = List.of(
+				"radicalred",
+				"inclementemerald",
+				"custom"
+		);
+
+		Map<String, TrainerFile> trainerFiles = new HashMap<>();
+		for (String namespace : namespaces) {
+			resourceManager.findResources(namespace, this::isJsonFile)
+					.forEach((identifier, resource) -> {
+						try {
+							// identifier: cobblemontrainerbattle:custom/custom_trainer.json
+							JsonArray pokemons = loadTrainerPokemons(resource);
+							JsonObject configuration = loadTrainerConfiguration(resourceManager, identifier);
+							trainerFiles.put(identifier.getPath(), new TrainerFile(pokemons, configuration));
+
+						} catch (LoadingResourceFailedException e) {
+							LOGGER.error(String.format("Error occurred while loading trainer file %s", identifier.toString()));
+						}
+					});
+			LOGGER.info(String.format("Loaded %s trainer files", namespace));
+		}
+		return trainerFiles;
+	}
+
+	private Map<String, GroupFile> loadGroupFiles(ResourceManager resourceManager) {
+		Map<String, GroupFile> groupFiles = new HashMap<>();
+		String startingPath = "battlegroup";
+		resourceManager.findResources(startingPath, this::isJsonFile)
+				.forEach((identifier, resource) -> {
+					try {
+						// identifier: cobblemontrainerbattle:battlegroup/custom_trainer_group.json
+						JsonObject configuration = loadGroupConfiguration(resourceManager, identifier);
+						String path = identifier.getPath().replace(String.format("%s/", startingPath), "");
+						groupFiles.put(path, new GroupFile(configuration));
+
+					} catch (LoadingResourceFailedException e) {
+						LOGGER.error(String.format("Error occurred while loading group file %s", identifier.toString()));
+					}
+				});
+		LOGGER.info("Loaded group files");
+		return groupFiles;
+	}
+
+
+	private JsonArray loadTrainerPokemons(Resource resource) throws LoadingResourceFailedException {
+		try (InputStream inputStream = resource.getInputStream()) {
+			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+			return new Gson().fromJson(bufferedReader, JsonArray.class);
+
+		} catch (IOException | JsonSyntaxException e) {
+			throw new LoadingResourceFailedException();
+		}
+	}
+
 	private JsonObject loadTrainerConfiguration(ResourceManager resourceManager, Identifier identifier) {
 		try (InputStream inputStream = resourceManager
-				.getResourceOrThrow(toTrainerConfigurationFileIdentifier(identifier))
+				.getResourceOrThrow(new Identifier(String.format("battletrainer/%s", identifier.getPath())))
 				.getInputStream()) {
 			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
 			return new Gson().fromJson(bufferedReader, JsonObject.class);
@@ -130,24 +188,20 @@ public class CobblemonTrainerBattle implements ModInitializer {
 		}
 	}
 
-	private JsonArray loadTrainerPokemons(Resource resource) throws LoadingTrainerFileFailedException {
-		try (InputStream inputStream = resource.getInputStream()) {
+	private JsonObject loadGroupConfiguration(ResourceManager resourceManager, Identifier identifier)
+			throws LoadingResourceFailedException {
+		try (InputStream inputStream = resourceManager
+				.getResourceOrThrow(identifier)
+				.getInputStream()) {
 			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-			return new Gson().fromJson(bufferedReader, JsonArray.class);
+			return new Gson().fromJson(bufferedReader, JsonObject.class);
 
-		} catch (IOException | JsonSyntaxException e) {
-			throw new LoadingTrainerFileFailedException();
+		} catch (IOException e) {
+			throw new LoadingResourceFailedException();
 		}
 	}
 
-	private Identifier toTrainerIdentifier(Identifier resourceIdentifier) {
-		String namespace = Paths.get(resourceIdentifier.getPath()).getParent().toString();
-		String path = Paths.get(resourceIdentifier.getPath()).getFileName().toString();
-		return Identifier.of(namespace, path);
-	}
-
-	private Identifier toTrainerConfigurationFileIdentifier(Identifier trainerFileIdentifier) {
-		Path path = Paths.get("configuration", trainerFileIdentifier.getPath());
-		return  Identifier.of(NAMESPACE, path.toString().replace("\\", "/"));
+	private boolean isJsonFile(Identifier identifier) {
+		return identifier.toString().endsWith(".json");
 	}
 }
