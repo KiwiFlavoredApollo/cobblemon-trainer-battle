@@ -14,9 +14,9 @@ import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 
-public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSource> {
-    public TrainerBattleCommand() {
-        super("trainerbattle");
+public class BattleTrainerCommand extends LiteralArgumentBuilder<ServerCommandSource> {
+    public BattleTrainerCommand() {
+        super("battletrainer");
 
         this.requires(new PlayerCommandPredicate(
                 String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "trainer"),
