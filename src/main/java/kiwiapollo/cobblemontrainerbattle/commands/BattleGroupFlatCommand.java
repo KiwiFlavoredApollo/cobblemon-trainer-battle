@@ -1,12 +1,10 @@
 package kiwiapollo.cobblemontrainerbattle.commands;
 
-import com.mojang.brigadier.Command;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.exceptions.ExecuteCommandFailedException;
 import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattle;
 import net.minecraft.server.command.ServerCommandSource;
 
@@ -28,41 +26,16 @@ public class BattleGroupFlatCommand extends LiteralArgumentBuilder<ServerCommand
                             CobblemonTrainerBattle.groupFiles.keySet().stream().map(String::valueOf).forEach(builder::suggest);
                             return builder.buildFuture();
                         })
-                        .executes(context -> {
-                            try {
-                                GroupBattle.startSession(context);
-                                GroupBattle.battleGroupWithFlatLevelAndFullHealth(context);
-                                return Command.SINGLE_SUCCESS;
-
-                            } catch (ExecuteCommandFailedException e) {
-                                return -1;
-                            }
-                        }));
+                        .executes(GroupBattle::quickStart));
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getStopSessionCommand() {
         return LiteralArgumentBuilder.<ServerCommandSource>literal("stop")
-                .executes(context -> {
-                    try {
-                        GroupBattle.stopSession(context);
-                        return Command.SINGLE_SUCCESS;
-
-                    } catch (ExecuteCommandFailedException e) {
-                        return -1;
-                    }
-                });
+                .executes(GroupBattle::stopSession);
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getStartBattleCommand() {
         return LiteralArgumentBuilder.<ServerCommandSource>literal("battle")
-                .executes(context -> {
-                    try {
-                        GroupBattle.battleGroupWithFlatLevelAndFullHealth(context);
-                        return Command.SINGLE_SUCCESS;
-
-                    } catch (ExecuteCommandFailedException e) {
-                        return -1;
-                    }
-                });
+                .executes(GroupBattle::startBattleWithFlatLevelAndFullHealth);
     }
 }

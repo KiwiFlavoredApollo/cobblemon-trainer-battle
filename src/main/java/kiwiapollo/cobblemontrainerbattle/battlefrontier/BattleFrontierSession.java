@@ -13,7 +13,6 @@ public class BattleFrontierSession {
     public final BattleFrontierDifficulty difficulty;
 
     public UUID battleUuid;
-    public int battleCount;
     public List<Trainer> defeatedTrainers;
     public List<Pokemon> partyPokemons;
     public Instant timestamp;
@@ -25,7 +24,6 @@ public class BattleFrontierSession {
         this.difficulty = BattleFrontierDifficulty.NORMAL;
 
         this.battleUuid = null;
-        this.battleCount = 0;
         this.defeatedTrainers = new ArrayList<>();
         this.partyPokemons = new RandomPartyPokemonsFactory().create();
         this.timestamp = Instant.now();

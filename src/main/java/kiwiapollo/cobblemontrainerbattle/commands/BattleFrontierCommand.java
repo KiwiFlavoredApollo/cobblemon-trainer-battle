@@ -7,6 +7,7 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battlefrontier.BattleFrontier;
+import kiwiapollo.cobblemontrainerbattle.exceptions.ExecuteCommandFailedException;
 import net.minecraft.server.command.ServerCommandSource;
 
 public class BattleFrontierCommand extends LiteralArgumentBuilder<ServerCommandSource> {
@@ -27,24 +28,39 @@ public class BattleFrontierCommand extends LiteralArgumentBuilder<ServerCommandS
     private ArgumentBuilder<ServerCommandSource, ?> getBattleFrontierStartCommand() {
         return LiteralArgumentBuilder.<ServerCommandSource>literal("start")
                 .executes(context -> {
-                    BattleFrontier.startSession(context);
-                    return Command.SINGLE_SUCCESS;
+                    try {
+                        BattleFrontier.startSession(context);
+                        return Command.SINGLE_SUCCESS;
+
+                    } catch (ExecuteCommandFailedException e) {
+                        return -1;
+                    }
                 });
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getBattleFrontierStopCommand() {
         return LiteralArgumentBuilder.<ServerCommandSource>literal("stop")
                 .executes(context -> {
-                    BattleFrontier.stopSession(context);
-                    return Command.SINGLE_SUCCESS;
+                    try {
+                        BattleFrontier.stopSession(context);
+                        return Command.SINGLE_SUCCESS;
+
+                    } catch (ExecuteCommandFailedException e) {
+                        return -1;
+                    }
                 });
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getBattleFrontierBattleCommand() {
         return LiteralArgumentBuilder.<ServerCommandSource>literal("battle")
                 .executes(context -> {
-                    BattleFrontier.startBattle(context);
-                    return Command.SINGLE_SUCCESS;
+                    try {
+                        BattleFrontier.startBattle(context);
+                        return Command.SINGLE_SUCCESS;
+
+                    } catch (ExecuteCommandFailedException e) {
+                        return -1;
+                    }
                 });
     }
 
@@ -52,8 +68,13 @@ public class BattleFrontierCommand extends LiteralArgumentBuilder<ServerCommandS
         return LiteralArgumentBuilder
                 .<ServerCommandSource>literal("reroll")
                 .executes(context -> {
-                    BattleFrontier.rerollPokemons(context);
-                    return Command.SINGLE_SUCCESS;
+                    try {
+                        BattleFrontier.rerollPokemons(context);
+                        return Command.SINGLE_SUCCESS;
+
+                    } catch (ExecuteCommandFailedException e) {
+                        return -1;
+                    }
                 });
     }
 
@@ -64,28 +85,48 @@ public class BattleFrontierCommand extends LiteralArgumentBuilder<ServerCommandS
                         .then(RequiredArgumentBuilder
                                 .<ServerCommandSource, Integer>argument("trainerslot", IntegerArgumentType.integer(1, 3))
                                 .executes(context -> {
-                                    BattleFrontier.tradePokemon(context);
-                                    return Command.SINGLE_SUCCESS;
+                                    try {
+                                        BattleFrontier.tradePokemon(context);
+                                        return Command.SINGLE_SUCCESS;
+
+                                    } catch (ExecuteCommandFailedException e) {
+                                        return -1;
+                                    }
                                 })))
                 .executes(context -> {
-                    BattleFrontier.showTradeablePokemons(context);
-                    return Command.SINGLE_SUCCESS;
+                    try {
+                        BattleFrontier.showTradeablePokemons(context);
+                        return Command.SINGLE_SUCCESS;
+
+                    } catch (ExecuteCommandFailedException e) {
+                        return -1;
+                    }
                 });
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getBattleFrontierShowPokemonsCommand() {
         return LiteralArgumentBuilder.<ServerCommandSource>literal("pokemons")
                 .executes(context -> {
-                    BattleFrontier.showPartyPokemons(context);
-                    return Command.SINGLE_SUCCESS;
+                    try {
+                        BattleFrontier.showPartyPokemons(context);
+                        return Command.SINGLE_SUCCESS;
+
+                    } catch (ExecuteCommandFailedException e) {
+                        return -1;
+                    }
                 });
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getBattleFrontierShowWinningStreakCommand() {
         return LiteralArgumentBuilder.<ServerCommandSource>literal("streak")
                 .executes(context -> {
-                    BattleFrontier.showWinningStreak(context);
-                    return Command.SINGLE_SUCCESS;
+                    try {
+                        BattleFrontier.showWinningStreak(context);
+                        return Command.SINGLE_SUCCESS;
+
+                    } catch (ExecuteCommandFailedException e) {
+                        return -1;
+                    }
                 });
     }
 }

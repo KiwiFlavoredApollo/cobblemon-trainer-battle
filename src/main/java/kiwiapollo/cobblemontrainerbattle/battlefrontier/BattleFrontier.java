@@ -13,10 +13,11 @@ import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactors.player.BattleFrontierPlayerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.BattleFrontierNameTrainerBattleActorFactory;
-import kiwiapollo.cobblemontrainerbattle.exceptions.*;
+import kiwiapollo.cobblemontrainerbattle.exceptions.ExecuteCommandFailedException;
+import kiwiapollo.cobblemontrainerbattle.exceptions.IllegalPlayerStateException;
+import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidBattleSessionStateException;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.ThreePokemonTotalRandomTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kotlin.Unit;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -32,7 +33,7 @@ public class BattleFrontier {
     public static final int LEVEL = 100;
     public static Map<UUID, BattleFrontierSession> SESSIONS = new HashMap<>();
 
-    public static void startSession(CommandContext<ServerCommandSource> context) {
+    public static void startSession(CommandContext<ServerCommandSource> context) throws ExecuteCommandFailedException {
         try {
             assertNotExistValidSession(context.getSource().getPlayer());
 
@@ -43,15 +44,13 @@ public class BattleFrontier {
             CobblemonTrainerBattle.LOGGER.info(String.format("%s: Started Battle Frontier session",
                     context.getSource().getPlayer().getGameProfile().getName()));
 
-        } catch (ValidBattleFrontierSessionExistException e) {
-            context.getSource().getPlayer().sendMessage(
-                    Text.literal("Battle Frontier session already exists").formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Valid Battle Frontier session exists",
-                    context.getSource().getPlayer().getGameProfile().getName()));
+        } catch (InvalidBattleSessionStateException e) {
+            CobblemonTrainerBattle.LOGGER.error(e.getMessage());
+            throw new ExecuteCommandFailedException();
         }
     }
 
-    public static void stopSession(CommandContext<ServerCommandSource> context) {
+    public static void stopSession(CommandContext<ServerCommandSource> context) throws ExecuteCommandFailedException {
         try {
             assertExistValidSession(context.getSource().getPlayer());
 
@@ -61,19 +60,17 @@ public class BattleFrontier {
             CobblemonTrainerBattle.LOGGER.info(String.format("%s: Stopped Battle Frontier session",
                     context.getSource().getPlayer().getGameProfile().getName()));
 
-        } catch (ValidBattleFrontierSessionNotExistException e) {
-            context.getSource().getPlayer().sendMessage(
-                    Text.literal("You do not have valid Battle Frontier session").formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Valid Battle Frontier session does not exists",
-                    context.getSource().getPlayer().getGameProfile().getName()));
+        } catch (InvalidBattleSessionStateException e) {
+            CobblemonTrainerBattle.LOGGER.error(e.getMessage());
+            throw new ExecuteCommandFailedException();
         }
     }
 
-    public static void startBattle(CommandContext<ServerCommandSource> context) {
+    public static void startBattle(CommandContext<ServerCommandSource> context) throws ExecuteCommandFailedException {
         try {
             assertExistValidSession(context.getSource().getPlayer());
             assertNotPlayerDefeated(context.getSource().getPlayer());
-            TrainerBattle.assertNotExistPlayerParticipatingPokemonBattle(context.getSource().getPlayer());
+            assertNotExistPlayerParticipatingPokemonBattle(context.getSource().getPlayer());
 
             Trainer trainer = new ThreePokemonTotalRandomTrainerFactory().create(context.getSource().getPlayer());
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
@@ -94,58 +91,17 @@ public class BattleFrontier {
                 return Unit.INSTANCE;
             });
 
-        } catch (ValidBattleFrontierSessionNotExistException e) {
-            context.getSource().getPlayer().sendMessage(
-                    Text.literal("You do not have valid Battle Frontier session").formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Valid Battle Frontier session does not exists",
-                    context.getSource().getPlayer().getGameProfile().getName()));
+        } catch (InvalidBattleSessionStateException e) {
+            CobblemonTrainerBattle.LOGGER.error(e.getMessage());
+            throw new ExecuteCommandFailedException();
 
-        } catch (BattleFrontierDefeatedPlayerException e) {
-            context.getSource().getPlayer().sendMessage(
-                    Text.literal("You are defeated. Please create another Battle Frontier session").formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Battle Frontier session expired due to defeat",
-                    context.getSource().getPlayer().getGameProfile().getName()));
-
-        } catch (PlayerParticipatingPokemonBattleExistException e) {
-            context.getSource().getPlayer().sendMessage(
-                    Text.literal("You cannot start Pokemon battle while on another").formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Already participating in another Pokemon battle",
-                    context.getSource().getPlayer().getGameProfile().getName()));
+        } catch (IllegalPlayerStateException e) {
+            CobblemonTrainerBattle.LOGGER.error(e.getMessage());
+            throw new ExecuteCommandFailedException();
         }
     }
 
-    private static void assertNotPlayerDefeated(ServerPlayerEntity player) throws BattleFrontierDefeatedPlayerException {
-        BattleFrontierSession session = SESSIONS.get(player.getUuid());
-        if (session.isDefeated) {
-            throw new BattleFrontierDefeatedPlayerException();
-        }
-    }
-
-    private static void assertExistValidSession(ServerPlayerEntity player)
-            throws ValidBattleFrontierSessionNotExistException {
-        if (!isExistValidSession(player)) {
-            throw new ValidBattleFrontierSessionNotExistException();
-        }
-    }
-
-    private static void assertNotExistValidSession(ServerPlayerEntity player)
-            throws ValidBattleFrontierSessionExistException {
-        if (isExistValidSession(player)) {
-            throw new ValidBattleFrontierSessionExistException();
-        }
-    }
-
-    private static boolean isExistValidSession(ServerPlayerEntity player) {
-        if (!SESSIONS.containsKey(player.getUuid())) {
-            return false;
-        }
-
-        BattleFrontierSession session = SESSIONS.get(player.getUuid());
-        return Instant.now().isBefore(session.timestamp.plus(Duration.ofHours(24)));
-    }
-
-    public static void tradePokemon(CommandContext<ServerCommandSource> context) {
+    public static void tradePokemon(CommandContext<ServerCommandSource> context) throws ExecuteCommandFailedException {
         try {
             assertExistValidSession(context.getSource().getPlayer());
             assertNotPlayerDefeated(context.getSource().getPlayer());
@@ -173,40 +129,17 @@ public class BattleFrontier {
             context.getSource().getPlayer().sendMessage(pokemonTradeMessage);
             CobblemonTrainerBattle.LOGGER.info(pokemonTradeMessage.getString());
 
-        } catch (ValidBattleFrontierSessionNotExistException e) {
-            context.getSource().getPlayer().sendMessage(
-                    Text.literal("You do not have valid Battle Frontier session").formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Valid Battle Frontier session does not exists",
-                    context.getSource().getPlayer().getGameProfile().getName()));
+        } catch (InvalidBattleSessionStateException e) {
+            CobblemonTrainerBattle.LOGGER.error(e.getMessage());
+            throw new ExecuteCommandFailedException();
 
-        } catch (BattleFrontierDefeatedPlayerException e) {
-            context.getSource().getPlayer().sendMessage(
-                    Text.literal("You are defeated. Please create another Battle Frontier session").formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Battle Frontier session expired due to defeat",
-                    context.getSource().getPlayer().getGameProfile().getName()));
-
-        } catch (DefeatedTrainerNotExistException e) {
-            context.getSource().getPlayer().sendMessage(
-                    Text.literal("You do not have any defeated trainers").formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Defeated trainers do not exist",
-                    context.getSource().getPlayer().getGameProfile().getName()));
-
-        } catch (PlayerTradedPokemonException e) {
-            context.getSource().getPlayer().sendMessage(
-                    Text.literal("You already traded your Pokemon").formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Already traded Pokemon",
-                    context.getSource().getPlayer().getGameProfile().getName()));
+        } catch (IllegalPlayerStateException e) {
+            CobblemonTrainerBattle.LOGGER.error(e.getMessage());
+            throw new ExecuteCommandFailedException();
         }
     }
 
-    private static void assertNotPlayerTradedPokemon(ServerPlayerEntity player)
-            throws PlayerTradedPokemonException {
-        if (SESSIONS.get(player.getUuid()).isTradedPokemon) {
-            throw new PlayerTradedPokemonException();
-        }
-    }
-
-    public static void showTradeablePokemons(CommandContext<ServerCommandSource> context) {
+    public static void showTradeablePokemons(CommandContext<ServerCommandSource> context) throws ExecuteCommandFailedException {
         try {
             assertExistValidSession(context.getSource().getPlayer());
             assertExistDefeatedTrainer(context.getSource().getPlayer());
@@ -215,31 +148,120 @@ public class BattleFrontier {
             Trainer lastDefeatedTrainer = session.defeatedTrainers.get(session.defeatedTrainers.size() - 1);
             printPokemons(context, lastDefeatedTrainer.pokemons);
 
-        } catch (ValidBattleFrontierSessionNotExistException e) {
-            context.getSource().getPlayer().sendMessage(
-                    Text.literal("You do not have valid Battle Frontier session").formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Valid Battle Frontier session does not exists",
-                    context.getSource().getPlayer().getGameProfile().getName()));
+        } catch (InvalidBattleSessionStateException e) {
+            throw new ExecuteCommandFailedException();
 
-        } catch (DefeatedTrainerNotExistException e) {
-            context.getSource().getPlayer().sendMessage(
-                    Text.literal("You do not have any defeated trainers").formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Defeated trainers do not exist",
-                    context.getSource().getPlayer().getGameProfile().getName()));
+        } catch (IllegalPlayerStateException e) {
+            throw new ExecuteCommandFailedException();
         }
     }
 
-    public static void showPartyPokemons(CommandContext<ServerCommandSource> context) {
+    public static void showPartyPokemons(CommandContext<ServerCommandSource> context) throws ExecuteCommandFailedException {
         try {
             assertExistValidSession(context.getSource().getPlayer());
             printPokemons(context, SESSIONS.get(context.getSource().getPlayer().getUuid()).partyPokemons);
 
-        } catch (ValidBattleFrontierSessionNotExistException e) {
-            context.getSource().getPlayer().sendMessage(
-                    Text.literal("You do not have valid Battle Frontier session").formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Valid Battle Frontier session does not exists",
-                    context.getSource().getPlayer().getGameProfile().getName()));
+        } catch (InvalidBattleSessionStateException e) {
+            CobblemonTrainerBattle.LOGGER.error(e.getMessage());
+            throw new ExecuteCommandFailedException();
         }
+    }
+
+    public static void rerollPokemons(CommandContext<ServerCommandSource> context) throws ExecuteCommandFailedException {
+        try {
+            assertExistValidSession(context.getSource().getPlayer());
+            assertNotExistDefeatedTrainers(context.getSource().getPlayer());
+
+            BattleFrontierSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
+
+            session.partyPokemons = new RandomPartyPokemonsFactory().create();
+            context.getSource().getPlayer().sendMessage(Text.literal("Rerolled Pokemons"));
+            showPartyPokemons(context);
+
+        } catch (InvalidBattleSessionStateException e) {
+            throw new ExecuteCommandFailedException();
+
+        } catch (IllegalPlayerStateException e) {
+            context.getSource().getPlayer().sendMessage(
+                    Text.literal("You cannot reroll Pokemons after battling trainers").formatted(Formatting.RED));
+            throw new ExecuteCommandFailedException();
+        }
+    }
+
+    public static void showWinningStreak(CommandContext<ServerCommandSource> context) throws ExecuteCommandFailedException {
+        try {
+            assertExistValidSession(context.getSource().getPlayer());
+
+            BattleFrontierSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
+            int winningStreak = session.defeatedTrainers.size();
+            context.getSource().getPlayer().sendMessage(
+                    Text.literal(String.format("Winning streak: %d", winningStreak)));
+
+        } catch (InvalidBattleSessionStateException e) {
+            CobblemonTrainerBattle.LOGGER.error(e.getMessage());
+            throw new ExecuteCommandFailedException();
+        }
+    }
+
+    private static void assertNotPlayerDefeated(ServerPlayerEntity player) throws IllegalPlayerStateException {
+        BattleFrontierSession session = SESSIONS.get(player.getUuid());
+        if (session.isDefeated) {
+            throw new IllegalPlayerStateException(
+                    String.format("Player is defeated: %s", player.getGameProfile().getName()));
+        }
+    }
+
+    private static void assertExistValidSession(ServerPlayerEntity player)
+            throws InvalidBattleSessionStateException {
+        if (!isExistValidSession(player)) {
+            throw new InvalidBattleSessionStateException(
+                    String.format("Valid battle session does not exists: %s", player.getGameProfile().getName()));
+        }
+    }
+
+    private static void assertNotExistValidSession(ServerPlayerEntity player)
+            throws InvalidBattleSessionStateException {
+        if (isExistValidSession(player)) {
+            throw new InvalidBattleSessionStateException(
+                    String.format("Valid battle session exists: %s", player.getGameProfile().getName()));
+        }
+    }
+
+    private static boolean isExistValidSession(ServerPlayerEntity player) {
+        if (!SESSIONS.containsKey(player.getUuid())) {
+            return false;
+        }
+
+        BattleFrontierSession session = SESSIONS.get(player.getUuid());
+        return Instant.now().isBefore(session.timestamp.plus(Duration.ofHours(24)));
+    }
+
+    private static void assertNotPlayerTradedPokemon(ServerPlayerEntity player)
+            throws IllegalPlayerStateException {
+        if (SESSIONS.get(player.getUuid()).isTradedPokemon) {
+            throw new IllegalPlayerStateException(
+                    String.format("Player already traded a Pokemon: %s", player.getGameProfile().getName()));
+        }
+    }
+
+    private static void assertExistDefeatedTrainer(ServerPlayerEntity player)
+            throws IllegalPlayerStateException {
+        if (!isExistDefeatedTrainers(player)) {
+            throw new IllegalPlayerStateException(
+                    String.format("Player has no defeated trainers: %s", player.getGameProfile().getName()));
+        }
+    }
+
+    private static void assertNotExistDefeatedTrainers(ServerPlayerEntity player)
+            throws IllegalPlayerStateException {
+        if (isExistDefeatedTrainers(player)) {
+            throw new IllegalPlayerStateException(
+                    String.format("Player has defeated trainers: %s", player.getGameProfile().getName()));
+        }
+    }
+
+    private static boolean isExistDefeatedTrainers(ServerPlayerEntity player) {
+        return !SESSIONS.get(player.getUuid()).defeatedTrainers.isEmpty();
     }
 
     private static void printPokemons(CommandContext<ServerCommandSource> context, List<Pokemon> pokemons) {
@@ -279,61 +301,12 @@ public class BattleFrontier {
                 stats.get(Stats.SPECIAL_ATTACK), stats.get(Stats.SPECIAL_DEFENCE), stats.get(Stats.SPEED));
     };
 
-    public static void rerollPokemons(CommandContext<ServerCommandSource> context) {
-        try {
-            assertExistValidSession(context.getSource().getPlayer());
-            assertNotExistDefeatedTrainers(context.getSource().getPlayer());
-
-            BattleFrontierSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
-
-            session.partyPokemons = new RandomPartyPokemonsFactory().create();
-            context.getSource().getPlayer().sendMessage(Text.literal("Rerolled Pokemons"));
-            showPartyPokemons(context);
-
-        } catch (ValidBattleFrontierSessionNotExistException e) {
-            context.getSource().getPlayer().sendMessage(
-                    Text.literal("You do not have valid Battle Frontier session").formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Valid Battle Frontier session does not exists",
-                    context.getSource().getPlayer().getGameProfile().getName()));
-
-        } catch (DefeatedTrainerExistException e) {
-            context.getSource().getPlayer().sendMessage(
-                    Text.literal("You cannot reroll Pokemons after battling trainers").formatted(Formatting.RED));
-        }
-    }
-
-    private static void assertExistDefeatedTrainer(ServerPlayerEntity player)
-            throws DefeatedTrainerNotExistException {
-        if (!isExistDefeatedTrainers(player)) {
-            throw new DefeatedTrainerNotExistException();
-        }
-    }
-
-    private static void assertNotExistDefeatedTrainers(ServerPlayerEntity player)
-            throws DefeatedTrainerExistException {
-        if (isExistDefeatedTrainers(player)) {
-            throw new DefeatedTrainerExistException();
-        }
-    }
-
-    private static boolean isExistDefeatedTrainers(ServerPlayerEntity player) {
-        return !SESSIONS.get(player.getUuid()).defeatedTrainers.isEmpty();
-    }
-
-    public static void showWinningStreak(CommandContext<ServerCommandSource> context) {
-        try {
-            assertExistValidSession(context.getSource().getPlayer());
-
-            BattleFrontierSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
-            int winningStreak = session.defeatedTrainers.size();
-            context.getSource().getPlayer().sendMessage(
-                    Text.literal(String.format("Winning streak: %d", winningStreak)));
-
-        } catch (ValidBattleFrontierSessionNotExistException e) {
-            context.getSource().getPlayer().sendMessage(
-                    Text.literal("You do not have valid Battle Frontier session").formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Valid Battle Frontier session does not exists",
-                    context.getSource().getPlayer().getGameProfile().getName()));
+    private static void assertNotExistPlayerParticipatingPokemonBattle(ServerPlayerEntity player)
+            throws IllegalPlayerStateException {
+        if (Cobblemon.INSTANCE.getBattleRegistry().getBattleByParticipatingPlayer(player) != null) {
+            throw new IllegalPlayerStateException(
+                    String.format("Already participating in another Pokemon battle: %s",
+                            player.getGameProfile().getName()));
         }
     }
 }

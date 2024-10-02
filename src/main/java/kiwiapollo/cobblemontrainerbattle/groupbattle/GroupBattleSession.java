@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class BattleGroupSession {
+public class GroupBattleSession {
     public final UUID uuid;
     public final String groupResourcePath;
 
@@ -19,7 +19,7 @@ public class BattleGroupSession {
     public Instant timestamp;
     public boolean isDefeated;
 
-    public BattleGroupSession(String groupResourcePath) {
+    public GroupBattleSession(String groupResourcePath) {
         this.uuid = UUID.randomUUID();
         this.groupResourcePath = groupResourcePath;
 

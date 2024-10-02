@@ -6,6 +6,7 @@ import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.BattleSide;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.google.gson.JsonElement;
+import com.mojang.brigadier.Command;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
@@ -21,7 +22,6 @@ import kotlin.Unit;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
 
 import java.time.Duration;
 import java.time.Instant;
@@ -33,32 +33,41 @@ import java.util.stream.Stream;
 
 public class GroupBattle {
     public static final int FLAT_LEVEL = 100;
-    public static Map<UUID, BattleGroupSession> SESSIONS = new HashMap<>();
+    public static Map<UUID, GroupBattleSession> SESSIONS = new HashMap<>();
 
-    public static void startSession(CommandContext<ServerCommandSource> context) throws ExecuteCommandFailedException {
+    public static int quickStart(CommandContext<ServerCommandSource> context) {
+        try {
+            assertNotExistValidSession(context.getSource().getPlayer());
+            startSession(context);
+            return startBattleWithFlatLevelAndFullHealth(context);
+
+        } catch (InvalidBattleSessionStateException e) {
+            return startBattleWithFlatLevelAndFullHealth(context);
+        }
+    }
+
+    public static int startSession(CommandContext<ServerCommandSource> context) {
         try {
             assertNotExistValidSession(context.getSource().getPlayer());
 
             String groupFilePath = StringArgumentType.getString(context, "group");
             assertValidGroupFile(groupFilePath);
 
-            GroupBattle.SESSIONS.put(context.getSource().getPlayer().getUuid(), new BattleGroupSession(groupFilePath));
+            GroupBattle.SESSIONS.put(context.getSource().getPlayer().getUuid(), new GroupBattleSession(groupFilePath));
 
             context.getSource().getPlayer().sendMessage(Text.literal("Battle group session is started"));
             CobblemonTrainerBattle.LOGGER.info(String.format("%s: Started battle group session",
                     context.getSource().getPlayer().getGameProfile().getName()));
 
-        } catch (ValidBattleFrontierSessionExistException e) {
-            printValidBattleGroupSessionExistErrorMessage(context);
-            throw new ExecuteCommandFailedException();
+            return Command.SINGLE_SUCCESS;
 
-        } catch (InvalidGroupFileException e) {
-            printInvalidGroupFileErrorMessage(context);
-            throw new ExecuteCommandFailedException();
+        } catch (InvalidBattleSessionStateException | InvalidResourceException e) {
+            CobblemonTrainerBattle.LOGGER.error(e.getMessage());
+            return -1;
         }
     }
 
-    public static void stopSession(CommandContext<ServerCommandSource> context) throws ExecuteCommandFailedException {
+    public static int stopSession(CommandContext<ServerCommandSource> context) {
         try {
             assertExistValidSession(context.getSource().getPlayer());
 
@@ -68,14 +77,15 @@ public class GroupBattle {
             CobblemonTrainerBattle.LOGGER.info(String.format("%s: Stopped battle group session",
                     context.getSource().getPlayer().getGameProfile().getName()));
 
-        } catch (ValidBattleFrontierSessionNotExistException e) {
-            printValidBattleGroupSessionNotExistErrorMessage(context);
-            throw new ExecuteCommandFailedException();
+            return Command.SINGLE_SUCCESS;
+
+        } catch (InvalidBattleSessionStateException e) {
+            CobblemonTrainerBattle.LOGGER.error(e.getMessage());
+            return -1;
         }
     }
 
-    public static void battleGroupWithStatusQuo(CommandContext<ServerCommandSource> context)
-            throws ExecuteCommandFailedException {
+    public static int startBattleWithStatusQuo(CommandContext<ServerCommandSource> context) {
         try {
             assertExistValidSession(context.getSource().getPlayer());
             assertNotPlayerDefeated(context.getSource().getPlayer());
@@ -85,12 +95,15 @@ public class GroupBattle {
             assertPlayerPartyAtOrAboveRelativeLevelThreshold(context.getSource().getPlayer());
             assertExistNextTrainer(context.getSource().getPlayer());
 
-            Trainer trainer = createNextTrainer(context.getSource().getPlayer());
+            String nextTrainerResourcePath = getNextTrainerResourcePath(context.getSource().getPlayer());
+            Trainer trainer = new SpecificTrainerFactory().create(context.getSource().getPlayer(), nextTrainerResourcePath);
+
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
                     new BattleSide(new StatusQuoPlayerBattleActorFactory().create(context.getSource().getPlayer())),
                     new BattleSide(new TrainerBattleActorFactory().create(trainer)),
                     false
+
             ).ifSuccessful(pokemonBattle -> {
                 UUID playerUuid = context.getSource().getPlayer().getUuid();
                 CobblemonTrainerBattle.trainerBattles.put(playerUuid, pokemonBattle);
@@ -104,38 +117,18 @@ public class GroupBattle {
                 return Unit.INSTANCE;
             });
 
-        } catch (ValidBattleFrontierSessionNotExistException e) {
-            printValidBattleGroupSessionNotExistErrorMessage(context);
-            throw new ExecuteCommandFailedException();
+            return Command.SINGLE_SUCCESS;
 
-        } catch (BattleFrontierDefeatedPlayerException e) {
-            printPlayerDefeatedErrorMessage(context);
-            throw new ExecuteCommandFailedException();
-
-        } catch (PlayerParticipatingPokemonBattleExistException e) {
-            printPlayerParticipatingPokemonBattleExistErrorMessage(context);
-            throw new ExecuteCommandFailedException();
-
-        } catch (EmptyPlayerPartyException e) {
-            printEmptyPlayerPartyErrorMessage(context);
-            throw new ExecuteCommandFailedException();
-
-        } catch (FaintPlayerPartyException e) {
-            printFaintedPlayerPartyErrorMessage(context);
-            throw new ExecuteCommandFailedException();
-
-        } catch (PlayerPartyBelowRelativeLevelThresholdException e) {
-            printPlayerPartyBelowRelativeLevelThresholdErrorMessage(context);
-            throw new ExecuteCommandFailedException();
-
-        } catch (NextTrainerNotExistException e) {
-            printNextTrainerNotExistErrorMessage(context);
-            throw new ExecuteCommandFailedException();
+        } catch (InvalidBattleSessionStateException
+                 | InvalidResourceException
+                 | IllegalPlayerStateException
+                 | CreateTrainerFailedException e) {
+            CobblemonTrainerBattle.LOGGER.error(e.getMessage());
+            return -1;
         }
     }
 
-    public static void battleGroupWithFlatLevelAndFullHealth(CommandContext<ServerCommandSource> context)
-            throws ExecuteCommandFailedException {
+    public static int startBattleWithFlatLevelAndFullHealth(CommandContext<ServerCommandSource> context) {
         try {
             assertExistValidSession(context.getSource().getPlayer());
             assertNotPlayerDefeated(context.getSource().getPlayer());
@@ -143,12 +136,15 @@ public class GroupBattle {
             assertNotEmptyPlayerParty(context.getSource().getPlayer());
             assertExistNextTrainer(context.getSource().getPlayer());
 
-            Trainer trainer = createNextTrainer(context.getSource().getPlayer());
+            String nextTrainerResourcePath = getNextTrainerResourcePath(context.getSource().getPlayer());
+            Trainer trainer = new SpecificTrainerFactory().create(context.getSource().getPlayer(), nextTrainerResourcePath);
+
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
                     new BattleSide(new FlatLevelFullHealthPlayerBattleActorFactory().create(context.getSource().getPlayer(), FLAT_LEVEL)),
                     new BattleSide(new FlatLevelFullHealthTrainerBattleActorFactory().create(trainer, FLAT_LEVEL)),
                     false
+
             ).ifSuccessful(pokemonBattle -> {
                 UUID playerUuid = context.getSource().getPlayer().getUuid();
                 CobblemonTrainerBattle.trainerBattles.put(playerUuid, pokemonBattle);
@@ -162,45 +158,19 @@ public class GroupBattle {
                 return Unit.INSTANCE;
             });
 
-        } catch (ValidBattleFrontierSessionNotExistException e) {
-            printValidBattleGroupSessionNotExistErrorMessage(context);
-            throw new ExecuteCommandFailedException();
+            return Command.SINGLE_SUCCESS;
 
-        } catch (BattleFrontierDefeatedPlayerException e) {
-            printPlayerDefeatedErrorMessage(context);
-            throw new ExecuteCommandFailedException();
-
-        } catch (PlayerParticipatingPokemonBattleExistException e) {
-            printPlayerParticipatingPokemonBattleExistErrorMessage(context);
-            throw new ExecuteCommandFailedException();
-
-        } catch (EmptyPlayerPartyException e) {
-            printEmptyPlayerPartyErrorMessage(context);
-            throw new ExecuteCommandFailedException();
-
-        } catch (NextTrainerNotExistException e) {
-            printNextTrainerNotExistErrorMessage(context);
-            throw new ExecuteCommandFailedException();
-        }
-    }
-
-    private static Trainer createNextTrainer(ServerPlayerEntity player) throws NextTrainerNotExistException {
-        try {
-            BattleGroupSession session = SESSIONS.get(player.getUuid());
-            int defeatedTrainersCount = session.defeatedTrainers.size();
-            String nextTrainerResourcePath = CobblemonTrainerBattle.groupFiles
-                    .get(session.groupResourcePath).configuration
-                    .get("trainers").getAsJsonArray()
-                    .get(defeatedTrainersCount).getAsString();
-            return new SpecificTrainerFactory().create(player, nextTrainerResourcePath);
-
-        } catch (CreateTrainerFailedException e) {
-            throw new NextTrainerNotExistException();
+        } catch (InvalidBattleSessionStateException
+                 | InvalidResourceException
+                 | IllegalPlayerStateException
+                 | CreateTrainerFailedException e) {
+            CobblemonTrainerBattle.LOGGER.error(e.getMessage());
+            return -1;
         }
     }
 
     public static String getNextTrainerResourcePath(ServerPlayerEntity player) {
-        BattleGroupSession session = SESSIONS.get(player.getUuid());
+        GroupBattleSession session = SESSIONS.get(player.getUuid());
         int defeatedTrainersCount = session.defeatedTrainers.size();
         return CobblemonTrainerBattle.groupFiles
                 .get(session.groupResourcePath).configuration
@@ -208,109 +178,43 @@ public class GroupBattle {
                 .get(defeatedTrainersCount).getAsString();
     }
 
-    private static void printValidBattleGroupSessionNotExistErrorMessage(CommandContext<ServerCommandSource> context) {
-        context.getSource().getPlayer().sendMessage(
-                Text.literal("You do not have valid battle group session").formatted(Formatting.RED));
-        CobblemonTrainerBattle.LOGGER.error("An error occurred while executing battlegroup command");
-        CobblemonTrainerBattle.LOGGER.error(String.format("%s: Valid Battle Group session does not exists",
-                context.getSource().getPlayer().getGameProfile().getName()));
-    }
-
-    private static void printValidBattleGroupSessionExistErrorMessage(CommandContext<ServerCommandSource> context) {
-        context.getSource().getPlayer().sendMessage(
-                Text.literal("Battle group session already exists").formatted(Formatting.RED));
-        CobblemonTrainerBattle.LOGGER.error("An error occurred while executing battlegroup command");
-        CobblemonTrainerBattle.LOGGER.error(String.format("%s: Valid Battle Group session exists",
-                context.getSource().getPlayer().getGameProfile().getName()));
-    }
-
-    private static void printPlayerDefeatedErrorMessage(CommandContext<ServerCommandSource> context) {
-        context.getSource().getPlayer().sendMessage(
-                Text.literal("You are defeated. Please create another battle group session").formatted(Formatting.RED));
-        CobblemonTrainerBattle.LOGGER.error("An error occurred while executing battlegroup command");
-        CobblemonTrainerBattle.LOGGER.error(String.format("%s: battle group session expired due to defeat",
-                context.getSource().getPlayer().getGameProfile().getName()));
-    }
-
-    private static void printPlayerParticipatingPokemonBattleExistErrorMessage(CommandContext<ServerCommandSource> context) {
-        context.getSource().getPlayer().sendMessage(
-                Text.literal("You cannot start Pokemon battle while on another").formatted(Formatting.RED));
-        CobblemonTrainerBattle.LOGGER.error("An error occurred while executing battlegroup command");
-        CobblemonTrainerBattle.LOGGER.error(String.format("%s: Already participating in another Pokemon battle",
-                context.getSource().getPlayer().getGameProfile().getName()));
-    }
-
-    private static void printEmptyPlayerPartyErrorMessage(CommandContext<ServerCommandSource> context) {
-        context.getSource().getPlayer().sendMessage(Text.literal("You have no Pokemon"));
-        CobblemonTrainerBattle.LOGGER.error("An error occurred while executing battlegroup command");
-        CobblemonTrainerBattle.LOGGER.error(
-                String.format("%s: Player has no Pokemon", context.getSource().getPlayer().getGameProfile().getName()));
-    }
-
-    private static void printPlayerPartyBelowRelativeLevelThresholdErrorMessage(CommandContext<ServerCommandSource> context) {
-        context.getSource().getPlayer().sendMessage(
-                Text.literal(String.format("You must have at least one Pokemon at or above level %d",
-                        TrainerFileParser.RELATIVE_LEVEL_THRESHOLD)).formatted(Formatting.RED));
-        CobblemonTrainerBattle.LOGGER.error("An error occurred while executing battlegroup command");
-        CobblemonTrainerBattle.LOGGER.error(
-                String.format("%s: Pokemons under leveled", context.getSource().getPlayer().getGameProfile().getName()));
-    }
-
-    private static void printFaintedPlayerPartyErrorMessage(CommandContext<ServerCommandSource> context) {
-        context.getSource().getPlayer().sendMessage(Text.literal("Your Pokemons are all fainted").formatted(Formatting.RED));
-        CobblemonTrainerBattle.LOGGER.error("An error occurred while executing battlegroup command");
-        CobblemonTrainerBattle.LOGGER.error(
-                String.format("%s: Pokemons are all fainted", context.getSource().getPlayer().getGameProfile().getName()));
-    }
-
-    private static void printNextTrainerNotExistErrorMessage(CommandContext<ServerCommandSource> context) {
-        context.getSource().getPlayer().sendMessage(
-                Text.literal("You have defeated all trainers").formatted(Formatting.RED));
-        CobblemonTrainerBattle.LOGGER.error("An error occurred while executing battlegroup command");
-        CobblemonTrainerBattle.LOGGER.error(
-                String.format("%s: Player has defeated all trainers", context.getSource().getPlayer().getGameProfile().getName()));
-    }
-
-    private static void printInvalidGroupFileErrorMessage(CommandContext<ServerCommandSource> context) {
-        String groupFilePath = StringArgumentType.getString(context, "group");
-        context.getSource().getPlayer().sendMessage(
-                Text.literal(String.format("Invalid group file: %s", groupFilePath)).formatted(Formatting.RED));
-        CobblemonTrainerBattle.LOGGER.error("An error occurred while executing battlegroup command");
-        CobblemonTrainerBattle.LOGGER.error("Invalid group file");
-    }
-
-    private static void assertValidGroupFile(String groupFilePath) throws InvalidGroupFileException {
+    private static void assertValidGroupFile(String groupFilePath) throws InvalidResourceException {
         try {
             if (!CobblemonTrainerBattle.groupFiles.get(groupFilePath).configuration
                     .get("trainers").getAsJsonArray()
                     .asList().stream()
                     .map(JsonElement::getAsString)
                     .allMatch(CobblemonTrainerBattle.trainerFiles::containsKey)) {
-                throw new InvalidGroupFileException();
+                throw new InvalidResourceException(
+                        String.format("One or more trainer files are not loaded: %s", groupFilePath));
             };
         } catch (NullPointerException | IllegalStateException | AssertionError | ClassCastException e) {
-            throw new InvalidGroupFileException();
+            throw new InvalidResourceException(
+                    String.format("Invalid resource: %s", groupFilePath));
         }
     }
 
-    private static void assertNotPlayerDefeated(ServerPlayerEntity player) throws BattleFrontierDefeatedPlayerException {
-        BattleGroupSession session = SESSIONS.get(player.getUuid());
+    private static void assertNotPlayerDefeated(ServerPlayerEntity player) throws IllegalPlayerStateException {
+        GroupBattleSession session = SESSIONS.get(player.getUuid());
         if (session.isDefeated) {
-            throw new BattleFrontierDefeatedPlayerException();
+            throw new IllegalPlayerStateException(
+                    String.format("Player is defeated: %s", player.getGameProfile().getName()));
         }
     }
 
     private static void assertExistValidSession(ServerPlayerEntity player)
-            throws ValidBattleFrontierSessionNotExistException {
+            throws InvalidBattleSessionStateException {
         if (!isExistValidSession(player)) {
-            throw new ValidBattleFrontierSessionNotExistException();
+            throw new InvalidBattleSessionStateException(
+                    String.format("Valid battle session does not exists: %s", player.getGameProfile().getName()));
         }
     }
 
     private static void assertNotExistValidSession(ServerPlayerEntity player)
-            throws ValidBattleFrontierSessionExistException {
+            throws InvalidBattleSessionStateException {
         if (isExistValidSession(player)) {
-            throw new ValidBattleFrontierSessionExistException();
+            throw new InvalidBattleSessionStateException(
+                    String.format("Valid battle session exists: %s", player.getGameProfile().getName()));
         }
     }
 
@@ -319,53 +223,70 @@ public class GroupBattle {
             return false;
         }
 
-        BattleGroupSession session = SESSIONS.get(player.getUuid());
+        GroupBattleSession session = SESSIONS.get(player.getUuid());
         return Instant.now().isBefore(session.timestamp.plus(Duration.ofHours(24)));
     }
 
     private static void assertNotExistPlayerParticipatingPokemonBattle(ServerPlayerEntity player)
-            throws PlayerParticipatingPokemonBattleExistException {
+            throws IllegalPlayerStateException {
         if (Cobblemon.INSTANCE.getBattleRegistry().getBattleByParticipatingPlayer(player) != null) {
-            throw new PlayerParticipatingPokemonBattleExistException();
+            throw new IllegalPlayerStateException(
+                    String.format("Already participating in another Pokemon battle: %s",
+                            player.getGameProfile().getName()));
         }
     }
 
-    private static void assertNotEmptyPlayerParty(ServerPlayerEntity player) throws EmptyPlayerPartyException {
+    private static void assertNotEmptyPlayerParty(ServerPlayerEntity player) throws IllegalPlayerStateException {
         PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
         if (playerPartyStore.toGappyList().stream().allMatch(Objects::isNull)) {
-            throw new EmptyPlayerPartyException();
+            throw new IllegalPlayerStateException(
+                    String.format("Player has no Pokemon: %s", player.getGameProfile().getName()));
         }
     }
 
     private static void assertPlayerPartyAtOrAboveRelativeLevelThreshold(ServerPlayerEntity player)
-            throws PlayerPartyBelowRelativeLevelThresholdException {
+            throws IllegalPlayerStateException {
         PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
         Stream<Pokemon> pokemons = playerPartyStore.toGappyList().stream().filter(Objects::nonNull);
         if (pokemons.map(Pokemon::getLevel).allMatch(level -> level < TrainerFileParser.RELATIVE_LEVEL_THRESHOLD)) {
-            throw new PlayerPartyBelowRelativeLevelThresholdException();
+            throw new IllegalPlayerStateException(
+                    String.format("Pokemons are under leveled: %s", player.getGameProfile().getName()));
         }
     }
 
-    private static void assertNotFaintPlayerParty(ServerPlayerEntity player) throws FaintPlayerPartyException {
+    private static void assertNotFaintPlayerParty(ServerPlayerEntity player) throws IllegalPlayerStateException {
         PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
         Stream<Pokemon> pokemons = playerPartyStore.toGappyList().stream().filter(Objects::nonNull);
         if (pokemons.allMatch(Pokemon::isFainted)) {
-            throw new FaintPlayerPartyException();
+            throw new IllegalPlayerStateException(
+                    String.format("Pokemons are all fainted: %s", player.getGameProfile().getName()));
         }
     }
 
-    public static void assertExistNextTrainer(ServerPlayerEntity player) throws NextTrainerNotExistException {
+    public static void assertExistNextTrainer(ServerPlayerEntity player)
+            throws InvalidBattleSessionStateException, InvalidResourceException {
         try {
-            BattleGroupSession session = SESSIONS.get(player.getUuid());
+            GroupBattleSession session = SESSIONS.get(player.getUuid());
             int defeatedTrainersCount = session.defeatedTrainers.size();
             GroupFile groupFile = CobblemonTrainerBattle.groupFiles.get(session.groupResourcePath);
-            String nextTrainerResourcePath = groupFile.configuration
-                    .get("trainers").getAsJsonArray()
+
+            if (groupFile.configuration.get("trainers").getAsJsonArray().isEmpty()) {
+                throw new InvalidResourceException(
+                        String.format("Group has no trainers: %s", session.groupResourcePath));
+            }
+
+            groupFile.configuration.get("trainers").getAsJsonArray()
                     .get(defeatedTrainersCount).getAsString();
 
         } catch (NullPointerException | IllegalStateException
-                 | UnsupportedOperationException | IndexOutOfBoundsException e) {
-            throw new NextTrainerNotExistException();
+                 | UnsupportedOperationException e) {
+            GroupBattleSession session = SESSIONS.get(player.getUuid());
+            GroupFile groupFile = CobblemonTrainerBattle.groupFiles.get(session.groupResourcePath);
+            throw new InvalidResourceException(String.format("Invalid resource: %s", groupFile));
+
+        } catch (IndexOutOfBoundsException e) {
+            throw new InvalidBattleSessionStateException(
+                    String.format("Player has defeated all trainers: %s", player.getGameProfile().getName()));
         }
     }
 }

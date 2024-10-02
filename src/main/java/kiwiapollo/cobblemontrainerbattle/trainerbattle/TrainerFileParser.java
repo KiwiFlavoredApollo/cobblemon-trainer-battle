@@ -104,11 +104,10 @@ public class TrainerFileParser {
     }
 
     private void setPokemonLevel(Pokemon pokemon, int level) {
-        try {
-            assertNotRelativeLevel(level);
+        if (level >= RELATIVE_LEVEL_THRESHOLD) {
             pokemon.setLevel(level);
 
-        } catch (RelativePokemonLevelException e) {
+        } else {
             List<Pokemon> playerPokemons = Cobblemon.INSTANCE.getStorage().getParty(player).toGappyList();
             if (playerPokemons.stream().allMatch(Objects::isNull)) return;
             int playerMaximumLevel = playerPokemons.stream()
@@ -116,12 +115,6 @@ public class TrainerFileParser {
                     .map(Pokemon::getLevel)
                     .max(Comparator.naturalOrder()).get();
             pokemon.setLevel(playerMaximumLevel + level);
-        }
-    }
-
-    private void assertNotRelativeLevel(int level) throws RelativePokemonLevelException {
-        if (level < RELATIVE_LEVEL_THRESHOLD) {
-            throw new RelativePokemonLevelException();
         }
     }
 
