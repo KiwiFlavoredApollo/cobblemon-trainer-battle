@@ -35,7 +35,7 @@ public class GroupBattle {
     public static final int FLAT_LEVEL = 100;
     public static Map<UUID, BattleGroupSession> SESSIONS = new HashMap<>();
 
-    public static void startSession(CommandContext<ServerCommandSource> context) throws ExecuteCommandFaildException {
+    public static void startSession(CommandContext<ServerCommandSource> context) throws ExecuteCommandFailedException {
         try {
             assertNotExistValidSession(context.getSource().getPlayer());
 
@@ -50,15 +50,15 @@ public class GroupBattle {
 
         } catch (ValidBattleFrontierSessionExistException e) {
             printValidBattleGroupSessionExistErrorMessage(context);
-            throw new ExecuteCommandFaildException();
+            throw new ExecuteCommandFailedException();
 
         } catch (InvalidGroupFileException e) {
             printInvalidGroupFileErrorMessage(context);
-            throw new ExecuteCommandFaildException();
+            throw new ExecuteCommandFailedException();
         }
     }
 
-    public static void stopSession(CommandContext<ServerCommandSource> context) throws ExecuteCommandFaildException {
+    public static void stopSession(CommandContext<ServerCommandSource> context) throws ExecuteCommandFailedException {
         try {
             assertExistValidSession(context.getSource().getPlayer());
 
@@ -70,12 +70,12 @@ public class GroupBattle {
 
         } catch (ValidBattleFrontierSessionNotExistException e) {
             printValidBattleGroupSessionNotExistErrorMessage(context);
-            throw new ExecuteCommandFaildException();
+            throw new ExecuteCommandFailedException();
         }
     }
 
     public static void battleGroupWithStatusQuo(CommandContext<ServerCommandSource> context)
-            throws ExecuteCommandFaildException {
+            throws ExecuteCommandFailedException {
         try {
             assertExistValidSession(context.getSource().getPlayer());
             assertNotPlayerDefeated(context.getSource().getPlayer());
@@ -106,36 +106,36 @@ public class GroupBattle {
 
         } catch (ValidBattleFrontierSessionNotExistException e) {
             printValidBattleGroupSessionNotExistErrorMessage(context);
-            throw new ExecuteCommandFaildException();
+            throw new ExecuteCommandFailedException();
 
         } catch (BattleFrontierDefeatedPlayerException e) {
             printPlayerDefeatedErrorMessage(context);
-            throw new ExecuteCommandFaildException();
+            throw new ExecuteCommandFailedException();
 
         } catch (PlayerParticipatingPokemonBattleExistException e) {
             printPlayerParticipatingPokemonBattleExistErrorMessage(context);
-            throw new ExecuteCommandFaildException();
+            throw new ExecuteCommandFailedException();
 
         } catch (EmptyPlayerPartyException e) {
             printEmptyPlayerPartyErrorMessage(context);
-            throw new ExecuteCommandFaildException();
+            throw new ExecuteCommandFailedException();
 
         } catch (FaintPlayerPartyException e) {
             printFaintedPlayerPartyErrorMessage(context);
-            throw new ExecuteCommandFaildException();
+            throw new ExecuteCommandFailedException();
 
         } catch (PlayerPartyBelowRelativeLevelThresholdException e) {
             printPlayerPartyBelowRelativeLevelThresholdErrorMessage(context);
-            throw new ExecuteCommandFaildException();
+            throw new ExecuteCommandFailedException();
 
         } catch (NextTrainerNotExistException e) {
             printNextTrainerNotExistErrorMessage(context);
-            throw new ExecuteCommandFaildException();
+            throw new ExecuteCommandFailedException();
         }
     }
 
     public static void battleGroupWithFlatLevelAndFullHealth(CommandContext<ServerCommandSource> context)
-            throws ExecuteCommandFaildException {
+            throws ExecuteCommandFailedException {
         try {
             assertExistValidSession(context.getSource().getPlayer());
             assertNotPlayerDefeated(context.getSource().getPlayer());
@@ -164,23 +164,23 @@ public class GroupBattle {
 
         } catch (ValidBattleFrontierSessionNotExistException e) {
             printValidBattleGroupSessionNotExistErrorMessage(context);
-            throw new ExecuteCommandFaildException();
+            throw new ExecuteCommandFailedException();
 
         } catch (BattleFrontierDefeatedPlayerException e) {
             printPlayerDefeatedErrorMessage(context);
-            throw new ExecuteCommandFaildException();
+            throw new ExecuteCommandFailedException();
 
         } catch (PlayerParticipatingPokemonBattleExistException e) {
             printPlayerParticipatingPokemonBattleExistErrorMessage(context);
-            throw new ExecuteCommandFaildException();
+            throw new ExecuteCommandFailedException();
 
         } catch (EmptyPlayerPartyException e) {
             printEmptyPlayerPartyErrorMessage(context);
-            throw new ExecuteCommandFaildException();
+            throw new ExecuteCommandFailedException();
 
         } catch (NextTrainerNotExistException e) {
             printNextTrainerNotExistErrorMessage(context);
-            throw new ExecuteCommandFaildException();
+            throw new ExecuteCommandFailedException();
         }
     }
 
@@ -197,6 +197,15 @@ public class GroupBattle {
         } catch (CreateTrainerFailedException e) {
             throw new NextTrainerNotExistException();
         }
+    }
+
+    public static String getNextTrainerResourcePath(ServerPlayerEntity player) {
+        BattleGroupSession session = SESSIONS.get(player.getUuid());
+        int defeatedTrainersCount = session.defeatedTrainers.size();
+        return CobblemonTrainerBattle.groupFiles
+                .get(session.groupResourcePath).configuration
+                .get("trainers").getAsJsonArray()
+                .get(defeatedTrainersCount).getAsString();
     }
 
     private static void printValidBattleGroupSessionNotExistErrorMessage(CommandContext<ServerCommandSource> context) {
@@ -345,7 +354,7 @@ public class GroupBattle {
         }
     }
 
-    private static void assertExistNextTrainer(ServerPlayerEntity player) throws NextTrainerNotExistException {
+    public static void assertExistNextTrainer(ServerPlayerEntity player) throws NextTrainerNotExistException {
         try {
             BattleGroupSession session = SESSIONS.get(player.getUuid());
             int defeatedTrainersCount = session.defeatedTrainers.size();

@@ -25,7 +25,7 @@ import java.util.stream.Stream;
 public class TrainerBattle {
     public static final int LEVEL = 100;
 
-    public static void battleWithStatusQuo(CommandContext<ServerCommandSource> context, Trainer trainer) {
+    public static void battleWithStatusQuo(CommandContext<ServerCommandSource> context, Trainer trainer) throws ExecuteCommandFailedException {
         try {
             assertNotEmptyPlayerParty(context.getSource().getPlayer());
             assertPlayerPartyAtOrAboveRelativeLevelThreshold(context.getSource().getPlayer());
@@ -50,44 +50,28 @@ public class TrainerBattle {
             });
 
         } catch (EmptyPlayerPartyException e) {
-            context.getSource().getPlayer().sendMessage(Text.literal("You have no Pokemon").formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
-            CobblemonTrainerBattle.LOGGER.error(
-                    String.format("%s: Player has no Pokemon",
-                            context.getSource().getPlayer().getGameProfile().getName()));
+            printEmptyPlayerPartyErrorMessage(context);
+            throw new ExecuteCommandFailedException();
 
         } catch (PlayerPartyBelowRelativeLevelThresholdException e) {
-            context.getSource().getPlayer().sendMessage(
-                    Text.literal(String.format("You must have at least one Pokemon at or above level %d",
-                            TrainerFileParser.RELATIVE_LEVEL_THRESHOLD)).formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
-            CobblemonTrainerBattle.LOGGER.error(
-                    String.format("%s: Pokemons under leveled",
-                            context.getSource().getPlayer().getGameProfile().getName()));
+            printPlayerPartyBelowRelativeLevelThresholdErrorMessage(context);
+            throw new ExecuteCommandFailedException();
 
         } catch (FaintPlayerPartyException e) {
-            context.getSource().getPlayer().sendMessage(Text.literal("Your Pokemons are all fainted").formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
-            CobblemonTrainerBattle.LOGGER.error(
-                    String.format("%s: Pokemons are all fainted",
-                            context.getSource().getPlayer().getGameProfile().getName()));
+            printFaintPlayerPartyErrorMessage(context);
+            throw new ExecuteCommandFailedException();
 
         } catch (PlayerParticipatingPokemonBattleExistException e) {
-            context.getSource().getPlayer().sendMessage(
-                    Text.literal("You cannot start Pokemon battle while on another").formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Already participating in another Pokemon battle",
-                    context.getSource().getPlayer().getGameProfile().getName()));
+            printPlayerParticipatingPokemonBattleExistErrorMessage(context);
+            throw new ExecuteCommandFailedException();
 
         } catch (TrainerConditionNotSatisfiedException e) {
-            context.getSource().getPlayer().sendMessage(Text.literal(e.message).formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Player does not satisfy trainer condition",
-                    context.getSource().getPlayer().getGameProfile().getName()));
+            printTrainerConditionNotSatisfiedErrorMessage(context, e);
+            throw new ExecuteCommandFailedException();
         }
     }
 
-    public static void battleWithFlatLevelAndFullHealth(CommandContext<ServerCommandSource> context, Trainer trainer) {
+    public static void battleWithFlatLevelAndFullHealth(CommandContext<ServerCommandSource> context, Trainer trainer) throws ExecuteCommandFailedException {
         try {
             assertNotEmptyPlayerParty(context.getSource().getPlayer());
             assertNotExistPlayerParticipatingPokemonBattle(context.getSource().getPlayer());
@@ -114,25 +98,55 @@ public class TrainerBattle {
             });
 
         } catch (EmptyPlayerPartyException e) {
-            context.getSource().getPlayer().sendMessage(Text.literal("You have no Pokemon"));
-            CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
-            CobblemonTrainerBattle.LOGGER.error(
-                    String.format("%s: Player has no Pokemon",
-                            context.getSource().getPlayer().getGameProfile().getName()));
+            printEmptyPlayerPartyErrorMessage(context);
+            throw new ExecuteCommandFailedException();
 
         } catch (PlayerParticipatingPokemonBattleExistException e) {
-            context.getSource().getPlayer().sendMessage(
-                    Text.literal("You cannot start Pokemon battle while on another"));
-            CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Already participating in another Pokemon battle",
-                    context.getSource().getPlayer().getGameProfile().getName()));
+            printPlayerParticipatingPokemonBattleExistErrorMessage(context);
+            throw new ExecuteCommandFailedException();
 
         } catch (TrainerConditionNotSatisfiedException e) {
-            context.getSource().getPlayer().sendMessage(Text.literal(e.message).formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
-            CobblemonTrainerBattle.LOGGER.error(String.format("%s: Player does not satisfy trainer condition",
-                    context.getSource().getPlayer().getGameProfile().getName()));
+            printTrainerConditionNotSatisfiedErrorMessage(context, e);
+            throw new ExecuteCommandFailedException();
         }
+    }
+
+    private static void printTrainerConditionNotSatisfiedErrorMessage(CommandContext<ServerCommandSource> context, TrainerConditionNotSatisfiedException e) {
+        context.getSource().getPlayer().sendMessage(Text.literal(e.message).formatted(Formatting.RED));
+        CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
+        CobblemonTrainerBattle.LOGGER.error(String.format("%s: Player does not satisfy trainer condition",
+                context.getSource().getPlayer().getGameProfile().getName()));
+    }
+
+    private static void printPlayerParticipatingPokemonBattleExistErrorMessage(CommandContext<ServerCommandSource> context) {
+        context.getSource().getPlayer().sendMessage(
+                Text.literal("You cannot start Pokemon battle while on another").formatted(Formatting.RED));
+        CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
+        CobblemonTrainerBattle.LOGGER.error(String.format("%s: Already participating in another Pokemon battle",
+                context.getSource().getPlayer().getGameProfile().getName()));
+    }
+
+    private static void printFaintPlayerPartyErrorMessage(CommandContext<ServerCommandSource> context) {
+        context.getSource().getPlayer().sendMessage(Text.literal("Your Pokemons are all fainted").formatted(Formatting.RED));
+        CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
+        CobblemonTrainerBattle.LOGGER.error(
+                String.format("%s: Pokemons are all fainted", context.getSource().getPlayer().getGameProfile().getName()));
+    }
+
+    private static void printPlayerPartyBelowRelativeLevelThresholdErrorMessage(CommandContext<ServerCommandSource> context) {
+        context.getSource().getPlayer().sendMessage(
+                Text.literal(String.format("You must have at least one Pokemon at or above level %d",
+                        TrainerFileParser.RELATIVE_LEVEL_THRESHOLD)).formatted(Formatting.RED));
+        CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
+        CobblemonTrainerBattle.LOGGER.error(
+                String.format("%s: Pokemons under leveled", context.getSource().getPlayer().getGameProfile().getName()));
+    }
+
+    private static void printEmptyPlayerPartyErrorMessage(CommandContext<ServerCommandSource> context) {
+        context.getSource().getPlayer().sendMessage(Text.literal("You have no Pokemon").formatted(Formatting.RED));
+        CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
+        CobblemonTrainerBattle.LOGGER.error(
+                String.format("%s: Player has no Pokemon", context.getSource().getPlayer().getGameProfile().getName()));
     }
 
     private static void assertSatisfiedTrainerCondition(ServerPlayerEntity player, Trainer trainer)

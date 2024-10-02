@@ -7,8 +7,10 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.exceptions.CreateTrainerFailedException;
+import kiwiapollo.cobblemontrainerbattle.exceptions.ExecuteCommandFailedException;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.RandomTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.SpecificTrainerFactory;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.Text;
@@ -21,16 +23,22 @@ public class BattleTrainerFlatCommand extends LiteralArgumentBuilder<ServerComma
         this.requires(new PlayerCommandPredicate(
                 String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "trainer"),
                         String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "random")))
-                .then(getRadicalRedTrainerBattleFlatCommand())
+                .then(getSpecificTrainerBattleCommand())
                 .then(LiteralArgumentBuilder.<ServerCommandSource>literal("random")
                         .requires(new PlayerCommandPredicate(String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "random")))
                         .executes(context -> {
-                            TrainerBattle.battleWithFlatLevelAndFullHealth(context, new RandomTrainerFactory().create(context.getSource().getPlayer()));
-                            return Command.SINGLE_SUCCESS;
+                            try {
+                                Trainer trainer = new RandomTrainerFactory().create(context.getSource().getPlayer());
+                                TrainerBattle.battleWithFlatLevelAndFullHealth(context, trainer);
+                                return Command.SINGLE_SUCCESS;
+
+                            } catch (ExecuteCommandFailedException e) {
+                                return -1;
+                            }
                         }));
     }
 
-    private ArgumentBuilder<ServerCommandSource, ?> getRadicalRedTrainerBattleFlatCommand() {
+    private ArgumentBuilder<ServerCommandSource, ?> getSpecificTrainerBattleCommand() {
         return RequiredArgumentBuilder.<ServerCommandSource, String>argument("trainer", StringArgumentType.greedyString())
                 .requires(new PlayerCommandPredicate(String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "trainer")))
                 .suggests((context, builder) -> {
@@ -39,9 +47,9 @@ public class BattleTrainerFlatCommand extends LiteralArgumentBuilder<ServerComma
                 })
                 .executes(context -> {
                     try {
-                        String trainer = StringArgumentType.getString(context, "trainer");
-                        TrainerBattle.battleWithFlatLevelAndFullHealth(context,
-                                new SpecificTrainerFactory().create(context.getSource().getPlayer(), trainer));
+                        String trainerResourcePath = StringArgumentType.getString(context, "trainer");
+                        Trainer trainer = new SpecificTrainerFactory().create(context.getSource().getPlayer(), trainerResourcePath);
+                        TrainerBattle.battleWithFlatLevelAndFullHealth(context, trainer);
                         return Command.SINGLE_SUCCESS;
 
                     } catch (CreateTrainerFailedException e) {
@@ -51,6 +59,9 @@ public class BattleTrainerFlatCommand extends LiteralArgumentBuilder<ServerComma
                         CobblemonTrainerBattle.LOGGER.error("Error occurred while starting trainer battle");
                         CobblemonTrainerBattle.LOGGER.error(String.format("%s: Unknown trainer", trainer));
 
+                        return -1;
+
+                    } catch (ExecuteCommandFailedException e) {
                         return -1;
                     }
                 });

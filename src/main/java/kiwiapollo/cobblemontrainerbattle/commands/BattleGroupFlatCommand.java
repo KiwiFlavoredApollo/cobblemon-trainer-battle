@@ -6,8 +6,8 @@ import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.exceptions.ExecuteCommandFailedException;
 import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattle;
-import kiwiapollo.cobblemontrainerbattle.exceptions.ExecuteCommandFaildException;
 import net.minecraft.server.command.ServerCommandSource;
 
 public class BattleGroupFlatCommand extends LiteralArgumentBuilder<ServerCommandSource> {
@@ -34,7 +34,7 @@ public class BattleGroupFlatCommand extends LiteralArgumentBuilder<ServerCommand
                                 GroupBattle.battleGroupWithFlatLevelAndFullHealth(context);
                                 return Command.SINGLE_SUCCESS;
 
-                            } catch (ExecuteCommandFaildException e) {
+                            } catch (ExecuteCommandFailedException e) {
                                 return -1;
                             }
                         }));
@@ -47,7 +47,7 @@ public class BattleGroupFlatCommand extends LiteralArgumentBuilder<ServerCommand
                         GroupBattle.stopSession(context);
                         return Command.SINGLE_SUCCESS;
 
-                    } catch (ExecuteCommandFaildException e) {
+                    } catch (ExecuteCommandFailedException e) {
                         return -1;
                     }
                 });
@@ -60,7 +60,7 @@ public class BattleGroupFlatCommand extends LiteralArgumentBuilder<ServerCommand
                         GroupBattle.battleGroupWithFlatLevelAndFullHealth(context);
                         return Command.SINGLE_SUCCESS;
 
-                    } catch (ExecuteCommandFaildException e) {
+                    } catch (ExecuteCommandFailedException e) {
                         return -1;
                     }
                 });
