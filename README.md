@@ -113,6 +113,10 @@ Trades Pokemons with trainers
 - [ ] Refactor TrainerFileParser.createPokemon using JsonObject.has
 - [ ] When on Battle Frontier battle, player Pokemons are slightly damaged
 - [ ] Add subcommand for `/battlefrontier` showing winning streak
+- [ ] BattleFrontierSession.battleCount is deprecated
+- [ ] Rename battlefrontier to battlefrontierarcade
+- [ ] New battlefrontier replaces battlestreak
+- [ ] Create BattleFrontierArcadeSession
 
 ## Reference
 - [Pokemon Showdown Team Formats - Cobblemon Showdown](https://gitlab.com/cable-mc/cobblemon-showdown/-/blob/master/sim/TEAMS.md#packed-format)

@@ -45,6 +45,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 	public static Map<UUID, PokemonBattle> trainerBattles = new HashMap<>();
 	public static Map<Identifier, TrainerFile> trainerFiles = new HashMap<>();
 	public static JsonObject defaultTrainerConfiguration = new JsonObject();
+	public static Map<Identifier, JsonObject> battleStreaks = new HashMap<>();
 
 	@Override
 	public void onInitialize() {
