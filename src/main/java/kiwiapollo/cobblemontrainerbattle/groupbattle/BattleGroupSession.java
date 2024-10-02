@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.battlegroup;
+package kiwiapollo.cobblemontrainerbattle.groupbattle;
 
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.battlefrontier.RandomPartyPokemonsFactory;

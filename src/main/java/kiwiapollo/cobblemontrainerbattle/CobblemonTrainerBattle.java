@@ -7,7 +7,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
-import kiwiapollo.cobblemontrainerbattle.battlegroup.GroupFile;
+import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupFile;
 import kiwiapollo.cobblemontrainerbattle.commands.*;
 import kiwiapollo.cobblemontrainerbattle.common.Config;
 import kiwiapollo.cobblemontrainerbattle.common.ConfigLoader;

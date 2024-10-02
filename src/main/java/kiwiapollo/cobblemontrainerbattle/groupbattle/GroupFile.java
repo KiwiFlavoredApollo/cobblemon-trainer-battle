@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.battlegroup;
+package kiwiapollo.cobblemontrainerbattle.groupbattle;
 
 import com.google.gson.JsonObject;
 
