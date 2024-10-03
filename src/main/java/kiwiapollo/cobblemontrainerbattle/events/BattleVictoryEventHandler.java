@@ -192,8 +192,7 @@ public class BattleVictoryEventHandler {
     private void onVictoryBattleFactory(BattleVictoryEvent battleVictoryEvent) {
         ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
 
-        BattleFactory.SESSIONS.get(player.getUuid()).defeatedTrainers
-                .add(getDefeatedTrainer(battleVictoryEvent));
+        BattleFactory.SESSIONS.get(player.getUuid()).defeatedTrainerCount += 1;
         BattleFactory.SESSIONS.get(player.getUuid()).isTradedPokemon = false;
     }
 

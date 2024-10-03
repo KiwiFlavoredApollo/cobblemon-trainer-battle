@@ -1,0 +1,10 @@
+{
+  "onVictory": {
+    "balance": 0,
+    "commands": []
+  },
+  "onDefeat": {
+    "balance": 0,
+    "commands": []
+  }
+}
