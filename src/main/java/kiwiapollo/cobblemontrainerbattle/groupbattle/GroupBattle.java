@@ -44,25 +44,49 @@ public class GroupBattle {
     public static final int FLAT_LEVEL = 100;
     public static Map<UUID, GroupBattleSession> SESSIONS = new HashMap<>();
 
-    public static int quickStartBattleWithStatusQuo(CommandContext<ServerCommandSource> context) {
+    public static int startSessionAndStartBattleWithStatusQuo(CommandContext<ServerCommandSource> context) {
         try {
             assertNotExistValidSession(context.getSource().getPlayer());
             startSession(context);
             return startBattleWithStatusQuo(context);
 
         } catch (InvalidBattleSessionStateException e) {
+            stopSession(context);
+            startSession(context);
             return startBattleWithStatusQuo(context);
         }
     }
 
-    public static int quickStartBattleWithFlatLevelAndFullHealth(CommandContext<ServerCommandSource> context) {
+    public static int startBattleWithStatusQuoOrStopSession(CommandContext<ServerCommandSource> context) {
+        try {
+            assertNotDefeatedAllTrainers(context.getSource().getPlayer());
+            return startBattleWithStatusQuo(context);
+
+        } catch (InvalidBattleSessionStateException e) {
+            return stopSession(context);
+        }
+    }
+
+    public static int startSessionAndStartBattleWithFlatLevelAndFullHealth(CommandContext<ServerCommandSource> context) {
         try {
             assertNotExistValidSession(context.getSource().getPlayer());
             startSession(context);
             return startBattleWithFlatLevelAndFullHealth(context);
 
         } catch (InvalidBattleSessionStateException e) {
+            stopSession(context);
+            startSession(context);
             return startBattleWithFlatLevelAndFullHealth(context);
+        }
+    }
+
+    public static int startBattleWithFlatLevelAndFullHealthOrStopSession(CommandContext<ServerCommandSource> context) {
+        try {
+            assertNotDefeatedAllTrainers(context.getSource().getPlayer());
+            return startBattleWithFlatLevelAndFullHealth(context);
+
+        } catch (InvalidBattleSessionStateException e) {
+            return stopSession(context);
         }
     }
 
@@ -99,7 +123,7 @@ public class GroupBattle {
         try {
             assertExistValidSession(context.getSource().getPlayer());
 
-            if (isPlayerVictory(context)) {
+            if (isDefeatedAllTrainers(context.getSource().getPlayer())) {
                 onGroupBattleVictory(context);
             } else {
                 onGroupBattleDefeat(context);
@@ -177,21 +201,6 @@ public class GroupBattle {
         }
     }
 
-    private static boolean isPlayerVictory(CommandContext<ServerCommandSource> context) {
-        try {
-            GroupBattleSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
-
-            int defeatedTrainerCount = session.defeatedTrainers.size();
-            GroupFile groupFile = CobblemonTrainerBattle.groupFiles.get(session.groupResourcePath);
-            int groupTrainerCount = groupFile.configuration.get("trainers").getAsJsonArray().size();
-
-            return defeatedTrainerCount == groupTrainerCount;
-
-        } catch (NullPointerException | ClassCastException | IllegalStateException e) {
-            return false;
-        }
-    }
-
     public static int startBattleWithStatusQuo(CommandContext<ServerCommandSource> context) {
         try {
             assertExistValidSession(context.getSource().getPlayer());
@@ -200,6 +209,7 @@ public class GroupBattle {
             assertNotEmptyPlayerParty(context.getSource().getPlayer());
             assertNotFaintPlayerParty(context.getSource().getPlayer());
             assertPlayerPartyAtOrAboveRelativeLevelThreshold(context.getSource().getPlayer());
+            assertNotDefeatedAllTrainers(context.getSource().getPlayer());
 
             String nextTrainerResourcePath = getNextTrainerResourcePath(context.getSource().getPlayer());
             Trainer trainer = new SpecificTrainerFactory().create(context.getSource().getPlayer(), nextTrainerResourcePath);
@@ -242,6 +252,31 @@ public class GroupBattle {
                     Text.literal(getInvalidPlayerStateErrorMessage(e)).formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
             return -1;
+        }
+    }
+
+    private static void assertNotDefeatedAllTrainers(ServerPlayerEntity player)
+            throws InvalidBattleSessionStateException {
+        if (isDefeatedAllTrainers(player)) {
+            throw new InvalidBattleSessionStateException(
+                    String.format("Player has defeated all trainers: %s", player.getGameProfile().getName()),
+                    InvalidBattleSessionState.ALL_TRAINER_DEFEATED
+            );
+        };
+    }
+
+    private static boolean isDefeatedAllTrainers(ServerPlayerEntity player) {
+        try {
+            GroupBattleSession session = SESSIONS.get(player.getUuid());
+
+            int defeatedTrainerCount = session.defeatedTrainers.size();
+            GroupFile groupFile = CobblemonTrainerBattle.groupFiles.get(session.groupResourcePath);
+            int groupTrainerCount = groupFile.configuration.get("trainers").getAsJsonArray().size();
+
+            return defeatedTrainerCount == groupTrainerCount;
+
+        } catch (NullPointerException | ClassCastException | IllegalStateException e) {
+            throw new RuntimeException(e);
         }
     }
 

@@ -45,9 +45,10 @@ public class CobblemonTrainerBattle implements ModInitializer {
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
 			dispatcher.register(new BattleTrainerCommand());
 			dispatcher.register(new BattleTrainerFlatCommand());
-			dispatcher.register(new BattleFrontierCommand());
 			dispatcher.register(new BattleGroupCommand());
 			dispatcher.register(new BattleGroupFlatCommand());
+			dispatcher.register(new GroupBattleSessionCommand());
+			dispatcher.register(new BattleFrontierCommand());
 		});
 
 		CobblemonEvents.BATTLE_VICTORY.subscribe(Priority.NORMAL, battleVictoryEvent -> {

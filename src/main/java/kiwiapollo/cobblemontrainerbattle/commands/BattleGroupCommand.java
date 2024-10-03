@@ -14,28 +14,16 @@ public class BattleGroupCommand extends LiteralArgumentBuilder<ServerCommandSour
         super("battlegroup");
 
         this.requires(new PlayerCommandPredicate(String.format("%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral())))
-                .then(getStartSessionCommand())
-                .then(getStopSessionCommand())
-                .then(getStartBattleCommand());
+                .then(getStartSessionAndStartBattleCommand())
+                .executes(GroupBattle::startBattleWithStatusQuoOrStopSession);
     }
 
-    private ArgumentBuilder<ServerCommandSource, ?> getStartSessionCommand() {
-        return LiteralArgumentBuilder.<ServerCommandSource>literal("start")
-                .then(RequiredArgumentBuilder.<ServerCommandSource, String>argument("group", StringArgumentType.greedyString())
-                        .suggests((context, builder) -> {
-                            CobblemonTrainerBattle.groupFiles.keySet().stream().map(String::valueOf).forEach(builder::suggest);
-                            return builder.buildFuture();
-                        })
-                        .executes(GroupBattle::quickStartBattleWithStatusQuo));
-    }
-
-    private ArgumentBuilder<ServerCommandSource, ?> getStopSessionCommand() {
-        return LiteralArgumentBuilder.<ServerCommandSource>literal("stop")
-                .executes(GroupBattle::stopSession);
-    }
-
-    private ArgumentBuilder<ServerCommandSource, ?> getStartBattleCommand() {
-        return LiteralArgumentBuilder.<ServerCommandSource>literal("battle")
-                .executes(GroupBattle::startBattleWithStatusQuo);
+    private ArgumentBuilder<ServerCommandSource, ?> getStartSessionAndStartBattleCommand() {
+        return RequiredArgumentBuilder.<ServerCommandSource, String>argument("group", StringArgumentType.greedyString())
+                .suggests((context, builder) -> {
+                    CobblemonTrainerBattle.groupFiles.keySet().stream().map(String::valueOf).forEach(builder::suggest);
+                    return builder.buildFuture();
+                })
+                .executes(GroupBattle::startSessionAndStartBattleWithStatusQuo);
     }
 }

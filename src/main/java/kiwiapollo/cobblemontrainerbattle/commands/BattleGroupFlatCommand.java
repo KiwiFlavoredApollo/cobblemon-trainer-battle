@@ -14,28 +14,17 @@ public class BattleGroupFlatCommand extends LiteralArgumentBuilder<ServerCommand
         super("battlegroupflat");
 
         this.requires(new PlayerCommandPredicate(String.format("%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral())))
-                .then(getStartSessionCommand())
-                .then(getStopSessionCommand())
-                .then(getStartBattleCommand());
+                .then(getStartSessionAndStartBattleCommand())
+                .executes(GroupBattle::startBattleWithFlatLevelAndFullHealthOrStopSession);
     }
 
-    private ArgumentBuilder<ServerCommandSource, ?> getStartSessionCommand() {
+    private ArgumentBuilder<ServerCommandSource, ?> getStartSessionAndStartBattleCommand() {
         return LiteralArgumentBuilder.<ServerCommandSource>literal("start")
                 .then(RequiredArgumentBuilder.<ServerCommandSource, String>argument("group", StringArgumentType.greedyString())
                         .suggests((context, builder) -> {
                             CobblemonTrainerBattle.groupFiles.keySet().stream().map(String::valueOf).forEach(builder::suggest);
                             return builder.buildFuture();
                         })
-                        .executes(GroupBattle::quickStartBattleWithFlatLevelAndFullHealth));
-    }
-
-    private ArgumentBuilder<ServerCommandSource, ?> getStopSessionCommand() {
-        return LiteralArgumentBuilder.<ServerCommandSource>literal("stop")
-                .executes(GroupBattle::stopSession);
-    }
-
-    private ArgumentBuilder<ServerCommandSource, ?> getStartBattleCommand() {
-        return LiteralArgumentBuilder.<ServerCommandSource>literal("battle")
-                .executes(GroupBattle::startBattleWithFlatLevelAndFullHealth);
+                        .executes(GroupBattle::startSessionAndStartBattleWithFlatLevelAndFullHealth));
     }
 }
