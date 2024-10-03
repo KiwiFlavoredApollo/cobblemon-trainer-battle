@@ -16,6 +16,8 @@ import kiwiapollo.cobblemontrainerbattle.battleactors.player.FlatLevelFullHealth
 import kiwiapollo.cobblemontrainerbattle.battleactors.player.StatusQuoPlayerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.FlatLevelFullHealthTrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.TrainerBattleActorFactory;
+import kiwiapollo.cobblemontrainerbattle.commands.BattleGroupCommand;
+import kiwiapollo.cobblemontrainerbattle.commands.BattleGroupFlatCommand;
 import kiwiapollo.cobblemontrainerbattle.common.InvalidBattleSessionState;
 import kiwiapollo.cobblemontrainerbattle.common.InvalidPlayerState;
 import kiwiapollo.cobblemontrainerbattle.common.InvalidResourceState;
@@ -227,7 +229,8 @@ public class GroupBattle {
 
                 context.getSource().getPlayer().sendMessage(
                         Text.literal(String.format("Trainer battle has started against %s", trainer.name)));
-                CobblemonTrainerBattle.LOGGER.info(String.format("battlegroup: %s versus %s",
+                CobblemonTrainerBattle.LOGGER.info(String.format("%s: %s versus %s",
+                        new BattleGroupCommand().getLiteral(),
                         context.getSource().getPlayer().getGameProfile().getName(), trainer.name));
 
                 return Unit.INSTANCE;
@@ -303,7 +306,8 @@ public class GroupBattle {
 
                 context.getSource().getPlayer().sendMessage(
                         Text.literal(String.format("Flat level trainer battle has started against %s", trainer.name)));
-                CobblemonTrainerBattle.LOGGER.info(String.format("battlegroup: %s versus %s",
+                CobblemonTrainerBattle.LOGGER.info(String.format("%s: %s versus %s",
+                        new BattleGroupFlatCommand().getLiteral(),
                         context.getSource().getPlayer().getGameProfile().getName(), trainer.name));
 
                 return Unit.INSTANCE;
