@@ -4,16 +4,16 @@ import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
-import kiwiapollo.cobblemontrainerbattle.battlefrontier.BattleFrontier;
-import kiwiapollo.cobblemontrainerbattle.battlefrontier.BattleFrontierSession;
+import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactory;
+import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactorySession;
 import kotlin.Unit;
 import net.minecraft.server.network.ServerPlayerEntity;
 
-public class BattleFrontierPlayerBattleActorFactory {
+public class BattleFactoryPlayerBattleActorFactory {
     public BattleActor create(ServerPlayerEntity player) {
-        BattleFrontierSession session = BattleFrontier.SESSIONS.get(player.getUuid());
+        BattleFactorySession session = BattleFactory.SESSIONS.get(player.getUuid());
         session.partyPokemons.forEach(Pokemon::heal);
-        session.partyPokemons.forEach(pokemon -> pokemon.setLevel(BattleFrontier.LEVEL));
+        session.partyPokemons.forEach(pokemon -> pokemon.setLevel(BattleFactory.LEVEL));
 
         return new PlayerBattleActor(
                 player.getUuid(),

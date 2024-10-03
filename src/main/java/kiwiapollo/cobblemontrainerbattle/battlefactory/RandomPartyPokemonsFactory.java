@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.battlefrontier;
+package kiwiapollo.cobblemontrainerbattle.battlefactory;
 
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
 import com.cobblemon.mod.common.pokemon.Pokemon;

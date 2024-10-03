@@ -10,7 +10,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.mojang.brigadier.CommandDispatcher;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battlefrontier.BattleFrontier;
+import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactory;
 import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
 import net.minecraft.server.MinecraftServer;
@@ -32,16 +32,16 @@ public class BattleVictoryEventHandler {
             return;
         }
 
-        if (isBattleFrontier(battleVictoryEvent)) {
-            handleBattleFrontierVictoryEvent(battleVictoryEvent);
+        if (isBattleFactory(battleVictoryEvent)) {
+            handleBattleFactoryVictoryEvent(battleVictoryEvent);
             return;
         }
 
         handleTrainerBattleVictoryEvent(battleVictoryEvent);
     }
 
-    private boolean isBattleFrontier(BattleVictoryEvent battleVictoryEvent) {
-        return BattleFrontier.SESSIONS.values().stream()
+    private boolean isBattleFactory(BattleVictoryEvent battleVictoryEvent) {
+        return BattleFactory.SESSIONS.values().stream()
                 .map(session -> session.battleUuid)
                 .anyMatch(uuid -> uuid == battleVictoryEvent.getBattle().getBattleId());
     }
@@ -175,32 +175,32 @@ public class BattleVictoryEventHandler {
         GroupBattle.SESSIONS.get(player.getUuid()).isDefeated = true;
     }
 
-    private void handleBattleFrontierVictoryEvent(BattleVictoryEvent battleVictoryEvent) {
+    private void handleBattleFactoryVictoryEvent(BattleVictoryEvent battleVictoryEvent) {
         ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
         BattleActor playerBattleActor = battleVictoryEvent.getBattle().getActor(player);
 
         if (battleVictoryEvent.getWinners().contains(playerBattleActor)) {
-            onVictoryBattleFrontier(battleVictoryEvent);
+            onVictoryBattleFactory(battleVictoryEvent);
 
         } else {
-            onDefeatBattleFrontier(battleVictoryEvent);
+            onDefeatBattleFactory(battleVictoryEvent);
         }
 
         CobblemonTrainerBattle.trainerBattles.remove(battleVictoryEvent.getBattle().getBattleId());
     }
 
-    private void onVictoryBattleFrontier(BattleVictoryEvent battleVictoryEvent) {
+    private void onVictoryBattleFactory(BattleVictoryEvent battleVictoryEvent) {
         ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
 
-        BattleFrontier.SESSIONS.get(player.getUuid()).defeatedTrainers
+        BattleFactory.SESSIONS.get(player.getUuid()).defeatedTrainers
                 .add(getDefeatedTrainer(battleVictoryEvent));
-        BattleFrontier.SESSIONS.get(player.getUuid()).isTradedPokemon = false;
+        BattleFactory.SESSIONS.get(player.getUuid()).isTradedPokemon = false;
     }
 
-    private void onDefeatBattleFrontier(BattleVictoryEvent battleVictoryEvent) {
+    private void onDefeatBattleFactory(BattleVictoryEvent battleVictoryEvent) {
         ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
 
-        BattleFrontier.SESSIONS.get(player.getUuid()).isDefeated = true;
+        BattleFactory.SESSIONS.get(player.getUuid()).isDefeated = true;
     }
 
     private Trainer getDefeatedTrainer(BattleVictoryEvent battleVictoryEvent) {

@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.battlefrontier;
+package kiwiapollo.cobblemontrainerbattle.battlefactory;
 
 import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.moves.Move;
@@ -12,9 +12,9 @@ import com.mojang.brigadier.Command;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battleactors.player.BattleFrontierPlayerBattleActorFactory;
-import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.BattleFrontierNameTrainerBattleActorFactory;
-import kiwiapollo.cobblemontrainerbattle.commands.BattleFrontierCommand;
+import kiwiapollo.cobblemontrainerbattle.battleactors.player.BattleFactoryPlayerBattleActorFactory;
+import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.BattleFactoryNameTrainerBattleActorFactory;
+import kiwiapollo.cobblemontrainerbattle.commands.BattleFactoryCommand;
 import kiwiapollo.cobblemontrainerbattle.common.InvalidBattleSessionState;
 import kiwiapollo.cobblemontrainerbattle.common.InvalidPlayerState;
 import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidBattleSessionStateException;
@@ -32,9 +32,9 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.*;
 
-public class BattleFrontier {
+public class BattleFactory {
     public static final int LEVEL = 100;
-    public static Map<UUID, BattleFrontierSession> SESSIONS = new HashMap<>();
+    public static Map<UUID, BattleFactorySession> SESSIONS = new HashMap<>();
 
     public static int quickStart(CommandContext<ServerCommandSource> context) {
         try {
@@ -53,7 +53,7 @@ public class BattleFrontier {
         try {
             assertNotExistValidSession(context.getSource().getPlayer());
 
-            BattleFrontier.SESSIONS.put(context.getSource().getPlayer().getUuid(), new BattleFrontierSession());
+            BattleFactory.SESSIONS.put(context.getSource().getPlayer().getUuid(), new BattleFactorySession());
 
             context.getSource().getPlayer().sendMessage(Text.literal("Battle Frontier session has started"));
             showPartyPokemons(context);
@@ -74,7 +74,7 @@ public class BattleFrontier {
         try {
             assertExistValidSession(context.getSource().getPlayer());
 
-            BattleFrontier.SESSIONS.remove(context.getSource().getPlayer().getUuid());
+            BattleFactory.SESSIONS.remove(context.getSource().getPlayer().getUuid());
 
             context.getSource().getPlayer().sendMessage(Text.literal("Battle Frontier session has stopped"));
             CobblemonTrainerBattle.LOGGER.info(String.format("%s: Stopped Battle Frontier session",
@@ -98,18 +98,18 @@ public class BattleFrontier {
             Trainer trainer = new ThreePokemonTotalRandomTrainerFactory().create(context.getSource().getPlayer());
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
-                    new BattleSide(new BattleFrontierPlayerBattleActorFactory().create(context.getSource().getPlayer())),
-                    new BattleSide(new BattleFrontierNameTrainerBattleActorFactory().create(trainer)),
+                    new BattleSide(new BattleFactoryPlayerBattleActorFactory().create(context.getSource().getPlayer())),
+                    new BattleSide(new BattleFactoryNameTrainerBattleActorFactory().create(trainer)),
                     false
             ).ifSuccessful(pokemonBattle -> {
                 CobblemonTrainerBattle.trainerBattles.put(context.getSource().getPlayer().getUuid(), pokemonBattle);
                 UUID playerUuid = context.getSource().getPlayer().getUuid();
-                BattleFrontier.SESSIONS.get(playerUuid).battleUuid = pokemonBattle.getBattleId();
+                BattleFactory.SESSIONS.get(playerUuid).battleUuid = pokemonBattle.getBattleId();
 
                 context.getSource().getPlayer().sendMessage(
                         Text.literal("Battle Frontier Pokemon Battle has started"));
                 CobblemonTrainerBattle.LOGGER.info(String.format("%s: %s versus %s",
-                        new BattleFrontierCommand().getLiteral(),
+                        new BattleFactoryCommand().getLiteral(),
                         context.getSource().getPlayer().getGameProfile().getName(), trainer.name));
 
                 return Unit.INSTANCE;
@@ -141,7 +141,7 @@ public class BattleFrontier {
             int playerslot = IntegerArgumentType.getInteger(context, "playerslot");
             int trainerslot = IntegerArgumentType.getInteger(context, "trainerslot");
 
-            BattleFrontierSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
+            BattleFactorySession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
             Trainer lastDefeatedTrainer = session.defeatedTrainers.get(session.defeatedTrainers.size() - 1);
             Pokemon trainerPokemon = lastDefeatedTrainer.pokemons.get(trainerslot - 1);
             Pokemon playerPokemon = session.partyPokemons.get(playerslot - 1);
@@ -174,7 +174,7 @@ public class BattleFrontier {
             assertExistValidSession(context.getSource().getPlayer());
             assertExistDefeatedTrainer(context.getSource().getPlayer());
 
-            BattleFrontierSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
+            BattleFactorySession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
             Trainer lastDefeatedTrainer = session.defeatedTrainers.get(session.defeatedTrainers.size() - 1);
             printPokemons(context, lastDefeatedTrainer.pokemons);
 
@@ -207,7 +207,7 @@ public class BattleFrontier {
             assertExistValidSession(context.getSource().getPlayer());
             assertNotExistDefeatedTrainers(context.getSource().getPlayer());
 
-            BattleFrontierSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
+            BattleFactorySession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
 
             session.partyPokemons = new RandomPartyPokemonsFactory().create();
             context.getSource().getPlayer().sendMessage(Text.literal("Rerolled Pokemons"));
@@ -232,7 +232,7 @@ public class BattleFrontier {
         try {
             assertExistValidSession(context.getSource().getPlayer());
 
-            BattleFrontierSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
+            BattleFactorySession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
             int winningStreak = session.defeatedTrainers.size();
             context.getSource().getPlayer().sendMessage(
                     Text.literal(String.format("Winning streak: %d", winningStreak)));
@@ -248,7 +248,7 @@ public class BattleFrontier {
     }
 
     private static void assertNotPlayerDefeated(ServerPlayerEntity player) throws InvalidBattleSessionStateException {
-        BattleFrontierSession session = SESSIONS.get(player.getUuid());
+        BattleFactorySession session = SESSIONS.get(player.getUuid());
         if (session.isDefeated) {
             throw new InvalidBattleSessionStateException(
                     String.format("Player is defeated: %s", player.getGameProfile().getName()),
@@ -278,7 +278,7 @@ public class BattleFrontier {
             return false;
         }
 
-        BattleFrontierSession session = SESSIONS.get(player.getUuid());
+        BattleFactorySession session = SESSIONS.get(player.getUuid());
         return Instant.now().isBefore(session.timestamp.plus(Duration.ofHours(24)));
     }
 

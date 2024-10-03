@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.battlefrontier;
+package kiwiapollo.cobblemontrainerbattle.battlefactory;
 
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
@@ -8,9 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class BattleFrontierSession {
+public class BattleFactorySession {
     public final UUID uuid;
-    public final BattleFrontierDifficulty difficulty;
 
     public UUID battleUuid;
     public List<Trainer> defeatedTrainers;
@@ -19,9 +18,8 @@ public class BattleFrontierSession {
     public boolean isDefeated;
     public boolean isTradedPokemon;
 
-    public BattleFrontierSession() {
+    public BattleFactorySession() {
         this.uuid = UUID.randomUUID();
-        this.difficulty = BattleFrontierDifficulty.NORMAL;
 
         this.battleUuid = null;
         this.defeatedTrainers = new ArrayList<>();

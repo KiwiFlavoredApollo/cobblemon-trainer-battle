@@ -1,7 +1,5 @@
 package kiwiapollo.cobblemontrainerbattle.groupbattle;
 
-import com.cobblemon.mod.common.pokemon.Pokemon;
-import kiwiapollo.cobblemontrainerbattle.battlefrontier.RandomPartyPokemonsFactory;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
 
 import java.time.Instant;
