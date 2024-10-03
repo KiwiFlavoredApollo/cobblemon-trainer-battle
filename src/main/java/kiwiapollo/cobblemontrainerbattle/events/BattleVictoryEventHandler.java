@@ -87,7 +87,7 @@ public class BattleVictoryEventHandler {
 
         if (onVictory.has("commands") && onVictory.get("commands").isJsonArray()) {
             for (JsonElement commandJsonElement : onVictory.get("commands").getAsJsonArray()) {
-                runCommand(commandJsonElement, player);
+                executeCommand(commandJsonElement, player);
             }
         }
     }
@@ -106,12 +106,12 @@ public class BattleVictoryEventHandler {
 
         if (onDefeat.has("commands") && onDefeat.get("commands").isJsonArray()) {
             for (JsonElement commandJsonElement : onDefeat.get("commands").getAsJsonArray()) {
-                runCommand(commandJsonElement, player);
+                executeCommand(commandJsonElement, player);
             }
         }
     }
 
-    private void runCommand(JsonElement commandJsonElement, ServerPlayerEntity player) {
+    private void executeCommand(JsonElement commandJsonElement, ServerPlayerEntity player) {
         try {
             String command = commandJsonElement.getAsString();
             command = command.replace("%player%", player.getGameProfile().getName());
@@ -159,14 +159,18 @@ public class BattleVictoryEventHandler {
             onDefeatGroupBattle(battleVictoryEvent);
         }
 
+        GroupBattle.SESSIONS.get(player.getUuid()).battleUuid = null;
         CobblemonTrainerBattle.trainerBattles.remove(battleVictoryEvent.getBattle().getBattleId());
+
+//        if (isDefeatedAllTrainers || isDefeatedToTrainer) {
+//            BattleFactory.SESSIONS.remove(player.getUuid());
+//        }
     }
 
     private void onVictoryGroupBattle(BattleVictoryEvent battleVictoryEvent) {
         ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
 
-        GroupBattle.SESSIONS.get(player.getUuid()).defeatedTrainers
-                .add(getDefeatedTrainer(battleVictoryEvent));
+        GroupBattle.SESSIONS.get(player.getUuid()).defeatedTrainerCount += 1;
     }
 
     private void onDefeatGroupBattle(BattleVictoryEvent battleVictoryEvent) {
@@ -186,6 +190,7 @@ public class BattleVictoryEventHandler {
             onDefeatBattleFactory(battleVictoryEvent);
         }
 
+        BattleFactory.SESSIONS.get(player.getUuid()).battleUuid = null;
         CobblemonTrainerBattle.trainerBattles.remove(battleVictoryEvent.getBattle().getBattleId());
     }
 

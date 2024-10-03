@@ -24,7 +24,6 @@ import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
-import net.minecraft.util.Identifier;
 
 import java.util.Objects;
 import java.util.stream.Stream;
@@ -55,7 +54,7 @@ public class TrainerBattle {
             assertNotEmptyPlayerParty(context.getSource().getPlayer());
             assertPlayerPartyAtOrAboveRelativeLevelThreshold(context.getSource().getPlayer());
             assertNotFaintPlayerParty(context.getSource().getPlayer());
-            assertNotPlayerBusyWithAnotherPokemonBattle(context.getSource().getPlayer());
+            assertNotPlayerBusyWithPokemonBattle(context.getSource().getPlayer());
             assertSatisfiedTrainerCondition(context.getSource().getPlayer(), trainer);
 
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
@@ -112,7 +111,7 @@ public class TrainerBattle {
     public static int startSpecificTrainerBattleWithFlatLevelAndFullHealth(CommandContext<ServerCommandSource> context, Trainer trainer) {
         try {
             assertNotEmptyPlayerParty(context.getSource().getPlayer());
-            assertNotPlayerBusyWithAnotherPokemonBattle(context.getSource().getPlayer());
+            assertNotPlayerBusyWithPokemonBattle(context.getSource().getPlayer());
 
             Cobblemon.INSTANCE.getStorage().getParty(context.getSource().getPlayer()).forEach(Pokemon::recall);
 
@@ -231,13 +230,13 @@ public class TrainerBattle {
         }
     }
 
-    public static void assertNotPlayerBusyWithAnotherPokemonBattle(ServerPlayerEntity player)
+    public static void assertNotPlayerBusyWithPokemonBattle(ServerPlayerEntity player)
             throws InvalidPlayerStateException {
         if (Cobblemon.INSTANCE.getBattleRegistry().getBattleByParticipatingPlayer(player) != null) {
             throw new InvalidPlayerStateException(
-                    String.format("Player is busy with another Pokemon battle: %s",
+                    String.format("Player is busy with Pokemon battle: %s",
                             player.getGameProfile().getName()),
-                    InvalidPlayerState.BUSY_WITH_ANOTHER_POKEMON_BATTLE);
+                    InvalidPlayerState.BUSY_WITH_POKEMON_BATTLE);
         }
     }
 
@@ -258,8 +257,8 @@ public class TrainerBattle {
             return "You have no Pokemon";
         }
 
-        if (e.getInvalidPlayerState().equals(InvalidPlayerState.BUSY_WITH_ANOTHER_POKEMON_BATTLE)) {
-            return "You cannot start trainer battle while on another";
+        if (e.getInvalidPlayerState().equals(InvalidPlayerState.BUSY_WITH_POKEMON_BATTLE)) {
+            return "You cannot run this command while on Pokemon battle";
         }
 
         if (e.getInvalidPlayerState().equals(InvalidPlayerState.FAINTED_POKEMON_PARTY)) {

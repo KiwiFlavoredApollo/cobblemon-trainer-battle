@@ -1,10 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.groupbattle;
 
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
-
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
 public class GroupBattleSession {
@@ -12,7 +8,7 @@ public class GroupBattleSession {
     public final String groupResourcePath;
 
     public UUID battleUuid;
-    public List<Trainer> defeatedTrainers;
+    public int defeatedTrainerCount;
     public Instant timestamp;
     public boolean isDefeated;
 
@@ -21,7 +17,7 @@ public class GroupBattleSession {
         this.groupResourcePath = groupResourcePath;
 
         this.battleUuid = null;
-        this.defeatedTrainers = new ArrayList<>();
+        this.defeatedTrainerCount = 0;
         this.timestamp = Instant.now();
         this.isDefeated = false;
     }

@@ -60,9 +60,9 @@ public class BattleFactory {
 
             BattleFactory.SESSIONS.put(context.getSource().getPlayer().getUuid(), new BattleFactorySession(trainersToDefeat));
 
-            context.getSource().getPlayer().sendMessage(Text.literal("Battle Frontier session has started"));
+            context.getSource().getPlayer().sendMessage(Text.literal("Battle Factory session has started"));
             showPartyPokemons(context);
-            CobblemonTrainerBattle.LOGGER.info(String.format("%s: Started Battle Frontier session",
+            CobblemonTrainerBattle.LOGGER.info(String.format("%s: Started Battle Factory session",
                     context.getSource().getPlayer().getGameProfile().getName()));
 
             return Command.SINGLE_SUCCESS;
@@ -78,11 +78,12 @@ public class BattleFactory {
     public static int stopSession(CommandContext<ServerCommandSource> context) {
         try {
             assertExistValidSession(context.getSource().getPlayer());
+            assertNotPlayerBusyWithPokemonBattle(context.getSource().getPlayer());
 
             BattleFactory.SESSIONS.remove(context.getSource().getPlayer().getUuid());
 
-            context.getSource().getPlayer().sendMessage(Text.literal("Battle Frontier session has stopped"));
-            CobblemonTrainerBattle.LOGGER.info(String.format("%s: Stopped Battle Frontier session",
+            context.getSource().getPlayer().sendMessage(Text.literal("Battle Factory session has stopped"));
+            CobblemonTrainerBattle.LOGGER.info(String.format("%s: Stopped Battle Factory session",
                     context.getSource().getPlayer().getGameProfile().getName()));
 
             return Command.SINGLE_SUCCESS;
@@ -91,6 +92,11 @@ public class BattleFactory {
             context.getSource().getPlayer().sendMessage(
                     Text.literal(getInvalidBattleSessionStateErrorMessage(e)).formatted(Formatting.RED));
             return -1;
+
+        } catch (InvalidPlayerStateException e) {
+            context.getSource().getPlayer().sendMessage(
+                    Text.literal(getInvalidPlayerStateErrorMessage(e)).formatted(Formatting.RED));
+            return -1;
         }
     }
 
@@ -98,7 +104,7 @@ public class BattleFactory {
         try {
             assertExistValidSession(context.getSource().getPlayer());
             assertNotPlayerDefeated(context.getSource().getPlayer());
-            assertNotPlayerBusyWithAnotherPokemonBattle(context.getSource().getPlayer());
+            assertNotPlayerBusyWithPokemonBattle(context.getSource().getPlayer());
             assertNotDefeatedAllTrainers(context.getSource().getPlayer());
 
             BattleFactorySession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
@@ -114,7 +120,7 @@ public class BattleFactory {
                 BattleFactory.SESSIONS.get(playerUuid).battleUuid = pokemonBattle.getBattleId();
 
                 context.getSource().getPlayer().sendMessage(
-                        Text.literal("Battle Frontier Pokemon Battle has started"));
+                        Text.literal("Battle Factory Pokemon Battle has started"));
                 CobblemonTrainerBattle.LOGGER.info(String.format("%s: %s versus %s",
                         new BattleFactoryCommand().getLiteral(),
                         context.getSource().getPlayer().getGameProfile().getName(), trainer.name));
@@ -390,28 +396,28 @@ public class BattleFactory {
                 stats.get(Stats.SPECIAL_ATTACK), stats.get(Stats.SPECIAL_DEFENCE), stats.get(Stats.SPEED));
     };
 
-    private static void assertNotPlayerBusyWithAnotherPokemonBattle(ServerPlayerEntity player)
+    private static void assertNotPlayerBusyWithPokemonBattle(ServerPlayerEntity player)
             throws InvalidPlayerStateException {
         if (Cobblemon.INSTANCE.getBattleRegistry().getBattleByParticipatingPlayer(player) != null) {
             throw new InvalidPlayerStateException(
-                    String.format("Player is busy with another Pokemon battle: %s",
+                    String.format("Player is busy with Pokemon battle: %s",
                             player.getGameProfile().getName()),
-                    InvalidPlayerState.BUSY_WITH_ANOTHER_POKEMON_BATTLE
+                    InvalidPlayerState.BUSY_WITH_POKEMON_BATTLE
             );
         }
     }
 
     private static String getInvalidBattleSessionStateErrorMessage(InvalidBattleSessionStateException e) {
         if (e.getInvalidBattleSessionState().equals(InvalidBattleSessionState.SESSION_EXISTS)) {
-            return "Active battle frontier session exist";
+            return "Valid battle factory session exist";
         }
 
         if (e.getInvalidBattleSessionState().equals(InvalidBattleSessionState.SESSION_NOT_EXISTS)) {
-            return "Active battle frontier session does not exist";
+            return "Valid battle factory session does not exist";
         }
 
         if (e.getInvalidBattleSessionState().equals(InvalidBattleSessionState.DEFEATED_TO_TRAINER)) {
-            return "You cannot continue battle frontier session due to being defeated";
+            return "You cannot continue battle factory session due to being defeated";
         }
 
         if (e.getInvalidBattleSessionState().equals(InvalidBattleSessionState.ALL_TRAINER_DEFEATED)) {
@@ -434,8 +440,8 @@ public class BattleFactory {
     }
 
     private static String getInvalidPlayerStateErrorMessage(InvalidPlayerStateException e) {
-        if (e.getInvalidPlayerState().equals(InvalidPlayerState.BUSY_WITH_ANOTHER_POKEMON_BATTLE)) {
-            return "You cannot start trainer battle while on another";
+        if (e.getInvalidPlayerState().equals(InvalidPlayerState.BUSY_WITH_POKEMON_BATTLE)) {
+            return "You cannot run this command while on Pokemon battle";
         }
 
         throw new RuntimeException(e);

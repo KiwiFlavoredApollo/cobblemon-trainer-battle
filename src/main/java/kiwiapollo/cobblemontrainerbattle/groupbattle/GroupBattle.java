@@ -124,6 +124,7 @@ public class GroupBattle {
     public static int stopSession(CommandContext<ServerCommandSource> context) {
         try {
             assertExistValidSession(context.getSource().getPlayer());
+            assertNotPlayerBusyWithPokemonBattle(context.getSource().getPlayer());
 
             if (isDefeatedAllTrainers(context.getSource().getPlayer())) {
                 onGroupBattleVictory(context);
@@ -144,6 +145,12 @@ public class GroupBattle {
                     Text.literal(getInvalidBattleSessionStateErrorMessage(e)).formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
             return -1;
+
+        } catch (InvalidPlayerStateException e) {
+            context.getSource().getPlayer().sendMessage(
+                    Text.literal(getInvalidPlayerStateErrorMessage(e)).formatted(Formatting.RED));
+            CobblemonTrainerBattle.LOGGER.error(e.getMessage());
+            return -1;
         }
     }
 
@@ -162,7 +169,7 @@ public class GroupBattle {
                     .filter(JsonElement::isJsonPrimitive)
                     .map(JsonElement::getAsString)
                     .forEach(command -> {
-                        runCommand(context.getSource().getPlayer(), command);
+                        executeCommand(context.getSource().getPlayer(), command);
                     });
         }
     }
@@ -182,12 +189,12 @@ public class GroupBattle {
                     .filter(JsonElement::isJsonPrimitive)
                     .map(JsonElement::getAsString)
                     .forEach(command -> {
-                        runCommand(context.getSource().getPlayer(), command);
+                        executeCommand(context.getSource().getPlayer(), command);
                     });
         }
     }
 
-    private static void runCommand(ServerPlayerEntity player, String command) {
+    private static void executeCommand(ServerPlayerEntity player, String command) {
         try {
             command = command.replace("%player%", player.getGameProfile().getName());
 
@@ -207,7 +214,7 @@ public class GroupBattle {
         try {
             assertExistValidSession(context.getSource().getPlayer());
             assertNotPlayerDefeated(context.getSource().getPlayer());
-            assertNotPlayerBusyWithAnotherPokemonBattle(context.getSource().getPlayer());
+            assertNotPlayerBusyWithPokemonBattle(context.getSource().getPlayer());
             assertNotEmptyPlayerParty(context.getSource().getPlayer());
             assertNotFaintPlayerParty(context.getSource().getPlayer());
             assertPlayerPartyAtOrAboveRelativeLevelThreshold(context.getSource().getPlayer());
@@ -272,11 +279,10 @@ public class GroupBattle {
         try {
             GroupBattleSession session = SESSIONS.get(player.getUuid());
 
-            int defeatedTrainerCount = session.defeatedTrainers.size();
             GroupFile groupFile = CobblemonTrainerBattle.groupFiles.get(session.groupResourcePath);
             int groupTrainerCount = groupFile.configuration.get("trainers").getAsJsonArray().size();
 
-            return defeatedTrainerCount == groupTrainerCount;
+            return session.defeatedTrainerCount == groupTrainerCount;
 
         } catch (NullPointerException | ClassCastException | IllegalStateException e) {
             throw new RuntimeException(e);
@@ -287,7 +293,7 @@ public class GroupBattle {
         try {
             assertExistValidSession(context.getSource().getPlayer());
             assertNotPlayerDefeated(context.getSource().getPlayer());
-            assertNotPlayerBusyWithAnotherPokemonBattle(context.getSource().getPlayer());
+            assertNotPlayerBusyWithPokemonBattle(context.getSource().getPlayer());
             assertNotEmptyPlayerParty(context.getSource().getPlayer());
 
             String nextTrainerResourcePath = getNextTrainerResourcePath(context.getSource().getPlayer());
@@ -339,7 +345,6 @@ public class GroupBattle {
             throws InvalidResourceStateException, InvalidBattleSessionStateException {
         try {
             GroupBattleSession session = SESSIONS.get(player.getUuid());
-            int defeatedTrainersCount = session.defeatedTrainers.size();
             GroupFile groupFile = CobblemonTrainerBattle.groupFiles.get(session.groupResourcePath);
 
             if (groupFile.configuration.get("trainers").getAsJsonArray().isEmpty()) {
@@ -351,7 +356,7 @@ public class GroupBattle {
             }
 
             return groupFile.configuration.get("trainers").getAsJsonArray()
-                    .get(defeatedTrainersCount).getAsString();
+                    .get(session.defeatedTrainerCount).getAsString();
 
         } catch (NullPointerException | IllegalStateException | UnsupportedOperationException e) {
             GroupBattleSession session = SESSIONS.get(player.getUuid());
@@ -429,13 +434,13 @@ public class GroupBattle {
         return Instant.now().isBefore(session.timestamp.plus(Duration.ofHours(24)));
     }
 
-    private static void assertNotPlayerBusyWithAnotherPokemonBattle(ServerPlayerEntity player)
+    private static void assertNotPlayerBusyWithPokemonBattle(ServerPlayerEntity player)
             throws InvalidPlayerStateException {
         if (Cobblemon.INSTANCE.getBattleRegistry().getBattleByParticipatingPlayer(player) != null) {
             throw new InvalidPlayerStateException(
-                    String.format("Player is busy with another Pokemon battle: %s",
+                    String.format("Player is busy with Pokemon battle: %s",
                             player.getGameProfile().getName()),
-                    InvalidPlayerState.BUSY_WITH_ANOTHER_POKEMON_BATTLE
+                    InvalidPlayerState.BUSY_WITH_POKEMON_BATTLE
             );
         }
     }
@@ -475,11 +480,11 @@ public class GroupBattle {
 
     private static String getInvalidBattleSessionStateErrorMessage(InvalidBattleSessionStateException e) {
         if (e.getInvalidBattleSessionState().equals(InvalidBattleSessionState.SESSION_EXISTS)) {
-            return "Active group battle session exist";
+            return "Valid group battle session exist";
         }
 
         if (e.getInvalidBattleSessionState().equals(InvalidBattleSessionState.SESSION_NOT_EXISTS)) {
-            return "Active group battle session does not exist";
+            return "Valid group battle session does not exist";
         }
 
         if (e.getInvalidBattleSessionState().equals(InvalidBattleSessionState.ALL_TRAINER_DEFEATED)) {
@@ -510,8 +515,8 @@ public class GroupBattle {
             return "You have no Pokemon";
         }
 
-        if (e.getInvalidPlayerState().equals(InvalidPlayerState.BUSY_WITH_ANOTHER_POKEMON_BATTLE)) {
-            return "You cannot start trainer battle while on another";
+        if (e.getInvalidPlayerState().equals(InvalidPlayerState.BUSY_WITH_POKEMON_BATTLE)) {
+            return "You cannot run this command while on Pokemon battle";
         }
 
         if (e.getInvalidPlayerState().equals(InvalidPlayerState.FAINTED_POKEMON_PARTY)) {
