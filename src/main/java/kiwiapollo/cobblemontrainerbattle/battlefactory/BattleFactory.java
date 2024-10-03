@@ -261,7 +261,9 @@ public class BattleFactory {
             throws InvalidBattleSessionStateException {
         if (!isExistValidSession(player)) {
             throw new InvalidBattleSessionStateException(
-                    String.format("Valid battle session does not exists: %s", player.getGameProfile().getName()));
+                    String.format("Valid battle session does not exists: %s", player.getGameProfile().getName()),
+                    InvalidBattleSessionState.SESSION_NOT_EXISTS
+            );
         }
     }
 
@@ -269,7 +271,9 @@ public class BattleFactory {
             throws InvalidBattleSessionStateException {
         if (isExistValidSession(player)) {
             throw new InvalidBattleSessionStateException(
-                    String.format("Valid battle session exists: %s", player.getGameProfile().getName()));
+                    String.format("Valid battle session exists: %s", player.getGameProfile().getName()),
+                    InvalidBattleSessionState.SESSION_EXISTS
+            );
         }
     }
 
