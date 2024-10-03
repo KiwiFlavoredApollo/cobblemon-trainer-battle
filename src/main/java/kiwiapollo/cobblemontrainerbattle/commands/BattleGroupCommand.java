@@ -26,7 +26,7 @@ public class BattleGroupCommand extends LiteralArgumentBuilder<ServerCommandSour
                             CobblemonTrainerBattle.groupFiles.keySet().stream().map(String::valueOf).forEach(builder::suggest);
                             return builder.buildFuture();
                         })
-                        .executes(GroupBattle::quickStart));
+                        .executes(GroupBattle::quickStartBattleWithStatusQuo));
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getStopSessionCommand() {
