@@ -6,7 +6,9 @@ import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.BattleSide;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.mojang.brigadier.Command;
+import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
@@ -24,6 +26,7 @@ import kiwiapollo.cobblemontrainerbattle.trainerbattle.SpecificTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerFileParser;
 import kotlin.Unit;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
@@ -96,6 +99,12 @@ public class GroupBattle {
         try {
             assertExistValidSession(context.getSource().getPlayer());
 
+            if (isPlayerVictory(context)) {
+                onGroupBattleVictory(context);
+            } else {
+                onGroupBattleDefeat(context);
+            }
+
             GroupBattle.SESSIONS.remove(context.getSource().getPlayer().getUuid());
 
             context.getSource().getPlayer().sendMessage(Text.literal("Battle group session has stopped"));
@@ -109,6 +118,77 @@ public class GroupBattle {
                     Text.literal(getInvalidBattleSessionStateErrorMessage(e)).formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
             return -1;
+        }
+    }
+
+    private static void onGroupBattleVictory(CommandContext<ServerCommandSource> context) {
+        GroupBattleSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
+        GroupFile groupFile = CobblemonTrainerBattle.groupFiles.get(session.groupResourcePath);
+        JsonObject onVictory = groupFile.configuration.get("onVictory").getAsJsonObject();
+
+        if (onVictory.has("balance") && onVictory.get("balance").isJsonPrimitive()) {
+            CobblemonTrainerBattle.ECONOMY.addBalance(
+                    context.getSource().getPlayer(), onVictory.get("balance").getAsDouble());
+        }
+
+        if (onVictory.has("commands") && onVictory.get("commands").isJsonArray()) {
+            onVictory.get("commands").getAsJsonArray().asList().stream()
+                    .filter(JsonElement::isJsonPrimitive)
+                    .map(JsonElement::getAsString)
+                    .forEach(command -> {
+                        runCommand(context.getSource().getPlayer(), command);
+                    });
+        }
+    }
+
+    private static void onGroupBattleDefeat(CommandContext<ServerCommandSource> context) {
+        GroupBattleSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
+        GroupFile groupFile = CobblemonTrainerBattle.groupFiles.get(session.groupResourcePath);
+        JsonObject onDefeat = groupFile.configuration.get("onDefeat").getAsJsonObject();
+
+        if (onDefeat.has("balance") && onDefeat.get("balance").isJsonPrimitive()) {
+            CobblemonTrainerBattle.ECONOMY.removeBalance(
+                    context.getSource().getPlayer(), onDefeat.get("balance").getAsDouble());
+        }
+
+        if (onDefeat.has("commands") && onDefeat.get("commands").isJsonArray()) {
+            onDefeat.get("commands").getAsJsonArray().asList().stream()
+                    .filter(JsonElement::isJsonPrimitive)
+                    .map(JsonElement::getAsString)
+                    .forEach(command -> {
+                        runCommand(context.getSource().getPlayer(), command);
+                    });
+        }
+    }
+
+    private static void runCommand(ServerPlayerEntity player, String command) {
+        try {
+            command = command.replace("%player%", player.getGameProfile().getName());
+
+            MinecraftServer server = player.getCommandSource().getServer();
+            CommandDispatcher<ServerCommandSource> dispatcher = server.getCommandManager().getDispatcher();
+
+            server.getCommandManager().execute(
+                    dispatcher.parse(command, server.getCommandSource()), command);
+
+        } catch (UnsupportedOperationException e) {
+            CobblemonTrainerBattle.LOGGER.error(
+                    String.format("Error occurred while running command: %s", command));
+        }
+    }
+
+    private static boolean isPlayerVictory(CommandContext<ServerCommandSource> context) {
+        try {
+            GroupBattleSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
+
+            int defeatedTrainerCount = session.defeatedTrainers.size();
+            GroupFile groupFile = CobblemonTrainerBattle.groupFiles.get(session.groupResourcePath);
+            int groupTrainerCount = groupFile.configuration.get("trainers").getAsJsonArray().size();
+
+            return defeatedTrainerCount == groupTrainerCount;
+
+        } catch (NullPointerException | ClassCastException | IllegalStateException e) {
+            return false;
         }
     }
 

@@ -23,16 +23,36 @@ import java.util.stream.StreamSupport;
 
 public class BattleVictoryEventHandler {
     public void run(BattleVictoryEvent battleVictoryEvent) {
+        List<UUID> battleIds = CobblemonTrainerBattle.trainerBattles.values().stream().map(PokemonBattle::getBattleId).toList();
+        boolean isCobblemonTrainerBattle = battleIds.contains(battleVictoryEvent.getBattle().getBattleId());
+        if (!isCobblemonTrainerBattle) return;
+
+        if (isGroupBattle(battleVictoryEvent)) {
+            handleGroupBattleVictoryEvent(battleVictoryEvent);
+            return;
+        }
+
+        if (isBattleFrontier(battleVictoryEvent)) {
+            handleBattleFrontierVictoryEvent(battleVictoryEvent);
+            return;
+        }
+
         handleTrainerBattleVictoryEvent(battleVictoryEvent);
-        handleGroupBattleVictoryEvent(battleVictoryEvent);
-        handleBattleFrontierVictoryEvent(battleVictoryEvent);
+    }
+
+    private boolean isBattleFrontier(BattleVictoryEvent battleVictoryEvent) {
+        return BattleFrontier.SESSIONS.values().stream()
+                .map(session -> session.battleUuid)
+                .anyMatch(uuid -> uuid == battleVictoryEvent.getBattle().getBattleId());
+    }
+
+    private boolean isGroupBattle(BattleVictoryEvent battleVictoryEvent) {
+        return GroupBattle.SESSIONS.values().stream()
+                .map(session -> session.battleUuid)
+                .anyMatch(uuid -> uuid == battleVictoryEvent.getBattle().getBattleId());
     }
 
     private void handleTrainerBattleVictoryEvent(BattleVictoryEvent battleVictoryEvent) {
-        List<UUID> battleIds = CobblemonTrainerBattle.trainerBattles.values().stream().map(PokemonBattle::getBattleId).toList();
-        boolean isTrainerBattle = battleIds.contains(battleVictoryEvent.getBattle().getBattleId());
-        if (!isTrainerBattle) return;
-
         ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
         BattleActor playerBattleActor = battleVictoryEvent.getBattle().getActor(player);
         String trainerName = StreamSupport.stream(battleVictoryEvent.getBattle().getActors().spliterator(), false)
@@ -42,37 +62,18 @@ public class BattleVictoryEventHandler {
         if (battleVictoryEvent.getWinners().contains(playerBattleActor)) {
             CobblemonTrainerBattle.LOGGER.info(String.format(
                     "%s: Victory against %s", player.getGameProfile().getName(), trainerName));
-            handleOnVictoryEvent(battleVictoryEvent);
+            onVictoryTrainerBattle(battleVictoryEvent);
 
         } else {
             CobblemonTrainerBattle.LOGGER.info(String.format(
                     "%s: Defeated by %s", player.getGameProfile().getName(), trainerName));
-            handleOnDefeatEvent(battleVictoryEvent);
+            onDefeatTrainerBattle(battleVictoryEvent);
         }
 
         CobblemonTrainerBattle.trainerBattles.remove(battleVictoryEvent.getBattle().getBattleId());
     }
 
-    private void handleOnDefeatEvent(BattleVictoryEvent battleVictoryEvent) {
-        ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
-        String trainerName = StreamSupport.stream(battleVictoryEvent.getBattle().getActors().spliterator(), false)
-                .filter(battleActor -> !battleActor.isForPlayer(player))
-                .findFirst().get().getName().getString();
-        JsonObject trainerConfiguration = CobblemonTrainerBattle.trainerFiles.get(trainerName).configuration;
-        JsonObject onDefeat = trainerConfiguration.get("onDefeat").getAsJsonObject();
-
-        if (onDefeat.has("balance") && onDefeat.get("balance").isJsonPrimitive()) {
-            removePlayerBalance(onDefeat.get("balance"), player);
-        }
-
-        if (onDefeat.has("commands") && onDefeat.get("commands").isJsonArray()) {
-            for (JsonElement commandJsonElement : onDefeat.get("commands").getAsJsonArray()) {
-                runCommand(commandJsonElement, player);
-            }
-        }
-    }
-
-    private void handleOnVictoryEvent(BattleVictoryEvent battleVictoryEvent) {
+    private void onVictoryTrainerBattle(BattleVictoryEvent battleVictoryEvent) {
         ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
         String trainerName = StreamSupport.stream(battleVictoryEvent.getBattle().getActors().spliterator(), false)
                 .filter(battleActor -> !battleActor.isForPlayer(player))
@@ -86,6 +87,25 @@ public class BattleVictoryEventHandler {
 
         if (onVictory.has("commands") && onVictory.get("commands").isJsonArray()) {
             for (JsonElement commandJsonElement : onVictory.get("commands").getAsJsonArray()) {
+                runCommand(commandJsonElement, player);
+            }
+        }
+    }
+
+    private void onDefeatTrainerBattle(BattleVictoryEvent battleVictoryEvent) {
+        ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
+        String trainerName = StreamSupport.stream(battleVictoryEvent.getBattle().getActors().spliterator(), false)
+                .filter(battleActor -> !battleActor.isForPlayer(player))
+                .findFirst().get().getName().getString();
+        JsonObject trainerConfiguration = CobblemonTrainerBattle.trainerFiles.get(trainerName).configuration;
+        JsonObject onDefeat = trainerConfiguration.get("onDefeat").getAsJsonObject();
+
+        if (onDefeat.has("balance") && onDefeat.get("balance").isJsonPrimitive()) {
+            removePlayerBalance(onDefeat.get("balance"), player);
+        }
+
+        if (onDefeat.has("commands") && onDefeat.get("commands").isJsonArray()) {
+            for (JsonElement commandJsonElement : onDefeat.get("commands").getAsJsonArray()) {
                 runCommand(commandJsonElement, player);
             }
         }
@@ -129,53 +149,58 @@ public class BattleVictoryEventHandler {
     }
 
     private void handleGroupBattleVictoryEvent(BattleVictoryEvent battleVictoryEvent) {
-        boolean isGroupBattle = GroupBattle.SESSIONS.values().stream()
-                .map(session -> session.battleUuid)
-                .anyMatch(uuid -> uuid == battleVictoryEvent.getBattle().getBattleId());
-        if (!isGroupBattle) return;
-
         ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
         BattleActor playerBattleActor = battleVictoryEvent.getBattle().getActor(player);
 
         if (battleVictoryEvent.getWinners().contains(playerBattleActor)) {
-            handleOnVictoryEvent(battleVictoryEvent);
+            onVictoryGroupBattle(battleVictoryEvent);
 
         } else {
-            handleOnDefeatEvent(battleVictoryEvent);
+            onDefeatGroupBattle(battleVictoryEvent);
         }
 
         CobblemonTrainerBattle.trainerBattles.remove(battleVictoryEvent.getBattle().getBattleId());
     }
 
-    private void handleBattleFrontierVictoryEvent(BattleVictoryEvent battleVictoryEvent) {
-        boolean isBattleFrontierBattle = BattleFrontier.SESSIONS.values().stream()
-                .map(session -> session.battleUuid)
-                .anyMatch(uuid -> uuid == battleVictoryEvent.getBattle().getBattleId());
-        if (!isBattleFrontierBattle) return;
+    private void onVictoryGroupBattle(BattleVictoryEvent battleVictoryEvent) {
+        ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
 
+        GroupBattle.SESSIONS.get(player.getUuid()).defeatedTrainers
+                .add(getDefeatedTrainer(battleVictoryEvent));
+    }
+
+    private void onDefeatGroupBattle(BattleVictoryEvent battleVictoryEvent) {
+        ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
+
+        GroupBattle.SESSIONS.get(player.getUuid()).isDefeated = true;
+    }
+
+    private void handleBattleFrontierVictoryEvent(BattleVictoryEvent battleVictoryEvent) {
         ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
         BattleActor playerBattleActor = battleVictoryEvent.getBattle().getActor(player);
 
         if (battleVictoryEvent.getWinners().contains(playerBattleActor)) {
-            handleBattleFrontierPlayerVictoryEvent(battleVictoryEvent);
+            onVictoryBattleFrontier(battleVictoryEvent);
 
         } else {
-            handleBattleFrontierPlayerDefeatEvent(battleVictoryEvent);
+            onDefeatBattleFrontier(battleVictoryEvent);
         }
+
+        CobblemonTrainerBattle.trainerBattles.remove(battleVictoryEvent.getBattle().getBattleId());
     }
 
-    private void handleBattleFrontierPlayerDefeatEvent(BattleVictoryEvent battleVictoryEvent) {
-        ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
-
-        BattleFrontier.SESSIONS.get(player.getUuid()).isDefeated = true;
-    }
-
-    private void handleBattleFrontierPlayerVictoryEvent(BattleVictoryEvent battleVictoryEvent) {
+    private void onVictoryBattleFrontier(BattleVictoryEvent battleVictoryEvent) {
         ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
 
         BattleFrontier.SESSIONS.get(player.getUuid()).defeatedTrainers
                 .add(getDefeatedTrainer(battleVictoryEvent));
         BattleFrontier.SESSIONS.get(player.getUuid()).isTradedPokemon = false;
+    }
+
+    private void onDefeatBattleFrontier(BattleVictoryEvent battleVictoryEvent) {
+        ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
+
+        BattleFrontier.SESSIONS.get(player.getUuid()).isDefeated = true;
     }
 
     private Trainer getDefeatedTrainer(BattleVictoryEvent battleVictoryEvent) {

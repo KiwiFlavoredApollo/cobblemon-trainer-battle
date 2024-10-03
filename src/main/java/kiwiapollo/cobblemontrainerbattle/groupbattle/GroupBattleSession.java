@@ -15,7 +15,6 @@ public class GroupBattleSession {
 
     public UUID battleUuid;
     public List<Trainer> defeatedTrainers;
-    public List<Pokemon> partyPokemons;
     public Instant timestamp;
     public boolean isDefeated;
 
@@ -25,7 +24,6 @@ public class GroupBattleSession {
 
         this.battleUuid = null;
         this.defeatedTrainers = new ArrayList<>();
-        this.partyPokemons = new RandomPartyPokemonsFactory().create();
         this.timestamp = Instant.now();
         this.isDefeated = false;
     }
