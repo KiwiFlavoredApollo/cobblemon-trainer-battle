@@ -219,12 +219,15 @@ public class BattleFactory {
             if (e.getInvalidBattleSessionState().equals(InvalidBattleSessionState.ANY_TRAINER_DEFEATED)) {
                 context.getSource().getPlayer().sendMessage(
                         Text.literal("You cannot reroll Pokemons after battling trainers").formatted(Formatting.RED));
+                CobblemonTrainerBattle.LOGGER.error(e.getMessage());
+                return -1;
+
             } else {
                 context.getSource().getPlayer().sendMessage(
                         Text.literal(getInvalidBattleSessionStateErrorMessage(e)).formatted(Formatting.RED));
+                CobblemonTrainerBattle.LOGGER.error(e.getMessage());
+                return -1;
             }
-            CobblemonTrainerBattle.LOGGER.error(e.getMessage());
-            return -1;
         }
     }
 
@@ -379,6 +382,10 @@ public class BattleFactory {
 
         if (e.getInvalidBattleSessionState().equals(InvalidBattleSessionState.DEFEATED_TO_TRAINER)) {
             return "You cannot continue battle frontier session due to being defeated";
+        }
+
+        if (e.getInvalidBattleSessionState().equals(InvalidBattleSessionState.ANY_TRAINER_DEFEATED)) {
+            return "You have defeated trainers";
         }
 
         if (e.getInvalidBattleSessionState().equals(InvalidBattleSessionState.NO_TRAINER_DEFEATED)) {
