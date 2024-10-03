@@ -152,7 +152,7 @@ public class TrainerBattle {
         try {
             PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
             int maximumPartyLevel = CobblemonTrainerBattle.trainerFiles
-                    .get(new Identifier(trainer.name)).configuration
+                    .get(trainer.name).configuration
                     .get("condition").getAsJsonObject()
                     .get("maximumPartyLevel").getAsInt();
             boolean isAtOrBelowPartyMaximumLevel = playerPartyStore.toGappyList().stream()
@@ -177,7 +177,7 @@ public class TrainerBattle {
         try {
             PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
             int minimumPartyLevel = CobblemonTrainerBattle.trainerFiles
-                    .get(new Identifier(trainer.name)).configuration
+                    .get(trainer.name).configuration
                     .get("condition").getAsJsonObject()
                     .get("minimumPartyLevel").getAsInt();
             boolean isAtOrAbovePartyMinimumLevel = playerPartyStore.toGappyList().stream()
