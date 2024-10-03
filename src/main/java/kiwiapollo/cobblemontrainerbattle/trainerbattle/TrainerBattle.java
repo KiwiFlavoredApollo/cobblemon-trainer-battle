@@ -37,14 +37,11 @@ public class TrainerBattle {
             return startSpecificTrainerBattleWithStatusQuo(context, trainer);
 
         } catch (InvalidResourceStateException e) {
-            if (e.getInvalidResourceState().equals(InvalidResourceState.UNREADABLE)) {
-                context.getSource().getPlayer().sendMessage(
-                        Text.literal(String.format("An error occurred while reading %s", e.getResourcePath())));
-            }
+            context.getSource().getPlayer().sendMessage(
+                    Text.literal(getInvalidResourceStateErrorMessage(e)).formatted(Formatting.RED));
             return -1;
         }
     }
-
 
     public static int startRandomBattleWithStatusQuo(CommandContext<ServerCommandSource> context) {
          Trainer trainer = new RandomTrainerFactory().create(context.getSource().getPlayer());
@@ -78,43 +75,14 @@ public class TrainerBattle {
             return Command.SINGLE_SUCCESS;
 
         } catch (UnsatisfiedTrainerConditionException e) {
-            if (e.getUnsatisfiedCondition().equals(TrainerCondition.MINIMUM_PARTY_LEVEL)) {
-                context.getSource().getPlayer().sendMessage(
-                        Text.literal(String.format("Your Pokemons must be at or above level %d",
-                                (Integer) e.getRequiredValue())).formatted(Formatting.RED));
-            }
-
-            if (e.getUnsatisfiedCondition().equals(TrainerCondition.MAXIMUM_PARTY_LEVEL)) {
-                context.getSource().getPlayer().sendMessage(
-                        Text.literal(String.format("Your Pokemons must be at or below level %d",
-                                (Integer) e.getRequiredValue())).formatted(Formatting.RED));
-            }
-
+            context.getSource().getPlayer().sendMessage(
+                    Text.literal(getUnsatisfiedTrainerConditionErrorMessage(e)).formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
             return -1;
 
         } catch (InvalidPlayerStateException e) {
-            if (e.getInvalidPlayerState().equals(InvalidPlayerState.EMPTY_POKEMON_PARTY)) {
-                context.getSource().getPlayer().sendMessage(
-                        Text.literal("You have no Pokemon").formatted(Formatting.RED));
-            }
-
-            if (e.getInvalidPlayerState().equals(InvalidPlayerState.FAINTED_POKEMON_PARTY)) {
-                context.getSource().getPlayer().sendMessage(
-                        Text.literal("Your Pokemons are all fainted").formatted(Formatting.RED));
-            }
-
-            if (e.getInvalidPlayerState().equals(InvalidPlayerState.POKEMON_PARTY_BELOW_RELATIVE_LEVEL_THRESHOLD)) {
-                context.getSource().getPlayer().sendMessage(
-                        Text.literal(String.format("Pokemon levels should be above %d",
-                                TrainerFileParser.RELATIVE_LEVEL_THRESHOLD)).formatted(Formatting.RED));
-            }
-
-            if (e.getInvalidPlayerState().equals(InvalidPlayerState.BUSY_WITH_ANOTHER_POKEMON_BATTLE)) {
-                context.getSource().getPlayer().sendMessage(
-                        Text.literal("You cannot start trainer battle while on another").formatted(Formatting.RED));
-            }
-
+            context.getSource().getPlayer().sendMessage(
+                    Text.literal(getInvalidPlayerStateErrorMessage(e)).formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
             return -1;
         }
@@ -127,10 +95,8 @@ public class TrainerBattle {
             return startSpecificTrainerBattleWithFlatLevelAndFullHealth(context, trainer);
 
         } catch (InvalidResourceStateException e) {
-            if (e.getInvalidResourceState().equals(InvalidResourceState.UNREADABLE)) {
-                context.getSource().getPlayer().sendMessage(
-                        Text.literal(String.format("An error occurred while reading %s", e.getResourcePath())));
-            }
+            context.getSource().getPlayer().sendMessage(
+                    Text.literal(getInvalidResourceStateErrorMessage(e)).formatted(Formatting.RED));
             return -1;
         }
     }
@@ -168,16 +134,8 @@ public class TrainerBattle {
             return Command.SINGLE_SUCCESS;
 
         } catch (InvalidPlayerStateException e) {
-            if (e.getInvalidPlayerState().equals(InvalidPlayerState.EMPTY_POKEMON_PARTY)) {
-                context.getSource().getPlayer().sendMessage(
-                        Text.literal("You have no Pokemon").formatted(Formatting.RED));
-            }
-
-            if (e.getInvalidPlayerState().equals(InvalidPlayerState.BUSY_WITH_ANOTHER_POKEMON_BATTLE)) {
-                context.getSource().getPlayer().sendMessage(
-                        Text.literal("You cannot start trainer battle while on another").formatted(Formatting.RED));
-            }
-
+            context.getSource().getPlayer().sendMessage(
+                    Text.literal(getInvalidPlayerStateErrorMessage(e)).formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
             return -1;
         }
@@ -277,5 +235,49 @@ public class TrainerBattle {
                             player.getGameProfile().getName()),
                     InvalidPlayerState.BUSY_WITH_ANOTHER_POKEMON_BATTLE);
         }
+    }
+
+    private static String getInvalidResourceStateErrorMessage(InvalidResourceStateException e) {
+        if (e.getInvalidResourceState().equals(InvalidResourceState.UNREADABLE)) {
+            return String.format("An error occurred while reading %s", e.getResourcePath());
+        }
+
+        if (e.getInvalidResourceState().equals(InvalidResourceState.CONTAINS_INVALID_VALUE)) {
+            return String.format("Invalid values found in %s", e.getResourcePath());
+        }
+
+        throw new RuntimeException(e);
+    }
+
+    private static String getInvalidPlayerStateErrorMessage(InvalidPlayerStateException e) {
+        if (e.getInvalidPlayerState().equals(InvalidPlayerState.EMPTY_POKEMON_PARTY)) {
+            return "You have no Pokemon";
+        }
+
+        if (e.getInvalidPlayerState().equals(InvalidPlayerState.BUSY_WITH_ANOTHER_POKEMON_BATTLE)) {
+            return "You cannot start trainer battle while on another";
+        }
+
+        if (e.getInvalidPlayerState().equals(InvalidPlayerState.FAINTED_POKEMON_PARTY)) {
+            return "Your Pokemons are all fainted";
+        }
+
+        if (e.getInvalidPlayerState().equals(InvalidPlayerState.POKEMON_PARTY_BELOW_RELATIVE_LEVEL_THRESHOLD)) {
+            return String.format("Pokemon levels should be above %d", TrainerFileParser.RELATIVE_LEVEL_THRESHOLD);
+        }
+
+        throw new RuntimeException(e);
+    }
+
+    private static String getUnsatisfiedTrainerConditionErrorMessage(UnsatisfiedTrainerConditionException e) {
+        if (e.getUnsatisfiedCondition().equals(TrainerCondition.MINIMUM_PARTY_LEVEL)) {
+            return String.format("Your Pokemons must be at or above level %d", (Integer) e.getRequiredValue());
+        }
+
+        if (e.getUnsatisfiedCondition().equals(TrainerCondition.MAXIMUM_PARTY_LEVEL)) {
+            return String.format("Your Pokemons must be at or below level %d", (Integer) e.getRequiredValue());
+        }
+
+        throw new RuntimeException(e);
     }
 }
