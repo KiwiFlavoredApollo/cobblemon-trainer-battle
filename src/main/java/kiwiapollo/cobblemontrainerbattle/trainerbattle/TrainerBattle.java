@@ -13,7 +13,9 @@ import kiwiapollo.cobblemontrainerbattle.battleactors.player.FlatLevelFullHealth
 import kiwiapollo.cobblemontrainerbattle.battleactors.player.StatusQuoPlayerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.FlatLevelFullHealthTrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.TrainerBattleActorFactory;
-import kiwiapollo.cobblemontrainerbattle.common.TrainerConditionKey;
+import kiwiapollo.cobblemontrainerbattle.common.InvalidPlayerState;
+import kiwiapollo.cobblemontrainerbattle.common.InvalidResourceState;
+import kiwiapollo.cobblemontrainerbattle.common.TrainerCondition;
 import kiwiapollo.cobblemontrainerbattle.exceptions.*;
 import kotlin.Unit;
 import net.minecraft.server.command.ServerCommandSource;
@@ -34,10 +36,11 @@ public class TrainerBattle {
             Trainer trainer = new SpecificTrainerFactory().create(context.getSource().getPlayer(), trainerResourcePath);
             return startSpecificTrainerBattleWithStatusQuo(context, trainer);
 
-        } catch (CreateTrainerFailedException e) {
-            context.getSource().getPlayer().sendMessage(
-                    Text.literal("").formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(e.getMessage());
+        } catch (InvalidResourceStateException e) {
+            if (e.getInvalidResourceState().equals(InvalidResourceState.UNREADABLE)) {
+                context.getSource().getPlayer().sendMessage(
+                        Text.literal(String.format("An error occurred while reading %s", e.getResourcePath())));
+            }
             return -1;
         }
     }
@@ -53,7 +56,7 @@ public class TrainerBattle {
             assertNotEmptyPlayerParty(context.getSource().getPlayer());
             assertPlayerPartyAtOrAboveRelativeLevelThreshold(context.getSource().getPlayer());
             assertNotFaintPlayerParty(context.getSource().getPlayer());
-            assertNotExistPlayerParticipatingPokemonBattle(context.getSource().getPlayer());
+            assertNotPlayerBusyWithAnotherPokemonBattle(context.getSource().getPlayer());
             assertSatisfiedTrainerCondition(context.getSource().getPlayer(), trainer);
 
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
@@ -65,8 +68,8 @@ public class TrainerBattle {
                 CobblemonTrainerBattle.trainerBattles.put(context.getSource().getPlayer().getUuid(), pokemonBattle);
 
                 context.getSource().getPlayer().sendMessage(
-                        Text.literal("Status Quo Pokemon Battle started"));
-                CobblemonTrainerBattle.LOGGER.info(String.format("%s: versus %s",
+                        Text.literal(String.format("Trainer battle has started against %s", trainer.name)));
+                CobblemonTrainerBattle.LOGGER.info(String.format("battletrainer: %s versus %s",
                         context.getSource().getPlayer().getGameProfile().getName(), trainer.name));
 
                 return Unit.INSTANCE;
@@ -74,25 +77,44 @@ public class TrainerBattle {
 
             return Command.SINGLE_SUCCESS;
 
-        } catch (TrainerConditionException e) {
-            if (e.getConditionKey().equals(TrainerConditionKey.MINIMUM_PARTY_LEVEL)) {
+        } catch (UnsatisfiedTrainerConditionException e) {
+            if (e.getUnsatisfiedCondition().equals(TrainerCondition.MINIMUM_PARTY_LEVEL)) {
                 context.getSource().getPlayer().sendMessage(
-                        Text.literal(String.format("Your Pokemon must be at or above level %d",
-                                (Integer) e.getConditionValue())).formatted(Formatting.RED));
+                        Text.literal(String.format("Your Pokemons must be at or above level %d",
+                                (Integer) e.getRequiredValue())).formatted(Formatting.RED));
             }
 
-            if (e.getConditionKey().equals(TrainerConditionKey.MAXIMUM_PARTY_LEVEL)) {
+            if (e.getUnsatisfiedCondition().equals(TrainerCondition.MAXIMUM_PARTY_LEVEL)) {
                 context.getSource().getPlayer().sendMessage(
-                        Text.literal(String.format("Your Pokemon must be at or below level %d",
-                                (Integer) e.getConditionValue())).formatted(Formatting.RED));
+                        Text.literal(String.format("Your Pokemons must be at or below level %d",
+                                (Integer) e.getRequiredValue())).formatted(Formatting.RED));
             }
 
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
             return -1;
 
         } catch (InvalidPlayerStateException e) {
-            context.getSource().getPlayer().sendMessage(
-                    Text.literal("").formatted(Formatting.RED));
+            if (e.getInvalidPlayerState().equals(InvalidPlayerState.EMPTY_POKEMON_PARTY)) {
+                context.getSource().getPlayer().sendMessage(
+                        Text.literal("You have no Pokemon").formatted(Formatting.RED));
+            }
+
+            if (e.getInvalidPlayerState().equals(InvalidPlayerState.FAINTED_POKEMON_PARTY)) {
+                context.getSource().getPlayer().sendMessage(
+                        Text.literal("Your Pokemons are all fainted").formatted(Formatting.RED));
+            }
+
+            if (e.getInvalidPlayerState().equals(InvalidPlayerState.POKEMON_PARTY_BELOW_RELATIVE_LEVEL_THRESHOLD)) {
+                context.getSource().getPlayer().sendMessage(
+                        Text.literal(String.format("Pokemon levels should be above %d",
+                                TrainerFileParser.RELATIVE_LEVEL_THRESHOLD)).formatted(Formatting.RED));
+            }
+
+            if (e.getInvalidPlayerState().equals(InvalidPlayerState.BUSY_WITH_ANOTHER_POKEMON_BATTLE)) {
+                context.getSource().getPlayer().sendMessage(
+                        Text.literal("You cannot start trainer battle while on another").formatted(Formatting.RED));
+            }
+
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
             return -1;
         }
@@ -104,10 +126,11 @@ public class TrainerBattle {
             Trainer trainer = new SpecificTrainerFactory().create(context.getSource().getPlayer(), trainerResourcePath);
             return startSpecificTrainerBattleWithFlatLevelAndFullHealth(context, trainer);
 
-        } catch (CreateTrainerFailedException e) {
-            context.getSource().getPlayer().sendMessage(
-                    Text.literal("").formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(e.getMessage());
+        } catch (InvalidResourceStateException e) {
+            if (e.getInvalidResourceState().equals(InvalidResourceState.UNREADABLE)) {
+                context.getSource().getPlayer().sendMessage(
+                        Text.literal(String.format("An error occurred while reading %s", e.getResourcePath())));
+            }
             return -1;
         }
     }
@@ -120,8 +143,7 @@ public class TrainerBattle {
     public static int startSpecificTrainerBattleWithFlatLevelAndFullHealth(CommandContext<ServerCommandSource> context, Trainer trainer) {
         try {
             assertNotEmptyPlayerParty(context.getSource().getPlayer());
-            assertNotExistPlayerParticipatingPokemonBattle(context.getSource().getPlayer());
-            assertSatisfiedTrainerCondition(context.getSource().getPlayer(), trainer);
+            assertNotPlayerBusyWithAnotherPokemonBattle(context.getSource().getPlayer());
 
             Cobblemon.INSTANCE.getStorage().getParty(context.getSource().getPlayer()).forEach(Pokemon::recall);
 
@@ -136,8 +158,8 @@ public class TrainerBattle {
                 CobblemonTrainerBattle.trainerBattles.put(context.getSource().getPlayer().getUuid(), pokemonBattle);
 
                 context.getSource().getPlayer().sendMessage(
-                        Text.literal("Flat Level Full Health Pokemon Battle started"));
-                CobblemonTrainerBattle.LOGGER.info(String.format("%s: versus %s",
+                        Text.literal(String.format("Flat level trainer battle has started against %s", trainer.name)));
+                CobblemonTrainerBattle.LOGGER.info(String.format("battletrainerflat: %s versus %s",
                         context.getSource().getPlayer().getGameProfile().getName(), trainer.name));
 
                 return Unit.INSTANCE;
@@ -145,28 +167,30 @@ public class TrainerBattle {
 
             return Command.SINGLE_SUCCESS;
 
-        } catch (TrainerConditionException e) {
-            context.getSource().getPlayer().sendMessage(
-                    Text.literal("").formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(e.getMessage());
-            return -1;
-
         } catch (InvalidPlayerStateException e) {
-            context.getSource().getPlayer().sendMessage(
-                    Text.literal("").formatted(Formatting.RED));
+            if (e.getInvalidPlayerState().equals(InvalidPlayerState.EMPTY_POKEMON_PARTY)) {
+                context.getSource().getPlayer().sendMessage(
+                        Text.literal("You have no Pokemon").formatted(Formatting.RED));
+            }
+
+            if (e.getInvalidPlayerState().equals(InvalidPlayerState.BUSY_WITH_ANOTHER_POKEMON_BATTLE)) {
+                context.getSource().getPlayer().sendMessage(
+                        Text.literal("You cannot start trainer battle while on another").formatted(Formatting.RED));
+            }
+
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
             return -1;
         }
     }
 
     private static void assertSatisfiedTrainerCondition(ServerPlayerEntity player, Trainer trainer)
-            throws TrainerConditionException {
+            throws UnsatisfiedTrainerConditionException {
         assertSatisfiedMinimumLevelTrainerCondition(player, trainer);
         assertSatisfiedMaximumLevelTrainerCondition(player, trainer);
     }
 
     private static void assertSatisfiedMaximumLevelTrainerCondition(ServerPlayerEntity player, Trainer trainer)
-            throws TrainerConditionException {
+            throws UnsatisfiedTrainerConditionException {
         try {
             PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
             int maximumPartyLevel = CobblemonTrainerBattle.trainerFiles
@@ -179,9 +203,9 @@ public class TrainerBattle {
                     .allMatch(level -> level <= maximumPartyLevel);
 
             if (!isAtOrBelowPartyMaximumLevel) {
-                throw new TrainerConditionException(
+                throw new UnsatisfiedTrainerConditionException(
                         String.format("Player did not satisfy maximum level condition: %s, %s", player, trainer.name),
-                        TrainerConditionKey.MAXIMUM_PARTY_LEVEL,
+                        TrainerCondition.MAXIMUM_PARTY_LEVEL,
                         maximumPartyLevel);
             }
 
@@ -191,7 +215,7 @@ public class TrainerBattle {
     }
 
     private static void assertSatisfiedMinimumLevelTrainerCondition(ServerPlayerEntity player, Trainer trainer)
-            throws TrainerConditionException {
+            throws UnsatisfiedTrainerConditionException {
         try {
             PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
             int minimumPartyLevel = CobblemonTrainerBattle.trainerFiles
@@ -204,9 +228,9 @@ public class TrainerBattle {
                     .allMatch(level -> level >= minimumPartyLevel);
 
             if (!isAtOrAbovePartyMinimumLevel) {
-                throw new TrainerConditionException(
+                throw new UnsatisfiedTrainerConditionException(
                         String.format("Player did not satisfy minimum level condition: %s, %s", player, trainer.name),
-                        TrainerConditionKey.MINIMUM_PARTY_LEVEL,
+                        TrainerCondition.MINIMUM_PARTY_LEVEL,
                         minimumPartyLevel);
             }
 
@@ -219,7 +243,8 @@ public class TrainerBattle {
         PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
         if (playerPartyStore.toGappyList().stream().allMatch(Objects::isNull)) {
             throw new InvalidPlayerStateException(
-                    String.format("Player has no Pokemon: %s", player.getGameProfile().getName()));
+                    String.format("Player has no Pokemon: %s", player.getGameProfile().getName()),
+                    InvalidPlayerState.EMPTY_POKEMON_PARTY);
         }
     }
 
@@ -229,7 +254,8 @@ public class TrainerBattle {
         Stream<Pokemon> pokemons = playerPartyStore.toGappyList().stream().filter(Objects::nonNull);
         if (pokemons.map(Pokemon::getLevel).allMatch(level -> level < TrainerFileParser.RELATIVE_LEVEL_THRESHOLD)) {
             throw new InvalidPlayerStateException(
-                    String.format("Pokemons are under leveled: %s", player.getGameProfile().getName()));
+                    String.format("Pokemon levels are below relative level threshold: %s", player.getGameProfile().getName()),
+                    InvalidPlayerState.POKEMON_PARTY_BELOW_RELATIVE_LEVEL_THRESHOLD);
         }
     }
 
@@ -238,16 +264,18 @@ public class TrainerBattle {
         Stream<Pokemon> pokemons = playerPartyStore.toGappyList().stream().filter(Objects::nonNull);
         if (pokemons.allMatch(Pokemon::isFainted)) {
             throw new InvalidPlayerStateException(
-                    String.format("Pokemons are all fainted: %s", player.getGameProfile().getName()));
+                    String.format("Pokemons are all fainted: %s", player.getGameProfile().getName()),
+                    InvalidPlayerState.FAINTED_POKEMON_PARTY);
         }
     }
 
-    public static void assertNotExistPlayerParticipatingPokemonBattle(ServerPlayerEntity player)
+    public static void assertNotPlayerBusyWithAnotherPokemonBattle(ServerPlayerEntity player)
             throws InvalidPlayerStateException {
         if (Cobblemon.INSTANCE.getBattleRegistry().getBattleByParticipatingPlayer(player) != null) {
             throw new InvalidPlayerStateException(
-                    String.format("Already participating in another Pokemon battle: %s",
-                            player.getGameProfile().getName()));
+                    String.format("Player is busy with another Pokemon battle: %s",
+                            player.getGameProfile().getName()),
+                    InvalidPlayerState.BUSY_WITH_ANOTHER_POKEMON_BATTLE);
         }
     }
 }
