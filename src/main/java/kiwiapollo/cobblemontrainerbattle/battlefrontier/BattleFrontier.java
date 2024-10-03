@@ -14,6 +14,7 @@ import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactors.player.BattleFrontierPlayerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.BattleFrontierNameTrainerBattleActorFactory;
+import kiwiapollo.cobblemontrainerbattle.commands.BattleFrontierCommand;
 import kiwiapollo.cobblemontrainerbattle.common.InvalidBattleSessionState;
 import kiwiapollo.cobblemontrainerbattle.common.InvalidPlayerState;
 import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidBattleSessionStateException;
@@ -42,6 +43,8 @@ public class BattleFrontier {
             return startBattle(context);
 
         } catch (InvalidBattleSessionStateException e) {
+            stopSession(context);
+            startSession(context);
             return startBattle(context);
         }
     }
@@ -104,8 +107,9 @@ public class BattleFrontier {
                 BattleFrontier.SESSIONS.get(playerUuid).battleUuid = pokemonBattle.getBattleId();
 
                 context.getSource().getPlayer().sendMessage(
-                        Text.literal("Battle Frontier Pokemon Battle started"));
-                CobblemonTrainerBattle.LOGGER.info(String.format("%s: versus %s",
+                        Text.literal("Battle Frontier Pokemon Battle has started"));
+                CobblemonTrainerBattle.LOGGER.info(String.format("%s: %s versus %s",
+                        new BattleFrontierCommand().getLiteral(),
                         context.getSource().getPlayer().getGameProfile().getName(), trainer.name));
 
                 return Unit.INSTANCE;
@@ -127,7 +131,7 @@ public class BattleFrontier {
         }
     }
 
-    public static int tradePokemon(CommandContext<ServerCommandSource> context) {
+    public static int tradePokemons(CommandContext<ServerCommandSource> context) {
         try {
             assertExistValidSession(context.getSource().getPlayer());
             assertNotPlayerDefeated(context.getSource().getPlayer());

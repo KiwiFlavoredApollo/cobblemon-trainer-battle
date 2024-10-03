@@ -30,44 +30,43 @@ public class BattleFrontierCommand extends LiteralArgumentBuilder<ServerCommandS
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getBattleFrontierStartCommand() {
-        return LiteralArgumentBuilder.<ServerCommandSource>literal("start")
+        return LiteralArgumentBuilder.<ServerCommandSource>literal("startsession")
                 .executes(BattleFrontier::startSession);
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getBattleFrontierStopCommand() {
-        return LiteralArgumentBuilder.<ServerCommandSource>literal("stop")
+        return LiteralArgumentBuilder.<ServerCommandSource>literal("stopsession")
                 .executes(BattleFrontier::stopSession);
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getBattleFrontierBattleCommand() {
-        return LiteralArgumentBuilder.<ServerCommandSource>literal("battle")
+        return LiteralArgumentBuilder.<ServerCommandSource>literal("startbattle")
                 .executes(BattleFrontier::startBattle);
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getBattleFrontierRerollPokemonsCommand() {
         return LiteralArgumentBuilder
-                .<ServerCommandSource>literal("reroll")
+                .<ServerCommandSource>literal("rerollpokemons")
                 .executes(BattleFrontier::rerollPokemons);
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getBattleFrontierTradePokemonCommand() {
-        return LiteralArgumentBuilder.<ServerCommandSource>literal("trade")
+        return LiteralArgumentBuilder.<ServerCommandSource>literal("tradepokemons")
                 .executes(BattleFrontier::showTradeablePokemons)
                 .then(RequiredArgumentBuilder
                         .<ServerCommandSource, Integer>argument("playerslot", IntegerArgumentType.integer(1, 3))
                         .then(RequiredArgumentBuilder
                                 .<ServerCommandSource, Integer>argument("trainerslot", IntegerArgumentType.integer(1, 3))
-                                .executes(BattleFrontier::tradePokemon)));
-
+                                .executes(BattleFrontier::tradePokemons)));
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getBattleFrontierShowPokemonsCommand() {
-        return LiteralArgumentBuilder.<ServerCommandSource>literal("pokemons")
+        return LiteralArgumentBuilder.<ServerCommandSource>literal("showpokemons")
                 .executes(BattleFrontier::showPartyPokemons);
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getBattleFrontierShowWinningStreakCommand() {
-        return LiteralArgumentBuilder.<ServerCommandSource>literal("streak")
+        return LiteralArgumentBuilder.<ServerCommandSource>literal("winningstreak")
                 .executes(BattleFrontier::showWinningStreak);
     }
 }
