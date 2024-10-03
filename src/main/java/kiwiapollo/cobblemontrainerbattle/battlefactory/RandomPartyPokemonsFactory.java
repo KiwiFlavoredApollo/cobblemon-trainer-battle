@@ -8,9 +8,9 @@ import java.util.List;
 public class RandomPartyPokemonsFactory {
     public List<Pokemon> create() {
         return List.of(
-                PokemonSpecies.INSTANCE.random().create(100),
-                PokemonSpecies.INSTANCE.random().create(100),
-                PokemonSpecies.INSTANCE.random().create(100)
+                PokemonSpecies.INSTANCE.random().create(BattleFactory.LEVEL),
+                PokemonSpecies.INSTANCE.random().create(BattleFactory.LEVEL),
+                PokemonSpecies.INSTANCE.random().create(BattleFactory.LEVEL)
         );
     }
 }
