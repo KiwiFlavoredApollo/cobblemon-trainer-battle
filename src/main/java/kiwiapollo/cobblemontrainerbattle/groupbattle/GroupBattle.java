@@ -105,6 +105,11 @@ public class GroupBattle {
             return Command.SINGLE_SUCCESS;
 
         } catch (InvalidBattleSessionStateException e) {
+            if (e.getInvalidBattleSessionState().equals(InvalidBattleSessionState.SESSION_NOT_EXISTS)) {
+                context.getSource().getPlayer().sendMessage(
+                        Text.literal("Active group battle session does not exist").formatted(Formatting.RED));
+            }
+
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
             return -1;
         }
