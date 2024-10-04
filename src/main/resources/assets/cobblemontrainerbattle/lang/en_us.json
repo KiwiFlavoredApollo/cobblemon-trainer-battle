@@ -28,6 +28,7 @@
   "command.cobblemontrainerbattle.battlefactory.startbattle.success": "Battle has started against %s",
   "command.cobblemontrainerbattle.battlefactory.tradepokemon.success": "Traded %s for %s",
   "command.cobblemontrainerbattle.battlefactory.rerollpokemon.success": "Re-rolled Pokemons",
+  "command.cobblemontrainerbattle.battlefactory.winningstreak.success": "Winning Streak: %d",
 
   "command.cobblemontrainerbattle.battlefactory.common.valid_session_exist": "Valid Battle Factory session exists",
   "command.cobblemontrainerbattle.battlefactory.common.valid_session_not_exist": "Valid Battle Factory session does not exist",
