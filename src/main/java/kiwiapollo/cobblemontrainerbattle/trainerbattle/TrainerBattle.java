@@ -41,8 +41,17 @@ public class TrainerBattle {
             return startSpecificTrainerBattleWithStatusQuo(context, trainer);
 
         } catch (InvalidResourceStateException e) {
-            context.getSource().getPlayer().sendMessage(
-                    Text.literal(getInvalidResourceStateErrorMessage(e)).formatted(Formatting.RED));
+            Text message = switch (e.getInvalidResourceState()) {
+                case UNKNOWN_RESOURCE ->
+                        Text.translatable("command.cobblemontrainerbattle.unknown_resource", e.getResourcePath());
+                case UNREADABLE_RESOURCE ->
+                        Text.translatable("command.cobblemontrainerbattle.unreadable_resource", e.getResourcePath());
+                case CONTAINS_INVALID_VALUE ->
+                        Text.translatable("command.cobblemontrainerbattle.group_resource_contains_unknown_trainers", e.getResourcePath());
+                case CONTAINS_NO_VALUE ->
+                        Text.translatable("command.cobblemontrainerbattle.group_resource_contains_no_trainer", e.getResourcePath());
+            };
+            context.getSource().getPlayer().sendMessage(message.copy().formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
             return 0;
         }
@@ -119,8 +128,17 @@ public class TrainerBattle {
             return startSpecificTrainerBattleWithFlatLevelAndFullHealth(context, trainer);
 
         } catch (InvalidResourceStateException e) {
-            context.getSource().getPlayer().sendMessage(
-                    Text.literal(getInvalidResourceStateErrorMessage(e)).formatted(Formatting.RED));
+            Text message = switch (e.getInvalidResourceState()) {
+                case UNKNOWN_RESOURCE ->
+                        Text.translatable("command.cobblemontrainerbattle.unknown_resource", e.getResourcePath());
+                case UNREADABLE_RESOURCE ->
+                        Text.translatable("command.cobblemontrainerbattle.unreadable_resource", e.getResourcePath());
+                case CONTAINS_INVALID_VALUE ->
+                        Text.translatable("command.cobblemontrainerbattle.group_resource_contains_unknown_trainers", e.getResourcePath());
+                case CONTAINS_NO_VALUE ->
+                        Text.translatable("command.cobblemontrainerbattle.group_resource_contains_no_trainer", e.getResourcePath());
+            };
+            context.getSource().getPlayer().sendMessage(message.copy().formatted(Formatting.RED));
             return 0;
         }
     }
@@ -281,17 +299,5 @@ public class TrainerBattle {
                     CommandConditionType.BUSY_WITH_POKEMON_BATTLE
             );
         }
-    }
-
-    private static String getInvalidResourceStateErrorMessage(InvalidResourceStateException e) {
-        if (e.getInvalidResourceState().equals(InvalidResourceState.UNREADABLE_RESOURCE)) {
-            return String.format("An error occurred while reading %s", e.getResourcePath());
-        }
-
-        if (e.getInvalidResourceState().equals(InvalidResourceState.CONTAINS_INVALID_VALUE)) {
-            return String.format("Invalid values found in %s", e.getResourcePath());
-        }
-
-        throw new RuntimeException(e);
     }
 }
