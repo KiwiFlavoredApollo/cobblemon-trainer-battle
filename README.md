@@ -181,11 +181,6 @@ Shows player's winning streak
 - [ ] Refactor TrainerFileParser.createPokemon using JsonObject.has
 - [ ] When on Battle Frontier battle, player Pokemons are slightly damaged
 
-```
-/battletrainer
-/battlegroup
-```
-
 ## Reference
 - [Pokemon Showdown Team Formats - Cobblemon Showdown](https://gitlab.com/cable-mc/cobblemon-showdown/-/blob/master/sim/TEAMS.md#packed-format)
 - [Cobblemon - Gitlab](https://gitlab.com/cable-mc/cobblemon)
