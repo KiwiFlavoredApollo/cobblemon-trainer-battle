@@ -6,15 +6,7 @@ import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidResourceStateExceptio
 import net.minecraft.server.network.ServerPlayerEntity;
 
 public class SpecificTrainerFactory {
-    public Trainer create(ServerPlayerEntity player, String resourcePath) throws InvalidResourceStateException {
-        if (!CobblemonTrainerBattle.trainerFiles.containsKey(resourcePath)) {
-            throw new InvalidResourceStateException(
-                    String.format("Trainer file is not loaded: %s", resourcePath),
-                    InvalidResourceState.UNREADABLE,
-                    resourcePath
-            );
-        }
-
+    public Trainer create(ServerPlayerEntity player, String resourcePath) {
         TrainerFile trainerFile = CobblemonTrainerBattle.trainerFiles.get(resourcePath);
         return new Trainer(resourcePath, new TrainerFileParser(player).parse(trainerFile));
     }

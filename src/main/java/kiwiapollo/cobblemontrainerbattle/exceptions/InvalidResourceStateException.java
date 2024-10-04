@@ -12,7 +12,7 @@ public class InvalidResourceStateException extends Exception {
         resourcePath = null;
     }
 
-    public InvalidResourceStateException(String message, InvalidResourceState invalidResourceState, String resourcePath) {
+    public InvalidResourceStateException(InvalidResourceState invalidResourceState, String resourcePath, String message) {
         super(message);
         this.invalidResourceState = invalidResourceState;
         this.resourcePath = resourcePath;
