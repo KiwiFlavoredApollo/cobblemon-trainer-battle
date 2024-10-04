@@ -15,7 +15,6 @@ import com.google.gson.JsonObject;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidPokemonStatsException;
 import kiwiapollo.cobblemontrainerbattle.exceptions.NotCobblemonMoveNameException;
-import kiwiapollo.cobblemontrainerbattle.exceptions.RelativePokemonLevelException;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
