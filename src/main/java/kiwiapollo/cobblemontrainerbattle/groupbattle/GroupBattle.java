@@ -53,33 +53,34 @@ public class GroupBattle {
 
             GroupBattle.SESSIONS.put(context.getSource().getPlayer().getUuid(), new GroupBattleSession(groupResourcePath));
 
-            context.getSource().getPlayer().sendMessage(Text.literal("Battle group session has started"));
+            context.getSource().getPlayer().sendMessage(
+                    Text.translatable("command.cobblemontrainerbattle.groupbattle.startsession.success"));
             CobblemonTrainerBattle.LOGGER.info(String.format("Started battle group session: %s",
                     context.getSource().getPlayer().getGameProfile().getName()));
 
             return Command.SINGLE_SUCCESS;
 
         } catch (InvalidPlayerStateException e) {
-            Text message = switch (e.getInvalidPlayerStateType()) {
-                case VALID_SESSION_EXIST ->
-                        Text.translatable("command.cobblemontrainerbattle.valid_group_battle_session_exist");
-                default ->
-                        Text.translatable("command.cobblemontrainerbattle.default_error");
-            };
-            context.getSource().getPlayer().sendMessage(message.copy().formatted(Formatting.RED));
+            if (!e.getInvalidPlayerStateType().equals(InvalidPlayerStateType.VALID_SESSION_EXIST)) {
+                throw new RuntimeException(e);
+            }
+
+            context.getSource().getPlayer().sendMessage(
+                    Text.translatable("command.cobblemontrainerbattle.groupbattle.common.valid_session_exist")
+                            .formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
             return 0;
 
         } catch (InvalidResourceStateException e) {
             Text message = switch (e.getInvalidResourceState()) {
-                case UNKNOWN_RESOURCE ->
-                        Text.translatable("command.cobblemontrainerbattle.unknown_resource", e.getResourcePath());
-                case UNREADABLE_RESOURCE ->
-                        Text.translatable("command.cobblemontrainerbattle.unreadable_resource", e.getResourcePath());
+                case NOT_FOUND ->
+                        Text.translatable("command.cobblemontrainerbattle.common.resource.not_found", e.getResourcePath());
+                case CANNOT_BE_READ ->
+                        Text.translatable("command.cobblemontrainerbattle.common.resource.cannot_be_read", e.getResourcePath());
                 case CONTAINS_INVALID_VALUE ->
-                        Text.translatable("command.cobblemontrainerbattle.group_resource_contains_unknown_trainers", e.getResourcePath());
+                        Text.translatable("command.cobblemontrainerbattle.groupbattle.resource.no_trainer", e.getResourcePath());
                 case CONTAINS_NO_VALUE ->
-                        Text.translatable("command.cobblemontrainerbattle.group_resource_contains_no_trainer", e.getResourcePath());
+                        Text.translatable("command.cobblemontrainerbattle.groupbattle.resource.trainers_not_found", e.getResourcePath());
             };
             context.getSource().getPlayer().sendMessage(message.copy().formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
@@ -100,20 +101,21 @@ public class GroupBattle {
 
             GroupBattle.SESSIONS.remove(context.getSource().getPlayer().getUuid());
 
-            context.getSource().getPlayer().sendMessage(Text.literal("Battle group session has stopped"));
+            context.getSource().getPlayer().sendMessage(
+                    Text.literal("command.cobblemontrainerbattle.groupbattle.stopsession.success"));
             CobblemonTrainerBattle.LOGGER.info(String.format("Stopped battle group session: %s",
                     context.getSource().getPlayer().getGameProfile().getName()));
 
             return Command.SINGLE_SUCCESS;
 
         } catch (InvalidPlayerStateException e) {
-            Text message = switch (e.getInvalidPlayerStateType()) {
-                case VALID_SESSION_NOT_EXIST ->
-                        Text.translatable("command.cobblemontrainerbattle.valid_group_battle_session_not_exist");
-                default ->
-                        Text.translatable("command.cobblemontrainerbattle.default_error");
-            };
-            context.getSource().getPlayer().sendMessage(message.copy().formatted(Formatting.RED));
+            if (!e.getInvalidPlayerStateType().equals(InvalidPlayerStateType.VALID_SESSION_NOT_EXIST)) {
+                throw new RuntimeException(e);
+            }
+
+            context.getSource().getPlayer().sendMessage(
+                    Text.translatable("command.cobblemontrainerbattle.groupbattle.common.valid_session_not_exist")
+                            .formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
             return 0;
         }
@@ -143,8 +145,8 @@ public class GroupBattle {
                 CobblemonTrainerBattle.trainerBattles.put(playerUuid, pokemonBattle);
                 GroupBattle.SESSIONS.get(playerUuid).battleUuid = pokemonBattle.getBattleId();
 
-                context.getSource().getPlayer().sendMessage(
-                        Text.literal(String.format("Trainer battle has started against %s", trainer.name)));
+                context.getSource().getServer().sendMessage(
+                        Text.translatable("command.cobblemontrainerbattle.groupbattle.startbattle.success", trainer.name));
                 CobblemonTrainerBattle.LOGGER.info(String.format("%s: %s versus %s",
                         new GroupBattleCommand().getLiteral(),
                         context.getSource().getPlayer().getGameProfile().getName(), trainer.name));
@@ -157,21 +159,20 @@ public class GroupBattle {
         } catch (InvalidPlayerStateException e) {
             Text message = switch (e.getInvalidPlayerStateType()) {
                 case VALID_SESSION_NOT_EXIST ->
-                        Text.translatable("command.cobblemontrainerbattle.valid_group_battle_session_not_exist");
+                        Text.translatable("command.cobblemontrainerbattle.groupbattle.common.valid_session_not_exist");
                 case DEFEATED_TO_TRAINER ->
-                        Text.translatable("command.cobblemontrainerbattle.unable_to_continue_session_defeated_to_trainer");
+                        Text.translatable("command.cobblemontrainerbattle.groupbattle.startbattle.defeated_to_trainer");
                 case DEFEATED_ALL_TRAINERS ->
-                        Text.translatable("command.cobblemontrainerbattle.unable_to_continue_session_defeated_all_trainers");
+                        Text.translatable("command.cobblemontrainerbattle.groupbattle.startbattle.defeated_all_trainers");
                 case EMPTY_PLAYER_PARTY ->
-                        Text.translatable("command.cobblemontrainerbattle.empty_player_party");
+                        Text.translatable("command.cobblemontrainerbattle.common.empty_player_party");
                 case FAINTED_PLAYER_PARTY ->
-                        Text.translatable("command.cobblemontrainerbattle.fainted_player_party");
+                        Text.translatable("command.cobblemontrainerbattle.common.fainted_player_party");
                 case BELOW_RELATIVE_LEVEL_THRESHOLD ->
-                        Text.translatable("command.cobblemontrainerbattle.below_relative_level_threshold");
+                        Text.translatable("command.cobblemontrainerbattle.common.below_relative_level_threshold");
                 case BUSY_WITH_POKEMON_BATTLE ->
-                        Text.translatable("command.cobblemontrainerbattle.minimum_party_level");
-                default ->
-                        Text.translatable("command.cobblemontrainerbattle.default_error");
+                        Text.translatable("command.cobblemontrainerbattle.common.busy_with_pokemon_battle");
+                default -> throw new RuntimeException(e);
             };
             context.getSource().getPlayer().sendMessage(message.copy().formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
@@ -225,7 +226,7 @@ public class GroupBattle {
                 GroupBattle.SESSIONS.get(playerUuid).battleUuid = pokemonBattle.getBattleId();
 
                 context.getSource().getPlayer().sendMessage(
-                        Text.literal(String.format("Flat level trainer battle has started against %s", trainer.name)));
+                        Text.translatable("command.cobblemontrainerbattle.groupbattleflat.startbattle.success", trainer.name));
                 CobblemonTrainerBattle.LOGGER.info(String.format("%s: %s versus %s",
                         new GroupBattleFlatCommand().getLiteral(),
                         context.getSource().getPlayer().getGameProfile().getName(), trainer.name));
@@ -238,21 +239,16 @@ public class GroupBattle {
         } catch (InvalidPlayerStateException e) {
             Text message = switch (e.getInvalidPlayerStateType()) {
                 case VALID_SESSION_NOT_EXIST ->
-                        Text.translatable("command.cobblemontrainerbattle.valid_group_battle_session_not_exist");
+                        Text.translatable("command.cobblemontrainerbattle.groupbattle.common.valid_session_not_exist");
                 case DEFEATED_TO_TRAINER ->
-                        Text.translatable("command.cobblemontrainerbattle.unable_to_continue_session_defeated_to_trainer");
+                        Text.translatable("command.cobblemontrainerbattle.groupbattle.startbattle.defeated_to_trainer");
                 case DEFEATED_ALL_TRAINERS ->
-                        Text.translatable("command.cobblemontrainerbattle.unable_to_continue_session_defeated_all_trainers");
+                        Text.translatable("command.cobblemontrainerbattle.groupbattle.startbattle.defeated_all_trainers");
                 case EMPTY_PLAYER_PARTY ->
-                        Text.translatable("command.cobblemontrainerbattle.empty_player_party");
-                case FAINTED_PLAYER_PARTY ->
-                        Text.translatable("command.cobblemontrainerbattle.fainted_player_party");
-                case BELOW_RELATIVE_LEVEL_THRESHOLD ->
-                        Text.translatable("command.cobblemontrainerbattle.below_relative_level_threshold");
+                        Text.translatable("command.cobblemontrainerbattle.common.empty_player_party");
                 case BUSY_WITH_POKEMON_BATTLE ->
-                        Text.translatable("command.cobblemontrainerbattle.minimum_party_level");
-                default ->
-                        Text.translatable("command.cobblemontrainerbattle.default_error");
+                        Text.translatable("command.cobblemontrainerbattle.common.busy_with_pokemon_battle");
+                default -> throw new RuntimeException(e);
             };
             context.getSource().getPlayer().sendMessage(message.copy().formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
@@ -281,8 +277,8 @@ public class GroupBattle {
             GroupFile groupFile = CobblemonTrainerBattle.groupFiles.get(groupResourcePath);
             if (groupFile == null) {
                 throw new InvalidResourceStateException(
-                        String.format("Unknown resource: %s", groupResourcePath),
-                        InvalidResourceState.UNKNOWN_RESOURCE,
+                        String.format("Resource not found: %s", groupResourcePath),
+                        InvalidResourceState.NOT_FOUND,
                         groupResourcePath
                 );
             }
@@ -307,8 +303,8 @@ public class GroupBattle {
 
         } catch (NullPointerException | IllegalStateException | UnsupportedOperationException | ClassCastException e) {
             throw new InvalidResourceStateException(
-                    String.format("Unreadable resource: %s", groupResourcePath),
-                    InvalidResourceState.UNREADABLE_RESOURCE,
+                    String.format("Unable to read resource: %s", groupResourcePath),
+                    InvalidResourceState.CANNOT_BE_READ,
                     groupResourcePath
             );
         }
