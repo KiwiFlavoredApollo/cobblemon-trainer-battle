@@ -34,11 +34,13 @@ public class CobblemonTrainerBattle implements ModInitializer {
 	public static final Economy ECONOMY = EconomyFactory.create(CONFIG.economy);
 	public static final String GROUP_CONFIG_DIR = "groups";
 	public static final String TRAINER_CONFIG_DIR = "trainers";
+	public static final String ARCADE_CONFIG_DIR = "arcades";
 
 	public static Map<UUID, PokemonBattle> trainerBattles = new HashMap<>();
 	public static JsonObject defaultTrainerConfiguration = new JsonObject();
 	public static Map<String, TrainerFile> trainerFiles = new HashMap<>();
 	public static Map<String, GroupFile> groupFiles = new HashMap<>();
+	public static JsonObject battleFactoryConfiguration = new JsonObject();
 
 	@Override
 	public void onInitialize() {

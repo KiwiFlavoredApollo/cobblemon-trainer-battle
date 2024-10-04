@@ -9,7 +9,10 @@ import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.BattleSide;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.cobblemon.mod.common.pokemon.PokemonStats;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.mojang.brigadier.Command;
+import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
@@ -20,6 +23,7 @@ import kiwiapollo.cobblemontrainerbattle.common.InvalidPlayerStateType;
 import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidPlayerStateException;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
 import kotlin.Unit;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.MutableText;
@@ -71,6 +75,7 @@ public class BattleFactory {
             assertExistValidSession(context.getSource().getPlayer());
             assertNotPlayerBusyWithPokemonBattle(context.getSource().getPlayer());
 
+            onBattleFactorySessionStop(context);
             BattleFactory.SESSIONS.remove(context.getSource().getPlayer().getUuid());
 
             context.getSource().getPlayer().sendMessage(
@@ -91,6 +96,14 @@ public class BattleFactory {
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
             return 0;
 
+        }
+    }
+
+    private static void onBattleFactorySessionStop(CommandContext<ServerCommandSource> context) {
+        if (isDefeatedAllTrainers(context.getSource().getPlayer())) {
+            onBattleFactoryVictory(context);
+        } else {
+            onBattleFactoryDefeat(context);
         }
     }
 
@@ -426,6 +439,58 @@ public class BattleFactory {
                     String.format("Player is busy with Pokemon battle: %s", player.getGameProfile().getName()),
                     InvalidPlayerStateType.BUSY_WITH_POKEMON_BATTLE
             );
+        }
+    }
+
+    private static void onBattleFactoryVictory(CommandContext<ServerCommandSource> context) {
+        JsonObject onVictory = CobblemonTrainerBattle.battleFactoryConfiguration.get("onVictory").getAsJsonObject();
+
+        if (onVictory.has("balance") && onVictory.get("balance").isJsonPrimitive()) {
+            CobblemonTrainerBattle.ECONOMY.addBalance(
+                    context.getSource().getPlayer(), onVictory.get("balance").getAsDouble());
+        }
+
+        if (onVictory.has("commands") && onVictory.get("commands").isJsonArray()) {
+            onVictory.get("commands").getAsJsonArray().asList().stream()
+                    .filter(JsonElement::isJsonPrimitive)
+                    .map(JsonElement::getAsString)
+                    .forEach(command -> {
+                        executeCommand(context.getSource().getPlayer(), command);
+                    });
+        }
+    }
+
+    private static void onBattleFactoryDefeat(CommandContext<ServerCommandSource> context) {
+        JsonObject onDefeat = CobblemonTrainerBattle.battleFactoryConfiguration.get("onDefeat").getAsJsonObject();
+
+        if (onDefeat.has("balance") && onDefeat.get("balance").isJsonPrimitive()) {
+            CobblemonTrainerBattle.ECONOMY.removeBalance(
+                    context.getSource().getPlayer(), onDefeat.get("balance").getAsDouble());
+        }
+
+        if (onDefeat.has("commands") && onDefeat.get("commands").isJsonArray()) {
+            onDefeat.get("commands").getAsJsonArray().asList().stream()
+                    .filter(JsonElement::isJsonPrimitive)
+                    .map(JsonElement::getAsString)
+                    .forEach(command -> {
+                        executeCommand(context.getSource().getPlayer(), command);
+                    });
+        }
+    }
+
+    private static void executeCommand(ServerPlayerEntity player, String command) {
+        try {
+            command = command.replace("%player%", player.getGameProfile().getName());
+
+            MinecraftServer server = player.getCommandSource().getServer();
+            CommandDispatcher<ServerCommandSource> dispatcher = server.getCommandManager().getDispatcher();
+
+            server.getCommandManager().execute(
+                    dispatcher.parse(command, server.getCommandSource()), command);
+
+        } catch (UnsupportedOperationException e) {
+            CobblemonTrainerBattle.LOGGER.error(
+                    String.format("Error occurred while running command: %s", command));
         }
     }
 }

@@ -32,6 +32,7 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
         CobblemonTrainerBattle.defaultTrainerConfiguration = loadDefaultTrainerConfiguration(resourceManager);
         CobblemonTrainerBattle.trainerFiles = loadTrainerFiles(resourceManager);
         CobblemonTrainerBattle.groupFiles = loadGroupFiles(resourceManager);
+        CobblemonTrainerBattle.battleFactoryConfiguration = loadBattleFactoryConfiguration(resourceManager);
     }
 
     private JsonObject loadDefaultTrainerConfiguration(ResourceManager resourceManager) {
@@ -140,5 +141,21 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
 
     private boolean isJsonFile(Identifier identifier) {
         return identifier.toString().endsWith(".json");
+    }
+
+    private JsonObject loadBattleFactoryConfiguration(ResourceManager resourceManager) {
+        String path = String.format("%s/battlefactory.json", CobblemonTrainerBattle.ARCADE_CONFIG_DIR);
+        Identifier identifier = Identifier.of(CobblemonTrainerBattle.NAMESPACE, path);
+
+        try (InputStream inputStream = resourceManager
+                .getResourceOrThrow(identifier)
+                .getInputStream()) {
+
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            return new Gson().fromJson(bufferedReader, JsonObject.class);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
