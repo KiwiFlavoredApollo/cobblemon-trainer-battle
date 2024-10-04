@@ -40,13 +40,13 @@ public class BattleFactoryCommand extends LiteralArgumentBuilder<ServerCommandSo
 
     private ArgumentBuilder<ServerCommandSource, ?> getBattleFactoryRerollPokemonsCommand() {
         return LiteralArgumentBuilder
-                .<ServerCommandSource>literal("rerollpokemons")
-                .executes(BattleFactory::rerollPokemons);
+                .<ServerCommandSource>literal("rerollpokemon")
+                .executes(BattleFactory::rerollPokemon);
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getBattleFactoryTradePokemonsCommand() {
-        return LiteralArgumentBuilder.<ServerCommandSource>literal("tradepokemons")
-                .executes(BattleFactory::showTradeablePokemons)
+        return LiteralArgumentBuilder.<ServerCommandSource>literal("tradepokemon")
+                .executes(BattleFactory::showTradeablePokemon)
                 .then(RequiredArgumentBuilder
                         .<ServerCommandSource, Integer>argument("playerslot", IntegerArgumentType.integer(1, 3))
                         .then(RequiredArgumentBuilder
@@ -55,8 +55,8 @@ public class BattleFactoryCommand extends LiteralArgumentBuilder<ServerCommandSo
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getBattleFactoryShowPokemonsCommand() {
-        return LiteralArgumentBuilder.<ServerCommandSource>literal("showpokemons")
-                .executes(BattleFactory::showPartyPokemons);
+        return LiteralArgumentBuilder.<ServerCommandSource>literal("showpokemon")
+                .executes(BattleFactory::showPartyPokemon);
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getBattleFactoryShowWinningStreakCommand() {

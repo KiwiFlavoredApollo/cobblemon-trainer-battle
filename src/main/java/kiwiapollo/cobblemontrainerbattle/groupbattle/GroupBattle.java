@@ -18,9 +18,9 @@ import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.FlatLevelFullHealt
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.TrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.commands.GroupBattleCommand;
 import kiwiapollo.cobblemontrainerbattle.commands.GroupBattleFlatCommand;
-import kiwiapollo.cobblemontrainerbattle.common.CommandConditionType;
+import kiwiapollo.cobblemontrainerbattle.common.InvalidPlayerStateType;
 import kiwiapollo.cobblemontrainerbattle.common.InvalidResourceState;
-import kiwiapollo.cobblemontrainerbattle.exceptions.CommandConditionNotSatisfiedException;
+import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidPlayerStateException;
 import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidResourceStateException;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.SpecificTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
@@ -59,9 +59,9 @@ public class GroupBattle {
 
             return Command.SINGLE_SUCCESS;
 
-        } catch (CommandConditionNotSatisfiedException e) {
-            Text message = switch (e.getCommandConditionType()) {
-                case VALID_SESSION_EXISTS ->
+        } catch (InvalidPlayerStateException e) {
+            Text message = switch (e.getInvalidPlayerStateType()) {
+                case VALID_SESSION_EXIST ->
                         Text.translatable("command.cobblemontrainerbattle.valid_group_battle_session_exist");
                 default ->
                         Text.translatable("command.cobblemontrainerbattle.default_error");
@@ -106,9 +106,9 @@ public class GroupBattle {
 
             return Command.SINGLE_SUCCESS;
 
-        } catch (CommandConditionNotSatisfiedException e) {
-            Text message = switch (e.getCommandConditionType()) {
-                case VALID_SESSION_NOT_EXISTS ->
+        } catch (InvalidPlayerStateException e) {
+            Text message = switch (e.getInvalidPlayerStateType()) {
+                case VALID_SESSION_NOT_EXIST ->
                         Text.translatable("command.cobblemontrainerbattle.valid_group_battle_session_not_exist");
                 default ->
                         Text.translatable("command.cobblemontrainerbattle.default_error");
@@ -154,9 +154,9 @@ public class GroupBattle {
 
             return Command.SINGLE_SUCCESS;
 
-        } catch (CommandConditionNotSatisfiedException e) {
-            Text message = switch (e.getCommandConditionType()) {
-                case VALID_SESSION_NOT_EXISTS ->
+        } catch (InvalidPlayerStateException e) {
+            Text message = switch (e.getInvalidPlayerStateType()) {
+                case VALID_SESSION_NOT_EXIST ->
                         Text.translatable("command.cobblemontrainerbattle.valid_group_battle_session_not_exist");
                 case DEFEATED_TO_TRAINER ->
                         Text.translatable("command.cobblemontrainerbattle.unable_to_continue_session_defeated_to_trainer");
@@ -180,11 +180,11 @@ public class GroupBattle {
     }
 
     private static void assertNotDefeatedAllTrainers(ServerPlayerEntity player)
-            throws CommandConditionNotSatisfiedException {
+            throws InvalidPlayerStateException {
         if (isDefeatedAllTrainers(player)) {
-            throw new CommandConditionNotSatisfiedException(
+            throw new InvalidPlayerStateException(
                     String.format("Player has defeated all trainers: %s", player.getGameProfile().getName()),
-                    CommandConditionType.DEFEATED_ALL_TRAINERS
+                    InvalidPlayerStateType.DEFEATED_ALL_TRAINERS
             );
         };
     }
@@ -235,9 +235,9 @@ public class GroupBattle {
 
             return Command.SINGLE_SUCCESS;
 
-        } catch (CommandConditionNotSatisfiedException e) {
-            Text message = switch (e.getCommandConditionType()) {
-                case VALID_SESSION_NOT_EXISTS ->
+        } catch (InvalidPlayerStateException e) {
+            Text message = switch (e.getInvalidPlayerStateType()) {
+                case VALID_SESSION_NOT_EXIST ->
                         Text.translatable("command.cobblemontrainerbattle.valid_group_battle_session_not_exist");
                 case DEFEATED_TO_TRAINER ->
                         Text.translatable("command.cobblemontrainerbattle.unable_to_continue_session_defeated_to_trainer");
@@ -261,7 +261,7 @@ public class GroupBattle {
     }
 
     public static String getNextTrainerResourcePath(ServerPlayerEntity player)
-            throws CommandConditionNotSatisfiedException {
+            throws InvalidPlayerStateException {
         try {
             GroupBattleSession session = SESSIONS.get(player.getUuid());
             GroupFile groupFile = CobblemonTrainerBattle.groupFiles.get(session.groupResourcePath);
@@ -269,9 +269,9 @@ public class GroupBattle {
                     .get(session.defeatedTrainerCount).getAsString();
 
         } catch (IndexOutOfBoundsException e) {
-            throw new CommandConditionNotSatisfiedException(
+            throw new InvalidPlayerStateException(
                     String.format("Player has defeated all trainers: %s", player.getGameProfile().getName()),
-                    CommandConditionType.DEFEATED_ALL_TRAINERS
+                    InvalidPlayerStateType.DEFEATED_ALL_TRAINERS
             );
         }
     }
@@ -314,32 +314,32 @@ public class GroupBattle {
         }
     }
 
-    private static void assertNotPlayerDefeated(ServerPlayerEntity player) throws CommandConditionNotSatisfiedException {
+    private static void assertNotPlayerDefeated(ServerPlayerEntity player) throws InvalidPlayerStateException {
         GroupBattleSession session = SESSIONS.get(player.getUuid());
         if (session.isDefeated) {
-            throw new CommandConditionNotSatisfiedException(
+            throw new InvalidPlayerStateException(
                     String.format("Player is defeated: %s", player.getGameProfile().getName()),
-                    CommandConditionType.DEFEATED_TO_TRAINER
+                    InvalidPlayerStateType.DEFEATED_TO_TRAINER
             );
         }
     }
 
     private static void assertExistValidSession(ServerPlayerEntity player)
-            throws CommandConditionNotSatisfiedException {
+            throws InvalidPlayerStateException {
         if (!isExistValidSession(player)) {
-            throw new CommandConditionNotSatisfiedException(
+            throw new InvalidPlayerStateException(
                     String.format("Valid battle session does not exists: %s", player.getGameProfile().getName()),
-                    CommandConditionType.VALID_SESSION_NOT_EXISTS
+                    InvalidPlayerStateType.VALID_SESSION_NOT_EXIST
             );
         }
     }
 
     private static void assertNotExistValidSession(ServerPlayerEntity player)
-            throws CommandConditionNotSatisfiedException {
+            throws InvalidPlayerStateException {
         if (isExistValidSession(player)) {
-            throw new CommandConditionNotSatisfiedException(
+            throw new InvalidPlayerStateException(
                     String.format("Valid battle session exists: %s", player.getGameProfile().getName()),
-                    CommandConditionType.VALID_SESSION_EXISTS
+                    InvalidPlayerStateType.VALID_SESSION_EXIST
             );
         }
     }
@@ -354,44 +354,44 @@ public class GroupBattle {
     }
 
     private static void assertNotPlayerBusyWithPokemonBattle(ServerPlayerEntity player)
-            throws CommandConditionNotSatisfiedException {
+            throws InvalidPlayerStateException {
         if (Cobblemon.INSTANCE.getBattleRegistry().getBattleByParticipatingPlayer(player) != null) {
-            throw new CommandConditionNotSatisfiedException(
+            throw new InvalidPlayerStateException(
                     String.format("Player is busy with Pokemon battle: %s", player.getGameProfile().getName()),
-                    CommandConditionType.BUSY_WITH_POKEMON_BATTLE
+                    InvalidPlayerStateType.BUSY_WITH_POKEMON_BATTLE
             );
         }
     }
 
-    private static void assertNotEmptyPlayerParty(ServerPlayerEntity player) throws CommandConditionNotSatisfiedException {
+    private static void assertNotEmptyPlayerParty(ServerPlayerEntity player) throws InvalidPlayerStateException {
         PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
         if (playerPartyStore.toGappyList().stream().allMatch(Objects::isNull)) {
-            throw new CommandConditionNotSatisfiedException(
+            throw new InvalidPlayerStateException(
                     String.format("Player has no Pokemon: %s", player.getGameProfile().getName()),
-                    CommandConditionType.EMPTY_PLAYER_PARTY
+                    InvalidPlayerStateType.EMPTY_PLAYER_PARTY
             );
         }
     }
 
     private static void assertPlayerPartyAtOrAboveRelativeLevelThreshold(ServerPlayerEntity player)
-            throws CommandConditionNotSatisfiedException {
+            throws InvalidPlayerStateException {
         PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
         Stream<Pokemon> pokemons = playerPartyStore.toGappyList().stream().filter(Objects::nonNull);
         if (pokemons.map(Pokemon::getLevel).allMatch(level -> level < TrainerFileParser.RELATIVE_LEVEL_THRESHOLD)) {
-            throw new CommandConditionNotSatisfiedException(
+            throw new InvalidPlayerStateException(
                     String.format("Pokemon levels are below relative level threshold", player.getGameProfile().getName()),
-                    CommandConditionType.BELOW_RELATIVE_LEVEL_THRESHOLD
+                    InvalidPlayerStateType.BELOW_RELATIVE_LEVEL_THRESHOLD
             );
         }
     }
 
-    private static void assertNotFaintPlayerParty(ServerPlayerEntity player) throws CommandConditionNotSatisfiedException {
+    private static void assertNotFaintPlayerParty(ServerPlayerEntity player) throws InvalidPlayerStateException {
         PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
         Stream<Pokemon> pokemons = playerPartyStore.toGappyList().stream().filter(Objects::nonNull);
         if (pokemons.allMatch(Pokemon::isFainted)) {
-            throw new CommandConditionNotSatisfiedException(
+            throw new InvalidPlayerStateException(
                     String.format("Pokemons are all fainted: %s", player.getGameProfile().getName()),
-                    CommandConditionType.FAINTED_PLAYER_PARTY
+                    InvalidPlayerStateType.FAINTED_PLAYER_PARTY
             );
         }
     }
