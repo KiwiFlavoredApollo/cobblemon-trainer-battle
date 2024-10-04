@@ -93,12 +93,7 @@ public class GroupBattle {
             assertExistValidSession(context.getSource().getPlayer());
             assertNotPlayerBusyWithPokemonBattle(context.getSource().getPlayer());
 
-            if (isDefeatedAllTrainers(context.getSource().getPlayer())) {
-                onGroupBattleVictory(context);
-            } else {
-                onGroupBattleDefeat(context);
-            }
-
+            onGroupBattleSessionStop(context);
             GroupBattle.SESSIONS.remove(context.getSource().getPlayer().getUuid());
 
             context.getSource().getPlayer().sendMessage(
@@ -118,6 +113,14 @@ public class GroupBattle {
                             .formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
             return 0;
+        }
+    }
+
+    private static void onGroupBattleSessionStop(CommandContext<ServerCommandSource> context) {
+        if (isDefeatedAllTrainers(context.getSource().getPlayer())) {
+            onGroupBattleVictory(context);
+        } else {
+            onGroupBattleDefeat(context);
         }
     }
 
