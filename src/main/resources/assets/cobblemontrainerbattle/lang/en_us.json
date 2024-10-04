@@ -1,20 +1,40 @@
 {
-  "command.cobblemontrainerbattle.default_error": "An error occurred while running this command",
-  "command.cobblemontrainerbattle.empty_player_party": "You have no Pokemon in your party",
-  "command.cobblemontrainerbattle.fainted_player_party": "Your Pokemons are all fainted",
-  "command.cobblemontrainerbattle.busy_with_pokemon_battle": "You cannot run this command while in Pokemon battle",
-  "command.cobblemontrainerbattle.below_relative_level_threshold": "Pokemon levels must be above %d",
-  "command.cobblemontrainerbattle.minimum_party_level": "Pokemon levels must be at or above level %d",
-  "command.cobblemontrainerbattle.maximum_party_level": "Pokemon levels must be at or above level %d",
-  "command.cobblemontrainerbattle.unknown_resource": "No such resource found %s",
-  "command.cobblemontrainerbattle.unreadable_resource": "An error occurred while reading %s",
-  "command.cobblemontrainerbattle.group_resource_contains_no_trainer": "No trainers found in %s",
-  "command.cobblemontrainerbattle.group_resource_contains_unknown_trainers": "Unknown trainers found in %s",
-  "command.cobblemontrainerbattle.valid_group_battle_session_exist": "Valid group battle session exists",
-  "command.cobblemontrainerbattle.valid_group_battle_session_not_exist": "Valid group battle session does not exist",
-  "command.cobblemontrainerbattle.unable_to_continue_session_defeated_all_trainers": "You cannot continue %s session due to having defeated all trainers",
-  "command.cobblemontrainerbattle.unable_to_continue_session_defeated_to_trainer": "You cannot continue %s session due to being defeated to a trainer",
-  "command.cobblemontrainerbattle.unable_to_reroll_pokemons_defeated_trainer_exist": "You cannot re-roll Pokemons after defeating a trainer",
-  "command.cobblemontrainerbattle.unable_to_trade_pokemon_defeated_trainer_not_exist": "You cannot trade your Pokemon unless you defeat a trainer",
-  "command.cobblemontrainerbattle.unable_to_trade_pokemon_player_already_traded": "You have already traded your Pokemon"
+  "command.cobblemontrainerbattle.common.empty_player_party": "You have no Pokemon in your party",
+  "command.cobblemontrainerbattle.common.fainted_player_party": "Your Pokemons are all fainted",
+  "command.cobblemontrainerbattle.common.busy_with_pokemon_battle": "You cannot run this command while in Pokemon battle",
+  "command.cobblemontrainerbattle.common.below_relative_level_threshold": "Pokemon levels must be above %d",
+
+  "command.cobblemontrainerbattle.trainer.minimum_party_level": "Pokemon levels must be at or above level %d",
+  "command.cobblemontrainerbattle.trainer.maximum_party_level": "Pokemon levels must be at or below level %d",
+
+  "command.cobblemontrainerbattle.common.resource.unknown": "No such resource found %s",
+  "command.cobblemontrainerbattle.common.resource.unreadable": "An error occurred while reading %s",
+  "command.cobblemontrainerbattle.groupbattle.resource.no_trainer": "No trainers found in %s",
+  "command.cobblemontrainerbattle.groupbattle.resource.unknown_trainers": "Unknown trainers found in %s",
+
+  "command.cobblemontrainerbattle.trainerbattle.success": "Battle has started against %s",
+  "command.cobblemontrainerbattle.trainerbattleflat.success": "Flat level battle has started against %s",
+
+  "command.cobblemontrainerbattle.groupbattle.startsession.success": "Group Battle session has started",
+  "command.cobblemontrainerbattle.groupbattle.stopsession.success": "Group Battle session has stopped",
+  "command.cobblemontrainerbattle.groupbattle.startbattle.success": "Battle has started against %s",
+  "command.cobblemontrainerbattle.groupbattleflat.startbattle.success": "Flat level battle has started against %s",
+
+  "command.cobblemontrainerbattle.groupbattle.common.valid_session_exist": "Valid Group Battle session exists",
+  "command.cobblemontrainerbattle.groupbattle.common.valid_session_not_exist": "Valid Group Battle session does not exist",
+
+  "command.cobblemontrainerbattle.battlefactory.startsession.success": "Battle Factory session has started",
+  "command.cobblemontrainerbattle.battlefactory.stopsession.success": "Battle Factory session has stopped",
+  "command.cobblemontrainerbattle.battlefactory.startbattle.success": "Battle has started against %s",
+  "command.cobblemontrainerbattle.battlefactory.tradepokemon.success": "Traded %s for %s",
+  "command.cobblemontrainerbattle.battlefactory.rerollpokemon.success": "Re-rolled Pokemons",
+
+  "command.cobblemontrainerbattle.battlefactory.common.valid_session_exist": "Valid Battle Factory session exists",
+  "command.cobblemontrainerbattle.battlefactory.common.valid_session_not_exist": "Valid Battle Factory session does not exist",
+  "command.cobblemontrainerbattle.battlefactory.startbattle.defeated_all_trainers": "You cannot continue completed Battle Factory session",
+  "command.cobblemontrainerbattle.battlefactory.startbattle.defeated_to_trainer": "You cannot continue defeated Battle Factory session",
+  "command.cobblemontrainerbattle.battlefactory.rerollpokemon.defeated_trainer_exist": "You cannot re-roll Pokemons after defeating a trainer",
+  "command.cobblemontrainerbattle.battlefactory.tradepokemon.defeated_to_trainer": "You cannot trade Pokemon in defeated Battle Factory session",
+  "command.cobblemontrainerbattle.battlefactory.tradepokemon.defeated_trainer_not_exist": "You cannot trade your Pokemon unless you defeat a trainer",
+  "command.cobblemontrainerbattle.battlefactory.tradepokemon.already_traded_pokemon": "You have already traded your Pokemon"
 }
