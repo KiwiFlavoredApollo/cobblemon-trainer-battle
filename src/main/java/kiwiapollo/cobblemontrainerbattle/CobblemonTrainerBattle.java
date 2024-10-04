@@ -43,11 +43,10 @@ public class CobblemonTrainerBattle implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
-			dispatcher.register(new BattleTrainerCommand());
-			dispatcher.register(new BattleTrainerFlatCommand());
-			dispatcher.register(new BattleGroupCommand());
-			dispatcher.register(new BattleGroupFlatCommand());
-			dispatcher.register(new GroupBattleSessionCommand());
+			dispatcher.register(new TrainerBattleCommand());
+			dispatcher.register(new TrainerBattleFlatCommand());
+			dispatcher.register(new GroupBattleCommand());
+			dispatcher.register(new GroupBattleFlatCommand());
 			dispatcher.register(new BattleFactoryCommand());
 		});
 

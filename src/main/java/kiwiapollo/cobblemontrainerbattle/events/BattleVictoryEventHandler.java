@@ -163,6 +163,7 @@ public class BattleVictoryEventHandler {
         CobblemonTrainerBattle.trainerBattles.remove(battleVictoryEvent.getBattle().getBattleId());
 
 //        if (isDefeatedAllTrainers || isDefeatedToTrainer) {
+//            executeCommandAndSuch
 //            BattleFactory.SESSIONS.remove(player.getUuid());
 //        }
     }

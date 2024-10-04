@@ -8,9 +8,9 @@ import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import net.minecraft.server.command.ServerCommandSource;
 
-public class BattleTrainerCommand extends LiteralArgumentBuilder<ServerCommandSource> {
-    public BattleTrainerCommand() {
-        super("battletrainer");
+public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerCommandSource> {
+    public TrainerBattleFlatCommand() {
+        super("trainerbattleflat");
 
         this.requires(new PlayerCommandPredicate(
                 String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "trainer"),
@@ -18,7 +18,7 @@ public class BattleTrainerCommand extends LiteralArgumentBuilder<ServerCommandSo
                 .then(getSpecificTrainerBattleCommand())
                 .then(LiteralArgumentBuilder.<ServerCommandSource>literal("random")
                         .requires(new PlayerCommandPredicate(String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "random")))
-                        .executes(TrainerBattle::startRandomBattleWithStatusQuo));
+                        .executes(TrainerBattle::startRandomBattleWithFlatLevelAndFullHealth));
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getSpecificTrainerBattleCommand() {
@@ -28,6 +28,6 @@ public class BattleTrainerCommand extends LiteralArgumentBuilder<ServerCommandSo
                     CobblemonTrainerBattle.trainerFiles.keySet().stream().map(String::valueOf).forEach(builder::suggest);
                     return builder.buildFuture();
                 })
-                .executes(TrainerBattle::startTrainerBattleWithStatusQuo);
+                .executes(TrainerBattle::startTrainerBattleWithFlatLevelAndFullHealth);
     }
 }

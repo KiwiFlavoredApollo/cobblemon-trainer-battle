@@ -14,7 +14,6 @@ public class BattleFactoryCommand extends LiteralArgumentBuilder<ServerCommandSo
         super("battlefactory");
 
         this.requires(new PlayerCommandPredicate(String.format("%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral())))
-                .then(getBattleFactoryQuickStartCommand())
                 .then(getBattleFactoryStartSessionCommand())
                 .then(getBattleFactoryStopSessionCommand())
                 .then(getBattleFactoryStartBattleCommand())
@@ -22,11 +21,6 @@ public class BattleFactoryCommand extends LiteralArgumentBuilder<ServerCommandSo
                 .then(getBattleFactoryTradePokemonsCommand())
                 .then(getBattleFactoryShowPokemonsCommand())
                 .then(getBattleFactoryShowWinningStreakCommand());
-    }
-
-    private ArgumentBuilder<ServerCommandSource, ?> getBattleFactoryQuickStartCommand() {
-        return LiteralArgumentBuilder.<ServerCommandSource>literal("quickstart")
-                .executes(BattleFactory::quickStart);
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getBattleFactoryStartSessionCommand() {

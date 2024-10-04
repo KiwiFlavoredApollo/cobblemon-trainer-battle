@@ -36,19 +36,6 @@ public class BattleFactory {
     public static final int LEVEL = 100;
     public static Map<UUID, BattleFactorySession> SESSIONS = new HashMap<>();
 
-    public static int quickStart(CommandContext<ServerCommandSource> context) {
-        try {
-            assertNotExistValidSession(context.getSource().getPlayer());
-            startSession(context);
-            return startBattle(context);
-
-        } catch (InvalidBattleSessionStateException e) {
-            stopSession(context);
-            startSession(context);
-            return startBattle(context);
-        }
-    }
-
     public static int startSession(CommandContext<ServerCommandSource> context) {
         try {
             assertNotExistValidSession(context.getSource().getPlayer());
@@ -71,7 +58,7 @@ public class BattleFactory {
             context.getSource().getPlayer().sendMessage(
                     Text.literal(getInvalidBattleSessionStateErrorMessage(e)).formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
-            return -1;
+            return 0;
         }
     }
 
@@ -91,12 +78,12 @@ public class BattleFactory {
         } catch (InvalidBattleSessionStateException e) {
             context.getSource().getPlayer().sendMessage(
                     Text.literal(getInvalidBattleSessionStateErrorMessage(e)).formatted(Formatting.RED));
-            return -1;
+            return 0;
 
         } catch (InvalidPlayerStateException e) {
             context.getSource().getPlayer().sendMessage(
                     Text.literal(getInvalidPlayerStateErrorMessage(e)).formatted(Formatting.RED));
-            return -1;
+            return 0;
         }
     }
 
@@ -134,13 +121,13 @@ public class BattleFactory {
             context.getSource().getPlayer().sendMessage(
                     Text.literal(getInvalidBattleSessionStateErrorMessage(e)).formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
-            return -1;
+            return 0;
 
         } catch (InvalidPlayerStateException e) {
             context.getSource().getPlayer().sendMessage(
                     Text.literal(getInvalidPlayerStateErrorMessage(e)).formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
-            return -1;
+            return 0;
         }
     }
 
@@ -178,7 +165,7 @@ public class BattleFactory {
             context.getSource().getPlayer().sendMessage(
                     Text.literal(getInvalidBattleSessionStateErrorMessage(e)).formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
-            return -1;
+            return 0;
         }
     }
 
@@ -197,7 +184,7 @@ public class BattleFactory {
             context.getSource().getPlayer().sendMessage(
                     Text.literal(getInvalidBattleSessionStateErrorMessage(e)).formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
-            return -1;
+            return 0;
         }
     }
 
@@ -211,7 +198,7 @@ public class BattleFactory {
             context.getSource().getPlayer().sendMessage(
                     Text.literal(getInvalidBattleSessionStateErrorMessage(e)).formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
-            return -1;
+            return 0;
         }
     }
 
@@ -237,13 +224,13 @@ public class BattleFactory {
                 context.getSource().getPlayer().sendMessage(
                         Text.literal("You cannot reroll Pokemons after battling trainers").formatted(Formatting.RED));
                 CobblemonTrainerBattle.LOGGER.error(e.getMessage());
-                return -1;
+                return 0;
 
             } else {
                 context.getSource().getPlayer().sendMessage(
                         Text.literal(getInvalidBattleSessionStateErrorMessage(e)).formatted(Formatting.RED));
                 CobblemonTrainerBattle.LOGGER.error(e.getMessage());
-                return -1;
+                return 0;
             }
         }
     }
@@ -262,7 +249,7 @@ public class BattleFactory {
             context.getSource().getPlayer().sendMessage(
                     Text.literal(getInvalidBattleSessionStateErrorMessage(e)).formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
-            return -1;
+            return 0;
         }
     }
 

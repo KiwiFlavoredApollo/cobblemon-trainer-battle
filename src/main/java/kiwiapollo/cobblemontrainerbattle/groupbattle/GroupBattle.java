@@ -16,8 +16,8 @@ import kiwiapollo.cobblemontrainerbattle.battleactors.player.FlatLevelFullHealth
 import kiwiapollo.cobblemontrainerbattle.battleactors.player.StatusQuoPlayerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.FlatLevelFullHealthTrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.TrainerBattleActorFactory;
-import kiwiapollo.cobblemontrainerbattle.commands.BattleGroupCommand;
-import kiwiapollo.cobblemontrainerbattle.commands.BattleGroupFlatCommand;
+import kiwiapollo.cobblemontrainerbattle.commands.GroupBattleCommand;
+import kiwiapollo.cobblemontrainerbattle.commands.GroupBattleFlatCommand;
 import kiwiapollo.cobblemontrainerbattle.common.InvalidBattleSessionState;
 import kiwiapollo.cobblemontrainerbattle.common.InvalidPlayerState;
 import kiwiapollo.cobblemontrainerbattle.common.InvalidResourceState;
@@ -46,52 +46,6 @@ public class GroupBattle {
     public static final int FLAT_LEVEL = 100;
     public static Map<UUID, GroupBattleSession> SESSIONS = new HashMap<>();
 
-    public static int startSessionAndStartBattleWithStatusQuo(CommandContext<ServerCommandSource> context) {
-        try {
-            assertNotExistValidSession(context.getSource().getPlayer());
-            startSession(context);
-            return startBattleWithStatusQuo(context);
-
-        } catch (InvalidBattleSessionStateException e) {
-            stopSession(context);
-            startSession(context);
-            return startBattleWithStatusQuo(context);
-        }
-    }
-
-    public static int startBattleWithStatusQuoOrStopSession(CommandContext<ServerCommandSource> context) {
-        try {
-            assertNotDefeatedAllTrainers(context.getSource().getPlayer());
-            return startBattleWithStatusQuo(context);
-
-        } catch (InvalidBattleSessionStateException e) {
-            return stopSession(context);
-        }
-    }
-
-    public static int startSessionAndStartBattleWithFlatLevelAndFullHealth(CommandContext<ServerCommandSource> context) {
-        try {
-            assertNotExistValidSession(context.getSource().getPlayer());
-            startSession(context);
-            return startBattleWithFlatLevelAndFullHealth(context);
-
-        } catch (InvalidBattleSessionStateException e) {
-            stopSession(context);
-            startSession(context);
-            return startBattleWithFlatLevelAndFullHealth(context);
-        }
-    }
-
-    public static int startBattleWithFlatLevelAndFullHealthOrStopSession(CommandContext<ServerCommandSource> context) {
-        try {
-            assertNotDefeatedAllTrainers(context.getSource().getPlayer());
-            return startBattleWithFlatLevelAndFullHealth(context);
-
-        } catch (InvalidBattleSessionStateException e) {
-            return stopSession(context);
-        }
-    }
-
     public static int startSession(CommandContext<ServerCommandSource> context) {
         try {
             assertNotExistValidSession(context.getSource().getPlayer());
@@ -111,13 +65,13 @@ public class GroupBattle {
             context.getSource().getPlayer().sendMessage(
                     Text.literal(getInvalidBattleSessionStateErrorMessage(e)).formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
-            return -1;
+            return 0;
 
         } catch (InvalidResourceStateException e) {
             context.getSource().getPlayer().sendMessage(
                     Text.literal(getInvalidResourceStateErrorMessage(e)).formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
-            return -1;
+            return 0;
         }
     }
 
@@ -144,13 +98,13 @@ public class GroupBattle {
             context.getSource().getPlayer().sendMessage(
                     Text.literal(getInvalidBattleSessionStateErrorMessage(e)).formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
-            return -1;
+            return 0;
 
         } catch (InvalidPlayerStateException e) {
             context.getSource().getPlayer().sendMessage(
                     Text.literal(getInvalidPlayerStateErrorMessage(e)).formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
-            return -1;
+            return 0;
         }
     }
 
@@ -237,7 +191,7 @@ public class GroupBattle {
                 context.getSource().getPlayer().sendMessage(
                         Text.literal(String.format("Trainer battle has started against %s", trainer.name)));
                 CobblemonTrainerBattle.LOGGER.info(String.format("%s: %s versus %s",
-                        new BattleGroupCommand().getLiteral(),
+                        new GroupBattleCommand().getLiteral(),
                         context.getSource().getPlayer().getGameProfile().getName(), trainer.name));
 
                 return Unit.INSTANCE;
@@ -249,19 +203,19 @@ public class GroupBattle {
             context.getSource().getPlayer().sendMessage(
                     Text.literal(getInvalidBattleSessionStateErrorMessage(e)).formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
-            return -1;
+            return 0;
 
         } catch (InvalidResourceStateException e) {
             context.getSource().getPlayer().sendMessage(
                     Text.literal(getInvalidResourceStateErrorMessage(e)).formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
-            return -1;
+            return 0;
 
         } catch (InvalidPlayerStateException e) {
             context.getSource().getPlayer().sendMessage(
                     Text.literal(getInvalidPlayerStateErrorMessage(e)).formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
-            return -1;
+            return 0;
         }
     }
 
@@ -313,7 +267,7 @@ public class GroupBattle {
                 context.getSource().getPlayer().sendMessage(
                         Text.literal(String.format("Flat level trainer battle has started against %s", trainer.name)));
                 CobblemonTrainerBattle.LOGGER.info(String.format("%s: %s versus %s",
-                        new BattleGroupFlatCommand().getLiteral(),
+                        new GroupBattleFlatCommand().getLiteral(),
                         context.getSource().getPlayer().getGameProfile().getName(), trainer.name));
 
                 return Unit.INSTANCE;
@@ -325,19 +279,19 @@ public class GroupBattle {
             context.getSource().getPlayer().sendMessage(
                     Text.literal(getInvalidBattleSessionStateErrorMessage(e)).formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
-            return -1;
+            return 0;
 
         } catch (InvalidResourceStateException e) {
             context.getSource().getPlayer().sendMessage(
                     Text.literal(getInvalidResourceStateErrorMessage(e)).formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
-            return -1;
+            return 0;
 
         } catch (InvalidPlayerStateException e) {
             context.getSource().getPlayer().sendMessage(
                     Text.literal(getInvalidPlayerStateErrorMessage(e)).formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
-            return -1;
+            return 0;
         }
     }
 

@@ -13,8 +13,8 @@ import kiwiapollo.cobblemontrainerbattle.battleactors.player.FlatLevelFullHealth
 import kiwiapollo.cobblemontrainerbattle.battleactors.player.StatusQuoPlayerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.FlatLevelFullHealthTrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.TrainerBattleActorFactory;
-import kiwiapollo.cobblemontrainerbattle.commands.BattleTrainerCommand;
-import kiwiapollo.cobblemontrainerbattle.commands.BattleTrainerFlatCommand;
+import kiwiapollo.cobblemontrainerbattle.commands.TrainerBattleCommand;
+import kiwiapollo.cobblemontrainerbattle.commands.TrainerBattleFlatCommand;
 import kiwiapollo.cobblemontrainerbattle.common.InvalidPlayerState;
 import kiwiapollo.cobblemontrainerbattle.common.InvalidResourceState;
 import kiwiapollo.cobblemontrainerbattle.common.TrainerCondition;
@@ -40,7 +40,7 @@ public class TrainerBattle {
         } catch (InvalidResourceStateException e) {
             context.getSource().getPlayer().sendMessage(
                     Text.literal(getInvalidResourceStateErrorMessage(e)).formatted(Formatting.RED));
-            return -1;
+            return 0;
         }
     }
 
@@ -68,7 +68,7 @@ public class TrainerBattle {
                 context.getSource().getPlayer().sendMessage(
                         Text.literal(String.format("Trainer battle has started against %s", trainer.name)));
                 CobblemonTrainerBattle.LOGGER.info(String.format("%s: %s versus %s",
-                        new BattleTrainerCommand().getLiteral(),
+                        new TrainerBattleCommand().getLiteral(),
                         context.getSource().getPlayer().getGameProfile().getName(), trainer.name));
 
                 return Unit.INSTANCE;
@@ -80,13 +80,13 @@ public class TrainerBattle {
             context.getSource().getPlayer().sendMessage(
                     Text.literal(getUnsatisfiedTrainerConditionErrorMessage(e)).formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
-            return -1;
+            return 0;
 
         } catch (InvalidPlayerStateException e) {
             context.getSource().getPlayer().sendMessage(
                     Text.literal(getInvalidPlayerStateErrorMessage(e)).formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
-            return -1;
+            return 0;
         }
     }
 
@@ -99,7 +99,7 @@ public class TrainerBattle {
         } catch (InvalidResourceStateException e) {
             context.getSource().getPlayer().sendMessage(
                     Text.literal(getInvalidResourceStateErrorMessage(e)).formatted(Formatting.RED));
-            return -1;
+            return 0;
         }
     }
 
@@ -128,7 +128,7 @@ public class TrainerBattle {
                 context.getSource().getPlayer().sendMessage(
                         Text.literal(String.format("Flat level trainer battle has started against %s", trainer.name)));
                 CobblemonTrainerBattle.LOGGER.info(String.format("%s: %s versus %s",
-                        new BattleTrainerFlatCommand().getLiteral(),
+                        new TrainerBattleFlatCommand().getLiteral(),
                         context.getSource().getPlayer().getGameProfile().getName(), trainer.name));
 
                 return Unit.INSTANCE;
@@ -140,7 +140,7 @@ public class TrainerBattle {
             context.getSource().getPlayer().sendMessage(
                     Text.literal(getInvalidPlayerStateErrorMessage(e)).formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
-            return -1;
+            return 0;
         }
     }
 
