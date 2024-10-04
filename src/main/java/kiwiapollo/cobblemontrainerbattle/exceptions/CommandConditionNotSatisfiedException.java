@@ -10,7 +10,7 @@ public class CommandConditionNotSatisfiedException extends Exception {
         commandConditionType = null;
     }
 
-    public CommandConditionNotSatisfiedException(CommandConditionType commandConditionType, String message) {
+    public CommandConditionNotSatisfiedException(String message, CommandConditionType commandConditionType) {
         super(message);
         this.commandConditionType = commandConditionType;
     }

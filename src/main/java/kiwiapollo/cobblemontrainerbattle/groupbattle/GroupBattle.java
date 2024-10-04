@@ -183,8 +183,8 @@ public class GroupBattle {
             throws CommandConditionNotSatisfiedException {
         if (isDefeatedAllTrainers(player)) {
             throw new CommandConditionNotSatisfiedException(
-                    CommandConditionType.DEFEATED_ALL_TRAINERS,
-                    String.format("Player has defeated all trainers: %s", player.getGameProfile().getName())
+                    String.format("Player has defeated all trainers: %s", player.getGameProfile().getName()),
+                    CommandConditionType.DEFEATED_ALL_TRAINERS
             );
         };
     }
@@ -270,8 +270,8 @@ public class GroupBattle {
 
         } catch (IndexOutOfBoundsException e) {
             throw new CommandConditionNotSatisfiedException(
-                    CommandConditionType.DEFEATED_ALL_TRAINERS,
-                    String.format("Player has defeated all trainers: %s", player.getGameProfile().getName())
+                    String.format("Player has defeated all trainers: %s", player.getGameProfile().getName()),
+                    CommandConditionType.DEFEATED_ALL_TRAINERS
             );
         }
     }
@@ -281,17 +281,17 @@ public class GroupBattle {
             GroupFile groupFile = CobblemonTrainerBattle.groupFiles.get(groupResourcePath);
             if (groupFile == null) {
                 throw new InvalidResourceStateException(
+                        String.format("Unknown resource: %s", groupResourcePath),
                         InvalidResourceState.UNKNOWN_RESOURCE,
-                        groupResourcePath,
-                        String.format("Unknown resource: %s", groupResourcePath)
+                        groupResourcePath
                 );
             }
 
             if (groupFile.configuration.get("trainers").getAsJsonArray().isEmpty()) {
                 throw new InvalidResourceStateException(
+                        String.format("No trainers: %s", groupResourcePath),
                         InvalidResourceState.CONTAINS_NO_VALUE,
-                        groupResourcePath,
-                        String.format("No trainers: %s", groupResourcePath)
+                        groupResourcePath
                 );
             }
 
@@ -299,17 +299,17 @@ public class GroupBattle {
                     .map(JsonElement::getAsString)
                     .allMatch(CobblemonTrainerBattle.trainerFiles::containsKey)) {
                 throw new InvalidResourceStateException(
+                        String.format("One or more trainers are unknown: %s", groupResourcePath),
                         InvalidResourceState.CONTAINS_INVALID_VALUE,
-                        groupResourcePath,
-                        String.format("One or more trainers are unknown: %s", groupResourcePath)
+                        groupResourcePath
                 );
             };
 
         } catch (NullPointerException | IllegalStateException | UnsupportedOperationException | ClassCastException e) {
             throw new InvalidResourceStateException(
+                    String.format("Unreadable resource: %s", groupResourcePath),
                     InvalidResourceState.UNREADABLE_RESOURCE,
-                    groupResourcePath,
-                    String.format("Unreadable resource: %s", groupResourcePath)
+                    groupResourcePath
             );
         }
     }
@@ -318,8 +318,8 @@ public class GroupBattle {
         GroupBattleSession session = SESSIONS.get(player.getUuid());
         if (session.isDefeated) {
             throw new CommandConditionNotSatisfiedException(
-                    CommandConditionType.DEFEATED_TO_TRAINER,
-                    String.format("Player is defeated: %s", player.getGameProfile().getName())
+                    String.format("Player is defeated: %s", player.getGameProfile().getName()),
+                    CommandConditionType.DEFEATED_TO_TRAINER
             );
         }
     }
@@ -328,8 +328,8 @@ public class GroupBattle {
             throws CommandConditionNotSatisfiedException {
         if (!isExistValidSession(player)) {
             throw new CommandConditionNotSatisfiedException(
-                    CommandConditionType.VALID_SESSION_NOT_EXISTS,
-                    String.format("Valid battle session does not exists: %s", player.getGameProfile().getName())
+                    String.format("Valid battle session does not exists: %s", player.getGameProfile().getName()),
+                    CommandConditionType.VALID_SESSION_NOT_EXISTS
             );
         }
     }
@@ -338,8 +338,8 @@ public class GroupBattle {
             throws CommandConditionNotSatisfiedException {
         if (isExistValidSession(player)) {
             throw new CommandConditionNotSatisfiedException(
-                    CommandConditionType.VALID_SESSION_EXISTS,
-                    String.format("Valid battle session exists: %s", player.getGameProfile().getName())
+                    String.format("Valid battle session exists: %s", player.getGameProfile().getName()),
+                    CommandConditionType.VALID_SESSION_EXISTS
             );
         }
     }
@@ -357,8 +357,8 @@ public class GroupBattle {
             throws CommandConditionNotSatisfiedException {
         if (Cobblemon.INSTANCE.getBattleRegistry().getBattleByParticipatingPlayer(player) != null) {
             throw new CommandConditionNotSatisfiedException(
-                    CommandConditionType.BUSY_WITH_POKEMON_BATTLE,
-                    String.format("Player is busy with Pokemon battle: %s", player.getGameProfile().getName())
+                    String.format("Player is busy with Pokemon battle: %s", player.getGameProfile().getName()),
+                    CommandConditionType.BUSY_WITH_POKEMON_BATTLE
             );
         }
     }
@@ -367,8 +367,8 @@ public class GroupBattle {
         PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
         if (playerPartyStore.toGappyList().stream().allMatch(Objects::isNull)) {
             throw new CommandConditionNotSatisfiedException(
-                    CommandConditionType.EMPTY_PLAYER_PARTY,
-                    String.format("Player has no Pokemon: %s", player.getGameProfile().getName())
+                    String.format("Player has no Pokemon: %s", player.getGameProfile().getName()),
+                    CommandConditionType.EMPTY_PLAYER_PARTY
             );
         }
     }
@@ -379,8 +379,8 @@ public class GroupBattle {
         Stream<Pokemon> pokemons = playerPartyStore.toGappyList().stream().filter(Objects::nonNull);
         if (pokemons.map(Pokemon::getLevel).allMatch(level -> level < TrainerFileParser.RELATIVE_LEVEL_THRESHOLD)) {
             throw new CommandConditionNotSatisfiedException(
-                    CommandConditionType.BELOW_RELATIVE_LEVEL_THRESHOLD,
-                    String.format("Pokemon levels are below relative level threshold", player.getGameProfile().getName())
+                    String.format("Pokemon levels are below relative level threshold", player.getGameProfile().getName()),
+                    CommandConditionType.BELOW_RELATIVE_LEVEL_THRESHOLD
             );
         }
     }
@@ -390,8 +390,8 @@ public class GroupBattle {
         Stream<Pokemon> pokemons = playerPartyStore.toGappyList().stream().filter(Objects::nonNull);
         if (pokemons.allMatch(Pokemon::isFainted)) {
             throw new CommandConditionNotSatisfiedException(
-                    CommandConditionType.FAINTED_PLAYER_PARTY,
-                    String.format("Pokemons are all fainted: %s", player.getGameProfile().getName())
+                    String.format("Pokemons are all fainted: %s", player.getGameProfile().getName()),
+                    CommandConditionType.FAINTED_PLAYER_PARTY
             );
         }
     }

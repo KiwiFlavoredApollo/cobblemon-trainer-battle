@@ -294,8 +294,8 @@ public class BattleFactory {
         BattleFactorySession session = SESSIONS.get(player.getUuid());
         if (session.isDefeated) {
             throw new CommandConditionNotSatisfiedException(
-                    CommandConditionType.DEFEATED_TO_TRAINER,
-                    String.format("Player is defeated: %s", player.getGameProfile().getName())
+                    String.format("Player is defeated: %s", player.getGameProfile().getName()),
+                    CommandConditionType.DEFEATED_TO_TRAINER
             );
         }
     }
@@ -304,8 +304,8 @@ public class BattleFactory {
             throws CommandConditionNotSatisfiedException {
         if (isDefeatedAllTrainers(player)) {
             throw new CommandConditionNotSatisfiedException(
-                    CommandConditionType.DEFEATED_ALL_TRAINERS,
-                    String.format("Player has defeated all trainers: %s", player.getGameProfile().getName())
+                    String.format("Player has defeated all trainers: %s", player.getGameProfile().getName()),
+                    CommandConditionType.DEFEATED_ALL_TRAINERS
             );
         };
     }
@@ -324,8 +324,8 @@ public class BattleFactory {
             throws CommandConditionNotSatisfiedException {
         if (!isExistValidSession(player)) {
             throw new CommandConditionNotSatisfiedException(
-                    CommandConditionType.VALID_SESSION_NOT_EXISTS,
-                    String.format("Valid battle session does not exists: %s", player.getGameProfile().getName())
+                    String.format("Valid battle session does not exists: %s", player.getGameProfile().getName()),
+                    CommandConditionType.VALID_SESSION_NOT_EXISTS
             );
         }
     }
@@ -334,8 +334,8 @@ public class BattleFactory {
             throws CommandConditionNotSatisfiedException {
         if (isExistValidSession(player)) {
             throw new CommandConditionNotSatisfiedException(
-                    CommandConditionType.VALID_SESSION_EXISTS,
-                    String.format("Valid battle session exists: %s", player.getGameProfile().getName())
+                    String.format("Valid battle session exists: %s", player.getGameProfile().getName()),
+                    CommandConditionType.VALID_SESSION_EXISTS
             );
         }
     }
@@ -353,8 +353,8 @@ public class BattleFactory {
             throws CommandConditionNotSatisfiedException {
         if (SESSIONS.get(player.getUuid()).isTradedPokemon) {
             throw new CommandConditionNotSatisfiedException(
-                    CommandConditionType.POKEMON_TRADED,
-                    String.format("Player has already traded a Pokemon: %s", player.getGameProfile().getName())
+                    String.format("Player has already traded a Pokemon: %s", player.getGameProfile().getName()),
+                    CommandConditionType.POKEMON_TRADED
             );
         }
     }
@@ -363,8 +363,8 @@ public class BattleFactory {
             throws CommandConditionNotSatisfiedException {
         if (!isExistDefeatedTrainers(player)) {
             throw new CommandConditionNotSatisfiedException(
-                    CommandConditionType.DEFEATED_NO_TRAINER,
-                    String.format("Player has no defeated trainers: %s", player.getGameProfile().getName())
+                    String.format("Player has no defeated trainers: %s", player.getGameProfile().getName()),
+                    CommandConditionType.DEFEATED_NO_TRAINER
             );
         }
     }
@@ -373,8 +373,8 @@ public class BattleFactory {
             throws CommandConditionNotSatisfiedException {
         if (isExistDefeatedTrainers(player)) {
             throw new CommandConditionNotSatisfiedException(
-                    CommandConditionType.DEFEATED_ANY_TRAINERS,
-                    String.format("Player has defeated trainers: %s", player.getGameProfile().getName())
+                    String.format("Player has defeated trainers: %s", player.getGameProfile().getName()),
+                    CommandConditionType.DEFEATED_ANY_TRAINERS
             );
         }
     }
@@ -424,8 +424,8 @@ public class BattleFactory {
             throws CommandConditionNotSatisfiedException {
         if (Cobblemon.INSTANCE.getBattleRegistry().getBattleByParticipatingPlayer(player) != null) {
             throw new CommandConditionNotSatisfiedException(
-                    CommandConditionType.BUSY_WITH_POKEMON_BATTLE,
-                    String.format("Player is busy with Pokemon battle: %s", player.getGameProfile().getName())
+                    String.format("Player is busy with Pokemon battle: %s", player.getGameProfile().getName()),
+                    CommandConditionType.BUSY_WITH_POKEMON_BATTLE
             );
         }
     }

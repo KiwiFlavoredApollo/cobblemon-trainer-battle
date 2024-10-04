@@ -175,9 +175,9 @@ public class TrainerBattle {
     private static void assertExistTrainerResource(String trainerResourcePath) throws InvalidResourceStateException {
         if (!CobblemonTrainerBattle.trainerFiles.containsKey(trainerResourcePath)) {
             throw new InvalidResourceStateException(
+                    String.format("Trainer file is not loaded: %s", trainerResourcePath),
                     InvalidResourceState.UNKNOWN_RESOURCE,
-                    trainerResourcePath,
-                    String.format("Trainer file is not loaded: %s", trainerResourcePath)
+                    trainerResourcePath
             );
         }
     }
@@ -243,8 +243,8 @@ public class TrainerBattle {
         PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
         if (playerPartyStore.toGappyList().stream().allMatch(Objects::isNull)) {
             throw new CommandConditionNotSatisfiedException(
-                    CommandConditionType.EMPTY_PLAYER_PARTY,
-                    String.format("Player has no Pokemon: %s", player.getGameProfile().getName())
+                    String.format("Player has no Pokemon: %s", player.getGameProfile().getName()),
+                    CommandConditionType.EMPTY_PLAYER_PARTY
             );
         }
     }
@@ -255,8 +255,8 @@ public class TrainerBattle {
         Stream<Pokemon> pokemons = playerPartyStore.toGappyList().stream().filter(Objects::nonNull);
         if (pokemons.map(Pokemon::getLevel).allMatch(level -> level < TrainerFileParser.RELATIVE_LEVEL_THRESHOLD)) {
             throw new CommandConditionNotSatisfiedException(
-                    CommandConditionType.BELOW_RELATIVE_LEVEL_THRESHOLD,
-                    String.format("Pokemon levels are below relative level threshold: %s", player.getGameProfile().getName())
+                    String.format("Pokemon levels are below relative level threshold: %s", player.getGameProfile().getName()),
+                    CommandConditionType.BELOW_RELATIVE_LEVEL_THRESHOLD
             );
         }
     }
@@ -267,8 +267,8 @@ public class TrainerBattle {
         Stream<Pokemon> pokemons = playerPartyStore.toGappyList().stream().filter(Objects::nonNull);
         if (pokemons.allMatch(Pokemon::isFainted)) {
             throw new CommandConditionNotSatisfiedException(
-                    CommandConditionType.FAINTED_PLAYER_PARTY,
-                    String.format("Pokemons are all fainted: %s", player.getGameProfile().getName())
+                    String.format("Pokemons are all fainted: %s", player.getGameProfile().getName()),
+                    CommandConditionType.FAINTED_PLAYER_PARTY
             );
         }
     }
@@ -277,9 +277,8 @@ public class TrainerBattle {
             throws CommandConditionNotSatisfiedException {
         if (Cobblemon.INSTANCE.getBattleRegistry().getBattleByParticipatingPlayer(player) != null) {
             throw new CommandConditionNotSatisfiedException(
-                    CommandConditionType.BUSY_WITH_POKEMON_BATTLE,
-                    String.format("Player is busy with Pokemon battle: %s",
-                            player.getGameProfile().getName())
+                    String.format("Player is busy with Pokemon battle: %s", player.getGameProfile().getName()),
+                    CommandConditionType.BUSY_WITH_POKEMON_BATTLE
             );
         }
     }
