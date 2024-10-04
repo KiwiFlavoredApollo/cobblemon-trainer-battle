@@ -172,7 +172,7 @@ Shows player's winning streak
 }
 ```
 - You can add onVictory/onDefeat configuration
-- `<datapack>/cobblemontrainerbattle/arcades/battelfactory.json`
+- `<datapack>/data/cobblemontrainerbattle/arcades/battlefactory.json`
 
 ## TODOs
 
