@@ -161,11 +161,6 @@ public class BattleVictoryEventHandler {
 
         GroupBattle.SESSIONS.get(player.getUuid()).battleUuid = null;
         CobblemonTrainerBattle.trainerBattles.remove(battleVictoryEvent.getBattle().getBattleId());
-
-//        if (isDefeatedAllTrainers || isDefeatedToTrainer) {
-//            executeCommandAndSuch
-//            BattleFactory.SESSIONS.remove(player.getUuid());
-//        }
     }
 
     private void onVictoryGroupBattle(BattleVictoryEvent battleVictoryEvent) {
