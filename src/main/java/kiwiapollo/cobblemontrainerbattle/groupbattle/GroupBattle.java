@@ -93,7 +93,7 @@ public class GroupBattle {
             assertExistValidSession(context.getSource().getPlayer());
             assertNotPlayerBusyWithPokemonBattle(context.getSource().getPlayer());
 
-            onGroupBattleSessionStop(context);
+            onStopGroupBattleSession(context);
             GroupBattle.SESSIONS.remove(context.getSource().getPlayer().getUuid());
 
             context.getSource().getPlayer().sendMessage(
@@ -116,11 +116,11 @@ public class GroupBattle {
         }
     }
 
-    private static void onGroupBattleSessionStop(CommandContext<ServerCommandSource> context) {
+    private static void onStopGroupBattleSession(CommandContext<ServerCommandSource> context) {
         if (isDefeatedAllTrainers(context.getSource().getPlayer())) {
-            onGroupBattleVictory(context);
+            onVictoryGroupBattleSession(context);
         } else {
-            onGroupBattleDefeat(context);
+            onDefeatGroupBattleSession(context);
         }
     }
 
@@ -396,7 +396,7 @@ public class GroupBattle {
     }
 
 
-    private static void onGroupBattleVictory(CommandContext<ServerCommandSource> context) {
+    private static void onVictoryGroupBattleSession(CommandContext<ServerCommandSource> context) {
         GroupBattleSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
         GroupFile groupFile = CobblemonTrainerBattle.groupFiles.get(session.groupResourcePath);
         JsonObject onVictory = groupFile.configuration.get("onVictory").getAsJsonObject();
@@ -416,7 +416,7 @@ public class GroupBattle {
         }
     }
 
-    private static void onGroupBattleDefeat(CommandContext<ServerCommandSource> context) {
+    private static void onDefeatGroupBattleSession(CommandContext<ServerCommandSource> context) {
         GroupBattleSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
         GroupFile groupFile = CobblemonTrainerBattle.groupFiles.get(session.groupResourcePath);
         JsonObject onDefeat = groupFile.configuration.get("onDefeat").getAsJsonObject();

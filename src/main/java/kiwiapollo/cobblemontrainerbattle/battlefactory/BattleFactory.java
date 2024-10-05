@@ -75,7 +75,7 @@ public class BattleFactory {
             assertExistValidSession(context.getSource().getPlayer());
             assertNotPlayerBusyWithPokemonBattle(context.getSource().getPlayer());
 
-            onBattleFactorySessionStop(context);
+            onStopBattleFactorySession(context);
             BattleFactory.SESSIONS.remove(context.getSource().getPlayer().getUuid());
 
             context.getSource().getPlayer().sendMessage(
@@ -99,11 +99,11 @@ public class BattleFactory {
         }
     }
 
-    private static void onBattleFactorySessionStop(CommandContext<ServerCommandSource> context) {
+    private static void onStopBattleFactorySession(CommandContext<ServerCommandSource> context) {
         if (isDefeatedAllTrainers(context.getSource().getPlayer())) {
-            onBattleFactoryVictory(context);
+            onVictoryBattleFactorySession(context);
         } else {
-            onBattleFactoryDefeat(context);
+            onDefeatBattleFactorySession(context);
         }
     }
 
@@ -442,7 +442,7 @@ public class BattleFactory {
         }
     }
 
-    private static void onBattleFactoryVictory(CommandContext<ServerCommandSource> context) {
+    private static void onVictoryBattleFactorySession(CommandContext<ServerCommandSource> context) {
         JsonObject onVictory = CobblemonTrainerBattle.battleFactoryConfiguration.get("onVictory").getAsJsonObject();
 
         if (onVictory.has("balance") && onVictory.get("balance").isJsonPrimitive()) {
@@ -460,7 +460,7 @@ public class BattleFactory {
         }
     }
 
-    private static void onBattleFactoryDefeat(CommandContext<ServerCommandSource> context) {
+    private static void onDefeatBattleFactorySession(CommandContext<ServerCommandSource> context) {
         JsonObject onDefeat = CobblemonTrainerBattle.battleFactoryConfiguration.get("onDefeat").getAsJsonObject();
 
         if (onDefeat.has("balance") && onDefeat.get("balance").isJsonPrimitive()) {
