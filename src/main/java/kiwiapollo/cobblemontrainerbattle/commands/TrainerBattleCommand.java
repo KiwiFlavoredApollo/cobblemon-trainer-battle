@@ -21,8 +21,9 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getSpecificTrainerBattleCommand() {
+        String permission = String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "trainer");
         return RequiredArgumentBuilder.<ServerCommandSource, String>argument("trainer", StringArgumentType.greedyString())
-                .requires(new PlayerCommandPredicate(String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "trainer")))
+                .requires(new PlayerCommandPredicate(permission))
                 .suggests((context, builder) -> {
                     CobblemonTrainerBattle.trainerFiles.keySet().stream().map(String::valueOf).forEach(builder::suggest);
                     return builder.buildFuture();
@@ -31,8 +32,9 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getRandomTrainerBattleCommand() {
+        String permission = String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "random");
         return LiteralArgumentBuilder.<ServerCommandSource>literal("random")
-                .requires(new PlayerCommandPredicate(String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "random")))
+                .requires(new PlayerCommandPredicate(permission))
                 .executes(TrainerBattle::startRandomBattleWithStatusQuo);
     }
 }
