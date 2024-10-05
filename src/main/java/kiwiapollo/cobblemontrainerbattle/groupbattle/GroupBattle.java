@@ -399,6 +399,11 @@ public class GroupBattle {
     private static void onVictoryGroupBattleSession(CommandContext<ServerCommandSource> context) {
         GroupBattleSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
         GroupFile groupFile = CobblemonTrainerBattle.groupFiles.get(session.groupResourcePath);
+
+        if (!groupFile.configuration.has("onVictory")) {
+            return;
+        }
+
         JsonObject onVictory = groupFile.configuration.get("onVictory").getAsJsonObject();
 
         if (onVictory.has("balance") && onVictory.get("balance").isJsonPrimitive()) {
@@ -419,6 +424,11 @@ public class GroupBattle {
     private static void onDefeatGroupBattleSession(CommandContext<ServerCommandSource> context) {
         GroupBattleSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
         GroupFile groupFile = CobblemonTrainerBattle.groupFiles.get(session.groupResourcePath);
+
+        if (!groupFile.configuration.has("onDefeat")) {
+            return;
+        }
+
         JsonObject onDefeat = groupFile.configuration.get("onDefeat").getAsJsonObject();
 
         if (onDefeat.has("balance") && onDefeat.get("balance").isJsonPrimitive()) {

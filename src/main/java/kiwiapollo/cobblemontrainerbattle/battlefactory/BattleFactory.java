@@ -443,6 +443,10 @@ public class BattleFactory {
     }
 
     private static void onVictoryBattleFactorySession(CommandContext<ServerCommandSource> context) {
+        if (!CobblemonTrainerBattle.battleFactoryConfiguration.has("onVictory")) {
+            return;
+        }
+
         JsonObject onVictory = CobblemonTrainerBattle.battleFactoryConfiguration.get("onVictory").getAsJsonObject();
 
         if (onVictory.has("balance") && onVictory.get("balance").isJsonPrimitive()) {
@@ -461,6 +465,10 @@ public class BattleFactory {
     }
 
     private static void onDefeatBattleFactorySession(CommandContext<ServerCommandSource> context) {
+        if (!CobblemonTrainerBattle.battleFactoryConfiguration.has("onDefeat")) {
+            return;
+        }
+
         JsonObject onDefeat = CobblemonTrainerBattle.battleFactoryConfiguration.get("onDefeat").getAsJsonObject();
 
         if (onDefeat.has("balance") && onDefeat.get("balance").isJsonPrimitive()) {
