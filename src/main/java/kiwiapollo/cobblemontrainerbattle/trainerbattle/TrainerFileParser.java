@@ -216,7 +216,8 @@ public class TrainerFileParser {
                 "Drain Kiss", "drainingkiss",
                 "Bad Tantrum", "stompingtantrum",
                 "FirstImpress", "firstimpression",
-                "Dark Hole", "darkvoid"
+                "Dark Hole", "darkvoid",
+                "Para Charge", "paraboliccharge"
         );
 
         if (!moveNameExceptions.containsKey(moveName)) {
