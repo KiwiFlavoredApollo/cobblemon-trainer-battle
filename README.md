@@ -180,6 +180,7 @@ Shows player's winning streak
 - [ ] Add feature defining Battle Frontier trainer sequence by data pack
 - [ ] Refactor TrainerFileParser.createPokemon using JsonObject.has
 - [ ] When on Battle Frontier battle, player Pokemons are slightly damaged
+- [ ] Fix Luckperms not working as intended `trainerbattle` permission node
 
 ## Reference
 - [Pokemon Showdown Team Formats - Cobblemon Showdown](https://gitlab.com/cable-mc/cobblemon-showdown/-/blob/master/sim/TEAMS.md#packed-format)
