@@ -5,6 +5,7 @@ import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.api.events.CobblemonEvents;
 import com.google.gson.JsonObject;
 import kiwiapollo.cobblemontrainerbattle.common.ResourceReloadListener;
+import kiwiapollo.cobblemontrainerbattle.events.TrainerSpawnEventHandler;
 import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupFile;
 import kiwiapollo.cobblemontrainerbattle.commands.*;
 import kiwiapollo.cobblemontrainerbattle.common.Config;
@@ -18,6 +19,7 @@ import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerFile;
 import kotlin.Unit;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
@@ -42,13 +44,10 @@ public class CobblemonTrainerBattle implements ModInitializer {
 	public static final String GROUP_CONFIG_DIR = "groups";
 	public static final String TRAINER_CONFIG_DIR = "trainers";
 	public static final String ARCADE_CONFIG_DIR = "arcades";
-	public static final EntityType<TrainerEntity> TRAINER = Registry.register(
-			Registries.ENTITY_TYPE,
-			Identifier.of(NAMESPACE, "trainerentity"),
+	public static final EntityType<TrainerEntity> TRAINER =
 			EntityType.Builder.create(TrainerEntity::new, SpawnGroup.CREATURE)
-					.setDimensions(1.0f, 1.0f)
-					.build("trainerentity")
-	);;
+					.setDimensions(0.6f, 1.8f)
+					.build("trainer");
 
 	public static Map<UUID, PokemonBattle> trainerBattles = new HashMap<>();
 	public static JsonObject defaultTrainerConfiguration = new JsonObject();
@@ -88,6 +87,9 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
 		ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new ResourceReloadListener());
 
+		// Entity
+		Registry.register(Registries.ENTITY_TYPE, Identifier.of(NAMESPACE, "trainer"), TRAINER);
 		FabricDefaultAttributeRegistry.register(TRAINER, TrainerEntity.createMobAttributes());
+		ServerTickEvents.END_WORLD_TICK.register(TrainerSpawnEventHandler::onEndWorldTick);
 	}
 }

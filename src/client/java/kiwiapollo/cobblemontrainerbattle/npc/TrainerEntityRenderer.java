@@ -15,6 +15,6 @@ public class TrainerEntityRenderer extends MobEntityRenderer {
 
     @Override
     public Identifier getTexture(Entity entity) {
-        return Identifier.of(CobblemonTrainerBattle.NAMESPACE, "textures/entity/trainer/trainer.png");
+        return Identifier.of(CobblemonTrainerBattle.NAMESPACE, "textures/entity/trainer/kiwileopard.png");
     }
 }

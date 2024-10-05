@@ -22,6 +22,7 @@ import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidPlayerStateException;
 import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidResourceStateException;
 import kiwiapollo.cobblemontrainerbattle.exceptions.TrainerConditionUnsatisfiedException;
 import kotlin.Unit;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
@@ -38,7 +39,7 @@ public class TrainerBattle {
             String trainerResourcePath = StringArgumentType.getString(context, "trainer");
             assertExistTrainerResource(trainerResourcePath);
             Trainer trainer = new SpecificTrainerFactory().create(context.getSource().getPlayer(), trainerResourcePath);
-            return startSpecificTrainerBattleWithStatusQuo(context, trainer);
+            return startSpecificTrainerBattleWithStatusQuo(context.getSource().getPlayer(), trainer);
 
         } catch (InvalidResourceStateException e) {
             context.getSource().getPlayer().sendMessage(
@@ -51,30 +52,30 @@ public class TrainerBattle {
 
     public static int startRandomBattleWithStatusQuo(CommandContext<ServerCommandSource> context) {
          Trainer trainer = new RandomTrainerFactory().create(context.getSource().getPlayer());
-         return startSpecificTrainerBattleWithStatusQuo(context, trainer);
+         return startSpecificTrainerBattleWithStatusQuo(context.getSource().getPlayer(), trainer);
     }
 
-    public static int startSpecificTrainerBattleWithStatusQuo(CommandContext<ServerCommandSource> context, Trainer trainer) {
+    public static int startSpecificTrainerBattleWithStatusQuo(ServerPlayerEntity player, Trainer trainer) {
         try {
-            assertNotEmptyPlayerParty(context.getSource().getPlayer());
-            assertPlayerPartyAtOrAboveRelativeLevelThreshold(context.getSource().getPlayer());
-            assertNotFaintPlayerParty(context.getSource().getPlayer());
-            assertNotPlayerBusyWithPokemonBattle(context.getSource().getPlayer());
-            assertSatisfiedTrainerCondition(context.getSource().getPlayer(), trainer);
+            assertNotEmptyPlayerParty(player);
+            assertPlayerPartyAtOrAboveRelativeLevelThreshold(player);
+            assertNotFaintPlayerParty(player);
+            assertNotPlayerBusyWithPokemonBattle(player);
+            assertSatisfiedTrainerCondition(player, trainer);
 
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
-                    new BattleSide(new StatusQuoPlayerBattleActorFactory().create(context.getSource().getPlayer())),
+                    new BattleSide(new StatusQuoPlayerBattleActorFactory().create(player)),
                     new BattleSide(new TrainerBattleActorFactory().create(trainer)),
                     false
             ).ifSuccessful(pokemonBattle -> {
-                CobblemonTrainerBattle.trainerBattles.put(context.getSource().getPlayer().getUuid(), pokemonBattle);
+                CobblemonTrainerBattle.trainerBattles.put(player.getUuid(), pokemonBattle);
 
-                context.getSource().getPlayer().sendMessage(
+                player.sendMessage(
                         Text.translatable("command.cobblemontrainerbattle.trainerbattle.success", trainer.name));
                 CobblemonTrainerBattle.LOGGER.info(String.format("%s: %s versus %s",
                         new TrainerBattleCommand().getLiteral(),
-                        context.getSource().getPlayer().getGameProfile().getName(), trainer.name));
+                        player.getGameProfile().getName(), trainer.name));
 
                 return Unit.INSTANCE;
             });
@@ -90,7 +91,7 @@ public class TrainerBattle {
                         Text.translatable("command.cobblemontrainerbattle.trainer.minimum_party_level",
                                 e.getRequiredValue());
             };
-            context.getSource().getPlayer().sendMessage(message.copy().formatted(Formatting.RED));
+            player.sendMessage(message.copy().formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
             return 0;
 
@@ -106,7 +107,7 @@ public class TrainerBattle {
                         Text.translatable("command.cobblemontrainerbattle.common.busy_with_pokemon_battle");
                 default -> throw new RuntimeException(e);
             };
-            context.getSource().getPlayer().sendMessage(message.copy().formatted(Formatting.RED));
+            player.sendMessage(message.copy().formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
             return 0;
         }
@@ -117,7 +118,7 @@ public class TrainerBattle {
             String trainerResourcePath = StringArgumentType.getString(context, "trainer");
             assertExistTrainerResource(trainerResourcePath);
             Trainer trainer = new SpecificTrainerFactory().create(context.getSource().getPlayer(), trainerResourcePath);
-            return startSpecificTrainerBattleWithFlatLevelAndFullHealth(context, trainer);
+            return startSpecificTrainerBattleWithFlatLevelAndFullHealth(context.getSource().getPlayer(), trainer);
 
         } catch (InvalidResourceStateException e) {
             if (!e.getInvalidResourceState().equals(InvalidResourceState.NOT_FOUND)) {
@@ -134,31 +135,31 @@ public class TrainerBattle {
 
     public static int startRandomBattleWithFlatLevelAndFullHealth(CommandContext<ServerCommandSource> context) {
         Trainer trainer = new RandomTrainerFactory().create(context.getSource().getPlayer());
-        return startSpecificTrainerBattleWithFlatLevelAndFullHealth(context, trainer);
+        return startSpecificTrainerBattleWithFlatLevelAndFullHealth(context.getSource().getPlayer(), trainer);
     }
 
-    public static int startSpecificTrainerBattleWithFlatLevelAndFullHealth(CommandContext<ServerCommandSource> context, Trainer trainer) {
+    public static int startSpecificTrainerBattleWithFlatLevelAndFullHealth(ServerPlayerEntity player, Trainer trainer) {
         try {
-            assertNotEmptyPlayerParty(context.getSource().getPlayer());
-            assertNotPlayerBusyWithPokemonBattle(context.getSource().getPlayer());
+            assertNotEmptyPlayerParty(player);
+            assertNotPlayerBusyWithPokemonBattle(player);
 
-            Cobblemon.INSTANCE.getStorage().getParty(context.getSource().getPlayer()).forEach(Pokemon::recall);
+            Cobblemon.INSTANCE.getStorage().getParty(player).forEach(Pokemon::recall);
 
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
                     new BattleSide(new FlatLevelFullHealthPlayerBattleActorFactory()
-                            .create(context.getSource().getPlayer(), FLAT_LEVEL)),
+                            .create(player, FLAT_LEVEL)),
                     new BattleSide(new FlatLevelFullHealthTrainerBattleActorFactory()
                             .create(trainer, FLAT_LEVEL)),
                     false
             ).ifSuccessful(pokemonBattle -> {
-                CobblemonTrainerBattle.trainerBattles.put(context.getSource().getPlayer().getUuid(), pokemonBattle);
+                CobblemonTrainerBattle.trainerBattles.put(player.getUuid(), pokemonBattle);
 
-                context.getSource().getPlayer().sendMessage(
+                player.sendMessage(
                         Text.translatable("command.cobblemontrainerbattle.trainerbattleflat.success", trainer.name));
                 CobblemonTrainerBattle.LOGGER.info(String.format("%s: %s versus %s",
                         new TrainerBattleFlatCommand().getLiteral(),
-                        context.getSource().getPlayer().getGameProfile().getName(), trainer.name));
+                        player.getGameProfile().getName(), trainer.name));
 
                 return Unit.INSTANCE;
             });
@@ -173,7 +174,7 @@ public class TrainerBattle {
                         Text.translatable("command.cobblemontrainerbattle.common.busy_with_pokemon_battle");
                 default -> throw new RuntimeException(e);
             };
-            context.getSource().getPlayer().sendMessage(message.copy().formatted(Formatting.RED));
+            player.sendMessage(message.copy().formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(e.getMessage());
             return 0;
         }
