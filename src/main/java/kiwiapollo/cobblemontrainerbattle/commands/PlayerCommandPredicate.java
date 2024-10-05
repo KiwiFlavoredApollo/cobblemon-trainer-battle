@@ -2,7 +2,9 @@ package kiwiapollo.cobblemontrainerbattle.commands;
 
 import kiwiapollo.cobblemontrainerbattle.exceptions.LuckPermsNotLoadedException;
 import net.luckperms.api.LuckPermsProvider;
+import net.luckperms.api.cacheddata.CachedPermissionData;
 import net.luckperms.api.model.user.User;
+import net.luckperms.api.util.Tristate;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 
@@ -41,10 +43,9 @@ public class PlayerCommandPredicate implements Predicate<ServerCommandSource> {
     protected boolean isExistLuckPermsPermission(ServerCommandSource source) {
         ServerPlayerEntity player = source.getPlayer();
         User user = LuckPermsProvider.get().getUserManager().getUser(player.getUuid());
+        CachedPermissionData userCachedPermissionData = user.getCachedData().getPermissionData();
 
-        return permissions.stream().anyMatch(permission ->
-                user.getCachedData().getPermissionData().checkPermission(permission).asBoolean()
-        );
+        return permissions.stream().map(userCachedPermissionData::checkPermission).anyMatch(Tristate::asBoolean);
     }
 
     private boolean isExistOpPermission(ServerCommandSource source) {
