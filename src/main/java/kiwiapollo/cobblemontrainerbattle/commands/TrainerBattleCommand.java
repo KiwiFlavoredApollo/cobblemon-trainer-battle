@@ -13,12 +13,11 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
         super("trainerbattle");
 
         this.requires(new PlayerCommandPredicate(
-                String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "trainer"),
-                        String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "random")))
+                        String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "trainer"),
+                        String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "random")
+                ))
                 .then(getSpecificTrainerBattleCommand())
-                .then(LiteralArgumentBuilder.<ServerCommandSource>literal("random")
-                        .requires(new PlayerCommandPredicate(String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "random")))
-                        .executes(TrainerBattle::startRandomBattleWithStatusQuo));
+                .then(getRandomTrainerBattleCommand());
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getSpecificTrainerBattleCommand() {
@@ -29,5 +28,11 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
                     return builder.buildFuture();
                 })
                 .executes(TrainerBattle::startTrainerBattleWithStatusQuo);
+    }
+
+    private ArgumentBuilder<ServerCommandSource, ?> getRandomTrainerBattleCommand() {
+        return LiteralArgumentBuilder.<ServerCommandSource>literal("random")
+                .requires(new PlayerCommandPredicate(String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "random")))
+                .executes(TrainerBattle::startRandomBattleWithStatusQuo);
     }
 }
