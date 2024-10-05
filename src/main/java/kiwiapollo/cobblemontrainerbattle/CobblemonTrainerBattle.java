@@ -13,13 +13,20 @@ import kiwiapollo.cobblemontrainerbattle.common.EconomyFactory;
 import kiwiapollo.cobblemontrainerbattle.economies.Economy;
 import kiwiapollo.cobblemontrainerbattle.events.BattleVictoryEventHandler;
 import kiwiapollo.cobblemontrainerbattle.events.LootDroppedEventHandler;
+import kiwiapollo.cobblemontrainerbattle.npc.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerFile;
 import kotlin.Unit;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnGroup;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.resource.ResourceType;
+import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -35,6 +42,13 @@ public class CobblemonTrainerBattle implements ModInitializer {
 	public static final String GROUP_CONFIG_DIR = "groups";
 	public static final String TRAINER_CONFIG_DIR = "trainers";
 	public static final String ARCADE_CONFIG_DIR = "arcades";
+	public static final EntityType<TrainerEntity> TRAINER = Registry.register(
+			Registries.ENTITY_TYPE,
+			Identifier.of(NAMESPACE, "trainerentity"),
+			EntityType.Builder.create(TrainerEntity::new, SpawnGroup.CREATURE)
+					.setDimensions(1.0f, 1.0f)
+					.build("trainerentity")
+	);;
 
 	public static Map<UUID, PokemonBattle> trainerBattles = new HashMap<>();
 	public static JsonObject defaultTrainerConfiguration = new JsonObject();
@@ -73,5 +87,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 		});
 
 		ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new ResourceReloadListener());
+
+		FabricDefaultAttributeRegistry.register(TRAINER, TrainerEntity.createMobAttributes());
 	}
 }
