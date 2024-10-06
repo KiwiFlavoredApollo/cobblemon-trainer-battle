@@ -1,3 +1,4 @@
 {
-  "economy": "None"
+  "economy": "None",
+  "enableTrainerSpawn": true
 }

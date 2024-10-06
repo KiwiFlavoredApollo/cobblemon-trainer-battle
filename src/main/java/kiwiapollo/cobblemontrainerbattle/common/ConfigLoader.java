@@ -28,10 +28,9 @@ public class ConfigLoader {
     }
 
     private static void copyDefaultConfig() {
-        try (
-                InputStream defaults = ConfigLoader.class.getClassLoader()
-                        .getResourceAsStream("config/defaults.json")
-        ) {
+        try (InputStream defaults = ConfigLoader.class.getClassLoader()
+                .getResourceAsStream("config/defaults.json")) {
+
             if (!CONFIG_DIR.exists()) {
                 CONFIG_DIR.mkdirs();
             }
@@ -52,12 +51,12 @@ public class ConfigLoader {
     }
 
     private static Config loadDefaultConfig() {
-        try (
-                InputStream defaults = ConfigLoader.class.getClassLoader()
-                        .getResourceAsStream("config/defaults.json");
-                InputStreamReader reader = new InputStreamReader(defaults)
-        ) {
+        try (InputStream defaults = ConfigLoader.class.getClassLoader()
+                .getResourceAsStream("config/defaults.json");
+             InputStreamReader reader = new InputStreamReader(defaults)) {
+
             return GSON.fromJson(reader, Config.class);
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
