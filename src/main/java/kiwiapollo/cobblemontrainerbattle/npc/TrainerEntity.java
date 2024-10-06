@@ -1,10 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.npc;
 
-import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidTrainerEntityStateException;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.RandomTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.*;
@@ -20,7 +17,6 @@ import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 
 public class TrainerEntity extends PathAwareEntity {
-
     public TrainerEntity(EntityType<? extends PathAwareEntity> entityType, World world) {
         super(entityType, world);
     }
@@ -42,8 +38,12 @@ public class TrainerEntity extends PathAwareEntity {
         }
 
         if (player instanceof ServerPlayerEntity) {
+            this.setVelocity(0, 0, 0);
+            this.setAiDisabled(true);
+            this.velocityDirty = true;
+
             Trainer trainer = new RandomTrainerFactory().create((ServerPlayerEntity) player);
-            TrainerBattle.startSpecificTrainerBattleWithStatusQuo((ServerPlayerEntity) player, trainer);
+            EntityBackedTrainerBattle.startSpecificTrainerBattleWithStatusQuo((ServerPlayerEntity) player, trainer, this);
         }
 
         return super.interactMob(player, hand);

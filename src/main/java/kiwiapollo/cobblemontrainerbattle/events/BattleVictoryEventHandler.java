@@ -3,6 +3,7 @@ package kiwiapollo.cobblemontrainerbattle.events;
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import com.cobblemon.mod.common.api.events.battles.BattleVictoryEvent;
+import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.cobblemon.mod.common.battles.actor.TrainerBattleActor;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
@@ -10,9 +11,11 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.mojang.brigadier.CommandDispatcher;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.EntityBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactory;
 import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
+import net.minecraft.entity.Entity;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -55,9 +58,8 @@ public class BattleVictoryEventHandler {
     private void handleTrainerBattleVictoryEvent(BattleVictoryEvent battleVictoryEvent) {
         ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
         BattleActor playerBattleActor = battleVictoryEvent.getBattle().getActor(player);
-        String trainerName = StreamSupport.stream(battleVictoryEvent.getBattle().getActors().spliterator(), false)
-                .filter(battleActor -> !battleActor.isForPlayer(player))
-                .findFirst().get().getName().getString();
+        BattleActor trainerBattleActor = getTrainerBattleActor(battleVictoryEvent);
+        String trainerName = trainerBattleActor.getName().getString();
 
         if (battleVictoryEvent.getWinners().contains(playerBattleActor)) {
             CobblemonTrainerBattle.LOGGER.info(String.format(
@@ -75,9 +77,8 @@ public class BattleVictoryEventHandler {
 
     private void onVictoryTrainerBattle(BattleVictoryEvent battleVictoryEvent) {
         ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
-        String trainerName = StreamSupport.stream(battleVictoryEvent.getBattle().getActors().spliterator(), false)
-                .filter(battleActor -> !battleActor.isForPlayer(player))
-                .findFirst().get().getName().getString();
+        BattleActor trainerBattleActor = getTrainerBattleActor(battleVictoryEvent);
+        String trainerName = trainerBattleActor.getName().getString();
         JsonObject trainerConfiguration = CobblemonTrainerBattle.trainerFiles.get(trainerName).configuration;
 
         if (!trainerConfiguration.has("onVictory")) {
@@ -95,13 +96,22 @@ public class BattleVictoryEventHandler {
                 executeCommand(commandJsonElement, player);
             }
         }
+
+        if (trainerBattleActor instanceof EntityBackedTrainerBattleActor) {
+            ((EntityBackedTrainerBattleActor) trainerBattleActor).getEntity().remove(Entity.RemovalReason.KILLED);
+        }
+    }
+
+    private BattleActor getTrainerBattleActor(BattleVictoryEvent battleVictoryEvent) {
+        return StreamSupport.stream(battleVictoryEvent.getBattle().getActors().spliterator(), false)
+                .filter(battleActor -> !(battleActor instanceof PlayerBattleActor))
+                .findFirst().get();
     }
 
     private void onDefeatTrainerBattle(BattleVictoryEvent battleVictoryEvent) {
         ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
-        String trainerName = StreamSupport.stream(battleVictoryEvent.getBattle().getActors().spliterator(), false)
-                .filter(battleActor -> !battleActor.isForPlayer(player))
-                .findFirst().get().getName().getString();
+        BattleActor trainerBattleActor = getTrainerBattleActor(battleVictoryEvent);
+        String trainerName = trainerBattleActor.getName().getString();
         JsonObject trainerConfiguration = CobblemonTrainerBattle.trainerFiles.get(trainerName).configuration;
 
         if (!trainerConfiguration.has("onDefeat")) {
@@ -118,6 +128,10 @@ public class BattleVictoryEventHandler {
             for (JsonElement commandJsonElement : onDefeat.get("commands").getAsJsonArray()) {
                 executeCommand(commandJsonElement, player);
             }
+        }
+
+        if (trainerBattleActor instanceof EntityBackedTrainerBattleActor) {
+            ((EntityBackedTrainerBattleActor) trainerBattleActor).getEntity().setAiDisabled(false);
         }
     }
 

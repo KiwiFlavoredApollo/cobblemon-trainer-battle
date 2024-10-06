@@ -44,7 +44,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 	public static final String GROUP_CONFIG_DIR = "groups";
 	public static final String TRAINER_CONFIG_DIR = "trainers";
 	public static final String ARCADE_CONFIG_DIR = "arcades";
-	public static final EntityType<TrainerEntity> TRAINER =
+	public static final EntityType<TrainerEntity> TRAINER_ENTITY_TYPE =
 			EntityType.Builder.create(TrainerEntity::new, SpawnGroup.CREATURE)
 					.setDimensions(0.6f, 1.8f)
 					.build("trainer");
@@ -87,9 +87,8 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
 		ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new ResourceReloadListener());
 
-		// Entity
-		Registry.register(Registries.ENTITY_TYPE, Identifier.of(NAMESPACE, "trainer"), TRAINER);
-		FabricDefaultAttributeRegistry.register(TRAINER, TrainerEntity.createMobAttributes());
+		Registry.register(Registries.ENTITY_TYPE, Identifier.of(NAMESPACE, "trainer"), TRAINER_ENTITY_TYPE);
+		FabricDefaultAttributeRegistry.register(TRAINER_ENTITY_TYPE, TrainerEntity.createMobAttributes());
 		ServerTickEvents.END_WORLD_TICK.register(TrainerSpawnEventHandler::onEndWorldTick);
 	}
 }

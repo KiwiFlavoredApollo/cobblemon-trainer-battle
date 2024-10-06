@@ -1,50 +1,58 @@
 package kiwiapollo.cobblemontrainerbattle.events;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.npc.TrainerEntity;
+import kiwiapollo.cobblemontrainerbattle.exceptions.TrainerSpawnException;
+import kiwiapollo.cobblemontrainerbattle.npc.TrainerEntityFactory;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Box;
-
-import java.util.List;
+import net.minecraft.world.Heightmap;
 
 public class TrainerSpawnEventHandler {
     private static final int SPAWN_INTERVAL = 100;
+    private static final int RADIUS = 20;
+    private static final int MAXIMUM_TRAINER_COUNT = 1;
     private static int tickCounter = 0;
 
     public static void onEndWorldTick(ServerWorld world) {
         tickCounter++;
 
         if (tickCounter >= SPAWN_INTERVAL) {
-            spawnEntitiesAroundPlayers(world);
+            for (PlayerEntity player : world.getPlayers()) {
+                spawnTrainersAroundPlayer(world, player);
+            }
             tickCounter = 0;
         }
     }
 
-    private static void spawnEntitiesAroundPlayers(ServerWorld world) {
-        List<ServerPlayerEntity> players = world.getPlayers();
+    private static void spawnTrainersAroundPlayer(ServerWorld world, PlayerEntity player) {
+        try {
+            assertBelowMaximumTrainerCount(world, player);
 
-        for (PlayerEntity player : players) {
-            BlockPos playerPos = player.getBlockPos();
-            int radius = 10;
-            int xOffset = (int) (Math.random() * radius * 2) - radius;
-            int zOffset = (int) (Math.random() * radius * 2) - radius;
-            BlockPos spawnPos = playerPos.add(xOffset, 0, zOffset);
+            BlockPos spawnPos = getSafeSpawnPosition(world, player);
+            world.spawnEntity(new TrainerEntityFactory().create(world, player, spawnPos));
 
-            int trainerCount = world.getEntitiesByType(CobblemonTrainerBattle.TRAINER, player.getBoundingBox().expand(radius), entity -> true).size();
-            if (trainerCount > 3) {
-                continue;
-            }
+            CobblemonTrainerBattle.LOGGER.info("Spawned trainer");
 
-            TrainerEntity trainer = new TrainerEntity(CobblemonTrainerBattle.TRAINER, world);
+        } catch (TrainerSpawnException ignored) {
 
-            if (world.isSpaceEmpty(trainer, new Box(spawnPos))) {
-                trainer.refreshPositionAndAngles(spawnPos.getX(), spawnPos.getY(), spawnPos.getZ(), player.getYaw(), player.getPitch());
-                world.spawnEntity(trainer);
-                CobblemonTrainerBattle.LOGGER.info("Spawned trainer");
-            }
         }
+    }
+
+    private static void assertBelowMaximumTrainerCount(ServerWorld world, PlayerEntity player) throws TrainerSpawnException {
+        int trainerCount = world.getEntitiesByType(CobblemonTrainerBattle.TRAINER_ENTITY_TYPE,
+                player.getBoundingBox().expand(RADIUS), entity -> true).size();
+        if (trainerCount > MAXIMUM_TRAINER_COUNT) {
+            throw new TrainerSpawnException();
+        }
+    }
+
+    private static BlockPos getSafeSpawnPosition(ServerWorld world, PlayerEntity player) {
+        BlockPos playerPos = player.getBlockPos();
+
+        int xOffset = (int) (Math.random() * RADIUS * 2) - RADIUS;
+        int zOffset = (int) (Math.random() * RADIUS * 2) - RADIUS;
+
+        return world.getTopPosition(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, playerPos.add(xOffset, 0, zOffset));
     }
 }

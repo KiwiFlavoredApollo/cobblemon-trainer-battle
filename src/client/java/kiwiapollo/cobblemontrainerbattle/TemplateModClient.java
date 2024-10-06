@@ -14,7 +14,7 @@ public class TemplateModClient implements ClientModInitializer {
 
 	@Override
 	public void onInitializeClient() {
-		EntityRendererRegistry.register(CobblemonTrainerBattle.TRAINER, TrainerEntityRenderer::new);
+		EntityRendererRegistry.register(CobblemonTrainerBattle.TRAINER_ENTITY_TYPE, TrainerEntityRenderer::new);
 
 		EntityModelLayerRegistry.registerModelLayer(MODEL_TRAINER_LAYER, TrainerEntityModel::getTexturedModelData);
 	}
