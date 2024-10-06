@@ -11,7 +11,6 @@ import java.util.UUID;
 public class BattleFactorySession {
     public final UUID uuid;
 
-    public UUID battleUuid;
     public List<Trainer> trainersToDefeat;
     public int defeatedTrainerCount;
     public List<Pokemon> partyPokemons;
@@ -22,7 +21,6 @@ public class BattleFactorySession {
     public BattleFactorySession(List<Trainer> trainersToDefeat) {
         this.uuid = UUID.randomUUID();
 
-        this.battleUuid = null;
         this.trainersToDefeat = trainersToDefeat;
         this.defeatedTrainerCount = 0;
         this.partyPokemons = List.of(

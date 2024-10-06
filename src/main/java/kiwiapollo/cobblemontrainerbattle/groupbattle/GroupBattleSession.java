@@ -7,7 +7,6 @@ public class GroupBattleSession {
     public final UUID uuid;
     public final String groupResourcePath;
 
-    public UUID battleUuid;
     public int defeatedTrainerCount;
     public Instant timestamp;
     public boolean isDefeated;
@@ -16,7 +15,6 @@ public class GroupBattleSession {
         this.uuid = UUID.randomUUID();
         this.groupResourcePath = groupResourcePath;
 
-        this.battleUuid = null;
         this.defeatedTrainerCount = 0;
         this.timestamp = Instant.now();
         this.isDefeated = false;

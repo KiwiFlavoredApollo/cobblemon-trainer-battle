@@ -1,20 +1,16 @@
 package kiwiapollo.cobblemontrainerbattle;
 
 import com.cobblemon.mod.common.api.Priority;
-import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.api.events.CobblemonEvents;
 import com.google.gson.JsonObject;
-import kiwiapollo.cobblemontrainerbattle.common.ResourceReloadListener;
-import kiwiapollo.cobblemontrainerbattle.events.TrainerSpawnEventHandler;
-import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupFile;
 import kiwiapollo.cobblemontrainerbattle.commands.*;
-import kiwiapollo.cobblemontrainerbattle.common.Config;
-import kiwiapollo.cobblemontrainerbattle.common.ConfigLoader;
-import kiwiapollo.cobblemontrainerbattle.common.EconomyFactory;
+import kiwiapollo.cobblemontrainerbattle.common.*;
 import kiwiapollo.cobblemontrainerbattle.economies.Economy;
+import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.events.BattleVictoryEventHandler;
 import kiwiapollo.cobblemontrainerbattle.events.LootDroppedEventHandler;
-import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
+import kiwiapollo.cobblemontrainerbattle.events.TrainerSpawnEventHandler;
+import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupFile;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerFile;
 import kotlin.Unit;
 import net.fabricmc.api.ModInitializer;
@@ -49,7 +45,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 					.setDimensions(0.6f, 1.8f)
 					.build("trainer");
 
-	public static Map<UUID, PokemonBattle> trainerBattles = new HashMap<>();
+	public static Map<UUID, TrainerPokemonBattle> trainerBattles = new HashMap<>();
 	public static JsonObject defaultTrainerConfiguration = new JsonObject();
 	public static Map<String, TrainerFile> trainerFiles = new HashMap<>();
 	public static Map<String, GroupFile> groupFiles = new HashMap<>();

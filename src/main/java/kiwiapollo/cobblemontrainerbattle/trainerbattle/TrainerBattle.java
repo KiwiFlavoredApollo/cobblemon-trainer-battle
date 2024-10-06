@@ -18,11 +18,11 @@ import kiwiapollo.cobblemontrainerbattle.commands.TrainerBattleFlatCommand;
 import kiwiapollo.cobblemontrainerbattle.common.InvalidPlayerStateType;
 import kiwiapollo.cobblemontrainerbattle.common.InvalidResourceState;
 import kiwiapollo.cobblemontrainerbattle.common.TrainerConditionType;
+import kiwiapollo.cobblemontrainerbattle.common.TrainerPokemonBattle;
 import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidPlayerStateException;
 import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidResourceStateException;
 import kiwiapollo.cobblemontrainerbattle.exceptions.TrainerConditionUnsatisfiedException;
 import kotlin.Unit;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
@@ -69,7 +69,8 @@ public class TrainerBattle {
                     new BattleSide(new TrainerBattleActorFactory().create(trainer)),
                     false
             ).ifSuccessful(pokemonBattle -> {
-                CobblemonTrainerBattle.trainerBattles.put(player.getUuid(), pokemonBattle);
+                TrainerPokemonBattle trainerPokemonBattle = new TrainerPokemonBattle(pokemonBattle, new Object());
+                CobblemonTrainerBattle.trainerBattles.put(player.getUuid(), trainerPokemonBattle);
 
                 player.sendMessage(
                         Text.translatable("command.cobblemontrainerbattle.trainerbattle.success", trainer.name));
@@ -153,7 +154,8 @@ public class TrainerBattle {
                             .create(trainer, FLAT_LEVEL)),
                     false
             ).ifSuccessful(pokemonBattle -> {
-                CobblemonTrainerBattle.trainerBattles.put(player.getUuid(), pokemonBattle);
+                TrainerPokemonBattle trainerPokemonBattle = new TrainerPokemonBattle(pokemonBattle, new Object());
+                CobblemonTrainerBattle.trainerBattles.put(player.getUuid(), trainerPokemonBattle);
 
                 player.sendMessage(
                         Text.translatable("command.cobblemontrainerbattle.trainerbattleflat.success", trainer.name));

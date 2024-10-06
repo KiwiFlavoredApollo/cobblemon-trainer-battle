@@ -20,6 +20,7 @@ import kiwiapollo.cobblemontrainerbattle.battleactors.player.BattleFactoryPlayer
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.BattleFactorySpecificTrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.commands.BattleFactoryCommand;
 import kiwiapollo.cobblemontrainerbattle.common.InvalidPlayerStateType;
+import kiwiapollo.cobblemontrainerbattle.common.TrainerPokemonBattle;
 import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidPlayerStateException;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
 import kotlin.Unit;
@@ -122,9 +123,9 @@ public class BattleFactory {
                     new BattleSide(new BattleFactorySpecificTrainerBattleActorFactory().create(trainer)),
                     false
             ).ifSuccessful(pokemonBattle -> {
-                CobblemonTrainerBattle.trainerBattles.put(context.getSource().getPlayer().getUuid(), pokemonBattle);
                 UUID playerUuid = context.getSource().getPlayer().getUuid();
-                BattleFactory.SESSIONS.get(playerUuid).battleUuid = pokemonBattle.getBattleId();
+                TrainerPokemonBattle trainerPokemonBattle = new TrainerPokemonBattle(pokemonBattle, session);
+                CobblemonTrainerBattle.trainerBattles.put(playerUuid, trainerPokemonBattle);
 
                 context.getSource().getPlayer().sendMessage(
                         Text.translatable("command.cobblemontrainerbattle.battlefactory.startbattle.success", trainer.name));

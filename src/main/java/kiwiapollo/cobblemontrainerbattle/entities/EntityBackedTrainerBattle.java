@@ -15,6 +15,7 @@ import kiwiapollo.cobblemontrainerbattle.commands.TrainerBattleCommand;
 import kiwiapollo.cobblemontrainerbattle.commands.TrainerBattleFlatCommand;
 import kiwiapollo.cobblemontrainerbattle.common.InvalidPlayerStateType;
 import kiwiapollo.cobblemontrainerbattle.common.TrainerConditionType;
+import kiwiapollo.cobblemontrainerbattle.common.TrainerPokemonBattle;
 import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidPlayerStateException;
 import kiwiapollo.cobblemontrainerbattle.exceptions.TrainerConditionUnsatisfiedException;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
@@ -44,7 +45,8 @@ public class EntityBackedTrainerBattle {
                     new BattleSide(new EntityBackedTrainerBattleActorFactory().create(trainer, trainerEntity)),
                     false
             ).ifSuccessful(pokemonBattle -> {
-                CobblemonTrainerBattle.trainerBattles.put(player.getUuid(), pokemonBattle);
+                TrainerPokemonBattle trainerPokemonBattle = new TrainerPokemonBattle(pokemonBattle, new Object());
+                CobblemonTrainerBattle.trainerBattles.put(player.getUuid(), trainerPokemonBattle);
 
                 player.sendMessage(
                         Text.translatable("command.cobblemontrainerbattle.trainerbattle.success", trainer.name));
@@ -103,7 +105,8 @@ public class EntityBackedTrainerBattle {
                             .create(trainer, FLAT_LEVEL, trainerEntity)),
                     false
             ).ifSuccessful(pokemonBattle -> {
-                CobblemonTrainerBattle.trainerBattles.put(player.getUuid(), pokemonBattle);
+                TrainerPokemonBattle trainerPokemonBattle = new TrainerPokemonBattle(pokemonBattle, new Object());
+                CobblemonTrainerBattle.trainerBattles.put(player.getUuid(), trainerPokemonBattle);
 
                 player.sendMessage(
                         Text.translatable("command.cobblemontrainerbattle.trainerbattleflat.success", trainer.name));

@@ -20,6 +20,7 @@ import kiwiapollo.cobblemontrainerbattle.commands.GroupBattleCommand;
 import kiwiapollo.cobblemontrainerbattle.commands.GroupBattleFlatCommand;
 import kiwiapollo.cobblemontrainerbattle.common.InvalidPlayerStateType;
 import kiwiapollo.cobblemontrainerbattle.common.InvalidResourceState;
+import kiwiapollo.cobblemontrainerbattle.common.TrainerPokemonBattle;
 import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidPlayerStateException;
 import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidResourceStateException;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.SpecificTrainerFactory;
@@ -144,9 +145,10 @@ public class GroupBattle {
                     false
 
             ).ifSuccessful(pokemonBattle -> {
+                GroupBattleSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
+                TrainerPokemonBattle trainerPokemonBattle = new TrainerPokemonBattle(pokemonBattle, session);
                 UUID playerUuid = context.getSource().getPlayer().getUuid();
-                CobblemonTrainerBattle.trainerBattles.put(playerUuid, pokemonBattle);
-                GroupBattle.SESSIONS.get(playerUuid).battleUuid = pokemonBattle.getBattleId();
+                CobblemonTrainerBattle.trainerBattles.put(playerUuid, trainerPokemonBattle);
 
                 context.getSource().getServer().sendMessage(
                         Text.translatable("command.cobblemontrainerbattle.groupbattle.startbattle.success", trainer.name));
@@ -224,9 +226,10 @@ public class GroupBattle {
                     false
 
             ).ifSuccessful(pokemonBattle -> {
+                GroupBattleSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
+                TrainerPokemonBattle trainerPokemonBattle = new TrainerPokemonBattle(pokemonBattle, session);
                 UUID playerUuid = context.getSource().getPlayer().getUuid();
-                CobblemonTrainerBattle.trainerBattles.put(playerUuid, pokemonBattle);
-                GroupBattle.SESSIONS.get(playerUuid).battleUuid = pokemonBattle.getBattleId();
+                CobblemonTrainerBattle.trainerBattles.put(playerUuid, trainerPokemonBattle);
 
                 context.getSource().getPlayer().sendMessage(
                         Text.translatable("command.cobblemontrainerbattle.groupbattleflat.startbattle.success", trainer.name));

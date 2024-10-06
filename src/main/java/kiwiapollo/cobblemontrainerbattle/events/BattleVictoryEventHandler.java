@@ -13,7 +13,9 @@ import com.mojang.brigadier.CommandDispatcher;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.EntityBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactory;
+import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactorySession;
 import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattle;
+import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattleSession;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
 import net.minecraft.entity.Entity;
 import net.minecraft.server.MinecraftServer;
@@ -44,15 +46,19 @@ public class BattleVictoryEventHandler {
     }
 
     private boolean isBattleFactory(BattleVictoryEvent battleVictoryEvent) {
-        return BattleFactory.SESSIONS.values().stream()
-                .map(session -> session.battleUuid)
-                .anyMatch(uuid -> uuid == battleVictoryEvent.getBattle().getBattleId());
+        List<UUID> battleIds = CobblemonTrainerBattle.trainerBattles.values().stream()
+                .filter(pokemonBattle -> pokemonBattle.getSession() instanceof BattleFactorySession)
+                .map(PokemonBattle::getBattleId).toList();
+
+        return battleIds.contains(battleVictoryEvent.getBattle().getBattleId());
     }
 
     private boolean isGroupBattle(BattleVictoryEvent battleVictoryEvent) {
-        return GroupBattle.SESSIONS.values().stream()
-                .map(session -> session.battleUuid)
-                .anyMatch(uuid -> uuid == battleVictoryEvent.getBattle().getBattleId());
+        List<UUID> battleIds = CobblemonTrainerBattle.trainerBattles.values().stream()
+                .filter(pokemonBattle -> pokemonBattle.getSession() instanceof GroupBattleSession)
+                .map(PokemonBattle::getBattleId).toList();
+
+        return battleIds.contains(battleVictoryEvent.getBattle().getBattleId());
     }
 
     private void handleTrainerBattleVictoryEvent(BattleVictoryEvent battleVictoryEvent) {
@@ -183,7 +189,6 @@ public class BattleVictoryEventHandler {
             onDefeatGroupBattle(battleVictoryEvent);
         }
 
-        GroupBattle.SESSIONS.get(player.getUuid()).battleUuid = null;
         CobblemonTrainerBattle.trainerBattles.remove(battleVictoryEvent.getBattle().getBattleId());
     }
 
@@ -210,7 +215,6 @@ public class BattleVictoryEventHandler {
             onDefeatBattleFactory(battleVictoryEvent);
         }
 
-        BattleFactory.SESSIONS.get(player.getUuid()).battleUuid = null;
         CobblemonTrainerBattle.trainerBattles.remove(battleVictoryEvent.getBattle().getBattleId());
     }
 
