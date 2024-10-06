@@ -1,4 +1,6 @@
 {
+  "item.cobblemontrainerbattle.trainer_spawn_egg": "Trainer Spawn Egg",
+
   "command.cobblemontrainerbattle.common.empty_player_party": "You have no Pokemon in your party",
   "command.cobblemontrainerbattle.common.fainted_player_party": "Your Pokemons are all fainted",
   "command.cobblemontrainerbattle.common.busy_with_pokemon_battle": "You cannot run this command while in Pokemon battle",
