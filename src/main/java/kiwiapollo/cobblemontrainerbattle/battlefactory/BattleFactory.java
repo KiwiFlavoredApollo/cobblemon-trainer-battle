@@ -1,6 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.battlefactory;
 
 import com.cobblemon.mod.common.Cobblemon;
+import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.api.moves.Move;
 import com.cobblemon.mod.common.api.moves.MoveSet;
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
@@ -20,7 +21,6 @@ import kiwiapollo.cobblemontrainerbattle.battleactors.player.BattleFactoryPlayer
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.BattleFactorySpecificTrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.commands.BattleFactoryCommand;
 import kiwiapollo.cobblemontrainerbattle.common.InvalidPlayerStateType;
-import kiwiapollo.cobblemontrainerbattle.common.TrainerPokemonBattle;
 import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidPlayerStateException;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
 import kotlin.Unit;
@@ -37,7 +37,8 @@ import java.util.*;
 
 public class BattleFactory {
     public static final int LEVEL = 100;
-    public static Map<UUID, BattleFactorySession> SESSIONS = new HashMap<>();
+    public static Map<UUID, BattleFactorySession> sessions = new HashMap<>();
+    public static Map<UUID, PokemonBattle> trainerBattles = new HashMap<>();
 
     public static int startSession(CommandContext<ServerCommandSource> context) {
         try {
@@ -48,7 +49,7 @@ public class BattleFactory {
                 trainersToDefeat.add(new BattleFactoryRandomTrainerFactory().create(context.getSource().getPlayer()));
             }
 
-            BattleFactory.SESSIONS.put(context.getSource().getPlayer().getUuid(), new BattleFactorySession(trainersToDefeat));
+            BattleFactory.sessions.put(context.getSource().getPlayer().getUuid(), new BattleFactorySession(trainersToDefeat));
 
             context.getSource().getPlayer().sendMessage(
                     Text.translatable("command.cobblemontrainerbattle.battlefactory.startsession.success"));
@@ -77,7 +78,7 @@ public class BattleFactory {
             assertNotPlayerBusyWithPokemonBattle(context.getSource().getPlayer());
 
             onStopBattleFactorySession(context);
-            BattleFactory.SESSIONS.remove(context.getSource().getPlayer().getUuid());
+            BattleFactory.sessions.remove(context.getSource().getPlayer().getUuid());
 
             context.getSource().getPlayer().sendMessage(
                     Text.translatable("command.cobblemontrainerbattle.battlefactory.stopsession.success"));
@@ -115,7 +116,7 @@ public class BattleFactory {
             assertNotPlayerBusyWithPokemonBattle(context.getSource().getPlayer());
             assertNotDefeatedAllTrainers(context.getSource().getPlayer());
 
-            BattleFactorySession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
+            BattleFactorySession session = sessions.get(context.getSource().getPlayer().getUuid());
             Trainer trainer = session.trainersToDefeat.get(session.defeatedTrainerCount);
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
@@ -124,8 +125,7 @@ public class BattleFactory {
                     false
             ).ifSuccessful(pokemonBattle -> {
                 UUID playerUuid = context.getSource().getPlayer().getUuid();
-                TrainerPokemonBattle trainerPokemonBattle = new TrainerPokemonBattle(pokemonBattle, session);
-                CobblemonTrainerBattle.trainerBattles.put(playerUuid, trainerPokemonBattle);
+                trainerBattles.put(playerUuid, pokemonBattle);
 
                 context.getSource().getPlayer().sendMessage(
                         Text.translatable("command.cobblemontrainerbattle.battlefactory.startbattle.success", trainer.name));
@@ -166,7 +166,7 @@ public class BattleFactory {
             int playerslot = IntegerArgumentType.getInteger(context, "playerslot");
             int trainerslot = IntegerArgumentType.getInteger(context, "trainerslot");
 
-            BattleFactorySession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
+            BattleFactorySession session = sessions.get(context.getSource().getPlayer().getUuid());
             Trainer lastDefeatedTrainer = session.trainersToDefeat.get(session.defeatedTrainerCount - 1);
             Pokemon trainerPokemon = lastDefeatedTrainer.pokemons.get(trainerslot - 1);
             Pokemon playerPokemon = session.partyPokemons.get(playerslot - 1);
@@ -206,7 +206,7 @@ public class BattleFactory {
             assertExistValidSession(context.getSource().getPlayer());
             assertExistDefeatedTrainer(context.getSource().getPlayer());
 
-            BattleFactorySession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
+            BattleFactorySession session = sessions.get(context.getSource().getPlayer().getUuid());
             Trainer lastDefeatedTrainer = session.trainersToDefeat.get(session.defeatedTrainerCount - 1);
             printPokemons(context, lastDefeatedTrainer.pokemons);
 
@@ -229,7 +229,7 @@ public class BattleFactory {
     public static int showPartyPokemon(CommandContext<ServerCommandSource> context) {
         try {
             assertExistValidSession(context.getSource().getPlayer());
-            printPokemons(context, SESSIONS.get(context.getSource().getPlayer().getUuid()).partyPokemons);
+            printPokemons(context, sessions.get(context.getSource().getPlayer().getUuid()).partyPokemons);
             return Command.SINGLE_SUCCESS;
 
         } catch (InvalidPlayerStateException e) {
@@ -250,7 +250,7 @@ public class BattleFactory {
             assertExistValidSession(context.getSource().getPlayer());
             assertNotExistDefeatedTrainers(context.getSource().getPlayer());
 
-            BattleFactorySession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
+            BattleFactorySession session = sessions.get(context.getSource().getPlayer().getUuid());
 
             session.partyPokemons = List.of(
                     PokemonSpecies.INSTANCE.random().create(BattleFactory.LEVEL),
@@ -282,7 +282,7 @@ public class BattleFactory {
         try {
             assertExistValidSession(context.getSource().getPlayer());
 
-            BattleFactorySession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
+            BattleFactorySession session = sessions.get(context.getSource().getPlayer().getUuid());
             context.getSource().getPlayer().sendMessage(
                     Text.translatable("command.cobblemontrainerbattle.battlefactory.winningstreak.success",
                             session.defeatedTrainerCount));
@@ -304,7 +304,7 @@ public class BattleFactory {
 
     private static void assertNotPlayerDefeated(ServerPlayerEntity player)
             throws InvalidPlayerStateException {
-        BattleFactorySession session = SESSIONS.get(player.getUuid());
+        BattleFactorySession session = sessions.get(player.getUuid());
         if (session.isDefeated) {
             throw new InvalidPlayerStateException(
                     String.format("Player is defeated: %s", player.getGameProfile().getName()),
@@ -325,7 +325,7 @@ public class BattleFactory {
 
     private static boolean isDefeatedAllTrainers(ServerPlayerEntity player) {
         try {
-            BattleFactorySession session = SESSIONS.get(player.getUuid());
+            BattleFactorySession session = sessions.get(player.getUuid());
             return session.defeatedTrainerCount == session.trainersToDefeat.size();
 
         } catch (NullPointerException | ClassCastException | IllegalStateException e) {
@@ -354,17 +354,17 @@ public class BattleFactory {
     }
 
     private static boolean isExistValidSession(ServerPlayerEntity player) {
-        if (!SESSIONS.containsKey(player.getUuid())) {
+        if (!sessions.containsKey(player.getUuid())) {
             return false;
         }
 
-        BattleFactorySession session = SESSIONS.get(player.getUuid());
+        BattleFactorySession session = sessions.get(player.getUuid());
         return Instant.now().isBefore(session.timestamp.plus(Duration.ofHours(24)));
     }
 
     private static void assertNotPlayerTradedPokemon(ServerPlayerEntity player)
             throws InvalidPlayerStateException {
-        if (SESSIONS.get(player.getUuid()).isTradedPokemon) {
+        if (sessions.get(player.getUuid()).isTradedPokemon) {
             throw new InvalidPlayerStateException(
                     String.format("Player has already traded a Pokemon: %s", player.getGameProfile().getName()),
                     InvalidPlayerStateType.TRADED_POKEMON_WITH_TRAINER
@@ -393,7 +393,7 @@ public class BattleFactory {
     }
 
     private static boolean isExistDefeatedTrainers(ServerPlayerEntity player) {
-        return SESSIONS.get(player.getUuid()).defeatedTrainerCount != 0;
+        return sessions.get(player.getUuid()).defeatedTrainerCount != 0;
     }
 
     private static void printPokemons(CommandContext<ServerCommandSource> context, List<Pokemon> pokemons) {

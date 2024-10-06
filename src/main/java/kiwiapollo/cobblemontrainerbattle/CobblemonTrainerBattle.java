@@ -3,18 +3,19 @@ package kiwiapollo.cobblemontrainerbattle;
 import com.cobblemon.mod.common.api.Priority;
 import com.cobblemon.mod.common.api.events.CobblemonEvents;
 import com.google.gson.JsonObject;
-import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactorySession;
-import kiwiapollo.cobblemontrainerbattle.events.BattleFactoryVictoryEventHandler;
+import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactory;
 import kiwiapollo.cobblemontrainerbattle.commands.*;
-import kiwiapollo.cobblemontrainerbattle.common.*;
+import kiwiapollo.cobblemontrainerbattle.common.Config;
+import kiwiapollo.cobblemontrainerbattle.common.ConfigLoader;
+import kiwiapollo.cobblemontrainerbattle.common.EconomyFactory;
+import kiwiapollo.cobblemontrainerbattle.common.ResourceReloadListener;
 import kiwiapollo.cobblemontrainerbattle.economies.Economy;
+import kiwiapollo.cobblemontrainerbattle.entities.EntityBackedTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
-import kiwiapollo.cobblemontrainerbattle.events.LootDroppedEventHandler;
-import kiwiapollo.cobblemontrainerbattle.events.TrainerSpawnEventHandler;
-import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattleSession;
-import kiwiapollo.cobblemontrainerbattle.events.GroupBattleVictoryEventHandler;
+import kiwiapollo.cobblemontrainerbattle.events.*;
+import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattle;
 import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupFile;
-import kiwiapollo.cobblemontrainerbattle.events.TrainerBattleVictoryEventHandler;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerFile;
 import kotlin.Unit;
 import net.fabricmc.api.ModInitializer;
@@ -28,6 +29,7 @@ import net.minecraft.entity.SpawnGroup;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.resource.ResourceType;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -49,7 +51,6 @@ public class CobblemonTrainerBattle implements ModInitializer {
 					.setDimensions(0.6f, 1.8f)
 					.build("trainer");
 
-	public static Map<UUID, TrainerPokemonBattle> trainerBattles = new HashMap<>();
 	public static JsonObject defaultTrainerConfiguration = new JsonObject();
 	public static Map<String, TrainerFile> trainerFiles = new HashMap<>();
 	public static Map<String, GroupFile> groupFiles = new HashMap<>();
@@ -67,9 +68,27 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
 		CobblemonEvents.BATTLE_VICTORY.subscribe(Priority.NORMAL, battleVictoryEvent -> {
 			// BATTLE_VICTORY event fires even if the player loses
-			new TrainerBattleVictoryEventHandler().onPlayerVictory(battleVictoryEvent);
-			new GroupBattleVictoryEventHandler().onPlayerVictory(battleVictoryEvent);
-			new BattleFactoryVictoryEventHandler().onPlayerVictory(battleVictoryEvent);
+			ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
+
+			if (GroupBattle.trainerBattles.containsKey(player.getUuid())) {
+				new GroupBattleVictoryEventHandler().onBattleVictory(battleVictoryEvent);
+				GroupBattle.trainerBattles.remove(player.getUuid());
+			}
+
+			if (BattleFactory.trainerBattles.containsKey(player.getUuid())) {
+				new BattleFactoryVictoryEventHandler().onBattleVictory(battleVictoryEvent);
+				BattleFactory.trainerBattles.remove(player.getUuid());
+			}
+
+			if (EntityBackedTrainerBattle.trainerBattles.containsKey(player.getUuid())) {
+				new EntityBackedTrainerBattleVictoryEventHandler().onBattleVictory(battleVictoryEvent);
+				EntityBackedTrainerBattle.trainerBattles.remove(player.getUuid());
+			}
+
+			if (TrainerBattle.trainerBattles.containsKey(player.getUuid())) {
+				new TrainerBattleVictoryEventHandler().onBattleVictory(battleVictoryEvent);
+				TrainerBattle.trainerBattles.remove(player.getUuid());
+			}
 
 			return Unit.INSTANCE;
         });
@@ -85,21 +104,28 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
 		ServerPlayConnectionEvents.DISCONNECT.register((handler, server) -> {
 			UUID playerUuid = handler.getPlayer().getUuid();
-			if (!trainerBattles.containsKey(playerUuid)) {
-				return;
+
+			if (GroupBattle.trainerBattles.containsKey(playerUuid)) {
+				GroupBattle.sessions.get(playerUuid).isDefeated = true;
+				GroupBattle.trainerBattles.get(playerUuid).end();
+				GroupBattle.trainerBattles.remove(playerUuid);
 			}
 
-			trainerBattles.get(playerUuid).end();
-
-			if (trainerBattles.get(playerUuid).getSession() instanceof GroupBattleSession session) {
-                session.isDefeated = true;
+			if (BattleFactory.trainerBattles.containsKey(playerUuid)) {
+				BattleFactory.sessions.get(playerUuid).isDefeated = true;
+				BattleFactory.trainerBattles.get(playerUuid).end();
+				BattleFactory.trainerBattles.remove(playerUuid);
 			}
 
-			if (trainerBattles.get(playerUuid).getSession() instanceof BattleFactorySession session) {
-                session.isDefeated = true;
+			if (EntityBackedTrainerBattle.trainerBattles.containsKey(playerUuid)) {
+				EntityBackedTrainerBattle.trainerBattles.get(playerUuid).end();
+				EntityBackedTrainerBattle.trainerBattles.remove(playerUuid);
 			}
 
-			trainerBattles.remove(playerUuid);
+			if (TrainerBattle.trainerBattles.containsKey(playerUuid)) {
+				TrainerBattle.trainerBattles.get(playerUuid).end();
+				TrainerBattle.trainerBattles.remove(playerUuid);
+			}
 		});
 
 		ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new ResourceReloadListener());

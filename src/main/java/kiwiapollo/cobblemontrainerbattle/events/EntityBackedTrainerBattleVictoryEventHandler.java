@@ -8,8 +8,6 @@ import com.google.gson.JsonObject;
 import com.mojang.brigadier.CommandDispatcher;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.EntityBackedTrainerBattleActor;
-import kiwiapollo.cobblemontrainerbattle.events.BattleVictoryEventHandler;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import net.minecraft.entity.Entity;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
@@ -17,7 +15,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 
 import java.util.stream.StreamSupport;
 
-public class TrainerBattleVictoryEventHandler implements BattleVictoryEventHandler {
+public class EntityBackedTrainerBattleVictoryEventHandler implements BattleVictoryEventHandler {
     @Override
     public void onBattleVictory(BattleVictoryEvent battleVictoryEvent) {
         ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);

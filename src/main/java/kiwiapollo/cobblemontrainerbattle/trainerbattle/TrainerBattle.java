@@ -1,6 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.trainerbattle;
 
 import com.cobblemon.mod.common.Cobblemon;
+import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.api.storage.party.PlayerPartyStore;
 import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.BattleSide;
@@ -18,7 +19,6 @@ import kiwiapollo.cobblemontrainerbattle.commands.TrainerBattleFlatCommand;
 import kiwiapollo.cobblemontrainerbattle.common.InvalidPlayerStateType;
 import kiwiapollo.cobblemontrainerbattle.common.InvalidResourceState;
 import kiwiapollo.cobblemontrainerbattle.common.TrainerConditionType;
-import kiwiapollo.cobblemontrainerbattle.common.TrainerPokemonBattle;
 import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidPlayerStateException;
 import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidResourceStateException;
 import kiwiapollo.cobblemontrainerbattle.exceptions.TrainerConditionUnsatisfiedException;
@@ -28,11 +28,15 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
+import java.util.UUID;
 import java.util.stream.Stream;
 
 public class TrainerBattle {
     public static final int FLAT_LEVEL = 100;
+    public static Map<UUID, PokemonBattle> trainerBattles = new HashMap<>();
 
     public static int startTrainerBattleWithStatusQuo(CommandContext<ServerCommandSource> context) {
         try {
@@ -69,8 +73,7 @@ public class TrainerBattle {
                     new BattleSide(new TrainerBattleActorFactory().create(trainer)),
                     false
             ).ifSuccessful(pokemonBattle -> {
-                TrainerPokemonBattle trainerPokemonBattle = new TrainerPokemonBattle(pokemonBattle, new Object());
-                CobblemonTrainerBattle.trainerBattles.put(player.getUuid(), trainerPokemonBattle);
+                trainerBattles.put(player.getUuid(), pokemonBattle);
 
                 player.sendMessage(
                         Text.translatable("command.cobblemontrainerbattle.trainerbattle.success", trainer.name));
@@ -154,8 +157,7 @@ public class TrainerBattle {
                             .create(trainer, FLAT_LEVEL)),
                     false
             ).ifSuccessful(pokemonBattle -> {
-                TrainerPokemonBattle trainerPokemonBattle = new TrainerPokemonBattle(pokemonBattle, new Object());
-                CobblemonTrainerBattle.trainerBattles.put(player.getUuid(), trainerPokemonBattle);
+                trainerBattles.put(player.getUuid(), pokemonBattle);
 
                 player.sendMessage(
                         Text.translatable("command.cobblemontrainerbattle.trainerbattleflat.success", trainer.name));

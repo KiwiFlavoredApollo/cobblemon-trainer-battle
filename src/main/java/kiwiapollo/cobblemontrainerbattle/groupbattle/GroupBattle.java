@@ -1,6 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.groupbattle;
 
 import com.cobblemon.mod.common.Cobblemon;
+import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.api.storage.party.PlayerPartyStore;
 import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.BattleSide;
@@ -20,7 +21,6 @@ import kiwiapollo.cobblemontrainerbattle.commands.GroupBattleCommand;
 import kiwiapollo.cobblemontrainerbattle.commands.GroupBattleFlatCommand;
 import kiwiapollo.cobblemontrainerbattle.common.InvalidPlayerStateType;
 import kiwiapollo.cobblemontrainerbattle.common.InvalidResourceState;
-import kiwiapollo.cobblemontrainerbattle.common.TrainerPokemonBattle;
 import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidPlayerStateException;
 import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidResourceStateException;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.SpecificTrainerFactory;
@@ -43,7 +43,8 @@ import java.util.stream.Stream;
 
 public class GroupBattle {
     public static final int FLAT_LEVEL = 100;
-    public static Map<UUID, GroupBattleSession> SESSIONS = new HashMap<>();
+    public static Map<UUID, GroupBattleSession> sessions = new HashMap<>();
+    public static Map<UUID, PokemonBattle> trainerBattles = new HashMap<>();
 
     public static int startSession(CommandContext<ServerCommandSource> context) {
         try {
@@ -52,7 +53,7 @@ public class GroupBattle {
             String groupResourcePath = StringArgumentType.getString(context, "group");
             assertValidGroupResource(groupResourcePath);
 
-            GroupBattle.SESSIONS.put(context.getSource().getPlayer().getUuid(), new GroupBattleSession(groupResourcePath));
+            GroupBattle.sessions.put(context.getSource().getPlayer().getUuid(), new GroupBattleSession(groupResourcePath));
 
             context.getSource().getPlayer().sendMessage(
                     Text.translatable("command.cobblemontrainerbattle.groupbattle.startsession.success"));
@@ -95,7 +96,7 @@ public class GroupBattle {
             assertNotPlayerBusyWithPokemonBattle(context.getSource().getPlayer());
 
             onStopGroupBattleSession(context);
-            GroupBattle.SESSIONS.remove(context.getSource().getPlayer().getUuid());
+            GroupBattle.sessions.remove(context.getSource().getPlayer().getUuid());
 
             context.getSource().getPlayer().sendMessage(
                     Text.literal("command.cobblemontrainerbattle.groupbattle.stopsession.success"));
@@ -145,10 +146,9 @@ public class GroupBattle {
                     false
 
             ).ifSuccessful(pokemonBattle -> {
-                GroupBattleSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
-                TrainerPokemonBattle trainerPokemonBattle = new TrainerPokemonBattle(pokemonBattle, session);
+                GroupBattleSession session = sessions.get(context.getSource().getPlayer().getUuid());
                 UUID playerUuid = context.getSource().getPlayer().getUuid();
-                CobblemonTrainerBattle.trainerBattles.put(playerUuid, trainerPokemonBattle);
+                trainerBattles.put(playerUuid, pokemonBattle);
 
                 context.getSource().getServer().sendMessage(
                         Text.translatable("command.cobblemontrainerbattle.groupbattle.startbattle.success", trainer.name));
@@ -197,7 +197,7 @@ public class GroupBattle {
 
     private static boolean isDefeatedAllTrainers(ServerPlayerEntity player) {
         try {
-            GroupBattleSession session = SESSIONS.get(player.getUuid());
+            GroupBattleSession session = sessions.get(player.getUuid());
 
             GroupFile groupFile = CobblemonTrainerBattle.groupFiles.get(session.groupResourcePath);
             int groupTrainerCount = groupFile.configuration.get("trainers").getAsJsonArray().size();
@@ -226,10 +226,9 @@ public class GroupBattle {
                     false
 
             ).ifSuccessful(pokemonBattle -> {
-                GroupBattleSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
-                TrainerPokemonBattle trainerPokemonBattle = new TrainerPokemonBattle(pokemonBattle, session);
+                GroupBattleSession session = sessions.get(context.getSource().getPlayer().getUuid());
                 UUID playerUuid = context.getSource().getPlayer().getUuid();
-                CobblemonTrainerBattle.trainerBattles.put(playerUuid, trainerPokemonBattle);
+                trainerBattles.put(playerUuid, pokemonBattle);
 
                 context.getSource().getPlayer().sendMessage(
                         Text.translatable("command.cobblemontrainerbattle.groupbattleflat.startbattle.success", trainer.name));
@@ -265,7 +264,7 @@ public class GroupBattle {
     public static String getNextTrainerResourcePath(ServerPlayerEntity player)
             throws InvalidPlayerStateException {
         try {
-            GroupBattleSession session = SESSIONS.get(player.getUuid());
+            GroupBattleSession session = sessions.get(player.getUuid());
             GroupFile groupFile = CobblemonTrainerBattle.groupFiles.get(session.groupResourcePath);
             return groupFile.configuration.get("trainers").getAsJsonArray()
                     .get(session.defeatedTrainerCount).getAsString();
@@ -317,7 +316,7 @@ public class GroupBattle {
     }
 
     private static void assertNotPlayerDefeated(ServerPlayerEntity player) throws InvalidPlayerStateException {
-        GroupBattleSession session = SESSIONS.get(player.getUuid());
+        GroupBattleSession session = sessions.get(player.getUuid());
         if (session.isDefeated) {
             throw new InvalidPlayerStateException(
                     String.format("Player is defeated: %s", player.getGameProfile().getName()),
@@ -347,11 +346,11 @@ public class GroupBattle {
     }
 
     private static boolean isExistValidSession(ServerPlayerEntity player) {
-        if (!SESSIONS.containsKey(player.getUuid())) {
+        if (!sessions.containsKey(player.getUuid())) {
             return false;
         }
 
-        GroupBattleSession session = SESSIONS.get(player.getUuid());
+        GroupBattleSession session = sessions.get(player.getUuid());
         return Instant.now().isBefore(session.timestamp.plus(Duration.ofHours(24)));
     }
 
@@ -400,7 +399,7 @@ public class GroupBattle {
 
 
     private static void onVictoryGroupBattleSession(CommandContext<ServerCommandSource> context) {
-        GroupBattleSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
+        GroupBattleSession session = sessions.get(context.getSource().getPlayer().getUuid());
         GroupFile groupFile = CobblemonTrainerBattle.groupFiles.get(session.groupResourcePath);
 
         if (!groupFile.configuration.has("onVictory")) {
@@ -425,7 +424,7 @@ public class GroupBattle {
     }
 
     private static void onDefeatGroupBattleSession(CommandContext<ServerCommandSource> context) {
-        GroupBattleSession session = SESSIONS.get(context.getSource().getPlayer().getUuid());
+        GroupBattleSession session = sessions.get(context.getSource().getPlayer().getUuid());
         GroupFile groupFile = CobblemonTrainerBattle.groupFiles.get(session.groupResourcePath);
 
         if (!groupFile.configuration.has("onDefeat")) {
