@@ -2,6 +2,7 @@ package kiwiapollo.cobblemontrainerbattle.trainerbattle;
 
 import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.abilities.Abilities;
+import com.cobblemon.mod.common.api.moves.Move;
 import com.cobblemon.mod.common.api.moves.Moves;
 import com.cobblemon.mod.common.api.pokemon.Natures;
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
@@ -14,7 +15,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidPokemonStatsException;
-import kiwiapollo.cobblemontrainerbattle.exceptions.NotCobblemonMoveNameException;
+import kiwiapollo.cobblemontrainerbattle.exceptions.CobblemonMoveNameNotExistException;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
@@ -30,6 +31,18 @@ import java.util.function.BiConsumer;
 public class TrainerFileParser {
     public static final int DEFAULT_LEVEL = 50;
     public static final int RELATIVE_LEVEL_THRESHOLD = 10;
+    public static final Map<String, String> EXCEPTIONAL_MOVE_NAMES = Map.of(
+            "Drain Kiss", "drainingkiss",
+            "Bad Tantrum", "stompingtantrum",
+            "FirstImpress", "firstimpression",
+            "Dark Hole", "darkvoid",
+            "Para Charge", "paraboliccharge",
+            "HiHorsepower", "highhorsepower",
+            "Expand Force", "expandingforce",
+            "Aqua Fang", "aquajet",
+            "Teary Look", "tearfullook"
+    );
+
     private final ServerPlayerEntity player;
 
     public TrainerFileParser(ServerPlayerEntity player) {
@@ -192,46 +205,54 @@ public class TrainerFileParser {
 
     private void setPokemonMoveSet(Pokemon pokemon, JsonArray moveSet) {
         pokemon.getMoveSet().clear();
-        moveSet.getAsJsonArray().asList().stream()
-                .map(JsonElement::getAsString)
-                .map(this::toCobblemonMoveName)
-                .forEach(name -> pokemon.getMoveSet().add(Moves.INSTANCE.getByNameOrDummy(name).create()));
-    }
+        List<String> moveNames = moveSet.getAsJsonArray().asList().stream().map(JsonElement::getAsString).toList();
+        for (String moveName : moveNames) {
+            try {
+                assertExistCobblmonMoveName(moveName);
 
-    private String toCobblemonMoveName(String moveName) {
-        try {
-            String cobblemonMoveName = moveName.replace(" ", "")
-                    .replace("-", "")
-                    .toLowerCase();
-            assertCobblmonMoveName(cobblemonMoveName);
-            return cobblemonMoveName;
+                String cobblemonMoveName = toCobblemonMove(moveName);
+                Move move = Moves.INSTANCE.getByNameOrDummy(cobblemonMoveName).create();
+                pokemon.getMoveSet().add(move);
 
-        } catch (NotCobblemonMoveNameException e) {
-            return getExceptionalCobblemonMoveName(moveName);
+            } catch (CobblemonMoveNameNotExistException e) {
+                CobblemonTrainerBattle.LOGGER.error(String.format("Move not found: %s", moveName));
+                CobblemonTrainerBattle.LOGGER.error("Please report to mod author");
+            }
         }
     }
 
-    private String getExceptionalCobblemonMoveName(String moveName) {
-        Map<String, String> moveNameExceptions = Map.of(
-                "Drain Kiss", "drainingkiss",
-                "Bad Tantrum", "stompingtantrum",
-                "FirstImpress", "firstimpression",
-                "Dark Hole", "darkvoid",
-                "Para Charge", "paraboliccharge"
-        );
-
-        if (!moveNameExceptions.containsKey(moveName)) {
-            CobblemonTrainerBattle.LOGGER.error(String.format("Failed to get Cobblemon move name for %s", moveName));
-            CobblemonTrainerBattle.LOGGER.error("Falling back to Tackle");
-            return "tackle";
-        } else {
-            return moveNameExceptions.get(moveName);
-        }
+    private String normalizeMoveName(String moveName) {
+        return moveName.replace(" ", "")
+                .replace("-", "")
+                .toLowerCase();
     }
 
-    private void assertCobblmonMoveName(String moveName) throws NotCobblemonMoveNameException {
-        if (!Moves.INSTANCE.names().contains(moveName)) {
-            throw new NotCobblemonMoveNameException();
+    private String toCobblemonMove(String moveName) {
+        if (Moves.INSTANCE.names().contains(normalizeMoveName(moveName))) {
+            return normalizeMoveName(moveName);
         }
+
+        if (EXCEPTIONAL_MOVE_NAMES.containsKey(moveName)) {
+            return EXCEPTIONAL_MOVE_NAMES.get(moveName);
+        }
+
+        throw new RuntimeException();
+    }
+
+    private void assertExistCobblmonMoveName(String moveName) throws CobblemonMoveNameNotExistException {
+        if (moveName.equals("None")) {
+            throw new CobblemonMoveNameNotExistException();
+        }
+
+        if (Moves.INSTANCE.names().contains(normalizeMoveName(moveName))) {
+            return;
+        }
+
+        if (EXCEPTIONAL_MOVE_NAMES.containsKey(moveName)) {
+            CobblemonTrainerBattle.LOGGER.warn(String.format("Exceptional move name: %s", moveName));
+            return;
+        }
+
+        throw new CobblemonMoveNameNotExistException();
     }
 }
