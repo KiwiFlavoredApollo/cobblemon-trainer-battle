@@ -15,6 +15,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 
 import java.util.ArrayList;
@@ -22,12 +23,20 @@ import java.util.Collections;
 import java.util.List;
 
 public class TrainerEntity extends PathAwareEntity {
+    private static final List<Identifier> TEXTURES = List.of(
+            Identifier.of("minecraft", "textures/entity/player/wide/steve.png"),
+            Identifier.of("minecraft", "textures/entity/player/wide/alex.png"),
+            Identifier.of("minecraft", "textures/entity/player/wide/zuri.png")
+    );
+
     private final String trainerResourcePath;
+    private final Identifier texture;
 
     public TrainerEntity(EntityType<? extends PathAwareEntity> entityType, World world) {
         super(entityType, world);
 
         this.trainerResourcePath = getRandomTrainerResourcePath();
+        this.texture = getRandomTexture();
     }
 
     private String getRandomTrainerResourcePath() {
@@ -35,6 +44,16 @@ public class TrainerEntity extends PathAwareEntity {
                 CobblemonTrainerBattle.trainerFiles.keySet().stream().toList());
         Collections.shuffle(trainerFilePaths);
         return trainerFilePaths.get(0);
+    }
+
+    private Identifier getRandomTexture() {
+        List<Identifier> textures = new ArrayList<>(TEXTURES);
+        Collections.shuffle(textures);
+        return textures.get(0);
+    }
+
+    public Identifier getTexture() {
+        return texture;
     }
 
     @Override
