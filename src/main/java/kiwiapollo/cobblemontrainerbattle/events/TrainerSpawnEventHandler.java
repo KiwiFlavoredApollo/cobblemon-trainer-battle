@@ -1,8 +1,8 @@
 package kiwiapollo.cobblemontrainerbattle.events;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.exceptions.TrainerSpawnException;
-import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntityFactory;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
@@ -30,7 +30,10 @@ public class TrainerSpawnEventHandler {
             assertBelowMaximumTrainerCount(world, player);
 
             BlockPos spawnPos = getSafeSpawnPosition(world, player);
-            world.spawnEntity(new TrainerEntityFactory().create(world, player, spawnPos));
+            TrainerEntity trainerEntity = new TrainerEntity(CobblemonTrainerBattle.TRAINER_ENTITY_TYPE, world);
+            trainerEntity.refreshPositionAndAngles(spawnPos.getX(), spawnPos.getY(), spawnPos.getZ(),
+                    player.getYaw(), player.getPitch());
+            world.spawnEntity(trainerEntity);
 
             CobblemonTrainerBattle.LOGGER.info("Spawned trainer");
 
