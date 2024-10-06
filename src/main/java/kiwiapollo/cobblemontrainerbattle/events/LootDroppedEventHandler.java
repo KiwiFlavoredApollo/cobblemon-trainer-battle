@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.UUID;
 
 public class LootDroppedEventHandler {
-    public void run(LootDroppedEvent lootDroppedEvent) {
+    public void onLootDropped(LootDroppedEvent lootDroppedEvent) {
         if (!(lootDroppedEvent.getEntity() instanceof PokemonEntity)) return;
 
         PokemonEntity pokemonEntity = (PokemonEntity) lootDroppedEvent.getEntity();

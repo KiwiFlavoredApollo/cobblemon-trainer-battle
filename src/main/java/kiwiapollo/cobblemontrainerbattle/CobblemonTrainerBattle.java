@@ -78,7 +78,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 			// LOOT_DROPPED event fires before BATTLE_VICTORY event
 			// Cobblemon Discord, Hiroku: It's only used if the player kills the pokemon by hand, not by battle
 			// However Pokemons drop loot when defeated in battles, at least on 1.5.1
-			new LootDroppedEventHandler().run(lootDroppedEvent);
+			new LootDroppedEventHandler().onLootDropped(lootDroppedEvent);
 
 			return Unit.INSTANCE;
         });
