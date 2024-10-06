@@ -4,15 +4,17 @@ import com.cobblemon.mod.common.api.Priority;
 import com.cobblemon.mod.common.api.events.CobblemonEvents;
 import com.google.gson.JsonObject;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactorySession;
+import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactoryVictoryEventHandler;
 import kiwiapollo.cobblemontrainerbattle.commands.*;
 import kiwiapollo.cobblemontrainerbattle.common.*;
 import kiwiapollo.cobblemontrainerbattle.economies.Economy;
 import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
-import kiwiapollo.cobblemontrainerbattle.events.BattleVictoryEventHandler;
 import kiwiapollo.cobblemontrainerbattle.events.LootDroppedEventHandler;
 import kiwiapollo.cobblemontrainerbattle.events.TrainerSpawnEventHandler;
 import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattleSession;
+import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattleVictoryEventHandler;
 import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupFile;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattleVictoryEventHandler;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerFile;
 import kotlin.Unit;
 import net.fabricmc.api.ModInitializer;
@@ -65,8 +67,10 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
 		CobblemonEvents.BATTLE_VICTORY.subscribe(Priority.NORMAL, battleVictoryEvent -> {
 			// BATTLE_VICTORY event fires even if the player loses
-			LOGGER.info("BATTLE_VICTORY event");
-			new BattleVictoryEventHandler().run(battleVictoryEvent);
+			new TrainerBattleVictoryEventHandler().onPlayerVictory(battleVictoryEvent);
+			new GroupBattleVictoryEventHandler().onPlayerVictory(battleVictoryEvent);
+			new BattleFactoryVictoryEventHandler().onPlayerVictory(battleVictoryEvent);
+
 			return Unit.INSTANCE;
         });
 
@@ -74,8 +78,8 @@ public class CobblemonTrainerBattle implements ModInitializer {
 			// LOOT_DROPPED event fires before BATTLE_VICTORY event
 			// Cobblemon Discord, Hiroku: It's only used if the player kills the pokemon by hand, not by battle
 			// However Pokemons drop loot when defeated in battles, at least on 1.5.1
-			LOGGER.info("LOOT_DROPPED event");
 			new LootDroppedEventHandler().run(lootDroppedEvent);
+
 			return Unit.INSTANCE;
         });
 
