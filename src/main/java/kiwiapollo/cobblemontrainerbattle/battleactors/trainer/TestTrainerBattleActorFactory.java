@@ -6,6 +6,7 @@ import com.cobblemon.mod.common.battles.actor.TrainerBattleActor;
 import com.cobblemon.mod.common.battles.ai.RandomBattleAI;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
+import kiwiapollo.cobblemontrainerbattle.common.SafeCopyBattlePokemonFactory;
 import kotlin.Unit;
 import net.minecraft.util.Identifier;
 
@@ -22,14 +23,7 @@ public class TestTrainerBattleActorFactory {
                 "MyTrainer",
                 UUID.randomUUID(),
                 List.of(
-                        new BattlePokemon(
-                                pikachu,
-                                pikachu,
-                                pokemonEntity -> {
-                                    pokemonEntity.discard();
-                                    return Unit.INSTANCE;
-                                }
-                        )
+                        SafeCopyBattlePokemonFactory.create(pikachu)
                 ),
                 new RandomBattleAI()
         );

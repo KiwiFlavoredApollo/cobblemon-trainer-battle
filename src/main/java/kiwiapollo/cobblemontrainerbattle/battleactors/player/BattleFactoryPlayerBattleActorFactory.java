@@ -6,6 +6,7 @@ import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactory;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactorySession;
+import kiwiapollo.cobblemontrainerbattle.common.SafeCopyBattlePokemonFactory;
 import kotlin.Unit;
 import net.minecraft.server.network.ServerPlayerEntity;
 
@@ -17,16 +18,7 @@ public class BattleFactoryPlayerBattleActorFactory {
 
         return new PlayerBattleActor(
                 player.getUuid(),
-                session.partyPokemons.stream()
-                        .map(pokemon -> new BattlePokemon(
-                                pokemon,
-                                pokemon.clone(true, true),
-                                pokemonEntity -> {
-                                    pokemonEntity.discard();
-                                    return Unit.INSTANCE;
-                                }
-                        ))
-                        .toList()
+                session.partyPokemons.stream().map(SafeCopyBattlePokemonFactory::create).toList()
         );
     }
 }

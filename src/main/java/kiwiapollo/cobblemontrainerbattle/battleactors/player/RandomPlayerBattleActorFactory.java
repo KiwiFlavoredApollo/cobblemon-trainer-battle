@@ -5,6 +5,7 @@ import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
+import kiwiapollo.cobblemontrainerbattle.common.SafeCopyBattlePokemonFactory;
 import kotlin.Unit;
 import net.minecraft.server.network.ServerPlayerEntity;
 
@@ -20,16 +21,7 @@ public class RandomPlayerBattleActorFactory {
 
         return new PlayerBattleActor(
                 player.getUuid(),
-                playerParty.stream()
-                        .map(pokemon -> new BattlePokemon(
-                                pokemon,
-                                pokemon,
-                                pokemonEntity -> {
-                                    pokemonEntity.discard();
-                                    return Unit.INSTANCE;
-                                }
-                        ))
-                        .toList()
+                playerParty.stream().map(SafeCopyBattlePokemonFactory::create).toList()
         );
     }
 }
