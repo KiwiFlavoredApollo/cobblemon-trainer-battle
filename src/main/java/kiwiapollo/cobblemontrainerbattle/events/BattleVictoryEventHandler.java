@@ -78,7 +78,7 @@ public class BattleVictoryEventHandler {
             onDefeatTrainerBattle(battleVictoryEvent);
         }
 
-        CobblemonTrainerBattle.trainerBattles.remove(battleVictoryEvent.getBattle().getBattleId());
+        CobblemonTrainerBattle.trainerBattles.remove(player.getUuid());
     }
 
     private void onVictoryTrainerBattle(BattleVictoryEvent battleVictoryEvent) {
@@ -189,7 +189,7 @@ public class BattleVictoryEventHandler {
             onDefeatGroupBattle(battleVictoryEvent);
         }
 
-        CobblemonTrainerBattle.trainerBattles.remove(battleVictoryEvent.getBattle().getBattleId());
+        CobblemonTrainerBattle.trainerBattles.remove(player.getUuid());
     }
 
     private void onVictoryGroupBattle(BattleVictoryEvent battleVictoryEvent) {
@@ -215,7 +215,7 @@ public class BattleVictoryEventHandler {
             onDefeatBattleFactory(battleVictoryEvent);
         }
 
-        CobblemonTrainerBattle.trainerBattles.remove(battleVictoryEvent.getBattle().getBattleId());
+        CobblemonTrainerBattle.trainerBattles.remove(player.getUuid());
     }
 
     private void onVictoryBattleFactory(BattleVictoryEvent battleVictoryEvent) {
