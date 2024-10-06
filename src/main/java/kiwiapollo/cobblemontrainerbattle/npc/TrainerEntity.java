@@ -1,6 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.npc;
 
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.RandomTrainerFactory;
+import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.SpecificTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -16,9 +17,24 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class TrainerEntity extends PathAwareEntity {
+    private final String trainerResourcePath;
+
     public TrainerEntity(EntityType<? extends PathAwareEntity> entityType, World world) {
         super(entityType, world);
+
+        this.trainerResourcePath = getRandomTrainerResourcePath();
+    }
+
+    private String getRandomTrainerResourcePath() {
+        List<String> trainerFilePaths = new ArrayList<>(
+                CobblemonTrainerBattle.trainerFiles.keySet().stream().toList());
+        Collections.shuffle(trainerFilePaths);
+        return trainerFilePaths.get(0);
     }
 
     @Override
@@ -42,7 +58,7 @@ public class TrainerEntity extends PathAwareEntity {
             this.setAiDisabled(true);
             this.velocityDirty = true;
 
-            Trainer trainer = new RandomTrainerFactory().create((ServerPlayerEntity) player);
+            Trainer trainer = new SpecificTrainerFactory().create((ServerPlayerEntity) player, trainerResourcePath);
             EntityBackedTrainerBattle.startSpecificTrainerBattleWithStatusQuo((ServerPlayerEntity) player, trainer, this);
         }
 
