@@ -31,8 +31,7 @@ public class TrainerSpawnEventHandler {
 
             BlockPos spawnPos = getSafeSpawnPosition(world, player);
             TrainerEntity trainerEntity = new TrainerEntity(CobblemonTrainerBattle.TRAINER_ENTITY_TYPE, world);
-            trainerEntity.refreshPositionAndAngles(spawnPos.getX(), spawnPos.getY(), spawnPos.getZ(),
-                    player.getYaw(), player.getPitch());
+            trainerEntity.refreshPositionAndAngles(spawnPos, player.getYaw(), player.getPitch());
             world.spawnEntity(trainerEntity);
 
             CobblemonTrainerBattle.LOGGER.info("Spawned trainer");
