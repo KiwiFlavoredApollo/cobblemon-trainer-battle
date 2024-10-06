@@ -14,7 +14,7 @@ import kiwiapollo.cobblemontrainerbattle.common.EconomyFactory;
 import kiwiapollo.cobblemontrainerbattle.economies.Economy;
 import kiwiapollo.cobblemontrainerbattle.events.BattleVictoryEventHandler;
 import kiwiapollo.cobblemontrainerbattle.events.LootDroppedEventHandler;
-import kiwiapollo.cobblemontrainerbattle.npc.TrainerEntity;
+import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerFile;
 import kotlin.Unit;
 import net.fabricmc.api.ModInitializer;

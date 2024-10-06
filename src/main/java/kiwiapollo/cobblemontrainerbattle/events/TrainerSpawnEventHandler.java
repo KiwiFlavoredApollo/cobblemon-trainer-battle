@@ -2,7 +2,7 @@ package kiwiapollo.cobblemontrainerbattle.events;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.exceptions.TrainerSpawnException;
-import kiwiapollo.cobblemontrainerbattle.npc.TrainerEntityFactory;
+import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntityFactory;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;

@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.npc;
+package kiwiapollo.cobblemontrainerbattle.entities;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.SpecificTrainerFactory;

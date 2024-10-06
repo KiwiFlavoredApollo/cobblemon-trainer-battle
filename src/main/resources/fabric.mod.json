@@ -19,7 +19,7 @@
 			"kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle"
 		],
 		"client": [
-			"kiwiapollo.cobblemontrainerbattle.TemplateModClient"
+			"kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattleClient"
 		]
 	},
 	"mixins": [
