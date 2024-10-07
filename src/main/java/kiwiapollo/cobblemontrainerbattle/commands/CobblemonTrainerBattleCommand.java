@@ -4,6 +4,7 @@ import com.mojang.brigadier.Command;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.common.ConfigLoader;
+import kiwiapollo.cobblemontrainerbattle.common.ShowdownJsonExporter;
 import kiwiapollo.cobblemontrainerbattle.economies.EconomyFactory;
 import net.minecraft.server.command.ServerCommandSource;
 
@@ -20,6 +21,14 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
                     CobblemonTrainerBattle.config = ConfigLoader.load();
                     CobblemonTrainerBattle.economy = EconomyFactory.create(CobblemonTrainerBattle.config.economy);
                     CobblemonTrainerBattle.LOGGER.info("Reloaded configuration");
+                    return Command.SINGLE_SUCCESS;
+                }))
+                .then(LiteralArgumentBuilder.<ServerCommandSource>literal("export")
+                .requires(new PlayerCommandPredicate(
+                        String.format("%s.%s", getLiteral(), "export")
+                ))
+                .executes(context -> {
+                    new ShowdownJsonExporter(context.getSource().getPlayer()).export();
                     return Command.SINGLE_SUCCESS;
                 }));
     }
