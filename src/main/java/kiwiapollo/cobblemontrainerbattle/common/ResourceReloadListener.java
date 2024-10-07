@@ -100,7 +100,6 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
         return groupFiles;
     }
 
-
     private JsonArray loadTrainerPokemons(Resource resource) throws LoadingResourceFailedException {
         try (InputStream inputStream = resource.getInputStream()) {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));

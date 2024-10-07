@@ -6,7 +6,7 @@ import net.minecraft.text.Text;
 
 public class InvalidResourceStateExceptionMessageFactory {
     public MutableText create(InvalidResourceStateException e) {
-        return switch (e.getInvalidResourceState()) {
+        return switch (e.getReason()) {
             case NOT_FOUND ->
                     Text.translatable("command.cobblemontrainerbattle.common.resource.not_found", e.getResourcePath());
             case CANNOT_BE_READ ->

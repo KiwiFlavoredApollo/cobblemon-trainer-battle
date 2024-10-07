@@ -35,7 +35,7 @@ public class TrainerBattle {
     public static int startTrainerBattleWithStatusQuo(CommandContext<ServerCommandSource> context) {
         try {
             String trainerResourcePath = StringArgumentType.getString(context, "trainer");
-            ResourceStateChecker.assertExistTrainerResource(trainerResourcePath);
+            ResourceValidator.assertExistTrainerResource(trainerResourcePath);
 
             Trainer trainer = new SpecificTrainerFactory().create(context.getSource().getPlayer(), trainerResourcePath);
             return startSpecificTrainerBattleWithStatusQuo(context.getSource().getPlayer(), trainer);
@@ -43,7 +43,7 @@ public class TrainerBattle {
         } catch (InvalidResourceStateException e) {
             MutableText message = Text.translatable("command.cobblemontrainerbattle.common.resource.not_found", e.getResourcePath());
             context.getSource().getPlayer().sendMessage(message.formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(e.getMessage());
+            CobblemonTrainerBattle.LOGGER.error(String.format("An error occurred while reading trainer file: %s, %s", e.getMessage(), e.getResourcePath()));
             return 0;
         }
     }
@@ -113,19 +113,15 @@ public class TrainerBattle {
     public static int startTrainerBattleWithFlatLevelAndFullHealth(CommandContext<ServerCommandSource> context) {
         try {
             String trainerResourcePath = StringArgumentType.getString(context, "trainer");
-            ResourceStateChecker.assertExistTrainerResource(trainerResourcePath);
+            ResourceValidator.assertExistTrainerResource(trainerResourcePath);
 
             Trainer trainer = new SpecificTrainerFactory().create(context.getSource().getPlayer(), trainerResourcePath);
             return startSpecificTrainerBattleWithFlatLevelAndFullHealth(context.getSource().getPlayer(), trainer);
 
         } catch (InvalidResourceStateException e) {
-            if (!e.getInvalidResourceState().equals(InvalidResourceState.NOT_FOUND)) {
-                throw new RuntimeException(e);
-            }
-
             MutableText message = Text.translatable("command.cobblemontrainerbattle.common.resource.not_found", e.getResourcePath());
             context.getSource().getPlayer().sendMessage(message.formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(e.getMessage());
+            CobblemonTrainerBattle.LOGGER.error(String.format("An error occurred while reading trainer file: %s, %s", e.getMessage(), e.getResourcePath()));
             return 0;
         }
     }

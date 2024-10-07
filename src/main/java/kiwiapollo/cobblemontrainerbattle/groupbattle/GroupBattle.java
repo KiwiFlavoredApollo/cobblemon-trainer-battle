@@ -17,8 +17,8 @@ import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.FlatLevelFullHealt
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.TrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.commands.GroupBattleCommand;
 import kiwiapollo.cobblemontrainerbattle.commands.GroupBattleFlatCommand;
-import kiwiapollo.cobblemontrainerbattle.common.InvalidResourceState;
 import kiwiapollo.cobblemontrainerbattle.common.InvalidResourceStateExceptionMessageFactory;
+import kiwiapollo.cobblemontrainerbattle.common.ResourceValidator;
 import kiwiapollo.cobblemontrainerbattle.exceptions.*;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.PlayerValidator;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.SpecificTrainerFactory;
@@ -46,7 +46,7 @@ public class GroupBattle {
             validator.assertNotExistValidSession();
 
             String groupResourcePath = StringArgumentType.getString(context, "group");
-            assertValidGroupResource(groupResourcePath);
+            ResourceValidator.assertValidGroupResource(groupResourcePath);
 
             GroupBattle.sessions.put(context.getSource().getPlayer().getUuid(), new GroupBattleSession(groupResourcePath));
 
@@ -68,7 +68,7 @@ public class GroupBattle {
             ServerPlayerEntity player = context.getSource().getPlayer();
             MutableText message = new InvalidResourceStateExceptionMessageFactory().create(e);
             player.sendMessage(message.formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(String.format("An error occurred while reading resource: %s", e.getResourcePath(), e.getInvalidResourceState()));
+            CobblemonTrainerBattle.LOGGER.error(String.format("An error occurred while reading resource: %s", e.getResourcePath(), e.getMessage()));
             return 0;
         }
     }
@@ -268,45 +268,6 @@ public class GroupBattle {
 
         } catch (IndexOutOfBoundsException e) {
             throw new DefeatedAllTrainersException();
-        }
-    }
-
-    // TODO
-    private static void assertValidGroupResource(String groupResourcePath) throws InvalidResourceStateException {
-        try {
-            GroupFile groupFile = CobblemonTrainerBattle.groupFiles.get(groupResourcePath);
-            if (groupFile == null) {
-                throw new InvalidResourceStateException(
-                        String.format("Resource not found: %s", groupResourcePath),
-                        InvalidResourceState.NOT_FOUND,
-                        groupResourcePath
-                );
-            }
-
-            if (groupFile.configuration.get("trainers").getAsJsonArray().isEmpty()) {
-                throw new InvalidResourceStateException(
-                        String.format("No trainers: %s", groupResourcePath),
-                        InvalidResourceState.CANNOT_BE_READ,
-                        groupResourcePath
-                );
-            }
-
-            if (!groupFile.configuration.get("trainers").getAsJsonArray().asList().stream()
-                    .map(JsonElement::getAsString)
-                    .allMatch(CobblemonTrainerBattle.trainerFiles::containsKey)) {
-                throw new InvalidResourceStateException(
-                        String.format("One or more trainers are unknown: %s", groupResourcePath),
-                        InvalidResourceState.CANNOT_BE_READ,
-                        groupResourcePath
-                );
-            };
-
-        } catch (NullPointerException | IllegalStateException | UnsupportedOperationException | ClassCastException e) {
-            throw new InvalidResourceStateException(
-                    String.format("Unable to read resource: %s", groupResourcePath),
-                    InvalidResourceState.CANNOT_BE_READ,
-                    groupResourcePath
-            );
         }
     }
 
