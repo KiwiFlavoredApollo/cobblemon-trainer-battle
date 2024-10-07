@@ -70,7 +70,7 @@ public class BattleFactory {
     public static int stopSession(CommandContext<ServerCommandSource> context) {
         try {
             new BattleFactorySessionValidator(context.getSource().getPlayer()).assertExistValidSession();
-            new PlayerValidator(context.getSource().getPlayer()).assertNotPlayerBusyWithPokemonBattle();
+            new PlayerValidator(context.getSource().getPlayer()).assertPlayerNotBusyWithPokemonBattle();
 
             onStopBattleFactorySession(context);
             BattleFactory.sessions.remove(context.getSource().getPlayer().getUuid());
@@ -89,7 +89,7 @@ public class BattleFactory {
             CobblemonTrainerBattle.LOGGER.error(String.format("Valid battle session does not exist: %s", player.getGameProfile().getName()));
             return 0;
 
-        } catch (BusyPlayerException e) {
+        } catch (BusyWithPokemonBattleException e) {
             ServerPlayerEntity player = context.getSource().getPlayer();
             MutableText message = Text.translatable("command.cobblemontrainerbattle.common.busy_with_pokemon_battle");
             player.sendMessage(message.formatted(Formatting.RED));
@@ -106,7 +106,7 @@ public class BattleFactory {
             sessionValidator.assertNotPlayerDefeated();
 
             PlayerValidator playerValidator = new PlayerValidator(context.getSource().getPlayer());
-            playerValidator.assertNotPlayerBusyWithPokemonBattle();
+            playerValidator.assertPlayerNotBusyWithPokemonBattle();
 
             BattleFactorySession session = sessions.get(context.getSource().getPlayer().getUuid());
             Trainer trainer = session.trainersToDefeat.get(session.defeatedTrainerCount);
@@ -151,7 +151,7 @@ public class BattleFactory {
             CobblemonTrainerBattle.LOGGER.error(String.format("Player is defeated: %s", player.getGameProfile().getName()));
             return 0;
 
-        } catch (BusyPlayerException e) {
+        } catch (BusyWithPokemonBattleException e) {
             ServerPlayerEntity player = context.getSource().getPlayer();
             MutableText message = Text.translatable("command.cobblemontrainerbattle.common.busy_with_pokemon_battle");
             player.sendMessage(message.formatted(Formatting.RED));
@@ -369,7 +369,7 @@ public class BattleFactory {
         JsonObject onVictory = CobblemonTrainerBattle.battleFactoryConfiguration.get("onVictory").getAsJsonObject();
 
         if (onVictory.has("balance") && onVictory.get("balance").isJsonPrimitive()) {
-            CobblemonTrainerBattle.ECONOMY.addBalance(
+            CobblemonTrainerBattle.economy.addBalance(
                     context.getSource().getPlayer(), onVictory.get("balance").getAsDouble());
         }
 
@@ -391,7 +391,7 @@ public class BattleFactory {
         JsonObject onDefeat = CobblemonTrainerBattle.battleFactoryConfiguration.get("onDefeat").getAsJsonObject();
 
         if (onDefeat.has("balance") && onDefeat.get("balance").isJsonPrimitive()) {
-            CobblemonTrainerBattle.ECONOMY.removeBalance(
+            CobblemonTrainerBattle.economy.removeBalance(
                     context.getSource().getPlayer(), onDefeat.get("balance").getAsDouble());
         }
 

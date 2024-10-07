@@ -108,7 +108,7 @@ public class EntityBackedTrainerBattleVictoryEventHandler implements BattleVicto
 
     private void addPlayerBalance(JsonElement balanceJsonElement, ServerPlayerEntity player) {
         try {
-            CobblemonTrainerBattle.ECONOMY.addBalance(player, balanceJsonElement.getAsInt());
+            CobblemonTrainerBattle.economy.addBalance(player, balanceJsonElement.getAsInt());
 
         } catch (UnsupportedOperationException e) {
             CobblemonTrainerBattle.LOGGER.error(
@@ -118,7 +118,7 @@ public class EntityBackedTrainerBattleVictoryEventHandler implements BattleVicto
 
     private void removePlayerBalance(JsonElement balanceJsonElement, ServerPlayerEntity player) {
         try {
-            CobblemonTrainerBattle.ECONOMY.removeBalance(player, balanceJsonElement.getAsInt());
+            CobblemonTrainerBattle.economy.removeBalance(player, balanceJsonElement.getAsInt());
 
         } catch (UnsupportedOperationException e) {
             CobblemonTrainerBattle.LOGGER.error(

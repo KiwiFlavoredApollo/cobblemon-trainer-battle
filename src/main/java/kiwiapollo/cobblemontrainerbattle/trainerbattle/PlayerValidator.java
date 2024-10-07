@@ -37,10 +37,10 @@ public class PlayerValidator {
         }
     }
 
-    public void assertNotPlayerBusyWithPokemonBattle()
-            throws BusyPlayerException {
+    public void assertPlayerNotBusyWithPokemonBattle()
+            throws BusyWithPokemonBattleException {
         if (Cobblemon.INSTANCE.getBattleRegistry().getBattleByParticipatingPlayer(player) != null) {
-            throw new BusyPlayerException();
+            throw new BusyWithPokemonBattleException();
         }
     }
 

@@ -46,8 +46,6 @@ import java.util.UUID;
 public class CobblemonTrainerBattle implements ModInitializer {
 	public static final String NAMESPACE = "cobblemontrainerbattle";
 	public static final Logger LOGGER = LoggerFactory.getLogger(NAMESPACE);
-	public static final Config CONFIG = ConfigLoader.load();
-	public static final Economy ECONOMY = EconomyFactory.create(CONFIG.economy);
 	public static final String GROUP_CONFIG_DIR = "groups";
 	public static final String TRAINER_CONFIG_DIR = "trainers";
 	public static final String ARCADE_CONFIG_DIR = "arcades";
@@ -55,7 +53,6 @@ public class CobblemonTrainerBattle implements ModInitializer {
 			EntityType.Builder.create(TrainerEntity::new, SpawnGroup.CREATURE)
 					.setDimensions(0.6f, 1.8f)
 					.build("trainer");
-
 	public static final Item TRAINER_SPAWN_EGG = new SpawnEggItem(
 			TRAINER_ENTITY_TYPE,
 			0xAAAAAA,
@@ -63,6 +60,8 @@ public class CobblemonTrainerBattle implements ModInitializer {
 			new FabricItemSettings().maxCount(64)
 	);
 
+	public static Config config = ConfigLoader.load();
+	public static Economy economy = EconomyFactory.create(config.economy);
 	public static JsonObject defaultTrainerConfiguration = new JsonObject();
 	public static Map<String, TrainerFile> trainerFiles = new HashMap<>();
 	public static Map<String, GroupFile> groupFiles = new HashMap<>();
@@ -82,6 +81,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 			dispatcher.register(new GroupBattleCommand());
 			dispatcher.register(new GroupBattleFlatCommand());
 			dispatcher.register(new BattleFactoryCommand());
+			dispatcher.register(new ReloadConfigCommand());
 		});
 
 		CobblemonEvents.BATTLE_VICTORY.subscribe(Priority.NORMAL, battleVictoryEvent -> {

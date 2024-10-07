@@ -15,7 +15,7 @@ public class TrainerSpawnEventHandler {
     private static int tickCounter = 0;
 
     public static void onEndWorldTick(ServerWorld world) {
-        if (!CobblemonTrainerBattle.CONFIG.enableTrainerSpawn) {
+        if (!CobblemonTrainerBattle.config.enableTrainerSpawn) {
             return;
         }
 

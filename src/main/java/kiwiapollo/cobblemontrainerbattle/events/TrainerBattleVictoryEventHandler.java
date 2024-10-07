@@ -8,8 +8,6 @@ import com.google.gson.JsonObject;
 import com.mojang.brigadier.CommandDispatcher;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.EntityBackedTrainerBattleActor;
-import kiwiapollo.cobblemontrainerbattle.events.BattleVictoryEventHandler;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import net.minecraft.entity.Entity;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
@@ -110,7 +108,7 @@ public class TrainerBattleVictoryEventHandler implements BattleVictoryEventHandl
 
     private void addPlayerBalance(JsonElement balanceJsonElement, ServerPlayerEntity player) {
         try {
-            CobblemonTrainerBattle.ECONOMY.addBalance(player, balanceJsonElement.getAsInt());
+            CobblemonTrainerBattle.economy.addBalance(player, balanceJsonElement.getAsInt());
 
         } catch (UnsupportedOperationException e) {
             CobblemonTrainerBattle.LOGGER.error(
@@ -120,7 +118,7 @@ public class TrainerBattleVictoryEventHandler implements BattleVictoryEventHandl
 
     private void removePlayerBalance(JsonElement balanceJsonElement, ServerPlayerEntity player) {
         try {
-            CobblemonTrainerBattle.ECONOMY.removeBalance(player, balanceJsonElement.getAsInt());
+            CobblemonTrainerBattle.economy.removeBalance(player, balanceJsonElement.getAsInt());
 
         } catch (UnsupportedOperationException e) {
             CobblemonTrainerBattle.LOGGER.error(

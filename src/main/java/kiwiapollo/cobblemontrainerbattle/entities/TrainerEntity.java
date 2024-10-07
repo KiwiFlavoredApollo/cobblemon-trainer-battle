@@ -1,6 +1,10 @@
 package kiwiapollo.cobblemontrainerbattle.entities;
 
+import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
+import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.EntityBackedTrainerBattleActor;
+import kiwiapollo.cobblemontrainerbattle.exceptions.BusyWithPokemonBattleException;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.SpecificTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
 import net.minecraft.entity.EntityType;
@@ -18,9 +22,8 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
+import java.util.stream.StreamSupport;
 
 public class TrainerEntity extends PathAwareEntity {
     private static final List<Identifier> TEXTURES = List.of(
@@ -86,14 +89,55 @@ public class TrainerEntity extends PathAwareEntity {
 
     @Override
     public boolean damage(DamageSource source, float amount) {
-        boolean isDamaged = super.damage(source, amount);
-        boolean isLivingEntityAttacker = source.getAttacker() instanceof LivingEntity;
+        try {
+            assertNotBusyWithPokemonBattle();
 
-        if (isDamaged && isLivingEntityAttacker) {
-            this.setTarget((LivingEntity) source.getAttacker());
+            boolean isDamaged = super.damage(source, amount);
+            boolean isLivingEntityAttacker = source.getAttacker() instanceof LivingEntity;
+
+            if (isDamaged && isLivingEntityAttacker) {
+                this.setTarget((LivingEntity) source.getAttacker());
+            }
+
+            return isDamaged;
+
+        } catch (BusyWithPokemonBattleException e) {
+            return false;
         }
+    }
 
-        return isDamaged;
+    private void assertNotBusyWithPokemonBattle() throws BusyWithPokemonBattleException {
+        try {
+            getPokemonBattle();
+            throw new BusyWithPokemonBattleException();
+
+        } catch (NoSuchElementException ignored) {
+
+        }
+    }
+
+    private PokemonBattle getPokemonBattle() {
+        try {
+            return EntityBackedTrainerBattle.trainerBattles.values().stream()
+                    .filter(pokemonBattle -> getBattleActorsOf(pokemonBattle).stream().anyMatch(this::isEntityOf))
+                    .findFirst().get();
+
+        } catch (NullPointerException | NoSuchElementException e) {
+            throw new NoSuchElementException();
+        }
+    }
+
+    private List<BattleActor> getBattleActorsOf(PokemonBattle pokemonBattle) {
+        return StreamSupport.stream(pokemonBattle.getActors().spliterator(), false).toList();
+    }
+
+    private boolean isEntityOf(BattleActor battleActor) {
+        try {
+            return ((EntityBackedTrainerBattleActor) battleActor).getEntity().equals(this);
+
+        } catch (NullPointerException | ClassCastException e) {
+            return false;
+        }
     }
 
     public static DefaultAttributeContainer.Builder createMobAttributes() {
@@ -101,5 +145,16 @@ public class TrainerEntity extends PathAwareEntity {
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 20.0)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2.0)
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25D);
+    }
+
+    @Override
+    public void onDeath(DamageSource damageSource) {
+        try {
+            getPokemonBattle().end();
+            super.onDeath(damageSource);
+
+        } catch (NoSuchElementException e) {
+            super.onDeath(damageSource);
+        }
     }
 }

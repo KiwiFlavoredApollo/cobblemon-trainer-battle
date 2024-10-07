@@ -58,7 +58,7 @@ public class TrainerBattle {
             PlayerValidator playerValidator = new PlayerValidator(player);
             playerValidator.assertNotEmptyPlayerParty();
             playerValidator.assertNotFaintPlayerParty();
-            playerValidator.assertNotPlayerBusyWithPokemonBattle();
+            playerValidator.assertPlayerNotBusyWithPokemonBattle();
             playerValidator.assertPlayerPartyAtOrAboveRelativeLevelThreshold();
             playerValidator.assertSatisfiedTrainerCondition(trainer);
 
@@ -91,7 +91,7 @@ public class TrainerBattle {
             CobblemonTrainerBattle.LOGGER.error(String.format("Pokemons are all fainted: %s", player.getGameProfile().getName()));
             return 0;
 
-        } catch (BusyPlayerException e) {
+        } catch (BusyWithPokemonBattleException e) {
             MutableText message = Text.translatable("command.cobblemontrainerbattle.common.busy_with_pokemon_battle");
             player.sendMessage(message.formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(String.format("Player is busy with Pokemon battle: %s", player.getGameProfile().getName()));
@@ -135,7 +135,7 @@ public class TrainerBattle {
         try {
             PlayerValidator playerValidator = new PlayerValidator(player);
             playerValidator.assertNotEmptyPlayerParty();
-            playerValidator.assertNotPlayerBusyWithPokemonBattle();
+            playerValidator.assertPlayerNotBusyWithPokemonBattle();
 
             Cobblemon.INSTANCE.getStorage().getParty(player).forEach(Pokemon::recall);
 
@@ -162,7 +162,7 @@ public class TrainerBattle {
             CobblemonTrainerBattle.LOGGER.error(String.format("Player has no Pokemon: %s", player.getGameProfile().getName()));
             return 0;
 
-        } catch (BusyPlayerException e) {
+        } catch (BusyWithPokemonBattleException e) {
             MutableText message = Text.translatable("command.cobblemontrainerbattle.common.busy_with_pokemon_battle");
             player.sendMessage(message.formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(String.format("Player is busy with Pokemon battle: %s", player.getGameProfile().getName()));

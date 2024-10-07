@@ -76,7 +76,7 @@ public class GroupBattle {
     public static int stopSession(CommandContext<ServerCommandSource> context) {
         try {
             new GroupBattleSessionValidator(context.getSource().getPlayer()).assertExistValidSession();
-            new PlayerValidator(context.getSource().getPlayer()).assertNotPlayerBusyWithPokemonBattle();
+            new PlayerValidator(context.getSource().getPlayer()).assertPlayerNotBusyWithPokemonBattle();
 
             onStopGroupBattleSession(context);
             GroupBattle.sessions.remove(context.getSource().getPlayer().getUuid());
@@ -95,7 +95,7 @@ public class GroupBattle {
             CobblemonTrainerBattle.LOGGER.error(String.format("Valid battle session does not exist: %s", player.getGameProfile().getName()));
             return 0;
 
-        } catch (BusyPlayerException e) {
+        } catch (BusyWithPokemonBattleException e) {
             ServerPlayerEntity player = context.getSource().getPlayer();
             MutableText message = Text.translatable("command.cobblemontrainerbattle.common.busy_with_pokemon_battle");
             player.sendMessage(message.formatted(Formatting.RED));
@@ -112,7 +112,7 @@ public class GroupBattle {
             sessionValidator.assertNotPlayerDefeated();
 
             PlayerValidator playerValidator = new PlayerValidator(context.getSource().getPlayer());
-            playerValidator.assertNotPlayerBusyWithPokemonBattle();
+            playerValidator.assertPlayerNotBusyWithPokemonBattle();
             playerValidator.assertNotEmptyPlayerParty();
             playerValidator.assertNotFaintPlayerParty();
             playerValidator.assertPlayerPartyAtOrAboveRelativeLevelThreshold();
@@ -178,7 +178,7 @@ public class GroupBattle {
             CobblemonTrainerBattle.LOGGER.error(String.format("Pokemons are all fainted: %s", player.getGameProfile().getName()));
             return 0;
 
-        } catch (BusyPlayerException e) {
+        } catch (BusyWithPokemonBattleException e) {
             ServerPlayerEntity player = context.getSource().getPlayer();
             MutableText message = Text.translatable("command.cobblemontrainerbattle.common.busy_with_pokemon_battle");
             player.sendMessage(message.formatted(Formatting.RED));
@@ -201,7 +201,7 @@ public class GroupBattle {
             sessionValidator.assertNotDefeatedAllTrainers();
 
             PlayerValidator playerValidator = new PlayerValidator(context.getSource().getPlayer());
-            playerValidator.assertNotPlayerBusyWithPokemonBattle();
+            playerValidator.assertPlayerNotBusyWithPokemonBattle();
             playerValidator.assertNotEmptyPlayerParty();
 
             String nextTrainerResourcePath = getNextTrainerResourcePath(context.getSource().getPlayer());
@@ -250,7 +250,7 @@ public class GroupBattle {
             CobblemonTrainerBattle.LOGGER.error(String.format("Player has no Pokemon: %s", player.getGameProfile().getName()));
             return 0;
 
-        } catch (BusyPlayerException e) {
+        } catch (BusyWithPokemonBattleException e) {
             ServerPlayerEntity player = context.getSource().getPlayer();
             MutableText message = Text.translatable("command.cobblemontrainerbattle.common.busy_with_pokemon_battle");
             player.sendMessage(message.formatted(Formatting.RED));
@@ -290,7 +290,7 @@ public class GroupBattle {
         JsonObject onVictory = groupFile.configuration.get("onVictory").getAsJsonObject();
 
         if (onVictory.has("balance") && onVictory.get("balance").isJsonPrimitive()) {
-            CobblemonTrainerBattle.ECONOMY.addBalance(
+            CobblemonTrainerBattle.economy.addBalance(
                     context.getSource().getPlayer(), onVictory.get("balance").getAsDouble());
         }
 
@@ -315,7 +315,7 @@ public class GroupBattle {
         JsonObject onDefeat = groupFile.configuration.get("onDefeat").getAsJsonObject();
 
         if (onDefeat.has("balance") && onDefeat.get("balance").isJsonPrimitive()) {
-            CobblemonTrainerBattle.ECONOMY.removeBalance(
+            CobblemonTrainerBattle.economy.removeBalance(
                     context.getSource().getPlayer(), onDefeat.get("balance").getAsDouble());
         }
 
