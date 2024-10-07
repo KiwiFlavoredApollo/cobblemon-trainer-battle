@@ -81,7 +81,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 			dispatcher.register(new GroupBattleCommand());
 			dispatcher.register(new GroupBattleFlatCommand());
 			dispatcher.register(new BattleFactoryCommand());
-			dispatcher.register(new ReloadConfigCommand());
+			dispatcher.register(new CobblemonTrainerBattleCommand());
 		});
 
 		CobblemonEvents.BATTLE_VICTORY.subscribe(Priority.NORMAL, battleVictoryEvent -> {

@@ -7,19 +7,19 @@ import kiwiapollo.cobblemontrainerbattle.common.ConfigLoader;
 import kiwiapollo.cobblemontrainerbattle.common.EconomyFactory;
 import net.minecraft.server.command.ServerCommandSource;
 
-public class ReloadConfigCommand extends LiteralArgumentBuilder<ServerCommandSource> {
+public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSource> {
 
-    public ReloadConfigCommand() {
+    public CobblemonTrainerBattleCommand() {
         super(CobblemonTrainerBattle.NAMESPACE);
 
-        this.then(LiteralArgumentBuilder.<ServerCommandSource>literal("reload")
-                .requires(new PlayerCommandPredicate(
-                        String.format("%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral())
-                ))
+        this.requires(new PlayerCommandPredicate(
+                String.format("%s.%s", getLiteral(), "reload")
+        )).then(LiteralArgumentBuilder.<ServerCommandSource>literal("reload")
+                .requires(new PlayerCommandPredicate(String.format("%s.%s", getLiteral(), "reload")))
                 .executes(context -> {
                     CobblemonTrainerBattle.config = ConfigLoader.load();
                     CobblemonTrainerBattle.economy = EconomyFactory.create(CobblemonTrainerBattle.config.economy);
-                    CobblemonTrainerBattle.LOGGER.info("Reloaded config.json");
+                    CobblemonTrainerBattle.LOGGER.info("Reloaded configuration");
                     return Command.SINGLE_SUCCESS;
                 }));
     }
