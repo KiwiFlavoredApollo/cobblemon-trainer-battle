@@ -1,20 +1,12 @@
 # README
 
-## Significant Updates in 1.3.0
-
-- `battlefrontier` command was renamed to `battlefactory`
-- Subcommands became a bit longer but more precise
-- `groupbattle` command is added
-- Directory where trainer configuration files reside has changed 
-  - from `<datapack>/data/cobblemontrainerbattle/configuration` 
-  - to `<datapack>/data/cobblemontrainerbattle/trainers`
-
 ## Configuration
 
 `config/cobblemontrainerbattle/config.json`
 
 ```
 "economy": "None"
+"enableTrainerSpawn": true
 ```
 
 ### Available `economy` Options
@@ -22,42 +14,97 @@
 - `None`
 - `OctoEconomy`
 
+### NPC Trainers
+
+if `enableTrainerSpawn` is set to `true`, NPC trainers will spawn around players. Basically the same as running `trainerbattle random` command but more interesting.
+
 ## Trainer Battle
 
-### 1. `/trainerbattle`
+```
+/trainerbattle <trainer>
+/trainerbattle random
+
+/trainerbattleflat <trainer>
+/trainerbattleflat random
+```
 
 - Initiates Pokemon battle with trainers
 - Players will use Pokemons in their parties
 - Trainer Pokemon levels may differ depending on their configuration
+- For `/trainerbattleflat`, Pokemon levels are set to 100 for both players and trainers
+
+## Group Battle
 
 ```
-/trainerbattle radicalred/<trainer>
-/trainerbattle inclementemerald/<trainer>
-/trainerbattle custom/<trainer>
-/trainerbattle random
+/groupbattle startsession <group>
+/groupbattle stopsession
+/groupbattle startbattle
 ```
 
-### 2. `/trainerbattleflat`
+## Battle Factory
 
-- Initiates Pokemon battle with trainers
-- Players will use Pokemons in their parties
-- Pokemon levels are set to 100 for both players and trainers
+- Mini-game for players who wants to test their luck and skills
+- Three random Pokemons are given to player
+- Player can trade Pokemons with trainers once obtained victory
 
 ```
-/trainerbattleflat radicalred/<trainer>
-/trainerbattleflat inclementemerald/<trainer>
-/trainerbattleflat custom/<trainer>
-/trainerbattleflat random
+/battlefactory startsession
+/battlefactory stopsession
+/battlefactory showpokemon
+/battlefactory rerollpokemon
+/battlefactory tradepokemon
+/battlefactory tradepokemon <playerslot> <trainerslot>
+/battlefactory winningstreak
 ```
 
-## Custom Trainers
+## NPCs
+
+- Starting from 1.4.0, NPC feature is available
+- Random trainers spawn around players in radius of 20 blocks
+- Trainers disappear when defeated
+- Trainers will fight back when attacked
+- Trainer Spawn Egg is available
+- `/summon cobblemontrainerbattle:trainer`
+
+## Customization
+
+### Custom Trainers
 
 - Trainer files can be added via data packs
 - Custom trainer files must be located under `<datapack>/data/cobblemontrainerbattle/custom`
 - Please make sure trainer files(`.json`) are in Smogon Teams JSON format
 - Trainer Pokemon levels can be set relative to player Pokemons
 
-### Custom Trainer Configuration (>=1.2.0)
+### Custom Trainer Configuration
+
+```dtd
+datapacks/
+└── your_datapack_name/
+    ├── data/
+    │   └── cobblemontrainerbattle/
+    │       ├── custom/
+    │       │   ├── custom_trainer_1.json
+    │       │   └── custom_trainer_2.json
+    │       ├── radicalred/
+    │       ├── inclementemerald/
+    │       │
+    │       ├── trainers/
+    │       │   ├── custom/
+    │       │   │   ├── custom_trainer_1.json
+    │       │   │   └── custom_trainer_2.json
+    │       │   ├── radicalred/
+    │       │   ├── inclementemerald/
+    │       │   └── defaults.json
+    │       │
+    │       ├── groups/
+    │       │   ├── custom_group_1.json
+    │       │   └── custom_group_1.json
+    │       │
+    │       └── arcades/
+    │           └── battlefactory.json
+    │
+    └── pack.mcmeta
+```
 
 ```json
 {
@@ -75,25 +122,12 @@
   }
 }
 ```
-
-- Trainer-specific configuration files reside in separate directory from trainer files
-- Trainer-specific configuration file names must be the same as the trainer files
-- `<datapack>/data/cobblemontrainerbattle/trainers/<namespace>/<trainer>.json`
 - Multiple commands are supported
 - Configuration can be set globally by modifying `defaults.json`
-- `<datapack>/data/cobblemontrainerbattle/trainers/defaults.json`
 - Commands are run as server
 - `%player%` placeholder can be used to indicate player
 
-## Group Battle
-
-```
-/groupbattle startsession <group>
-/groupbattle stopsession
-/groupbattle startbattle
-```
-
-## Custom Groups
+### Custom Groups
 
 ```
 {
@@ -119,47 +153,11 @@
 ```
 
 - Custom groups can be added with their onVictory/onDefeat behavior
-- `<datapack>/data/cobblemontrainerbattle/groups/<group>.json`
+- Basically the same as trainer configuration files
 
-## Battle Factory
+### Custom Battle Factory
 
-- Mini-game for players who wants to test their luck and skills
-- Three random Pokemons are given to player
-- Player can trade Pokemons with trainers once obtained victory
-
-### 1. `/battlefactory startsession`
-
-Creates battle frontier session
-
-### 2. `/battlefactory stopsession`
-
-Removes battle frontier session
-
-### 3. `/battlefactory showpokemon`
-
-Shows Pokemons
-
-### 4. `/battlefactory rerollpokemon`
-
-Re-rolls Pokemons
-
-### 5. `/battlefactory tradepokemon`
-
-`/battlefactory tradepokemon`
-
-Shows Pokemons available for trade
-
-`/battlefactory tradepokemon <playerslot> <trainerslot>`
-
-Trades Pokemons with trainers
-
-### 6. `/battlefactory winningstreak`
-
-Shows player's winning streak
-
-### Configuration
-
-```
+```json
 {
   "onVictory": {
     "balance": 0,
@@ -171,8 +169,6 @@ Shows player's winning streak
   }
 }
 ```
-- You can add onVictory/onDefeat configuration
-- `<datapack>/data/cobblemontrainerbattle/arcades/battlefactory.json`
 
 ## TODOs
 
@@ -180,7 +176,6 @@ Shows player's winning streak
 - [ ] Add feature defining Battle Frontier trainer sequence by data pack
 - [ ] Refactor TrainerFileParser.createPokemon using JsonObject.has
 - [ ] When on Battle Frontier battle, player Pokemons are slightly damaged
-- [ ] Fix Luckperms not working as intended `trainerbattle` permission node
 
 ## Reference
 - [Pokemon Showdown Team Formats - Cobblemon Showdown](https://gitlab.com/cable-mc/cobblemon-showdown/-/blob/master/sim/TEAMS.md#packed-format)
