@@ -4,9 +4,11 @@
 
 `config/cobblemontrainerbattle/config.json`
 
-```
-"economy": "None"
-"enableTrainerSpawn": true
+```json
+{
+  "economy": "None"
+  "enableTrainerSpawn": true
+}
 ```
 
 ### Available `economy` Options
@@ -44,6 +46,7 @@ if `enableTrainerSpawn` is set to `true`, NPC trainers will spawn around players
 ## Battle Factory
 
 - Mini-game for players who wants to test their luck and skills
+- Players must defeat 21 trainers
 - Three random Pokemons are given to player
 - Player can trade Pokemons with trainers once obtained victory
 
@@ -63,6 +66,7 @@ if `enableTrainerSpawn` is set to `true`, NPC trainers will spawn around players
 - Random trainers spawn around players in radius of 20 blocks
 - Trainers disappear when defeated
 - Trainers will fight back when attacked
+- NPC trainers will be of Radical Red, Inclement Emerald and custom trainer you provided
 - Trainer Spawn Egg is available
 - `/summon cobblemontrainerbattle:trainer`
 
@@ -129,7 +133,7 @@ datapacks/
 
 ### Custom Groups
 
-```
+```json
 {
   "trainers": [
     "radicalred/leader_falkner.json",
