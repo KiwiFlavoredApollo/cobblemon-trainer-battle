@@ -20,8 +20,8 @@ import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactors.player.BattleFactoryPlayerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.BattleFactorySpecificTrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.commands.BattleFactoryCommand;
-import kiwiapollo.cobblemontrainerbattle.common.InvalidPlayerStateType;
-import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidPlayerStateException;
+import kiwiapollo.cobblemontrainerbattle.exceptions.*;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.PlayerValidator;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
 import kotlin.Unit;
 import net.minecraft.server.MinecraftServer;
@@ -31,8 +31,6 @@ import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 
-import java.time.Duration;
-import java.time.Instant;
 import java.util.*;
 
 public class BattleFactory {
@@ -42,7 +40,8 @@ public class BattleFactory {
 
     public static int startSession(CommandContext<ServerCommandSource> context) {
         try {
-            assertNotExistValidSession(context.getSource().getPlayer());
+            BattleFactorySessionValidator validator = new BattleFactorySessionValidator(context.getSource().getPlayer());
+            validator.assertNotExistValidSession();
 
             List<Trainer> trainersToDefeat = new ArrayList<>();
             for (int i = 0; i < 21; i++) {
@@ -59,23 +58,19 @@ public class BattleFactory {
 
             return Command.SINGLE_SUCCESS;
 
-        } catch (InvalidPlayerStateException e) {
-            if (!e.getInvalidPlayerStateType().equals(InvalidPlayerStateType.VALID_SESSION_EXIST)) {
-              throw new RuntimeException(e);
-            }
-
-            context.getSource().getPlayer().sendMessage(
-                    Text.translatable("command.cobblemontrainerbattle.battlefactory.common.valid_session_exist")
-                            .formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(e.getMessage());
+        } catch (ExistValidSessionException e) {
+            ServerPlayerEntity player = context.getSource().getPlayer();
+            MutableText message = Text.translatable("command.cobblemontrainerbattle.battlefactory.common.valid_session_exist");
+            player.sendMessage(message.formatted(Formatting.RED));
+            CobblemonTrainerBattle.LOGGER.error(String.format("Valid battle session exists: %s", player.getGameProfile().getName()));
             return 0;
         }
     }
 
     public static int stopSession(CommandContext<ServerCommandSource> context) {
         try {
-            assertExistValidSession(context.getSource().getPlayer());
-            assertNotPlayerBusyWithPokemonBattle(context.getSource().getPlayer());
+            new BattleFactorySessionValidator(context.getSource().getPlayer()).assertExistValidSession();
+            new PlayerValidator(context.getSource().getPlayer()).assertNotPlayerBusyWithPokemonBattle();
 
             onStopBattleFactorySession(context);
             BattleFactory.sessions.remove(context.getSource().getPlayer().getUuid());
@@ -87,34 +82,31 @@ public class BattleFactory {
 
             return Command.SINGLE_SUCCESS;
 
-        } catch (InvalidPlayerStateException e) {
-            if (!e.getInvalidPlayerStateType().equals(InvalidPlayerStateType.VALID_SESSION_EXIST)) {
-                throw new RuntimeException(e);
-            }
-
-            context.getSource().getPlayer().sendMessage(
-                    Text.translatable("command.cobblemontrainerbattle.battlefactory.common.valid_session_not_exist")
-                            .formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(e.getMessage());
+        } catch (NotExistValidSessionException e) {
+            ServerPlayerEntity player = context.getSource().getPlayer();
+            MutableText message = Text.translatable("command.cobblemontrainerbattle.battlefactory.common.valid_session_not_exist");
+            player.sendMessage(message.formatted(Formatting.RED));
+            CobblemonTrainerBattle.LOGGER.error(String.format("Valid battle session does not exist: %s", player.getGameProfile().getName()));
             return 0;
 
-        }
-    }
-
-    private static void onStopBattleFactorySession(CommandContext<ServerCommandSource> context) {
-        if (isDefeatedAllTrainers(context.getSource().getPlayer())) {
-            onVictoryBattleFactorySession(context);
-        } else {
-            onDefeatBattleFactorySession(context);
+        } catch (BusyPlayerException e) {
+            ServerPlayerEntity player = context.getSource().getPlayer();
+            MutableText message = Text.translatable("command.cobblemontrainerbattle.common.busy_with_pokemon_battle");
+            player.sendMessage(message.formatted(Formatting.RED));
+            CobblemonTrainerBattle.LOGGER.error(String.format("Player is busy with Pokemon battle: %s", player.getGameProfile().getName()));
+            return 0;
         }
     }
 
     public static int startBattle(CommandContext<ServerCommandSource> context) {
         try {
-            assertExistValidSession(context.getSource().getPlayer());
-            assertNotPlayerDefeated(context.getSource().getPlayer());
-            assertNotPlayerBusyWithPokemonBattle(context.getSource().getPlayer());
-            assertNotDefeatedAllTrainers(context.getSource().getPlayer());
+            BattleFactorySessionValidator sessionValidator = new BattleFactorySessionValidator(context.getSource().getPlayer());
+            sessionValidator.assertExistValidSession();
+            sessionValidator.assertNotDefeatedAllTrainers();
+            sessionValidator.assertNotPlayerDefeated();
+
+            PlayerValidator playerValidator = new PlayerValidator(context.getSource().getPlayer());
+            playerValidator.assertNotPlayerBusyWithPokemonBattle();
 
             BattleFactorySession session = sessions.get(context.getSource().getPlayer().getUuid());
             Trainer trainer = session.trainersToDefeat.get(session.defeatedTrainerCount);
@@ -138,30 +130,43 @@ public class BattleFactory {
 
             return Command.SINGLE_SUCCESS;
 
-        } catch (InvalidPlayerStateException e) {
-            Text message = switch (e.getInvalidPlayerStateType()) {
-                case VALID_SESSION_NOT_EXIST ->
-                        Text.translatable("command.cobblemontrainerbattle.battlefactory.common.valid_session_not_exist");
-                case DEFEATED_TO_TRAINER ->
-                        Text.translatable("command.cobblemontrainerbattle.battlefactory.startbattle.defeated_to_trainer");
-                case DEFEATED_ALL_TRAINERS ->
-                        Text.translatable("command.cobblemontrainerbattle.battlefactory.startbattle.defeated_all_trainers");
-                case BUSY_WITH_POKEMON_BATTLE ->
-                        Text.translatable("command.cobblemontrainerbattle.common.busy_with_pokemon_battle");
-                default -> throw new RuntimeException(e);
-            };
-            context.getSource().getPlayer().sendMessage(message.copy().formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(e.getMessage());
+        } catch (NotExistValidSessionException e) {
+            ServerPlayerEntity player = context.getSource().getPlayer();
+            MutableText message = Text.translatable("command.cobblemontrainerbattle.battlefactory.common.valid_session_not_exist");
+            player.sendMessage(message.formatted(Formatting.RED));
+            CobblemonTrainerBattle.LOGGER.error(String.format("Valid battle session does not exists: %s", player.getGameProfile().getName()));
+            return 0;
+
+        }  catch (DefeatedAllTrainersException e) {
+            ServerPlayerEntity player = context.getSource().getPlayer();
+            MutableText message = Text.translatable("command.cobblemontrainerbattle.battlefactory.startbattle.defeated_all_trainers");
+            player.sendMessage(message.formatted(Formatting.RED));
+            CobblemonTrainerBattle.LOGGER.error(String.format("Player has defeated all trainers: %s", player.getGameProfile().getName()));
+            return 0;
+
+        } catch (DefeatedToTrainerException e) {
+            ServerPlayerEntity player = context.getSource().getPlayer();
+            MutableText message = Text.translatable("command.cobblemontrainerbattle.battlefactory.startbattle.defeated_to_trainer");
+            player.sendMessage(message.formatted(Formatting.RED));
+            CobblemonTrainerBattle.LOGGER.error(String.format("Player is defeated: %s", player.getGameProfile().getName()));
+            return 0;
+
+        } catch (BusyPlayerException e) {
+            ServerPlayerEntity player = context.getSource().getPlayer();
+            MutableText message = Text.translatable("command.cobblemontrainerbattle.common.busy_with_pokemon_battle");
+            player.sendMessage(message.formatted(Formatting.RED));
+            CobblemonTrainerBattle.LOGGER.error(String.format("Player is busy with Pokemon battle: %s", player.getGameProfile().getName()));
             return 0;
         }
     }
 
     public static int tradePokemons(CommandContext<ServerCommandSource> context) {
         try {
-            assertExistValidSession(context.getSource().getPlayer());
-            assertNotPlayerDefeated(context.getSource().getPlayer());
-            assertExistDefeatedTrainer(context.getSource().getPlayer());
-            assertNotPlayerTradedPokemon(context.getSource().getPlayer());
+            BattleFactorySessionValidator sessionValidator = new BattleFactorySessionValidator(context.getSource().getPlayer());
+            sessionValidator.assertExistValidSession();
+            sessionValidator.assertNotPlayerDefeated();
+            sessionValidator.assertExistDefeatedTrainer();
+            sessionValidator.assertNotPlayerTradedPokemon();
 
             int playerslot = IntegerArgumentType.getInteger(context, "playerslot");
             int trainerslot = IntegerArgumentType.getInteger(context, "trainerslot");
@@ -183,28 +188,41 @@ public class BattleFactory {
 
             return Command.SINGLE_SUCCESS;
 
-        } catch (InvalidPlayerStateException e) {
-            Text message = switch (e.getInvalidPlayerStateType()) {
-                case VALID_SESSION_NOT_EXIST ->
-                        Text.translatable("command.cobblemontrainerbattle.battlefactory.common.valid_session_not_exist");
-                case DEFEATED_TO_TRAINER ->
-                        Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.defeated_to_trainer");
-                case DEFEATED_NO_TRAINER ->
-                        Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.defeated_trainer_not_exist");
-                case TRADED_POKEMON_WITH_TRAINER ->
-                        Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.already_traded_pokemon");
-                default -> throw new RuntimeException(e);
-            };
-            context.getSource().getPlayer().sendMessage(message.copy().formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(e.getMessage());
+        } catch (NotExistValidSessionException e) {
+            ServerPlayerEntity player = context.getSource().getPlayer();
+            MutableText message = Text.translatable("command.cobblemontrainerbattle.battlefactory.common.valid_session_not_exist");
+            player.sendMessage(message.formatted(Formatting.RED));
+            CobblemonTrainerBattle.LOGGER.error(String.format("Valid battle session does not exists: %s", player.getGameProfile().getName()));
+            return 0;
+
+        } catch (NotExistDefeatedTrainerException e) {
+            ServerPlayerEntity player = context.getSource().getPlayer();
+            MutableText message = Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.defeated_trainer_not_exist");
+            player.sendMessage(message.formatted(Formatting.RED));
+            CobblemonTrainerBattle.LOGGER.error(String.format("Player has no defeated trainers: %s", player.getGameProfile().getName()));
+            return 0;
+
+        } catch (DefeatedToTrainerException e) {
+            ServerPlayerEntity player = context.getSource().getPlayer();
+            MutableText message = Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.defeated_to_trainer");
+            player.sendMessage(message.formatted(Formatting.RED));
+            CobblemonTrainerBattle.LOGGER.error(String.format("Player is defeated: %s", player.getGameProfile().getName()));
+            return 0;
+
+        } catch (TradedPokemonException e) {
+            ServerPlayerEntity player = context.getSource().getPlayer();
+            MutableText message = Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.already_traded_pokemon");
+            player.sendMessage(message.formatted(Formatting.RED));
+            CobblemonTrainerBattle.LOGGER.error(String.format("Player has already traded a Pokemon: %s", player.getGameProfile().getName()));
             return 0;
         }
     }
 
     public static int showTradeablePokemon(CommandContext<ServerCommandSource> context) {
         try {
-            assertExistValidSession(context.getSource().getPlayer());
-            assertExistDefeatedTrainer(context.getSource().getPlayer());
+            BattleFactorySessionValidator sessionValidator = new BattleFactorySessionValidator(context.getSource().getPlayer());
+            sessionValidator.assertExistValidSession();
+            sessionValidator.assertExistDefeatedTrainer();
 
             BattleFactorySession session = sessions.get(context.getSource().getPlayer().getUuid());
             Trainer lastDefeatedTrainer = session.trainersToDefeat.get(session.defeatedTrainerCount - 1);
@@ -212,43 +230,42 @@ public class BattleFactory {
 
             return Command.SINGLE_SUCCESS;
 
-        } catch (InvalidPlayerStateException e) {
-            Text message = switch (e.getInvalidPlayerStateType()) {
-                case VALID_SESSION_NOT_EXIST ->
-                        Text.translatable("command.cobblemontrainerbattle.battlefactory.common.valid_session_not_exist");
-                case DEFEATED_NO_TRAINER ->
-                        Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.defeated_trainer_not_exist");
-                default -> throw new RuntimeException(e);
-            };
-            context.getSource().getPlayer().sendMessage(message.copy().formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(e.getMessage());
+        } catch (NotExistValidSessionException e) {
+            ServerPlayerEntity player = context.getSource().getPlayer();
+            MutableText message = Text.translatable("command.cobblemontrainerbattle.battlefactory.common.valid_session_not_exist");
+            player.sendMessage(message.formatted(Formatting.RED));
+            CobblemonTrainerBattle.LOGGER.error(String.format("Valid battle session does not exists: %s", player.getGameProfile().getName()));
+            return 0;
+
+        } catch (NotExistDefeatedTrainerException e) {
+            ServerPlayerEntity player = context.getSource().getPlayer();
+            MutableText message = Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.defeated_trainer_not_exist");
+            player.sendMessage(message.formatted(Formatting.RED));
+            CobblemonTrainerBattle.LOGGER.error(String.format("Player has no defeated trainers: %s", player.getGameProfile().getName()));
             return 0;
         }
     }
 
     public static int showPartyPokemon(CommandContext<ServerCommandSource> context) {
         try {
-            assertExistValidSession(context.getSource().getPlayer());
+            new BattleFactorySessionValidator(context.getSource().getPlayer()).assertExistValidSession();
             printPokemons(context, sessions.get(context.getSource().getPlayer().getUuid()).partyPokemons);
             return Command.SINGLE_SUCCESS;
 
-        } catch (InvalidPlayerStateException e) {
-            if (!e.getInvalidPlayerStateType().equals(InvalidPlayerStateType.VALID_SESSION_NOT_EXIST)) {
-                throw new RuntimeException(e);
-            }
-
-            context.getSource().getPlayer().sendMessage(
-                    Text.translatable("command.cobblemontrainerbattle.battlefactory.common.valid_session_not_exist")
-                            .formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(e.getMessage());
+        } catch (NotExistValidSessionException e) {
+            ServerPlayerEntity player = context.getSource().getPlayer();
+            MutableText message = Text.translatable("command.cobblemontrainerbattle.battlefactory.common.valid_session_not_exist");
+            player.sendMessage(message.formatted(Formatting.RED));
+            CobblemonTrainerBattle.LOGGER.error(String.format("Valid battle session does not exists: %s", player.getGameProfile().getName()));
             return 0;
         }
     }
 
     public static int rerollPokemon(CommandContext<ServerCommandSource> context) {
         try {
-            assertExistValidSession(context.getSource().getPlayer());
-            assertNotExistDefeatedTrainers(context.getSource().getPlayer());
+            BattleFactorySessionValidator sessionValidator = new BattleFactorySessionValidator(context.getSource().getPlayer());
+            sessionValidator.assertExistValidSession();
+            sessionValidator.assertNotExistDefeatedTrainer();
 
             BattleFactorySession session = sessions.get(context.getSource().getPlayer().getUuid());
 
@@ -263,24 +280,25 @@ public class BattleFactory {
 
             return Command.SINGLE_SUCCESS;
 
-        } catch (InvalidPlayerStateException e) {
-            Text message = switch (e.getInvalidPlayerStateType()) {
-                case VALID_SESSION_NOT_EXIST ->
-                        Text.translatable("command.cobblemontrainerbattle.battlefactory.common.valid_session_not_exist");
-                case DEFEATED_ANY_TRAINERS ->
-                        Text.translatable("command.cobblemontrainerbattle.battlefactory.rerollpokemon.defeated_trainer_exist");
-                default -> throw new RuntimeException(e);
-            };
+        } catch (NotExistValidSessionException e) {
+            ServerPlayerEntity player = context.getSource().getPlayer();
+            MutableText message = Text.translatable("command.cobblemontrainerbattle.battlefactory.common.valid_session_not_exist");
+            player.sendMessage(message.formatted(Formatting.RED));
+            CobblemonTrainerBattle.LOGGER.error(String.format("Valid battle session does not exists: %s", player.getGameProfile().getName()));
+            return 0;
 
-            context.getSource().getPlayer().sendMessage(message.copy().formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(e.getMessage());
+        }catch (ExistDefeatedTrainerException e) {
+            ServerPlayerEntity player = context.getSource().getPlayer();
+            MutableText message = Text.translatable("command.cobblemontrainerbattle.battlefactory.rerollpokemon.defeated_trainer_exist");
+            player.sendMessage(message.formatted(Formatting.RED));
+            CobblemonTrainerBattle.LOGGER.error(String.format("Player has defeated trainers: %s", player.getGameProfile().getName()));
             return 0;
         }
     }
 
     public static int showWinningStreak(CommandContext<ServerCommandSource> context) {
         try {
-            assertExistValidSession(context.getSource().getPlayer());
+            new BattleFactorySessionValidator(context.getSource().getPlayer()).assertExistValidSession();
 
             BattleFactorySession session = sessions.get(context.getSource().getPlayer().getUuid());
             context.getSource().getPlayer().sendMessage(
@@ -289,111 +307,13 @@ public class BattleFactory {
 
             return Command.SINGLE_SUCCESS;
 
-        } catch (InvalidPlayerStateException e) {
-            if (!e.getInvalidPlayerStateType().equals(InvalidPlayerStateType.VALID_SESSION_NOT_EXIST)) {
-                throw new RuntimeException(e);
-            }
-
-            context.getSource().getPlayer().sendMessage(
-                    Text.translatable("command.cobblemontrainerbattle.battlefactory.common.valid_session_not_exist")
-                            .formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(e.getMessage());
+        } catch (NotExistValidSessionException e) {
+            ServerPlayerEntity player = context.getSource().getPlayer();
+            MutableText message = Text.translatable("command.cobblemontrainerbattle.battlefactory.common.valid_session_not_exist");
+            player.sendMessage(message.formatted(Formatting.RED));
+            CobblemonTrainerBattle.LOGGER.error(String.format("Valid battle session does not exist: %s", player.getGameProfile().getName()));
             return 0;
         }
-    }
-
-    private static void assertNotPlayerDefeated(ServerPlayerEntity player)
-            throws InvalidPlayerStateException {
-        BattleFactorySession session = sessions.get(player.getUuid());
-        if (session.isDefeated) {
-            throw new InvalidPlayerStateException(
-                    String.format("Player is defeated: %s", player.getGameProfile().getName()),
-                    InvalidPlayerStateType.DEFEATED_TO_TRAINER
-            );
-        }
-    }
-
-    private static void assertNotDefeatedAllTrainers(ServerPlayerEntity player)
-            throws InvalidPlayerStateException {
-        if (isDefeatedAllTrainers(player)) {
-            throw new InvalidPlayerStateException(
-                    String.format("Player has defeated all trainers: %s", player.getGameProfile().getName()),
-                    InvalidPlayerStateType.DEFEATED_ALL_TRAINERS
-            );
-        }
-    }
-
-    private static boolean isDefeatedAllTrainers(ServerPlayerEntity player) {
-        try {
-            BattleFactorySession session = sessions.get(player.getUuid());
-            return session.defeatedTrainerCount == session.trainersToDefeat.size();
-
-        } catch (NullPointerException | ClassCastException | IllegalStateException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    private static void assertExistValidSession(ServerPlayerEntity player)
-            throws InvalidPlayerStateException {
-        if (!isExistValidSession(player)) {
-            throw new InvalidPlayerStateException(
-                    String.format("Valid battle session does not exists: %s", player.getGameProfile().getName()),
-                    InvalidPlayerStateType.VALID_SESSION_NOT_EXIST
-            );
-        }
-    }
-
-    private static void assertNotExistValidSession(ServerPlayerEntity player)
-            throws InvalidPlayerStateException {
-        if (isExistValidSession(player)) {
-            throw new InvalidPlayerStateException(
-                    String.format("Valid battle session exists: %s", player.getGameProfile().getName()),
-                    InvalidPlayerStateType.VALID_SESSION_EXIST
-            );
-        }
-    }
-
-    private static boolean isExistValidSession(ServerPlayerEntity player) {
-        if (!sessions.containsKey(player.getUuid())) {
-            return false;
-        }
-
-        BattleFactorySession session = sessions.get(player.getUuid());
-        return Instant.now().isBefore(session.timestamp.plus(Duration.ofHours(24)));
-    }
-
-    private static void assertNotPlayerTradedPokemon(ServerPlayerEntity player)
-            throws InvalidPlayerStateException {
-        if (sessions.get(player.getUuid()).isTradedPokemon) {
-            throw new InvalidPlayerStateException(
-                    String.format("Player has already traded a Pokemon: %s", player.getGameProfile().getName()),
-                    InvalidPlayerStateType.TRADED_POKEMON_WITH_TRAINER
-            );
-        }
-    }
-
-    private static void assertExistDefeatedTrainer(ServerPlayerEntity player)
-            throws InvalidPlayerStateException {
-        if (!isExistDefeatedTrainers(player)) {
-            throw new InvalidPlayerStateException(
-                    String.format("Player has no defeated trainers: %s", player.getGameProfile().getName()),
-                    InvalidPlayerStateType.DEFEATED_NO_TRAINER
-            );
-        }
-    }
-
-    private static void assertNotExistDefeatedTrainers(ServerPlayerEntity player)
-            throws InvalidPlayerStateException {
-        if (isExistDefeatedTrainers(player)) {
-            throw new InvalidPlayerStateException(
-                    String.format("Player has defeated trainers: %s", player.getGameProfile().getName()),
-                    InvalidPlayerStateType.DEFEATED_ANY_TRAINERS
-            );
-        }
-    }
-
-    private static boolean isExistDefeatedTrainers(ServerPlayerEntity player) {
-        return sessions.get(player.getUuid()).defeatedTrainerCount != 0;
     }
 
     private static void printPokemons(CommandContext<ServerCommandSource> context, List<Pokemon> pokemons) {
@@ -433,13 +353,11 @@ public class BattleFactory {
                 stats.get(Stats.SPECIAL_ATTACK), stats.get(Stats.SPECIAL_DEFENCE), stats.get(Stats.SPEED));
     }
 
-    private static void assertNotPlayerBusyWithPokemonBattle(ServerPlayerEntity player)
-            throws InvalidPlayerStateException {
-        if (Cobblemon.INSTANCE.getBattleRegistry().getBattleByParticipatingPlayer(player) != null) {
-            throw new InvalidPlayerStateException(
-                    String.format("Player is busy with Pokemon battle: %s", player.getGameProfile().getName()),
-                    InvalidPlayerStateType.BUSY_WITH_POKEMON_BATTLE
-            );
+    private static void onStopBattleFactorySession(CommandContext<ServerCommandSource> context) {
+        if (BattleFactorySessionValidator.isDefeatedAllTrainers(context.getSource().getPlayer())) {
+            onVictoryBattleFactorySession(context);
+        } else {
+            onDefeatBattleFactorySession(context);
         }
     }
 

@@ -11,8 +11,6 @@
 
   "command.cobblemontrainerbattle.common.resource.not_found": "Unable to find %s",
   "command.cobblemontrainerbattle.common.resource.cannot_be_read": "An error occurred while reading %s",
-  "command.cobblemontrainerbattle.groupbattle.resource.no_trainer": "No trainer found in %s",
-  "command.cobblemontrainerbattle.groupbattle.resource.trainers_not_found": "One or more trainers are not found in %s",
 
   "command.cobblemontrainerbattle.trainerbattle.success": "Battle has started against %s",
   "command.cobblemontrainerbattle.trainerbattleflat.success": "Flat level battle has started against %s",

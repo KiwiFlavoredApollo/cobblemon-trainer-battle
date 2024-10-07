@@ -2,17 +2,17 @@ package kiwiapollo.cobblemontrainerbattle.exceptions;
 
 import kiwiapollo.cobblemontrainerbattle.common.TrainerConditionType;
 
-public class TrainerConditionUnsatisfiedException extends Exception {
+public class UnsatisfiedTrainerConditionException extends Exception {
     private final TrainerConditionType trainerConditionType;
     private final Object requiredValue;
 
-    public TrainerConditionUnsatisfiedException(String message) {
+    public UnsatisfiedTrainerConditionException(String message) {
         super(message);
         trainerConditionType = null;
         requiredValue = null;
     }
 
-    public TrainerConditionUnsatisfiedException(String message, TrainerConditionType trainerConditionType, Object requiredValue) {
+    public UnsatisfiedTrainerConditionException(String message, TrainerConditionType trainerConditionType, Object requiredValue) {
         super(message);
         this.trainerConditionType = trainerConditionType;
         this.requiredValue = requiredValue;
