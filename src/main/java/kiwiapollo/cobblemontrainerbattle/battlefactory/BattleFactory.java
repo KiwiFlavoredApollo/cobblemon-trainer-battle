@@ -17,7 +17,7 @@ import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battleactors.player.BattleFactoryPlayerBattleActorFactory;
+import kiwiapollo.cobblemontrainerbattle.battleactors.player.PlayerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.VirtualTrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.commands.BattleFactoryCommand;
 import kiwiapollo.cobblemontrainerbattle.exceptions.*;
@@ -112,7 +112,7 @@ public class BattleFactory {
             Trainer trainer = session.trainersToDefeat.get(session.defeatedTrainerCount);
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
-                    new BattleSide(new BattleFactoryPlayerBattleActorFactory().create(context.getSource().getPlayer())),
+                    new BattleSide(new PlayerBattleActorFactory().createForBattleFactory(context.getSource().getPlayer())),
                     new BattleSide(new VirtualTrainerBattleActorFactory(context.getSource().getPlayer()).createWithFlatLevelFullHealth(trainer, LEVEL)),
                     false
             ).ifSuccessful(pokemonBattle -> {

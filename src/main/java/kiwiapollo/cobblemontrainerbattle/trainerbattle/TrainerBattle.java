@@ -9,8 +9,7 @@ import com.mojang.brigadier.Command;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battleactors.player.FlatLevelFullHealthPlayerBattleActorFactory;
-import kiwiapollo.cobblemontrainerbattle.battleactors.player.StatusQuoPlayerBattleActorFactory;
+import kiwiapollo.cobblemontrainerbattle.battleactors.player.PlayerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.VirtualTrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.commands.TrainerBattleCommand;
 import kiwiapollo.cobblemontrainerbattle.commands.TrainerBattleFlatCommand;
@@ -64,7 +63,7 @@ public class TrainerBattle {
 
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
-                    new BattleSide(new StatusQuoPlayerBattleActorFactory().create(player)),
+                    new BattleSide(new PlayerBattleActorFactory().createWithStatusQuo(player)),
                     new BattleSide(new VirtualTrainerBattleActorFactory(player).createWithStatusQuo(trainer)),
                     false
             ).ifSuccessful(pokemonBattle -> {
@@ -141,7 +140,7 @@ public class TrainerBattle {
 
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
-                    new BattleSide(new FlatLevelFullHealthPlayerBattleActorFactory().create(player, FLAT_LEVEL)),
+                    new BattleSide(new PlayerBattleActorFactory().createWithFlatLevelFullHealth(player, FLAT_LEVEL)),
                     new BattleSide(new VirtualTrainerBattleActorFactory(player).createWithFlatLevelFullHealth(trainer, FLAT_LEVEL)),
                     false
             ).ifSuccessful(pokemonBattle -> {

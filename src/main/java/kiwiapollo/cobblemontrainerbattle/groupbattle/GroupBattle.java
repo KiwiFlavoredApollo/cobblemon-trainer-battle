@@ -11,8 +11,7 @@ import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battleactors.player.FlatLevelFullHealthPlayerBattleActorFactory;
-import kiwiapollo.cobblemontrainerbattle.battleactors.player.StatusQuoPlayerBattleActorFactory;
+import kiwiapollo.cobblemontrainerbattle.battleactors.player.PlayerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.VirtualTrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.commands.GroupBattleCommand;
 import kiwiapollo.cobblemontrainerbattle.commands.GroupBattleFlatCommand;
@@ -122,7 +121,7 @@ public class GroupBattle {
 
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
-                    new BattleSide(new StatusQuoPlayerBattleActorFactory().create(context.getSource().getPlayer())),
+                    new BattleSide(new PlayerBattleActorFactory().createWithStatusQuo(context.getSource().getPlayer())),
                     new BattleSide(new VirtualTrainerBattleActorFactory(context.getSource().getPlayer()).createWithStatusQuo(trainer)),
                     false
 
@@ -208,7 +207,7 @@ public class GroupBattle {
 
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
-                    new BattleSide(new FlatLevelFullHealthPlayerBattleActorFactory().create(context.getSource().getPlayer(), FLAT_LEVEL)),
+                    new BattleSide(new PlayerBattleActorFactory().createWithFlatLevelFullHealth(context.getSource().getPlayer(), FLAT_LEVEL)),
                     new BattleSide(new VirtualTrainerBattleActorFactory(context.getSource().getPlayer()).createWithFlatLevelFullHealth(trainer, FLAT_LEVEL)),
                     false
 
