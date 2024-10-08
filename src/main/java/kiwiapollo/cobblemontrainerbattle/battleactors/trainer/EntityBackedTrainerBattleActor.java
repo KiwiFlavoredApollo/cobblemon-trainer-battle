@@ -6,6 +6,7 @@ import com.cobblemon.mod.common.api.battles.model.actor.EntityBackedBattleActor;
 import com.cobblemon.mod.common.api.battles.model.actor.FleeableBattleActor;
 import com.cobblemon.mod.common.api.battles.model.ai.BattleAI;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
+import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import kotlin.Pair;
 import net.minecraft.registry.RegistryKey;
@@ -21,7 +22,6 @@ import java.util.List;
 import java.util.UUID;
 
 public class EntityBackedTrainerBattleActor extends AIBattleActor implements EntityBackedBattleActor<TrainerEntity>, FleeableBattleActor {
-    private static final int FLEE_DISTANCE = 10;
     private final String trainerName;
     private final TrainerEntity trainerEntity;
 
@@ -61,7 +61,7 @@ public class EntityBackedTrainerBattleActor extends AIBattleActor implements Ent
 
     @Override
     public float getFleeDistance() {
-        return FLEE_DISTANCE;
+        return CobblemonTrainerBattle.FLEE_DISTANCE;
     }
 
     @Nullable

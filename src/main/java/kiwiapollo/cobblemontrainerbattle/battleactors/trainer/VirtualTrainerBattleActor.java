@@ -5,6 +5,7 @@ import com.cobblemon.mod.common.api.battles.model.actor.ActorType;
 import com.cobblemon.mod.common.api.battles.model.actor.FleeableBattleActor;
 import com.cobblemon.mod.common.api.battles.model.ai.BattleAI;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
+import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kotlin.Pair;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
@@ -18,7 +19,6 @@ import java.util.List;
 import java.util.UUID;
 
 public class VirtualTrainerBattleActor extends AIBattleActor implements FleeableBattleActor {
-    private static int FLEE_DISTANCE = 20;
     private final String trainerName;
     private final ServerWorld battleStartingWorld;
     private final Vec3d battleStartingPosition;
@@ -55,7 +55,7 @@ public class VirtualTrainerBattleActor extends AIBattleActor implements Fleeable
 
     @Override
     public float getFleeDistance() {
-        return FLEE_DISTANCE;
+        return CobblemonTrainerBattle.FLEE_DISTANCE;
     }
 
     @Nullable
