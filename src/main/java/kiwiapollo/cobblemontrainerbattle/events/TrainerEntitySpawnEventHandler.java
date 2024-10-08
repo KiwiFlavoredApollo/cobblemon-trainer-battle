@@ -8,7 +8,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Heightmap;
 
-public class TrainerSpawnEventHandler {
+public class TrainerEntitySpawnEventHandler {
     private static final int SPAWN_INTERVAL = 100;
     private static final int RADIUS = 20;
     private static final int MAXIMUM_TRAINER_COUNT = 1;

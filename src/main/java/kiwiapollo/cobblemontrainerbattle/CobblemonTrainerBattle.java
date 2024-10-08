@@ -71,10 +71,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		Registry.register(Registries.ITEM, new Identifier(NAMESPACE, "trainer_spawn_egg"), TRAINER_SPAWN_EGG);
-
-		ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(entries -> {
-			entries.add(TRAINER_SPAWN_EGG);
-		});
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(entries -> entries.add(TRAINER_SPAWN_EGG));
 
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
 			dispatcher.register(new TrainerBattleCommand());
@@ -151,14 +148,9 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
 		Registry.register(Registries.ENTITY_TYPE, Identifier.of(NAMESPACE, "trainer"), TRAINER_ENTITY_TYPE);
 		FabricDefaultAttributeRegistry.register(TRAINER_ENTITY_TYPE, TrainerEntity.createMobAttributes());
-		ServerTickEvents.END_WORLD_TICK.register(TrainerSpawnEventHandler::onEndWorldTick);
+		ServerTickEvents.END_WORLD_TICK.register(TrainerEntitySpawnEventHandler::onEndWorldTick);
+		ServerEntityEvents.ENTITY_LOAD.register(TrainerEntitySynchronizeEventHandler::onEntityLoad);
 
 		ServerTickEvents.END_WORLD_TICK.register(TrainerBattleFledEventHandler::onEndWorldTick);
-
-		ServerEntityEvents.ENTITY_LOAD.register((entity, world) -> {
-			if (entity instanceof TrainerEntity) {
-				((TrainerEntity) entity).synchronizeClient(world);
-			}
-		});
 	}
 }
