@@ -59,7 +59,7 @@ public class TrainerEntity extends PathAwareEntity {
         buf.writeIdentifier(this.texture);
 
         for (ServerPlayerEntity player : ((ServerWorld) world).getPlayers()) {
-            ServerPlayNetworking.send(player, TrainerEntityPackets.TRAINER_SYNC, buf);
+            ServerPlayNetworking.send(player, TrainerEntityPackets.TRAINER_ENTITY_SYNC, buf);
         }
     }
 

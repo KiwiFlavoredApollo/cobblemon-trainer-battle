@@ -15,7 +15,7 @@ public class CobblemonTrainerBattleClient implements ClientModInitializer {
 	public void onInitializeClient() {
 		EntityRendererRegistry.register(CobblemonTrainerBattle.TRAINER_ENTITY_TYPE, TrainerEntityRenderer::new);
 
-		ClientPlayNetworking.registerGlobalReceiver(TrainerEntityPackets.TRAINER_SYNC, (client, handler, buf, responseSender) -> {
+		ClientPlayNetworking.registerGlobalReceiver(TrainerEntityPackets.TRAINER_ENTITY_SYNC, (client, handler, buf, responseSender) -> {
 			int entityId = buf.readInt();
 			String trainerResourcePath = buf.readString();
 			Identifier texture = buf.readIdentifier();

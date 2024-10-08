@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.UUID;
 
 public class TrainerBattleActor extends AIBattleActor implements FleeableBattleActor {
-    private static int FLEE_DISTANCE = 10;
+    private static int FLEE_DISTANCE = 20;
     private final String trainerName;
     private final ServerWorld battleStartingWorld;
     private final Vec3d battleStartingPosition;
