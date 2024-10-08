@@ -36,18 +36,23 @@ import java.util.*;
 import java.util.stream.StreamSupport;
 
 public class TrainerEntity extends PathAwareEntity {
-    private static final List<Identifier> TEXTURES = List.of(
-            Identifier.of(CobblemonTrainerBattle.NAMESPACE, "textures/entity/trainer/slim/red_piikapiika.png"),
-            Identifier.of(CobblemonTrainerBattle.NAMESPACE, "textures/entity/trainer/slim/green_piikapiika.png"),
-            Identifier.of(CobblemonTrainerBattle.NAMESPACE, "textures/entity/trainer/slim/leaf_piikapiika.png"),
-            Identifier.of(CobblemonTrainerBattle.NAMESPACE, "textures/entity/trainer/slim/alola_leaf_piikapiika.png"),
-            Identifier.of(CobblemonTrainerBattle.NAMESPACE, "textures/entity/trainer/slim/silver_piikapiika.png"),
-            Identifier.of(CobblemonTrainerBattle.NAMESPACE, "textures/entity/trainer/slim/black_hilbert_piikapiika.png"),
-            Identifier.of(CobblemonTrainerBattle.NAMESPACE, "textures/entity/trainer/slim/white_hilda_piikapiika.png"),
-            Identifier.of(CobblemonTrainerBattle.NAMESPACE, "textures/entity/trainer/slim/blacksmith_roxie_idkgraceorsmth.png"),
-            Identifier.of(CobblemonTrainerBattle.NAMESPACE, "textures/entity/trainer/slim/cherry_blossom_garden_selene_idkgraceorsmth.png"),
-            Identifier.of(CobblemonTrainerBattle.NAMESPACE, "textures/entity/trainer/slim/diner_waitress_mia_idkgraceorsmth.png")
+    private static final String TEXTURE_PARENTS = "textures/entity/trainer/slim/";
+    private static final List<String> TEXTURE_FILES = List.of(
+            "red_piikapiika.png",
+            "green_piikapiika.png",
+            "leaf_piikapiika.png",
+            "alola_leaf_piikapiika.png",
+            "silver_piikapiika.png",
+            "black_hilbert_piikapiika.png",
+            "white_hilda_piikapiika.png",
+
+            "blacksmith_roxie_idkgraceorsmth.png",
+            "cherry_blossom_garden_selene_idkgraceorsmth.png",
+            "diner_waitress_mia_idkgraceorsmth.png"
     );
+    private static final List<Identifier> TEXTURES = TEXTURE_FILES.stream()
+            .map(file -> TEXTURE_PARENTS + file)
+            .map(path -> Identifier.of(CobblemonTrainerBattle.NAMESPACE, path)).toList();
 
     private Identifier trainer;
     private Identifier texture;

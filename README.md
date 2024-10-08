@@ -197,8 +197,22 @@ datapacks/
 - While it's not strictly formatted like the Smogon team JSON format, it can be used for adding custom trainers 
 - `.minecraft/cobblemontrainerbattle/exports/<player>_<timestamp>.json`
 
-## TODOs
+## Credits
+- [piikapiika](https://www.minecraftskins.com/profile/5894998/piikapiika)
+  - White (Hilda) | Pokemon
+  - Black (Hilbert) | Pokemon
+  - Alola Leaf | Pokemon
+  - Leaf | Pokemon
+  - Silver | Pokemon
+  - Red - Pokemon
+  - Blue/Ookido Green | Pokemon
 
+- [idkgraceorsmth](https://www.minecraftskins.com/profile/8183289/idkgraceorsmth)
+  - Diner Waitress - Mia
+  - Cherry Blossom Garden - Selene
+  - Blacksmith - Roxie
+
+## TODOs
 - [ ] Fix bug SimpleTM TM/TR drop
 - [ ] Add feature defining Battle Frontier trainer sequence by data pack
 - [ ] When on Battle Frontier battle, player Pokemons are slightly damaged
