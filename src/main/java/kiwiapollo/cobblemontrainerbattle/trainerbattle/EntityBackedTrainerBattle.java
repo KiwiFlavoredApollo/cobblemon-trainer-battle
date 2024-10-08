@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.entities;
+package kiwiapollo.cobblemontrainerbattle.trainerbattle;
 
 import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
@@ -12,6 +12,7 @@ import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.EntityBackedTraine
 import kiwiapollo.cobblemontrainerbattle.commands.TrainerBattleCommand;
 import kiwiapollo.cobblemontrainerbattle.commands.TrainerBattleFlatCommand;
 import kiwiapollo.cobblemontrainerbattle.common.UnsatisfiedTrainerConditionExceptionMessageFactory;
+import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.exceptions.*;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.PlayerValidator;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;

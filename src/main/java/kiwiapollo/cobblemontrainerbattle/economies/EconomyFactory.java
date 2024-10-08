@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.common;
+package kiwiapollo.cobblemontrainerbattle.economies;
 
 
 import kiwiapollo.cobblemontrainerbattle.economies.Economy;

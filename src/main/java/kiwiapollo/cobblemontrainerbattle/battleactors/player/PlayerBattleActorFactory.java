@@ -8,7 +8,7 @@ import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactory;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactorySession;
-import kiwiapollo.cobblemontrainerbattle.common.SafeCopyBattlePokemonFactory;
+import kiwiapollo.cobblemontrainerbattle.battleactors.SafeCopyBattlePokemonFactory;
 import net.minecraft.server.network.ServerPlayerEntity;
 
 import java.util.List;

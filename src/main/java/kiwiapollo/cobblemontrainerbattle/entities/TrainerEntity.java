@@ -5,6 +5,7 @@ import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.EntityBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.exceptions.BusyWithPokemonBattleException;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.EntityBackedTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.SpecificTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;

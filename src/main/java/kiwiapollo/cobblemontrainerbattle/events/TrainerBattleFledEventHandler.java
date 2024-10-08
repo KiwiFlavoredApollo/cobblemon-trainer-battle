@@ -4,7 +4,7 @@ import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.api.battles.model.actor.FleeableBattleActor;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactory;
-import kiwiapollo.cobblemontrainerbattle.entities.EntityBackedTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.EntityBackedTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import net.minecraft.server.network.ServerPlayerEntity;

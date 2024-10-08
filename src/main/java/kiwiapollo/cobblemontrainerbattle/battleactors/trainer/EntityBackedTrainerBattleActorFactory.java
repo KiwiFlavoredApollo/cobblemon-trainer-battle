@@ -4,7 +4,7 @@ import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.common.Generation5AI;
-import kiwiapollo.cobblemontrainerbattle.common.SafeCopyBattlePokemonFactory;
+import kiwiapollo.cobblemontrainerbattle.battleactors.SafeCopyBattlePokemonFactory;
 import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
 

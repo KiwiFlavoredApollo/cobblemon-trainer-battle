@@ -4,7 +4,7 @@ import com.mojang.brigadier.Command;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.common.ConfigLoader;
-import kiwiapollo.cobblemontrainerbattle.common.EconomyFactory;
+import kiwiapollo.cobblemontrainerbattle.economies.EconomyFactory;
 import net.minecraft.server.command.ServerCommandSource;
 
 public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSource> {

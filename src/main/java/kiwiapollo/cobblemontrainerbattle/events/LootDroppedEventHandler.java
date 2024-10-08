@@ -5,13 +5,9 @@ import com.cobblemon.mod.common.api.events.drops.LootDroppedEvent;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactory;
-import kiwiapollo.cobblemontrainerbattle.entities.EntityBackedTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.EntityBackedTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
-import net.minecraft.server.network.ServerPlayerEntity;
-
-import java.util.List;
-import java.util.UUID;
 
 public class LootDroppedEventHandler {
     public void onLootDropped(LootDroppedEvent lootDroppedEvent) {
