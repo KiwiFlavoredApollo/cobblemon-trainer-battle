@@ -9,7 +9,6 @@ import com.mojang.brigadier.Command;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactors.player.FlatLevelFullHealthPlayerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactors.player.StatusQuoPlayerBattleActorFactory;
-import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.EntityBackedFlatLevelFullHealthTrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.EntityBackedTrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.commands.TrainerBattleCommand;
 import kiwiapollo.cobblemontrainerbattle.commands.TrainerBattleFlatCommand;
@@ -43,7 +42,7 @@ public class EntityBackedTrainerBattle {
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
                     new BattleSide(new StatusQuoPlayerBattleActorFactory().create(player)),
-                    new BattleSide(new EntityBackedTrainerBattleActorFactory().create(trainer, trainerEntity)),
+                    new BattleSide(new EntityBackedTrainerBattleActorFactory(trainerEntity).createWithStatusQuo(trainer)),
                     false
             ).ifSuccessful(pokemonBattle -> {
                 trainerBattles.put(player.getUuid(), pokemonBattle);
@@ -99,7 +98,7 @@ public class EntityBackedTrainerBattle {
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
                     new BattleSide(new FlatLevelFullHealthPlayerBattleActorFactory().create(player, FLAT_LEVEL)),
-                    new BattleSide(new EntityBackedFlatLevelFullHealthTrainerBattleActorFactory().create(trainer, FLAT_LEVEL, trainerEntity)),
+                    new BattleSide(new EntityBackedTrainerBattleActorFactory(trainerEntity).createWithFlatLevelFullHealth(trainer, FLAT_LEVEL)),
                     false
             ).ifSuccessful(pokemonBattle -> {
                 trainerBattles.put(player.getUuid(), pokemonBattle);

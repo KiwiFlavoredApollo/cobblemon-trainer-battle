@@ -11,11 +11,11 @@ import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactors.player.FlatLevelFullHealthPlayerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactors.player.StatusQuoPlayerBattleActorFactory;
-import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.FlatLevelFullHealthTrainerBattleActorFactory;
-import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.TrainerBattleActorFactory;
+import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.VirtualTrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.commands.TrainerBattleCommand;
 import kiwiapollo.cobblemontrainerbattle.commands.TrainerBattleFlatCommand;
-import kiwiapollo.cobblemontrainerbattle.common.*;
+import kiwiapollo.cobblemontrainerbattle.common.ResourceValidator;
+import kiwiapollo.cobblemontrainerbattle.common.UnsatisfiedTrainerConditionExceptionMessageFactory;
 import kiwiapollo.cobblemontrainerbattle.exceptions.*;
 import kotlin.Unit;
 import net.minecraft.server.command.ServerCommandSource;
@@ -65,7 +65,7 @@ public class TrainerBattle {
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
                     new BattleSide(new StatusQuoPlayerBattleActorFactory().create(player)),
-                    new BattleSide(new TrainerBattleActorFactory().create(trainer, player)),
+                    new BattleSide(new VirtualTrainerBattleActorFactory(player).createWithStatusQuo(trainer)),
                     false
             ).ifSuccessful(pokemonBattle -> {
                 trainerBattles.put(player.getUuid(), pokemonBattle);
@@ -142,7 +142,7 @@ public class TrainerBattle {
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
                     new BattleSide(new FlatLevelFullHealthPlayerBattleActorFactory().create(player, FLAT_LEVEL)),
-                    new BattleSide(new FlatLevelFullHealthTrainerBattleActorFactory().create(trainer, player, FLAT_LEVEL)),
+                    new BattleSide(new VirtualTrainerBattleActorFactory(player).createWithFlatLevelFullHealth(trainer, FLAT_LEVEL)),
                     false
             ).ifSuccessful(pokemonBattle -> {
                 trainerBattles.put(player.getUuid(), pokemonBattle);

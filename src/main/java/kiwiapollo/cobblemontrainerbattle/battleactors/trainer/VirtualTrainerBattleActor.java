@@ -17,13 +17,13 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.UUID;
 
-public class TrainerBattleActor extends AIBattleActor implements FleeableBattleActor {
+public class VirtualTrainerBattleActor extends AIBattleActor implements FleeableBattleActor {
     private static int FLEE_DISTANCE = 20;
     private final String trainerName;
     private final ServerWorld battleStartingWorld;
     private final Vec3d battleStartingPosition;
 
-    public TrainerBattleActor(
+    public VirtualTrainerBattleActor(
             String trainerName,
             @NotNull UUID gameId,
             @NotNull List<? extends BattlePokemon> pokemonList,

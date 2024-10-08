@@ -5,17 +5,17 @@ import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.common.Generation5AI;
 import kiwiapollo.cobblemontrainerbattle.common.SafeCopyBattlePokemonFactory;
-import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
+import net.minecraft.server.network.ServerPlayerEntity;
 
 import java.util.List;
 import java.util.UUID;
 
-public class EntityBackedTrainerBattleActorFactory implements TrainerBattleActorFactory {
-    private final TrainerEntity trainerEntity;
+public class VirtualTrainerBattleActorFactory implements TrainerBattleActorFactory {
+    private final ServerPlayerEntity player;
 
-    public EntityBackedTrainerBattleActorFactory(TrainerEntity trainerEntity) {
-        this.trainerEntity = trainerEntity;
+    public VirtualTrainerBattleActorFactory(ServerPlayerEntity player) {
+        this.player = player;
     }
 
     @Override
@@ -23,12 +23,12 @@ public class EntityBackedTrainerBattleActorFactory implements TrainerBattleActor
         List<BattlePokemon> pokemons = trainer.pokemons.stream()
                 .map(SafeCopyBattlePokemonFactory::create).toList();
 
-        return new EntityBackedTrainerBattleActor(
+        return new VirtualTrainerBattleActor(
                 trainer.name,
                 UUID.randomUUID(),
                 pokemons,
                 new Generation5AI(),
-                trainerEntity
+                player
         );
     }
 
@@ -40,12 +40,12 @@ public class EntityBackedTrainerBattleActorFactory implements TrainerBattleActor
         List<BattlePokemon> pokemons = trainer.pokemons.stream()
                 .map(SafeCopyBattlePokemonFactory::create).toList();
 
-        return new EntityBackedTrainerBattleActor(
+        return new VirtualTrainerBattleActor(
                 trainer.name,
                 UUID.randomUUID(),
                 pokemons,
                 new Generation5AI(),
-                trainerEntity
+                player
         );
     }
 }
