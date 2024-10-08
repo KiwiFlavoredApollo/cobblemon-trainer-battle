@@ -8,7 +8,7 @@ import net.minecraft.util.Identifier;
 
 public class TrainerEntityRenderer extends MobEntityRenderer<TrainerEntity, PlayerEntityModel<TrainerEntity>> {
     public TrainerEntityRenderer(EntityRendererFactory.Context context) {
-        super(context, new PlayerEntityModel<>(context.getPart(EntityModelLayers.PLAYER), false), 0.5f);
+        super(context, new PlayerEntityModel<>(context.getPart(EntityModelLayers.PLAYER_SLIM), false), 0.5f);
     }
 
     @Override

@@ -6,8 +6,6 @@ import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactor.EntityBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.*;
-import kiwiapollo.cobblemontrainerbattle.common.PlayerValidator;
-import kiwiapollo.cobblemontrainerbattle.exception.EmptyPlayerPartyException;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.SafetyCheckedTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.common.TrainerProfile;
@@ -39,9 +37,16 @@ import java.util.stream.StreamSupport;
 
 public class TrainerEntity extends PathAwareEntity {
     private static final List<Identifier> TEXTURES = List.of(
-            Identifier.of("minecraft", "textures/entity/player/wide/steve.png"),
-            Identifier.of("minecraft", "textures/entity/player/wide/alex.png"),
-            Identifier.of("minecraft", "textures/entity/player/wide/zuri.png")
+            Identifier.of(CobblemonTrainerBattle.NAMESPACE, "textures/entity/trainer/slim/red_piikapiika.png"),
+            Identifier.of(CobblemonTrainerBattle.NAMESPACE, "textures/entity/trainer/slim/green_piikapiika.png"),
+            Identifier.of(CobblemonTrainerBattle.NAMESPACE, "textures/entity/trainer/slim/leaf_piikapiika.png"),
+            Identifier.of(CobblemonTrainerBattle.NAMESPACE, "textures/entity/trainer/slim/alola_leaf_piikapiika.png"),
+            Identifier.of(CobblemonTrainerBattle.NAMESPACE, "textures/entity/trainer/slim/silver_piikapiika.png"),
+            Identifier.of(CobblemonTrainerBattle.NAMESPACE, "textures/entity/trainer/slim/black_hilbert_piikapiika.png"),
+            Identifier.of(CobblemonTrainerBattle.NAMESPACE, "textures/entity/trainer/slim/white_hilda_piikapiika.png"),
+            Identifier.of(CobblemonTrainerBattle.NAMESPACE, "textures/entity/trainer/slim/blacksmith_roxie_idkgraceorsmth.png"),
+            Identifier.of(CobblemonTrainerBattle.NAMESPACE, "textures/entity/trainer/slim/cherry_blossom_garden_selene_idkgraceorsmth.png"),
+            Identifier.of(CobblemonTrainerBattle.NAMESPACE, "textures/entity/trainer/slim/diner_waitress_mia_idkgraceorsmth.png")
     );
 
     private Identifier trainer;
