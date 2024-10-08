@@ -1,8 +1,14 @@
 package kiwiapollo.cobblemontrainerbattle;
 
+import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.Priority;
+import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
+import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
+import com.cobblemon.mod.common.api.battles.model.actor.FleeableBattleActor;
 import com.cobblemon.mod.common.api.events.CobblemonEvents;
 import com.google.gson.JsonObject;
+import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.EntityBackedTrainerBattleActor;
+import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.TrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactory;
 import kiwiapollo.cobblemontrainerbattle.commands.*;
 import kiwiapollo.cobblemontrainerbattle.common.Config;
@@ -28,6 +34,7 @@ import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRe
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.SpawnEggItem;
@@ -36,12 +43,14 @@ import net.minecraft.registry.Registry;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.Vec3d;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+import java.util.stream.StreamSupport;
 
 public class CobblemonTrainerBattle implements ModInitializer {
 	public static final String NAMESPACE = "cobblemontrainerbattle";
@@ -151,5 +160,71 @@ public class CobblemonTrainerBattle implements ModInitializer {
 		Registry.register(Registries.ENTITY_TYPE, Identifier.of(NAMESPACE, "trainer"), TRAINER_ENTITY_TYPE);
 		FabricDefaultAttributeRegistry.register(TRAINER_ENTITY_TYPE, TrainerEntity.createMobAttributes());
 		ServerTickEvents.END_WORLD_TICK.register(TrainerSpawnEventHandler::onEndWorldTick);
+
+		ServerTickEvents.END_WORLD_TICK.register(world -> {
+			world.getPlayers().forEach(player -> {
+				if (GroupBattle.trainerBattles.containsKey(player.getUuid())) {
+					PokemonBattle trainerBattle = GroupBattle.trainerBattles.get(player.getUuid());
+					BattleActor trainerBattleActor = StreamSupport.stream(trainerBattle.getActors().spliterator(), false)
+							.filter(battleActor -> battleActor instanceof FleeableBattleActor).findFirst().get();
+
+					Vec3d playerPos = player.getPos();
+					Vec3d trainerPos = ((FleeableBattleActor) trainerBattleActor).getWorldAndPosition().getSecond();
+
+					if (playerPos.distanceTo(trainerPos) > ((FleeableBattleActor) trainerBattleActor).getFleeDistance()) {
+						trainerBattle.end();
+						GroupBattle.trainerBattles.remove(player.getUuid());
+					}
+				}
+
+				if (BattleFactory.trainerBattles.containsKey(player.getUuid())) {
+					if (BattleFactory.trainerBattles.containsKey(player.getUuid())) {
+						PokemonBattle trainerBattle = BattleFactory.trainerBattles.get(player.getUuid());
+						BattleActor trainerBattleActor = StreamSupport.stream(trainerBattle.getActors().spliterator(), false)
+								.filter(battleActor -> battleActor instanceof FleeableBattleActor).findFirst().get();
+
+						Vec3d playerPos = player.getPos();
+						Vec3d trainerPos = ((FleeableBattleActor) trainerBattleActor).getWorldAndPosition().getSecond();
+
+						if (playerPos.distanceTo(trainerPos) > ((FleeableBattleActor) trainerBattleActor).getFleeDistance()) {
+							trainerBattle.end();
+							BattleFactory.trainerBattles.remove(player.getUuid());
+						}
+					}
+				}
+
+				if (EntityBackedTrainerBattle.trainerBattles.containsKey(player.getUuid())) {
+					if (EntityBackedTrainerBattle.trainerBattles.containsKey(player.getUuid())) {
+						PokemonBattle trainerBattle = EntityBackedTrainerBattle.trainerBattles.get(player.getUuid());
+						BattleActor trainerBattleActor = StreamSupport.stream(trainerBattle.getActors().spliterator(), false)
+								.filter(battleActor -> battleActor instanceof FleeableBattleActor).findFirst().get();
+
+						Vec3d playerPos = player.getPos();
+						Vec3d trainerPos = ((FleeableBattleActor) trainerBattleActor).getWorldAndPosition().getSecond();
+
+						if (playerPos.distanceTo(trainerPos) > ((FleeableBattleActor) trainerBattleActor).getFleeDistance()) {
+							trainerBattle.end();
+							EntityBackedTrainerBattle.trainerBattles.remove(player.getUuid());
+						}
+					}
+				}
+
+				if (TrainerBattle.trainerBattles.containsKey(player.getUuid())) {
+					if (TrainerBattle.trainerBattles.containsKey(player.getUuid())) {
+						PokemonBattle trainerBattle = TrainerBattle.trainerBattles.get(player.getUuid());
+						BattleActor trainerBattleActor = StreamSupport.stream(trainerBattle.getActors().spliterator(), false)
+								.filter(battleActor -> battleActor instanceof FleeableBattleActor).findFirst().get();
+
+						Vec3d playerPos = player.getPos();
+						Vec3d trainerPos = ((FleeableBattleActor) trainerBattleActor).getWorldAndPosition().getSecond();
+
+						if (playerPos.distanceTo(trainerPos) > ((FleeableBattleActor) trainerBattleActor).getFleeDistance()) {
+							trainerBattle.end();
+							TrainerBattle.trainerBattles.remove(player.getUuid());
+						}
+					}
+				}
+			});
+		});
 	}
 }

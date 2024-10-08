@@ -18,7 +18,7 @@ import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactors.player.BattleFactoryPlayerBattleActorFactory;
-import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.BattleFactorySpecificTrainerBattleActorFactory;
+import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.BattleFactoryTrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.commands.BattleFactoryCommand;
 import kiwiapollo.cobblemontrainerbattle.exceptions.*;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.PlayerValidator;
@@ -113,7 +113,7 @@ public class BattleFactory {
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
                     new BattleSide(new BattleFactoryPlayerBattleActorFactory().create(context.getSource().getPlayer())),
-                    new BattleSide(new BattleFactorySpecificTrainerBattleActorFactory().create(trainer)),
+                    new BattleSide(new BattleFactoryTrainerBattleActorFactory().create(trainer, context.getSource().getPlayer())),
                     false
             ).ifSuccessful(pokemonBattle -> {
                 UUID playerUuid = context.getSource().getPlayer().getUuid();

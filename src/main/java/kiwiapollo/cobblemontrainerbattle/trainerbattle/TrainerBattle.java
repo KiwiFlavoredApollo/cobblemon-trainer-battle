@@ -65,7 +65,7 @@ public class TrainerBattle {
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
                     new BattleSide(new StatusQuoPlayerBattleActorFactory().create(player)),
-                    new BattleSide(new TrainerBattleActorFactory().create(trainer)),
+                    new BattleSide(new TrainerBattleActorFactory().create(trainer, player)),
                     false
             ).ifSuccessful(pokemonBattle -> {
                 trainerBattles.put(player.getUuid(), pokemonBattle);
@@ -142,7 +142,7 @@ public class TrainerBattle {
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
                     new BattleSide(new FlatLevelFullHealthPlayerBattleActorFactory().create(player, FLAT_LEVEL)),
-                    new BattleSide(new FlatLevelFullHealthTrainerBattleActorFactory().create(trainer, FLAT_LEVEL)),
+                    new BattleSide(new FlatLevelFullHealthTrainerBattleActorFactory().create(trainer, player, FLAT_LEVEL)),
                     false
             ).ifSuccessful(pokemonBattle -> {
                 trainerBattles.put(player.getUuid(), pokemonBattle);

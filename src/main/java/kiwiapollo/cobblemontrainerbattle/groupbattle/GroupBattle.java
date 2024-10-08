@@ -124,7 +124,7 @@ public class GroupBattle {
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
                     new BattleSide(new StatusQuoPlayerBattleActorFactory().create(context.getSource().getPlayer())),
-                    new BattleSide(new TrainerBattleActorFactory().create(trainer)),
+                    new BattleSide(new TrainerBattleActorFactory().create(trainer, context.getSource().getPlayer())),
                     false
 
             ).ifSuccessful(pokemonBattle -> {
@@ -210,7 +210,7 @@ public class GroupBattle {
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
                     new BattleSide(new FlatLevelFullHealthPlayerBattleActorFactory().create(context.getSource().getPlayer(), FLAT_LEVEL)),
-                    new BattleSide(new FlatLevelFullHealthTrainerBattleActorFactory().create(trainer, FLAT_LEVEL)),
+                    new BattleSide(new FlatLevelFullHealthTrainerBattleActorFactory().create(trainer, context.getSource().getPlayer(), FLAT_LEVEL)),
                     false
 
             ).ifSuccessful(pokemonBattle -> {

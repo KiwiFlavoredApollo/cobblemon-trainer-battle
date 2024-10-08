@@ -2,43 +2,37 @@ package kiwiapollo.cobblemontrainerbattle.battleactors.trainer;
 
 import com.cobblemon.mod.common.api.battles.model.actor.AIBattleActor;
 import com.cobblemon.mod.common.api.battles.model.actor.ActorType;
-import com.cobblemon.mod.common.api.battles.model.actor.EntityBackedBattleActor;
 import com.cobblemon.mod.common.api.battles.model.actor.FleeableBattleActor;
 import com.cobblemon.mod.common.api.battles.model.ai.BattleAI;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
-import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import kotlin.Pair;
-import net.minecraft.registry.RegistryKey;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.UUID;
 
-public class EntityBackedTrainerBattleActor extends AIBattleActor implements EntityBackedBattleActor<TrainerEntity>, FleeableBattleActor {
-    private static final int FLEE_DISTANCE = 10;
+public class TrainerBattleActor extends AIBattleActor implements FleeableBattleActor {
+    private static int FLEE_DISTANCE = 10;
     private final String trainerName;
-    private final TrainerEntity trainerEntity;
+    private final ServerWorld battleStartingWorld;
+    private final Vec3d battleStartingPosition;
 
-    public EntityBackedTrainerBattleActor(
+    public TrainerBattleActor(
             String trainerName,
-            UUID uuid,
-            List<BattlePokemon> pokemonList,
-            BattleAI artificialDecider,
-            TrainerEntity trainerEntity) {
-        super(uuid, pokemonList, artificialDecider);
+            @NotNull UUID gameId,
+            @NotNull List<? extends BattlePokemon> pokemonList,
+            @NotNull BattleAI battleAI,
+            ServerPlayerEntity opposingPlayer) {
+        super(gameId, pokemonList, battleAI);
         this.trainerName = trainerName;
-        this.trainerEntity = trainerEntity;
-    }
-
-    @Override
-    public TrainerEntity getEntity() {
-        return this.trainerEntity;
+        this.battleStartingWorld = opposingPlayer.getServerWorld();
+        this.battleStartingPosition = opposingPlayer.getPos();
     }
 
     @NotNull
@@ -67,7 +61,6 @@ public class EntityBackedTrainerBattleActor extends AIBattleActor implements Ent
     @Nullable
     @Override
     public Pair<ServerWorld, Vec3d> getWorldAndPosition() {
-        RegistryKey<World> entityWorldRegistryKey = trainerEntity.getEntityWorld().getRegistryKey();
-        return new Pair<>(trainerEntity.getServer().getWorld(entityWorldRegistryKey), trainerEntity.getPos());
+        return new Pair<>(battleStartingWorld, battleStartingPosition);
     }
 }
