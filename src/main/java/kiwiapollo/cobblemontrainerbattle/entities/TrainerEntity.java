@@ -7,6 +7,8 @@ import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.EntityBackedTraine
 import kiwiapollo.cobblemontrainerbattle.exceptions.BusyWithPokemonBattleException;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.SpecificTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
+import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.*;
@@ -15,7 +17,9 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.PacketByteBuf;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -32,14 +36,31 @@ public class TrainerEntity extends PathAwareEntity {
             Identifier.of("minecraft", "textures/entity/player/wide/zuri.png")
     );
 
-    private final String trainerResourcePath;
-    private final Identifier texture;
+    private String trainerResourcePath;
+    private Identifier texture;
 
     public TrainerEntity(EntityType<? extends PathAwareEntity> entityType, World world) {
         super(entityType, world);
 
         this.trainerResourcePath = getRandomTrainerResourcePath();
         this.texture = getRandomTexture();
+
+        syncClient(world);
+    }
+
+    private void syncClient(World world) {
+        if (world.isClient()) {
+            return;
+        }
+
+        PacketByteBuf buf = PacketByteBufs.create();
+        buf.writeInt(this.getId());
+        buf.writeString(this.trainerResourcePath);
+        buf.writeIdentifier(this.texture);
+
+        for (ServerPlayerEntity player : ((ServerWorld) world).getPlayers()) {
+            ServerPlayNetworking.send(player, TrainerEntityPackets.TRAINER_SYNC, buf);
+        }
     }
 
     private String getRandomTrainerResourcePath() {
@@ -156,5 +177,13 @@ public class TrainerEntity extends PathAwareEntity {
         } catch (NoSuchElementException e) {
             super.onDeath(damageSource);
         }
+    }
+
+    public void setTrainerResourcePath(String trainerResourcePath) {
+        this.trainerResourcePath = trainerResourcePath;
+    }
+
+    public void setTexture(Identifier texture) {
+        this.texture = texture;
     }
 }
