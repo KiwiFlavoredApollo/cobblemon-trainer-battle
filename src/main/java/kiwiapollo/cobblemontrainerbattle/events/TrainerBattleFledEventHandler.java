@@ -21,6 +21,7 @@ public class TrainerBattleFledEventHandler {
                     && isFledBattle(GroupBattle.trainerBattles.get(player.getUuid()), player)) {
                 GroupBattle.trainerBattles.get(player.getUuid()).end();
                 GroupBattle.trainerBattles.remove(player.getUuid());
+                GroupBattle.sessions.get(player.getUuid()).isDefeated = true;
 
                 CobblemonTrainerBattle.LOGGER.info(String.format("Battle was fled: %s", player.getGameProfile().getName()));
             }
@@ -29,6 +30,7 @@ public class TrainerBattleFledEventHandler {
                     && isFledBattle(BattleFactory.trainerBattles.get(player.getUuid()), player)) {
                 BattleFactory.trainerBattles.get(player.getUuid()).end();
                 BattleFactory.trainerBattles.remove(player.getUuid());
+                BattleFactory.sessions.get(player.getUuid()).isDefeated = true;
 
                 CobblemonTrainerBattle.LOGGER.info(String.format("Battle was fled: %s", player.getGameProfile().getName()));
             }

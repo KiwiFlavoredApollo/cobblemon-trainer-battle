@@ -26,7 +26,10 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.stream.StreamSupport;
 
 public class TrainerEntity extends PathAwareEntity {
@@ -44,30 +47,29 @@ public class TrainerEntity extends PathAwareEntity {
 
         this.trainerResourcePath = getRandomTrainerResourcePath();
         this.texture = getRandomTexture();
-
-        syncClient(world);
     }
 
-    private void syncClient(World world) {
-        if (world.isClient()) {
-            return;
-        }
-
+    public void synchronizeClient(ServerWorld world) {
         PacketByteBuf buf = PacketByteBufs.create();
         buf.writeInt(this.getId());
         buf.writeString(this.trainerResourcePath);
         buf.writeIdentifier(this.texture);
 
-        for (ServerPlayerEntity player : ((ServerWorld) world).getPlayers()) {
+        for (ServerPlayerEntity player : world.getPlayers()) {
             ServerPlayNetworking.send(player, TrainerEntityPackets.TRAINER_ENTITY_SYNC, buf);
         }
     }
 
     private String getRandomTrainerResourcePath() {
-        List<String> trainerFilePaths = new ArrayList<>(
-                CobblemonTrainerBattle.trainerFiles.keySet().stream().toList());
-        Collections.shuffle(trainerFilePaths);
-        return trainerFilePaths.get(0);
+        try {
+            List<String> trainerFilePaths = new ArrayList<>(
+                    CobblemonTrainerBattle.trainerFiles.keySet().stream().toList());
+            Collections.shuffle(trainerFilePaths);
+            return trainerFilePaths.get(0);
+
+        } catch (IndexOutOfBoundsException e) {
+            return "";
+        }
     }
 
     private Identifier getRandomTexture() {
