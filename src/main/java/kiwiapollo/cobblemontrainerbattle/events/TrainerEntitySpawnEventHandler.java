@@ -3,29 +3,28 @@ package kiwiapollo.cobblemontrainerbattle.events;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.exceptions.TrainerSpawnException;
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.Heightmap;
 
 public class TrainerEntitySpawnEventHandler {
     private static final int SPAWN_INTERVAL = 100;
-    private static final int RADIUS = 20;
-    private static final int MAXIMUM_TRAINER_COUNT = 1;
-    private static int tickCounter = 0;
+    private static final int MAXIMUM_RADIUS = 30;
+    private static final int MINIMUM_RADIUS = 5;
+    private static final int MAXIMUM_TRAINER_COUNT = 2;
 
     public static void onEndWorldTick(ServerWorld world) {
         if (!CobblemonTrainerBattle.config.enableTrainerSpawn) {
             return;
         }
 
-        tickCounter++;
-
-        if (tickCounter >= SPAWN_INTERVAL) {
+        if (world.getServer().getTicks() % SPAWN_INTERVAL == 0) {
             for (PlayerEntity player : world.getPlayers()) {
                 spawnTrainersAroundPlayer(world, player);
             }
-            tickCounter = 0;
         }
     }
 
@@ -33,12 +32,12 @@ public class TrainerEntitySpawnEventHandler {
         try {
             assertBelowMaximumTrainerCount(world, player);
 
-            BlockPos spawnPos = getSafeSpawnPosition(world, player);
+            BlockPos spawnPos = getRandomSpawnPosition(world, player);
             TrainerEntity trainerEntity = new TrainerEntity(CobblemonTrainerBattle.TRAINER_ENTITY_TYPE, world);
             trainerEntity.refreshPositionAndAngles(spawnPos, player.getYaw(), player.getPitch());
             world.spawnEntity(trainerEntity);
 
-            CobblemonTrainerBattle.LOGGER.info("Spawned trainer");
+            CobblemonTrainerBattle.LOGGER.info(String.format("Spawned trainer on %s %s", world.getRegistryKey().getValue(), spawnPos.toString()));
 
         } catch (TrainerSpawnException ignored) {
 
@@ -47,18 +46,30 @@ public class TrainerEntitySpawnEventHandler {
 
     private static void assertBelowMaximumTrainerCount(ServerWorld world, PlayerEntity player) throws TrainerSpawnException {
         int trainerCount = world.getEntitiesByType(CobblemonTrainerBattle.TRAINER_ENTITY_TYPE,
-                player.getBoundingBox().expand(RADIUS), entity -> true).size();
-        if (trainerCount > MAXIMUM_TRAINER_COUNT) {
+                player.getBoundingBox().expand(MAXIMUM_RADIUS), entity -> true).size();
+        if (trainerCount >= MAXIMUM_TRAINER_COUNT) {
             throw new TrainerSpawnException();
         }
     }
 
-    private static BlockPos getSafeSpawnPosition(ServerWorld world, PlayerEntity player) {
+    private static BlockPos getRandomSpawnPosition(ServerWorld world, PlayerEntity player) throws TrainerSpawnException {
         BlockPos playerPos = player.getBlockPos();
+        final int MAXIMUM_RETRIES = 50;
 
-        int xOffset = (int) (Math.random() * RADIUS * 2) - RADIUS;
-        int zOffset = (int) (Math.random() * RADIUS * 2) - RADIUS;
+        for (int i = 0; i < MAXIMUM_RETRIES; i++) {
+            int xOffset = Random.create().nextBetween(MINIMUM_RADIUS, MAXIMUM_RADIUS) * Random.create().nextBetween(-1, 1);
+            int zOffset = Random.create().nextBetween(MINIMUM_RADIUS, MAXIMUM_RADIUS) * Random.create().nextBetween(-1, 1);
+            int yOffset = Random.create().nextBetween(-1 * MAXIMUM_RADIUS, MAXIMUM_RADIUS);
 
-        return world.getTopPosition(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, playerPos.add(xOffset, 0, zOffset));
+            BlockPos spawnPos = playerPos.add(xOffset, yOffset, zOffset);
+            boolean isSolidGround = world.getBlockState(spawnPos.down()).isSolidBlock(world, spawnPos.down());
+            boolean isEmptySpace = world.getBlockState(spawnPos).isAir();
+
+            if (isSolidGround && isEmptySpace) {
+                return spawnPos;
+            }
+        }
+
+        throw new TrainerSpawnException();
     }
 }
