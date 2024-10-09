@@ -1,0 +1,109 @@
+[
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Lum Berry",
+        "ability": "Sand Stream",
+        "evs": {
+            "hp": 248,
+            "atk": 64,
+            "spd": 184,
+            "spe": 12
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Crunch",
+            "Pursuit",
+            "Stealth Rock",
+            "Superpower"
+        ]
+    },
+    {
+        "species": "Arceus-Grass",
+        "item": "Meadow Plate",
+        "ability": "Multitype",
+        "evs": {
+            "hp": 248,
+            "def": 4,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Ice Beam",
+            "Judgment",
+            "Recover",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Excadrill",
+        "gender": "M",
+        "item": "Air Balloon",
+        "ability": "Sand Rush",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Iron Head",
+            "Rapid Spin",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Genesect",
+        "item": "Choice Scarf",
+        "ability": "Download",
+        "evs": {
+            "atk": 248,
+            "spa": 8,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Explosion",
+            "Ice Beam",
+            "Iron Head",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Ho-Oh",
+        "item": "Leftovers",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 208,
+            "atk": 176,
+            "spd": 28,
+            "spe": 96
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Brave Bird",
+            "Roost",
+            "Sacred Fire",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Palkia",
+        "item": "Lustrous Orb",
+        "ability": "Pressure",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Dragon Tail",
+            "Fire Blast",
+            "Hydro Pump",
+            "Spacial Rend"
+        ]
+    }
+]

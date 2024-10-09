@@ -1,0 +1,108 @@
+[
+    {
+        "species": "Aerodactyl",
+        "gender": "M",
+        "item": "Focus Sash",
+        "ability": "Unnerve",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Rock Tomb",
+            "Stealth Rock",
+            "Tailwind",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Calyrex-Shadow",
+        "item": "Focus Sash",
+        "ability": "As One (Spectrier)",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Astral Barrage",
+            "Draining Kiss",
+            "Encore",
+            "Nasty Plot"
+        ]
+    },
+    {
+        "species": "Eternatus",
+        "item": "Power Herb",
+        "ability": "Pressure",
+        "evs": {
+            "hp": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Dynamax Cannon",
+            "Flamethrower",
+            "Meteor Beam",
+            "Sludge Bomb"
+        ]
+    },
+    {
+        "species": "Necrozma-Dusk-Mane",
+        "item": "Lum Berry",
+        "ability": "Prism Armor",
+        "evs": {
+            "hp": 80,
+            "atk": 252,
+            "spe": 176
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Dragon Dance",
+            "Knock Off",
+            "Stone Edge",
+            "Sunsteel Strike"
+        ]
+    },
+    {
+        "species": "Yveltal",
+        "item": "Life Orb",
+        "ability": "Dark Aura",
+        "evs": {
+            "atk": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Hasty",
+        "moves": [
+            "Dark Pulse",
+            "Oblivion Wing",
+            "Sucker Punch",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Zekrom",
+        "item": "Life Orb",
+        "ability": "Teravolt",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Bolt Strike",
+            "Draco Meteor",
+            "Dragon Claw",
+            "Dragon Dance"
+        ]
+    }
+]

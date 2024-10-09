@@ -1,0 +1,122 @@
+[
+    {
+        "species": "Ninetales",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Drought",
+        "evs": {
+            "hp": 252,
+            "def": 120,
+            "spe": 136
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Flamethrower",
+            "Protect",
+            "Roar",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Infernape",
+        "gender": "M",
+        "item": "Focus Sash",
+        "ability": "Blaze",
+        "evs": {
+            "atk": 252,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Hasty",
+        "moves": [
+            "Close Combat",
+            "Overheat",
+            "Stealth Rock",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Latios",
+        "item": "Choice Scarf",
+        "ability": "Levitate",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Draco Meteor",
+            "Dragon Pulse",
+            "Surf",
+            "Trick"
+        ]
+    },
+    {
+        "species": "Malaconda",
+        "gender": "M",
+        "item": "Lum Berry",
+        "ability": "Harvest",
+        "evs": {
+            "hp": 112,
+            "atk": 60,
+            "spd": 212,
+            "spe": 124
+        },
+        "nature": "Careful",
+        "moves": [
+            "Power Whip",
+            "Pursuit",
+            "Rest",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Stratagem",
+        "item": "Expert Belt",
+        "ability": "Levitate",
+        "evs": {
+            "def": 36,
+            "spa": 220,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "def": 30
+        },
+        "moves": [
+            "Earth Power",
+            "Flamethrower",
+            "Giga Drain",
+            "Hidden Power Ice"
+        ]
+    },
+    {
+        "species": "Tomohawk",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 252,
+            "def": 156,
+            "spe": 100
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Aura Sphere",
+            "Heat Wave",
+            "Rapid Spin",
+            "Roost"
+        ]
+    }
+]

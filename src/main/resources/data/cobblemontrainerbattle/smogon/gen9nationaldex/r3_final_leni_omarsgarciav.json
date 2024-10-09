@@ -1,0 +1,126 @@
+[
+    {
+        "species": "Urshifu-Rapid-Strike",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Unseen Fist",
+        "teraType": "Water",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Ice Spinner",
+            "Surging Strikes",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Darkrai",
+        "item": "Choice Specs",
+        "ability": "Bad Dreams",
+        "teraType": "Poison",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Dark Pulse",
+            "Focus Blast",
+            "Sludge Bomb",
+            "Trick"
+        ]
+    },
+    {
+        "species": "Diancie",
+        "item": "Diancite",
+        "ability": "Clear Body",
+        "teraType": "Rock",
+        "evs": {
+            "atk": 28,
+            "spa": 228,
+            "spe": 252
+        },
+        "nature": "Hasty",
+        "moves": [
+            "Diamond Storm",
+            "Moonblast",
+            "Mystical Fire",
+            "Spikes"
+        ]
+    },
+    {
+        "species": "Landorus-Therian",
+        "item": "Rocky Helmet",
+        "ability": "Intimidate",
+        "teraType": "Dragon",
+        "evs": {
+            "hp": 248,
+            "def": 136,
+            "spd": 28,
+            "spe": 96
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Stealth Rock",
+            "Toxic",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Serperior",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Contrary",
+        "hpType": "Fire",
+        "teraType": "Steel",
+        "evs": {
+            "hp": 56,
+            "spa": 200,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Glare",
+            "Hidden Power Fire",
+            "Leaf Storm",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Slowking-Galar",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Regenerator",
+        "teraType": "Steel",
+        "evs": {
+            "hp": 252,
+            "def": 8,
+            "spa": 20,
+            "spd": 228
+        },
+        "nature": "Sassy",
+        "ivs": {
+            "atk": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Chilly Reception",
+            "Future Sight",
+            "Sludge Bomb",
+            "Thunder Wave"
+        ]
+    }
+]

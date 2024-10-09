@@ -1,0 +1,117 @@
+[
+    {
+        "species": "Ninetales-Alola",
+        "gender": "M",
+        "item": "Light Clay",
+        "ability": "Snow Warning",
+        "evs": {
+            "hp": 248,
+            "def": 8,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Aurora Veil",
+            "Encore",
+            "Freeze-Dry",
+            "Hypnosis"
+        ]
+    },
+    {
+        "species": "Cloyster",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Skill Link",
+        "evs": {
+            "atk": 252,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Naughty",
+        "moves": [
+            "Hydro Pump",
+            "Icicle Spear",
+            "Rock Blast",
+            "Shell Smash"
+        ]
+    },
+    {
+        "species": "Dragapult",
+        "gender": "M",
+        "item": "Weakness Policy",
+        "ability": "Clear Body",
+        "evs": {
+            "atk": 252,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Lonely",
+        "moves": [
+            "Dragon Dance",
+            "Dragon Darts",
+            "Flamethrower",
+            "Phantom Force"
+        ]
+    },
+    {
+        "species": "Garchomp",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Rough Skin",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Aqua Tail",
+            "Earthquake",
+            "Scale Shot",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Heatran",
+        "gender": "M",
+        "item": "Air Balloon",
+        "ability": "Flame Body",
+        "evs": {
+            "spa": 248,
+            "spd": 8,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earth Power",
+            "Magma Storm",
+            "Stealth Rock",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Scizor",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Technician",
+        "evs": {
+            "hp": 100,
+            "atk": 252,
+            "def": 4,
+            "spe": 152
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bullet Punch",
+            "Knock Off",
+            "Roost",
+            "Swords Dance"
+        ]
+    }
+]

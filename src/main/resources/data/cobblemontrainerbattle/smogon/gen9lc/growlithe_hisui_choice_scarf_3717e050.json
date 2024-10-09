@@ -1,0 +1,125 @@
+[
+    {
+        "species": "Growlithe-Hisui",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Rock Head",
+        "level": 5,
+        "teraType": "Fire",
+        "evs": {
+            "hp": 36,
+            "atk": 236,
+            "spe": 236
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Flare Blitz",
+            "Head Smash",
+            "Psychic Fangs",
+            "Rock Blast"
+        ]
+    },
+    {
+        "species": "Mienfoo",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Regenerator",
+        "level": 5,
+        "teraType": "Dragon",
+        "evs": {
+            "def": 196,
+            "spd": 36,
+            "spe": 236
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Fake Out",
+            "High Jump Kick",
+            "Knock Off",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Mudbray",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Stamina",
+        "level": 5,
+        "teraType": "Steel",
+        "evs": {
+            "hp": 116,
+            "atk": 116,
+            "def": 196,
+            "spd": 76
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Heavy Slam",
+            "Roar",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Stunky",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Aftermath",
+        "level": 5,
+        "teraType": "Dark",
+        "evs": {
+            "hp": 12,
+            "atk": 252,
+            "spe": 244
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Gunk Shot",
+            "Knock Off",
+            "Sucker Punch",
+            "Temper Flare"
+        ]
+    },
+    {
+        "species": "Voltorb-Hisui",
+        "item": "Eviolite",
+        "ability": "Static",
+        "level": 5,
+        "teraType": "Fire",
+        "evs": {
+            "hp": 36,
+            "def": 36,
+            "spa": 236,
+            "spe": 196
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Giga Drain",
+            "Protect",
+            "Tera Blast",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Vullaby",
+        "item": "Eviolite",
+        "ability": "Weak Armor",
+        "level": 5,
+        "teraType": "Electric",
+        "evs": {
+            "atk": 236,
+            "def": 76,
+            "spe": 196
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Brave Bird",
+            "Knock Off",
+            "Roost",
+            "Taunt"
+        ]
+    }
+]

@@ -1,0 +1,66 @@
+[
+    {
+        "species": "Electabuzz",
+        "gender": "M",
+        "moves": [
+            "Psychic",
+            "Pursuit",
+            "Thief",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Blastoise",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Rapid Spin",
+            "Rest",
+            "Sleep Talk",
+            "Surf"
+        ]
+    },
+    {
+        "species": "Chansey",
+        "item": "Leftovers",
+        "moves": [
+            "Heal Bell",
+            "Present",
+            "Soft-Boiled",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Crobat",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Haze",
+            "Protect",
+            "Toxic",
+            "Wing Attack"
+        ]
+    },
+    {
+        "species": "Hypno",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Body Slam",
+            "Curse",
+            "Psychic",
+            "Rest"
+        ]
+    },
+    {
+        "species": "Shuckle",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Defense Curl",
+            "Flash",
+            "Rest",
+            "Toxic"
+        ]
+    }
+]

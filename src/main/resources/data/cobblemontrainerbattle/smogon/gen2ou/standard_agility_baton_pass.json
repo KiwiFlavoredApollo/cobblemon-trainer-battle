@@ -1,0 +1,85 @@
+[
+    {
+        "species": "Smeargle",
+        "gender": "M",
+        "item": "Miracle Berry",
+        "moves": [
+            "Agility",
+            "Baton Pass",
+            "Spikes",
+            "Spore"
+        ]
+    },
+    {
+        "species": "Jolteon",
+        "gender": "M",
+        "item": "Leftovers",
+        "ivs": {
+            "hp": 15,
+            "atk": 29,
+            "def": 27
+        },
+        "moves": [
+            "Agility",
+            "Baton Pass",
+            "Hidden Power Water",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Machamp",
+        "gender": "M",
+        "item": "Miracle Berry",
+        "ivs": {
+            "atk": 27,
+            "def": 27
+        },
+        "moves": [
+            "Cross Chop",
+            "Hidden Power Bug",
+            "Meditate",
+            "Rock Slide"
+        ]
+    },
+    {
+        "species": "Marowak",
+        "gender": "M",
+        "item": "Thick Club",
+        "ivs": {
+            "atk": 27,
+            "def": 27
+        },
+        "moves": [
+            "Earthquake",
+            "Fire Blast",
+            "Hidden Power Bug",
+            "Rock Slide"
+        ]
+    },
+    {
+        "species": "Scizor",
+        "gender": "M",
+        "item": "Miracle Berry",
+        "ivs": {
+            "atk": 27,
+            "def": 27
+        },
+        "moves": [
+            "Agility",
+            "Baton Pass",
+            "Hidden Power Bug",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Snorlax",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Belly Drum",
+            "Double-Edge",
+            "Earthquake",
+            "Protect"
+        ]
+    }
+]

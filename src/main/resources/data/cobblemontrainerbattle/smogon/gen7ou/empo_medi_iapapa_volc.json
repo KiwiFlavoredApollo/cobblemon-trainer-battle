@@ -1,0 +1,118 @@
+[
+    {
+        "species": "Medicham",
+        "gender": "M",
+        "item": "Medichamite",
+        "ability": "Pure Power",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Fake Out",
+            "High Jump Kick",
+            "Ice Punch",
+            "Zen Headbutt"
+        ]
+    },
+    {
+        "species": "Kartana",
+        "item": "Choice Scarf",
+        "ability": "Beast Boost",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Knock Off",
+            "Leaf Blade",
+            "Sacred Sword",
+            "Smart Strike"
+        ]
+    },
+    {
+        "species": "Landorus-Therian",
+        "item": "Flyinium Z",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 248,
+            "atk": 112,
+            "spe": 148
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Fly",
+            "Stealth Rock",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Magearna",
+        "item": "Assault Vest",
+        "ability": "Soul-Heart",
+        "evs": {
+            "hp": 248,
+            "def": 28,
+            "spd": 232
+        },
+        "nature": "Sassy",
+        "ivs": {
+            "atk": 0,
+            "spe": 18
+        },
+        "moves": [
+            "Fleur Cannon",
+            "Hidden Power Fire",
+            "Ice Beam",
+            "Volt Switch"
+        ],
+        "hpType": "Fire"
+    },
+    {
+        "species": "Rotom-Wash",
+        "item": "Iapapa Berry",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Hydro Pump",
+            "Volt Switch",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Volcarona",
+        "gender": "F",
+        "item": "Iapapa Berry",
+        "ability": "Flame Body",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Bug Buzz",
+            "Fire Blast",
+            "Hidden Power Ground",
+            "Quiver Dance"
+        ],
+        "hpType": "Ground"
+    }
+]

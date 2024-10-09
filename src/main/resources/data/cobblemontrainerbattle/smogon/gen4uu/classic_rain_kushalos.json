@@ -1,0 +1,118 @@
+[
+    {
+        "species": "Uxie",
+        "item": "Damp Rock",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Bold",
+        "moves": [
+            "Psychic",
+            "Rain Dance",
+            "Stealth Rock",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Dugtrio",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Arena Trap",
+        "evs": {
+            "hp": 12,
+            "atk": 244,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Stone Edge",
+            "Sucker Punch",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Kabutops",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Swift Swim",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "ivs": {
+            "hp": 29
+        },
+        "moves": [
+            "Aqua Jet",
+            "Stone Edge",
+            "Swords Dance",
+            "Waterfall"
+        ]
+    },
+    {
+        "species": "Ludicolo",
+        "gender": "F",
+        "item": "Life Orb",
+        "ability": "Swift Swim",
+        "evs": {
+            "hp": 32,
+            "spa": 248,
+            "spe": 228
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 2,
+            "spe": 30
+        },
+        "moves": [
+            "Energy Ball",
+            "Hidden Power Psychic",
+            "Hydro Pump",
+            "Rain Dance"
+        ]
+    },
+    {
+        "species": "Registeel",
+        "item": "Leftovers",
+        "ability": "Clear Body",
+        "evs": {
+            "hp": 252,
+            "atk": 4,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "moves": [
+            "Curse",
+            "Iron Head",
+            "Rest",
+            "Sleep Talk"
+        ]
+    },
+    {
+        "species": "Toxicroak",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Dry Skin",
+        "evs": {
+            "hp": 8,
+            "spa": 248,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Focus Blast",
+            "Nasty Plot",
+            "Sludge Bomb",
+            "Vacuum Wave"
+        ]
+    }
+]

@@ -1,0 +1,128 @@
+[
+    {
+        "species": "Salamence",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Intimidate",
+        "evs": {
+            "atk": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "ivs": {
+            "def": 30,
+            "spa": 30
+        },
+        "moves": [
+            "Brick Break",
+            "Dragon Claw",
+            "Fire Blast",
+            "Hidden Power Grass"
+        ]
+    },
+    {
+        "species": "Metagross",
+        "item": "Leftovers",
+        "ability": "Clear Body",
+        "evs": {
+            "atk": 36,
+            "spa": 252,
+            "spe": 220
+        },
+        "nature": "Rash",
+        "ivs": {
+            "def": 30,
+            "spa": 30,
+            "spe": 30
+        },
+        "moves": [
+            "Explosion",
+            "Hidden Power Fire",
+            "Meteor Mash",
+            "Psychic"
+        ]
+    },
+    {
+        "species": "Snorlax",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Immunity",
+        "evs": {
+            "hp": 16,
+            "atk": 176,
+            "def": 120,
+            "spd": 160,
+            "spe": 36
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Body Slam",
+            "Focus Punch",
+            "Self-Destruct",
+            "Shadow Ball"
+        ]
+    },
+    {
+        "species": "Swampert",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Torrent",
+        "evs": {
+            "atk": 28,
+            "spa": 252,
+            "spe": 228
+        },
+        "nature": "Rash",
+        "moves": [
+            "Earthquake",
+            "Focus Punch",
+            "Hydro Pump",
+            "Ice Beam"
+        ]
+    },
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Lum Berry",
+        "ability": "Sand Stream",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Dragon Dance",
+            "Earthquake",
+            "Hidden Power Bug",
+            "Rock Slide"
+        ],
+        "ivs": {
+            "atk": 30,
+            "def": 30,
+            "spd": 30
+        }
+    },
+    {
+        "species": "Zapdos",
+        "item": "Leftovers",
+        "ability": "Pressure",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "def": 30
+        },
+        "moves": [
+            "Hidden Power Ice",
+            "Roar",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    }
+]

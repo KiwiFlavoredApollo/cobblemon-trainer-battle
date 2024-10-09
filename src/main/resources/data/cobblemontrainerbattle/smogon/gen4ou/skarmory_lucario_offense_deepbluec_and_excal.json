@@ -1,0 +1,115 @@
+[
+    {
+        "species": "Skarmory",
+        "gender": "M",
+        "item": "Lum Berry",
+        "ability": "Keen Eye",
+        "evs": {
+            "hp": 248,
+            "atk": 48,
+            "def": 20,
+            "spd": 8,
+            "spe": 184
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Drill Peck",
+            "Spikes",
+            "Stealth Rock",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Flygon",
+        "gender": "M",
+        "item": "Expert Belt",
+        "ability": "Levitate",
+        "evs": {
+            "atk": 64,
+            "spa": 192,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Draco Meteor",
+            "Earthquake",
+            "Fire Blast",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Gyarados",
+        "gender": "M",
+        "item": "Lum Berry",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 40,
+            "atk": 252,
+            "spe": 216
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Dragon Dance",
+            "Earthquake",
+            "Ice Fang",
+            "Waterfall"
+        ]
+    },
+    {
+        "species": "Lucario",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Inner Focus",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bullet Punch",
+            "Close Combat",
+            "Extreme Speed",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Rotom-Heat",
+        "item": "Choice Scarf",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Overheat",
+            "Shadow Ball",
+            "Thunderbolt",
+            "Trick"
+        ]
+    },
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sand Stream",
+        "evs": {
+            "hp": 252,
+            "atk": 172,
+            "spa": 72,
+            "spe": 12
+        },
+        "nature": "Lonely",
+        "moves": [
+            "Crunch",
+            "Focus Punch",
+            "Ice Beam",
+            "Substitute"
+        ]
+    }
+]

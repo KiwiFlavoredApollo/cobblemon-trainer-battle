@@ -1,0 +1,124 @@
+[
+    {
+        "species": "Suicune",
+        "item": "Leftovers",
+        "ability": "Pressure",
+        "evs": {
+            "hp": 252,
+            "spd": 16,
+            "spe": 240
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Protect",
+            "Scald",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Greninja",
+        "gender": "M",
+        "item": "Groundium Z",
+        "ability": "Protean",
+        "evs": {
+            "atk": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Dig",
+            "Extrasensory",
+            "Hidden Power Electric",
+            "Ice Beam"
+        ],
+        "ivs": {
+            "spa": 30
+        },
+        "hpType": "Electric"
+    },
+    {
+        "species": "Keldeo",
+        "item": "Choice Scarf",
+        "ability": "Justified",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hydro Pump",
+            "Icy Wind",
+            "Scald",
+            "Secret Sword"
+        ]
+    },
+    {
+        "species": "Mantine",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Water Absorb",
+        "evs": {
+            "hp": 252,
+            "def": 160,
+            "spe": 96
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Haze",
+            "Roost",
+            "Scald"
+        ]
+    },
+    {
+        "species": "Swampert",
+        "gender": "M",
+        "item": "Swampertite",
+        "ability": "Torrent",
+        "evs": {
+            "hp": 252,
+            "atk": 4,
+            "def": 252
+        },
+        "nature": "Relaxed",
+        "moves": [
+            "Earthquake",
+            "Roar",
+            "Scald",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Toxapex",
+        "gender": "M",
+        "item": "Black Sludge",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 252,
+            "def": 232,
+            "spd": 24
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Recover",
+            "Scald",
+            "Sludge Bomb",
+            "Toxic Spikes"
+        ]
+    }
+]

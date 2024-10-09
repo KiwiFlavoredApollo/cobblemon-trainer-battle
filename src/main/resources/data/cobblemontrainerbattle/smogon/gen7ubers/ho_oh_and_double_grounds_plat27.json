@@ -1,0 +1,108 @@
+[
+    {
+        "species": "Ho-Oh",
+        "item": "Choice Band",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Brave Bird",
+            "Defog",
+            "Sacred Fire",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Arceus-Ground",
+        "item": "Earth Plate",
+        "ability": "Multitype",
+        "evs": {
+            "hp": 252,
+            "def": 40,
+            "spd": 24,
+            "spe": 192
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Ice Beam",
+            "Judgment",
+            "Recover"
+        ]
+    },
+    {
+        "species": "Groudon",
+        "item": "Red Orb",
+        "ability": "Drought",
+        "evs": {
+            "hp": 252,
+            "def": 56,
+            "spd": 200
+        },
+        "nature": "Relaxed",
+        "moves": [
+            "Overheat",
+            "Precipice Blades",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Magearna",
+        "item": "Leftovers",
+        "ability": "Soul-Heart",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Calm",
+        "moves": [
+            "Fleur Cannon",
+            "Heal Bell",
+            "Heart Swap",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Mewtwo",
+        "item": "Mewtwonite Y",
+        "ability": "Pressure",
+        "evs": {
+            "def": 40,
+            "spa": 216,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Calm Mind",
+            "Fire Blast",
+            "Ice Beam",
+            "Psystrike"
+        ]
+    },
+    {
+        "species": "Yveltal",
+        "item": "Choice Scarf",
+        "ability": "Dark Aura",
+        "evs": {
+            "hp": 72,
+            "def": 252,
+            "spe": 184
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Defog",
+            "Foul Play",
+            "Toxic",
+            "U-turn"
+        ]
+    }
+]

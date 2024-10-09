@@ -1,0 +1,119 @@
+[
+    {
+        "species": "Golurk",
+        "item": "Life Orb",
+        "ability": "No Guard",
+        "shiny": true,
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Dynamic Punch",
+            "Earthquake",
+            "Rock Polish",
+            "Shadow Punch"
+        ]
+    },
+    {
+        "species": "Durant",
+        "gender": "M",
+        "item": "Lum Berry",
+        "ability": "Hustle",
+        "shiny": true,
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Hone Claws",
+            "Superpower",
+            "Thunder Fang",
+            "X-Scissor"
+        ]
+    },
+    {
+        "species": "Feraligatr",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Torrent",
+        "evs": {
+            "hp": 40,
+            "atk": 252,
+            "spe": 216
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Aqua Jet",
+            "Crunch",
+            "Substitute",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Omastar",
+        "gender": "M",
+        "item": "Focus Sash",
+        "ability": "Weak Armor",
+        "shiny": true,
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Ice Beam",
+            "Scald",
+            "Spikes",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Rotom",
+        "item": "Choice Scarf",
+        "ability": "Levitate",
+        "shiny": true,
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Shadow Ball",
+            "Thunderbolt",
+            "Trick",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Sceptile",
+        "gender": "M",
+        "item": "Flying Gem",
+        "ability": "Unburden",
+        "shiny": true,
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Acrobatics",
+            "Earthquake",
+            "Leaf Blade",
+            "Swords Dance"
+        ]
+    }
+]

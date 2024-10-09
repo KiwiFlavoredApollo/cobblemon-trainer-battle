@@ -1,0 +1,123 @@
+[
+    {
+        "species": "Solrock",
+        "item": "Lum Berry",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 4
+        },
+        "nature": "Brave",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Explosion",
+            "Stealth Rock",
+            "Stone Edge",
+            "Trick Room"
+        ]
+    },
+    {
+        "species": "Camerupt",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Solid Rock",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spa": 252
+        },
+        "nature": "Quiet",
+        "ivs": {
+            "atk": 30,
+            "spa": 30,
+            "spe": 1
+        },
+        "moves": [
+            "Earthquake",
+            "Explosion",
+            "Fire Blast",
+            "Hidden Power Grass"
+        ]
+    },
+    {
+        "species": "Gardevoir",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Trace",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Focus Blast",
+            "Psychic",
+            "Thunderbolt",
+            "Trick"
+        ]
+    },
+    {
+        "species": "Marowak",
+        "gender": "M",
+        "item": "Thick Club",
+        "ability": "Rock Head",
+        "evs": {
+            "hp": 248,
+            "atk": 252,
+            "def": 8
+        },
+        "nature": "Brave",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Double-Edge",
+            "Earthquake",
+            "Rock Slide",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Medicham",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Pure Power",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bullet Punch",
+            "Fake Out",
+            "High Jump Kick",
+            "Thunder Punch"
+        ]
+    },
+    {
+        "species": "Tauros",
+        "item": "Choice Band",
+        "ability": "Intimidate",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Facade",
+            "Pursuit",
+            "Return"
+        ],
+        "happiness": 255
+    }
+]

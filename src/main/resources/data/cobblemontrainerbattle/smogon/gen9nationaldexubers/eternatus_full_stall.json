@@ -1,0 +1,127 @@
+[
+    {
+        "species": "Dondozo",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Unaware",
+        "teraType": "Fairy",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Impish",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Avalanche",
+            "Body Press",
+            "Curse",
+            "Rest"
+        ]
+    },
+    {
+        "species": "Arceus-Dark",
+        "item": "Dread Plate",
+        "ability": "Multitype",
+        "teraType": "Fire",
+        "evs": {
+            "hp": 248,
+            "def": 172,
+            "spe": 88
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Foul Play",
+            "Recover",
+            "Refresh",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Chansey",
+        "item": "Eviolite",
+        "ability": "Natural Cure",
+        "teraType": "Grass",
+        "evs": {
+            "hp": 8,
+            "def": 252,
+            "spd": 248
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Confide",
+            "Heal Bell",
+            "Seismic Toss",
+            "Soft-Boiled"
+        ]
+    },
+    {
+        "species": "Eternatus",
+        "item": "Leftovers",
+        "ability": "Pressure",
+        "teraType": "Fairy",
+        "evs": {
+            "hp": 248,
+            "spd": 40,
+            "spe": 220
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Dynamax Cannon",
+            "Recover",
+            "Sludge Bomb",
+            "Toxic Spikes"
+        ]
+    },
+    {
+        "species": "Giratina-Origin",
+        "item": "Griseous Core",
+        "ability": "Levitate",
+        "teraType": "Steel",
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spd": 8
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Defog",
+            "Hex",
+            "Rest",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Ho-Oh",
+        "item": "Heavy-Duty Boots",
+        "ability": "Regenerator",
+        "teraType": "Grass",
+        "evs": {
+            "hp": 248,
+            "def": 204,
+            "spd": 56
+        },
+        "nature": "Impish",
+        "moves": [
+            "Defog",
+            "Sacred Fire",
+            "Toxic",
+            "Whirlwind"
+        ]
+    }
+]

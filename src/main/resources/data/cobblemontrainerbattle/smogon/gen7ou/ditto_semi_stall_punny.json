@@ -1,0 +1,108 @@
+[
+    {
+        "species": "Scizor",
+        "gender": "M",
+        "item": "Scizorite",
+        "ability": "Technician",
+        "evs": {
+            "hp": 248,
+            "def": 40,
+            "spe": 220
+        },
+        "nature": "Impish",
+        "moves": [
+            "Bullet Punch",
+            "Roost",
+            "Superpower",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Chansey",
+        "item": "Eviolite",
+        "ability": "Natural Cure",
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spd": 8
+        },
+        "nature": "Bold",
+        "moves": [
+            "Seismic Toss",
+            "Soft-Boiled",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Ditto",
+        "item": "Choice Scarf",
+        "ability": "Imposter",
+        "hpType": "Ground",
+        "evs": {
+            "hp": 252,
+            "atk": 4,
+            "def": 252
+        },
+        "nature": "Impish",
+        "moves": [
+            "Transform"
+        ]
+    },
+    {
+        "species": "Gliscor",
+        "gender": "M",
+        "item": "Toxic Orb",
+        "ability": "Poison Heal",
+        "evs": {
+            "hp": 244,
+            "spd": 152,
+            "spe": 112
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Defog",
+            "Earthquake",
+            "Knock Off",
+            "Roost"
+        ]
+    },
+    {
+        "species": "Kartana",
+        "item": "Grassium Z",
+        "ability": "Beast Boost",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Knock Off",
+            "Leaf Blade",
+            "Swords Dance",
+            "Synthesis"
+        ]
+    },
+    {
+        "species": "Reuniclus",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Magic Guard",
+        "evs": {
+            "hp": 240,
+            "def": 212,
+            "spe": 56
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Focus Blast",
+            "Psyshock",
+            "Recover"
+        ]
+    }
+]

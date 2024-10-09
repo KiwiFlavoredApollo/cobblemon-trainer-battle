@@ -1,0 +1,121 @@
+[
+    {
+        "species": "Dragapult",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Infiltrator",
+        "teraType": "Ghost",
+        "evs": {
+            "atk": 76,
+            "spa": 180,
+            "spe": 252
+        },
+        "nature": "Hasty",
+        "moves": [
+            "Dragon Darts",
+            "Hex",
+            "U-turn",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Cresceidon",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Multiscale",
+        "teraType": "Poison",
+        "evs": {
+            "hp": 252,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Moonblast",
+            "Recover",
+            "Scald",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Gliscor",
+        "gender": "M",
+        "item": "Toxic Orb",
+        "ability": "Poison Heal",
+        "teraType": "Water",
+        "evs": {
+            "hp": 244,
+            "def": 12,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "moves": [
+            "Earthquake",
+            "Protect",
+            "Spikes",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Kingambit",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Supreme Overlord",
+        "teraType": "Fire",
+        "evs": {
+            "hp": 140,
+            "atk": 252,
+            "spe": 116
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Iron Head",
+            "Kowtow Cleave",
+            "Sucker Punch",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Skeledirge",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Unaware",
+        "teraType": "Fairy",
+        "evs": {
+            "hp": 248,
+            "spa": 8,
+            "spd": 252
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hex",
+            "Slack Off",
+            "Torch Song",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Venomicon",
+        "item": "Heavy-Duty Boots",
+        "ability": "Stamina",
+        "teraType": "Dragon",
+        "evs": {
+            "hp": 248,
+            "def": 144,
+            "spd": 116
+        },
+        "nature": "Bold",
+        "moves": [
+            "Body Press",
+            "Knock Off",
+            "Roost",
+            "Stealth Rock"
+        ]
+    }
+]

@@ -1,0 +1,125 @@
+[
+    {
+        "species": "Kangaskhan",
+        "item": "Kangaskhanite",
+        "ability": "Scrappy",
+        "evs": {
+            "hp": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Crunch",
+            "Fake Out",
+            "Low Kick",
+            "Seismic Toss"
+        ]
+    },
+    {
+        "species": "Amoonguss",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Regenerator",
+        "shiny": true,
+        "evs": {
+            "hp": 252,
+            "def": 76,
+            "spd": 176,
+            "spe": 4
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Giga Drain",
+            "Protect",
+            "Rage Powder",
+            "Spore"
+        ]
+    },
+    {
+        "species": "Landorus-Therian",
+        "item": "Assault Vest",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 252,
+            "atk": 28,
+            "spd": 200,
+            "spe": 28
+        },
+        "nature": "Careful",
+        "moves": [
+            "Earthquake",
+            "Stone Edge",
+            "Superpower",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Sylveon",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Pixilate",
+        "shiny": true,
+        "evs": {
+            "hp": 252,
+            "def": 36,
+            "spa": 136,
+            "spd": 60,
+            "spe": 24
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Hyper Voice",
+            "Protect",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Thundurus",
+        "item": "Sitrus Berry",
+        "ability": "Prankster",
+        "evs": {
+            "hp": 252,
+            "spd": 160,
+            "spe": 96
+        },
+        "nature": "Modest",
+        "moves": [
+            "Hidden Power Ice",
+            "Sky Drop",
+            "Thunderbolt",
+            "Thunder Wave"
+        ],
+        "ivs": {
+            "atk": 30,
+            "def": 30
+        }
+    },
+    {
+        "species": "Volcanion",
+        "item": "Safety Goggles",
+        "ability": "Water Absorb",
+        "evs": {
+            "hp": 252,
+            "spd": 216,
+            "spe": 40
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earth Power",
+            "Heat Wave",
+            "Protect",
+            "Steam Eruption"
+        ]
+    }
+]

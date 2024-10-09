@@ -1,0 +1,125 @@
+[
+    {
+        "species": "Vullaby",
+        "item": "Eviolite",
+        "ability": "Weak Armor",
+        "level": 5,
+        "teraType": "Electric",
+        "evs": {
+            "atk": 236,
+            "def": 76,
+            "spe": 196
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Brave Bird",
+            "Defog",
+            "Knock Off",
+            "Roost"
+        ]
+    },
+    {
+        "species": "Doduo",
+        "gender": "M",
+        "item": "Sky Plate",
+        "ability": "Early Bird",
+        "level": 5,
+        "teraType": "Flying",
+        "evs": {
+            "atk": 236,
+            "spe": 236
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Brave Bird",
+            "Knock Off",
+            "Protect",
+            "Quick Attack"
+        ]
+    },
+    {
+        "species": "Mareanie",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Regenerator",
+        "level": 5,
+        "teraType": "Steel",
+        "evs": {
+            "hp": 116,
+            "atk": 12,
+            "def": 180,
+            "spd": 180
+        },
+        "nature": "Impish",
+        "moves": [
+            "Gunk Shot",
+            "Liquidation",
+            "Pin Missile",
+            "Recover"
+        ]
+    },
+    {
+        "species": "Mienfoo",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Regenerator",
+        "level": 5,
+        "teraType": "Steel",
+        "evs": {
+            "hp": 76,
+            "def": 196,
+            "spd": 196
+        },
+        "nature": "Careful",
+        "moves": [
+            "Fake Out",
+            "High Jump Kick",
+            "Knock Off",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Mudbray",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Stamina",
+        "level": 5,
+        "teraType": "Water",
+        "evs": {
+            "hp": 36,
+            "atk": 196,
+            "def": 196,
+            "spe": 76
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Heavy Slam",
+            "Roar",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Voltorb-Hisui",
+        "item": "Eviolite",
+        "ability": "Static",
+        "level": 5,
+        "teraType": "Ghost",
+        "evs": {
+            "hp": 36,
+            "def": 36,
+            "spa": 236,
+            "spe": 196
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Giga Drain",
+            "Thunderbolt",
+            "Thunder Wave",
+            "Volt Switch"
+        ]
+    }
+]

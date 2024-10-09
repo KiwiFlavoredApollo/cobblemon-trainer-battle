@@ -1,0 +1,120 @@
+[
+    {
+        "species": "Flamigo",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Scrappy",
+        "teraType": "Flying",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Brave Bird",
+            "Close Combat",
+            "Roost",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Altaria",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Natural Cure",
+        "teraType": "Steel",
+        "evs": {
+            "hp": 248,
+            "def": 124,
+            "spe": 136
+        },
+        "nature": "Impish",
+        "moves": [
+            "Brave Bird",
+            "Defog",
+            "Roost",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Decidueye",
+        "gender": "M",
+        "item": "Spell Tag",
+        "ability": "Long Reach",
+        "teraType": "Ghost",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Leaf Blade",
+            "Poltergeist",
+            "Shadow Sneak",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Mudsdale",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Stamina",
+        "teraType": "Steel",
+        "evs": {
+            "hp": 248,
+            "atk": 100,
+            "def": 124,
+            "spe": 36
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Heavy Slam",
+            "Roar",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Rotom-Heat",
+        "item": "Heavy-Duty Boots",
+        "ability": "Levitate",
+        "teraType": "Water",
+        "evs": {
+            "hp": 248,
+            "spa": 8,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Nasty Plot",
+            "Overheat",
+            "Pain Split",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Slowbro-Galar",
+        "gender": "M",
+        "item": "Assault Vest",
+        "ability": "Regenerator",
+        "teraType": "Water",
+        "evs": {
+            "hp": 248,
+            "def": 16,
+            "spa": 4,
+            "spd": 240
+        },
+        "nature": "Relaxed",
+        "moves": [
+            "Flamethrower",
+            "Ice Beam",
+            "Psychic",
+            "Shell Side Arm"
+        ]
+    }
+]

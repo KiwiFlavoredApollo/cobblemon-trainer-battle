@@ -1,0 +1,107 @@
+[
+    {
+        "species": "Nihilego",
+        "item": "Black Sludge",
+        "ability": "Beast Boost",
+        "evs": {
+            "def": 80,
+            "spa": 176,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Grass Knot",
+            "Knock Off",
+            "Power Gem",
+            "Sludge Bomb"
+        ]
+    },
+    {
+        "species": "Cobalion",
+        "item": "Leftovers",
+        "ability": "Justified",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Iron Head",
+            "Megahorn",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Hatterene",
+        "item": "Leftovers",
+        "ability": "Magic Bounce",
+        "evs": {
+            "hp": 252,
+            "def": 192,
+            "spe": 64
+        },
+        "nature": "Bold",
+        "moves": [
+            "Calm Mind",
+            "Draining Kiss",
+            "Mystical Fire",
+            "Psyshock"
+        ]
+    },
+    {
+        "species": "Hippowdon",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sand Stream",
+        "evs": {
+            "hp": 252,
+            "atk": 8,
+            "def": 32,
+            "spd": 216
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Slack Off",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Noivern",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Infiltrator",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Draco Meteor",
+            "Flamethrower",
+            "Roost",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Rotom-Wash",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 248,
+            "def": 172,
+            "spe": 88
+        },
+        "nature": "Bold",
+        "moves": [
+            "Hydro Pump",
+            "Pain Split",
+            "Volt Switch",
+            "Will-O-Wisp"
+        ]
+    }
+]

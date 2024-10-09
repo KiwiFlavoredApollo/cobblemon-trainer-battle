@@ -1,0 +1,116 @@
+[
+    {
+        "species": "Machoke",
+        "gender": "M",
+        "item": "Focus Sash",
+        "ability": "No Guard",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bullet Punch",
+            "Dynamic Punch",
+            "Payback",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Gabite",
+        "gender": "F",
+        "item": "Choice Band",
+        "ability": "Sand Veil",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Dragon Claw",
+            "Earthquake",
+            "Outrage",
+            "Sleep Talk"
+        ]
+    },
+    {
+        "species": "Muk",
+        "gender": "M",
+        "item": "Black Sludge",
+        "ability": "Sticky Hold",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "moves": [
+            "Payback",
+            "Poison Jab",
+            "Rest",
+            "Sleep Talk"
+        ]
+    },
+    {
+        "species": "Relicanth",
+        "gender": "M",
+        "item": "Shuca Berry",
+        "ability": "Rock Head",
+        "shiny": true,
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Head Smash",
+            "Stealth Rock",
+            "Toxic",
+            "Waterfall"
+        ]
+    },
+    {
+        "species": "Tangela",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Chlorophyll",
+        "evs": {
+            "hp": 252,
+            "def": 156,
+            "spe": 100
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Energy Ball",
+            "Leech Seed",
+            "Sleep Powder",
+            "Synthesis"
+        ]
+    },
+    {
+        "species": "Zangoose",
+        "gender": "F",
+        "item": "Choice Scarf",
+        "ability": "Immunity",
+        "shiny": true,
+        "happiness": 0,
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Frustration",
+            "Pursuit",
+            "Quick Attack"
+        ]
+    }
+]

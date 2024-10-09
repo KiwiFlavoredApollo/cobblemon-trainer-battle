@@ -1,0 +1,129 @@
+[
+    {
+        "species": "Roserade",
+        "gender": "F",
+        "item": "Focus Sash",
+        "ability": "Poison Point",
+        "shiny": true,
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "def": 30
+        },
+        "moves": [
+            "Hidden Power Ice",
+            "Leaf Storm",
+            "Sleep Powder",
+            "Toxic Spikes"
+        ]
+    },
+    {
+        "species": "Heatran",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Flash Fire",
+        "shiny": true,
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earth Power",
+            "Lava Plume",
+            "Protect",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Latias",
+        "item": "Choice Specs",
+        "ability": "Levitate",
+        "shiny": true,
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Draco Meteor",
+            "Dragon Pulse",
+            "Sleep Talk",
+            "Surf"
+        ]
+    },
+    {
+        "species": "Rotom-Wash",
+        "item": "Choice Scarf",
+        "ability": "Levitate",
+        "shiny": true,
+        "evs": {
+            "hp": 48,
+            "spa": 252,
+            "spe": 208
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "def": 30
+        },
+        "moves": [
+            "Hidden Power Ice",
+            "Shadow Ball",
+            "Thunderbolt",
+            "Trick"
+        ]
+    },
+    {
+        "species": "Swampert",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Torrent",
+        "shiny": true,
+        "evs": {
+            "hp": 252,
+            "def": 224,
+            "spd": 32
+        },
+        "nature": "Relaxed",
+        "moves": [
+            "Earthquake",
+            "Ice Beam",
+            "Protect",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Sand Stream",
+        "shiny": true,
+        "evs": {
+            "hp": 248,
+            "atk": 252,
+            "def": 4,
+            "spd": 4
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Crunch",
+            "Ice Punch",
+            "Pursuit",
+            "Superpower"
+        ]
+    }
+]

@@ -1,0 +1,56 @@
+[
+    {
+        "species": "Dodrio",
+        "moves": [
+            "Agility",
+            "Body Slam",
+            "Drill Peck",
+            "Hyper Beam"
+        ]
+    },
+    {
+        "species": "Chansey",
+        "moves": [
+            "Ice Beam",
+            "Reflect",
+            "Sing",
+            "Soft-Boiled"
+        ]
+    },
+    {
+        "species": "Kangaskhan",
+        "moves": [
+            "Body Slam",
+            "Counter",
+            "Earthquake",
+            "Hyper Beam"
+        ]
+    },
+    {
+        "species": "Persian",
+        "moves": [
+            "Bubble Beam",
+            "Hyper Beam",
+            "Slash",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Snorlax",
+        "moves": [
+            "Amnesia",
+            "Blizzard",
+            "Body Slam",
+            "Self-Destruct"
+        ]
+    },
+    {
+        "species": "Tauros",
+        "moves": [
+            "Body Slam",
+            "Earthquake",
+            "Hyper Beam",
+            "Thunderbolt"
+        ]
+    }
+]

@@ -1,0 +1,120 @@
+[
+    {
+        "species": "Heatran",
+        "gender": "M",
+        "item": "Focus Sash",
+        "ability": "Flash Fire",
+        "evs": {
+            "atk": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Hasty",
+        "moves": [
+            "Explosion",
+            "Fire Blast",
+            "Stealth Rock",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Blaziken",
+        "gender": "M",
+        "item": "Choice Specs",
+        "ability": "Blaze",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Fire Blast",
+            "Focus Blast",
+            "Overheat",
+            "Vacuum Wave"
+        ]
+    },
+    {
+        "species": "Charizard",
+        "gender": "F",
+        "item": "Life Orb",
+        "ability": "Blaze",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "spa": 30
+        },
+        "moves": [
+            "Air Slash",
+            "Fire Blast",
+            "Hidden Power Grass",
+            "Roost"
+        ]
+    },
+    {
+        "species": "Houndoom",
+        "gender": "M",
+        "item": "Black Glasses",
+        "ability": "Flash Fire",
+        "evs": {
+            "atk": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Hasty",
+        "moves": [
+            "Dark Pulse",
+            "Fire Blast",
+            "Nasty Plot",
+            "Sucker Punch"
+        ]
+    },
+    {
+        "species": "Infernape",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Blaze",
+        "evs": {
+            "atk": 252,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Hasty",
+        "moves": [
+            "Close Combat",
+            "Flare Blitz",
+            "Thunder Punch",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Torkoal",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "White Smoke",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spa": 4
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Lava Plume",
+            "Rapid Spin",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    }
+]

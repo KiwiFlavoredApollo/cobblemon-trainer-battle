@@ -1,0 +1,56 @@
+[
+    {
+        "species": "Dragonite",
+        "moves": [
+            "Blizzard",
+            "Body Slam",
+            "Thunder Wave",
+            "Wrap"
+        ]
+    },
+    {
+        "species": "Articuno",
+        "moves": [
+            "Agility",
+            "Blizzard",
+            "Double-Edge",
+            "Hyper Beam"
+        ]
+    },
+    {
+        "species": "Dugtrio",
+        "moves": [
+            "Earthquake",
+            "Rock Slide",
+            "Slash",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Kadabra",
+        "moves": [
+            "Psychic",
+            "Recover",
+            "Seismic Toss",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Kangaskhan",
+        "moves": [
+            "Body Slam",
+            "Earthquake",
+            "Hyper Beam",
+            "Rock Slide"
+        ]
+    },
+    {
+        "species": "Tentacruel",
+        "moves": [
+            "Blizzard",
+            "Hyper Beam",
+            "Surf",
+            "Wrap"
+        ]
+    }
+]

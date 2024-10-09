@@ -1,0 +1,80 @@
+[
+    {
+        "species": "Staryu",
+        "item": "Miracle Berry",
+        "level": 5,
+        "moves": [
+            "Ice Beam",
+            "Surf",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Abra",
+        "gender": "M",
+        "item": "Berry Juice",
+        "level": 5,
+        "moves": [
+            "Encore",
+            "Ice Punch",
+            "Psychic",
+            "Thief"
+        ]
+    },
+    {
+        "species": "Chansey",
+        "item": "Berry Juice",
+        "level": 5,
+        "moves": [
+            "Body Slam",
+            "Ice Beam",
+            "Soft-Boiled",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Cubone",
+        "gender": "M",
+        "item": "Thick Club",
+        "level": 5,
+        "ivs": {
+            "atk": 27,
+            "def": 27
+        },
+        "moves": [
+            "Earthquake",
+            "Hidden Power Bug",
+            "Rock Slide",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Machop",
+        "gender": "M",
+        "item": "Berry Juice",
+        "level": 5,
+        "ivs": {
+            "atk": 27,
+            "def": 27
+        },
+        "moves": [
+            "Cross Chop",
+            "Curse",
+            "Earthquake",
+            "Hidden Power Bug"
+        ]
+    },
+    {
+        "species": "Magby",
+        "gender": "M",
+        "item": "Berry Juice",
+        "level": 5,
+        "moves": [
+            "Cross Chop",
+            "Fire Blast",
+            "Thief",
+            "Thunder Punch"
+        ]
+    }
+]

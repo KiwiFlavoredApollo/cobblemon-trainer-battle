@@ -1,0 +1,122 @@
+[
+    {
+        "species": "Politoed",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Drizzle",
+        "evs": {
+            "hp": 252,
+            "def": 204,
+            "spe": 52
+        },
+        "nature": "Bold",
+        "moves": [
+            "Earthquake",
+            "Encore",
+            "Protect",
+            "Scald"
+        ]
+    },
+    {
+        "species": "Ferrothorn",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Iron Barbs",
+        "evs": {
+            "hp": 252,
+            "def": 48,
+            "spd": 208
+        },
+        "nature": "Relaxed",
+        "moves": [
+            "Power Whip",
+            "Spikes",
+            "Stealth Rock",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Krilowatt",
+        "gender": "F",
+        "item": "Life Orb",
+        "ability": "Magic Guard",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "spa": 30
+        },
+        "moves": [
+            "Earth Power",
+            "Hidden Power Grass",
+            "Surf",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Latios",
+        "item": "Choice Scarf",
+        "ability": "Levitate",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Draco Meteor",
+            "Recover",
+            "Surf",
+            "Trick"
+        ]
+    },
+    {
+        "species": "Mollux",
+        "gender": "M",
+        "item": "Black Sludge",
+        "ability": "Dry Skin",
+        "evs": {
+            "hp": 252,
+            "def": 60,
+            "spd": 196
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Lava Plume",
+            "Rapid Spin",
+            "Thunder",
+            "Toxic Spikes"
+        ]
+    },
+    {
+        "species": "Tomohawk",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Prankster",
+        "evs": {
+            "hp": 248,
+            "spd": 244,
+            "spe": 16
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Aura Sphere",
+            "Haze",
+            "Hurricane",
+            "Roost"
+        ]
+    }
+]

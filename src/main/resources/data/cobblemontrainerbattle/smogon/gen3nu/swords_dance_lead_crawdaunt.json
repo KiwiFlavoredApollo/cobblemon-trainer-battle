@@ -1,0 +1,121 @@
+[
+    {
+        "species": "Crawdaunt",
+        "gender": "M",
+        "item": "Lum Berry",
+        "ability": "Hyper Cutter",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Ancient Power",
+            "Double-Edge",
+            "Hidden Power Ground",
+            "Swords Dance"
+        ],
+        "ivs": {
+            "spa": 30,
+            "spd": 30
+        }
+    },
+    {
+        "species": "Haunter",
+        "gender": "M",
+        "ability": "Levitate",
+        "evs": {
+            "atk": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Explosion",
+            "Psychic",
+            "Thief",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Metang",
+        "item": "Leftovers",
+        "ability": "Clear Body",
+        "evs": {
+            "hp": 116,
+            "atk": 252,
+            "spe": 140
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Agility",
+            "Earthquake",
+            "Explosion",
+            "Meteor Mash"
+        ]
+    },
+    {
+        "species": "Murkrow",
+        "gender": "M",
+        "item": "Lum Berry",
+        "ability": "Insomnia",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Drill Peck",
+            "Haze",
+            "Hidden Power Ground",
+            "Shadow Ball"
+        ],
+        "ivs": {
+            "spa": 30,
+            "spd": 30
+        }
+    },
+    {
+        "species": "Roselia",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Natural Cure",
+        "evs": {
+            "hp": 252,
+            "def": 20,
+            "spd": 216,
+            "spe": 20
+        },
+        "nature": "Calm",
+        "moves": [
+            "Giga Drain",
+            "Sludge Bomb",
+            "Spikes",
+            "Synthesis"
+        ]
+    },
+    {
+        "species": "Wailord",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Oblivious",
+        "evs": {
+            "hp": 60,
+            "def": 252,
+            "spd": 136,
+            "spe": 60
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Rest",
+            "Roar",
+            "Sleep Talk",
+            "Surf"
+        ]
+    }
+]

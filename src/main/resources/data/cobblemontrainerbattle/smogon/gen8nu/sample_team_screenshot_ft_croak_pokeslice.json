@@ -1,0 +1,115 @@
+[
+    {
+        "species": "Toxicroak",
+        "gender": "M",
+        "item": "Shuca Berry",
+        "ability": "Dry Skin",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Gunk Shot",
+            "Low Kick",
+            "Sucker Punch",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Copperajah",
+        "gender": "M",
+        "item": "Assault Vest",
+        "ability": "Heavy Metal",
+        "evs": {
+            "atk": 252,
+            "spd": 92,
+            "spe": 164
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Heat Crash",
+            "Heavy Slam",
+            "Power Whip",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Mudsdale",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Stamina",
+        "evs": {
+            "hp": 252,
+            "atk": 4,
+            "def": 252
+        },
+        "nature": "Relaxed",
+        "moves": [
+            "Earthquake",
+            "Smack Down",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Rotom-Mow",
+        "item": "Choice Scarf",
+        "ability": "Levitate",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Leaf Storm",
+            "Trick",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Talonflame",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Flame Body",
+        "evs": {
+            "hp": 248,
+            "def": 52,
+            "spe": 208
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Brave Bird",
+            "Roost",
+            "U-turn",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Vaporeon",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Water Absorb",
+        "evs": {
+            "hp": 252,
+            "def": 216,
+            "spd": 40
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Heal Bell",
+            "Protect",
+            "Scald",
+            "Wish"
+        ]
+    }
+]

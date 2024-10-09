@@ -1,0 +1,124 @@
+[
+    {
+        "species": "Dragapult",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Infiltrator",
+        "teraType": "Ghost",
+        "evs": {
+            "atk": 76,
+            "spa": 180,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Dragon Darts",
+            "Hex",
+            "Thunder Wave",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Gliscor",
+        "gender": "M",
+        "item": "Toxic Orb",
+        "ability": "Poison Heal",
+        "teraType": "Dark",
+        "evs": {
+            "hp": 244,
+            "def": 232,
+            "spd": 16,
+            "spe": 16
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Knock Off",
+            "Protect",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Hemogoblin",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Pixilate",
+        "teraType": "Water",
+        "evs": {
+            "atk": 252,
+            "spd": 36,
+            "spe": 220
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bulk Up",
+            "Extreme Speed",
+            "Flare Blitz",
+            "Moonlight"
+        ]
+    },
+    {
+        "species": "Kingambit",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Supreme Overlord",
+        "teraType": "Dark",
+        "evs": {
+            "hp": 136,
+            "atk": 252,
+            "spe": 120
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Iron Head",
+            "Kowtow Cleave",
+            "Sucker Punch",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Skarmory",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Sturdy",
+        "teraType": "Dragon",
+        "evs": {
+            "hp": 248,
+            "def": 164,
+            "spe": 96
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Body Press",
+            "Roost",
+            "Spikes",
+            "Whirlwind"
+        ]
+    },
+    {
+        "species": "Slowking-Galar",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Regenerator",
+        "teraType": "Water",
+        "evs": {
+            "hp": 252,
+            "def": 16,
+            "spd": 240
+        },
+        "nature": "Sassy",
+        "ivs": {
+            "atk": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Chilly Reception",
+            "Sludge Bomb",
+            "Surf",
+            "Toxic"
+        ]
+    }
+]

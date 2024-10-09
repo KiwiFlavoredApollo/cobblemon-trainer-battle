@@ -1,0 +1,119 @@
+[
+    {
+        "species": "Gholdengo",
+        "item": "Heavy-Duty Boots",
+        "ability": "Good as Gold",
+        "teraType": "Fairy",
+        "evs": {
+            "hp": 252,
+            "def": 248,
+            "spe": 8
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Focus Blast",
+            "Hex",
+            "Recover",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Deoxys-Speed",
+        "item": "Heavy-Duty Boots",
+        "ability": "Pressure",
+        "teraType": "Fighting",
+        "evs": {
+            "atk": 200,
+            "spa": 252,
+            "spe": 56
+        },
+        "nature": "Naive",
+        "moves": [
+            "Ice Beam",
+            "Knock Off",
+            "Psycho Boost",
+            "Superpower"
+        ]
+    },
+    {
+        "species": "Garganacl",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Purifying Salt",
+        "teraType": "Water",
+        "evs": {
+            "hp": 252,
+            "def": 176,
+            "spd": 80
+        },
+        "nature": "Impish",
+        "moves": [
+            "Protect",
+            "Recover",
+            "Salt Cure",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Gliscor",
+        "gender": "M",
+        "item": "Toxic Orb",
+        "ability": "Poison Heal",
+        "teraType": "Water",
+        "evs": {
+            "hp": 244,
+            "def": 12,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "ivs": {
+            "spe": 28
+        },
+        "moves": [
+            "Earthquake",
+            "Protect",
+            "Toxic",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Ogerpon",
+        "item": "Heavy-Duty Boots",
+        "ability": "Defiant",
+        "teraType": "Grass",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Encore",
+            "Ivy Cudgel",
+            "Knock Off",
+            "U-turn"
+        ],
+        "hpType": "Poison"
+    },
+    {
+        "species": "Ting-Lu",
+        "item": "Heavy-Duty Boots",
+        "ability": "Vessel of Ruin",
+        "teraType": "Water",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "moves": [
+            "Earthquake",
+            "Ruination",
+            "Spikes",
+            "Whirlwind"
+        ]
+    }
+]

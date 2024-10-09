@@ -1,0 +1,74 @@
+[
+    {
+        "species": "Snorlax",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Curse",
+            "Double-Edge",
+            "Earthquake",
+            "Rest"
+        ]
+    },
+    {
+        "species": "Cloyster",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Explosion",
+            "Spikes",
+            "Surf",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Exeggutor",
+        "gender": "M",
+        "item": "Leftovers",
+        "ivs": {
+            "hp": 7,
+            "atk": 29,
+            "def": 25
+        },
+        "moves": [
+            "Explosion",
+            "Giga Drain",
+            "Hidden Power Fire",
+            "Psychic"
+        ]
+    },
+    {
+        "species": "Golem",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Earthquake",
+            "Explosion",
+            "Rapid Spin",
+            "Roar"
+        ]
+    },
+    {
+        "species": "Moltres",
+        "item": "Charcoal",
+        "moves": [
+            "Fire Blast",
+            "Rest",
+            "Sleep Talk",
+            "Sunny Day"
+        ]
+    },
+    {
+        "species": "Zapdos",
+        "item": "Leftovers",
+        "ivs": {
+            "def": 27
+        },
+        "moves": [
+            "Hidden Power Ice",
+            "Rest",
+            "Sleep Talk",
+            "Thunder"
+        ]
+    }
+]

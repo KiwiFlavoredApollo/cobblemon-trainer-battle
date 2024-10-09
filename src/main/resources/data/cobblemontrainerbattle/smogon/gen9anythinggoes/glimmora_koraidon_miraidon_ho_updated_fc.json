@@ -1,0 +1,116 @@
+[
+    {
+        "species": "Glimmora",
+        "gender": "M",
+        "item": "Focus Sash",
+        "ability": "Toxic Debris",
+        "teraType": "Ghost",
+        "evs": {
+            "def": 172,
+            "spa": 84,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Mortal Spin",
+            "Mud Shot",
+            "Spikes",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Arceus",
+        "item": "Silk Scarf",
+        "ability": "Multitype",
+        "teraType": "Normal",
+        "evs": {
+            "hp": 120,
+            "atk": 252,
+            "spe": 136
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Extreme Speed",
+            "Shadow Claw",
+            "Swords Dance",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Arceus-Ground",
+        "item": "Earth Plate",
+        "ability": "Multitype",
+        "teraType": "Fairy",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Dragon Dance",
+            "Earthquake",
+            "Recover",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Calyrex-Shadow",
+        "item": "Focus Sash",
+        "ability": "As One (Spectrier)",
+        "teraType": "Normal",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Agility",
+            "Astral Barrage",
+            "Grass Knot",
+            "Nasty Plot"
+        ]
+    },
+    {
+        "species": "Koraidon",
+        "item": "Loaded Dice",
+        "ability": "Orichalcum Pulse",
+        "teraType": "Ghost",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Flare Blitz",
+            "Low Kick",
+            "Scale Shot",
+            "Swords Dance"
+        ],
+        "hpType": "Ghost"
+    },
+    {
+        "species": "Miraidon",
+        "item": "Electric Seed",
+        "ability": "Hadron Engine",
+        "teraType": "Fairy",
+        "evs": {
+            "hp": 160,
+            "spa": 252,
+            "spe": 96
+        },
+        "nature": "Modest",
+        "moves": [
+            "Agility",
+            "Calm Mind",
+            "Dragon Pulse",
+            "Electro Drift"
+        ],
+        "hpType": "Ghost"
+    }
+]

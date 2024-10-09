@@ -1,0 +1,66 @@
+[
+    {
+        "species": "Snorlax",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Curse",
+            "Double-Edge",
+            "Lovely Kiss",
+            "Rest"
+        ]
+    },
+    {
+        "species": "Celebi",
+        "item": "Leftovers",
+        "moves": [
+            "Giga Drain",
+            "Heal Bell",
+            "Leech Seed",
+            "Recover"
+        ]
+    },
+    {
+        "species": "Forretress",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Explosion",
+            "Rapid Spin",
+            "Spikes",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Golem",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Earthquake",
+            "Explosion",
+            "Rapid Spin",
+            "Roar"
+        ]
+    },
+    {
+        "species": "Ho-Oh",
+        "item": "Leftovers",
+        "moves": [
+            "Flamethrower",
+            "Recover",
+            "Toxic",
+            "Whirlwind"
+        ]
+    },
+    {
+        "species": "Umbreon",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Baton Pass",
+            "Charm",
+            "Mean Look",
+            "Rest"
+        ]
+    }
+]

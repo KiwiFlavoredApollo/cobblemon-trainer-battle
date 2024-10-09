@@ -1,0 +1,56 @@
+[
+    {
+        "species": "Jynx",
+        "moves": [
+            "Blizzard",
+            "Counter",
+            "Lovely Kiss",
+            "Psychic"
+        ]
+    },
+    {
+        "species": "Alakazam",
+        "moves": [
+            "Psychic",
+            "Recover",
+            "Seismic Toss",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Exeggutor",
+        "moves": [
+            "Double-Edge",
+            "Explosion",
+            "Psychic",
+            "Sleep Powder"
+        ]
+    },
+    {
+        "species": "Mr. Mime",
+        "moves": [
+            "Psychic",
+            "Seismic Toss",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Slowbro",
+        "moves": [
+            "Amnesia",
+            "Rest",
+            "Surf",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Starmie",
+        "moves": [
+            "Blizzard",
+            "Recover",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    }
+]

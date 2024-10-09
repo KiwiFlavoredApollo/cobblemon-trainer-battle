@@ -1,0 +1,111 @@
+[
+    {
+        "species": "Azelf",
+        "item": "Focus Sash",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 252,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Explosion",
+            "Fire Blast",
+            "Stealth Rock",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Azumarill",
+        "gender": "M",
+        "item": "Sitrus Berry",
+        "ability": "Huge Power",
+        "evs": {
+            "hp": 92,
+            "atk": 252,
+            "spe": 164
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Aqua Jet",
+            "Belly Drum",
+            "Play Rough",
+            "Waterfall"
+        ]
+    },
+    {
+        "species": "Celebi",
+        "item": "Choice Scarf",
+        "ability": "Natural Cure",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Healing Wish",
+            "Leaf Storm",
+            "Psychic",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Garchomp",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Rough Skin",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Fire Blast",
+            "Outrage",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Lucario",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Justified",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Close Combat",
+            "Extreme Speed",
+            "Meteor Mash",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Scizor",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Technician",
+        "evs": {
+            "hp": 248,
+            "def": 132,
+            "spd": 128
+        },
+        "nature": "Relaxed",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Bullet Punch",
+            "Roost",
+            "Swords Dance",
+            "U-turn"
+        ]
+    }
+]

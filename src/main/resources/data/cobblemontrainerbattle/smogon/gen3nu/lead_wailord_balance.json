@@ -1,0 +1,131 @@
+[
+    {
+        "species": "Wailord",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Water Veil",
+        "evs": {
+            "spa": 252,
+            "spd": 40,
+            "spe": 216
+        },
+        "nature": "Modest",
+        "moves": [
+            "Hidden Power Grass",
+            "Hydro Pump",
+            "Ice Beam",
+            "Self-Destruct"
+        ],
+        "ivs": {
+            "atk": 30,
+            "spa": 30
+        }
+    },
+    {
+        "species": "Chimecho",
+        "gender": "F",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 252,
+            "def": 156,
+            "spe": 100
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 2,
+            "spa": 30,
+            "spe": 30
+        },
+        "moves": [
+            "Calm Mind",
+            "Heal Bell",
+            "Hidden Power Fire",
+            "Psychic"
+        ]
+    },
+    {
+        "species": "Golbat",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Inner Focus",
+        "evs": {
+            "hp": 252,
+            "atk": 112,
+            "spe": 144
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Aerial Ace",
+            "Hidden Power Ground",
+            "Sludge Bomb",
+            "Toxic"
+        ],
+        "ivs": {
+            "spa": 30,
+            "spd": 30
+        }
+    },
+    {
+        "species": "Metang",
+        "item": "Leftovers",
+        "ability": "Clear Body",
+        "evs": {
+            "hp": 252,
+            "def": 56,
+            "spd": 200
+        },
+        "nature": "Careful",
+        "moves": [
+            "Explosion",
+            "Meteor Mash",
+            "Protect",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Pupitar",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Shed Skin",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Dragon Dance",
+            "Earthquake",
+            "Hidden Power Bug",
+            "Rock Slide"
+        ],
+        "ivs": {
+            "atk": 30,
+            "def": 30,
+            "spd": 30
+        }
+    },
+    {
+        "species": "Roselia",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Natural Cure",
+        "evs": {
+            "hp": 252,
+            "def": 20,
+            "spd": 216,
+            "spe": 20
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Giga Drain",
+            "Spikes",
+            "Stun Spore",
+            "Synthesis"
+        ]
+    }
+]

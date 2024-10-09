@@ -1,0 +1,114 @@
+[
+    {
+        "species": "Kommo-o",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Soundproof",
+        "evs": {
+            "hp": 252,
+            "def": 164,
+            "spd": 92
+        },
+        "nature": "Impish",
+        "moves": [
+            "Drain Punch",
+            "Protect",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Ferrothorn",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Iron Barbs",
+        "evs": {
+            "hp": 252,
+            "def": 24,
+            "spd": 232
+        },
+        "nature": "Careful",
+        "moves": [
+            "Leech Seed",
+            "Power Whip",
+            "Protect",
+            "Spikes"
+        ]
+    },
+    {
+        "species": "Gliscor",
+        "gender": "M",
+        "item": "Toxic Orb",
+        "ability": "Poison Heal",
+        "evs": {
+            "hp": 244,
+            "spd": 248,
+            "spe": 16
+        },
+        "nature": "Careful",
+        "moves": [
+            "Earthquake",
+            "Facade",
+            "Roost",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Latias",
+        "item": "Latiasite",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 248,
+            "def": 8,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Ice Beam",
+            "Roost",
+            "Stored Power"
+        ]
+    },
+    {
+        "species": "Tornadus-Therian",
+        "item": "Flyinium Z",
+        "ability": "Regenerator",
+        "evs": {
+            "atk": 52,
+            "spa": 252,
+            "spe": 204
+        },
+        "nature": "Naive",
+        "moves": [
+            "Defog",
+            "Hurricane",
+            "Superpower",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Toxapex",
+        "gender": "M",
+        "item": "Black Sludge",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 248,
+            "def": 8,
+            "spd": 252
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Haze",
+            "Recover",
+            "Scald",
+            "Toxic Spikes"
+        ]
+    }
+]

@@ -1,0 +1,110 @@
+[
+    {
+        "species": "Deoxys-Speed",
+        "item": "Rocky Helmet",
+        "ability": "Pressure",
+        "evs": {
+            "hp": 240,
+            "spa": 16,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Dark Pulse",
+            "Spikes",
+            "Stealth Rock",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Arceus-Electric",
+        "item": "Zap Plate",
+        "ability": "Multitype",
+        "evs": {
+            "hp": 248,
+            "spa": 8,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Ice Beam",
+            "Recover",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Genesect",
+        "item": "Choice Scarf",
+        "ability": "Download",
+        "evs": {
+            "atk": 248,
+            "spa": 8,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Explosion",
+            "Ice Beam",
+            "Iron Head",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Giratina-Origin",
+        "item": "Griseous Orb",
+        "ability": "Levitate",
+        "evs": {
+            "atk": 252,
+            "def": 160,
+            "spe": 96
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Dragon Tail",
+            "Earthquake",
+            "Shadow Sneak",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Kyogre",
+        "item": "Choice Specs",
+        "ability": "Drizzle",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hydro Pump",
+            "Ice Beam",
+            "Thunder",
+            "Water Spout"
+        ]
+    },
+    {
+        "species": "Palkia",
+        "item": "Lustrous Orb",
+        "ability": "Pressure",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Dragon Tail",
+            "Fire Blast",
+            "Hydro Pump",
+            "Spacial Rend"
+        ]
+    }
+]

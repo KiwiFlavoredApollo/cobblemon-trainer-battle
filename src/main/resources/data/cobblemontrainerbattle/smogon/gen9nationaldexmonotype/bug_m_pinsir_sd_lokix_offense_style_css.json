@@ -1,0 +1,121 @@
+[
+    {
+        "species": "Lokix",
+        "gender": "M",
+        "item": "Darkinium Z",
+        "ability": "Tinted Lens",
+        "teraType": "Bug",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "First Impression",
+            "Leech Life",
+            "Sucker Punch",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Armaldo",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Battle Armor",
+        "teraType": "Rock",
+        "evs": {
+            "hp": 248,
+            "atk": 16,
+            "def": 24,
+            "spd": 220
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Knock Off",
+            "Rapid Spin",
+            "Stealth Rock",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Buzzwole",
+        "item": "Choice Scarf",
+        "ability": "Beast Boost",
+        "teraType": "Bug",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Earthquake",
+            "Ice Punch",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Pinsir",
+        "gender": "M",
+        "item": "Pinsirite",
+        "ability": "Moxie",
+        "happiness": 0,
+        "teraType": "Bug",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Frustration",
+            "Quick Attack",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Scizor",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Technician",
+        "teraType": "Bug",
+        "evs": {
+            "hp": 248,
+            "atk": 44,
+            "spe": 216
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bullet Punch",
+            "Close Combat",
+            "Swords Dance",
+            "Trailblaze"
+        ]
+    },
+    {
+        "species": "Volcarona",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Flame Body",
+        "teraType": "Bug",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Fiery Dance",
+            "Giga Drain",
+            "Hidden Power Ground",
+            "Quiver Dance"
+        ],
+        "hpType": "Ground"
+    }
+]

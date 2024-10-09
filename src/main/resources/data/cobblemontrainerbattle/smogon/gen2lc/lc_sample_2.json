@@ -1,0 +1,76 @@
+[
+    {
+        "species": "Gastly",
+        "gender": "M",
+        "item": "Berry Juice",
+        "level": 5,
+        "moves": [
+            "Giga Drain",
+            "Hypnosis",
+            "Thief",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Elekid",
+        "gender": "M",
+        "item": "Berry Juice",
+        "level": 5,
+        "moves": [
+            "Cross Chop",
+            "Ice Punch",
+            "Thief",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Houndour",
+        "gender": "M",
+        "item": "Berry Juice",
+        "level": 5,
+        "moves": [
+            "Crunch",
+            "Fire Blast",
+            "Solar Beam",
+            "Sunny Day"
+        ]
+    },
+    {
+        "species": "Machop",
+        "gender": "M",
+        "item": "Berry Juice",
+        "level": 5,
+        "ivs": {
+            "atk": 27,
+            "def": 27
+        },
+        "moves": [
+            "Cross Chop",
+            "Curse",
+            "Earthquake",
+            "Hidden Power Bug"
+        ]
+    },
+    {
+        "species": "Porygon",
+        "item": "Miracle Berry",
+        "level": 5,
+        "moves": [
+            "Ice Beam",
+            "Sharpen",
+            "Thunder Wave",
+            "Tri Attack"
+        ]
+    },
+    {
+        "species": "Staryu",
+        "item": "Miracle Berry",
+        "level": 5,
+        "moves": [
+            "Ice Beam",
+            "Surf",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    }
+]

@@ -1,0 +1,116 @@
+[
+    {
+        "species": "Druddigon",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Sheer Force",
+        "evs": {
+            "hp": 56,
+            "atk": 252,
+            "spd": 4,
+            "spe": 196
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Dragon Claw",
+            "Fire Punch",
+            "Iron Head",
+            "Thunder Punch"
+        ]
+    },
+    {
+        "species": "Emboar",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Blaze",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Flare Blitz",
+            "Superpower",
+            "Toxic",
+            "Wild Charge"
+        ]
+    },
+    {
+        "species": "Flygon",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 112,
+            "atk": 144,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Defog",
+            "Earthquake",
+            "Roost",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Slowking",
+        "gender": "M",
+        "item": "Colbur Berry",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spe": 8
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Scald",
+            "Slack Off",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Steelix",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sturdy",
+        "evs": {
+            "hp": 244,
+            "atk": 136,
+            "spd": 128
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Heavy Slam",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Venusaur",
+        "gender": "M",
+        "item": "Black Sludge",
+        "ability": "Overgrow",
+        "evs": {
+            "hp": 248,
+            "def": 204,
+            "spa": 24,
+            "spd": 16,
+            "spe": 16
+        },
+        "nature": "Bold",
+        "moves": [
+            "Giga Drain",
+            "Knock Off",
+            "Sludge Bomb",
+            "Synthesis"
+        ]
+    }
+]

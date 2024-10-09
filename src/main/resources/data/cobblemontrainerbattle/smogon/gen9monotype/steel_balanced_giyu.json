@@ -1,0 +1,126 @@
+[
+    {
+        "species": "Corviknight",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Pressure",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Relaxed",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Brave Bird",
+            "Defog",
+            "Roost",
+            "U-turn"
+        ],
+        "teraType": "Flying"
+    },
+    {
+        "species": "Empoleon",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Competitive",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Sassy",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Flip Turn",
+            "Knock Off",
+            "Roost",
+            "Surf"
+        ],
+        "teraType": "Water"
+    },
+    {
+        "species": "Gholdengo",
+        "item": "Air Balloon",
+        "ability": "Good as Gold",
+        "teraType": "Steel",
+        "evs": {
+            "hp": 248,
+            "def": 36,
+            "spe": 224
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Make It Rain",
+            "Nasty Plot",
+            "Recover",
+            "Shadow Ball"
+        ]
+    },
+    {
+        "species": "Heatran",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Flash Fire",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earth Power",
+            "Lava Plume",
+            "Protect",
+            "Stealth Rock"
+        ],
+        "teraType": "Fire"
+    },
+    {
+        "species": "Iron Treads",
+        "item": "Choice Scarf",
+        "ability": "Quark Drive",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Ice Spinner",
+            "Stone Edge",
+            "Volt Switch"
+        ],
+        "teraType": "Ground"
+    },
+    {
+        "species": "Kingambit",
+        "gender": "M",
+        "item": "Black Glasses",
+        "ability": "Supreme Overlord",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Kowtow Cleave",
+            "Low Kick",
+            "Sucker Punch",
+            "Swords Dance"
+        ],
+        "teraType": "Dark"
+    }
+]

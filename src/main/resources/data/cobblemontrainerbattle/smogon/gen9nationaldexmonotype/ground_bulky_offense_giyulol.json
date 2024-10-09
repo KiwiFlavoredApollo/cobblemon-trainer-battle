@@ -1,0 +1,117 @@
+[
+    {
+        "species": "Gastrodon-East",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Storm Drain",
+        "teraType": "Ground",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Recover",
+            "Scald",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Great Tusk",
+        "item": "Fightinium Z",
+        "ability": "Protosynthesis",
+        "teraType": "Ground",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Bulk Up",
+            "Close Combat",
+            "Earthquake",
+            "Rapid Spin"
+        ],
+        "hpType": "Fighting"
+    },
+    {
+        "species": "Landorus",
+        "item": "Life Orb",
+        "ability": "Sheer Force",
+        "teraType": "Ground",
+        "evs": {
+            "atk": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Earth Power",
+            "Gravity",
+            "Rock Slide",
+            "Sludge Wave"
+        ]
+    },
+    {
+        "species": "Mamoswine",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Thick Fat",
+        "teraType": "Ground",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Icicle Crash",
+            "Knock Off",
+            "Superpower"
+        ]
+    },
+    {
+        "species": "Steelix",
+        "gender": "M",
+        "item": "Steelixite",
+        "ability": "Rock Head",
+        "teraType": "Ground",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "moves": [
+            "Curse",
+            "Heavy Slam",
+            "Rest",
+            "Sleep Talk"
+        ]
+    },
+    {
+        "species": "Ting-Lu",
+        "item": "Leftovers",
+        "ability": "Vessel of Ruin",
+        "teraType": "Ground",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Relaxed",
+        "moves": [
+            "Body Press",
+            "Earthquake",
+            "Spikes",
+            "Whirlwind"
+        ]
+    }
+]

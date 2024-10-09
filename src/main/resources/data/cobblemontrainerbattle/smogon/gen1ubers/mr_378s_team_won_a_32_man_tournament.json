@@ -1,0 +1,56 @@
+[
+    {
+        "species": "Jynx",
+        "moves": [
+            "Blizzard",
+            "Lovely Kiss",
+            "Rest",
+            "Seismic Toss"
+        ]
+    },
+    {
+        "species": "Chansey",
+        "moves": [
+            "Ice Beam",
+            "Light Screen",
+            "Soft-Boiled",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Mew",
+        "moves": [
+            "Body Slam",
+            "Earthquake",
+            "Explosion",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Mewtwo",
+        "moves": [
+            "Amnesia",
+            "Ice Beam",
+            "Recover",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Slowbro",
+        "moves": [
+            "Amnesia",
+            "Rest",
+            "Surf",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Snorlax",
+        "moves": [
+            "Body Slam",
+            "Earthquake",
+            "Hyper Beam",
+            "Self-Destruct"
+        ]
+    }
+]

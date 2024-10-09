@@ -1,0 +1,56 @@
+[
+    {
+        "species": "Ninetales",
+        "moves": [
+            "Body Slam",
+            "Fire Blast",
+            "Hyper Beam",
+            "Quick Attack"
+        ]
+    },
+    {
+        "species": "Dugtrio",
+        "moves": [
+            "Earthquake",
+            "Rock Slide",
+            "Slash",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Electabuzz",
+        "moves": [
+            "Body Slam",
+            "Hyper Beam",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Kadabra",
+        "moves": [
+            "Psychic",
+            "Recover",
+            "Seismic Toss",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Tangela",
+        "moves": [
+            "Body Slam",
+            "Mega Drain",
+            "Sleep Powder",
+            "Stun Spore"
+        ]
+    },
+    {
+        "species": "Tentacruel",
+        "moves": [
+            "Blizzard",
+            "Hyper Beam",
+            "Surf",
+            "Wrap"
+        ]
+    }
+]

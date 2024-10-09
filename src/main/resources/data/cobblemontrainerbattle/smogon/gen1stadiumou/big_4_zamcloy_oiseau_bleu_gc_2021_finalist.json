@@ -1,0 +1,68 @@
+[
+    {
+        "species": "Alakazam",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Psychic",
+            "Recover",
+            "Seismic Toss",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Chansey",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Ice Beam",
+            "Soft-Boiled",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Cloyster",
+        "moves": [
+            "Blizzard",
+            "Clamp",
+            "Explosion",
+            "Rest"
+        ]
+    },
+    {
+        "species": "Exeggutor",
+        "moves": [
+            "Double-Edge",
+            "Psychic",
+            "Rest",
+            "Stun Spore"
+        ]
+    },
+    {
+        "species": "Snorlax",
+        "moves": [
+            "Amnesia",
+            "Blizzard",
+            "Body Slam",
+            "Rest"
+        ]
+    },
+    {
+        "species": "Tauros",
+        "moves": [
+            "Blizzard",
+            "Body Slam",
+            "Double-Edge",
+            "Substitute"
+        ]
+    }
+]

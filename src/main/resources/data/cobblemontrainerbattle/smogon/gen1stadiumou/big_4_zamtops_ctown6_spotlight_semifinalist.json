@@ -1,0 +1,68 @@
+[
+    {
+        "species": "Alakazam",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Psychic",
+            "Recover",
+            "Substitute",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Chansey",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Ice Beam",
+            "Seismic Toss",
+            "Soft-Boiled",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Exeggutor",
+        "moves": [
+            "Double-Edge",
+            "Psychic",
+            "Rest",
+            "Stun Spore"
+        ]
+    },
+    {
+        "species": "Kabutops",
+        "moves": [
+            "Rest",
+            "Slash",
+            "Substitute",
+            "Surf"
+        ]
+    },
+    {
+        "species": "Snorlax",
+        "moves": [
+            "Body Slam",
+            "Earthquake",
+            "Reflect",
+            "Rest"
+        ]
+    },
+    {
+        "species": "Tauros",
+        "moves": [
+            "Blizzard",
+            "Body Slam",
+            "Earthquake",
+            "Substitute"
+        ]
+    }
+]

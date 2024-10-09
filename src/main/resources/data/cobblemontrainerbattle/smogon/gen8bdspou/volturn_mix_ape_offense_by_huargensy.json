@@ -1,0 +1,114 @@
+[
+    {
+        "species": "Latias",
+        "item": "Soul Dew",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 252,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Draco Meteor",
+            "Psychic",
+            "Roost"
+        ]
+    },
+    {
+        "species": "Gliscor",
+        "gender": "M",
+        "item": "Toxic Orb",
+        "ability": "Poison Heal",
+        "evs": {
+            "hp": 244,
+            "spd": 144,
+            "spe": 120
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Defog",
+            "Earthquake",
+            "Roost",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Infernape",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Blaze",
+        "evs": {
+            "atk": 252,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Hasty",
+        "moves": [
+            "Close Combat",
+            "Overheat",
+            "Stealth Rock",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Rotom-Wash",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spe": 8
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hydro Pump",
+            "Protect",
+            "Volt Switch",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Scizor",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Technician",
+        "evs": {
+            "hp": 252,
+            "def": 16,
+            "spd": 240
+        },
+        "nature": "Impish",
+        "moves": [
+            "Bullet Punch",
+            "Roost",
+            "Swords Dance",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Weavile",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Pressure",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Assurance",
+            "Ice Shard",
+            "Icicle Crash",
+            "Throat Chop"
+        ]
+    }
+]

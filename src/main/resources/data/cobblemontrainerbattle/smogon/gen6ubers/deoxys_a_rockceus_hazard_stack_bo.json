@@ -1,0 +1,114 @@
+[
+    {
+        "species": "Groudon",
+        "item": "Red Orb",
+        "ability": "Drought",
+        "evs": {
+            "hp": 240,
+            "atk": 124,
+            "spd": 68,
+            "spe": 76
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Precipice Blades",
+            "Stealth Rock",
+            "Stone Edge",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Arceus-Rock",
+        "item": "Stone Plate",
+        "ability": "Multitype",
+        "evs": {
+            "hp": 248,
+            "spa": 68,
+            "spe": 192
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Judgment",
+            "Recover",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Deoxys-Attack",
+        "item": "Life Orb",
+        "ability": "Pressure",
+        "evs": {
+            "atk": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Rash",
+        "moves": [
+            "Extreme Speed",
+            "Knock Off",
+            "Psycho Boost",
+            "Superpower"
+        ]
+    },
+    {
+        "species": "Giratina-Origin",
+        "item": "Griseous Orb",
+        "ability": "Levitate",
+        "evs": {
+            "def": 248,
+            "spa": 248,
+            "spe": 12
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Draco Meteor",
+            "Hex",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Klefki",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Prankster",
+        "evs": {
+            "hp": 252,
+            "atk": 4,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "moves": [
+            "Play Rough",
+            "Spikes",
+            "Thunder Wave",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Salamence",
+        "gender": "M",
+        "item": "Salamencite",
+        "ability": "Intimidate",
+        "happiness": 0,
+        "evs": {
+            "hp": 248,
+            "atk": 136,
+            "spe": 124
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Dragon Dance",
+            "Earthquake",
+            "Frustration",
+            "Roost"
+        ]
+    }
+]

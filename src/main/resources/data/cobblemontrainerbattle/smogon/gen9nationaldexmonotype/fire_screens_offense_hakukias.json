@@ -1,0 +1,123 @@
+[
+    {
+        "species": "Rotom-Heat",
+        "item": "Light Clay",
+        "ability": "Levitate",
+        "teraType": "Electric",
+        "evs": {
+            "hp": 248,
+            "spd": 8,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Light Screen",
+            "Reflect",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Ceruledge",
+        "gender": "M",
+        "item": "Focus Sash",
+        "ability": "Weak Armor",
+        "teraType": "Fire",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Bitter Blade",
+            "Close Combat",
+            "Shadow Sneak",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Charizard",
+        "gender": "M",
+        "item": "Charizardite X",
+        "ability": "Blaze",
+        "teraType": "Fire",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Blaze Kick",
+            "Dragon Claw",
+            "Dragon Dance",
+            "Earthquake"
+        ]
+    },
+    {
+        "species": "Iron Moth",
+        "item": "Choice Scarf",
+        "ability": "Quark Drive",
+        "teraType": "Fire",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Dazzling Gleam",
+            "Energy Ball",
+            "Fire Blast",
+            "Sludge Wave"
+        ]
+    },
+    {
+        "species": "Torkoal",
+        "gender": "M",
+        "item": "Heat Rock",
+        "ability": "Drought",
+        "teraType": "Fire",
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spd": 8
+        },
+        "nature": "Bold",
+        "moves": [
+            "Body Press",
+            "Rapid Spin",
+            "Stealth Rock",
+            "Yawn"
+        ]
+    },
+    {
+        "species": "Volcarona",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Flame Body",
+        "teraType": "Bug",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Bug Buzz",
+            "Fire Blast",
+            "Giga Drain",
+            "Quiver Dance"
+        ]
+    }
+]

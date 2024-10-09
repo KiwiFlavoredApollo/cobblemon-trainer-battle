@@ -1,0 +1,114 @@
+[
+    {
+        "species": "Floatzel",
+        "gender": "M",
+        "item": "Focus Sash",
+        "ability": "Swift Swim",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Baton Pass",
+            "Ice Punch",
+            "Taunt",
+            "Waterfall"
+        ]
+    },
+    {
+        "species": "Charizard",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Blaze",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Air Slash",
+            "Fire Blast",
+            "Hidden Power Grass",
+            "Roost"
+        ],
+        "ivs": {
+            "atk": 30,
+            "spa": 30
+        }
+    },
+    {
+        "species": "Gardevoir",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Trace",
+        "evs": {
+            "hp": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Focus Blast",
+            "Psychic",
+            "Thunderbolt",
+            "Trick"
+        ]
+    },
+    {
+        "species": "Sandslash",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sand Veil",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Rapid Spin",
+            "Shadow Claw",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Skuntank",
+        "gender": "M",
+        "item": "Black Glasses",
+        "ability": "Aftermath",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Crunch",
+            "Explosion",
+            "Pursuit",
+            "Sucker Punch"
+        ]
+    },
+    {
+        "species": "Vileplume",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Chlorophyll",
+        "evs": {
+            "hp": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Sleep Powder",
+            "Sludge Bomb",
+            "Solar Beam",
+            "Sunny Day"
+        ]
+    }
+]

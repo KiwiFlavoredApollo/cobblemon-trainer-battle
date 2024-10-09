@@ -1,0 +1,109 @@
+[
+    {
+        "species": "Groudon",
+        "item": "Red Orb",
+        "ability": "Drought",
+        "evs": {
+            "hp": 252,
+            "def": 56,
+            "spd": 200
+        },
+        "nature": "Relaxed",
+        "moves": [
+            "Overheat",
+            "Precipice Blades",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Arceus-Ground",
+        "item": "Earth Plate",
+        "ability": "Multitype",
+        "evs": {
+            "hp": 252,
+            "def": 168,
+            "spe": 88
+        },
+        "nature": "Timid",
+        "moves": [
+            "Defog",
+            "Ice Beam",
+            "Judgment",
+            "Recover"
+        ]
+    },
+    {
+        "species": "Gengar",
+        "gender": "M",
+        "item": "Gengarite",
+        "ability": "Cursed Body",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Icy Wind",
+            "Shadow Ball",
+            "Sludge Wave",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Magearna",
+        "item": "Leftovers",
+        "ability": "Soul-Heart",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Calm",
+        "moves": [
+            "Fleur Cannon",
+            "Heal Bell",
+            "Heart Swap",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Marshadow",
+        "item": "Marshadium Z",
+        "ability": "Technician",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "ivs": {
+            "atk": 30,
+            "def": 30
+        },
+        "moves": [
+            "Bulk Up",
+            "Close Combat",
+            "Shadow Sneak",
+            "Spectral Thief"
+        ]
+    },
+    {
+        "species": "Yveltal",
+        "item": "Leftovers",
+        "ability": "Dark Aura",
+        "evs": {
+            "hp": 248,
+            "spd": 76,
+            "spe": 184
+        },
+        "nature": "Timid",
+        "moves": [
+            "Foul Play",
+            "Roost",
+            "Taunt",
+            "Toxic"
+        ]
+    }
+]

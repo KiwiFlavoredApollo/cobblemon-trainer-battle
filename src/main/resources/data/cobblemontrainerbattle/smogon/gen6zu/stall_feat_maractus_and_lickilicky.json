@@ -1,0 +1,111 @@
+[
+    {
+        "species": "Bronzor",
+        "item": "Eviolite",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 252,
+            "def": 144,
+            "spd": 112
+        },
+        "nature": "Bold",
+        "moves": [
+            "Psywave",
+            "Rest",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Lickitung",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Oblivious",
+        "evs": {
+            "hp": 252,
+            "def": 168,
+            "spd": 88
+        },
+        "nature": "Careful",
+        "moves": [
+            "Heal Bell",
+            "Knock Off",
+            "Protect",
+            "Wish"
+        ]
+    },
+    {
+        "species": "Maractus",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Water Absorb",
+        "evs": {
+            "hp": 252,
+            "def": 120,
+            "spe": 136
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Giga Drain",
+            "Leech Seed",
+            "Spikes",
+            "Synthesis"
+        ]
+    },
+    {
+        "species": "Swalot",
+        "gender": "M",
+        "item": "Black Sludge",
+        "ability": "Sticky Hold",
+        "evs": {
+            "hp": 252,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "moves": [
+            "Curse",
+            "Fire Punch",
+            "Rest",
+            "Sleep Talk"
+        ]
+    },
+    {
+        "species": "Wartortle",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Torrent",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Bold",
+        "moves": [
+            "Foresight",
+            "Rapid Spin",
+            "Scald",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Zweilous",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Hustle",
+        "evs": {
+            "hp": 252,
+            "atk": 4,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "moves": [
+            "Dragon Tail",
+            "Rest",
+            "Roar",
+            "Sleep Talk"
+        ]
+    }
+]

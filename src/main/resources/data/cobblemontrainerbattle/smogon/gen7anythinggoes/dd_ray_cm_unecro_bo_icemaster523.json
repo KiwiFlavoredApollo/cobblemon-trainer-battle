@@ -1,0 +1,116 @@
+[
+    {
+        "species": "Rayquaza",
+        "item": "Life Orb",
+        "ability": "Air Lock",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Dragon Ascent",
+            "Dragon Dance",
+            "Earthquake",
+            "Extreme Speed"
+        ]
+    },
+    {
+        "species": "Arceus-Dark",
+        "item": "Dread Plate",
+        "ability": "Multitype",
+        "evs": {
+            "hp": 252,
+            "def": 168,
+            "spe": 88
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Judgment",
+            "Recover",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Arceus-Ground",
+        "item": "Earth Plate",
+        "ability": "Multitype",
+        "evs": {
+            "hp": 248,
+            "def": 224,
+            "spe": 36
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Ice Beam",
+            "Judgment",
+            "Recover",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Groudon",
+        "item": "Red Orb",
+        "ability": "Drought",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Sassy",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Dragon Tail",
+            "Precipice Blades",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Ho-Oh",
+        "item": "Leftovers",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 252,
+            "def": 204,
+            "spd": 52
+        },
+        "nature": "Impish",
+        "moves": [
+            "Defog",
+            "Sacred Fire",
+            "Toxic",
+            "Whirlwind"
+        ]
+    },
+    {
+        "species": "Necrozma-Dusk-Mane",
+        "item": "Ultranecrozium Z",
+        "ability": "Prism Armor",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Dragon Pulse",
+            "Heat Wave",
+            "Photon Geyser"
+        ]
+    }
+]

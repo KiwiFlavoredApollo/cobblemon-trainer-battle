@@ -1,0 +1,121 @@
+[
+    {
+        "species": "Zapdos",
+        "item": "Heavy-Duty Boots",
+        "ability": "Pressure",
+        "teraType": "Electric",
+        "evs": {
+            "hp": 16,
+            "spa": 240,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Discharge",
+            "Hurricane",
+            "Roost",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Iron Hands",
+        "item": "Shuca Berry",
+        "ability": "Quark Drive",
+        "teraType": "Fighting",
+        "evs": {
+            "def": 116,
+            "spd": 252,
+            "spe": 140
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Drain Punch",
+            "Ice Punch",
+            "Swords Dance",
+            "Thunder Punch"
+        ]
+    },
+    {
+        "species": "Magnezone",
+        "item": "Assault Vest",
+        "ability": "Analytic",
+        "teraType": "Electric",
+        "evs": {
+            "hp": 168,
+            "def": 68,
+            "spa": 60,
+            "spd": 204,
+            "spe": 8
+        },
+        "nature": "Modest",
+        "moves": [
+            "Flash Cannon",
+            "Thunderbolt",
+            "Tri Attack",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Regieleki",
+        "item": "Heavy-Duty Boots",
+        "ability": "Transistor",
+        "teraType": "Electric",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Rapid Spin",
+            "Thunderbolt",
+            "Thunder Wave",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Rotom-Wash",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "teraType": "Electric",
+        "evs": {
+            "hp": 212,
+            "def": 48,
+            "spe": 248
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hydro Pump",
+            "Nasty Plot",
+            "Stored Power",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Sandy Shocks",
+        "item": "Choice Scarf",
+        "ability": "Protosynthesis",
+        "teraType": "Electric",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earth Power",
+            "Power Gem",
+            "Stealth Rock",
+            "Volt Switch"
+        ]
+    }
+]

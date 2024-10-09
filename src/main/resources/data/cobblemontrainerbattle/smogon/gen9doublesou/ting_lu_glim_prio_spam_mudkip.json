@@ -1,0 +1,123 @@
+[
+    {
+        "species": "Chien-Pao",
+        "item": "Focus Sash",
+        "ability": "Sword of Ruin",
+        "teraType": "Ghost",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Ice Spinner",
+            "Protect",
+            "Sacred Sword",
+            "Sucker Punch"
+        ]
+    },
+    {
+        "species": "Dragonite",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Inner Focus",
+        "teraType": "Normal",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "spd": 4
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Dragon Claw",
+            "Extreme Speed",
+            "Fire Punch",
+            "Ice Spinner"
+        ]
+    },
+    {
+        "species": "Glimmora",
+        "gender": "M",
+        "item": "Focus Sash",
+        "ability": "Toxic Debris",
+        "teraType": "Grass",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Earth Power",
+            "Mortal Spin",
+            "Power Gem",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Gouging Fire",
+        "item": "Booster Energy",
+        "ability": "Protosynthesis",
+        "hpType": "Fighting",
+        "teraType": "Fairy",
+        "evs": {
+            "hp": 164,
+            "atk": 128,
+            "spe": 216
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Breaking Swipe",
+            "Burning Bulwark",
+            "Heat Crash",
+            "Howl"
+        ],
+        "ivs": {
+            "hp": 20,
+            "atk": 20,
+            "def": 20,
+            "spa": 20,
+            "spd": 20,
+            "spe": 20
+        }
+    },
+    {
+        "species": "Rillaboom",
+        "gender": "M",
+        "item": "Assault Vest",
+        "ability": "Grassy Surge",
+        "teraType": "Fire",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "spd": 4
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Fake Out",
+            "Grassy Glide",
+            "U-turn",
+            "Wood Hammer"
+        ]
+    },
+    {
+        "species": "Ting-Lu",
+        "item": "Leftovers",
+        "ability": "Vessel of Ruin",
+        "teraType": "Ghost",
+        "evs": {
+            "hp": 144,
+            "def": 112,
+            "spd": 184,
+            "spe": 68
+        },
+        "nature": "Careful",
+        "moves": [
+            "Spikes",
+            "Stomping Tantrum",
+            "Throat Chop",
+            "Whirlwind"
+        ]
+    }
+]

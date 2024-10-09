@@ -1,0 +1,112 @@
+[
+    {
+        "species": "Ferrothorn",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Iron Barbs",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "moves": [
+            "Curse",
+            "Knock Off",
+            "Leech Seed",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Calyrex-Shadow",
+        "item": "Choice Specs",
+        "ability": "As One (Spectrier)",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Aromatherapy",
+            "Astral Barrage",
+            "Psyshock",
+            "Trick"
+        ]
+    },
+    {
+        "species": "Eternatus",
+        "item": "Air Balloon",
+        "ability": "Pressure",
+        "evs": {
+            "hp": 248,
+            "def": 44,
+            "spe": 216
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Draco Meteor",
+            "Flamethrower",
+            "Recover",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Groudon",
+        "item": "Leftovers",
+        "ability": "Drought",
+        "evs": {
+            "hp": 248,
+            "atk": 108,
+            "spe": 152
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Heat Crash",
+            "Precipice Blades",
+            "Rock Tomb",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Necrozma-Dusk-Mane",
+        "item": "Colbur Berry",
+        "ability": "Prism Armor",
+        "evs": {
+            "hp": 252,
+            "spd": 136,
+            "spe": 120
+        },
+        "nature": "Careful",
+        "moves": [
+            "Dragon Dance",
+            "Knock Off",
+            "Moonlight",
+            "Sunsteel Strike"
+        ]
+    },
+    {
+        "species": "Yveltal",
+        "item": "Heavy-Duty Boots",
+        "ability": "Dark Aura",
+        "evs": {
+            "hp": 248,
+            "def": 112,
+            "spd": 68,
+            "spe": 80
+        },
+        "nature": "Careful",
+        "moves": [
+            "Defog",
+            "Foul Play",
+            "Knock Off",
+            "Roost"
+        ]
+    }
+]

@@ -1,0 +1,120 @@
+[
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Tyranitarite",
+        "ability": "Sand Stream",
+        "evs": {
+            "hp": 16,
+            "atk": 240,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Brick Break",
+            "Dragon Dance",
+            "Ice Punch",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Excadrill",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Sand Rush",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Iron Head",
+            "Return",
+            "Swords Dance"
+        ],
+        "happiness": 255
+    },
+    {
+        "species": "Landorus-Therian",
+        "item": "Focus Sash",
+        "ability": "Intimidate",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Explosion",
+            "Imprison",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Latias",
+        "item": "Light Clay",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Healing Wish",
+            "Light Screen",
+            "Reflect",
+            "Safeguard"
+        ]
+    },
+    {
+        "species": "Serperior",
+        "gender": "M",
+        "item": "Light Clay",
+        "ability": "Contrary",
+        "evs": {
+            "hp": 252,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Glare",
+            "Leaf Storm",
+            "Light Screen",
+            "Reflect"
+        ]
+    },
+    {
+        "species": "Volcarona",
+        "gender": "F",
+        "item": "Life Orb",
+        "ability": "Flame Body",
+        "evs": {
+            "hp": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 1,
+            "spa": 30,
+            "spd": 30
+        },
+        "moves": [
+            "Fire Blast",
+            "Giga Drain",
+            "Hidden Power Ground",
+            "Quiver Dance"
+        ]
+    }
+]

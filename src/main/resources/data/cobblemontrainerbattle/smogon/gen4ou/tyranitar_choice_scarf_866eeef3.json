@@ -1,0 +1,109 @@
+[
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Sand Stream",
+        "shiny": true,
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Crunch",
+            "Pursuit",
+            "Stealth Rock",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Clefable",
+        "gender": "F",
+        "item": "Leftovers",
+        "ability": "Magic Guard",
+        "evs": {
+            "hp": 252,
+            "def": 56,
+            "spd": 200
+        },
+        "nature": "Calm",
+        "moves": [
+            "Knock Off",
+            "Seismic Toss",
+            "Soft-Boiled",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Jirachi",
+        "item": "Leftovers",
+        "ability": "Serene Grace",
+        "evs": {
+            "hp": 180,
+            "atk": 180,
+            "spe": 148
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Body Slam",
+            "Fire Punch",
+            "Iron Head",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Latias",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 252,
+            "def": 160,
+            "spe": 96
+        },
+        "nature": "Bold",
+        "moves": [
+            "Earthquake",
+            "Ice Beam",
+            "Recover",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Quagsire",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Water Absorb",
+        "evs": {
+            "hp": 252,
+            "def": 100,
+            "spd": 156
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Encore",
+            "Recover",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Skarmory",
+        "gender": "M",
+        "item": "Shed Shell",
+        "ability": "Keen Eye",
+        "evs": {
+            "hp": 248,
+            "def": 244,
+            "spe": 16
+        },
+        "nature": "Impish",
+        "moves": [
+            "Brave Bird",
+            "Roost",
+            "Spikes",
+            "Whirlwind"
+        ]
+    }
+]

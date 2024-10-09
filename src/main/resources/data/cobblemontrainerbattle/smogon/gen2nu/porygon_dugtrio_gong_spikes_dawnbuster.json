@@ -1,0 +1,68 @@
+[
+    {
+        "species": "Stantler",
+        "gender": "M",
+        "item": "Leftovers",
+        "happiness": 0,
+        "moves": [
+            "Earthquake",
+            "Frustration",
+            "Rest",
+            "Sleep Talk"
+        ]
+    },
+    {
+        "species": "Dewgong",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Ice Beam",
+            "Rest",
+            "Sleep Talk",
+            "Surf"
+        ]
+    },
+    {
+        "species": "Dugtrio",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Earthquake",
+            "Rock Slide",
+            "Screech",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Pineco",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Explosion",
+            "Giga Drain",
+            "Rapid Spin",
+            "Spikes"
+        ]
+    },
+    {
+        "species": "Porygon",
+        "item": "Leftovers",
+        "moves": [
+            "Curse",
+            "Double-Edge",
+            "Recover",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Weezing",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Explosion",
+            "Haze",
+            "Sludge Bomb",
+            "Thunder"
+        ]
+    }
+]

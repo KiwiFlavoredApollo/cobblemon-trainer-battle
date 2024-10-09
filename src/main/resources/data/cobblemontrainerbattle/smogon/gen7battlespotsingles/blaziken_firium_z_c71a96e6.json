@@ -1,0 +1,125 @@
+[
+    {
+        "species": "Blaziken",
+        "gender": "M",
+        "item": "Firium Z",
+        "ability": "Speed Boost",
+        "level": 50,
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Flare Blitz",
+            "High Jump Kick",
+            "Protect",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Espeon",
+        "gender": "M",
+        "item": "Light Clay",
+        "ability": "Magic Bounce",
+        "level": 50,
+        "evs": {
+            "hp": 244,
+            "def": 12,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Light Screen",
+            "Psychic",
+            "Reflect",
+            "Yawn"
+        ]
+    },
+    {
+        "species": "Gengar",
+        "gender": "M",
+        "item": "Gengarite",
+        "ability": "Cursed Body",
+        "level": 50,
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hex",
+            "Hypnosis",
+            "Sludge Bomb",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Gyarados",
+        "gender": "M",
+        "item": "Gyaradosite",
+        "ability": "Intimidate",
+        "level": 50,
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Dragon Dance",
+            "Earthquake",
+            "Ice Fang",
+            "Waterfall"
+        ]
+    },
+    {
+        "species": "Hippowdon",
+        "gender": "M",
+        "item": "Sitrus Berry",
+        "ability": "Sand Stream",
+        "level": 50,
+        "evs": {
+            "hp": 252,
+            "spd": 252,
+            "spe": 4
+        },
+        "nature": "Careful",
+        "ivs": {
+            "def": 25
+        },
+        "moves": [
+            "Earthquake",
+            "Stealth Rock",
+            "Whirlwind",
+            "Yawn"
+        ]
+    },
+    {
+        "species": "Skarmory",
+        "gender": "M",
+        "item": "Flyinium Z",
+        "ability": "Sturdy",
+        "level": 50,
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Brave Bird",
+            "Rock Tomb",
+            "Stealth Rock",
+            "Taunt"
+        ]
+    }
+]

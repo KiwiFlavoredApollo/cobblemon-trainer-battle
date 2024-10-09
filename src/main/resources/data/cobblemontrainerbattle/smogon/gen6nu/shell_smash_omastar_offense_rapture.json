@@ -1,0 +1,112 @@
+[
+    {
+        "species": "Omastar",
+        "gender": "M",
+        "item": "Shuca Berry",
+        "ability": "Shell Armor",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "moves": [
+            "Earth Power",
+            "Hydro Pump",
+            "Ice Beam",
+            "Shell Smash"
+        ]
+    },
+    {
+        "species": "Magmortar",
+        "gender": "M",
+        "item": "Assault Vest",
+        "ability": "Vital Spirit",
+        "evs": {
+            "hp": 64,
+            "spa": 252,
+            "spe": 192
+        },
+        "nature": "Mild",
+        "moves": [
+            "Earthquake",
+            "Fire Blast",
+            "Hidden Power Grass",
+            "Thunderbolt"
+        ],
+        "ivs": {
+            "atk": 30,
+            "spa": 30
+        }
+    },
+    {
+        "species": "Mesprit",
+        "item": "Colbur Berry",
+        "ability": "Levitate",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Ice Beam",
+            "Psychic",
+            "Signal Beam",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Mismagius",
+        "gender": "M",
+        "item": "Colbur Berry",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Hex",
+            "Memento",
+            "Taunt",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Shiftry",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Chlorophyll",
+        "evs": {
+            "atk": 252,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Lonely",
+        "moves": [
+            "Defog",
+            "Knock Off",
+            "Leaf Storm",
+            "Sucker Punch"
+        ]
+    },
+    {
+        "species": "Tauros",
+        "item": "Life Orb",
+        "ability": "Sheer Force",
+        "evs": {
+            "atk": 252,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Earthquake",
+            "Fire Blast",
+            "Iron Tail",
+            "Rock Climb"
+        ]
+    }
+]

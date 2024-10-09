@@ -1,0 +1,126 @@
+[
+    {
+        "species": "Venusaur",
+        "gender": "M",
+        "item": "Venusaurite",
+        "ability": "Chlorophyll",
+        "teraType": "Grass",
+        "evs": {
+            "hp": 252,
+            "def": 240,
+            "spe": 16
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Giga Drain",
+            "Hidden Power Fire",
+            "Leech Seed",
+            "Synthesis"
+        ],
+        "hpType": "Fire"
+    },
+    {
+        "species": "Crobat",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Infiltrator",
+        "teraType": "Poison",
+        "evs": {
+            "hp": 252,
+            "spd": 56,
+            "spe": 200
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Brave Bird",
+            "Defog",
+            "Roost",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Muk-Alola",
+        "gender": "M",
+        "item": "Assault Vest",
+        "ability": "Poison Touch",
+        "teraType": "Poison",
+        "evs": {
+            "hp": 252,
+            "atk": 20,
+            "def": 12,
+            "spd": 224
+        },
+        "nature": "Careful",
+        "moves": [
+            "Drain Punch",
+            "Knock Off",
+            "Poison Jab",
+            "Pursuit"
+        ]
+    },
+    {
+        "species": "Nidoking",
+        "item": "Life Orb",
+        "ability": "Sheer Force",
+        "teraType": "Poison",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earth Power",
+            "Ice Beam",
+            "Stealth Rock",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Slowking-Galar",
+        "gender": "M",
+        "item": "Assault Vest",
+        "ability": "Regenerator",
+        "teraType": "Poison",
+        "evs": {
+            "hp": 252,
+            "atk": 44,
+            "spd": 212
+        },
+        "nature": "Sassy",
+        "moves": [
+            "Earthquake",
+            "Future Sight",
+            "Ice Beam",
+            "Sludge Bomb"
+        ]
+    },
+    {
+        "species": "Toxapex",
+        "gender": "M",
+        "item": "Icium Z",
+        "ability": "Regenerator",
+        "teraType": "Poison",
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spd": 8
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Haze",
+            "Recover",
+            "Scald",
+            "Toxic"
+        ]
+    }
+]

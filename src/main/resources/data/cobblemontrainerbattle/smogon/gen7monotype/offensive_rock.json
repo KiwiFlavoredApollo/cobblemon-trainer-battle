@@ -1,0 +1,117 @@
+[
+    {
+        "species": "Diancie",
+        "item": "Diancite",
+        "ability": "Clear Body",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Diamond Storm",
+            "Earth Power",
+            "Hidden Power Fire",
+            "Moonblast"
+        ],
+        "ivs": {
+            "atk": 30,
+            "spa": 30,
+            "spe": 30
+        },
+        "hpType": "Fire"
+    },
+    {
+        "species": "Cradily",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Storm Drain",
+        "evs": {
+            "hp": 248,
+            "def": 212,
+            "spe": 48
+        },
+        "nature": "Bold",
+        "moves": [
+            "Giga Drain",
+            "Mirror Coat",
+            "Recover",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Golem-Alola",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Magnet Pull",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Fire Punch",
+            "Stone Edge",
+            "Wild Charge"
+        ]
+    },
+    {
+        "species": "Shuckle",
+        "gender": "M",
+        "item": "Mental Herb",
+        "ability": "Sturdy",
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spd": 8
+        },
+        "nature": "Impish",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Encore",
+            "Knock Off",
+            "Stealth Rock",
+            "Sticky Web"
+        ]
+    },
+    {
+        "species": "Terrakion",
+        "item": "Choice Scarf",
+        "ability": "Justified",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Earthquake",
+            "Poison Jab",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Sand Stream",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Crunch",
+            "Fire Punch",
+            "Pursuit",
+            "Stone Edge"
+        ]
+    }
+]

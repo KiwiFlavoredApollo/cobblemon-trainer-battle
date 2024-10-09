@@ -1,0 +1,56 @@
+[
+    {
+        "species": "Persian",
+        "moves": [
+            "Amnesia",
+            "Hypnosis",
+            "Slash",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Gengar",
+        "moves": [
+            "Explosion",
+            "Hypnosis",
+            "Ice Punch",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Hypno",
+        "moves": [
+            "Amnesia",
+            "Ice Punch",
+            "Psychic",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Snorlax",
+        "moves": [
+            "Body Slam",
+            "Reflect",
+            "Rest",
+            "Self-Destruct"
+        ]
+    },
+    {
+        "species": "Starmie",
+        "moves": [
+            "Recover",
+            "Surf",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Vaporeon",
+        "moves": [
+            "Acid Armor",
+            "Growth",
+            "Rest",
+            "Surf"
+        ]
+    }
+]

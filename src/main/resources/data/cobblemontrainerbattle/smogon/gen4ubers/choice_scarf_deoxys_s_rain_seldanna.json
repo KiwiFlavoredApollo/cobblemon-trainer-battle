@@ -1,0 +1,114 @@
+[
+    {
+        "species": "Deoxys-Speed",
+        "item": "Choice Scarf",
+        "ability": "Pressure",
+        "evs": {
+            "hp": 248,
+            "def": 96,
+            "spd": 164
+        },
+        "nature": "Bold",
+        "moves": [
+            "Spikes",
+            "Taunt",
+            "Thunder Wave",
+            "Trick"
+        ]
+    },
+    {
+        "species": "Bronzong",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 252,
+            "def": 8,
+            "spd": 248
+        },
+        "nature": "Careful",
+        "moves": [
+            "Earthquake",
+            "Explosion",
+            "Payback",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Dialga",
+        "item": "Choice Scarf",
+        "ability": "Pressure",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Draco Meteor",
+            "Dragon Pulse",
+            "Sleep Talk",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Giratina-Origin",
+        "item": "Griseous Orb",
+        "ability": "Levitate",
+        "evs": {
+            "atk": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Draco Meteor",
+            "Outrage",
+            "Shadow Sneak",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Kyogre",
+        "item": "Leftovers",
+        "ability": "Drizzle",
+        "evs": {
+            "hp": 248,
+            "def": 52,
+            "spa": 96,
+            "spe": 112
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Hydro Pump",
+            "Ice Beam",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Latios",
+        "item": "Soul Dew",
+        "ability": "Levitate",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Draco Meteor",
+            "Recover",
+            "Roar",
+            "Thunder"
+        ]
+    }
+]

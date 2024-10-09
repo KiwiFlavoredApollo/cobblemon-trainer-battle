@@ -1,0 +1,120 @@
+[
+    {
+        "species": "Azelf",
+        "item": "Lum Berry",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 200,
+            "def": 224,
+            "spd": 24,
+            "spe": 60
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Explosion",
+            "Stealth Rock",
+            "Taunt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Gyarados",
+        "gender": "M",
+        "item": "Lum Berry",
+        "ability": "Intimidate",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Dragon Dance",
+            "Earthquake",
+            "Ice Fang",
+            "Waterfall"
+        ]
+    },
+    {
+        "species": "Jirachi",
+        "item": "Shuca Berry",
+        "ability": "Serene Grace",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 3,
+            "spa": 30,
+            "spd": 30
+        },
+        "moves": [
+            "Calm Mind",
+            "Grass Knot",
+            "Hidden Power Ground",
+            "Psychic"
+        ]
+    },
+    {
+        "species": "Metagross",
+        "item": "Iron Ball",
+        "ability": "Clear Body",
+        "shiny": true,
+        "evs": {
+            "hp": 248,
+            "atk": 136,
+            "def": 20,
+            "spd": 76,
+            "spe": 28
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Explosion",
+            "Meteor Mash",
+            "Trick"
+        ]
+    },
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Shuca Berry",
+        "ability": "Sand Stream",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Dragon Dance",
+            "Earthquake",
+            "Ice Punch",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Zapdos",
+        "item": "Life Orb",
+        "ability": "Pressure",
+        "shiny": true,
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 2,
+            "spa": 30
+        },
+        "moves": [
+            "Agility",
+            "Heat Wave",
+            "Hidden Power Grass",
+            "Thunderbolt"
+        ]
+    }
+]

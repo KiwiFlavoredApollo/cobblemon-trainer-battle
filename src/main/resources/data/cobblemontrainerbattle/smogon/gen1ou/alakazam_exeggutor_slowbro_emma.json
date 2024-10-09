@@ -1,0 +1,56 @@
+[
+    {
+        "species": "Alakazam",
+        "moves": [
+            "Psychic",
+            "Recover",
+            "Seismic Toss",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Chansey",
+        "moves": [
+            "Reflect",
+            "Seismic Toss",
+            "Soft-Boiled",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Exeggutor",
+        "moves": [
+            "Explosion",
+            "Mega Drain",
+            "Psychic",
+            "Sleep Powder"
+        ]
+    },
+    {
+        "species": "Slowbro",
+        "moves": [
+            "Amnesia",
+            "Rest",
+            "Surf",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Snorlax",
+        "moves": [
+            "Body Slam",
+            "Earthquake",
+            "Reflect",
+            "Rest"
+        ]
+    },
+    {
+        "species": "Tauros",
+        "moves": [
+            "Blizzard",
+            "Body Slam",
+            "Hyper Beam",
+            "Thunderbolt"
+        ]
+    }
+]

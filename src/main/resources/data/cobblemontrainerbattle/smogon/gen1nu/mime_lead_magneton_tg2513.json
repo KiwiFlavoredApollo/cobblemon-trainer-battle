@@ -1,0 +1,74 @@
+[
+    {
+        "species": "Mr. Mime",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Psychic",
+            "Seismic Toss",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Aerodactyl",
+        "moves": [
+            "Double-Edge",
+            "Fire Blast",
+            "Sky Attack",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Blastoise",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Blizzard",
+            "Counter",
+            "Seismic Toss",
+            "Surf"
+        ]
+    },
+    {
+        "species": "Charizard",
+        "moves": [
+            "Earthquake",
+            "Fire Blast",
+            "Hyper Beam",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Magneton",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Substitute",
+            "Thunder",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Venomoth",
+        "moves": [
+            "Double-Edge",
+            "Psychic",
+            "Sleep Powder",
+            "Stun Spore"
+        ]
+    }
+]

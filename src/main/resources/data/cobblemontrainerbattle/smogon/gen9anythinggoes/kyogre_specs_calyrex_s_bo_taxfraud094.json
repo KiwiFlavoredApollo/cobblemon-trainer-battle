@@ -1,0 +1,114 @@
+[
+    {
+        "species": "Kyogre",
+        "item": "Heavy-Duty Boots",
+        "ability": "Drizzle",
+        "teraType": "Fairy",
+        "evs": {
+            "hp": 224,
+            "spa": 252,
+            "spe": 32
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Ice Beam",
+            "Origin Pulse",
+            "Thunder",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Calyrex-Shadow",
+        "item": "Choice Specs",
+        "ability": "As One (Spectrier)",
+        "teraType": "Ghost",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Astral Barrage",
+            "Grass Knot",
+            "Psyshock",
+            "Trick"
+        ]
+    },
+    {
+        "species": "Ho-Oh",
+        "item": "Heavy-Duty Boots",
+        "ability": "Regenerator",
+        "teraType": "Fairy",
+        "evs": {
+            "hp": 240,
+            "def": 244,
+            "spe": 24
+        },
+        "nature": "Impish",
+        "moves": [
+            "Brave Bird",
+            "Recover",
+            "Sacred Fire",
+            "Whirlwind"
+        ]
+    },
+    {
+        "species": "Koraidon",
+        "item": "Choice Scarf",
+        "ability": "Orichalcum Pulse",
+        "teraType": "Fire",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Flare Blitz",
+            "Low Kick",
+            "Outrage",
+            "U-turn"
+        ],
+        "hpType": "Ghost"
+    },
+    {
+        "species": "Necrozma-Dusk-Mane",
+        "item": "Heavy-Duty Boots",
+        "ability": "Prism Armor",
+        "teraType": "Fire",
+        "evs": {
+            "hp": 248,
+            "def": 120,
+            "spe": 140
+        },
+        "nature": "Impish",
+        "moves": [
+            "Dragon Dance",
+            "Earthquake",
+            "Moonlight",
+            "Sunsteel Strike"
+        ]
+    },
+    {
+        "species": "Ting-Lu",
+        "item": "Leftovers",
+        "ability": "Vessel of Ruin",
+        "teraType": "Poison",
+        "evs": {
+            "hp": 220,
+            "spd": 252,
+            "spe": 36
+        },
+        "nature": "Careful",
+        "moves": [
+            "Earthquake",
+            "Ruination",
+            "Spikes",
+            "Whirlwind"
+        ]
+    }
+]

@@ -1,0 +1,124 @@
+[
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sand Stream",
+        "evs": {
+            "hp": 184,
+            "atk": 196,
+            "def": 120,
+            "spe": 8
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Hidden Power Bug",
+            "Roar",
+            "Rock Slide"
+        ],
+        "ivs": {
+            "atk": 30,
+            "def": 30,
+            "spd": 30
+        }
+    },
+    {
+        "species": "Blissey",
+        "item": "Leftovers",
+        "ability": "Natural Cure",
+        "evs": {
+            "hp": 40,
+            "def": 244,
+            "spa": 208,
+            "spe": 16
+        },
+        "nature": "Bold",
+        "moves": [
+            "Ice Beam",
+            "Seismic Toss",
+            "Soft-Boiled",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Claydol",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 224,
+            "atk": 228,
+            "spa": 36,
+            "spe": 20
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Psychic",
+            "Rapid Spin",
+            "Refresh"
+        ]
+    },
+    {
+        "species": "Dugtrio",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Arena Trap",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Aerial Ace",
+            "Earthquake",
+            "Hidden Power Bug",
+            "Screech"
+        ],
+        "ivs": {
+            "atk": 30,
+            "def": 30,
+            "spd": 30
+        }
+    },
+    {
+        "species": "Milotic",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Marvel Scale",
+        "evs": {
+            "hp": 248,
+            "def": 212,
+            "spe": 48
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Recover",
+            "Refresh",
+            "Surf",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Skarmory",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Keen Eye",
+        "evs": {
+            "hp": 248,
+            "spd": 236,
+            "spe": 24
+        },
+        "nature": "Careful",
+        "moves": [
+            "Drill Peck",
+            "Roar",
+            "Spikes",
+            "Toxic"
+        ]
+    }
+]

@@ -1,0 +1,120 @@
+[
+    {
+        "species": "Celebi",
+        "item": "Expert Belt",
+        "ability": "Natural Cure",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earth Power",
+            "Hidden Power Fire",
+            "Nasty Plot",
+            "Psychic"
+        ],
+        "hpType": "Fire"
+    },
+    {
+        "species": "Breloom",
+        "gender": "M",
+        "item": "Rockium Z",
+        "ability": "Technician",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bullet Seed",
+            "Mach Punch",
+            "Stone Edge",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Decidueye",
+        "gender": "M",
+        "item": "Spooky Plate",
+        "ability": "Long Reach",
+        "evs": {
+            "hp": 80,
+            "atk": 252,
+            "spe": 176
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Roost",
+            "Shadow Sneak",
+            "Spirit Shackle",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Ferrothorn",
+        "gender": "F",
+        "item": "Leftovers",
+        "ability": "Iron Barbs",
+        "evs": {
+            "hp": 248,
+            "def": 200,
+            "spd": 60
+        },
+        "nature": "Relaxed",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Gyro Ball",
+            "Leech Seed",
+            "Protect",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Venusaur",
+        "gender": "M",
+        "item": "Venusaurite",
+        "ability": "Chlorophyll",
+        "evs": {
+            "hp": 252,
+            "def": 136,
+            "spd": 120
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Giga Drain",
+            "Sleep Powder",
+            "Sludge Bomb",
+            "Synthesis"
+        ]
+    },
+    {
+        "species": "Whimsicott",
+        "gender": "M",
+        "item": "Pixie Plate",
+        "ability": "Prankster",
+        "evs": {
+            "def": 44,
+            "spa": 252,
+            "spd": 4,
+            "spe": 208
+        },
+        "nature": "Timid",
+        "moves": [
+            "Knock Off",
+            "Moonblast",
+            "Tailwind",
+            "U-turn"
+        ]
+    }
+]

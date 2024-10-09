@@ -1,0 +1,74 @@
+[
+    {
+        "species": "Starmie",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Psychic",
+            "Recover",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Chansey",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Counter",
+            "Ice Beam",
+            "Sing",
+            "Soft-Boiled"
+        ]
+    },
+    {
+        "species": "Rhydon",
+        "moves": [
+            "Body Slam",
+            "Earthquake",
+            "Rock Slide",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Slowbro",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Amnesia",
+            "Rest",
+            "Surf",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Snorlax",
+        "moves": [
+            "Body Slam",
+            "Hyper Beam",
+            "Reflect",
+            "Rest"
+        ]
+    },
+    {
+        "species": "Tauros",
+        "moves": [
+            "Blizzard",
+            "Body Slam",
+            "Earthquake",
+            "Hyper Beam"
+        ]
+    }
+]

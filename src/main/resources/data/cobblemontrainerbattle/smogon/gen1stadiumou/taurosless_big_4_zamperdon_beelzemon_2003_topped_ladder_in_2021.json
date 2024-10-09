@@ -1,0 +1,56 @@
+[
+    {
+        "species": "Persian",
+        "moves": [
+            "Bubble Beam",
+            "Slash",
+            "Substitute",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Alakazam",
+        "moves": [
+            "Psychic",
+            "Recover",
+            "Seismic Toss",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Chansey",
+        "moves": [
+            "Ice Beam",
+            "Soft-Boiled",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Exeggutor",
+        "moves": [
+            "Double-Edge",
+            "Mega Drain",
+            "Psychic",
+            "Rest"
+        ]
+    },
+    {
+        "species": "Rhydon",
+        "moves": [
+            "Earthquake",
+            "Rest",
+            "Rock Slide",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Snorlax",
+        "moves": [
+            "Body Slam",
+            "Earthquake",
+            "Rest",
+            "Rock Slide"
+        ]
+    }
+]

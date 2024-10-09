@@ -1,0 +1,127 @@
+[
+    {
+        "species": "Mienfoo",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 76,
+            "atk": 76,
+            "def": 36,
+            "spd": 36,
+            "spe": 236
+        },
+        "nature": "Jolly",
+        "moves": [
+            "High Jump Kick",
+            "Knock Off",
+            "Stone Edge",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Diglett",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Sand Force",
+        "evs": {
+            "hp": 36,
+            "atk": 236,
+            "spe": 236
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Beat Up",
+            "Earthquake",
+            "Protect",
+            "Rock Slide"
+        ]
+    },
+    {
+        "species": "Ferroseed",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Iron Barbs",
+        "evs": {
+            "hp": 84,
+            "def": 108,
+            "spa": 4,
+            "spd": 228,
+            "spe": 36
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Endeavor",
+            "Giga Drain",
+            "Spikes",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Gastly",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 116,
+            "spa": 120,
+            "spe": 200
+        },
+        "nature": "Timid",
+        "moves": [
+            "Hidden Power Fighting",
+            "Knock Off",
+            "Shadow Ball",
+            "Will-O-Wisp"
+        ],
+        "ivs": {
+            "def": 30,
+            "spa": 30,
+            "spd": 30,
+            "spe": 30
+        }
+    },
+    {
+        "species": "Hippopotas",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Sand Stream",
+        "evs": {
+            "hp": 132,
+            "atk": 20,
+            "def": 212,
+            "spd": 100,
+            "spe": 20
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Slack Off",
+            "Stealth Rock",
+            "Whirlwind"
+        ]
+    },
+    {
+        "species": "Staryu",
+        "item": "Eviolite",
+        "ability": "Natural Cure",
+        "evs": {
+            "hp": 116,
+            "spd": 156,
+            "spe": 236
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Rapid Spin",
+            "Recover",
+            "Scald",
+            "Thunderbolt"
+        ]
+    }
+]

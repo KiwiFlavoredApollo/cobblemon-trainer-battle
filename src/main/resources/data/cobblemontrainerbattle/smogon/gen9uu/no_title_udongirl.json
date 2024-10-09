@@ -1,0 +1,124 @@
+[
+    {
+        "species": "Slowking",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Regenerator",
+        "teraType": "Fairy",
+        "evs": {
+            "hp": 252,
+            "def": 172,
+            "spd": 84
+        },
+        "nature": "Sassy",
+        "ivs": {
+            "atk": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Chilly Reception",
+            "Future Sight",
+            "Scald",
+            "Slack Off"
+        ]
+    },
+    {
+        "species": "Excadrill",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Mold Breaker",
+        "teraType": "Water",
+        "evs": {
+            "atk": 96,
+            "spd": 252,
+            "spe": 160
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Iron Head",
+            "Rapid Spin",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Hydrapple",
+        "gender": "M",
+        "item": "Choice Specs",
+        "ability": "Regenerator",
+        "teraType": "Steel",
+        "evs": {
+            "hp": 248,
+            "spa": 252,
+            "spe": 8
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Draco Meteor",
+            "Earth Power",
+            "Giga Drain",
+            "Leaf Storm"
+        ]
+    },
+    {
+        "species": "Lokix",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Tinted Lens",
+        "teraType": "Bug",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "First Impression",
+            "Knock Off",
+            "Sucker Punch",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Tornadus-Therian",
+        "item": "Assault Vest",
+        "ability": "Regenerator",
+        "teraType": "Steel",
+        "evs": {
+            "hp": 208,
+            "spd": 132,
+            "spe": 168
+        },
+        "nature": "Timid",
+        "moves": [
+            "Bleakwind Storm",
+            "Heat Wave",
+            "Knock Off",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Zapdos",
+        "item": "Heavy-Duty Boots",
+        "ability": "Static",
+        "teraType": "Steel",
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spd": 8
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Heat Wave",
+            "Hurricane",
+            "Roost",
+            "Volt Switch"
+        ]
+    }
+]

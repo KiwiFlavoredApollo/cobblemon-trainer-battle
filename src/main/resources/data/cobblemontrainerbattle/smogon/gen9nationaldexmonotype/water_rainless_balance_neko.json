@@ -1,0 +1,118 @@
+[
+    {
+        "species": "Dondozo",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Unaware",
+        "teraType": "Water",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "moves": [
+            "Curse",
+            "Rest",
+            "Sleep Talk",
+            "Waterfall"
+        ]
+    },
+    {
+        "species": "Gastrodon",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Sticky Hold",
+        "teraType": "Water",
+        "evs": {
+            "hp": 252,
+            "atk": 4,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "moves": [
+            "Clear Smog",
+            "Earthquake",
+            "Recover",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Greninja",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Protean",
+        "teraType": "Water",
+        "evs": {
+            "atk": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Hasty",
+        "moves": [
+            "Dark Pulse",
+            "Gunk Shot",
+            "Ice Beam",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Rotom-Wash",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "teraType": "Electric",
+        "evs": {
+            "hp": 252,
+            "def": 208,
+            "spe": 48
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Pain Split",
+            "Toxic",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Toxapex",
+        "gender": "M",
+        "item": "Icium Z",
+        "ability": "Regenerator",
+        "teraType": "Water",
+        "evs": {
+            "hp": 252,
+            "atk": 4,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "moves": [
+            "Haze",
+            "Poison Jab",
+            "Recover",
+            "Scald"
+        ]
+    },
+    {
+        "species": "Urshifu-Rapid-Strike",
+        "gender": "M",
+        "item": "Protective Pads",
+        "ability": "Unseen Fist",
+        "teraType": "Fighting",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Surging Strikes",
+            "Swords Dance",
+            "Zen Headbutt"
+        ]
+    }
+]

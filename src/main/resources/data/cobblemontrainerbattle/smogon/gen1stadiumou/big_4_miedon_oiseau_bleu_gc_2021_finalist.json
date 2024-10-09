@@ -1,0 +1,68 @@
+[
+    {
+        "species": "Starmie",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Blizzard",
+            "Recover",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Chansey",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Ice Beam",
+            "Soft-Boiled",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Exeggutor",
+        "moves": [
+            "Double-Edge",
+            "Psychic",
+            "Rest",
+            "Stun Spore"
+        ]
+    },
+    {
+        "species": "Rhydon",
+        "moves": [
+            "Body Slam",
+            "Earthquake",
+            "Rest",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Snorlax",
+        "moves": [
+            "Body Slam",
+            "Earthquake",
+            "Reflect",
+            "Rest"
+        ]
+    },
+    {
+        "species": "Tauros",
+        "moves": [
+            "Blizzard",
+            "Body Slam",
+            "Stomp",
+            "Substitute"
+        ]
+    }
+]

@@ -1,0 +1,121 @@
+[
+    {
+        "species": "Latios",
+        "item": "Soul Dew",
+        "ability": "Levitate",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Ice Beam",
+            "Recover",
+            "Refresh",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Gengar",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 100,
+            "atk": 252,
+            "spe": 156
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Hidden Power Rock",
+            "Shadow Ball",
+            "Taunt",
+            "Will-O-Wisp"
+        ],
+        "ivs": {
+            "def": 30,
+            "spd": 30,
+            "spe": 30
+        }
+    },
+    {
+        "species": "Groudon",
+        "item": "Leftovers",
+        "ability": "Drought",
+        "evs": {
+            "hp": 252,
+            "spd": 196,
+            "spe": 60
+        },
+        "nature": "Careful",
+        "moves": [
+            "Earthquake",
+            "Rock Slide",
+            "Swords Dance",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Ho-Oh",
+        "item": "Choice Band",
+        "ability": "Pressure",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Hidden Power Flying",
+            "Sacred Fire",
+            "Shadow Ball"
+        ],
+        "ivs": {
+            "hp": 30,
+            "atk": 30,
+            "def": 30,
+            "spa": 30,
+            "spd": 30
+        }
+    },
+    {
+        "species": "Mewtwo",
+        "item": "Lum Berry",
+        "ability": "Pressure",
+        "evs": {
+            "atk": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Hasty",
+        "moves": [
+            "Calm Mind",
+            "Ice Beam",
+            "Self-Destruct",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Snorlax",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Thick Fat",
+        "evs": {
+            "hp": 252,
+            "def": 132,
+            "spd": 124
+        },
+        "nature": "Impish",
+        "moves": [
+            "Amnesia",
+            "Body Slam",
+            "Curse",
+            "Rest"
+        ]
+    }
+]

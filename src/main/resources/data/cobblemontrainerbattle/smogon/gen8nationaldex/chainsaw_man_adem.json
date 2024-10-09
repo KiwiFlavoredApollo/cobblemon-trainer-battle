@@ -1,0 +1,123 @@
+[
+    {
+        "species": "Deoxys-Defense",
+        "item": "Leftovers",
+        "ability": "Pressure",
+        "evs": {
+            "hp": 252,
+            "def": 64,
+            "spe": 192
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Cosmic Power",
+            "Night Shade",
+            "Recover",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Ferrothorn",
+        "gender": "F",
+        "item": "Leftovers",
+        "ability": "Iron Barbs",
+        "evs": {
+            "hp": 252,
+            "def": 24,
+            "spd": 232
+        },
+        "nature": "Careful",
+        "moves": [
+            "Knock Off",
+            "Leech Seed",
+            "Power Whip",
+            "Spikes"
+        ]
+    },
+    {
+        "species": "Heatran",
+        "gender": "M",
+        "item": "Grassium Z",
+        "ability": "Flash Fire",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earth Power",
+            "Magma Storm",
+            "Solar Beam",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Landorus-Therian",
+        "item": "Rocky Helmet",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spe": 4
+        },
+        "nature": "Lax",
+        "moves": [
+            "Earthquake",
+            "Hidden Power Ice",
+            "Stealth Rock",
+            "U-turn"
+        ],
+        "ivs": {
+            "atk": 30,
+            "def": 30
+        },
+        "hpType": "Ice"
+    },
+    {
+        "species": "Latias",
+        "item": "Latiasite",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 248,
+            "spa": 8,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Aura Sphere",
+            "Calm Mind",
+            "Psyshock",
+            "Roost"
+        ]
+    },
+    {
+        "species": "Tapu Fini",
+        "item": "Choice Scarf",
+        "ability": "Misty Surge",
+        "evs": {
+            "hp": 248,
+            "spd": 44,
+            "spe": 216
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Hydro Pump",
+            "Moonblast",
+            "Trick"
+        ]
+    }
+]

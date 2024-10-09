@@ -1,0 +1,122 @@
+[
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Tyranitarite",
+        "ability": "Sand Stream",
+        "evs": {
+            "hp": 216,
+            "atk": 244,
+            "spe": 48
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Crunch",
+            "Focus Punch",
+            "Pursuit",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Clefable",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Magic Guard",
+        "evs": {
+            "hp": 252,
+            "def": 236,
+            "spe": 20
+        },
+        "nature": "Bold",
+        "moves": [
+            "Knock Off",
+            "Moonblast",
+            "Soft-Boiled",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Excadrill",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Sand Rush",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Iron Head",
+            "Rapid Spin",
+            "Rock Slide"
+        ]
+    },
+    {
+        "species": "Serperior",
+        "gender": "F",
+        "item": "Chesto Berry",
+        "ability": "Contrary",
+        "evs": {
+            "hp": 48,
+            "spa": 208,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 1,
+            "def": 30,
+            "spd": 30,
+            "spe": 30
+        },
+        "moves": [
+            "Glare",
+            "Hidden Power Rock",
+            "Leaf Storm",
+            "Rest"
+        ]
+    },
+    {
+        "species": "Volcanion",
+        "item": "Choice Scarf",
+        "ability": "Water Absorb",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Flamethrower",
+            "Overheat",
+            "Sludge Bomb",
+            "Steam Eruption"
+        ]
+    },
+    {
+        "species": "Zapdos",
+        "item": "Rocky Helmet",
+        "ability": "Static",
+        "evs": {
+            "hp": 248,
+            "def": 168,
+            "spa": 36,
+            "spe": 56
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0,
+            "def": 30
+        },
+        "moves": [
+            "Heat Wave",
+            "Hidden Power Ice",
+            "Roost",
+            "Volt Switch"
+        ]
+    }
+]

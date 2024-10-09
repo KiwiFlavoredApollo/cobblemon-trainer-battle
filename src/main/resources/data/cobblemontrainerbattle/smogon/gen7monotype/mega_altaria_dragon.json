@@ -1,0 +1,113 @@
+[
+    {
+        "species": "Dragonite",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Multiscale",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Extreme Speed",
+            "Fire Punch",
+            "Outrage",
+            "Superpower"
+        ]
+    },
+    {
+        "species": "Altaria",
+        "gender": "M",
+        "item": "Altarianite",
+        "ability": "Natural Cure",
+        "evs": {
+            "hp": 248,
+            "def": 8,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Dragon Dance",
+            "Refresh",
+            "Return",
+            "Roost"
+        ],
+        "happiness": 255
+    },
+    {
+        "species": "Garchomp",
+        "gender": "M",
+        "item": "Focus Sash",
+        "ability": "Rough Skin",
+        "evs": {
+            "atk": 252,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Earthquake",
+            "Fire Blast",
+            "Outrage",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Kommo-o",
+        "gender": "M",
+        "item": "Kommonium Z",
+        "ability": "Soundproof",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Clanging Scales",
+            "Close Combat",
+            "Dragon Dance",
+            "Poison Jab"
+        ]
+    },
+    {
+        "species": "Kyurem-Black",
+        "item": "Life Orb",
+        "ability": "Teravolt",
+        "evs": {
+            "atk": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Earth Power",
+            "Fusion Bolt",
+            "Ice Beam",
+            "Roost"
+        ]
+    },
+    {
+        "species": "Latios",
+        "item": "Choice Scarf",
+        "ability": "Levitate",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Draco Meteor",
+            "Hidden Power Steel",
+            "Psychic"
+        ],
+        "hpType": "Steel"
+    }
+]

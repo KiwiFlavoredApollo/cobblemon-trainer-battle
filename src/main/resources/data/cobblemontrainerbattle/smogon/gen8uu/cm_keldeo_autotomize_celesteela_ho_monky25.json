@@ -1,0 +1,113 @@
+[
+    {
+        "species": "Excadrill",
+        "gender": "M",
+        "item": "Focus Sash",
+        "ability": "Mold Breaker",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Rapid Spin",
+            "Rock Tomb",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Azelf",
+        "item": "Expert Belt",
+        "ability": "Levitate",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Dazzling Gleam",
+            "Flamethrower",
+            "Nasty Plot",
+            "Psyshock"
+        ]
+    },
+    {
+        "species": "Celesteela",
+        "item": "Power Herb",
+        "ability": "Beast Boost",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "moves": [
+            "Air Slash",
+            "Autotomize",
+            "Fire Blast",
+            "Meteor Beam"
+        ]
+    },
+    {
+        "species": "Gyarados",
+        "gender": "M",
+        "item": "Mystic Water",
+        "ability": "Moxie",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Dragon Dance",
+            "Ice Fang",
+            "Power Whip",
+            "Waterfall"
+        ]
+    },
+    {
+        "species": "Keldeo-Resolute",
+        "item": "Leftovers",
+        "ability": "Justified",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Air Slash",
+            "Calm Mind",
+            "Scald",
+            "Secret Sword"
+        ]
+    },
+    {
+        "species": "Scizor",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Technician",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bullet Punch",
+            "Dual Wingbeat",
+            "Knock Off",
+            "Swords Dance"
+        ]
+    }
+]

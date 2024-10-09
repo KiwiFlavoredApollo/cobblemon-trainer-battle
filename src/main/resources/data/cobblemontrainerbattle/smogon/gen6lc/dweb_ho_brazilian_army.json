@@ -1,0 +1,118 @@
+[
+    {
+        "species": "Dwebble",
+        "gender": "M",
+        "item": "Berry Juice",
+        "ability": "Sturdy",
+        "evs": {
+            "atk": 236,
+            "spe": 236
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Knock Off",
+            "Rock Blast",
+            "Spikes",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Abra",
+        "gender": "M",
+        "item": "Focus Sash",
+        "ability": "Magic Guard",
+        "evs": {
+            "atk": 36,
+            "spa": 240,
+            "spe": 200
+        },
+        "nature": "Timid",
+        "moves": [
+            "Dazzling Gleam",
+            "Hidden Power Fighting",
+            "Protect",
+            "Psychic"
+        ],
+        "ivs": {
+            "def": 30,
+            "spa": 30,
+            "spd": 30,
+            "spe": 30
+        }
+    },
+    {
+        "species": "Fletchling",
+        "gender": "M",
+        "ability": "Gale Wings",
+        "evs": {
+            "hp": 76,
+            "atk": 196,
+            "def": 12,
+            "spa": 36,
+            "spe": 180
+        },
+        "nature": "Naughty",
+        "moves": [
+            "Acrobatics",
+            "Overheat",
+            "Roost",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Pawniard",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Defiant",
+        "evs": {
+            "atk": 156,
+            "def": 36,
+            "spd": 116,
+            "spe": 196
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Iron Head",
+            "Knock Off",
+            "Sucker Punch",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Pumpkaboo-Super",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Frisk",
+        "evs": {
+            "hp": 204,
+            "def": 36,
+            "spd": 236,
+            "spe": 28
+        },
+        "nature": "Careful",
+        "moves": [
+            "Bullet Seed",
+            "Shadow Sneak",
+            "Synthesis",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Timburr",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Guts",
+        "evs": {
+            "hp": 76,
+            "def": 156,
+            "spd": 236
+        },
+        "nature": "Careful",
+        "moves": [
+            "Bulk Up",
+            "Drain Punch",
+            "Knock Off",
+            "Mach Punch"
+        ]
+    }
+]

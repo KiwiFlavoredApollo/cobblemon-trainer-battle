@@ -1,0 +1,123 @@
+[
+    {
+        "species": "Lurantis",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Contrary",
+        "evs": {
+            "hp": 252,
+            "atk": 216,
+            "def": 24,
+            "spd": 16
+        },
+        "nature": "Brave",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Leaf Blade",
+            "Protect",
+            "Substitute",
+            "Superpower"
+        ]
+    },
+    {
+        "species": "Incineroar",
+        "gender": "M",
+        "item": "Sitrus Berry",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 252,
+            "atk": 56,
+            "def": 24,
+            "spd": 176
+        },
+        "nature": "Careful",
+        "ivs": {
+            "spe": 30
+        },
+        "moves": [
+            "Fake Out",
+            "Flare Blitz",
+            "Knock Off",
+            "Parting Shot"
+        ]
+    },
+    {
+        "species": "Mew",
+        "item": "Sitrus Berry",
+        "ability": "Synchronize",
+        "evs": {
+            "hp": 252,
+            "def": 72,
+            "spa": 136,
+            "spd": 48
+        },
+        "nature": "Modest",
+        "moves": [
+            "Earth Power",
+            "Fake Out",
+            "Pollen Puff",
+            "Trick Room"
+        ]
+    },
+    {
+        "species": "Porygon2",
+        "item": "Eviolite",
+        "ability": "Download",
+        "evs": {
+            "hp": 252,
+            "def": 80,
+            "spa": 136,
+            "spd": 40
+        },
+        "nature": "Quiet",
+        "ivs": {
+            "atk": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Ice Beam",
+            "Recover",
+            "Thunderbolt",
+            "Trick Room"
+        ]
+    },
+    {
+        "species": "Tapu Fini",
+        "item": "Choice Scarf",
+        "ability": "Misty Surge",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hydro Pump",
+            "Ice Beam",
+            "Moonblast",
+            "Trick"
+        ]
+    },
+    {
+        "species": "Zygarde",
+        "item": "Choice Band",
+        "ability": "Aura Break",
+        "evs": {
+            "hp": 144,
+            "atk": 252,
+            "spe": 112
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Extreme Speed",
+            "Haze",
+            "Superpower",
+            "Thousand Arrows"
+        ]
+    }
+]

@@ -1,0 +1,121 @@
+[
+    {
+        "species": "Ninetales",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Drought",
+        "evs": {
+            "hp": 248,
+            "def": 208,
+            "spd": 36,
+            "spe": 16
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Fire Spin",
+            "Roar",
+            "Sunny Day",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Gliscor",
+        "gender": "M",
+        "item": "Toxic Orb",
+        "ability": "Poison Heal",
+        "evs": {
+            "hp": 244,
+            "def": 140,
+            "spd": 124
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Protect",
+            "Stealth Rock",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Malaconda",
+        "gender": "M",
+        "item": "Lum Berry",
+        "ability": "Harvest",
+        "evs": {
+            "hp": 112,
+            "atk": 60,
+            "spd": 212,
+            "spe": 124
+        },
+        "nature": "Careful",
+        "moves": [
+            "Power Whip",
+            "Punishment",
+            "Pursuit",
+            "Rest"
+        ]
+    },
+    {
+        "species": "Starmie",
+        "item": "Leftovers",
+        "ability": "Natural Cure",
+        "evs": {
+            "hp": 248,
+            "def": 160,
+            "spe": 100
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "spa": 30,
+            "spe": 30
+        },
+        "moves": [
+            "Hidden Power Fire",
+            "Psyshock",
+            "Rapid Spin",
+            "Recover"
+        ]
+    },
+    {
+        "species": "Stratagem",
+        "item": "Expert Belt",
+        "ability": "Levitate",
+        "evs": {
+            "def": 36,
+            "spa": 220,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "def": 30
+        },
+        "moves": [
+            "Earth Power",
+            "Flamethrower",
+            "Giga Drain",
+            "Hidden Power Ice"
+        ]
+    },
+    {
+        "species": "Victini",
+        "item": "Choice Scarf",
+        "ability": "Victory Star",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Bolt Strike",
+            "Brick Break",
+            "U-turn",
+            "V-create"
+        ]
+    }
+]

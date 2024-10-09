@@ -1,0 +1,116 @@
+[
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Tyranitarite",
+        "ability": "Sand Stream",
+        "evs": {
+            "hp": 156,
+            "atk": 228,
+            "spe": 124
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Pursuit",
+            "Stealth Rock",
+            "Stone Edge",
+            "Superpower"
+        ]
+    },
+    {
+        "species": "Arghonaut",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Unaware",
+        "evs": {
+            "hp": 252,
+            "def": 180,
+            "spd": 76
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Foul Play",
+            "Recover",
+            "Spikes"
+        ]
+    },
+    {
+        "species": "Excadrill",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sand Rush",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Iron Head",
+            "Rapid Spin",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Jumbao",
+        "gender": "M",
+        "item": "Fairium Z",
+        "ability": "Trace",
+        "evs": {
+            "hp": 240,
+            "spa": 44,
+            "spe": 224
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hidden Power Ground",
+            "Moonblast",
+            "Shore Up",
+            "Wish"
+        ],
+        "hpType": "Ground"
+    },
+    {
+        "species": "Reuniclus",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Magic Guard",
+        "evs": {
+            "hp": 252,
+            "def": 200,
+            "spe": 56
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Focus Blast",
+            "Psyshock",
+            "Recover"
+        ]
+    },
+    {
+        "species": "Tornadus-Therian",
+        "item": "Assault Vest",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 80,
+            "spa": 196,
+            "spe": 232
+        },
+        "nature": "Timid",
+        "moves": [
+            "Heat Wave",
+            "Hurricane",
+            "Knock Off",
+            "U-turn"
+        ]
+    }
+]

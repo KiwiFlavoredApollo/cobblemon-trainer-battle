@@ -1,0 +1,124 @@
+[
+    {
+        "species": "Camerupt",
+        "gender": "M",
+        "item": "Cameruptite",
+        "ability": "Magma Armor",
+        "evs": {
+            "hp": 248,
+            "def": 8,
+            "spa": 252
+        },
+        "nature": "Quiet",
+        "ivs": {
+            "atk": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Earth Power",
+            "Heat Wave",
+            "Nature Power",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Bronzong",
+        "item": "Psychium Z",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 252,
+            "def": 96,
+            "spd": 160
+        },
+        "nature": "Relaxed",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Gyro Ball",
+            "Hypnosis",
+            "Stealth Rock",
+            "Trick Room"
+        ]
+    },
+    {
+        "species": "Diancie",
+        "item": "Weakness Policy",
+        "ability": "Clear Body",
+        "evs": {
+            "hp": 248,
+            "atk": 252,
+            "spd": 8
+        },
+        "nature": "Sassy",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Diamond Storm",
+            "Moonblast",
+            "Protect",
+            "Trick Room"
+        ]
+    },
+    {
+        "species": "Incineroar",
+        "gender": "M",
+        "item": "Wiki Berry",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 252,
+            "def": 100,
+            "spd": 156
+        },
+        "nature": "Sassy",
+        "ivs": {
+            "spe": 1
+        },
+        "moves": [
+            "Fake Out",
+            "Flare Blitz",
+            "Taunt",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Porygon2",
+        "item": "Eviolite",
+        "ability": "Download",
+        "evs": {
+            "hp": 252,
+            "def": 132,
+            "spa": 16,
+            "spd": 108
+        },
+        "nature": "Quiet",
+        "ivs": {
+            "atk": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Ice Beam",
+            "Recover",
+            "Toxic",
+            "Trick Room"
+        ]
+    },
+    {
+        "species": "Tapu Bulu",
+        "item": "Assault Vest",
+        "ability": "Grassy Surge",
+        "evs": {
+            "hp": 208,
+            "atk": 64,
+            "spd": 236
+        },
+        "nature": "Brave",
+        "moves": [
+            "Horn Leech",
+            "Stone Edge",
+            "Superpower",
+            "Wood Hammer"
+        ]
+    }
+]

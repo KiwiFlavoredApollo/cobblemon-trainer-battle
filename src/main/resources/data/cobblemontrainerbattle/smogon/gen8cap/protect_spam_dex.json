@@ -1,0 +1,118 @@
+[
+    {
+        "species": "Equilibra",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 252,
+            "def": 100,
+            "spa": 12,
+            "spd": 132,
+            "spe": 12
+        },
+        "nature": "Modest",
+        "moves": [
+            "Doom Desire",
+            "Earth Power",
+            "Protect",
+            "Rapid Spin"
+        ]
+    },
+    {
+        "species": "Garchomp",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Rough Skin",
+        "evs": {
+            "hp": 240,
+            "spd": 252,
+            "spe": 16
+        },
+        "nature": "Careful",
+        "moves": [
+            "Earthquake",
+            "Protect",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Tapu Lele",
+        "item": "Choice Specs",
+        "ability": "Psychic Surge",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Focus Blast",
+            "Moonblast",
+            "Psychic",
+            "Psyshock"
+        ]
+    },
+    {
+        "species": "Toxapex",
+        "gender": "M",
+        "item": "Shed Shell",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spd": 8
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Haze",
+            "Recover",
+            "Scald",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Weavile",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Pressure",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Ice Shard",
+            "Knock Off",
+            "Swords Dance",
+            "Triple Axel"
+        ]
+    },
+    {
+        "species": "Zapdos",
+        "item": "Heavy-Duty Boots",
+        "ability": "Static",
+        "evs": {
+            "hp": 252,
+            "def": 240,
+            "spe": 16
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Discharge",
+            "Heat Wave",
+            "Hurricane",
+            "Roost"
+        ]
+    }
+]

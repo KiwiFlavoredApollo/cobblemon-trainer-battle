@@ -1,0 +1,113 @@
+[
+    {
+        "species": "Groudon",
+        "item": "Red Orb",
+        "ability": "Drought",
+        "evs": {
+            "hp": 136,
+            "atk": 168,
+            "spd": 52,
+            "spe": 152
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Dragon Tail",
+            "Precipice Blades",
+            "Stealth Rock",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Arceus",
+        "item": "Chople Berry",
+        "ability": "Multitype",
+        "evs": {
+            "hp": 240,
+            "atk": 252,
+            "spe": 16
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Extreme Speed",
+            "Ice Beam",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Greninja",
+        "gender": "M",
+        "item": "Focus Sash",
+        "ability": "Protean",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Icy Wind",
+            "Spikes",
+            "Taunt",
+            "Toxic Spikes"
+        ]
+    },
+    {
+        "species": "Necrozma-Dusk-Mane",
+        "item": "Solganium Z",
+        "ability": "Prism Armor",
+        "evs": {
+            "atk": 252,
+            "spd": 8,
+            "spe": 248
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Rock Polish",
+            "Sunsteel Strike",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Salamence",
+        "gender": "M",
+        "item": "Salamencite",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 44,
+            "atk": 228,
+            "spe": 212
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Double-Edge",
+            "Dragon Dance",
+            "Earthquake",
+            "Facade"
+        ]
+    },
+    {
+        "species": "Xerneas",
+        "item": "Power Herb",
+        "ability": "Fairy Aura",
+        "evs": {
+            "def": 168,
+            "spa": 252,
+            "spe": 88
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Focus Blast",
+            "Geomancy",
+            "Moonblast",
+            "Thunder"
+        ]
+    }
+]

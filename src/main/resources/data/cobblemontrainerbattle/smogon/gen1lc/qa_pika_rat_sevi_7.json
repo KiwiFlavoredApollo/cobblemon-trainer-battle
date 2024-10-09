@@ -1,0 +1,62 @@
+[
+    {
+        "species": "Pikachu",
+        "level": 5,
+        "moves": [
+            "Quick Attack",
+            "Surf",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Abra",
+        "level": 5,
+        "moves": [
+            "Ice Punch",
+            "Psychic",
+            "Thunder Punch",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Diglett",
+        "level": 5,
+        "moves": [
+            "Earthquake",
+            "Rock Slide",
+            "Slash",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Drowzee",
+        "level": 5,
+        "moves": [
+            "Hypnosis",
+            "Ice Punch",
+            "Psychic",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Rattata",
+        "level": 5,
+        "moves": [
+            "Body Slam",
+            "Bubble Beam",
+            "Quick Attack",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Staryu",
+        "level": 5,
+        "moves": [
+            "Blizzard",
+            "Surf",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    }
+]

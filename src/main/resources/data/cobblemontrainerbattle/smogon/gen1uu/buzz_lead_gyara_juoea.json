@@ -1,0 +1,56 @@
+[
+    {
+        "species": "Electabuzz",
+        "moves": [
+            "Body Slam",
+            "Hyper Beam",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Dugtrio",
+        "moves": [
+            "Earthquake",
+            "Rock Slide",
+            "Slash",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Gyarados",
+        "moves": [
+            "Blizzard",
+            "Body Slam",
+            "Surf",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Kadabra",
+        "moves": [
+            "Psychic",
+            "Recover",
+            "Seismic Toss",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Kangaskhan",
+        "moves": [
+            "Body Slam",
+            "Earthquake",
+            "Hyper Beam",
+            "Rock Slide"
+        ]
+    },
+    {
+        "species": "Tentacruel",
+        "moves": [
+            "Hyper Beam",
+            "Surf",
+            "Swords Dance",
+            "Wrap"
+        ]
+    }
+]

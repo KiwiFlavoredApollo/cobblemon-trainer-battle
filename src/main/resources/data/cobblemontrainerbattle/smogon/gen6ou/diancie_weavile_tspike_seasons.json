@@ -1,0 +1,116 @@
+[
+    {
+        "species": "Weavile",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Pressure",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Ice Shard",
+            "Icicle Crash",
+            "Knock Off",
+            "Pursuit"
+        ]
+    },
+    {
+        "species": "Cofagrigus",
+        "gender": "F",
+        "item": "Leftovers",
+        "ability": "Mummy",
+        "evs": {
+            "hp": 248,
+            "def": 244,
+            "spe": 16
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Pain Split",
+            "Shadow Ball",
+            "Toxic Spikes",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Diancie",
+        "item": "Diancite",
+        "ability": "Clear Body",
+        "evs": {
+            "atk": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Hasty",
+        "moves": [
+            "Diamond Storm",
+            "Earth Power",
+            "Moonblast",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Excadrill",
+        "gender": "F",
+        "item": "Leftovers",
+        "ability": "Mold Breaker",
+        "evs": {
+            "hp": 56,
+            "atk": 36,
+            "def": 80,
+            "spd": 84,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Iron Head",
+            "Rapid Spin",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Tornadus-Therian",
+        "item": "Rocky Helmet",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 248,
+            "def": 52,
+            "spe": 208
+        },
+        "nature": "Timid",
+        "moves": [
+            "Hurricane",
+            "Knock Off",
+            "Taunt",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Volcanion",
+        "item": "Leftovers",
+        "ability": "Water Absorb",
+        "evs": {
+            "hp": 248,
+            "def": 152,
+            "spd": 76,
+            "spe": 32
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Flamethrower",
+            "Protect",
+            "Steam Eruption",
+            "Toxic"
+        ]
+    }
+]

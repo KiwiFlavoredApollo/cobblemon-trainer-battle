@@ -1,0 +1,127 @@
+[
+    {
+        "species": "Latios",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "teraType": "Electric",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Draco Meteor",
+            "Recover",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Mienshao",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Regenerator",
+        "teraType": "Fighting",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Knock Off",
+            "Stone Edge",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Rhyperior",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Solid Rock",
+        "teraType": "Dragon",
+        "evs": {
+            "hp": 184,
+            "atk": 16,
+            "spd": 252,
+            "spe": 56
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Stealth Rock",
+            "Stone Edge",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Slowking",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Regenerator",
+        "teraType": "Fairy",
+        "evs": {
+            "hp": 252,
+            "def": 172,
+            "spd": 84
+        },
+        "nature": "Sassy",
+        "ivs": {
+            "atk": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Chilly Reception",
+            "Future Sight",
+            "Scald",
+            "Slack Off"
+        ]
+    },
+    {
+        "species": "Tinkaton",
+        "item": "Air Balloon",
+        "ability": "Pickpocket",
+        "teraType": "Flying",
+        "evs": {
+            "hp": 252,
+            "atk": 12,
+            "def": 180,
+            "spd": 24,
+            "spe": 40
+        },
+        "nature": "Careful",
+        "moves": [
+            "Encore",
+            "Gigaton Hammer",
+            "Knock Off",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Zapdos",
+        "item": "Heavy-Duty Boots",
+        "ability": "Static",
+        "teraType": "Steel",
+        "evs": {
+            "hp": 248,
+            "def": 156,
+            "spa": 72,
+            "spe": 32
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Heat Wave",
+            "Hurricane",
+            "Roost",
+            "Volt Switch"
+        ]
+    }
+]

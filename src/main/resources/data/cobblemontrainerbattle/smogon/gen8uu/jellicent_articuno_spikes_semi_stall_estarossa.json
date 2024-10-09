@@ -1,0 +1,121 @@
+[
+    {
+        "species": "Umbreon",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Inner Focus",
+        "shiny": true,
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Foul Play",
+            "Protect",
+            "Toxic",
+            "Wish"
+        ]
+    },
+    {
+        "species": "Articuno",
+        "item": "Heavy-Duty Boots",
+        "ability": "Pressure",
+        "evs": {
+            "hp": 252,
+            "spd": 200,
+            "spe": 56
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Freeze-Dry",
+            "Heal Bell",
+            "Roost"
+        ]
+    },
+    {
+        "species": "Chansey",
+        "item": "Eviolite",
+        "ability": "Natural Cure",
+        "evs": {
+            "hp": 248,
+            "atk": 8,
+            "def": 252
+        },
+        "nature": "Impish",
+        "moves": [
+            "Covet",
+            "Seismic Toss",
+            "Soft-Boiled",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Hippowdon",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Sand Stream",
+        "evs": {
+            "hp": 252,
+            "def": 16,
+            "spd": 240
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Slack Off",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Jellicent",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Cursed Body",
+        "evs": {
+            "hp": 252,
+            "def": 56,
+            "spe": 200
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hex",
+            "Recover",
+            "Taunt",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Skarmory",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Sturdy",
+        "evs": {
+            "hp": 252,
+            "def": 160,
+            "spe": 96
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Body Press",
+            "Iron Defense",
+            "Roost",
+            "Spikes"
+        ]
+    }
+]

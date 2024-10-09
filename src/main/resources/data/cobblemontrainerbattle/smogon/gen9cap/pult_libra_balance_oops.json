@@ -1,0 +1,121 @@
+[
+    {
+        "species": "Dragapult",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Infiltrator",
+        "teraType": "Fairy",
+        "evs": {
+            "atk": 76,
+            "spa": 180,
+            "spe": 252
+        },
+        "nature": "Hasty",
+        "moves": [
+            "Dragon Darts",
+            "Hex",
+            "U-turn",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Arghonaut",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Unaware",
+        "teraType": "Fairy",
+        "evs": {
+            "hp": 252,
+            "def": 148,
+            "spd": 108
+        },
+        "nature": "Impish",
+        "moves": [
+            "Circle Throw",
+            "Knock Off",
+            "Recover",
+            "Spikes"
+        ]
+    },
+    {
+        "species": "Equilibra",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "teraType": "Water",
+        "evs": {
+            "hp": 252,
+            "spd": 252,
+            "spe": 4
+        },
+        "nature": "Calm",
+        "moves": [
+            "Doom Desire",
+            "Earth Power",
+            "Pain Split",
+            "Rapid Spin"
+        ]
+    },
+    {
+        "species": "Mollux",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Dry Skin",
+        "teraType": "Fairy",
+        "evs": {
+            "hp": 252,
+            "def": 208,
+            "spe": 48
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Lava Plume",
+            "Recover",
+            "Sludge Bomb"
+        ]
+    },
+    {
+        "species": "Skarmory",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Sturdy",
+        "teraType": "Dragon",
+        "evs": {
+            "hp": 252,
+            "def": 160,
+            "spe": 96
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Body Press",
+            "Iron Defense",
+            "Roost",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Weavile",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Pressure",
+        "teraType": "Ice",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Ice Shard",
+            "Knock Off",
+            "Swords Dance",
+            "Triple Axel"
+        ]
+    }
+]

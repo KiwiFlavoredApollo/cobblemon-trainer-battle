@@ -1,0 +1,112 @@
+[
+    {
+        "species": "Garchomp",
+        "gender": "M",
+        "item": "Focus Sash",
+        "ability": "Rough Skin",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Outrage",
+            "Stealth Rock",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Breloom",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Technician",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bullet Seed",
+            "Low Sweep",
+            "Mach Punch",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Dragonite",
+        "gender": "M",
+        "item": "Lum Berry",
+        "ability": "Multiscale",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Dragon Dance",
+            "Extreme Speed",
+            "Fire Punch",
+            "Outrage"
+        ]
+    },
+    {
+        "species": "Scizor",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Technician",
+        "evs": {
+            "hp": 40,
+            "atk": 252,
+            "spe": 216
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bullet Punch",
+            "Pursuit",
+            "Superpower",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Starmie",
+        "item": "Air Balloon",
+        "ability": "Analytic",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Hydro Pump",
+            "Ice Beam",
+            "Rapid Spin",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Volcarona",
+        "gender": "M",
+        "item": "Insect Plate",
+        "ability": "Flame Body",
+        "evs": {
+            "hp": 72,
+            "spa": 252,
+            "spe": 184
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Bug Buzz",
+            "Fire Blast",
+            "Psychic",
+            "Quiver Dance"
+        ]
+    }
+]

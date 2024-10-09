@@ -1,0 +1,121 @@
+[
+    {
+        "species": "Deoxys-Speed",
+        "item": "Rocky Helmet",
+        "ability": "Pressure",
+        "evs": {
+            "hp": 248,
+            "def": 196,
+            "spd": 44,
+            "spe": 20
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "spa": 30,
+            "spe": 30
+        },
+        "moves": [
+            "Dark Pulse",
+            "Hidden Power Fire",
+            "Spikes",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Arceus",
+        "item": "Silk Scarf",
+        "ability": "Multitype",
+        "evs": {
+            "hp": 128,
+            "atk": 252,
+            "spe": 128
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Extreme Speed",
+            "Shadow Claw",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Darkrai",
+        "item": "Life Orb",
+        "ability": "Bad Dreams",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Dark Pulse",
+            "Dark Void",
+            "Focus Blast",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Genesect",
+        "item": "Choice Scarf",
+        "ability": "Download",
+        "shiny": true,
+        "evs": {
+            "atk": 232,
+            "spa": 8,
+            "spd": 16,
+            "spe": 252
+        },
+        "nature": "Hasty",
+        "moves": [
+            "Explosion",
+            "Ice Beam",
+            "Iron Head",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Giratina-Origin",
+        "item": "Griseous Orb",
+        "ability": "Levitate",
+        "evs": {
+            "atk": 176,
+            "def": 248,
+            "spe": 84
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Dragon Tail",
+            "Magic Coat",
+            "Shadow Sneak",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Latios",
+        "item": "Soul Dew",
+        "ability": "Levitate",
+        "evs": {
+            "def": 12,
+            "spa": 228,
+            "spd": 16,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "spa": 30,
+            "spe": 30
+        },
+        "moves": [
+            "Draco Meteor",
+            "Hidden Power Fire",
+            "Psyshock",
+            "Surf"
+        ]
+    }
+]

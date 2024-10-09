@@ -1,0 +1,119 @@
+[
+    {
+        "species": "Landorus-Therian",
+        "item": "Focus Sash",
+        "ability": "Intimidate",
+        "shiny": true,
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Stealth Rock",
+            "Stone Edge",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Jellicent",
+        "gender": "M",
+        "item": "Sitrus Berry",
+        "ability": "Water Absorb",
+        "evs": {
+            "hp": 252,
+            "def": 100,
+            "spd": 156
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0,
+            "spe": 4
+        },
+        "moves": [
+            "Recover",
+            "Scald",
+            "Trick Room",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Kyurem-Black",
+        "item": "Choice Band",
+        "ability": "Teravolt",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Dragon Claw",
+            "Fusion Bolt",
+            "Ice Beam",
+            "Outrage"
+        ]
+    },
+    {
+        "species": "Latios",
+        "item": "Dragon Gem",
+        "ability": "Levitate",
+        "shiny": true,
+        "evs": {
+            "hp": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "spa": 30,
+            "spd": 30
+        },
+        "moves": [
+            "Draco Meteor",
+            "Hidden Power Ground",
+            "Protect",
+            "Psychic"
+        ]
+    },
+    {
+        "species": "Metagross",
+        "item": "Leftovers",
+        "ability": "Clear Body",
+        "shiny": true,
+        "evs": {
+            "hp": 252,
+            "atk": 196,
+            "spd": 44,
+            "spe": 16
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Meteor Mash",
+            "Protect",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Thundurus",
+        "item": "Sitrus Berry",
+        "ability": "Prankster",
+        "shiny": true,
+        "evs": {
+            "hp": 236,
+            "spd": 176,
+            "spe": 96
+        },
+        "nature": "Calm",
+        "moves": [
+            "Sky Drop",
+            "Taunt",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    }
+]

@@ -1,0 +1,114 @@
+[
+    {
+        "species": "Togekiss",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Serene Grace",
+        "evs": {
+            "hp": 248,
+            "spa": 8,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Air Slash",
+            "Encore",
+            "Nasty Plot",
+            "Roost"
+        ]
+    },
+    {
+        "species": "Amoonguss",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 252,
+            "def": 220,
+            "spd": 36
+        },
+        "nature": "Bold",
+        "moves": [
+            "Foul Play",
+            "Seed Bomb",
+            "Sludge Bomb",
+            "Spore"
+        ]
+    },
+    {
+        "species": "Azelf",
+        "item": "Heavy-Duty Boots",
+        "ability": "Levitate",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Flamethrower",
+            "Knock Off",
+            "Psychic",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Cobalion",
+        "item": "Rocky Helmet",
+        "ability": "Justified",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Iron Head",
+            "Stone Edge",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Hippowdon",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sand Stream",
+        "evs": {
+            "hp": 252,
+            "atk": 8,
+            "def": 32,
+            "spd": 216
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Slack Off",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Rotom-Wash",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 248,
+            "spd": 44,
+            "spe": 216
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Hydro Pump",
+            "Pain Split",
+            "Volt Switch"
+        ]
+    }
+]

@@ -1,0 +1,115 @@
+[
+    {
+        "species": "Froslass",
+        "item": "Focus Sash",
+        "ability": "Cursed Body",
+        "shiny": true,
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Icy Wind",
+            "Spikes",
+            "Taunt",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Azumarill",
+        "gender": "M",
+        "item": "Sitrus Berry",
+        "ability": "Huge Power",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Aqua Jet",
+            "Belly Drum",
+            "Knock Off",
+            "Play Rough"
+        ]
+    },
+    {
+        "species": "Gyarados",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Moxie",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Bounce",
+            "Dragon Dance",
+            "Taunt",
+            "Waterfall"
+        ]
+    },
+    {
+        "species": "Lycanroc-Dusk",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Tough Claws",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Accelerock",
+            "Close Combat",
+            "Psychic Fangs",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Necrozma",
+        "item": "Power Herb",
+        "ability": "Prism Armor",
+        "evs": {
+            "hp": 152,
+            "spa": 252,
+            "spe": 104
+        },
+        "nature": "Modest",
+        "moves": [
+            "Heat Wave",
+            "Meteor Beam",
+            "Photon Geyser",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Polteageist",
+        "item": "Spell Tag",
+        "ability": "Cursed Body",
+        "shiny": true,
+        "evs": {
+            "hp": 32,
+            "spa": 252,
+            "spe": 224
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Shadow Ball",
+            "Shell Smash",
+            "Stored Power",
+            "Substitute"
+        ]
+    }
+]

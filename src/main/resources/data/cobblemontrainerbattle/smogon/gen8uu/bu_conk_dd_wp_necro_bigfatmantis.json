@@ -1,0 +1,107 @@
+[
+    {
+        "species": "Conkeldurr",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Guts",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "moves": [
+            "Bulk Up",
+            "Drain Punch",
+            "Ice Punch",
+            "Mach Punch"
+        ]
+    },
+    {
+        "species": "Cobalion",
+        "item": "Rocky Helmet",
+        "ability": "Justified",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Stealth Rock",
+            "Stone Edge",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Diggersby",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Huge Power",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Body Slam",
+            "Earthquake",
+            "Fire Punch",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Moltres",
+        "item": "Heavy-Duty Boots",
+        "ability": "Flame Body",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Defog",
+            "Flamethrower",
+            "Roost",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Necrozma",
+        "item": "Weakness Policy",
+        "ability": "Prism Armor",
+        "evs": {
+            "hp": 120,
+            "atk": 140,
+            "spe": 248
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Dragon Dance",
+            "Heat Wave",
+            "Photon Geyser",
+            "X-Scissor"
+        ]
+    },
+    {
+        "species": "Tangrowth",
+        "gender": "M",
+        "item": "Assault Vest",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Sassy",
+        "moves": [
+            "Focus Blast",
+            "Knock Off",
+            "Power Whip",
+            "Sludge Bomb"
+        ]
+    }
+]

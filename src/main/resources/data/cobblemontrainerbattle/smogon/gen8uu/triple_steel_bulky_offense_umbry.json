@@ -1,0 +1,115 @@
+[
+    {
+        "species": "Excadrill",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Mold Breaker",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Iron Head",
+            "Rapid Spin",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Celesteela",
+        "item": "Leftovers",
+        "ability": "Beast Boost",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Sassy",
+        "moves": [
+            "Flamethrower",
+            "Heavy Slam",
+            "Leech Seed",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Nihilego",
+        "item": "Black Sludge",
+        "ability": "Beast Boost",
+        "evs": {
+            "def": 80,
+            "spa": 176,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Grass Knot",
+            "Power Gem",
+            "Sludge Bomb",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Scizor",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Technician",
+        "evs": {
+            "hp": 252,
+            "atk": 96,
+            "def": 144,
+            "spe": 16
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bullet Punch",
+            "Knock Off",
+            "Roost",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Slowking",
+        "gender": "M",
+        "item": "Colbur Berry",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Relaxed",
+        "ivs": {
+            "atk": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Future Sight",
+            "Scald",
+            "Slack Off",
+            "Teleport"
+        ]
+    },
+    {
+        "species": "Zarude-Dada",
+        "item": "Choice Scarf",
+        "ability": "Leaf Guard",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Darkest Lariat",
+            "Power Whip",
+            "U-turn"
+        ]
+    }
+]

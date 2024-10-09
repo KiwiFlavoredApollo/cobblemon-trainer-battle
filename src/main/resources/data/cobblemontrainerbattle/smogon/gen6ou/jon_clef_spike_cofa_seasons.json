@@ -1,0 +1,118 @@
+[
+    {
+        "species": "Skarmory",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Sturdy",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Impish",
+        "moves": [
+            "Iron Head",
+            "Roost",
+            "Spikes",
+            "Whirlwind"
+        ]
+    },
+    {
+        "species": "Clefable",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Magic Guard",
+        "evs": {
+            "hp": 252,
+            "def": 152,
+            "spa": 80,
+            "spe": 24
+        },
+        "nature": "Modest",
+        "moves": [
+            "Calm Mind",
+            "Knock Off",
+            "Moonblast",
+            "Soft-Boiled"
+        ]
+    },
+    {
+        "species": "Cofagrigus",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Mummy",
+        "evs": {
+            "hp": 248,
+            "def": 216,
+            "spe": 44
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hex",
+            "Pain Split",
+            "Toxic Spikes",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Gastrodon",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Storm Drain",
+        "evs": {
+            "hp": 248,
+            "spd": 240,
+            "spe": 20
+        },
+        "nature": "Sassy",
+        "moves": [
+            "Clear Smog",
+            "Earthquake",
+            "Recover",
+            "Scald"
+        ]
+    },
+    {
+        "species": "Heatran",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Flash Fire",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Lava Plume",
+            "Protect",
+            "Roar",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Lopunny",
+        "gender": "F",
+        "item": "Lopunnite",
+        "ability": "Limber",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Fake Out",
+            "High Jump Kick",
+            "Quick Attack",
+            "Return"
+        ],
+        "happiness": 255
+    }
+]

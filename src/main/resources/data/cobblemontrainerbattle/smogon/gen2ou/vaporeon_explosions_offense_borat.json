@@ -1,0 +1,80 @@
+[
+    {
+        "species": "Zapdos",
+        "item": "Leftovers",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 23,
+            "def": 27
+        },
+        "moves": [
+            "Hidden Power Ice",
+            "Rest",
+            "Sleep Talk",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Cloyster",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Explosion",
+            "Spikes",
+            "Surf",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Exeggutor",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Explosion",
+            "Giga Drain",
+            "Psychic",
+            "Sleep Powder"
+        ]
+    },
+    {
+        "species": "Snorlax",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Curse",
+            "Double-Edge",
+            "Earthquake",
+            "Rest"
+        ]
+    },
+    {
+        "species": "Steelix",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Curse",
+            "Earthquake",
+            "Explosion",
+            "Roar"
+        ]
+    },
+    {
+        "species": "Vaporeon",
+        "gender": "F",
+        "item": "Leftovers",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Growth",
+            "Rest",
+            "Sleep Talk",
+            "Surf"
+        ]
+    }
+]

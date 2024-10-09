@@ -1,0 +1,127 @@
+[
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Chople Berry",
+        "ability": "Sand Stream",
+        "evs": {
+            "hp": 248,
+            "atk": 44,
+            "spa": 44,
+            "spd": 172
+        },
+        "nature": "Brave",
+        "moves": [
+            "Crunch",
+            "Flamethrower",
+            "Pursuit",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Alakazam",
+        "gender": "F",
+        "item": "Life Orb",
+        "ability": "Magic Guard",
+        "evs": {
+            "def": 88,
+            "spa": 188,
+            "spe": 232
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "spa": 30,
+            "spe": 30
+        },
+        "moves": [
+            "Grass Knot",
+            "Hidden Power Fire",
+            "Psychic",
+            "Shadow Ball"
+        ]
+    },
+    {
+        "species": "Ferrothorn",
+        "gender": "M",
+        "item": "Rawst Berry",
+        "ability": "Iron Barbs",
+        "evs": {
+            "hp": 248,
+            "def": 8,
+            "spd": 252
+        },
+        "nature": "Relaxed",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Gyro Ball",
+            "Knock Off",
+            "Power Whip",
+            "Spikes"
+        ]
+    },
+    {
+        "species": "Keldeo",
+        "item": "Leftovers",
+        "ability": "Justified",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "def": 30
+        },
+        "moves": [
+            "Hidden Power Ice",
+            "Protect",
+            "Scald",
+            "Secret Sword"
+        ]
+    },
+    {
+        "species": "Landorus-Therian",
+        "item": "Leftovers",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 100,
+            "def": 156,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "ivs": {
+            "hp": 30,
+            "def": 30
+        },
+        "moves": [
+            "Earthquake",
+            "Hidden Power Ice",
+            "Stealth Rock",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Latios",
+        "item": "Choice Scarf",
+        "ability": "Levitate",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Draco Meteor",
+            "Psyshock",
+            "Surf",
+            "Trick"
+        ]
+    }
+]

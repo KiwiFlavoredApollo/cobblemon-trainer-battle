@@ -1,0 +1,114 @@
+[
+    {
+        "species": "Medicham",
+        "gender": "M",
+        "item": "Medichamite",
+        "ability": "Pure Power",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bullet Punch",
+            "Fake Out",
+            "High Jump Kick",
+            "Zen Headbutt"
+        ]
+    },
+    {
+        "species": "Clefable",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Magic Guard",
+        "evs": {
+            "hp": 252,
+            "def": 220,
+            "spe": 36
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Moonblast",
+            "Soft-Boiled",
+            "Stealth Rock",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Ferrothorn",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Iron Barbs",
+        "evs": {
+            "hp": 252,
+            "def": 92,
+            "spd": 164
+        },
+        "nature": "Careful",
+        "moves": [
+            "Iron Head",
+            "Leech Seed",
+            "Spikes",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Landorus-Therian",
+        "item": "Choice Scarf",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 12,
+            "atk": 252,
+            "spe": 244
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Defog",
+            "Earthquake",
+            "Stone Edge",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Rotom-Wash",
+        "item": "Waterium Z",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 252,
+            "spa": 68,
+            "spd": 188
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hydro Pump",
+            "Pain Split",
+            "Thunder Wave",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Weavile",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Pressure",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Ice Shard",
+            "Knock Off",
+            "Pursuit",
+            "Triple Axel"
+        ]
+    }
+]

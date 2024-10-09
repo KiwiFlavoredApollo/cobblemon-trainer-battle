@@ -1,0 +1,129 @@
+[
+    {
+        "species": "Ursaluna",
+        "gender": "M",
+        "item": "Flame Orb",
+        "ability": "Guts",
+        "teraType": "Fairy",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Facade",
+            "Fire Punch",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Corviknight",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Pressure",
+        "teraType": "Dragon",
+        "evs": {
+            "hp": 248,
+            "def": 224,
+            "spd": 36
+        },
+        "nature": "Impish",
+        "moves": [
+            "Brave Bird",
+            "Defog",
+            "Roost",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Slowking-Galar",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Regenerator",
+        "teraType": "Dragon",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Sassy",
+        "ivs": {
+            "atk": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Chilly Reception",
+            "Flamethrower",
+            "Sludge Bomb",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Tangrowth",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Regenerator",
+        "teraType": "Steel",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Relaxed",
+        "moves": [
+            "Hidden Power Ice",
+            "Knock Off",
+            "Power Whip",
+            "Sleep Powder"
+        ],
+        "ivs": {
+            "atk": 30,
+            "def": 30
+        },
+        "hpType": "Ice"
+    },
+    {
+        "species": "Tapu Koko",
+        "item": "Electrium Z",
+        "ability": "Electric Surge",
+        "teraType": "Electric",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Hidden Power Ice",
+            "Roost",
+            "Thunderbolt",
+            "U-turn"
+        ],
+        "ivs": {
+            "atk": 30,
+            "def": 30
+        },
+        "hpType": "Ice"
+    },
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Tyranitarite",
+        "ability": "Sand Stream",
+        "teraType": "Rock",
+        "evs": {
+            "hp": 124,
+            "atk": 252,
+            "spe": 132
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Knock Off",
+            "Pursuit",
+            "Stealth Rock",
+            "Stone Edge"
+        ]
+    }
+]

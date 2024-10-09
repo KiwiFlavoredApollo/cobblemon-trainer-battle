@@ -1,0 +1,121 @@
+[
+    {
+        "species": "Pelipper",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Drizzle",
+        "teraType": "Water",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spa": 4
+        },
+        "nature": "Relaxed",
+        "ivs": {
+            "spe": 21
+        },
+        "moves": [
+            "Defog",
+            "Hurricane",
+            "Roost",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Barraskewda",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Swift Swim",
+        "teraType": "Water",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Flip Turn",
+            "Liquidation",
+            "Poison Jab"
+        ]
+    },
+    {
+        "species": "Greninja",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Protean",
+        "teraType": "Water",
+        "evs": {
+            "atk": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Hasty",
+        "moves": [
+            "Dark Pulse",
+            "Gunk Shot",
+            "Ice Beam",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Manaphy",
+        "item": "Waterium Z",
+        "ability": "Hydration",
+        "teraType": "Water",
+        "evs": {
+            "hp": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Psychic",
+            "Rain Dance",
+            "Surf",
+            "Tail Glow"
+        ]
+    },
+    {
+        "species": "Swampert",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Torrent",
+        "teraType": "Water",
+        "evs": {
+            "hp": 240,
+            "def": 16,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "moves": [
+            "Earthquake",
+            "Flip Turn",
+            "Roar",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Toxapex",
+        "gender": "M",
+        "item": "Black Sludge",
+        "ability": "Regenerator",
+        "teraType": "Poison",
+        "evs": {
+            "hp": 252,
+            "atk": 4,
+            "def": 252
+        },
+        "nature": "Impish",
+        "moves": [
+            "Haze",
+            "Poison Jab",
+            "Recover",
+            "Toxic"
+        ]
+    }
+]

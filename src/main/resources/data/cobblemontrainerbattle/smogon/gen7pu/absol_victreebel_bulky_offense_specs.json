@@ -1,0 +1,112 @@
+[
+    {
+        "species": "Absol",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Super Luck",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Knock Off",
+            "Play Rough",
+            "Pursuit",
+            "Superpower"
+        ]
+    },
+    {
+        "species": "Lanturn",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Volt Absorb",
+        "evs": {
+            "hp": 40,
+            "def": 220,
+            "spd": 248
+        },
+        "nature": "Calm",
+        "moves": [
+            "Heal Bell",
+            "Scald",
+            "Toxic",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Primeape",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Defiant",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Earthquake",
+            "Stone Edge",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Regirock",
+        "item": "Leftovers",
+        "ability": "Clear Body",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "moves": [
+            "Drain Punch",
+            "Stealth Rock",
+            "Stone Edge",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Silvally-Fairy",
+        "item": "Fairy Memory",
+        "ability": "RKS System",
+        "evs": {
+            "atk": 216,
+            "def": 40,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Defog",
+            "Flamethrower",
+            "Multi-Attack",
+            "Parting Shot"
+        ]
+    },
+    {
+        "species": "Victreebel",
+        "gender": "F",
+        "item": "Grassium Z",
+        "ability": "Chlorophyll",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 1
+        },
+        "moves": [
+            "Hidden Power Fire",
+            "Leaf Storm",
+            "Sludge Bomb",
+            "Strength Sap"
+        ],
+        "hpType": "Fire"
+    }
+]

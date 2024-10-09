@@ -1,0 +1,113 @@
+[
+    {
+        "species": "Gliscor",
+        "gender": "M",
+        "item": "Toxic Orb",
+        "ability": "Poison Heal",
+        "evs": {
+            "hp": 248,
+            "def": 44,
+            "spe": 216
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Substitute",
+            "Taunt",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Arceus-Fighting",
+        "item": "Fist Plate",
+        "ability": "Multitype",
+        "evs": {
+            "hp": 248,
+            "spd": 84,
+            "spe": 176
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Ice Beam",
+            "Judgment",
+            "Recover",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Excadrill",
+        "gender": "M",
+        "item": "Air Balloon",
+        "ability": "Sand Rush",
+        "evs": {
+            "atk": 248,
+            "spd": 68,
+            "spe": 192
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Rapid Spin",
+            "Shadow Claw",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Ferrothorn",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Iron Barbs",
+        "shiny": true,
+        "evs": {
+            "hp": 248,
+            "def": 8,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "moves": [
+            "Leech Seed",
+            "Power Whip",
+            "Protect",
+            "Spikes"
+        ]
+    },
+    {
+        "species": "Giratina",
+        "item": "Leftovers",
+        "ability": "Pressure",
+        "evs": {
+            "hp": 224,
+            "spd": 252,
+            "spe": 32
+        },
+        "nature": "Careful",
+        "moves": [
+            "Dragon Tail",
+            "Rest",
+            "Roar",
+            "Sleep Talk"
+        ]
+    },
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Chople Berry",
+        "ability": "Sand Stream",
+        "evs": {
+            "hp": 252,
+            "atk": 84,
+            "def": 48,
+            "spd": 124
+        },
+        "nature": "Sassy",
+        "moves": [
+            "Fire Blast",
+            "Payback",
+            "Pursuit",
+            "Stealth Rock"
+        ]
+    }
+]

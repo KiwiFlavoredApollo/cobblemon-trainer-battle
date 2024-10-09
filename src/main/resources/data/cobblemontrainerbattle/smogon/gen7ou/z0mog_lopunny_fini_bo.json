@@ -1,0 +1,116 @@
+[
+    {
+        "species": "Lopunny",
+        "gender": "M",
+        "item": "Lopunnite",
+        "ability": "Limber",
+        "happiness": 0,
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Fake Out",
+            "Frustration",
+            "High Jump Kick",
+            "Quick Attack"
+        ]
+    },
+    {
+        "species": "Garchomp",
+        "gender": "M",
+        "item": "Rockium Z",
+        "ability": "Rough Skin",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Stealth Rock",
+            "Stone Edge",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Jirachi",
+        "item": "Leftovers",
+        "ability": "Serene Grace",
+        "evs": {
+            "hp": 248,
+            "spd": 184,
+            "spe": 76
+        },
+        "nature": "Careful",
+        "moves": [
+            "Iron Head",
+            "Protect",
+            "U-turn",
+            "Wish"
+        ]
+    },
+    {
+        "species": "Kartana",
+        "item": "Choice Band",
+        "ability": "Beast Boost",
+        "happiness": 0,
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Frustration",
+            "Knock Off",
+            "Leaf Blade",
+            "Sacred Sword"
+        ]
+    },
+    {
+        "species": "Tapu Fini",
+        "item": "Leftovers",
+        "ability": "Misty Surge",
+        "evs": {
+            "hp": 248,
+            "spa": 12,
+            "spd": 52,
+            "spe": 196
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Moonblast",
+            "Scald",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Zapdos",
+        "item": "Leftovers",
+        "ability": "Static",
+        "evs": {
+            "hp": 252,
+            "def": 180,
+            "spe": 76
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Heat Wave",
+            "Hidden Power Ice",
+            "Roost",
+            "Volt Switch"
+        ],
+        "hpType": "Ice"
+    }
+]

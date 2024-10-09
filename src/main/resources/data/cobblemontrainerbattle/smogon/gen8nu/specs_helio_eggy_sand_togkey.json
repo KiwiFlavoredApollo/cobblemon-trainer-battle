@@ -1,0 +1,116 @@
+[
+    {
+        "species": "Sandslash",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Sand Rush",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Knock Off",
+            "Leech Life",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Exeggutor-Alola",
+        "gender": "M",
+        "item": "Sitrus Berry",
+        "ability": "Harvest",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Draco Meteor",
+            "Flamethrower",
+            "Giga Drain",
+            "Teleport"
+        ]
+    },
+    {
+        "species": "Gigalith",
+        "gender": "M",
+        "item": "Smooth Rock",
+        "ability": "Sand Stream",
+        "evs": {
+            "hp": 252,
+            "def": 124,
+            "spd": 132
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Rock Blast",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Heliolisk",
+        "gender": "M",
+        "item": "Choice Specs",
+        "ability": "Dry Skin",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Dark Pulse",
+            "Hyper Voice",
+            "Thunderbolt",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Lycanroc",
+        "gender": "M",
+        "item": "Wide Lens",
+        "ability": "Sand Rush",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Accelerock",
+            "Close Combat",
+            "Stone Edge",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Xatu",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Magic Bounce",
+        "evs": {
+            "hp": 248,
+            "def": 244,
+            "spe": 16
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Night Shade",
+            "Psychic",
+            "Roost",
+            "Teleport"
+        ]
+    }
+]

@@ -1,0 +1,133 @@
+[
+    {
+        "species": "Ogerpon-Wellspring",
+        "item": "Wellspring Mask",
+        "ability": "Water Absorb",
+        "teraType": "Water",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Ivy Cudgel",
+            "Power Whip",
+            "Superpower",
+            "Swords Dance"
+        ],
+        "hpType": "Poison"
+    },
+    {
+        "species": "Diancie",
+        "item": "Diancite",
+        "ability": "Clear Body",
+        "teraType": "Rock",
+        "evs": {
+            "hp": 244,
+            "def": 12,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Endeavor",
+            "Moonblast",
+            "Spikes",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Dragonite",
+        "gender": "M",
+        "item": "Loaded Dice",
+        "ability": "Multiscale",
+        "teraType": "Fire",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Dragon Dance",
+            "Fire Punch",
+            "Scale Shot",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Gouging Fire",
+        "item": "Dragonium Z",
+        "ability": "Protosynthesis",
+        "teraType": "Fire",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Dragon Dance",
+            "Earthquake",
+            "Flare Blitz",
+            "Outrage"
+        ],
+        "ivs": {
+            "hp": 20,
+            "atk": 20,
+            "def": 20,
+            "spa": 20,
+            "spd": 20,
+            "spe": 20
+        },
+        "hpType": "Fighting"
+    },
+    {
+        "species": "Iron Crown",
+        "item": "Booster Energy",
+        "ability": "Quark Drive",
+        "teraType": "Dragon",
+        "evs": {
+            "hp": 84,
+            "spa": 172,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "hp": 20,
+            "atk": 20,
+            "def": 20,
+            "spa": 20,
+            "spd": 20,
+            "spe": 20
+        },
+        "moves": [
+            "Calm Mind",
+            "Iron Defense",
+            "Stored Power",
+            "Tachyon Cutter"
+        ],
+        "hpType": "Fighting"
+    },
+    {
+        "species": "Landorus-Therian",
+        "item": "Rocky Helmet",
+        "ability": "Intimidate",
+        "teraType": "Water",
+        "evs": {
+            "hp": 248,
+            "def": 8,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Earth Power",
+            "Stealth Rock",
+            "Taunt",
+            "U-turn"
+        ]
+    }
+]

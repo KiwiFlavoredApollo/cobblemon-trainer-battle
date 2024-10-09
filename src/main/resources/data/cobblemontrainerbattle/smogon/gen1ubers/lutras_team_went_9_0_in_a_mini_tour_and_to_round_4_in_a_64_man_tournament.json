@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Jynx",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Blizzard",
+            "Lovely Kiss",
+            "Rest",
+            "Seismic Toss"
+        ]
+    },
+    {
+        "species": "Chansey",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Light Screen",
+            "Seismic Toss",
+            "Soft-Boiled",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Exeggutor",
+        "moves": [
+            "Explosion",
+            "Psychic",
+            "Sleep Powder",
+            "Stun Spore"
+        ]
+    },
+    {
+        "species": "Mew",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Reflect",
+            "Soft-Boiled",
+            "Thunder Wave",
+            "Transform"
+        ]
+    },
+    {
+        "species": "Mewtwo",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Amnesia",
+            "Ice Beam",
+            "Psychic",
+            "Recover"
+        ]
+    },
+    {
+        "species": "Slowbro",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Amnesia",
+            "Rest",
+            "Surf",
+            "Thunder Wave"
+        ]
+    }
+]

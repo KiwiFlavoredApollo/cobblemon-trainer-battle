@@ -1,0 +1,113 @@
+[
+    {
+        "species": "Kartana",
+        "item": "Grassium Z",
+        "ability": "Beast Boost",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Knock Off",
+            "Leaf Blade",
+            "Sacred Sword",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Greninja-Bond",
+        "item": "Choice Specs",
+        "ability": "Battle Bond",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Dark Pulse",
+            "Hydro Pump",
+            "Spikes",
+            "Water Shuriken"
+        ],
+        "hpType": "Ghost"
+    },
+    {
+        "species": "Heatran",
+        "gender": "M",
+        "item": "Air Balloon",
+        "ability": "Flash Fire",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earth Power",
+            "Eruption",
+            "Magma Storm",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Landorus-Therian",
+        "item": "Rocky Helmet",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 252,
+            "def": 232,
+            "spe": 24
+        },
+        "nature": "Impish",
+        "moves": [
+            "Defog",
+            "Earthquake",
+            "Explosion",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Scizor",
+        "gender": "M",
+        "item": "Scizorite",
+        "ability": "Light Metal",
+        "evs": {
+            "hp": 248,
+            "atk": 40,
+            "spe": 220
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bullet Punch",
+            "Roost",
+            "Sand Tomb",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Tapu Fini",
+        "item": "Choice Scarf",
+        "ability": "Misty Surge",
+        "evs": {
+            "hp": 248,
+            "def": 44,
+            "spe": 216
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Moonblast",
+            "Surf",
+            "Trick"
+        ]
+    }
+]

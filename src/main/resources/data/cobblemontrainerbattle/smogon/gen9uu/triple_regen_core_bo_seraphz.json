@@ -1,0 +1,126 @@
+[
+    {
+        "species": "Mienshao",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Regenerator",
+        "teraType": "Fighting",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Ice Spinner",
+            "Knock Off",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Hydrapple",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Regenerator",
+        "teraType": "Steel",
+        "evs": {
+            "hp": 248,
+            "def": 92,
+            "spa": 116,
+            "spd": 32,
+            "spe": 20
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Draco Meteor",
+            "Earth Power",
+            "Giga Drain",
+            "Nasty Plot"
+        ]
+    },
+    {
+        "species": "Mamoswine",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Thick Fat",
+        "teraType": "Ice",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Ice Shard",
+            "Icicle Crash",
+            "Knock Off"
+        ]
+    },
+    {
+        "species": "Slowking",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Regenerator",
+        "teraType": "Fairy",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Relaxed",
+        "ivs": {
+            "atk": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Chilly Reception",
+            "Scald",
+            "Slack Off",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Tinkaton",
+        "item": "Leftovers",
+        "ability": "Pickpocket",
+        "teraType": "Flying",
+        "evs": {
+            "hp": 252,
+            "def": 160,
+            "spd": 96
+        },
+        "nature": "Careful",
+        "moves": [
+            "Encore",
+            "Gigaton Hammer",
+            "Knock Off",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Zapdos",
+        "item": "Heavy-Duty Boots",
+        "ability": "Static",
+        "teraType": "Steel",
+        "evs": {
+            "hp": 252,
+            "def": 240,
+            "spe": 16
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Heat Wave",
+            "Hurricane",
+            "Roost",
+            "Volt Switch"
+        ]
+    }
+]

@@ -1,0 +1,121 @@
+[
+    {
+        "species": "Zapdos",
+        "item": "Leftovers",
+        "ability": "Pressure",
+        "evs": {
+            "hp": 252,
+            "spd": 80,
+            "spe": 176
+        },
+        "nature": "Timid",
+        "ivs": {
+            "hp": 30,
+            "atk": 2,
+            "def": 30,
+            "spa": 30,
+            "spd": 30
+        },
+        "moves": [
+            "Charge Beam",
+            "Hidden Power Flying",
+            "Roost",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Gligar",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Immunity",
+        "evs": {
+            "hp": 232,
+            "def": 216,
+            "spe": 60
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Knock Off",
+            "Roost",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Hitmontop",
+        "item": "Leftovers",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spe": 4
+        },
+        "nature": "Impish",
+        "moves": [
+            "Close Combat",
+            "Rapid Spin",
+            "Rest",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Roserade",
+        "gender": "M",
+        "item": "Black Sludge",
+        "ability": "Natural Cure",
+        "evs": {
+            "hp": 248,
+            "spd": 220,
+            "spe": 40
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Giga Drain",
+            "Rest",
+            "Sludge Bomb",
+            "Spikes"
+        ]
+    },
+    {
+        "species": "Slowking",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 248,
+            "atk": 16,
+            "def": 244
+        },
+        "nature": "Relaxed",
+        "moves": [
+            "Calm Mind",
+            "Dragon Tail",
+            "Scald",
+            "Slack Off"
+        ]
+    },
+    {
+        "species": "Umbreon",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Synchronize",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Foul Play",
+            "Heal Bell",
+            "Protect",
+            "Wish"
+        ]
+    }
+]

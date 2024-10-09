@@ -1,0 +1,117 @@
+[
+    {
+        "species": "Omastar",
+        "gender": "F",
+        "item": "Air Balloon",
+        "ability": "Weak Armor",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "spa": 30
+        },
+        "moves": [
+            "Hidden Power Grass",
+            "Ice Beam",
+            "Shell Smash",
+            "Surf"
+        ]
+    },
+    {
+        "species": "Archeops",
+        "gender": "M",
+        "item": "Flying Gem",
+        "ability": "Defeatist",
+        "evs": {
+            "atk": 252,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Acrobatics",
+            "Earthquake",
+            "Heat Wave",
+            "Hidden Power Grass"
+        ],
+        "ivs": {
+            "atk": 30,
+            "spa": 30
+        }
+    },
+    {
+        "species": "Cradily",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Storm Drain",
+        "evs": {
+            "hp": 252,
+            "atk": 4,
+            "spd": 252
+        },
+        "nature": "Sassy",
+        "moves": [
+            "Earthquake",
+            "Giga Drain",
+            "Recover",
+            "Stockpile"
+        ]
+    },
+    {
+        "species": "Rhyperior",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Solid Rock",
+        "evs": {
+            "hp": 252,
+            "atk": 4,
+            "def": 252
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Fire Punch",
+            "Stealth Rock",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Terrakion",
+        "item": "Choice Scarf",
+        "ability": "Justified",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Earthquake",
+            "Stone Edge",
+            "X-Scissor"
+        ]
+    },
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Sand Stream",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Crunch",
+            "Earthquake",
+            "Pursuit",
+            "Stone Edge"
+        ]
+    }
+]

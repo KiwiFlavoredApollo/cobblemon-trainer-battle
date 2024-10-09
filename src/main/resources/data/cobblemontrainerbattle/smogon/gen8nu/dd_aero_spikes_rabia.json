@@ -1,0 +1,113 @@
+[
+    {
+        "species": "Aerodactyl",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Unnerve",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Dragon Dance",
+            "Earthquake",
+            "Roost",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Dhelmise",
+        "item": "Heavy-Duty Boots",
+        "ability": "Steelworker",
+        "evs": {
+            "hp": 252,
+            "def": 228,
+            "spe": 28
+        },
+        "nature": "Impish",
+        "moves": [
+            "Poltergeist",
+            "Power Whip",
+            "Rapid Spin",
+            "Synthesis"
+        ]
+    },
+    {
+        "species": "Garbodor",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Aftermath",
+        "evs": {
+            "hp": 252,
+            "def": 140,
+            "spd": 100,
+            "spe": 16
+        },
+        "nature": "Impish",
+        "moves": [
+            "Gunk Shot",
+            "Haze",
+            "Pain Split",
+            "Spikes"
+        ]
+    },
+    {
+        "species": "Heliolisk",
+        "gender": "M",
+        "item": "Expert Belt",
+        "ability": "Dry Skin",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Grass Knot",
+            "Hyper Voice",
+            "Thunderbolt",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Inteleon",
+        "gender": "M",
+        "item": "Choice Specs",
+        "ability": "Torrent",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Dark Pulse",
+            "Hydro Pump",
+            "Ice Beam",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Stunfisk-Galar",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Mimicry",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "moves": [
+            "Earthquake",
+            "Protect",
+            "Stealth Rock",
+            "Yawn"
+        ]
+    }
+]

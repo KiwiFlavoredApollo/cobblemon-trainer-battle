@@ -1,0 +1,126 @@
+[
+    {
+        "species": "Diglett",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Arena Trap",
+        "evs": {
+            "hp": 116,
+            "atk": 156,
+            "spe": 236
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Beat Up",
+            "Earthquake",
+            "Final Gambit",
+            "Rock Tomb"
+        ]
+    },
+    {
+        "species": "Abra",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Magic Guard",
+        "evs": {
+            "def": 156,
+            "spa": 80,
+            "spe": 200
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0,
+            "spa": 30,
+            "spe": 30
+        },
+        "moves": [
+            "Dazzling Gleam",
+            "Energy Ball",
+            "Hidden Power Fire",
+            "Psychic"
+        ]
+    },
+    {
+        "species": "Gastly",
+        "gender": "F",
+        "item": "Life Orb",
+        "ability": "Levitate",
+        "evs": {
+            "spa": 200,
+            "spd": 80,
+            "spe": 200
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 1,
+            "def": 30,
+            "spa": 30,
+            "spd": 30,
+            "spe": 30
+        },
+        "moves": [
+            "Hidden Power Fighting",
+            "Psychic",
+            "Sludge Bomb",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Mienfoo",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 76,
+            "def": 196,
+            "spd": 196
+        },
+        "nature": "Impish",
+        "moves": [
+            "High Jump Kick",
+            "Knock Off",
+            "Sleep Talk",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Onix",
+        "gender": "M",
+        "item": "Groundium Z",
+        "ability": "Weak Armor",
+        "evs": {
+            "hp": 76,
+            "atk": 236,
+            "spe": 196
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Explosion",
+            "Rock Blast",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Vullaby",
+        "item": "Flyinium Z",
+        "ability": "Weak Armor",
+        "evs": {
+            "atk": 236,
+            "def": 76,
+            "spa": 80,
+            "spe": 116
+        },
+        "nature": "Naughty",
+        "ivs": {
+            "hp": 30,
+            "spa": 30
+        },
+        "moves": [
+            "Brave Bird",
+            "Heat Wave",
+            "Hidden Power Grass",
+            "Knock Off"
+        ]
+    }
+]

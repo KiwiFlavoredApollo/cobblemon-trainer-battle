@@ -1,0 +1,87 @@
+[
+    {
+        "species": "Diglett",
+        "gender": "M",
+        "item": "Berry Juice",
+        "level": 5,
+        "ivs": {
+            "atk": 27,
+            "def": 27
+        },
+        "moves": [
+            "Ancient Power",
+            "Earthquake",
+            "Hidden Power Bug",
+            "Thief"
+        ]
+    },
+    {
+        "species": "Chinchou",
+        "gender": "M",
+        "item": "Berry Juice",
+        "level": 5,
+        "moves": [
+            "Hydro Pump",
+            "Ice Beam",
+            "Thunder",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Exeggcute",
+        "gender": "M",
+        "item": "Berry Juice",
+        "level": 5,
+        "moves": [
+            "Explosion",
+            "Giga Drain",
+            "Psychic",
+            "Sleep Powder"
+        ]
+    },
+    {
+        "species": "Houndour",
+        "gender": "M",
+        "item": "Berry Juice",
+        "level": 5,
+        "ivs": {
+            "hp": 7,
+            "atk": 29,
+            "def": 29
+        },
+        "moves": [
+            "Crunch",
+            "Fire Blast",
+            "Hidden Power Grass",
+            "Pursuit"
+        ]
+    },
+    {
+        "species": "Magby",
+        "gender": "M",
+        "item": "Berry Juice",
+        "level": 5,
+        "ivs": {
+            "hp": 7,
+            "atk": 29,
+            "def": 29
+        },
+        "moves": [
+            "Cross Chop",
+            "Fire Blast",
+            "Hidden Power Grass",
+            "Thief"
+        ]
+    },
+    {
+        "species": "Porygon",
+        "item": "Miracle Berry",
+        "level": 5,
+        "moves": [
+            "Ice Beam",
+            "Sharpen",
+            "Thunder Wave",
+            "Tri Attack"
+        ]
+    }
+]

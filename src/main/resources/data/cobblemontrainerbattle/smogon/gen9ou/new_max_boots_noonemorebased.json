@@ -1,0 +1,117 @@
+[
+    {
+        "species": "Skarmory",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Sturdy",
+        "teraType": "Dragon",
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spe": 8
+        },
+        "nature": "Impish",
+        "moves": [
+            "Brave Bird",
+            "Roost",
+            "Stealth Rock",
+            "Whirlwind"
+        ]
+    },
+    {
+        "species": "Kyurem",
+        "item": "Heavy-Duty Boots",
+        "ability": "Pressure",
+        "teraType": "Fairy",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Earth Power",
+            "Freeze-Dry",
+            "Ice Beam",
+            "Scale Shot"
+        ]
+    },
+    {
+        "species": "Slowking-Galar",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Regenerator",
+        "teraType": "Water",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Sassy",
+        "ivs": {
+            "atk": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Chilly Reception",
+            "Future Sight",
+            "Sludge Bomb",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Ting-Lu",
+        "item": "Heavy-Duty Boots",
+        "ability": "Vessel of Ruin",
+        "teraType": "Ghost",
+        "evs": {
+            "hp": 252,
+            "spd": 252,
+            "spe": 4
+        },
+        "nature": "Careful",
+        "moves": [
+            "Earthquake",
+            "Ruination",
+            "Spikes",
+            "Whirlwind"
+        ]
+    },
+    {
+        "species": "Weavile",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Pickpocket",
+        "teraType": "Ice",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Ice Shard",
+            "Knock Off",
+            "Low Kick",
+            "Triple Axel"
+        ]
+    },
+    {
+        "species": "Zamazenta",
+        "item": "Heavy-Duty Boots",
+        "ability": "Dauntless Shield",
+        "teraType": "Fire",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Close Combat",
+            "Crunch",
+            "Heavy Slam",
+            "Stone Edge"
+        ]
+    }
+]

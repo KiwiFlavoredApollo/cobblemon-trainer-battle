@@ -1,0 +1,62 @@
+[
+    {
+        "species": "Arcanine",
+        "moves": [
+            "Agility",
+            "Body Slam",
+            "Fire Blast",
+            "Hyper Beam"
+        ]
+    },
+    {
+        "species": "Kabutops",
+        "moves": [
+            "Body Slam",
+            "Hyper Beam",
+            "Slash",
+            "Surf"
+        ]
+    },
+    {
+        "species": "Moltres",
+        "moves": [
+            "Agility",
+            "Fire Blast",
+            "Fire Spin",
+            "Hyper Beam"
+        ]
+    },
+    {
+        "species": "Mr. Mime",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Psychic",
+            "Seismic Toss",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Poliwrath",
+        "moves": [
+            "Earthquake",
+            "Hypnosis",
+            "Seismic Toss",
+            "Surf"
+        ]
+    },
+    {
+        "species": "Venusaur",
+        "moves": [
+            "Body Slam",
+            "Hyper Beam",
+            "Razor Leaf",
+            "Sleep Powder"
+        ]
+    }
+]

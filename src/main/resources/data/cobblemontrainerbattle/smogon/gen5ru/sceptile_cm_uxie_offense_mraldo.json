@@ -1,0 +1,117 @@
+[
+    {
+        "species": "Uxie",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 252,
+            "spa": 40,
+            "spe": 216
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Psychic",
+            "Substitute",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Escavalier",
+        "gender": "M",
+        "item": "Custap Berry",
+        "ability": "Swarm",
+        "evs": {
+            "hp": 132,
+            "atk": 252,
+            "spe": 124
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Endure",
+            "Megahorn",
+            "Return",
+            "Swords Dance"
+        ],
+        "happiness": 255
+    },
+    {
+        "species": "Qwilfish",
+        "gender": "M",
+        "item": "Black Sludge",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 252,
+            "atk": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Destiny Bond",
+            "Spikes",
+            "Taunt",
+            "Waterfall"
+        ]
+    },
+    {
+        "species": "Rhydon",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Rock Head",
+        "evs": {
+            "hp": 108,
+            "atk": 56,
+            "def": 60,
+            "spd": 252,
+            "spe": 32
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Megahorn",
+            "Stealth Rock",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Rotom",
+        "item": "Choice Scarf",
+        "ability": "Levitate",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Shadow Ball",
+            "Thunderbolt",
+            "Volt Switch",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Sceptile",
+        "gender": "M",
+        "item": "Flying Gem",
+        "ability": "Unburden",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Acrobatics",
+            "Earthquake",
+            "Leaf Blade",
+            "Swords Dance"
+        ]
+    }
+]

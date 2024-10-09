@@ -1,0 +1,122 @@
+[
+    {
+        "species": "Brambleghast",
+        "gender": "M",
+        "item": "Spell Tag",
+        "ability": "Wind Rider",
+        "teraType": "Grass",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Poltergeist",
+            "Rapid Spin",
+            "Shadow Sneak",
+            "Spikes"
+        ]
+    },
+    {
+        "species": "Abomasnow",
+        "gender": "M",
+        "item": "Light Clay",
+        "ability": "Snow Warning",
+        "teraType": "Grass",
+        "evs": {
+            "hp": 40,
+            "spa": 252,
+            "spe": 216
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Aurora Veil",
+            "Blizzard",
+            "Earth Power",
+            "Giga Drain"
+        ]
+    },
+    {
+        "species": "Amoonguss",
+        "gender": "M",
+        "item": "Eject Button",
+        "ability": "Regenerator",
+        "teraType": "Grass",
+        "evs": {
+            "hp": 240,
+            "def": 164,
+            "spd": 104
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Foul Play",
+            "Sludge Bomb",
+            "Spore",
+            "Synthesis"
+        ]
+    },
+    {
+        "species": "Meowscarada",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Protean",
+        "teraType": "Grass",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Flower Trick",
+            "Knock Off",
+            "Play Rough",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Ogerpon-Hearthflame",
+        "item": "Hearthflame Mask",
+        "ability": "Mold Breaker",
+        "teraType": "Fire",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Horn Leech",
+            "Ivy Cudgel",
+            "Rock Tomb",
+            "Swords Dance"
+        ],
+        "hpType": "Poison"
+    },
+    {
+        "species": "Torterra",
+        "gender": "M",
+        "item": "Loaded Dice",
+        "ability": "Overgrow",
+        "teraType": "Grass",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bullet Seed",
+            "Headlong Rush",
+            "Rock Blast",
+            "Shell Smash"
+        ]
+    }
+]

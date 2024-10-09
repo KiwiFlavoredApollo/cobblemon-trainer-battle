@@ -1,0 +1,126 @@
+[
+    {
+        "species": "Toxapex",
+        "gender": "M",
+        "item": "Icium Z",
+        "ability": "Regenerator",
+        "teraType": "Poison",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Haze",
+            "Recover",
+            "Scald",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Gastrodon",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Storm Drain",
+        "teraType": "Water",
+        "evs": {
+            "hp": 252,
+            "spa": 4,
+            "spd": 252
+        },
+        "nature": "Sassy",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Clear Smog",
+            "Earthquake",
+            "Recover",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Gyarados",
+        "gender": "M",
+        "item": "Gyaradosite",
+        "ability": "Intimidate",
+        "teraType": "Water",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Crunch",
+            "Dragon Dance",
+            "Earthquake",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Tapu Fini",
+        "item": "Leftovers",
+        "ability": "Misty Surge",
+        "teraType": "Water",
+        "evs": {
+            "hp": 248,
+            "def": 68,
+            "spe": 192
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Draining Kiss",
+            "Scald",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Urshifu-Rapid-Strike",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Unseen Fist",
+        "teraType": "Fighting",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Surging Strikes",
+            "Thunder Punch",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Volcanion",
+        "item": "Heavy-Duty Boots",
+        "ability": "Water Absorb",
+        "teraType": "Fire",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spa": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Earth Power",
+            "Flamethrower",
+            "Steam Eruption"
+        ]
+    }
+]

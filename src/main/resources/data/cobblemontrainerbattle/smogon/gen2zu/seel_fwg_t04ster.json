@@ -1,0 +1,83 @@
+[
+    {
+        "species": "Butterfree",
+        "gender": "M",
+        "item": "Miracle Berry",
+        "ivs": {
+            "hp": 7,
+            "atk": 29,
+            "def": 29
+        },
+        "moves": [
+            "Hidden Power Grass",
+            "Psychic",
+            "Sleep Powder",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Ivysaur",
+        "gender": "M",
+        "item": "Leftovers",
+        "ivs": {
+            "hp": 7,
+            "atk": 25,
+            "def": 29
+        },
+        "moves": [
+            "Giga Drain",
+            "Hidden Power Poison",
+            "Swords Dance",
+            "Synthesis"
+        ]
+    },
+    {
+        "species": "Koffing",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Explosion",
+            "Haze",
+            "Pain Split",
+            "Sludge Bomb"
+        ]
+    },
+    {
+        "species": "Magby",
+        "gender": "M",
+        "item": "Leftovers",
+        "ivs": {
+            "hp": 7,
+            "atk": 29,
+            "def": 29
+        },
+        "moves": [
+            "Fire Blast",
+            "Protect",
+            "Thunder Punch",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Seel",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Encore",
+            "Rest",
+            "Sleep Talk",
+            "Surf"
+        ]
+    },
+    {
+        "species": "Togetic",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Curse",
+            "Double-Edge",
+            "Rest",
+            "Sleep Talk"
+        ]
+    }
+]

@@ -1,0 +1,116 @@
+[
+    {
+        "species": "Toxapex",
+        "gender": "M",
+        "item": "Icium Z",
+        "ability": "Regenerator",
+        "teraType": "Poison",
+        "evs": {
+            "hp": 252,
+            "def": 116,
+            "spd": 140
+        },
+        "nature": "Calm",
+        "moves": [
+            "Haze",
+            "Recover",
+            "Scald",
+            "Toxic Spikes"
+        ]
+    },
+    {
+        "species": "Azumarill",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sap Sipper",
+        "teraType": "Water",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Calm",
+        "moves": [
+            "Perish Song",
+            "Protect",
+            "Rest",
+            "Whirlpool"
+        ]
+    },
+    {
+        "species": "Dondozo",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Unaware",
+        "teraType": "Water",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Impish",
+        "moves": [
+            "Curse",
+            "Liquidation",
+            "Rest",
+            "Sleep Talk"
+        ]
+    },
+    {
+        "species": "Gastrodon",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Storm Drain",
+        "teraType": "Water",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Bold",
+        "moves": [
+            "Earth Power",
+            "Recover",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Lanturn",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Volt Absorb",
+        "teraType": "Water",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Calm",
+        "moves": [
+            "Heal Bell",
+            "Protect",
+            "Toxic",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Mantine",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Water Absorb",
+        "teraType": "Water",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Calm",
+        "moves": [
+            "Defog",
+            "Haze",
+            "Roost",
+            "Scald"
+        ]
+    }
+]

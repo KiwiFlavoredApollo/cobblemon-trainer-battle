@@ -1,0 +1,113 @@
+[
+    {
+        "species": "Mew",
+        "item": "Choice Scarf",
+        "ability": "Synchronize",
+        "evs": {
+            "hp": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Giga Drain",
+            "Psychic",
+            "Trick",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Darmanitan",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Sheer Force",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Flare Blitz",
+            "Rock Slide",
+            "Superpower",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Gligar",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Immunity",
+        "evs": {
+            "hp": 252,
+            "atk": 4,
+            "def": 252
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Roost",
+            "Stealth Rock",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Lanturn",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Volt Absorb",
+        "evs": {
+            "hp": 252,
+            "spa": 4,
+            "spd": 252
+        },
+        "nature": "Sassy",
+        "moves": [
+            "Heal Bell",
+            "Scald",
+            "Toxic",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Mienshao",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "ivs": {
+            "atk": 30,
+            "def": 30
+        },
+        "moves": [
+            "Fake Out",
+            "High Jump Kick",
+            "Stone Edge",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Xatu",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Magic Bounce",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Relaxed",
+        "moves": [
+            "Grass Knot",
+            "Night Shade",
+            "Roost",
+            "U-turn"
+        ]
+    }
+]

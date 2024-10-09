@@ -1,0 +1,123 @@
+[
+    {
+        "species": "Latias",
+        "item": "Latiasite",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Ice Beam",
+            "Psyshock",
+            "Roost"
+        ]
+    },
+    {
+        "species": "Chansey",
+        "item": "Eviolite",
+        "ability": "Natural Cure",
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spd": 8
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Seismic Toss",
+            "Soft-Boiled",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Ferrothorn",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Iron Barbs",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Body Press",
+            "Iron Defense",
+            "Leech Seed",
+            "Spikes"
+        ]
+    },
+    {
+        "species": "Gliscor",
+        "gender": "M",
+        "item": "Toxic Orb",
+        "ability": "Poison Heal",
+        "evs": {
+            "hp": 244,
+            "def": 52,
+            "spd": 188,
+            "spe": 24
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Knock Off",
+            "Roost",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Tapu Koko",
+        "item": "Fairium Z",
+        "ability": "Electric Surge",
+        "evs": {
+            "hp": 40,
+            "spa": 252,
+            "spe": 216
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Dazzling Gleam",
+            "Roost",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Toxapex",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spd": 8
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Haze",
+            "Recover",
+            "Scald",
+            "Toxic"
+        ]
+    }
+]

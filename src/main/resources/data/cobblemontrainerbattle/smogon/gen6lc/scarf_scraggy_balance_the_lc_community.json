@@ -1,0 +1,113 @@
+[
+    {
+        "species": "Scraggy",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Moxie",
+        "evs": {
+            "atk": 236,
+            "spd": 36,
+            "spe": 212
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Drain Punch",
+            "High Jump Kick",
+            "Knock Off",
+            "Zen Headbutt"
+        ]
+    },
+    {
+        "species": "Archen",
+        "gender": "M",
+        "ability": "Defeatist",
+        "evs": {
+            "hp": 76,
+            "atk": 20,
+            "def": 76,
+            "spd": 76,
+            "spe": 196
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Acrobatics",
+            "Roost",
+            "Stealth Rock",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Chinchou",
+        "gender": "M",
+        "item": "Berry Juice",
+        "ability": "Volt Absorb",
+        "evs": {
+            "hp": 76,
+            "def": 212,
+            "spa": 148,
+            "spe": 60
+        },
+        "nature": "Bold",
+        "moves": [
+            "Ice Beam",
+            "Scald",
+            "Thunder Wave",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Foongus",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 124,
+            "def": 156,
+            "spd": 156
+        },
+        "nature": "Bold",
+        "moves": [
+            "Clear Smog",
+            "Giga Drain",
+            "Sludge Bomb",
+            "Spore"
+        ]
+    },
+    {
+        "species": "Honedge",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "No Guard",
+        "evs": {
+            "atk": 116,
+            "def": 116,
+            "spd": 140,
+            "spe": 132
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Iron Head",
+            "Pursuit",
+            "Shadow Sneak",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Timburr",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Guts",
+        "evs": {
+            "atk": 116,
+            "def": 156,
+            "spd": 236
+        },
+        "nature": "Careful",
+        "moves": [
+            "Bulk Up",
+            "Drain Punch",
+            "Knock Off",
+            "Mach Punch"
+        ]
+    }
+]

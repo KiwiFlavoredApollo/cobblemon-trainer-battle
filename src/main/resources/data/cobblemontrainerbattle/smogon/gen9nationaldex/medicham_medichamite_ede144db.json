@@ -1,0 +1,126 @@
+[
+    {
+        "species": "Medicham",
+        "gender": "M",
+        "item": "Medichamite",
+        "ability": "Pure Power",
+        "teraType": "Fighting",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bullet Punch",
+            "Close Combat",
+            "Fake Out",
+            "Zen Headbutt"
+        ]
+    },
+    {
+        "species": "Darkrai",
+        "item": "Choice Specs",
+        "ability": "Bad Dreams",
+        "teraType": "Dark",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Dark Pulse",
+            "Focus Blast",
+            "Ice Beam",
+            "Sludge Bomb"
+        ]
+    },
+    {
+        "species": "Kartana",
+        "item": "Choice Scarf",
+        "ability": "Beast Boost",
+        "teraType": "Grass",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Defog",
+            "Knock Off",
+            "Leaf Blade",
+            "Sacred Sword"
+        ]
+    },
+    {
+        "species": "Landorus-Therian",
+        "item": "Rocky Helmet",
+        "ability": "Intimidate",
+        "teraType": "Water",
+        "evs": {
+            "hp": 252,
+            "def": 148,
+            "spd": 28,
+            "spe": 80
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Hidden Power Ice",
+            "Stealth Rock",
+            "U-turn"
+        ],
+        "ivs": {
+            "atk": 30,
+            "def": 30
+        },
+        "hpType": "Ice"
+    },
+    {
+        "species": "Samurott-Hisui",
+        "gender": "M",
+        "item": "Protective Pads",
+        "ability": "Sharpness",
+        "teraType": "Poison",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Ceaseless Edge",
+            "Razor Shell",
+            "Sucker Punch",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Slowking-Galar",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Regenerator",
+        "teraType": "Steel",
+        "evs": {
+            "hp": 252,
+            "def": 8,
+            "spd": 248
+        },
+        "nature": "Sassy",
+        "ivs": {
+            "atk": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Chilly Reception",
+            "Future Sight",
+            "Sludge Bomb",
+            "Toxic"
+        ]
+    }
+]

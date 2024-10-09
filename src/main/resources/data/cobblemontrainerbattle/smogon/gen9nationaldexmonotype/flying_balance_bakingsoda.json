@@ -1,0 +1,126 @@
+[
+    {
+        "species": "Celesteela",
+        "item": "Leftovers",
+        "ability": "Beast Boost",
+        "teraType": "Steel",
+        "evs": {
+            "hp": 252,
+            "def": 160,
+            "spd": 96
+        },
+        "nature": "Impish",
+        "moves": [
+            "Flamethrower",
+            "Heavy Slam",
+            "Leech Seed",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Charizard",
+        "gender": "M",
+        "item": "Charizardite Y",
+        "ability": "Blaze",
+        "teraType": "Fire",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Fire Blast",
+            "Focus Blast",
+            "Roost",
+            "Solar Beam"
+        ]
+    },
+    {
+        "species": "Dragonite",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Multiscale",
+        "teraType": "Dragon",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Dragon Claw",
+            "Dragon Dance",
+            "Earthquake",
+            "Roost"
+        ]
+    },
+    {
+        "species": "Gliscor",
+        "gender": "M",
+        "item": "Toxic Orb",
+        "ability": "Poison Heal",
+        "teraType": "Ground",
+        "evs": {
+            "hp": 244,
+            "def": 20,
+            "spd": 124,
+            "spe": 120
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Defog",
+            "Earthquake",
+            "Knock Off",
+            "Roost"
+        ]
+    },
+    {
+        "species": "Mantine",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Water Absorb",
+        "teraType": "Water",
+        "evs": {
+            "hp": 252,
+            "def": 160,
+            "spe": 96
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Haze",
+            "Roost",
+            "Scald"
+        ]
+    },
+    {
+        "species": "Thundurus-Therian",
+        "item": "Choice Scarf",
+        "ability": "Volt Absorb",
+        "teraType": "Electric",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Grass Knot",
+            "Hidden Power Ice",
+            "Thunderbolt",
+            "U-turn"
+        ],
+        "ivs": {
+            "atk": 30,
+            "def": 30
+        },
+        "hpType": "Ice"
+    }
+]

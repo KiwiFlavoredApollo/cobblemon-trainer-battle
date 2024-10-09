@@ -1,0 +1,118 @@
+[
+    {
+        "species": "Ting-Lu",
+        "item": "Leftovers",
+        "ability": "Vessel of Ruin",
+        "teraType": "Water",
+        "evs": {
+            "hp": 252,
+            "def": 24,
+            "spd": 228,
+            "spe": 4
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Ruination",
+            "Stealth Rock",
+            "Whirlwind"
+        ]
+    },
+    {
+        "species": "Dragapult",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Infiltrator",
+        "teraType": "Dragon",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Draco Meteor",
+            "Hex",
+            "U-turn",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Gliscor",
+        "gender": "M",
+        "item": "Toxic Orb",
+        "ability": "Poison Heal",
+        "teraType": "Fairy",
+        "evs": {
+            "hp": 244,
+            "spd": 244,
+            "spe": 20
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Knock Off",
+            "Protect",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Kingambit",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Supreme Overlord",
+        "teraType": "Dark",
+        "evs": {
+            "hp": 232,
+            "atk": 252,
+            "spe": 24
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Iron Head",
+            "Kowtow Cleave",
+            "Sucker Punch",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Slowking-Galar",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Regenerator",
+        "teraType": "Water",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Sassy",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Chilly Reception",
+            "Flamethrower",
+            "Future Sight",
+            "Sludge Bomb"
+        ]
+    },
+    {
+        "species": "Zamazenta",
+        "item": "Heavy-Duty Boots",
+        "ability": "Dauntless Shield",
+        "teraType": "Fire",
+        "evs": {
+            "hp": 80,
+            "atk": 252,
+            "spe": 176
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Crunch",
+            "Roar",
+            "Stone Edge"
+        ]
+    }
+]

@@ -1,0 +1,119 @@
+[
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Chople Berry",
+        "ability": "Sand Stream",
+        "evs": {
+            "hp": 208,
+            "atk": 88,
+            "spd": 200,
+            "spe": 12
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Crunch",
+            "Earthquake",
+            "Pursuit",
+            "Rock Slide"
+        ]
+    },
+    {
+        "species": "Alakazam",
+        "gender": "F",
+        "item": "Focus Sash",
+        "ability": "Magic Guard",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "def": 30
+        },
+        "moves": [
+            "Focus Blast",
+            "Hidden Power Ice",
+            "Psyshock",
+            "Shadow Ball"
+        ]
+    },
+    {
+        "species": "Landorus-Therian",
+        "item": "Leftovers",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 216,
+            "def": 200,
+            "spe": 92
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Knock Off",
+            "Stealth Rock",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Latios",
+        "item": "Choice Specs",
+        "ability": "Levitate",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Draco Meteor",
+            "Grass Knot",
+            "Surf",
+            "Trick"
+        ]
+    },
+    {
+        "species": "Rotom-Wash",
+        "item": "Chesto Berry",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 252,
+            "def": 120,
+            "spd": 136
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0,
+            "spe": 10
+        },
+        "moves": [
+            "Hydro Pump",
+            "Rest",
+            "Volt Switch",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Skarmory",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sturdy",
+        "evs": {
+            "hp": 252,
+            "spd": 240,
+            "spe": 16
+        },
+        "nature": "Careful",
+        "moves": [
+            "Brave Bird",
+            "Roost",
+            "Spikes",
+            "Whirlwind"
+        ]
+    }
+]

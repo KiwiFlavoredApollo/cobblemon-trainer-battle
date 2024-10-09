@@ -1,0 +1,128 @@
+[
+    {
+        "species": "Zapdos",
+        "item": "Leftovers",
+        "ability": "Pressure",
+        "evs": {
+            "hp": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "spa": 30
+        },
+        "moves": [
+            "Baton Pass",
+            "Hidden Power Grass",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Celebi",
+        "item": "Leftovers",
+        "ability": "Natural Cure",
+        "evs": {
+            "hp": 252,
+            "def": 64,
+            "spd": 192
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0,
+            "spe": 30
+        },
+        "moves": [
+            "Baton Pass",
+            "Leech Seed",
+            "Psychic",
+            "Recover"
+        ]
+    },
+    {
+        "species": "Dugtrio",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Arena Trap",
+        "evs": {
+            "hp": 136,
+            "atk": 252,
+            "spd": 24,
+            "spe": 96
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Aerial Ace",
+            "Beat Up",
+            "Earthquake",
+            "Hidden Power Bug"
+        ],
+        "ivs": {
+            "atk": 30,
+            "def": 30,
+            "spd": 30
+        }
+    },
+    {
+        "species": "Starmie",
+        "item": "Leftovers",
+        "ability": "Natural Cure",
+        "evs": {
+            "hp": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hydro Pump",
+            "Ice Beam",
+            "Rapid Spin",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Swampert",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Torrent",
+        "evs": {
+            "hp": 252,
+            "def": 212,
+            "spd": 44
+        },
+        "nature": "Relaxed",
+        "moves": [
+            "Earthquake",
+            "Hydro Pump",
+            "Ice Beam",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sand Stream",
+        "evs": {
+            "hp": 248,
+            "atk": 252,
+            "spd": 8
+        },
+        "nature": "Adamant",
+        "ivs": {
+            "spd": 30,
+            "spe": 30
+        },
+        "moves": [
+            "Earthquake",
+            "Focus Punch",
+            "Hidden Power Bug",
+            "Rock Slide"
+        ]
+    }
+]

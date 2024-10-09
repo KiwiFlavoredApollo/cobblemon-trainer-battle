@@ -1,0 +1,116 @@
+[
+    {
+        "species": "Kangaskhan",
+        "item": "Kangaskhanite",
+        "ability": "Scrappy",
+        "evs": {
+            "hp": 168,
+            "atk": 88,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Fake Out",
+            "Low Kick",
+            "Seismic Toss",
+            "Sucker Punch"
+        ]
+    },
+    {
+        "species": "Bisharp",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Defiant",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "ivs": {
+            "spa": 0
+        },
+        "moves": [
+            "Iron Head",
+            "Knock Off",
+            "Protect",
+            "Sucker Punch"
+        ]
+    },
+    {
+        "species": "Deoxys-Attack",
+        "item": "Life Orb",
+        "ability": "Pressure",
+        "evs": {
+            "atk": 32,
+            "spa": 224,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Extreme Speed",
+            "Protect",
+            "Psycho Boost",
+            "Superpower"
+        ]
+    },
+    {
+        "species": "Ferrothorn",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Iron Barbs",
+        "evs": {
+            "hp": 252,
+            "atk": 160,
+            "def": 96
+        },
+        "nature": "Relaxed",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Gyro Ball",
+            "Leech Seed",
+            "Power Whip",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Keldeo",
+        "item": "Life Orb",
+        "ability": "Justified",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hydro Pump",
+            "Protect",
+            "Quick Guard",
+            "Secret Sword"
+        ]
+    },
+    {
+        "species": "Talonflame",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Gale Wings",
+        "evs": {
+            "hp": 232,
+            "atk": 252,
+            "spe": 24
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Brave Bird",
+            "Flare Blitz",
+            "Me First",
+            "Sleep Talk"
+        ]
+    }
+]

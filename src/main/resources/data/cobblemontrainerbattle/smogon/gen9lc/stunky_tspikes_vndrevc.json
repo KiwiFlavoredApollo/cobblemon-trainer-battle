@@ -1,0 +1,128 @@
+[
+    {
+        "species": "Mienfoo",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Regenerator",
+        "level": 5,
+        "teraType": "Steel",
+        "evs": {
+            "def": 196,
+            "spd": 36,
+            "spe": 236
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Fake Out",
+            "High Jump Kick",
+            "Knock Off",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Mareanie",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Regenerator",
+        "level": 5,
+        "teraType": "Dragon",
+        "evs": {
+            "hp": 116,
+            "def": 180,
+            "spa": 12,
+            "spd": 180
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Recover",
+            "Sludge Bomb",
+            "Surf",
+            "Toxic Spikes"
+        ]
+    },
+    {
+        "species": "Mudbray",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Stamina",
+        "level": 5,
+        "teraType": "Steel",
+        "evs": {
+            "hp": 36,
+            "atk": 196,
+            "def": 36,
+            "spe": 236
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Heavy Slam",
+            "Stealth Rock",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Stunky",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Aftermath",
+        "level": 5,
+        "teraType": "Dark",
+        "evs": {
+            "hp": 12,
+            "atk": 252,
+            "spe": 244
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Gunk Shot",
+            "Knock Off",
+            "Sucker Punch",
+            "Temper Flare"
+        ]
+    },
+    {
+        "species": "Voltorb-Hisui",
+        "item": "Eviolite",
+        "ability": "Aftermath",
+        "level": 5,
+        "teraType": "Flying",
+        "evs": {
+            "spa": 236,
+            "spd": 76,
+            "spe": 196
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Giga Drain",
+            "Protect",
+            "Tera Blast",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Vullaby",
+        "item": "Eviolite",
+        "ability": "Overcoat",
+        "level": 5,
+        "teraType": "Electric",
+        "evs": {
+            "hp": 196,
+            "atk": 76,
+            "def": 236
+        },
+        "nature": "Impish",
+        "moves": [
+            "Brave Bird",
+            "Knock Off",
+            "Roost",
+            "U-turn"
+        ]
+    }
+]

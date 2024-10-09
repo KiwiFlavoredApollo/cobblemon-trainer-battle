@@ -1,0 +1,117 @@
+[
+    {
+        "species": "Skarmory",
+        "gender": "M",
+        "item": "Shed Shell",
+        "ability": "Keen Eye",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Impish",
+        "moves": [
+            "Drill Peck",
+            "Roost",
+            "Spikes",
+            "Whirlwind"
+        ]
+    },
+    {
+        "species": "Arghonaut",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Unaware",
+        "evs": {
+            "hp": 252,
+            "def": 172,
+            "spd": 84
+        },
+        "nature": "Careful",
+        "moves": [
+            "Ice Punch",
+            "Recover",
+            "Roar",
+            "Waterfall"
+        ]
+    },
+    {
+        "species": "Blissey",
+        "item": "Leftovers",
+        "ability": "Natural Cure",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Heal Bell",
+            "Seismic Toss",
+            "Soft-Boiled",
+            "Wish"
+        ]
+    },
+    {
+        "species": "Clefable",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Magic Guard",
+        "evs": {
+            "hp": 252,
+            "def": 192,
+            "spd": 64
+        },
+        "nature": "Impish",
+        "moves": [
+            "Flamethrower",
+            "Knock Off",
+            "Soft-Boiled",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Fidgit",
+        "gender": "M",
+        "item": "Black Sludge",
+        "ability": "Persistent",
+        "evs": {
+            "hp": 252,
+            "def": 148,
+            "spe": 108
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earth Power",
+            "Encore",
+            "Rapid Spin",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Rotom-Wash",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 248,
+            "def": 120,
+            "spd": 140
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hydro Pump",
+            "Rest",
+            "Sleep Talk",
+            "Will-O-Wisp"
+        ]
+    }
+]

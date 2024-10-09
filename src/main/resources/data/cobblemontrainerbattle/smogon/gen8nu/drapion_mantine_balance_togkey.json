@@ -1,0 +1,117 @@
+[
+    {
+        "species": "Drapion",
+        "gender": "M",
+        "item": "Black Sludge",
+        "ability": "Battle Armor",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Knock Off",
+            "Poison Jab",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Copperajah",
+        "gender": "M",
+        "item": "Assault Vest",
+        "ability": "Sheer Force",
+        "evs": {
+            "atk": 124,
+            "spd": 216,
+            "spe": 168
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Heat Crash",
+            "Iron Head",
+            "Power Whip",
+            "Rock Slide"
+        ]
+    },
+    {
+        "species": "Mantine",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Water Absorb",
+        "evs": {
+            "hp": 248,
+            "def": 108,
+            "spd": 16,
+            "spe": 136
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hurricane",
+            "Scald",
+            "Substitute",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Mudsdale",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Stamina",
+        "evs": {
+            "hp": 252,
+            "def": 244,
+            "spd": 4,
+            "spe": 8
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Protect",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Rotom-Mow",
+        "item": "Choice Scarf",
+        "ability": "Levitate",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "spe": 30
+        },
+        "moves": [
+            "Defog",
+            "Leaf Storm",
+            "Trick",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Sylveon",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Pixilate",
+        "evs": {
+            "hp": 252,
+            "def": 188,
+            "spd": 68
+        },
+        "nature": "Calm",
+        "moves": [
+            "Heal Bell",
+            "Hyper Voice",
+            "Protect",
+            "Wish"
+        ]
+    }
+]

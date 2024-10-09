@@ -1,0 +1,120 @@
+[
+    {
+        "species": "Glalie",
+        "gender": "M",
+        "item": "Focus Sash",
+        "ability": "Inner Focus",
+        "evs": {
+            "atk": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Hasty",
+        "moves": [
+            "Explosion",
+            "Ice Beam",
+            "Spikes",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Bellossom",
+        "gender": "F",
+        "item": "Leftovers",
+        "ability": "Chlorophyll",
+        "evs": {
+            "hp": 248,
+            "def": 8,
+            "spd": 252
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 2,
+            "spa": 30,
+            "spe": 30
+        },
+        "moves": [
+            "Energy Ball",
+            "Hidden Power Fire",
+            "Sleep Powder",
+            "Synthesis"
+        ]
+    },
+    {
+        "species": "Murkrow",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Insomnia",
+        "evs": {
+            "atk": 252,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Hasty",
+        "moves": [
+            "Brave Bird",
+            "Heat Wave",
+            "Hidden Power Grass",
+            "Sucker Punch"
+        ],
+        "ivs": {
+            "atk": 30,
+            "spa": 30
+        }
+    },
+    {
+        "species": "Purugly",
+        "gender": "M",
+        "item": "Silk Scarf",
+        "ability": "Thick Fat",
+        "happiness": 0,
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Fake Out",
+            "Frustration",
+            "Sucker Punch",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Relicanth",
+        "gender": "M",
+        "item": "Shuca Berry",
+        "ability": "Rock Head",
+        "evs": {
+            "hp": 116,
+            "atk": 252,
+            "spe": 140
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Head Smash",
+            "Rock Polish",
+            "Stealth Rock",
+            "Waterfall"
+        ]
+    },
+    {
+        "species": "Xatu",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Synchronize",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Giga Drain",
+            "Heat Wave",
+            "Psychic",
+            "U-turn"
+        ]
+    }
+]

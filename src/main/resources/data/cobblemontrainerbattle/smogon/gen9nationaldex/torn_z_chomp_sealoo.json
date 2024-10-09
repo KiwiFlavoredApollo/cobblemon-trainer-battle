@@ -1,0 +1,122 @@
+[
+    {
+        "species": "Tornadus-Therian",
+        "item": "Heavy-Duty Boots",
+        "ability": "Regenerator",
+        "teraType": "Steel",
+        "evs": {
+            "hp": 248,
+            "spa": 8,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Bleakwind Storm",
+            "Defog",
+            "Knock Off",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Ferrothorn",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Iron Barbs",
+        "teraType": "Ghost",
+        "evs": {
+            "hp": 248,
+            "def": 116,
+            "spd": 144
+        },
+        "nature": "Impish",
+        "moves": [
+            "Knock Off",
+            "Leech Seed",
+            "Power Whip",
+            "Spikes"
+        ]
+    },
+    {
+        "species": "Garchomp",
+        "gender": "M",
+        "item": "Rockium Z",
+        "ability": "Rough Skin",
+        "teraType": "Dragon",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Stealth Rock",
+            "Stone Edge",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Tapu Lele",
+        "item": "Choice Specs",
+        "ability": "Psychic Surge",
+        "teraType": "Psychic",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hidden Power Fire",
+            "Moonblast",
+            "Psychic",
+            "Psyshock"
+        ],
+        "hpType": "Fire"
+    },
+    {
+        "species": "Toxapex",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Regenerator",
+        "shiny": true,
+        "teraType": "Dragon",
+        "evs": {
+            "hp": 248,
+            "def": 116,
+            "spd": 144
+        },
+        "nature": "Impish",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Haze",
+            "Recover",
+            "Scald",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Urshifu-Rapid-Strike",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Unseen Fist",
+        "teraType": "Water",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Ice Spinner",
+            "Surging Strikes",
+            "U-turn"
+        ]
+    }
+]

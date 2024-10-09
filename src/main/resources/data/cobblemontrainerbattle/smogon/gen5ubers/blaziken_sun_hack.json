@@ -1,0 +1,118 @@
+[
+    {
+        "species": "Groudon",
+        "item": "Earth Plate",
+        "ability": "Drought",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Dragon Tail",
+            "Earthquake",
+            "Stealth Rock",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Arceus",
+        "item": "Silk Scarf",
+        "ability": "Multitype",
+        "evs": {
+            "hp": 200,
+            "atk": 252,
+            "spe": 56
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Brick Break",
+            "Extreme Speed",
+            "Shadow Claw",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Blaziken",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Speed Boost",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Flare Blitz",
+            "Low Kick",
+            "Protect",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Forretress",
+        "gender": "M",
+        "item": "Custap Berry",
+        "ability": "Sturdy",
+        "evs": {
+            "atk": 252
+        },
+        "nature": "Brave",
+        "ivs": {
+            "hp": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Gyro Ball",
+            "Rapid Spin",
+            "Spikes",
+            "Toxic Spikes"
+        ]
+    },
+    {
+        "species": "Ho-Oh",
+        "item": "Choice Band",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 112,
+            "atk": 252,
+            "spe": 144
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Brave Bird",
+            "Earthquake",
+            "Sacred Fire",
+            "Sleep Talk"
+        ]
+    },
+    {
+        "species": "Latias",
+        "item": "Soul Dew",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 48,
+            "def": 4,
+            "spa": 252,
+            "spd": 8,
+            "spe": 196
+        },
+        "nature": "Timid",
+        "moves": [
+            "Draco Meteor",
+            "Healing Wish",
+            "Hidden Power Fire",
+            "Psyshock"
+        ],
+        "ivs": {
+            "atk": 30,
+            "spa": 30,
+            "spe": 30
+        }
+    }
+]

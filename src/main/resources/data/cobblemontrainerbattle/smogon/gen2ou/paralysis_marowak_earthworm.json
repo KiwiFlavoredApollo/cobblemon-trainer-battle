@@ -1,0 +1,72 @@
+[
+    {
+        "species": "Snorlax",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Double-Edge",
+            "Rest",
+            "Sleep Talk",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Cloyster",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Explosion",
+            "Spikes",
+            "Surf",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Marowak",
+        "gender": "M",
+        "item": "Thick Club",
+        "moves": [
+            "Earthquake",
+            "Fire Blast",
+            "Rock Slide",
+            "Swords Dance"
+        ],
+        "evs": {
+            "atk": 240
+        }
+    },
+    {
+        "species": "Starmie",
+        "item": "Leftovers",
+        "moves": [
+            "Rapid Spin",
+            "Recover",
+            "Surf",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Dynamic Punch",
+            "Earthquake",
+            "Rock Slide",
+            "Screech"
+        ]
+    },
+    {
+        "species": "Zapdos",
+        "item": "Leftovers",
+        "ivs": {
+            "def": 27
+        },
+        "moves": [
+            "Hidden Power Ice",
+            "Thunder",
+            "Thunder Wave",
+            "Whirlwind"
+        ]
+    }
+]

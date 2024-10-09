@@ -1,0 +1,75 @@
+[
+    {
+        "species": "Magmar",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Cross Chop",
+            "Fire Blast",
+            "Sunny Day",
+            "Thunder Punch"
+        ]
+    },
+    {
+        "species": "Fearow",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Double-Edge",
+            "Drill Peck",
+            "Rest",
+            "Sleep Talk"
+        ]
+    },
+    {
+        "species": "Magnemite",
+        "item": "Leftovers",
+        "ivs": {
+            "def": 27
+        },
+        "moves": [
+            "Hidden Power Ice",
+            "Rest",
+            "Sleep Talk",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Octillery",
+        "gender": "M",
+        "item": "Leftovers",
+        "ivs": {
+            "hp": 15,
+            "atk": 29
+        },
+        "moves": [
+            "Hidden Power Electric",
+            "Rest",
+            "Sleep Talk",
+            "Surf"
+        ]
+    },
+    {
+        "species": "Stantler",
+        "gender": "M",
+        "item": "Leftovers",
+        "happiness": 0,
+        "moves": [
+            "Earthquake",
+            "Frustration",
+            "Rest",
+            "Sleep Talk"
+        ]
+    },
+    {
+        "species": "Weezing",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Explosion",
+            "Fire Blast",
+            "Sludge Bomb",
+            "Thunder"
+        ]
+    }
+]

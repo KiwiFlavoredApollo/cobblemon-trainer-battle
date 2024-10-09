@@ -55,6 +55,7 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
         List<String> namespaces = List.of(
                 "radicalred",
                 "inclementemerald",
+                "smogon",
                 "custom"
         );
 

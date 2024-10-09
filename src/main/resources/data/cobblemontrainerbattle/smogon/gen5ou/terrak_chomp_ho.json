@@ -1,0 +1,111 @@
+[
+    {
+        "species": "Garchomp",
+        "gender": "M",
+        "item": "Focus Sash",
+        "ability": "Rough Skin",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Fire Fang",
+            "Outrage",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Breloom",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Technician",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bullet Seed",
+            "Low Sweep",
+            "Mach Punch",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Dragonite",
+        "gender": "M",
+        "item": "Yache Berry",
+        "ability": "Multiscale",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Dragon Dance",
+            "Extreme Speed",
+            "Fire Punch",
+            "Outrage"
+        ]
+    },
+    {
+        "species": "Scizor",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Technician",
+        "evs": {
+            "hp": 40,
+            "atk": 252,
+            "spe": 216
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Bullet Punch",
+            "Pursuit",
+            "Superpower",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Starmie",
+        "item": "Air Balloon",
+        "ability": "Analytic",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hydro Pump",
+            "Ice Beam",
+            "Rapid Spin",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Terrakion",
+        "item": "Focus Sash",
+        "ability": "Justified",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Stealth Rock",
+            "Stone Edge",
+            "Taunt"
+        ]
+    }
+]

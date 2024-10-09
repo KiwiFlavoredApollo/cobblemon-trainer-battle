@@ -1,0 +1,115 @@
+[
+    {
+        "species": "Jynx",
+        "item": "Focus Sash",
+        "ability": "Forewarn",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Grass Knot",
+            "Ice Beam",
+            "Lovely Kiss",
+            "Nasty Plot"
+        ]
+    },
+    {
+        "species": "Haunter",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Levitate",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Hidden Power Ground",
+            "Shadow Ball",
+            "Sludge Bomb",
+            "Substitute"
+        ],
+        "ivs": {
+            "spa": 30,
+            "spd": 30
+        }
+    },
+    {
+        "species": "Hitmonchan",
+        "item": "Leftovers",
+        "ability": "Iron Fist",
+        "evs": {
+            "hp": 160,
+            "atk": 252,
+            "spe": 96
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bulk Up",
+            "Drain Punch",
+            "Ice Punch",
+            "Mach Punch"
+        ]
+    },
+    {
+        "species": "Manectric",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Static",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Hidden Power Grass",
+            "Overheat",
+            "Switcheroo",
+            "Thunderbolt"
+        ],
+        "ivs": {
+            "atk": 30,
+            "spa": 30
+        }
+    },
+    {
+        "species": "Regirock",
+        "item": "Leftovers",
+        "ability": "Clear Body",
+        "evs": {
+            "hp": 204,
+            "atk": 148,
+            "spd": 156
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Explosion",
+            "Rock Slide",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Skuntank",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Aftermath",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Explosion",
+            "Pursuit",
+            "Sucker Punch",
+            "Taunt"
+        ]
+    }
+]

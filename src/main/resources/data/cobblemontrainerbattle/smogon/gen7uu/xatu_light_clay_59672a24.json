@@ -1,0 +1,116 @@
+[
+    {
+        "species": "Xatu",
+        "gender": "M",
+        "item": "Light Clay",
+        "ability": "Magic Bounce",
+        "evs": {
+            "hp": 248,
+            "def": 124,
+            "spd": 76,
+            "spe": 60
+        },
+        "nature": "Calm",
+        "moves": [
+            "Light Screen",
+            "Reflect",
+            "Thunder Wave",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Feraligatr",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Sheer Force",
+        "evs": {
+            "hp": 36,
+            "atk": 252,
+            "spe": 220
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Crunch",
+            "Dragon Dance",
+            "Ice Punch",
+            "Liquidation"
+        ]
+    },
+    {
+        "species": "Krookodile",
+        "gender": "M",
+        "item": "Focus Sash",
+        "ability": "Intimidate",
+        "evs": {
+            "atk": 236,
+            "def": 20,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Knock Off",
+            "Stealth Rock",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Latias",
+        "item": "Dragonium Z",
+        "ability": "Levitate",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Draco Meteor",
+            "Hidden Power Fire",
+            "Psyshock"
+        ],
+        "hpType": "Fire"
+    },
+    {
+        "species": "Linoone",
+        "gender": "M",
+        "item": "Figy Berry",
+        "ability": "Gluttony",
+        "evs": {
+            "hp": 148,
+            "atk": 248,
+            "def": 8,
+            "spd": 88,
+            "spe": 16
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Belly Drum",
+            "Extreme Speed",
+            "Seed Bomb",
+            "Stomping Tantrum"
+        ]
+    },
+    {
+        "species": "Scizor",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Technician",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bullet Punch",
+            "Quick Attack",
+            "Superpower",
+            "Swords Dance"
+        ]
+    }
+]

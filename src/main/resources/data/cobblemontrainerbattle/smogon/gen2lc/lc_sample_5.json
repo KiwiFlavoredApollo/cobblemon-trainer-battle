@@ -1,0 +1,79 @@
+[
+    {
+        "species": "Elekid",
+        "gender": "M",
+        "item": "Berry Juice",
+        "level": 5,
+        "moves": [
+            "Cross Chop",
+            "Ice Punch",
+            "Thief",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Doduo",
+        "gender": "M",
+        "item": "Berry Juice",
+        "level": 5,
+        "moves": [
+            "Drill Peck",
+            "Quick Attack",
+            "Return",
+            "Thief"
+        ],
+        "happiness": 255
+    },
+    {
+        "species": "Drowzee",
+        "gender": "M",
+        "item": "Berry Juice",
+        "level": 5,
+        "moves": [
+            "Fire Punch",
+            "Light Screen",
+            "Psychic",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Machop",
+        "gender": "M",
+        "item": "Berry Juice",
+        "level": 5,
+        "ivs": {
+            "atk": 27,
+            "def": 27
+        },
+        "moves": [
+            "Cross Chop",
+            "Earthquake",
+            "Encore",
+            "Hidden Power Bug"
+        ]
+    },
+    {
+        "species": "Poliwag",
+        "gender": "M",
+        "item": "Berry Juice",
+        "level": 5,
+        "moves": [
+            "Ice Beam",
+            "Lovely Kiss",
+            "Psychic",
+            "Surf"
+        ]
+    },
+    {
+        "species": "Sandshrew",
+        "gender": "M",
+        "item": "Berry Juice",
+        "level": 5,
+        "moves": [
+            "Counter",
+            "Earthquake",
+            "Rapid Spin",
+            "Thief"
+        ]
+    }
+]

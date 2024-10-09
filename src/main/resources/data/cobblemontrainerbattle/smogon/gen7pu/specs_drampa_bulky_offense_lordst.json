@@ -1,0 +1,121 @@
+[
+    {
+        "species": "Drampa",
+        "gender": "M",
+        "item": "Choice Specs",
+        "ability": "Sap Sipper",
+        "evs": {
+            "hp": 84,
+            "spa": 252,
+            "spe": 172
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Draco Meteor",
+            "Energy Ball",
+            "Fire Blast",
+            "Hyper Voice"
+        ]
+    },
+    {
+        "species": "Jellicent",
+        "gender": "M",
+        "item": "Rindo Berry",
+        "ability": "Cursed Body",
+        "evs": {
+            "hp": 252,
+            "def": 212,
+            "spa": 12,
+            "spe": 32
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Recover",
+            "Scald",
+            "Taunt",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Mudsdale",
+        "gender": "M",
+        "item": "Figy Berry",
+        "ability": "Stamina",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Rock Slide",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Rotom-Frost",
+        "item": "Choice Scarf",
+        "ability": "Levitate",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Blizzard",
+            "Thunderbolt",
+            "Trick",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Silvally-Poison",
+        "item": "Poison Memory",
+        "ability": "RKS System",
+        "evs": {
+            "hp": 252,
+            "spd": 108,
+            "spe": 148
+        },
+        "nature": "Careful",
+        "moves": [
+            "Defog",
+            "Flamethrower",
+            "Multi-Attack",
+            "Parting Shot"
+        ]
+    },
+    {
+        "species": "Simisear",
+        "gender": "M",
+        "item": "Firium Z",
+        "ability": "Blaze",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Fire Blast",
+            "Grass Knot",
+            "Nasty Plot",
+            "Protect"
+        ]
+    }
+]

@@ -1,0 +1,132 @@
+[
+    {
+        "species": "Iron Moth",
+        "item": "Booster Energy",
+        "ability": "Quark Drive",
+        "shiny": true,
+        "teraType": "Ghost",
+        "evs": {
+            "def": 124,
+            "spa": 132,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Fiery Dance",
+            "Psychic",
+            "Sludge Wave",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Iron Valiant",
+        "item": "Booster Energy",
+        "ability": "Quark Drive",
+        "shiny": true,
+        "teraType": "Ghost",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Moonblast",
+            "Shadow Ball",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Kingambit",
+        "gender": "M",
+        "item": "Lum Berry",
+        "ability": "Supreme Overlord",
+        "shiny": true,
+        "teraType": "Dark",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Iron Head",
+            "Kowtow Cleave",
+            "Sucker Punch",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Ogerpon-Cornerstone",
+        "item": "Cornerstone Mask",
+        "ability": "Sturdy",
+        "hpType": "Poison",
+        "teraType": "Rock",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Ivy Cudgel",
+            "Power Whip",
+            "Spikes",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Raging Bolt",
+        "item": "Booster Energy",
+        "ability": "Protosynthesis",
+        "teraType": "Water",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "hp": 20,
+            "atk": 20,
+            "def": 20,
+            "spa": 20,
+            "spd": 20,
+            "spe": 20
+        },
+        "moves": [
+            "Calm Mind",
+            "Dragon Pulse",
+            "Tera Blast",
+            "Thunderclap"
+        ],
+        "hpType": "Fighting"
+    },
+    {
+        "species": "Rillaboom",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Grassy Surge",
+        "shiny": true,
+        "teraType": "Grass",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Grassy Glide",
+            "Knock Off",
+            "U-turn",
+            "Wood Hammer"
+        ]
+    }
+]

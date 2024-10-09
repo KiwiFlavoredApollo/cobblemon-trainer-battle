@@ -1,0 +1,109 @@
+[
+    {
+        "species": "Mesprit",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 120,
+            "spa": 252,
+            "spe": 136
+        },
+        "nature": "Modest",
+        "moves": [
+            "Grass Knot",
+            "Psychic",
+            "Stealth Rock",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Arcanine",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "moves": [
+            "Extreme Speed",
+            "Flare Blitz",
+            "Morning Sun",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Dugtrio",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Arena Trap",
+        "evs": {
+            "hp": 12,
+            "atk": 244,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Pursuit",
+            "Stone Edge",
+            "Sucker Punch"
+        ]
+    },
+    {
+        "species": "Kabutops",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Swift Swim",
+        "evs": {
+            "hp": 80,
+            "atk": 252,
+            "spe": 176
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Aqua Jet",
+            "Rapid Spin",
+            "Stone Edge",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Leafeon",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Leaf Guard",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Double-Edge",
+            "Leaf Blade",
+            "Swords Dance",
+            "Synthesis"
+        ]
+    },
+    {
+        "species": "Swellow",
+        "gender": "M",
+        "item": "Toxic Orb",
+        "ability": "Guts",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Brave Bird",
+            "Facade",
+            "Quick Attack",
+            "U-turn"
+        ]
+    }
+]

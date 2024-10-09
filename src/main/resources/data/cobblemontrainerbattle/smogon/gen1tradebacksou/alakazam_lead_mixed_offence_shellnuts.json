@@ -1,0 +1,56 @@
+[
+    {
+        "species": "Alakazam",
+        "moves": [
+            "Psychic",
+            "Recover",
+            "Seismic Toss",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Exeggutor",
+        "moves": [
+            "Explosion",
+            "Psychic",
+            "Sleep Powder",
+            "Stun Spore"
+        ]
+    },
+    {
+        "species": "Gengar",
+        "moves": [
+            "Explosion",
+            "Hypnosis",
+            "Ice Punch",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Snorlax",
+        "moves": [
+            "Body Slam",
+            "Earthquake",
+            "Hyper Beam",
+            "Self-Destruct"
+        ]
+    },
+    {
+        "species": "Tauros",
+        "moves": [
+            "Blizzard",
+            "Body Slam",
+            "Earthquake",
+            "Hyper Beam"
+        ]
+    },
+    {
+        "species": "Zapdos",
+        "moves": [
+            "Agility",
+            "Drill Peck",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    }
+]

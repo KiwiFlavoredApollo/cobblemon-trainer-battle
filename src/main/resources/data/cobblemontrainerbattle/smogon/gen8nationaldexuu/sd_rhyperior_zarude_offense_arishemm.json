@@ -1,0 +1,118 @@
+[
+    {
+        "species": "Rhyperior",
+        "gender": "M",
+        "item": "Rockium Z",
+        "ability": "Solid Rock",
+        "evs": {
+            "hp": 32,
+            "atk": 164,
+            "spd": 200,
+            "spe": 112
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Stealth Rock",
+            "Stone Edge",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Aegislash",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Stance Change",
+        "evs": {
+            "hp": 252,
+            "spa": 56,
+            "spd": 128,
+            "spe": 72
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Flash Cannon",
+            "King's Shield",
+            "Shadow Ball",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Salamence",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 100,
+            "spa": 156,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Draco Meteor",
+            "Flamethrower",
+            "Hurricane",
+            "Roost"
+        ]
+    },
+    {
+        "species": "Volcanion",
+        "item": "Heavy-Duty Boots",
+        "ability": "Water Absorb",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Flamethrower",
+            "Sludge Bomb",
+            "Steam Eruption"
+        ]
+    },
+    {
+        "species": "Zarude",
+        "item": "Protective Pads",
+        "ability": "Leaf Guard",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Darkest Lariat",
+            "Jungle Healing",
+            "Power Whip",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Zeraora",
+        "item": "Heavy-Duty Boots",
+        "ability": "Volt Absorb",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Knock Off",
+            "Plasma Fists",
+            "Volt Switch"
+        ]
+    }
+]

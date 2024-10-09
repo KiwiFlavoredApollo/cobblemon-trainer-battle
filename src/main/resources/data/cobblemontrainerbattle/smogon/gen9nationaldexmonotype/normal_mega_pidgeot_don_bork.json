@@ -1,0 +1,121 @@
+[
+    {
+        "species": "Staraptor",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Intimidate",
+        "teraType": "Normal",
+        "evs": {
+            "hp": 248,
+            "def": 244,
+            "spe": 16
+        },
+        "nature": "Impish",
+        "moves": [
+            "Brave Bird",
+            "Defog",
+            "Roost",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Bewear",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Fluffy",
+        "teraType": "Normal",
+        "evs": {
+            "hp": 252,
+            "atk": 192,
+            "spe": 64
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bulk Up",
+            "Darkest Lariat",
+            "Drain Punch",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Blissey",
+        "item": "Heavy-Duty Boots",
+        "ability": "Natural Cure",
+        "teraType": "Normal",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Seismic Toss",
+            "Soft-Boiled",
+            "Stealth Rock",
+            "Teleport"
+        ]
+    },
+    {
+        "species": "Ditto",
+        "item": "Choice Scarf",
+        "ability": "Imposter",
+        "teraType": "Normal",
+        "evs": {
+            "hp": 248,
+            "atk": 8,
+            "def": 252
+        },
+        "nature": "Relaxed",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Transform"
+        ]
+    },
+    {
+        "species": "Pidgeot",
+        "gender": "M",
+        "item": "Pidgeotite",
+        "ability": "Keen Eye",
+        "teraType": "Normal",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Heat Wave",
+            "Hidden Power Ground",
+            "Hurricane",
+            "Roost"
+        ],
+        "hpType": "Ground"
+    },
+    {
+        "species": "Ursaluna",
+        "gender": "M",
+        "item": "Flame Orb",
+        "ability": "Guts",
+        "teraType": "Ground",
+        "evs": {
+            "hp": 248,
+            "atk": 252,
+            "spd": 8
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Drain Punch",
+            "Facade",
+            "Fire Punch",
+            "Headlong Rush"
+        ]
+    }
+]

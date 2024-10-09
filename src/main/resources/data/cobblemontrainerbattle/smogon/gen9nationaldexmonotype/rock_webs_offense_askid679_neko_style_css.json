@@ -1,0 +1,120 @@
+[
+    {
+        "species": "Diancie",
+        "item": "Diancite",
+        "ability": "Clear Body",
+        "teraType": "Rock",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earth Power",
+            "Moonblast",
+            "Mystical Fire",
+            "Spikes"
+        ]
+    },
+    {
+        "species": "Minior",
+        "item": "White Herb",
+        "ability": "Shields Down",
+        "teraType": "Rock",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Acrobatics",
+            "Earthquake",
+            "Shell Smash",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Omastar",
+        "gender": "M",
+        "item": "Air Balloon",
+        "ability": "Weak Armor",
+        "teraType": "Rock",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hidden Power Grass",
+            "Ice Beam",
+            "Shell Smash",
+            "Surf"
+        ],
+        "hpType": "Grass"
+    },
+    {
+        "species": "Shuckle",
+        "gender": "M",
+        "item": "Mental Herb",
+        "ability": "Sturdy",
+        "teraType": "Bug",
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spd": 8
+        },
+        "nature": "Careful",
+        "moves": [
+            "Encore",
+            "Knock Off",
+            "Stealth Rock",
+            "Sticky Web"
+        ]
+    },
+    {
+        "species": "Terrakion",
+        "item": "Fightinium Z",
+        "ability": "Justified",
+        "teraType": "Rock",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Earthquake",
+            "Stone Edge",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Sand Stream",
+        "teraType": "Rock",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Crunch",
+            "Fire Punch",
+            "Heavy Slam",
+            "Stone Edge"
+        ]
+    }
+]

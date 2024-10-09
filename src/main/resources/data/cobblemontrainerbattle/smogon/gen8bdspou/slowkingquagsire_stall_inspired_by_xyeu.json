@@ -1,0 +1,118 @@
+[
+    {
+        "species": "Blissey",
+        "item": "Leftovers",
+        "ability": "Natural Cure",
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spd": 8
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Seismic Toss",
+            "Soft-Boiled",
+            "Stealth Rock",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Dragonite",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Multiscale",
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spd": 8
+        },
+        "nature": "Relaxed",
+        "moves": [
+            "Defog",
+            "Earthquake",
+            "Flamethrower",
+            "Roost"
+        ]
+    },
+    {
+        "species": "Quagsire",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Unaware",
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spd": 8
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Protect",
+            "Recover",
+            "Scald",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Skarmory",
+        "gender": "M",
+        "item": "Shed Shell",
+        "ability": "Sturdy",
+        "shiny": true,
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spe": 8
+        },
+        "nature": "Impish",
+        "moves": [
+            "Brave Bird",
+            "Defog",
+            "Roost",
+            "Whirlwind"
+        ]
+    },
+    {
+        "species": "Slowking",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 248,
+            "def": 88,
+            "spd": 172
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Scald",
+            "Shadow Ball",
+            "Slack Off"
+        ]
+    },
+    {
+        "species": "Tangrowth",
+        "gender": "M",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spe": 8
+        },
+        "nature": "Bold",
+        "moves": [
+            "Giga Drain",
+            "Knock Off",
+            "Leech Seed",
+            "Sludge Bomb"
+        ]
+    }
+]

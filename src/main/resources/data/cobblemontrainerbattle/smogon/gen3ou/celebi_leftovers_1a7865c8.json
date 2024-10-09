@@ -1,0 +1,133 @@
+[
+    {
+        "species": "Celebi",
+        "item": "Leftovers",
+        "ability": "Natural Cure",
+        "evs": {
+            "hp": 240,
+            "def": 92,
+            "spe": 176
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "spa": 30
+        },
+        "moves": [
+            "Hidden Power Grass",
+            "Leech Seed",
+            "Light Screen",
+            "Recover"
+        ]
+    },
+    {
+        "species": "Aerodactyl",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Rock Head",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Double-Edge",
+            "Earthquake",
+            "Hidden Power Bug",
+            "Rock Slide"
+        ],
+        "ivs": {
+            "atk": 30,
+            "def": 30,
+            "spd": 30
+        }
+    },
+    {
+        "species": "Magneton",
+        "item": "Leftovers",
+        "ability": "Magnet Pull",
+        "evs": {
+            "hp": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 2,
+            "spa": 30,
+            "spe": 30
+        },
+        "moves": [
+            "Hidden Power Fire",
+            "Protect",
+            "Thunderbolt",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Skarmory",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Keen Eye",
+        "evs": {
+            "hp": 252,
+            "spd": 232,
+            "spe": 24
+        },
+        "nature": "Careful",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Protect",
+            "Spikes",
+            "Toxic",
+            "Whirlwind"
+        ]
+    },
+    {
+        "species": "Swampert",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Torrent",
+        "evs": {
+            "hp": 240,
+            "def": 216,
+            "spd": 52
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Protect",
+            "Refresh",
+            "Surf",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Tyranitar",
+        "gender": "F",
+        "item": "Leftovers",
+        "ability": "Sand Stream",
+        "evs": {
+            "hp": 240,
+            "spa": 188,
+            "spd": 48,
+            "spe": 32
+        },
+        "nature": "Quiet",
+        "ivs": {
+            "atk": 2,
+            "spa": 30
+        },
+        "moves": [
+            "Crunch",
+            "Fire Blast",
+            "Hidden Power Grass",
+            "Pursuit"
+        ]
+    }
+]

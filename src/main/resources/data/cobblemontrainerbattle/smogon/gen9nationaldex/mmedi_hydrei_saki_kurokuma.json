@@ -1,0 +1,126 @@
+[
+    {
+        "species": "Medicham",
+        "gender": "M",
+        "item": "Medichamite",
+        "ability": "Pure Power",
+        "teraType": "Fighting",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Bullet Punch",
+            "Close Combat",
+            "Fake Out",
+            "Zen Headbutt"
+        ]
+    },
+    {
+        "species": "Clefable",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Magic Guard",
+        "teraType": "Dragon",
+        "evs": {
+            "hp": 252,
+            "def": 244,
+            "spe": 12
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Moonblast",
+            "Soft-Boiled",
+            "Stealth Rock",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Heatran",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Flash Fire",
+        "teraType": "Fairy",
+        "evs": {
+            "hp": 252,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earth Power",
+            "Hidden Power Ice",
+            "Magma Storm",
+            "Toxic"
+        ],
+        "hpType": "Ice"
+    },
+    {
+        "species": "Hydreigon",
+        "gender": "M",
+        "item": "Choice Specs",
+        "ability": "Levitate",
+        "teraType": "Dark",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Dark Pulse",
+            "Draco Meteor",
+            "Flash Cannon",
+            "Focus Blast"
+        ]
+    },
+    {
+        "species": "Landorus-Therian",
+        "item": "Choice Scarf",
+        "ability": "Intimidate",
+        "teraType": "Fairy",
+        "evs": {
+            "hp": 208,
+            "atk": 4,
+            "def": 128,
+            "spe": 168
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Defog",
+            "Earthquake",
+            "Stone Edge",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Ogerpon",
+        "item": "Heavy-Duty Boots",
+        "ability": "Defiant",
+        "teraType": "Grass",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Ivy Cudgel",
+            "Knock Off",
+            "Superpower",
+            "Swords Dance"
+        ],
+        "hpType": "Poison"
+    }
+]

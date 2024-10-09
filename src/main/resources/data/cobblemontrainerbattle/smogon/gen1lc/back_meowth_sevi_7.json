@@ -1,0 +1,62 @@
+[
+    {
+        "species": "Voltorb",
+        "level": 5,
+        "moves": [
+            "Explosion",
+            "Take Down",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Abra",
+        "level": 5,
+        "moves": [
+            "Ice Punch",
+            "Psychic",
+            "Thunder Punch",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Diglett",
+        "level": 5,
+        "moves": [
+            "Earthquake",
+            "Rock Slide",
+            "Slash",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Exeggcute",
+        "level": 5,
+        "moves": [
+            "Mega Drain",
+            "Psychic",
+            "Sleep Powder",
+            "Stun Spore"
+        ]
+    },
+    {
+        "species": "Meowth",
+        "level": 5,
+        "moves": [
+            "Amnesia",
+            "Bubble Beam",
+            "Hypnosis",
+            "Slash"
+        ]
+    },
+    {
+        "species": "Staryu",
+        "level": 5,
+        "moves": [
+            "Blizzard",
+            "Surf",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    }
+]

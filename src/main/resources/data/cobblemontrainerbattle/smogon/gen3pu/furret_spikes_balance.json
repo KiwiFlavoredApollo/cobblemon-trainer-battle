@@ -1,0 +1,130 @@
+[
+    {
+        "species": "Furret",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Keen Eye",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Brick Break",
+            "Double-Edge",
+            "Quick Attack",
+            "Shadow Ball"
+        ]
+    },
+    {
+        "species": "Dragonair",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Shed Skin",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Double-Edge",
+            "Dragon Dance",
+            "Hidden Power Fighting",
+            "Iron Tail"
+        ],
+        "ivs": {
+            "def": 30,
+            "spa": 30,
+            "spd": 30,
+            "spe": 30
+        }
+    },
+    {
+        "species": "Houndour",
+        "gender": "F",
+        "item": "Leftovers",
+        "ability": "Flash Fire",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 2,
+            "spa": 30
+        },
+        "moves": [
+            "Crunch",
+            "Fire Blast",
+            "Hidden Power Grass",
+            "Pursuit"
+        ]
+    },
+    {
+        "species": "Ivysaur",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Overgrow",
+        "evs": {
+            "hp": 248,
+            "def": 228,
+            "spe": 32
+        },
+        "nature": "Bold",
+        "moves": [
+            "Hidden Power Grass",
+            "Leech Seed",
+            "Sludge Bomb",
+            "Synthesis"
+        ],
+        "ivs": {
+            "atk": 30,
+            "spa": 30
+        }
+    },
+    {
+        "species": "Minun",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Minus",
+        "evs": {
+            "hp": 248,
+            "spd": 8,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Baton Pass",
+            "Protect",
+            "Thunderbolt",
+            "Wish"
+        ]
+    },
+    {
+        "species": "Omanyte",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Shell Armor",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Ice Beam",
+            "Protect",
+            "Spikes",
+            "Surf"
+        ]
+    }
+]

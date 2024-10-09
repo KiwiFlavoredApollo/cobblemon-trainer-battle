@@ -1,0 +1,121 @@
+[
+    {
+        "species": "Manaphy",
+        "item": "Sitrus Berry",
+        "ability": "Hydration",
+        "evs": {
+            "hp": 108,
+            "spa": 148,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Energy Ball",
+            "Ice Beam",
+            "Surf",
+            "Tail Glow"
+        ]
+    },
+    {
+        "species": "Clefable",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Magic Guard",
+        "evs": {
+            "hp": 252,
+            "def": 168,
+            "spd": 88
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Encore",
+            "Moonblast",
+            "Soft-Boiled",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Excadrill",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Mold Breaker",
+        "evs": {
+            "hp": 28,
+            "atk": 32,
+            "def": 80,
+            "spd": 200,
+            "spe": 168
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Iron Head",
+            "Rapid Spin",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Medicham",
+        "gender": "M",
+        "item": "Medichamite",
+        "ability": "Pure Power",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Fake Out",
+            "High Jump Kick",
+            "Ice Punch",
+            "Thunder Punch"
+        ]
+    },
+    {
+        "species": "Rotom-Wash",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "shiny": true,
+        "evs": {
+            "hp": 252,
+            "def": 200,
+            "spa": 4,
+            "spd": 44,
+            "spe": 8
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hydro Pump",
+            "Pain Split",
+            "Volt Switch",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Tornadus-Therian",
+        "item": "Assault Vest",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 248,
+            "spa": 8,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Air Slash",
+            "Heat Wave",
+            "Knock Off",
+            "U-turn"
+        ]
+    }
+]

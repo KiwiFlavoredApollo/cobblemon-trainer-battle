@@ -1,0 +1,122 @@
+[
+    {
+        "species": "Raikou",
+        "item": "Leftovers",
+        "ability": "Pressure",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "def": 30
+        },
+        "moves": [
+            "Calm Mind",
+            "Hidden Power Ice",
+            "Thunderbolt",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Blastoise",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Rain Dish",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Bold",
+        "moves": [
+            "Rapid Spin",
+            "Roar",
+            "Scald",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Cresselia",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 252,
+            "def": 176,
+            "spe": 80
+        },
+        "nature": "Bold",
+        "ivs": {
+            "hp": 30,
+            "atk": 2,
+            "spa": 30,
+            "spd": 30,
+            "spe": 30
+        },
+        "moves": [
+            "Calm Mind",
+            "Hidden Power Fighting",
+            "Psyshock",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Gligar",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Immunity",
+        "evs": {
+            "hp": 236,
+            "def": 216,
+            "spe": 56
+        },
+        "nature": "Impish",
+        "moves": [
+            "Aerial Ace",
+            "Earthquake",
+            "Roost",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Togekiss",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Serene Grace",
+        "evs": {
+            "hp": 176,
+            "spa": 80,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Air Slash",
+            "Nasty Plot",
+            "Roost",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Umbreon",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Synchronize",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Calm",
+        "moves": [
+            "Foul Play",
+            "Heal Bell",
+            "Protect",
+            "Wish"
+        ]
+    }
+]

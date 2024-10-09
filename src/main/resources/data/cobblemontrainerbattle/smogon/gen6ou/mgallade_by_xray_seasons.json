@@ -1,0 +1,121 @@
+[
+    {
+        "species": "Clefable",
+        "gender": "F",
+        "item": "Leftovers",
+        "ability": "Magic Guard",
+        "evs": {
+            "hp": 248,
+            "def": 212,
+            "spd": 32,
+            "spe": 16
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Moonblast",
+            "Soft-Boiled",
+            "Stealth Rock",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Excadrill",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Mold Breaker",
+        "evs": {
+            "hp": 32,
+            "atk": 8,
+            "def": 56,
+            "spd": 160,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Iron Head",
+            "Rapid Spin",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Gallade",
+        "item": "Galladite",
+        "ability": "Justified",
+        "evs": {
+            "hp": 152,
+            "atk": 100,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Drain Punch",
+            "Psycho Cut",
+            "Shadow Sneak",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Volcanion",
+        "item": "Choice Scarf",
+        "ability": "Water Absorb",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Flamethrower",
+            "Overheat",
+            "Steam Eruption",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Weavile",
+        "gender": "F",
+        "item": "Choice Band",
+        "ability": "Pressure",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Ice Shard",
+            "Icicle Crash",
+            "Knock Off",
+            "Pursuit"
+        ]
+    },
+    {
+        "species": "Zapdos",
+        "item": "Rocky Helmet",
+        "ability": "Static",
+        "evs": {
+            "hp": 248,
+            "def": 236,
+            "spe": 24
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0,
+            "def": 30
+        },
+        "moves": [
+            "Heat Wave",
+            "Hidden Power Ice",
+            "Roost",
+            "Volt Switch"
+        ]
+    }
+]

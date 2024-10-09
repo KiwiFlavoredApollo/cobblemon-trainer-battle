@@ -1,0 +1,56 @@
+[
+    {
+        "species": "Tauros",
+        "moves": [
+            "Blizzard",
+            "Body Slam",
+            "Earthquake",
+            "Hyper Beam"
+        ]
+    },
+    {
+        "species": "Exeggutor",
+        "moves": [
+            "Explosion",
+            "Psychic",
+            "Sleep Powder",
+            "Stun Spore"
+        ]
+    },
+    {
+        "species": "Mew",
+        "moves": [
+            "Body Slam",
+            "Reflect",
+            "Soft-Boiled",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Mewtwo",
+        "moves": [
+            "Amnesia",
+            "Ice Beam",
+            "Psychic",
+            "Recover"
+        ]
+    },
+    {
+        "species": "Slowbro",
+        "moves": [
+            "Amnesia",
+            "Ice Beam",
+            "Rest",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Snorlax",
+        "moves": [
+            "Body Slam",
+            "Earthquake",
+            "Hyper Beam",
+            "Self-Destruct"
+        ]
+    }
+]

@@ -1,0 +1,134 @@
+[
+    {
+        "species": "Kangaskhan",
+        "item": "Leftovers",
+        "ability": "Early Bird",
+        "evs": {
+            "hp": 252,
+            "def": 112,
+            "spd": 128,
+            "spe": 16
+        },
+        "nature": "Careful",
+        "moves": [
+            "Rest",
+            "Return",
+            "Toxic",
+            "Wish"
+        ],
+        "happiness": 255
+    },
+    {
+        "species": "Ampharos",
+        "gender": "F",
+        "item": "Leftovers",
+        "ability": "Static",
+        "evs": {
+            "hp": 232,
+            "def": 80,
+            "spa": 88,
+            "spd": 92,
+            "spe": 16
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 2,
+            "def": 30
+        },
+        "moves": [
+            "Heal Bell",
+            "Hidden Power Ice",
+            "Thunderbolt",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Scyther",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Swarm",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Aerial Ace",
+            "Double-Edge",
+            "Hidden Power Bug",
+            "Quick Attack"
+        ],
+        "ivs": {
+            "atk": 30,
+            "def": 30,
+            "spd": 30
+        }
+    },
+    {
+        "species": "Solrock",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 252,
+            "atk": 32,
+            "spd": 200,
+            "spe": 24
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Explosion",
+            "Fire Spin",
+            "Hidden Power Grass",
+            "Rock Slide"
+        ],
+        "ivs": {
+            "atk": 30,
+            "spa": 30
+        }
+    },
+    {
+        "species": "Tentacruel",
+        "gender": "F",
+        "item": "Leftovers",
+        "ability": "Liquid Ooze",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 3,
+            "spa": 30
+        },
+        "moves": [
+            "Hidden Power Electric",
+            "Ice Beam",
+            "Rapid Spin",
+            "Surf"
+        ]
+    },
+    {
+        "species": "Vileplume",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Chlorophyll",
+        "evs": {
+            "hp": 252,
+            "def": 196,
+            "spd": 60
+        },
+        "nature": "Impish",
+        "moves": [
+            "Hidden Power Ground",
+            "Leech Seed",
+            "Moonlight",
+            "Sludge Bomb"
+        ],
+        "ivs": {
+            "spa": 30,
+            "spd": 30
+        }
+    }
+]

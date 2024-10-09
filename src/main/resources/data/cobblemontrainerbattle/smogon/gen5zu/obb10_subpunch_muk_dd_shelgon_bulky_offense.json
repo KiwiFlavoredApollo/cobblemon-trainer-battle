@@ -1,0 +1,120 @@
+[
+    {
+        "species": "Muk",
+        "gender": "M",
+        "item": "Black Sludge",
+        "ability": "Sticky Hold",
+        "shiny": true,
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "spd": 4
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Focus Punch",
+            "Payback",
+            "Poison Jab",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Emolga",
+        "gender": "M",
+        "item": "Flying Gem",
+        "ability": "Motor Drive",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Acrobatics",
+            "Roost",
+            "Taunt",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Grumpig",
+        "gender": "F",
+        "item": "Choice Scarf",
+        "ability": "Thick Fat",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 2,
+            "spa": 30,
+            "spe": 30
+        },
+        "moves": [
+            "Hidden Power Fire",
+            "Psychic",
+            "Shadow Ball",
+            "Trick"
+        ]
+    },
+    {
+        "species": "Lairon",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Rock Head",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Head Smash",
+            "Stealth Rock",
+            "Superpower"
+        ]
+    },
+    {
+        "species": "Shelgon",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Overcoat",
+        "shiny": true,
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Brick Break",
+            "Dragon Dance",
+            "Fire Fang",
+            "Outrage"
+        ]
+    },
+    {
+        "species": "Staryu",
+        "item": "Eviolite",
+        "ability": "Natural Cure",
+        "evs": {
+            "hp": 252,
+            "def": 120,
+            "spd": 120,
+            "spe": 16
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Rapid Spin",
+            "Recover",
+            "Scald",
+            "Toxic"
+        ]
+    }
+]

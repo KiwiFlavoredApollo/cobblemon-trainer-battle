@@ -1,0 +1,56 @@
+[
+    {
+        "species": "Alakazam",
+        "moves": [
+            "Psychic",
+            "Recover",
+            "Substitute",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Chansey",
+        "moves": [
+            "Reflect",
+            "Seismic Toss",
+            "Soft-Boiled",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Exeggutor",
+        "moves": [
+            "Explosion",
+            "Psychic",
+            "Rest",
+            "Stun Spore"
+        ]
+    },
+    {
+        "species": "Snorlax",
+        "moves": [
+            "Body Slam",
+            "Ice Beam",
+            "Reflect",
+            "Rest"
+        ]
+    },
+    {
+        "species": "Starmie",
+        "moves": [
+            "Blizzard",
+            "Recover",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Tauros",
+        "moves": [
+            "Blizzard",
+            "Body Slam",
+            "Double-Edge",
+            "Substitute"
+        ]
+    }
+]

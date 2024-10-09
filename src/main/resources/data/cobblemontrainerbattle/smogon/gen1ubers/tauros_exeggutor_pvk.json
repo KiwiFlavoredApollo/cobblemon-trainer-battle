@@ -1,0 +1,59 @@
+[
+    {
+        "species": "Tauros",
+        "moves": [
+            "Body Slam",
+            "Earthquake",
+            "Hyper Beam",
+            "Stomp"
+        ]
+    },
+    {
+        "species": "Chansey",
+        "moves": [
+            "Ice Beam",
+            "Sing",
+            "Soft-Boiled",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Exeggutor",
+        "moves": [
+            "Explosion",
+            "Psychic",
+            "Sleep Powder",
+            "Stun Spore"
+        ]
+    },
+    {
+        "species": "Mew",
+        "moves": [
+            "Earthquake",
+            "Explosion",
+            "Soft-Boiled",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Mewtwo",
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Amnesia",
+            "Ice Beam",
+            "Psychic",
+            "Recover"
+        ]
+    },
+    {
+        "species": "Snorlax",
+        "moves": [
+            "Body Slam",
+            "Earthquake",
+            "Hyper Beam",
+            "Self-Destruct"
+        ]
+    }
+]

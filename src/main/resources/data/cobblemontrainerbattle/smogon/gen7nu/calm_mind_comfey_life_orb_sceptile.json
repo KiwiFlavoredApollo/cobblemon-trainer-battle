@@ -1,0 +1,118 @@
+[
+    {
+        "species": "Comfey",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Triage",
+        "evs": {
+            "hp": 232,
+            "spa": 252,
+            "spe": 24
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Draining Kiss",
+            "Giga Drain",
+            "Hidden Power Fire"
+        ],
+        "hpType": "Fire"
+    },
+    {
+        "species": "Incineroar",
+        "gender": "M",
+        "item": "Firium Z",
+        "ability": "Intimidate",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Flare Blitz",
+            "Knock Off",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Passimian",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Defiant",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Gunk Shot",
+            "Knock Off",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Sceptile",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Overgrow",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Focus Blast",
+            "Giga Drain",
+            "Hidden Power Ice",
+            "Leaf Storm"
+        ],
+        "hpType": "Ice"
+    },
+    {
+        "species": "Steelix",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sturdy",
+        "evs": {
+            "hp": 252,
+            "atk": 76,
+            "spd": 180
+        },
+        "nature": "Careful",
+        "moves": [
+            "Curse",
+            "Earthquake",
+            "Heavy Slam",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Xatu",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Magic Bounce",
+        "evs": {
+            "hp": 252,
+            "def": 196,
+            "spe": 60
+        },
+        "nature": "Bold",
+        "moves": [
+            "Night Shade",
+            "Roost",
+            "Toxic",
+            "U-turn"
+        ]
+    }
+]

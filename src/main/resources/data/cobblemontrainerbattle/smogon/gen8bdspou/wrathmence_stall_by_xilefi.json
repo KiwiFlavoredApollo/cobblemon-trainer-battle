@@ -1,0 +1,121 @@
+[
+    {
+        "species": "Poliwrath",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Water Absorb",
+        "evs": {
+            "hp": 252,
+            "atk": 4,
+            "def": 252
+        },
+        "nature": "Relaxed",
+        "moves": [
+            "Circle Throw",
+            "Rest",
+            "Scald",
+            "Sleep Talk"
+        ]
+    },
+    {
+        "species": "Clefable",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Unaware",
+        "shiny": true,
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spd": 8
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Moonblast",
+            "Protect",
+            "Wish"
+        ]
+    },
+    {
+        "species": "Gastrodon",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sticky Hold",
+        "shiny": true,
+        "evs": {
+            "hp": 248,
+            "spa": 8,
+            "spd": 252
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earth Power",
+            "Protect",
+            "Recover",
+            "Scald"
+        ]
+    },
+    {
+        "species": "Mew",
+        "item": "Leftovers",
+        "ability": "Synchronize",
+        "evs": {
+            "hp": 248,
+            "def": 240,
+            "spe": 20
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Flamethrower",
+            "Ice Beam",
+            "Roost"
+        ]
+    },
+    {
+        "species": "Salamence",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 248,
+            "def": 184,
+            "spe": 76
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Defog",
+            "Earthquake",
+            "Fire Blast",
+            "Roost"
+        ]
+    },
+    {
+        "species": "Skarmory",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sturdy",
+        "shiny": true,
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spe": 8
+        },
+        "nature": "Impish",
+        "moves": [
+            "Brave Bird",
+            "Roost",
+            "Spikes",
+            "Stealth Rock"
+        ]
+    }
+]

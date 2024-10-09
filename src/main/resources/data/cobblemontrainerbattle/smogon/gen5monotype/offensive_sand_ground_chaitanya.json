@@ -1,0 +1,112 @@
+[
+    {
+        "species": "Garchomp",
+        "gender": "M",
+        "item": "Expert Belt",
+        "ability": "Rough Skin",
+        "evs": {
+            "atk": 252,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Dual Chop",
+            "Earthquake",
+            "Fire Blast",
+            "Outrage"
+        ]
+    },
+    {
+        "species": "Gastrodon",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Storm Drain",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Sassy",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Mirror Coat",
+            "Recover",
+            "Scald",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Gliscor",
+        "gender": "M",
+        "item": "Toxic Orb",
+        "ability": "Poison Heal",
+        "evs": {
+            "hp": 244,
+            "def": 52,
+            "spe": 212
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Protect",
+            "Substitute",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Hippowdon",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sand Stream",
+        "evs": {
+            "hp": 252,
+            "def": 232,
+            "spd": 24
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Slack Off",
+            "Stealth Rock",
+            "Whirlwind"
+        ]
+    },
+    {
+        "species": "Landorus-Therian",
+        "item": "Power Herb",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 24,
+            "atk": 240,
+            "spe": 244
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Fly",
+            "Rock Polish",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Mamoswine",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Thick Fat",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Ice Shard",
+            "Icicle Crash",
+            "Stone Edge"
+        ]
+    }
+]

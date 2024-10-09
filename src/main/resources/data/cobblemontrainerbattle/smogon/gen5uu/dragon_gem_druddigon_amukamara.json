@@ -1,0 +1,118 @@
+[
+    {
+        "species": "Druddigon",
+        "gender": "M",
+        "item": "Dragon Gem",
+        "ability": "Mold Breaker",
+        "evs": {
+            "hp": 252,
+            "atk": 96,
+            "spd": 160
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Dragon Tail",
+            "Earthquake",
+            "Outrage",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Blastoise",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Torrent",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Rapid Spin",
+            "Refresh",
+            "Roar",
+            "Scald"
+        ]
+    },
+    {
+        "species": "Flygon",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Levitate",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Dragon Claw",
+            "Earthquake",
+            "Outrage",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Roserade",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Natural Cure",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Leaf Storm",
+            "Sleep Powder",
+            "Sludge Bomb",
+            "Synthesis"
+        ]
+    },
+    {
+        "species": "Victini",
+        "item": "Choice Band",
+        "ability": "Victory Star",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Bolt Strike",
+            "U-turn",
+            "V-create",
+            "Zen Headbutt"
+        ]
+    },
+    {
+        "species": "Zapdos",
+        "item": "Leftovers",
+        "ability": "Pressure",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "spa": 30
+        },
+        "moves": [
+            "Heat Wave",
+            "Hidden Power Grass",
+            "Roost",
+            "Thunderbolt"
+        ]
+    }
+]

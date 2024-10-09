@@ -1,0 +1,118 @@
+[
+    {
+        "species": "Muk",
+        "gender": "M",
+        "item": "Black Sludge",
+        "ability": "Sticky Hold",
+        "evs": {
+            "hp": 252,
+            "def": 12,
+            "spd": 244
+        },
+        "nature": "Careful",
+        "moves": [
+            "Curse",
+            "Poison Jab",
+            "Rest",
+            "Sleep Talk"
+        ]
+    },
+    {
+        "species": "Clefairy",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Magic Guard",
+        "evs": {
+            "hp": 252,
+            "spa": 4,
+            "spd": 252
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Moonblast",
+            "Soft-Boiled",
+            "Stealth Rock",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Leafeon",
+        "gender": "M",
+        "item": "Yache Berry",
+        "ability": "Chlorophyll",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Knock Off",
+            "Leaf Blade",
+            "Swords Dance",
+            "Synthesis"
+        ]
+    },
+    {
+        "species": "Mr. Mime",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Soundproof",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Dazzling Gleam",
+            "Focus Blast",
+            "Healing Wish",
+            "Psychic"
+        ]
+    },
+    {
+        "species": "Probopass",
+        "gender": "M",
+        "item": "Air Balloon",
+        "ability": "Magnet Pull",
+        "evs": {
+            "hp": 172,
+            "spa": 252,
+            "spe": 84
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earth Power",
+            "Flash Cannon",
+            "Taunt",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Vullaby",
+        "item": "Eviolite",
+        "ability": "Overcoat",
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spd": 8
+        },
+        "nature": "Impish",
+        "moves": [
+            "Defog",
+            "Foul Play",
+            "Roost",
+            "U-turn"
+        ]
+    }
+]

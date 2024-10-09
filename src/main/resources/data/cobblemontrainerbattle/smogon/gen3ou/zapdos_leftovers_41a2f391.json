@@ -1,0 +1,132 @@
+[
+    {
+        "species": "Zapdos",
+        "item": "Leftovers",
+        "ability": "Pressure",
+        "evs": {
+            "hp": 248,
+            "spd": 228,
+            "spe": 32
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Rest",
+            "Thunderbolt",
+            "Thunder Wave",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Celebi",
+        "item": "Leftovers",
+        "ability": "Natural Cure",
+        "evs": {
+            "hp": 240,
+            "def": 100,
+            "spd": 136,
+            "spe": 32
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Leech Seed",
+            "Psychic",
+            "Recover"
+        ]
+    },
+    {
+        "species": "Dugtrio",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Arena Trap",
+        "evs": {
+            "hp": 8,
+            "atk": 248,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Aerial Ace",
+            "Earthquake",
+            "Hidden Power Bug",
+            "Rock Slide"
+        ],
+        "ivs": {
+            "atk": 30,
+            "def": 30,
+            "spd": 30
+        }
+    },
+    {
+        "species": "Skarmory",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Keen Eye",
+        "evs": {
+            "hp": 248,
+            "spd": 216,
+            "spe": 44
+        },
+        "nature": "Careful",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Spikes",
+            "Taunt",
+            "Toxic",
+            "Whirlwind"
+        ]
+    },
+    {
+        "species": "Swampert",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Torrent",
+        "evs": {
+            "hp": 240,
+            "def": 188,
+            "spd": 56,
+            "spe": 24
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Protect",
+            "Refresh",
+            "Surf",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sand Stream",
+        "evs": {
+            "hp": 184,
+            "atk": 204,
+            "spe": 120
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Focus Punch",
+            "Hidden Power Bug",
+            "Rock Slide"
+        ],
+        "ivs": {
+            "atk": 30,
+            "def": 30,
+            "spd": 30
+        }
+    }
+]

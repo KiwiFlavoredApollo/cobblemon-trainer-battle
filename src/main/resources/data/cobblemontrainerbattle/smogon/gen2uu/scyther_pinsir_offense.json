@@ -1,0 +1,76 @@
+[
+    {
+        "species": "Hypno",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Psychic",
+            "Rest",
+            "Sleep Talk",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Haunter",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Destiny Bond",
+            "Explosion",
+            "Psychic",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Piloswine",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Earthquake",
+            "Ice Beam",
+            "Rest",
+            "Sleep Talk"
+        ]
+    },
+    {
+        "species": "Pinsir",
+        "gender": "M",
+        "item": "Leftovers",
+        "ivs": {
+            "hp": 15,
+            "atk": 25
+        },
+        "moves": [
+            "Body Slam",
+            "Double-Edge",
+            "Hidden Power Ground",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Qwilfish",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Curse",
+            "Hydro Pump",
+            "Sludge Bomb",
+            "Spikes"
+        ]
+    },
+    {
+        "species": "Scyther",
+        "gender": "M",
+        "item": "Leftovers",
+        "ivs": {
+            "hp": 15,
+            "atk": 25
+        },
+        "moves": [
+            "Double-Edge",
+            "Hidden Power Ground",
+            "Swords Dance",
+            "Wing Attack"
+        ]
+    }
+]

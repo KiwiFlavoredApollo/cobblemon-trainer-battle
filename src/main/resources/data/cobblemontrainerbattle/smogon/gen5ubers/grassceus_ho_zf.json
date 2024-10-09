@@ -1,0 +1,110 @@
+[
+    {
+        "species": "Dialga",
+        "item": "Life Orb",
+        "ability": "Pressure",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Aura Sphere",
+            "Draco Meteor",
+            "Stealth Rock",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Arceus-Grass",
+        "item": "Meadow Plate",
+        "ability": "Multitype",
+        "evs": {
+            "hp": 248,
+            "spa": 8,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Calm Mind",
+            "Ice Beam",
+            "Judgment",
+            "Recover"
+        ]
+    },
+    {
+        "species": "Deoxys-Attack",
+        "item": "Focus Sash",
+        "ability": "Pressure",
+        "evs": {
+            "atk": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Dark Pulse",
+            "Icy Wind",
+            "Spikes",
+            "Superpower"
+        ]
+    },
+    {
+        "species": "Genesect",
+        "item": "Choice Scarf",
+        "ability": "Download",
+        "evs": {
+            "atk": 248,
+            "spa": 8,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Ice Beam",
+            "Iron Head",
+            "Thunder",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Giratina-Origin",
+        "item": "Griseous Orb",
+        "ability": "Levitate",
+        "evs": {
+            "atk": 168,
+            "def": 248,
+            "spe": 92
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Dragon Tail",
+            "Magic Coat",
+            "Shadow Sneak",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Kyogre",
+        "item": "Choice Specs",
+        "ability": "Drizzle",
+        "evs": {
+            "hp": 88,
+            "spa": 252,
+            "spe": 168
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hydro Pump",
+            "Ice Beam",
+            "Thunder",
+            "Water Spout"
+        ]
+    }
+]

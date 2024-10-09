@@ -1,0 +1,127 @@
+[
+    {
+        "species": "Vulpix-Alola",
+        "gender": "M",
+        "item": "Light Clay",
+        "ability": "Snow Warning",
+        "shiny": true,
+        "evs": {
+            "hp": 52,
+            "spa": 200,
+            "spe": 240
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0,
+            "spa": 30,
+            "spe": 30
+        },
+        "moves": [
+            "Aurora Veil",
+            "Blizzard",
+            "Freeze-Dry",
+            "Hidden Power Fire"
+        ]
+    },
+    {
+        "species": "Diglett",
+        "gender": "M",
+        "item": "Groundium Z",
+        "ability": "Arena Trap",
+        "shiny": true,
+        "evs": {
+            "hp": 36,
+            "atk": 236,
+            "spe": 236
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Memento",
+            "Stealth Rock",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Shellder",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Skill Link",
+        "shiny": true,
+        "evs": {
+            "atk": 236,
+            "spd": 76,
+            "spe": 196
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Icicle Spear",
+            "Liquidation",
+            "Rock Blast",
+            "Shell Smash"
+        ]
+    },
+    {
+        "species": "Tirtouga",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Solid Rock",
+        "shiny": true,
+        "evs": {
+            "hp": 4,
+            "atk": 212,
+            "def": 12,
+            "spd": 76,
+            "spe": 180
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Shell Smash",
+            "Stone Edge",
+            "Waterfall",
+            "Zen Headbutt"
+        ]
+    },
+    {
+        "species": "Vullaby",
+        "item": "Berry Juice",
+        "ability": "Weak Armor",
+        "shiny": true,
+        "evs": {
+            "spa": 240,
+            "spe": 196
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0,
+            "spa": 30
+        },
+        "moves": [
+            "Air Slash",
+            "Heat Wave",
+            "Hidden Power Grass",
+            "Nasty Plot"
+        ]
+    },
+    {
+        "species": "Zigzagoon",
+        "gender": "M",
+        "item": "Berry Juice",
+        "ability": "Pickup",
+        "shiny": true,
+        "evs": {
+            "hp": 132,
+            "atk": 196,
+            "def": 108,
+            "spd": 28,
+            "spe": 36
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Belly Drum",
+            "Extreme Speed",
+            "Protect",
+            "Thief"
+        ]
+    }
+]

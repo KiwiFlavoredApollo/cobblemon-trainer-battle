@@ -1,0 +1,56 @@
+[
+    {
+        "species": "Charizard",
+        "moves": [
+            "Counter",
+            "Fire Blast",
+            "Fire Spin",
+            "Slash"
+        ]
+    },
+    {
+        "species": "Arcanine",
+        "moves": [
+            "Agility",
+            "Body Slam",
+            "Fire Blast",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Magmar",
+        "moves": [
+            "Fire Blast",
+            "Psychic",
+            "Submission",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Moltres",
+        "moves": [
+            "Agility",
+            "Fire Blast",
+            "Fire Spin",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Ninetales",
+        "moves": [
+            "Body Slam",
+            "Fire Blast",
+            "Fire Spin",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Rapidash",
+        "moves": [
+            "Agility",
+            "Fire Blast",
+            "Fire Spin",
+            "Toxic"
+        ]
+    }
+]

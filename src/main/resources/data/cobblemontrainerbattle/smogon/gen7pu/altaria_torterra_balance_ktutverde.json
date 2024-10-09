@@ -1,0 +1,116 @@
+[
+    {
+        "species": "Torterra",
+        "gender": "M",
+        "item": "Lum Berry",
+        "ability": "Overgrow",
+        "evs": {
+            "hp": 248,
+            "spd": 108,
+            "spe": 152
+        },
+        "nature": "Careful",
+        "moves": [
+            "Earthquake",
+            "Stealth Rock",
+            "Synthesis",
+            "Wood Hammer"
+        ]
+    },
+    {
+        "species": "Altaria",
+        "gender": "M",
+        "item": "Dragonium Z",
+        "ability": "Natural Cure",
+        "evs": {
+            "hp": 172,
+            "spa": 84,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Draco Meteor",
+            "Fire Blast",
+            "Roost"
+        ]
+    },
+    {
+        "species": "Eelektross",
+        "gender": "M",
+        "item": "Assault Vest",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 228,
+            "atk": 80,
+            "spd": 200
+        },
+        "nature": "Brave",
+        "moves": [
+            "Discharge",
+            "Drain Punch",
+            "Knock Off",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Jellicent",
+        "gender": "M",
+        "item": "Colbur Berry",
+        "ability": "Cursed Body",
+        "evs": {
+            "hp": 252,
+            "def": 212,
+            "spe": 44
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hex",
+            "Recover",
+            "Taunt",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Primeape",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Defiant",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Ice Punch",
+            "Seed Bomb",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Sandslash-Alola",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Slush Rush",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Icicle Crash",
+            "Iron Head",
+            "Rapid Spin"
+        ]
+    }
+]

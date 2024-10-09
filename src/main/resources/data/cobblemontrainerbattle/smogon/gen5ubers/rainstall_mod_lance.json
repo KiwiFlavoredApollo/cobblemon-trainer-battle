@@ -1,0 +1,115 @@
+[
+    {
+        "species": "Arceus-Rock",
+        "item": "Stone Plate",
+        "ability": "Multitype",
+        "evs": {
+            "hp": 252,
+            "def": 80,
+            "spe": 176
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Judgment",
+            "Recover",
+            "Stealth Rock",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Ferrothorn",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Iron Barbs",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Sassy",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Gyro Ball",
+            "Leech Seed",
+            "Protect",
+            "Spikes"
+        ]
+    },
+    {
+        "species": "Giratina-Origin",
+        "item": "Griseous Orb",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 248,
+            "def": 8,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Dragon Tail",
+            "Rest",
+            "Roar",
+            "Sleep Talk"
+        ]
+    },
+    {
+        "species": "Kyogre",
+        "item": "Choice Scarf",
+        "ability": "Drizzle",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Ice Beam",
+            "Surf",
+            "Thunder",
+            "Water Spout"
+        ]
+    },
+    {
+        "species": "Lugia",
+        "item": "Leftovers",
+        "ability": "Multiscale",
+        "evs": {
+            "hp": 248,
+            "def": 56,
+            "spe": 204
+        },
+        "nature": "Impish",
+        "moves": [
+            "Roost",
+            "Substitute",
+            "Toxic",
+            "Whirlwind"
+        ]
+    },
+    {
+        "species": "Tentacruel",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Rain Dish",
+        "evs": {
+            "hp": 252,
+            "def": 32,
+            "spd": 224
+        },
+        "nature": "Calm",
+        "moves": [
+            "Rapid Spin",
+            "Scald",
+            "Toxic",
+            "Toxic Spikes"
+        ]
+    }
+]

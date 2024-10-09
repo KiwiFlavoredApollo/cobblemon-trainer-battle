@@ -1,0 +1,70 @@
+[
+    {
+        "species": "Snorlax",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Double-Edge",
+            "Earthquake",
+            "Rest",
+            "Sleep Talk"
+        ]
+    },
+    {
+        "species": "Cloyster",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Explosion",
+            "Spikes",
+            "Surf",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Gengar",
+        "gender": "M",
+        "moves": [
+            "Explosion",
+            "Ice Punch",
+            "Thief",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Golem",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Earthquake",
+            "Explosion",
+            "Rapid Spin",
+            "Roar"
+        ]
+    },
+    {
+        "species": "Jynx",
+        "item": "Leftovers",
+        "moves": [
+            "Ice Beam",
+            "Lovely Kiss",
+            "Psychic",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Zapdos",
+        "item": "Leftovers",
+        "ivs": {
+            "hp": 15,
+            "atk": 29,
+            "def": 27
+        },
+        "moves": [
+            "Hidden Power Water",
+            "Protect",
+            "Thunderbolt",
+            "Whirlwind"
+        ]
+    }
+]

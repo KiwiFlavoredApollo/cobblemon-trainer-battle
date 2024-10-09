@@ -1,0 +1,124 @@
+[
+    {
+        "species": "Walrein",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Thick Fat",
+        "evs": {
+            "hp": 252,
+            "def": 116,
+            "spa": 140
+        },
+        "nature": "Modest",
+        "moves": [
+            "Earthquake",
+            "Ice Beam",
+            "Surf",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Kangaskhan",
+        "item": "Leftovers",
+        "ability": "Early Bird",
+        "evs": {
+            "hp": 252,
+            "def": 112,
+            "spd": 128,
+            "spe": 16
+        },
+        "nature": "Careful",
+        "moves": [
+            "Rest",
+            "Return",
+            "Toxic",
+            "Wish"
+        ],
+        "happiness": 255
+    },
+    {
+        "species": "Omastar",
+        "gender": "F",
+        "item": "Leftovers",
+        "ability": "Shell Armor",
+        "evs": {
+            "hp": 252,
+            "def": 200,
+            "spe": 56
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 3,
+            "spa": 30
+        },
+        "moves": [
+            "Hidden Power Electric",
+            "Rest",
+            "Spikes",
+            "Surf"
+        ]
+    },
+    {
+        "species": "Scyther",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Swarm",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Aerial Ace",
+            "Double-Edge",
+            "Hidden Power Bug",
+            "Quick Attack"
+        ],
+        "ivs": {
+            "atk": 30,
+            "def": 30,
+            "spd": 30
+        }
+    },
+    {
+        "species": "Tentacruel",
+        "gender": "F",
+        "item": "Leftovers",
+        "ability": "Liquid Ooze",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 3,
+            "spa": 30
+        },
+        "moves": [
+            "Hidden Power Electric",
+            "Ice Beam",
+            "Rapid Spin",
+            "Surf"
+        ]
+    },
+    {
+        "species": "Vileplume",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Chlorophyll",
+        "evs": {
+            "hp": 252,
+            "def": 196,
+            "spd": 60
+        },
+        "nature": "Impish",
+        "moves": [
+            "Aromatherapy",
+            "Leech Seed",
+            "Moonlight",
+            "Sludge Bomb"
+        ]
+    }
+]

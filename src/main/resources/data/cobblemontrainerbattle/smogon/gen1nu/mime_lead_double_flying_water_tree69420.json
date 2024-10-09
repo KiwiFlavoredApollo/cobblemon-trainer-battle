@@ -1,0 +1,68 @@
+[
+    {
+        "species": "Mr. Mime",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Psychic",
+            "Seismic Toss",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Fearow",
+        "moves": [
+            "Agility",
+            "Double-Edge",
+            "Drill Peck",
+            "Hyper Beam"
+        ]
+    },
+    {
+        "species": "Kabutops",
+        "moves": [
+            "Hyper Beam",
+            "Slash",
+            "Surf",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Moltres",
+        "moves": [
+            "Agility",
+            "Fire Blast",
+            "Fire Spin",
+            "Hyper Beam"
+        ]
+    },
+    {
+        "species": "Poliwrath",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Counter",
+            "Hypnosis",
+            "Seismic Toss",
+            "Surf"
+        ]
+    },
+    {
+        "species": "Raticate",
+        "moves": [
+            "Body Slam",
+            "Hyper Beam",
+            "Super Fang",
+            "Thunderbolt"
+        ]
+    }
+]

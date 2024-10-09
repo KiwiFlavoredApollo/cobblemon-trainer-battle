@@ -1,0 +1,125 @@
+[
+    {
+        "species": "Krookodile",
+        "gender": "M",
+        "item": "Iapapa Berry",
+        "ability": "Intimidate",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Knock Off",
+            "Stealth Rock",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Amoonguss",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 240,
+            "def": 188,
+            "spd": 72,
+            "spe": 8
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Clear Smog",
+            "Giga Drain",
+            "Hidden Power Fire",
+            "Spore"
+        ],
+        "hpType": "Fire"
+    },
+    {
+        "species": "Manectric",
+        "gender": "M",
+        "item": "Manectite",
+        "ability": "Lightning Rod",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hidden Power Ice",
+            "Overheat",
+            "Thunderbolt",
+            "Volt Switch"
+        ],
+        "hpType": "Ice"
+    },
+    {
+        "species": "Scizor",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Technician",
+        "evs": {
+            "hp": 40,
+            "atk": 252,
+            "spe": 216
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Bullet Punch",
+            "Pursuit",
+            "Superpower",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Starmie",
+        "item": "Colbur Berry",
+        "ability": "Analytic",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hydro Pump",
+            "Ice Beam",
+            "Rapid Spin",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Togekiss",
+        "gender": "M",
+        "item": "Fightinium Z",
+        "ability": "Serene Grace",
+        "evs": {
+            "hp": 216,
+            "spa": 32,
+            "spd": 8,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Air Slash",
+            "Aura Sphere",
+            "Nasty Plot",
+            "Roost"
+        ]
+    }
+]

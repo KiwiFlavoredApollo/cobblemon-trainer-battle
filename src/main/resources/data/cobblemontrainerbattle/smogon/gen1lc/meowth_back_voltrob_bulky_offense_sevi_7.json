@@ -1,0 +1,62 @@
+[
+    {
+        "species": "Meowth",
+        "level": 5,
+        "moves": [
+            "Amnesia",
+            "Bubble Beam",
+            "Hypnosis",
+            "Slash"
+        ]
+    },
+    {
+        "species": "Abra",
+        "level": 5,
+        "moves": [
+            "Ice Punch",
+            "Psychic",
+            "Thunder Punch",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Diglett",
+        "level": 5,
+        "moves": [
+            "Earthquake",
+            "Rock Slide",
+            "Slash",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Drowzee",
+        "level": 5,
+        "moves": [
+            "Amnesia",
+            "Ice Punch",
+            "Psychic",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Exeggcute",
+        "level": 5,
+        "moves": [
+            "Explosion",
+            "Psychic",
+            "Sleep Powder",
+            "Stun Spore"
+        ]
+    },
+    {
+        "species": "Voltorb",
+        "level": 5,
+        "moves": [
+            "Explosion",
+            "Take Down",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    }
+]

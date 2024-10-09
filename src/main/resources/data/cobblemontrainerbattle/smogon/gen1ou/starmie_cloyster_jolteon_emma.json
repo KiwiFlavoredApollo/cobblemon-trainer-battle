@@ -1,0 +1,56 @@
+[
+    {
+        "species": "Starmie",
+        "moves": [
+            "Blizzard",
+            "Psychic",
+            "Recover",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Chansey",
+        "moves": [
+            "Ice Beam",
+            "Sing",
+            "Soft-Boiled",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Cloyster",
+        "moves": [
+            "Blizzard",
+            "Clamp",
+            "Explosion",
+            "Rest"
+        ]
+    },
+    {
+        "species": "Jolteon",
+        "moves": [
+            "Double Kick",
+            "Rest",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Snorlax",
+        "moves": [
+            "Body Slam",
+            "Earthquake",
+            "Reflect",
+            "Rest"
+        ]
+    },
+    {
+        "species": "Tauros",
+        "moves": [
+            "Blizzard",
+            "Body Slam",
+            "Fire Blast",
+            "Hyper Beam"
+        ]
+    }
+]

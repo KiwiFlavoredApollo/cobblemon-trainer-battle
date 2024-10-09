@@ -1,0 +1,128 @@
+[
+    {
+        "species": "Whimsicott",
+        "gender": "M",
+        "item": "Focus Sash",
+        "ability": "Prankster",
+        "evs": {
+            "hp": 252,
+            "def": 192,
+            "spd": 56,
+            "spe": 8
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0,
+            "spa": 0
+        },
+        "moves": [
+            "Encore",
+            "Fake Tears",
+            "Protect",
+            "Tailwind"
+        ]
+    },
+    {
+        "species": "Celesteela",
+        "item": "Power Herb",
+        "ability": "Beast Boost",
+        "evs": {
+            "hp": 164,
+            "spa": 252,
+            "spe": 92
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Air Slash",
+            "Flash Cannon",
+            "Meteor Beam",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Incineroar",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 248,
+            "atk": 60,
+            "spd": 160,
+            "spe": 40
+        },
+        "nature": "Careful",
+        "ivs": {
+            "spa": 0
+        },
+        "moves": [
+            "Fake Out",
+            "Flare Blitz",
+            "Knock Off",
+            "Parting Shot"
+        ]
+    },
+    {
+        "species": "Landorus",
+        "item": "Life Orb",
+        "ability": "Sheer Force",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earth Power",
+            "Focus Blast",
+            "Protect",
+            "Sludge Bomb"
+        ]
+    },
+    {
+        "species": "Naganadel",
+        "item": "Life Orb",
+        "ability": "Beast Boost",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Draco Meteor",
+            "Fire Blast",
+            "Protect",
+            "Sludge Bomb"
+        ]
+    },
+    {
+        "species": "Tapu Fini",
+        "item": "Choice Specs",
+        "ability": "Misty Surge",
+        "evs": {
+            "hp": 24,
+            "spa": 228,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hydro Pump",
+            "Ice Beam",
+            "Moonblast",
+            "Muddy Water"
+        ]
+    }
+]

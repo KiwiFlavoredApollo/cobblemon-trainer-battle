@@ -1,0 +1,127 @@
+[
+    {
+        "species": "Dragapult",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Clear Body",
+        "shiny": true,
+        "teraType": "Ghost",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Dragon Darts",
+            "Quick Attack",
+            "Tera Blast",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Iron Crown",
+        "item": "Assault Vest",
+        "ability": "Quark Drive",
+        "teraType": "Fighting",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "hp": 20,
+            "atk": 20,
+            "def": 20,
+            "spa": 20,
+            "spd": 20,
+            "spe": 20
+        },
+        "moves": [
+            "Focus Blast",
+            "Future Sight",
+            "Tachyon Cutter",
+            "Volt Switch"
+        ],
+        "hpType": "Fighting"
+    },
+    {
+        "species": "Kingambit",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Supreme Overlord",
+        "teraType": "Ghost",
+        "evs": {
+            "hp": 208,
+            "atk": 252,
+            "spe": 48
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Iron Head",
+            "Kowtow Cleave",
+            "Sucker Punch",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Landorus-Therian",
+        "item": "Rocky Helmet",
+        "ability": "Intimidate",
+        "teraType": "Water",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spe": 4
+        },
+        "nature": "Bold",
+        "moves": [
+            "Earth Power",
+            "Grass Knot",
+            "Stealth Rock",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Primarina",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Torrent",
+        "teraType": "Fairy",
+        "evs": {
+            "hp": 248,
+            "spa": 80,
+            "spe": 180
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Moonblast",
+            "Psychic Noise",
+            "Surf"
+        ]
+    },
+    {
+        "species": "Samurott-Hisui",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Sharpness",
+        "teraType": "Fire",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Ceaseless Edge",
+            "Encore",
+            "Knock Off",
+            "Razor Shell"
+        ]
+    }
+]

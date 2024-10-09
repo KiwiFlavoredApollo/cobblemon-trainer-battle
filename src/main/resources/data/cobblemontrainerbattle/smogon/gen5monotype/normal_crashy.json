@@ -1,0 +1,119 @@
+[
+    {
+        "species": "Ditto",
+        "item": "Choice Scarf",
+        "ability": "Imposter",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Relaxed",
+        "ivs": {
+            "atk": 30,
+            "spa": 30,
+            "spe": 3
+        },
+        "moves": [
+            "Transform"
+        ]
+    },
+    {
+        "species": "Chansey",
+        "item": "Eviolite",
+        "ability": "Natural Cure",
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spd": 8
+        },
+        "nature": "Bold",
+        "moves": [
+            "Seismic Toss",
+            "Soft-Boiled",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Meloetta",
+        "item": "Choice Specs",
+        "ability": "Serene Grace",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Focus Blast",
+            "Psychic",
+            "Shadow Ball",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Porygon2",
+        "item": "Eviolite",
+        "ability": "Download",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spe": 4
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 2,
+            "spa": 30,
+            "spe": 30
+        },
+        "moves": [
+            "Discharge",
+            "Hidden Power Fire",
+            "Ice Beam",
+            "Recover"
+        ]
+    },
+    {
+        "species": "Staraptor",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Reckless",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Brave Bird",
+            "Close Combat",
+            "Double-Edge",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Togekiss",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Serene Grace",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Air Slash",
+            "Flamethrower",
+            "Roost",
+            "Thunder Wave"
+        ]
+    }
+]

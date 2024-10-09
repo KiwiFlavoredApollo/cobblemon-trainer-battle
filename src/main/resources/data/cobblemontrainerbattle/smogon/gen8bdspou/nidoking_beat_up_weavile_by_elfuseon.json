@@ -1,0 +1,117 @@
+[
+    {
+        "species": "Weavile",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Pressure",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Beat Up",
+            "Ice Shard",
+            "Icicle Crash",
+            "Throat Chop"
+        ]
+    },
+    {
+        "species": "Garchomp",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Rough Skin",
+        "evs": {
+            "atk": 252,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Draco Meteor",
+            "Dragon Claw",
+            "Earthquake",
+            "Fire Blast"
+        ]
+    },
+    {
+        "species": "Heatran",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Flame Body",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earth Power",
+            "Magma Storm",
+            "Stealth Rock",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Nidoking",
+        "item": "Life Orb",
+        "ability": "Sheer Force",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earth Power",
+            "Ice Beam",
+            "Sludge Wave",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Rotom-Wash",
+        "item": "Choice Scarf",
+        "ability": "Levitate",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hydro Pump",
+            "Thunderbolt",
+            "Trick",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Scizor",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Technician",
+        "evs": {
+            "hp": 252,
+            "atk": 4,
+            "def": 252
+        },
+        "nature": "Impish",
+        "moves": [
+            "Bullet Punch",
+            "Defog",
+            "Roost",
+            "U-turn"
+        ]
+    }
+]

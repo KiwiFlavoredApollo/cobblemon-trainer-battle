@@ -1,0 +1,113 @@
+[
+    {
+        "species": "Mudsdale",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Stamina",
+        "evs": {
+            "hp": 248,
+            "def": 244,
+            "spe": 16
+        },
+        "nature": "Impish",
+        "moves": [
+            "Close Combat",
+            "Earthquake",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Eelektross",
+        "gender": "M",
+        "item": "Assault Vest",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 248,
+            "spa": 8,
+            "spd": 252
+        },
+        "nature": "Sassy",
+        "moves": [
+            "Drain Punch",
+            "Flamethrower",
+            "Giga Drain",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Jellicent",
+        "gender": "M",
+        "item": "Colbur Berry",
+        "ability": "Cursed Body",
+        "evs": {
+            "hp": 252,
+            "def": 224,
+            "spe": 32
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hex",
+            "Recover",
+            "Taunt",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Leafeon",
+        "gender": "M",
+        "item": "Normalium Z",
+        "ability": "Leaf Guard",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Celebrate",
+            "Double-Edge",
+            "Leaf Blade",
+            "Synthesis"
+        ]
+    },
+    {
+        "species": "Skuntank",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Aftermath",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Crunch",
+            "Defog",
+            "Poison Jab",
+            "Pursuit"
+        ]
+    },
+    {
+        "species": "Victreebel",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Chlorophyll",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Knock Off",
+            "Poison Jab",
+            "Power Whip",
+            "Swords Dance"
+        ]
+    }
+]

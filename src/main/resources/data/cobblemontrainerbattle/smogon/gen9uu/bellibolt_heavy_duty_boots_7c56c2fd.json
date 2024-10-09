@@ -1,0 +1,117 @@
+[
+    {
+        "species": "Bellibolt",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Static",
+        "teraType": "Ground",
+        "evs": {
+            "hp": 248,
+            "def": 56,
+            "spd": 204
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Muddy Water",
+            "Slack Off",
+            "Toxic",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Arcanine-Hisui",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Rock Head",
+        "teraType": "Normal",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Extreme Speed",
+            "Flare Blitz",
+            "Head Smash",
+            "Morning Sun"
+        ]
+    },
+    {
+        "species": "Hippowdon",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Sand Stream",
+        "teraType": "Dragon",
+        "evs": {
+            "hp": 252,
+            "def": 76,
+            "spd": 180
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Slack Off",
+            "Stealth Rock",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Lokix",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Tinted Lens",
+        "teraType": "Bug",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "First Impression",
+            "Knock Off",
+            "Sucker Punch",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Mandibuzz",
+        "item": "Heavy-Duty Boots",
+        "ability": "Overcoat",
+        "teraType": "Steel",
+        "evs": {
+            "hp": 248,
+            "def": 244,
+            "spe": 16
+        },
+        "nature": "Impish",
+        "moves": [
+            "Defog",
+            "Foul Play",
+            "Roost",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Tornadus-Therian",
+        "item": "Assault Vest",
+        "ability": "Regenerator",
+        "teraType": "Electric",
+        "evs": {
+            "hp": 208,
+            "spd": 124,
+            "spe": 176
+        },
+        "nature": "Timid",
+        "moves": [
+            "Heat Wave",
+            "Hurricane",
+            "Knock Off",
+            "U-turn"
+        ]
+    }
+]

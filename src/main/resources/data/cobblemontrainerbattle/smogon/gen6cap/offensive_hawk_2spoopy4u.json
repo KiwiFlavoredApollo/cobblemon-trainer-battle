@@ -1,0 +1,117 @@
+[
+    {
+        "species": "Tomohawk",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Intimidate",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Aura Sphere",
+            "Earth Power",
+            "Hurricane",
+            "Roost"
+        ]
+    },
+    {
+        "species": "Clefable",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Magic Guard",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Flamethrower",
+            "Moonblast",
+            "Soft-Boiled"
+        ]
+    },
+    {
+        "species": "Garchomp",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Rough Skin",
+        "evs": {
+            "hp": 248,
+            "def": 168,
+            "spe": 92
+        },
+        "nature": "Impish",
+        "moves": [
+            "Dragon Tail",
+            "Earthquake",
+            "Fire Blast",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Metagross",
+        "item": "Metagrossite",
+        "ability": "Clear Body",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Meteor Mash",
+            "Pursuit",
+            "Thunder Punch",
+            "Zen Headbutt"
+        ]
+    },
+    {
+        "species": "Rotom-Wash",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spd": 8
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0,
+            "spe": 30
+        },
+        "moves": [
+            "Hydro Pump",
+            "Pain Split",
+            "Volt Switch",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Tornadus-Therian",
+        "item": "Assault Vest",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 96,
+            "spa": 160,
+            "spe": 252
+        },
+        "nature": "Hasty",
+        "moves": [
+            "Hurricane",
+            "Knock Off",
+            "Superpower",
+            "U-turn"
+        ]
+    }
+]

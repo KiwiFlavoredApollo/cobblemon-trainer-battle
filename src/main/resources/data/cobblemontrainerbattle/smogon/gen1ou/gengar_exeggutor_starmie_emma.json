@@ -1,0 +1,56 @@
+[
+    {
+        "species": "Gengar",
+        "moves": [
+            "Explosion",
+            "Hypnosis",
+            "Psychic",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Chansey",
+        "moves": [
+            "Ice Beam",
+            "Soft-Boiled",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Exeggutor",
+        "moves": [
+            "Explosion",
+            "Psychic",
+            "Sleep Powder",
+            "Stun Spore"
+        ]
+    },
+    {
+        "species": "Snorlax",
+        "moves": [
+            "Body Slam",
+            "Earthquake",
+            "Reflect",
+            "Rest"
+        ]
+    },
+    {
+        "species": "Starmie",
+        "moves": [
+            "Recover",
+            "Surf",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Tauros",
+        "moves": [
+            "Blizzard",
+            "Body Slam",
+            "Earthquake",
+            "Hyper Beam"
+        ]
+    }
+]
