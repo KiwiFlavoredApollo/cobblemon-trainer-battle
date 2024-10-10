@@ -1,68 +1,14 @@
 package kiwiapollo.cobblemontrainerbattle.common;
 
-import com.cobblemon.mod.common.Cobblemon;
-import com.cobblemon.mod.common.pokemon.Pokemon;
-import com.google.gson.*;
-import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.exceptions.ShowdownJsonExportException;
-import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.server.network.ServerPlayerEntity;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
-public class ShowdownJsonExporter {
-    private static final File GAME_DIR =
-            new File(FabricLoader.getInstance().getGameDir().toFile(), CobblemonTrainerBattle.NAMESPACE);
-    public static final File EXPORT_DIR = new File(GAME_DIR, "exports");
-
-    private final ServerPlayerEntity player;
-
-    public ShowdownJsonExporter(ServerPlayerEntity player) {
-        this.player = player;
-
-        if (!EXPORT_DIR.exists()) {
-            EXPORT_DIR.mkdirs();
-        }
-    }
-
-    public void export() {
-        try (FileWriter fileWriter = new FileWriter(getExportFile())) {
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            gson.toJson(getPlayerPartyInShowdownJsonFormat(), fileWriter);
-
-            CobblemonTrainerBattle.LOGGER.info(String.format("Exported: %s", player.getGameProfile().getName()));
-            CobblemonTrainerBattle.LOGGER.info(getExportFile().getPath());
-
-        } catch (ShowdownJsonExportException | IOException e) {
-            CobblemonTrainerBattle.LOGGER.error("An error occurred while exporting Pokemon");
-        }
-    }
-
-    private File getExportFile() {
-        return new File(EXPORT_DIR, String.format("%s.json", player.getGameProfile().getName()));
-    }
-
-    private JsonArray getPlayerPartyInShowdownJsonFormat() throws ShowdownJsonExportException {
-        List<Pokemon> pokemons = Cobblemon.INSTANCE.getStorage()
-                .getParty(player).toGappyList().stream()
-                .filter(Objects::nonNull).toList();
-        List<JsonObject> cobblemon = pokemons.stream().map(pokemon -> pokemon.saveToJSON(new JsonObject())).toList();
-
-        List<ShowdownPokemon> showdown = new ArrayList<>();
-        for (JsonObject jsonObject : cobblemon) {
-            showdown.add(toShowdownJsonObject(jsonObject));
-        }
-
-        return new Gson().toJsonTree(showdown).getAsJsonArray();
-    }
-
-    private ShowdownPokemon toShowdownJsonObject(JsonObject cobblemon) throws ShowdownJsonExportException {
+public class CobblemonJsonObjectParser {
+    public ShowdownPokemon toShowdownPokemon(JsonObject cobblemon) throws JsonParseException {
         try {
             return new ShowdownPokemon(
                     getName(cobblemon),
@@ -78,7 +24,7 @@ public class ShowdownJsonExporter {
             );
 
         } catch (IllegalStateException | UnsupportedOperationException | NullPointerException ignored) {
-            throw new ShowdownJsonExportException();
+            throw new JsonParseException("");
         }
     }
 
