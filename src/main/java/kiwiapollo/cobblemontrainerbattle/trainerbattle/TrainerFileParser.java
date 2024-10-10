@@ -123,11 +123,6 @@ public class TrainerFileParser {
         }
     }
 
-    private boolean isIdentifierString(String species) {
-        List<String> split = Arrays.stream(species.split(":")).toList();
-        return split.size() == 2 && !split.contains("");
-    }
-
     private void setPokemonLevel(Pokemon pokemon, int level) {
         if (level >= RELATIVE_LEVEL_THRESHOLD) {
             pokemon.setLevel(level);
