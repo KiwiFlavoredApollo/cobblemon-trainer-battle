@@ -6,10 +6,16 @@
 
 ```json
 {
-  "economy": "None"
+  "economy": "None",
   "enableTrainerSpawn": true
 }
 ```
+
+```dtd
+/cobblemontrainerbattle reload
+```
+
+- Reloads configuration at runtime 
 
 ### Available `economy` Options
 
@@ -18,7 +24,8 @@
 
 ### NPC Trainers
 
-if `enableTrainerSpawn` is set to `true`, NPC trainers will spawn around players. Basically the same as running `trainerbattle random` command but more interesting.
+- If `enableTrainerSpawn` is set to `true`, NPC trainers will spawn around players
+- Basically the same as running `trainerbattle random` command but more interesting
 
 ## Trainer Battle
 
@@ -173,6 +180,15 @@ datapacks/
   }
 }
 ```
+
+### Exporting Player Pokemons
+
+```
+/cobblemontrainerbattle export <player>
+```
+
+- Exports player Pokemons as compatible trainer file
+- While it's not strictly formatted like the Smogon team JSON format, it can be used for custom trainers
 
 ## TODOs
 

@@ -16,16 +16,15 @@ import com.google.gson.JsonObject;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidPokemonStatsException;
 import kiwiapollo.cobblemontrainerbattle.exceptions.CobblemonMoveNameNotExistException;
+import kiwiapollo.cobblemontrainerbattle.exceptions.PokemonParseException;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.InvalidIdentifierException;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 import java.util.function.BiConsumer;
 
 public class TrainerFileParser {
@@ -50,34 +49,24 @@ public class TrainerFileParser {
     }
 
     public List<Pokemon> parse(TrainerFile trainerFile) {
-        return getPokemons(trainerFile.pokemons);
-    }
+        List<Pokemon> pokemons = new ArrayList<>();
+        for (JsonElement pokemon: trainerFile.pokemons.asList()) {
+            try {
+                pokemons.add(toPokemon(pokemon.getAsJsonObject()));
 
-    private List<Pokemon> getPokemons(JsonArray trainer) {
-        List<JsonObject> pokemonJsonObjects = trainer.getAsJsonArray().asList().stream()
-                .map(JsonElement::getAsJsonObject)
-                .filter(this::isExistPokemon).toList();
-
-        return pokemonJsonObjects.stream().map(this::createPokemon).toList();
-    }
-
-    private boolean isExistPokemon(JsonObject pokemon) {
-        try {
-            Identifier identifier = Identifier.of(
-                    "cobblemon", pokemon.get("species").getAsString().toLowerCase());
-            return PokemonSpecies.INSTANCE.getByIdentifier(identifier) != null;
-
-        } catch (NullPointerException e) {
-            CobblemonTrainerBattle.LOGGER.error(
-                    String.format("Error occured while getting species data for %s",
-                            pokemon.get("species").getAsString()));
-            return false;
+            } catch (PokemonParseException | IllegalStateException e) {
+                CobblemonTrainerBattle.LOGGER.warn(String.format("An error occurred while parsing Pokemon"));
+            }
         }
+        return pokemons;
     }
 
-    private Pokemon createPokemon(JsonObject jsonObject) {
-        Identifier identifier = Identifier.of(
-                "cobblemon", jsonObject.get("species").getAsString().toLowerCase());
+    private Pokemon toPokemon(JsonObject jsonObject) throws PokemonParseException {
+        if (!jsonObject.has("species") || jsonObject.get("species").isJsonNull()) {
+            throw new PokemonParseException();
+        }
+
+        Identifier identifier = createSpeciesIdentifier(jsonObject);
         Pokemon pokemon = PokemonSpecies.INSTANCE.getByIdentifier(identifier).create(DEFAULT_LEVEL);
 
         if (jsonObject.get("evs") != null && !jsonObject.get("evs").isJsonNull()) {
@@ -113,6 +102,30 @@ public class TrainerFileParser {
         }
 
         return pokemon;
+    }
+
+    private Identifier createSpeciesIdentifier(JsonObject jsonObject) throws PokemonParseException {
+        try {
+            String species = jsonObject.get("species").getAsString();
+            return new Identifier(species);
+
+        } catch (InvalidIdentifierException e) {
+            String species = jsonObject.get("species").getAsString();
+            Identifier cobblemon = Identifier.of("cobblemon", species.toLowerCase());
+            if (cobblemon != null) {
+                return cobblemon;
+            }
+
+            throw new PokemonParseException();
+
+        } catch (NullPointerException | UnsupportedOperationException e) {
+            throw new PokemonParseException();
+        }
+    }
+
+    private boolean isIdentifierString(String species) {
+        List<String> split = Arrays.stream(species.split(":")).toList();
+        return split.size() == 2 && !split.contains("");
     }
 
     private void setPokemonLevel(Pokemon pokemon, int level) {
@@ -180,11 +193,19 @@ public class TrainerFileParser {
     }
 
     private void setPokemonNature(Pokemon pokemon, String natureName) {
-        Nature nature = Natures.INSTANCE.getNature(
-                Identifier.of("cobblemon", natureName.toLowerCase()));
+        Nature nature = Natures.INSTANCE.getNature(createNatureIdentifier(natureName));
 
         if (Natures.INSTANCE.all().contains(nature)) {
             pokemon.setNature(nature);
+        }
+    }
+
+    private Identifier createNatureIdentifier(String nature) {
+        try {
+            return new Identifier(nature);
+
+        } catch (InvalidIdentifierException e) {
+            return Identifier.of("cobblemon", nature.toLowerCase());
         }
     }
 
