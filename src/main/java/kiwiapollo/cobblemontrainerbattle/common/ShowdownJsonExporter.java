@@ -11,7 +11,9 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 public class ShowdownJsonExporter {
@@ -32,176 +34,144 @@ public class ShowdownJsonExporter {
     public void export() {
         try (FileWriter fileWriter = new FileWriter(getExportFile())) {
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            gson.toJson(playerPartyToJsonArray(), fileWriter);
+            gson.toJson(getPlayerPartyInShowdownJsonFormat(), fileWriter);
 
             CobblemonTrainerBattle.LOGGER.info(String.format("Exported: %s", player.getGameProfile().getName()));
             CobblemonTrainerBattle.LOGGER.info(getExportFile().getPath());
 
-        } catch (IOException e) {
+        } catch (ShowdownJsonExportException | IOException e) {
             CobblemonTrainerBattle.LOGGER.error("An error occurred while exporting Pokemon");
         }
-    }
-
-    private JsonArray playerPartyToJsonArray() {
-        List<Pokemon> pokemonList = Cobblemon.INSTANCE.getStorage()
-                .getParty(player).toGappyList().stream()
-                .filter(Objects::nonNull).toList();
-
-        JsonArray pokemonJsonArray = new JsonArray();
-        for (Pokemon pokemon : pokemonList) {
-            pokemonJsonArray.add(pokemon.saveToJSON(new JsonObject()));
-        }
-
-        return pokemonJsonArray;
     }
 
     private File getExportFile() {
         return new File(EXPORT_DIR, String.format("%s.json", player.getGameProfile().getName()));
     }
 
-    private JsonObject toShowdownJsonFormat(JsonObject cobblemon) throws ShowdownJsonExportException {
-        JsonObject showdown = new JsonObject();
+    private JsonArray getPlayerPartyInShowdownJsonFormat() throws ShowdownJsonExportException {
+        List<Pokemon> pokemons = Cobblemon.INSTANCE.getStorage()
+                .getParty(player).toGappyList().stream()
+                .filter(Objects::nonNull).toList();
+        List<JsonObject> cobblemon = pokemons.stream().map(pokemon -> pokemon.saveToJSON(new JsonObject())).toList();
 
-        showdown.addProperty("name", toShowdownName(cobblemon));
-        showdown.addProperty("species", toShowdownSpecies(cobblemon));
-        showdown.addProperty("item", toShowdownItem(cobblemon));
-        showdown.addProperty("ability", toShowdownAbility(cobblemon));
-        showdown.addProperty("gender", toShowdownGender(cobblemon));
-        showdown.addProperty("nature", toShowdownNature(cobblemon));
-        showdown.addProperty("level", toShowdownLevel(cobblemon));
-        showdown.add("evs", toShowdownEvs(cobblemon));
-        showdown.add("ivs", toShowdownIvs(cobblemon));
-        showdown.add("moves", toShowdownMoveSet(cobblemon));
+        List<ShowdownPokemon> showdown = new ArrayList<>();
+        for (JsonObject jsonObject : cobblemon) {
+            showdown.add(toShowdownJsonObject(jsonObject));
+        }
 
-        return showdown;
+        return new Gson().toJsonTree(showdown).getAsJsonArray();
     }
 
-    private String toShowdownName(JsonObject cobblemon) {
+    private ShowdownPokemon toShowdownJsonObject(JsonObject cobblemon) throws ShowdownJsonExportException {
         try {
-            return cobblemon.get("Name").getAsString();
+            return new ShowdownPokemon(
+                    getName(cobblemon),
+                    getSpecies(cobblemon),
+                    getItem(cobblemon),
+                    getAbility(cobblemon),
+                    getGender(cobblemon),
+                    getNature(cobblemon),
+                    getLevel(cobblemon),
+                    getEvs(cobblemon),
+                    getIvs(cobblemon),
+                    getMoves(cobblemon)
+            );
 
-        } catch (UnsupportedOperationException | NullPointerException ignored) {
+        } catch (IllegalStateException | UnsupportedOperationException | NullPointerException ignored) {
+            throw new ShowdownJsonExportException();
+        }
+    }
+
+    private String getName(JsonObject cobblemon) {
+        try {
+            return cobblemon.get("Nickname").getAsJsonObject().get("text").getAsString();
+
+        } catch (IllegalStateException | UnsupportedOperationException | NullPointerException ignored) {
             return "";
         }
     }
 
-    private String toShowdownSpecies(JsonObject cobblemon) throws ShowdownJsonExportException {
-        try {
-            return cobblemon.get("Species").getAsString();
-
-        } catch (UnsupportedOperationException | NullPointerException ignored) {
-            throw new ShowdownJsonExportException();
-        }
+    private String getSpecies(JsonObject cobblemon) {
+        return cobblemon.get("Species").getAsString();
     }
 
-    private String toShowdownItem(JsonObject cobblemon) throws ShowdownJsonExportException {
+    private String getItem(JsonObject cobblemon) {
         try {
-            return cobblemon.get("Item").getAsString();
-
-        } catch (UnsupportedOperationException | NullPointerException ignored) {
-            throw new ShowdownJsonExportException();
-        }
-    }
-
-    private String toShowdownAbility(JsonObject cobblemon) throws ShowdownJsonExportException {
-        try {
-            return cobblemon.get("Ability").getAsJsonObject().get("AbilityName").getAsString();
+            return cobblemon.get("HeldItem").getAsJsonObject().get("id").getAsString();
 
         } catch (IllegalStateException | UnsupportedOperationException | NullPointerException ignored) {
-            throw new ShowdownJsonExportException();
+            return "None";
         }
     }
 
-    private String toShowdownGender(JsonObject cobblemon) throws ShowdownJsonExportException {
-        try {
-            String gender = cobblemon.get("Gender").getAsString();
-            return switch(gender) {
-                case "MALE" -> "M";
-                case "FEMALE" -> "F";
-                case "GENDERLESS" -> "";
-                default -> throw new ShowdownJsonExportException();
-            };
-
-        } catch (UnsupportedOperationException | NullPointerException ignored) {
-            throw new ShowdownJsonExportException();
-        }
+    private String getAbility(JsonObject cobblemon) {
+        return cobblemon.get("Ability").getAsJsonObject().get("AbilityName").getAsString();
     }
 
-    private String toShowdownNature(JsonObject cobblemon) throws ShowdownJsonExportException {
-        try {
-            return cobblemon.get("Nature").getAsString();
-
-        } catch (UnsupportedOperationException | NullPointerException ignored) {
-            throw new ShowdownJsonExportException();
-        }
+    private String getGender(JsonObject cobblemon) {
+        String gender = cobblemon.get("Gender").getAsString();
+        return switch(gender) {
+            case "MALE" -> "M";
+            case "FEMALE" -> "F";
+            case "GENDERLESS" -> "";
+            default -> throw new IllegalStateException("Unexpected value: " + gender);
+        };
     }
 
-    private int toShowdownLevel(JsonObject cobblemon) throws ShowdownJsonExportException {
-        try {
-            return cobblemon.get("Level").getAsInt();
-
-        } catch (NullPointerException | UnsupportedOperationException e) {
-            throw new ShowdownJsonExportException();
-        }
+    private String getNature(JsonObject cobblemon) {
+        return cobblemon.get("Nature").getAsString();
     }
 
-    private JsonObject toShowdownEvs(JsonObject cobblemon) throws ShowdownJsonExportException {
-        try {
+    private int getLevel(JsonObject cobblemon) {
+        return cobblemon.get("Level").getAsInt();
+    }
+
+    private Map<String, Integer> getEvs(JsonObject cobblemon) {
+        if (cobblemon.has("EVs") && !cobblemon.get("EVs").isJsonNull()) {
             return toShowdownPokemonStats(cobblemon.get("EVs").getAsJsonObject());
-
-        } catch (UnsupportedOperationException | NullPointerException ignored) {
-            throw new ShowdownJsonExportException();
+        } else {
+            return Map.of();
         }
     }
 
-    private JsonObject toShowdownIvs(JsonObject cobblemon) throws ShowdownJsonExportException {
-        try {
+    private Map<String, Integer> getIvs(JsonObject cobblemon) {
+        if (cobblemon.has("IVs") && !cobblemon.get("IVs").isJsonNull()) {
             return toShowdownPokemonStats(cobblemon.get("IVs").getAsJsonObject());
-
-        } catch (UnsupportedOperationException | NullPointerException ignored) {
-            throw new ShowdownJsonExportException();
+        } else {
+            return Map.of();
         }
     }
 
-    private JsonObject toShowdownPokemonStats(JsonObject cobblemonStats) {
-        JsonObject showdownStats = new JsonObject();
-
-        showdownStats.addProperty("hp", cobblemonStats.get("hp").getAsInt());
-        showdownStats.addProperty("atk", cobblemonStats.get("attack").getAsInt());
-        showdownStats.addProperty("def", cobblemonStats.get("defence").getAsInt());
-        showdownStats.addProperty("spa", cobblemonStats.get("special_attack").getAsInt());
-        showdownStats.addProperty("spd", cobblemonStats.get("special_defence").getAsInt());
-        showdownStats.addProperty("spe", cobblemonStats.get("speed").getAsInt());
-
-        return showdownStats;
+    private Map<String, Integer> toShowdownPokemonStats(JsonObject cobblemonStats) {
+        return Map.of(
+                "hp", cobblemonStats.has("hp") ? cobblemonStats.get("hp").getAsInt() : 0,
+                "atk", cobblemonStats.has("attack") ? cobblemonStats.get("attack").getAsInt() : 0,
+                "def", cobblemonStats.has("defence") ? cobblemonStats.get("defence").getAsInt() : 0,
+                "spa", cobblemonStats.has("special_attack") ? cobblemonStats.get("special_attack").getAsInt() : 0,
+                "spd", cobblemonStats.has("special_defence") ? cobblemonStats.get("special_defence").getAsInt() : 0,
+                "spe", cobblemonStats.has("speed") ? cobblemonStats.get("speed").getAsInt() : 0
+        );
     }
 
-    private JsonArray toShowdownMoveSet(JsonObject cobblemon) throws ShowdownJsonExportException {
-        try {
-            JsonObject cobblemonMoveSet = cobblemon.get("MoveSet").getAsJsonObject();
+    private List<String> getMoves(JsonObject cobblemon) {
+        List<String> moveSetKeys = List.of(
+                "MoveSet0",
+                "MoveSet1",
+                "MoveSet2",
+                "MoveSet3"
+        );
 
-            List<String> keys = List.of(
-                    "MoveSet0",
-                    "MoveSet1",
-                    "MoveSet2",
-                    "MoveSet3"
-            );
-
-            JsonArray moveSet = new JsonArray();
-            for (String key : keys) {
-                try {
-                    JsonObject move = cobblemonMoveSet.get(key).getAsJsonObject();
-                    moveSet.add(move.get("MoveName").getAsString());
-
-                } catch (IllegalStateException | NullPointerException ignored) {
-
-                }
+        JsonObject cobblemonMoveSet = cobblemon.get("MoveSet").getAsJsonObject();
+        List<String> moveSet = new ArrayList<>();
+        for (String key : moveSetKeys) {
+            if (!cobblemonMoveSet.has(key)) {
+                continue;
             }
 
-            return moveSet;
-
-        } catch (IllegalStateException | UnsupportedOperationException | NullPointerException ignored) {
-            throw new ShowdownJsonExportException();
+            JsonObject move = cobblemonMoveSet.get(key).getAsJsonObject();
+            moveSet.add(move.get("MoveName").getAsString());
         }
+
+        return moveSet;
     }
 }
