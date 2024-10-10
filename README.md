@@ -189,6 +189,8 @@ datapacks/
 
 - Exports player Pokemons as compatible trainer file
 - While it's not strictly formatted like the Smogon team JSON format, it can be used for custom trainers
+- Need `cobblemontrainerbattle.export` permission
+- `.minecraft/cobblemontrainerbattle/exports/<player>_<timestamp>.json`
 
 ## TODOs
 
