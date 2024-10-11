@@ -66,12 +66,12 @@ public class PlayerValidator {
         try {
             Trainer trainer = CobblemonTrainerBattle.trainers.get(identifier);
             PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
-            boolean isAtOrBelowPartyMaximumLevel = playerPartyStore.toGappyList().stream()
+            boolean isAtOrBelowMaximumPartyLevel = playerPartyStore.toGappyList().stream()
                     .filter(Objects::nonNull)
                     .map(Pokemon::getLevel)
                     .allMatch(level -> level <= trainer.condition.maximumPartyLevel);
 
-            if (!isAtOrBelowPartyMaximumLevel) {
+            if (!isAtOrBelowMaximumPartyLevel) {
                 throw new BattleConditionException(
                         BattleConditionType.MAXIMUM_PARTY_LEVEL,
                         trainer.condition.maximumPartyLevel
@@ -88,12 +88,12 @@ public class PlayerValidator {
         try {
             Trainer trainer = CobblemonTrainerBattle.trainers.get(identifier);
             PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
-            boolean isAtOrAbovePartyMinimumLevel = playerPartyStore.toGappyList().stream()
+            boolean isAtOrAboveMinimumPartyLevel = playerPartyStore.toGappyList().stream()
                     .filter(Objects::nonNull)
                     .map(Pokemon::getLevel)
                     .allMatch(level -> level >= trainer.condition.minimumPartyLevel);
 
-            if (!isAtOrAbovePartyMinimumLevel) {
+            if (!isAtOrAboveMinimumPartyLevel) {
                 throw new BattleConditionException(
                         BattleConditionType.MINIMUM_PARTY_LEVEL,
                         trainer.condition.minimumPartyLevel
