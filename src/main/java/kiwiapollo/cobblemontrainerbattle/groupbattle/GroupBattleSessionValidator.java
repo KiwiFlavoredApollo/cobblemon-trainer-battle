@@ -45,7 +45,7 @@ public class GroupBattleSessionValidator {
     public void assertNotDefeatedAllTrainers() throws DefeatedAllTrainersException {
         if (isDefeatedAllTrainers(player)) {
             throw new DefeatedAllTrainersException();
-        };
+        }
     }
 
     public static boolean isDefeatedAllTrainers(ServerPlayerEntity player) {

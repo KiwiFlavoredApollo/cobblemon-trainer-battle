@@ -17,8 +17,6 @@ public class BattleFactorySession {
     public List<Pokemon> tradeablePokemons;
     public Instant timestamp;
     public boolean isDefeated;
-    @ Deprecated
-    public boolean isTradedPokemon;
 
     public BattleFactorySession(List<Identifier> trainersToDefeat) {
         this.uuid = UUID.randomUUID();
@@ -33,6 +31,5 @@ public class BattleFactorySession {
         this.tradeablePokemons = List.of();
         this.timestamp = Instant.now();
         this.isDefeated = false;
-        this.isTradedPokemon = false;
     }
 }

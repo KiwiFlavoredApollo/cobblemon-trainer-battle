@@ -182,7 +182,6 @@ public class BattleFactory {
 
             session.partyPokemons = new ArrayList<>(session.partyPokemons);
             session.partyPokemons.set(playerslot - 1, trainerPokemon.clone(true, true));
-            session.isTradedPokemon = true;
             session.tradeablePokemons = List.of();
 
             MutableText pokemonTradeMessage = Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.success",

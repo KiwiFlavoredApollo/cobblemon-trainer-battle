@@ -12,7 +12,6 @@ import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
-import java.util.Objects;
 import java.util.stream.StreamSupport;
 
 public class TrainerBattleVictoryEventHandler implements BattleVictoryEventHandler {

@@ -68,7 +68,7 @@ public class BattleFactorySessionValidator {
     }
 
     public void assertNotPlayerTradedPokemon() throws TradedPokemonException {
-        if (BattleFactory.sessions.get(player.getUuid()).isTradedPokemon) {
+        if (BattleFactory.sessions.get(player.getUuid()).tradeablePokemons.isEmpty()) {
             throw new TradedPokemonException();
         }
     }

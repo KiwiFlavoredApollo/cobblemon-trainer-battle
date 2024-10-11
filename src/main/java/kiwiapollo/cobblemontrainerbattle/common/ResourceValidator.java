@@ -43,7 +43,7 @@ public class ResourceValidator {
                         InvalidResourceState.CANNOT_BE_READ,
                         groupResourcePath
                 );
-            };
+            }
 
         } catch (InvalidIdentifierException | NullPointerException | ClassCastException e) {
             throw new InvalidResourceStateException(
