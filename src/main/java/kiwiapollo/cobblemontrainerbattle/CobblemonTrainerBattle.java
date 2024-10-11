@@ -43,9 +43,6 @@ import java.util.UUID;
 public class CobblemonTrainerBattle implements ModInitializer {
 	public static final String NAMESPACE = "cobblemontrainerbattle";
 	public static final Logger LOGGER = LoggerFactory.getLogger(NAMESPACE);
-	public static final String GROUP_CONFIG_DIR = "groups";
-	public static final String TRAINER_CONFIG_DIR = "trainers";
-	public static final String ARCADE_CONFIG_DIR = "arcades";
 	public static final int FLEE_DISTANCE = 20;
 	public static final EntityType<TrainerEntity> TRAINER_ENTITY_TYPE =
 			EntityType.Builder.create(TrainerEntity::new, SpawnGroup.CREATURE)
