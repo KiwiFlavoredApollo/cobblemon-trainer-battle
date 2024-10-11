@@ -2,11 +2,10 @@ package kiwiapollo.cobblemontrainerbattle.economies;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.exceptions.EconomyNotLoadedException;
-import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidCurrencyAmountException;
 import net.minecraft.server.network.ServerPlayerEntity;
 
 public class OctoEconomy implements Economy {
-    public OctoEconomy() throws EconomyNotLoadedException, InvalidCurrencyAmountException {
+    public OctoEconomy() throws EconomyNotLoadedException {
         assertOctoEconomyLoaded();
 
         CobblemonTrainerBattle.LOGGER.info("Loaded OctoEconomy");
