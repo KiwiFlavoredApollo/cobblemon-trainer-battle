@@ -1,6 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.common;
 
 public class BattleCondition {
-    public int minimumPartyLevel;
-    public int maximumPartyLevel;
+    public int minimumPartyLevel = 0;
+    public int maximumPartyLevel = 100;
 }

@@ -2,6 +2,7 @@ package kiwiapollo.cobblemontrainerbattle.common;
 
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
+import com.google.gson.JsonParseException;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
 import net.minecraft.resource.Resource;
@@ -65,9 +66,8 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
         resourceManager.findResources(namespace, this::isJsonFile).forEach(((identifier, resource) -> {
             try {
                 // identifier: cobblemontrainerbattle:custom/custom_trainer.json
-                List<SmogonPokemon> pokemons = loadTrainerPokemons(resource);
-                Resource configurationResource = getTrainerConfigurationResource(resourceManager, identifier);
-                TrainerConfiguration configuration = loadTrainerConfiguration(configurationResource);
+                List<SmogonPokemon> pokemons = readSmogonPokemonResource(resource);
+                TrainerConfiguration configuration = loadTrainerConfiguration(resourceManager, identifier);
 
                 trainers.put(
                         identifier,
@@ -79,7 +79,7 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
                         )
                 );
 
-            } catch (IOException e) {
+            } catch (JsonParseException | IOException e) {
                 String message = String.format("An error occurred while loading %s", identifier.toString());
                 CobblemonTrainerBattle.LOGGER.error(message);
             }
@@ -97,7 +97,7 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
                 TrainerGroup trainerGroup = new Gson().fromJson(bufferedReader, TrainerGroup.class);
                 trainerGroups.put(identifier, trainerGroup);
 
-            } catch (IOException e) {
+            } catch (IOException ignored) {
 
             }
         }));
@@ -129,20 +129,27 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
         return resourceManager.getResourceOrThrow(identifier);
     }
 
-    private List<SmogonPokemon> loadTrainerPokemons(Resource resource) throws IOException {
+    private List<SmogonPokemon> readSmogonPokemonResource(Resource resource) throws IOException, JsonParseException {
         try (InputStream inputStream = resource.getInputStream()) {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
             return new Gson().fromJson(bufferedReader, new TypeToken<List<SmogonPokemon>>(){}.getType());
         }
     }
 
-    private TrainerConfiguration loadTrainerConfiguration(Resource resource) {
-        try (InputStream inputStream = resource.getInputStream()) {
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-            return new Gson().fromJson(bufferedReader, TrainerConfiguration.class);
+    private TrainerConfiguration loadTrainerConfiguration(ResourceManager resourceManager, Identifier identifier) {
+        try {
+            Resource resource = getTrainerConfigurationResource(resourceManager, identifier);
+            return readTrainerConfigurationResource(resource);
 
         } catch (IOException e) {
             return CobblemonTrainerBattle.defaultTrainerConfiguration;
+        }
+    }
+
+    private TrainerConfiguration readTrainerConfigurationResource(Resource resource) throws IOException {
+        try (InputStream inputStream = resource.getInputStream()) {
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            return new Gson().fromJson(bufferedReader, TrainerConfiguration.class);
         }
     }
 
