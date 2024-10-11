@@ -1,9 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.common;
 
-import kiwiapollo.cobblemontrainerbattle.common.BattleCondition;
-import kiwiapollo.cobblemontrainerbattle.common.PostBattleAction;
-import kiwiapollo.cobblemontrainerbattle.common.SmogonPokemon;
-import net.minecraft.util.Identifier;
+import kiwiapollo.cobblemontrainerbattle.parsers.SmogonPokemon;
 
 import java.util.List;
 

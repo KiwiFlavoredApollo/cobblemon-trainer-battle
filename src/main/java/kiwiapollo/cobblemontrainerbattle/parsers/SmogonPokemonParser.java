@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.common;
+package kiwiapollo.cobblemontrainerbattle.parsers;
 
 import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.abilities.Abilities;
