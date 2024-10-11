@@ -10,7 +10,6 @@ import com.cobblemon.mod.common.api.pokemon.stats.Stats;
 import com.cobblemon.mod.common.pokemon.Gender;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.common.SmogonPokemon;
 import kiwiapollo.cobblemontrainerbattle.exceptions.PokemonParseException;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -46,7 +45,7 @@ public class SmogonPokemonParser {
         this.player = player;
     }
 
-    public Pokemon toPokemon(SmogonPokemon smogonPokemon) throws PokemonParseException {
+    public Pokemon toCobblemonPokemon(SmogonPokemon smogonPokemon) throws PokemonParseException {
         Identifier identifier = createSpeciesIdentifier(smogonPokemon);
         Pokemon pokemon = PokemonSpecies.INSTANCE.getByIdentifier(identifier).create(DEFAULT_LEVEL);
 
@@ -55,7 +54,7 @@ public class SmogonPokemonParser {
         setPokemonGender(pokemon, smogonPokemon.gender);
         setPokemonMoveSet(pokemon, smogonPokemon.moves);
         setPokemonHeldItem(pokemon, smogonPokemon.item);
-        setPokemonAbility(pokemon, smogonPokemon.abiltiy);
+        setPokemonAbility(pokemon, smogonPokemon.ability);
         setPokemonLevel(pokemon, smogonPokemon.level);
         setPokemonNature(pokemon, smogonPokemon.nature);
 
@@ -103,6 +102,10 @@ public class SmogonPokemonParser {
     }
 
     private void setPokemonStats(BiConsumer<Stats, Integer> consumer, Map<String, Integer> stats) {
+        if (!Objects.isNull(stats)) {
+            return;
+        }
+
         if (stats.containsKey("hp")) {
             consumer.accept(Stats.HP, stats.get("hp"));
         }

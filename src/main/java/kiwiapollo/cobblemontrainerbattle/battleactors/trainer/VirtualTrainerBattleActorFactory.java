@@ -34,7 +34,7 @@ public class VirtualTrainerBattleActorFactory implements TrainerBattleActorFacto
         List<Pokemon> pokemons = new ArrayList<>();
         for (SmogonPokemon smogonPokemon : trainer.pokemons) {
             try {
-                pokemons.add(parser.toPokemon(smogonPokemon));
+                pokemons.add(parser.toCobblemonPokemon(smogonPokemon));
 
             } catch (PokemonParseException ignored) {
 
@@ -61,7 +61,7 @@ public class VirtualTrainerBattleActorFactory implements TrainerBattleActorFacto
         List<Pokemon> pokemons = new ArrayList<>();
         for (SmogonPokemon smogonPokemon : trainer.pokemons) {
             try {
-                pokemons.add(parser.toPokemon(smogonPokemon));
+                pokemons.add(parser.toCobblemonPokemon(smogonPokemon));
 
             } catch (PokemonParseException ignored) {
 
@@ -92,7 +92,7 @@ public class VirtualTrainerBattleActorFactory implements TrainerBattleActorFacto
         List<Pokemon> pokemons = new ArrayList<>();
         for (SmogonPokemon smogonPokemon : trainer.pokemons) {
             try {
-                pokemons.add(parser.toPokemon(smogonPokemon));
+                pokemons.add(parser.toCobblemonPokemon(smogonPokemon));
 
             } catch (PokemonParseException ignored) {
 
