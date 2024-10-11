@@ -5,7 +5,7 @@ import com.cobblemon.mod.common.api.events.battles.BattleVictoryEvent;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.mojang.brigadier.CommandDispatcher;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
+import kiwiapollo.cobblemontrainerbattle.common.Trainer;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;

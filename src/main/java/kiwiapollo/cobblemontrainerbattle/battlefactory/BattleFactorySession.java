@@ -2,7 +2,6 @@ package kiwiapollo.cobblemontrainerbattle.battlefactory;
 
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
 import com.cobblemon.mod.common.pokemon.Pokemon;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
 import net.minecraft.util.Identifier;
 
 import java.time.Instant;

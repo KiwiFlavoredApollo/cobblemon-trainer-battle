@@ -14,8 +14,7 @@ import kiwiapollo.cobblemontrainerbattle.commands.TrainerBattleFlatCommand;
 import kiwiapollo.cobblemontrainerbattle.common.UnsatisfiedTrainerConditionExceptionMessageFactory;
 import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.exceptions.*;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.PlayerValidator;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
+import kiwiapollo.cobblemontrainerbattle.common.PlayerValidator;
 import kotlin.Unit;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.MutableText;
@@ -78,7 +77,7 @@ public class EntityBackedTrainerBattle {
             CobblemonTrainerBattle.LOGGER.error(String.format("Player is busy with Pokemon battle: %s", player.getGameProfile().getName()));
             return 0;
 
-        }catch (BelowRelativeLevelThresholdException e) {
+        } catch (BelowRelativeLevelThresholdException e) {
             MutableText message = Text.translatable("command.cobblemontrainerbattle.common.below_relative_level_threshold");
             player.sendMessage(message.formatted(Formatting.RED));
             CobblemonTrainerBattle.LOGGER.error(String.format("Pokemon levels are below relative level threshold: %s", player.getGameProfile().getName()));

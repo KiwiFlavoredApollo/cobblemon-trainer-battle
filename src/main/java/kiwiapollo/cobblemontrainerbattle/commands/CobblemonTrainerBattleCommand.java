@@ -17,7 +17,7 @@ import kiwiapollo.cobblemontrainerbattle.common.ShowdownPokemonExporter;
 import kiwiapollo.cobblemontrainerbattle.economies.EconomyFactory;
 import kiwiapollo.cobblemontrainerbattle.exceptions.EmptyPlayerPartyException;
 import kiwiapollo.cobblemontrainerbattle.exceptions.ShowdownPokemonExportException;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.PlayerValidator;
+import kiwiapollo.cobblemontrainerbattle.common.PlayerValidator;
 import net.minecraft.command.EntitySelector;
 import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.server.command.ServerCommandSource;

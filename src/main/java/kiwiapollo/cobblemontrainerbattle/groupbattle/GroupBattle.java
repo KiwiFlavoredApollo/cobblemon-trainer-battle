@@ -18,7 +18,7 @@ import kiwiapollo.cobblemontrainerbattle.common.PostBattleAction;
 import kiwiapollo.cobblemontrainerbattle.common.ResourceValidator;
 import kiwiapollo.cobblemontrainerbattle.common.TrainerGroup;
 import kiwiapollo.cobblemontrainerbattle.exceptions.*;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.PlayerValidator;
+import kiwiapollo.cobblemontrainerbattle.common.PlayerValidator;
 import kotlin.Unit;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
@@ -27,7 +27,6 @@ import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.InvalidIdentifierException;
 
 import java.nio.file.Paths;
 import java.util.HashMap;

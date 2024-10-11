@@ -3,6 +3,7 @@ package kiwiapollo.cobblemontrainerbattle.common;
 import java.util.List;
 import java.util.Map;
 
+@Deprecated
 public class ShowdownPokemon {
     public String name;
     public String species;

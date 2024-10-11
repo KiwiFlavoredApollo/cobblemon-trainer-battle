@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.trainerbattle;
+package kiwiapollo.cobblemontrainerbattle.common;
 
 import kiwiapollo.cobblemontrainerbattle.common.BattleCondition;
 import kiwiapollo.cobblemontrainerbattle.common.PostBattleAction;

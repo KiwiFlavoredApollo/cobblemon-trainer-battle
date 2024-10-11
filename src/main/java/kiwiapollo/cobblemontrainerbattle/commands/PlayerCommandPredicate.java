@@ -1,6 +1,5 @@
 package kiwiapollo.cobblemontrainerbattle.commands;
 
-import kiwiapollo.cobblemontrainerbattle.exceptions.LuckPermsNotLoadedException;
 import net.luckperms.api.LuckPermsProvider;
 import net.luckperms.api.cacheddata.CachedPermissionData;
 import net.luckperms.api.model.user.User;
@@ -24,19 +23,18 @@ public class PlayerCommandPredicate implements Predicate<ServerCommandSource> {
     public boolean test(ServerCommandSource source) {
         try {
             assertLoadedLuckPerms();
-
             return isExistLuckPermsPermission(source);
 
-        } catch (LuckPermsNotLoadedException e) {
+        } catch (AssertionError e) {
             return isExistOpPermission(source);
         }
     }
 
-    private void assertLoadedLuckPerms() throws LuckPermsNotLoadedException {
+    private void assertLoadedLuckPerms() throws AssertionError {
         try {
             Class.forName("net.luckperms.api.LuckPerms");
         } catch (ClassNotFoundException e) {
-            throw new LuckPermsNotLoadedException();
+            throw new AssertionError();
         }
     }
 

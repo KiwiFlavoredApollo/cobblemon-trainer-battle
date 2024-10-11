@@ -13,6 +13,8 @@ import kiwiapollo.cobblemontrainerbattle.battleactors.player.PlayerBattleActorFa
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.VirtualTrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.commands.TrainerBattleCommand;
 import kiwiapollo.cobblemontrainerbattle.commands.TrainerBattleFlatCommand;
+import kiwiapollo.cobblemontrainerbattle.common.PlayerValidator;
+import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerIdentifierFactory;
 import kiwiapollo.cobblemontrainerbattle.common.ResourceValidator;
 import kiwiapollo.cobblemontrainerbattle.common.UnsatisfiedTrainerConditionExceptionMessageFactory;
 import kiwiapollo.cobblemontrainerbattle.exceptions.*;
@@ -23,7 +25,6 @@ import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.InvalidIdentifierException;
 
 import java.nio.file.Paths;
 import java.util.HashMap;

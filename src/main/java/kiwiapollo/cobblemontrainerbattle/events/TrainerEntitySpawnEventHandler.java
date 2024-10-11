@@ -2,13 +2,10 @@ package kiwiapollo.cobblemontrainerbattle.events;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
-import kiwiapollo.cobblemontrainerbattle.exceptions.TrainerSpawnException;
-import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
-import net.minecraft.world.Heightmap;
 
 public class TrainerEntitySpawnEventHandler {
     private static final int SPAWN_INTERVAL = 100;
@@ -39,20 +36,20 @@ public class TrainerEntitySpawnEventHandler {
 
             CobblemonTrainerBattle.LOGGER.info(String.format("Spawned trainer on %s %s", world.getRegistryKey().getValue(), spawnPos.toString()));
 
-        } catch (TrainerSpawnException ignored) {
+        } catch (AssertionError | IllegalStateException ignored) {
 
         }
     }
 
-    private static void assertBelowMaximumTrainerCount(ServerWorld world, PlayerEntity player) throws TrainerSpawnException {
+    private static void assertBelowMaximumTrainerCount(ServerWorld world, PlayerEntity player) throws AssertionError {
         int trainerCount = world.getEntitiesByType(CobblemonTrainerBattle.TRAINER_ENTITY_TYPE,
                 player.getBoundingBox().expand(MAXIMUM_RADIUS), entity -> true).size();
         if (trainerCount >= MAXIMUM_TRAINER_COUNT) {
-            throw new TrainerSpawnException();
+            throw new AssertionError();
         }
     }
 
-    private static BlockPos getRandomSpawnPosition(ServerWorld world, PlayerEntity player) throws TrainerSpawnException {
+    private static BlockPos getRandomSpawnPosition(ServerWorld world, PlayerEntity player) throws IllegalStateException {
         BlockPos playerPos = player.getBlockPos();
         final int MAXIMUM_RETRIES = 50;
 
@@ -70,6 +67,6 @@ public class TrainerEntitySpawnEventHandler {
             }
         }
 
-        throw new TrainerSpawnException();
+        throw new IllegalStateException();
     }
 }

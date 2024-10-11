@@ -1,15 +1,13 @@
-package kiwiapollo.cobblemontrainerbattle.trainerbattle;
+package kiwiapollo.cobblemontrainerbattle.common;
 
 import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.storage.party.PlayerPartyStore;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.common.TrainerConditionType;
 import kiwiapollo.cobblemontrainerbattle.exceptions.*;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
-import java.nio.file.Paths;
 import java.util.Objects;
 import java.util.stream.Stream;
 

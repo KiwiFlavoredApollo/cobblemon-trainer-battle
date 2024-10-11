@@ -3,7 +3,6 @@ package kiwiapollo.cobblemontrainerbattle.common;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
 import net.minecraft.resource.Resource;
 import net.minecraft.resource.ResourceManager;

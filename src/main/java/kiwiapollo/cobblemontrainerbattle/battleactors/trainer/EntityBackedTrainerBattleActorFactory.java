@@ -9,8 +9,8 @@ import kiwiapollo.cobblemontrainerbattle.battleactors.SafeCopyBattlePokemonFacto
 import kiwiapollo.cobblemontrainerbattle.common.SmogonPokemon;
 import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.exceptions.PokemonParseException;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.SmogonPokemonParser;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
+import kiwiapollo.cobblemontrainerbattle.common.SmogonPokemonParser;
+import kiwiapollo.cobblemontrainerbattle.common.Trainer;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 

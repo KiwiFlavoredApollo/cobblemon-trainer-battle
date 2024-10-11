@@ -19,8 +19,9 @@ import kiwiapollo.cobblemontrainerbattle.battleactors.player.PlayerBattleActorFa
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.VirtualTrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.commands.BattleFactoryCommand;
 import kiwiapollo.cobblemontrainerbattle.common.PostBattleAction;
+import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerIdentifierFactory;
 import kiwiapollo.cobblemontrainerbattle.exceptions.*;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.PlayerValidator;
+import kiwiapollo.cobblemontrainerbattle.common.PlayerValidator;
 import kotlin.Unit;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
@@ -44,10 +45,9 @@ public class BattleFactory {
             BattleFactorySessionValidator validator = new BattleFactorySessionValidator(context.getSource().getPlayer());
             validator.assertNotExistValidSession();
 
-            BattleFactoryRandomTrainerIdentifierFactory factory = new BattleFactoryRandomTrainerIdentifierFactory();
             List<Identifier> trainersToDefeat = new ArrayList<>();
             for (int i = 0; i < 21; i++) {
-                trainersToDefeat.add(factory.create());
+                trainersToDefeat.add(new RandomTrainerIdentifierFactory().createForBattleFactory());
             }
 
             BattleFactory.sessions.put(context.getSource().getPlayer().getUuid(), new BattleFactorySession(trainersToDefeat));

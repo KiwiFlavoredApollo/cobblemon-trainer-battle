@@ -11,7 +11,7 @@ import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.events.*;
 import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.EntityBackedTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
+import kiwiapollo.cobblemontrainerbattle.common.Trainer;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kotlin.Unit;
 import net.fabricmc.api.ModInitializer;
