@@ -5,12 +5,14 @@ import com.cobblemon.mod.common.api.events.battles.BattleVictoryEvent;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.mojang.brigadier.CommandDispatcher;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.common.PostBattleAction;
 import kiwiapollo.cobblemontrainerbattle.common.Trainer;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
+import java.util.Objects;
 import java.util.stream.StreamSupport;
 
 public class TrainerBattleVictoryEventHandler implements BattleVictoryEventHandler {
@@ -33,11 +35,39 @@ public class TrainerBattleVictoryEventHandler implements BattleVictoryEventHandl
         String trainerResourcePath = trainerBattleActor.getName().getString();
 
         Trainer trainer = CobblemonTrainerBattle.trainers.get(Identifier.of(CobblemonTrainerBattle.NAMESPACE, trainerResourcePath));
+        PostBattleAction onVictory = trainer.onVictory;
 
-        CobblemonTrainerBattle.economy.addBalance(player, trainer.onVictory.balance);
+        try {
+            CobblemonTrainerBattle.economy.addBalance(player, onVictory.balance);
+        } catch (NullPointerException ignored) {
 
-        for (String command : trainer.onVictory.commands) {
-            executeCommand(command, player);
+        }
+
+        try {
+            onVictory.commands.forEach(command -> executeCommand(command, player));
+        } catch (NullPointerException ignored) {
+
+        }
+    }
+
+    private void onDefeat(BattleVictoryEvent battleVictoryEvent) {
+        ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
+        BattleActor trainerBattleActor = getTrainerBattleActor(battleVictoryEvent);
+        String trainerResourcePath = trainerBattleActor.getName().getString();
+
+        Trainer trainer = CobblemonTrainerBattle.trainers.get(Identifier.of(CobblemonTrainerBattle.NAMESPACE, trainerResourcePath));
+        PostBattleAction onDefeat = trainer.onDefeat;
+
+        try {
+            CobblemonTrainerBattle.economy.removeBalance(player, onDefeat.balance);
+        } catch (NullPointerException ignored) {
+
+        }
+
+        try {
+            onDefeat.commands.forEach(command -> executeCommand(command, player));
+        } catch (NullPointerException ignored) {
+
         }
     }
 
@@ -47,33 +77,12 @@ public class TrainerBattleVictoryEventHandler implements BattleVictoryEventHandl
                 .findFirst().get();
     }
 
-    private void onDefeat(BattleVictoryEvent battleVictoryEvent) {
-        ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
-        BattleActor trainerBattleActor = getTrainerBattleActor(battleVictoryEvent);
-        String trainerResourcePath = trainerBattleActor.getName().getString();
-
-        Trainer trainer = CobblemonTrainerBattle.trainers.get(Identifier.of(CobblemonTrainerBattle.NAMESPACE, trainerResourcePath));
-
-        CobblemonTrainerBattle.economy.removeBalance(player, trainer.onDefeat.balance);
-
-        for (String command : trainer.onDefeat.commands) {
-            executeCommand(command, player);
-        }
-    }
-
     private void executeCommand(String command, ServerPlayerEntity player) {
-        try {
-            command = command.replace("%player%", player.getGameProfile().getName());
+        command = command.replace("%player%", player.getGameProfile().getName());
 
-            MinecraftServer server = player.getCommandSource().getServer();
-            CommandDispatcher<ServerCommandSource> dispatcher = server.getCommandManager().getDispatcher();
+        MinecraftServer server = player.getCommandSource().getServer();
+        CommandDispatcher<ServerCommandSource> dispatcher = server.getCommandManager().getDispatcher();
 
-            server.getCommandManager().execute(
-                    dispatcher.parse(command, server.getCommandSource()), command);
-
-        } catch (UnsupportedOperationException e) {
-            CobblemonTrainerBattle.LOGGER.error(
-                    String.format("Error occurred while running command: %s", command));
-        }
+        server.getCommandManager().execute(dispatcher.parse(command, server.getCommandSource()), command);
     }
 }

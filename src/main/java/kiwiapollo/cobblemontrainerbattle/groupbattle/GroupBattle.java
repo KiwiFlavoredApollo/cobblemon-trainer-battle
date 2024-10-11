@@ -287,10 +287,16 @@ public class GroupBattle {
         TrainerGroup trainerGroup = CobblemonTrainerBattle.trainerGroups.get(session.trainerGroupIdentifier);
         PostBattleAction onVictory = trainerGroup.onVictory;
 
-        CobblemonTrainerBattle.economy.addBalance(context.getSource().getPlayer(), onVictory.balance);
+        try {
+            CobblemonTrainerBattle.economy.addBalance(context.getSource().getPlayer(), onVictory.balance);
+        } catch (NullPointerException ignored) {
 
-        for (String command : onVictory.commands) {
-            executeCommand(context.getSource().getPlayer(), command);
+        }
+
+        try {
+            onVictory.commands.forEach(command -> executeCommand(command, context.getSource().getPlayer()));
+        } catch (NullPointerException ignored) {
+
         }
     }
 
@@ -299,26 +305,25 @@ public class GroupBattle {
         TrainerGroup trainerGroup = CobblemonTrainerBattle.trainerGroups.get(session.trainerGroupIdentifier);
         PostBattleAction onDefeat = trainerGroup.onDefeat;
 
-        CobblemonTrainerBattle.economy.removeBalance(context.getSource().getPlayer(), onDefeat.balance);
+        try {
+            CobblemonTrainerBattle.economy.removeBalance(context.getSource().getPlayer(), onDefeat.balance);
+        } catch (NullPointerException ignored) {
 
-        for (String command : onDefeat.commands) {
-            executeCommand(context.getSource().getPlayer(), command);
+        }
+
+        try {
+            onDefeat.commands.forEach(command -> executeCommand(command, context.getSource().getPlayer()));
+        } catch (NullPointerException ignored) {
+
         }
     }
 
-    private static void executeCommand(ServerPlayerEntity player, String command) {
-        try {
-            command = command.replace("%player%", player.getGameProfile().getName());
+    private static void executeCommand(String command, ServerPlayerEntity player) {
+        command = command.replace("%player%", player.getGameProfile().getName());
 
-            MinecraftServer server = player.getCommandSource().getServer();
-            CommandDispatcher<ServerCommandSource> dispatcher = server.getCommandManager().getDispatcher();
+        MinecraftServer server = player.getCommandSource().getServer();
+        CommandDispatcher<ServerCommandSource> dispatcher = server.getCommandManager().getDispatcher();
 
-            server.getCommandManager().execute(
-                    dispatcher.parse(command, server.getCommandSource()), command);
-
-        } catch (UnsupportedOperationException e) {
-            CobblemonTrainerBattle.LOGGER.error(
-                    String.format("Error occurred while running command: %s", command));
-        }
+        server.getCommandManager().execute(dispatcher.parse(command, server.getCommandSource()), command);
     }
 }

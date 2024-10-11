@@ -91,7 +91,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 			}
 
 			if (EntityBackedTrainerBattle.trainerBattles.containsKey(player.getUuid())) {
-				new EntityBackedTrainerBattleVictoryEventHandler().onBattleVictory(battleVictoryEvent);
+				new TrainerBattleVictoryEventHandler().onBattleVictory(battleVictoryEvent);
 				EntityBackedTrainerBattle.trainerBattles.remove(player.getUuid());
 			}
 

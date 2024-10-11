@@ -398,18 +398,11 @@ public class BattleFactory {
     }
 
     private static void executeCommand(ServerPlayerEntity player, String command) {
-        try {
-            command = command.replace("%player%", player.getGameProfile().getName());
+        command = command.replace("%player%", player.getGameProfile().getName());
 
-            MinecraftServer server = player.getCommandSource().getServer();
-            CommandDispatcher<ServerCommandSource> dispatcher = server.getCommandManager().getDispatcher();
+        MinecraftServer server = player.getCommandSource().getServer();
+        CommandDispatcher<ServerCommandSource> dispatcher = server.getCommandManager().getDispatcher();
 
-            server.getCommandManager().execute(
-                    dispatcher.parse(command, server.getCommandSource()), command);
-
-        } catch (UnsupportedOperationException e) {
-            CobblemonTrainerBattle.LOGGER.error(
-                    String.format("Error occurred while running command: %s", command));
-        }
+        server.getCommandManager().execute(dispatcher.parse(command, server.getCommandSource()), command);
     }
 }

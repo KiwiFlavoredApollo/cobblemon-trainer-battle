@@ -75,11 +75,9 @@ public class EntityBackedTrainerBattleActorFactory implements TrainerBattleActor
 
         List<BattlePokemon> battlePokemons = pokemons.stream()
                 .map(SafeCopyBattlePokemonFactory::create).toList();
-        String trainerName = Paths.get(identifier.getPath())
-                .getFileName().toString().replace(".json", "");
 
         return new EntityBackedTrainerBattleActor(
-                trainerName,
+                identifier.getPath(),
                 UUID.randomUUID(),
                 battlePokemons,
                 new Generation5AI(),

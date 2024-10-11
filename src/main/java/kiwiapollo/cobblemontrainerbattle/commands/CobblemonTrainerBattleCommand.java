@@ -2,6 +2,7 @@ package kiwiapollo.cobblemontrainerbattle.commands;
 
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.mojang.brigadier.Command;
+import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
@@ -41,7 +42,19 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
                         .requires(new PlayerCommandPredicate(String.format("%s.%s", getLiteral(), "export")))
                         .then(RequiredArgumentBuilder.<ServerCommandSource, EntitySelector>
                                         argument("player", EntityArgumentType.player())
-                                .executes(this::exportPlayerToTrainer)));
+                                .executes(this::exportPlayer)))
+                .then(LiteralArgumentBuilder.<ServerCommandSource>literal("exportflat")
+                        .requires(new PlayerCommandPredicate(String.format("%s.%s", getLiteral(), "export")))
+                        .then(RequiredArgumentBuilder.<ServerCommandSource, EntitySelector>
+                                        argument("player", EntityArgumentType.player())
+                                .then(RequiredArgumentBuilder.<ServerCommandSource, Integer>
+                                                argument("level", IntegerArgumentType.integer(20, 100))
+                                        .executes(this::exportPlayerWithFlatLevel))))
+                .then(LiteralArgumentBuilder.<ServerCommandSource>literal("exportrelative")
+                        .requires(new PlayerCommandPredicate(String.format("%s.%s", getLiteral(), "export")))
+                        .then(RequiredArgumentBuilder.<ServerCommandSource, EntitySelector>
+                                        argument("player", EntityArgumentType.player())
+                                .executes(this::exportPlayerWithRelativeLevel)));
     }
 
     private int reloadConfig(CommandContext<ServerCommandSource> context) {
@@ -51,7 +64,7 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
         return Command.SINGLE_SUCCESS;
     }
 
-    private int exportPlayerToTrainer(CommandContext<ServerCommandSource> context) {
+    private int exportPlayer(CommandContext<ServerCommandSource> context) {
         try {
             ServerPlayerEntity player = EntityArgumentType.getPlayer(context, "player");
             new PlayerValidator(player).assertNotEmptyPlayerParty();
@@ -66,6 +79,84 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
             String timestamp = dateTime.format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
 
             String exportFileName = String.format("%s_%s.json", player.getGameProfile().getName().toLowerCase(), timestamp);
+            File exportFile = new File(SmogonPokemonExporter.EXPORT_DIR, exportFileName);
+            new SmogonPokemonExporter().toJson(smogonPokemons, exportFile);
+
+            context.getSource().sendMessage(Text.literal(String.format("Exported %s's Pokemon team", player.getGameProfile().getName())));
+            CobblemonTrainerBattle.LOGGER.info(String.format("Successfully exported trainer file: %s", exportFile.getPath()));
+
+            return Command.SINGLE_SUCCESS;
+
+        } catch (CommandSyntaxException e) {
+            CobblemonTrainerBattle.LOGGER.error("Unknown player");
+            return 0;
+
+        } catch (EmptyPlayerPartyException e) {
+            CobblemonTrainerBattle.LOGGER.error("Player has no Pokemon");
+            return 0;
+
+        } catch (IOException e) {
+            CobblemonTrainerBattle.LOGGER.error("An error occurred while exporting trainer file");
+            return 0;
+        }
+    }
+
+    private int exportPlayerWithFlatLevel(CommandContext<ServerCommandSource> context) {
+        try {
+            ServerPlayerEntity player = EntityArgumentType.getPlayer(context, "player");
+            new PlayerValidator(player).assertNotEmptyPlayerParty();
+
+            int level = IntegerArgumentType.getInteger(context, "level");
+
+            List<Pokemon> pokemons = com.cobblemon.mod.common.Cobblemon.INSTANCE.getStorage()
+                    .getParty(player).toGappyList().stream()
+                    .filter(Objects::nonNull).toList();
+
+            List<SmogonPokemon> smogonPokemons = pokemons.stream().map(new CobblemonPokemonParser()::toSmogonPokemon).toList();
+            smogonPokemons.forEach(smogonPokemon -> smogonPokemon.level = level);
+
+            LocalDateTime dateTime = LocalDateTime.ofInstant(Instant.now(), ZoneId.systemDefault());
+            String timestamp = dateTime.format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
+
+            String exportFileName = String.format("%s_flat_%s.json", player.getGameProfile().getName().toLowerCase(), timestamp);
+            File exportFile = new File(SmogonPokemonExporter.EXPORT_DIR, exportFileName);
+            new SmogonPokemonExporter().toJson(smogonPokemons, exportFile);
+
+            context.getSource().sendMessage(Text.literal(String.format("Exported %s's Pokemon team", player.getGameProfile().getName())));
+            CobblemonTrainerBattle.LOGGER.info(String.format("Successfully exported trainer file: %s", exportFile.getPath()));
+
+            return Command.SINGLE_SUCCESS;
+
+        } catch (CommandSyntaxException e) {
+            CobblemonTrainerBattle.LOGGER.error("Unknown player");
+            return 0;
+
+        } catch (EmptyPlayerPartyException e) {
+            CobblemonTrainerBattle.LOGGER.error("Player has no Pokemon");
+            return 0;
+
+        } catch (IOException e) {
+            CobblemonTrainerBattle.LOGGER.error("An error occurred while exporting trainer file");
+            return 0;
+        }
+    }
+
+    private int exportPlayerWithRelativeLevel(CommandContext<ServerCommandSource> context) {
+        try {
+            ServerPlayerEntity player = EntityArgumentType.getPlayer(context, "player");
+            new PlayerValidator(player).assertNotEmptyPlayerParty();
+
+            List<Pokemon> pokemons = com.cobblemon.mod.common.Cobblemon.INSTANCE.getStorage()
+                    .getParty(player).toGappyList().stream()
+                    .filter(Objects::nonNull).toList();
+
+            List<SmogonPokemon> smogonPokemons = pokemons.stream().map(new CobblemonPokemonParser()::toSmogonPokemon).toList();
+            smogonPokemons.forEach(smogonPokemon -> smogonPokemon.level = 0);
+
+            LocalDateTime dateTime = LocalDateTime.ofInstant(Instant.now(), ZoneId.systemDefault());
+            String timestamp = dateTime.format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
+
+            String exportFileName = String.format("%s_relative_%s.json", player.getGameProfile().getName().toLowerCase(), timestamp);
             File exportFile = new File(SmogonPokemonExporter.EXPORT_DIR, exportFileName);
             new SmogonPokemonExporter().toJson(smogonPokemons, exportFile);
 
