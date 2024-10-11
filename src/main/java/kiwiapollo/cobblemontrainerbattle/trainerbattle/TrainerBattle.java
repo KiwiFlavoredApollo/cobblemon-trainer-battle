@@ -13,10 +13,7 @@ import kiwiapollo.cobblemontrainerbattle.battleactors.player.PlayerBattleActorFa
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.VirtualTrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.commands.TrainerBattleCommand;
 import kiwiapollo.cobblemontrainerbattle.commands.TrainerBattleFlatCommand;
-import kiwiapollo.cobblemontrainerbattle.common.PlayerValidator;
-import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerIdentifierFactory;
-import kiwiapollo.cobblemontrainerbattle.common.ResourceValidator;
-import kiwiapollo.cobblemontrainerbattle.common.UnsatisfiedTrainerConditionExceptionMessageFactory;
+import kiwiapollo.cobblemontrainerbattle.common.*;
 import kiwiapollo.cobblemontrainerbattle.exceptions.*;
 import kotlin.Unit;
 import net.minecraft.server.command.ServerCommandSource;
@@ -26,6 +23,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 
+import java.io.FileNotFoundException;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
@@ -38,12 +36,12 @@ public class TrainerBattle {
     public static int startSelectedTrainerBattleWithStatusQuo(CommandContext<ServerCommandSource> context) {
         try {
             String resourcePath = StringArgumentType.getString(context, "trainer");
-            new ResourceValidator().assertExistValidTrainerResource(resourcePath);
+            new ResourceValidator().assertExistResource(resourcePath);
 
             Identifier identifier = Identifier.of(CobblemonTrainerBattle.NAMESPACE, resourcePath);
             return startTrainerBattleWithStatusQuo(context.getSource().getPlayer(), identifier);
 
-        } catch (InvalidResourceStateException e) {
+        } catch (FileNotFoundException e) {
             String resourcePath = StringArgumentType.getString(context, "trainer");
             MutableText message = Text.translatable("command.cobblemontrainerbattle.common.resource.not_found", resourcePath);
             context.getSource().getPlayer().sendMessage(message.formatted(Formatting.RED));
@@ -119,12 +117,12 @@ public class TrainerBattle {
     public static int startSelectedTrainerBattleWithFlatLevelAndFullHealth(CommandContext<ServerCommandSource> context) {
         try {
             String resourcePath = StringArgumentType.getString(context, "trainer");
-            new ResourceValidator().assertExistValidTrainerResource(resourcePath);
+            new ResourceValidator().assertExistResource(resourcePath);
 
             Identifier identifier = new Identifier(CobblemonTrainerBattle.NAMESPACE, resourcePath);
             return startTrainerBattleWithFlatLevelAndFullHealth(context.getSource().getPlayer(), identifier);
 
-        } catch (InvalidResourceStateException e) {
+        } catch (FileNotFoundException e) {
             String resourcePath = StringArgumentType.getString(context, "trainer");
             MutableText message = Text.translatable("command.cobblemontrainerbattle.common.resource.not_found", resourcePath);
             context.getSource().getPlayer().sendMessage(message.formatted(Formatting.RED));

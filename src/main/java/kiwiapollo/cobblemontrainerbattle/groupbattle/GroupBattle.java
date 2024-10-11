@@ -13,12 +13,11 @@ import kiwiapollo.cobblemontrainerbattle.battleactors.player.PlayerBattleActorFa
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.VirtualTrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.commands.GroupBattleCommand;
 import kiwiapollo.cobblemontrainerbattle.commands.GroupBattleFlatCommand;
-import kiwiapollo.cobblemontrainerbattle.common.InvalidResourceStateExceptionMessageFactory;
+import kiwiapollo.cobblemontrainerbattle.common.PlayerValidator;
 import kiwiapollo.cobblemontrainerbattle.common.PostBattleAction;
 import kiwiapollo.cobblemontrainerbattle.common.ResourceValidator;
 import kiwiapollo.cobblemontrainerbattle.common.TrainerGroup;
 import kiwiapollo.cobblemontrainerbattle.exceptions.*;
-import kiwiapollo.cobblemontrainerbattle.common.PlayerValidator;
 import kotlin.Unit;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
@@ -28,6 +27,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 
+import java.io.FileNotFoundException;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
@@ -43,7 +43,9 @@ public class GroupBattle {
             new GroupBattleSessionValidator(context.getSource().getPlayer()).assertNotExistValidSession();
 
             String groupResourcePath = StringArgumentType.getString(context, "group");
-            new ResourceValidator().assertExistValidGroupResource(groupResourcePath);
+            ResourceValidator resourceValidator = new ResourceValidator();
+            resourceValidator.assertExistResource(groupResourcePath);
+            resourceValidator.assertValidGroupResource(groupResourcePath);
 
             Identifier identifier = Identifier.of(CobblemonTrainerBattle.NAMESPACE, groupResourcePath);
             GroupBattle.sessions.put(context.getSource().getPlayer().getUuid(), new GroupBattleSession(identifier));
@@ -62,11 +64,20 @@ public class GroupBattle {
             CobblemonTrainerBattle.LOGGER.error(String.format("Valid battle session exists: %s", player.getGameProfile().getName()));
             return 0;
 
-        } catch (InvalidResourceStateException e) {
+        } catch (FileNotFoundException e) {
             ServerPlayerEntity player = context.getSource().getPlayer();
-            MutableText message = new InvalidResourceStateExceptionMessageFactory().create(e);
+            String groupResourcePath = StringArgumentType.getString(context, "group");
+            MutableText message = Text.translatable("command.cobblemontrainerbattle.common.resource.not_found", groupResourcePath);
             player.sendMessage(message.formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(String.format("An error occurred while reading resource: %s", e.getResourcePath(), e.getMessage()));
+            CobblemonTrainerBattle.LOGGER.error(String.format("An error occurred while reading resource: %s", groupResourcePath));
+            return 0;
+
+        } catch (IllegalArgumentException e) {
+            ServerPlayerEntity player = context.getSource().getPlayer();
+            String groupResourcePath = StringArgumentType.getString(context, "group");
+            MutableText message = Text.translatable("command.cobblemontrainerbattle.common.resource.cannot_be_read", groupResourcePath);
+            player.sendMessage(message.formatted(Formatting.RED));
+            CobblemonTrainerBattle.LOGGER.error(String.format("An error occurred while reading resource: %s", groupResourcePath));
             return 0;
         }
     }
