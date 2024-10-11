@@ -62,7 +62,7 @@ public class TrainerBattle {
             playerValidator.assertNotFaintPlayerParty();
             playerValidator.assertPlayerNotBusyWithPokemonBattle();
             playerValidator.assertPlayerPartyAtOrAboveRelativeLevelThreshold();
-            playerValidator.assertSatisfiedTrainerCondition(trainerIdentifier);
+            playerValidator.assertSatisfiedBattleCondition(trainerIdentifier);
 
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
@@ -107,9 +107,9 @@ public class TrainerBattle {
             CobblemonTrainerBattle.LOGGER.error(String.format("Pokemon levels are below relative level threshold: %s", player.getGameProfile().getName()));
             return 0;
 
-        } catch (UnsatisfiedTrainerConditionException e) {
-            player.sendMessage(new UnsatisfiedTrainerConditionExceptionMessageFactory().create(e).formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(String.format("Trainer condition not satisfied: %s, %s", e.getTrainerConditionType(), e.getRequiredValue()));
+        } catch (BattleConditionException e) {
+            player.sendMessage(new BattleConditionExceptionMessageFactory().create(e).formatted(Formatting.RED));
+            CobblemonTrainerBattle.LOGGER.error(String.format("Trainer condition not satisfied: %s, %s", e.getBattleConditionType(), e.getRequiredValue()));
             return 0;
         }
     }

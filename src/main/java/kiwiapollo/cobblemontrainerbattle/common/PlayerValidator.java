@@ -55,14 +55,14 @@ public class PlayerValidator {
         }
     }
 
-    public void assertSatisfiedTrainerCondition(Identifier identifier)
-            throws UnsatisfiedTrainerConditionException {
-        assertSatisfiedMinimumLevelTrainerCondition(identifier);
-        assertSatisfiedMaximumLevelTrainerCondition(identifier);
+    public void assertSatisfiedBattleCondition(Identifier identifier)
+            throws BattleConditionException {
+        assertSatisfiedMinimumLevelBattleCondition(identifier);
+        assertSatisfiedMaximumLevelBattleCondition(identifier);
     }
 
-    private void assertSatisfiedMaximumLevelTrainerCondition(Identifier identifier)
-            throws UnsatisfiedTrainerConditionException {
+    private void assertSatisfiedMaximumLevelBattleCondition(Identifier identifier)
+            throws BattleConditionException {
         try {
             Trainer trainer = CobblemonTrainerBattle.trainers.get(identifier);
             PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
@@ -72,8 +72,8 @@ public class PlayerValidator {
                     .allMatch(level -> level <= trainer.condition.maximumPartyLevel);
 
             if (!isAtOrBelowPartyMaximumLevel) {
-                throw new UnsatisfiedTrainerConditionException(
-                        TrainerConditionType.MAXIMUM_PARTY_LEVEL,
+                throw new BattleConditionException(
+                        BattleConditionType.MAXIMUM_PARTY_LEVEL,
                         trainer.condition.maximumPartyLevel
                 );
             }
@@ -83,8 +83,8 @@ public class PlayerValidator {
         }
     }
 
-    private void assertSatisfiedMinimumLevelTrainerCondition(Identifier identifier)
-            throws UnsatisfiedTrainerConditionException {
+    private void assertSatisfiedMinimumLevelBattleCondition(Identifier identifier)
+            throws BattleConditionException {
         try {
             Trainer trainer = CobblemonTrainerBattle.trainers.get(identifier);
             PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
@@ -94,8 +94,8 @@ public class PlayerValidator {
                     .allMatch(level -> level >= trainer.condition.minimumPartyLevel);
 
             if (!isAtOrAbovePartyMinimumLevel) {
-                throw new UnsatisfiedTrainerConditionException(
-                        TrainerConditionType.MINIMUM_PARTY_LEVEL,
+                throw new BattleConditionException(
+                        BattleConditionType.MINIMUM_PARTY_LEVEL,
                         trainer.condition.minimumPartyLevel
                 );
             }

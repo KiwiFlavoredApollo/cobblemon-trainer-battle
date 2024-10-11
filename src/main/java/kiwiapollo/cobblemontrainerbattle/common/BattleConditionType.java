@@ -1,6 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.common;
 
-public enum TrainerConditionType {
+public enum BattleConditionType {
     MINIMUM_PARTY_LEVEL,
     MAXIMUM_PARTY_LEVEL
 }

@@ -12,7 +12,7 @@ import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.EntityBackedTraine
 import kiwiapollo.cobblemontrainerbattle.commands.TrainerBattleCommand;
 import kiwiapollo.cobblemontrainerbattle.commands.TrainerBattleFlatCommand;
 import kiwiapollo.cobblemontrainerbattle.common.PlayerValidator;
-import kiwiapollo.cobblemontrainerbattle.common.UnsatisfiedTrainerConditionExceptionMessageFactory;
+import kiwiapollo.cobblemontrainerbattle.common.BattleConditionExceptionMessageFactory;
 import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.exceptions.*;
 import kotlin.Unit;
@@ -38,7 +38,7 @@ public class EntityBackedTrainerBattle {
             playerValidator.assertNotFaintPlayerParty();
             playerValidator.assertPlayerNotBusyWithPokemonBattle();
             playerValidator.assertPlayerPartyAtOrAboveRelativeLevelThreshold();
-            playerValidator.assertSatisfiedTrainerCondition(identifier);
+            playerValidator.assertSatisfiedBattleCondition(identifier);
 
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
@@ -83,9 +83,9 @@ public class EntityBackedTrainerBattle {
             CobblemonTrainerBattle.LOGGER.error(String.format("Pokemon levels are below relative level threshold: %s", player.getGameProfile().getName()));
             return 0;
 
-        } catch (UnsatisfiedTrainerConditionException e) {
-            player.sendMessage(new UnsatisfiedTrainerConditionExceptionMessageFactory().create(e).formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(String.format("Trainer condition not satisfied: %s, %s", e.getTrainerConditionType(), e.getRequiredValue()));
+        } catch (BattleConditionException e) {
+            player.sendMessage(new BattleConditionExceptionMessageFactory().create(e).formatted(Formatting.RED));
+            CobblemonTrainerBattle.LOGGER.error(String.format("Trainer condition not satisfied: %s, %s", e.getBattleConditionType(), e.getRequiredValue()));
             return 0;
         }
     }
