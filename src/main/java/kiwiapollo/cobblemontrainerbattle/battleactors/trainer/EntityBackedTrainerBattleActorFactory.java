@@ -5,6 +5,7 @@ import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactors.SafeCopyBattlePokemonFactory;
+import kiwiapollo.cobblemontrainerbattle.battleactors.TrainerPokemonFactory;
 import kiwiapollo.cobblemontrainerbattle.common.Generation5AI;
 import kiwiapollo.cobblemontrainerbattle.common.Trainer;
 import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
@@ -29,18 +30,7 @@ public class EntityBackedTrainerBattleActorFactory implements TrainerBattleActor
 
     @Override
     public BattleActor createWithStatusQuo(Identifier identifier) {
-        Trainer trainer = CobblemonTrainerBattle.trainers.get(identifier);
-        SmogonPokemonParser parser = new SmogonPokemonParser(player);
-
-        List<Pokemon> pokemons = new ArrayList<>();
-        for (SmogonPokemon smogonPokemon : trainer.pokemons) {
-            try {
-                pokemons.add(parser.toCobblemonPokemon(smogonPokemon));
-
-            } catch (PokemonParseException ignored) {
-
-            }
-        }
+        List<Pokemon> pokemons = new TrainerPokemonFactory(player).create(identifier);
 
         List<BattlePokemon> battlePokemons = pokemons.stream()
                 .map(SafeCopyBattlePokemonFactory::create).toList();
@@ -56,18 +46,7 @@ public class EntityBackedTrainerBattleActorFactory implements TrainerBattleActor
 
     @Override
     public BattleActor createWithFlatLevelFullHealth(Identifier identifier, int level) {
-        Trainer trainer = CobblemonTrainerBattle.trainers.get(identifier);
-        SmogonPokemonParser parser = new SmogonPokemonParser(player);
-
-        List<Pokemon> pokemons = new ArrayList<>();
-        for (SmogonPokemon smogonPokemon : trainer.pokemons) {
-            try {
-                pokemons.add(parser.toCobblemonPokemon(smogonPokemon));
-
-            } catch (PokemonParseException ignored) {
-
-            }
-        }
+        List<Pokemon> pokemons = new TrainerPokemonFactory(player).create(identifier);
 
         pokemons.forEach(Pokemon::heal);
         pokemons.forEach(pokemon -> pokemon.setLevel(level));
