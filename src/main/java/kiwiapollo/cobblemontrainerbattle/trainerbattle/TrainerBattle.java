@@ -22,7 +22,10 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.InvalidIdentifierException;
 
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -31,47 +34,50 @@ public class TrainerBattle {
     public static final int FLAT_LEVEL = 100;
     public static Map<UUID, PokemonBattle> trainerBattles = new HashMap<>();
 
-    public static int startTrainerBattleWithStatusQuo(CommandContext<ServerCommandSource> context) {
+    public static int startSelectedTrainerBattleWithStatusQuo(CommandContext<ServerCommandSource> context) {
         try {
-            String trainerResourcePath = StringArgumentType.getString(context, "trainer");
-            ResourceValidator.assertExistTrainerResource(trainerResourcePath);
+            String resourcePath = StringArgumentType.getString(context, "trainer");
+            new ResourceValidator().assertExistValidTrainerResource(resourcePath);
 
-            Trainer trainer = new SpecificTrainerFactory().create(context.getSource().getPlayer(), trainerResourcePath);
-            return startSpecificTrainerBattleWithStatusQuo(context.getSource().getPlayer(), trainer);
+            Identifier identifier = Identifier.of(CobblemonTrainerBattle.NAMESPACE, resourcePath);
+            return startTrainerBattleWithStatusQuo(context.getSource().getPlayer(), identifier);
 
         } catch (InvalidResourceStateException e) {
-            MutableText message = Text.translatable("command.cobblemontrainerbattle.common.resource.not_found", e.getResourcePath());
+            String resourcePath = StringArgumentType.getString(context, "trainer");
+            MutableText message = Text.translatable("command.cobblemontrainerbattle.common.resource.not_found", resourcePath);
             context.getSource().getPlayer().sendMessage(message.formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(String.format("An error occurred while reading trainer file: %s, %s", e.getMessage(), e.getResourcePath()));
+            CobblemonTrainerBattle.LOGGER.error(String.format("An error occurred while reading trainer file: %s", resourcePath));
             return 0;
         }
     }
 
-    public static int startRandomBattleWithStatusQuo(CommandContext<ServerCommandSource> context) {
-         Trainer trainer = new RandomTrainerFactory().create(context.getSource().getPlayer());
-         return startSpecificTrainerBattleWithStatusQuo(context.getSource().getPlayer(), trainer);
+    public static int startRandomTrainerBattleWithStatusQuo(CommandContext<ServerCommandSource> context) {
+         Identifier trainerIdentifier = new RandomTrainerIdentifierFactory().create();
+         return startTrainerBattleWithStatusQuo(context.getSource().getPlayer(), trainerIdentifier);
     }
 
-    public static int startSpecificTrainerBattleWithStatusQuo(ServerPlayerEntity player, Trainer trainer) {
+    public static int startTrainerBattleWithStatusQuo(ServerPlayerEntity player, Identifier trainerIdentifier) {
         try {
             PlayerValidator playerValidator = new PlayerValidator(player);
             playerValidator.assertNotEmptyPlayerParty();
             playerValidator.assertNotFaintPlayerParty();
             playerValidator.assertPlayerNotBusyWithPokemonBattle();
             playerValidator.assertPlayerPartyAtOrAboveRelativeLevelThreshold();
-            playerValidator.assertSatisfiedTrainerCondition(trainer);
+            playerValidator.assertSatisfiedTrainerCondition(trainerIdentifier);
 
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
                     new BattleSide(new PlayerBattleActorFactory().createWithStatusQuo(player)),
-                    new BattleSide(new VirtualTrainerBattleActorFactory(player).createWithStatusQuo(trainer)),
+                    new BattleSide(new VirtualTrainerBattleActorFactory(player).createWithStatusQuo(trainerIdentifier)),
                     false
             ).ifSuccessful(pokemonBattle -> {
                 trainerBattles.put(player.getUuid(), pokemonBattle);
+                String trainerName = Paths.get(trainerIdentifier.getPath())
+                        .getFileName().toString().replace(".json", "");
 
-                player.sendMessage(Text.translatable("command.cobblemontrainerbattle.trainerbattle.success", trainer.name));
+                player.sendMessage(Text.translatable("command.cobblemontrainerbattle.trainerbattle.success", trainerName));
                 CobblemonTrainerBattle.LOGGER.info(String.format("%s: %s versus %s",
-                        new TrainerBattleCommand().getLiteral(), player.getGameProfile().getName(), trainer.name));
+                        new TrainerBattleCommand().getLiteral(), player.getGameProfile().getName(), trainerName));
 
                 return Unit.INSTANCE;
             });
@@ -109,28 +115,29 @@ public class TrainerBattle {
         }
     }
 
-    public static int startTrainerBattleWithFlatLevelAndFullHealth(CommandContext<ServerCommandSource> context) {
+    public static int startSelectedTrainerBattleWithFlatLevelAndFullHealth(CommandContext<ServerCommandSource> context) {
         try {
-            String trainerResourcePath = StringArgumentType.getString(context, "trainer");
-            ResourceValidator.assertExistTrainerResource(trainerResourcePath);
+            String resourcePath = StringArgumentType.getString(context, "trainer");
+            new ResourceValidator().assertExistValidTrainerResource(resourcePath);
 
-            Trainer trainer = new SpecificTrainerFactory().create(context.getSource().getPlayer(), trainerResourcePath);
-            return startSpecificTrainerBattleWithFlatLevelAndFullHealth(context.getSource().getPlayer(), trainer);
+            Identifier identifier = new Identifier(CobblemonTrainerBattle.NAMESPACE, resourcePath);
+            return startTrainerBattleWithFlatLevelAndFullHealth(context.getSource().getPlayer(), identifier);
 
         } catch (InvalidResourceStateException e) {
-            MutableText message = Text.translatable("command.cobblemontrainerbattle.common.resource.not_found", e.getResourcePath());
+            String resourcePath = StringArgumentType.getString(context, "trainer");
+            MutableText message = Text.translatable("command.cobblemontrainerbattle.common.resource.not_found", resourcePath);
             context.getSource().getPlayer().sendMessage(message.formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(String.format("An error occurred while reading trainer file: %s, %s", e.getMessage(), e.getResourcePath()));
+            CobblemonTrainerBattle.LOGGER.error(String.format("An error occurred while reading trainer file: %s", resourcePath));
             return 0;
         }
     }
 
-    public static int startRandomBattleWithFlatLevelAndFullHealth(CommandContext<ServerCommandSource> context) {
-        Trainer trainer = new RandomTrainerFactory().create(context.getSource().getPlayer());
-        return startSpecificTrainerBattleWithFlatLevelAndFullHealth(context.getSource().getPlayer(), trainer);
+    public static int startRandomTrainerBattleWithFlatLevelAndFullHealth(CommandContext<ServerCommandSource> context) {
+        Identifier trainerIdentifier = new RandomTrainerIdentifierFactory().create();
+        return startTrainerBattleWithFlatLevelAndFullHealth(context.getSource().getPlayer(), trainerIdentifier);
     }
 
-    public static int startSpecificTrainerBattleWithFlatLevelAndFullHealth(ServerPlayerEntity player, Trainer trainer) {
+    public static int startTrainerBattleWithFlatLevelAndFullHealth(ServerPlayerEntity player, Identifier trainerIdentifier) {
         try {
             PlayerValidator playerValidator = new PlayerValidator(player);
             playerValidator.assertNotEmptyPlayerParty();
@@ -141,14 +148,16 @@ public class TrainerBattle {
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
                     new BattleSide(new PlayerBattleActorFactory().createWithFlatLevelFullHealth(player, FLAT_LEVEL)),
-                    new BattleSide(new VirtualTrainerBattleActorFactory(player).createWithFlatLevelFullHealth(trainer, FLAT_LEVEL)),
+                    new BattleSide(new VirtualTrainerBattleActorFactory(player).createWithFlatLevelFullHealth(trainerIdentifier, FLAT_LEVEL)),
                     false
             ).ifSuccessful(pokemonBattle -> {
                 trainerBattles.put(player.getUuid(), pokemonBattle);
+                String trainerName = Paths.get(trainerIdentifier.getPath())
+                        .getFileName().toString().replace(".json", "");
 
-                player.sendMessage(Text.translatable("command.cobblemontrainerbattle.trainerbattleflat.success", trainer.name));
+                player.sendMessage(Text.translatable("command.cobblemontrainerbattle.trainerbattleflat.success", trainerName));
                 CobblemonTrainerBattle.LOGGER.info(String.format("%s: %s versus %s",
-                        new TrainerBattleFlatCommand().getLiteral(), player.getGameProfile().getName(), trainer.name));
+                        new TrainerBattleFlatCommand().getLiteral(), player.getGameProfile().getName(), trainerName));
 
                 return Unit.INSTANCE;
             });

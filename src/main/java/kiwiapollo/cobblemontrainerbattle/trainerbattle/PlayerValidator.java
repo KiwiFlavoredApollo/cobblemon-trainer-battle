@@ -7,7 +7,9 @@ import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.common.TrainerConditionType;
 import kiwiapollo.cobblemontrainerbattle.exceptions.*;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.util.Identifier;
 
+import java.nio.file.Paths;
 import java.util.Objects;
 import java.util.stream.Stream;
 
@@ -49,35 +51,32 @@ public class PlayerValidator {
         PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
         Stream<Pokemon> pokemons = playerPartyStore.toGappyList().stream().filter(Objects::nonNull);
 
-        if (pokemons.map(Pokemon::getLevel).allMatch(level -> level < TrainerFileParser.RELATIVE_LEVEL_THRESHOLD)) {
+        if (pokemons.map(Pokemon::getLevel).allMatch(level -> level < SmogonPokemonParser.RELATIVE_LEVEL_THRESHOLD)) {
             throw new BelowRelativeLevelThresholdException();
         }
     }
 
-    public void assertSatisfiedTrainerCondition(Trainer trainer)
+    public void assertSatisfiedTrainerCondition(Identifier identifier)
             throws UnsatisfiedTrainerConditionException {
-        assertSatisfiedMinimumLevelTrainerCondition(trainer);
-        assertSatisfiedMaximumLevelTrainerCondition(trainer);
+        assertSatisfiedMinimumLevelTrainerCondition(identifier);
+        assertSatisfiedMaximumLevelTrainerCondition(identifier);
     }
 
-    private void assertSatisfiedMaximumLevelTrainerCondition(Trainer trainer)
+    private void assertSatisfiedMaximumLevelTrainerCondition(Identifier identifier)
             throws UnsatisfiedTrainerConditionException {
         try {
+            Trainer trainer = CobblemonTrainerBattle.trainers.get(identifier);
             PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
-            int maximumPartyLevel = CobblemonTrainerBattle.trainerFiles
-                    .get(trainer.name).configuration
-                    .get("condition").getAsJsonObject()
-                    .get("maximumPartyLevel").getAsInt();
             boolean isAtOrBelowPartyMaximumLevel = playerPartyStore.toGappyList().stream()
                     .filter(Objects::nonNull)
                     .map(Pokemon::getLevel)
-                    .allMatch(level -> level <= maximumPartyLevel);
+                    .allMatch(level -> level <= trainer.condition.maximumPartyLevel);
 
             if (!isAtOrBelowPartyMaximumLevel) {
                 throw new UnsatisfiedTrainerConditionException(
-                        String.format("Player did not satisfy maximum level condition: %s, %s", player, trainer.name),
                         TrainerConditionType.MAXIMUM_PARTY_LEVEL,
-                        maximumPartyLevel);
+                        trainer.condition.maximumPartyLevel
+                );
             }
 
         } catch (NullPointerException | IllegalStateException | UnsupportedOperationException ignored) {
@@ -85,24 +84,21 @@ public class PlayerValidator {
         }
     }
 
-    private void assertSatisfiedMinimumLevelTrainerCondition(Trainer trainer)
+    private void assertSatisfiedMinimumLevelTrainerCondition(Identifier identifier)
             throws UnsatisfiedTrainerConditionException {
         try {
+            Trainer trainer = CobblemonTrainerBattle.trainers.get(identifier);
             PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
-            int minimumPartyLevel = CobblemonTrainerBattle.trainerFiles
-                    .get(trainer.name).configuration
-                    .get("condition").getAsJsonObject()
-                    .get("minimumPartyLevel").getAsInt();
             boolean isAtOrAbovePartyMinimumLevel = playerPartyStore.toGappyList().stream()
                     .filter(Objects::nonNull)
                     .map(Pokemon::getLevel)
-                    .allMatch(level -> level >= minimumPartyLevel);
+                    .allMatch(level -> level >= trainer.condition.minimumPartyLevel);
 
             if (!isAtOrAbovePartyMinimumLevel) {
                 throw new UnsatisfiedTrainerConditionException(
-                        String.format("Player did not satisfy minimum level condition: %s, %s", player, trainer.name),
                         TrainerConditionType.MINIMUM_PARTY_LEVEL,
-                        minimumPartyLevel);
+                        trainer.condition.minimumPartyLevel
+                );
             }
 
         } catch (NullPointerException | IllegalStateException | UnsupportedOperationException ignored) {

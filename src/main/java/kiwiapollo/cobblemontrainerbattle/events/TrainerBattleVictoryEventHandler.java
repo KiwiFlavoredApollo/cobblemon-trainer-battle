@@ -8,10 +8,13 @@ import com.google.gson.JsonObject;
 import com.mojang.brigadier.CommandDispatcher;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.EntityBackedTrainerBattleActor;
+import kiwiapollo.cobblemontrainerbattle.common.PostBattleAction;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
 import net.minecraft.entity.Entity;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.util.Identifier;
 
 import java.util.stream.StreamSupport;
 
@@ -32,27 +35,14 @@ public class TrainerBattleVictoryEventHandler implements BattleVictoryEventHandl
     private void onVictory(BattleVictoryEvent battleVictoryEvent) {
         ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
         BattleActor trainerBattleActor = getTrainerBattleActor(battleVictoryEvent);
-        String trainerName = trainerBattleActor.getName().getString();
-        JsonObject trainerConfiguration = CobblemonTrainerBattle.trainerFiles.get(trainerName).configuration;
+        String trainerResourcePath = trainerBattleActor.getName().getString();
 
-        if (!trainerConfiguration.has("onVictory")) {
-            return;
-        }
+        Trainer trainer = CobblemonTrainerBattle.trainers.get(Identifier.of(CobblemonTrainerBattle.NAMESPACE, trainerResourcePath));
 
-        JsonObject onVictory = trainerConfiguration.get("onVictory").getAsJsonObject();
+        CobblemonTrainerBattle.economy.addBalance(player, trainer.onVictory.balance);
 
-        if (onVictory.has("balance") && onVictory.get("balance").isJsonPrimitive()) {
-            addPlayerBalance(onVictory.get("balance"), player);
-        }
-
-        if (onVictory.has("commands") && onVictory.get("commands").isJsonArray()) {
-            for (JsonElement commandJsonElement : onVictory.get("commands").getAsJsonArray()) {
-                executeCommand(commandJsonElement, player);
-            }
-        }
-
-        if (trainerBattleActor instanceof EntityBackedTrainerBattleActor) {
-            ((EntityBackedTrainerBattleActor) trainerBattleActor).getEntity().remove(Entity.RemovalReason.KILLED);
+        for (String command : trainer.onVictory.commands) {
+            executeCommand(command, player);
         }
     }
 
@@ -65,33 +55,19 @@ public class TrainerBattleVictoryEventHandler implements BattleVictoryEventHandl
     private void onDefeat(BattleVictoryEvent battleVictoryEvent) {
         ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
         BattleActor trainerBattleActor = getTrainerBattleActor(battleVictoryEvent);
-        String trainerName = trainerBattleActor.getName().getString();
-        JsonObject trainerConfiguration = CobblemonTrainerBattle.trainerFiles.get(trainerName).configuration;
+        String trainerResourcePath = trainerBattleActor.getName().getString();
 
-        if (!trainerConfiguration.has("onDefeat")) {
-            return;
-        }
+        Trainer trainer = CobblemonTrainerBattle.trainers.get(Identifier.of(CobblemonTrainerBattle.NAMESPACE, trainerResourcePath));
 
-        JsonObject onDefeat = trainerConfiguration.get("onDefeat").getAsJsonObject();
+        CobblemonTrainerBattle.economy.removeBalance(player, trainer.onDefeat.balance);
 
-        if (onDefeat.has("balance") && onDefeat.get("balance").isJsonPrimitive()) {
-            removePlayerBalance(onDefeat.get("balance"), player);
-        }
-
-        if (onDefeat.has("commands") && onDefeat.get("commands").isJsonArray()) {
-            for (JsonElement commandJsonElement : onDefeat.get("commands").getAsJsonArray()) {
-                executeCommand(commandJsonElement, player);
-            }
-        }
-
-        if (trainerBattleActor instanceof EntityBackedTrainerBattleActor) {
-            ((EntityBackedTrainerBattleActor) trainerBattleActor).getEntity().setAiDisabled(false);
+        for (String command : trainer.onDefeat.commands) {
+            executeCommand(command, player);
         }
     }
 
-    private void executeCommand(JsonElement commandJsonElement, ServerPlayerEntity player) {
+    private void executeCommand(String command, ServerPlayerEntity player) {
         try {
-            String command = commandJsonElement.getAsString();
             command = command.replace("%player%", player.getGameProfile().getName());
 
             MinecraftServer server = player.getCommandSource().getServer();
@@ -102,27 +78,7 @@ public class TrainerBattleVictoryEventHandler implements BattleVictoryEventHandl
 
         } catch (UnsupportedOperationException e) {
             CobblemonTrainerBattle.LOGGER.error(
-                    String.format("%s: Error occurred while running command", commandJsonElement.getAsString()));
-        }
-    }
-
-    private void addPlayerBalance(JsonElement balanceJsonElement, ServerPlayerEntity player) {
-        try {
-            CobblemonTrainerBattle.economy.addBalance(player, balanceJsonElement.getAsInt());
-
-        } catch (UnsupportedOperationException e) {
-            CobblemonTrainerBattle.LOGGER.error(
-                    String.format("%s: Error occurred while adding balance to player", player.getGameProfile().getName()));
-        }
-    }
-
-    private void removePlayerBalance(JsonElement balanceJsonElement, ServerPlayerEntity player) {
-        try {
-            CobblemonTrainerBattle.economy.removeBalance(player, balanceJsonElement.getAsInt());
-
-        } catch (UnsupportedOperationException e) {
-            CobblemonTrainerBattle.LOGGER.error(
-                    String.format("%s: Error occurred while removing balance from player", player.getGameProfile().getName()));
+                    String.format("Error occurred while running command: %s", command));
         }
     }
 }

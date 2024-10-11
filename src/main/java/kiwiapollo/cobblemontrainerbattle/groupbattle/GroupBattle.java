@@ -4,8 +4,6 @@ import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.BattleSide;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.StringArgumentType;
@@ -16,11 +14,11 @@ import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.VirtualTrainerBatt
 import kiwiapollo.cobblemontrainerbattle.commands.GroupBattleCommand;
 import kiwiapollo.cobblemontrainerbattle.commands.GroupBattleFlatCommand;
 import kiwiapollo.cobblemontrainerbattle.common.InvalidResourceStateExceptionMessageFactory;
+import kiwiapollo.cobblemontrainerbattle.common.PostBattleAction;
 import kiwiapollo.cobblemontrainerbattle.common.ResourceValidator;
+import kiwiapollo.cobblemontrainerbattle.common.TrainerGroup;
 import kiwiapollo.cobblemontrainerbattle.exceptions.*;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.PlayerValidator;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.SpecificTrainerFactory;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
 import kotlin.Unit;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
@@ -28,7 +26,10 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.InvalidIdentifierException;
 
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -40,13 +41,13 @@ public class GroupBattle {
 
     public static int startSession(CommandContext<ServerCommandSource> context) {
         try {
-            GroupBattleSessionValidator validator = new GroupBattleSessionValidator(context.getSource().getPlayer());
-            validator.assertNotExistValidSession();
+            new GroupBattleSessionValidator(context.getSource().getPlayer()).assertNotExistValidSession();
 
             String groupResourcePath = StringArgumentType.getString(context, "group");
-            ResourceValidator.assertValidGroupResource(groupResourcePath);
+            new ResourceValidator().assertExistValidGroupResource(groupResourcePath);
 
-            GroupBattle.sessions.put(context.getSource().getPlayer().getUuid(), new GroupBattleSession(groupResourcePath));
+            Identifier identifier = Identifier.of(CobblemonTrainerBattle.NAMESPACE, groupResourcePath);
+            GroupBattle.sessions.put(context.getSource().getPlayer().getUuid(), new GroupBattleSession(identifier));
 
             context.getSource().getPlayer().sendMessage(
                     Text.translatable("command.cobblemontrainerbattle.groupbattle.startsession.success"));
@@ -115,14 +116,12 @@ public class GroupBattle {
             playerValidator.assertNotFaintPlayerParty();
             playerValidator.assertPlayerPartyAtOrAboveRelativeLevelThreshold();
 
-
-            String nextTrainerResourcePath = getNextTrainerResourcePath(context.getSource().getPlayer());
-            Trainer trainer = new SpecificTrainerFactory().create(context.getSource().getPlayer(), nextTrainerResourcePath);
+            Identifier nextTrainerIdentifier = getNextTrainerIdentifier(context.getSource().getPlayer());
 
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
                     new BattleSide(new PlayerBattleActorFactory().createWithStatusQuo(context.getSource().getPlayer())),
-                    new BattleSide(new VirtualTrainerBattleActorFactory(context.getSource().getPlayer()).createWithStatusQuo(trainer)),
+                    new BattleSide(new VirtualTrainerBattleActorFactory(context.getSource().getPlayer()).createWithStatusQuo(nextTrainerIdentifier)),
                     false
 
             ).ifSuccessful(pokemonBattle -> {
@@ -130,11 +129,14 @@ public class GroupBattle {
                 UUID playerUuid = context.getSource().getPlayer().getUuid();
                 trainerBattles.put(playerUuid, pokemonBattle);
 
+                String trainerName = Paths.get(nextTrainerIdentifier.getPath())
+                        .getFileName().toString().replace(".json", "");
+
                 context.getSource().getServer().sendMessage(
-                        Text.translatable("command.cobblemontrainerbattle.groupbattle.startbattle.success", trainer.name));
+                        Text.translatable("command.cobblemontrainerbattle.groupbattle.startbattle.success", trainerName));
                 CobblemonTrainerBattle.LOGGER.info(String.format("%s: %s versus %s",
                         new GroupBattleCommand().getLiteral(),
-                        context.getSource().getPlayer().getGameProfile().getName(), trainer.name));
+                        context.getSource().getPlayer().getGameProfile().getName(), trainerName));
 
                 return Unit.INSTANCE;
             });
@@ -202,13 +204,12 @@ public class GroupBattle {
             playerValidator.assertPlayerNotBusyWithPokemonBattle();
             playerValidator.assertNotEmptyPlayerParty();
 
-            String nextTrainerResourcePath = getNextTrainerResourcePath(context.getSource().getPlayer());
-            Trainer trainer = new SpecificTrainerFactory().create(context.getSource().getPlayer(), nextTrainerResourcePath);
+            Identifier nextTrainerIdentifier = getNextTrainerIdentifier(context.getSource().getPlayer());
 
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
                     new BattleSide(new PlayerBattleActorFactory().createWithFlatLevelFullHealth(context.getSource().getPlayer(), FLAT_LEVEL)),
-                    new BattleSide(new VirtualTrainerBattleActorFactory(context.getSource().getPlayer()).createWithFlatLevelFullHealth(trainer, FLAT_LEVEL)),
+                    new BattleSide(new VirtualTrainerBattleActorFactory(context.getSource().getPlayer()).createWithFlatLevelFullHealth(nextTrainerIdentifier, FLAT_LEVEL)),
                     false
 
             ).ifSuccessful(pokemonBattle -> {
@@ -216,11 +217,14 @@ public class GroupBattle {
                 UUID playerUuid = context.getSource().getPlayer().getUuid();
                 trainerBattles.put(playerUuid, pokemonBattle);
 
+                String trainerName = Paths.get(nextTrainerIdentifier.getPath())
+                        .getFileName().toString().replace(".json", "");
+
                 context.getSource().getPlayer().sendMessage(
-                        Text.translatable("command.cobblemontrainerbattle.groupbattleflat.startbattle.success", trainer.name));
+                        Text.translatable("command.cobblemontrainerbattle.groupbattleflat.startbattle.success", trainerName));
                 CobblemonTrainerBattle.LOGGER.info(String.format("%s: %s versus %s",
                         new GroupBattleFlatCommand().getLiteral(),
-                        context.getSource().getPlayer().getGameProfile().getName(), trainer.name));
+                        context.getSource().getPlayer().getGameProfile().getName(), trainerName));
 
                 return Unit.INSTANCE;
             });
@@ -257,12 +261,14 @@ public class GroupBattle {
         }
     }
 
-    public static String getNextTrainerResourcePath(ServerPlayerEntity player) throws DefeatedAllTrainersException {
+    public static Identifier getNextTrainerIdentifier(ServerPlayerEntity player) throws DefeatedAllTrainersException {
         try {
             GroupBattleSession session = sessions.get(player.getUuid());
-            GroupFile groupFile = CobblemonTrainerBattle.groupFiles.get(session.groupResourcePath);
-            return groupFile.configuration.get("trainers").getAsJsonArray()
-                    .get(session.defeatedTrainerCount).getAsString();
+            TrainerGroup trainerGroup = CobblemonTrainerBattle.trainerGroups.get(session.trainerGroupIdentifier);
+            return Identifier.of(
+                    CobblemonTrainerBattle.NAMESPACE,
+                    trainerGroup.trainers.get(session.defeatedTrainerCount)
+            );
 
         } catch (IndexOutOfBoundsException e) {
             throw new DefeatedAllTrainersException();
@@ -279,51 +285,25 @@ public class GroupBattle {
 
     private static void onVictoryGroupBattleSession(CommandContext<ServerCommandSource> context) {
         GroupBattleSession session = sessions.get(context.getSource().getPlayer().getUuid());
-        GroupFile groupFile = CobblemonTrainerBattle.groupFiles.get(session.groupResourcePath);
+        TrainerGroup trainerGroup = CobblemonTrainerBattle.trainerGroups.get(session.trainerGroupIdentifier);
+        PostBattleAction onVictory = trainerGroup.onVictory;
 
-        if (!groupFile.configuration.has("onVictory")) {
-            return;
-        }
+        CobblemonTrainerBattle.economy.addBalance(context.getSource().getPlayer(), onVictory.balance);
 
-        JsonObject onVictory = groupFile.configuration.get("onVictory").getAsJsonObject();
-
-        if (onVictory.has("balance") && onVictory.get("balance").isJsonPrimitive()) {
-            CobblemonTrainerBattle.economy.addBalance(
-                    context.getSource().getPlayer(), onVictory.get("balance").getAsDouble());
-        }
-
-        if (onVictory.has("commands") && onVictory.get("commands").isJsonArray()) {
-            onVictory.get("commands").getAsJsonArray().asList().stream()
-                    .filter(JsonElement::isJsonPrimitive)
-                    .map(JsonElement::getAsString)
-                    .forEach(command -> {
-                        executeCommand(context.getSource().getPlayer(), command);
-                    });
+        for (String command : onVictory.commands) {
+            executeCommand(context.getSource().getPlayer(), command);
         }
     }
 
     private static void onDefeatGroupBattleSession(CommandContext<ServerCommandSource> context) {
         GroupBattleSession session = sessions.get(context.getSource().getPlayer().getUuid());
-        GroupFile groupFile = CobblemonTrainerBattle.groupFiles.get(session.groupResourcePath);
+        TrainerGroup trainerGroup = CobblemonTrainerBattle.trainerGroups.get(session.trainerGroupIdentifier);
+        PostBattleAction onDefeat = trainerGroup.onDefeat;
 
-        if (!groupFile.configuration.has("onDefeat")) {
-            return;
-        }
+        CobblemonTrainerBattle.economy.removeBalance(context.getSource().getPlayer(), onDefeat.balance);
 
-        JsonObject onDefeat = groupFile.configuration.get("onDefeat").getAsJsonObject();
-
-        if (onDefeat.has("balance") && onDefeat.get("balance").isJsonPrimitive()) {
-            CobblemonTrainerBattle.economy.removeBalance(
-                    context.getSource().getPlayer(), onDefeat.get("balance").getAsDouble());
-        }
-
-        if (onDefeat.has("commands") && onDefeat.get("commands").isJsonArray()) {
-            onDefeat.get("commands").getAsJsonArray().asList().stream()
-                    .filter(JsonElement::isJsonPrimitive)
-                    .map(JsonElement::getAsString)
-                    .forEach(command -> {
-                        executeCommand(context.getSource().getPlayer(), command);
-                    });
+        for (String command : onDefeat.commands) {
+            executeCommand(context.getSource().getPlayer(), command);
         }
     }
 

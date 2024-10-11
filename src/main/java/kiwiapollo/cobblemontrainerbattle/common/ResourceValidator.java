@@ -1,13 +1,18 @@
 package kiwiapollo.cobblemontrainerbattle.common;
 
-import com.google.gson.JsonElement;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.exceptions.InvalidResourceStateException;
-import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupFile;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.InvalidIdentifierException;
+
+import java.util.Objects;
 
 public class ResourceValidator {
-    public static void assertExistTrainerResource(String trainerResourcePath) throws InvalidResourceStateException {
-        if (!CobblemonTrainerBattle.trainerFiles.containsKey(trainerResourcePath)) {
+    public void assertExistValidTrainerResource(String trainerResourcePath) throws InvalidResourceStateException {
+        try {
+            new Identifier(CobblemonTrainerBattle.NAMESPACE, trainerResourcePath);
+
+        } catch (InvalidIdentifierException e) {
             throw new InvalidResourceStateException(
                     "Unable to find trainer file",
                     InvalidResourceState.NOT_FOUND,
@@ -16,18 +21,12 @@ public class ResourceValidator {
         }
     }
 
-    public static void assertValidGroupResource(String groupResourcePath) throws InvalidResourceStateException {
+    public void assertExistValidGroupResource(String groupResourcePath) throws InvalidResourceStateException {
         try {
-            GroupFile groupFile = CobblemonTrainerBattle.groupFiles.get(groupResourcePath);
-            if (groupFile == null) {
-                throw new InvalidResourceStateException(
-                        "Unable to find group file",
-                        InvalidResourceState.NOT_FOUND,
-                        groupResourcePath
-                );
-            }
+            Identifier identifier = new Identifier(CobblemonTrainerBattle.NAMESPACE, groupResourcePath);
+            TrainerGroup trainerGroup = CobblemonTrainerBattle.trainerGroups.get(identifier);
 
-            if (groupFile.configuration.get("trainers").getAsJsonArray().isEmpty()) {
+            if (trainerGroup.trainers.isEmpty()) {
                 throw new InvalidResourceStateException(
                         "Group has no trainer",
                         InvalidResourceState.CANNOT_BE_READ,
@@ -35,9 +34,10 @@ public class ResourceValidator {
                 );
             }
 
-            if (!groupFile.configuration.get("trainers").getAsJsonArray().asList().stream()
-                    .map(JsonElement::getAsString)
-                    .allMatch(CobblemonTrainerBattle.trainerFiles::containsKey)) {
+            boolean isExistAllTrainers = trainerGroup.trainers.stream()
+                    .map(resourcePath -> Identifier.of(CobblemonTrainerBattle.NAMESPACE, resourcePath))
+                    .allMatch(Objects::nonNull);
+            if (!isExistAllTrainers) {
                 throw new InvalidResourceStateException(
                         "One or more trainers cannot be found",
                         InvalidResourceState.CANNOT_BE_READ,
@@ -45,7 +45,7 @@ public class ResourceValidator {
                 );
             };
 
-        } catch (NullPointerException | IllegalStateException | UnsupportedOperationException | ClassCastException e) {
+        } catch (InvalidIdentifierException | NullPointerException | ClassCastException e) {
             throw new InvalidResourceStateException(
                     "Unable to read group file",
                     InvalidResourceState.CANNOT_BE_READ,

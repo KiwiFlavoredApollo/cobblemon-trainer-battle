@@ -7,6 +7,7 @@ import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import net.minecraft.server.command.ServerCommandSource;
+import net.minecraft.util.Identifier;
 
 public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSource> {
     public TrainerBattleCommand() {
@@ -25,16 +26,18 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
         return RequiredArgumentBuilder.<ServerCommandSource, String>argument("trainer", StringArgumentType.greedyString())
                 .requires(new PlayerCommandPredicate(permission))
                 .suggests((context, builder) -> {
-                    CobblemonTrainerBattle.trainerFiles.keySet().stream().map(String::valueOf).forEach(builder::suggest);
+                    CobblemonTrainerBattle.trainers.keySet().stream()
+                            .map(Identifier::getPath)
+                            .forEach(builder::suggest);
                     return builder.buildFuture();
                 })
-                .executes(TrainerBattle::startTrainerBattleWithStatusQuo);
+                .executes(TrainerBattle::startSelectedTrainerBattleWithStatusQuo);
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getRandomTrainerBattleCommand() {
         String permission = String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "random");
         return LiteralArgumentBuilder.<ServerCommandSource>literal("random")
                 .requires(new PlayerCommandPredicate(permission))
-                .executes(TrainerBattle::startRandomBattleWithStatusQuo);
+                .executes(TrainerBattle::startRandomTrainerBattleWithStatusQuo);
     }
 }

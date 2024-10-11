@@ -1,6 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.groupbattle;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.common.TrainerGroup;
 import kiwiapollo.cobblemontrainerbattle.exceptions.*;
 import net.minecraft.server.network.ServerPlayerEntity;
 
@@ -50,11 +51,9 @@ public class GroupBattleSessionValidator {
     public static boolean isDefeatedAllTrainers(ServerPlayerEntity player) {
         try {
             GroupBattleSession session = GroupBattle.sessions.get(player.getUuid());
+            TrainerGroup trainerGroup = CobblemonTrainerBattle.trainerGroups.get(session.trainerGroupIdentifier);
 
-            GroupFile groupFile = CobblemonTrainerBattle.groupFiles.get(session.groupResourcePath);
-            int groupTrainerCount = groupFile.configuration.get("trainers").getAsJsonArray().size();
-
-            return session.defeatedTrainerCount == groupTrainerCount;
+            return session.defeatedTrainerCount == trainerGroup.trainers.size();
 
         } catch (NullPointerException | ClassCastException | IllegalStateException e) {
             throw new RuntimeException(e);

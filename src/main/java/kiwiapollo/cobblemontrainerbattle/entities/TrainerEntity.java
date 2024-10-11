@@ -6,8 +6,6 @@ import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.EntityBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.exceptions.BusyWithPokemonBattleException;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.EntityBackedTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.SpecificTrainerFactory;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.entity.EntityType;
@@ -40,20 +38,20 @@ public class TrainerEntity extends PathAwareEntity {
             Identifier.of("minecraft", "textures/entity/player/wide/zuri.png")
     );
 
-    private String trainerResourcePath;
+    private Identifier trainerIdentifier;
     private Identifier texture;
 
     public TrainerEntity(EntityType<? extends PathAwareEntity> entityType, World world) {
         super(entityType, world);
 
-        this.trainerResourcePath = getRandomTrainerResourcePath();
+        this.trainerIdentifier = getRandomTrainerIdentifier();
         this.texture = getRandomTexture();
     }
 
     public void synchronizeClient(ServerWorld world) {
         PacketByteBuf buf = PacketByteBufs.create();
         buf.writeInt(this.getId());
-        buf.writeString(this.trainerResourcePath);
+        buf.writeIdentifier(this.trainerIdentifier);
         buf.writeIdentifier(this.texture);
 
         for (ServerPlayerEntity player : world.getPlayers()) {
@@ -61,15 +59,14 @@ public class TrainerEntity extends PathAwareEntity {
         }
     }
 
-    private String getRandomTrainerResourcePath() {
+    private Identifier getRandomTrainerIdentifier() {
         try {
-            List<String> trainerFilePaths = new ArrayList<>(
-                    CobblemonTrainerBattle.trainerFiles.keySet().stream().toList());
-            Collections.shuffle(trainerFilePaths);
-            return trainerFilePaths.get(0);
+            List<Identifier> identifiers = new ArrayList<>(CobblemonTrainerBattle.trainers.keySet());
+            Collections.shuffle(identifiers);
+            return identifiers.get(0);
 
         } catch (IndexOutOfBoundsException e) {
-            return "";
+            throw new RuntimeException();
         }
     }
 
@@ -104,8 +101,7 @@ public class TrainerEntity extends PathAwareEntity {
             this.setAiDisabled(true);
             this.velocityDirty = true;
 
-            Trainer trainer = new SpecificTrainerFactory().create((ServerPlayerEntity) player, trainerResourcePath);
-            EntityBackedTrainerBattle.startSpecificTrainerBattleWithStatusQuo((ServerPlayerEntity) player, trainer, this);
+            EntityBackedTrainerBattle.startSpecificTrainerBattleWithStatusQuo((ServerPlayerEntity) player, trainerIdentifier, this);
         }
 
         return super.interactMob(player, hand);
@@ -182,8 +178,8 @@ public class TrainerEntity extends PathAwareEntity {
         }
     }
 
-    public void setTrainerResourcePath(String trainerResourcePath) {
-        this.trainerResourcePath = trainerResourcePath;
+    public void setTrainerIdentifier(Identifier trainerIdentifier) {
+        this.trainerIdentifier = trainerIdentifier;
     }
 
     public void setTexture(Identifier texture) {

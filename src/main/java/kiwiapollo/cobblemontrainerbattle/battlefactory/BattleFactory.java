@@ -10,8 +10,6 @@ import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.BattleSide;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.cobblemon.mod.common.pokemon.PokemonStats;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
@@ -20,9 +18,9 @@ import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactors.player.PlayerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.VirtualTrainerBattleActorFactory;
 import kiwiapollo.cobblemontrainerbattle.commands.BattleFactoryCommand;
+import kiwiapollo.cobblemontrainerbattle.common.PostBattleAction;
 import kiwiapollo.cobblemontrainerbattle.exceptions.*;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.PlayerValidator;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
 import kotlin.Unit;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
@@ -30,11 +28,14 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
+import net.minecraft.util.Identifier;
 
+import java.nio.file.Paths;
 import java.util.*;
 
 public class BattleFactory {
     public static final int LEVEL = 100;
+    public static final int POKEMON_COUNT = 3;
     public static Map<UUID, BattleFactorySession> sessions = new HashMap<>();
     public static Map<UUID, PokemonBattle> trainerBattles = new HashMap<>();
 
@@ -43,9 +44,10 @@ public class BattleFactory {
             BattleFactorySessionValidator validator = new BattleFactorySessionValidator(context.getSource().getPlayer());
             validator.assertNotExistValidSession();
 
-            List<Trainer> trainersToDefeat = new ArrayList<>();
+            BattleFactoryRandomTrainerIdentifierFactory factory = new BattleFactoryRandomTrainerIdentifierFactory();
+            List<Identifier> trainersToDefeat = new ArrayList<>();
             for (int i = 0; i < 21; i++) {
-                trainersToDefeat.add(new BattleFactoryRandomTrainerFactory().create(context.getSource().getPlayer()));
+                trainersToDefeat.add(factory.create());
             }
 
             BattleFactory.sessions.put(context.getSource().getPlayer().getUuid(), new BattleFactorySession(trainersToDefeat));
@@ -109,21 +111,24 @@ public class BattleFactory {
             playerValidator.assertPlayerNotBusyWithPokemonBattle();
 
             BattleFactorySession session = sessions.get(context.getSource().getPlayer().getUuid());
-            Trainer trainer = session.trainersToDefeat.get(session.defeatedTrainerCount);
+            Identifier trainerIdentifier = session.trainersToDefeat.get(session.defeatedTrainerCount);
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
                     new BattleSide(new PlayerBattleActorFactory().createForBattleFactory(context.getSource().getPlayer())),
-                    new BattleSide(new VirtualTrainerBattleActorFactory(context.getSource().getPlayer()).createWithFlatLevelFullHealth(trainer, LEVEL)),
+                    new BattleSide(new VirtualTrainerBattleActorFactory(context.getSource().getPlayer()).createForBattleFactory(trainerIdentifier, LEVEL)),
                     false
             ).ifSuccessful(pokemonBattle -> {
                 UUID playerUuid = context.getSource().getPlayer().getUuid();
                 trainerBattles.put(playerUuid, pokemonBattle);
 
+                String trainerName = Paths.get(trainerIdentifier.getPath())
+                        .getFileName().toString().replace(".json", "");
+
                 context.getSource().getPlayer().sendMessage(
-                        Text.translatable("command.cobblemontrainerbattle.battlefactory.startbattle.success", trainer.name));
+                        Text.translatable("command.cobblemontrainerbattle.battlefactory.startbattle.success", trainerName));
                 CobblemonTrainerBattle.LOGGER.info(String.format("%s: %s versus %s",
                         new BattleFactoryCommand().getLiteral(),
-                        context.getSource().getPlayer().getGameProfile().getName(), trainer.name));
+                        context.getSource().getPlayer().getGameProfile().getName(), trainerName));
 
                 return Unit.INSTANCE;
             });
@@ -172,13 +177,13 @@ public class BattleFactory {
             int trainerslot = IntegerArgumentType.getInteger(context, "trainerslot");
 
             BattleFactorySession session = sessions.get(context.getSource().getPlayer().getUuid());
-            Trainer lastDefeatedTrainer = session.trainersToDefeat.get(session.defeatedTrainerCount - 1);
-            Pokemon trainerPokemon = lastDefeatedTrainer.pokemons.get(trainerslot - 1);
+            Pokemon trainerPokemon = session.tradeablePokemons.get(trainerslot - 1);
             Pokemon playerPokemon = session.partyPokemons.get(playerslot - 1);
 
             session.partyPokemons = new ArrayList<>(session.partyPokemons);
             session.partyPokemons.set(playerslot - 1, trainerPokemon.clone(true, true));
             session.isTradedPokemon = true;
+            session.tradeablePokemons = List.of();
 
             MutableText pokemonTradeMessage = Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.success",
                     playerPokemon.getDisplayName(), trainerPokemon.getDisplayName()).formatted(Formatting.YELLOW);
@@ -225,8 +230,7 @@ public class BattleFactory {
             sessionValidator.assertExistDefeatedTrainer();
 
             BattleFactorySession session = sessions.get(context.getSource().getPlayer().getUuid());
-            Trainer lastDefeatedTrainer = session.trainersToDefeat.get(session.defeatedTrainerCount - 1);
-            printPokemons(context, lastDefeatedTrainer.pokemons);
+            printPokemons(context, session.tradeablePokemons);
 
             return Command.SINGLE_SUCCESS;
 
@@ -362,46 +366,34 @@ public class BattleFactory {
     }
 
     private static void onVictoryBattleFactorySession(CommandContext<ServerCommandSource> context) {
-        if (!CobblemonTrainerBattle.battleFactoryConfiguration.has("onVictory")) {
-            return;
+        PostBattleAction onVictory = CobblemonTrainerBattle.battleFactoryConfiguration.onVictory;
+
+        try {
+            CobblemonTrainerBattle.economy.addBalance(context.getSource().getPlayer(), onVictory.balance);
+        } catch (NullPointerException ignored) {
+
         }
 
-        JsonObject onVictory = CobblemonTrainerBattle.battleFactoryConfiguration.get("onVictory").getAsJsonObject();
+        try {
+            onVictory.commands.forEach(command -> executeCommand(context.getSource().getPlayer(), command));
+        } catch (NullPointerException ignored) {
 
-        if (onVictory.has("balance") && onVictory.get("balance").isJsonPrimitive()) {
-            CobblemonTrainerBattle.economy.addBalance(
-                    context.getSource().getPlayer(), onVictory.get("balance").getAsDouble());
-        }
-
-        if (onVictory.has("commands") && onVictory.get("commands").isJsonArray()) {
-            onVictory.get("commands").getAsJsonArray().asList().stream()
-                    .filter(JsonElement::isJsonPrimitive)
-                    .map(JsonElement::getAsString)
-                    .forEach(command -> {
-                        executeCommand(context.getSource().getPlayer(), command);
-                    });
         }
     }
 
     private static void onDefeatBattleFactorySession(CommandContext<ServerCommandSource> context) {
-        if (!CobblemonTrainerBattle.battleFactoryConfiguration.has("onDefeat")) {
-            return;
+        PostBattleAction onDefeat = CobblemonTrainerBattle.battleFactoryConfiguration.onDefeat;
+
+        try {
+            CobblemonTrainerBattle.economy.removeBalance(context.getSource().getPlayer(), onDefeat.balance);
+        } catch (NullPointerException ignored) {
+
         }
 
-        JsonObject onDefeat = CobblemonTrainerBattle.battleFactoryConfiguration.get("onDefeat").getAsJsonObject();
+        try {
+            onDefeat.commands.forEach(command -> executeCommand(context.getSource().getPlayer(), command));
+        } catch (NullPointerException ignored) {
 
-        if (onDefeat.has("balance") && onDefeat.get("balance").isJsonPrimitive()) {
-            CobblemonTrainerBattle.economy.removeBalance(
-                    context.getSource().getPlayer(), onDefeat.get("balance").getAsDouble());
-        }
-
-        if (onDefeat.has("commands") && onDefeat.get("commands").isJsonArray()) {
-            onDefeat.get("commands").getAsJsonArray().asList().stream()
-                    .filter(JsonElement::isJsonPrimitive)
-                    .map(JsonElement::getAsString)
-                    .forEach(command -> {
-                        executeCommand(context.getSource().getPlayer(), command);
-                    });
         }
     }
 

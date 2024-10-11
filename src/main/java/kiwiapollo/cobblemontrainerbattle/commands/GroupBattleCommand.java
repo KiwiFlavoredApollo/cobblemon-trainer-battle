@@ -7,6 +7,7 @@ import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattle;
 import net.minecraft.server.command.ServerCommandSource;
+import net.minecraft.util.Identifier;
 
 public class GroupBattleCommand extends LiteralArgumentBuilder<ServerCommandSource> {
 
@@ -23,7 +24,9 @@ public class GroupBattleCommand extends LiteralArgumentBuilder<ServerCommandSour
         return LiteralArgumentBuilder.<ServerCommandSource>literal("startsession")
                 .then(RequiredArgumentBuilder.<ServerCommandSource, String>argument("group", StringArgumentType.greedyString())
                         .suggests((context, builder) -> {
-                            CobblemonTrainerBattle.groupFiles.keySet().stream().map(String::valueOf).forEach(builder::suggest);
+                            CobblemonTrainerBattle.trainerGroups.keySet().stream()
+                                    .map(Identifier::getPath)
+                                    .forEach(builder::suggest);
                             return builder.buildFuture();
                         })
                         .executes(GroupBattle::startSession));

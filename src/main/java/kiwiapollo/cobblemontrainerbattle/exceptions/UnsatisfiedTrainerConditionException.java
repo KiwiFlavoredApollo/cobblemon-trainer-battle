@@ -12,8 +12,7 @@ public class UnsatisfiedTrainerConditionException extends Exception {
         requiredValue = null;
     }
 
-    public UnsatisfiedTrainerConditionException(String message, TrainerConditionType trainerConditionType, Object requiredValue) {
-        super(message);
+    public UnsatisfiedTrainerConditionException(TrainerConditionType trainerConditionType, Object requiredValue) {
         this.trainerConditionType = trainerConditionType;
         this.requiredValue = requiredValue;
     }

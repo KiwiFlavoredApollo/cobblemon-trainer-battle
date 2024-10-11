@@ -1,19 +1,21 @@
 package kiwiapollo.cobblemontrainerbattle.groupbattle;
 
+import net.minecraft.util.Identifier;
+
 import java.time.Instant;
 import java.util.UUID;
 
 public class GroupBattleSession {
     public final UUID uuid;
-    public final String groupResourcePath;
+    public final Identifier trainerGroupIdentifier;
 
     public int defeatedTrainerCount;
     public Instant timestamp;
     public boolean isDefeated;
 
-    public GroupBattleSession(String groupResourcePath) {
+    public GroupBattleSession(Identifier trainerGroupIdentifier) {
         this.uuid = UUID.randomUUID();
-        this.groupResourcePath = groupResourcePath;
+        this.trainerGroupIdentifier = trainerGroupIdentifier;
 
         this.defeatedTrainerCount = 0;
         this.timestamp = Instant.now();

@@ -2,21 +2,17 @@ package kiwiapollo.cobblemontrainerbattle;
 
 import com.cobblemon.mod.common.api.Priority;
 import com.cobblemon.mod.common.api.events.CobblemonEvents;
-import com.google.gson.JsonObject;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactory;
 import kiwiapollo.cobblemontrainerbattle.commands.*;
-import kiwiapollo.cobblemontrainerbattle.common.Config;
-import kiwiapollo.cobblemontrainerbattle.common.ConfigLoader;
-import kiwiapollo.cobblemontrainerbattle.economies.EconomyFactory;
-import kiwiapollo.cobblemontrainerbattle.common.ResourceReloadListener;
+import kiwiapollo.cobblemontrainerbattle.common.*;
 import kiwiapollo.cobblemontrainerbattle.economies.Economy;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.EntityBackedTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.economies.EconomyFactory;
 import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.events.*;
 import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattle;
-import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupFile;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.EntityBackedTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.Trainer;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerFile;
 import kotlin.Unit;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
@@ -64,10 +60,10 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
 	public static Config config = ConfigLoader.load();
 	public static Economy economy = EconomyFactory.create(config.economy);
-	public static JsonObject defaultTrainerConfiguration = new JsonObject();
-	public static Map<String, TrainerFile> trainerFiles = new HashMap<>();
-	public static Map<String, GroupFile> groupFiles = new HashMap<>();
-	public static JsonObject battleFactoryConfiguration = new JsonObject();
+	public static TrainerConfiguration defaultTrainerConfiguration;
+	public static BattleFactoryConfiguration battleFactoryConfiguration;
+	public static Map<Identifier, Trainer> trainers = new HashMap<>();
+	public static Map<Identifier, TrainerGroup> trainerGroups = new HashMap<>();
 
 	@Override
 	public void onInitialize() {

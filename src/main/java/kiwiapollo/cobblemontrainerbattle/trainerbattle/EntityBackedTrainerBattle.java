@@ -21,7 +21,9 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
+import net.minecraft.util.Identifier;
 
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -30,26 +32,28 @@ public class EntityBackedTrainerBattle {
     public static final int FLAT_LEVEL = 100;
     public static Map<UUID, PokemonBattle> trainerBattles = new HashMap<>();
 
-    public static int startSpecificTrainerBattleWithStatusQuo(ServerPlayerEntity player, Trainer trainer, TrainerEntity trainerEntity) {
+    public static int startSpecificTrainerBattleWithStatusQuo(ServerPlayerEntity player, Identifier identifier, TrainerEntity trainerEntity) {
         try {
             PlayerValidator playerValidator = new PlayerValidator(player);
             playerValidator.assertNotEmptyPlayerParty();
             playerValidator.assertNotFaintPlayerParty();
             playerValidator.assertPlayerNotBusyWithPokemonBattle();
             playerValidator.assertPlayerPartyAtOrAboveRelativeLevelThreshold();
-            playerValidator.assertSatisfiedTrainerCondition(trainer);
+            playerValidator.assertSatisfiedTrainerCondition(identifier);
 
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
                     new BattleSide(new PlayerBattleActorFactory().createWithStatusQuo(player)),
-                    new BattleSide(new EntityBackedTrainerBattleActorFactory(trainerEntity).createWithStatusQuo(trainer)),
+                    new BattleSide(new EntityBackedTrainerBattleActorFactory(player, trainerEntity).createWithStatusQuo(identifier)),
                     false
             ).ifSuccessful(pokemonBattle -> {
                 trainerBattles.put(player.getUuid(), pokemonBattle);
+                String trainerName = Paths.get(identifier.getPath())
+                        .getFileName().toString().replace(".json", "");
 
-                player.sendMessage(Text.translatable("command.cobblemontrainerbattle.trainerbattle.success", trainer.name));
+                player.sendMessage(Text.translatable("command.cobblemontrainerbattle.trainerbattle.success", trainerName));
                 CobblemonTrainerBattle.LOGGER.info(String.format("%s: %s versus %s",
-                        new TrainerBattleCommand().getLiteral(), player.getGameProfile().getName(), trainer.name));
+                        new TrainerBattleCommand().getLiteral(), player.getGameProfile().getName(), trainerName));
 
                 return Unit.INSTANCE;
             });
@@ -87,7 +91,7 @@ public class EntityBackedTrainerBattle {
         }
     }
 
-    public static int startSpecificTrainerBattleWithFlatLevelAndFullHealth(ServerPlayerEntity player, Trainer trainer, TrainerEntity trainerEntity) {
+    public static int startSpecificTrainerBattleWithFlatLevelAndFullHealth(ServerPlayerEntity player, Identifier trainerIdentifier, TrainerEntity trainerEntity) {
         try {
             PlayerValidator playerValidator = new PlayerValidator(player);
             playerValidator.assertNotEmptyPlayerParty();
@@ -98,14 +102,16 @@ public class EntityBackedTrainerBattle {
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
                     new BattleSide(new PlayerBattleActorFactory().createWithFlatLevelFullHealth(player, FLAT_LEVEL)),
-                    new BattleSide(new EntityBackedTrainerBattleActorFactory(trainerEntity).createWithFlatLevelFullHealth(trainer, FLAT_LEVEL)),
+                    new BattleSide(new EntityBackedTrainerBattleActorFactory(player, trainerEntity).createWithFlatLevelFullHealth(trainerIdentifier, FLAT_LEVEL)),
                     false
             ).ifSuccessful(pokemonBattle -> {
                 trainerBattles.put(player.getUuid(), pokemonBattle);
+                String trainerName = Paths.get(trainerIdentifier.getPath())
+                        .getFileName().toString().replace(".json", "");
 
-                player.sendMessage(Text.translatable("command.cobblemontrainerbattle.trainerbattleflat.success", trainer.name));
+                player.sendMessage(Text.translatable("command.cobblemontrainerbattle.trainerbattleflat.success", trainerName));
                 CobblemonTrainerBattle.LOGGER.info(String.format("%s: %s versus %s",
-                        new TrainerBattleFlatCommand().getLiteral(), player.getGameProfile().getName(), trainer.name));
+                        new TrainerBattleFlatCommand().getLiteral(), player.getGameProfile().getName(), trainerName));
 
                 return Unit.INSTANCE;
             });
