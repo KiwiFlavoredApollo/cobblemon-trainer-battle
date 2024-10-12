@@ -10,11 +10,7 @@ public class SafeCopyBattlePokemonFactory {
                 pokemon,
                 pokemon.clone(true, true),
                 pokemonEntity -> {
-                    // Discards the entity. This is also referred to as "despawning".
-                    // This does not cause the entity to drop loot. - JavaDoc
-                    //
-                    // This does not apply to Pokemon drops defined in `resources/data/cobblemon/species/`
-                    // LOOT_DROPPED event fires regardless of discarding PokemonEntity
+                    // Calling discard() does not prevent LOOT_DROPPED event
                     pokemonEntity.discard();
                     return Unit.INSTANCE;
                 }
