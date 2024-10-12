@@ -153,11 +153,20 @@ public class SmogonPokemonParser {
         }
     }
 
-    private void setPokemonHeldItem(Pokemon pokemon, String itemName) {
-        Item item = Registries.ITEM.get(Identifier.of(
-                "cobblemon", itemName.replace(" ", "_").toLowerCase()));
+    private void setPokemonHeldItem(Pokemon pokemon, String item) {
+        try {
+            Identifier itemIdentifier = new Identifier(item);
+            pokemon.swapHeldItem(new ItemStack(Registries.ITEM.get(itemIdentifier)), false);
 
-        pokemon.swapHeldItem(new ItemStack(item), false);
+        } catch (InvalidIdentifierException e) {
+            Identifier itemIdentifier = Identifier.of("cobblemon", item.replace(" ", "_").toLowerCase());
+
+            if (itemIdentifier == null) {
+                return;
+            }
+
+            pokemon.swapHeldItem(new ItemStack(Registries.ITEM.get(itemIdentifier)), false);
+        }
     }
 
     private void setPokemonMoveSet(Pokemon pokemon, List<String> moveSet) {
