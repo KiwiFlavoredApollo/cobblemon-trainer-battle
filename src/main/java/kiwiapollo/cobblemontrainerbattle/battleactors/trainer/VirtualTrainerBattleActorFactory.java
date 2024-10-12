@@ -62,18 +62,7 @@ public class VirtualTrainerBattleActorFactory implements TrainerBattleActorFacto
     }
 
     public BattleActor createForBattleFactory(Identifier identifier, int level) {
-        Trainer trainer = CobblemonTrainerBattle.trainers.get(identifier);
-        SmogonPokemonParser parser = new SmogonPokemonParser(player);
-
-        List<Pokemon> pokemons = new ArrayList<>();
-        for (SmogonPokemon smogonPokemon : trainer.pokemons) {
-            try {
-                pokemons.add(parser.toCobblemonPokemon(smogonPokemon));
-
-            } catch (PokemonParseException ignored) {
-
-            }
-        }
+        List<Pokemon> pokemons = new TrainerPokemonFactory(player).create(identifier);
 
         pokemons = pokemons.subList(0, BattleFactory.POKEMON_COUNT);
 
