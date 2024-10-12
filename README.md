@@ -196,13 +196,8 @@ datapacks/
 
 - [ ] Fix bug SimpleTM TM/TR drop
 - [ ] Add feature defining Battle Frontier trainer sequence by data pack
-- [ ] Refactor TrainerFileParser.createPokemon using JsonObject.has
-- [ ] When on Battle Frontier battle, player Pokemons are slightly damaged
-- [ ] Do not store either JsonArray or JsonObject 
-
-## Note
-
-JsonObject, JsonArray을 사용하지 않는 방향으로 수정하고 있다 2024-10-11
+- [ ] When on Battle Frontier battle, player Pokemons are slightly damaged 
+- [ ] use custom BattleRegistry when starting Pokemon battle 
 
 ## Reference
 - [Pokemon Showdown Team Formats - Cobblemon Showdown](https://gitlab.com/cable-mc/cobblemon-showdown/-/blob/master/sim/TEAMS.md#packed-format)
