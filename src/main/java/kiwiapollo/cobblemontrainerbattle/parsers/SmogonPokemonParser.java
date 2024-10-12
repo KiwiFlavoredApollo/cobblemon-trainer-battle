@@ -102,7 +102,7 @@ public class SmogonPokemonParser {
     }
 
     private void setPokemonStats(BiConsumer<Stats, Integer> consumer, Map<String, Integer> stats) {
-        if (!Objects.isNull(stats)) {
+        if (Objects.isNull(stats)) {
             return;
         }
 
