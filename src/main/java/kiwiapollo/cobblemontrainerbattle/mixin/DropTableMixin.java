@@ -12,8 +12,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import java.util.HashMap;
-
+@SuppressWarnings("unused")
 @Mixin(DropTable.class)
 public class DropTableMixin {
     @Inject(method = "drop", at = @At("HEAD"))
