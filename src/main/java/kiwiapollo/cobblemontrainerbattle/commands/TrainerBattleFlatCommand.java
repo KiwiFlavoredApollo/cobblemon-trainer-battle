@@ -68,7 +68,7 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
 
     private int startBattleWithTrainer(ServerPlayerEntity player, Trainer trainer) {
         try {
-            PlayerBattleParticipant playerBattleParticipant = new NormalBattlePlayer(player);
+            PlayerBattleParticipant playerBattleParticipant = new FlatBattlePlayer(player, 100);
             TrainerBattleParticipant trainerBattleParticipant = new FlatBattleTrainer(trainer, 100);
             ResultHandler resultHandler = new BattleResultHandler(player, trainer.onVictory(), trainer.onDefeat());
 

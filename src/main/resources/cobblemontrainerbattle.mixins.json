@@ -3,7 +3,8 @@
 	"package": "kiwiapollo.cobblemontrainerbattle.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"ExampleMixin"
+		"ExampleMixin",
+		"DropTableMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
