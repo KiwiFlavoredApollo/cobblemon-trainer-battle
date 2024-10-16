@@ -2,23 +2,24 @@ package kiwiapollo.cobblemontrainerbattle.common;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.InvalidIdentifierException;
 
 import java.io.FileNotFoundException;
 import java.util.Objects;
 
 public class ResourceValidator {
-    public void assertExistResource(String resourcePath) throws FileNotFoundException {
-        try {
-            new Identifier(CobblemonTrainerBattle.NAMESPACE, resourcePath);
-
-        } catch (InvalidIdentifierException e) {
+    public static void assertTrainerExist(Identifier identifier) throws FileNotFoundException {
+        if (!CobblemonTrainerBattle.trainers.containsKey(identifier)) {
             throw new FileNotFoundException();
         }
     }
 
-    public void assertValidGroupResource(String groupResourcePath) throws IllegalArgumentException {
-        Identifier identifier = new Identifier(CobblemonTrainerBattle.NAMESPACE, groupResourcePath);
+    public static void assertTrainerGroupExist(Identifier identifier) throws FileNotFoundException {
+        if (!CobblemonTrainerBattle.trainerGroups.containsKey(identifier)) {
+            throw new FileNotFoundException();
+        }
+    }
+
+    public static void assertTrainerGroupValid(Identifier identifier) throws IllegalArgumentException {
         TrainerGroup trainerGroup = CobblemonTrainerBattle.trainerGroups.get(identifier);
 
         if (trainerGroup.trainers.isEmpty()) {

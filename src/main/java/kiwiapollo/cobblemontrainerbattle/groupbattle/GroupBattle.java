@@ -10,6 +10,7 @@ import kiwiapollo.cobblemontrainerbattle.exceptions.*;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.BattleResultHandler;
 import kiwiapollo.cobblemontrainerbattle.exceptions.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultHandler;
+import kiwiapollo.cobblemontrainerbattle.sessions.Session;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.MutableText;
@@ -22,26 +23,21 @@ import java.util.*;
 
 public class GroupBattle {
     public static final int FLAT_LEVEL = 100;
-    public static Map<UUID, GroupBattleSession> sessions = new HashMap<>();
+    public static Map<UUID, Session> sessions = new HashMap<>();
 
     public static int startSession(CommandContext<ServerCommandSource> context) {
         try {
             ServerPlayerEntity player = context.getSource().getPlayer();
+
             String groupResourcePath = StringArgumentType.getString(context, "group");
-
-            ResourceValidator resourceValidator = new ResourceValidator();
-            resourceValidator.assertExistResource(groupResourcePath);
-            resourceValidator.assertValidGroupResource(groupResourcePath);
-
-            if (sessions.containsKey(player.getUuid())) {
-                throw new IllegalStateException();
-            }
-
             Identifier identifier = Identifier.of(CobblemonTrainerBattle.NAMESPACE, groupResourcePath);
 
-            List<Identifier> trainersToDefeat = new ArrayList<>();
-            // TODO
+            ResourceValidator.assertTrainerGroupExist(identifier);
+            ResourceValidator.assertTrainerGroupValid(identifier);
+            SessionValidator.assertSessionNotExist(sessions, player);
 
+            List<Identifier> trainersToDefeat = CobblemonTrainerBattle.trainerGroups.get(identifier).trainers.stream()
+                    .map(trainerResourcePath -> Identifier.of(CobblemonTrainerBattle.NAMESPACE, trainerResourcePath)).toList();
 
             ResultHandler resultHandler = new BattleResultHandler(
                     player,
@@ -49,7 +45,7 @@ public class GroupBattle {
                     CobblemonTrainerBattle.battleFactoryConfiguration.onDefeat
             );
 
-            GroupBattleSession session = new GroupBattleSession(
+            Session session = new GroupBattleSession(
                     player,
                     trainersToDefeat,
                     resultHandler
@@ -88,13 +84,10 @@ public class GroupBattle {
         try {
             ServerPlayerEntity player = context.getSource().getPlayer();
 
-            if (!sessions.containsKey(player.getUuid())) {
-                throw new IllegalStateException();
-            }
-
+            SessionValidator.assertSessionExist(sessions, player);
             PlayerValidator.assertPlayerNotBusyWithPokemonBattle(player);
 
-            GroupBattleSession session = sessions.get(player.getUuid());
+            Session session = sessions.get(player.getUuid());
             session.onSessionStop();
 
             BattleFactory.sessions.remove(player.getUuid());
@@ -124,11 +117,9 @@ public class GroupBattle {
         try {
             ServerPlayerEntity player = context.getSource().getPlayer();
 
-            if (sessions.containsKey(player.getUuid())) {
-                throw new IllegalStateException();
-            }
+            SessionValidator.assertSessionExist(sessions, player);
 
-            GroupBattleSession session = sessions.get(player.getUuid());
+            Session session = sessions.get(player.getUuid());
             session.startBattle();
 
             return Command.SINGLE_SUCCESS;
@@ -149,11 +140,9 @@ public class GroupBattle {
         try {
             ServerPlayerEntity player = context.getSource().getPlayer();
 
-            if (sessions.containsKey(player.getUuid())) {
-                throw new IllegalStateException();
-            }
+            SessionValidator.assertSessionExist(sessions, player);
 
-            GroupBattleSession session = sessions.get(player.getUuid());
+            Session session = sessions.get(player.getUuid());
             session.startBattle();
 
             return Command.SINGLE_SUCCESS;
