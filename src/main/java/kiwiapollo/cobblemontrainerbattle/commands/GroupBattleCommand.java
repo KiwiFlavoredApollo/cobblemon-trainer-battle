@@ -39,6 +39,6 @@ public class GroupBattleCommand extends LiteralArgumentBuilder<ServerCommandSour
 
     private ArgumentBuilder<ServerCommandSource, ?> getStartBattleCommand() {
         return LiteralArgumentBuilder.<ServerCommandSource>literal("startbattle")
-                .executes(GroupBattle::startBattleWithStatusQuo);
+                .executes(GroupBattle::startNormalBattle);
     }
 }

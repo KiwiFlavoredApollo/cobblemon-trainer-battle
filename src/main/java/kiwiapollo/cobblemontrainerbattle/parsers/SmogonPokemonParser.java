@@ -39,10 +39,10 @@ public class SmogonPokemonParser {
             "Teary Look", "tearfullook"
     );
 
-    private final ServerPlayerEntity player;
+    private final int pivotLevel;
 
-    public SmogonPokemonParser(ServerPlayerEntity player) {
-        this.player = player;
+    public SmogonPokemonParser(int pivotLevel) {
+        this.pivotLevel = pivotLevel;
     }
 
     public Pokemon toCobblemonPokemon(SmogonPokemon smogonPokemon) throws PokemonParseException {
@@ -81,13 +81,7 @@ public class SmogonPokemonParser {
             pokemon.setLevel(level);
 
         } else {
-            List<Pokemon> playerPokemons = Cobblemon.INSTANCE.getStorage().getParty(player).toGappyList();
-            if (playerPokemons.stream().allMatch(Objects::isNull)) return;
-            int playerMaximumLevel = playerPokemons.stream()
-                    .filter(Objects::nonNull)
-                    .map(Pokemon::getLevel)
-                    .max(Comparator.naturalOrder()).get();
-            pokemon.setLevel(playerMaximumLevel + level);
+            pokemon.setLevel(pivotLevel + level);
         }
     }
 

@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.battleactors.trainer;
+package kiwiapollo.cobblemontrainerbattle.battleactors;
 
 import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import net.minecraft.util.Identifier;

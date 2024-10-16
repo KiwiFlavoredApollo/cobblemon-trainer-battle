@@ -1,11 +1,17 @@
 package kiwiapollo.cobblemontrainerbattle.entities;
 
+import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battleactors.trainer.EntityBackedTrainerBattleActor;
+import kiwiapollo.cobblemontrainerbattle.battleactors.EntityBackedTrainerBattleActor;
+import kiwiapollo.cobblemontrainerbattle.common.Trainer;
 import kiwiapollo.cobblemontrainerbattle.exceptions.BusyWithPokemonBattleException;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.EntityBackedTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.*;
+import kiwiapollo.cobblemontrainerbattle.battleparticipants.PlayerBattleParticipant;
+import kiwiapollo.cobblemontrainerbattle.battleparticipants.TrainerBattleParticipant;
+import kiwiapollo.cobblemontrainerbattle.battleparticipants.NormalBattlePlayer;
+import kiwiapollo.cobblemontrainerbattle.battleparticipants.NormalBattleTrainer;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.entity.EntityType;
@@ -25,10 +31,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.*;
 import java.util.stream.StreamSupport;
 
 public class TrainerEntity extends PathAwareEntity {
@@ -40,12 +43,14 @@ public class TrainerEntity extends PathAwareEntity {
 
     private Identifier trainerIdentifier;
     private Identifier texture;
+    private TrainerBattle trainerBattle;
 
     public TrainerEntity(EntityType<? extends PathAwareEntity> entityType, World world) {
         super(entityType, world);
 
         this.trainerIdentifier = getRandomTrainerIdentifier();
         this.texture = getRandomTexture();
+        this.trainerBattle = null;
     }
 
     public void synchronizeClient(ServerWorld world) {
@@ -96,12 +101,29 @@ public class TrainerEntity extends PathAwareEntity {
             return ActionResult.SUCCESS;
         }
 
-        if (player instanceof ServerPlayerEntity) {
+        if (!(player instanceof ServerPlayerEntity)) {
+            return ActionResult.FAIL;
+        }
+
+        try {
             this.setVelocity(0, 0, 0);
             this.setAiDisabled(true);
             this.velocityDirty = true;
 
-            EntityBackedTrainerBattle.startSpecificTrainerBattleWithStatusQuo((ServerPlayerEntity) player, trainerIdentifier, this);
+            PlayerBattleParticipant sessionPlayer = new NormalBattlePlayer((ServerPlayerEntity) player);
+
+            Trainer trainer = CobblemonTrainerBattle.trainers.get(trainerIdentifier);
+            TrainerBattleParticipant sessionTrainer = new NormalBattleTrainer(trainer, (ServerPlayerEntity) player);
+            ResultHandler resultHandler = new BattleResultHandler((ServerPlayerEntity) player, trainer.onVictory(), trainer.onDefeat());
+
+            TrainerBattle trainerBattle = new EntityBackedTrainerBattle(sessionPlayer, sessionTrainer, resultHandler, this);
+            trainerBattle.start();
+
+            CobblemonTrainerBattle.trainerBattles.put(player.getUuid(), trainerBattle);
+            this.trainerBattle = trainerBattle;
+
+        } catch (BattleStartException ignored) {
+
         }
 
         return super.interactMob(player, hand);
@@ -138,11 +160,10 @@ public class TrainerEntity extends PathAwareEntity {
 
     private PokemonBattle getPokemonBattle() {
         try {
-            return EntityBackedTrainerBattle.trainerBattles.values().stream()
-                    .filter(pokemonBattle -> getBattleActorsOf(pokemonBattle).stream().anyMatch(this::isEntityOf))
-                    .findFirst().get();
+            UUID battleId = trainerBattle.getBattleId();
+            return Objects.requireNonNull(Cobblemon.INSTANCE.getBattleRegistry().getBattle(battleId));
 
-        } catch (NullPointerException | NoSuchElementException e) {
+        } catch (NullPointerException e) {
             throw new NoSuchElementException();
         }
     }

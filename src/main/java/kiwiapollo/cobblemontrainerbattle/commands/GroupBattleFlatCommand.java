@@ -39,6 +39,6 @@ public class GroupBattleFlatCommand extends LiteralArgumentBuilder<ServerCommand
 
     private ArgumentBuilder<ServerCommandSource, ?> getStartBattleCommand() {
         return LiteralArgumentBuilder.<ServerCommandSource>literal("startbattle")
-                .executes(GroupBattle::startBattleWithFlatLevelAndFullHealth);
+                .executes(GroupBattle::startFlatBattle);
     }
 }

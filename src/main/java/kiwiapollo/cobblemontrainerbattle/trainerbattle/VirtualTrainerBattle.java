@@ -5,11 +5,10 @@ import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.BattleSide;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battleactors.EntityBackedTrainerBattleActor;
+import kiwiapollo.cobblemontrainerbattle.battleactors.VirtualTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.commands.TrainerBattleCommand;
 import kiwiapollo.cobblemontrainerbattle.common.BattleConditionExceptionMessageFactory;
 import kiwiapollo.cobblemontrainerbattle.common.PlayerValidator;
-import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.exceptions.*;
 import kiwiapollo.cobblemontrainerbattle.battleparticipants.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battleparticipants.TrainerBattleParticipant;
@@ -18,24 +17,21 @@ import net.minecraft.text.Text;
 
 import java.util.UUID;
 
-public class EntityBackedTrainerBattle implements TrainerBattle {
+public class VirtualTrainerBattle implements TrainerBattle {
     private final PlayerBattleParticipant player;
     private final TrainerBattleParticipant trainer;
     private final ResultHandler resultHandler;
-    private final TrainerEntity trainerEntity;
 
     private UUID battleId;
 
-    public EntityBackedTrainerBattle(
+    public VirtualTrainerBattle(
             PlayerBattleParticipant player,
             TrainerBattleParticipant trainer,
-            ResultHandler resultHandler,
-            TrainerEntity trainerEntity
+            ResultHandler resultHandler
     ) {
         this.player = player;
         this.trainer = trainer;
         this.resultHandler = resultHandler;
-        this.trainerEntity = trainerEntity;
     }
 
     @Override
@@ -53,12 +49,12 @@ public class EntityBackedTrainerBattle implements TrainerBattle {
                             player.getUuid(),
                             player.getBattleTeam()
                     )),
-                    new BattleSide(new EntityBackedTrainerBattleActor(
+                    new BattleSide(new VirtualTrainerBattleActor(
                             trainer.getName(),
                             trainer.getUuid(),
                             trainer.getBattleTeam(),
                             trainer.getBattleAI(),
-                            trainerEntity
+                            player.getPlayerEntity()
                     )),
                     false
             ).ifSuccessful(pokemonBattle -> {
@@ -80,14 +76,14 @@ public class EntityBackedTrainerBattle implements TrainerBattle {
             CobblemonTrainerBattle.LOGGER.error("Pokemons are all fainted: {}", player.getName());
             throw new BattleStartException();
 
+        } catch (BelowRelativeLevelThresholdException e) {
+            player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.common.below_relative_level_threshold"));
+            CobblemonTrainerBattle.LOGGER.error("Pokemon levels are below relative level threshold: {}", player.getName());
+            throw new BattleStartException();
+
         } catch (BusyWithPokemonBattleException e) {
             player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.common.busy_with_pokemon_battle"));
             CobblemonTrainerBattle.LOGGER.error("Player is busy with Pokemon battle: {}", player.getName());
-            throw new BattleStartException();
-
-        }catch (BelowRelativeLevelThresholdException e) {
-            player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.common.below_relative_level_threshold"));
-            CobblemonTrainerBattle.LOGGER.error("Pokemon levels are below relative level threshold: {}", player.getName());
             throw new BattleStartException();
 
         } catch (BattleConditionException e) {

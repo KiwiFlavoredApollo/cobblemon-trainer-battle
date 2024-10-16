@@ -1,80 +1,60 @@
 package kiwiapollo.cobblemontrainerbattle.common;
 
 import com.cobblemon.mod.common.Cobblemon;
-import com.cobblemon.mod.common.api.storage.party.PlayerPartyStore;
+import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.pokemon.Pokemon;
-import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.exceptions.*;
 import kiwiapollo.cobblemontrainerbattle.parsers.SmogonPokemonParser;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.util.Identifier;
 
 import java.util.Objects;
-import java.util.stream.Stream;
 
 public class PlayerValidator {
-    private final ServerPlayerEntity player;
-
-    public PlayerValidator(ServerPlayerEntity player) {
-        this.player = player;
-    }
-
-    public void assertNotEmptyPlayerParty()
-            throws EmptyPlayerPartyException {
-        PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
-
-        if (playerPartyStore.toGappyList().stream().allMatch(Objects::isNull)) {
+    public static void assertPlayerPartyNotEmpty(PartyStore party) throws EmptyPlayerPartyException {
+        if (party.toGappyList().stream().allMatch(Objects::isNull)) {
             throw new EmptyPlayerPartyException();
         }
     }
 
-    public void assertNotFaintPlayerParty()
-            throws FaintedPlayerPartyException {
-        PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
-        Stream<Pokemon> pokemons = playerPartyStore.toGappyList().stream().filter(Objects::nonNull);
-
-        if (pokemons.allMatch(Pokemon::isFainted)) {
+    public static void assertPlayerPartyNotFaint(PartyStore party) throws FaintedPlayerPartyException {
+        if (party.toGappyList().stream().filter(Objects::nonNull).allMatch(Pokemon::isFainted)) {
             throw new FaintedPlayerPartyException();
         }
     }
 
-    public void assertPlayerNotBusyWithPokemonBattle()
-            throws BusyWithPokemonBattleException {
+    public static void assertPlayerNotBusyWithPokemonBattle(ServerPlayerEntity player) throws BusyWithPokemonBattleException {
         if (Cobblemon.INSTANCE.getBattleRegistry().getBattleByParticipatingPlayer(player) != null) {
             throw new BusyWithPokemonBattleException();
         }
     }
 
-    public void assertPlayerPartyAtOrAboveRelativeLevelThreshold()
-            throws BelowRelativeLevelThresholdException {
-        PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
-        Stream<Pokemon> pokemons = playerPartyStore.toGappyList().stream().filter(Objects::nonNull);
+    public static void assertPlayerPartyAtOrAboveRelativeLevelThreshold(PartyStore party) throws BelowRelativeLevelThresholdException {
+        boolean isAtOrBelowRelativeLevelThreshold = party.toGappyList().stream()
+                .filter(Objects::nonNull)
+                .map(Pokemon::getLevel)
+                .allMatch(level -> level < SmogonPokemonParser.RELATIVE_LEVEL_THRESHOLD);
 
-        if (pokemons.map(Pokemon::getLevel).allMatch(level -> level < SmogonPokemonParser.RELATIVE_LEVEL_THRESHOLD)) {
+        if (isAtOrBelowRelativeLevelThreshold) {
             throw new BelowRelativeLevelThresholdException();
         }
     }
 
-    public void assertSatisfiedBattleCondition(Identifier identifier)
-            throws BattleConditionException {
-        assertSatisfiedMinimumLevelBattleCondition(identifier);
-        assertSatisfiedMaximumLevelBattleCondition(identifier);
+    public static void assertSatisfiedBattleCondition(PartyStore party, BattleCondition condition) throws BattleConditionException {
+        assertSatisfiedMinimumLevelBattleCondition(party, condition);
+        assertSatisfiedMaximumLevelBattleCondition(party, condition);
     }
 
-    private void assertSatisfiedMaximumLevelBattleCondition(Identifier identifier)
-            throws BattleConditionException {
+    private static void assertSatisfiedMaximumLevelBattleCondition(PartyStore party, BattleCondition condition) throws BattleConditionException {
         try {
-            Trainer trainer = CobblemonTrainerBattle.trainers.get(identifier);
-            PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
-            boolean isAtOrBelowMaximumPartyLevel = playerPartyStore.toGappyList().stream()
+            boolean isAtOrBelowMaximumPartyLevel = party.toGappyList().stream()
                     .filter(Objects::nonNull)
                     .map(Pokemon::getLevel)
-                    .allMatch(level -> level <= trainer.condition.maximumPartyLevel);
+                    .allMatch(level -> level <= condition.maximumPartyLevel);
 
             if (!isAtOrBelowMaximumPartyLevel) {
                 throw new BattleConditionException(
                         BattleConditionType.MAXIMUM_PARTY_LEVEL,
-                        trainer.condition.maximumPartyLevel
+                        condition.maximumPartyLevel
                 );
             }
 
@@ -83,20 +63,17 @@ public class PlayerValidator {
         }
     }
 
-    private void assertSatisfiedMinimumLevelBattleCondition(Identifier identifier)
-            throws BattleConditionException {
+    private static void assertSatisfiedMinimumLevelBattleCondition(PartyStore party, BattleCondition condition) throws BattleConditionException {
         try {
-            Trainer trainer = CobblemonTrainerBattle.trainers.get(identifier);
-            PlayerPartyStore playerPartyStore = Cobblemon.INSTANCE.getStorage().getParty(player);
-            boolean isAtOrAboveMinimumPartyLevel = playerPartyStore.toGappyList().stream()
+            boolean isAtOrAboveMinimumPartyLevel = party.toGappyList().stream()
                     .filter(Objects::nonNull)
                     .map(Pokemon::getLevel)
-                    .allMatch(level -> level >= trainer.condition.minimumPartyLevel);
+                    .allMatch(level -> level >= condition.minimumPartyLevel);
 
             if (!isAtOrAboveMinimumPartyLevel) {
                 throw new BattleConditionException(
                         BattleConditionType.MINIMUM_PARTY_LEVEL,
-                        trainer.condition.minimumPartyLevel
+                        condition.minimumPartyLevel
                 );
             }
 

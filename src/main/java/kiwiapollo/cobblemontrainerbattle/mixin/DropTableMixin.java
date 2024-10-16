@@ -3,6 +3,8 @@ package kiwiapollo.cobblemontrainerbattle.mixin;
 import com.cobblemon.mod.common.api.drop.DropTable;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.temp.Session;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
@@ -11,6 +13,9 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+import java.util.List;
+import java.util.UUID;
 
 @SuppressWarnings("unused")
 @Mixin(DropTable.class)
@@ -24,21 +29,22 @@ public class DropTableMixin {
             int amount,
             CallbackInfo callbackInfo
     ) {
-        try {
-            PokemonEntity pokemonEntity = (PokemonEntity) entity;
-
-            if (!pokemonEntity.getPokemon().isWild()) {
-                throw new AssertionError();
-            }
-
-            if (!CobblemonTrainerBattle.sessions.containsKey(pokemonEntity.getBattleId())) {
-                throw new AssertionError();
-            }
-
-            callbackInfo.cancel();
-
-        } catch (ClassCastException | AssertionError ignored) {
-
+        if (!(entity instanceof PokemonEntity)) {
+            return;
         }
+
+        PokemonEntity pokemonEntity = (PokemonEntity) entity;
+        if (pokemonEntity.getPokemon().isWild()) {
+            return;
+        }
+
+        boolean isTrainerBattle = CobblemonTrainerBattle.trainerBattles.values().stream()
+                .map(TrainerBattle::getBattleId)
+                .toList().contains(pokemonEntity.getBattleId());
+        if (!isTrainerBattle) {
+            return;
+        }
+
+        callbackInfo.cancel();
     }
 }

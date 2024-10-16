@@ -11,6 +11,7 @@ import net.minecraft.resource.ResourceManager;
 import net.minecraft.util.Identifier;
 
 import java.io.*;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -69,10 +70,12 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
                 // identifier: cobblemontrainerbattle:custom/custom_trainer.json
                 List<SmogonPokemon> pokemons = readSmogonPokemonResource(resource);
                 TrainerConfiguration configuration = loadTrainerConfiguration(resourceManager, identifier);
+                String name = Paths.get(identifier.getPath()).getFileName().toString().replace(".json", "");
 
                 trainers.put(
                         identifier,
                         new Trainer(
+                                name,
                                 pokemons,
                                 configuration.onVictory,
                                 configuration.onDefeat,

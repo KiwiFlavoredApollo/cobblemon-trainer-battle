@@ -1,5 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.commands;
 
+import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
@@ -67,7 +68,7 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
     private int exportPlayer(CommandContext<ServerCommandSource> context) {
         try {
             ServerPlayerEntity player = EntityArgumentType.getPlayer(context, "player");
-            new PlayerValidator(player).assertNotEmptyPlayerParty();
+            PlayerValidator.assertPlayerPartyNotEmpty(Cobblemon.INSTANCE.getStorage().getParty(player));
 
             List<Pokemon> pokemons = com.cobblemon.mod.common.Cobblemon.INSTANCE.getStorage()
                     .getParty(player).toGappyList().stream()
@@ -104,7 +105,7 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
     private int exportPlayerWithFlatLevel(CommandContext<ServerCommandSource> context) {
         try {
             ServerPlayerEntity player = EntityArgumentType.getPlayer(context, "player");
-            new PlayerValidator(player).assertNotEmptyPlayerParty();
+            PlayerValidator.assertPlayerPartyNotEmpty(Cobblemon.INSTANCE.getStorage().getParty(player));
 
             int level = IntegerArgumentType.getInteger(context, "level");
 
@@ -144,7 +145,7 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
     private int exportPlayerWithRelativeLevel(CommandContext<ServerCommandSource> context) {
         try {
             ServerPlayerEntity player = EntityArgumentType.getPlayer(context, "player");
-            new PlayerValidator(player).assertNotEmptyPlayerParty();
+            PlayerValidator.assertPlayerPartyNotEmpty(Cobblemon.INSTANCE.getStorage().getParty(player));
 
             List<Pokemon> pokemons = com.cobblemon.mod.common.Cobblemon.INSTANCE.getStorage()
                     .getParty(player).toGappyList().stream()
