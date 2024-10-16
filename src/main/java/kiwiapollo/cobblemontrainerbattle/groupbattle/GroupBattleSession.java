@@ -1,20 +1,19 @@
-package kiwiapollo.cobblemontrainerbattle.temp;
+package kiwiapollo.cobblemontrainerbattle.groupbattle;
 
-import com.mojang.brigadier.CommandDispatcher;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleparticipants.NormalBattlePlayer;
 import kiwiapollo.cobblemontrainerbattle.battleparticipants.NormalBattleTrainer;
-import kiwiapollo.cobblemontrainerbattle.common.*;
 import kiwiapollo.cobblemontrainerbattle.battleparticipants.PlayerBattleParticipant;
+import kiwiapollo.cobblemontrainerbattle.exceptions.BattleStartException;
+import kiwiapollo.cobblemontrainerbattle.resulthandler.DummyResultHandler;
+import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultHandler;
+import kiwiapollo.cobblemontrainerbattle.sessions.Session;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.*;
 import kiwiapollo.cobblemontrainerbattle.battleparticipants.TrainerBattleParticipant;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
-import java.util.UUID;
 
 public class GroupBattleSession implements Session {
     private final PlayerBattleParticipant player;
@@ -23,8 +22,6 @@ public class GroupBattleSession implements Session {
 
     private int defeatedTrainersCount;
     private boolean isPlayerDefeated;
-
-    private UUID battleId;
 
     public GroupBattleSession(
             ServerPlayerEntity player,

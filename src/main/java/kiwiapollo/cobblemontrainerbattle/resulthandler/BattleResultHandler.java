@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.trainerbattle;
+package kiwiapollo.cobblemontrainerbattle.resulthandler;
 
 import com.mojang.brigadier.CommandDispatcher;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;

@@ -2,6 +2,7 @@ package kiwiapollo.cobblemontrainerbattle.trainerbattle;
 
 import kiwiapollo.cobblemontrainerbattle.battleparticipants.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battleparticipants.TrainerBattleParticipant;
+import kiwiapollo.cobblemontrainerbattle.exceptions.BattleStartException;
 
 import java.util.UUID;
 

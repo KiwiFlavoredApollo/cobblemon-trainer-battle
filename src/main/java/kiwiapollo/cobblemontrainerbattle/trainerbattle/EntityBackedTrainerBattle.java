@@ -13,6 +13,7 @@ import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.exceptions.*;
 import kiwiapollo.cobblemontrainerbattle.battleparticipants.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battleparticipants.TrainerBattleParticipant;
+import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultHandler;
 import kotlin.Unit;
 import net.minecraft.text.Text;
 

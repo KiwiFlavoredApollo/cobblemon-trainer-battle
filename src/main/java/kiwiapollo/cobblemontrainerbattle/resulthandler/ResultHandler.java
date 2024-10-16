@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.trainerbattle;
+package kiwiapollo.cobblemontrainerbattle.resulthandler;
 
 public interface ResultHandler {
     void onVictory();

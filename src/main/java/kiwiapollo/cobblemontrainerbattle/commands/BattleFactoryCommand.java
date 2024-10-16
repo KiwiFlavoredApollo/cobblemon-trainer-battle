@@ -1,18 +1,12 @@
 package kiwiapollo.cobblemontrainerbattle.commands;
 
-import com.mojang.brigadier.Command;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
-import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactory;
-import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactorySession;
-import kiwiapollo.cobblemontrainerbattle.temp.*;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.*;
 import net.minecraft.server.command.ServerCommandSource;
-import net.minecraft.server.network.ServerPlayerEntity;
 
 public class BattleFactoryCommand extends LiteralArgumentBuilder<ServerCommandSource> {
 

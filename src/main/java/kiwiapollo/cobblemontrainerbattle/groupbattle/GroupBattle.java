@@ -7,10 +7,9 @@ import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactory;
 import kiwiapollo.cobblemontrainerbattle.common.*;
 import kiwiapollo.cobblemontrainerbattle.exceptions.*;
-import kiwiapollo.cobblemontrainerbattle.temp.GroupBattleSession;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.BattleResultHandler;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.BattleStartException;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.ResultHandler;
+import kiwiapollo.cobblemontrainerbattle.resulthandler.BattleResultHandler;
+import kiwiapollo.cobblemontrainerbattle.exceptions.BattleStartException;
+import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultHandler;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.MutableText;
@@ -41,6 +40,7 @@ public class GroupBattle {
             Identifier identifier = Identifier.of(CobblemonTrainerBattle.NAMESPACE, groupResourcePath);
 
             List<Identifier> trainersToDefeat = new ArrayList<>();
+            // TODO
 
 
             ResultHandler resultHandler = new BattleResultHandler(

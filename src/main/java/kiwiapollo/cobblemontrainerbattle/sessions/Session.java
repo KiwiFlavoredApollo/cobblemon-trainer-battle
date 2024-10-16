@@ -1,8 +1,6 @@
-package kiwiapollo.cobblemontrainerbattle.temp;
+package kiwiapollo.cobblemontrainerbattle.sessions;
 
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.BattleStartException;
-
-import java.util.UUID;
+import kiwiapollo.cobblemontrainerbattle.exceptions.BattleStartException;
 
 public interface Session {
     void startBattle() throws BattleStartException;

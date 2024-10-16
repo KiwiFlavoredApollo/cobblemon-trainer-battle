@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.trainerbattle;
+package kiwiapollo.cobblemontrainerbattle.resulthandler;
 
 public class DummyResultHandler implements ResultHandler {
     public void onVictory() {
