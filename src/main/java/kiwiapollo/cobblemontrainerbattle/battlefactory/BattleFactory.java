@@ -5,9 +5,10 @@ import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerIdentifierFactory;
+import kiwiapollo.cobblemontrainerbattle.common.SessionValidator;
 import kiwiapollo.cobblemontrainerbattle.exception.*;
 import kiwiapollo.cobblemontrainerbattle.common.PlayerValidator;
-import kiwiapollo.cobblemontrainerbattle.resulthandler.BattleResultHandler;
+import kiwiapollo.cobblemontrainerbattle.resulthandler.GenericResultHandler;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultHandler;
 import net.minecraft.server.command.ServerCommandSource;
@@ -28,16 +29,14 @@ public class BattleFactory {
         try {
             ServerPlayerEntity player = context.getSource().getPlayer();
 
-            if (sessions.containsKey(player.getUuid())) {
-                throw new IllegalStateException();
-            }
+            SessionValidator.assertSessionNotExist(sessions, player);
 
             List<Identifier> trainersToDefeat = new ArrayList<>();
             for (int i = 0; i < 21; i++) {
                 trainersToDefeat.add(new RandomTrainerIdentifierFactory().createForBattleFactory());
             }
 
-            ResultHandler resultHandler = new BattleResultHandler(
+            ResultHandler resultHandler = new GenericResultHandler(
                     player,
                     CobblemonTrainerBattle.battleFactoryConfiguration.onVictory,
                     CobblemonTrainerBattle.battleFactoryConfiguration.onDefeat
@@ -62,9 +61,7 @@ public class BattleFactory {
         try {
             ServerPlayerEntity player = context.getSource().getPlayer();
 
-            if (!sessions.containsKey(player.getUuid())) {
-                throw new IllegalStateException();
-            }
+            SessionValidator.assertSessionExist(sessions, player);
 
             PlayerValidator.assertPlayerNotBusyWithPokemonBattle(player);
 
@@ -98,9 +95,7 @@ public class BattleFactory {
         try {
             ServerPlayerEntity player = context.getSource().getPlayer();
 
-            if (sessions.containsKey(player.getUuid())) {
-                throw new IllegalStateException();
-            }
+            SessionValidator.assertSessionExist(sessions, player);
 
             BattleFactorySession session = sessions.get(player.getUuid());
             session.startBattle();
@@ -123,9 +118,7 @@ public class BattleFactory {
         try {
             ServerPlayerEntity player = context.getSource().getPlayer();
 
-            if (sessions.containsKey(player.getUuid())) {
-                throw new IllegalStateException();
-            }
+            SessionValidator.assertSessionExist(sessions, player);
 
             int playerSlot = IntegerArgumentType.getInteger(context, "playerslot");
             int trainerSlot = IntegerArgumentType.getInteger(context, "trainerslot");
@@ -148,9 +141,7 @@ public class BattleFactory {
         try {
             ServerPlayerEntity player = context.getSource().getPlayer();
 
-            if (sessions.containsKey(player.getUuid())) {
-                throw new IllegalStateException();
-            }
+            SessionValidator.assertSessionExist(sessions, player);
 
             BattleFactorySession session = sessions.get(player.getUuid());
             session.showTradeablePokemon();
@@ -170,9 +161,7 @@ public class BattleFactory {
         try {
             ServerPlayerEntity player = context.getSource().getPlayer();
 
-            if (sessions.containsKey(player.getUuid())) {
-                throw new IllegalStateException();
-            }
+            SessionValidator.assertSessionExist(sessions, player);
 
             BattleFactorySession session = sessions.get(player.getUuid());
             session.showPartyPokemon();
@@ -192,9 +181,7 @@ public class BattleFactory {
         try {
             ServerPlayerEntity player = context.getSource().getPlayer();
 
-            if (sessions.containsKey(player.getUuid())) {
-                throw new IllegalStateException();
-            }
+            SessionValidator.assertSessionExist(sessions, player);
 
             BattleFactorySession session = sessions.get(player.getUuid());
             session.rerollPokemon();

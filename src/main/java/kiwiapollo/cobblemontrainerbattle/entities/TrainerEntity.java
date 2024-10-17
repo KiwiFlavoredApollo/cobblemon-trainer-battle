@@ -10,7 +10,7 @@ import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.common.Trainer;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.exception.BusyWithPokemonBattleException;
-import kiwiapollo.cobblemontrainerbattle.resulthandler.BattleResultHandler;
+import kiwiapollo.cobblemontrainerbattle.resulthandler.GenericResultHandler;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultHandler;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.TrainerBattleParticipant;
@@ -118,7 +118,7 @@ public class TrainerEntity extends PathAwareEntity {
 
             Trainer trainer = CobblemonTrainerBattle.trainers.get(trainerIdentifier);
             TrainerBattleParticipant trainerBattleParticipant = new NormalBattleTrainer(trainer, (ServerPlayerEntity) player);
-            ResultHandler resultHandler = new BattleResultHandler((ServerPlayerEntity) player, trainer.onVictory(), trainer.onDefeat());
+            ResultHandler resultHandler = new GenericResultHandler((ServerPlayerEntity) player, trainer.onVictory(), trainer.onDefeat());
 
             TrainerBattle trainerBattle = new EntityBackedTrainerBattle(
                     playerBattleParticipant,

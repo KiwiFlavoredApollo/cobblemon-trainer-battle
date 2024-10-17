@@ -12,7 +12,7 @@ import kiwiapollo.cobblemontrainerbattle.trainerbattle.VirtualTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerIdentifierFactory;
 import kiwiapollo.cobblemontrainerbattle.common.Trainer;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
-import kiwiapollo.cobblemontrainerbattle.resulthandler.BattleResultHandler;
+import kiwiapollo.cobblemontrainerbattle.resulthandler.GenericResultHandler;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultHandler;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.TrainerBattleParticipant;
@@ -77,7 +77,7 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
         try {
             PlayerBattleParticipant playerBattleParticipant = new NormalBattlePlayer(player);
             TrainerBattleParticipant trainerBattleParticipant = new NormalBattleTrainer(trainer, player);
-            ResultHandler resultHandler = new BattleResultHandler(player, trainer.onVictory(), trainer.onDefeat());
+            ResultHandler resultHandler = new GenericResultHandler(player, trainer.onVictory(), trainer.onDefeat());
 
             TrainerBattle trainerBattle = new VirtualTrainerBattle(playerBattleParticipant, trainerBattleParticipant, resultHandler);
             trainerBattle.start();

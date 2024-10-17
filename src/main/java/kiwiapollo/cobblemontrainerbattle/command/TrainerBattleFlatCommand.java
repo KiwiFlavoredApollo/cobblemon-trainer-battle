@@ -13,7 +13,7 @@ import kiwiapollo.cobblemontrainerbattle.battleparticipant.*;
 import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerIdentifierFactory;
 import kiwiapollo.cobblemontrainerbattle.common.Trainer;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
-import kiwiapollo.cobblemontrainerbattle.resulthandler.BattleResultHandler;
+import kiwiapollo.cobblemontrainerbattle.resulthandler.GenericResultHandler;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultHandler;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -74,7 +74,7 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
         try {
             PlayerBattleParticipant playerBattleParticipant = new FlatBattlePlayer(player, VirtualTrainerBattle.FLAT_LEVEL);
             TrainerBattleParticipant trainerBattleParticipant = new FlatBattleTrainer(trainer, player, VirtualTrainerBattle.FLAT_LEVEL);
-            ResultHandler resultHandler = new BattleResultHandler(player, trainer.onVictory(), trainer.onDefeat());
+            ResultHandler resultHandler = new GenericResultHandler(player, trainer.onVictory(), trainer.onDefeat());
 
             TrainerBattle trainerBattle = new VirtualTrainerBattle(playerBattleParticipant, trainerBattleParticipant, resultHandler);
             trainerBattle.start();

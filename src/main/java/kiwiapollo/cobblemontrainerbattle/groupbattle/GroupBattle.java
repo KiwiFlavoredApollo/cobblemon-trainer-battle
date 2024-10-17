@@ -10,10 +10,9 @@ import kiwiapollo.cobblemontrainerbattle.battleparticipant.NormalBattleParticipa
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.BattleParticipantFactory;
 import kiwiapollo.cobblemontrainerbattle.common.*;
 import kiwiapollo.cobblemontrainerbattle.exception.*;
-import kiwiapollo.cobblemontrainerbattle.resulthandler.BattleResultHandler;
+import kiwiapollo.cobblemontrainerbattle.resulthandler.GenericResultHandler;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultHandler;
-import kiwiapollo.cobblemontrainerbattle.session.Session;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.MutableText;
@@ -26,7 +25,7 @@ import java.util.*;
 
 public class GroupBattle {
     public static final int FLAT_LEVEL = 100;
-    public static Map<UUID, Session> sessions = new HashMap<>();
+    public static Map<UUID, GroupBattleSession> sessions = new HashMap<>();
 
     public static int startNormalGroupBattleSession(CommandContext<ServerCommandSource> context) {
         return startSession(context, new NormalBattleParticipantFactory());
@@ -50,13 +49,13 @@ public class GroupBattle {
             List<Identifier> trainersToDefeat = CobblemonTrainerBattle.trainerGroups.get(identifier).trainers.stream()
                     .map(trainerResourcePath -> Identifier.of(CobblemonTrainerBattle.NAMESPACE, trainerResourcePath)).toList();
 
-            ResultHandler resultHandler = new BattleResultHandler(
+            ResultHandler resultHandler = new GenericResultHandler(
                     player,
                     CobblemonTrainerBattle.battleFactoryConfiguration.onVictory,
                     CobblemonTrainerBattle.battleFactoryConfiguration.onDefeat
             );
 
-            Session session = new GroupBattleSession(
+            GroupBattleSession session = new GroupBattleSession(
                     player,
                     trainersToDefeat,
                     resultHandler,
@@ -99,7 +98,7 @@ public class GroupBattle {
             SessionValidator.assertSessionExist(sessions, player);
             PlayerValidator.assertPlayerNotBusyWithPokemonBattle(player);
 
-            Session session = sessions.get(player.getUuid());
+            GroupBattleSession session = sessions.get(player.getUuid());
             session.onSessionStop();
 
             BattleFactory.sessions.remove(player.getUuid());
@@ -131,7 +130,7 @@ public class GroupBattle {
 
             SessionValidator.assertSessionExist(sessions, player);
 
-            Session session = sessions.get(player.getUuid());
+            GroupBattleSession session = sessions.get(player.getUuid());
             session.startBattle();
 
             return Command.SINGLE_SUCCESS;

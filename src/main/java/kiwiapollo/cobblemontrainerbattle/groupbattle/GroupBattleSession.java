@@ -1,6 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.groupbattle;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.resulthandler.SessionBattleResultHandler;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.VirtualTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.*;
@@ -8,7 +9,6 @@ import kiwiapollo.cobblemontrainerbattle.common.Trainer;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.exception.DefeatedAllTrainersException;
 import kiwiapollo.cobblemontrainerbattle.exception.DefeatedToTrainerException;
-import kiwiapollo.cobblemontrainerbattle.resulthandler.DummyResultHandler;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultHandler;
 import kiwiapollo.cobblemontrainerbattle.session.Session;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -51,7 +51,7 @@ public class GroupBattleSession implements Session {
             Trainer trainer = CobblemonTrainerBattle.trainers.get(trainersToDefeat.get(defeatedTrainersCount));
             TrainerBattleParticipant trainerBattleParticipant = battleParticipantFactory.createTrainer(trainer, player);
 
-            ResultHandler resultHandler = new DummyResultHandler();
+            ResultHandler resultHandler = new SessionBattleResultHandler(this::onBattleVictory, this::onBattleDefeat);
 
             TrainerBattle trainerBattle = new VirtualTrainerBattle(
                     playerBattleParticipant,

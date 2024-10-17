@@ -7,11 +7,11 @@ import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.cobblemon.mod.common.pokemon.PokemonStats;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.resulthandler.SessionBattleResultHandler;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.VirtualTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.*;
 import kiwiapollo.cobblemontrainerbattle.exception.*;
-import kiwiapollo.cobblemontrainerbattle.resulthandler.DummyResultHandler;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultHandler;
 import kiwiapollo.cobblemontrainerbattle.session.PokemonShowFeature;
 import kiwiapollo.cobblemontrainerbattle.session.PokemonTradeFeature;
@@ -60,7 +60,9 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Pokem
                     player.getPlayerEntity(),
                     BattleFactory.LEVEL
             );
-            ResultHandler resultHandler = new DummyResultHandler();
+
+            ResultHandler resultHandler = new SessionBattleResultHandler(this::onBattleVictory, this::onBattleDefeat);
+
             TrainerBattle trainerBattle = new VirtualTrainerBattle(player, trainer, resultHandler);
             trainerBattle.start();
 
