@@ -1,6 +1,5 @@
 package kiwiapollo.cobblemontrainerbattle.parsers;
 
-import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.abilities.Abilities;
 import com.cobblemon.mod.common.api.moves.Move;
 import com.cobblemon.mod.common.api.moves.Moves;
@@ -14,11 +13,8 @@ import kiwiapollo.cobblemontrainerbattle.exceptions.PokemonParseException;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
-import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.InvalidIdentifierException;
 
-import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -46,8 +42,7 @@ public class SmogonPokemonParser {
     }
 
     public Pokemon toCobblemonPokemon(SmogonPokemon smogonPokemon) throws PokemonParseException {
-        Identifier identifier = createSpeciesIdentifier(smogonPokemon);
-        Pokemon pokemon = PokemonSpecies.INSTANCE.getByIdentifier(identifier).create(DEFAULT_LEVEL);
+        Pokemon pokemon = createBasePokemon(smogonPokemon);
 
         setPokemonStats(pokemon::setEV, smogonPokemon.evs);
         setPokemonStats(pokemon::setIV, smogonPokemon.ivs);
@@ -61,17 +56,25 @@ public class SmogonPokemonParser {
         return pokemon;
     }
 
-    private Identifier createSpeciesIdentifier(SmogonPokemon smogonPokemon) throws PokemonParseException {
+    private Pokemon createBasePokemon(SmogonPokemon smogonPokemon) throws PokemonParseException {
         try {
-            return new Identifier(smogonPokemon.species);
+            Identifier identifier = toSpeciesIdentifier(smogonPokemon.species);
+            return PokemonSpecies.INSTANCE.getByIdentifier(identifier).create(DEFAULT_LEVEL);
 
-        } catch (InvalidIdentifierException e) {
-            Identifier cobblemon = Identifier.of("cobblemon", smogonPokemon.species.toLowerCase());
+        } catch (NullPointerException e) {
+            throw new PokemonParseException();
+        }
+    }
 
-            if (cobblemon != null) {
-                return cobblemon;
+    private Identifier toSpeciesIdentifier(String species) throws PokemonParseException {
+        try {
+            boolean isNamespaceProvided = species.contains(":");
+            if (isNamespaceProvided) {
+                return Objects.requireNonNull(Identifier.tryParse(species));
+            } else {
+                return Objects.requireNonNull(Identifier.of("cobblemon", species));
             }
-
+        } catch (NullPointerException e) {
             throw new PokemonParseException();
         }
     }
@@ -127,14 +130,19 @@ public class SmogonPokemonParser {
 
     private void setPokemonNature(Pokemon pokemon, String nature) {
         try {
-            pokemon.setNature(Natures.INSTANCE.getNature(new Identifier(nature)));
+            Objects.requireNonNull(nature);
 
-        } catch (InvalidIdentifierException e) {
-            Identifier identifier = Identifier.of("cobblemon", nature.toLowerCase());
+            boolean isNamespaceProvided = nature.contains(":");
+            if (isNamespaceProvided) {
+                pokemon.setNature(Objects.requireNonNull(Natures.INSTANCE.getNature(nature)));
 
-            if (!Objects.isNull(identifier)) {
-                pokemon.setNature(Natures.INSTANCE.getNature(identifier));
+            } else {
+                Identifier identifier = Identifier.of("cobblemon", nature);
+                pokemon.setNature(Objects.requireNonNull(Natures.INSTANCE.getNature(identifier)));
             }
+
+        } catch (NullPointerException ignored) {
+
         }
     }
 
@@ -149,17 +157,20 @@ public class SmogonPokemonParser {
 
     private void setPokemonHeldItem(Pokemon pokemon, String item) {
         try {
-            Identifier itemIdentifier = new Identifier(item);
-            pokemon.swapHeldItem(new ItemStack(Registries.ITEM.get(itemIdentifier)), false);
+            Objects.requireNonNull(item);
 
-        } catch (InvalidIdentifierException e) {
-            Identifier itemIdentifier = Identifier.of("cobblemon", item.replace(" ", "_").toLowerCase());
+            boolean isNamespaceProvided = item.contains(":");
+            if (isNamespaceProvided) {
+                Item itemToHold = Registries.ITEM.get(Identifier.tryParse(item));
+                pokemon.swapHeldItem(new ItemStack(itemToHold), false);
 
-            if (itemIdentifier == null) {
-                return;
+            } else {
+                Item itemToHold = Registries.ITEM.get(Identifier.of("cobblemon", item));
+                pokemon.swapHeldItem(new ItemStack(itemToHold), false);
             }
 
-            pokemon.swapHeldItem(new ItemStack(Registries.ITEM.get(itemIdentifier)), false);
+        } catch (NullPointerException ignored) {
+
         }
     }
 
