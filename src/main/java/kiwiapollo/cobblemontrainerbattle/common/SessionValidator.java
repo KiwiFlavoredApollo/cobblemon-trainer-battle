@@ -1,6 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.common;
 
-import kiwiapollo.cobblemontrainerbattle.sessions.Session;
+import kiwiapollo.cobblemontrainerbattle.session.Session;
 import net.minecraft.server.network.ServerPlayerEntity;
 
 import java.util.Map;

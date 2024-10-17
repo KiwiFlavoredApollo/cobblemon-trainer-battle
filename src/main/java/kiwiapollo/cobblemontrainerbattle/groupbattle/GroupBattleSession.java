@@ -1,15 +1,16 @@
 package kiwiapollo.cobblemontrainerbattle.groupbattle;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battleparticipants.*;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.VirtualTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.*;
 import kiwiapollo.cobblemontrainerbattle.common.Trainer;
-import kiwiapollo.cobblemontrainerbattle.exceptions.BattleStartException;
-import kiwiapollo.cobblemontrainerbattle.exceptions.DefeatedAllTrainersException;
-import kiwiapollo.cobblemontrainerbattle.exceptions.DefeatedToTrainerException;
+import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
+import kiwiapollo.cobblemontrainerbattle.exception.DefeatedAllTrainersException;
+import kiwiapollo.cobblemontrainerbattle.exception.DefeatedToTrainerException;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.DummyResultHandler;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultHandler;
-import kiwiapollo.cobblemontrainerbattle.sessions.Session;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.*;
+import kiwiapollo.cobblemontrainerbattle.session.Session;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 

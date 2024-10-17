@@ -3,8 +3,8 @@ package kiwiapollo.cobblemontrainerbattle.common;
 import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.pokemon.Pokemon;
-import kiwiapollo.cobblemontrainerbattle.exceptions.*;
-import kiwiapollo.cobblemontrainerbattle.parsers.SmogonPokemonParser;
+import kiwiapollo.cobblemontrainerbattle.exception.*;
+import kiwiapollo.cobblemontrainerbattle.parser.SmogonPokemonParser;
 import net.minecraft.server.network.ServerPlayerEntity;
 
 import java.util.Objects;

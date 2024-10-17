@@ -1,6 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.common;
 
-import kiwiapollo.cobblemontrainerbattle.parsers.SmogonPokemon;
+import kiwiapollo.cobblemontrainerbattle.parser.SmogonPokemon;
 
 import java.util.List;
 

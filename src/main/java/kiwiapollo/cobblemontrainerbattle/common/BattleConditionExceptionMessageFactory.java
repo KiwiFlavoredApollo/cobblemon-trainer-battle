@@ -1,6 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.common;
 
-import kiwiapollo.cobblemontrainerbattle.exceptions.BattleConditionException;
+import kiwiapollo.cobblemontrainerbattle.exception.BattleConditionException;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 
