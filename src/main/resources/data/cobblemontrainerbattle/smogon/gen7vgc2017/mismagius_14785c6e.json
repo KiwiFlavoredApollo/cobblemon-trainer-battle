@@ -1,0 +1,129 @@
+[
+    {
+        "species": "Mismagius",
+        "gender": "F",
+        "item": "Ghostium Z",
+        "ability": "Levitate",
+        "level": 50,
+        "evs": {
+            "hp": 140,
+            "def": 4,
+            "spa": 92,
+            "spd": 28,
+            "spe": 244
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Protect",
+            "Shadow Ball",
+            "Taunt",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Arcanine",
+        "gender": "M",
+        "item": "Sitrus Berry",
+        "ability": "Intimidate",
+        "level": 50,
+        "evs": {
+            "hp": 76,
+            "def": 4,
+            "spa": 196,
+            "spd": 76,
+            "spe": 156
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Flamethrower",
+            "Protect",
+            "Roar",
+            "Snarl"
+        ]
+    },
+    {
+        "species": "Garchomp",
+        "gender": "M",
+        "item": "Groundium Z",
+        "ability": "Rough Skin",
+        "level": 50,
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Dragon Claw",
+            "Earthquake",
+            "Poison Jab",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Gastrodon-East",
+        "gender": "M",
+        "item": "Maranga Berry",
+        "ability": "Storm Drain",
+        "level": 50,
+        "evs": {
+            "hp": 252,
+            "def": 196,
+            "spd": 60
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Protect",
+            "Recover",
+            "Scald",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Kartana",
+        "item": "Focus Sash",
+        "ability": "Beast Boost",
+        "level": 50,
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Leaf Blade",
+            "Protect",
+            "Sacred Sword",
+            "Smart Strike"
+        ]
+    },
+    {
+        "species": "Tapu Koko",
+        "item": "Assault Vest",
+        "ability": "Electric Surge",
+        "level": 50,
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spa": 12,
+            "spd": 140,
+            "spe": 100
+        },
+        "nature": "Timid",
+        "moves": [
+            "Dazzling Gleam",
+            "Nature's Madness",
+            "Sky Drop",
+            "Thunderbolt"
+        ]
+    }
+]

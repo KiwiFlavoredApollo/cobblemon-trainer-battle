@@ -1,0 +1,132 @@
+[
+    {
+        "species": "Magnezone",
+        "item": "Choice Specs",
+        "ability": "Sturdy",
+        "level": 50,
+        "evs": {
+            "hp": 252,
+            "spa": 252,
+            "spd": 4
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0,
+            "spe": 30
+        },
+        "moves": [
+            "Flash Cannon",
+            "Hidden Power Ground",
+            "Thunderbolt",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Araquanid",
+        "gender": "M",
+        "item": "Waterium Z",
+        "ability": "Water Bubble",
+        "level": 50,
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "spd": 4
+        },
+        "nature": "Brave",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Liquidation",
+            "Lunge",
+            "Protect",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Hariyama",
+        "gender": "M",
+        "item": "Flame Orb",
+        "ability": "Guts",
+        "level": 50,
+        "evs": {
+            "hp": 92,
+            "atk": 252,
+            "def": 164
+        },
+        "nature": "Brave",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Close Combat",
+            "Fake Out",
+            "Feint",
+            "Knock Off"
+        ]
+    },
+    {
+        "species": "Mimikyu",
+        "gender": "M",
+        "item": "Ghostium Z",
+        "ability": "Disguise",
+        "level": 50,
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Destiny Bond",
+            "Shadow Claw",
+            "Taunt",
+            "Trick Room"
+        ]
+    },
+    {
+        "species": "Porygon2",
+        "item": "Eviolite",
+        "ability": "Download",
+        "level": 50,
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spa": 4
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Ice Beam",
+            "Recover",
+            "Thunderbolt",
+            "Trick Room"
+        ]
+    },
+    {
+        "species": "Snorlax",
+        "gender": "M",
+        "item": "Figy Berry",
+        "ability": "Gluttony",
+        "level": 50,
+        "evs": {
+            "hp": 68,
+            "atk": 252,
+            "def": 188
+        },
+        "nature": "Brave",
+        "ivs": {
+            "spe": 2
+        },
+        "moves": [
+            "Belly Drum",
+            "High Horsepower",
+            "Protect",
+            "Return"
+        ],
+        "happiness": 255
+    }
+]

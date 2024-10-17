@@ -1,0 +1,62 @@
+[
+    {
+        "species": "Articuno",
+        "level": 55,
+        "moves": [
+            "Agility",
+            "Blizzard",
+            "Hyper Beam",
+            "Ice Beam"
+        ]
+    },
+    {
+        "species": "Dugtrio",
+        "level": 50,
+        "moves": [
+            "Earthquake",
+            "Rock Slide",
+            "Slash",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Exeggutor",
+        "level": 50,
+        "moves": [
+            "Explosion",
+            "Psychic",
+            "Sleep Powder",
+            "Stun Spore"
+        ]
+    },
+    {
+        "species": "Gengar",
+        "level": 50,
+        "moves": [
+            "Explosion",
+            "Hypnosis",
+            "Psychic",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Tauros",
+        "level": 50,
+        "moves": [
+            "Blizzard",
+            "Body Slam",
+            "Earthquake",
+            "Hyper Beam"
+        ]
+    },
+    {
+        "species": "Zapdos",
+        "level": 55,
+        "moves": [
+            "Drill Peck",
+            "Hyper Beam",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    }
+]

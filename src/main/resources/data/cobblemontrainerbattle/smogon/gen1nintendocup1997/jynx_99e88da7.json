@@ -1,0 +1,62 @@
+[
+    {
+        "species": "Jynx",
+        "level": 50,
+        "moves": [
+            "Blizzard",
+            "Double Team",
+            "Lovely Kiss",
+            "Psychic"
+        ]
+    },
+    {
+        "species": "Alakazam",
+        "level": 50,
+        "moves": [
+            "Psychic",
+            "Recover",
+            "Seismic Toss",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Jolteon",
+        "level": 50,
+        "moves": [
+            "Double Kick",
+            "Pin Missile",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Lapras",
+        "level": 50,
+        "moves": [
+            "Blizzard",
+            "Double Team",
+            "Rest",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Nidoking",
+        "level": 55,
+        "moves": [
+            "Blizzard",
+            "Earthquake",
+            "Horn Drill",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Tauros",
+        "level": 55,
+        "moves": [
+            "Blizzard",
+            "Body Slam",
+            "Earthquake",
+            "Hyper Beam"
+        ]
+    }
+]

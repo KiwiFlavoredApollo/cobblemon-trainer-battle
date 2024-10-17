@@ -1,0 +1,62 @@
+[
+    {
+        "species": "Tauros",
+        "level": 55,
+        "moves": [
+            "Blizzard",
+            "Body Slam",
+            "Earthquake",
+            "Hyper Beam"
+        ]
+    },
+    {
+        "species": "Electrode",
+        "level": 50,
+        "moves": [
+            "Double Team",
+            "Explosion",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Jynx",
+        "level": 50,
+        "moves": [
+            "Blizzard",
+            "Double Team",
+            "Lovely Kiss",
+            "Psychic"
+        ]
+    },
+    {
+        "species": "Lapras",
+        "level": 50,
+        "moves": [
+            "Blizzard",
+            "Double Team",
+            "Rest",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Rhydon",
+        "level": 50,
+        "moves": [
+            "Blizzard",
+            "Earthquake",
+            "Rock Slide",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Starmie",
+        "level": 55,
+        "moves": [
+            "Blizzard",
+            "Minimize",
+            "Recover",
+            "Thunderbolt"
+        ]
+    }
+]

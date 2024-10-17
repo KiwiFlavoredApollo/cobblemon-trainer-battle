@@ -1,0 +1,124 @@
+[
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Sand Stream",
+        "level": 50,
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Assurance",
+            "Ice Punch",
+            "Rock Slide",
+            "Superpower"
+        ]
+    },
+    {
+        "species": "Azumarill",
+        "gender": "F",
+        "item": "Sitrus Berry",
+        "ability": "Huge Power",
+        "level": 50,
+        "evs": {
+            "hp": 196,
+            "atk": 252,
+            "def": 20,
+            "spd": 12,
+            "spe": 28
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Aqua Jet",
+            "Belly Drum",
+            "Knock Off",
+            "Present"
+        ]
+    },
+    {
+        "species": "Clefairy",
+        "gender": "F",
+        "item": "Eviolite",
+        "ability": "Friend Guard",
+        "level": 50,
+        "evs": {
+            "hp": 252,
+            "def": 220,
+            "spd": 36
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Encore",
+            "Follow Me",
+            "Helping Hand",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Excadrill",
+        "gender": "M",
+        "item": "Groundium Z",
+        "ability": "Sand Rush",
+        "level": 50,
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Protect",
+            "Rock Slide",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Salamence",
+        "gender": "M",
+        "item": "Salamencite",
+        "ability": "Intimidate",
+        "level": 50,
+        "evs": {
+            "atk": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Double-Edge",
+            "Hyper Voice",
+            "Protect",
+            "Tailwind"
+        ]
+    },
+    {
+        "species": "Thundurus-Therian",
+        "item": "Life Orb",
+        "ability": "Volt Absorb",
+        "level": 50,
+        "shiny": true,
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hidden Power Ice",
+            "Protect",
+            "Sludge Bomb",
+            "Thunderbolt"
+        ]
+    }
+]

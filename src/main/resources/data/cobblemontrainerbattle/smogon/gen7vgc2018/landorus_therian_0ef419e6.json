@@ -1,0 +1,128 @@
+[
+    {
+        "species": "Landorus-Therian",
+        "item": "Choice Band",
+        "ability": "Intimidate",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Explosion",
+            "Rock Slide",
+            "U-turn"
+        ],
+        "level": 50
+    },
+    {
+        "species": "Charizard",
+        "gender": "M",
+        "item": "Charizardite Y",
+        "ability": "Blaze",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Flamethrower",
+            "Hidden Power Ground",
+            "Protect",
+            "Solar Beam"
+        ],
+        "level": 50
+    },
+    {
+        "species": "Lilligant",
+        "item": "Focus Sash",
+        "ability": "Chlorophyll",
+        "shiny": true,
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hidden Power Ice",
+            "Leaf Storm",
+            "Protect",
+            "Sleep Powder"
+        ],
+        "level": 50
+    },
+    {
+        "species": "Mimikyu",
+        "gender": "F",
+        "item": "Mimikium Z",
+        "ability": "Disguise",
+        "shiny": true,
+        "evs": {
+            "hp": 244,
+            "atk": 252,
+            "def": 12
+        },
+        "nature": "Brave",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Play Rough",
+            "Shadow Claw",
+            "Swords Dance",
+            "Trick Room"
+        ],
+        "level": 50
+    },
+    {
+        "species": "Snorlax",
+        "gender": "M",
+        "item": "Iapapa Berry",
+        "ability": "Gluttony",
+        "evs": {
+            "hp": 68,
+            "atk": 252,
+            "def": 188
+        },
+        "nature": "Brave",
+        "moves": [
+            "Belly Drum",
+            "High Horsepower",
+            "Protect",
+            "Return"
+        ],
+        "level": 50,
+        "happiness": 255
+    },
+    {
+        "species": "Tapu Lele",
+        "item": "Life Orb",
+        "ability": "Psychic Surge",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Moonblast",
+            "Protect",
+            "Psychic",
+            "Taunt"
+        ],
+        "level": 50
+    }
+]

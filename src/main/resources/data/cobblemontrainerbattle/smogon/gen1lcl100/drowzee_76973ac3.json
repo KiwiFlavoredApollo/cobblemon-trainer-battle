@@ -1,0 +1,56 @@
+[
+    {
+        "species": "Drowzee",
+        "moves": [
+            "Hypnosis",
+            "Psychic",
+            "Rest",
+            "Seismic Toss"
+        ]
+    },
+    {
+        "species": "Abra",
+        "moves": [
+            "Psychic",
+            "Seismic Toss",
+            "Substitute",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Diglett",
+        "moves": [
+            "Body Slam",
+            "Earthquake",
+            "Slash",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Dratini",
+        "moves": [
+            "Agility",
+            "Blizzard",
+            "Hyper Beam",
+            "Wrap"
+        ]
+    },
+    {
+        "species": "Exeggcute",
+        "moves": [
+            "Explosion",
+            "Psychic",
+            "Sleep Powder",
+            "Stun Spore"
+        ]
+    },
+    {
+        "species": "Staryu",
+        "moves": [
+            "Blizzard",
+            "Recover",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    }
+]

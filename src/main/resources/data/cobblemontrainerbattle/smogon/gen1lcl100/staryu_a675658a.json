@@ -1,0 +1,56 @@
+[
+    {
+        "species": "Staryu",
+        "moves": [
+            "Blizzard",
+            "Recover",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Abra",
+        "moves": [
+            "Counter",
+            "Psychic",
+            "Seismic Toss",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Diglett",
+        "moves": [
+            "Earthquake",
+            "Rock Slide",
+            "Slash",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Doduo",
+        "moves": [
+            "Body Slam",
+            "Double-Edge",
+            "Drill Peck",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Exeggcute",
+        "moves": [
+            "Double-Edge",
+            "Explosion",
+            "Psychic",
+            "Sleep Powder"
+        ]
+    },
+    {
+        "species": "Gastly",
+        "moves": [
+            "Explosion",
+            "Night Shade",
+            "Psychic",
+            "Thunderbolt"
+        ]
+    }
+]

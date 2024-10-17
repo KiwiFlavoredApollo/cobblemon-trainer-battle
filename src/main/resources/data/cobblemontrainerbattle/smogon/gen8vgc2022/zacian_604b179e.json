@@ -1,0 +1,127 @@
+[
+    {
+        "species": "Zacian",
+        "item": "Rusted Sword",
+        "ability": "Intrepid Sword",
+        "level": 50,
+        "evs": {
+            "hp": 212,
+            "atk": 76,
+            "def": 4,
+            "spd": 44,
+            "spe": 172
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Iron Head",
+            "Protect",
+            "Sacred Sword",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Incineroar",
+        "gender": "M",
+        "item": "Safety Goggles",
+        "ability": "Intimidate",
+        "level": 50,
+        "evs": {
+            "hp": 244,
+            "atk": 4,
+            "def": 52,
+            "spd": 76,
+            "spe": 132
+        },
+        "nature": "Careful",
+        "moves": [
+            "Fake Out",
+            "Flare Blitz",
+            "Parting Shot",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Indeedee-F",
+        "item": "Psychic Seed",
+        "ability": "Psychic Surge",
+        "level": 50,
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Expanding Force",
+            "Follow Me",
+            "Helping Hand",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Kyogre",
+        "item": "Life Orb",
+        "ability": "Drizzle",
+        "level": 50,
+        "evs": {
+            "hp": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Blizzard",
+            "Origin Pulse",
+            "Protect",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Landorus-Therian",
+        "item": "White Herb",
+        "ability": "Intimidate",
+        "level": 50,
+        "evs": {
+            "hp": 36,
+            "atk": 52,
+            "def": 156,
+            "spd": 12,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Fly",
+            "Rock Slide",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Rillaboom",
+        "gender": "M",
+        "item": "Assault Vest",
+        "ability": "Grassy Surge",
+        "level": 50,
+        "evs": {
+            "hp": 132,
+            "atk": 116,
+            "def": 60,
+            "spd": 188,
+            "spe": 12
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Fake Out",
+            "Grassy Glide",
+            "High Horsepower",
+            "U-turn"
+        ],
+        "gigantamax": true
+    }
+]

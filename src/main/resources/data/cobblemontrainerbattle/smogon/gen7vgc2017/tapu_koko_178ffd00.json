@@ -1,0 +1,134 @@
+[
+    {
+        "species": "Tapu Koko",
+        "item": "Assault Vest",
+        "ability": "Electric Surge",
+        "level": 50,
+        "evs": {
+            "hp": 52,
+            "def": 4,
+            "spa": 212,
+            "spd": 84,
+            "spe": 156
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Dazzling Gleam",
+            "Hidden Power Fire",
+            "Sky Drop",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Arcanine",
+        "gender": "M",
+        "item": "Misty Seed",
+        "ability": "Intimidate",
+        "level": 50,
+        "evs": {
+            "hp": 252,
+            "atk": 76,
+            "def": 4,
+            "spd": 132,
+            "spe": 44
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Extreme Speed",
+            "Flare Blitz",
+            "Protect",
+            "Thief"
+        ]
+    },
+    {
+        "species": "Gigalith",
+        "gender": "M",
+        "item": "Rockium Z",
+        "ability": "Sand Stream",
+        "level": 50,
+        "evs": {
+            "hp": 244,
+            "atk": 116,
+            "spd": 148
+        },
+        "nature": "Brave",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Curse",
+            "Protect",
+            "Rock Slide",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Kartana",
+        "item": "Grassium Z",
+        "ability": "Beast Boost",
+        "level": 50,
+        "evs": {
+            "hp": 4,
+            "atk": 116,
+            "def": 4,
+            "spd": 132,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Detect",
+            "Leaf Blade",
+            "Sacred Sword",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Porygon2",
+        "item": "Eviolite",
+        "ability": "Download",
+        "level": 50,
+        "evs": {
+            "hp": 244,
+            "def": 156,
+            "spa": 4,
+            "spd": 100,
+            "spe": 4
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Ice Beam",
+            "Recover",
+            "Thunderbolt",
+            "Trick Room"
+        ]
+    },
+    {
+        "species": "Tapu Fini",
+        "item": "Mago Berry",
+        "ability": "Misty Surge",
+        "level": 50,
+        "evs": {
+            "hp": 236,
+            "def": 4,
+            "spa": 196,
+            "spd": 12,
+            "spe": 60
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Moonblast",
+            "Muddy Water",
+            "Protect"
+        ]
+    }
+]

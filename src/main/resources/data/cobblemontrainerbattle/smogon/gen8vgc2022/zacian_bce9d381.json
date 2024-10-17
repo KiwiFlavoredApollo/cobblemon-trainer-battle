@@ -1,0 +1,128 @@
+[
+    {
+        "species": "Zacian",
+        "item": "Rusted Sword",
+        "ability": "Intrepid Sword",
+        "level": 50,
+        "evs": {
+            "hp": 252,
+            "atk": 76,
+            "def": 84,
+            "spd": 84,
+            "spe": 12
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Iron Head",
+            "Play Rough",
+            "Protect",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Amoonguss",
+        "gender": "M",
+        "item": "Focus Sash",
+        "ability": "Regenerator",
+        "level": 50,
+        "evs": {
+            "hp": 236,
+            "def": 172,
+            "spd": 100
+        },
+        "nature": "Careful",
+        "ivs": {
+            "spe": 26
+        },
+        "moves": [
+            "Protect",
+            "Rage Powder",
+            "Seed Bomb",
+            "Spore"
+        ]
+    },
+    {
+        "species": "Incineroar",
+        "gender": "M",
+        "item": "Shuca Berry",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 252,
+            "def": 100,
+            "spd": 156
+        },
+        "nature": "Careful",
+        "moves": [
+            "Darkest Lariat",
+            "Fake Out",
+            "Flare Blitz",
+            "Parting Shot"
+        ],
+        "level": 50
+    },
+    {
+        "species": "Indeedee-F",
+        "item": "Psychic Seed",
+        "ability": "Psychic Surge",
+        "level": 50,
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Expanding Force",
+            "Follow Me",
+            "Mystical Fire",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Palkia",
+        "item": "Life Orb",
+        "ability": "Pressure",
+        "evs": {
+            "hp": 28,
+            "def": 52,
+            "spa": 236,
+            "spd": 4,
+            "spe": 188
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Blizzard",
+            "Earth Power",
+            "Hydro Pump",
+            "Protect"
+        ],
+        "level": 50
+    },
+    {
+        "species": "Porygon2",
+        "item": "Eviolite",
+        "ability": "Analytic",
+        "level": 50,
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Eerie Impulse",
+            "Foul Play",
+            "Recover",
+            "Trick Room"
+        ]
+    }
+]
