@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.BattleSide;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
+import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactor.VirtualTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.command.TrainerBattleCommand;
@@ -16,10 +17,12 @@ import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultHandler;
 import kotlin.Unit;
 import net.minecraft.text.Text;
 
+import java.util.Objects;
 import java.util.UUID;
 
 public class VirtualTrainerBattle implements TrainerBattle {
     public static final int FLAT_LEVEL = 100;
+
     private final PlayerBattleParticipant player;
     private final TrainerBattleParticipant trainer;
     private final ResultHandler resultHandler;
@@ -45,6 +48,11 @@ public class VirtualTrainerBattle implements TrainerBattle {
             PlayerValidator.assertPlayerNotBusyWithPokemonBattle(player.getPlayerEntity());
             PlayerValidator.assertSatisfiedBattleCondition(player.getParty(), trainer.getBattleCondition());
 
+            Cobblemon.INSTANCE.getStorage()
+                    .getParty(player.getPlayerEntity()).toGappyList().stream()
+                    .filter(Objects::nonNull)
+                    .forEach(Pokemon::recall);
+
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
                     new BattleSide(new PlayerBattleActor(
@@ -63,34 +71,29 @@ public class VirtualTrainerBattle implements TrainerBattle {
                 battleId = pokemonBattle.getBattleId();
 
                 player.sendInfoMessage(Text.translatable("command.cobblemontrainerbattle.trainerbattle.success", trainer.getName()));
-                CobblemonTrainerBattle.LOGGER.info("{}: {} versus {}", new TrainerBattleCommand().getLiteral(), player.getName(), trainer.getName());
+                CobblemonTrainerBattle.LOGGER.info("Started virtual trainer battle: {} versus {}", player.getName(), trainer.getName());
 
                 return Unit.INSTANCE;
             });
 
         } catch (EmptyPlayerPartyException e) {
-            player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.common.empty_player_party"));
-            CobblemonTrainerBattle.LOGGER.error("Player has no Pokemon: {}", player.getName());
+            player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.trainerbattle.empty_player_party"));
             throw new BattleStartException();
 
         } catch (FaintedPlayerPartyException e) {
-            player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.common.fainted_player_party"));
-            CobblemonTrainerBattle.LOGGER.error("Pokemons are all fainted: {}", player.getName());
+            player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.trainerbattle.fainted_player_party"));
             throw new BattleStartException();
 
         } catch (BelowRelativeLevelThresholdException e) {
-            player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.common.below_relative_level_threshold"));
-            CobblemonTrainerBattle.LOGGER.error("Pokemon levels are below relative level threshold: {}", player.getName());
+            player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.trainerbattle.below_relative_level_threshold"));
             throw new BattleStartException();
 
         } catch (BusyWithPokemonBattleException e) {
-            player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.common.busy_with_pokemon_battle"));
-            CobblemonTrainerBattle.LOGGER.error("Player is busy with Pokemon battle: {}", player.getName());
+            player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.trainerbattle.busy_with_pokemon_battle"));
             throw new BattleStartException();
 
         } catch (BattleConditionException e) {
             player.sendErrorMessage(new BattleConditionExceptionMessageFactory().create(e));
-            CobblemonTrainerBattle.LOGGER.error("Trainer condition not satisfied: {}, {}", e.getBattleConditionType(), e.getRequiredValue());
             throw new BattleStartException();
         }
     }

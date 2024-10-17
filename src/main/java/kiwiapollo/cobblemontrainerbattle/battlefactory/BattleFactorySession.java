@@ -72,12 +72,11 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Pokem
             this.lastDefeatedTrainer = null;
 
         } catch (DefeatedToTrainerException e) {
-            player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.defeated_to_trainer"));
-            CobblemonTrainerBattle.LOGGER.error("Player is defeated: {}", player.getName());
+            player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.startbattle.defeated_to_trainer"));
+            throw new BattleStartException();
 
         } catch (DefeatedAllTrainersException e) {
             player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.startbattle.defeated_all_trainers"));
-            CobblemonTrainerBattle.LOGGER.error("Player has defeated all trainers: {}", player.getName());
             throw new BattleStartException();
         }
     }
@@ -102,15 +101,12 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Pokem
 
         } catch (DefeatedToTrainerException e) {
             player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.defeated_to_trainer"));
-            CobblemonTrainerBattle.LOGGER.error("Player is defeated: {}", player.getName());
 
         } catch (NotExistDefeatedTrainerException e) {
             player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.defeated_trainer_not_exist"));
-            CobblemonTrainerBattle.LOGGER.error("Player has no defeated trainers: {}", player.getName());
 
         } catch (TradedPokemonException e) {
             player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.already_traded_pokemon"));
-            CobblemonTrainerBattle.LOGGER.error("Player has already traded a Pokemon: {}", player.getName());
         }
     }
 
@@ -145,6 +141,7 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Pokem
             printPokemons(player, player.getParty());
 
             player.sendInfoMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.rerollpokemon.success"));
+            CobblemonTrainerBattle.LOGGER.info("{} rerolled Pokemon", player.getName());
 
         } catch (ExistDefeatedTrainerException e) {
             player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.rerollpokemon.defeated_trainer_exist"));

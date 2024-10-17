@@ -65,29 +65,35 @@ public class GroupBattle {
 
             sessions.put(player.getUuid(), session);
 
+            player.sendMessage(Text.translatable("command.cobblemontrainerbattle.groupbattle.startsession.success"));
+            CobblemonTrainerBattle.LOGGER.info("Started group battle session: {}", player.getGameProfile().getName());
+
             return Command.SINGLE_SUCCESS;
 
         } catch (IllegalStateException e) {
             ServerPlayerEntity player = context.getSource().getPlayer();
-            MutableText message = Text.translatable("command.cobblemontrainerbattle.groupbattle.common.valid_session_not_exist");
+
+            MutableText message = Text.translatable("command.cobblemontrainerbattle.groupbattle.common.valid_session_exist");
             player.sendMessage(message.formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(String.format("Valid battle session exists: %s", player.getGameProfile().getName()));
+
             return 0;
 
         } catch (FileNotFoundException e) {
             ServerPlayerEntity player = context.getSource().getPlayer();
+
             String groupResourcePath = StringArgumentType.getString(context, "group");
             MutableText message = Text.translatable("command.cobblemontrainerbattle.common.resource.not_found", groupResourcePath);
             player.sendMessage(message.formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(String.format("An error occurred while reading resource: %s", groupResourcePath));
+
             return 0;
 
         } catch (IllegalArgumentException e) {
             ServerPlayerEntity player = context.getSource().getPlayer();
+
             String groupResourcePath = StringArgumentType.getString(context, "group");
             MutableText message = Text.translatable("command.cobblemontrainerbattle.common.resource.cannot_be_read", groupResourcePath);
             player.sendMessage(message.formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(String.format("An error occurred while reading resource: %s", groupResourcePath));
+
             return 0;
         }
     }
@@ -104,23 +110,25 @@ public class GroupBattle {
 
             BattleFactory.sessions.remove(player.getUuid());
 
-            context.getSource().getPlayer().sendMessage(Text.literal("command.cobblemontrainerbattle.groupbattle.stopsession.success"));
-            CobblemonTrainerBattle.LOGGER.info("Stopped battle group session: {}", context.getSource().getPlayer().getGameProfile().getName());
+            player.sendMessage(Text.literal("command.cobblemontrainerbattle.groupbattle.stopsession.success"));
+            CobblemonTrainerBattle.LOGGER.info("Stopped group battle session: {}", player.getGameProfile().getName());
 
             return Command.SINGLE_SUCCESS;
 
         } catch (IllegalStateException e) {
             ServerPlayerEntity player = context.getSource().getPlayer();
-            MutableText message = Text.translatable("command.cobblemontrainerbattle.battlefactory.common.valid_session_not_exist");
+
+            MutableText message = Text.translatable("command.cobblemontrainerbattle.groupbattle.common.valid_session_not_exist");
             player.sendMessage(message.formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error("Valid battle session does not exist: {}", player.getGameProfile().getName());
+
             return 0;
 
         } catch (BusyWithPokemonBattleException e) {
             ServerPlayerEntity player = context.getSource().getPlayer();
-            MutableText message = Text.translatable("command.cobblemontrainerbattle.common.busy_with_pokemon_battle");
+
+            MutableText message = Text.translatable("command.cobblemontrainerbattle.trainerbattle.busy_with_pokemon_battle");
             player.sendMessage(message.formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error("Player is busy with Pokemon battle: {}", player.getGameProfile().getName());
+
             return 0;
         }
     }
@@ -138,13 +146,14 @@ public class GroupBattle {
 
         } catch (IllegalStateException e) {
             ServerPlayerEntity player = context.getSource().getPlayer();
+
             MutableText message = Text.translatable("command.cobblemontrainerbattle.groupbattle.common.valid_session_not_exist");
             player.sendMessage(message.formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(String.format("Valid battle session does not exists: %s", player.getGameProfile().getName()));
+
             return 0;
 
         } catch (BattleStartException e) {
-            throw new RuntimeException(e);
+            return 0;
         }
     }
 }

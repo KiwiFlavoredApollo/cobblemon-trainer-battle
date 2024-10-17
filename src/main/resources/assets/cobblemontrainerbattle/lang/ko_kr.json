@@ -1,22 +1,20 @@
 {
-  "command.cobblemontrainerbattle.common.empty_player_party": "가지고 있는 포켓몬이 없습니다",
-  "command.cobblemontrainerbattle.common.fainted_player_party": "모든 포켓몬이 기절해 있습니다",
-  "command.cobblemontrainerbattle.common.busy_with_pokemon_battle": "포켓몬 배틀 중에는 이 명령어는 실행할 수 없습니다",
-  "command.cobblemontrainerbattle.common.below_relative_level_threshold": "포켓몬 레벨이 %d 보다 높아야 합니다",
+  "item.cobblemontrainerbattle.trainer_spawn_egg": "트레이너 생성 알",
 
-  "command.cobblemontrainerbattle.trainer.minimum_party_level": "모든 포켓몬의 레벨이 %d 보다 낮지 않아야 합니다",
-  "command.cobblemontrainerbattle.trainer.maximum_party_level": "모든 포켓몬의 레벨이 %d 보다 높지 않아야 합니다",
+  "command.cobblemontrainerbattle.trainerbattle.success": "%s와(과)의 배틀이 시작되었습니다",
+  "command.cobblemontrainerbattle.trainerbattle.empty_player_party": "가지고 있는 포켓몬이 없습니다",
+  "command.cobblemontrainerbattle.trainerbattle.fainted_player_party": "모든 포켓몬이 기절해 있습니다",
+  "command.cobblemontrainerbattle.trainerbattle.busy_with_pokemon_battle": "포켓몬 배틀 중에는 이 명령어는 실행할 수 없습니다",
+  "command.cobblemontrainerbattle.trainerbattle.below_relative_level_threshold": "포켓몬 레벨이 %d 보다 높아야 합니다",
+
+  "command.cobblemontrainerbattle.condition.minimum_party_level": "모든 포켓몬의 레벨이 %d 보다 낮지 않아야 합니다",
+  "command.cobblemontrainerbattle.condition.maximum_party_level": "모든 포켓몬의 레벨이 %d 보다 높지 않아야 합니다",
 
   "command.cobblemontrainerbattle.common.resource.not_found": "%s을 찾을 수 없습니다",
   "command.cobblemontrainerbattle.common.resource.cannot_be_read": "%s을 읽는 도중에 오류가 발생했습니다",
 
-  "command.cobblemontrainerbattle.trainerbattle.success": "%s와(과)의 배틀이 시작되었습니다",
-  "command.cobblemontrainerbattle.trainerbattleflat.success": "%s와(과)의 레벨고정 배틀이 시작되었습니다",
-
   "command.cobblemontrainerbattle.groupbattle.startsession.success": "그룹배틀 세션이 시작되었습니다",
   "command.cobblemontrainerbattle.groupbattle.stopsession.success": "그룹배틀 세션이 중단되었습니다",
-  "command.cobblemontrainerbattle.groupbattle.startbattle.success": "%s와(과)의 배틀이 시작되었습니다",
-  "command.cobblemontrainerbattle.groupbattleflat.startbattle.success": "%s와(과)의 레벨고정 배틀이 시작되었습니다",
 
   "command.cobblemontrainerbattle.groupbattle.common.valid_session_exist": "그룹배틀 세션이 이미 존재합니다",
   "command.cobblemontrainerbattle.groupbattle.common.valid_session_not_exist": "그룹배틀 세션이 존재하지 않습니다",
@@ -25,7 +23,6 @@
 
   "command.cobblemontrainerbattle.battlefactory.startsession.success": "배틀팩토리 세션이 시작되었습니다",
   "command.cobblemontrainerbattle.battlefactory.stopsession.success": "배틀팩토리 세션이 중단되었습니다",
-  "command.cobblemontrainerbattle.battlefactory.startbattle.success": "%s와(과)의 배틀이 시작되었습니다",
   "command.cobblemontrainerbattle.battlefactory.tradepokemon.success": "%s와 %s를 교환했습니다",
   "command.cobblemontrainerbattle.battlefactory.rerollpokemon.success": "포켓몬을 다시 뽑았습니다",
   "command.cobblemontrainerbattle.battlefactory.winningstreak.success": "이긴 횟수: %d",

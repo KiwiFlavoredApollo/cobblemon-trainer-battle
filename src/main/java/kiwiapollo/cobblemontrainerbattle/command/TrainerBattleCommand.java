@@ -20,6 +20,7 @@ import kiwiapollo.cobblemontrainerbattle.battleparticipant.NormalBattlePlayer;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.NormalBattleTrainer;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSource> {

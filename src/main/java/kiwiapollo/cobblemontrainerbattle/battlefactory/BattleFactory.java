@@ -53,9 +53,17 @@ public class BattleFactory {
 
             sessions.put(player.getUuid(), session);
 
+            player.sendMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.startsession.success"));
+            CobblemonTrainerBattle.LOGGER.info("Started battle factory session: {}", player.getGameProfile().getName());
+
             return Command.SINGLE_SUCCESS;
 
         } catch (IllegalStateException e) {
+            ServerPlayerEntity player = context.getSource().getPlayer();
+
+            MutableText message = Text.translatable("command.cobblemontrainerbattle.battlefactory.common.valid_session_exist");
+            player.sendMessage(message.formatted(Formatting.RED));
+
             return 0;
         }
     }
@@ -74,22 +82,24 @@ public class BattleFactory {
             BattleFactory.sessions.remove(player.getUuid());
 
             player.sendMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.stopsession.success"));
-            CobblemonTrainerBattle.LOGGER.info("{}: Stopped Battle Factory session", player.getGameProfile().getName());
+            CobblemonTrainerBattle.LOGGER.info("Stopped battle factory session: {}", player.getGameProfile().getName());
 
             return Command.SINGLE_SUCCESS;
 
         } catch (IllegalStateException e) {
             ServerPlayerEntity player = context.getSource().getPlayer();
+
             MutableText message = Text.translatable("command.cobblemontrainerbattle.battlefactory.common.valid_session_not_exist");
             player.sendMessage(message.formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error("Valid battle session does not exist: {}", player.getGameProfile().getName());
+
             return 0;
 
         } catch (BusyWithPokemonBattleException e) {
             ServerPlayerEntity player = context.getSource().getPlayer();
-            MutableText message = Text.translatable("command.cobblemontrainerbattle.common.busy_with_pokemon_battle");
+
+            MutableText message = Text.translatable("command.cobblemontrainerbattle.trainerbattle.busy_with_pokemon_battle");
             player.sendMessage(message.formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error("Player is busy with Pokemon battle: {}", player.getGameProfile().getName());
+
             return 0;
         }
     }
@@ -107,9 +117,10 @@ public class BattleFactory {
 
         } catch (IllegalStateException e) {
             ServerPlayerEntity player = context.getSource().getPlayer();
+
             MutableText message = Text.translatable("command.cobblemontrainerbattle.battlefactory.common.valid_session_not_exist");
             player.sendMessage(message.formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error("Valid battle session does not exists: {}", player.getGameProfile().getName());
+
             return 0;
 
         } catch (BattleStartException e) {
@@ -133,9 +144,10 @@ public class BattleFactory {
 
         } catch (IllegalStateException e) {
             ServerPlayerEntity player = context.getSource().getPlayer();
+
             MutableText message = Text.translatable("command.cobblemontrainerbattle.battlefactory.common.valid_session_not_exist");
             player.sendMessage(message.formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error("Valid battle session does not exists: {}", player.getGameProfile().getName());
+
             return 0;
         }
     }
@@ -153,9 +165,10 @@ public class BattleFactory {
 
         } catch (IllegalStateException e) {
             ServerPlayerEntity player = context.getSource().getPlayer();
+
             MutableText message = Text.translatable("command.cobblemontrainerbattle.battlefactory.common.valid_session_not_exist");
             player.sendMessage(message.formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error("Valid battle session does not exists: {}", player.getGameProfile().getName());
+
             return 0;
         }
     }
@@ -173,9 +186,10 @@ public class BattleFactory {
 
         } catch (IllegalStateException e) {
             ServerPlayerEntity player = context.getSource().getPlayer();
+
             MutableText message = Text.translatable("command.cobblemontrainerbattle.battlefactory.common.valid_session_not_exist");
             player.sendMessage(message.formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error("Valid battle session does not exists: {}", player.getGameProfile().getName());
+
             return 0;
         }
     }
@@ -193,9 +207,10 @@ public class BattleFactory {
 
         } catch (IllegalStateException e) {
             ServerPlayerEntity player = context.getSource().getPlayer();
+
             MutableText message = Text.translatable("command.cobblemontrainerbattle.battlefactory.common.valid_session_not_exist");
             player.sendMessage(message.formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error("Valid battle session does not exists: {}", player.getGameProfile().getName());
+
             return 0;
         }
     }
