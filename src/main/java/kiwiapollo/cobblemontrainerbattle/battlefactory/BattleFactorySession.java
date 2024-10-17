@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class BattleFactorySession implements Session, PokemonTradeFeature, PokemonShowFeature, RentalPokemonFeature {
-    private final PlayerBattleParticipant playerBattleParticipant;
+    private final PlayerBattleParticipant player;
     private final List<Identifier> trainersToDefeat;
     private final ResultHandler resultHandler;
 
@@ -40,7 +40,7 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Pokem
             List<Identifier> trainersToDefeat,
             ResultHandler resultHandler
     ) {
-        this.playerBattleParticipant = new BattleFactoryPlayer(player);
+        this.player = new BattleFactoryPlayer(player);
         this.trainersToDefeat = trainersToDefeat;
         this.defeatedTrainersCount = 0;
         this.isPlayerDefeated = false;
@@ -56,25 +56,25 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Pokem
 
             TrainerBattleParticipant trainer = new BattleFactoryTrainer(
                     CobblemonTrainerBattle.trainers.get(trainersToDefeat.get(defeatedTrainersCount)),
-                    playerBattleParticipant.getPlayerEntity(),
+                    player.getPlayerEntity(),
                     BattleFactory.LEVEL
             );
             ResultHandler resultHandler = new DummyResultHandler();
-            TrainerBattle trainerBattle = new VirtualTrainerBattle(playerBattleParticipant, trainer, resultHandler);
+            TrainerBattle trainerBattle = new VirtualTrainerBattle(player, trainer, resultHandler);
             trainerBattle.start();
 
-            CobblemonTrainerBattle.trainerBattles.put(playerBattleParticipant.getUuid(), trainerBattle);
+            CobblemonTrainerBattle.trainerBattles.put(player.getUuid(), trainerBattle);
 
             this.lastTrainerBattle = trainerBattle;
             this.lastDefeatedTrainer = null;
 
         } catch (DefeatedToTrainerException e) {
-            playerBattleParticipant.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.defeated_to_trainer"));
-            CobblemonTrainerBattle.LOGGER.error("Player is defeated: {}", playerBattleParticipant.getName());
+            player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.defeated_to_trainer"));
+            CobblemonTrainerBattle.LOGGER.error("Player is defeated: {}", player.getName());
 
         } catch (DefeatedAllTrainersException e) {
-            playerBattleParticipant.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.startbattle.defeated_all_trainers"));
-            CobblemonTrainerBattle.LOGGER.error("Player has defeated all trainers: {}", playerBattleParticipant.getName());
+            player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.startbattle.defeated_all_trainers"));
+            CobblemonTrainerBattle.LOGGER.error("Player has defeated all trainers: {}", player.getName());
             throw new BattleStartException();
         }
     }
@@ -87,27 +87,27 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Pokem
             assertNotPlayerTradedPokemon();
 
             Pokemon trainerPokemon = lastDefeatedTrainer.getParty().get(trainerSlot - 1);
-            Pokemon playerPokemon = playerBattleParticipant.getParty().get(playerSlot - 1);
+            Pokemon playerPokemon = player.getParty().get(playerSlot - 1);
 
             lastDefeatedTrainer.getParty().set(trainerSlot, playerPokemon);
-            playerBattleParticipant.getParty().set(playerSlot, trainerPokemon);
+            player.getParty().set(playerSlot, trainerPokemon);
 
             isTradedPokemon = true;
 
-            playerBattleParticipant.sendInfoMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.success", playerPokemon.getDisplayName(), trainerPokemon.getDisplayName()));
-            CobblemonTrainerBattle.LOGGER.info("{} traded {} for {}", playerBattleParticipant.getName(), playerPokemon.getDisplayName(), trainerPokemon.getDisplayName());
+            player.sendInfoMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.success", playerPokemon.getDisplayName(), trainerPokemon.getDisplayName()));
+            CobblemonTrainerBattle.LOGGER.info("{} traded {} for {}", player.getName(), playerPokemon.getDisplayName(), trainerPokemon.getDisplayName());
 
         } catch (DefeatedToTrainerException e) {
-            playerBattleParticipant.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.defeated_to_trainer"));
-            CobblemonTrainerBattle.LOGGER.error("Player is defeated: {}", playerBattleParticipant.getName());
+            player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.defeated_to_trainer"));
+            CobblemonTrainerBattle.LOGGER.error("Player is defeated: {}", player.getName());
 
         } catch (NotExistDefeatedTrainerException e) {
-            playerBattleParticipant.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.defeated_trainer_not_exist"));
-            CobblemonTrainerBattle.LOGGER.error("Player has no defeated trainers: {}", playerBattleParticipant.getName());
+            player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.defeated_trainer_not_exist"));
+            CobblemonTrainerBattle.LOGGER.error("Player has no defeated trainers: {}", player.getName());
 
         } catch (TradedPokemonException e) {
-            playerBattleParticipant.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.already_traded_pokemon"));
-            CobblemonTrainerBattle.LOGGER.error("Player has already traded a Pokemon: {}", playerBattleParticipant.getName());
+            player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.already_traded_pokemon"));
+            CobblemonTrainerBattle.LOGGER.error("Player has already traded a Pokemon: {}", player.getName());
         }
     }
 
@@ -117,35 +117,35 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Pokem
             assertExistDefeatedTrainer();
             assertNotPlayerTradedPokemon();
 
-            printPokemons(playerBattleParticipant, lastDefeatedTrainer.getParty());
+            printPokemons(player, lastDefeatedTrainer.getParty());
 
         } catch (NotExistDefeatedTrainerException e) {
-            playerBattleParticipant.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.defeated_trainer_not_exist"));
-            CobblemonTrainerBattle.LOGGER.error(String.format("Player has no defeated trainers: %s", playerBattleParticipant.getName()));
+            player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.defeated_trainer_not_exist"));
+            CobblemonTrainerBattle.LOGGER.error(String.format("Player has no defeated trainers: %s", player.getName()));
 
         } catch (TradedPokemonException e) {
-            playerBattleParticipant.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.already_traded_pokemon"));
-            CobblemonTrainerBattle.LOGGER.error("Player has already traded a Pokemon: {}", playerBattleParticipant.getName());
+            player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.already_traded_pokemon"));
+            CobblemonTrainerBattle.LOGGER.error("Player has already traded a Pokemon: {}", player.getName());
         }
     }
 
     @Override
     public void showPartyPokemon() {
-        printPokemons(playerBattleParticipant, playerBattleParticipant.getParty());
+        printPokemons(player, player.getParty());
     }
 
     @Override
     public void rerollPokemon() {
         try {
             assertNotExistDefeatedTrainer();
-            playerBattleParticipant.setParty(RandomPartyFactory.create(playerBattleParticipant.getPlayerEntity()));
-            printPokemons(playerBattleParticipant, playerBattleParticipant.getParty());
+            player.setParty(RandomPartyFactory.create(player.getPlayerEntity()));
+            printPokemons(player, player.getParty());
 
-            playerBattleParticipant.sendInfoMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.rerollpokemon.success"));
+            player.sendInfoMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.rerollpokemon.success"));
 
         } catch (ExistDefeatedTrainerException e) {
-            playerBattleParticipant.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.rerollpokemon.defeated_trainer_exist"));
-            CobblemonTrainerBattle.LOGGER.error("Player has defeated trainers: {}", playerBattleParticipant.getName());
+            player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.rerollpokemon.defeated_trainer_exist"));
+            CobblemonTrainerBattle.LOGGER.error("Player has defeated trainers: {}", player.getName());
         }
     }
 
