@@ -48,7 +48,7 @@ public class GroupBattleSession implements Session {
 
             PlayerBattleParticipant playerBattleParticipant = battleParticipantFactory.createPlayer(player);
 
-            Trainer trainer = CobblemonTrainerBattle.trainers.get(trainersToDefeat.get(defeatedTrainersCount));
+            Trainer trainer = CobblemonTrainerBattle.trainerRegistry.get(trainersToDefeat.get(defeatedTrainersCount));
             TrainerBattleParticipant trainerBattleParticipant = battleParticipantFactory.createTrainer(trainer, player);
 
             ResultHandler resultHandler = new SessionBattleResultHandler(this::onBattleVictory, this::onBattleDefeat);
@@ -60,7 +60,7 @@ public class GroupBattleSession implements Session {
             );
             trainerBattle.start();
 
-            CobblemonTrainerBattle.trainerBattles.put(player.getUuid(), trainerBattle);
+            CobblemonTrainerBattle.trainerBattleRegistry.put(player.getUuid(), trainerBattle);
 
         } catch (DefeatedToTrainerException e) {
             // TODO

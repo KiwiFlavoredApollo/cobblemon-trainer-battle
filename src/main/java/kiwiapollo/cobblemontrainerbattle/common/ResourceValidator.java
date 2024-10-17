@@ -8,19 +8,19 @@ import java.util.Objects;
 
 public class ResourceValidator {
     public static void assertTrainerExist(Identifier identifier) throws FileNotFoundException {
-        if (!CobblemonTrainerBattle.trainers.containsKey(identifier)) {
+        if (!CobblemonTrainerBattle.trainerRegistry.containsKey(identifier)) {
             throw new FileNotFoundException();
         }
     }
 
     public static void assertTrainerGroupExist(Identifier identifier) throws FileNotFoundException {
-        if (!CobblemonTrainerBattle.trainerGroups.containsKey(identifier)) {
+        if (!CobblemonTrainerBattle.trainerGroupRegistry.containsKey(identifier)) {
             throw new FileNotFoundException();
         }
     }
 
     public static void assertTrainerGroupValid(Identifier identifier) throws IllegalArgumentException {
-        TrainerGroup trainerGroup = CobblemonTrainerBattle.trainerGroups.get(identifier);
+        TrainerGroup trainerGroup = CobblemonTrainerBattle.trainerGroupRegistry.get(identifier);
 
         if (trainerGroup.trainers.isEmpty()) {
             throw new IllegalArgumentException();

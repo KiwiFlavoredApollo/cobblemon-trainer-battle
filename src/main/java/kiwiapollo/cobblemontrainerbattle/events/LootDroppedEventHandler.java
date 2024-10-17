@@ -12,7 +12,7 @@ public class LootDroppedEventHandler {
         }
 
         PokemonEntity pokemonEntity = (PokemonEntity) lootDroppedEvent.getEntity();
-        boolean isTrainerBattle = CobblemonTrainerBattle.trainerBattles.values().stream()
+        boolean isTrainerBattle = CobblemonTrainerBattle.trainerBattleRegistry.values().stream()
                 .map(TrainerBattle::getBattleId)
                 .toList().contains(pokemonEntity.getBattleId());
 

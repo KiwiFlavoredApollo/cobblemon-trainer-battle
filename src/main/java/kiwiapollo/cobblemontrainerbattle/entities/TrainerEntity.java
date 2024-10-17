@@ -70,7 +70,7 @@ public class TrainerEntity extends PathAwareEntity {
 
     private Identifier getRandomTrainerIdentifier() {
         try {
-            List<Identifier> identifiers = new ArrayList<>(CobblemonTrainerBattle.trainers.keySet());
+            List<Identifier> identifiers = new ArrayList<>(CobblemonTrainerBattle.trainerRegistry.keySet());
             Collections.shuffle(identifiers);
             return identifiers.get(0);
 
@@ -116,7 +116,7 @@ public class TrainerEntity extends PathAwareEntity {
 
             PlayerBattleParticipant playerBattleParticipant = new NormalBattlePlayer((ServerPlayerEntity) player);
 
-            Trainer trainer = CobblemonTrainerBattle.trainers.get(trainerIdentifier);
+            Trainer trainer = CobblemonTrainerBattle.trainerRegistry.get(trainerIdentifier);
             TrainerBattleParticipant trainerBattleParticipant = new NormalBattleTrainer(trainer, (ServerPlayerEntity) player);
             ResultHandler resultHandler = new GenericResultHandler((ServerPlayerEntity) player, trainer.onVictory(), trainer.onDefeat());
 
@@ -128,7 +128,7 @@ public class TrainerEntity extends PathAwareEntity {
             );
             trainerBattle.start();
 
-            CobblemonTrainerBattle.trainerBattles.put(player.getUuid(), trainerBattle);
+            CobblemonTrainerBattle.trainerBattleRegistry.put(player.getUuid(), trainerBattle);
             this.trainerBattle = trainerBattle;
 
         } catch (BattleStartException ignored) {

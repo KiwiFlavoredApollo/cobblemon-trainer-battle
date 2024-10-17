@@ -36,7 +36,7 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
         return RequiredArgumentBuilder.<ServerCommandSource, String>argument("trainer", StringArgumentType.greedyString())
                 .requires(new PlayerCommandPredicate(permission))
                 .suggests((context, builder) -> {
-                    CobblemonTrainerBattle.trainers.keySet().stream()
+                    CobblemonTrainerBattle.trainerRegistry.keySet().stream()
                             .map(Identifier::getPath)
                             .forEach(builder::suggest);
                     return builder.buildFuture();
@@ -56,7 +56,7 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
 
         String resourcePath = StringArgumentType.getString(context, "trainer");
         Identifier identifier = Identifier.of(CobblemonTrainerBattle.NAMESPACE, resourcePath);
-        Trainer trainer = CobblemonTrainerBattle.trainers.get(identifier);
+        Trainer trainer = CobblemonTrainerBattle.trainerRegistry.get(identifier);
 
         return startBattleWithTrainer(player, trainer);
     }
@@ -65,7 +65,7 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
         ServerPlayerEntity player = context.getSource().getPlayer();
 
         Identifier identifier = new RandomTrainerIdentifierFactory().create();
-        Trainer trainer = CobblemonTrainerBattle.trainers.get(identifier);
+        Trainer trainer = CobblemonTrainerBattle.trainerRegistry.get(identifier);
 
         return startBattleWithTrainer(player, trainer);
     }
@@ -79,7 +79,7 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
             TrainerBattle trainerBattle = new VirtualTrainerBattle(playerBattleParticipant, trainerBattleParticipant, resultHandler);
             trainerBattle.start();
 
-            CobblemonTrainerBattle.trainerBattles.put(player.getUuid(), trainerBattle);
+            CobblemonTrainerBattle.trainerBattleRegistry.put(player.getUuid(), trainerBattle);
 
             return Command.SINGLE_SUCCESS;
 

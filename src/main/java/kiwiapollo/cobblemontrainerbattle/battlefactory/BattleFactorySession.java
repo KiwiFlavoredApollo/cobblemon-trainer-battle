@@ -56,7 +56,7 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Pokem
             assertNotDefeatedAllTrainers();
 
             TrainerBattleParticipant trainer = new BattleFactoryTrainer(
-                    CobblemonTrainerBattle.trainers.get(trainersToDefeat.get(defeatedTrainersCount)),
+                    CobblemonTrainerBattle.trainerRegistry.get(trainersToDefeat.get(defeatedTrainersCount)),
                     player.getPlayerEntity(),
                     BattleFactory.LEVEL
             );
@@ -66,7 +66,7 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Pokem
             TrainerBattle trainerBattle = new VirtualTrainerBattle(player, trainer, resultHandler);
             trainerBattle.start();
 
-            CobblemonTrainerBattle.trainerBattles.put(player.getUuid(), trainerBattle);
+            CobblemonTrainerBattle.trainerBattleRegistry.put(player.getUuid(), trainerBattle);
 
             this.lastTrainerBattle = trainerBattle;
             this.lastDefeatedTrainer = null;

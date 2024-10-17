@@ -40,27 +40,19 @@ import java.util.*;
 public class CobblemonTrainerBattle implements ModInitializer {
 	public static final String NAMESPACE = "cobblemontrainerbattle";
 	public static final Logger LOGGER = LoggerFactory.getLogger(NAMESPACE);
+
+	public static final EntityType<TrainerEntity> TRAINER_ENTITY_TYPE = EntityType.Builder.create(TrainerEntity::new, SpawnGroup.CREATURE).setDimensions(0.6f, 1.8f).build("trainer");
+	public static final Item TRAINER_SPAWN_EGG = new SpawnEggItem(TRAINER_ENTITY_TYPE, 0xAAAAAA, 0xFF5555, new FabricItemSettings().maxCount(64));
+
 	public static final int FLEE_DISTANCE = 20;
-	public static final EntityType<TrainerEntity> TRAINER_ENTITY_TYPE =
-			EntityType.Builder.create(TrainerEntity::new, SpawnGroup.CREATURE)
-					.setDimensions(0.6f, 1.8f)
-					.build("trainer");
-	public static final Item TRAINER_SPAWN_EGG = new SpawnEggItem(
-			TRAINER_ENTITY_TYPE,
-			0xAAAAAA,
-			0xFF5555,
-			new FabricItemSettings().maxCount(64)
-	);
 
 	public static Config config = ConfigLoader.load();
 	public static Economy economy = EconomyFactory.create(config.economy);
 
-	public static TrainerConfiguration defaultTrainerConfiguration;
-	public static BattleFactoryConfiguration battleFactoryConfiguration;
-	public static Map<Identifier, Trainer> trainers = new HashMap<>();
-	public static Map<Identifier, TrainerGroup> trainerGroups = new HashMap<>();
+	public static Map<Identifier, Trainer> trainerRegistry = new HashMap<>();
+	public static Map<Identifier, TrainerGroup> trainerGroupRegistry = new HashMap<>();
 
-	public static Map<UUID, TrainerBattle> trainerBattles = new HashMap<>();
+	public static Map<UUID, TrainerBattle> trainerBattleRegistry = new HashMap<>();
 
     @Override
 	public void onInitialize() {
@@ -78,7 +70,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
 		CobblemonEvents.BATTLE_VICTORY.subscribe(Priority.NORMAL, battleVictoryEvent -> {
 			// BATTLE_VICTORY event fires even if the player loses
-			List<UUID> battleIds = trainerBattles.values().stream().map(TrainerBattle::getBattleId).toList();
+			List<UUID> battleIds = trainerBattleRegistry.values().stream().map(TrainerBattle::getBattleId).toList();
 			if (!battleIds.contains(battleVictoryEvent.getBattle().getBattleId())) {
 				return Unit.INSTANCE;
 			}
@@ -88,9 +80,9 @@ public class CobblemonTrainerBattle implements ModInitializer {
 					.anyMatch(battleActor -> battleActor.isForPlayer(player));
 
 			if (isPlayerVictory) {
-				trainerBattles.get(player.getUuid()).onPlayerVictory();
+				trainerBattleRegistry.get(player.getUuid()).onPlayerVictory();
 			} else {
-				trainerBattles.get(player.getUuid()).onPlayerDefeat();
+				trainerBattleRegistry.get(player.getUuid()).onPlayerDefeat();
 			}
 
 			return Unit.INSTANCE;
@@ -111,10 +103,10 @@ public class CobblemonTrainerBattle implements ModInitializer {
 			GroupBattle.sessions.remove(playerUuid);
             BattleFactory.sessions.remove(playerUuid);
 
-			if (trainerBattles.containsKey(playerUuid)) {
-				UUID battleId = trainerBattles.get(playerUuid).getBattleId();
+			if (trainerBattleRegistry.containsKey(playerUuid)) {
+				UUID battleId = trainerBattleRegistry.get(playerUuid).getBattleId();
 				Cobblemon.INSTANCE.getBattleRegistry().getBattle(battleId).end();
-				trainerBattles.remove(playerUuid);
+				trainerBattleRegistry.remove(playerUuid);
 			}
 		});
 

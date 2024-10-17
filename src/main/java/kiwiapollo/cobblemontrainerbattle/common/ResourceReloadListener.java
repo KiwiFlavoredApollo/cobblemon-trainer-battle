@@ -4,6 +4,7 @@ import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactory;
 import kiwiapollo.cobblemontrainerbattle.parser.SmogonPokemon;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
 import net.minecraft.resource.Resource;
@@ -21,6 +22,8 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
     public static final String TRAINER_CONFIG_DIR = "trainers";
     public static final String ARCADE_CONFIG_DIR = "arcades";
 
+    public static TrainerConfiguration defaultTrainerConfiguration;
+
     @Override
     public Identifier getFabricId() {
         return Identifier.of(CobblemonTrainerBattle.NAMESPACE, "resourceloader");
@@ -28,11 +31,12 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
 
     @Override
     public void reload(ResourceManager resourceManager) {
-        CobblemonTrainerBattle.defaultTrainerConfiguration = loadDefaultTrainerConfiguration(resourceManager);
+        defaultTrainerConfiguration = loadDefaultTrainerConfiguration(resourceManager);
 
-        CobblemonTrainerBattle.trainers = loadTrainers(resourceManager);
-        CobblemonTrainerBattle.trainerGroups = loadTrainerGroups(resourceManager);
-        CobblemonTrainerBattle.battleFactoryConfiguration = loadBattleFactoryConfiguration(resourceManager);
+        CobblemonTrainerBattle.trainerRegistry = loadTrainers(resourceManager);
+        CobblemonTrainerBattle.trainerGroupRegistry = loadTrainerGroups(resourceManager);
+
+        BattleFactory.configuration = loadBattleFactoryConfiguration(resourceManager);
     }
 
     private TrainerConfiguration loadDefaultTrainerConfiguration(ResourceManager resourceManager) {
@@ -146,7 +150,7 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
             return readTrainerConfigurationResource(resource);
 
         } catch (IOException e) {
-            return CobblemonTrainerBattle.defaultTrainerConfiguration;
+            return defaultTrainerConfiguration;
         }
     }
 

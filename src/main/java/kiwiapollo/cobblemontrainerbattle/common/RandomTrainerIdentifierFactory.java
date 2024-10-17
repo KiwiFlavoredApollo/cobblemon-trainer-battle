@@ -10,14 +10,14 @@ import java.util.List;
 
 public class RandomTrainerIdentifierFactory {
     public Identifier create() {
-        List<Identifier> identifiers = new ArrayList<>(CobblemonTrainerBattle.trainers.keySet());
+        List<Identifier> identifiers = new ArrayList<>(CobblemonTrainerBattle.trainerRegistry.keySet());
         Collections.shuffle(identifiers);
 
         return identifiers.get(0);
     }
 
     public Identifier createInNamespace(String namespace) {
-        List<Identifier> identifiers = new ArrayList<>(CobblemonTrainerBattle.trainers.keySet().stream()
+        List<Identifier> identifiers = new ArrayList<>(CobblemonTrainerBattle.trainerRegistry.keySet().stream()
                 .filter(identifier -> identifier.getPath().startsWith(namespace)).toList());
         Collections.shuffle(identifiers);
 
@@ -35,6 +35,6 @@ public class RandomTrainerIdentifierFactory {
     }
 
     private int getPokemonCount(Identifier identifier) {
-        return CobblemonTrainerBattle.trainers.get(identifier).pokemons().size();
+        return CobblemonTrainerBattle.trainerRegistry.get(identifier).pokemons().size();
     }
 }
