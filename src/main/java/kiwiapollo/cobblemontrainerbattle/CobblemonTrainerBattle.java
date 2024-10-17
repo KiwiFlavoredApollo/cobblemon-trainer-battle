@@ -79,6 +79,8 @@ public class CobblemonTrainerBattle implements ModInitializer {
 			boolean isPlayerVictory = battleVictoryEvent.getWinners().stream()
 					.anyMatch(battleActor -> battleActor.isForPlayer(player));
 
+			TRAINER_BATTLE_HISTORY.get(player.getUuid());
+
 			if (isPlayerVictory) {
 				trainerBattleRegistry.get(player.getUuid()).onPlayerVictory();
 			} else {
