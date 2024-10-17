@@ -29,7 +29,7 @@ public class GroupBattleCommand extends LiteralArgumentBuilder<ServerCommandSour
                                     .forEach(builder::suggest);
                             return builder.buildFuture();
                         })
-                        .executes(GroupBattle::startSession));
+                        .executes(GroupBattle::startNormalGroupBattleSession));
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getStopSessionCommand() {
@@ -39,6 +39,6 @@ public class GroupBattleCommand extends LiteralArgumentBuilder<ServerCommandSour
 
     private ArgumentBuilder<ServerCommandSource, ?> getStartBattleCommand() {
         return LiteralArgumentBuilder.<ServerCommandSource>literal("startbattle")
-                .executes(GroupBattle::startNormalBattle);
+                .executes(GroupBattle::startBattle);
     }
 }

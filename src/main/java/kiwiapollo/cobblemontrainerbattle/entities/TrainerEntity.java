@@ -113,13 +113,18 @@ public class TrainerEntity extends PathAwareEntity {
             this.setAiDisabled(true);
             this.velocityDirty = true;
 
-            PlayerBattleParticipant sessionPlayer = new NormalBattlePlayer((ServerPlayerEntity) player);
+            PlayerBattleParticipant playerBattleParticipant = new NormalBattlePlayer((ServerPlayerEntity) player);
 
             Trainer trainer = CobblemonTrainerBattle.trainers.get(trainerIdentifier);
-            TrainerBattleParticipant sessionTrainer = new NormalBattleTrainer(trainer, (ServerPlayerEntity) player);
+            TrainerBattleParticipant trainerBattleParticipant = new NormalBattleTrainer(trainer, (ServerPlayerEntity) player);
             ResultHandler resultHandler = new BattleResultHandler((ServerPlayerEntity) player, trainer.onVictory(), trainer.onDefeat());
 
-            TrainerBattle trainerBattle = new EntityBackedTrainerBattle(sessionPlayer, sessionTrainer, resultHandler, this);
+            TrainerBattle trainerBattle = new EntityBackedTrainerBattle(
+                    playerBattleParticipant,
+                    trainerBattleParticipant,
+                    resultHandler,
+                    this
+            );
             trainerBattle.start();
 
             CobblemonTrainerBattle.trainerBattles.put(player.getUuid(), trainerBattle);

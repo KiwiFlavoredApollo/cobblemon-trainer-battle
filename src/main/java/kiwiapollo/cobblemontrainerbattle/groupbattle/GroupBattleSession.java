@@ -1,24 +1,25 @@
 package kiwiapollo.cobblemontrainerbattle.groupbattle;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battleparticipants.NormalBattlePlayer;
-import kiwiapollo.cobblemontrainerbattle.battleparticipants.NormalBattleTrainer;
-import kiwiapollo.cobblemontrainerbattle.battleparticipants.PlayerBattleParticipant;
+import kiwiapollo.cobblemontrainerbattle.battleparticipants.*;
+import kiwiapollo.cobblemontrainerbattle.common.Trainer;
 import kiwiapollo.cobblemontrainerbattle.exceptions.BattleStartException;
+import kiwiapollo.cobblemontrainerbattle.exceptions.DefeatedAllTrainersException;
+import kiwiapollo.cobblemontrainerbattle.exceptions.DefeatedToTrainerException;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.DummyResultHandler;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultHandler;
 import kiwiapollo.cobblemontrainerbattle.sessions.Session;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.*;
-import kiwiapollo.cobblemontrainerbattle.battleparticipants.TrainerBattleParticipant;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
 
 public class GroupBattleSession implements Session {
-    private final PlayerBattleParticipant player;
+    private final ServerPlayerEntity player;
     private final List<Identifier> trainersToDefeat;
     private final ResultHandler resultHandler;
+    private final BattleParticipantFactory battleParticipantFactory;
 
     private int defeatedTrainersCount;
     private boolean isPlayerDefeated;
@@ -26,24 +27,46 @@ public class GroupBattleSession implements Session {
     public GroupBattleSession(
             ServerPlayerEntity player,
             List<Identifier> trainersToDefeat,
-            ResultHandler resultHandler
+            ResultHandler resultHandler,
+            BattleParticipantFactory battleParticipantFactory
     ) {
-        this.player = new NormalBattlePlayer(player);
+        this.player = player;
         this.trainersToDefeat = trainersToDefeat;
+        this.resultHandler = resultHandler;
+        this.battleParticipantFactory = battleParticipantFactory;
+
         this.defeatedTrainersCount = 0;
         this.isPlayerDefeated = false;
-        this.resultHandler = resultHandler;
     }
 
     @Override
     public void startBattle() throws BattleStartException {
-        TrainerBattleParticipant trainer = new NormalBattleTrainer(
-                CobblemonTrainerBattle.trainers.get(trainersToDefeat.get(defeatedTrainersCount)),
-                player.getPlayerEntity()
-        );
-        ResultHandler resultHandler = new DummyResultHandler();
-        TrainerBattle trainerBattle = new VirtualTrainerBattle(player, trainer, resultHandler);
-        trainerBattle.start();
+        try {
+            assertPlayerNotDefeated();
+            assertNotDefeatedAllTrainers();
+
+            PlayerBattleParticipant playerBattleParticipant = battleParticipantFactory.createPlayer(player);
+
+            Trainer trainer = CobblemonTrainerBattle.trainers.get(trainersToDefeat.get(defeatedTrainersCount));
+            TrainerBattleParticipant trainerBattleParticipant = battleParticipantFactory.createTrainer(trainer, player);
+
+            ResultHandler resultHandler = new DummyResultHandler();
+
+            TrainerBattle trainerBattle = new VirtualTrainerBattle(
+                    playerBattleParticipant,
+                    trainerBattleParticipant,
+                    resultHandler
+            );
+            trainerBattle.start();
+
+            CobblemonTrainerBattle.trainerBattles.put(player.getUuid(), trainerBattle);
+
+        } catch (DefeatedToTrainerException e) {
+            // TODO
+
+        } catch (DefeatedAllTrainersException e) {
+            // TODO
+        }
     }
 
     @Override
@@ -62,6 +85,18 @@ public class GroupBattleSession implements Session {
             resultHandler.onVictory();
         } else {
             resultHandler.onDefeat();
+        }
+    }
+
+    private void assertPlayerNotDefeated() throws DefeatedToTrainerException {
+        if (isPlayerDefeated) {
+            throw new DefeatedToTrainerException();
+        }
+    }
+
+    private void assertNotDefeatedAllTrainers() throws DefeatedAllTrainersException {
+        if (isDefeatedAllTrainers()) {
+            throw new DefeatedAllTrainersException();
         }
     }
 

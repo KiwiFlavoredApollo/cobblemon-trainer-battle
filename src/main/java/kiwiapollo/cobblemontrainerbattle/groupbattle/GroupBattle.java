@@ -5,6 +5,9 @@ import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactory;
+import kiwiapollo.cobblemontrainerbattle.battleparticipants.FlatBattleParticipantFactory;
+import kiwiapollo.cobblemontrainerbattle.battleparticipants.NormalBattleParticipantFactory;
+import kiwiapollo.cobblemontrainerbattle.battleparticipants.BattleParticipantFactory;
 import kiwiapollo.cobblemontrainerbattle.common.*;
 import kiwiapollo.cobblemontrainerbattle.exceptions.*;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.BattleResultHandler;
@@ -25,7 +28,15 @@ public class GroupBattle {
     public static final int FLAT_LEVEL = 100;
     public static Map<UUID, Session> sessions = new HashMap<>();
 
-    public static int startSession(CommandContext<ServerCommandSource> context) {
+    public static int startNormalGroupBattleSession(CommandContext<ServerCommandSource> context) {
+        return startSession(context, new NormalBattleParticipantFactory());
+    }
+
+    public static int startFlatGroupBattleSession(CommandContext<ServerCommandSource> context) {
+        return startSession(context, new FlatBattleParticipantFactory(FLAT_LEVEL));
+    }
+
+    private static int startSession(CommandContext<ServerCommandSource> context, BattleParticipantFactory battleParticipantFactory) {
         try {
             ServerPlayerEntity player = context.getSource().getPlayer();
 
@@ -48,7 +59,8 @@ public class GroupBattle {
             Session session = new GroupBattleSession(
                     player,
                     trainersToDefeat,
-                    resultHandler
+                    resultHandler,
+                    battleParticipantFactory
             );
 
             sessions.put(player.getUuid(), session);
@@ -113,30 +125,7 @@ public class GroupBattle {
         }
     }
 
-    public static int startNormalBattle(CommandContext<ServerCommandSource> context) {
-        try {
-            ServerPlayerEntity player = context.getSource().getPlayer();
-
-            SessionValidator.assertSessionExist(sessions, player);
-
-            Session session = sessions.get(player.getUuid());
-            session.startBattle();
-
-            return Command.SINGLE_SUCCESS;
-
-        } catch (IllegalStateException e) {
-            ServerPlayerEntity player = context.getSource().getPlayer();
-            MutableText message = Text.translatable("command.cobblemontrainerbattle.groupbattle.common.valid_session_not_exist");
-            player.sendMessage(message.formatted(Formatting.RED));
-            CobblemonTrainerBattle.LOGGER.error(String.format("Valid battle session does not exists: %s", player.getGameProfile().getName()));
-            return 0;
-
-        } catch (BattleStartException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public static int startFlatBattle(CommandContext<ServerCommandSource> context) {
+    public static int startBattle(CommandContext<ServerCommandSource> context) {
         try {
             ServerPlayerEntity player = context.getSource().getPlayer();
 

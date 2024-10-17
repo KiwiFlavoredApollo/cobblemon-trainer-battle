@@ -1,5 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.battleparticipants;
 
+import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.battles.model.ai.BattleAI;
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
@@ -12,6 +13,7 @@ import kiwiapollo.cobblemontrainerbattle.parsers.SmogonPokemon;
 import kiwiapollo.cobblemontrainerbattle.parsers.SmogonPokemonParser;
 import net.minecraft.server.network.ServerPlayerEntity;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
@@ -24,11 +26,16 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
     private PartyStore party;
 
 
-    public FlatBattleTrainer(Trainer trainer, int level) {
+    public FlatBattleTrainer(Trainer trainer, ServerPlayerEntity player, int level) {
         this.uuid = UUID.randomUUID();
         this.name = trainer.name();
-        this.battleCondition = trainer.condition();
-        this.party = toParty(trainer.pokemons(), level);
+        this.battleCondition = new BattleCondition(
+                trainer.condition().isRematchAllowedAfterVictory,
+                0,
+                100
+        );
+
+        this.party = toParty(trainer.pokemons(), player, level);
     }
 
     @Override
@@ -71,8 +78,8 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
         return party.toBattleTeam(false, false, leadingPokemon);
     }
 
-    private static PartyStore toParty(List<SmogonPokemon> pokemons, int level) {
-        SmogonPokemonParser parser = new SmogonPokemonParser(level);
+    private static PartyStore toParty(List<SmogonPokemon> pokemons, ServerPlayerEntity player, int level) {
+        SmogonPokemonParser parser = new SmogonPokemonParser(player);
 
         PartyStore party = new PartyStore(UUID.randomUUID());
         for (SmogonPokemon smogonPokemon : pokemons) {

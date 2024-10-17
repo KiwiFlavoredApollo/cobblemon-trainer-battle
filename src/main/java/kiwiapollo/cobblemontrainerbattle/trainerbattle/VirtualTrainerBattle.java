@@ -19,6 +19,7 @@ import net.minecraft.text.Text;
 import java.util.UUID;
 
 public class VirtualTrainerBattle implements TrainerBattle {
+    public static final int FLAT_LEVEL = 100;
     private final PlayerBattleParticipant player;
     private final TrainerBattleParticipant trainer;
     private final ResultHandler resultHandler;

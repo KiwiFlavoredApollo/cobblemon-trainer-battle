@@ -74,12 +74,7 @@ public class NormalBattleTrainer implements TrainerBattleParticipant {
     }
 
     private static PartyStore toParty(List<SmogonPokemon> pokemons, ServerPlayerEntity player) {
-        int maximumPartyLevel = Cobblemon.INSTANCE.getStorage().getParty(player).toGappyList().stream()
-                .filter(Objects::nonNull)
-                .map(Pokemon::getLevel)
-                .max(Comparator.naturalOrder()).get();
-
-        SmogonPokemonParser parser = new SmogonPokemonParser(maximumPartyLevel);
+        SmogonPokemonParser parser = new SmogonPokemonParser(player);
 
         PartyStore party = new PartyStore(UUID.randomUUID());
         for (SmogonPokemon smogonPokemon : pokemons) {

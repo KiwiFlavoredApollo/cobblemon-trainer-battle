@@ -1,5 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.parsers;
 
+import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.abilities.Abilities;
 import com.cobblemon.mod.common.api.moves.Move;
 import com.cobblemon.mod.common.api.moves.Moves;
@@ -13,8 +14,10 @@ import kiwiapollo.cobblemontrainerbattle.exceptions.PokemonParseException;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -35,10 +38,10 @@ public class SmogonPokemonParser {
             "Teary Look", "tearfullook"
     );
 
-    private final int pivotLevel;
+    private final ServerPlayerEntity player;
 
-    public SmogonPokemonParser(int pivotLevel) {
-        this.pivotLevel = pivotLevel;
+    public SmogonPokemonParser(ServerPlayerEntity player) {
+        this.player = player;
     }
 
     public Pokemon toCobblemonPokemon(SmogonPokemon smogonPokemon) throws PokemonParseException {
@@ -70,9 +73,9 @@ public class SmogonPokemonParser {
         try {
             boolean isNamespaceProvided = species.contains(":");
             if (isNamespaceProvided) {
-                return Objects.requireNonNull(Identifier.tryParse(species));
+                return Objects.requireNonNull(Identifier.tryParse(species.toLowerCase()));
             } else {
-                return Objects.requireNonNull(Identifier.of("cobblemon", species));
+                return Objects.requireNonNull(Identifier.of("cobblemon", species.toLowerCase()));
             }
         } catch (NullPointerException e) {
             throw new PokemonParseException();
@@ -84,7 +87,12 @@ public class SmogonPokemonParser {
             pokemon.setLevel(level);
 
         } else {
-            pokemon.setLevel(pivotLevel + level);
+            int maximumPartyLevel = Cobblemon.INSTANCE.getStorage().getParty(player).toGappyList().stream()
+                    .filter(Objects::nonNull)
+                    .map(Pokemon::getLevel)
+                    .max(Comparator.naturalOrder()).get();
+
+            pokemon.setLevel(maximumPartyLevel + level);
         }
     }
 
@@ -134,10 +142,10 @@ public class SmogonPokemonParser {
 
             boolean isNamespaceProvided = nature.contains(":");
             if (isNamespaceProvided) {
-                pokemon.setNature(Objects.requireNonNull(Natures.INSTANCE.getNature(nature)));
+                pokemon.setNature(Objects.requireNonNull(Natures.INSTANCE.getNature(nature.toLowerCase())));
 
             } else {
-                Identifier identifier = Identifier.of("cobblemon", nature);
+                Identifier identifier = Identifier.of("cobblemon", nature.toLowerCase());
                 pokemon.setNature(Objects.requireNonNull(Natures.INSTANCE.getNature(identifier)));
             }
 
@@ -161,11 +169,11 @@ public class SmogonPokemonParser {
 
             boolean isNamespaceProvided = item.contains(":");
             if (isNamespaceProvided) {
-                Item itemToHold = Registries.ITEM.get(Identifier.tryParse(item));
+                Item itemToHold = Registries.ITEM.get(Identifier.tryParse(item.toLowerCase()));
                 pokemon.swapHeldItem(new ItemStack(itemToHold), false);
 
             } else {
-                Item itemToHold = Registries.ITEM.get(Identifier.of("cobblemon", item));
+                Item itemToHold = Registries.ITEM.get(Identifier.of("cobblemon", item.toLowerCase()));
                 pokemon.swapHeldItem(new ItemStack(itemToHold), false);
             }
 

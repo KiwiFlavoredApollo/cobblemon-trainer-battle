@@ -10,8 +10,8 @@ import kiwiapollo.cobblemontrainerbattle.common.Trainer;
 import kiwiapollo.cobblemontrainerbattle.exceptions.PokemonParseException;
 import kiwiapollo.cobblemontrainerbattle.parsers.SmogonPokemon;
 import kiwiapollo.cobblemontrainerbattle.parsers.SmogonPokemonParser;
+import net.minecraft.server.network.ServerPlayerEntity;
 
-import java.sql.Array;
 import java.util.*;
 
 public class BattleFactoryTrainer implements TrainerBattleParticipant {
@@ -22,11 +22,11 @@ public class BattleFactoryTrainer implements TrainerBattleParticipant {
     private PartyStore party;
 
 
-    public BattleFactoryTrainer(Trainer trainer, int level) {
+    public BattleFactoryTrainer(Trainer trainer, ServerPlayerEntity player, int level) {
         this.uuid = UUID.randomUUID();
         this.name = trainer.name();
         this.battleCondition = trainer.condition();
-        this.party = toParty(trainer.pokemons(), level);
+        this.party = toParty(trainer.pokemons(), player, level);
     }
 
     @Override
@@ -69,8 +69,8 @@ public class BattleFactoryTrainer implements TrainerBattleParticipant {
         return party.toBattleTeam(false, false, leadingPokemon);
     }
 
-    private static PartyStore toParty(List<SmogonPokemon> pokemons, int level) {
-        SmogonPokemonParser parser = new SmogonPokemonParser(level);
+    private static PartyStore toParty(List<SmogonPokemon> pokemons, ServerPlayerEntity player, int level) {
+        SmogonPokemonParser parser = new SmogonPokemonParser(player);
 
         List<SmogonPokemon> randomParty = new ArrayList<>(pokemons);
         Collections.shuffle(randomParty);
