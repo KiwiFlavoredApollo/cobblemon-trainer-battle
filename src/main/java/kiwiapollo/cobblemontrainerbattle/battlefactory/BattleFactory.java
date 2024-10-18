@@ -8,7 +8,7 @@ import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerIdentifierFactory;
 import kiwiapollo.cobblemontrainerbattle.common.SessionValidator;
 import kiwiapollo.cobblemontrainerbattle.exception.*;
 import kiwiapollo.cobblemontrainerbattle.common.PlayerValidator;
-import kiwiapollo.cobblemontrainerbattle.resulthandler.GenericResultHandler;
+import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultActionHandler;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultHandler;
 import net.minecraft.server.command.ServerCommandSource;
@@ -37,7 +37,7 @@ public class BattleFactory {
                 trainersToDefeat.add(new RandomTrainerIdentifierFactory().createForBattleFactory());
             }
 
-            ResultHandler resultHandler = new GenericResultHandler(
+            ResultHandler resultHandler = new ResultActionHandler(
                     player,
                     CobblemonTrainerBattle.battleFactoryProfile.onVictory,
                     CobblemonTrainerBattle.battleFactoryProfile.onDefeat

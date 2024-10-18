@@ -2,7 +2,7 @@ package kiwiapollo.cobblemontrainerbattle.groupbattle;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.SessionBattleResultHandler;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.SafetyCheckedTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.*;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
@@ -54,7 +54,7 @@ public class GroupBattleSession implements Session {
 
             ResultHandler resultHandler = new SessionBattleResultHandler(this::onBattleVictory, this::onBattleDefeat);
 
-            TrainerBattle trainerBattle = new StandardTrainerBattle(
+            TrainerBattle trainerBattle = new SafetyCheckedTrainerBattle(
                     playerBattleParticipant,
                     trainerBattleParticipant,
                     resultHandler

@@ -16,7 +16,7 @@ import net.minecraft.text.Text;
 import java.util.Objects;
 import java.util.UUID;
 
-public class StandardTrainerBattle implements TrainerBattle {
+public class SafetyCheckedTrainerBattle implements TrainerBattle {
     public static final int FLAT_LEVEL = 100;
 
     private final PlayerBattleParticipant player;
@@ -25,7 +25,7 @@ public class StandardTrainerBattle implements TrainerBattle {
 
     private UUID battleId;
 
-    public StandardTrainerBattle(
+    public SafetyCheckedTrainerBattle(
             PlayerBattleParticipant player,
             TrainerBattleParticipant trainer,
             ResultHandler resultHandler
@@ -42,7 +42,7 @@ public class StandardTrainerBattle implements TrainerBattle {
             PlayerValidator.assertPlayerPartyNotFaint(player.getParty());
             PlayerValidator.assertPlayerPartyAtOrAboveRelativeLevelThreshold(player.getParty());
             PlayerValidator.assertPlayerNotBusyWithPokemonBattle(player.getPlayerEntity());
-            PlayerValidator.assertSatisfiedBattleCondition(this);
+            PlayerValidator.assertBattleConditionSatisfied(this);
 
             Cobblemon.INSTANCE.getStorage()
                     .getParty(player.getPlayerEntity()).toGappyList().stream()

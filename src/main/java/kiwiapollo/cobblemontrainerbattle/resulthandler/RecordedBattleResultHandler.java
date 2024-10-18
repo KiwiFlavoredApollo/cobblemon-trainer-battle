@@ -5,12 +5,12 @@ import kiwiapollo.cobblemontrainerbattle.battleparticipant.PlayerBattleParticipa
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.TrainerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.parser.TrainerBattleHistory;
 
-public class RecordedResultHandler implements ResultHandler {
+public class RecordedBattleResultHandler implements ResultHandler {
     private final PlayerBattleParticipant player;
     private final TrainerBattleParticipant trainer;
-    private final GenericResultHandler resultHandler;
+    private final ResultActionHandler resultHandler;
 
-    public RecordedResultHandler(
+    public RecordedBattleResultHandler(
             PlayerBattleParticipant player,
             TrainerBattleParticipant trainer,
             ResultAction victory,
@@ -18,7 +18,7 @@ public class RecordedResultHandler implements ResultHandler {
     ) {
         this.player = player;
         this.trainer = trainer;
-        this.resultHandler = new GenericResultHandler(player.getPlayerEntity(), victory, defeat);
+        this.resultHandler = new ResultActionHandler(player.getPlayerEntity(), victory, defeat);
     }
 
     @Override

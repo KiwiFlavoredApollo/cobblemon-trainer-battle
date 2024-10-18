@@ -6,12 +6,12 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 
-public class GenericResultHandler implements ResultHandler {
+public class ResultActionHandler implements ResultHandler {
     private final ServerPlayerEntity player;
     private final ResultAction victory;
     private final ResultAction defeat;
 
-    public GenericResultHandler(ServerPlayerEntity player, ResultAction victory, ResultAction defeat) {
+    public ResultActionHandler(ServerPlayerEntity player, ResultAction victory, ResultAction defeat) {
         this.player = player;
         this.victory = victory;
         this.defeat = defeat;

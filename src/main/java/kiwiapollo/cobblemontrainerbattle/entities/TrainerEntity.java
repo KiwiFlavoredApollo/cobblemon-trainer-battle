@@ -6,12 +6,12 @@ import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactor.EntityBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.*;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.SafetyCheckedTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.common.TrainerProfile;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.exception.BusyWithPokemonBattleException;
-import kiwiapollo.cobblemontrainerbattle.resulthandler.GenericResultHandler;
+import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultActionHandler;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultHandler;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
@@ -115,9 +115,9 @@ public class TrainerEntity extends PathAwareEntity {
             TrainerBattleParticipant trainerBattleParticipant = new EntityBackedNormalBattleTrainer(trainerIdentifier, this, (ServerPlayerEntity) player);
 
             TrainerProfile trainerProfile = CobblemonTrainerBattle.trainerProfileRegistry.get(trainerIdentifier);
-            ResultHandler resultHandler = new GenericResultHandler((ServerPlayerEntity) player, trainerProfile.onVictory(), trainerProfile.onDefeat());
+            ResultHandler resultHandler = new ResultActionHandler((ServerPlayerEntity) player, trainerProfile.onVictory(), trainerProfile.onDefeat());
 
-            TrainerBattle trainerBattle = new StandardTrainerBattle(
+            TrainerBattle trainerBattle = new SafetyCheckedTrainerBattle(
                     playerBattleParticipant,
                     trainerBattleParticipant,
                     resultHandler
