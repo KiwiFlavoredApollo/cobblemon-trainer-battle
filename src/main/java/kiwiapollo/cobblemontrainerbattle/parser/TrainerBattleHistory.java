@@ -17,8 +17,8 @@ public class TrainerBattleHistory {
     public void addPlayerVictory(Identifier trainer) {
         TrainerBattleRecord record = getTrainerBattleRecord(trainer);
 
-        record.victoryCount += 1;
-        record.lastBattleTimestamp = Instant.now();
+        record.victory += 1;
+        record.timestamp = Instant.now();
 
         recordRegistry.put(trainer, record);
     }
@@ -26,8 +26,8 @@ public class TrainerBattleHistory {
     public void addPlayerDefeat(Identifier trainer) {
         TrainerBattleRecord record = getTrainerBattleRecord(trainer);
 
-        record.defeatCount += 1;
-        record.lastBattleTimestamp = Instant.now();
+        record.defeat += 1;
+        record.timestamp = Instant.now();
 
         recordRegistry.put(trainer, record);
     }
@@ -44,7 +44,7 @@ public class TrainerBattleHistory {
         if (!recordRegistry.containsKey(trainer)) {
             return false;
         } else {
-            return recordRegistry.get(trainer).victoryCount > 0;
+            return recordRegistry.get(trainer).victory > 0;
         }
     }
 
@@ -69,9 +69,9 @@ public class TrainerBattleHistory {
     private NbtCompound writeTrainerBattleRecordToNbt(TrainerBattleRecord record) {
         NbtCompound nbt = new NbtCompound();
 
-        nbt.putLong("lastBattleTimestamp", record.lastBattleTimestamp.toEpochMilli());
-        nbt.putInt("victoryCount", record.victoryCount);
-        nbt.putInt("defeatCount", record.defeatCount);
+        nbt.putLong("timestamp", record.timestamp.toEpochMilli());
+        nbt.putInt("victory", record.victory);
+        nbt.putInt("defeat", record.defeat);
 
         return nbt;
     }
@@ -89,9 +89,9 @@ public class TrainerBattleHistory {
 
     private static TrainerBattleRecord readTrainerBattleRecordFromNbt(NbtCompound nbt) {
         return new TrainerBattleRecord(
-                Instant.ofEpochMilli(nbt.getLong("lastBattleTimestamp")),
-                nbt.getInt("victoryCount"),
-                nbt.getInt("defeatCount")
+                Instant.ofEpochMilli(nbt.getLong("timestamp")),
+                nbt.getInt("victory"),
+                nbt.getInt("defeat")
         );
     }
 }
