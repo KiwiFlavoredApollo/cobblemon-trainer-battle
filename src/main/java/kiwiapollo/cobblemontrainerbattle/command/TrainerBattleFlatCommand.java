@@ -71,7 +71,7 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
             TrainerBattleParticipant trainerBattleParticipant = new FlatBattleTrainer(trainer, player, StandardTrainerBattle.FLAT_LEVEL);
 
             TrainerProfile trainerProfile = CobblemonTrainerBattle.trainerProfileRegistry.get(trainer);
-            ResultHandler resultHandler = new RecordedResultHandler(player, trainerProfile.onVictory(), trainerProfile.onDefeat());
+            ResultHandler resultHandler = new RecordedResultHandler(playerBattleParticipant, trainerBattleParticipant, trainerProfile.onVictory(), trainerProfile.onDefeat());
 
             TrainerBattle trainerBattle = new StandardTrainerBattle(playerBattleParticipant, trainerBattleParticipant, resultHandler);
             trainerBattle.start();

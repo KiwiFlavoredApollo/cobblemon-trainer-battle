@@ -8,7 +8,7 @@ import java.util.Objects;
 
 public class ResourceValidator {
     public static void assertTrainerExist(Identifier identifier) throws FileNotFoundException {
-        if (!CobblemonTrainerBattle.trainerProfileRegistry.containsKey(identifier)) {
+        if (!isTrainerExist(identifier)) {
             throw new FileNotFoundException();
         }
     }
@@ -27,10 +27,14 @@ public class ResourceValidator {
         }
 
         boolean isExistAllTrainers = trainerGroupProfile.trainers.stream()
-                .map(resourcePath -> Identifier.of(CobblemonTrainerBattle.NAMESPACE, resourcePath))
-                .allMatch(Objects::nonNull);
+                .map(Identifier::new)
+                .allMatch(ResourceValidator::isTrainerExist);
         if (!isExistAllTrainers) {
             throw new IllegalArgumentException();
         }
+    }
+
+    private static boolean isTrainerExist(Identifier identifier) {
+        return CobblemonTrainerBattle.trainerProfileRegistry.containsKey(identifier);
     }
 }

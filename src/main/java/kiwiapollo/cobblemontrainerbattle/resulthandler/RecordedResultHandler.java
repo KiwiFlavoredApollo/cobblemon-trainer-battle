@@ -1,37 +1,44 @@
 package kiwiapollo.cobblemontrainerbattle.resulthandler;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.TrainerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.common.ResultAction;
 import kiwiapollo.cobblemontrainerbattle.common.TrainerBattleHistory;
-import net.minecraft.server.network.ServerPlayerEntity;
 
 public class RecordedResultHandler implements ResultHandler {
+    private final PlayerBattleParticipant player;
+    private final TrainerBattleParticipant trainer;
     private final GenericResultHandler resultHandler;
-    private final ServerPlayerEntity player;
 
-    public RecordedResultHandler(ServerPlayerEntity player, ResultAction victory, ResultAction defeat) {
-        this.resultHandler = new GenericResultHandler(player, victory, defeat);
+    public RecordedResultHandler(
+            PlayerBattleParticipant player,
+            TrainerBattleParticipant trainer,
+            ResultAction victory,
+            ResultAction defeat
+    ) {
         this.player = player;
+        this.trainer = trainer;
+        this.resultHandler = new GenericResultHandler(player.getPlayerEntity(), victory, defeat);
     }
 
     @Override
-    public void onVictory(TrainerBattleParticipant trainer) {
-        resultHandler.onVictory(trainer);
+    public void onVictory() {
+        resultHandler.onVictory();
 
         if (!CobblemonTrainerBattle.trainerBattleHistoryRegistry.containsKey(player.getUuid())) {
-            CobblemonTrainerBattle.trainerBattleHistoryRegistry.put(player.getUuid(), new TrainerBattleHistory(player));
+            CobblemonTrainerBattle.trainerBattleHistoryRegistry.put(player.getUuid(), new TrainerBattleHistory());
         }
 
         CobblemonTrainerBattle.trainerBattleHistoryRegistry.get(player.getUuid()).addPlayerVictory(trainer.getIdentifier());
     }
 
     @Override
-    public void onDefeat(TrainerBattleParticipant trainer) {
-        resultHandler.onDefeat(trainer);
+    public void onDefeat() {
+        resultHandler.onDefeat();
 
         if (!CobblemonTrainerBattle.trainerBattleHistoryRegistry.containsKey(player.getUuid())) {
-            CobblemonTrainerBattle.trainerBattleHistoryRegistry.put(player.getUuid(), new TrainerBattleHistory(player));
+            CobblemonTrainerBattle.trainerBattleHistoryRegistry.put(player.getUuid(), new TrainerBattleHistory());
         }
 
         CobblemonTrainerBattle.trainerBattleHistoryRegistry.get(player.getUuid()).addPlayerDefeat(trainer.getIdentifier());

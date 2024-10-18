@@ -74,7 +74,7 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
             TrainerBattleParticipant trainerBattleParticipant = new VirtualNormalBattleTrainer(trainer, player);
 
             TrainerProfile trainerProfile = CobblemonTrainerBattle.trainerProfileRegistry.get(trainer);
-            ResultHandler resultHandler = new RecordedResultHandler(player, trainerProfile.onVictory(), trainerProfile.onDefeat());
+            ResultHandler resultHandler = new RecordedResultHandler(playerBattleParticipant, trainerBattleParticipant, trainerProfile.onVictory(), trainerProfile.onDefeat());
 
             TrainerBattle trainerBattle = new StandardTrainerBattle(playerBattleParticipant, trainerBattleParticipant, resultHandler);
             trainerBattle.start();

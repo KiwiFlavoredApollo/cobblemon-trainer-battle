@@ -83,12 +83,12 @@ public class StandardTrainerBattle implements TrainerBattle {
 
     @Override
     public void onPlayerVictory() {
-        resultHandler.onVictory(trainer);
+        resultHandler.onVictory();
     }
 
     @Override
     public void onPlayerDefeat() {
-        resultHandler.onDefeat(trainer);
+        resultHandler.onDefeat();
     }
 
     @Override

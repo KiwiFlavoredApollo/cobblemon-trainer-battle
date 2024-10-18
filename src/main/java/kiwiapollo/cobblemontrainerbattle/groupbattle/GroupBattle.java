@@ -39,15 +39,14 @@ public class GroupBattle {
         try {
             ServerPlayerEntity player = context.getSource().getPlayer();
 
-            Identifier identifier = new Identifier(StringArgumentType.getString(context, "trainer"));
+            Identifier identifier = TrainerGroupProfileUtility.toResourceIdentifier(StringArgumentType.getString(context, "group"));
 
             ResourceValidator.assertTrainerGroupExist(identifier);
             ResourceValidator.assertTrainerGroupValid(identifier);
             SessionValidator.assertSessionNotExist(sessions, player);
 
             TrainerGroupProfile trainerGroupProfile = CobblemonTrainerBattle.trainerGroupProfileRegistry.get(identifier);
-            List<Identifier> trainersToDefeat = trainerGroupProfile.trainers.stream()
-                    .map(trainerResourcePath -> Identifier.of(CobblemonTrainerBattle.NAMESPACE, trainerResourcePath)).toList();
+            List<Identifier> trainersToDefeat = trainerGroupProfile.trainers.stream().map(Identifier::new).toList();
 
             ResultHandler resultHandler = new GenericResultHandler(
                     player,
@@ -107,9 +106,9 @@ public class GroupBattle {
             GroupBattleSession session = sessions.get(player.getUuid());
             session.onSessionStop();
 
-            BattleFactory.sessions.remove(player.getUuid());
+            sessions.remove(player.getUuid());
 
-            player.sendMessage(Text.literal("command.cobblemontrainerbattle.groupbattle.stopsession.success"));
+            player.sendMessage(Text.translatable("command.cobblemontrainerbattle.groupbattle.stopsession.success"));
             CobblemonTrainerBattle.LOGGER.info("Stopped group battle session: {}", player.getGameProfile().getName());
 
             return Command.SINGLE_SUCCESS;

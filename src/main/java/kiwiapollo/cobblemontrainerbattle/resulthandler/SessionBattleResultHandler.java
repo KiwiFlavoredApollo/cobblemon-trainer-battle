@@ -12,12 +12,12 @@ public class SessionBattleResultHandler implements ResultHandler {
     }
 
     @Override
-    public void onVictory(TrainerBattleParticipant trainer) {
+    public void onVictory() {
         onVictory.run();
     }
 
     @Override
-    public void onDefeat(TrainerBattleParticipant trainer) {
+    public void onDefeat() {
         onDefeat.run();
     }
 }

@@ -20,13 +20,13 @@ public class GenericResultHandler implements ResultHandler {
     }
 
     @Override
-    public void onVictory(TrainerBattleParticipant trainer) {
+    public void onVictory() {
         CobblemonTrainerBattle.economy.addBalance(player, victory.balance);
         victory.commands.forEach(this::executeCommand);
     }
 
     @Override
-    public void onDefeat(TrainerBattleParticipant trainer) {
+    public void onDefeat() {
         CobblemonTrainerBattle.economy.removeBalance(player, defeat.balance);
         defeat.commands.forEach(this::executeCommand);
     }

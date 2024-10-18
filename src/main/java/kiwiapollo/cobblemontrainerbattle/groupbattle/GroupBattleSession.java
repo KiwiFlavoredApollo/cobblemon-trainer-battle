@@ -88,9 +88,9 @@ public class GroupBattleSession implements Session {
     @Override
     public void onSessionStop() {
         if (isDefeatedAllTrainers()) {
-            resultHandler.onVictory(lastTrainerBattle.getTrainer());
+            resultHandler.onVictory();
         } else {
-            resultHandler.onDefeat(lastTrainerBattle.getTrainer());
+            resultHandler.onDefeat();
         }
     }
 

@@ -79,7 +79,7 @@ public class BattleFactory {
             BattleFactorySession session = sessions.get(player.getUuid());
             session.onSessionStop();
 
-            BattleFactory.sessions.remove(player.getUuid());
+            sessions.remove(player.getUuid());
 
             player.sendMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.stopsession.success"));
             CobblemonTrainerBattle.LOGGER.info("Stopped battle factory session: {}", player.getGameProfile().getName());
