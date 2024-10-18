@@ -4,12 +4,11 @@ import com.cobblemon.mod.common.api.battles.model.actor.AIBattleActor;
 import com.cobblemon.mod.common.api.battles.model.ai.BattleAI;
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
-import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battleactor.VirtualTrainerBattleActor;
+import kiwiapollo.cobblemontrainerbattle.battleactor.EntityBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.common.BattleCondition;
 import kiwiapollo.cobblemontrainerbattle.common.Generation5AI;
-import kiwiapollo.cobblemontrainerbattle.common.TrainerProfile;
+import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
 import kiwiapollo.cobblemontrainerbattle.parser.SmogonPokemon;
 import kiwiapollo.cobblemontrainerbattle.parser.SmogonPokemonParser;
@@ -20,28 +19,20 @@ import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
-public class FlatBattleTrainer implements TrainerBattleParticipant {
+public class EntityBackedNormalBattleTrainer implements TrainerBattleParticipant {
     private final Identifier identifier;
     private final UUID uuid;
-    private final BattleCondition battleCondition;
+    private final TrainerEntity entity;
     private final ServerPlayerEntity player;
 
     private PartyStore party;
 
-
-    public FlatBattleTrainer(Identifier identifier, ServerPlayerEntity player, int level) {
+    public EntityBackedNormalBattleTrainer(Identifier identifier, TrainerEntity entity, ServerPlayerEntity player) {
         this.identifier = identifier;
         this.uuid = UUID.randomUUID();
+        this.entity = entity;
         this.player = player;
-
-        TrainerProfile trainerProfile = CobblemonTrainerBattle.trainerProfileRegistry.get(identifier);
-        this.battleCondition = new BattleCondition(
-                trainerProfile.condition().isRematchAllowedAfterVictory,
-                0,
-                100
-        );
-
-        this.party = toParty(trainerProfile.pokemons(), player, level);
+        this.party = toParty(CobblemonTrainerBattle.trainerProfileRegistry.get(identifier).pokemons(), player);
     }
 
     @Override
@@ -66,17 +57,17 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
 
     @Override
     public BattleCondition getBattleCondition() {
-        return battleCondition;
+        return CobblemonTrainerBattle.trainerProfileRegistry.get(identifier).condition();
     }
 
     @Override
     public AIBattleActor createBattleActor() {
-        return new VirtualTrainerBattleActor(
+        return new EntityBackedTrainerBattleActor(
                 getName(),
                 getUuid(),
                 getBattleTeam(),
                 getBattleAI(),
-                player
+                entity
         );
     }
 
@@ -100,7 +91,7 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
         return party.toBattleTeam(false, false, leadingPokemon);
     }
 
-    private static PartyStore toParty(List<SmogonPokemon> pokemons, ServerPlayerEntity player, int level) {
+    private static PartyStore toParty(List<SmogonPokemon> pokemons, ServerPlayerEntity player) {
         SmogonPokemonParser parser = new SmogonPokemonParser(player);
 
         PartyStore party = new PartyStore(UUID.randomUUID());
@@ -111,9 +102,6 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
 
             }
         }
-
-        party.toGappyList().stream().filter(Objects::nonNull).forEach(Pokemon::heal);
-        party.toGappyList().stream().filter(Objects::nonNull).forEach(pokemon -> pokemon.setLevel(level));
 
         return party;
     }

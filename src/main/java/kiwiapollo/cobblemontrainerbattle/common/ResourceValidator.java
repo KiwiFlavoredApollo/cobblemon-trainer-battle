@@ -8,25 +8,25 @@ import java.util.Objects;
 
 public class ResourceValidator {
     public static void assertTrainerExist(Identifier identifier) throws FileNotFoundException {
-        if (!CobblemonTrainerBattle.trainerRegistry.containsKey(identifier)) {
+        if (!CobblemonTrainerBattle.trainerProfileRegistry.containsKey(identifier)) {
             throw new FileNotFoundException();
         }
     }
 
     public static void assertTrainerGroupExist(Identifier identifier) throws FileNotFoundException {
-        if (!CobblemonTrainerBattle.trainerGroupRegistry.containsKey(identifier)) {
+        if (!CobblemonTrainerBattle.trainerGroupProfileRegistry.containsKey(identifier)) {
             throw new FileNotFoundException();
         }
     }
 
     public static void assertTrainerGroupValid(Identifier identifier) throws IllegalArgumentException {
-        TrainerGroup trainerGroup = CobblemonTrainerBattle.trainerGroupRegistry.get(identifier);
+        TrainerGroupProfile trainerGroupProfile = CobblemonTrainerBattle.trainerGroupProfileRegistry.get(identifier);
 
-        if (trainerGroup.trainers.isEmpty()) {
+        if (trainerGroupProfile.trainers.isEmpty()) {
             throw new IllegalArgumentException();
         }
 
-        boolean isExistAllTrainers = trainerGroup.trainers.stream()
+        boolean isExistAllTrainers = trainerGroupProfile.trainers.stream()
                 .map(resourcePath -> Identifier.of(CobblemonTrainerBattle.NAMESPACE, resourcePath))
                 .allMatch(Objects::nonNull);
         if (!isExistAllTrainers) {

@@ -8,8 +8,8 @@ import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.cobblemon.mod.common.pokemon.PokemonStats;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.SessionBattleResultHandler;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.VirtualTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.*;
 import kiwiapollo.cobblemontrainerbattle.exception.*;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultHandler;
@@ -31,7 +31,6 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Pokem
     private final ResultHandler resultHandler;
 
     private TrainerBattle lastTrainerBattle;
-    private TrainerBattleParticipant lastDefeatedTrainer;
     private int defeatedTrainersCount;
     private boolean isPlayerDefeated;
     private boolean isTradedPokemon;
@@ -56,20 +55,19 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Pokem
             assertNotDefeatedAllTrainers();
 
             TrainerBattleParticipant trainer = new BattleFactoryTrainer(
-                    CobblemonTrainerBattle.trainerRegistry.get(trainersToDefeat.get(defeatedTrainersCount)),
+                    trainersToDefeat.get(defeatedTrainersCount),
                     player.getPlayerEntity(),
                     BattleFactory.LEVEL
             );
 
             ResultHandler resultHandler = new SessionBattleResultHandler(this::onBattleVictory, this::onBattleDefeat);
 
-            TrainerBattle trainerBattle = new VirtualTrainerBattle(player, trainer, resultHandler);
+            TrainerBattle trainerBattle = new StandardTrainerBattle(player, trainer, resultHandler);
             trainerBattle.start();
 
             CobblemonTrainerBattle.trainerBattleRegistry.put(player.getUuid(), trainerBattle);
 
             this.lastTrainerBattle = trainerBattle;
-            this.lastDefeatedTrainer = null;
 
         } catch (DefeatedToTrainerException e) {
             player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.startbattle.defeated_to_trainer"));
@@ -88,10 +86,12 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Pokem
             assertExistDefeatedTrainer();
             assertNotPlayerTradedPokemon();
 
-            Pokemon trainerPokemon = lastDefeatedTrainer.getParty().get(trainerSlot - 1);
+            TrainerBattleParticipant trainer = lastTrainerBattle.getTrainer();
+
+            Pokemon trainerPokemon = trainer.getParty().get(trainerSlot - 1);
             Pokemon playerPokemon = player.getParty().get(playerSlot - 1);
 
-            lastDefeatedTrainer.getParty().set(trainerSlot, playerPokemon);
+            trainer.getParty().set(trainerSlot, playerPokemon);
             player.getParty().set(playerSlot, trainerPokemon);
 
             isTradedPokemon = true;
@@ -116,7 +116,7 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Pokem
             assertExistDefeatedTrainer();
             assertNotPlayerTradedPokemon();
 
-            printPokemons(player, lastDefeatedTrainer.getParty());
+            printPokemons(player, lastTrainerBattle.getTrainer().getParty());
 
         } catch (NotExistDefeatedTrainerException e) {
             player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.defeated_trainer_not_exist"));
@@ -183,23 +183,21 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Pokem
 
     @Override
     public void onBattleVictory() {
-        lastDefeatedTrainer = lastTrainerBattle.getTrainer();
         defeatedTrainersCount += 1;
         isTradedPokemon = false;
     }
 
     @Override
     public void onBattleDefeat() {
-        lastDefeatedTrainer = null;
         isPlayerDefeated = true;
     }
 
     @Override
     public void onSessionStop() {
         if (isDefeatedAllTrainers()) {
-            resultHandler.onVictory();
+            resultHandler.onVictory(lastTrainerBattle.getTrainer());
         } else {
-            resultHandler.onDefeat();
+            resultHandler.onDefeat(lastTrainerBattle.getTrainer());
         }
     }
 

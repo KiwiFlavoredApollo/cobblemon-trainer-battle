@@ -24,7 +24,7 @@ public class GroupBattleCommand extends LiteralArgumentBuilder<ServerCommandSour
         return LiteralArgumentBuilder.<ServerCommandSource>literal("startsession")
                 .then(RequiredArgumentBuilder.<ServerCommandSource, String>argument("group", StringArgumentType.greedyString())
                         .suggests((context, builder) -> {
-                            CobblemonTrainerBattle.trainerGroupRegistry.keySet().stream()
+                            CobblemonTrainerBattle.trainerGroupProfileRegistry.keySet().stream()
                                     .map(Identifier::getPath)
                                     .forEach(builder::suggest);
                             return builder.buildFuture();

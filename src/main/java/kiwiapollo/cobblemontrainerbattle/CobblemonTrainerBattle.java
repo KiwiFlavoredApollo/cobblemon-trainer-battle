@@ -17,6 +17,7 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
@@ -49,10 +50,11 @@ public class CobblemonTrainerBattle implements ModInitializer {
 	public static Config config = ConfigLoader.load();
 	public static Economy economy = EconomyFactory.create(config.economy);
 
-	public static Map<Identifier, Trainer> trainerRegistry = new HashMap<>();
-	public static Map<Identifier, TrainerGroup> trainerGroupRegistry = new HashMap<>();
+	public static Map<Identifier, TrainerProfile> trainerProfileRegistry = new HashMap<>();
+	public static Map<Identifier, TrainerGroupProfile> trainerGroupProfileRegistry = new HashMap<>();
 
 	public static Map<UUID, TrainerBattle> trainerBattleRegistry = new HashMap<>();
+	public static Map<UUID, TrainerBattleHistory> trainerBattleHistoryRegistry = new HashMap<>();
 
     @Override
 	public void onInitialize() {
@@ -78,8 +80,6 @@ public class CobblemonTrainerBattle implements ModInitializer {
 			ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
 			boolean isPlayerVictory = battleVictoryEvent.getWinners().stream()
 					.anyMatch(battleActor -> battleActor.isForPlayer(player));
-
-			TRAINER_BATTLE_HISTORY.get(player.getUuid());
 
 			if (isPlayerVictory) {
 				trainerBattleRegistry.get(player.getUuid()).onPlayerVictory();

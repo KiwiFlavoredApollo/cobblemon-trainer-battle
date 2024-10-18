@@ -1,5 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.resulthandler;
 
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.TrainerBattleParticipant;
+
 public class SessionBattleResultHandler implements ResultHandler {
     private final Runnable onVictory;
     private final Runnable onDefeat;
@@ -10,12 +12,12 @@ public class SessionBattleResultHandler implements ResultHandler {
     }
 
     @Override
-    public void onVictory() {
+    public void onVictory(TrainerBattleParticipant trainer) {
         onVictory.run();
     }
 
     @Override
-    public void onDefeat() {
+    public void onDefeat(TrainerBattleParticipant trainer) {
         onDefeat.run();
     }
 }

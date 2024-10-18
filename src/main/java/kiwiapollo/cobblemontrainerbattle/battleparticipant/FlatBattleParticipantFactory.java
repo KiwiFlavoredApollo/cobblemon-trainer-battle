@@ -1,7 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.battleparticipant;
 
-import kiwiapollo.cobblemontrainerbattle.common.Trainer;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.util.Identifier;
 
 public class FlatBattleParticipantFactory implements BattleParticipantFactory {
     private final int level;
@@ -16,7 +16,7 @@ public class FlatBattleParticipantFactory implements BattleParticipantFactory {
     }
 
     @Override
-    public TrainerBattleParticipant createTrainer(Trainer trainer, ServerPlayerEntity player) {
+    public TrainerBattleParticipant createTrainer(Identifier trainer, ServerPlayerEntity player) {
         return new FlatBattleTrainer(trainer, player, level);
     }
 }

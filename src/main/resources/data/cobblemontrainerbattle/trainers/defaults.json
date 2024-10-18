@@ -1,5 +1,6 @@
 {
   "condition": {
+    "isRematchAllowedAfterVictory": true,
     "maximumPartyLevel": 100,
     "minimumPartyLevel": 1
   },

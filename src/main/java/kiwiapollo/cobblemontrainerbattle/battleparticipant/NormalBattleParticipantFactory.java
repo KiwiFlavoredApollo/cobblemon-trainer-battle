@@ -1,7 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.battleparticipant;
 
-import kiwiapollo.cobblemontrainerbattle.common.Trainer;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.util.Identifier;
 
 public class NormalBattleParticipantFactory implements BattleParticipantFactory {
     @Override
@@ -10,7 +10,7 @@ public class NormalBattleParticipantFactory implements BattleParticipantFactory 
     }
 
     @Override
-    public TrainerBattleParticipant createTrainer(Trainer trainer, ServerPlayerEntity player) {
-        return new NormalBattleTrainer(trainer, player);
+    public TrainerBattleParticipant createTrainer(Identifier trainer, ServerPlayerEntity player) {
+        return new VirtualNormalBattleTrainer(trainer, player);
     }
 }

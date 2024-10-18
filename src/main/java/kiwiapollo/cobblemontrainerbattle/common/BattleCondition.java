@@ -5,6 +5,12 @@ public class BattleCondition {
     public int minimumPartyLevel;
     public int maximumPartyLevel;
 
+    public BattleCondition() {
+        this.isRematchAllowedAfterVictory = true;
+        this.minimumPartyLevel = 0;
+        this.maximumPartyLevel = 100;
+    }
+
     public BattleCondition(
             boolean isRematchAllowedAfterVictory,
             int minimumPartyLevel,

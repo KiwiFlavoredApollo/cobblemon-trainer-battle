@@ -4,7 +4,7 @@ import kiwiapollo.cobblemontrainerbattle.parser.SmogonPokemon;
 
 import java.util.List;
 
-public record Trainer(
+public record TrainerProfile(
         String name,
         List<SmogonPokemon> pokemons,
         ResultAction onVictory,

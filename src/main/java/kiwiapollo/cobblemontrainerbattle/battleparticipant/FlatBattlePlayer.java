@@ -1,7 +1,9 @@
 package kiwiapollo.cobblemontrainerbattle.battleparticipant;
 
 import com.cobblemon.mod.common.Cobblemon;
+import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
+import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -65,6 +67,14 @@ public class FlatBattlePlayer implements PlayerBattleParticipant {
                 .findFirst().get().getUuid();
 
         return party.toBattleTeam(false, false, leadingPokemon);
+    }
+
+    @Override
+    public BattleActor createBattleActor() {
+        return new PlayerBattleActor(
+                getUuid(),
+                getBattleTeam()
+        );
     }
 
     @Override

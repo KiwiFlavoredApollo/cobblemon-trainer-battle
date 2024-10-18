@@ -2,6 +2,7 @@ package kiwiapollo.cobblemontrainerbattle.resulthandler;
 
 import com.mojang.brigadier.CommandDispatcher;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.TrainerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.common.ResultAction;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
@@ -18,12 +19,14 @@ public class GenericResultHandler implements ResultHandler {
         this.defeat = defeat;
     }
 
-    public void onVictory() {
+    @Override
+    public void onVictory(TrainerBattleParticipant trainer) {
         CobblemonTrainerBattle.economy.addBalance(player, victory.balance);
         victory.commands.forEach(this::executeCommand);
     }
 
-    public void onDefeat() {
+    @Override
+    public void onDefeat(TrainerBattleParticipant trainer) {
         CobblemonTrainerBattle.economy.removeBalance(player, defeat.balance);
         defeat.commands.forEach(this::executeCommand);
     }

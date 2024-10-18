@@ -3,16 +3,12 @@ package kiwiapollo.cobblemontrainerbattle.trainerbattle;
 import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.BattleSide;
-import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battleactor.VirtualTrainerBattleActor;
-import kiwiapollo.cobblemontrainerbattle.command.TrainerBattleCommand;
-import kiwiapollo.cobblemontrainerbattle.common.BattleConditionExceptionMessageFactory;
-import kiwiapollo.cobblemontrainerbattle.common.PlayerValidator;
-import kiwiapollo.cobblemontrainerbattle.exception.*;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.TrainerBattleParticipant;
+import kiwiapollo.cobblemontrainerbattle.common.PlayerValidator;
+import kiwiapollo.cobblemontrainerbattle.exception.*;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultHandler;
 import kotlin.Unit;
 import net.minecraft.text.Text;
@@ -20,7 +16,7 @@ import net.minecraft.text.Text;
 import java.util.Objects;
 import java.util.UUID;
 
-public class VirtualTrainerBattle implements TrainerBattle {
+public class StandardTrainerBattle implements TrainerBattle {
     public static final int FLAT_LEVEL = 100;
 
     private final PlayerBattleParticipant player;
@@ -29,7 +25,7 @@ public class VirtualTrainerBattle implements TrainerBattle {
 
     private UUID battleId;
 
-    public VirtualTrainerBattle(
+    public StandardTrainerBattle(
             PlayerBattleParticipant player,
             TrainerBattleParticipant trainer,
             ResultHandler resultHandler
@@ -46,7 +42,7 @@ public class VirtualTrainerBattle implements TrainerBattle {
             PlayerValidator.assertPlayerPartyNotFaint(player.getParty());
             PlayerValidator.assertPlayerPartyAtOrAboveRelativeLevelThreshold(player.getParty());
             PlayerValidator.assertPlayerNotBusyWithPokemonBattle(player.getPlayerEntity());
-            PlayerValidator.assertSatisfiedBattleCondition(player.getParty(), trainer.getBattleCondition());
+            PlayerValidator.assertSatisfiedBattleCondition(this);
 
             Cobblemon.INSTANCE.getStorage()
                     .getParty(player.getPlayerEntity()).toGappyList().stream()
@@ -55,17 +51,8 @@ public class VirtualTrainerBattle implements TrainerBattle {
 
             Cobblemon.INSTANCE.getBattleRegistry().startBattle(
                     BattleFormat.Companion.getGEN_9_SINGLES(),
-                    new BattleSide(new PlayerBattleActor(
-                            player.getUuid(),
-                            player.getBattleTeam()
-                    )),
-                    new BattleSide(new VirtualTrainerBattleActor(
-                            trainer.getName(),
-                            trainer.getUuid(),
-                            trainer.getBattleTeam(),
-                            trainer.getBattleAI(),
-                            player.getPlayerEntity()
-                    )),
+                    new BattleSide(player.createBattleActor()),
+                    new BattleSide(trainer.createBattleActor()),
                     false
             ).ifSuccessful(pokemonBattle -> {
                 battleId = pokemonBattle.getBattleId();
@@ -91,21 +78,17 @@ public class VirtualTrainerBattle implements TrainerBattle {
         } catch (BusyWithPokemonBattleException e) {
             player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.trainerbattle.busy_with_pokemon_battle"));
             throw new BattleStartException();
-
-        } catch (BattleConditionException e) {
-            player.sendErrorMessage(new BattleConditionExceptionMessageFactory().create(e));
-            throw new BattleStartException();
         }
     }
 
     @Override
     public void onPlayerVictory() {
-        resultHandler.onVictory();
+        resultHandler.onVictory(trainer);
     }
 
     @Override
     public void onPlayerDefeat() {
-        resultHandler.onDefeat();
+        resultHandler.onDefeat(trainer);
     }
 
     @Override

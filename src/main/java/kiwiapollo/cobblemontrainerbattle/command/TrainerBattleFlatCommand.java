@@ -7,13 +7,13 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.common.TrainerProfile;
+import kiwiapollo.cobblemontrainerbattle.resulthandler.RecordedResultHandler;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.VirtualTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.*;
 import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerIdentifierFactory;
-import kiwiapollo.cobblemontrainerbattle.common.Trainer;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
-import kiwiapollo.cobblemontrainerbattle.resulthandler.GenericResultHandler;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultHandler;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -36,7 +36,7 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
         return RequiredArgumentBuilder.<ServerCommandSource, String>argument("trainer", StringArgumentType.greedyString())
                 .requires(new PlayerCommandPredicate(permission))
                 .suggests((context, builder) -> {
-                    CobblemonTrainerBattle.trainerRegistry.keySet().stream()
+                    CobblemonTrainerBattle.trainerProfileRegistry.keySet().stream()
                             .map(Identifier::getPath)
                             .forEach(builder::suggest);
                     return builder.buildFuture();
@@ -55,28 +55,27 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
         ServerPlayerEntity player = context.getSource().getPlayer();
 
         String resourcePath = StringArgumentType.getString(context, "trainer");
-        Identifier identifier = Identifier.of(CobblemonTrainerBattle.NAMESPACE, resourcePath);
-        Trainer trainer = CobblemonTrainerBattle.trainerRegistry.get(identifier);
+        Identifier trainer = Identifier.of(CobblemonTrainerBattle.NAMESPACE, resourcePath);
 
         return startBattleWithTrainer(player, trainer);
     }
 
     private int startBattleWithRandomTrainer(CommandContext<ServerCommandSource> context) {
         ServerPlayerEntity player = context.getSource().getPlayer();
-
-        Identifier identifier = new RandomTrainerIdentifierFactory().create();
-        Trainer trainer = CobblemonTrainerBattle.trainerRegistry.get(identifier);
+        Identifier trainer = new RandomTrainerIdentifierFactory().create();
 
         return startBattleWithTrainer(player, trainer);
     }
 
-    private int startBattleWithTrainer(ServerPlayerEntity player, Trainer trainer) {
+    private int startBattleWithTrainer(ServerPlayerEntity player, Identifier trainer) {
         try {
-            PlayerBattleParticipant playerBattleParticipant = new FlatBattlePlayer(player, VirtualTrainerBattle.FLAT_LEVEL);
-            TrainerBattleParticipant trainerBattleParticipant = new FlatBattleTrainer(trainer, player, VirtualTrainerBattle.FLAT_LEVEL);
-            ResultHandler resultHandler = new GenericResultHandler(player, trainer.onVictory(), trainer.onDefeat());
+            PlayerBattleParticipant playerBattleParticipant = new FlatBattlePlayer(player, StandardTrainerBattle.FLAT_LEVEL);
+            TrainerBattleParticipant trainerBattleParticipant = new FlatBattleTrainer(trainer, player, StandardTrainerBattle.FLAT_LEVEL);
 
-            TrainerBattle trainerBattle = new VirtualTrainerBattle(playerBattleParticipant, trainerBattleParticipant, resultHandler);
+            TrainerProfile trainerProfile = CobblemonTrainerBattle.trainerProfileRegistry.get(trainer);
+            ResultHandler resultHandler = new RecordedResultHandler(player, trainerProfile.onVictory(), trainerProfile.onDefeat());
+
+            TrainerBattle trainerBattle = new StandardTrainerBattle(playerBattleParticipant, trainerBattleParticipant, resultHandler);
             trainerBattle.start();
 
             CobblemonTrainerBattle.trainerBattleRegistry.put(player.getUuid(), trainerBattle);

@@ -28,7 +28,8 @@ public class VirtualTrainerBattleActor extends AIBattleActor implements Fleeable
             @NotNull UUID gameId,
             @NotNull List<? extends BattlePokemon> pokemonList,
             @NotNull BattleAI battleAI,
-            ServerPlayerEntity opposingPlayer) {
+            ServerPlayerEntity opposingPlayer
+    ) {
         super(gameId, pokemonList, battleAI);
         this.trainerName = trainerName;
         this.battleStartingWorld = opposingPlayer.getServerWorld();

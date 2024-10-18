@@ -7,6 +7,7 @@
   "command.cobblemontrainerbattle.trainerbattle.busy_with_pokemon_battle": "You can’t use this command during a Pokémon battle.",
   "command.cobblemontrainerbattle.trainerbattle.below_relative_level_threshold": "Your Pokémon must be above level %d.",
 
+  "command.cobblemontrainerbattle.condition.is_rematch_allowed_after_victory": "Trainer can be defeated once",
   "command.cobblemontrainerbattle.condition.minimum_party_level": "Your Pokémon must be at least level %d.",
   "command.cobblemontrainerbattle.condition.maximum_party_level": "Your Pokémon must be no higher than level %d.",
 

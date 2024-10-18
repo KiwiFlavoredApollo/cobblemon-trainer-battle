@@ -46,14 +46,14 @@ public class GroupBattle {
             ResourceValidator.assertTrainerGroupValid(identifier);
             SessionValidator.assertSessionNotExist(sessions, player);
 
-            TrainerGroup trainerGroup = CobblemonTrainerBattle.trainerGroupRegistry.get(identifier);
-            List<Identifier> trainersToDefeat = trainerGroup.trainers.stream()
+            TrainerGroupProfile trainerGroupProfile = CobblemonTrainerBattle.trainerGroupProfileRegistry.get(identifier);
+            List<Identifier> trainersToDefeat = trainerGroupProfile.trainers.stream()
                     .map(trainerResourcePath -> Identifier.of(CobblemonTrainerBattle.NAMESPACE, trainerResourcePath)).toList();
 
             ResultHandler resultHandler = new GenericResultHandler(
                     player,
-                    trainerGroup.onVictory,
-                    trainerGroup.onDefeat
+                    trainerGroupProfile.onVictory,
+                    trainerGroupProfile.onDefeat
             );
 
             GroupBattleSession session = new GroupBattleSession(

@@ -33,8 +33,8 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
     public void reload(ResourceManager resourceManager) {
         defaultTrainerConfiguration = loadDefaultTrainerConfiguration(resourceManager);
 
-        CobblemonTrainerBattle.trainerRegistry = loadTrainers(resourceManager);
-        CobblemonTrainerBattle.trainerGroupRegistry = loadTrainerGroups(resourceManager);
+        CobblemonTrainerBattle.trainerProfileRegistry = loadTrainers(resourceManager);
+        CobblemonTrainerBattle.trainerGroupProfileRegistry = loadTrainerGroups(resourceManager);
 
         BattleFactory.configuration = loadBattleFactoryConfiguration(resourceManager);
     }
@@ -49,7 +49,7 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
         }
     }
 
-    private Map<Identifier, Trainer> loadTrainers(ResourceManager resourceManager) {
+    private Map<Identifier, TrainerProfile> loadTrainers(ResourceManager resourceManager) {
         List<String> namespaces = List.of(
                 "radicalred",
                 "inclementemerald",
@@ -57,7 +57,7 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
                 "custom"
         );
 
-        Map<Identifier, Trainer> trainers = new HashMap<>();
+        Map<Identifier, TrainerProfile> trainers = new HashMap<>();
         for (String namespace : namespaces) {
             trainers.putAll(loadTrainersByNamespace(resourceManager, namespace));
             CobblemonTrainerBattle.LOGGER.info(String.format("Loaded %s", namespace));
@@ -66,8 +66,8 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
         return trainers;
     }
 
-    private Map<Identifier, Trainer> loadTrainersByNamespace(ResourceManager resourceManager, String namespace) {
-        Map<Identifier, Trainer> trainers = new HashMap<>();
+    private Map<Identifier, TrainerProfile> loadTrainersByNamespace(ResourceManager resourceManager, String namespace) {
+        Map<Identifier, TrainerProfile> trainers = new HashMap<>();
 
         resourceManager.findResources(namespace, this::isJsonFile).forEach(((identifier, resource) -> {
             try {
@@ -78,7 +78,7 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
 
                 trainers.put(
                         identifier,
-                        new Trainer(
+                        new TrainerProfile(
                                 name,
                                 pokemons,
                                 configuration.onVictory,
@@ -96,14 +96,14 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
         return trainers;
     }
 
-    private Map<Identifier, TrainerGroup> loadTrainerGroups(ResourceManager resourceManager) {
-        Map<Identifier, TrainerGroup> trainerGroups = new HashMap<>();
+    private Map<Identifier, TrainerGroupProfile> loadTrainerGroups(ResourceManager resourceManager) {
+        Map<Identifier, TrainerGroupProfile> trainerGroups = new HashMap<>();
 
         resourceManager.findResources(GROUP_CONFIG_DIR, this::isJsonFile).forEach(((identifier, resource) -> {
             try (InputStream inputStream = resourceManager.getResourceOrThrow(identifier).getInputStream()) {
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-                TrainerGroup trainerGroup = new Gson().fromJson(bufferedReader, TrainerGroup.class);
-                trainerGroups.put(identifier, trainerGroup);
+                TrainerGroupProfile trainerGroupProfile = new Gson().fromJson(bufferedReader, TrainerGroupProfile.class);
+                trainerGroups.put(identifier, trainerGroupProfile);
 
             } catch (IOException ignored) {
 

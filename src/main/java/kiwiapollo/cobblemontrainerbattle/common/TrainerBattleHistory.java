@@ -1,50 +1,54 @@
 package kiwiapollo.cobblemontrainerbattle.common;
 
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.nbt.NbtIo;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.WorldSavePath;
+import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.util.Identifier;
 
-import java.io.File;
-import java.io.IOException;
+import java.time.Instant;
+import java.util.*;
 
 public class TrainerBattleHistory {
-    public static File WORLD_DIR = MinecraftServer.getSavePath(WorldSavePath.ROOT).toFile();
 
-    public static void save(ServerWorld world, NbtCompound data) {
-        try {
-            File worldDir = world.getServer().getSavePath(WorldSavePath.ROOT).toFile();
-            File modDir = new File(worldDir, NAMESPACE);
-            if (!modDir.exists()) {
-                modDir.mkdirs();
-            }
+    private final Map<Identifier, TrainerBattleRecord> recordRegistry;
 
-            File file = getFile(world);
+    public TrainerBattleHistory(ServerPlayerEntity player) {
+        recordRegistry = new HashMap<>();
+    }
 
-            NbtIo.writeCompressed(data, file);
+    public void addPlayerVictory(Identifier trainer) {
+        TrainerBattleRecord record = getTrainerBattleRecord(trainer);
 
-        } catch (IOException e) {
+        record.victoryCount += 1;
+        record.lastBattleDate = Instant.now();
 
+        recordRegistry.put(trainer, record);
+    }
+
+    public void addPlayerDefeat(Identifier trainer) {
+        TrainerBattleRecord record = getTrainerBattleRecord(trainer);
+
+        record.defeatCount += 1;
+        record.lastBattleDate = Instant.now();
+
+        recordRegistry.put(trainer, record);
+    }
+
+    private TrainerBattleRecord getTrainerBattleRecord(Identifier trainer) {
+        if (recordRegistry.containsKey(trainer)) {
+            return recordRegistry.get(trainer);
+        } else {
+            return new TrainerBattleRecord();
         }
     }
 
-    public static NbtCompound load(ServerWorld world) {
-        try {
-            File file = getFile(world);
-            if (!file.exists()) {
-                return new NbtCompound();
-            }
-
-            return NbtIo.readCompressed(file);
-        } catch (IOException e) {
-            return new NbtCompound();
-        }
+    public void remove(Identifier trainer) {
+        recordRegistry.remove(trainer);
     }
 
-    private static File getFile(ServerWorld world) {
-        File worldDir = world.getServer().getSavePath(WorldSavePath.ROOT).toFile();
-        File modDir = new File(worldDir, NAMESPACE);
-        return new File(worldDir, FILE_NAME);
+    public boolean isTrainerDefeated(Identifier trainer) {
+        if (!recordRegistry.containsKey(trainer)) {
+            return false;
+        } else {
+            return recordRegistry.get(trainer).victoryCount > 0;
+        }
     }
 }

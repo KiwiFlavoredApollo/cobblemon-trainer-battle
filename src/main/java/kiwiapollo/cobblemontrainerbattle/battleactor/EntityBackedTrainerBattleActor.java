@@ -30,7 +30,8 @@ public class EntityBackedTrainerBattleActor extends AIBattleActor implements Ent
             UUID uuid,
             List<BattlePokemon> pokemonList,
             BattleAI artificialDecider,
-            TrainerEntity trainerEntity) {
+            TrainerEntity trainerEntity
+    ) {
         super(uuid, pokemonList, artificialDecider);
         this.trainerName = trainerName;
         this.trainerEntity = trainerEntity;

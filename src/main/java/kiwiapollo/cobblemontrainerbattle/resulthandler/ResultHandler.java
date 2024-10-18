@@ -1,7 +1,9 @@
 package kiwiapollo.cobblemontrainerbattle.resulthandler;
 
-public interface ResultHandler {
-    void onVictory();
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.TrainerBattleParticipant;
 
-    void onDefeat();
+public interface ResultHandler {
+    void onVictory(TrainerBattleParticipant trainer);
+
+    void onDefeat(TrainerBattleParticipant trainer);
 }

@@ -2,10 +2,9 @@ package kiwiapollo.cobblemontrainerbattle.groupbattle;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.SessionBattleResultHandler;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.VirtualTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.*;
-import kiwiapollo.cobblemontrainerbattle.common.Trainer;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.exception.DefeatedAllTrainersException;
 import kiwiapollo.cobblemontrainerbattle.exception.DefeatedToTrainerException;
@@ -23,6 +22,7 @@ public class GroupBattleSession implements Session {
     private final ResultHandler resultHandler;
     private final BattleParticipantFactory battleParticipantFactory;
 
+    private TrainerBattle lastTrainerBattle;
     private int defeatedTrainersCount;
     private boolean isPlayerDefeated;
 
@@ -49,12 +49,12 @@ public class GroupBattleSession implements Session {
 
             PlayerBattleParticipant playerBattleParticipant = battleParticipantFactory.createPlayer(player);
 
-            Trainer trainer = CobblemonTrainerBattle.trainerRegistry.get(trainersToDefeat.get(defeatedTrainersCount));
+            Identifier trainer = trainersToDefeat.get(defeatedTrainersCount);
             TrainerBattleParticipant trainerBattleParticipant = battleParticipantFactory.createTrainer(trainer, player);
 
             ResultHandler resultHandler = new SessionBattleResultHandler(this::onBattleVictory, this::onBattleDefeat);
 
-            TrainerBattle trainerBattle = new VirtualTrainerBattle(
+            TrainerBattle trainerBattle = new StandardTrainerBattle(
                     playerBattleParticipant,
                     trainerBattleParticipant,
                     resultHandler
@@ -62,6 +62,8 @@ public class GroupBattleSession implements Session {
             trainerBattle.start();
 
             CobblemonTrainerBattle.trainerBattleRegistry.put(player.getUuid(), trainerBattle);
+
+            this.lastTrainerBattle = trainerBattle;
 
         } catch (DefeatedToTrainerException e) {
             player.sendMessage(Text.translatable("command.cobblemontrainerbattle.groupbattle.startbattle.defeated_to_trainer"));
@@ -86,9 +88,9 @@ public class GroupBattleSession implements Session {
     @Override
     public void onSessionStop() {
         if (isDefeatedAllTrainers()) {
-            resultHandler.onVictory();
+            resultHandler.onVictory(lastTrainerBattle.getTrainer());
         } else {
-            resultHandler.onDefeat();
+            resultHandler.onDefeat(lastTrainerBattle.getTrainer());
         }
     }
 

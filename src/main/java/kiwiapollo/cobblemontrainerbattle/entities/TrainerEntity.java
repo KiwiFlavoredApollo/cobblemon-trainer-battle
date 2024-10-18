@@ -5,17 +5,14 @@ import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactor.EntityBackedTrainerBattleActor;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.EntityBackedTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.*;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.common.Trainer;
+import kiwiapollo.cobblemontrainerbattle.common.TrainerProfile;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.exception.BusyWithPokemonBattleException;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.GenericResultHandler;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultHandler;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.PlayerBattleParticipant;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.TrainerBattleParticipant;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.NormalBattlePlayer;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.NormalBattleTrainer;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.entity.EntityType;
@@ -70,7 +67,7 @@ public class TrainerEntity extends PathAwareEntity {
 
     private Identifier getRandomTrainerIdentifier() {
         try {
-            List<Identifier> identifiers = new ArrayList<>(CobblemonTrainerBattle.trainerRegistry.keySet());
+            List<Identifier> identifiers = new ArrayList<>(CobblemonTrainerBattle.trainerProfileRegistry.keySet());
             Collections.shuffle(identifiers);
             return identifiers.get(0);
 
@@ -115,16 +112,15 @@ public class TrainerEntity extends PathAwareEntity {
             this.velocityDirty = true;
 
             PlayerBattleParticipant playerBattleParticipant = new NormalBattlePlayer((ServerPlayerEntity) player);
+            TrainerBattleParticipant trainerBattleParticipant = new EntityBackedNormalBattleTrainer(trainerIdentifier, this, (ServerPlayerEntity) player);
 
-            Trainer trainer = CobblemonTrainerBattle.trainerRegistry.get(trainerIdentifier);
-            TrainerBattleParticipant trainerBattleParticipant = new NormalBattleTrainer(trainer, (ServerPlayerEntity) player);
-            ResultHandler resultHandler = new GenericResultHandler((ServerPlayerEntity) player, trainer.onVictory(), trainer.onDefeat());
+            TrainerProfile trainerProfile = CobblemonTrainerBattle.trainerProfileRegistry.get(trainerIdentifier);
+            ResultHandler resultHandler = new GenericResultHandler((ServerPlayerEntity) player, trainerProfile.onVictory(), trainerProfile.onDefeat());
 
-            TrainerBattle trainerBattle = new EntityBackedTrainerBattle(
+            TrainerBattle trainerBattle = new StandardTrainerBattle(
                     playerBattleParticipant,
                     trainerBattleParticipant,
-                    resultHandler,
-                    this
+                    resultHandler
             );
             trainerBattle.start();
 
