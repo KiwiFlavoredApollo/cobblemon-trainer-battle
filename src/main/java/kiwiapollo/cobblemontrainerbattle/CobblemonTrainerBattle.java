@@ -3,9 +3,6 @@ package kiwiapollo.cobblemontrainerbattle;
 import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.Priority;
 import com.cobblemon.mod.common.api.events.CobblemonEvents;
-import com.cobblemon.mod.common.battles.ActiveBattlePokemon;
-import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
-import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactory;
 import kiwiapollo.cobblemontrainerbattle.command.*;
 import kiwiapollo.cobblemontrainerbattle.common.*;
@@ -19,8 +16,8 @@ import kotlin.Unit;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
@@ -31,16 +28,18 @@ import net.minecraft.entity.SpawnGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.SpawnEggItem;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.WorldSavePath;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
 import java.util.*;
-import java.util.stream.StreamSupport;
 
 public class CobblemonTrainerBattle implements ModInitializer {
 	public static final String NAMESPACE = "cobblemontrainerbattle";
@@ -91,11 +90,6 @@ public class CobblemonTrainerBattle implements ModInitializer {
 				trainerBattleRegistry.get(player.getUuid()).onPlayerDefeat();
 			}
 
-//			StreamSupport.stream(battleVictoryEvent.getBattle().getActivePokemon().spliterator(), false)
-//					.map(ActiveBattlePokemon::getBattlePokemon).filter(Objects::nonNull)
-//					.map(BattlePokemon::getEntity).filter(Objects::nonNull)
-//					.forEach(PokemonEntity::discard);
-
 			return Unit.INSTANCE;
         });
 
@@ -120,6 +114,47 @@ public class CobblemonTrainerBattle implements ModInitializer {
 				trainerBattleRegistry.remove(playerUuid);
 			}
 		});
+
+		ServerLifecycleEvents.SERVER_STARTED.register(server -> {
+            File worldDir = server.getSavePath(WorldSavePath.ROOT).toFile();
+            File modSaveDir = new File(worldDir, NAMESPACE);
+
+			if (!modSaveDir.isDirectory()) {
+				return;
+			}
+
+            trainerBattleHistoryRegistry.clear();
+            for (File file : Arrays.stream(modSaveDir.listFiles()).filter(file -> file.getName().endsWith(".dat")).toList()) {
+				try {
+					TrainerBattleHistory history = TrainerBattleHistory.readFromNbt(NbtFileHandler.readNbtFromFile(file));
+					trainerBattleHistoryRegistry.put(UUID.fromString(file.getName()), history);
+				} catch (NullPointerException ignored) {
+
+				}
+            }
+        });
+
+		ServerLifecycleEvents.SERVER_STOPPED.register(server -> {
+            File worldDir = server.getSavePath(WorldSavePath.ROOT).toFile();
+            File modSaveDir = new File(worldDir, NAMESPACE);
+
+			if (!modSaveDir.exists()) {
+				modSaveDir.mkdirs();
+			}
+
+            for (Map.Entry<UUID, TrainerBattleHistory> trainerBattleHistoryEntry: trainerBattleHistoryRegistry.entrySet()) {
+                UUID uuid = trainerBattleHistoryEntry.getKey();
+                TrainerBattleHistory trainerBattleHistory = trainerBattleHistoryEntry.getValue();
+
+                File playerSaveFile = new File(modSaveDir, String.format("%s.dat", uuid.toString()));
+
+				if (playerSaveFile.exists()) {
+					playerSaveFile.renameTo(new File(modSaveDir, String.format("%s.dat_old", uuid.toString())));
+				}
+
+                NbtFileHandler.writeNbtToFile(trainerBattleHistory.writeToNbt(new NbtCompound()), playerSaveFile);
+            }
+        });
 
 		ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new ResourceReloadListener());
 

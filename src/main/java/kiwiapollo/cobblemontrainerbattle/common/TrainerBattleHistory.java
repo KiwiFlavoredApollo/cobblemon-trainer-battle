@@ -1,6 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.common;
 
-import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.Identifier;
 
 import java.time.Instant;
@@ -10,7 +10,7 @@ public class TrainerBattleHistory {
 
     private final Map<Identifier, TrainerBattleRecord> recordRegistry;
 
-    public TrainerBattleHistory(ServerPlayerEntity player) {
+    public TrainerBattleHistory() {
         recordRegistry = new HashMap<>();
     }
 
@@ -50,5 +50,48 @@ public class TrainerBattleHistory {
         } else {
             return recordRegistry.get(trainer).victoryCount > 0;
         }
+    }
+
+    private void put(Identifier identifier, TrainerBattleRecord trainerBattleRecord) {
+        recordRegistry.put(identifier, trainerBattleRecord);
+    }
+
+    public NbtCompound writeToNbt(NbtCompound nbt) {
+        for (Map.Entry<Identifier, TrainerBattleRecord> trainerBattleRecordEntry: recordRegistry.entrySet()) {
+            Identifier identifier = trainerBattleRecordEntry.getKey();
+            TrainerBattleRecord trainerBattleRecord = trainerBattleRecordEntry.getValue();
+
+            nbt.put(identifier.toString(), writeTrainerBattleRecordToNbt(trainerBattleRecord));
+        }
+        return nbt;
+    }
+
+    private NbtCompound writeTrainerBattleRecordToNbt(TrainerBattleRecord trainerBattleRecord) {
+        NbtCompound subNbt = new NbtCompound();
+
+        subNbt.putLong("lastBattleDate", trainerBattleRecord.lastBattleDate.toEpochMilli());
+        subNbt.putInt("victoryCount", trainerBattleRecord.victoryCount);
+        subNbt.putInt("defeatCount", trainerBattleRecord.defeatCount);
+
+        return subNbt;
+    }
+
+    public static TrainerBattleHistory readFromNbt(NbtCompound nbt) {
+        TrainerBattleHistory history = new TrainerBattleHistory();
+        for (String string : nbt.getKeys()) {
+            history.put(
+                    new Identifier(string),
+                    readTrainerBattleRecordFromNbt(nbt.getCompound(string))
+            );
+        }
+        return history;
+    }
+
+    private static TrainerBattleRecord readTrainerBattleRecordFromNbt(NbtCompound compound) {
+        return new TrainerBattleRecord(
+                Instant.ofEpochMilli(compound.getLong("lastBattleDate")),
+                compound.getInt("victoryCount"),
+                compound.getInt("defeatCount")
+        );
     }
 }
