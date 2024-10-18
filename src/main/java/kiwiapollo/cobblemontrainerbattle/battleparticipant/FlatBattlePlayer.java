@@ -6,6 +6,7 @@ import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
+import kiwiapollo.cobblemontrainerbattle.battleactor.DisposableBattlePokemonFactory;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.MutableText;
 import net.minecraft.util.Formatting;
@@ -61,12 +62,7 @@ public class FlatBattlePlayer implements PlayerBattleParticipant {
     }
 
     public List<BattlePokemon> getBattleTeam() {
-        UUID leadingPokemon = party.toGappyList().stream()
-                .filter(Objects::nonNull)
-                .filter(pokemon -> !pokemon.isFainted())
-                .findFirst().get().getUuid();
-
-        return party.toBattleTeam(false, false, leadingPokemon);
+        return party.toGappyList().stream().filter(Objects::nonNull).map(DisposableBattlePokemonFactory::create).toList();
     }
 
     @Override

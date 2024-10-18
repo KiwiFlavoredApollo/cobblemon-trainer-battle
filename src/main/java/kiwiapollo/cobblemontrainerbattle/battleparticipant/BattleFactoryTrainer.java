@@ -6,6 +6,7 @@ import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.battleactor.DisposableBattlePokemonFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactor.VirtualTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.common.BattleCondition;
 import kiwiapollo.cobblemontrainerbattle.common.Generation5AI;
@@ -80,12 +81,7 @@ public class BattleFactoryTrainer implements TrainerBattleParticipant {
 
     @Override
     public List<BattlePokemon> getBattleTeam() {
-        UUID leadingPokemon = party.toGappyList().stream()
-                .filter(Objects::nonNull)
-                .filter(pokemon -> !pokemon.isFainted())
-                .findFirst().get().getUuid();
-
-        return party.toBattleTeam(false, false, leadingPokemon);
+        return party.toGappyList().stream().filter(Objects::nonNull).map(DisposableBattlePokemonFactory::create).toList();
     }
 
     private static PartyStore toParty(List<SmogonPokemon> pokemons, ServerPlayerEntity player, int level) {

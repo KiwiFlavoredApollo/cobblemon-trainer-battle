@@ -3,6 +3,9 @@ package kiwiapollo.cobblemontrainerbattle;
 import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.Priority;
 import com.cobblemon.mod.common.api.events.CobblemonEvents;
+import com.cobblemon.mod.common.battles.ActiveBattlePokemon;
+import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
+import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactory;
 import kiwiapollo.cobblemontrainerbattle.command.*;
 import kiwiapollo.cobblemontrainerbattle.common.*;
@@ -37,6 +40,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.*;
+import java.util.stream.StreamSupport;
 
 public class CobblemonTrainerBattle implements ModInitializer {
 	public static final String NAMESPACE = "cobblemontrainerbattle";
@@ -86,6 +90,11 @@ public class CobblemonTrainerBattle implements ModInitializer {
 			} else {
 				trainerBattleRegistry.get(player.getUuid()).onPlayerDefeat();
 			}
+
+//			StreamSupport.stream(battleVictoryEvent.getBattle().getActivePokemon().spliterator(), false)
+//					.map(ActiveBattlePokemon::getBattlePokemon).filter(Objects::nonNull)
+//					.map(BattlePokemon::getEntity).filter(Objects::nonNull)
+//					.forEach(PokemonEntity::discard);
 
 			return Unit.INSTANCE;
         });
