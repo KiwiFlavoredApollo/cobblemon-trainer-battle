@@ -39,8 +39,7 @@ public class GroupBattle {
         try {
             ServerPlayerEntity player = context.getSource().getPlayer();
 
-            String groupResourcePath = StringArgumentType.getString(context, "group");
-            Identifier identifier = Identifier.of(CobblemonTrainerBattle.NAMESPACE, groupResourcePath);
+            Identifier identifier = new Identifier(StringArgumentType.getString(context, "trainer"));
 
             ResourceValidator.assertTrainerGroupExist(identifier);
             ResourceValidator.assertTrainerGroupValid(identifier);

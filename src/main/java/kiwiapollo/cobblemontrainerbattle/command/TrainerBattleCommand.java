@@ -40,7 +40,7 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
                 .requires(new PlayerCommandPredicate(permission))
                 .suggests((context, builder) -> {
                     CobblemonTrainerBattle.trainerProfileRegistry.keySet().stream()
-                            .map(Identifier::getPath)
+                            .map(Identifier::toString)
                             .forEach(builder::suggest);
                     return builder.buildFuture();
                 })
@@ -56,9 +56,7 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
 
     private int startBattleWithSelectedTrainer(CommandContext<ServerCommandSource> context) {
         ServerPlayerEntity player = context.getSource().getPlayer();
-
-        String resourcePath = StringArgumentType.getString(context, "trainer");
-        Identifier trainer = Identifier.of(CobblemonTrainerBattle.NAMESPACE, resourcePath);
+        Identifier trainer = new Identifier(StringArgumentType.getString(context, "trainer"));
 
         return startBattleWithTrainer(player, trainer);
     }

@@ -12,17 +12,17 @@ import net.minecraft.resource.ResourceManager;
 import net.minecraft.util.Identifier;
 
 import java.io.*;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class ResourceReloadListener implements SimpleSynchronousResourceReloadListener {
-    public static final String GROUP_CONFIG_DIR = "groups";
-    public static final String TRAINER_CONFIG_DIR = "trainers";
-    public static final String ARCADE_CONFIG_DIR = "arcades";
-
-    public static TrainerConfiguration defaultTrainerConfiguration;
+    public static final String GROUP_DIR = "group";
+    public static final String TRAINER_TEAM_DIR = "trainer/team";
+    public static final String TRAINER_OPTION_DIR = "trainer/option";
+    public static final String MINIGAME_DIR = "minigame";
 
     @Override
     public Identifier getFabricId() {
@@ -31,8 +31,6 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
 
     @Override
     public void reload(ResourceManager resourceManager) {
-        defaultTrainerConfiguration = loadDefaultTrainerConfiguration(resourceManager);
-
         CobblemonTrainerBattle.trainerProfileRegistry = loadTrainers(resourceManager);
         CobblemonTrainerBattle.trainerGroupProfileRegistry = loadTrainerGroups(resourceManager);
 
@@ -67,17 +65,29 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
     }
 
     private Map<Identifier, TrainerProfile> loadTrainersByNamespace(ResourceManager resourceManager, String namespace) {
-        Map<Identifier, TrainerProfile> trainers = new HashMap<>();
+        TrainerConfiguration defaultOption = loadDefaultTrainerConfiguration(resourceManager);
 
-        resourceManager.findResources(namespace, this::isJsonFile).forEach(((identifier, resource) -> {
+        Map<Identifier, Resource> teamResources = resourceManager.findResources(String.format("%s/%s", TRAINER_TEAM_DIR, namespace), this::isJsonFile);
+        Map<Identifier, Resource> optionResources = resourceManager.findResources(String.format("%s/%s", TRAINER_OPTION_DIR, namespace), this::isJsonFile);
+
+        Map<Identifier, TrainerProfile> trainers = new HashMap<>();
+        for (Map.Entry<Identifier, Resource> entry : teamResources.entrySet()) {
             try {
-                // identifier: cobblemontrainerbattle:custom/custom_trainer.json
-                List<SmogonPokemon> pokemons = readSmogonPokemonResource(resource);
-                TrainerConfiguration configuration = loadTrainerConfiguration(resourceManager, identifier);
-                String name = Paths.get(identifier.getPath()).getFileName().toString().replace(".json", "");
+                Identifier teamIdentifier = entry.getKey();
+                Resource teamResource = entry.getValue();
+
+                Identifier optionIdentifier = toOptionIdentifier(teamIdentifier);
+
+                String name = Paths.get(teamIdentifier.getPath()).getFileName().toString().replace(".json", "");
+                List<SmogonPokemon> pokemons = readSmogonPokemonResource(teamResource);
+
+                TrainerConfiguration configuration = defaultOption;
+                if (optionResources.containsKey(optionIdentifier)) {
+                    configuration = readTrainerConfigurationResource(optionResources.get(optionIdentifier));
+                }
 
                 trainers.put(
-                        identifier,
+                        toNamespaceIdentifier(teamIdentifier),
                         new TrainerProfile(
                                 name,
                                 pokemons,
@@ -88,18 +98,48 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
                 );
 
             } catch (JsonParseException | IOException e) {
-                String message = String.format("An error occurred while loading %s", identifier.toString());
-                CobblemonTrainerBattle.LOGGER.error(message);
+                Identifier teamIdentifier = entry.getKey();
+                CobblemonTrainerBattle.LOGGER.error("An error occurred while loading {}", teamIdentifier.toString());
             }
-        }));
+        }
 
         return trainers;
+    }
+
+    private Identifier toOptionIdentifier(Identifier teamIdentifier) {
+        String namespace = teamIdentifier.getNamespace();
+        String path = teamIdentifier.getPath().replace(TRAINER_TEAM_DIR, TRAINER_OPTION_DIR);
+
+        return Identifier.of(namespace, path);
+    }
+
+    private Identifier toNamespaceIdentifier(Identifier teamIdentifier) {
+        String prefix = String.format("^%s/", TRAINER_TEAM_DIR);
+        String suffix = "\\.json$";
+        String trimmedPath = teamIdentifier.getPath().replaceAll(prefix, "").replaceAll(suffix, "");
+
+        String[] parts = trimmedPath.split("/");
+
+        StringBuilder remainingPath = new StringBuilder();
+        for (int i = 1; i < parts.length; i++) {
+            if (i == 1) {
+                remainingPath.append(parts[i]);
+            } else {
+                remainingPath.append("/");
+                remainingPath.append(parts[i]);
+            }
+        }
+
+        String namespace = parts[0];
+        String path = remainingPath.toString();
+
+        return Identifier.of(namespace, path);
     }
 
     private Map<Identifier, TrainerGroupProfile> loadTrainerGroups(ResourceManager resourceManager) {
         Map<Identifier, TrainerGroupProfile> trainerGroups = new HashMap<>();
 
-        resourceManager.findResources(GROUP_CONFIG_DIR, this::isJsonFile).forEach(((identifier, resource) -> {
+        resourceManager.findResources(GROUP_DIR, this::isJsonFile).forEach(((identifier, resource) -> {
             try (InputStream inputStream = resourceManager.getResourceOrThrow(identifier).getInputStream()) {
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
                 TrainerGroupProfile trainerGroupProfile = new Gson().fromJson(bufferedReader, TrainerGroupProfile.class);
@@ -125,14 +165,7 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
 
     private Resource getDefaultTrainerConfigurationResource(ResourceManager resourceManager)
             throws FileNotFoundException {
-        String path = String.format("%s/defaults.json", TRAINER_CONFIG_DIR);
-        Identifier identifier = Identifier.of(CobblemonTrainerBattle.NAMESPACE, path);
-        return resourceManager.getResourceOrThrow(identifier);
-    }
-
-    private Resource getTrainerConfigurationResource(ResourceManager resourceManager, Identifier trainerIdentifier)
-            throws FileNotFoundException {
-        String path = String.format("%s/%s", TRAINER_CONFIG_DIR, trainerIdentifier.getPath());
+        String path = String.format("%s/defaults.json", TRAINER_OPTION_DIR);
         Identifier identifier = Identifier.of(CobblemonTrainerBattle.NAMESPACE, path);
         return resourceManager.getResourceOrThrow(identifier);
     }
@@ -144,16 +177,6 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
         }
     }
 
-    private TrainerConfiguration loadTrainerConfiguration(ResourceManager resourceManager, Identifier identifier) {
-        try {
-            Resource resource = getTrainerConfigurationResource(resourceManager, identifier);
-            return readTrainerConfigurationResource(resource);
-
-        } catch (IOException e) {
-            return defaultTrainerConfiguration;
-        }
-    }
-
     private TrainerConfiguration readTrainerConfigurationResource(Resource resource) throws IOException {
         try (InputStream inputStream = resource.getInputStream()) {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
@@ -162,7 +185,7 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
     }
 
     private Resource getBattleFactoryConfigurationResource(ResourceManager resourceManager) throws FileNotFoundException {
-        String path = String.format("%s/battlefactory.json", ARCADE_CONFIG_DIR);
+        String path = String.format("%s/battlefactory.json", MINIGAME_DIR);
         Identifier identifier = Identifier.of(CobblemonTrainerBattle.NAMESPACE, path);
         return resourceManager.getResourceOrThrow(identifier);
     }

@@ -83,16 +83,20 @@ public class SmogonPokemonParser {
     }
 
     private void setPokemonLevel(Pokemon pokemon, int level) {
-        if (level >= RELATIVE_LEVEL_THRESHOLD) {
-            pokemon.setLevel(level);
+        try {
+            if (level >= RELATIVE_LEVEL_THRESHOLD) {
+                pokemon.setLevel(level);
 
-        } else {
-            int maximumPartyLevel = Cobblemon.INSTANCE.getStorage().getParty(player).toGappyList().stream()
-                    .filter(Objects::nonNull)
-                    .map(Pokemon::getLevel)
-                    .max(Comparator.naturalOrder()).get();
+            } else {
+                int maximumPartyLevel = Cobblemon.INSTANCE.getStorage().getParty(player).toGappyList().stream()
+                        .filter(Objects::nonNull)
+                        .map(Pokemon::getLevel)
+                        .max(Comparator.naturalOrder()).get();
 
-            pokemon.setLevel(maximumPartyLevel + level);
+                pokemon.setLevel(maximumPartyLevel + level);
+            }
+        } catch (NullPointerException ignored) {
+
         }
     }
 
@@ -155,11 +159,15 @@ public class SmogonPokemonParser {
     }
 
     private void setPokemonGender(Pokemon pokemon, String gender) {
-        switch (gender) {
-            case "M" -> pokemon.setGender(Gender.MALE);
-            case "F" -> pokemon.setGender(Gender.FEMALE);
-            case "" -> pokemon.setGender(Gender.GENDERLESS);
-            default -> {}
+        try {
+            switch (gender) {
+                case "M" -> pokemon.setGender(Gender.MALE);
+                case "F" -> pokemon.setGender(Gender.FEMALE);
+                case "" -> pokemon.setGender(Gender.GENDERLESS);
+                default -> {}
+            }
+        } catch (NullPointerException ignored) {
+
         }
     }
 
