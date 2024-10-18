@@ -20,10 +20,14 @@ import java.util.List;
 import java.util.Map;
 
 public class ResourceReloadListener implements SimpleSynchronousResourceReloadListener {
-    public static final String GROUP_DIR = "group";
-    public static final String TRAINER_TEAM_DIR = "trainer/team";
-    public static final String TRAINER_OPTION_DIR = "trainer/option";
-    public static final String MINIGAME_DIR = "minigame";
+    public static final String TRAINER_TEAM_DIR = "trainers/teams";
+    public static final String TRAINER_OPTION_DIR = "trainers/options";
+    public static final String DEFAULT_TRAINER_OPTION = String.format("%s/%s", TRAINER_OPTION_DIR, "defaults.json");
+
+    public static final String GROUP_DIR = "groups";
+
+    public static final String MINIGAME_DIR = "minigames";
+    public static final String BATTLE_FACTORY_PROFILE = String.format("%s/%s", MINIGAME_DIR, "battlefactory.json");
 
     @Override
     public Identifier getFabricId() {
@@ -165,8 +169,7 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
 
     private Resource getDefaultTrainerOptionResource(ResourceManager resourceManager)
             throws FileNotFoundException {
-        String path = String.format("%s/defaults.json", TRAINER_OPTION_DIR);
-        Identifier identifier = Identifier.of(CobblemonTrainerBattle.NAMESPACE, path);
+        Identifier identifier = Identifier.of(CobblemonTrainerBattle.NAMESPACE, DEFAULT_TRAINER_OPTION);
         return resourceManager.getResourceOrThrow(identifier);
     }
 
@@ -185,8 +188,7 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
     }
 
     private Resource getBattleFactoryProfileResource(ResourceManager resourceManager) throws FileNotFoundException {
-        String path = String.format("%s/battlefactory.json", MINIGAME_DIR);
-        Identifier identifier = Identifier.of(CobblemonTrainerBattle.NAMESPACE, path);
+        Identifier identifier = Identifier.of(CobblemonTrainerBattle.NAMESPACE, BATTLE_FACTORY_PROFILE);
         return resourceManager.getResourceOrThrow(identifier);
     }
 
