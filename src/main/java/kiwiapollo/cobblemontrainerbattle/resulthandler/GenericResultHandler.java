@@ -2,8 +2,6 @@ package kiwiapollo.cobblemontrainerbattle.resulthandler;
 
 import com.mojang.brigadier.CommandDispatcher;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.TrainerBattleParticipant;
-import kiwiapollo.cobblemontrainerbattle.common.ResultAction;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;

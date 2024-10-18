@@ -1,18 +1,19 @@
-package kiwiapollo.cobblemontrainerbattle.common;
+package kiwiapollo.cobblemontrainerbattle.parser;
 
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactory;
-import kiwiapollo.cobblemontrainerbattle.parser.SmogonPokemon;
+import kiwiapollo.cobblemontrainerbattle.common.BattleFactoryProfile;
+import kiwiapollo.cobblemontrainerbattle.common.TrainerGroupProfile;
+import kiwiapollo.cobblemontrainerbattle.common.TrainerOption;
+import kiwiapollo.cobblemontrainerbattle.common.TrainerProfile;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
 import net.minecraft.resource.Resource;
 import net.minecraft.resource.ResourceManager;
 import net.minecraft.util.Identifier;
 
 import java.io.*;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
@@ -31,23 +32,12 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
 
     @Override
     public void reload(ResourceManager resourceManager) {
-        CobblemonTrainerBattle.trainerProfileRegistry = loadTrainers(resourceManager);
-        CobblemonTrainerBattle.trainerGroupProfileRegistry = loadTrainerGroups(resourceManager);
-
-        BattleFactory.configuration = loadBattleFactoryConfiguration(resourceManager);
+        CobblemonTrainerBattle.trainerProfileRegistry = loadTrainerProfileRegistry(resourceManager);
+        CobblemonTrainerBattle.trainerGroupProfileRegistry = loadTrainerGroupProfileRegistry(resourceManager);
+        CobblemonTrainerBattle.battleFactoryProfile = loadBattleFactoryProfile(resourceManager);
     }
 
-    private TrainerConfiguration loadDefaultTrainerConfiguration(ResourceManager resourceManager) {
-        try (InputStream inputStream = getDefaultTrainerConfigurationResource(resourceManager).getInputStream()) {
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-            return new Gson().fromJson(bufferedReader, TrainerConfiguration.class);
-
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    private Map<Identifier, TrainerProfile> loadTrainers(ResourceManager resourceManager) {
+    private Map<Identifier, TrainerProfile> loadTrainerProfileRegistry(ResourceManager resourceManager) {
         List<String> namespaces = List.of(
                 "radicalred",
                 "inclementemerald",
@@ -65,13 +55,13 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
     }
 
     private Map<Identifier, TrainerProfile> loadTrainersByNamespace(ResourceManager resourceManager, String namespace) {
-        TrainerConfiguration defaultOption = loadDefaultTrainerConfiguration(resourceManager);
+        TrainerOption defaultOption = loadDefaultTrainerOption(resourceManager);
 
-        Map<Identifier, Resource> teamResources = resourceManager.findResources(String.format("%s/%s", TRAINER_TEAM_DIR, namespace), this::isJsonFile);
-        Map<Identifier, Resource> optionResources = resourceManager.findResources(String.format("%s/%s", TRAINER_OPTION_DIR, namespace), this::isJsonFile);
+        Map<Identifier, Resource> teamResourceMap = resourceManager.findResources(String.format("%s/%s", TRAINER_TEAM_DIR, namespace), this::isJsonFile);
+        Map<Identifier, Resource> optionResourceMap = resourceManager.findResources(String.format("%s/%s", TRAINER_OPTION_DIR, namespace), this::isJsonFile);
 
         Map<Identifier, TrainerProfile> trainers = new HashMap<>();
-        for (Map.Entry<Identifier, Resource> entry : teamResources.entrySet()) {
+        for (Map.Entry<Identifier, Resource> entry : teamResourceMap.entrySet()) {
             try {
                 Identifier teamIdentifier = entry.getKey();
                 Resource teamResource = entry.getValue();
@@ -79,21 +69,21 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
                 Identifier optionIdentifier = toOptionIdentifier(teamIdentifier);
 
                 String name = Paths.get(teamIdentifier.getPath()).getFileName().toString().replace(".json", "");
-                List<SmogonPokemon> pokemons = readSmogonPokemonResource(teamResource);
+                List<SmogonPokemon> team = readTeamResource(teamResource);
 
-                TrainerConfiguration configuration = defaultOption;
-                if (optionResources.containsKey(optionIdentifier)) {
-                    configuration = readTrainerConfigurationResource(optionResources.get(optionIdentifier));
+                TrainerOption option = defaultOption;
+                if (optionResourceMap.containsKey(optionIdentifier)) {
+                    option = readTrainerOptionResource(optionResourceMap.get(optionIdentifier));
                 }
 
                 trainers.put(
                         toNamespaceIdentifier(teamIdentifier),
                         new TrainerProfile(
                                 name,
-                                pokemons,
-                                configuration.onVictory,
-                                configuration.onDefeat,
-                                configuration.condition
+                                team,
+                                option.onVictory,
+                                option.onDefeat,
+                                option.condition
                         )
                 );
 
@@ -104,6 +94,16 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
         }
 
         return trainers;
+    }
+
+    private TrainerOption loadDefaultTrainerOption(ResourceManager resourceManager) {
+        try (InputStream inputStream = getDefaultTrainerOptionResource(resourceManager).getInputStream()) {
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            return new Gson().fromJson(bufferedReader, TrainerOption.class);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private Identifier toOptionIdentifier(Identifier teamIdentifier) {
@@ -136,55 +136,55 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
         return Identifier.of(namespace, path);
     }
 
-    private Map<Identifier, TrainerGroupProfile> loadTrainerGroups(ResourceManager resourceManager) {
-        Map<Identifier, TrainerGroupProfile> trainerGroups = new HashMap<>();
+    private Map<Identifier, TrainerGroupProfile> loadTrainerGroupProfileRegistry(ResourceManager resourceManager) {
+        Map<Identifier, TrainerGroupProfile> trainerGroupProfileMap = new HashMap<>();
 
         resourceManager.findResources(GROUP_DIR, this::isJsonFile).forEach(((identifier, resource) -> {
             try (InputStream inputStream = resourceManager.getResourceOrThrow(identifier).getInputStream()) {
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
                 TrainerGroupProfile trainerGroupProfile = new Gson().fromJson(bufferedReader, TrainerGroupProfile.class);
-                trainerGroups.put(identifier, trainerGroupProfile);
+                trainerGroupProfileMap.put(identifier, trainerGroupProfile);
 
             } catch (IOException ignored) {
 
             }
         }));
 
-        return trainerGroups;
+        return trainerGroupProfileMap;
     }
 
-    private BattleFactoryConfiguration loadBattleFactoryConfiguration(ResourceManager resourceManager) {
-        try (InputStream inputStream = getBattleFactoryConfigurationResource(resourceManager).getInputStream()) {
+    private BattleFactoryProfile loadBattleFactoryProfile(ResourceManager resourceManager) {
+        try (InputStream inputStream = getBattleFactoryProfileResource(resourceManager).getInputStream()) {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-            return new Gson().fromJson(bufferedReader, BattleFactoryConfiguration.class);
+            return new Gson().fromJson(bufferedReader, BattleFactoryProfile.class);
 
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    private Resource getDefaultTrainerConfigurationResource(ResourceManager resourceManager)
+    private Resource getDefaultTrainerOptionResource(ResourceManager resourceManager)
             throws FileNotFoundException {
         String path = String.format("%s/defaults.json", TRAINER_OPTION_DIR);
         Identifier identifier = Identifier.of(CobblemonTrainerBattle.NAMESPACE, path);
         return resourceManager.getResourceOrThrow(identifier);
     }
 
-    private List<SmogonPokemon> readSmogonPokemonResource(Resource resource) throws IOException, JsonParseException {
+    private List<SmogonPokemon> readTeamResource(Resource resource) throws IOException, JsonParseException {
         try (InputStream inputStream = resource.getInputStream()) {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
             return new Gson().fromJson(bufferedReader, new TypeToken<List<SmogonPokemon>>(){}.getType());
         }
     }
 
-    private TrainerConfiguration readTrainerConfigurationResource(Resource resource) throws IOException {
+    private TrainerOption readTrainerOptionResource(Resource resource) throws IOException {
         try (InputStream inputStream = resource.getInputStream()) {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-            return new Gson().fromJson(bufferedReader, TrainerConfiguration.class);
+            return new Gson().fromJson(bufferedReader, TrainerOption.class);
         }
     }
 
-    private Resource getBattleFactoryConfigurationResource(ResourceManager resourceManager) throws FileNotFoundException {
+    private Resource getBattleFactoryProfileResource(ResourceManager resourceManager) throws FileNotFoundException {
         String path = String.format("%s/battlefactory.json", MINIGAME_DIR);
         Identifier identifier = Identifier.of(CobblemonTrainerBattle.NAMESPACE, path);
         return resourceManager.getResourceOrThrow(identifier);

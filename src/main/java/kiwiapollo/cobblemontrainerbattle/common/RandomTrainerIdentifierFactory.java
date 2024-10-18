@@ -35,6 +35,6 @@ public class RandomTrainerIdentifierFactory {
     }
 
     private int getPokemonCount(Identifier identifier) {
-        return CobblemonTrainerBattle.trainerProfileRegistry.get(identifier).pokemons().size();
+        return CobblemonTrainerBattle.trainerProfileRegistry.get(identifier).team().size();
     }
 }

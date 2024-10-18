@@ -4,7 +4,6 @@ import com.mojang.brigadier.Command;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.common.BattleFactoryConfiguration;
 import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerIdentifierFactory;
 import kiwiapollo.cobblemontrainerbattle.common.SessionValidator;
 import kiwiapollo.cobblemontrainerbattle.exception.*;
@@ -25,7 +24,6 @@ public class BattleFactory {
     public static final int LEVEL = 100;
     public static final int POKEMON_COUNT = 3;
 
-    public static BattleFactoryConfiguration configuration;
     public static Map<UUID, BattleFactorySession> sessions = new HashMap<>();
 
     public static int startSession(CommandContext<ServerCommandSource> context) {
@@ -41,8 +39,8 @@ public class BattleFactory {
 
             ResultHandler resultHandler = new GenericResultHandler(
                     player,
-                    configuration.onVictory,
-                    configuration.onDefeat
+                    CobblemonTrainerBattle.battleFactoryProfile.onVictory,
+                    CobblemonTrainerBattle.battleFactoryProfile.onDefeat
             );
 
             BattleFactorySession session = new BattleFactorySession(

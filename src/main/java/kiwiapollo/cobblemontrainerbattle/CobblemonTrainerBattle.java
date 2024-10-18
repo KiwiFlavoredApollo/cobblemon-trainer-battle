@@ -11,10 +11,7 @@ import kiwiapollo.cobblemontrainerbattle.economy.EconomyFactory;
 import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.events.*;
 import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattle;
-import kiwiapollo.cobblemontrainerbattle.parser.Config;
-import kiwiapollo.cobblemontrainerbattle.parser.ConfigLoader;
-import kiwiapollo.cobblemontrainerbattle.parser.TrainerBattleHistory;
-import kiwiapollo.cobblemontrainerbattle.parser.TrainerBattleHistoryRegistryParser;
+import kiwiapollo.cobblemontrainerbattle.parser.*;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kotlin.Unit;
 import net.fabricmc.api.ModInitializer;
@@ -56,6 +53,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
 	public static Map<Identifier, TrainerProfile> trainerProfileRegistry = new HashMap<>();
 	public static Map<Identifier, TrainerGroupProfile> trainerGroupProfileRegistry = new HashMap<>();
+	public static BattleFactoryProfile battleFactoryProfile;
 
 	public static Map<UUID, TrainerBattle> trainerBattleRegistry = new HashMap<>();
 	public static Map<UUID, TrainerBattleHistory> trainerBattleHistoryRegistry = new HashMap<>();

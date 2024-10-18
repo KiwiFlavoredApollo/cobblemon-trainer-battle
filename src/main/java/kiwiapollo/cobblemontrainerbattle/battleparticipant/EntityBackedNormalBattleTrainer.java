@@ -33,7 +33,7 @@ public class EntityBackedNormalBattleTrainer implements TrainerBattleParticipant
         this.uuid = UUID.randomUUID();
         this.entity = entity;
         this.player = player;
-        this.party = toParty(CobblemonTrainerBattle.trainerProfileRegistry.get(identifier).pokemons(), player);
+        this.party = toParty(CobblemonTrainerBattle.trainerProfileRegistry.get(identifier).team(), player);
     }
 
     @Override

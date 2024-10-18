@@ -30,7 +30,7 @@ public class BattleFactoryTrainer implements TrainerBattleParticipant {
         this.identifier = identifier;
         this.uuid = UUID.randomUUID();
         this.player = player;
-        this.party = toParty(CobblemonTrainerBattle.trainerProfileRegistry.get(identifier).pokemons(), player, level);
+        this.party = toParty(CobblemonTrainerBattle.trainerProfileRegistry.get(identifier).team(), player, level);
     }
 
     @Override

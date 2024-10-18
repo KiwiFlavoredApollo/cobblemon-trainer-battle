@@ -42,7 +42,7 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
                 100
         );
 
-        this.party = toParty(trainerProfile.pokemons(), player, level);
+        this.party = toParty(trainerProfile.team(), player, level);
     }
 
     @Override

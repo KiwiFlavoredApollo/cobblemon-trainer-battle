@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.common;
+package kiwiapollo.cobblemontrainerbattle.resulthandler;
 
 import java.util.ArrayList;
 import java.util.List;

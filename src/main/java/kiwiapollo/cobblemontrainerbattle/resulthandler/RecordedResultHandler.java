@@ -3,7 +3,6 @@ package kiwiapollo.cobblemontrainerbattle.resulthandler;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.TrainerBattleParticipant;
-import kiwiapollo.cobblemontrainerbattle.common.ResultAction;
 import kiwiapollo.cobblemontrainerbattle.parser.TrainerBattleHistory;
 
 public class RecordedResultHandler implements ResultHandler {

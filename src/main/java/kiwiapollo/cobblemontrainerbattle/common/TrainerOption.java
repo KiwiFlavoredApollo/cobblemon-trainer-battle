@@ -2,10 +2,8 @@ package kiwiapollo.cobblemontrainerbattle.common;
 
 import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultAction;
 
-import java.util.List;
-
-public class TrainerGroupProfile {
-    public List<String> trainers;
+public class TrainerOption {
+    public BattleCondition condition;
     public ResultAction onVictory;
     public ResultAction onDefeat;
 }
