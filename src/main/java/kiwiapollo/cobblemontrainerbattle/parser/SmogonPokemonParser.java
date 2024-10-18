@@ -146,7 +146,7 @@ public class SmogonPokemonParser {
 
             boolean isNamespaceProvided = nature.contains(":");
             if (isNamespaceProvided) {
-                pokemon.setNature(Objects.requireNonNull(Natures.INSTANCE.getNature(nature.toLowerCase())));
+                pokemon.setNature(Objects.requireNonNull(Natures.INSTANCE.getNature(new Identifier(nature.toLowerCase()))));
 
             } else {
                 Identifier identifier = Identifier.of("cobblemon", nature.toLowerCase());
