@@ -127,7 +127,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
             for (File file : Arrays.stream(modSaveDir.listFiles()).filter(file -> file.getName().endsWith(".dat")).toList()) {
 				try {
 					TrainerBattleHistory history = TrainerBattleHistory.readFromNbt(NbtFileHandler.readNbtFromFile(file));
-					trainerBattleHistoryRegistry.put(UUID.fromString(file.getName()), history);
+					trainerBattleHistoryRegistry.put(UUID.fromString(file.getName().replace(".dat", "")), history);
 				} catch (NullPointerException ignored) {
 
 				}
