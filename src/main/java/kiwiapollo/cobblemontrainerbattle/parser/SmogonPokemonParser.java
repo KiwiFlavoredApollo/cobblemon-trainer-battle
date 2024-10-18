@@ -17,10 +17,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 import java.util.function.BiConsumer;
 
 public class SmogonPokemonParser {
@@ -95,7 +92,7 @@ public class SmogonPokemonParser {
 
                 pokemon.setLevel(maximumPartyLevel + level);
             }
-        } catch (NullPointerException ignored) {
+        } catch (NullPointerException | NoSuchElementException ignored) {
 
         }
     }

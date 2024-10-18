@@ -20,6 +20,7 @@ import kiwiapollo.cobblemontrainerbattle.session.Session;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
@@ -154,7 +155,7 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Pokem
         for (int i = 0; i < pokemons.size(); i++) {
             Pokemon pokemon = pokemons.get(i);
 
-            player.sendInfoMessage(Text.literal("[" + (i + 1) + "] ").append(pokemon.getDisplayName()));
+            player.getPlayerEntity().sendMessage(Text.literal("[" + (i + 1) + "] ").append(pokemon.getDisplayName()).formatted(Formatting.YELLOW));
             player.sendInfoMessage(Text.literal("Ability ").append(Text.translatable(pokemon.getAbility().getDisplayName())));
             player.sendInfoMessage(Text.literal("Nature ").append(Text.translatable(pokemon.getNature().getDisplayName())));
             player.sendInfoMessage(Text.literal("MoveSet ").append(getPokemonMoveSetReport(pokemon.getMoveSet())));

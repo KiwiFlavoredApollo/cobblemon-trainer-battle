@@ -12,6 +12,7 @@ import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultHandler;
 import kiwiapollo.cobblemontrainerbattle.session.Session;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
@@ -66,11 +67,11 @@ public class GroupBattleSession implements Session {
             this.lastTrainerBattle = trainerBattle;
 
         } catch (DefeatedToTrainerException e) {
-            player.sendMessage(Text.translatable("command.cobblemontrainerbattle.groupbattle.startbattle.defeated_to_trainer"));
+            player.sendMessage(Text.translatable("command.cobblemontrainerbattle.groupbattle.startbattle.defeated_to_trainer").formatted(Formatting.RED));
             throw new BattleStartException();
 
         } catch (DefeatedAllTrainersException e) {
-            player.sendMessage(Text.translatable("command.cobblemontrainerbattle.groupbattle.startbattle.defeated_all_trainers"));
+            player.sendMessage(Text.translatable("command.cobblemontrainerbattle.groupbattle.startbattle.defeated_all_trainers").formatted(Formatting.RED));
             throw new BattleStartException();
         }
     }

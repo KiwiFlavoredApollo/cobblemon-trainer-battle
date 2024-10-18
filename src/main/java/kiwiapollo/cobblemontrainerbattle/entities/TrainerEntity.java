@@ -6,6 +6,8 @@ import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactor.EntityBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.*;
+import kiwiapollo.cobblemontrainerbattle.common.PlayerValidator;
+import kiwiapollo.cobblemontrainerbattle.exception.EmptyPlayerPartyException;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.SafetyCheckedTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.common.TrainerProfile;
@@ -42,14 +44,14 @@ public class TrainerEntity extends PathAwareEntity {
             Identifier.of("minecraft", "textures/entity/player/wide/zuri.png")
     );
 
-    private Identifier trainerIdentifier;
+    private Identifier trainer;
     private Identifier texture;
     private TrainerBattle trainerBattle;
 
     public TrainerEntity(EntityType<? extends PathAwareEntity> entityType, World world) {
         super(entityType, world);
 
-        this.trainerIdentifier = getRandomTrainerIdentifier();
+        this.trainer = getRandomTrainerIdentifier();
         this.texture = getRandomTexture();
         this.trainerBattle = null;
     }
@@ -57,7 +59,7 @@ public class TrainerEntity extends PathAwareEntity {
     public void synchronizeClient(ServerWorld world) {
         PacketByteBuf buf = PacketByteBufs.create();
         buf.writeInt(this.getId());
-        buf.writeIdentifier(this.trainerIdentifier);
+        buf.writeIdentifier(this.trainer);
         buf.writeIdentifier(this.texture);
 
         for (ServerPlayerEntity player : world.getPlayers()) {
@@ -89,9 +91,9 @@ public class TrainerEntity extends PathAwareEntity {
     @Override
     protected void initGoals() {
         this.goalSelector.add(0, new SwimGoal(this));
-        this.goalSelector.add(1, new WanderAroundFarGoal(this, 1.0D));
-        this.goalSelector.add(2, new LookAroundGoal(this));
-        this.goalSelector.add(3, new AttackGoal(this));
+        this.goalSelector.add(3, new WanderAroundFarGoal(this, 1.0D));
+        this.goalSelector.add(3, new LookAroundGoal(this));
+        this.goalSelector.add(2, new AttackGoal(this));
         this.targetSelector.add(1, new RevengeGoal(this));
     }
 
@@ -112,9 +114,9 @@ public class TrainerEntity extends PathAwareEntity {
             this.velocityDirty = true;
 
             PlayerBattleParticipant playerBattleParticipant = new NormalBattlePlayer((ServerPlayerEntity) player);
-            TrainerBattleParticipant trainerBattleParticipant = new EntityBackedNormalBattleTrainer(trainerIdentifier, this, (ServerPlayerEntity) player);
+            TrainerBattleParticipant trainerBattleParticipant = new EntityBackedNormalBattleTrainer(trainer, this, (ServerPlayerEntity) player);
 
-            TrainerProfile trainerProfile = CobblemonTrainerBattle.trainerProfileRegistry.get(trainerIdentifier);
+            TrainerProfile trainerProfile = CobblemonTrainerBattle.trainerProfileRegistry.get(trainer);
             ResultHandler resultHandler = new ResultActionHandler((ServerPlayerEntity) player, trainerProfile.onVictory(), trainerProfile.onDefeat());
 
             TrainerBattle trainerBattle = new SafetyCheckedTrainerBattle(
@@ -128,7 +130,7 @@ public class TrainerEntity extends PathAwareEntity {
             this.trainerBattle = trainerBattle;
 
         } catch (BattleStartException ignored) {
-
+            this.setAiDisabled(false);
         }
 
         return super.interactMob(player, hand);
@@ -204,8 +206,8 @@ public class TrainerEntity extends PathAwareEntity {
         }
     }
 
-    public void setTrainerIdentifier(Identifier trainerIdentifier) {
-        this.trainerIdentifier = trainerIdentifier;
+    public void setTrainer(Identifier trainer) {
+        this.trainer = trainer;
     }
 
     public void setTexture(Identifier texture) {

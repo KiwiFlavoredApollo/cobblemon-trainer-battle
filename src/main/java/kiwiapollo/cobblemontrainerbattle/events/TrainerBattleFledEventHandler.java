@@ -4,12 +4,14 @@ import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.api.battles.model.actor.FleeableBattleActor;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.battleactor.EntityBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.Vec3d;
 
 import java.util.NoSuchElementException;
+import java.util.Objects;
 import java.util.stream.StreamSupport;
 
 public class TrainerBattleFledEventHandler {
@@ -24,6 +26,13 @@ public class TrainerBattleFledEventHandler {
             if (!isFledBattle(pokemonBattle, player)) {
                 return;
             }
+
+            StreamSupport.stream(pokemonBattle.getActors().spliterator(), false)
+                    .filter(battleActor -> battleActor instanceof EntityBackedTrainerBattleActor)
+                    .map(battleActor -> ((EntityBackedTrainerBattleActor) battleActor))
+                    .map(EntityBackedTrainerBattleActor::getEntity)
+                    .filter(Objects::nonNull)
+                    .forEach(trainerEntity -> trainerEntity.setAiDisabled(false));
 
             pokemonBattle.end();
 

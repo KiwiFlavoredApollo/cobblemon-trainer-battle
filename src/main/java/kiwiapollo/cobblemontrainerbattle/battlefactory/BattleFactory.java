@@ -24,13 +24,13 @@ public class BattleFactory {
     public static final int LEVEL = 100;
     public static final int POKEMON_COUNT = 3;
 
-    public static Map<UUID, BattleFactorySession> sessions = new HashMap<>();
+    public static Map<UUID, BattleFactorySession> sessionRegistry = new HashMap<>();
 
     public static int startSession(CommandContext<ServerCommandSource> context) {
         try {
             ServerPlayerEntity player = context.getSource().getPlayer();
 
-            SessionValidator.assertSessionNotExist(sessions, player);
+            SessionValidator.assertSessionNotExist(sessionRegistry, player);
 
             List<Identifier> trainersToDefeat = new ArrayList<>();
             for (int i = 0; i < 21; i++) {
@@ -49,7 +49,9 @@ public class BattleFactory {
                     resultHandler
             );
 
-            sessions.put(player.getUuid(), session);
+            session.showPartyPokemon();
+
+            sessionRegistry.put(player.getUuid(), session);
 
             player.sendMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.startsession.success"));
             CobblemonTrainerBattle.LOGGER.info("Started battle factory session: {}", player.getGameProfile().getName());
@@ -70,14 +72,14 @@ public class BattleFactory {
         try {
             ServerPlayerEntity player = context.getSource().getPlayer();
 
-            SessionValidator.assertSessionExist(sessions, player);
+            SessionValidator.assertSessionExist(sessionRegistry, player);
 
             PlayerValidator.assertPlayerNotBusyWithPokemonBattle(player);
 
-            BattleFactorySession session = sessions.get(player.getUuid());
+            BattleFactorySession session = sessionRegistry.get(player.getUuid());
             session.onSessionStop();
 
-            sessions.remove(player.getUuid());
+            sessionRegistry.remove(player.getUuid());
 
             player.sendMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.stopsession.success"));
             CobblemonTrainerBattle.LOGGER.info("Stopped battle factory session: {}", player.getGameProfile().getName());
@@ -106,9 +108,9 @@ public class BattleFactory {
         try {
             ServerPlayerEntity player = context.getSource().getPlayer();
 
-            SessionValidator.assertSessionExist(sessions, player);
+            SessionValidator.assertSessionExist(sessionRegistry, player);
 
-            BattleFactorySession session = sessions.get(player.getUuid());
+            BattleFactorySession session = sessionRegistry.get(player.getUuid());
             session.startBattle();
 
             return Command.SINGLE_SUCCESS;
@@ -130,12 +132,12 @@ public class BattleFactory {
         try {
             ServerPlayerEntity player = context.getSource().getPlayer();
 
-            SessionValidator.assertSessionExist(sessions, player);
+            SessionValidator.assertSessionExist(sessionRegistry, player);
 
             int playerSlot = IntegerArgumentType.getInteger(context, "playerslot");
             int trainerSlot = IntegerArgumentType.getInteger(context, "trainerslot");
 
-            BattleFactorySession session = sessions.get(player.getUuid());
+            BattleFactorySession session = sessionRegistry.get(player.getUuid());
             session.tradePokemon(playerSlot, trainerSlot);
 
             return Command.SINGLE_SUCCESS;
@@ -154,9 +156,9 @@ public class BattleFactory {
         try {
             ServerPlayerEntity player = context.getSource().getPlayer();
 
-            SessionValidator.assertSessionExist(sessions, player);
+            SessionValidator.assertSessionExist(sessionRegistry, player);
 
-            BattleFactorySession session = sessions.get(player.getUuid());
+            BattleFactorySession session = sessionRegistry.get(player.getUuid());
             session.showTradeablePokemon();
 
             return Command.SINGLE_SUCCESS;
@@ -175,9 +177,9 @@ public class BattleFactory {
         try {
             ServerPlayerEntity player = context.getSource().getPlayer();
 
-            SessionValidator.assertSessionExist(sessions, player);
+            SessionValidator.assertSessionExist(sessionRegistry, player);
 
-            BattleFactorySession session = sessions.get(player.getUuid());
+            BattleFactorySession session = sessionRegistry.get(player.getUuid());
             session.showPartyPokemon();
 
             return Command.SINGLE_SUCCESS;
@@ -196,9 +198,9 @@ public class BattleFactory {
         try {
             ServerPlayerEntity player = context.getSource().getPlayer();
 
-            SessionValidator.assertSessionExist(sessions, player);
+            SessionValidator.assertSessionExist(sessionRegistry, player);
 
-            BattleFactorySession session = sessions.get(player.getUuid());
+            BattleFactorySession session = sessionRegistry.get(player.getUuid());
             session.rerollPokemon();
 
             return Command.SINGLE_SUCCESS;

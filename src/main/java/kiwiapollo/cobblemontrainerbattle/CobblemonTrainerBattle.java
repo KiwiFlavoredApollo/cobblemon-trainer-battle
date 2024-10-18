@@ -3,6 +3,7 @@ package kiwiapollo.cobblemontrainerbattle;
 import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.Priority;
 import com.cobblemon.mod.common.api.events.CobblemonEvents;
+import kiwiapollo.cobblemontrainerbattle.battleactor.EntityBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactory;
 import kiwiapollo.cobblemontrainerbattle.command.*;
 import kiwiapollo.cobblemontrainerbattle.common.*;
@@ -38,6 +39,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.*;
+import java.util.stream.StreamSupport;
 
 public class CobblemonTrainerBattle implements ModInitializer {
 	public static final String NAMESPACE = "cobblemontrainerbattle";
@@ -89,6 +91,13 @@ public class CobblemonTrainerBattle implements ModInitializer {
 				trainerBattleRegistry.get(player.getUuid()).onPlayerDefeat();
 			}
 
+			StreamSupport.stream(battleVictoryEvent.getBattle().getActors().spliterator(), false)
+					.filter(battleActor -> battleActor instanceof EntityBackedTrainerBattleActor)
+					.map(battleActor -> ((EntityBackedTrainerBattleActor) battleActor))
+					.map(EntityBackedTrainerBattleActor::getEntity)
+					.filter(Objects::nonNull)
+					.forEach(trainerEntity -> trainerEntity.setAiDisabled(false));
+
 			return Unit.INSTANCE;
         });
 
@@ -104,8 +113,8 @@ public class CobblemonTrainerBattle implements ModInitializer {
 		ServerPlayConnectionEvents.DISCONNECT.register((handler, server) -> {
 			UUID playerUuid = handler.getPlayer().getUuid();
 
-			GroupBattle.sessions.remove(playerUuid);
-            BattleFactory.sessions.remove(playerUuid);
+			GroupBattle.sessionRegistry.remove(playerUuid);
+            BattleFactory.sessionRegistry.remove(playerUuid);
 
 			if (trainerBattleRegistry.containsKey(playerUuid)) {
 				UUID battleId = trainerBattleRegistry.get(playerUuid).getBattleId();
