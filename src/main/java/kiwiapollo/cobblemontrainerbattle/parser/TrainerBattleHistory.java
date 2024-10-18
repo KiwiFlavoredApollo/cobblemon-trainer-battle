@@ -8,14 +8,14 @@ import java.util.*;
 
 public class TrainerBattleHistory {
 
-    private final Map<Identifier, TrainerBattleRecord> recordRegistry;
+    private final Map<Identifier, TrainerBattleHistoryRecord> recordRegistry;
 
     public TrainerBattleHistory() {
         recordRegistry = new HashMap<>();
     }
 
     public void addPlayerVictory(Identifier trainer) {
-        TrainerBattleRecord record = getTrainerBattleRecord(trainer);
+        TrainerBattleHistoryRecord record = getTrainerBattleRecord(trainer);
 
         record.victory += 1;
         record.timestamp = Instant.now();
@@ -24,7 +24,7 @@ public class TrainerBattleHistory {
     }
 
     public void addPlayerDefeat(Identifier trainer) {
-        TrainerBattleRecord record = getTrainerBattleRecord(trainer);
+        TrainerBattleHistoryRecord record = getTrainerBattleRecord(trainer);
 
         record.defeat += 1;
         record.timestamp = Instant.now();
@@ -32,11 +32,11 @@ public class TrainerBattleHistory {
         recordRegistry.put(trainer, record);
     }
 
-    private TrainerBattleRecord getTrainerBattleRecord(Identifier trainer) {
+    private TrainerBattleHistoryRecord getTrainerBattleRecord(Identifier trainer) {
         if (recordRegistry.containsKey(trainer)) {
             return recordRegistry.get(trainer);
         } else {
-            return new TrainerBattleRecord();
+            return new TrainerBattleHistoryRecord();
         }
     }
 
@@ -48,8 +48,8 @@ public class TrainerBattleHistory {
         }
     }
 
-    private void put(Identifier identifier, TrainerBattleRecord trainerBattleRecord) {
-        recordRegistry.put(identifier, trainerBattleRecord);
+    private void put(Identifier identifier, TrainerBattleHistoryRecord record) {
+        recordRegistry.put(identifier, record);
     }
 
     public void remove(Identifier trainer) {
@@ -57,16 +57,16 @@ public class TrainerBattleHistory {
     }
 
     public NbtCompound writeToNbt(NbtCompound nbt) {
-        for (Map.Entry<Identifier, TrainerBattleRecord> recordEntry: recordRegistry.entrySet()) {
+        for (Map.Entry<Identifier, TrainerBattleHistoryRecord> recordEntry: recordRegistry.entrySet()) {
             Identifier trainer = recordEntry.getKey();
-            TrainerBattleRecord record = recordEntry.getValue();
+            TrainerBattleHistoryRecord record = recordEntry.getValue();
 
             nbt.put(trainer.toString(), writeTrainerBattleRecordToNbt(record));
         }
         return nbt;
     }
 
-    private NbtCompound writeTrainerBattleRecordToNbt(TrainerBattleRecord record) {
+    private NbtCompound writeTrainerBattleRecordToNbt(TrainerBattleHistoryRecord record) {
         NbtCompound nbt = new NbtCompound();
 
         nbt.putLong("timestamp", record.timestamp.toEpochMilli());
@@ -87,8 +87,8 @@ public class TrainerBattleHistory {
         return history;
     }
 
-    private static TrainerBattleRecord readTrainerBattleRecordFromNbt(NbtCompound nbt) {
-        return new TrainerBattleRecord(
+    private static TrainerBattleHistoryRecord readTrainerBattleRecordFromNbt(NbtCompound nbt) {
+        return new TrainerBattleHistoryRecord(
                 Instant.ofEpochMilli(nbt.getLong("timestamp")),
                 nbt.getInt("victory"),
                 nbt.getInt("defeat")
