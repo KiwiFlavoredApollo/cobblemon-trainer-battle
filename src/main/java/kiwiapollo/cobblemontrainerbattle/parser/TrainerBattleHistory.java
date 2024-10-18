@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.common;
+package kiwiapollo.cobblemontrainerbattle.parser;
 
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.Identifier;
@@ -18,7 +18,7 @@ public class TrainerBattleHistory {
         TrainerBattleRecord record = getTrainerBattleRecord(trainer);
 
         record.victoryCount += 1;
-        record.lastBattleDate = Instant.now();
+        record.lastBattleTimestamp = Instant.now();
 
         recordRegistry.put(trainer, record);
     }
@@ -27,7 +27,7 @@ public class TrainerBattleHistory {
         TrainerBattleRecord record = getTrainerBattleRecord(trainer);
 
         record.defeatCount += 1;
-        record.lastBattleDate = Instant.now();
+        record.lastBattleTimestamp = Instant.now();
 
         recordRegistry.put(trainer, record);
     }
@@ -38,10 +38,6 @@ public class TrainerBattleHistory {
         } else {
             return new TrainerBattleRecord();
         }
-    }
-
-    public void remove(Identifier trainer) {
-        recordRegistry.remove(trainer);
     }
 
     public boolean isTrainerDefeated(Identifier trainer) {
@@ -56,42 +52,46 @@ public class TrainerBattleHistory {
         recordRegistry.put(identifier, trainerBattleRecord);
     }
 
-    public NbtCompound writeToNbt(NbtCompound nbt) {
-        for (Map.Entry<Identifier, TrainerBattleRecord> trainerBattleRecordEntry: recordRegistry.entrySet()) {
-            Identifier identifier = trainerBattleRecordEntry.getKey();
-            TrainerBattleRecord trainerBattleRecord = trainerBattleRecordEntry.getValue();
+    public void remove(Identifier trainer) {
+        recordRegistry.remove(trainer);
+    }
 
-            nbt.put(identifier.toString(), writeTrainerBattleRecordToNbt(trainerBattleRecord));
+    public NbtCompound writeToNbt(NbtCompound nbt) {
+        for (Map.Entry<Identifier, TrainerBattleRecord> recordEntry: recordRegistry.entrySet()) {
+            Identifier trainer = recordEntry.getKey();
+            TrainerBattleRecord record = recordEntry.getValue();
+
+            nbt.put(trainer.toString(), writeTrainerBattleRecordToNbt(record));
         }
         return nbt;
     }
 
-    private NbtCompound writeTrainerBattleRecordToNbt(TrainerBattleRecord trainerBattleRecord) {
-        NbtCompound subNbt = new NbtCompound();
+    private NbtCompound writeTrainerBattleRecordToNbt(TrainerBattleRecord record) {
+        NbtCompound nbt = new NbtCompound();
 
-        subNbt.putLong("lastBattleDate", trainerBattleRecord.lastBattleDate.toEpochMilli());
-        subNbt.putInt("victoryCount", trainerBattleRecord.victoryCount);
-        subNbt.putInt("defeatCount", trainerBattleRecord.defeatCount);
+        nbt.putLong("lastBattleTimestamp", record.lastBattleTimestamp.toEpochMilli());
+        nbt.putInt("victoryCount", record.victoryCount);
+        nbt.putInt("defeatCount", record.defeatCount);
 
-        return subNbt;
+        return nbt;
     }
 
     public static TrainerBattleHistory readFromNbt(NbtCompound nbt) {
         TrainerBattleHistory history = new TrainerBattleHistory();
-        for (String string : nbt.getKeys()) {
+        for (String trainer : nbt.getKeys()) {
             history.put(
-                    new Identifier(string),
-                    readTrainerBattleRecordFromNbt(nbt.getCompound(string))
+                    new Identifier(trainer),
+                    readTrainerBattleRecordFromNbt(nbt.getCompound(trainer))
             );
         }
         return history;
     }
 
-    private static TrainerBattleRecord readTrainerBattleRecordFromNbt(NbtCompound compound) {
+    private static TrainerBattleRecord readTrainerBattleRecordFromNbt(NbtCompound nbt) {
         return new TrainerBattleRecord(
-                Instant.ofEpochMilli(compound.getLong("lastBattleDate")),
-                compound.getInt("victoryCount"),
-                compound.getInt("defeatCount")
+                Instant.ofEpochMilli(nbt.getLong("lastBattleTimestamp")),
+                nbt.getInt("victoryCount"),
+                nbt.getInt("defeatCount")
         );
     }
 }

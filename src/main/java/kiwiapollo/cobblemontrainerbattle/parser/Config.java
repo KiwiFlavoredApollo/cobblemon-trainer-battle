@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.common;
+package kiwiapollo.cobblemontrainerbattle.parser;
 
 public class Config {
     public String economy;

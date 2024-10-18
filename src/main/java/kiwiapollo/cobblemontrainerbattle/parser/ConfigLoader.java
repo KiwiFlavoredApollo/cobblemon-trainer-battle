@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.common;
+package kiwiapollo.cobblemontrainerbattle.parser;
 
 import com.google.gson.Gson;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;

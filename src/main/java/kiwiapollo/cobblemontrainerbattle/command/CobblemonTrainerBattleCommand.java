@@ -13,6 +13,7 @@ import kiwiapollo.cobblemontrainerbattle.common.*;
 import kiwiapollo.cobblemontrainerbattle.economy.EconomyFactory;
 import kiwiapollo.cobblemontrainerbattle.exception.EmptyPlayerPartyException;
 import kiwiapollo.cobblemontrainerbattle.parser.CobblemonPokemonParser;
+import kiwiapollo.cobblemontrainerbattle.parser.ConfigLoader;
 import kiwiapollo.cobblemontrainerbattle.parser.SmogonPokemon;
 import kiwiapollo.cobblemontrainerbattle.parser.SmogonPokemonExporter;
 import net.minecraft.command.EntitySelector;

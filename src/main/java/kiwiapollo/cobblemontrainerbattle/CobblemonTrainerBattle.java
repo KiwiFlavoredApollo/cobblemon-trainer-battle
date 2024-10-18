@@ -11,6 +11,10 @@ import kiwiapollo.cobblemontrainerbattle.economy.EconomyFactory;
 import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.events.*;
 import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattle;
+import kiwiapollo.cobblemontrainerbattle.parser.Config;
+import kiwiapollo.cobblemontrainerbattle.parser.ConfigLoader;
+import kiwiapollo.cobblemontrainerbattle.parser.TrainerBattleHistory;
+import kiwiapollo.cobblemontrainerbattle.parser.TrainerBattleHistoryRegistryParser;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kotlin.Unit;
 import net.fabricmc.api.ModInitializer;
@@ -28,17 +32,14 @@ import net.minecraft.entity.SpawnGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.SpawnEggItem;
-import net.minecraft.nbt.NbtCompound;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.WorldSavePath;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.File;
 import java.util.*;
 
 public class CobblemonTrainerBattle implements ModInitializer {
@@ -115,46 +116,10 @@ public class CobblemonTrainerBattle implements ModInitializer {
 			}
 		});
 
-		ServerLifecycleEvents.SERVER_STARTED.register(server -> {
-            File worldDir = server.getSavePath(WorldSavePath.ROOT).toFile();
-            File modSaveDir = new File(worldDir, NAMESPACE);
+		ServerLifecycleEvents.SERVER_STARTED.register(TrainerBattleHistoryRegistryParser::loadFromNbt);
 
-			if (!modSaveDir.isDirectory()) {
-				return;
-			}
-
-            trainerBattleHistoryRegistry.clear();
-            for (File file : Arrays.stream(modSaveDir.listFiles()).filter(file -> file.getName().endsWith(".dat")).toList()) {
-				try {
-					TrainerBattleHistory history = TrainerBattleHistory.readFromNbt(NbtFileHandler.readNbtFromFile(file));
-					trainerBattleHistoryRegistry.put(UUID.fromString(file.getName().replace(".dat", "")), history);
-				} catch (NullPointerException ignored) {
-
-				}
-            }
-        });
-
-		ServerLifecycleEvents.SERVER_STOPPED.register(server -> {
-            File worldDir = server.getSavePath(WorldSavePath.ROOT).toFile();
-            File modSaveDir = new File(worldDir, NAMESPACE);
-
-			if (!modSaveDir.exists()) {
-				modSaveDir.mkdirs();
-			}
-
-            for (Map.Entry<UUID, TrainerBattleHistory> trainerBattleHistoryEntry: trainerBattleHistoryRegistry.entrySet()) {
-                UUID uuid = trainerBattleHistoryEntry.getKey();
-                TrainerBattleHistory trainerBattleHistory = trainerBattleHistoryEntry.getValue();
-
-                File playerSaveFile = new File(modSaveDir, String.format("%s.dat", uuid.toString()));
-
-				if (playerSaveFile.exists()) {
-					playerSaveFile.renameTo(new File(modSaveDir, String.format("%s.dat_old", uuid.toString())));
-				}
-
-                NbtFileHandler.writeNbtToFile(trainerBattleHistory.writeToNbt(new NbtCompound()), playerSaveFile);
-            }
-        });
+		ServerLifecycleEvents.SERVER_STOPPED.register(TrainerBattleHistoryRegistryParser::saveToNbt);
+		ServerTickEvents.END_WORLD_TICK.register(TrainerBattleHistoryRegistryParser::onEndWorldTick);
 
 		ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new ResourceReloadListener());
 
