@@ -1,24 +1,24 @@
 package kiwiapollo.cobblemontrainerbattle.resulthandler;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.PlayerBattleParticipant;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.TrainerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.parser.TrainerBattleHistory;
+import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.util.Identifier;
 
-public class RecordedBattleResultHandler implements ResultHandler {
-    private final PlayerBattleParticipant player;
-    private final TrainerBattleParticipant trainer;
+public class RecordedResultHandler implements ResultHandler {
+    private final ServerPlayerEntity player;
+    private final Identifier identifier;
     private final ResultHandler resultHandler;
 
-    public RecordedBattleResultHandler(
-            PlayerBattleParticipant player,
-            TrainerBattleParticipant trainer,
+    public RecordedResultHandler(
+            ServerPlayerEntity player,
+            Identifier identifier,
             ResultAction victory,
             ResultAction defeat
     ) {
         this.player = player;
-        this.trainer = trainer;
-        this.resultHandler = new ResultActionHandler(player.getPlayerEntity(), victory, defeat);
+        this.identifier = identifier;
+        this.resultHandler = new ResultActionHandler(player, victory, defeat);
     }
 
     @Override
@@ -29,7 +29,7 @@ public class RecordedBattleResultHandler implements ResultHandler {
             CobblemonTrainerBattle.trainerBattleHistoryRegistry.put(player.getUuid(), new TrainerBattleHistory());
         }
 
-        CobblemonTrainerBattle.trainerBattleHistoryRegistry.get(player.getUuid()).addPlayerVictory(trainer.getIdentifier());
+        CobblemonTrainerBattle.trainerBattleHistoryRegistry.get(player.getUuid()).addPlayerVictory(identifier);
     }
 
     @Override
@@ -40,6 +40,6 @@ public class RecordedBattleResultHandler implements ResultHandler {
             CobblemonTrainerBattle.trainerBattleHistoryRegistry.put(player.getUuid(), new TrainerBattleHistory());
         }
 
-        CobblemonTrainerBattle.trainerBattleHistoryRegistry.get(player.getUuid()).addPlayerDefeat(trainer.getIdentifier());
+        CobblemonTrainerBattle.trainerBattleHistoryRegistry.get(player.getUuid()).addPlayerDefeat(identifier);
     }
 }
