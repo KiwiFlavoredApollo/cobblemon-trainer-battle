@@ -64,6 +64,16 @@ public class NormalBattlePlayer implements PlayerBattleParticipant {
     }
 
     @Override
+    public void onVictory() {
+
+    }
+
+    @Override
+    public void onDefeat() {
+
+    }
+
+    @Override
     public void sendInfoMessage(MutableText message) {
         this.player.sendMessage(message.formatted(Formatting.WHITE));
     }

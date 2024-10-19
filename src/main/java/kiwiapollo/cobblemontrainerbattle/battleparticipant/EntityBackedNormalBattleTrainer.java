@@ -73,6 +73,16 @@ public class EntityBackedNormalBattleTrainer implements TrainerBattleParticipant
     }
 
     @Override
+    public void onVictory() {
+        entity.setAiDisabled(false);
+    }
+
+    @Override
+    public void onDefeat() {
+        entity.discard();
+    }
+
+    @Override
     public PartyStore getParty() {
         return party;
     }

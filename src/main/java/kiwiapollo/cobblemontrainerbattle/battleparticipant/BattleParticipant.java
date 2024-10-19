@@ -19,4 +19,8 @@ public interface BattleParticipant {
     List<BattlePokemon> getBattleTeam();
 
     BattleActor createBattleActor();
+
+    void onVictory();
+
+    void onDefeat();
 }

@@ -70,6 +70,16 @@ public class BattleFactoryTrainer implements TrainerBattleParticipant {
     }
 
     @Override
+    public void onVictory() {
+
+    }
+
+    @Override
+    public void onDefeat() {
+
+    }
+
+    @Override
     public PartyStore getParty() {
         return party;
     }

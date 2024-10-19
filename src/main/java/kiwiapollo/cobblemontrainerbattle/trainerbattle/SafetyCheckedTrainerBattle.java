@@ -84,11 +84,15 @@ public class SafetyCheckedTrainerBattle implements TrainerBattle {
     @Override
     public void onPlayerVictory() {
         resultHandler.onVictory();
+        player.onVictory();
+        trainer.onDefeat();
     }
 
     @Override
     public void onPlayerDefeat() {
         resultHandler.onDefeat();
+        player.onDefeat();
+        trainer.onVictory();
     }
 
     @Override

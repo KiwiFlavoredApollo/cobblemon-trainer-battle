@@ -108,7 +108,6 @@ public class TrainerEntity extends PathAwareEntity {
     @Override
     public ActionResult interactMob(PlayerEntity player, Hand hand) {
         if (this.getWorld().isClient) {
-            player.playSound(SoundEvents.ENTITY_VILLAGER_YES, 1.0F, 1.0F);
             return ActionResult.SUCCESS;
         }
 

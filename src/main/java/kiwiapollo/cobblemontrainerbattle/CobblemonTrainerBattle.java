@@ -25,6 +25,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.item.Item;
@@ -90,13 +91,6 @@ public class CobblemonTrainerBattle implements ModInitializer {
 			} else {
 				trainerBattleRegistry.get(player.getUuid()).onPlayerDefeat();
 			}
-
-			StreamSupport.stream(battleVictoryEvent.getBattle().getActors().spliterator(), false)
-					.filter(battleActor -> battleActor instanceof EntityBackedTrainerBattleActor)
-					.map(battleActor -> ((EntityBackedTrainerBattleActor) battleActor))
-					.map(EntityBackedTrainerBattleActor::getEntity)
-					.filter(Objects::nonNull)
-					.forEach(trainerEntity -> trainerEntity.setAiDisabled(false));
 
 			return Unit.INSTANCE;
         });

@@ -8,7 +8,7 @@ import kiwiapollo.cobblemontrainerbattle.parser.TrainerBattleHistory;
 public class RecordedBattleResultHandler implements ResultHandler {
     private final PlayerBattleParticipant player;
     private final TrainerBattleParticipant trainer;
-    private final ResultActionHandler resultHandler;
+    private final ResultHandler resultHandler;
 
     public RecordedBattleResultHandler(
             PlayerBattleParticipant player,
