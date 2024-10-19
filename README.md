@@ -1,15 +1,15 @@
 # README
 
-## 1.5.0 Changelog
+## 1.5.1 Changelog
 
 - Data packs made for earlier versions will NOT be compatible
 - Trainer teams are stored under `trainers/teams/<namespace>`
 - Trainer options are stored under `trainers/options/<namespace>`
 - Renamed Smogon trainer to be short and uniform
 - Fixed bug where Pokemon entities drop held items
-- Trainer can be selected in `<namespace>:<trainer>`
-- `/trainerbattle radicalred:biker_alex`
-- Added new trainer condition `isRematchAllowedAfterVictory`
+- Trainer selector starts with `trainer:`
+- For example, `/trainerbattle trainer:radicalred/biker_alex`
+- Added new battle condition `isRematchAllowedAfterVictory`
 
 ## Configuration
 
@@ -120,9 +120,9 @@ datapacks/
 ### Custom Trainer Team
 
 - Trainer files can be added via data packs
-- Custom trainer files must be located under `<datapack>/data/cobblemontrainerbattle/trainers/teams/custom`
 - Please make sure trainer files(`.json`) are in Smogon Teams JSON format
 - Trainer Pokemon levels can be set relative to player Pokemons
+- Please refer to example data pack for more information [CobblemonTrainerBattleFC](https://github.com/KiwiFlavoredApollo/CobblemonTrainerBattleFC)
 
 ### Custom Trainer Option
 
@@ -153,15 +153,20 @@ datapacks/
 ```json
 {
   "trainers": [
-    "radicalred:leader_falkner",
-    "radicalred:leader_bugsy",
-    "radicalred:leader_whitney",
-    "radicalred:leader_morty",
-    "radicalred:leader_chuck",
-    "radicalred:leader_jasmine",
-    "radicalred:leader_pryce",
-    "radicalred:leader_clair"
+    "trainer:radicalred/leader_falkner",
+    "trainer:radicalred/leader_bugsy",
+    "trainer:radicalred/leader_whitney",
+    "trainer:radicalred/leader_morty",
+    "trainer:radicalred/leader_chuck",
+    "trainer:radicalred/leader_jasmine",
+    "trainer:radicalred/leader_pryce",
+    "trainer:radicalred/leader_clair"
   ],
+  "condition": {
+    "isRematchAllowedAfterVictory": true,
+    "maximumPartyLevel": 100,
+    "minimumPartyLevel": 1
+  },
   "onVictory": {
     "balance": 0,
     "commands": []
