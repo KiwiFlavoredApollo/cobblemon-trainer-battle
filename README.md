@@ -198,6 +198,8 @@ datapacks/
 - `.minecraft/cobblemontrainerbattle/exports/<player>_<timestamp>.json`
 
 ## Credits
+
+### Trainer Skins
 - [piikapiika](https://www.minecraftskins.com/profile/5894998/piikapiika)
   - White (Hilda) | Pokemon
   - Black (Hilbert) | Pokemon
