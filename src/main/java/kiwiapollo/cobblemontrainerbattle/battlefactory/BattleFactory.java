@@ -124,7 +124,7 @@ public class BattleFactory {
             return 0;
 
         } catch (BattleStartException e) {
-            throw new RuntimeException(e);
+            return 0;
         }
     }
 
