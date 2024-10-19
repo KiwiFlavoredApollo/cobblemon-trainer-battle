@@ -5,9 +5,9 @@ import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.groupbattle.TrainerGroupProfileUtility;
 import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattle;
 import net.minecraft.server.command.ServerCommandSource;
+import net.minecraft.util.Identifier;
 
 public class GroupBattleCommand extends LiteralArgumentBuilder<ServerCommandSource> {
 
@@ -25,7 +25,7 @@ public class GroupBattleCommand extends LiteralArgumentBuilder<ServerCommandSour
                 .then(RequiredArgumentBuilder.<ServerCommandSource, String>argument("group", StringArgumentType.greedyString())
                         .suggests((context, builder) -> {
                             CobblemonTrainerBattle.trainerGroupProfileRegistry.keySet().stream()
-                                    .map(TrainerGroupProfileUtility::toResourceName)
+                                    .map(Identifier::toString)
                                     .forEach(builder::suggest);
                             return builder.buildFuture();
                         })

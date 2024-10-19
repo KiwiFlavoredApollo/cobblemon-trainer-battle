@@ -1,13 +1,13 @@
 {
   "trainers": [
-    "radicalred:leader_brock",
-    "radicalred:leader_misty",
-    "radicalred:leader_lt_surge",
-    "radicalred:leader_erika",
-    "radicalred:leader_koga",
-    "radicalred:leader_sabrina",
-    "radicalred:leader_blaine",
-    "radicalred:leader_giovanni"
+    "trainer:radicalred/leader_brock",
+    "trainer:radicalred/leader_misty",
+    "trainer:radicalred/leader_lt_surge",
+    "trainer:radicalred/leader_erika",
+    "trainer:radicalred/leader_koga",
+    "trainer:radicalred/leader_sabrina",
+    "trainer:radicalred/leader_blaine",
+    "trainer:radicalred/leader_giovanni"
   ],
   "onVictory": {
     "balance": 0,

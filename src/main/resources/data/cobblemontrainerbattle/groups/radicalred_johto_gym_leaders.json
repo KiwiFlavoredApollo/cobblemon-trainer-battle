@@ -1,13 +1,13 @@
 {
   "trainers": [
-    "radicalred:leader_falkner",
-    "radicalred:leader_bugsy",
-    "radicalred:leader_whitney",
-    "radicalred:leader_morty",
-    "radicalred:leader_chuck",
-    "radicalred:leader_jasmine",
-    "radicalred:leader_pryce",
-    "radicalred:leader_clair"
+    "trainer:radicalred/leader_falkner",
+    "trainer:radicalred/leader_bugsy",
+    "trainer:radicalred/leader_whitney",
+    "trainer:radicalred/leader_morty",
+    "trainer:radicalred/leader_chuck",
+    "trainer:radicalred/leader_jasmine",
+    "trainer:radicalred/leader_pryce",
+    "trainer:radicalred/leader_clair"
   ],
   "onVictory": {
     "balance": 0,

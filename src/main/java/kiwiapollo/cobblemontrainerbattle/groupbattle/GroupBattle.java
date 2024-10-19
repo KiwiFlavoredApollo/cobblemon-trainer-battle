@@ -38,7 +38,7 @@ public class GroupBattle {
         try {
             ServerPlayerEntity player = context.getSource().getPlayer();
 
-            Identifier identifier = TrainerGroupProfileUtility.toResourceIdentifier(StringArgumentType.getString(context, "group"));
+            Identifier identifier = new Identifier(StringArgumentType.getString(context, "group"));
 
             ResourceValidator.assertTrainerGroupExist(identifier);
             ResourceValidator.assertTrainerGroupValid(identifier);

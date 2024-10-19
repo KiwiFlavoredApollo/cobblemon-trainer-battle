@@ -81,7 +81,7 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
                 }
 
                 trainers.put(
-                        toNamespaceIdentifier(teamIdentifier),
+                        toTrainerIdentifier(teamIdentifier),
                         new TrainerProfile(
                                 name,
                                 team,
@@ -117,27 +117,12 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
         return Identifier.of(namespace, path);
     }
 
-    private Identifier toNamespaceIdentifier(Identifier teamIdentifier) {
+    private Identifier toTrainerIdentifier(Identifier teamIdentifier) {
         String prefix = String.format("^%s/", TRAINER_TEAM_DIR);
         String suffix = "\\.json$";
-        String trimmedPath = teamIdentifier.getPath().replaceAll(prefix, "").replaceAll(suffix, "");
+        String path = teamIdentifier.getPath().replaceAll(prefix, "").replaceAll(suffix, "");
 
-        String[] parts = trimmedPath.split("/");
-
-        StringBuilder remainingPath = new StringBuilder();
-        for (int i = 1; i < parts.length; i++) {
-            if (i == 1) {
-                remainingPath.append(parts[i]);
-            } else {
-                remainingPath.append("/");
-                remainingPath.append(parts[i]);
-            }
-        }
-
-        String namespace = parts[0];
-        String path = remainingPath.toString();
-
-        return Identifier.of(namespace, path);
+        return Identifier.of("trainer", path);
     }
 
     private Map<Identifier, TrainerGroupProfile> loadTrainerGroupProfileRegistry(ResourceManager resourceManager) {
@@ -147,14 +132,21 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
             try (InputStream inputStream = resourceManager.getResourceOrThrow(identifier).getInputStream()) {
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
                 TrainerGroupProfile trainerGroupProfile = new Gson().fromJson(bufferedReader, TrainerGroupProfile.class);
-                trainerGroupProfileMap.put(identifier, trainerGroupProfile);
+                trainerGroupProfileMap.put(toTrainerGroupIdentifier(identifier), trainerGroupProfile);
 
-            } catch (IOException ignored) {
+            } catch (IOException | NullPointerException ignored) {
 
             }
         }));
 
         return trainerGroupProfileMap;
+    }
+
+    private Identifier toTrainerGroupIdentifier(Identifier identifier) {
+        String prefix = String.format("^%s/", GROUP_DIR);
+        String suffix = "\\.json$";
+        String path = identifier.getPath().replaceAll(prefix, "").replaceAll(suffix, "");
+        return Identifier.of("group", path);
     }
 
     private BattleFactoryProfile loadBattleFactoryProfile(ResourceManager resourceManager) {
