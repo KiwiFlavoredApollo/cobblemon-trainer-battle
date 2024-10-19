@@ -11,13 +11,13 @@ import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.FlatBattlePlay
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.FlatBattleTrainer;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.TrainerBattleParticipant;
-import kiwiapollo.cobblemontrainerbattle.resulthandler.RecordedResultHandler;
+import kiwiapollo.cobblemontrainerbattle.postbattle.RecordedBattleResultHandler;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerProfile;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerIdentifierFactory;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
-import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultHandler;
+import kiwiapollo.cobblemontrainerbattle.postbattle.BattleResultHandler;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
@@ -74,9 +74,9 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
             TrainerBattleParticipant trainerBattleParticipant = new FlatBattleTrainer(trainer, player, StandardTrainerBattle.FLAT_LEVEL);
 
             TrainerProfile trainerProfile = CobblemonTrainerBattle.trainerProfileRegistry.get(trainer);
-            ResultHandler resultHandler = new RecordedResultHandler(player, trainer, trainerProfile.onVictory(), trainerProfile.onDefeat());
+            BattleResultHandler battleResultHandler = new RecordedBattleResultHandler(player, trainer, trainerProfile.onVictory(), trainerProfile.onDefeat());
 
-            TrainerBattle trainerBattle = new StandardTrainerBattle(playerBattleParticipant, trainerBattleParticipant, resultHandler);
+            TrainerBattle trainerBattle = new StandardTrainerBattle(playerBattleParticipant, trainerBattleParticipant, battleResultHandler);
             trainerBattle.start();
 
             CobblemonTrainerBattle.trainerBattleRegistry.put(player.getUuid(), trainerBattle);

@@ -5,13 +5,13 @@ import kiwiapollo.cobblemontrainerbattle.battleparticipant.factory.BattlePartici
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.TrainerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.common.BattleCondition;
-import kiwiapollo.cobblemontrainerbattle.resulthandler.SessionBattleResultHandler;
+import kiwiapollo.cobblemontrainerbattle.postbattle.ParameterizedBattleResultHandler;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.exception.DefeatedAllTrainersException;
 import kiwiapollo.cobblemontrainerbattle.exception.DefeatedToTrainerException;
-import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultHandler;
+import kiwiapollo.cobblemontrainerbattle.postbattle.BattleResultHandler;
 import kiwiapollo.cobblemontrainerbattle.session.Session;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
@@ -24,7 +24,7 @@ public class GroupBattleSession implements Session {
     private final ServerPlayerEntity player;
     private final List<Identifier> trainersToDefeat;
     private final BattleCondition condition;
-    private final ResultHandler resultHandler;
+    private final BattleResultHandler battleResultHandler;
     private final BattleParticipantFactory battleParticipantFactory;
 
     private TrainerBattle lastTrainerBattle;
@@ -35,13 +35,13 @@ public class GroupBattleSession implements Session {
             ServerPlayerEntity player,
             List<Identifier> trainersToDefeat,
             BattleCondition condition,
-            ResultHandler resultHandler,
+            BattleResultHandler battleResultHandler,
             BattleParticipantFactory battleParticipantFactory
     ) {
         this.player = player;
         this.trainersToDefeat = trainersToDefeat;
         this.condition = condition;
-        this.resultHandler = resultHandler;
+        this.battleResultHandler = battleResultHandler;
         this.battleParticipantFactory = battleParticipantFactory;
 
         this.defeatedTrainersCount = 0;
@@ -59,12 +59,12 @@ public class GroupBattleSession implements Session {
             Identifier trainer = trainersToDefeat.get(defeatedTrainersCount);
             TrainerBattleParticipant trainerBattleParticipant = battleParticipantFactory.createTrainer(trainer, player, condition);
 
-            ResultHandler resultHandler = new SessionBattleResultHandler(this::onBattleVictory, this::onBattleDefeat);
+            BattleResultHandler battleResultHandler = new ParameterizedBattleResultHandler(this::onBattleVictory, this::onBattleDefeat);
 
             TrainerBattle trainerBattle = new StandardTrainerBattle(
                     playerBattleParticipant,
                     trainerBattleParticipant,
-                    resultHandler
+                    battleResultHandler
             );
             trainerBattle.start();
 
@@ -82,12 +82,10 @@ public class GroupBattleSession implements Session {
         }
     }
 
-    @Override
     public void onBattleVictory() {
         defeatedTrainersCount += 1;
     }
 
-    @Override
     public void onBattleDefeat() {
         isPlayerDefeated = true;
     }
@@ -95,9 +93,9 @@ public class GroupBattleSession implements Session {
     @Override
     public void onSessionStop() {
         if (isDefeatedAllTrainers()) {
-            resultHandler.onVictory();
+            battleResultHandler.onVictory();
         } else {
-            resultHandler.onDefeat();
+            battleResultHandler.onDefeat();
         }
     }
 

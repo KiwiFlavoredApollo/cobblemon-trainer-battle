@@ -1,6 +1,5 @@
 package kiwiapollo.cobblemontrainerbattle;
 
-import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.Priority;
 import com.cobblemon.mod.common.api.events.CobblemonEvents;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactory;
@@ -11,10 +10,8 @@ import kiwiapollo.cobblemontrainerbattle.economy.EconomyFactory;
 import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.events.*;
 import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattle;
-import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattleSession;
 import kiwiapollo.cobblemontrainerbattle.groupbattle.TrainerGroupProfile;
 import kiwiapollo.cobblemontrainerbattle.parser.*;
-import kiwiapollo.cobblemontrainerbattle.session.Session;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerProfile;
 import kotlin.Unit;
@@ -60,7 +57,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 	public static BattleFactoryProfile battleFactoryProfile;
 
 	public static Map<UUID, TrainerBattle> trainerBattleRegistry = new HashMap<>();
-	public static Map<UUID, TrainerBattleHistory> trainerBattleHistoryRegistry = new HashMap<>();
+	public static Map<UUID, PlayerBattleHistory> playerBattleHistoryRegistry = new HashMap<>();
 
     @Override
 	public void onInitialize() {
@@ -124,10 +121,10 @@ public class CobblemonTrainerBattle implements ModInitializer {
 			}
 		});
 
-		ServerLifecycleEvents.SERVER_STARTED.register(TrainerBattleHistoryRegistryParser::loadFromNbt);
+		ServerLifecycleEvents.SERVER_STARTED.register(PlayerBattleHistoryRegistryParser::loadFromNbt);
 
-		ServerLifecycleEvents.SERVER_STOPPED.register(TrainerBattleHistoryRegistryParser::saveToNbt);
-		ServerTickEvents.END_WORLD_TICK.register(TrainerBattleHistoryRegistryParser::onEndWorldTick);
+		ServerLifecycleEvents.SERVER_STOPPED.register(PlayerBattleHistoryRegistryParser::saveToNbt);
+		ServerTickEvents.END_WORLD_TICK.register(PlayerBattleHistoryRegistryParser::onEndWorldTick);
 
 		ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new ResourceReloadListener());
 

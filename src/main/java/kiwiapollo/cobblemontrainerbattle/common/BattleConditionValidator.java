@@ -48,7 +48,7 @@ public class BattleConditionValidator {
             Identifier trainer = trainerBattle.getTrainer().getIdentifier();
             BattleCondition condition = trainerBattle.getTrainer().getBattleCondition();
 
-            boolean isTrainerDefeated = CobblemonTrainerBattle.trainerBattleHistoryRegistry.get(player.getUuid()).isTrainerDefeated(trainer);
+            boolean isTrainerDefeated = CobblemonTrainerBattle.playerBattleHistoryRegistry.get(player.getUuid()).isTrainerDefeated(trainer);
             if (!condition.isRematchAllowedAfterVictory && isTrainerDefeated) {
                 throw new RematchNotAllowedException();
             }

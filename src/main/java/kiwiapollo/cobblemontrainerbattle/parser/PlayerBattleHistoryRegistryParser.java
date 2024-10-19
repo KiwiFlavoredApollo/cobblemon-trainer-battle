@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-public class TrainerBattleHistoryRegistryParser {
+public class PlayerBattleHistoryRegistryParser {
     private static final int SAVE_INTERVAL = 100;
 
     public static void onEndWorldTick(ServerWorld world) {
@@ -30,14 +30,14 @@ public class TrainerBattleHistoryRegistryParser {
             return;
         }
 
-        CobblemonTrainerBattle.trainerBattleHistoryRegistry.clear();
+        CobblemonTrainerBattle.playerBattleHistoryRegistry.clear();
         List<File> datFileList = Arrays.stream(historyDir.listFiles())
-                .filter(TrainerBattleHistoryRegistryParser::isDatFile).toList();
+                .filter(PlayerBattleHistoryRegistryParser::isDatFile).toList();
         for (File file : datFileList) {
             try {
-                TrainerBattleHistory playerHistory = TrainerBattleHistory.readFromNbt(NbtIo.readCompressed(file));
+                PlayerBattleHistory playerHistory = PlayerBattleHistory.readFromNbt(NbtIo.readCompressed(file));
                 UUID playerUuid = UUID.fromString(file.getName().replace(".dat", ""));
-                CobblemonTrainerBattle.trainerBattleHistoryRegistry.put(playerUuid, playerHistory);
+                CobblemonTrainerBattle.playerBattleHistoryRegistry.put(playerUuid, playerHistory);
 
             } catch (NullPointerException | IOException ignored) {
                 CobblemonTrainerBattle.LOGGER.error("An error occurred while loading from {}", file.getName());
@@ -52,10 +52,10 @@ public class TrainerBattleHistoryRegistryParser {
             historyDir.mkdirs();
         }
 
-        for (Map.Entry<UUID, TrainerBattleHistory> historyEntry: CobblemonTrainerBattle.trainerBattleHistoryRegistry.entrySet()) {
+        for (Map.Entry<UUID, PlayerBattleHistory> historyEntry: CobblemonTrainerBattle.playerBattleHistoryRegistry.entrySet()) {
             try {
                 UUID playerUuid = historyEntry.getKey();
-                TrainerBattleHistory trainerBattleHistory = historyEntry.getValue();
+                PlayerBattleHistory playerBattleHistory = historyEntry.getValue();
 
                 File newPlayerHistory = new File(historyDir, String.format("%s.dat", playerUuid));
                 File oldPlayerHistory = new File(historyDir, String.format("%s.dat_old", playerUuid));
@@ -64,7 +64,7 @@ public class TrainerBattleHistoryRegistryParser {
                     newPlayerHistory.renameTo(oldPlayerHistory);
                 }
 
-                NbtIo.writeCompressed(trainerBattleHistory.writeToNbt(new NbtCompound()), newPlayerHistory);
+                NbtIo.writeCompressed(playerBattleHistory.writeToNbt(new NbtCompound()), newPlayerHistory);
 
             } catch (IOException e) {
                 UUID playerUuid = historyEntry.getKey();

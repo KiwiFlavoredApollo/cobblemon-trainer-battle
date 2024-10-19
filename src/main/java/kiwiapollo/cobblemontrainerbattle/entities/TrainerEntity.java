@@ -15,8 +15,8 @@ import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerProfile;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.exception.BusyWithPokemonBattleException;
-import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultActionHandler;
-import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultHandler;
+import kiwiapollo.cobblemontrainerbattle.postbattle.PostBattleActionSetHandler;
+import kiwiapollo.cobblemontrainerbattle.postbattle.BattleResultHandler;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.entity.EntityType;
@@ -126,12 +126,12 @@ public class TrainerEntity extends PathAwareEntity {
             TrainerBattleParticipant trainerBattleParticipant = new EntityBackedTrainer(trainer, this, (ServerPlayerEntity) player);
 
             TrainerProfile trainerProfile = CobblemonTrainerBattle.trainerProfileRegistry.get(trainer);
-            ResultHandler resultHandler = new ResultActionHandler((ServerPlayerEntity) player, trainerProfile.onVictory(), trainerProfile.onDefeat());
+            BattleResultHandler battleResultHandler = new PostBattleActionSetHandler((ServerPlayerEntity) player, trainerProfile.onVictory(), trainerProfile.onDefeat());
 
             TrainerBattle trainerBattle = new StandardTrainerBattle(
                     playerBattleParticipant,
                     trainerBattleParticipant,
-                    resultHandler
+                    battleResultHandler
             );
             trainerBattle.start();
 

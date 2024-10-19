@@ -11,11 +11,11 @@ import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.BattleFactoryP
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.BattleFactoryTrainer;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.TrainerBattleParticipant;
-import kiwiapollo.cobblemontrainerbattle.resulthandler.SessionBattleResultHandler;
+import kiwiapollo.cobblemontrainerbattle.postbattle.ParameterizedBattleResultHandler;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.exception.*;
-import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultHandler;
+import kiwiapollo.cobblemontrainerbattle.postbattle.BattleResultHandler;
 import kiwiapollo.cobblemontrainerbattle.session.PokemonShowFeature;
 import kiwiapollo.cobblemontrainerbattle.session.PokemonTradeFeature;
 import kiwiapollo.cobblemontrainerbattle.session.RentalPokemonFeature;
@@ -32,7 +32,7 @@ import java.util.Objects;
 public class BattleFactorySession implements Session, PokemonTradeFeature, PokemonShowFeature, RentalPokemonFeature {
     private final PlayerBattleParticipant player;
     private final List<Identifier> trainersToDefeat;
-    private final ResultHandler resultHandler;
+    private final BattleResultHandler battleResultHandler;
 
     private TrainerBattle lastTrainerBattle;
     private int defeatedTrainersCount;
@@ -42,14 +42,14 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Pokem
     public BattleFactorySession(
             ServerPlayerEntity player,
             List<Identifier> trainersToDefeat,
-            ResultHandler resultHandler
+            BattleResultHandler battleResultHandler
     ) {
         this.player = new BattleFactoryPlayer(player);
         this.trainersToDefeat = trainersToDefeat;
         this.defeatedTrainersCount = 0;
         this.isPlayerDefeated = false;
         this.isTradedPokemon = false;
-        this.resultHandler = resultHandler;
+        this.battleResultHandler = battleResultHandler;
     }
 
     @Override
@@ -64,9 +64,9 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Pokem
                     BattleFactory.LEVEL
             );
 
-            ResultHandler resultHandler = new SessionBattleResultHandler(this::onBattleVictory, this::onBattleDefeat);
+            BattleResultHandler battleResultHandler = new ParameterizedBattleResultHandler(this::onBattleVictory, this::onBattleDefeat);
 
-            TrainerBattle trainerBattle = new StandardTrainerBattle(player, trainer, resultHandler);
+            TrainerBattle trainerBattle = new StandardTrainerBattle(player, trainer, battleResultHandler);
             trainerBattle.start();
 
             CobblemonTrainerBattle.trainerBattleRegistry.put(player.getUuid(), trainerBattle);
@@ -185,13 +185,11 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Pokem
                 stats.get(Stats.SPECIAL_ATTACK), stats.get(Stats.SPECIAL_DEFENCE), stats.get(Stats.SPEED));
     }
 
-    @Override
     public void onBattleVictory() {
         defeatedTrainersCount += 1;
         isTradedPokemon = false;
     }
 
-    @Override
     public void onBattleDefeat() {
         isPlayerDefeated = true;
     }
@@ -199,9 +197,9 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Pokem
     @Override
     public void onSessionStop() {
         if (isDefeatedAllTrainers()) {
-            resultHandler.onVictory();
+            battleResultHandler.onVictory();
         } else {
-            resultHandler.onDefeat();
+            battleResultHandler.onDefeat();
         }
     }
 

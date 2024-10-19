@@ -8,9 +8,9 @@ import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerIdentifierFactory;
 import kiwiapollo.cobblemontrainerbattle.common.SessionValidator;
 import kiwiapollo.cobblemontrainerbattle.exception.*;
 import kiwiapollo.cobblemontrainerbattle.common.PlayerValidator;
-import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultActionHandler;
+import kiwiapollo.cobblemontrainerbattle.postbattle.PostBattleActionSetHandler;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
-import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultHandler;
+import kiwiapollo.cobblemontrainerbattle.postbattle.BattleResultHandler;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.MutableText;
@@ -37,7 +37,7 @@ public class BattleFactory {
                 trainersToDefeat.add(new RandomTrainerIdentifierFactory().createForBattleFactory());
             }
 
-            ResultHandler resultHandler = new ResultActionHandler(
+            BattleResultHandler battleResultHandler = new PostBattleActionSetHandler(
                     player,
                     CobblemonTrainerBattle.battleFactoryProfile.onVictory,
                     CobblemonTrainerBattle.battleFactoryProfile.onDefeat
@@ -46,7 +46,7 @@ public class BattleFactory {
             BattleFactorySession session = new BattleFactorySession(
                     player,
                     trainersToDefeat,
-                    resultHandler
+                    battleResultHandler
             );
 
             session.showPartyPokemon();

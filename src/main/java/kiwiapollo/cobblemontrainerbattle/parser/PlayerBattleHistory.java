@@ -6,16 +6,16 @@ import net.minecraft.util.Identifier;
 import java.time.Instant;
 import java.util.*;
 
-public class TrainerBattleHistory {
+public class PlayerBattleHistory {
 
-    private final Map<Identifier, TrainerBattleHistoryRecord> recordRegistry;
+    private final Map<Identifier, PlayerBattleRecord> recordRegistry;
 
-    public TrainerBattleHistory() {
+    public PlayerBattleHistory() {
         recordRegistry = new HashMap<>();
     }
 
     public void addPlayerVictory(Identifier trainer) {
-        TrainerBattleHistoryRecord record = getTrainerBattleRecord(trainer);
+        PlayerBattleRecord record = getTrainerBattleRecord(trainer);
 
         record.victory += 1;
         record.timestamp = Instant.now();
@@ -24,7 +24,7 @@ public class TrainerBattleHistory {
     }
 
     public void addPlayerDefeat(Identifier trainer) {
-        TrainerBattleHistoryRecord record = getTrainerBattleRecord(trainer);
+        PlayerBattleRecord record = getTrainerBattleRecord(trainer);
 
         record.defeat += 1;
         record.timestamp = Instant.now();
@@ -32,11 +32,11 @@ public class TrainerBattleHistory {
         recordRegistry.put(trainer, record);
     }
 
-    private TrainerBattleHistoryRecord getTrainerBattleRecord(Identifier trainer) {
+    private PlayerBattleRecord getTrainerBattleRecord(Identifier trainer) {
         if (recordRegistry.containsKey(trainer)) {
             return recordRegistry.get(trainer);
         } else {
-            return new TrainerBattleHistoryRecord();
+            return new PlayerBattleRecord();
         }
     }
 
@@ -48,7 +48,7 @@ public class TrainerBattleHistory {
         }
     }
 
-    private void put(Identifier identifier, TrainerBattleHistoryRecord record) {
+    private void put(Identifier identifier, PlayerBattleRecord record) {
         recordRegistry.put(identifier, record);
     }
 
@@ -57,16 +57,16 @@ public class TrainerBattleHistory {
     }
 
     public NbtCompound writeToNbt(NbtCompound nbt) {
-        for (Map.Entry<Identifier, TrainerBattleHistoryRecord> recordEntry: recordRegistry.entrySet()) {
+        for (Map.Entry<Identifier, PlayerBattleRecord> recordEntry: recordRegistry.entrySet()) {
             Identifier trainer = recordEntry.getKey();
-            TrainerBattleHistoryRecord record = recordEntry.getValue();
+            PlayerBattleRecord record = recordEntry.getValue();
 
             nbt.put(trainer.toString(), writeTrainerBattleRecordToNbt(record));
         }
         return nbt;
     }
 
-    private NbtCompound writeTrainerBattleRecordToNbt(TrainerBattleHistoryRecord record) {
+    private NbtCompound writeTrainerBattleRecordToNbt(PlayerBattleRecord record) {
         NbtCompound nbt = new NbtCompound();
 
         nbt.putLong("timestamp", record.timestamp.toEpochMilli());
@@ -76,8 +76,8 @@ public class TrainerBattleHistory {
         return nbt;
     }
 
-    public static TrainerBattleHistory readFromNbt(NbtCompound nbt) {
-        TrainerBattleHistory history = new TrainerBattleHistory();
+    public static PlayerBattleHistory readFromNbt(NbtCompound nbt) {
+        PlayerBattleHistory history = new PlayerBattleHistory();
         for (String trainer : nbt.getKeys()) {
             history.put(
                     new Identifier(trainer),
@@ -87,8 +87,8 @@ public class TrainerBattleHistory {
         return history;
     }
 
-    private static TrainerBattleHistoryRecord readTrainerBattleRecordFromNbt(NbtCompound nbt) {
-        return new TrainerBattleHistoryRecord(
+    private static PlayerBattleRecord readTrainerBattleRecordFromNbt(NbtCompound nbt) {
+        return new PlayerBattleRecord(
                 Instant.ofEpochMilli(nbt.getLong("timestamp")),
                 nbt.getInt("victory"),
                 nbt.getInt("defeat")

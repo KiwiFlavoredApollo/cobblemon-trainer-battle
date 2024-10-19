@@ -10,7 +10,7 @@ import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.TrainerBattle
 import kiwiapollo.cobblemontrainerbattle.common.BattleConditionValidator;
 import kiwiapollo.cobblemontrainerbattle.common.PlayerValidator;
 import kiwiapollo.cobblemontrainerbattle.exception.*;
-import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultHandler;
+import kiwiapollo.cobblemontrainerbattle.postbattle.BattleResultHandler;
 import kotlin.Unit;
 import net.minecraft.text.Text;
 
@@ -22,18 +22,18 @@ public class StandardTrainerBattle implements TrainerBattle {
 
     private final PlayerBattleParticipant player;
     private final TrainerBattleParticipant trainer;
-    private final ResultHandler resultHandler;
+    private final BattleResultHandler battleResultHandler;
 
     private UUID battleId;
 
     public StandardTrainerBattle(
             PlayerBattleParticipant player,
             TrainerBattleParticipant trainer,
-            ResultHandler resultHandler
+            BattleResultHandler battleResultHandler
     ) {
         this.player = player;
         this.trainer = trainer;
-        this.resultHandler = resultHandler;
+        this.battleResultHandler = battleResultHandler;
     }
 
     @Override
@@ -84,14 +84,14 @@ public class StandardTrainerBattle implements TrainerBattle {
 
     @Override
     public void onPlayerVictory() {
-        resultHandler.onVictory();
+        battleResultHandler.onVictory();
         player.onVictory();
         trainer.onDefeat();
     }
 
     @Override
     public void onPlayerDefeat() {
-        resultHandler.onDefeat();
+        battleResultHandler.onDefeat();
         player.onDefeat();
         trainer.onVictory();
     }

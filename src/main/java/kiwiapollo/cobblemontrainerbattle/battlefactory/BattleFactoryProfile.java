@@ -1,8 +1,8 @@
 package kiwiapollo.cobblemontrainerbattle.battlefactory;
 
-import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultAction;
+import kiwiapollo.cobblemontrainerbattle.postbattle.PostBattleActionSet;
 
 public class BattleFactoryProfile {
-    public ResultAction onVictory;
-    public ResultAction onDefeat;
+    public PostBattleActionSet onVictory;
+    public PostBattleActionSet onDefeat;
 }

@@ -1,10 +1,10 @@
-package kiwiapollo.cobblemontrainerbattle.resulthandler;
+package kiwiapollo.cobblemontrainerbattle.postbattle;
 
-public class SessionBattleResultHandler implements ResultHandler {
+public class ParameterizedBattleResultHandler implements BattleResultHandler {
     private final Runnable onVictory;
     private final Runnable onDefeat;
 
-    public SessionBattleResultHandler(Runnable onVictory, Runnable onDefeat) {
+    public ParameterizedBattleResultHandler(Runnable onVictory, Runnable onDefeat) {
         this.onVictory = onVictory;
         this.onDefeat = onDefeat;
     }
