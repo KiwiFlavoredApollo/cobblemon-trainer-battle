@@ -97,15 +97,14 @@ datapacks/
     │       │   │   ├── smogon/
     │       │   │   └── custom/
     │       │   │       ├── custom_trainer_1.json
-    │       │   │       └── custom_trainer_1.json
+    │       │   │       └── custom_trainer_2.json
     │       │   └── options/
     │       │       ├── radicalred/
     │       │       ├── inclementemerald/
     │       │       ├── smogon/
     │       │       ├── custom/
-    │       │       ├── custom/
     │       │       │   ├── custom_trainer_1.json
-    │       │       │   └── custom_trainer_1.json
+    │       │       │   └── custom_trainer_2.json
     │       │       └── defaults.json
     │       │
     │       ├── groups/
