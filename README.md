@@ -1,5 +1,15 @@
 # README
 
+## 1.5.0 Changelog
+
+- Trainer teams are stored under `trainers/team/<namespace>`
+- Trainer options are stored under `trainers/options/<namespace>`
+- Renamed Smogon trainer to be shorter and uniform
+- Fixed bug where Pokemon entities drop held items
+- Trainer can be selected in `<namespace>:<trainer>`
+- `/trainerbattle radicalred:biker_alex`
+- Added new trainer condition `isRematchAllowedAfterVictory` 
+
 ## Configuration
 
 `config/cobblemontrainerbattle/config.json`
@@ -11,21 +21,16 @@
 }
 ```
 
-```dtd
-/cobblemontrainerbattle reload
-```
-
-- Reloads configuration at runtime 
-
 ### Available `economy` Options
 
 - `None`
 - `OctoEconomy`
 
-### NPC Trainers
+```dtd
+/cobblemontrainerbattle reload
+```
 
-- If `enableTrainerSpawn` is set to `true`, NPC trainers will spawn around players
-- Basically the same as running `trainerbattle random` command but more interesting
+- Reloads configuration at runtime
 
 ## Trainer Battle
 
@@ -69,57 +74,62 @@
 
 ## NPCs
 
-- Starting from 1.4.0, NPC feature is available
 - Random trainers spawn around players in radius of 20 blocks
 - Trainers disappear when defeated
 - Trainers will fight back when attacked
-- NPC trainers will be of Radical Red, Inclement Emerald and custom trainer you provided
 - Trainer Spawn Egg is available
 - `/summon cobblemontrainerbattle:trainer`
 
 ## Customization
 
-### Custom Trainers
-
-- Trainer files can be added via data packs
-- Custom trainer files must be located under `<datapack>/data/cobblemontrainerbattle/custom`
-- Please make sure trainer files(`.json`) are in Smogon Teams JSON format
-- Trainer Pokemon levels can be set relative to player Pokemons
-
-### Custom Trainer Configuration
+### Data Pack Structure
 
 ```dtd
 datapacks/
 └── your_datapack_name/
     ├── data/
     │   └── cobblemontrainerbattle/
-    │       ├── custom/
-    │       │   ├── custom_trainer_1.json
-    │       │   └── custom_trainer_2.json
-    │       ├── radicalred/
-    │       ├── inclementemerald/
-    │       │
     │       ├── trainers/
-    │       │   ├── custom/
-    │       │   │   ├── custom_trainer_1.json
-    │       │   │   └── custom_trainer_2.json
-    │       │   ├── radicalred/
-    │       │   ├── inclementemerald/
-    │       │   └── defaults.json
+    │       │   ├── teams/
+    │       │   │   ├── radicalred/
+    │       │   │   ├── inclementemerald/
+    │       │   │   ├── smogon/
+    │       │   │   └── custom/
+    │       │   │       ├── custom_trainer_1.json
+    │       │   │       └── custom_trainer_1.json
+    │       │   └── options/
+    │       │       ├── radicalred/
+    │       │       ├── inclementemerald/
+    │       │       ├── smogon/
+    │       │       ├── custom/
+    │       │       ├── custom/
+    │       │       │   ├── custom_trainer_1.json
+    │       │       │   └── custom_trainer_1.json
+    │       │       └── defaults.json
     │       │
     │       ├── groups/
     │       │   ├── custom_group_1.json
     │       │   └── custom_group_1.json
     │       │
-    │       └── arcades/
+    │       └── minigames/
     │           └── battlefactory.json
     │
     └── pack.mcmeta
 ```
 
+### Custom Trainer Team
+
+- Trainer files can be added via data packs
+- Custom trainer files must be located under `<datapack>/data/cobblemontrainerbattle/trainers/teams/custom`
+- Please make sure trainer files(`.json`) are in Smogon Teams JSON format
+- Trainer Pokemon levels can be set relative to player Pokemons
+
+### Custom Trainer Option
+
 ```json
 {
   "condition": {
+    "isRematchAllowedAfterVictory": true,
     "maximumPartyLevel": 100,
     "minimumPartyLevel": 1
   },
@@ -138,19 +148,19 @@ datapacks/
 - Commands are run as server
 - `%player%` placeholder can be used to indicate player
 
-### Custom Groups
+### Custom Trainer Group
 
 ```json
 {
   "trainers": [
-    "radicalred/leader_falkner.json",
-    "radicalred/leader_bugsy.json",
-    "radicalred/leader_whitney.json",
-    "radicalred/leader_morty.json",
-    "radicalred/leader_chuck.json",
-    "radicalred/leader_jasmine.json",
-    "radicalred/leader_pryce.json",
-    "radicalred/leader_clair.json"
+    "radicalred:leader_falkner",
+    "radicalred:leader_bugsy",
+    "radicalred:leader_whitney",
+    "radicalred:leader_morty",
+    "radicalred:leader_chuck",
+    "radicalred:leader_jasmine",
+    "radicalred:leader_pryce",
+    "radicalred:leader_clair"
   ],
   "onVictory": {
     "balance": 0,
@@ -162,9 +172,6 @@ datapacks/
   }
 }
 ```
-
-- Custom groups can be added with their onVictory/onDefeat behavior
-- Basically the same as trainer configuration files
 
 ### Custom Battle Factory
 
@@ -181,23 +188,20 @@ datapacks/
 }
 ```
 
-### Exporting Player Pokemons
+### Exporting Player Team
 
 ```
 /cobblemontrainerbattle export <player>
 ```
 
-- Exports player Pokemons as compatible trainer file
-- While it's not strictly formatted like the Smogon team JSON format, it can be used for custom trainers
-- Need `cobblemontrainerbattle.export` permission
+- While it's not strictly formatted like the Smogon team JSON format, it can be used for adding custom trainers 
 - `.minecraft/cobblemontrainerbattle/exports/<player>_<timestamp>.json`
 
 ## TODOs
 
 - [ ] Fix bug SimpleTM TM/TR drop
 - [ ] Add feature defining Battle Frontier trainer sequence by data pack
-- [ ] When on Battle Frontier battle, player Pokemons are slightly damaged 
-- [ ] use custom BattleRegistry when starting Pokemon battle 
+- [ ] When on Battle Frontier battle, player Pokemons are slightly damaged
 
 ## Reference
 - [Pokemon Showdown Team Formats - Cobblemon Showdown](https://gitlab.com/cable-mc/cobblemon-showdown/-/blob/master/sim/TEAMS.md#packed-format)
