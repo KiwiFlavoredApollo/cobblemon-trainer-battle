@@ -23,6 +23,7 @@ import java.util.*;
 public class BattleFactory {
     public static final int LEVEL = 100;
     public static final int POKEMON_COUNT = 3;
+    public static final int BATTLE_COUNT = 7;
 
     public static Map<UUID, BattleFactorySession> sessionRegistry = new HashMap<>();
 
@@ -33,7 +34,7 @@ public class BattleFactory {
             SessionValidator.assertSessionNotExist(sessionRegistry, player);
 
             List<Identifier> trainersToDefeat = new ArrayList<>();
-            for (int i = 0; i < 21; i++) {
+            for (int i = 0; i < BATTLE_COUNT; i++) {
                 trainersToDefeat.add(new RandomTrainerIdentifierFactory().createForBattleFactory());
             }
 
@@ -202,6 +203,28 @@ public class BattleFactory {
 
             BattleFactorySession session = sessionRegistry.get(player.getUuid());
             session.rerollPokemon();
+
+            return Command.SINGLE_SUCCESS;
+
+        } catch (IllegalStateException e) {
+            ServerPlayerEntity player = context.getSource().getPlayer();
+
+            MutableText message = Text.translatable("command.cobblemontrainerbattle.battlefactory.common.valid_session_not_exist");
+            player.sendMessage(message.formatted(Formatting.RED));
+
+            return 0;
+        }
+    }
+
+    public static int showWinningStreak(CommandContext<ServerCommandSource> context) {
+        try {
+            ServerPlayerEntity player = context.getSource().getPlayer();
+
+            SessionValidator.assertSessionExist(sessionRegistry, player);
+
+            BattleFactorySession session = sessionRegistry.get(player.getUuid());
+
+            player.sendMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.winningstreak.success", session.getDefeatedTrainersCount()));
 
             return Command.SINGLE_SUCCESS;
 

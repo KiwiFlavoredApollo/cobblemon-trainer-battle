@@ -203,6 +203,11 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Pokem
         }
     }
 
+    @Override
+    public int getDefeatedTrainersCount() {
+        return defeatedTrainersCount;
+    }
+
     private void assertNotPlayerDefeated() throws DefeatedToTrainerException {
         if (isPlayerDefeated) {
             throw new DefeatedToTrainerException();

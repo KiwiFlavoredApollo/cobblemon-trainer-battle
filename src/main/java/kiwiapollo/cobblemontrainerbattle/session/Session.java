@@ -6,4 +6,6 @@ public interface Session {
     void startBattle() throws BattleStartException;
 
     void onSessionStop();
+
+    int getDefeatedTrainersCount();
 }

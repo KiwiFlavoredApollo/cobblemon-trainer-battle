@@ -99,6 +99,11 @@ public class GroupBattleSession implements Session {
         }
     }
 
+    @Override
+    public int getDefeatedTrainersCount() {
+        return defeatedTrainersCount;
+    }
+
     private void assertPlayerNotDefeated() throws DefeatedToTrainerException {
         if (isPlayerDefeated) {
             throw new DefeatedToTrainerException();

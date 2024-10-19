@@ -17,9 +17,10 @@ public class BattleFactoryCommand extends LiteralArgumentBuilder<ServerCommandSo
                 .then(getBattleFactoryStartSessionCommand())
                 .then(getBattleFactoryStopSessionCommand())
                 .then(getBattleFactoryStartBattleCommand())
-                .then(getBattleFactoryRerollPokemonsCommand())
-                .then(getBattleFactoryTradePokemonsCommand())
-                .then(getBattleFactoryShowPokemonsCommand());
+                .then(getBattleFactoryRerollPokemonCommand())
+                .then(getBattleFactoryTradePokemonCommand())
+                .then(getBattleFactoryShowPokemonCommand())
+                .then(getBattleFactoryShowWiningStreakCommand());
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getBattleFactoryStartSessionCommand() {
@@ -37,13 +38,13 @@ public class BattleFactoryCommand extends LiteralArgumentBuilder<ServerCommandSo
                 .executes(BattleFactory::startBattle);
     }
 
-    private ArgumentBuilder<ServerCommandSource, ?> getBattleFactoryRerollPokemonsCommand() {
+    private ArgumentBuilder<ServerCommandSource, ?> getBattleFactoryRerollPokemonCommand() {
         return LiteralArgumentBuilder
                 .<ServerCommandSource>literal("rerollpokemon")
                 .executes(BattleFactory::rerollPokemon);
     }
 
-    private ArgumentBuilder<ServerCommandSource, ?> getBattleFactoryTradePokemonsCommand() {
+    private ArgumentBuilder<ServerCommandSource, ?> getBattleFactoryTradePokemonCommand() {
         return LiteralArgumentBuilder.<ServerCommandSource>literal("tradepokemon")
                 .executes(BattleFactory::showTradeablePokemon)
                 .then(RequiredArgumentBuilder
@@ -53,8 +54,13 @@ public class BattleFactoryCommand extends LiteralArgumentBuilder<ServerCommandSo
                                 .executes(BattleFactory::tradePokemons)));
     }
 
-    private ArgumentBuilder<ServerCommandSource, ?> getBattleFactoryShowPokemonsCommand() {
+    private ArgumentBuilder<ServerCommandSource, ?> getBattleFactoryShowPokemonCommand() {
         return LiteralArgumentBuilder.<ServerCommandSource>literal("showpokemon")
                 .executes(BattleFactory::showPartyPokemon);
+    }
+
+    private ArgumentBuilder<ServerCommandSource, ?> getBattleFactoryShowWiningStreakCommand() {
+        return LiteralArgumentBuilder.<ServerCommandSource>literal("winningstreak")
+                .executes(BattleFactory::showWinningStreak);
     }
 }
