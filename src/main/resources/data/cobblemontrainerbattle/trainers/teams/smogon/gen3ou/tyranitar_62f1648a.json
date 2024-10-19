@@ -1,0 +1,122 @@
+[
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sand Stream",
+        "evs": {
+            "hp": 252,
+            "spa": 252,
+            "spd": 4
+        },
+        "nature": "Modest",
+        "moves": [
+            "Crunch",
+            "Earthquake",
+            "Ice Beam",
+            "Pursuit"
+        ]
+    },
+    {
+        "species": "Flygon",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 252,
+            "def": 224,
+            "spe": 32
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Protect",
+            "Rock Slide",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Gengar",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 248,
+            "def": 44,
+            "spa": 8,
+            "spd": 112,
+            "spe": 96
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Ice Punch",
+            "Taunt",
+            "Thunderbolt",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Jirachi",
+        "item": "Leftovers",
+        "ability": "Serene Grace",
+        "evs": {
+            "hp": 248,
+            "atk": 44,
+            "def": 68,
+            "spd": 100,
+            "spe": 48
+        },
+        "nature": "Sassy",
+        "moves": [
+            "Body Slam",
+            "Fire Punch",
+            "Protect",
+            "Wish"
+        ]
+    },
+    {
+        "species": "Moltres",
+        "item": "Leftovers",
+        "ability": "Pressure",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "spa": 30
+        },
+        "moves": [
+            "Fire Blast",
+            "Hidden Power Grass",
+            "Protect",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Skarmory",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Keen Eye",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Protect",
+            "Roar",
+            "Spikes",
+            "Toxic"
+        ]
+    }
+]

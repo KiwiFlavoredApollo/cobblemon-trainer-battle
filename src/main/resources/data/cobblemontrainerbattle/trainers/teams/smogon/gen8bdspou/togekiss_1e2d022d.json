@@ -1,0 +1,121 @@
+[
+    {
+        "species": "Togekiss",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Serene Grace",
+        "evs": {
+            "hp": 228,
+            "spa": 104,
+            "spe": 176
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Air Slash",
+            "Nasty Plot",
+            "Roost",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Clefable",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Unaware",
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spa": 8
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Moonblast",
+            "Protect",
+            "Wish"
+        ]
+    },
+    {
+        "species": "Garchomp",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Rough Skin",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Dual Chop",
+            "Earthquake",
+            "Iron Head",
+            "Outrage"
+        ]
+    },
+    {
+        "species": "Heatran",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Flash Fire",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earth Power",
+            "Magma Storm",
+            "Stealth Rock",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Scizor",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Technician",
+        "evs": {
+            "hp": 248,
+            "def": 8,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "moves": [
+            "Bullet Punch",
+            "Defog",
+            "Roost",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Starmie",
+        "item": "Life Orb",
+        "ability": "Analytic",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hydro Pump",
+            "Ice Beam",
+            "Recover",
+            "Thunderbolt"
+        ]
+    }
+]

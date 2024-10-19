@@ -1,0 +1,56 @@
+[
+    {
+        "species": "Dodrio",
+        "moves": [
+            "Agility",
+            "Body Slam",
+            "Drill Peck",
+            "Hyper Beam"
+        ]
+    },
+    {
+        "species": "Dugtrio",
+        "moves": [
+            "Earthquake",
+            "Rock Slide",
+            "Slash",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Golem",
+        "moves": [
+            "Earthquake",
+            "Explosion",
+            "Rock Slide",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Kadabra",
+        "moves": [
+            "Psychic",
+            "Recover",
+            "Seismic Toss",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Kangaskhan",
+        "moves": [
+            "Body Slam",
+            "Earthquake",
+            "Hyper Beam",
+            "Rock Slide"
+        ]
+    },
+    {
+        "species": "Vaporeon",
+        "moves": [
+            "Body Slam",
+            "Quick Attack",
+            "Rest",
+            "Surf"
+        ]
+    }
+]

@@ -1,0 +1,115 @@
+[
+    {
+        "species": "Mudsdale",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Stamina",
+        "teraType": "Ghost",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Impish",
+        "moves": [
+            "Body Press",
+            "Earthquake",
+            "Roar",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Bombirdier",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Big Pecks",
+        "teraType": "Dark",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Brave Bird",
+            "Knock Off",
+            "Sucker Punch",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Decidueye",
+        "gender": "M",
+        "item": "Spell Tag",
+        "ability": "Long Reach",
+        "teraType": "Ghost",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Defog",
+            "Leaf Blade",
+            "Shadow Sneak",
+            "Spirit Shackle"
+        ]
+    },
+    {
+        "species": "Naclstack",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Purifying Salt",
+        "teraType": "Water",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "moves": [
+            "Curse",
+            "Protect",
+            "Recover",
+            "Salt Cure"
+        ]
+    },
+    {
+        "species": "Slowbro-Galar",
+        "gender": "M",
+        "item": "Assault Vest",
+        "ability": "Regenerator",
+        "teraType": "Water",
+        "evs": {
+            "hp": 248,
+            "def": 16,
+            "spd": 244
+        },
+        "nature": "Bold",
+        "moves": [
+            "Flamethrower",
+            "Psychic",
+            "Shell Side Arm",
+            "Surf"
+        ]
+    },
+    {
+        "species": "Tauros-Paldea-Aqua",
+        "item": "Choice Band",
+        "ability": "Intimidate",
+        "teraType": "Water",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Aqua Jet",
+            "Close Combat",
+            "Raging Bull",
+            "Wave Crash"
+        ]
+    }
+]

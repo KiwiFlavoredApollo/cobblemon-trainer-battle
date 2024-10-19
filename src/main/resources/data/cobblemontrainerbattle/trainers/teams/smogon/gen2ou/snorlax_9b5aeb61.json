@@ -1,0 +1,83 @@
+[
+    {
+        "species": "Snorlax",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Curse",
+            "Double-Edge",
+            "Flamethrower",
+            "Rest"
+        ]
+    },
+    {
+        "species": "Forretress",
+        "gender": "M",
+        "item": "Leftovers",
+        "ivs": {
+            "hp": 7,
+            "atk": 29,
+            "def": 25
+        },
+        "moves": [
+            "Explosion",
+            "Hidden Power Fire",
+            "Spikes",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Raikou",
+        "item": "Leftovers",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "def": 27
+        },
+        "moves": [
+            "Hidden Power Ice",
+            "Rest",
+            "Roar",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Skarmory",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Curse",
+            "Drill Peck",
+            "Rest",
+            "Whirlwind"
+        ]
+    },
+    {
+        "species": "Starmie",
+        "item": "Leftovers",
+        "moves": [
+            "Psychic",
+            "Rapid Spin",
+            "Recover",
+            "Surf"
+        ]
+    },
+    {
+        "species": "Umbreon",
+        "gender": "F",
+        "item": "Leftovers",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Charm",
+            "Pursuit",
+            "Rest",
+            "Sleep Talk"
+        ]
+    }
+]

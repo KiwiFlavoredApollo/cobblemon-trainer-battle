@@ -1,0 +1,188 @@
+[
+    {
+        "name": "",
+        "species": "Lucario",
+        "item": "",
+        "ability": "Who cares they both suck",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -4,
+        "moves": [
+            "High Jump Kick",
+            "Crunch",
+            "Bullet Punch",
+            "Swords Dance"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Togekiss",
+        "item": "",
+        "ability": "Serene Grace",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -4,
+        "moves": [
+            "Nasty Plot",
+            "Extrasensory",
+            "Air Slash",
+            "Aura Sphere"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Magmortar",
+        "item": "",
+        "ability": "Vital Spirit",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -4,
+        "moves": [
+            "Cross Chop",
+            "Flare Blitz",
+            "Iron Tail",
+            "Screech"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Serperior",
+        "item": "",
+        "ability": "Contrary",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -4,
+        "moves": [
+            "Leaf Storm",
+            "Dragon Pulse",
+            "Glare",
+            "Grassy Terrain"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Whiscash",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -5,
+        "moves": [
+            "Aqua Tail",
+            "Earthquake",
+            "Dragon Dance",
+            "Spark"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Miltank",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -4,
+        "moves": [
+            "Curse",
+            "Hammer Arm",
+            "Double Edge",
+            "Milk Drink"
+        ]
+    }
+]

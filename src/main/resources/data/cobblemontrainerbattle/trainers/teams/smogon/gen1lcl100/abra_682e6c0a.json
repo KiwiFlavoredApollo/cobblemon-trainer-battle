@@ -1,0 +1,56 @@
+[
+    {
+        "species": "Abra",
+        "moves": [
+            "Counter",
+            "Psychic",
+            "Seismic Toss",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Clefairy",
+        "moves": [
+            "Blizzard",
+            "Body Slam",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Diglett",
+        "moves": [
+            "Body Slam",
+            "Earthquake",
+            "Rock Slide",
+            "Slash"
+        ]
+    },
+    {
+        "species": "Exeggcute",
+        "moves": [
+            "Double-Edge",
+            "Explosion",
+            "Psychic",
+            "Sleep Powder"
+        ]
+    },
+    {
+        "species": "Gastly",
+        "moves": [
+            "Explosion",
+            "Night Shade",
+            "Psychic",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Poliwag",
+        "moves": [
+            "Amnesia",
+            "Blizzard",
+            "Psychic",
+            "Surf"
+        ]
+    }
+]

@@ -1,0 +1,68 @@
+[
+    {
+        "species": "Starmie",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Blizzard",
+            "Recover",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Chansey",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Seismic Toss",
+            "Sing",
+            "Soft-Boiled",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Mew",
+        "moves": [
+            "Earthquake",
+            "Explosion",
+            "Soft-Boiled",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Mewtwo",
+        "moves": [
+            "Amnesia",
+            "Psychic",
+            "Recover",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Rhydon",
+        "moves": [
+            "Body Slam",
+            "Earthquake",
+            "Rest",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Snorlax",
+        "moves": [
+            "Body Slam",
+            "Earthquake",
+            "Hyper Beam",
+            "Self-Destruct"
+        ]
+    }
+]

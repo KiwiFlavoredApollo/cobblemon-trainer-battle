@@ -1,0 +1,117 @@
+[
+    {
+        "species": "Sableye",
+        "gender": "F",
+        "item": "Sablenite",
+        "ability": "Prankster",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Fake Out",
+            "Foul Play",
+            "Recover",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Arceus-Ground",
+        "item": "Groundium Z",
+        "ability": "Multitype",
+        "evs": {
+            "hp": 252,
+            "def": 156,
+            "spe": 100
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Earth Power",
+            "Ice Beam",
+            "Recover"
+        ]
+    },
+    {
+        "species": "Blissey",
+        "item": "Shed Shell",
+        "ability": "Natural Cure",
+        "evs": {
+            "hp": 4,
+            "def": 252,
+            "spd": 252
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Confide",
+            "Heal Bell",
+            "Soft-Boiled",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Ho-Oh",
+        "item": "Leftovers",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 252,
+            "def": 204,
+            "spd": 52
+        },
+        "nature": "Impish",
+        "moves": [
+            "Brave Bird",
+            "Defog",
+            "Toxic",
+            "Whirlwind"
+        ]
+    },
+    {
+        "species": "Lunala",
+        "item": "Leftovers",
+        "ability": "Shadow Shield",
+        "evs": {
+            "hp": 116,
+            "def": 192,
+            "spe": 200
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Moongeist Beam",
+            "Roost",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Zekrom",
+        "item": "Leftovers",
+        "ability": "Teravolt",
+        "evs": {
+            "hp": 252,
+            "def": 28,
+            "spd": 228
+        },
+        "nature": "Sassy",
+        "moves": [
+            "Bolt Strike",
+            "Draco Meteor",
+            "Roost",
+            "Toxic"
+        ]
+    }
+]

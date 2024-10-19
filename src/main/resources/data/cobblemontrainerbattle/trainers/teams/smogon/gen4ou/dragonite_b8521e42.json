@@ -1,0 +1,118 @@
+[
+    {
+        "species": "Dragonite",
+        "gender": "M",
+        "item": "Yache Berry",
+        "ability": "Inner Focus",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Dragon Dance",
+            "Earthquake",
+            "Fire Punch",
+            "Outrage"
+        ]
+    },
+    {
+        "species": "Bronzong",
+        "item": "Custap Berry",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 248,
+            "atk": 156,
+            "def": 8,
+            "spd": 96
+        },
+        "nature": "Relaxed",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Earthquake",
+            "Explosion",
+            "Gyro Ball",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Gengar",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Levitate",
+        "evs": {
+            "atk": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Hasty",
+        "moves": [
+            "Explosion",
+            "Focus Blast",
+            "Shadow Ball",
+            "Sleep Talk"
+        ]
+    },
+    {
+        "species": "Magnezone",
+        "item": "Chople Berry",
+        "ability": "Magnet Pull",
+        "shiny": true,
+        "evs": {
+            "hp": 100,
+            "spa": 252,
+            "spe": 156
+        },
+        "nature": "Modest",
+        "moves": [
+            "Explosion",
+            "Hidden Power Grass",
+            "Thunderbolt",
+            "Thunder Wave"
+        ],
+        "ivs": {
+            "atk": 30,
+            "spa": 30
+        }
+    },
+    {
+        "species": "Metagross",
+        "item": "Occa Berry",
+        "ability": "Clear Body",
+        "shiny": true,
+        "evs": {
+            "hp": 64,
+            "atk": 252,
+            "spe": 192
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Agility",
+            "Earthquake",
+            "Explosion",
+            "Meteor Mash"
+        ]
+    },
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Lum Berry",
+        "ability": "Sand Stream",
+        "shiny": true,
+        "evs": {
+            "hp": 80,
+            "atk": 176,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Crunch",
+            "Dragon Dance",
+            "Earthquake",
+            "Ice Punch"
+        ]
+    }
+]

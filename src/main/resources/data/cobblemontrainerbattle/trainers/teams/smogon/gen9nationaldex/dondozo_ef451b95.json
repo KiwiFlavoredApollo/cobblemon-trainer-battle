@@ -1,0 +1,121 @@
+[
+    {
+        "species": "Dondozo",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Unaware",
+        "teraType": "Dragon",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Impish",
+        "moves": [
+            "Body Press",
+            "Liquidation",
+            "Rest",
+            "Sleep Talk"
+        ]
+    },
+    {
+        "species": "Blissey",
+        "item": "Leftovers",
+        "ability": "Natural Cure",
+        "teraType": "Dark",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Protect",
+            "Seismic Toss",
+            "Toxic",
+            "Wish"
+        ]
+    },
+    {
+        "species": "Clodsire",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Unaware",
+        "teraType": "Steel",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "moves": [
+            "Amnesia",
+            "Poison Jab",
+            "Recover",
+            "Spikes"
+        ]
+    },
+    {
+        "species": "Corviknight",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Pressure",
+        "teraType": "Dragon",
+        "evs": {
+            "hp": 252,
+            "def": 188,
+            "spe": 68
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Body Press",
+            "Defog",
+            "Iron Defense",
+            "Roost"
+        ]
+    },
+    {
+        "species": "Gliscor",
+        "gender": "M",
+        "item": "Toxic Orb",
+        "ability": "Poison Heal",
+        "teraType": "Fairy",
+        "evs": {
+            "hp": 244,
+            "def": 56,
+            "spd": 208
+        },
+        "nature": "Careful",
+        "moves": [
+            "Earthquake",
+            "Protect",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Toxapex",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Regenerator",
+        "teraType": "Psychic",
+        "evs": {
+            "hp": 252,
+            "def": 92,
+            "spd": 164
+        },
+        "nature": "Careful",
+        "moves": [
+            "Knock Off",
+            "Recover",
+            "Scald",
+            "Toxic Spikes"
+        ]
+    }
+]

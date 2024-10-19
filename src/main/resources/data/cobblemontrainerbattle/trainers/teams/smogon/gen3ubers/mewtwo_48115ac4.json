@@ -1,0 +1,118 @@
+[
+    {
+        "species": "Mewtwo",
+        "item": "Lum Berry",
+        "ability": "Pressure",
+        "evs": {
+            "atk": 36,
+            "spa": 252,
+            "spe": 220
+        },
+        "nature": "Rash",
+        "moves": [
+            "Fire Blast",
+            "Ice Beam",
+            "Self-Destruct",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Deoxys-Attack",
+        "item": "Petaya Berry",
+        "ability": "Pressure",
+        "evs": {
+            "atk": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "ivs": {
+            "hp": 30
+        },
+        "moves": [
+            "Ice Beam",
+            "Substitute",
+            "Superpower",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Kyogre",
+        "item": "Leftovers",
+        "ability": "Drizzle",
+        "evs": {
+            "hp": 252,
+            "spa": 152,
+            "spe": 104
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Ice Beam",
+            "Substitute",
+            "Surf"
+        ]
+    },
+    {
+        "species": "Latios",
+        "item": "Soul Dew",
+        "ability": "Levitate",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "spa": 30,
+            "spe": 30
+        },
+        "moves": [
+            "Dragon Claw",
+            "Hidden Power Fire",
+            "Ice Beam",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Metagross",
+        "item": "Leftovers",
+        "ability": "Clear Body",
+        "evs": {
+            "hp": 252,
+            "atk": 180,
+            "def": 20,
+            "spd": 56
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Explosion",
+            "Meteor Mash",
+            "Pursuit"
+        ]
+    },
+    {
+        "species": "Snorlax",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Thick Fat",
+        "evs": {
+            "hp": 52,
+            "atk": 252,
+            "def": 28,
+            "spd": 176
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Body Slam",
+            "Earthquake",
+            "Self-Destruct",
+            "Shadow Ball"
+        ]
+    }
+]

@@ -1,0 +1,116 @@
+[
+    {
+        "species": "Archeops",
+        "gender": "M",
+        "item": "Focus Sash",
+        "ability": "Defeatist",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Endeavor",
+            "Head Smash",
+            "Stealth Rock",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Drapion",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Sniper",
+        "evs": {
+            "hp": 16,
+            "atk": 252,
+            "spe": 240
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Brick Break",
+            "Knock Off",
+            "Poison Jab",
+            "Pursuit"
+        ]
+    },
+    {
+        "species": "Glalie",
+        "gender": "M",
+        "item": "Glalitite",
+        "ability": "Inner Focus",
+        "evs": {
+            "atk": 160,
+            "spa": 96,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Double-Edge",
+            "Freeze-Dry",
+            "Ice Shard",
+            "Spikes"
+        ]
+    },
+    {
+        "species": "Hitmonlee",
+        "item": "Life Orb",
+        "ability": "Reckless",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Close Combat",
+            "High Jump Kick",
+            "Knock Off",
+            "Mach Punch"
+        ]
+    },
+    {
+        "species": "Omastar",
+        "gender": "M",
+        "item": "Shuca Berry",
+        "ability": "Weak Armor",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0,
+            "spa": 30
+        },
+        "moves": [
+            "Hidden Power Grass",
+            "Ice Beam",
+            "Shell Smash",
+            "Surf"
+        ]
+    },
+    {
+        "species": "Sigilyph",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Magic Guard",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Air Slash",
+            "Calm Mind",
+            "Heat Wave",
+            "Psychic"
+        ]
+    }
+]

@@ -1,0 +1,112 @@
+[
+    {
+        "species": "Latias",
+        "item": "Latiasite",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 240,
+            "def": 16,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Aura Sphere",
+            "Calm Mind",
+            "Psyshock",
+            "Roost"
+        ]
+    },
+    {
+        "species": "Clefable",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Magic Guard",
+        "evs": {
+            "hp": 252,
+            "def": 248,
+            "spe": 8
+        },
+        "nature": "Bold",
+        "moves": [
+            "Calm Mind",
+            "Moonblast",
+            "Soft-Boiled",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Gastrodon",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Storm Drain",
+        "evs": {
+            "hp": 248,
+            "def": 20,
+            "spd": 216,
+            "spe": 24
+        },
+        "nature": "Sassy",
+        "moves": [
+            "Clear Smog",
+            "Earthquake",
+            "Recover",
+            "Scald"
+        ]
+    },
+    {
+        "species": "Heatran",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Flash Fire",
+        "evs": {
+            "hp": 252,
+            "spd": 48,
+            "spe": 208
+        },
+        "nature": "Calm",
+        "moves": [
+            "Earth Power",
+            "Magma Storm",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Rotom-Wash",
+        "item": "Choice Scarf",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 236,
+            "spd": 64,
+            "spe": 208
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Hydro Pump",
+            "Trick",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Skarmory",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Sturdy",
+        "evs": {
+            "hp": 248,
+            "def": 164,
+            "spe": 96
+        },
+        "nature": "Bold",
+        "moves": [
+            "Body Press",
+            "Iron Defense",
+            "Roost",
+            "Spikes"
+        ]
+    }
+]

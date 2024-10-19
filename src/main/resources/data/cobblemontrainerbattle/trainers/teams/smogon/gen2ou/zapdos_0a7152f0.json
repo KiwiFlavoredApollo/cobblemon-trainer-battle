@@ -1,0 +1,75 @@
+[
+    {
+        "species": "Zapdos",
+        "item": "Leftovers",
+        "ivs": {
+            "hp": 15,
+            "atk": 29,
+            "def": 27
+        },
+        "moves": [
+            "Hidden Power Water",
+            "Thunderbolt",
+            "Thunder Wave",
+            "Whirlwind"
+        ]
+    },
+    {
+        "species": "Miltank",
+        "item": "Leftovers",
+        "moves": [
+            "Body Slam",
+            "Growl",
+            "Heal Bell",
+            "Milk Drink"
+        ]
+    },
+    {
+        "species": "Quagsire",
+        "gender": "M",
+        "item": "Leftovers",
+        "ivs": {
+            "hp": 23,
+            "atk": 27,
+            "def": 25
+        },
+        "moves": [
+            "Belly Drum",
+            "Earthquake",
+            "Hidden Power Rock",
+            "Rest"
+        ]
+    },
+    {
+        "species": "Snorlax",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Body Slam",
+            "Curse",
+            "Fire Blast",
+            "Rest"
+        ]
+    },
+    {
+        "species": "Starmie",
+        "item": "Leftovers",
+        "moves": [
+            "Rapid Spin",
+            "Recover",
+            "Surf",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Fire Blast",
+            "Pursuit",
+            "Roar",
+            "Rock Slide"
+        ]
+    }
+]

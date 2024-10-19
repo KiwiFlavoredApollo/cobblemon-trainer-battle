@@ -1,0 +1,126 @@
+[
+    {
+        "name": "",
+        "species": "Tropius",
+        "item": "Sitrus Berry",
+        "ability": "Harvest",
+        "gender": "",
+        "nature": "Bold",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 252,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Sunny Day",
+            "Air Slash",
+            "Leech Seed",
+            "Substitute"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Dodrio",
+        "item": "Normal Gem",
+        "ability": "Moxie",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Brave Bird",
+            "Double Edge",
+            "Jump Kick",
+            "Quick Attack"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Emolga",
+        "item": "Flying Gem",
+        "ability": "Static",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Acrobatics",
+            "Wild Charge",
+            "U Turn",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Archeops",
+        "item": "Flying Gem",
+        "ability": "Defeatist",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Acrobatics",
+            "Stone Edge",
+            "Dragon Claw",
+            "Crunch"
+        ]
+    }
+]

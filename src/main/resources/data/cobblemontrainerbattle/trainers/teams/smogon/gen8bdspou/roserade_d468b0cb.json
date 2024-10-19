@@ -1,0 +1,121 @@
+[
+    {
+        "species": "Roserade",
+        "gender": "M",
+        "item": "Black Sludge",
+        "ability": "Natural Cure",
+        "evs": {
+            "hp": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Giga Drain",
+            "Sleep Powder",
+            "Sludge Bomb",
+            "Toxic Spikes"
+        ]
+    },
+    {
+        "species": "Clefable",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Magic Guard",
+        "evs": {
+            "hp": 252,
+            "def": 248,
+            "spe": 8
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Moonblast",
+            "Protect",
+            "Wish"
+        ]
+    },
+    {
+        "species": "Gliscor",
+        "gender": "M",
+        "item": "Toxic Orb",
+        "ability": "Poison Heal",
+        "evs": {
+            "hp": 252,
+            "spd": 136,
+            "spe": 120
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Knock Off",
+            "Roost",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Scizor",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Technician",
+        "evs": {
+            "hp": 252,
+            "atk": 4,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "ivs": {
+            "spe": 30
+        },
+        "moves": [
+            "Bullet Punch",
+            "Defog",
+            "Roost",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Suicune",
+        "item": "Leftovers",
+        "ability": "Pressure",
+        "evs": {
+            "hp": 252,
+            "def": 40,
+            "spe": 216
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Protect",
+            "Scald",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Weavile",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Pressure",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Brick Break",
+            "Ice Shard",
+            "Icicle Crash",
+            "Throat Chop"
+        ]
+    }
+]

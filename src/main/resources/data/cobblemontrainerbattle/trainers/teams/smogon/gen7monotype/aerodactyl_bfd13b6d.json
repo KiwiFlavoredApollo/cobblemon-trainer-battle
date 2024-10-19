@@ -1,0 +1,118 @@
+[
+    {
+        "species": "Aerodactyl",
+        "gender": "M",
+        "item": "Focus Sash",
+        "ability": "Pressure",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Rock Slide",
+            "Stealth Rock",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Celesteela",
+        "item": "Metronome",
+        "ability": "Beast Boost",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Air Slash",
+            "Autotomize",
+            "Flamethrower",
+            "Flash Cannon"
+        ]
+    },
+    {
+        "species": "Charizard",
+        "gender": "M",
+        "item": "Charizardite Y",
+        "ability": "Blaze",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Fire Blast",
+            "Focus Blast",
+            "Hidden Power Electric",
+            "Solar Beam"
+        ],
+        "hpType": "Electric"
+    },
+    {
+        "species": "Dragonite",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Multiscale",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Extreme Speed",
+            "Fire Punch",
+            "Outrage",
+            "Superpower"
+        ]
+    },
+    {
+        "species": "Landorus-Therian",
+        "item": "Choice Scarf",
+        "ability": "Intimidate",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Defog",
+            "Earthquake",
+            "Stone Edge",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Thundurus-Therian",
+        "item": "Electrium Z",
+        "ability": "Volt Absorb",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Agility",
+            "Hidden Power Ice",
+            "Nasty Plot",
+            "Thunderbolt"
+        ],
+        "hpType": "Ice"
+    }
+]

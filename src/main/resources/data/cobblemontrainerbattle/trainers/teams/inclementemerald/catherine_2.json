@@ -1,0 +1,157 @@
+[
+    {
+        "name": "",
+        "species": "Bellossom",
+        "item": "Miracle Seed",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Quiver Dance",
+            "Moonblast",
+            "Giga Drain",
+            "Sleep Powder"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Noivern",
+        "item": "Petaya Berry",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Hurricane",
+            "Water Pulse",
+            "Dragon Pulse",
+            "Boomburst"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Beartic",
+        "item": "Water Gem",
+        "ability": "Swift Swim",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Icicle Crash",
+            "Liquidation",
+            "Throat Chop",
+            "Aqua Jet"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Seismitoad",
+        "item": "Sitrus Berry",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Earth Power",
+            "Hydro Pump",
+            "Sludge Wave",
+            "Power Whip"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Blastoise",
+        "item": "Leftovers",
+        "ability": "Rain Dish",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Scald",
+            "Protect",
+            "Yawn",
+            "Aqua Ring"
+        ]
+    }
+]

@@ -1,0 +1,124 @@
+[
+    {
+        "species": "Politoed",
+        "gender": "M",
+        "item": "Eject Button",
+        "ability": "Drizzle",
+        "evs": {
+            "hp": 252,
+            "def": 200,
+            "spd": 56
+        },
+        "nature": "Relaxed",
+        "ivs": {
+            "atk": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Encore",
+            "Helping Hand",
+            "Hypnosis",
+            "Scald"
+        ]
+    },
+    {
+        "species": "Kingdra",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Swift Swim",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Draco Meteor",
+            "Hydro Pump",
+            "Muddy Water",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Landorus-Therian",
+        "item": "Focus Sash",
+        "ability": "Intimidate",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Stealth Rock",
+            "Stone Edge",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Scizor",
+        "gender": "M",
+        "item": "Steel Gem",
+        "ability": "Technician",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 4
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bug Bite",
+            "Bullet Punch",
+            "Protect",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Shaymin-Sky",
+        "item": "Leftovers",
+        "ability": "Serene Grace",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Air Slash",
+            "Protect",
+            "Seed Flare",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Thundurus",
+        "item": "Electric Gem",
+        "ability": "Prankster",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "hp": 30,
+            "atk": 2,
+            "def": 30,
+            "spa": 30,
+            "spd": 30
+        },
+        "moves": [
+            "Hidden Power Flying",
+            "Protect",
+            "Thunder",
+            "Thunder Wave"
+        ]
+    }
+]

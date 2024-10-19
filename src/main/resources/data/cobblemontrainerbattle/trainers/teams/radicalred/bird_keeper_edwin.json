@@ -1,0 +1,126 @@
+[
+    {
+        "name": "",
+        "species": "Pidgeotto",
+        "item": "None",
+        "ability": "Tangled Feet",
+        "gender": "M",
+        "nature": "Quiet",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 57,
+        "moves": [
+            "Agility",
+            "Air Slash",
+            "Mirror Move",
+            "Tailwind"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Farfetch\u2019d-Galar",
+        "item": "None",
+        "ability": "Steadfast",
+        "gender": "M",
+        "nature": "Quirky",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 59,
+        "moves": [
+            "Brick Break",
+            "Swords Dance",
+            "Slam",
+            "Leaf Blade"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Swoobat",
+        "item": "None",
+        "ability": "Klutz",
+        "gender": "F",
+        "nature": "Quiet",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 58,
+        "moves": [
+            "Future Sight",
+            "Psychic",
+            "Endeavor",
+            "Heat Wave"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Pidgeot",
+        "item": "None",
+        "ability": "Tangled Feet",
+        "gender": "M",
+        "nature": "Naive",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 57,
+        "moves": [
+            "Agility",
+            "Air Slash",
+            "Mirror Move",
+            "Tailwind"
+        ]
+    }
+]

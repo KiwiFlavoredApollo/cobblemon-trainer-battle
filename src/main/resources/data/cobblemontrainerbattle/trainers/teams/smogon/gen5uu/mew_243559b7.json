@@ -1,0 +1,113 @@
+[
+    {
+        "species": "Mew",
+        "item": "Normal Gem",
+        "ability": "Synchronize",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Explosion",
+            "Stealth Rock",
+            "Tailwind",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Druddigon",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Mold Breaker",
+        "evs": {
+            "hp": 132,
+            "atk": 240,
+            "spd": 4,
+            "spe": 132
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Dragon Claw",
+            "Earthquake",
+            "Outrage",
+            "Sucker Punch"
+        ]
+    },
+    {
+        "species": "Nidoking",
+        "item": "Life Orb",
+        "ability": "Sheer Force",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earth Power",
+            "Fire Blast",
+            "Ice Beam",
+            "Shadow Ball"
+        ]
+    },
+    {
+        "species": "Suicune",
+        "item": "Leftovers",
+        "ability": "Pressure",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 3,
+            "spa": 30
+        },
+        "moves": [
+            "Calm Mind",
+            "Hidden Power Electric",
+            "Hydro Pump",
+            "Ice Beam"
+        ]
+    },
+    {
+        "species": "Tornadus",
+        "item": "Life Orb",
+        "ability": "Prankster",
+        "evs": {
+            "atk": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Hasty",
+        "moves": [
+            "Grass Knot",
+            "Hurricane",
+            "Superpower",
+            "Tailwind"
+        ]
+    },
+    {
+        "species": "Victini",
+        "item": "Charcoal",
+        "ability": "Victory Star",
+        "evs": {
+            "atk": 252,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Lonely",
+        "moves": [
+            "Brick Break",
+            "Grass Knot",
+            "V-create",
+            "Zen Headbutt"
+        ]
+    }
+]

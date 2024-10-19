@@ -1,0 +1,74 @@
+[
+    {
+        "species": "Mr. Mime",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Psychic",
+            "Rest",
+            "Sleep Talk",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Granbull",
+        "gender": "M",
+        "item": "Leftovers",
+        "happiness": 0,
+        "moves": [
+            "Curse",
+            "Frustration",
+            "Rest",
+            "Sleep Talk"
+        ]
+    },
+    {
+        "species": "Gyarados",
+        "gender": "M",
+        "item": "Leftovers",
+        "ivs": {
+            "hp": 15,
+            "atk": 25,
+            "def": 27
+        },
+        "moves": [
+            "Hidden Power Flying",
+            "Hydro Pump",
+            "Roar",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Haunter",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Destiny Bond",
+            "Explosion",
+            "Psychic",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Piloswine",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Earthquake",
+            "Ice Beam",
+            "Rest",
+            "Sleep Talk"
+        ]
+    },
+    {
+        "species": "Qwilfish",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Curse",
+            "Hydro Pump",
+            "Sludge Bomb",
+            "Spikes"
+        ]
+    }
+]

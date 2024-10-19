@@ -1,0 +1,116 @@
+[
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Chople Berry",
+        "ability": "Sand Stream",
+        "evs": {
+            "hp": 248,
+            "atk": 72,
+            "spd": 188
+        },
+        "nature": "Sassy",
+        "moves": [
+            "Crunch",
+            "Fire Blast",
+            "Pursuit",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Excadrill",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sand Force",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Iron Head",
+            "Protect",
+            "Rapid Spin"
+        ]
+    },
+    {
+        "species": "Revenankh",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Air Lock",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "moves": [
+            "Hammer Arm",
+            "Knock Off",
+            "Moonlight",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Skarmory",
+        "gender": "M",
+        "item": "Shed Shell",
+        "ability": "Sturdy",
+        "evs": {
+            "hp": 252,
+            "def": 200,
+            "spd": 56
+        },
+        "nature": "Impish",
+        "moves": [
+            "Brave Bird",
+            "Roost",
+            "Spikes",
+            "Whirlwind"
+        ]
+    },
+    {
+        "species": "Slowking",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 252,
+            "def": 200,
+            "spd": 56
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Future Sight",
+            "Psyshock",
+            "Scald",
+            "Slack Off"
+        ]
+    },
+    {
+        "species": "Stratagem",
+        "item": "Life Orb",
+        "ability": "Levitate",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "def": 30
+        },
+        "moves": [
+            "Flamethrower",
+            "Giga Drain",
+            "Hidden Power Ice",
+            "Weather Ball"
+        ]
+    }
+]

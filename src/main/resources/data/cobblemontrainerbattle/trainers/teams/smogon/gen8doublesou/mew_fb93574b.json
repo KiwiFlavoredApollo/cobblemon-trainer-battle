@@ -1,0 +1,112 @@
+[
+    {
+        "species": "Mew",
+        "item": "Sitrus Berry",
+        "ability": "Synchronize",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Snarl",
+            "Spikes",
+            "Tailwind",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Dracovish",
+        "item": "Choice Band",
+        "ability": "Sand Rush",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Fishious Rend",
+            "Ice Fang",
+            "Sleep Talk",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Dragapult",
+        "gender": "M",
+        "item": "Choice Specs",
+        "ability": "Clear Body",
+        "evs": {
+            "hp": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Draco Meteor",
+            "Fire Blast",
+            "Shadow Ball",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Incineroar",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 252,
+            "def": 136,
+            "spd": 72,
+            "spe": 48
+        },
+        "nature": "Impish",
+        "moves": [
+            "Fake Out",
+            "Flare Blitz",
+            "Knock Off",
+            "Parting Shot"
+        ]
+    },
+    {
+        "species": "Rillaboom",
+        "gender": "M",
+        "item": "Assault Vest",
+        "ability": "Grassy Surge",
+        "evs": {
+            "hp": 184,
+            "atk": 252,
+            "spe": 72
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Fake Out",
+            "Grassy Glide",
+            "Knock Off",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Sitrus Berry",
+        "ability": "Sand Stream",
+        "evs": {
+            "hp": 248,
+            "spd": 216,
+            "spe": 44
+        },
+        "nature": "Careful",
+        "moves": [
+            "Dragon Tail",
+            "Ice Punch",
+            "Stealth Rock",
+            "Stone Edge"
+        ]
+    }
+]

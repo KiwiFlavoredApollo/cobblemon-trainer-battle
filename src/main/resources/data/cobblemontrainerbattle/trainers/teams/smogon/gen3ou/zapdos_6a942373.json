@@ -1,0 +1,133 @@
+[
+    {
+        "species": "Zapdos",
+        "item": "Leftovers",
+        "ability": "Pressure",
+        "evs": {
+            "hp": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "spa": 30
+        },
+        "moves": [
+            "Baton Pass",
+            "Hidden Power Grass",
+            "Roar",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Celebi",
+        "item": "Leftovers",
+        "ability": "Natural Cure",
+        "evs": {
+            "hp": 252,
+            "def": 12,
+            "spd": 68,
+            "spe": 176
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Baton Pass",
+            "Calm Mind",
+            "Leech Seed",
+            "Psychic"
+        ]
+    },
+    {
+        "species": "Jirachi",
+        "item": "Leftovers",
+        "ability": "Serene Grace",
+        "evs": {
+            "hp": 252,
+            "def": 40,
+            "spa": 64,
+            "spe": 152
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 2,
+            "def": 30,
+            "spa": 30
+        },
+        "moves": [
+            "Calm Mind",
+            "Hidden Power Water",
+            "Psychic",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Magneton",
+        "item": "Magnet",
+        "ability": "Magnet Pull",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 2,
+            "spa": 30,
+            "spe": 30
+        },
+        "moves": [
+            "Hidden Power Fire",
+            "Metal Sound",
+            "Substitute",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Porygon2",
+        "item": "Leftovers",
+        "ability": "Trace",
+        "evs": {
+            "hp": 252,
+            "def": 224,
+            "spa": 32
+        },
+        "nature": "Relaxed",
+        "moves": [
+            "Hidden Power Fighting",
+            "Ice Beam",
+            "Recover",
+            "Thunder Wave"
+        ],
+        "ivs": {
+            "def": 30,
+            "spa": 30,
+            "spd": 30,
+            "spe": 30
+        }
+    },
+    {
+        "species": "Swampert",
+        "gender": "M",
+        "item": "Salac Berry",
+        "ability": "Torrent",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Endeavor",
+            "Roar",
+            "Substitute",
+            "Surf"
+        ]
+    }
+]

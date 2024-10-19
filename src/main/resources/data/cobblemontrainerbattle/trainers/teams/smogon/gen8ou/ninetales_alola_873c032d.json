@@ -1,0 +1,120 @@
+[
+    {
+        "species": "Ninetales-Alola",
+        "gender": "M",
+        "item": "Icy Rock",
+        "ability": "Snow Warning",
+        "shiny": true,
+        "evs": {
+            "hp": 248,
+            "spa": 8,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Aurora Veil",
+            "Encore",
+            "Freeze-Dry",
+            "Hypnosis"
+        ]
+    },
+    {
+        "species": "Arctozolt",
+        "item": "Heavy-Duty Boots",
+        "ability": "Slush Rush",
+        "shiny": true,
+        "evs": {
+            "atk": 252,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Naughty",
+        "moves": [
+            "Blizzard",
+            "Bolt Beak",
+            "Freeze-Dry",
+            "Low Kick"
+        ]
+    },
+    {
+        "species": "Heatran",
+        "gender": "M",
+        "item": "Air Balloon",
+        "ability": "Flash Fire",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earth Power",
+            "Eruption",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Kartana",
+        "item": "Choice Scarf",
+        "ability": "Beast Boost",
+        "shiny": true,
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Knock Off",
+            "Leaf Blade",
+            "Sacred Sword",
+            "Smart Strike"
+        ]
+    },
+    {
+        "species": "Landorus-Therian",
+        "item": "Leftovers",
+        "ability": "Intimidate",
+        "shiny": true,
+        "evs": {
+            "hp": 248,
+            "spd": 52,
+            "spe": 208
+        },
+        "nature": "Careful",
+        "moves": [
+            "Defog",
+            "Earthquake",
+            "Knock Off",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Tapu Fini",
+        "item": "Leftovers",
+        "ability": "Misty Surge",
+        "shiny": true,
+        "evs": {
+            "hp": 112,
+            "def": 252,
+            "spe": 144
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Draining Kiss",
+            "Surf",
+            "Taunt"
+        ]
+    }
+]

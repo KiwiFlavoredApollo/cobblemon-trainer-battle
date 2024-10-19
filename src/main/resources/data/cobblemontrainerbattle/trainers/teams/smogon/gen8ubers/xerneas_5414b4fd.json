@@ -1,0 +1,116 @@
+[
+    {
+        "species": "Xerneas",
+        "item": "Air Balloon",
+        "ability": "Fairy Aura",
+        "evs": {
+            "hp": 192,
+            "def": 252,
+            "spe": 64
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Aromatherapy",
+            "Moonblast",
+            "Rest",
+            "Sleep Talk"
+        ]
+    },
+    {
+        "species": "Calyrex-Shadow",
+        "item": "Choice Specs",
+        "ability": "As One (Spectrier)",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Astral Barrage",
+            "Nasty Plot",
+            "Psyshock",
+            "Trick"
+        ]
+    },
+    {
+        "species": "Eternatus",
+        "item": "Eject Pack",
+        "ability": "Pressure",
+        "evs": {
+            "hp": 164,
+            "spd": 252,
+            "spe": 92
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Draco Meteor",
+            "Mystical Fire",
+            "Recover",
+            "Sludge Bomb"
+        ]
+    },
+    {
+        "species": "Necrozma-Dusk-Mane",
+        "item": "Leftovers",
+        "ability": "Prism Armor",
+        "evs": {
+            "hp": 216,
+            "spd": 252,
+            "spe": 40
+        },
+        "nature": "Careful",
+        "moves": [
+            "Iron Head",
+            "Moonlight",
+            "Stealth Rock",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Yveltal",
+        "item": "Heavy-Duty Boots",
+        "ability": "Dark Aura",
+        "evs": {
+            "hp": 16,
+            "spd": 240,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Foul Play",
+            "Roost",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Zekrom",
+        "item": "Haban Berry",
+        "ability": "Teravolt",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Bolt Strike",
+            "Dragon Claw",
+            "Dragon Dance",
+            "Roost"
+        ]
+    }
+]

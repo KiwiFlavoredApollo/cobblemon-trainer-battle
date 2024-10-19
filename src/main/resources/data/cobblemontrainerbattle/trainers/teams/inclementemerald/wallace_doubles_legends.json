@@ -1,0 +1,188 @@
+[
+    {
+        "name": "",
+        "species": "Kyogre",
+        "item": "Assault Vest",
+        "ability": "",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 4,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 30,
+            "spd": 31,
+            "spe": 30
+        },
+        "level": 2,
+        "moves": [
+            "Origin Pulse",
+            "Ice Beam",
+            "Thunder",
+            "Hidden Power"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Arceus-Electric",
+        "item": "Zap Plate",
+        "ability": "",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 2,
+        "moves": [
+            "Thunder",
+            "Earth Power",
+            "Sludge Bomb",
+            "Ice Beam"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Tornadus-Therian",
+        "item": "Life Orb",
+        "ability": "",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 2,
+        "moves": [
+            "Hurricane",
+            "Focus Blast",
+            "Grass Knot",
+            "U Turn"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Latios",
+        "item": "Soul Dew",
+        "ability": "",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 2,
+        "moves": [
+            "Psyshock",
+            "Draco Meteor",
+            "Thunder",
+            "Aura Sphere"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Omastar",
+        "item": "Water Gem",
+        "ability": "Iron Barbs",
+        "gender": "",
+        "nature": "Modest",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 2,
+        "moves": [
+            "Muddy Water",
+            "Ice Beam",
+            "Earth Power",
+            "Protect"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Milotic",
+        "item": "Miloticite",
+        "ability": "Competitive -> Prism Scales",
+        "gender": "",
+        "nature": "Bold",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 252,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 3,
+        "moves": [
+            "Scald",
+            "Moonblast",
+            "Calm Mind",
+            "Recover"
+        ]
+    }
+]

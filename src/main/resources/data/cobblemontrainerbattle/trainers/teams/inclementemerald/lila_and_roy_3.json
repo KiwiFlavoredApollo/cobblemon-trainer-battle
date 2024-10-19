@@ -1,0 +1,126 @@
+[
+    {
+        "name": "",
+        "species": "Gastrodon",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Surf",
+            "Earth Power",
+            "Ancient Power",
+            "Recover"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Lanturn",
+        "item": "",
+        "ability": "Water Absorb",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Surf",
+            "Thunderbolt",
+            "Confuse Ray",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Ludicolo",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Surf",
+            "Leaf Storm",
+            "Knock Off",
+            "Zen Headbutt"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Lumineon",
+        "item": "",
+        "ability": "Storm Drain",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Surf",
+            "Dazzling Gleam",
+            "Bug Buzz",
+            "Quiver Dance"
+        ]
+    }
+]

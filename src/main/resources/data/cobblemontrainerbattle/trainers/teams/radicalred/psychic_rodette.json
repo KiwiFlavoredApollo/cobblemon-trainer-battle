@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Natu",
+        "item": "None",
+        "ability": "Early Bird",
+        "gender": "F",
+        "nature": "Modest",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 15,
+            "atk": 15,
+            "def": 15,
+            "spa": 15,
+            "spd": 15,
+            "spe": 15
+        },
+        "level": 53,
+        "moves": [
+            "Psychic",
+            "Confuse Ray",
+            "Wish",
+            "Future Sight"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Hypno",
+        "item": "None",
+        "ability": "Forewarn",
+        "gender": "F",
+        "nature": "Relaxed",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 15,
+            "atk": 15,
+            "def": 15,
+            "spa": 15,
+            "spd": 15,
+            "spe": 15
+        },
+        "level": 53,
+        "moves": [
+            "Psychic",
+            "Disable",
+            "Psych Up",
+            "Future Sight"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Hypno",
+        "item": "None",
+        "ability": "Forewarn",
+        "gender": "F",
+        "nature": "Modest",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 15,
+            "atk": 15,
+            "def": 15,
+            "spa": 15,
+            "spd": 15,
+            "spe": 15
+        },
+        "level": 53,
+        "moves": [
+            "Psychic",
+            "Hypnosis",
+            "Psych Up",
+            "Future Sight"
+        ]
+    }
+]

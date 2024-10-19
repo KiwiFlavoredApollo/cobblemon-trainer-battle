@@ -1,0 +1,64 @@
+[
+    {
+        "name": "",
+        "species": "Magnezone",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Modest",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 2,
+        "moves": [
+            "Flash Cannon",
+            "Thunderbolt",
+            "Thunder Wave",
+            "Signal Beam"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Exploud",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Modest",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 2,
+        "moves": [
+            "Hyper Voice",
+            "Extrasensory",
+            "Focus Blast",
+            "Ice Beam"
+        ]
+    }
+]

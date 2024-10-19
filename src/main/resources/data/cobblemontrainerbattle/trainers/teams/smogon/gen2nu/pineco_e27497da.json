@@ -1,0 +1,73 @@
+[
+    {
+        "species": "Pineco",
+        "gender": "M",
+        "item": "Miracle Berry",
+        "moves": [
+            "Explosion",
+            "Rapid Spin",
+            "Spikes",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Chinchou",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Rest",
+            "Sleep Talk",
+            "Surf",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Dugtrio",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Earthquake",
+            "Rock Slide",
+            "Screech",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Kingler",
+        "gender": "M",
+        "item": "Leftovers",
+        "happiness": 0,
+        "ivs": {
+            "hp": 15,
+            "atk": 25
+        },
+        "moves": [
+            "Frustration",
+            "Hidden Power Ground",
+            "Substitute",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Sudowoodo",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Curse",
+            "Earthquake",
+            "Rock Slide",
+            "Self-Destruct"
+        ]
+    },
+    {
+        "species": "Weezing",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Explosion",
+            "Fire Blast",
+            "Sludge Bomb",
+            "Thunder"
+        ]
+    }
+]

@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Boldore",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 15,
+            "atk": 15,
+            "def": 15,
+            "spa": 15,
+            "spd": 15,
+            "spe": 15
+        },
+        "level": -1,
+        "moves": [
+            "Power Gem",
+            "Shock Wave",
+            "Round",
+            "Iron Defense"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Graveler",
+        "item": "",
+        "ability": "Sturdy",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 15,
+            "atk": 15,
+            "def": 15,
+            "spa": 15,
+            "spd": 15,
+            "spe": 15
+        },
+        "level": -1,
+        "moves": [
+            "Bulldoze",
+            "Smack Down",
+            "Self Destruct",
+            "Rock Polish"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Primeape",
+        "item": "",
+        "ability": "Defiant",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 15,
+            "atk": 15,
+            "def": 15,
+            "spa": 15,
+            "spd": 15,
+            "spe": 15
+        },
+        "level": -1,
+        "moves": [
+            "Cross Chop",
+            "Assurance",
+            "Swagger",
+            "Thrash"
+        ]
+    }
+]

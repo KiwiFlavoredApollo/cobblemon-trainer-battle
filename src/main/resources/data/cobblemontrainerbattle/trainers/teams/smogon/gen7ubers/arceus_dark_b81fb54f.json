@@ -1,0 +1,113 @@
+[
+    {
+        "species": "Arceus-Dark",
+        "item": "Dread Plate",
+        "ability": "Multitype",
+        "evs": {
+            "hp": 252,
+            "def": 132,
+            "spd": 28,
+            "spe": 96
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Ice Beam",
+            "Judgment",
+            "Recover"
+        ]
+    },
+    {
+        "species": "Groudon",
+        "item": "Red Orb",
+        "ability": "Drought",
+        "evs": {
+            "hp": 248,
+            "def": 112,
+            "spd": 148
+        },
+        "nature": "Relaxed",
+        "moves": [
+            "Overheat",
+            "Precipice Blades",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Ho-Oh",
+        "item": "Choice Band",
+        "ability": "Regenerator",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Brave Bird",
+            "Defog",
+            "Sacred Fire",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Necrozma-Dusk-Mane",
+        "item": "Solganium Z",
+        "ability": "Prism Armor",
+        "evs": {
+            "hp": 252,
+            "atk": 80,
+            "spd": 152,
+            "spe": 24
+        },
+        "nature": "Careful",
+        "moves": [
+            "Earthquake",
+            "Morning Sun",
+            "Sunsteel Strike",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Xerneas",
+        "item": "Choice Scarf",
+        "ability": "Fairy Aura",
+        "evs": {
+            "hp": 24,
+            "def": 96,
+            "spa": 212,
+            "spe": 176
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Aromatherapy",
+            "Defog",
+            "Moonblast",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Zygarde",
+        "item": "Leftovers",
+        "ability": "Power Construct",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Impish",
+        "moves": [
+            "Coil",
+            "Glare",
+            "Rest",
+            "Thousand Arrows"
+        ]
+    }
+]

@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Pinsir",
+        "item": "Pinsirite",
+        "ability": "",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Double Edge",
+            "Feint",
+            "Close Combat",
+            "Rock Slide"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Pachirisu",
+        "item": "Sitrus Berry",
+        "ability": "Fur Coat",
+        "gender": "",
+        "nature": "Impish",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 252,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Follow Me",
+            "Super Fang",
+            "Nuzzle",
+            "Charm"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Lickilicky",
+        "item": "Assault Vest",
+        "ability": "Own Tempo",
+        "gender": "",
+        "nature": "Modest",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Muddy Water",
+            "Fire Blast",
+            "Thunder",
+            "Ice Beam"
+        ]
+    }
+]

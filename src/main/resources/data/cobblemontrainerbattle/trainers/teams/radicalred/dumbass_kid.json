@@ -1,0 +1,187 @@
+[
+    {
+        "name": "",
+        "species": "Swampert",
+        "item": "Rindo Berry",
+        "ability": "Torrent",
+        "gender": "F",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 6
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 54,
+        "moves": [
+            "Stealth Rock",
+            "Flip Turn",
+            "Liquidation",
+            "Earthquake"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Pelipper",
+        "item": "Damp Rock",
+        "ability": "Drizzle",
+        "gender": "M",
+        "nature": "Modest",
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 54,
+        "moves": [
+            "Surf",
+            "Hurricane",
+            "U-turn",
+            "Roost"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Scizor",
+        "item": "Metal Coat",
+        "ability": "Technician",
+        "gender": "F",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 6
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 54,
+        "moves": [
+            "Swords Dance",
+            "U-turn",
+            "Bullet Punch",
+            "Superpower"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Frosmoth",
+        "item": "Leftovers",
+        "ability": "Ice Scales",
+        "gender": "M",
+        "nature": "Modest",
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 54,
+        "moves": [
+            "Quiver Dance",
+            "Ice Beam",
+            "Hurricane",
+            "Bug Buzz"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Seaking",
+        "item": "Choice Band",
+        "ability": "Rain Dish",
+        "gender": "M",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 54,
+        "moves": [
+            "FishiousRend",
+            "Megahorn",
+            "Flip Turn"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Swampert",
+        "item": "Swampertite",
+        "ability": "Torrent",
+        "gender": "F",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 54,
+        "moves": [
+            "Liquidation",
+            "Earthquake",
+            "Ice Punch",
+            "Flip Turn"
+        ]
+    }
+]

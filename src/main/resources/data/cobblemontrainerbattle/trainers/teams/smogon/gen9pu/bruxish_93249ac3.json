@@ -1,0 +1,123 @@
+[
+    {
+        "species": "Bruxish",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Dazzling",
+        "teraType": "Water",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Crunch",
+            "Flip Turn",
+            "Psychic Fangs",
+            "Wave Crash"
+        ]
+    },
+    {
+        "species": "Florges",
+        "item": "Heavy-Duty Boots",
+        "ability": "Flower Veil",
+        "teraType": "Poison",
+        "evs": {
+            "hp": 252,
+            "def": 44,
+            "spd": 116,
+            "spe": 96
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Moonblast",
+            "Psychic Noise",
+            "Synthesis"
+        ]
+    },
+    {
+        "species": "Gligar",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Immunity",
+        "teraType": "Ghost",
+        "evs": {
+            "hp": 252,
+            "def": 28,
+            "spd": 196,
+            "spe": 24
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Spikes",
+            "Toxic",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Kilowattrel",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Volt Absorb",
+        "teraType": "Ghost",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Hurricane",
+            "Roost",
+            "Thunderbolt",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Sandslash-Alola",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Slush Rush",
+        "teraType": "Ghost",
+        "evs": {
+            "hp": 252,
+            "spd": 224,
+            "spe": 32
+        },
+        "nature": "Careful",
+        "moves": [
+            "Icicle Crash",
+            "Knock Off",
+            "Rapid Spin",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Slowbro-Galar",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Regenerator",
+        "teraType": "Water",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spe": 4
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Flamethrower",
+            "Psyshock",
+            "Slack Off"
+        ]
+    }
+]

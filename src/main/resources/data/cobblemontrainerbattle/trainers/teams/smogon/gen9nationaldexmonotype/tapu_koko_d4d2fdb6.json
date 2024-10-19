@@ -1,0 +1,130 @@
+[
+    {
+        "species": "Tapu Koko",
+        "item": "Expert Belt",
+        "ability": "Electric Surge",
+        "teraType": "Electric",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Dazzling Gleam",
+            "Grass Knot",
+            "Hidden Power Ice",
+            "Volt Switch"
+        ],
+        "hpType": "Ice"
+    },
+    {
+        "species": "Magnezone",
+        "item": "Air Balloon",
+        "ability": "Magnet Pull",
+        "teraType": "Electric",
+        "evs": {
+            "hp": 252,
+            "def": 120,
+            "spd": 44,
+            "spe": 92
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Body Press",
+            "Discharge",
+            "Iron Defense",
+            "Magnet Rise"
+        ]
+    },
+    {
+        "species": "Raichu-Alola",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Surge Surfer",
+        "teraType": "Electric",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Grass Knot",
+            "Nasty Plot",
+            "Psyshock",
+            "Rising Voltage"
+        ]
+    },
+    {
+        "species": "Rotom-Wash",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "teraType": "Electric",
+        "evs": {
+            "hp": 252,
+            "def": 96,
+            "spd": 116,
+            "spe": 44
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Hydro Pump",
+            "Volt Switch",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Zapdos",
+        "item": "Choice Specs",
+        "ability": "Static",
+        "teraType": "Electric",
+        "evs": {
+            "spa": 248,
+            "spd": 8,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Heat Wave",
+            "Hidden Power Ice",
+            "Hurricane",
+            "Volt Switch"
+        ],
+        "hpType": "Ice"
+    },
+    {
+        "species": "Zeraora",
+        "item": "Fightinium Z",
+        "ability": "Volt Absorb",
+        "teraType": "Electric",
+        "evs": {
+            "hp": 56,
+            "atk": 248,
+            "spe": 204
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Bulk Up",
+            "Close Combat",
+            "Knock Off",
+            "Plasma Fists"
+        ]
+    }
+]

@@ -1,0 +1,126 @@
+[
+    {
+        "name": "",
+        "species": "Persian-Alola",
+        "item": "None",
+        "ability": "Fur Coat",
+        "gender": "F",
+        "nature": "Serious",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "level": 28,
+        "moves": [
+            "Fury Swipes",
+            "Screech",
+            "Feint Attack",
+            "Taunt"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Palpitoad",
+        "item": "None",
+        "ability": "Swift Swim",
+        "gender": "F",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "level": 27,
+        "moves": [
+            "Bubble Beam",
+            "Mud Shot",
+            "Aqua Ring",
+            "Uproar"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Stunky",
+        "item": "None",
+        "ability": "Stench",
+        "gender": "M",
+        "nature": "Brave",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "level": 28,
+        "moves": [
+            "Acid Spray",
+            "Bite",
+            "Slash",
+            "Toxic"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Spinda",
+        "item": "None",
+        "ability": "Own Tempo",
+        "gender": "F",
+        "nature": "Naughty",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "level": 28,
+        "moves": [
+            "Psybeam",
+            "Hypnosis",
+            "Dizzy Punch",
+            "Sucker Punch"
+        ]
+    }
+]

@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Primarina",
+        "item": "",
+        "ability": "Berserk",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 20,
+            "atk": 20,
+            "def": 20,
+            "spa": 20,
+            "spd": 20,
+            "spe": 20
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Sparkling Aria",
+            "Moonblast",
+            "Icy Wind",
+            "Sing"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Durant",
+        "item": "",
+        "ability": "Hustle",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 20,
+            "atk": 20,
+            "def": 20,
+            "spa": 20,
+            "spd": 20,
+            "spe": 20
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "X Scissor",
+            "Iron Head",
+            "Crunch",
+            "Thunder Fang"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Dusclops",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 20,
+            "atk": 20,
+            "def": 20,
+            "spa": 20,
+            "spd": 20,
+            "spe": 20
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Night Shade",
+            "Curse",
+            "Protect",
+            "Infestation"
+        ]
+    }
+]

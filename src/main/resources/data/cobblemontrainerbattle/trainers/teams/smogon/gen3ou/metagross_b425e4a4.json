@@ -1,0 +1,133 @@
+[
+    {
+        "species": "Metagross",
+        "item": "Leftovers",
+        "ability": "Clear Body",
+        "evs": {
+            "hp": 152,
+            "atk": 252,
+            "spe": 104
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Agility",
+            "Earthquake",
+            "Explosion",
+            "Meteor Mash"
+        ]
+    },
+    {
+        "species": "Celebi",
+        "item": "Leftovers",
+        "ability": "Natural Cure",
+        "evs": {
+            "hp": 240,
+            "def": 44,
+            "spd": 4,
+            "spe": 220
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Baton Pass",
+            "Hidden Power Rock",
+            "Recover",
+            "Swords Dance"
+        ],
+        "ivs": {
+            "def": 30,
+            "spd": 30,
+            "spe": 30
+        }
+    },
+    {
+        "species": "Gyarados",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Intimidate",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Double-Edge",
+            "Dragon Dance",
+            "Earthquake",
+            "Hidden Power Flying"
+        ],
+        "ivs": {
+            "hp": 30,
+            "atk": 30,
+            "def": 30,
+            "spa": 30,
+            "spd": 30
+        }
+    },
+    {
+        "species": "Heracross",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Guts",
+        "evs": {
+            "hp": 144,
+            "atk": 16,
+            "spd": 184,
+            "spe": 164
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Brick Break",
+            "Hidden Power Ghost",
+            "Megahorn",
+            "Rock Slide"
+        ],
+        "ivs": {
+            "def": 30,
+            "spd": 30
+        }
+    },
+    {
+        "species": "Magneton",
+        "item": "Leftovers",
+        "ability": "Magnet Pull",
+        "evs": {
+            "hp": 144,
+            "spa": 112,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "spa": 30,
+            "spe": 30
+        },
+        "moves": [
+            "Hidden Power Fire",
+            "Thunderbolt",
+            "Thunder Wave",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Milotic",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Marvel Scale",
+        "evs": {
+            "hp": 248,
+            "def": 212,
+            "spe": 48
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hypnosis",
+            "Ice Beam",
+            "Recover",
+            "Surf"
+        ]
+    }
+]

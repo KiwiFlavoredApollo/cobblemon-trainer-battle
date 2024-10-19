@@ -1,0 +1,119 @@
+[
+    {
+        "species": "Gliscor",
+        "gender": "M",
+        "item": "Toxic Orb",
+        "ability": "Poison Heal",
+        "teraType": "Normal",
+        "evs": {
+            "hp": 244,
+            "spd": 240,
+            "spe": 24
+        },
+        "nature": "Careful",
+        "moves": [
+            "Earthquake",
+            "Facade",
+            "Protect",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Alomomola",
+        "gender": "M",
+        "item": "Red Card",
+        "ability": "Regenerator",
+        "teraType": "Flying",
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spd": 8
+        },
+        "nature": "Relaxed",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Acrobatics",
+            "Flip Turn",
+            "Protect",
+            "Wish"
+        ]
+    },
+    {
+        "species": "Cinderace",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Libero",
+        "teraType": "Fire",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Court Change",
+            "Pyro Ball",
+            "Sucker Punch",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Gholdengo",
+        "item": "Choice Scarf",
+        "ability": "Good as Gold",
+        "teraType": "Fighting",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Focus Blast",
+            "Make It Rain",
+            "Shadow Ball",
+            "Trick"
+        ]
+    },
+    {
+        "species": "Hoopa-Unbound",
+        "item": "Assault Vest",
+        "ability": "Magician",
+        "teraType": "Fairy",
+        "evs": {
+            "hp": 248,
+            "def": 244,
+            "spa": 16
+        },
+        "nature": "Quiet",
+        "moves": [
+            "Gunk Shot",
+            "Knock Off",
+            "Psychic Noise",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Zamazenta",
+        "item": "Leftovers",
+        "ability": "Dauntless Shield",
+        "teraType": "Steel",
+        "evs": {
+            "hp": 104,
+            "def": 236,
+            "spe": 168
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Body Press",
+            "Crunch",
+            "Iron Defense",
+            "Roar"
+        ]
+    }
+]

@@ -1,0 +1,56 @@
+[
+    {
+        "species": "Starmie",
+        "moves": [
+            "Blizzard",
+            "Recover",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Exeggutor",
+        "moves": [
+            "Explosion",
+            "Psychic",
+            "Sleep Powder",
+            "Stun Spore"
+        ]
+    },
+    {
+        "species": "Gengar",
+        "moves": [
+            "Explosion",
+            "Hypnosis",
+            "Ice Punch",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Rhydon",
+        "moves": [
+            "Body Slam",
+            "Earthquake",
+            "Rock Slide",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Snorlax",
+        "moves": [
+            "Body Slam",
+            "Earthquake",
+            "Hyper Beam",
+            "Self-Destruct"
+        ]
+    },
+    {
+        "species": "Tauros",
+        "moves": [
+            "Blizzard",
+            "Body Slam",
+            "Earthquake",
+            "Hyper Beam"
+        ]
+    }
+]

@@ -1,0 +1,107 @@
+[
+    {
+        "species": "Kyogre",
+        "item": "Choice Specs",
+        "ability": "Drizzle",
+        "evs": {
+            "hp": 152,
+            "spa": 252,
+            "spe": 104
+        },
+        "nature": "Modest",
+        "moves": [
+            "Hydro Pump",
+            "Ice Beam",
+            "Thunder",
+            "Water Spout"
+        ]
+    },
+    {
+        "species": "Arceus-Ground",
+        "item": "Earth Plate",
+        "ability": "Multitype",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Recover",
+            "Stone Edge",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Dialga",
+        "item": "Lum Berry",
+        "ability": "Pressure",
+        "evs": {
+            "hp": 252,
+            "spa": 28,
+            "spd": 208,
+            "spe": 20
+        },
+        "nature": "Modest",
+        "moves": [
+            "Draco Meteor",
+            "Fire Blast",
+            "Roar",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Giratina-Origin",
+        "item": "Griseous Orb",
+        "ability": "Levitate",
+        "evs": {
+            "atk": 240,
+            "def": 176,
+            "spe": 92
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Aqua Tail",
+            "Dragon Tail",
+            "Shadow Sneak",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Kingdra",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Swift Swim",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "moves": [
+            "Draco Meteor",
+            "Dragon Pulse",
+            "Hydro Pump",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Skarmory",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sturdy",
+        "evs": {
+            "hp": 240,
+            "spd": 248,
+            "spe": 20
+        },
+        "nature": "Calm",
+        "moves": [
+            "Roost",
+            "Spikes",
+            "Taunt",
+            "Whirlwind"
+        ]
+    }
+]

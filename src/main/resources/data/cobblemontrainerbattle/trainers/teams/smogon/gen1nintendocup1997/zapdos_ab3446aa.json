@@ -1,0 +1,62 @@
+[
+    {
+        "species": "Zapdos",
+        "level": 55,
+        "moves": [
+            "Drill Peck",
+            "Hyper Beam",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Electrode",
+        "level": 50,
+        "moves": [
+            "Double Team",
+            "Explosion",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Exeggutor",
+        "level": 50,
+        "moves": [
+            "Explosion",
+            "Psychic",
+            "Sleep Powder",
+            "Stun Spore"
+        ]
+    },
+    {
+        "species": "Jynx",
+        "level": 50,
+        "moves": [
+            "Blizzard",
+            "Double Team",
+            "Lovely Kiss",
+            "Psychic"
+        ]
+    },
+    {
+        "species": "Lapras",
+        "level": 50,
+        "moves": [
+            "Blizzard",
+            "Double Team",
+            "Rest",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Tauros",
+        "level": 55,
+        "moves": [
+            "Blizzard",
+            "Body Slam",
+            "Earthquake",
+            "Hyper Beam"
+        ]
+    }
+]

@@ -1,0 +1,106 @@
+[
+    {
+        "species": "Smeargle",
+        "gender": "M",
+        "item": "Focus Sash",
+        "ability": "Own Tempo",
+        "evs": {
+            "hp": 4,
+            "def": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Baton Pass",
+            "Shell Smash",
+            "Spore",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Arceus",
+        "item": "Lum Berry",
+        "ability": "Multitype",
+        "evs": {
+            "hp": 200,
+            "atk": 252,
+            "spe": 56
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Brick Break",
+            "Extreme Speed",
+            "Shadow Claw",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Cloyster",
+        "gender": "M",
+        "item": "Focus Sash",
+        "ability": "Skill Link",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Icicle Spear",
+            "Rapid Spin",
+            "Shell Smash",
+            "Spikes"
+        ]
+    },
+    {
+        "species": "Dialga",
+        "item": "White Herb",
+        "ability": "Pressure",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "moves": [
+            "Aura Sphere",
+            "Dragon Pulse",
+            "Flamethrower",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Groudon",
+        "item": "Earth Plate",
+        "ability": "Drought",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Dragon Tail",
+            "Earthquake",
+            "Sleep Talk",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Kyurem-White",
+        "item": "White Herb",
+        "ability": "Turboblaze",
+        "evs": {
+            "def": 56,
+            "spa": 252,
+            "spe": 200
+        },
+        "nature": "Modest",
+        "moves": [
+            "Ancient Power",
+            "Dragon Pulse",
+            "Fusion Flare",
+            "Ice Beam"
+        ]
+    }
+]

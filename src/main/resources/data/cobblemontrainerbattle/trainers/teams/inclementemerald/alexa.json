@@ -1,0 +1,157 @@
+[
+    {
+        "name": "",
+        "species": "Feraligatr",
+        "item": "Life Orb",
+        "ability": "Sheer Force",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Liquidation",
+            "Crunch",
+            "Ice Punch",
+            "Dragon Dance"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Marowak-Alola",
+        "item": "Thick Club",
+        "ability": "Lightningrod",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Flare Blitz",
+            "Shadow Bone",
+            "Bonemerang",
+            "Shadow Sneak"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Scizor",
+        "item": "Metal Coat",
+        "ability": "Technician",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Bullet Punch",
+            "U Turn",
+            "Superpower",
+            "Roost"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Exeggutor",
+        "item": "Grass Gem",
+        "ability": "Chloroplast",
+        "gender": "",
+        "nature": "Quiet",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 0
+        },
+        "level": -1,
+        "moves": [
+            "Solar Beam",
+            "Psychic",
+            "Synthesis",
+            "Trick Room"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Ampharos",
+        "item": "Ampharosite",
+        "ability": "",
+        "gender": "",
+        "nature": "Modest",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Volt Switch",
+            "Dragon Pulse",
+            "Focus Blast",
+            "Power Gem"
+        ]
+    }
+]

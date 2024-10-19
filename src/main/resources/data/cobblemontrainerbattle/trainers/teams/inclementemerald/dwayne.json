@@ -1,0 +1,93 @@
+[
+    {
+        "name": "",
+        "species": "Corphish",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Bubble Beam",
+            "Vise Grip",
+            "Leer",
+            "Harden"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Tentacool",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Bubble Beam",
+            "Acid",
+            "Constrict"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Makuhita",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Whirlwind",
+            "Force Palm",
+            "Fake Out"
+        ]
+    }
+]

@@ -1,0 +1,112 @@
+[
+    {
+        "species": "Krookodile",
+        "gender": "M",
+        "item": "Focus Sash",
+        "ability": "Intimidate",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Knock Off",
+            "Stealth Rock",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Greninja",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Protean",
+        "evs": {
+            "atk": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Gunk Shot",
+            "Ice Beam",
+            "Toxic Spikes",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Hydreigon",
+        "gender": "M",
+        "item": "Dragonium Z",
+        "ability": "Levitate",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Dark Pulse",
+            "Draco Meteor",
+            "Roost",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Mandibuzz",
+        "item": "Rocky Helmet",
+        "ability": "Overcoat",
+        "evs": {
+            "hp": 248,
+            "def": 164,
+            "spe": 96
+        },
+        "nature": "Impish",
+        "moves": [
+            "Defog",
+            "Foul Play",
+            "Roost",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Muk-Alola",
+        "gender": "M",
+        "item": "Iapapa Berry",
+        "ability": "Gluttony",
+        "evs": {
+            "hp": 248,
+            "def": 12,
+            "spd": 248
+        },
+        "nature": "Careful",
+        "moves": [
+            "Curse",
+            "Knock Off",
+            "Poison Jab",
+            "Recycle"
+        ]
+    },
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Tyranitarite",
+        "ability": "Sand Stream",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Dragon Dance",
+            "Fire Punch",
+            "Ice Punch",
+            "Stone Edge"
+        ]
+    }
+]

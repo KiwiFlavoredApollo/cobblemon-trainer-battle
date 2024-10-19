@@ -1,0 +1,120 @@
+[
+    {
+        "species": "Jirachi",
+        "item": "Leftovers",
+        "ability": "Serene Grace",
+        "teraType": "Steel",
+        "evs": {
+            "hp": 252,
+            "spd": 224,
+            "spe": 32
+        },
+        "nature": "Careful",
+        "moves": [
+            "Iron Head",
+            "Stealth Rock",
+            "Thunder Wave",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Gallade",
+        "item": "Galladite",
+        "ability": "Justified",
+        "teraType": "Psychic",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Knock Off",
+            "Psycho Cut",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Latios",
+        "item": "Dragonium Z",
+        "ability": "Levitate",
+        "teraType": "Dragon",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Draco Meteor",
+            "Psychic",
+            "Roost"
+        ]
+    },
+    {
+        "species": "Slowbro",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Regenerator",
+        "teraType": "Water",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Future Sight",
+            "Scald",
+            "Slack Off",
+            "Teleport"
+        ]
+    },
+    {
+        "species": "Tapu Lele",
+        "item": "Choice Scarf",
+        "ability": "Psychic Surge",
+        "teraType": "Psychic",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Focus Blast",
+            "Moonblast",
+            "Psyshock",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Victini",
+        "item": "Choice Band",
+        "ability": "Victory Star",
+        "teraType": "Psychic",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Bolt Strike",
+            "Trick",
+            "U-turn",
+            "V-create"
+        ]
+    }
+]

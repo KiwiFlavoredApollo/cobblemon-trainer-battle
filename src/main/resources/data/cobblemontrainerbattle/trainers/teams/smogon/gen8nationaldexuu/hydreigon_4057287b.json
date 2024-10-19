@@ -1,0 +1,115 @@
+[
+    {
+        "species": "Hydreigon",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Levitate",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Dark Pulse",
+            "Draco Meteor",
+            "Flash Cannon",
+            "Roost"
+        ]
+    },
+    {
+        "species": "Aggron",
+        "gender": "M",
+        "item": "Aggronite",
+        "ability": "Sturdy",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "moves": [
+            "Earthquake",
+            "Heavy Slam",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Buzzwole",
+        "item": "Rocky Helmet",
+        "ability": "Beast Boost",
+        "evs": {
+            "hp": 72,
+            "atk": 252,
+            "spe": 184
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Close Combat",
+            "Ice Punch",
+            "Poison Jab",
+            "Roost"
+        ]
+    },
+    {
+        "species": "Diggersby",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Huge Power",
+        "happiness": 0,
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Frustration",
+            "Knock Off",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Rotom-Wash",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 248,
+            "spd": 104,
+            "spe": 156
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Hydro Pump",
+            "Pain Split",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Tangrowth",
+        "gender": "M",
+        "item": "Assault Vest",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 252,
+            "def": 76,
+            "spd": 180
+        },
+        "nature": "Sassy",
+        "moves": [
+            "Focus Blast",
+            "Knock Off",
+            "Power Whip",
+            "Sludge Bomb"
+        ]
+    }
+]

@@ -1,0 +1,117 @@
+[
+    {
+        "species": "Mismagius",
+        "gender": "M",
+        "item": "Choice Specs",
+        "ability": "Levitate",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Energy Ball",
+            "Shadow Ball",
+            "Thunderbolt",
+            "Trick"
+        ]
+    },
+    {
+        "species": "Arcanine",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 248,
+            "def": 4,
+            "spd": 252,
+            "spe": 4
+        },
+        "nature": "Careful",
+        "moves": [
+            "Extreme Speed",
+            "Flare Blitz",
+            "Morning Sun",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Donphan",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sturdy",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "spe": 4
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Head Smash",
+            "Rapid Spin",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Kabutops",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Swift Swim",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Aqua Jet",
+            "Stone Edge",
+            "Swords Dance",
+            "Waterfall"
+        ]
+    },
+    {
+        "species": "Registeel",
+        "item": "Leftovers",
+        "ability": "Clear Body",
+        "evs": {
+            "hp": 252,
+            "def": 40,
+            "spd": 216
+        },
+        "nature": "Careful",
+        "moves": [
+            "Curse",
+            "Iron Head",
+            "Rest",
+            "Sleep Talk"
+        ]
+    },
+    {
+        "species": "Sceptile",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Overgrow",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Focus Blast",
+            "Hidden Power Ice",
+            "Leaf Blade",
+            "Synthesis"
+        ],
+        "ivs": {
+            "atk": 30,
+            "def": 30
+        }
+    }
+]

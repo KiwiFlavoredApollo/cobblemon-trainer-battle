@@ -1,0 +1,157 @@
+[
+    {
+        "name": "",
+        "species": "Samurott",
+        "item": "White Herb",
+        "ability": "",
+        "gender": "",
+        "nature": "Modest",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Hydro Pump",
+            "Secret Sword",
+            "Ice Beam",
+            "Shell Smash"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Kommo-o",
+        "item": "White Herb",
+        "ability": "",
+        "gender": "",
+        "nature": "Modest",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Aura Sphere",
+            "Clanging Scales",
+            "Shell Smash",
+            "Flamethrower"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Bewear",
+        "item": "Sitrus Berry",
+        "ability": "",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Drain Punch",
+            "Double Edge",
+            "Payback",
+            "Bulk Up"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Grapploct",
+        "item": "Payapa Berry",
+        "ability": "",
+        "gender": "",
+        "nature": "Calm",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 0,
+            "spd": 252,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Drain Punch",
+            "Liquidation",
+            "Payback",
+            "Bulk Up"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Medicham",
+        "item": "Medichamite",
+        "ability": "",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "High Jump Kick",
+            "Zen Headbutt",
+            "Fake Out",
+            "Ice Punch"
+        ]
+    }
+]

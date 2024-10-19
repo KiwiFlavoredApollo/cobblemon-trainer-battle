@@ -1,0 +1,113 @@
+[
+    {
+        "species": "Charizard",
+        "gender": "F",
+        "item": "Choice Specs",
+        "ability": "Blaze",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Air Slash",
+            "Fire Blast",
+            "Focus Blast",
+            "Hidden Power Grass"
+        ],
+        "ivs": {
+            "atk": 30,
+            "spa": 30
+        }
+    },
+    {
+        "species": "Grumpig",
+        "gender": "F",
+        "item": "Leftovers",
+        "ability": "Thick Fat",
+        "evs": {
+            "hp": 252,
+            "def": 80,
+            "spd": 176
+        },
+        "nature": "Calm",
+        "moves": [
+            "Focus Blast",
+            "Heal Bell",
+            "Psychic",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Jumpluff",
+        "gender": "F",
+        "item": "Life Orb",
+        "ability": "Chlorophyll",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Aerial Ace",
+            "Seed Bomb",
+            "Sleep Powder",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Poliwrath",
+        "gender": "F",
+        "item": "Leftovers",
+        "ability": "Water Absorb",
+        "evs": {
+            "hp": 120,
+            "atk": 252,
+            "spe": 136
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Encore",
+            "Focus Punch",
+            "Substitute",
+            "Waterfall"
+        ]
+    },
+    {
+        "species": "Sandslash",
+        "gender": "F",
+        "item": "Leftovers",
+        "ability": "Sand Veil",
+        "evs": {
+            "hp": 252,
+            "atk": 4,
+            "def": 252
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Night Slash",
+            "Rapid Spin",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Tauros",
+        "item": "Choice Band",
+        "ability": "Intimidate",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Double-Edge",
+            "Earthquake",
+            "Pursuit",
+            "Rock Slide"
+        ]
+    }
+]

@@ -1,0 +1,74 @@
+[
+    {
+        "species": "Arcanine",
+        "moves": [
+            "Agility",
+            "Body Slam",
+            "Fire Blast",
+            "Hyper Beam"
+        ]
+    },
+    {
+        "species": "Charizard",
+        "moves": [
+            "Counter",
+            "Earthquake",
+            "Fire Blast",
+            "Slash"
+        ]
+    },
+    {
+        "species": "Moltres",
+        "moves": [
+            "Agility",
+            "Double-Edge",
+            "Fire Blast",
+            "Hyper Beam"
+        ]
+    },
+    {
+        "species": "Mr. Mime",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Psychic",
+            "Seismic Toss",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Poliwrath",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Counter",
+            "Hypnosis",
+            "Seismic Toss",
+            "Surf"
+        ]
+    },
+    {
+        "species": "Venomoth",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Mega Drain",
+            "Psychic",
+            "Sleep Powder",
+            "Stun Spore"
+        ]
+    }
+]

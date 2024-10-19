@@ -1,0 +1,116 @@
+[
+    {
+        "species": "Aerodactyl",
+        "gender": "M",
+        "item": "Focus Sash",
+        "ability": "Pressure",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Double-Edge",
+            "Stealth Rock",
+            "Stone Edge",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Dragonite",
+        "gender": "M",
+        "item": "Lum Berry",
+        "ability": "Inner Focus",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Dragon Dance",
+            "Earthquake",
+            "Extreme Speed",
+            "Outrage"
+        ]
+    },
+    {
+        "species": "Gyarados",
+        "gender": "M",
+        "item": "Lum Berry",
+        "ability": "Intimidate",
+        "evs": {
+            "atk": 252,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Hasty",
+        "moves": [
+            "Dragon Dance",
+            "Earthquake",
+            "Stone Edge",
+            "Waterfall"
+        ]
+    },
+    {
+        "species": "Moltres",
+        "item": "Choice Scarf",
+        "ability": "Pressure",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Air Slash",
+            "Fire Blast",
+            "Hidden Power Grass",
+            "U-turn"
+        ],
+        "ivs": {
+            "atk": 30,
+            "spa": 30
+        }
+    },
+    {
+        "species": "Skarmory",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Keen Eye",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Impish",
+        "moves": [
+            "Brave Bird",
+            "Roost",
+            "Spikes",
+            "Whirlwind"
+        ]
+    },
+    {
+        "species": "Zapdos",
+        "item": "Life Orb",
+        "ability": "Pressure",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Hidden Power Ice",
+            "Roost",
+            "Thunderbolt",
+            "U-turn"
+        ],
+        "ivs": {
+            "atk": 30,
+            "def": 30
+        }
+    }
+]

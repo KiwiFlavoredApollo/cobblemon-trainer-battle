@@ -1,0 +1,124 @@
+[
+    {
+        "species": "Cinderace",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Libero",
+        "teraType": "Fire",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Court Change",
+            "Gunk Shot",
+            "Pyro Ball",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Arghonaut",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Unaware",
+        "teraType": "Fairy",
+        "evs": {
+            "hp": 252,
+            "def": 248,
+            "spe": 8
+        },
+        "nature": "Impish",
+        "moves": [
+            "Circle Throw",
+            "Knock Off",
+            "Recover",
+            "Spikes"
+        ]
+    },
+    {
+        "species": "Corviknight",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Pressure",
+        "teraType": "Dragon",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Impish",
+        "ivs": {
+            "spe": 16
+        },
+        "moves": [
+            "Brave Bird",
+            "Defog",
+            "Roost",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Kyurem",
+        "item": "Choice Specs",
+        "ability": "Pressure",
+        "teraType": "Ice",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Blizzard",
+            "Earth Power",
+            "Freeze-Dry",
+            "Ice Beam"
+        ]
+    },
+    {
+        "species": "Slowking-Galar",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Regenerator",
+        "teraType": "Water",
+        "evs": {
+            "hp": 252,
+            "def": 140,
+            "spd": 116
+        },
+        "nature": "Sassy",
+        "ivs": {
+            "atk": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Chilly Reception",
+            "Future Sight",
+            "Sludge Bomb",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Ting-Lu",
+        "item": "Leftovers",
+        "ability": "Vessel of Ruin",
+        "teraType": "Steel",
+        "evs": {
+            "hp": 252,
+            "spd": 252,
+            "spe": 4
+        },
+        "nature": "Careful",
+        "moves": [
+            "Earthquake",
+            "Ruination",
+            "Stealth Rock",
+            "Whirlwind"
+        ]
+    }
+]

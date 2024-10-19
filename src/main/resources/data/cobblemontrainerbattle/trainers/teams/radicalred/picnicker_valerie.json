@@ -1,0 +1,64 @@
+[
+    {
+        "name": "",
+        "species": "Weepinbell",
+        "item": "None",
+        "ability": "Chlorophyll",
+        "gender": "F",
+        "nature": "Naive",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "level": 56,
+        "moves": [
+            "Gastro Acid",
+            "Razor Leaf",
+            "Poison Jab",
+            "Slam"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Ursaring",
+        "item": "None",
+        "ability": "Quick Feet",
+        "gender": "F",
+        "nature": "Docile",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "level": 57,
+        "moves": [
+            "Scary Face",
+            "Rest",
+            "Thrash",
+            "Close Combat"
+        ]
+    }
+]

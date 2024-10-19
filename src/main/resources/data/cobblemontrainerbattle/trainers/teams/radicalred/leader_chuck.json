@@ -1,0 +1,188 @@
+[
+    {
+        "name": "",
+        "species": "Hitmontop",
+        "item": "Focus Sash",
+        "ability": "Technician",
+        "gender": "M",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -4,
+        "moves": [
+            "Triple Kick",
+            "Triple Axel",
+            "Fake Out",
+            "Brutal Swing"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Sneasler",
+        "item": "Focus Sash",
+        "ability": "Poison Touch",
+        "gender": "M",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -4,
+        "moves": [
+            "Close Combat",
+            "Poison Jab",
+            "Knock Off",
+            "Stone Edge"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Breloom",
+        "item": "Toxic Orb",
+        "ability": "Poison Heal",
+        "gender": "M",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -4,
+        "moves": [
+            "Spore",
+            "Substitute",
+            "Focus Punch",
+            "Rock Slide"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Poliwrath",
+        "item": "Mystic Water",
+        "ability": "Water Absorb",
+        "gender": "F",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 0,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -4,
+        "moves": [
+            "SurgeStrikes",
+            "Drain Punch",
+            "Ice Punch",
+            "Earthquake"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Lucario",
+        "item": "Shuca Berry",
+        "ability": "Inner Focus",
+        "gender": "F",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -4,
+        "moves": [
+            "Bulk Up",
+            "Close Combat",
+            "Extremespeed",
+            "Meteor Mash"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Gallade",
+        "item": "Galladite",
+        "ability": "Justified",
+        "gender": "M",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Bulk Up",
+            "Drain Punch",
+            "Psycho Cut",
+            "Night Slash"
+        ]
+    }
+]

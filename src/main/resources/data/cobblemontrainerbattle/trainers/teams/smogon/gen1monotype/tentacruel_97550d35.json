@@ -1,0 +1,56 @@
+[
+    {
+        "species": "Tentacruel",
+        "moves": [
+            "Blizzard",
+            "Hyper Beam",
+            "Surf",
+            "Wrap"
+        ]
+    },
+    {
+        "species": "Gengar",
+        "moves": [
+            "Explosion",
+            "Hypnosis",
+            "Night Shade",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Muk",
+        "moves": [
+            "Body Slam",
+            "Explosion",
+            "Fire Blast",
+            "Sludge"
+        ]
+    },
+    {
+        "species": "Nidoking",
+        "moves": [
+            "Blizzard",
+            "Body Slam",
+            "Earthquake",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Venomoth",
+        "moves": [
+            "Double-Edge",
+            "Psychic",
+            "Sleep Powder",
+            "Stun Spore"
+        ]
+    },
+    {
+        "species": "Victreebel",
+        "moves": [
+            "Razor Leaf",
+            "Sleep Powder",
+            "Stun Spore",
+            "Wrap"
+        ]
+    }
+]

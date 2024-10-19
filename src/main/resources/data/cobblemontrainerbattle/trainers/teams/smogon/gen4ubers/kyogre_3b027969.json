@@ -1,0 +1,114 @@
+[
+    {
+        "species": "Kyogre",
+        "item": "Lum Berry",
+        "ability": "Drizzle",
+        "evs": {
+            "hp": 248,
+            "def": 52,
+            "spa": 96,
+            "spe": 112
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hydro Pump",
+            "Ice Beam",
+            "Thunder",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Bronzong",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 248,
+            "spd": 252,
+            "spe": 8
+        },
+        "nature": "Careful",
+        "moves": [
+            "Earthquake",
+            "Explosion",
+            "Payback",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Darkrai",
+        "item": "Choice Scarf",
+        "ability": "Bad Dreams",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Dark Pulse",
+            "Dark Void",
+            "Ice Beam",
+            "Trick"
+        ]
+    },
+    {
+        "species": "Dialga",
+        "item": "Choice Band",
+        "ability": "Pressure",
+        "evs": {
+            "hp": 92,
+            "atk": 252,
+            "spe": 164
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Dragon Claw",
+            "Earthquake",
+            "Outrage",
+            "Sleep Talk"
+        ]
+    },
+    {
+        "species": "Latios",
+        "item": "Soul Dew",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Draco Meteor",
+            "Recover",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Rayquaza",
+        "item": "Life Orb",
+        "ability": "Air Lock",
+        "evs": {
+            "atk": 40,
+            "spa": 252,
+            "spe": 216
+        },
+        "nature": "Naive",
+        "moves": [
+            "Draco Meteor",
+            "Extreme Speed",
+            "Fire Blast",
+            "Outrage"
+        ]
+    }
+]

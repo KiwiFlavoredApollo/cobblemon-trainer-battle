@@ -1,0 +1,157 @@
+[
+    {
+        "name": "",
+        "species": "Pincurchin",
+        "item": "Electr. Seed",
+        "ability": "Electric Surge",
+        "gender": "M",
+        "nature": "Modest",
+        "evs": {
+            "hp": 100,
+            "atk": 100,
+            "def": 0,
+            "spa": 100,
+            "spd": 0,
+            "spe": 40
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 30,
+            "def": 31,
+            "spa": 30,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 32,
+        "moves": [
+            "Volt Switch",
+            "Scald",
+            "Discharge",
+            "Hidden Power"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Raichu-Alola",
+        "item": "TwistedSpoon",
+        "ability": "Surge Surfer",
+        "gender": "M",
+        "nature": "Modest",
+        "evs": {
+            "hp": 24,
+            "atk": 16,
+            "def": 0,
+            "spa": 40,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 33,
+        "moves": [
+            "Psyshock",
+            "Volt Switch",
+            "Nasty Plot",
+            "Grass Knot"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Vikavolt",
+        "item": "Occa Berry",
+        "ability": "Levitate",
+        "gender": "F",
+        "nature": "Modest",
+        "evs": {
+            "hp": 200,
+            "atk": 0,
+            "def": 0,
+            "spa": 100,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 33,
+        "moves": [
+            "Volt Switch",
+            "Bug Buzz",
+            "Energy Ball",
+            "Roost"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Manectric",
+        "item": "Manectite",
+        "ability": "Intimidate",
+        "gender": "M",
+        "nature": "Modest",
+        "evs": {
+            "hp": 100,
+            "atk": 100,
+            "def": 0,
+            "spa": 100,
+            "spd": 0,
+            "spe": 40
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 30,
+            "def": 31,
+            "spa": 30,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 34,
+        "moves": [
+            "Charge Beam",
+            "Flame Burst",
+            "Volt Switch",
+            "Hidden Power"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Boltund",
+        "item": "Expert Belt",
+        "ability": "Strong Jaw",
+        "gender": "M",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 100,
+            "atk": 100,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 33,
+        "moves": [
+            "Thunder Fang",
+            "Fire Fang",
+            "Ice Fang",
+            "Psychic Fang"
+        ]
+    }
+]

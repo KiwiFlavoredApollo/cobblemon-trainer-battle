@@ -1,0 +1,123 @@
+[
+    {
+        "species": "Steelix",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sturdy",
+        "evs": {
+            "hp": 252,
+            "atk": 4,
+            "def": 184,
+            "spd": 44,
+            "spe": 24
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Roar",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Aerodactyl",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Pressure",
+        "evs": {
+            "atk": 220,
+            "spa": 36,
+            "spe": 252
+        },
+        "nature": "Hasty",
+        "moves": [
+            "Earthquake",
+            "Fire Blast",
+            "Roost",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Magneton",
+        "item": "Choice Scarf",
+        "ability": "Magnet Pull",
+        "evs": {
+            "hp": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "spa": 30,
+            "spe": 30
+        },
+        "moves": [
+            "Flash Cannon",
+            "Hidden Power Fire",
+            "Thunderbolt",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Sceptile",
+        "gender": "M",
+        "item": "Flying Gem",
+        "ability": "Unburden",
+        "evs": {
+            "atk": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Mild",
+        "moves": [
+            "Acrobatics",
+            "Hidden Power Fire",
+            "Leaf Storm",
+            "Rock Slide"
+        ],
+        "ivs": {
+            "atk": 30,
+            "spa": 30,
+            "spe": 30
+        }
+    },
+    {
+        "species": "Skuntank",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Aftermath",
+        "evs": {
+            "atk": 252,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Lonely",
+        "moves": [
+            "Crunch",
+            "Fire Blast",
+            "Pursuit",
+            "Sucker Punch"
+        ]
+    },
+    {
+        "species": "Uxie",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 96,
+            "spa": 188,
+            "spe": 224
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Psychic",
+            "Signal Beam",
+            "Substitute"
+        ]
+    }
+]

@@ -1,0 +1,114 @@
+[
+    {
+        "species": "Scizor",
+        "gender": "M",
+        "item": "Protective Pads",
+        "ability": "Technician",
+        "evs": {
+            "hp": 120,
+            "atk": 252,
+            "spe": 136
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bullet Punch",
+            "Knock Off",
+            "Roost",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Amoonguss",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 252,
+            "def": 176,
+            "spd": 80
+        },
+        "nature": "Relaxed",
+        "moves": [
+            "Foul Play",
+            "Seed Bomb",
+            "Sludge Bomb",
+            "Spore"
+        ]
+    },
+    {
+        "species": "Hippowdon",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sand Stream",
+        "evs": {
+            "hp": 252,
+            "def": 32,
+            "spd": 224
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Slack Off",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Hydreigon",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Levitate",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "moves": [
+            "Dark Pulse",
+            "Defog",
+            "Draco Meteor",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Starmie",
+        "item": "Life Orb",
+        "ability": "Analytic",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hydro Pump",
+            "Ice Beam",
+            "Recover",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Thundurus-Therian",
+        "item": "Heavy-Duty Boots",
+        "ability": "Volt Absorb",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Focus Blast",
+            "Grass Knot",
+            "Psychic",
+            "Volt Switch"
+        ]
+    }
+]

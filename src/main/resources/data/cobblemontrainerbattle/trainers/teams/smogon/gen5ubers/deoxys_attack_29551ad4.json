@@ -1,0 +1,116 @@
+[
+    {
+        "species": "Deoxys-Attack",
+        "item": "Focus Sash",
+        "ability": "Pressure",
+        "evs": {
+            "atk": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Dark Pulse",
+            "Extreme Speed",
+            "Spikes",
+            "Superpower"
+        ]
+    },
+    {
+        "species": "Arceus-Ghost",
+        "item": "Spooky Plate",
+        "ability": "Multitype",
+        "evs": {
+            "hp": 160,
+            "spa": 96,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Focus Blast",
+            "Judgment",
+            "Recover"
+        ]
+    },
+    {
+        "species": "Darkrai",
+        "item": "Life Orb",
+        "ability": "Bad Dreams",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Dark Pulse",
+            "Dark Void",
+            "Focus Blast",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Genesect",
+        "item": "Choice Scarf",
+        "ability": "Download",
+        "evs": {
+            "atk": 248,
+            "spa": 8,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Flamethrower",
+            "Ice Beam",
+            "Iron Head",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Groudon",
+        "item": "Earth Plate",
+        "ability": "Drought",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Dragon Tail",
+            "Earthquake",
+            "Stealth Rock",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Latias",
+        "item": "Soul Dew",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 24,
+            "spa": 252,
+            "spd": 48,
+            "spe": 184
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "spa": 30,
+            "spe": 30
+        },
+        "moves": [
+            "Draco Meteor",
+            "Hidden Power Fire",
+            "Psyshock",
+            "Roar"
+        ]
+    }
+]

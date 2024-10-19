@@ -1,0 +1,137 @@
+[
+    {
+        "species": "Smeargle",
+        "gender": "M",
+        "item": "Focus Sash",
+        "ability": "Moody",
+        "level": 50,
+        "evs": {
+            "def": 252,
+            "spd": 252
+        },
+        "nature": "Sassy",
+        "ivs": {
+            "hp": 0,
+            "spa": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Endeavor",
+            "Fake Out",
+            "Follow Me",
+            "Water Shuriken"
+        ]
+    },
+    {
+        "species": "Celesteela",
+        "item": "Leftovers",
+        "ability": "Beast Boost",
+        "level": 50,
+        "evs": {
+            "hp": 252,
+            "atk": 124,
+            "def": 12,
+            "spa": 4,
+            "spd": 60,
+            "spe": 52
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Flamethrower",
+            "Heavy Slam",
+            "Leech Seed",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Gigalith",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Sand Stream",
+        "level": 50,
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "spd": 4
+        },
+        "nature": "Brave",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Earthquake",
+            "Heavy Slam",
+            "Rock Slide",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Palossand",
+        "gender": "M",
+        "item": "Weakness Policy",
+        "ability": "Water Compaction",
+        "level": 50,
+        "shiny": true,
+        "evs": {
+            "hp": 244,
+            "spa": 20,
+            "spd": 244
+        },
+        "nature": "Quiet",
+        "ivs": {
+            "atk": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Amnesia",
+            "Earth Power",
+            "Shadow Ball",
+            "Shore Up"
+        ]
+    },
+    {
+        "species": "Porygon-Z",
+        "item": "Normalium Z",
+        "ability": "Adaptability",
+        "level": 50,
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spa": 252
+        },
+        "nature": "Quiet",
+        "ivs": {
+            "atk": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Hyper Beam",
+            "Ice Beam",
+            "Protect",
+            "Trick Room"
+        ]
+    },
+    {
+        "species": "Tapu Koko",
+        "item": "Aguav Berry",
+        "ability": "Electric Surge",
+        "level": 50,
+        "evs": {
+            "hp": 252,
+            "def": 36,
+            "spa": 12,
+            "spd": 100,
+            "spe": 108
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Dazzling Gleam",
+            "Psych Up",
+            "Roost",
+            "Thunderbolt"
+        ]
+    }
+]

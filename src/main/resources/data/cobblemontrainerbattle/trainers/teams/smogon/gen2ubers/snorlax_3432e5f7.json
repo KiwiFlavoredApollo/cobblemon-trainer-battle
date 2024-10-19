@@ -1,0 +1,69 @@
+[
+    {
+        "species": "Snorlax",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Curse",
+            "Double-Edge",
+            "Lovely Kiss",
+            "Rest"
+        ]
+    },
+    {
+        "species": "Cloyster",
+        "gender": "M",
+        "item": "Leftovers",
+        "ivs": {
+            "hp": 15,
+            "atk": 29
+        },
+        "moves": [
+            "Explosion",
+            "Hidden Power Electric",
+            "Spikes",
+            "Surf"
+        ]
+    },
+    {
+        "species": "Lugia",
+        "item": "Leftovers",
+        "moves": [
+            "Aeroblast",
+            "Curse",
+            "Recover",
+            "Whirlwind"
+        ]
+    },
+    {
+        "species": "Mew",
+        "item": "Leftovers",
+        "moves": [
+            "Earthquake",
+            "Explosion",
+            "Rock Slide",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Mewtwo",
+        "item": "Leftovers",
+        "moves": [
+            "Fire Blast",
+            "Ice Beam",
+            "Self-Destruct",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Steelix",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Curse",
+            "Earthquake",
+            "Explosion",
+            "Roar"
+        ]
+    }
+]

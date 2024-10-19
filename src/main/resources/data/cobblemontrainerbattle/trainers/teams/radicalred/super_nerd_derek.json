@@ -1,0 +1,33 @@
+[
+    {
+        "name": "",
+        "species": "Rapidash",
+        "item": "None",
+        "ability": "Flash Fire",
+        "gender": "M",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 15,
+            "atk": 15,
+            "def": 15,
+            "spa": 15,
+            "spd": 15,
+            "spe": 15
+        },
+        "level": 74,
+        "moves": [
+            "Fire Blast",
+            "Bounce",
+            "Flare Blitz",
+            "Jump Kick"
+        ]
+    }
+]

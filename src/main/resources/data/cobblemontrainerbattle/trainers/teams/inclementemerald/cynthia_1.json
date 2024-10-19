@@ -1,0 +1,188 @@
+[
+    {
+        "name": "",
+        "species": "Roserade",
+        "item": "Focus Sash",
+        "ability": "",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 5,
+        "moves": [
+            "Sleep Powder",
+            "Sludge Bomb",
+            "Giga Drain",
+            "Spikes"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Togekiss",
+        "item": "Shell Bell",
+        "ability": "Serene Grace",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 5,
+        "moves": [
+            "Air Slash",
+            "Aura Sphere",
+            "Thunder Wave",
+            "Roost"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Spiritomb",
+        "item": "Leftovers",
+        "ability": "Pressure",
+        "gender": "",
+        "nature": "Bold",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 252,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 5,
+        "moves": [
+            "Dark Pulse",
+            "Calm Mind",
+            "Substitute",
+            "Recover"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Lucario",
+        "item": "Choice Scarf",
+        "ability": "Steadfast",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 5,
+        "moves": [
+            "Close Combat",
+            "Meteor Mash",
+            "Strength",
+            "Ice Punch"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Milotic",
+        "item": "Leftovers",
+        "ability": "Multiscale",
+        "gender": "",
+        "nature": "Bold",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 252,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 5,
+        "moves": [
+            "Scald",
+            "Ice Beam",
+            "Recover",
+            "Mirror Coat"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Garchomp",
+        "item": "Garchompite",
+        "ability": "Rough Skin -> Sand Force",
+        "gender": "",
+        "nature": "Naive",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 0,
+            "spa": 4,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 7,
+        "moves": [
+            "Earthquake",
+            "Draco Meteor",
+            "Stone Edge",
+            "Fire Blast"
+        ]
+    }
+]

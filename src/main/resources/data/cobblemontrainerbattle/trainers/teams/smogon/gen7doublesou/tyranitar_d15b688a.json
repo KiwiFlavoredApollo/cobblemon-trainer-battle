@@ -1,0 +1,124 @@
+[
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Tyranitarite",
+        "ability": "Sand Stream",
+        "evs": {
+            "hp": 188,
+            "atk": 32,
+            "def": 40,
+            "spe": 248
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Crunch",
+            "Dragon Dance",
+            "Protect",
+            "Rock Slide"
+        ]
+    },
+    {
+        "species": "Kartana",
+        "item": "Mago Berry",
+        "ability": "Beast Boost",
+        "shiny": true,
+        "evs": {
+            "hp": 72,
+            "atk": 48,
+            "spd": 180,
+            "spe": 208
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Detect",
+            "Leaf Blade",
+            "Sacred Sword",
+            "Tailwind"
+        ]
+    },
+    {
+        "species": "Landorus-Therian",
+        "item": "Wiki Berry",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 252,
+            "def": 28,
+            "spd": 216,
+            "spe": 12
+        },
+        "nature": "Calm",
+        "moves": [
+            "Defog",
+            "Earth Power",
+            "Stealth Rock",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Tapu Fini",
+        "item": "Wiki Berry",
+        "ability": "Misty Surge",
+        "evs": {
+            "hp": 252,
+            "def": 100,
+            "spd": 16,
+            "spe": 140
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Heal Pulse",
+            "Icy Wind",
+            "Moonblast",
+            "Nature's Madness"
+        ]
+    },
+    {
+        "species": "Volcarona",
+        "gender": "M",
+        "item": "Buginium Z",
+        "ability": "Swarm",
+        "evs": {
+            "hp": 12,
+            "spa": 200,
+            "spd": 56,
+            "spe": 240
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Bug Buzz",
+            "Heat Wave",
+            "Protect",
+            "Quiver Dance"
+        ]
+    },
+    {
+        "species": "Zeraora",
+        "item": "Assault Vest",
+        "ability": "Volt Absorb",
+        "evs": {
+            "hp": 184,
+            "def": 68,
+            "spa": 8,
+            "spe": 248
+        },
+        "nature": "Timid",
+        "moves": [
+            "Fake Out",
+            "Hidden Power Ice",
+            "Snarl",
+            "Volt Switch"
+        ],
+        "ivs": {
+            "atk": 30,
+            "def": 30
+        },
+        "hpType": "Ice"
+    }
+]

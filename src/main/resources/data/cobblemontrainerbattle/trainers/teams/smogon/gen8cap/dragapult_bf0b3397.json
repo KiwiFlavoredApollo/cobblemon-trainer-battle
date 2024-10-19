@@ -1,0 +1,116 @@
+[
+    {
+        "species": "Dragapult",
+        "gender": "M",
+        "item": "Choice Specs",
+        "ability": "Infiltrator",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Draco Meteor",
+            "Hex",
+            "Shadow Ball",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Arghonaut",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Unaware",
+        "evs": {
+            "hp": 252,
+            "def": 116,
+            "spd": 136,
+            "spe": 4
+        },
+        "nature": "Careful",
+        "moves": [
+            "Circle Throw",
+            "Knock Off",
+            "Recover",
+            "Spikes"
+        ]
+    },
+    {
+        "species": "Heatran",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Flash Fire",
+        "evs": {
+            "hp": 252,
+            "spd": 248,
+            "spe": 8
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earth Power",
+            "Magma Storm",
+            "Stealth Rock",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Melmetal",
+        "item": "Leftovers",
+        "ability": "Iron Fist",
+        "evs": {
+            "atk": 252,
+            "spd": 244,
+            "spe": 12
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Double Iron Bash",
+            "Earthquake",
+            "Protect",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Saharaja",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Water Absorb",
+        "evs": {
+            "hp": 252,
+            "atk": 60,
+            "spd": 4,
+            "spe": 192
+        },
+        "nature": "Careful",
+        "moves": [
+            "Diamond Storm",
+            "Earthquake",
+            "Rapid Spin",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Zapdos",
+        "item": "Heavy-Duty Boots",
+        "ability": "Static",
+        "evs": {
+            "hp": 248,
+            "def": 236,
+            "spe": 24
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Discharge",
+            "Heat Wave",
+            "Roost",
+            "Toxic"
+        ]
+    }
+]

@@ -1,0 +1,113 @@
+[
+    {
+        "species": "Xerneas",
+        "item": "Air Balloon",
+        "ability": "Fairy Aura",
+        "evs": {
+            "hp": 192,
+            "def": 252,
+            "spe": 64
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Aromatherapy",
+            "Moonblast",
+            "Rest",
+            "Sleep Talk"
+        ]
+    },
+    {
+        "species": "Calyrex-Shadow",
+        "item": "Choice Specs",
+        "ability": "As One (Spectrier)",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Astral Barrage",
+            "Nasty Plot",
+            "Psyshock",
+            "Trick"
+        ]
+    },
+    {
+        "species": "Eternatus",
+        "item": "Heavy-Duty Boots",
+        "ability": "Pressure",
+        "evs": {
+            "hp": 40,
+            "spd": 252,
+            "spe": 216
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Dynamax Cannon",
+            "Mystical Fire",
+            "Recover",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Groudon",
+        "item": "Leftovers",
+        "ability": "Drought",
+        "evs": {
+            "hp": 104,
+            "atk": 252,
+            "spe": 152
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Heat Crash",
+            "Precipice Blades",
+            "Stone Edge",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Necrozma-Dusk-Mane",
+        "item": "Leftovers",
+        "ability": "Prism Armor",
+        "evs": {
+            "hp": 252,
+            "spd": 136,
+            "spe": 120
+        },
+        "nature": "Careful",
+        "moves": [
+            "Iron Head",
+            "Morning Sun",
+            "Stealth Rock",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Yveltal",
+        "item": "Heavy-Duty Boots",
+        "ability": "Dark Aura",
+        "evs": {
+            "hp": 72,
+            "spd": 252,
+            "spe": 184
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Defog",
+            "Knock Off",
+            "Roost",
+            "Sucker Punch"
+        ]
+    }
+]

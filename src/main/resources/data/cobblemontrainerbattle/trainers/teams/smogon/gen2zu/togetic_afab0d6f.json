@@ -1,0 +1,75 @@
+[
+    {
+        "species": "Togetic",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Curse",
+            "Double-Edge",
+            "Rest",
+            "Sleep Talk"
+        ]
+    },
+    {
+        "species": "Croconaw",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Ice Beam",
+            "Rest",
+            "Sleep Talk",
+            "Surf"
+        ]
+    },
+    {
+        "species": "Poliwag",
+        "gender": "M",
+        "item": "Leftovers",
+        "ivs": {
+            "hp": 15,
+            "atk": 25
+        },
+        "moves": [
+            "Belly Drum",
+            "Hidden Power Ground",
+            "Lovely Kiss",
+            "Return"
+        ],
+        "happiness": 255
+    },
+    {
+        "species": "Smoochum",
+        "moves": [
+            "Hidden Power Dark",
+            "Ice Beam",
+            "Psychic",
+            "Thief"
+        ]
+    },
+    {
+        "species": "Tentacool",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Hydro Pump",
+            "Sludge Bomb",
+            "Substitute",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Weepinbell",
+        "gender": "M",
+        "item": "Leftovers",
+        "ivs": {
+            "hp": 15,
+            "atk": 25
+        },
+        "moves": [
+            "Hidden Power Ground",
+            "Sludge Bomb",
+            "Stun Spore",
+            "Swords Dance"
+        ]
+    }
+]

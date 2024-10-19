@@ -1,0 +1,121 @@
+[
+    {
+        "species": "Hawlucha",
+        "gender": "M",
+        "item": "Electric Seed",
+        "ability": "Unburden",
+        "evs": {
+            "hp": 8,
+            "atk": 252,
+            "spd": 136,
+            "spe": 112
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Acrobatics",
+            "High Jump Kick",
+            "Swords Dance",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Kyurem-Black",
+        "item": "Icium Z",
+        "ability": "Teravolt",
+        "evs": {
+            "atk": 252,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Lonely",
+        "moves": [
+            "Freeze Shock",
+            "Fusion Bolt",
+            "Ice Beam",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Landorus-Therian",
+        "item": "Rocky Helmet",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spa": 8
+        },
+        "nature": "Relaxed",
+        "moves": [
+            "Earthquake",
+            "Hidden Power Fire",
+            "Stealth Rock",
+            "U-turn"
+        ],
+        "ivs": {
+            "atk": 30,
+            "spa": 30,
+            "spe": 30
+        },
+        "hpType": "Fire"
+    },
+    {
+        "species": "Magearna",
+        "item": "Assault Vest",
+        "ability": "Soul-Heart",
+        "evs": {
+            "hp": 252,
+            "spd": 252,
+            "spe": 4
+        },
+        "nature": "Sassy",
+        "ivs": {
+            "atk": 30
+        },
+        "moves": [
+            "Fleur Cannon",
+            "Hidden Power Fire",
+            "Iron Head",
+            "Volt Switch"
+        ],
+        "hpType": "Fire"
+    },
+    {
+        "species": "Medicham",
+        "gender": "M",
+        "item": "Medichamite",
+        "ability": "Pure Power",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Fake Out",
+            "High Jump Kick",
+            "Ice Punch",
+            "Zen Headbutt"
+        ]
+    },
+    {
+        "species": "Tapu Koko",
+        "item": "Choice Scarf",
+        "ability": "Electric Surge",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Dazzling Gleam",
+            "Hidden Power Ice",
+            "Thunderbolt",
+            "Volt Switch"
+        ],
+        "hpType": "Ice"
+    }
+]

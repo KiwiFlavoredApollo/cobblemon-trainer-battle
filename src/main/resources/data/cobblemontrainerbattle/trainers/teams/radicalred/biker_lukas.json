@@ -1,0 +1,126 @@
+[
+    {
+        "name": "",
+        "species": "Koffing",
+        "item": "None",
+        "ability": "Neutralize Gas",
+        "gender": "M",
+        "nature": "Rash",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 47,
+        "moves": [
+            "Explosion",
+            "Destiny Bond",
+            "Belch",
+            "Memento"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Koffing",
+        "item": "None",
+        "ability": "Neutralize Gas",
+        "gender": "M",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 47,
+        "moves": [
+            "Explosion",
+            "Destiny Bond",
+            "Belch",
+            "Memento"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Muk",
+        "item": "None",
+        "ability": "Sticky Hold",
+        "gender": "F",
+        "nature": "Sassy",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 47,
+        "moves": [
+            "Poison Fang",
+            "Screech",
+            "Gunk Shot",
+            "Acid Armor"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Weezing",
+        "item": "None",
+        "ability": "Neutralize Gas",
+        "gender": "M",
+        "nature": "Lonely",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 47,
+        "moves": [
+            "Gyro Ball",
+            "Sludge Bomb",
+            "Explosion",
+            "Destiny Bond"
+        ]
+    }
+]

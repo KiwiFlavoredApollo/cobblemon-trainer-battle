@@ -1,0 +1,120 @@
+[
+    {
+        "species": "Clefable",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Unaware",
+        "evs": {
+            "hp": 248,
+            "def": 160,
+            "spd": 96,
+            "spe": 4
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Moonblast",
+            "Protect",
+            "Wish"
+        ]
+    },
+    {
+        "species": "Chansey",
+        "item": "Eviolite",
+        "ability": "Natural Cure",
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spd": 8
+        },
+        "nature": "Bold",
+        "moves": [
+            "Heal Bell",
+            "Seismic Toss",
+            "Soft-Boiled",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Gastrodon",
+        "gender": "F",
+        "item": "Leftovers",
+        "ability": "Storm Drain",
+        "evs": {
+            "hp": 248,
+            "def": 116,
+            "spd": 144
+        },
+        "nature": "Sassy",
+        "moves": [
+            "Earthquake",
+            "Recover",
+            "Scald",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Scizor",
+        "gender": "M",
+        "item": "Scizorite",
+        "ability": "Light Metal",
+        "evs": {
+            "hp": 248,
+            "atk": 16,
+            "def": 184,
+            "spe": 60
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bullet Punch",
+            "Defog",
+            "Roost",
+            "Superpower"
+        ]
+    },
+    {
+        "species": "Slowbro",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 248,
+            "def": 236,
+            "spd": 16,
+            "spe": 8
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Ice Beam",
+            "Scald",
+            "Slack Off",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Zapdos",
+        "item": "Leftovers",
+        "ability": "Pressure",
+        "evs": {
+            "hp": 184,
+            "def": 216,
+            "spe": 108
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Discharge",
+            "Heat Wave",
+            "Roost"
+        ]
+    }
+]

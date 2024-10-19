@@ -1,0 +1,123 @@
+[
+    {
+        "species": "Hippowdon",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sand Stream",
+        "teraType": "Ground",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Slack Off",
+            "Stealth Rock",
+            "Whirlwind"
+        ]
+    },
+    {
+        "species": "Clodsire",
+        "gender": "M",
+        "item": "Black Sludge",
+        "ability": "Water Absorb",
+        "teraType": "Poison",
+        "evs": {
+            "hp": 252,
+            "def": 160,
+            "spd": 96
+        },
+        "nature": "Careful",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earthquake",
+            "Poison Jab",
+            "Recover",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Excadrill",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Sand Rush",
+        "teraType": "Ground",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Iron Head",
+            "Rapid Spin",
+            "Rock Slide"
+        ]
+    },
+    {
+        "species": "Garchomp",
+        "gender": "M",
+        "item": "Garchompite",
+        "ability": "Rough Skin",
+        "teraType": "Dragon",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Fire Fang",
+            "Scale Shot",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Great Tusk",
+        "item": "Choice Scarf",
+        "ability": "Protosynthesis",
+        "teraType": "Ground",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Close Combat",
+            "Headlong Rush",
+            "Ice Spinner",
+            "Knock Off"
+        ]
+    },
+    {
+        "species": "Landorus",
+        "item": "Life Orb",
+        "ability": "Sheer Force",
+        "teraType": "Ground",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earth Power",
+            "Focus Blast",
+            "Gravity",
+            "Sludge Wave"
+        ]
+    }
+]

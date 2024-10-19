@@ -1,0 +1,157 @@
+[
+    {
+        "name": "",
+        "species": "Ambipom",
+        "item": "Silk Scarf",
+        "ability": "Technician",
+        "gender": "M",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 83,
+        "moves": [
+            "Fake Out",
+            "Tail Slap",
+            "Arm Thrust",
+            "U-turn"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Bruxish",
+        "item": "Mystic Water",
+        "ability": "Strong Jaw",
+        "gender": "M",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 83,
+        "moves": [
+            "Psychic Fang",
+            "Aqua Jet",
+            "Aqua Fang",
+            "Crunch"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Galvantula",
+        "item": "Magnet",
+        "ability": "Compound Eyes",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 83,
+        "moves": [
+            "Bug Buzz",
+            "Thunder",
+            "Giga Drain",
+            "Volt Switch"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Shedinja",
+        "item": "Focus Sash",
+        "ability": "Wonder Guard",
+        "gender": "",
+        "nature": "Bashful",
+        "evs": {
+            "hp": 4,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 40
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 83,
+        "moves": [
+            "Shadow Sneak",
+            "X-Scissor",
+            "Will-O-Wisp",
+            "PhantomForce"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Absol",
+        "item": "Absolite",
+        "ability": "Pressure or Super Luck",
+        "gender": "M",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 84,
+        "moves": [
+            "Play Rough",
+            "Night Slash",
+            "Sucker Punch",
+            "Superpower"
+        ]
+    }
+]

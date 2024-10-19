@@ -1,0 +1,124 @@
+[
+    {
+        "species": "Delphox",
+        "gender": "M",
+        "item": "Psychium Z",
+        "ability": "Blaze",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Dazzling Gleam",
+            "Flamethrower",
+            "Future Sight",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Clawitzer",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Mega Launcher",
+        "evs": {
+            "hp": 92,
+            "spa": 252,
+            "spd": 20,
+            "spe": 144
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Dark Pulse",
+            "Substitute",
+            "Toxic",
+            "Water Pulse"
+        ]
+    },
+    {
+        "species": "Guzzlord",
+        "item": "Choice Specs",
+        "ability": "Beast Boost",
+        "evs": {
+            "def": 64,
+            "spa": 252,
+            "spe": 192
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Dark Pulse",
+            "Draco Meteor",
+            "Fire Blast",
+            "Sludge Bomb"
+        ]
+    },
+    {
+        "species": "Passimian",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Defiant",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Earthquake",
+            "Knock Off",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Rotom",
+        "item": "Colbur Berry",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 248,
+            "spa": 8,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Hex",
+            "Volt Switch",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Steelix",
+        "gender": "M",
+        "item": "Figy Berry",
+        "ability": "Sturdy",
+        "evs": {
+            "hp": 252,
+            "atk": 108,
+            "spd": 148
+        },
+        "nature": "Brave",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Curse",
+            "Earthquake",
+            "Gyro Ball",
+            "Stealth Rock"
+        ]
+    }
+]

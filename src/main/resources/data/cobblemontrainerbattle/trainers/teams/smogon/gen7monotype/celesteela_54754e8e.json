@@ -1,0 +1,109 @@
+[
+    {
+        "species": "Celesteela",
+        "item": "Leftovers",
+        "ability": "Beast Boost",
+        "evs": {
+            "hp": 248,
+            "def": 8,
+            "spd": 252
+        },
+        "nature": "Sassy",
+        "moves": [
+            "Flamethrower",
+            "Heavy Slam",
+            "Leech Seed",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Excadrill",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Mold Breaker",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Iron Head",
+            "Rock Slide",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Ferrothorn",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Iron Barbs",
+        "evs": {
+            "hp": 252,
+            "def": 72,
+            "spd": 184
+        },
+        "nature": "Careful",
+        "moves": [
+            "Leech Seed",
+            "Power Whip",
+            "Protect",
+            "Spikes"
+        ]
+    },
+    {
+        "species": "Heatran",
+        "gender": "M",
+        "item": "Air Balloon",
+        "ability": "Flash Fire",
+        "evs": {
+            "atk": 24,
+            "spa": 232,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Earth Power",
+            "Magma Storm",
+            "Stone Edge",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Scizor",
+        "gender": "M",
+        "item": "Scizorite",
+        "ability": "Light Metal",
+        "evs": {
+            "hp": 248,
+            "spd": 204,
+            "spe": 56
+        },
+        "nature": "Careful",
+        "moves": [
+            "Bullet Punch",
+            "Roost",
+            "Swords Dance",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Skarmory",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Sturdy",
+        "evs": {
+            "hp": 252,
+            "def": 232,
+            "spe": 24
+        },
+        "nature": "Impish",
+        "moves": [
+            "Brave Bird",
+            "Roost",
+            "Stealth Rock",
+            "Whirlwind"
+        ]
+    }
+]

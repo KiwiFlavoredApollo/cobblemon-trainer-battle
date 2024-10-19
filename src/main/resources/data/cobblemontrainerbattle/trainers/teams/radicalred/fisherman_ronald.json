@@ -1,0 +1,126 @@
+[
+    {
+        "name": "",
+        "species": "Seaking",
+        "item": "None",
+        "ability": "Lightning Rod",
+        "gender": "F",
+        "nature": "Gentle",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 64,
+        "moves": [
+            "Waterfall",
+            "Soak",
+            "Megahorn",
+            "FishiousRend"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Sharpedo",
+        "item": "None",
+        "ability": "Rough Skin",
+        "gender": "F",
+        "nature": "Quiet",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 64,
+        "moves": [
+            "Crunch",
+            "Agility",
+            "Skull Bash",
+            "Taunt"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Cloyster",
+        "item": "None",
+        "ability": "Battle Armor",
+        "gender": "M",
+        "nature": "Impish",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 64,
+        "moves": [
+            "Spike Cannon",
+            "Ice Shard",
+            "Spikes",
+            "Icicle Crash"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Shellder",
+        "item": "None",
+        "ability": "Battle Armor",
+        "gender": "F",
+        "nature": "Brave",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 64,
+        "moves": [
+            "Iron Defense",
+            "Ice Beam",
+            "Shell Smash",
+            "Hydro Pump"
+        ]
+    }
+]

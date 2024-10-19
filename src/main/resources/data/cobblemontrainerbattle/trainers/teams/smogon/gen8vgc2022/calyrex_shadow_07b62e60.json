@@ -1,0 +1,136 @@
+[
+    {
+        "species": "Calyrex-Shadow",
+        "item": "Life Orb",
+        "ability": "As One (Spectrier)",
+        "level": 50,
+        "evs": {
+            "hp": 4,
+            "def": 4,
+            "spa": 244,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Astral Barrage",
+            "Expanding Force",
+            "Mud Shot",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Indeedee-F",
+        "item": "Psychic Seed",
+        "ability": "Psychic Surge",
+        "level": 50,
+        "evs": {
+            "hp": 252,
+            "def": 244,
+            "spa": 4,
+            "spd": 4,
+            "spe": 4
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Expanding Force",
+            "Follow Me",
+            "Helping Hand",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Kyogre",
+        "item": "Choice Scarf",
+        "ability": "Drizzle",
+        "level": 50,
+        "evs": {
+            "hp": 44,
+            "def": 4,
+            "spa": 252,
+            "spd": 4,
+            "spe": 204
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Ice Beam",
+            "Origin Pulse",
+            "Thunder",
+            "Water Spout"
+        ]
+    },
+    {
+        "species": "Landorus-Therian",
+        "item": "White Herb",
+        "ability": "Intimidate",
+        "level": 50,
+        "evs": {
+            "hp": 4,
+            "atk": 244,
+            "def": 4,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Fly",
+            "Protect",
+            "Rock Slide"
+        ]
+    },
+    {
+        "species": "Regieleki",
+        "item": "Focus Sash",
+        "ability": "Transistor",
+        "level": 50,
+        "evs": {
+            "hp": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Electroweb",
+            "Hyper Beam",
+            "Protect",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Whimsicott",
+        "gender": "M",
+        "item": "Coba Berry",
+        "ability": "Prankster",
+        "level": 50,
+        "evs": {
+            "hp": 228,
+            "def": 20,
+            "spa": 4,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Fake Tears",
+            "Moonblast",
+            "Protect",
+            "Tailwind"
+        ]
+    }
+]

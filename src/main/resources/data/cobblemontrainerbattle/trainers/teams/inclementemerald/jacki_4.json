@@ -1,0 +1,157 @@
+[
+    {
+        "name": "",
+        "species": "Musharna",
+        "item": "",
+        "ability": "Psychic Surge",
+        "gender": "",
+        "nature": "Bold",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 252,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Dream Eater",
+            "Yawn",
+            "Moonblast",
+            "Calm Mind"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Girafarig",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Psychic Fangs",
+            "Crunch",
+            "Ice Fang",
+            "Thunder Fang"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Espeon",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Psyshock",
+            "Shadow Ball",
+            "Grass Knot",
+            "Dazzling Gleam"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Meowstic-F",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Psychic",
+            "Shadow Ball",
+            "Thunderbolt",
+            "Signal Beam"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Orbeetle",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Psychic",
+            "Bug Buzz",
+            "Calm Mind",
+            "Recover"
+        ]
+    }
+]

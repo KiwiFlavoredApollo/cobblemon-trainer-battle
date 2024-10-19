@@ -1,0 +1,116 @@
+[
+    {
+        "species": "Sawk",
+        "item": "Choice Band",
+        "ability": "Mold Breaker",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Close Combat",
+            "Earthquake",
+            "Ice Punch",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Duosion",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Magic Guard",
+        "evs": {
+            "hp": 252,
+            "def": 236,
+            "spe": 20
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Psychic",
+            "Recover",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Garbodor",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Aftermath",
+        "evs": {
+            "hp": 252,
+            "def": 240,
+            "spe": 16
+        },
+        "nature": "Impish",
+        "moves": [
+            "Gunk Shot",
+            "Spikes",
+            "Toxic",
+            "Toxic Spikes"
+        ]
+    },
+    {
+        "species": "Mandibuzz",
+        "item": "Leftovers",
+        "ability": "Big Pecks",
+        "evs": {
+            "hp": 248,
+            "def": 112,
+            "spd": 148
+        },
+        "nature": "Careful",
+        "moves": [
+            "Brave Bird",
+            "Foul Play",
+            "Roost",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Rotom-Frost",
+        "item": "Choice Scarf",
+        "ability": "Levitate",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Blizzard",
+            "Thunderbolt",
+            "Trick",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Seismitoad",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Water Absorb",
+        "evs": {
+            "hp": 200,
+            "def": 128,
+            "spd": 180
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Protect",
+            "Scald",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    }
+]

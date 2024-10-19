@@ -1,0 +1,132 @@
+[
+    {
+        "species": "Exeggutor-Alola",
+        "gender": "M",
+        "item": "Sitrus Berry",
+        "ability": "Harvest",
+        "level": 50,
+        "evs": {
+            "hp": 244,
+            "def": 92,
+            "spd": 172
+        },
+        "nature": "Sassy",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Leech Seed",
+            "Protect",
+            "Trick Room",
+            "Wood Hammer"
+        ]
+    },
+    {
+        "species": "Arcanine",
+        "gender": "M",
+        "item": "Aguav Berry",
+        "ability": "Intimidate",
+        "level": 50,
+        "evs": {
+            "hp": 252,
+            "atk": 92,
+            "def": 44,
+            "spd": 76,
+            "spe": 44
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Extreme Speed",
+            "Flare Blitz",
+            "Protect",
+            "Snarl"
+        ]
+    },
+    {
+        "species": "Kartana",
+        "item": "Assault Vest",
+        "ability": "Beast Boost",
+        "level": 50,
+        "evs": {
+            "hp": 116,
+            "spd": 140,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Leaf Blade",
+            "Razor Leaf",
+            "Sacred Sword",
+            "Smart Strike"
+        ]
+    },
+    {
+        "species": "Mudsdale",
+        "gender": "M",
+        "item": "Groundium Z",
+        "ability": "Stamina",
+        "level": 50,
+        "evs": {
+            "hp": 172,
+            "atk": 196,
+            "def": 12,
+            "spd": 124
+        },
+        "nature": "Brave",
+        "ivs": {
+            "spe": 24
+        },
+        "moves": [
+            "Close Combat",
+            "High Horsepower",
+            "Protect",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Snorlax",
+        "gender": "M",
+        "item": "Iapapa Berry",
+        "ability": "Gluttony",
+        "level": 50,
+        "evs": {
+            "hp": 156,
+            "atk": 100,
+            "def": 252
+        },
+        "nature": "Brave",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Curse",
+            "High Horsepower",
+            "Recycle",
+            "Return"
+        ],
+        "happiness": 255
+    },
+    {
+        "species": "Tapu Fini",
+        "item": "Mago Berry",
+        "ability": "Misty Surge",
+        "level": 50,
+        "evs": {
+            "hp": 252,
+            "def": 76,
+            "spa": 132,
+            "spd": 12,
+            "spe": 36
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Light Screen",
+            "Moonblast",
+            "Muddy Water",
+            "Protect"
+        ]
+    }
+]

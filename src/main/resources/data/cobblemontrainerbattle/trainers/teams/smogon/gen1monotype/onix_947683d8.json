@@ -1,0 +1,56 @@
+[
+    {
+        "species": "Onix",
+        "moves": [
+            "Bind",
+            "Earthquake",
+            "Explosion",
+            "Rock Slide"
+        ]
+    },
+    {
+        "species": "Dugtrio",
+        "moves": [
+            "Earthquake",
+            "Rock Slide",
+            "Slash",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Golem",
+        "moves": [
+            "Body Slam",
+            "Earthquake",
+            "Explosion",
+            "Rock Slide"
+        ]
+    },
+    {
+        "species": "Nidoking",
+        "moves": [
+            "Blizzard",
+            "Body Slam",
+            "Earthquake",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Rhydon",
+        "moves": [
+            "Body Slam",
+            "Earthquake",
+            "Rock Slide",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Sandslash",
+        "moves": [
+            "Earthquake",
+            "Rock Slide",
+            "Submission",
+            "Swords Dance"
+        ]
+    }
+]

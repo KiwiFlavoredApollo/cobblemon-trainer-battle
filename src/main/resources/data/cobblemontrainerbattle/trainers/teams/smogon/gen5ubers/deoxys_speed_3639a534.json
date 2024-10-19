@@ -1,0 +1,108 @@
+[
+    {
+        "species": "Deoxys-Speed",
+        "item": "Rocky Helmet",
+        "ability": "Pressure",
+        "evs": {
+            "hp": 252,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Dark Pulse",
+            "Spikes",
+            "Stealth Rock",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Arceus-Steel",
+        "item": "Iron Plate",
+        "ability": "Multitype",
+        "evs": {
+            "hp": 248,
+            "spa": 8,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Judgment",
+            "Recover",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Giratina-Origin",
+        "item": "Griseous Orb",
+        "ability": "Levitate",
+        "evs": {
+            "atk": 168,
+            "def": 248,
+            "spe": 92
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Dragon Tail",
+            "Earthquake",
+            "Magic Coat",
+            "Shadow Sneak"
+        ]
+    },
+    {
+        "species": "Kabutops",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Swift Swim",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Low Kick",
+            "Rapid Spin",
+            "Stone Edge",
+            "Waterfall"
+        ]
+    },
+    {
+        "species": "Kyogre",
+        "item": "Choice Specs",
+        "ability": "Drizzle",
+        "evs": {
+            "hp": 168,
+            "spa": 252,
+            "spe": 88
+        },
+        "nature": "Modest",
+        "moves": [
+            "Hydro Pump",
+            "Ice Beam",
+            "Thunder",
+            "Water Spout"
+        ]
+    },
+    {
+        "species": "Palkia",
+        "item": "Haban Berry",
+        "ability": "Pressure",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Dragon Tail",
+            "Fire Blast",
+            "Hydro Pump",
+            "Spacial Rend"
+        ]
+    }
+]

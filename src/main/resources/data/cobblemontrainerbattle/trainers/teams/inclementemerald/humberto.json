@@ -1,0 +1,126 @@
+[
+    {
+        "name": "",
+        "species": "Gliscor",
+        "item": "Flying Gem",
+        "ability": "",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Acrobatics",
+            "Earthquake",
+            "Poison Jab",
+            "Swords Dance"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Mandibuzz",
+        "item": "Leftovers",
+        "ability": "Overcoat",
+        "gender": "",
+        "nature": "Impish",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 252,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Foul Play",
+            "Swagger",
+            "Roost",
+            "Substitute"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Hawlucha",
+        "item": "Sitrus Berry",
+        "ability": "Unburden",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Brave Bird",
+            "Close Combat",
+            "Stone Edge",
+            "Swords Dance"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Minior",
+        "item": "White Herb",
+        "ability": "",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Acrobatics",
+            "Rock Slide",
+            "Zen Headbutt",
+            "Shell Smash"
+        ]
+    }
+]

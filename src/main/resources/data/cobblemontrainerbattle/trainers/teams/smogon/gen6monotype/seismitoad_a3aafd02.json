@@ -1,0 +1,109 @@
+[
+    {
+        "species": "Seismitoad",
+        "gender": "M",
+        "item": "Assault Vest",
+        "ability": "Water Absorb",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Grass Knot",
+            "Knock Off",
+            "Scald",
+            "Sludge Wave"
+        ]
+    },
+    {
+        "species": "Excadrill",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Sand Rush",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Iron Head",
+            "Rock Slide",
+            "Shadow Claw"
+        ]
+    },
+    {
+        "species": "Garchomp",
+        "gender": "M",
+        "item": "Garchompite",
+        "ability": "Rough Skin",
+        "evs": {
+            "atk": 252,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Draco Meteor",
+            "Earthquake",
+            "Fire Blast",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Hippowdon",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sand Stream",
+        "evs": {
+            "hp": 248,
+            "def": 84,
+            "spd": 176
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Slack Off",
+            "Stealth Rock",
+            "Whirlwind"
+        ]
+    },
+    {
+        "species": "Landorus",
+        "item": "Life Orb",
+        "ability": "Sheer Force",
+        "evs": {
+            "atk": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Earth Power",
+            "Focus Blast",
+            "Gravity",
+            "Knock Off"
+        ]
+    },
+    {
+        "species": "Mamoswine",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Thick Fat",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Ice Shard",
+            "Icicle Crash",
+            "Superpower"
+        ]
+    }
+]

@@ -1,0 +1,64 @@
+[
+    {
+        "name": "",
+        "species": "Skiddo",
+        "item": "None",
+        "ability": "Sap Sipper",
+        "gender": "M",
+        "nature": "Lax",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "level": 18,
+        "moves": [
+            "Tail Whip",
+            "Leech Seed",
+            "Razor Leaf",
+            "Worry Seed"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Yamper",
+        "item": "None",
+        "ability": "Pickup",
+        "gender": "M",
+        "nature": "Naive",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "level": 20,
+        "moves": [
+            "Nuzzle",
+            "Bite",
+            "Roar",
+            "Spark"
+        ]
+    }
+]

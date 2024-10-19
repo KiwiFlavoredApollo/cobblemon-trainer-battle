@@ -1,0 +1,56 @@
+[
+    {
+        "species": "Exeggutor",
+        "moves": [
+            "Explosion",
+            "Psychic",
+            "Sleep Powder",
+            "Stun Spore"
+        ]
+    },
+    {
+        "species": "Mew",
+        "moves": [
+            "Body Slam",
+            "Reflect",
+            "Soft-Boiled",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Mewtwo",
+        "moves": [
+            "Amnesia",
+            "Psychic",
+            "Self-Destruct",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Slowbro",
+        "moves": [
+            "Psychic",
+            "Rest",
+            "Surf",
+            "Withdraw"
+        ]
+    },
+    {
+        "species": "Snorlax",
+        "moves": [
+            "Body Slam",
+            "Counter",
+            "Earthquake",
+            "Self-Destruct"
+        ]
+    },
+    {
+        "species": "Zapdos",
+        "moves": [
+            "Agility",
+            "Drill Peck",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    }
+]

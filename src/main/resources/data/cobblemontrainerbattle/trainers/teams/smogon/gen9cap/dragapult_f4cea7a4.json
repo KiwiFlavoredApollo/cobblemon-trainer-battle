@@ -1,0 +1,116 @@
+[
+    {
+        "species": "Dragapult",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Infiltrator",
+        "teraType": "Fairy",
+        "evs": {
+            "atk": 76,
+            "spa": 180,
+            "spe": 252
+        },
+        "nature": "Hasty",
+        "moves": [
+            "Dragon Darts",
+            "Hex",
+            "U-turn",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Cinderace",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Libero",
+        "teraType": "Fire",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Gunk Shot",
+            "Pyro Ball",
+            "U-turn",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Equilibra",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "teraType": "Water",
+        "evs": {
+            "hp": 252,
+            "def": 140,
+            "spa": 36,
+            "spd": 64,
+            "spe": 16
+        },
+        "nature": "Calm",
+        "moves": [
+            "Doom Desire",
+            "Earth Power",
+            "Flash Cannon",
+            "Rapid Spin"
+        ]
+    },
+    {
+        "species": "Garganacl",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Purifying Salt",
+        "teraType": "Water",
+        "evs": {
+            "hp": 252,
+            "def": 52,
+            "spd": 204
+        },
+        "nature": "Careful",
+        "moves": [
+            "Curse",
+            "Earthquake",
+            "Recover",
+            "Salt Cure"
+        ]
+    },
+    {
+        "species": "Primarina",
+        "gender": "M",
+        "item": "Assault Vest",
+        "ability": "Torrent",
+        "teraType": "Steel",
+        "evs": {
+            "hp": 80,
+            "spa": 252,
+            "spe": 176
+        },
+        "nature": "Modest",
+        "moves": [
+            "Flip Turn",
+            "Moonblast",
+            "Psychic Noise",
+            "Surf"
+        ]
+    },
+    {
+        "species": "Venomicon",
+        "item": "Heavy-Duty Boots",
+        "ability": "Stamina",
+        "teraType": "Water",
+        "evs": {
+            "hp": 248,
+            "def": 144,
+            "spd": 116
+        },
+        "nature": "Bold",
+        "moves": [
+            "Body Press",
+            "Roost",
+            "Sludge Bomb",
+            "Stealth Rock"
+        ]
+    }
+]

@@ -1,0 +1,119 @@
+[
+    {
+        "species": "Mr. Mime",
+        "gender": "M",
+        "item": "Choice Specs",
+        "ability": "Filter",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Focus Blast",
+            "Psychic",
+            "Shadow Ball",
+            "Trick"
+        ]
+    },
+    {
+        "species": "Klang",
+        "item": "Eviolite",
+        "ability": "Clear Body",
+        "evs": {
+            "hp": 248,
+            "def": 8,
+            "spd": 252
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Rest",
+            "Sleep Talk",
+            "Toxic",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Maractus",
+        "gender": "F",
+        "item": "Leftovers",
+        "ability": "Water Absorb",
+        "evs": {
+            "hp": 252,
+            "def": 172,
+            "spe": 84
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 2,
+            "def": 30
+        },
+        "moves": [
+            "Giga Drain",
+            "Hidden Power Ice",
+            "Spikes",
+            "Synthesis"
+        ]
+    },
+    {
+        "species": "Monferno",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Iron Fist",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Flare Blitz",
+            "Slack Off",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Stunfisk",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Static",
+        "evs": {
+            "hp": 252,
+            "def": 96,
+            "spd": 160
+        },
+        "nature": "Relaxed",
+        "moves": [
+            "Discharge",
+            "Earthquake",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Swanna",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Big Pecks",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Brave Bird",
+            "Hurricane",
+            "Ice Beam",
+            "Surf"
+        ]
+    }
+]

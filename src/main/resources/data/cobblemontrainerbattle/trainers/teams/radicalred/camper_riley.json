@@ -1,0 +1,64 @@
+[
+    {
+        "name": "",
+        "species": "Pinsir",
+        "item": "None",
+        "ability": "Mold Breaker",
+        "gender": "M",
+        "nature": "Naughty",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "level": 49,
+        "moves": [
+            "Storm Throw",
+            "Swords Dance",
+            "Thrash",
+            "Superpower"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Heracross",
+        "item": "None",
+        "ability": "Guts",
+        "gender": "M",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "level": 50,
+        "moves": [
+            "Take Down",
+            "Megahorn",
+            "Close Combat",
+            "Reversal"
+        ]
+    }
+]

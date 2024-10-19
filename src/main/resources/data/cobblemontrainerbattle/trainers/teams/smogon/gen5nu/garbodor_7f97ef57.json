@@ -1,0 +1,126 @@
+[
+    {
+        "species": "Garbodor",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Aftermath",
+        "shiny": true,
+        "evs": {
+            "hp": 48,
+            "atk": 252,
+            "spe": 208
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Gunk Shot",
+            "Rock Blast",
+            "Seed Bomb",
+            "Spikes"
+        ]
+    },
+    {
+        "species": "Alomomola",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 104,
+            "def": 252,
+            "spd": 152
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Healing Wish",
+            "Protect",
+            "Scald",
+            "Wish"
+        ]
+    },
+    {
+        "species": "Camerupt",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Solid Rock",
+        "evs": {
+            "hp": 252,
+            "spa": 4,
+            "spd": 252
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earth Power",
+            "Lava Plume",
+            "Roar",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Rotom-Fan",
+        "item": "Expert Belt",
+        "ability": "Levitate",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "spa": 30
+        },
+        "moves": [
+            "Air Slash",
+            "Hidden Power Grass",
+            "Thunderbolt",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Serperior",
+        "gender": "F",
+        "item": "Life Orb",
+        "ability": "Overgrow",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 3,
+            "def": 30,
+            "spd": 30,
+            "spe": 30
+        },
+        "moves": [
+            "Calm Mind",
+            "Giga Drain",
+            "Hidden Power Rock",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Skuntank",
+        "gender": "M",
+        "item": "Lum Berry",
+        "ability": "Aftermath",
+        "evs": {
+            "atk": 252,
+            "spd": 72,
+            "spe": 184
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Crunch",
+            "Pursuit",
+            "Sucker Punch",
+            "Taunt"
+        ]
+    }
+]

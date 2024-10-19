@@ -1,0 +1,118 @@
+[
+    {
+        "species": "Lopunny",
+        "gender": "M",
+        "item": "Lopunnite",
+        "ability": "Cute Charm",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Encore",
+            "High Jump Kick",
+            "Power-Up Punch",
+            "Return"
+        ],
+        "happiness": 255
+    },
+    {
+        "species": "Chansey",
+        "item": "Eviolite",
+        "ability": "Natural Cure",
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spd": 8
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Counter",
+            "Seismic Toss",
+            "Soft-Boiled",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Diggersby",
+        "gender": "M",
+        "item": "Normalium Z",
+        "ability": "Huge Power",
+        "happiness": 0,
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Frustration",
+            "Quick Attack",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Ditto",
+        "item": "Choice Scarf",
+        "ability": "Imposter",
+        "evs": {
+            "hp": 252,
+            "atk": 4,
+            "def": 252
+        },
+        "nature": "Relaxed",
+        "ivs": {
+            "atk": 0,
+            "spa": 30,
+            "spe": 0
+        },
+        "moves": [
+            "Transform"
+        ]
+    },
+    {
+        "species": "Porygon2",
+        "item": "Eviolite",
+        "ability": "Download",
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spd": 8
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Discharge",
+            "Hidden Power Fire",
+            "Ice Beam",
+            "Recover"
+        ],
+        "hpType": "Fire"
+    },
+    {
+        "species": "Staraptor",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 228,
+            "def": 172,
+            "spe": 108
+        },
+        "nature": "Impish",
+        "moves": [
+            "Brave Bird",
+            "Defog",
+            "Roost",
+            "U-turn"
+        ]
+    }
+]

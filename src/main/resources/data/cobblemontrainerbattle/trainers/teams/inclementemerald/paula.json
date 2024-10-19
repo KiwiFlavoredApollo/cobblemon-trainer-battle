@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Breloom",
+        "item": "Toxic Orb",
+        "ability": "Poison Heal",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Spore",
+            "Substitute",
+            "Focus Punch",
+            "Seed Bomb"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Pangoro",
+        "item": "Roseli Berry",
+        "ability": "",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Crunch",
+            "Hammer Arm",
+            "Poison Jab",
+            "Parting Shot"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Poliwrath",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Modest",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Focus Blast",
+            "Hydro Pump",
+            "Ice Beam",
+            "Mind Reader"
+        ]
+    }
+]

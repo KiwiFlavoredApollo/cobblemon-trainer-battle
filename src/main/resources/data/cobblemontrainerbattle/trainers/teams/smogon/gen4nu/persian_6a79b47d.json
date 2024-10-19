@@ -1,0 +1,122 @@
+[
+    {
+        "species": "Persian",
+        "gender": "M",
+        "item": "Heat Rock",
+        "ability": "Technician",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Fake Out",
+            "Sunny Day",
+            "Taunt",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Hypno",
+        "gender": "M",
+        "item": "Heat Rock",
+        "ability": "Insomnia",
+        "evs": {
+            "hp": 252,
+            "def": 160,
+            "spd": 96
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Baton Pass",
+            "Psychic",
+            "Sunny Day",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Regirock",
+        "item": "Heat Rock",
+        "ability": "Clear Body",
+        "evs": {
+            "hp": 248,
+            "atk": 252,
+            "spe": 8
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Explosion",
+            "Stealth Rock",
+            "Stone Edge",
+            "Sunny Day"
+        ]
+    },
+    {
+        "species": "Shiftry",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Chlorophyll",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Explosion",
+            "Seed Bomb",
+            "Sucker Punch",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Typhlosion",
+        "gender": "F",
+        "item": "Choice Scarf",
+        "ability": "Blaze",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "spa": 30
+        },
+        "moves": [
+            "Eruption",
+            "Flamethrower",
+            "Focus Blast",
+            "Hidden Power Grass"
+        ]
+    },
+    {
+        "species": "Victreebel",
+        "gender": "F",
+        "item": "Life Orb",
+        "ability": "Chlorophyll",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 3,
+            "def": 30,
+            "spd": 30,
+            "spe": 30
+        },
+        "moves": [
+            "Hidden Power Rock",
+            "Sleep Powder",
+            "Solar Beam",
+            "Weather Ball"
+        ]
+    }
+]

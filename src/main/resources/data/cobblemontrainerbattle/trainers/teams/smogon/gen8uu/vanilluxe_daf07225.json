@@ -1,0 +1,117 @@
+[
+    {
+        "species": "Vanilluxe",
+        "gender": "M",
+        "item": "Choice Specs",
+        "ability": "Snow Warning",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Blizzard",
+            "Freeze-Dry",
+            "Sleep Talk"
+        ]
+    },
+    {
+        "species": "Azelf",
+        "item": "Expert Belt",
+        "ability": "Levitate",
+        "evs": {
+            "atk": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Flamethrower",
+            "Knock Off",
+            "Psychic",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Excadrill",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Mold Breaker",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Iron Head",
+            "Rapid Spin",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Salamence",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Intimidate",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Draco Meteor",
+            "Flamethrower",
+            "Roost"
+        ]
+    },
+    {
+        "species": "Slowking",
+        "gender": "M",
+        "item": "Colbur Berry",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Relaxed",
+        "ivs": {
+            "atk": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Future Sight",
+            "Scald",
+            "Slack Off",
+            "Teleport"
+        ]
+    },
+    {
+        "species": "Zarude-Dada",
+        "item": "Heavy-Duty Boots",
+        "ability": "Leaf Guard",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Darkest Lariat",
+            "Jungle Healing",
+            "Power Whip",
+            "U-turn"
+        ]
+    }
+]

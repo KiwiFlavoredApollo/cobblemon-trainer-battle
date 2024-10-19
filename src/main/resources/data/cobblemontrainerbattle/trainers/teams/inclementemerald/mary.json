@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Braviary",
+        "item": "White Herb",
+        "ability": "",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Hone Claws",
+            "Brave Bird",
+            "Double Edge",
+            "Superpower"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Raticate-Alola",
+        "item": "Salac Berry",
+        "ability": "Hustle",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Quick Attack",
+            "Double Edge",
+            "Crunch",
+            "Hone Claws"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Drampa",
+        "item": "Damp Rock",
+        "ability": "",
+        "gender": "",
+        "nature": "Modest",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Rain Dance",
+            "Thunder",
+            "Hurricane",
+            "Work Up"
+        ]
+    }
+]

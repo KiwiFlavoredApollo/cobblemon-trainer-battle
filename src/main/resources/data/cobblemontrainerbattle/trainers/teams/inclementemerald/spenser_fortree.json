@@ -1,0 +1,188 @@
+[
+    {
+        "name": "",
+        "species": "Crobat",
+        "item": "Black Sludge",
+        "ability": "Infiltrator",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 4,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Fly",
+            "Roost",
+            "Protect",
+            "Toxic"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Slaking",
+        "item": "Choice Scarf",
+        "ability": "Truant",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Giga Impact",
+            "Earthquake",
+            "Hammer Arm",
+            "Play Rough"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Arcanine",
+        "item": "White Herb",
+        "ability": "Intimidate",
+        "gender": "",
+        "nature": "Naive",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 0,
+            "spa": 4,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Overheat",
+            "Extreme Speed",
+            "Wild Charge",
+            "Crunch"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Lapras",
+        "item": "Water Gem",
+        "ability": "Water Absorb",
+        "gender": "",
+        "nature": "Modest",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Freeze Dry",
+            "Hydro Pump",
+            "Thunder",
+            "Psychic"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Venusaur",
+        "item": "Venusaurite",
+        "ability": "Overgrow -> Thick Fat",
+        "gender": "",
+        "nature": "Modest",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Giga Drain",
+            "Sludge Bomb",
+            "Earth Power",
+            "Sleep Powder"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Suicune",
+        "item": "Leftovers",
+        "ability": "Pressure",
+        "gender": "",
+        "nature": "Bold",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 252,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Scald",
+            "Calm Mind",
+            "Rest",
+            "Sleep Talk"
+        ]
+    }
+]

@@ -1,0 +1,126 @@
+[
+    {
+        "species": "Scizor",
+        "gender": "M",
+        "item": "Scizorite",
+        "ability": "Light Metal",
+        "evs": {
+            "hp": 248,
+            "atk": 132,
+            "spd": 36,
+            "spe": 92
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bullet Punch",
+            "Protect",
+            "Superpower",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Gothitelle",
+        "gender": "M",
+        "item": "Wiki Berry",
+        "ability": "Shadow Tag",
+        "evs": {
+            "hp": 252,
+            "def": 152,
+            "spd": 104
+        },
+        "nature": "Sassy",
+        "ivs": {
+            "atk": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Heal Pulse",
+            "Protect",
+            "Psychic",
+            "Trick Room"
+        ]
+    },
+    {
+        "species": "Kommo-o",
+        "gender": "M",
+        "item": "Kommonium Z",
+        "ability": "Soundproof",
+        "evs": {
+            "atk": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Mild",
+        "moves": [
+            "Clanging Scales",
+            "Flamethrower",
+            "Poison Jab",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Landorus-Therian",
+        "item": "Yache Berry",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 248,
+            "def": 8,
+            "spa": 8,
+            "spd": 32,
+            "spe": 212
+        },
+        "nature": "Modest",
+        "moves": [
+            "Earth Power",
+            "Hidden Power Ice",
+            "Stealth Rock",
+            "U-turn"
+        ],
+        "ivs": {
+            "atk": 30,
+            "def": 30
+        },
+        "hpType": "Ice"
+    },
+    {
+        "species": "Tapu Koko",
+        "item": "Magnet",
+        "ability": "Electric Surge",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Dazzling Gleam",
+            "Protect",
+            "Thunderbolt",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Volcanion",
+        "item": "Shuca Berry",
+        "ability": "Water Absorb",
+        "evs": {
+            "hp": 248,
+            "spa": 188,
+            "spd": 20,
+            "spe": 52
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Heat Wave",
+            "Protect",
+            "Sludge Bomb",
+            "Steam Eruption"
+        ]
+    }
+]

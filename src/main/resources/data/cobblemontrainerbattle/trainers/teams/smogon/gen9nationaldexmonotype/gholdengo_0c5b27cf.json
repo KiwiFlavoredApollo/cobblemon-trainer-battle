@@ -1,0 +1,123 @@
+[
+    {
+        "species": "Gholdengo",
+        "item": "Ghostium Z",
+        "ability": "Good as Gold",
+        "teraType": "Steel",
+        "evs": {
+            "hp": 252,
+            "def": 32,
+            "spe": 224
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Make It Rain",
+            "Nasty Plot",
+            "Recover",
+            "Shadow Ball"
+        ]
+    },
+    {
+        "species": "Blacephalon",
+        "item": "Choice Scarf",
+        "ability": "Beast Boost",
+        "teraType": "Fire",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Flamethrower",
+            "Psyshock",
+            "Shadow Ball",
+            "Trick"
+        ]
+    },
+    {
+        "species": "Brambleghast",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Infiltrator",
+        "teraType": "Grass",
+        "evs": {
+            "hp": 252,
+            "atk": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Power Whip",
+            "Rapid Spin",
+            "Spikes",
+            "Strength Sap"
+        ]
+    },
+    {
+        "species": "Corsola-Galar",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Cursed Body",
+        "teraType": "Ghost",
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spd": 8
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Night Shade",
+            "Stealth Rock",
+            "Strength Sap",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Mimikyu",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Disguise",
+        "teraType": "Ghost",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Drain Punch",
+            "Play Rough",
+            "Shadow Sneak",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Sableye",
+        "gender": "M",
+        "item": "Sablenite",
+        "ability": "Prankster",
+        "teraType": "Dark",
+        "evs": {
+            "hp": 248,
+            "def": 104,
+            "spd": 156
+        },
+        "nature": "Careful",
+        "moves": [
+            "Knock Off",
+            "Metal Burst",
+            "Recover",
+            "Will-O-Wisp"
+        ]
+    }
+]

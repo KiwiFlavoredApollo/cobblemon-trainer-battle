@@ -1,0 +1,113 @@
+[
+    {
+        "species": "Ninjask",
+        "gender": "M",
+        "item": "Groundium Z",
+        "ability": "Speed Boost",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Dig",
+            "Leech Life",
+            "Swords Dance",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Electivire",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Motor Drive",
+        "evs": {
+            "atk": 252,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Hasty",
+        "moves": [
+            "Earthquake",
+            "Ice Punch",
+            "Volt Switch",
+            "Wild Charge"
+        ]
+    },
+    {
+        "species": "Golem",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sturdy",
+        "evs": {
+            "hp": 252,
+            "atk": 216,
+            "spe": 40
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Smack Down",
+            "Stealth Rock",
+            "Sucker Punch"
+        ]
+    },
+    {
+        "species": "Komala",
+        "gender": "M",
+        "item": "Assault Vest",
+        "ability": "Comatose",
+        "evs": {
+            "hp": 160,
+            "atk": 252,
+            "spe": 96
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Knock Off",
+            "Rapid Spin",
+            "Return",
+            "U-turn"
+        ],
+        "happiness": 255
+    },
+    {
+        "species": "Mr. Mime",
+        "gender": "M",
+        "item": "Choice Specs",
+        "ability": "Soundproof",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Dazzling Gleam",
+            "Focus Blast",
+            "Healing Wish",
+            "Psyshock"
+        ]
+    },
+    {
+        "species": "Silvally-Dragon",
+        "item": "Dragon Memory",
+        "ability": "RKS System",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Defog",
+            "Draco Meteor",
+            "Flamethrower",
+            "U-turn"
+        ]
+    }
+]

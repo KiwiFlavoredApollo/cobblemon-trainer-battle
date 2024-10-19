@@ -1,0 +1,113 @@
+[
+    {
+        "species": "Kyurem-Black",
+        "item": "Icium Z",
+        "ability": "Teravolt",
+        "evs": {
+            "atk": 252,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Freeze Shock",
+            "Fusion Bolt",
+            "Ice Beam",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Jumbao",
+        "gender": "M",
+        "item": "Pixie Plate",
+        "ability": "Trace",
+        "evs": {
+            "hp": 248,
+            "spa": 32,
+            "spe": 228
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hidden Power Ground",
+            "Moonblast",
+            "Shore Up",
+            "Wish"
+        ],
+        "hpType": "Ground"
+    },
+    {
+        "species": "Landorus-Therian",
+        "item": "Rocky Helmet",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 248,
+            "def": 232,
+            "spa": 28
+        },
+        "nature": "Relaxed",
+        "moves": [
+            "Earthquake",
+            "Stealth Rock",
+            "Toxic",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Rotom-Wash",
+        "item": "Wiki Berry",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 248,
+            "def": 76,
+            "spe": 184
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Hydro Pump",
+            "Volt Switch",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Scizor",
+        "gender": "M",
+        "item": "Scizorite",
+        "ability": "Light Metal",
+        "evs": {
+            "hp": 248,
+            "def": 16,
+            "spd": 244
+        },
+        "nature": "Impish",
+        "moves": [
+            "Bullet Punch",
+            "Roost",
+            "Swords Dance",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Tornadus-Therian",
+        "item": "Assault Vest",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 80,
+            "spa": 196,
+            "spe": 232
+        },
+        "nature": "Timid",
+        "moves": [
+            "Heat Wave",
+            "Knock Off",
+            "Sludge Bomb",
+            "U-turn"
+        ]
+    }
+]

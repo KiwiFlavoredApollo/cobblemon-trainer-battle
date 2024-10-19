@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Plusle",
+        "item": "Oran Berry",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Electro Ball",
+            "Nuzzle",
+            "Helping Hand",
+            "Charm"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Pachirisu",
+        "item": "Oran Berry",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Electro Ball",
+            "Nuzzle",
+            "Swift",
+            "Sweet Kiss"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Minun",
+        "item": "Oran Berry",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Electro Ball",
+            "Nuzzle",
+            "Swift",
+            "Sweet Kiss"
+        ]
+    }
+]

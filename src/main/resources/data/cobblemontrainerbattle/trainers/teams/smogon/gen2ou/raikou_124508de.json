@@ -1,0 +1,72 @@
+[
+    {
+        "species": "Raikou",
+        "item": "Leftovers",
+        "ivs": {
+            "hp": 15,
+            "atk": 29,
+            "def": 27
+        },
+        "moves": [
+            "Hidden Power Water",
+            "Rest",
+            "Sleep Talk",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Cloyster",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Explosion",
+            "Spikes",
+            "Surf",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Exeggutor",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Explosion",
+            "Giga Drain",
+            "Psychic",
+            "Sleep Powder"
+        ]
+    },
+    {
+        "species": "Golem",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Earthquake",
+            "Explosion",
+            "Rapid Spin",
+            "Roar"
+        ]
+    },
+    {
+        "species": "Heracross",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Curse",
+            "Megahorn",
+            "Rest",
+            "Sleep Talk"
+        ]
+    },
+    {
+        "species": "Snorlax",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Body Slam",
+            "Curse",
+            "Earthquake",
+            "Self-Destruct"
+        ]
+    }
+]

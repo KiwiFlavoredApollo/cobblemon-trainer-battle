@@ -1,0 +1,118 @@
+[
+    {
+        "species": "Groudon",
+        "item": "Red Orb",
+        "ability": "Drought",
+        "evs": {
+            "hp": 248,
+            "def": 56,
+            "spd": 204
+        },
+        "nature": "Relaxed",
+        "moves": [
+            "Lava Plume",
+            "Precipice Blades",
+            "Stealth Rock",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Arceus-Rock",
+        "item": "Stone Plate",
+        "ability": "Multitype",
+        "evs": {
+            "hp": 252,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Judgment",
+            "Recover",
+            "Refresh"
+        ]
+    },
+    {
+        "species": "Gengar",
+        "gender": "M",
+        "item": "Gengarite",
+        "ability": "Levitate",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Destiny Bond",
+            "Hex",
+            "Protect",
+            "Sludge Bomb"
+        ]
+    },
+    {
+        "species": "Giratina-Origin",
+        "item": "Griseous Orb",
+        "ability": "Levitate",
+        "evs": {
+            "def": 248,
+            "spa": 236,
+            "spe": 24
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Draco Meteor",
+            "Hex",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Klefki",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Prankster",
+        "evs": {
+            "hp": 252,
+            "atk": 4,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "moves": [
+            "Heal Block",
+            "Play Rough",
+            "Spikes",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Kyogre",
+        "item": "Blue Orb",
+        "ability": "Drizzle",
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spd": 8
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Ice Beam",
+            "Rest",
+            "Scald",
+            "Sleep Talk"
+        ]
+    }
+]

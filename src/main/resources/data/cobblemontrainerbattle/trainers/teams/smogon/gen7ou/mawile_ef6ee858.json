@@ -1,0 +1,124 @@
+[
+    {
+        "species": "Mawile",
+        "gender": "F",
+        "item": "Mawilite",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 172,
+            "atk": 252,
+            "spe": 84
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Knock Off",
+            "Play Rough",
+            "Sucker Punch",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Greninja",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Protean",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hidden Power Fire",
+            "Hydro Pump",
+            "Ice Beam",
+            "Spikes"
+        ],
+        "hpType": "Fire"
+    },
+    {
+        "species": "Kartana",
+        "item": "Choice Scarf",
+        "ability": "Beast Boost",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Knock Off",
+            "Leaf Blade",
+            "Sacred Sword",
+            "Smart Strike"
+        ]
+    },
+    {
+        "species": "Landorus-Therian",
+        "item": "Focus Sash",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 252,
+            "def": 112,
+            "spe": 144
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Hidden Power Ice",
+            "Stealth Rock",
+            "U-turn"
+        ],
+        "ivs": {
+            "atk": 30,
+            "def": 30
+        },
+        "hpType": "Ice"
+    },
+    {
+        "species": "Magearna",
+        "item": "Fairium Z",
+        "ability": "Soul-Heart",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spa": 252
+        },
+        "nature": "Quiet",
+        "ivs": {
+            "atk": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Fleur Cannon",
+            "Focus Blast",
+            "Thunderbolt",
+            "Trick Room"
+        ]
+    },
+    {
+        "species": "Tapu Lele",
+        "item": "Twisted Spoon",
+        "ability": "Psychic Surge",
+        "shiny": true,
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Hidden Power Fire",
+            "Moonblast",
+            "Psyshock"
+        ],
+        "hpType": "Fire"
+    }
+]

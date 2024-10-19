@@ -1,0 +1,123 @@
+[
+    {
+        "species": "Latias",
+        "item": "Latiasite",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 248,
+            "def": 4,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Ice Beam",
+            "Psychic",
+            "Roost",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Clefable",
+        "gender": "F",
+        "item": "Leftovers",
+        "ability": "Magic Guard",
+        "evs": {
+            "hp": 252,
+            "def": 156,
+            "spd": 88,
+            "spe": 12
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Moonblast",
+            "Soft-Boiled",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Gliscor",
+        "gender": "M",
+        "item": "Toxic Orb",
+        "ability": "Poison Heal",
+        "evs": {
+            "hp": 244,
+            "spd": 244,
+            "spe": 20
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Facade",
+            "Roost",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Heatran",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Flash Fire",
+        "evs": {
+            "hp": 248,
+            "def": 104,
+            "spd": 156
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Lava Plume",
+            "Protect",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Tornadus-Therian",
+        "item": "Flyinium Z",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 108,
+            "def": 60,
+            "spa": 148,
+            "spe": 192
+        },
+        "nature": "Timid",
+        "moves": [
+            "Defog",
+            "Hurricane",
+            "Knock Off",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Toxapex",
+        "gender": "F",
+        "item": "Black Sludge",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 252,
+            "def": 80,
+            "spd": 176
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Haze",
+            "Recover",
+            "Scald",
+            "Toxic"
+        ]
+    }
+]

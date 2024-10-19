@@ -1,0 +1,71 @@
+[
+    {
+        "species": "Snorlax",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Curse",
+            "Double-Edge",
+            "Lovely Kiss",
+            "Self-Destruct"
+        ]
+    },
+    {
+        "species": "Cloyster",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Explosion",
+            "Icy Wind",
+            "Spikes",
+            "Surf"
+        ]
+    },
+    {
+        "species": "Jolteon",
+        "gender": "M",
+        "item": "Leftovers",
+        "ivs": {
+            "hp": 15,
+            "atk": 29,
+            "def": 27
+        },
+        "moves": [
+            "Baton Pass",
+            "Growth",
+            "Hidden Power Water",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Mew",
+        "item": "Leftovers",
+        "moves": [
+            "Earthquake",
+            "Explosion",
+            "Rock Slide",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Mewtwo",
+        "item": "Leftovers",
+        "moves": [
+            "Fire Blast",
+            "Ice Beam",
+            "Self-Destruct",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Crunch",
+            "Fire Blast",
+            "Ice Beam",
+            "Roar"
+        ]
+    }
+]

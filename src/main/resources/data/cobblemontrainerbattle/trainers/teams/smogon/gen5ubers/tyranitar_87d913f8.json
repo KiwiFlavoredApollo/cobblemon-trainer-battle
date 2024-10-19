@@ -1,0 +1,109 @@
+[
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Focus Sash",
+        "ability": "Sand Stream",
+        "evs": {
+            "atk": 252,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Hasty",
+        "moves": [
+            "Crunch",
+            "Fire Blast",
+            "Stealth Rock",
+            "Superpower"
+        ]
+    },
+    {
+        "species": "Arceus-Fighting",
+        "item": "Fist Plate",
+        "ability": "Multitype",
+        "evs": {
+            "hp": 248,
+            "def": 8,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Judgment",
+            "Recover",
+            "Stone Edge",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Ferrothorn",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Iron Barbs",
+        "evs": {
+            "hp": 252,
+            "atk": 4,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "moves": [
+            "Knock Off",
+            "Leech Seed",
+            "Power Whip",
+            "Spikes"
+        ]
+    },
+    {
+        "species": "Genesect",
+        "item": "Choice Scarf",
+        "ability": "Download",
+        "evs": {
+            "atk": 8,
+            "spa": 248,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Bug Buzz",
+            "Ice Beam",
+            "Thunder",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Giratina-Origin",
+        "item": "Griseous Orb",
+        "ability": "Levitate",
+        "evs": {
+            "atk": 156,
+            "def": 248,
+            "spe": 104
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Dragon Tail",
+            "Earthquake",
+            "Shadow Sneak",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Kyogre",
+        "item": "Leftovers",
+        "ability": "Drizzle",
+        "evs": {
+            "hp": 248,
+            "spd": 224,
+            "spe": 36
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Rest",
+            "Roar",
+            "Scald",
+            "Sleep Talk"
+        ]
+    }
+]

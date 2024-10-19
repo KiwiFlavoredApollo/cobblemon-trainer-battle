@@ -1,0 +1,119 @@
+[
+    {
+        "species": "Metagross",
+        "item": "Focus Sash",
+        "ability": "Clear Body",
+        "evs": {
+            "hp": 80,
+            "atk": 252,
+            "spe": 176
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bullet Punch",
+            "Earthquake",
+            "Explosion",
+            "Meteor Mash"
+        ]
+    },
+    {
+        "species": "Infernape",
+        "gender": "M",
+        "item": "Expert Belt",
+        "ability": "Blaze",
+        "evs": {
+            "atk": 56,
+            "spa": 252,
+            "spe": 200
+        },
+        "nature": "Naive",
+        "moves": [
+            "Close Combat",
+            "Fire Blast",
+            "Grass Knot",
+            "Hidden Power Ice"
+        ],
+        "ivs": {
+            "atk": 30,
+            "def": 30
+        }
+    },
+    {
+        "species": "Latias",
+        "item": "Choice Specs",
+        "ability": "Levitate",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Draco Meteor",
+            "Grass Knot",
+            "Surf",
+            "Trick"
+        ]
+    },
+    {
+        "species": "Rotom-Wash",
+        "item": "Choice Scarf",
+        "ability": "Levitate",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "def": 30
+        },
+        "moves": [
+            "Hidden Power Ice",
+            "Shadow Ball",
+            "Thunderbolt",
+            "Trick"
+        ]
+    },
+    {
+        "species": "Scizor",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Technician",
+        "evs": {
+            "hp": 248,
+            "atk": 56,
+            "def": 12,
+            "spd": 192
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Brick Break",
+            "Bullet Punch",
+            "Roost",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Custap Berry",
+        "ability": "Sand Stream",
+        "evs": {
+            "hp": 252,
+            "atk": 108,
+            "spd": 148
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Crunch",
+            "Earthquake",
+            "Pursuit",
+            "Stealth Rock"
+        ]
+    }
+]

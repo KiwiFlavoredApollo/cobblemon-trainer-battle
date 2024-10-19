@@ -1,0 +1,115 @@
+[
+    {
+        "species": "Groudon",
+        "item": "Red Orb",
+        "ability": "Drought",
+        "teraType": "Flying",
+        "evs": {
+            "hp": 240,
+            "atk": 20,
+            "spd": 224,
+            "spe": 24
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Heat Crash",
+            "Precipice Blades",
+            "Spikes",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Arceus-Ground",
+        "item": "Groundium Z",
+        "ability": "Multitype",
+        "teraType": "Ghost",
+        "evs": {
+            "hp": 248,
+            "def": 92,
+            "spd": 40,
+            "spe": 128
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Dragon Dance",
+            "Earthquake",
+            "Recover",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Ho-Oh",
+        "item": "Heavy-Duty Boots",
+        "ability": "Regenerator",
+        "teraType": "Grass",
+        "evs": {
+            "hp": 248,
+            "def": 208,
+            "spd": 52
+        },
+        "nature": "Impish",
+        "moves": [
+            "Defog",
+            "Sacred Fire",
+            "Toxic",
+            "Whirlwind"
+        ]
+    },
+    {
+        "species": "Kyogre",
+        "item": "Blue Orb",
+        "ability": "Drizzle",
+        "teraType": "Water",
+        "evs": {
+            "hp": 244,
+            "def": 252,
+            "spe": 12
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Ice Beam",
+            "Rest",
+            "Scald"
+        ]
+    },
+    {
+        "species": "Yveltal",
+        "item": "Heavy-Duty Boots",
+        "ability": "Dark Aura",
+        "teraType": "Ghost",
+        "evs": {
+            "hp": 252,
+            "def": 172,
+            "spe": 84
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Foul Play",
+            "Roost",
+            "Sucker Punch",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Zygarde",
+        "item": "Leftovers",
+        "ability": "Power Construct",
+        "teraType": "Water",
+        "evs": {
+            "hp": 248,
+            "spd": 204,
+            "spe": 56
+        },
+        "nature": "Careful",
+        "moves": [
+            "Coil",
+            "Rest",
+            "Thousand Arrows",
+            "Toxic"
+        ]
+    }
+]

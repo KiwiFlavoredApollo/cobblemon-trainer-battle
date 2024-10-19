@@ -1,0 +1,117 @@
+[
+    {
+        "species": "Rayquaza",
+        "item": "Life Orb",
+        "ability": "Air Lock",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Dragon Ascent",
+            "Dragon Dance",
+            "Extreme Speed",
+            "V-create"
+        ]
+    },
+    {
+        "species": "Arceus",
+        "item": "Chople Berry",
+        "ability": "Multitype",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Extreme Speed",
+            "Facade",
+            "Shadow Claw",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Deoxys-Speed",
+        "item": "Light Clay",
+        "ability": "Pressure",
+        "evs": {
+            "hp": 208,
+            "def": 84,
+            "spe": 216
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Light Screen",
+            "Reflect",
+            "Stealth Rock",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Naganadel",
+        "item": "Dragonium Z",
+        "ability": "Beast Boost",
+        "shiny": true,
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Draco Meteor",
+            "Fire Blast",
+            "Nasty Plot",
+            "Sludge Wave"
+        ]
+    },
+    {
+        "species": "Necrozma-Dusk-Mane",
+        "item": "Weakness Policy",
+        "ability": "Prism Armor",
+        "evs": {
+            "atk": 244,
+            "spd": 8,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earthquake",
+            "Rock Polish",
+            "Sunsteel Strike",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Xerneas",
+        "item": "Power Herb",
+        "ability": "Fairy Aura",
+        "evs": {
+            "def": 96,
+            "spa": 252,
+            "spe": 160
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Focus Blast",
+            "Geomancy",
+            "Moonblast",
+            "Psyshock"
+        ]
+    }
+]

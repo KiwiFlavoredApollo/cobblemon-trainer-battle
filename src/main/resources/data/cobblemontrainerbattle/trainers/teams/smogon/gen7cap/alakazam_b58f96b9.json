@@ -1,0 +1,123 @@
+[
+    {
+        "species": "Alakazam",
+        "gender": "M",
+        "item": "Alakazite",
+        "ability": "Magic Guard",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Focus Blast",
+            "Psychic",
+            "Recover",
+            "Shadow Ball"
+        ]
+    },
+    {
+        "species": "Heatran",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Flash Fire",
+        "evs": {
+            "hp": 252,
+            "spa": 52,
+            "spd": 164,
+            "spe": 40
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earth Power",
+            "Magma Storm",
+            "Stealth Rock",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Landorus-Therian",
+        "item": "Choice Scarf",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 56,
+            "atk": 188,
+            "def": 52,
+            "spe": 212
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Knock Off",
+            "Stone Edge",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Magnezone",
+        "item": "Air Balloon",
+        "ability": "Magnet Pull",
+        "evs": {
+            "hp": 196,
+            "spa": 252,
+            "spe": 60
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hidden Power Fire",
+            "Magnet Rise",
+            "Substitute",
+            "Thunderbolt"
+        ],
+        "hpType": "Fire"
+    },
+    {
+        "species": "Tomohawk",
+        "gender": "M",
+        "item": "Flyinium Z",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 248,
+            "spa": 68,
+            "spe": 192
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Aura Sphere",
+            "Hurricane",
+            "Rapid Spin",
+            "Roost"
+        ]
+    },
+    {
+        "species": "Toxapex",
+        "gender": "M",
+        "item": "Black Sludge",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 252,
+            "def": 124,
+            "spd": 132
+        },
+        "nature": "Impish",
+        "moves": [
+            "Haze",
+            "Knock Off",
+            "Recover",
+            "Toxic Spikes"
+        ]
+    }
+]

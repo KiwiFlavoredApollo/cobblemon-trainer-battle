@@ -1,0 +1,129 @@
+[
+    {
+        "species": "Tapu Fini",
+        "item": "Wiki Berry",
+        "ability": "Misty Surge",
+        "level": 50,
+        "evs": {
+            "hp": 252,
+            "def": 100,
+            "spa": 52,
+            "spd": 44,
+            "spe": 60
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Moonblast",
+            "Muddy Water",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Aegislash",
+        "gender": "M",
+        "item": "Ghostium Z",
+        "ability": "Stance Change",
+        "level": 50,
+        "evs": {
+            "hp": 140,
+            "spa": 252,
+            "spe": 116
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Flash Cannon",
+            "King's Shield",
+            "Shadow Ball",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Incineroar",
+        "gender": "M",
+        "item": "Figy Berry",
+        "ability": "Blaze",
+        "level": 50,
+        "evs": {
+            "hp": 244,
+            "atk": 204,
+            "def": 44,
+            "spd": 12,
+            "spe": 4
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Fake Out",
+            "Flare Blitz",
+            "Knock Off",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Kartana",
+        "item": "Focus Sash",
+        "ability": "Beast Boost",
+        "level": 50,
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Detect",
+            "Leaf Blade",
+            "Sacred Sword",
+            "Tailwind"
+        ]
+    },
+    {
+        "species": "Landorus-Therian",
+        "item": "Assault Vest",
+        "ability": "Intimidate",
+        "level": 50,
+        "evs": {
+            "hp": 228,
+            "atk": 12,
+            "def": 84,
+            "spd": 4,
+            "spe": 180
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Knock Off",
+            "Rock Tomb",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Latias",
+        "item": "Latiasite",
+        "ability": "Levitate",
+        "level": 50,
+        "evs": {
+            "hp": 252,
+            "def": 60,
+            "spa": 76,
+            "spd": 12,
+            "spe": 108
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Ice Beam",
+            "Psyshock",
+            "Recover"
+        ]
+    }
+]

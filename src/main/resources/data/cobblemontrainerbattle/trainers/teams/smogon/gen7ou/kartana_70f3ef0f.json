@@ -1,0 +1,118 @@
+[
+    {
+        "species": "Kartana",
+        "item": "Choice Scarf",
+        "ability": "Beast Boost",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Knock Off",
+            "Leaf Blade",
+            "Sacred Sword",
+            "Smart Strike"
+        ]
+    },
+    {
+        "species": "Alakazam",
+        "gender": "M",
+        "item": "Alakazite",
+        "ability": "Magic Guard",
+        "evs": {
+            "def": 120,
+            "spa": 252,
+            "spe": 136
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Focus Blast",
+            "Psychic",
+            "Shadow Ball"
+        ]
+    },
+    {
+        "species": "Landorus-Therian",
+        "item": "Iapapa Berry",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 248,
+            "def": 204,
+            "spe": 56
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Knock Off",
+            "Stealth Rock",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Magearna",
+        "item": "Assault Vest",
+        "ability": "Soul-Heart",
+        "evs": {
+            "hp": 252,
+            "spa": 4,
+            "spd": 252
+        },
+        "nature": "Sassy",
+        "ivs": {
+            "spe": 20
+        },
+        "moves": [
+            "Explosion",
+            "Hidden Power Fire",
+            "Ice Beam",
+            "Volt Switch"
+        ],
+        "hpType": "Fire"
+    },
+    {
+        "species": "Rotom-Wash",
+        "item": "Iapapa Berry",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 224,
+            "spa": 96,
+            "spe": 188
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Hydro Pump",
+            "Volt Switch",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Tapu Lele",
+        "item": "Fightinium Z",
+        "ability": "Psychic Surge",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Focus Blast",
+            "Moonblast",
+            "Psyshock"
+        ]
+    }
+]

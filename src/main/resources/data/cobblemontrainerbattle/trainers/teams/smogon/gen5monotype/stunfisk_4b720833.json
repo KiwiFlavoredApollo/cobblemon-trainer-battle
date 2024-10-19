@@ -1,0 +1,128 @@
+[
+    {
+        "species": "Stunfisk",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Static",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Discharge",
+            "Earth Power",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Magnezone",
+        "item": "Air Balloon",
+        "ability": "Magnet Pull",
+        "evs": {
+            "hp": 248,
+            "def": 116,
+            "spd": 144
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 2,
+            "spa": 30,
+            "spe": 30
+        },
+        "moves": [
+            "Discharge",
+            "Hidden Power Fire",
+            "Magnet Rise",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Raikou",
+        "item": "Choice Scarf",
+        "ability": "Pressure",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "def": 30
+        },
+        "moves": [
+            "Hidden Power Ice",
+            "Shadow Ball",
+            "Thunderbolt",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Rotom-Wash",
+        "item": "Choice Scarf",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 200,
+            "spa": 56,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "spa": 30
+        },
+        "moves": [
+            "Hidden Power Grass",
+            "Hydro Pump",
+            "Trick",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Thundurus-Therian",
+        "item": "Leftovers",
+        "ability": "Volt Absorb",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "def": 30
+        },
+        "moves": [
+            "Focus Blast",
+            "Hidden Power Ice",
+            "Nasty Plot",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Zapdos",
+        "item": "Leftovers",
+        "ability": "Pressure",
+        "evs": {
+            "hp": 248,
+            "def": 152,
+            "spe": 108
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Discharge",
+            "Roost",
+            "Substitute",
+            "Toxic"
+        ]
+    }
+]

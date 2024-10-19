@@ -1,0 +1,116 @@
+[
+    {
+        "species": "Rillaboom",
+        "gender": "M",
+        "item": "Assault Vest",
+        "ability": "Grassy Surge",
+        "evs": {
+            "hp": 64,
+            "atk": 252,
+            "spe": 192
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Fake Out",
+            "Grassy Glide",
+            "High Horsepower",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Genesect",
+        "item": "Choice Band",
+        "ability": "Download",
+        "shiny": true,
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Blaze Kick",
+            "Extreme Speed",
+            "Iron Head",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Incineroar",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 252,
+            "def": 136,
+            "spd": 72,
+            "spe": 48
+        },
+        "nature": "Impish",
+        "moves": [
+            "Fake Out",
+            "Knock Off",
+            "Overheat",
+            "Parting Shot"
+        ]
+    },
+    {
+        "species": "Mew",
+        "item": "Sitrus Berry",
+        "ability": "Synchronize",
+        "evs": {
+            "hp": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Snarl",
+            "Spikes",
+            "Tailwind",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Tapu Fini",
+        "item": "Leftovers",
+        "ability": "Misty Surge",
+        "evs": {
+            "hp": 252,
+            "def": 56,
+            "spa": 136,
+            "spe": 64
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Moonblast",
+            "Muddy Water",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Sitrus Berry",
+        "ability": "Sand Stream",
+        "evs": {
+            "hp": 248,
+            "spd": 216,
+            "spe": 44
+        },
+        "nature": "Careful",
+        "moves": [
+            "Dragon Tail",
+            "High Horsepower",
+            "Ice Punch",
+            "Stealth Rock"
+        ]
+    }
+]

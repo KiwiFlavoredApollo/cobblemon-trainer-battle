@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Accelgor",
+        "item": "None",
+        "ability": "Hydration",
+        "gender": "F",
+        "nature": "Lax",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 15,
+            "atk": 15,
+            "def": 15,
+            "spa": 15,
+            "spd": 15,
+            "spe": 15
+        },
+        "level": 44,
+        "moves": [
+            "Bug Buzz",
+            "Giga Drain",
+            "Sludge Bomb",
+            "U-turn"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Heliolisk",
+        "item": "Stardust",
+        "ability": "Dry Skin",
+        "gender": "F",
+        "nature": "Bashful",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 15,
+            "atk": 15,
+            "def": 15,
+            "spa": 15,
+            "spd": 15,
+            "spe": 15
+        },
+        "level": 45,
+        "moves": [
+            "Thunderbolt",
+            "Hyper Voice",
+            "Grass Knot",
+            "Volt Switch"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Archeops",
+        "item": "None",
+        "ability": "Defeatist",
+        "gender": "F",
+        "nature": "Quirky",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 15,
+            "atk": 15,
+            "def": 15,
+            "spa": 15,
+            "spd": 15,
+            "spe": 15
+        },
+        "level": 44,
+        "moves": [
+            "Acrobatics",
+            "Rock Slide",
+            "Supersonic",
+            "Zen Headbutt"
+        ]
+    }
+]

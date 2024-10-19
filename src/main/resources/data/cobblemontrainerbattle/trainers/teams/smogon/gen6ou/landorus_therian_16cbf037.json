@@ -1,0 +1,124 @@
+[
+    {
+        "species": "Landorus-Therian",
+        "item": "Focus Sash",
+        "ability": "Intimidate",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Explosion",
+            "Imprison",
+            "Rock Tomb",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Altaria",
+        "gender": "M",
+        "item": "Altarianite",
+        "ability": "Natural Cure",
+        "happiness": 0,
+        "evs": {
+            "atk": 252,
+            "spd": 16,
+            "spe": 240
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Dragon Dance",
+            "Earthquake",
+            "Frustration",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Latias",
+        "item": "Light Clay",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 252,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Healing Wish",
+            "Light Screen",
+            "Reflect"
+        ]
+    },
+    {
+        "species": "Manaphy",
+        "item": "Sitrus Berry",
+        "ability": "Hydration",
+        "evs": {
+            "hp": 200,
+            "spa": 176,
+            "spd": 16,
+            "spe": 116
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Energy Ball",
+            "Ice Beam",
+            "Surf",
+            "Tail Glow"
+        ]
+    },
+    {
+        "species": "Serperior",
+        "gender": "F",
+        "item": "Light Clay",
+        "ability": "Contrary",
+        "shiny": true,
+        "evs": {
+            "hp": 100,
+            "spa": 156,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Leaf Storm",
+            "Light Screen",
+            "Reflect",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Volcarona",
+        "gender": "F",
+        "item": "Lum Berry",
+        "ability": "Flame Body",
+        "evs": {
+            "hp": 96,
+            "spa": 252,
+            "spe": 160
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 1,
+            "spa": 30,
+            "spd": 30
+        },
+        "moves": [
+            "Flamethrower",
+            "Giga Drain",
+            "Hidden Power Ground",
+            "Quiver Dance"
+        ]
+    }
+]

@@ -1,0 +1,122 @@
+[
+    {
+        "species": "Deoxys-Attack",
+        "item": "Life Orb",
+        "ability": "Pressure",
+        "evs": {
+            "atk": 48,
+            "spa": 208,
+            "spe": 252
+        },
+        "nature": "Rash",
+        "ivs": {
+            "hp": 29
+        },
+        "moves": [
+            "Extreme Speed",
+            "Psycho Boost",
+            "Superpower",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Arceus",
+        "item": "Silk Scarf",
+        "ability": "Multitype",
+        "evs": {
+            "hp": 128,
+            "atk": 252,
+            "spe": 128
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Extreme Speed",
+            "Shadow Claw",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Ferrothorn",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Iron Barbs",
+        "shiny": true,
+        "evs": {
+            "hp": 248,
+            "def": 4,
+            "spd": 252,
+            "spe": 4
+        },
+        "nature": "Sassy",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Gyro Ball",
+            "Leech Seed",
+            "Spikes",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Giratina-Origin",
+        "item": "Griseous Orb",
+        "ability": "Levitate",
+        "shiny": true,
+        "evs": {
+            "atk": 208,
+            "def": 252,
+            "spe": 48
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Dragon Tail",
+            "Magic Coat",
+            "Shadow Sneak",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Kingdra",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Swift Swim",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "hp": 29,
+            "atk": 0
+        },
+        "moves": [
+            "Draco Meteor",
+            "Dragon Pulse",
+            "Hydro Pump",
+            "Yawn"
+        ]
+    },
+    {
+        "species": "Kyogre",
+        "item": "Leftovers",
+        "ability": "Drizzle",
+        "evs": {
+            "hp": 248,
+            "spd": 216,
+            "spe": 44
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Rest",
+            "Roar",
+            "Scald",
+            "Sleep Talk"
+        ]
+    }
+]

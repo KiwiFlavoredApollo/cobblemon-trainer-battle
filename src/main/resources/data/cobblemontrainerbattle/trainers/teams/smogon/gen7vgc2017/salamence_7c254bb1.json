@@ -1,0 +1,132 @@
+[
+    {
+        "species": "Salamence",
+        "gender": "M",
+        "item": "Dragonium Z",
+        "ability": "Intimidate",
+        "level": 50,
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Draco Meteor",
+            "Flamethrower",
+            "Protect",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Magnezone",
+        "item": "Leftovers",
+        "ability": "Magnet Pull",
+        "level": 50,
+        "evs": {
+            "hp": 188,
+            "def": 68,
+            "spa": 100,
+            "spd": 108,
+            "spe": 44
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Flash Cannon",
+            "Protect",
+            "Substitute",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Muk-Alola",
+        "gender": "M",
+        "item": "Figy Berry",
+        "ability": "Gluttony",
+        "level": 50,
+        "evs": {
+            "hp": 220,
+            "atk": 252,
+            "spe": 36
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Knock Off",
+            "Poison Jab",
+            "Protect",
+            "Shadow Sneak"
+        ]
+    },
+    {
+        "species": "Ninetales-Alola",
+        "gender": "M",
+        "item": "Focus Sash",
+        "ability": "Snow Warning",
+        "level": 50,
+        "evs": {
+            "hp": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Aurora Veil",
+            "Blizzard",
+            "Freeze-Dry",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Politoed",
+        "gender": "M",
+        "item": "Sitrus Berry",
+        "ability": "Drizzle",
+        "level": 50,
+        "evs": {
+            "hp": 244,
+            "def": 76,
+            "spa": 76,
+            "spd": 108,
+            "spe": 4
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Encore",
+            "Perish Song",
+            "Protect",
+            "Scald"
+        ]
+    },
+    {
+        "species": "Tapu Bulu",
+        "item": "Lum Berry",
+        "ability": "Grassy Surge",
+        "level": 50,
+        "evs": {
+            "hp": 252,
+            "atk": 28,
+            "def": 140,
+            "spd": 28,
+            "spe": 60
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Horn Leech",
+            "Leech Seed",
+            "Protect",
+            "Substitute"
+        ]
+    }
+]

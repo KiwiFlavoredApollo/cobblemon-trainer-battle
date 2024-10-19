@@ -1,0 +1,126 @@
+[
+    {
+        "name": "",
+        "species": "Frogadier",
+        "item": "Eviolite",
+        "ability": "Protean",
+        "gender": "F",
+        "nature": "Bashful",
+        "evs": {
+            "hp": 100,
+            "atk": 40,
+            "def": 0,
+            "spa": 40,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 25,
+        "moves": [
+            "Ice Punch",
+            "Rock Tomb",
+            "Flip Turn",
+            "Grass Knot"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Floatzel",
+        "item": "Mystic Water",
+        "ability": "Technician",
+        "gender": "M",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 30,
+            "def": 31,
+            "spa": 30,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 25,
+        "moves": [
+            "Water Pulse",
+            "Flip Turn",
+            "Icy Wind",
+            "Hidden Power"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Starmie",
+        "item": "Sitrus Berry",
+        "ability": "Analytic",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 27,
+        "moves": [
+            "Psyshock",
+            "Scald",
+            "Recover",
+            "Aurora Beam"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Lanturn",
+        "item": "Iapapa Berry",
+        "ability": "Volt Absorb",
+        "gender": "F",
+        "nature": "Bold",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 30,
+            "def": 31,
+            "spa": 30,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 25,
+        "moves": [
+            "Scald",
+            "Para Charge",
+            "Icy Wind",
+            "Hidden Power"
+        ]
+    }
+]

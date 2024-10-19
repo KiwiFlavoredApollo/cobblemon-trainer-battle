@@ -1,0 +1,121 @@
+[
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Custap Berry",
+        "ability": "Sand Stream",
+        "evs": {
+            "hp": 248,
+            "atk": 88,
+            "spd": 172
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Crunch",
+            "Earthquake",
+            "Pursuit",
+            "Superpower"
+        ]
+    },
+    {
+        "species": "Kitsunoh",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Limber",
+        "evs": {
+            "hp": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Shadow Strike",
+            "Taunt",
+            "U-turn",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Landorus-Therian",
+        "item": "Leftovers",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 248,
+            "def": 76,
+            "spe": 184
+        },
+        "nature": "Naive",
+        "moves": [
+            "Earthquake",
+            "Hidden Power Ice",
+            "Stealth Rock",
+            "U-turn"
+        ],
+        "ivs": {
+            "atk": 30,
+            "def": 30
+        }
+    },
+    {
+        "species": "Latios",
+        "item": "Choice Scarf",
+        "ability": "Levitate",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Draco Meteor",
+            "Recover",
+            "Surf",
+            "Trick"
+        ]
+    },
+    {
+        "species": "Mollux",
+        "gender": "M",
+        "item": "Black Sludge",
+        "ability": "Dry Skin",
+        "evs": {
+            "hp": 248,
+            "spd": 92,
+            "spe": 168
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Lava Plume",
+            "Rapid Spin",
+            "Recover",
+            "Toxic Spikes"
+        ]
+    },
+    {
+        "species": "Rotom-Wash",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 248,
+            "def": 20,
+            "spd": 240
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 2,
+            "spa": 30
+        },
+        "moves": [
+            "Hidden Power Grass",
+            "Hydro Pump",
+            "Thunder Wave",
+            "Volt Switch"
+        ]
+    }
+]

@@ -1,0 +1,126 @@
+[
+    {
+        "name": "",
+        "species": "Rhyperior",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Earthquake",
+            "Stone Edge",
+            "Hammer Arm",
+            "Megahorn"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Slowbro-Galar",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Shell Side Arm",
+            "Psychic",
+            "Slack Off",
+            "Surf"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Aggron",
+        "item": "",
+        "ability": "Rock Head",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Iron Tail",
+            "Head Smash",
+            "Ice Punch",
+            "Rock Polish"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Druddigon",
+        "item": "",
+        "ability": "Sheer Force",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Dragon Rush",
+            "Crunch",
+            "Fire Punch",
+            "Gunk Shot"
+        ]
+    }
+]

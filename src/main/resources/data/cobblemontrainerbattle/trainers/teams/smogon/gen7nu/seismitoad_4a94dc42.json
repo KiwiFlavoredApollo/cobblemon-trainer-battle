@@ -1,0 +1,119 @@
+[
+    {
+        "species": "Seismitoad",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Water Absorb",
+        "evs": {
+            "hp": 252,
+            "def": 112,
+            "spe": 144
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earth Power",
+            "Refresh",
+            "Scald",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Comfey",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Triage",
+        "evs": {
+            "hp": 144,
+            "spa": 252,
+            "spe": 112
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Draining Kiss",
+            "Giga Drain",
+            "Hidden Power Ground"
+        ],
+        "hpType": "Ground"
+    },
+    {
+        "species": "Dhelmise",
+        "item": "Steelium Z",
+        "ability": "Steelworker",
+        "evs": {
+            "hp": 52,
+            "atk": 252,
+            "spe": 204
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Anchor Shot",
+            "Power Whip",
+            "Rapid Spin",
+            "Synthesis"
+        ]
+    },
+    {
+        "species": "Incineroar",
+        "gender": "M",
+        "item": "Figy Berry",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 244,
+            "def": 100,
+            "spd": 164
+        },
+        "nature": "Impish",
+        "moves": [
+            "Flare Blitz",
+            "Knock Off",
+            "Toxic",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Sigilyph",
+        "gender": "M",
+        "item": "Choice Specs",
+        "ability": "Tinted Lens",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Air Slash",
+            "Energy Ball",
+            "Heat Wave",
+            "Psyshock"
+        ]
+    },
+    {
+        "species": "Togedemaru",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Lightning Rod",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Iron Head",
+            "Nuzzle",
+            "U-turn",
+            "Zing Zap"
+        ]
+    }
+]

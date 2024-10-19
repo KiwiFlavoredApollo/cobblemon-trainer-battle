@@ -1,0 +1,126 @@
+[
+    {
+        "name": "",
+        "species": "Camerupt",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Quiet",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 0
+        },
+        "level": -2,
+        "moves": [
+            "Earth Power",
+            "Fire Blast",
+            "Rock Slide",
+            "Sunny Day"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Tropius",
+        "item": "",
+        "ability": "Aerilate",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Solar Blade",
+            "Double Edge",
+            "Dragon Dance",
+            "Synthesis"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Walrein",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Quiet",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 0
+        },
+        "level": -2,
+        "moves": [
+            "Surf",
+            "Blizzard",
+            "Crunch",
+            "Slack Off"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Comfey",
+        "item": "",
+        "ability": "Triage",
+        "gender": "",
+        "nature": "Modest",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Draining Kiss",
+            "Giga Drain",
+            "Leech Seed",
+            "Synthesis"
+        ]
+    }
+]

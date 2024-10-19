@@ -1,0 +1,125 @@
+[
+    {
+        "species": "Scizor",
+        "gender": "M",
+        "item": "Buginium Z",
+        "ability": "Technician",
+        "evs": {
+            "hp": 248,
+            "atk": 16,
+            "def": 100,
+            "spd": 140,
+            "spe": 4
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bullet Punch",
+            "Roost",
+            "Swords Dance",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Amoonguss",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 252,
+            "def": 220,
+            "spd": 36
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Foul Play",
+            "Giga Drain",
+            "Sludge Bomb",
+            "Spore"
+        ]
+    },
+    {
+        "species": "Chandelure",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Flame Body",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Flamethrower",
+            "Hex",
+            "Protect",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Hydreigon",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Levitate",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Dark Pulse",
+            "Defog",
+            "Draco Meteor",
+            "Fire Blast"
+        ]
+    },
+    {
+        "species": "Primarina",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Torrent",
+        "evs": {
+            "hp": 252,
+            "spd": 240,
+            "spe": 16
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Moonblast",
+            "Rest",
+            "Scald",
+            "Sleep Talk"
+        ]
+    },
+    {
+        "species": "Rhyperior",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Solid Rock",
+        "evs": {
+            "hp": 252,
+            "atk": 16,
+            "spd": 180,
+            "spe": 60
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Stealth Rock",
+            "Stone Edge",
+            "Swords Dance"
+        ]
+    }
+]

@@ -1,0 +1,125 @@
+[
+    {
+        "species": "Furret",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Keen Eye",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Brick Break",
+            "Double-Edge",
+            "Quick Attack",
+            "Shadow Ball"
+        ]
+    },
+    {
+        "species": "Charmeleon",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Blaze",
+        "evs": {
+            "atk": 252,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Belly Drum",
+            "Fire Blast",
+            "Hidden Power Ground",
+            "Rock Slide"
+        ],
+        "ivs": {
+            "spa": 30,
+            "spd": 30
+        }
+    },
+    {
+        "species": "Dragonair",
+        "gender": "F",
+        "item": "Leftovers",
+        "ability": "Shed Skin",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 2,
+            "spa": 30
+        },
+        "moves": [
+            "Hidden Power Grass",
+            "Ice Beam",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Lairon",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Rock Head",
+        "evs": {
+            "hp": 248,
+            "atk": 252,
+            "def": 8
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Body Slam",
+            "Double-Edge",
+            "Earthquake",
+            "Rock Slide"
+        ]
+    },
+    {
+        "species": "Minun",
+        "gender": "F",
+        "item": "Leftovers",
+        "ability": "Minus",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "def": 30
+        },
+        "moves": [
+            "Baton Pass",
+            "Hidden Power Ice",
+            "Substitute",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Sealeo",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Thick Fat",
+        "evs": {
+            "hp": 252,
+            "def": 248,
+            "spe": 8
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Ice Beam",
+            "Roar",
+            "Surf",
+            "Toxic"
+        ]
+    }
+]

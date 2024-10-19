@@ -1,0 +1,116 @@
+[
+    {
+        "species": "Pelipper",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Drizzle",
+        "teraType": "Water",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Relaxed",
+        "moves": [
+            "Hurricane",
+            "Knock Off",
+            "Roost",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Barraskewda",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Swift Swim",
+        "teraType": "Water",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Crunch",
+            "Flip Turn",
+            "Liquidation",
+            "Psychic Fangs"
+        ]
+    },
+    {
+        "species": "Gastrodon",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Sticky Hold",
+        "teraType": "Water",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Sassy",
+        "moves": [
+            "Earthquake",
+            "Ice Beam",
+            "Recover",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Samurott-Hisui",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Sharpness",
+        "teraType": "Water",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Ceaseless Edge",
+            "Flip Turn",
+            "Knock Off",
+            "Sacred Sword"
+        ]
+    },
+    {
+        "species": "Toxapex",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Regenerator",
+        "teraType": "Poison",
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spd": 8
+        },
+        "nature": "Impish",
+        "moves": [
+            "Haze",
+            "Poison Jab",
+            "Recover",
+            "Toxic Spikes"
+        ]
+    },
+    {
+        "species": "Urshifu-Rapid-Strike",
+        "gender": "M",
+        "item": "Punching Glove",
+        "ability": "Unseen Fist",
+        "teraType": "Fighting",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Drain Punch",
+            "Substitute",
+            "Surging Strikes",
+            "Swords Dance"
+        ]
+    }
+]

@@ -1,0 +1,120 @@
+[
+    {
+        "species": "Heatran",
+        "gender": "M",
+        "item": "Air Balloon",
+        "ability": "Flash Fire",
+        "teraType": "Grass",
+        "evs": {
+            "hp": 120,
+            "spa": 136,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earth Power",
+            "Magma Storm",
+            "Stealth Rock",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Hawlucha",
+        "gender": "M",
+        "item": "Grassy Seed",
+        "ability": "Unburden",
+        "teraType": "Poison",
+        "evs": {
+            "atk": 244,
+            "spd": 192,
+            "spe": 72
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Acrobatics",
+            "Close Combat",
+            "Substitute",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Hemogoblin",
+        "gender": "F",
+        "item": "Heavy-Duty Boots",
+        "ability": "Pixilate",
+        "teraType": "Fairy",
+        "evs": {
+            "atk": 252,
+            "spd": 36,
+            "spe": 220
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bulk Up",
+            "Extreme Speed",
+            "Flare Blitz",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Pecharunt",
+        "item": "Leftovers",
+        "ability": "Poison Puppeteer",
+        "teraType": "Fighting",
+        "evs": {
+            "hp": 192,
+            "spa": 252,
+            "spe": 64
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Malignant Chain",
+            "Nasty Plot",
+            "Shadow Ball",
+            "Tera Blast"
+        ]
+    },
+    {
+        "species": "Rillaboom",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Grassy Surge",
+        "teraType": "Grass",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Grassy Glide",
+            "Knock Off",
+            "U-turn",
+            "Wood Hammer"
+        ]
+    },
+    {
+        "species": "Roaring Moon",
+        "item": "Booster Energy",
+        "ability": "Protosynthesis",
+        "teraType": "Flying",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Acrobatics",
+            "Dragon Dance",
+            "Knock Off",
+            "Taunt"
+        ]
+    }
+]

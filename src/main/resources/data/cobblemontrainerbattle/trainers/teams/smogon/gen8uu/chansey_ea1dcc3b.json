@@ -1,0 +1,114 @@
+[
+    {
+        "species": "Chansey",
+        "item": "Eviolite",
+        "ability": "Natural Cure",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Aromatherapy",
+            "Seismic Toss",
+            "Soft-Boiled",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Nihilego",
+        "item": "Black Sludge",
+        "ability": "Beast Boost",
+        "evs": {
+            "hp": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Knock Off",
+            "Power Gem",
+            "Sludge Bomb",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Quagsire",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Unaware",
+        "evs": {
+            "hp": 252,
+            "def": 220,
+            "spd": 36
+        },
+        "nature": "Relaxed",
+        "moves": [
+            "Earthquake",
+            "Recover",
+            "Scald",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Salamence",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 248,
+            "def": 8,
+            "spe": 252
+        },
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Flamethrower",
+            "Hurricane",
+            "Roost"
+        ],
+        "nature": "Serious"
+    },
+    {
+        "species": "Tangrowth",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Relaxed",
+        "moves": [
+            "Giga Drain",
+            "Knock Off",
+            "Sludge Bomb",
+            "Synthesis"
+        ]
+    },
+    {
+        "species": "Umbreon",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Inner Focus",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Bold",
+        "moves": [
+            "Foul Play",
+            "Protect",
+            "Toxic",
+            "Wish"
+        ]
+    }
+]

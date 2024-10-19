@@ -1,0 +1,121 @@
+[
+    {
+        "species": "Stunky",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Aftermath",
+        "evs": {
+            "hp": 252,
+            "spd": 232,
+            "spe": 24
+        },
+        "nature": "Careful",
+        "moves": [
+            "Crunch",
+            "Defog",
+            "Taunt",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Krokorok",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Intimidate",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Knock Off",
+            "Pursuit",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Magmar",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Vital Spirit",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0,
+            "def": 30
+        },
+        "moves": [
+            "Fire Blast",
+            "Focus Blast",
+            "Hidden Power Ice",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Politoed",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Water Absorb",
+        "evs": {
+            "hp": 96,
+            "spa": 252,
+            "spe": 160
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Ice Beam",
+            "Scald",
+            "Substitute",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Sawsbuck",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Sap Sipper",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Horn Leech",
+            "Jump Kick",
+            "Return",
+            "Toxic"
+        ],
+        "happiness": 255
+    },
+    {
+        "species": "Wigglytuff",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Frisk",
+        "evs": {
+            "hp": 172,
+            "def": 252,
+            "spd": 84
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Dazzling Gleam",
+            "Protect",
+            "Stealth Rock",
+            "Wish"
+        ]
+    }
+]

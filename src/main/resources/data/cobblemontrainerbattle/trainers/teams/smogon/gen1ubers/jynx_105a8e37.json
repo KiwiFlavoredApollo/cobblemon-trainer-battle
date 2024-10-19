@@ -1,0 +1,74 @@
+[
+    {
+        "species": "Jynx",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Blizzard",
+            "Counter",
+            "Lovely Kiss",
+            "Rest"
+        ]
+    },
+    {
+        "species": "Chansey",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Seismic Toss",
+            "Soft-Boiled",
+            "Thunder Wave",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Mew",
+        "moves": [
+            "Body Slam",
+            "Reflect",
+            "Soft-Boiled",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Mewtwo",
+        "moves": [
+            "Amnesia",
+            "Psychic",
+            "Recover",
+            "Submission"
+        ]
+    },
+    {
+        "species": "Slowbro",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Amnesia",
+            "Rest",
+            "Surf",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Snorlax",
+        "moves": [
+            "Body Slam",
+            "Earthquake",
+            "Hyper Beam",
+            "Self-Destruct"
+        ]
+    }
+]

@@ -1,0 +1,157 @@
+[
+    {
+        "name": "",
+        "species": "Rhydon",
+        "item": "None",
+        "ability": "Rock Head",
+        "gender": "M",
+        "nature": "Lax",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 25,
+            "atk": 25,
+            "def": 25,
+            "spa": 25,
+            "spd": 25,
+            "spe": 25
+        },
+        "level": 52,
+        "moves": [
+            "Earthquake",
+            "Horn Drill",
+            "Rock Blast",
+            "Scary Face"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Slowbro",
+        "item": "None",
+        "ability": "Own Tempo",
+        "gender": "M",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 25,
+            "atk": 25,
+            "def": 25,
+            "spa": 25,
+            "spd": 25,
+            "spe": 25
+        },
+        "level": 54,
+        "moves": [
+            "Psychic",
+            "Headbutt",
+            "Amnesia",
+            "Disable"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Kangaskhan",
+        "item": "None",
+        "ability": "Scrappy",
+        "gender": "F",
+        "nature": "Mild",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 25,
+            "atk": 25,
+            "def": 25,
+            "spa": 25,
+            "spd": 25,
+            "spe": 25
+        },
+        "level": 52,
+        "moves": [
+            "Dizzy Punch",
+            "Bite",
+            "Endure",
+            "Reversal"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Machamp",
+        "item": "None",
+        "ability": "No Guard",
+        "gender": "F",
+        "nature": "Relaxed",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 25,
+            "atk": 25,
+            "def": 25,
+            "spa": 25,
+            "spd": 25,
+            "spe": 25
+        },
+        "level": 52,
+        "moves": [
+            "Cross Chop",
+            "Vital Throw",
+            "Revenge",
+            "Seismic Toss"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Ursaring",
+        "item": "None",
+        "ability": "Quick Feet",
+        "gender": "M",
+        "nature": "Careful",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 25,
+            "atk": 25,
+            "def": 25,
+            "spa": 25,
+            "spd": 25,
+            "spe": 25
+        },
+        "level": 55,
+        "moves": [
+            "Slash",
+            "Feint Attack",
+            "Snore",
+            "Rest"
+        ]
+    }
+]

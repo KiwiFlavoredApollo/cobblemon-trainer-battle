@@ -1,0 +1,157 @@
+[
+    {
+        "name": "",
+        "species": "Magnezone",
+        "item": "Custap Berry",
+        "ability": "Sturdy",
+        "gender": "",
+        "nature": "Naive",
+        "evs": {
+            "hp": 0,
+            "atk": 4,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -5,
+        "moves": [
+            "Thunder",
+            "Volt Switch",
+            "Explosion",
+            "Body Press"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Bisharp",
+        "item": "Focus Sash",
+        "ability": "Defiant",
+        "gender": "M",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -5,
+        "moves": [
+            "Swords Dance",
+            "Knock Off",
+            "Sucker Punch",
+            "Iron Head"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Whiscash",
+        "item": "Rindo Berry",
+        "ability": "Water Bubble",
+        "gender": "F",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -5,
+        "moves": [
+            "Dragon Dance",
+            "Waterfall",
+            "Earthquake",
+            "Bounce"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Salamence",
+        "item": "Yache Berry",
+        "ability": "Intimidate",
+        "gender": "F",
+        "nature": "Naive",
+        "evs": {
+            "hp": 0,
+            "atk": 4,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -5,
+        "moves": [
+            "Hurricane",
+            "Dragon Pulse",
+            "Hydro Pump",
+            "Earthquake"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Starmie",
+        "item": "Life Orb",
+        "ability": "Analytic",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -5,
+        "moves": [
+            "Flip Turn",
+            "Hydro Pump",
+            "Thunder",
+            "Psychic"
+        ]
+    }
+]

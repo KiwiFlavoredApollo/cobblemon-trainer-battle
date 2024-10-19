@@ -1,0 +1,112 @@
+[
+    {
+        "species": "Steelix",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sturdy",
+        "evs": {
+            "hp": 248,
+            "atk": 100,
+            "spd": 160
+        },
+        "nature": "Impish",
+        "moves": [
+            "Curse",
+            "Earthquake",
+            "Heavy Slam",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Aerodactyl",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Unnerve",
+        "evs": {
+            "atk": 244,
+            "def": 80,
+            "spe": 184
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Pursuit",
+            "Roost",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Dhelmise",
+        "item": "Colbur Berry",
+        "ability": "Steelworker",
+        "evs": {
+            "hp": 40,
+            "atk": 252,
+            "spe": 216
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Heavy Slam",
+            "Power Whip",
+            "Rapid Spin",
+            "Synthesis"
+        ]
+    },
+    {
+        "species": "Gallade",
+        "item": "Psychium Z",
+        "ability": "Justified",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Knock Off",
+            "Swords Dance",
+            "Zen Headbutt"
+        ]
+    },
+    {
+        "species": "Incineroar",
+        "gender": "M",
+        "item": "Figy Berry",
+        "ability": "Intimidate",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Flare Blitz",
+            "Knock Off",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Slowking",
+        "gender": "M",
+        "item": "Assault Vest",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 248,
+            "def": 40,
+            "spa": 176,
+            "spe": 44
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Fire Blast",
+            "Future Sight",
+            "Grass Knot",
+            "Scald"
+        ]
+    }
+]

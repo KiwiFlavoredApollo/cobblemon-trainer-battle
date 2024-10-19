@@ -1,0 +1,64 @@
+[
+    {
+        "name": "",
+        "species": "Hariyama",
+        "item": "None",
+        "ability": "Thick Fat",
+        "gender": "F",
+        "nature": "Impish",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 33,
+        "moves": [
+            "Knock Off",
+            "Vital Throw",
+            "Belly Drum",
+            "SmellingSalt"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Gligar",
+        "item": "None",
+        "ability": "Hyper Cutter",
+        "gender": "F",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 34,
+        "moves": [
+            "Feint Attack",
+            "Acrobatics",
+            "Slash",
+            "U-turn"
+        ]
+    }
+]

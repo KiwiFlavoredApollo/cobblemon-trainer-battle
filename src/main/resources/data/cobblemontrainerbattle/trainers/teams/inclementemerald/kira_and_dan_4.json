@@ -1,0 +1,126 @@
+[
+    {
+        "name": "",
+        "species": "Volbeat",
+        "item": "",
+        "ability": "Prankster",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 4,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Tail Glow",
+            "Bug Buzz",
+            "Thunder Wave",
+            "Protect"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Illumise",
+        "item": "",
+        "ability": "Tinted Lens",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Bug Buzz",
+            "Dazzling Gleam",
+            "Thunderbolt",
+            "Encore"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Froslass",
+        "item": "",
+        "ability": "Cursed Body",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Ice Beam",
+            "Shadow Ball",
+            "Will O Wisp",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Glalie",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Double Edge",
+            "Rock Slide",
+            "Ice Shard",
+            "Protect"
+        ]
+    }
+]

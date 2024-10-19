@@ -1,0 +1,113 @@
+[
+    {
+        "species": "Diancie",
+        "item": "Diancite",
+        "ability": "Clear Body",
+        "evs": {
+            "atk": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Diamond Storm",
+            "Earth Power",
+            "Moonblast",
+            "Psychic"
+        ]
+    },
+    {
+        "species": "Azumarill",
+        "gender": "M",
+        "item": "Sitrus Berry",
+        "ability": "Huge Power",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Aqua Jet",
+            "Belly Drum",
+            "Knock Off",
+            "Return"
+        ],
+        "happiness": 255
+    },
+    {
+        "species": "Clefable",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Magic Guard",
+        "evs": {
+            "hp": 252,
+            "def": 240,
+            "spe": 16
+        },
+        "nature": "Bold",
+        "moves": [
+            "Knock Off",
+            "Moonblast",
+            "Soft-Boiled",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Mimikyu",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Disguise",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Play Rough",
+            "Shadow Claw",
+            "Shadow Sneak",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Tapu Bulu",
+        "item": "Rockium Z",
+        "ability": "Grassy Surge",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Horn Leech",
+            "Stone Edge",
+            "Substitute",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Tapu Koko",
+        "item": "Magnet",
+        "ability": "Electric Surge",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0,
+            "def": 30
+        },
+        "moves": [
+            "Defog",
+            "Hidden Power Ice",
+            "Roost",
+            "Thunderbolt"
+        ],
+        "hpType": "Ice"
+    }
+]

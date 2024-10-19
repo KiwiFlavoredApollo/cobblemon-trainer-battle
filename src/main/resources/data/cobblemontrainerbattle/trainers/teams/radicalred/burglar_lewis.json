@@ -1,0 +1,64 @@
+[
+    {
+        "name": "",
+        "species": "Arcanine",
+        "item": "None",
+        "ability": "Flash Fire",
+        "gender": "F",
+        "nature": "Sassy",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 70,
+        "moves": [
+            "Fire Fang",
+            "Flare Blitz",
+            "Helping Hand",
+            "Retaliate"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Rapidash",
+        "item": "None",
+        "ability": "Flash Fire",
+        "gender": "M",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 69,
+        "moves": [
+            "Fire Blast",
+            "Bounce",
+            "Flare Blitz",
+            "Jump Kick"
+        ]
+    }
+]

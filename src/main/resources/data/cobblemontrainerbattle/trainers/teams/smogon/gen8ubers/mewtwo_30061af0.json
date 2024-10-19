@@ -1,0 +1,110 @@
+[
+    {
+        "species": "Mewtwo",
+        "item": "Leftovers",
+        "ability": "Pressure",
+        "evs": {
+            "hp": 248,
+            "spa": 8,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Psystrike",
+            "Recover",
+            "Taunt",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Eternatus",
+        "item": "Power Herb",
+        "ability": "Pressure",
+        "evs": {
+            "hp": 252,
+            "spd": 40,
+            "spe": 216
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Cosmic Power",
+            "Dragon Pulse",
+            "Meteor Beam",
+            "Recover"
+        ]
+    },
+    {
+        "species": "Groudon",
+        "item": "Leftovers",
+        "ability": "Drought",
+        "evs": {
+            "hp": 248,
+            "atk": 108,
+            "spe": 152
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Heat Crash",
+            "Rock Tomb",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Marshadow",
+        "item": "Life Orb",
+        "ability": "Technician",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Ice Punch",
+            "Low Kick",
+            "Shadow Sneak",
+            "Spectral Thief"
+        ]
+    },
+    {
+        "species": "Necrozma-Dusk-Mane",
+        "item": "Leftovers",
+        "ability": "Prism Armor",
+        "evs": {
+            "hp": 252,
+            "spd": 216,
+            "spe": 40
+        },
+        "nature": "Careful",
+        "moves": [
+            "Iron Head",
+            "Knock Off",
+            "Moonlight",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Yveltal",
+        "item": "Heavy-Duty Boots",
+        "ability": "Dark Aura",
+        "evs": {
+            "hp": 248,
+            "def": 72,
+            "spd": 188
+        },
+        "nature": "Careful",
+        "moves": [
+            "Defog",
+            "Knock Off",
+            "Roost",
+            "U-turn"
+        ]
+    }
+]

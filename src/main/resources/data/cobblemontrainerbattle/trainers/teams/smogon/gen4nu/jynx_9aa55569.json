@@ -1,0 +1,115 @@
+[
+    {
+        "species": "Jynx",
+        "item": "Focus Sash",
+        "ability": "Forewarn",
+        "evs": {
+            "hp": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Fake Out",
+            "Ice Beam",
+            "Lovely Kiss",
+            "Psychic"
+        ]
+    },
+    {
+        "species": "Haunter",
+        "gender": "F",
+        "item": "Life Orb",
+        "ability": "Levitate",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Hidden Power Ground",
+            "Shadow Ball",
+            "Sludge Bomb",
+            "Substitute"
+        ],
+        "ivs": {
+            "spa": 30,
+            "spd": 30
+        }
+    },
+    {
+        "species": "Manectric",
+        "gender": "F",
+        "item": "Choice Scarf",
+        "ability": "Static",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "spa": 30
+        },
+        "moves": [
+            "Flamethrower",
+            "Hidden Power Grass",
+            "Switcheroo",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Regirock",
+        "item": "Leftovers",
+        "ability": "Clear Body",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "moves": [
+            "Explosion",
+            "Rock Slide",
+            "Stealth Rock",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Slowking",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Own Tempo",
+        "evs": {
+            "hp": 252,
+            "def": 144,
+            "spd": 112
+        },
+        "nature": "Calm",
+        "moves": [
+            "Psychic",
+            "Slack Off",
+            "Surf",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Tauros",
+        "item": "Choice Band",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Double-Edge",
+            "Earthquake",
+            "Stone Edge",
+            "Zen Headbutt"
+        ]
+    }
+]

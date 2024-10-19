@@ -1,0 +1,114 @@
+[
+    {
+        "species": "Buzzwole",
+        "item": "Rocky Helmet",
+        "ability": "Beast Boost",
+        "evs": {
+            "hp": 252,
+            "atk": 16,
+            "def": 136,
+            "spe": 104
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Close Combat",
+            "Ice Punch",
+            "Roost",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Dracozolt",
+        "item": "Dragonium Z",
+        "ability": "Sand Rush",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bolt Beak",
+            "Fire Spin",
+            "Outrage",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Hippowdon",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sand Stream",
+        "evs": {
+            "hp": 252,
+            "def": 16,
+            "spd": 240
+        },
+        "nature": "Careful",
+        "moves": [
+            "Earthquake",
+            "Slack Off",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Mandibuzz",
+        "item": "Heavy-Duty Boots",
+        "ability": "Overcoat",
+        "evs": {
+            "hp": 248,
+            "def": 80,
+            "spd": 164,
+            "spe": 16
+        },
+        "nature": "Impish",
+        "moves": [
+            "Defog",
+            "Foul Play",
+            "Roost",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Scizor",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Technician",
+        "evs": {
+            "hp": 248,
+            "atk": 16,
+            "spd": 200,
+            "spe": 44
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bullet Punch",
+            "Knock Off",
+            "Roost",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Slowking",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 252,
+            "def": 116,
+            "spd": 140
+        },
+        "nature": "Sassy",
+        "ivs": {
+            "atk": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Future Sight",
+            "Scald",
+            "Slack Off",
+            "Teleport"
+        ]
+    }
+]

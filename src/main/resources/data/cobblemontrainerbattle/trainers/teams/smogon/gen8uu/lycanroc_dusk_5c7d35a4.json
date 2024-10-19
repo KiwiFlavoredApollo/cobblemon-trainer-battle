@@ -1,0 +1,118 @@
+[
+    {
+        "species": "Lycanroc-Dusk",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Tough Claws",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Accelerock",
+            "Close Combat",
+            "Psychic Fangs",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Amoonguss",
+        "gender": "M",
+        "item": "Eject Button",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 252,
+            "def": 136,
+            "spd": 120
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Foul Play",
+            "Sludge Bomb",
+            "Stun Spore",
+            "Synthesis"
+        ]
+    },
+    {
+        "species": "Celesteela",
+        "item": "Leftovers",
+        "ability": "Beast Boost",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Sassy",
+        "moves": [
+            "Flamethrower",
+            "Heavy Slam",
+            "Leech Seed",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Golisopod",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Emergency Exit",
+        "evs": {
+            "hp": 196,
+            "atk": 252,
+            "spe": 60
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Close Combat",
+            "First Impression",
+            "Knock Off",
+            "Spikes"
+        ]
+    },
+    {
+        "species": "Nidoqueen",
+        "item": "Black Sludge",
+        "ability": "Sheer Force",
+        "evs": {
+            "hp": 252,
+            "def": 72,
+            "spa": 136,
+            "spe": 48
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earth Power",
+            "Flamethrower",
+            "Sludge Wave",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Rotom-Wash",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 248,
+            "def": 148,
+            "spd": 24,
+            "spe": 88
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Hydro Pump",
+            "Pain Split",
+            "Volt Switch"
+        ]
+    }
+]

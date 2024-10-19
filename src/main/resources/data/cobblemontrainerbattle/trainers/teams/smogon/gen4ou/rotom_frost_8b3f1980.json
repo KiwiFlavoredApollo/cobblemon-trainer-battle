@@ -1,0 +1,123 @@
+[
+    {
+        "species": "Rotom-Frost",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 244,
+            "spa": 108,
+            "spd": 68,
+            "spe": 88
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Blizzard",
+            "Pain Split",
+            "Thunderbolt",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Jirachi",
+        "item": "Leftovers",
+        "ability": "Serene Grace",
+        "evs": {
+            "hp": 156,
+            "spa": 176,
+            "spe": 176
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 3,
+            "spa": 30,
+            "spd": 30
+        },
+        "moves": [
+            "Calm Mind",
+            "Draco Meteor",
+            "Hidden Power Ground",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Latias",
+        "item": "Choice Specs",
+        "ability": "Levitate",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Draco Meteor",
+            "Dragon Pulse",
+            "Sleep Talk",
+            "Surf"
+        ]
+    },
+    {
+        "species": "Lucario",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Inner Focus",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Close Combat",
+            "Crunch",
+            "Ice Punch",
+            "Thunder Punch"
+        ]
+    },
+    {
+        "species": "Skarmory",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sturdy",
+        "evs": {
+            "hp": 252,
+            "spd": 192,
+            "spe": 64
+        },
+        "nature": "Careful",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Roost",
+            "Spikes",
+            "Taunt",
+            "Whirlwind"
+        ]
+    },
+    {
+        "species": "Swampert",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Torrent",
+        "evs": {
+            "hp": 204,
+            "atk": 104,
+            "def": 112,
+            "spd": 88
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Ice Punch",
+            "Stealth Rock",
+            "Waterfall"
+        ]
+    }
+]

@@ -1,0 +1,126 @@
+[
+    {
+        "species": "Forretress",
+        "gender": "M",
+        "item": "Custap Berry",
+        "ability": "Sturdy",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 252
+        },
+        "nature": "Lax",
+        "ivs": {
+            "spd": 18,
+            "spe": 30
+        },
+        "moves": [
+            "Explosion",
+            "Rapid Spin",
+            "Spikes",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Galvantula",
+        "gender": "F",
+        "item": "Life Orb",
+        "ability": "Compound Eyes",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "def": 30
+        },
+        "moves": [
+            "Agility",
+            "Giga Drain",
+            "Hidden Power Ice",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Heracross",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Moxie",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Megahorn",
+            "Pursuit",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Scizor",
+        "gender": "M",
+        "item": "Metal Coat",
+        "ability": "Technician",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bullet Punch",
+            "Superpower",
+            "Swords Dance",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Volcarona",
+        "gender": "F",
+        "item": "Lum Berry",
+        "ability": "Flame Body",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 3,
+            "spa": 30,
+            "spd": 30
+        },
+        "moves": [
+            "Fire Blast",
+            "Giga Drain",
+            "Hidden Power Ground",
+            "Quiver Dance"
+        ]
+    },
+    {
+        "species": "Yanmega",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Speed Boost",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Air Slash",
+            "Bug Buzz",
+            "Giga Drain",
+            "Protect"
+        ]
+    }
+]

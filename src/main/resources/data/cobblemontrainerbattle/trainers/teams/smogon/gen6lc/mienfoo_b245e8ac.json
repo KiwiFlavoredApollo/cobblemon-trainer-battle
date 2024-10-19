@@ -1,0 +1,119 @@
+[
+    {
+        "species": "Mienfoo",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 156,
+            "def": 196,
+            "spd": 116
+        },
+        "nature": "Careful",
+        "moves": [
+            "Acrobatics",
+            "High Jump Kick",
+            "Knock Off",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Ferroseed",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Iron Barbs",
+        "evs": {
+            "hp": 84,
+            "atk": 36,
+            "def": 188,
+            "spd": 148,
+            "spe": 36
+        },
+        "nature": "Careful",
+        "moves": [
+            "Bullet Seed",
+            "Iron Head",
+            "Stealth Rock",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Gothita",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Shadow Tag",
+        "evs": {
+            "def": 36,
+            "spa": 236,
+            "spe": 236
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Energy Ball",
+            "Psychic",
+            "Thunderbolt",
+            "Trick"
+        ]
+    },
+    {
+        "species": "Pawniard",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Defiant",
+        "evs": {
+            "atk": 156,
+            "def": 36,
+            "spd": 116,
+            "spe": 196
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Iron Head",
+            "Knock Off",
+            "Sucker Punch",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Ponyta",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Flame Body",
+        "evs": {
+            "atk": 76,
+            "def": 156,
+            "spd": 76,
+            "spe": 196
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Flame Charge",
+            "Flare Blitz",
+            "Morning Sun",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Staryu",
+        "item": "Eviolite",
+        "ability": "Natural Cure",
+        "evs": {
+            "hp": 116,
+            "def": 156,
+            "spe": 236
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Rapid Spin",
+            "Recover",
+            "Scald",
+            "Thunder Wave"
+        ]
+    }
+]

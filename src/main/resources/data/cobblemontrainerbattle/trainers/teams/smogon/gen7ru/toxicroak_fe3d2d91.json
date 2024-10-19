@@ -1,0 +1,113 @@
+[
+    {
+        "species": "Toxicroak",
+        "gender": "M",
+        "item": "Poisonium Z",
+        "ability": "Dry Skin",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Drain Punch",
+            "Gunk Shot",
+            "Sucker Punch",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Diancie",
+        "item": "Leftovers",
+        "ability": "Clear Body",
+        "evs": {
+            "hp": 168,
+            "spa": 180,
+            "spe": 156
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Moonblast",
+            "Power Gem",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Donphan",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sturdy",
+        "evs": {
+            "hp": 248,
+            "atk": 96,
+            "def": 76,
+            "spe": 88
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Ice Shard",
+            "Knock Off",
+            "Rapid Spin"
+        ]
+    },
+    {
+        "species": "Golisopod",
+        "gender": "M",
+        "item": "Sitrus Berry",
+        "ability": "Emergency Exit",
+        "shiny": true,
+        "evs": {
+            "hp": 100,
+            "atk": 244,
+            "spe": 164
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Aqua Jet",
+            "First Impression",
+            "Leech Life",
+            "Liquidation"
+        ]
+    },
+    {
+        "species": "Metagross",
+        "item": "Choice Band",
+        "ability": "Clear Body",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bullet Punch",
+            "Earthquake",
+            "Meteor Mash",
+            "Pursuit"
+        ]
+    },
+    {
+        "species": "Noivern",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Infiltrator",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Draco Meteor",
+            "Hurricane",
+            "Switcheroo",
+            "U-turn"
+        ]
+    }
+]

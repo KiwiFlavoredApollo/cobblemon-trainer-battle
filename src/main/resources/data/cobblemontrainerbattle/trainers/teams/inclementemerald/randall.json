@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Swellow",
+        "item": "Flame Orb",
+        "ability": "",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Quick Attack",
+            "Brave Bird",
+            "Double Edge",
+            "Protect"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Lopunny",
+        "item": "Salac Berry",
+        "ability": "",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Quick Attack",
+            "Jump Kick",
+            "Return",
+            "Ice Punch"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Sawsbuck",
+        "item": "Heat Rock",
+        "ability": "",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Sunny Day",
+            "Jump Kick",
+            "Return",
+            "Horn Leech"
+        ]
+    }
+]

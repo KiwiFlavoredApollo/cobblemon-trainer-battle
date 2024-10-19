@@ -1,0 +1,121 @@
+[
+    {
+        "species": "Zapdos",
+        "item": "Leftovers",
+        "ability": "Pressure",
+        "evs": {
+            "hp": 248,
+            "def": 216,
+            "spd": 12,
+            "spe": 32
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 2,
+            "def": 30
+        },
+        "moves": [
+            "Hidden Power Ice",
+            "Roost",
+            "Substitute",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Blissey",
+        "item": "Leftovers",
+        "ability": "Natural Cure",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spa": 4
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Heal Bell",
+            "Ice Beam",
+            "Seismic Toss",
+            "Soft-Boiled"
+        ]
+    },
+    {
+        "species": "Forretress",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sturdy",
+        "evs": {
+            "hp": 248,
+            "def": 8,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "moves": [
+            "Payback",
+            "Rapid Spin",
+            "Rest",
+            "Spikes"
+        ]
+    },
+    {
+        "species": "Jirachi",
+        "item": "Leftovers",
+        "ability": "Serene Grace",
+        "evs": {
+            "hp": 248,
+            "def": 168,
+            "spd": 60,
+            "spe": 32
+        },
+        "nature": "Impish",
+        "moves": [
+            "Body Slam",
+            "Iron Head",
+            "Protect",
+            "Wish"
+        ]
+    },
+    {
+        "species": "Latias",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 204,
+            "spa": 120,
+            "spe": 184
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "spa": 30,
+            "spe": 30
+        },
+        "moves": [
+            "Calm Mind",
+            "Dragon Pulse",
+            "Hidden Power Fire",
+            "Recover"
+        ]
+    },
+    {
+        "species": "Swampert",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Torrent",
+        "evs": {
+            "hp": 248,
+            "def": 216,
+            "spd": 40,
+            "spe": 4
+        },
+        "nature": "Relaxed",
+        "moves": [
+            "Earthquake",
+            "Ice Beam",
+            "Roar",
+            "Stealth Rock"
+        ]
+    }
+]

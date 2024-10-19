@@ -1,0 +1,126 @@
+[
+    {
+        "name": "",
+        "species": "Fearow",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Drill Peck",
+            "Double Edge",
+            "Drill Run",
+            "Focus Energy"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Zebstrika",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Volt Tackle",
+            "Flare Blitz",
+            "Jump Kick",
+            "Agility"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Scolipede",
+        "item": "",
+        "ability": "Speed Boost",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Megahorn",
+            "Poison Jab",
+            "Protect",
+            "Baton Pass"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Rapidash-Galar",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Play Rough",
+            "Zen Headbutt",
+            "Drill Run",
+            "Swords Dance"
+        ]
+    }
+]

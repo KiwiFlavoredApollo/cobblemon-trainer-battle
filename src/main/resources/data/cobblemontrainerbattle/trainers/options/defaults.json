@@ -1,0 +1,15 @@
+{
+  "condition": {
+    "isRematchAllowedAfterVictory": true,
+    "maximumPartyLevel": 100,
+    "minimumPartyLevel": 1
+  },
+  "onVictory": {
+    "balance": 0,
+    "commands": []
+  },
+  "onDefeat": {
+    "balance": 0,
+    "commands": []
+  }
+}

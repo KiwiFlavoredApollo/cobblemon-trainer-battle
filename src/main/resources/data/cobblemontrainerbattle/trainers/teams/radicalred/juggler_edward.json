@@ -1,0 +1,126 @@
+[
+    {
+        "name": "",
+        "species": "Voltorb",
+        "item": "None",
+        "ability": "Soundproof",
+        "gender": "",
+        "nature": "Calm",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 46,
+        "moves": [
+            "Swift",
+            "Light Screen",
+            "Spark",
+            "Sonic Boom"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Voltorb",
+        "item": "None",
+        "ability": "Soundproof",
+        "gender": "",
+        "nature": "Careful",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 46,
+        "moves": [
+            "Swift",
+            "Light Screen",
+            "Spark",
+            "Sonic Boom"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Electrode",
+        "item": "None",
+        "ability": "Soundproof",
+        "gender": "",
+        "nature": "Brave",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 47,
+        "moves": [
+            "Swift",
+            "Spark",
+            "Selfdestruct",
+            "Sonic Boom"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Mr. Mime",
+        "item": "None",
+        "ability": "Soundproof",
+        "gender": "F",
+        "nature": "Impish",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 48,
+        "moves": [
+            "Psychic",
+            "Role Play",
+            "Reflect",
+            "Encore"
+        ]
+    }
+]

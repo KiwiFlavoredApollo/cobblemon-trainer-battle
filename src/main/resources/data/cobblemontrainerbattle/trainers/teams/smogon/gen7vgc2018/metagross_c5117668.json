@@ -1,0 +1,129 @@
+[
+    {
+        "species": "Metagross",
+        "item": "Metagrossite",
+        "ability": "Clear Body",
+        "level": 50,
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Iron Head",
+            "Protect",
+            "Stomping Tantrum",
+            "Zen Headbutt"
+        ]
+    },
+    {
+        "species": "Landorus-Therian",
+        "item": "Assault Vest",
+        "ability": "Intimidate",
+        "level": 50,
+        "evs": {
+            "hp": 252,
+            "def": 28,
+            "spa": 132,
+            "spd": 12,
+            "spe": 84
+        },
+        "nature": "Modest",
+        "moves": [
+            "Earth Power",
+            "Knock Off",
+            "Rock Tomb",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Porygon2",
+        "item": "Eviolite",
+        "ability": "Download",
+        "level": 50,
+        "evs": {
+            "hp": 252,
+            "atk": 204,
+            "def": 12,
+            "spa": 36,
+            "spd": 4
+        },
+        "nature": "Quiet",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Ice Beam",
+            "Return",
+            "Shadow Ball",
+            "Trick Room"
+        ],
+        "happiness": 255
+    },
+    {
+        "species": "Tapu Fini",
+        "item": "Waterium Z",
+        "ability": "Misty Surge",
+        "level": 50,
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spa": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Haze",
+            "Moonblast",
+            "Muddy Water",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Tapu Lele",
+        "item": "Life Orb",
+        "ability": "Psychic Surge",
+        "level": 50,
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Dazzling Gleam",
+            "Hidden Power Fire",
+            "Protect",
+            "Psyshock"
+        ]
+    },
+    {
+        "species": "Zapdos",
+        "item": "Wiki Berry",
+        "ability": "Pressure",
+        "level": 50,
+        "evs": {
+            "hp": 244,
+            "def": 28,
+            "spa": 148,
+            "spd": 84,
+            "spe": 4
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Detect",
+            "Heat Wave",
+            "Tailwind",
+            "Thunderbolt"
+        ]
+    }
+]

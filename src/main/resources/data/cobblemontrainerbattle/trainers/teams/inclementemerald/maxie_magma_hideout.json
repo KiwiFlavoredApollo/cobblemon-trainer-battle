@@ -1,0 +1,188 @@
+[
+    {
+        "name": "",
+        "species": "Groudon",
+        "item": "Lum Berry",
+        "ability": "Drought",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 100,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 156
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Precipice Blades",
+            "Heat Crash",
+            "Stone Edge",
+            "Rock Polish"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Lycanroc-Dusk",
+        "item": "Rock Gem",
+        "ability": "Tough Claws",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Strength",
+            "Close Combat",
+            "Psychic Fangs",
+            "Accelerock"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Hydreigon",
+        "item": "White Herb",
+        "ability": "",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Dark Pulse",
+            "Draco Meteor",
+            "Fire Blast",
+            "Focus Blast"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Crobat",
+        "item": "Shell Bell",
+        "ability": "Infiltrator",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Brave Bird",
+            "Cross Poison",
+            "Super Fang",
+            "Hypnosis"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Victreebel",
+        "item": "Life Orb",
+        "ability": "Chlorophyll",
+        "gender": "",
+        "nature": "Naive",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 0,
+            "spa": 4,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Solar Blade",
+            "Poison Jab",
+            "Weather Ball",
+            "Sleep Powder"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Camerupt",
+        "item": "Cameruptite",
+        "ability": "Anger Point (for Trace)",
+        "gender": "",
+        "nature": "Modest",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 4
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 2,
+        "moves": [
+            "Earth Power",
+            "Fire Blast",
+            "Solar Beam",
+            "Flash Cannon"
+        ]
+    }
+]

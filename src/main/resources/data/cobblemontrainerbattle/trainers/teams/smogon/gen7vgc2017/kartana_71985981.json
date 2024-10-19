@@ -1,0 +1,126 @@
+[
+    {
+        "species": "Kartana",
+        "item": "Focus Sash",
+        "ability": "Beast Boost",
+        "level": 50,
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Leaf Blade",
+            "Protect",
+            "Sacred Sword",
+            "Smart Strike"
+        ]
+    },
+    {
+        "species": "Araquanid",
+        "gender": "M",
+        "item": "Mystic Water",
+        "ability": "Water Bubble",
+        "level": 50,
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "spd": 4
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Liquidation",
+            "Protect",
+            "Toxic",
+            "Wide Guard"
+        ]
+    },
+    {
+        "species": "Arcanine",
+        "gender": "M",
+        "item": "Sitrus Berry",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spa": 4,
+            "spd": 92,
+            "spe": 156
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Flamethrower",
+            "Roar",
+            "Snarl",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Muk-Alola",
+        "gender": "M",
+        "item": "Iapapa Berry",
+        "ability": "Gluttony",
+        "level": 50,
+        "evs": {
+            "hp": 204,
+            "atk": 252,
+            "def": 44,
+            "spd": 4,
+            "spe": 4
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Imprison",
+            "Knock Off",
+            "Poison Jab",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Porygon2",
+        "item": "Eviolite",
+        "ability": "Download",
+        "evs": {
+            "hp": 252,
+            "def": 92,
+            "spa": 20,
+            "spd": 140
+        },
+        "nature": "Sassy",
+        "ivs": {
+            "atk": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Ice Beam",
+            "Recover",
+            "Shadow Ball",
+            "Trick Room"
+        ]
+    },
+    {
+        "species": "Tapu Koko",
+        "item": "Fairium Z",
+        "ability": "Electric Surge",
+        "level": 50,
+        "evs": {
+            "hp": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Dazzling Gleam",
+            "Protect",
+            "Taunt",
+            "Thunderbolt"
+        ]
+    }
+]

@@ -1,0 +1,64 @@
+[
+    {
+        "name": "",
+        "species": "Lumineon",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 60,
+            "atk": 60,
+            "def": 60,
+            "spa": 60,
+            "spd": 60,
+            "spe": 60
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Hydro Pump",
+            "Air Slash",
+            "Quiver Dance",
+            "Soak"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Octillery",
+        "item": "",
+        "ability": "Sniper",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 60,
+            "atk": 60,
+            "def": 60,
+            "spa": 60,
+            "spd": 60,
+            "spe": 60
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Octazooka",
+            "Ice Beam",
+            "Signal Beam",
+            "Focus Energy"
+        ]
+    }
+]

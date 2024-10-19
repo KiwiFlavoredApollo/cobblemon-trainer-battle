@@ -1,0 +1,122 @@
+[
+    {
+        "species": "Groudon",
+        "item": "Red Orb",
+        "ability": "Drought",
+        "teraType": "Ground",
+        "evs": {
+            "hp": 240,
+            "atk": 28,
+            "def": 88,
+            "spe": 152
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Precipice Blades",
+            "Rock Tomb",
+            "Stealth Rock",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Arceus-Dark",
+        "item": "Dread Plate",
+        "ability": "Multitype",
+        "teraType": "Poison",
+        "evs": {
+            "hp": 248,
+            "def": 108,
+            "spd": 28,
+            "spe": 124
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Foul Play",
+            "Perish Song",
+            "Recover",
+            "Whirlpool"
+        ]
+    },
+    {
+        "species": "Giratina-Origin",
+        "item": "Griseous Core",
+        "ability": "Levitate",
+        "teraType": "Steel",
+        "evs": {
+            "hp": 248,
+            "atk": 136,
+            "def": 60,
+            "spd": 52,
+            "spe": 12
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Defog",
+            "Dragon Tail",
+            "Poltergeist",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Ho-Oh",
+        "item": "Heavy-Duty Boots",
+        "ability": "Regenerator",
+        "teraType": "Ground",
+        "evs": {
+            "hp": 248,
+            "atk": 156,
+            "def": 16,
+            "spd": 76,
+            "spe": 12
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Brave Bird",
+            "Earthquake",
+            "Flare Blitz",
+            "Whirlwind"
+        ]
+    },
+    {
+        "species": "Kyogre",
+        "item": "Blue Orb",
+        "ability": "Drizzle",
+        "teraType": "Water",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Ice Beam",
+            "Origin Pulse",
+            "Thunder",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Zacian",
+        "item": "Rusted Sword",
+        "ability": "Intrepid Sword",
+        "teraType": "Fighting",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Iron Head",
+            "Swords Dance",
+            "Wild Charge"
+        ]
+    }
+]

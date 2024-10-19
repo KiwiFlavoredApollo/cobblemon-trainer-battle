@@ -1,0 +1,157 @@
+[
+    {
+        "name": "",
+        "species": "Ninetales",
+        "item": "Grass Gem",
+        "ability": "Drought",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Heat Wave",
+            "Solar Beam",
+            "Sunny Day",
+            "Will O Wisp"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Flygon",
+        "item": "White Herb",
+        "ability": "",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Draco Meteor",
+            "Earth Power",
+            "Solar Beam",
+            "Flamethrower"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Pidgeot",
+        "item": "Yache Berry",
+        "ability": "",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Hyper Voice",
+            "Air Slash",
+            "Heat Wave",
+            "Roost"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Venusaur",
+        "item": "Life Orb",
+        "ability": "",
+        "gender": "",
+        "nature": "Modest",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Giga Drain",
+            "Sludge Bomb",
+            "Weather Ball",
+            "Growth"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Aggron",
+        "item": "Choice Scarf",
+        "ability": "Rock Head",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 0,
+        "moves": [
+            "Head Smash",
+            "Iron Tail",
+            "Earthquake",
+            "Ice Punch"
+        ]
+    }
+]

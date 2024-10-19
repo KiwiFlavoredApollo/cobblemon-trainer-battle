@@ -1,0 +1,123 @@
+[
+    {
+        "name": "",
+        "species": "mantinesevii",
+        "item": "Air Balloon",
+        "ability": "Storm Drain",
+        "gender": "M",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 30,
+            "def": 31,
+            "spa": 30,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Thunder",
+            "Sludge Wave",
+            "Water Pulse",
+            "Hidden Power"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Milotic",
+        "item": "Choice Scarf",
+        "ability": "Competitive",
+        "gender": "M",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -4,
+        "moves": [
+            "Surf"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Greninja",
+        "item": "Choice Specs",
+        "ability": "Protean",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -4,
+        "moves": [
+            "Surf",
+            "Ice Beam",
+            "Dark Pulse",
+            "Extrasensory"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Lapras",
+        "item": "Laprasite",
+        "ability": "Water Absorb",
+        "gender": "F",
+        "nature": "Modest",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Boomburst",
+            "Blizzard",
+            "Draco Meteor",
+            "Thunderbolt"
+        ]
+    }
+]

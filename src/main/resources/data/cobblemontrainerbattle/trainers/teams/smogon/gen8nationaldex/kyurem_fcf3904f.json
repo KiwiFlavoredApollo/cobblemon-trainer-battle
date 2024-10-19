@@ -1,0 +1,118 @@
+[
+    {
+        "species": "Kyurem",
+        "item": "Icium Z",
+        "ability": "Pressure",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earth Power",
+            "Freeze-Dry",
+            "Hidden Power Fire",
+            "Roost"
+        ],
+        "hpType": "Fire"
+    },
+    {
+        "species": "Landorus-Therian",
+        "item": "Rocky Helmet",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 248,
+            "def": 240,
+            "spe": 20
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Hidden Power Ice",
+            "Stealth Rock",
+            "U-turn"
+        ],
+        "ivs": {
+            "atk": 30,
+            "def": 30
+        },
+        "hpType": "Ice"
+    },
+    {
+        "species": "Lopunny",
+        "gender": "M",
+        "item": "Lopunnite",
+        "ability": "Limber",
+        "happiness": 0,
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Fake Out",
+            "Frustration",
+            "Quick Attack"
+        ]
+    },
+    {
+        "species": "Melmetal",
+        "item": "Leftovers",
+        "ability": "Iron Fist",
+        "evs": {
+            "atk": 252,
+            "spd": 244,
+            "spe": 12
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Double Iron Bash",
+            "Earthquake",
+            "Protect",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Tapu Fini",
+        "item": "Choice Scarf",
+        "ability": "Misty Surge",
+        "evs": {
+            "hp": 248,
+            "spd": 68,
+            "spe": 192
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Hydro Pump",
+            "Moonblast",
+            "Trick"
+        ]
+    },
+    {
+        "species": "Victini",
+        "item": "Heavy-Duty Boots",
+        "ability": "Victory Star",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Bolt Strike",
+            "Encore",
+            "U-turn",
+            "V-create"
+        ]
+    }
+]

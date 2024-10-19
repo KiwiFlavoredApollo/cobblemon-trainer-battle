@@ -1,0 +1,128 @@
+[
+    {
+        "species": "Machamp",
+        "gender": "M",
+        "item": "Lum Berry",
+        "ability": "No Guard",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 4
+        },
+        "nature": "Brave",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Dynamic Punch",
+            "Earthquake",
+            "Payback",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Cresselia",
+        "item": "Choice Scarf",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 252,
+            "spd": 24,
+            "spe": 232
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Ice Beam",
+            "Lunar Dance",
+            "Trick",
+            "Trick Room"
+        ]
+    },
+    {
+        "species": "Fidgit",
+        "gender": "M",
+        "item": "Sitrus Berry",
+        "ability": "Persistent",
+        "evs": {
+            "hp": 252,
+            "def": 12,
+            "spd": 176
+        },
+        "nature": "Relaxed",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Encore",
+            "Stealth Rock",
+            "Trick Room",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Rhyperior",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Solid Rock",
+        "evs": {
+            "hp": 32,
+            "atk": 252,
+            "spd": 224
+        },
+        "nature": "Brave",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Earthquake",
+            "Megahorn",
+            "Stone Edge",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Scizor",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Technician",
+        "evs": {
+            "hp": 248,
+            "atk": 252,
+            "spd": 8
+        },
+        "nature": "Brave",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Bullet Punch",
+            "Pursuit",
+            "Superpower",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Slowking",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Own Tempo",
+        "evs": {
+            "hp": 252,
+            "spa": 252,
+            "spd": 4
+        },
+        "nature": "Quiet",
+        "ivs": {
+            "atk": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Nasty Plot",
+            "Psychic",
+            "Surf",
+            "Trick Room"
+        ]
+    }
+]

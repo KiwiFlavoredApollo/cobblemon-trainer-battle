@@ -1,0 +1,59 @@
+[
+    {
+        "species": "Snorlax",
+        "moves": [
+            "Amnesia",
+            "Blizzard",
+            "Body Slam",
+            "Rest"
+        ]
+    },
+    {
+        "species": "Chansey",
+        "moves": [
+            "Reflect",
+            "Seismic Toss",
+            "Soft-Boiled",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Exeggutor",
+        "moves": [
+            "Double-Edge",
+            "Psychic",
+            "Rest",
+            "Stun Spore"
+        ]
+    },
+    {
+        "species": "Persian",
+        "moves": [
+            "Body Slam",
+            "Bubble Beam",
+            "Slash",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Slowbro",
+        "evs": {
+            "spa": 216
+        },
+        "moves": [
+            "Amnesia",
+            "Psychic",
+            "Rest",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Tauros",
+        "moves": [
+            "Blizzard",
+            "Body Slam",
+            "Earthquake",
+            "Stomp"
+        ]
+    }
+]

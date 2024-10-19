@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Froslass",
+        "item": "Light Clay",
+        "ability": "Snow Cloak",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -5,
+        "moves": [
+            "Aurora Veil",
+            "Blizzard",
+            "Shadow Ball",
+            "Freeze-Dry"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Barbaracle",
+        "item": "White Herb",
+        "ability": "Tough Claws",
+        "gender": "M",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 4,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -5,
+        "moves": [
+            "Shell Smash",
+            "Liquidation",
+            "Close Combat",
+            "Stone Edge"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Arctozolt",
+        "item": "Magnet",
+        "ability": "Slush Rush",
+        "gender": "",
+        "nature": "Naive",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 4,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -5,
+        "moves": [
+            "Bolt Beak",
+            "Blizzard",
+            "Low Kick",
+            "Stone Edge"
+        ]
+    }
+]

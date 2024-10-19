@@ -1,0 +1,74 @@
+[
+    {
+        "species": "Magneton",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Reflect",
+            "Thunder",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Aerodactyl",
+        "moves": [
+            "Double-Edge",
+            "Fire Blast",
+            "Sky Attack",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Charizard",
+        "moves": [
+            "Earthquake",
+            "Fire Blast",
+            "Hyper Beam",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Mr. Mime",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Counter",
+            "Psychic",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Poliwhirl",
+        "evs": {
+            "atk": 0
+        },
+        "ivs": {
+            "atk": 3
+        },
+        "moves": [
+            "Amnesia",
+            "Blizzard",
+            "Hypnosis",
+            "Surf"
+        ]
+    },
+    {
+        "species": "Raticate",
+        "moves": [
+            "Body Slam",
+            "Hyper Beam",
+            "Super Fang",
+            "Thunderbolt"
+        ]
+    }
+]

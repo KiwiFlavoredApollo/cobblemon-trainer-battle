@@ -1,0 +1,188 @@
+[
+    {
+        "name": "",
+        "species": "Darkrai",
+        "item": "Wide Lens",
+        "ability": "",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Dark Void",
+            "Dark Pulse",
+            "Sludge Bomb",
+            "Focus Blast"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Yveltal",
+        "item": "Big Root",
+        "ability": "",
+        "gender": "",
+        "nature": "Hasty",
+        "evs": {
+            "hp": 0,
+            "atk": 4,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Dark Pulse",
+            "Oblivion Wing",
+            "Sucker Punch",
+            "Taunt"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Greninja",
+        "item": "Life Orb",
+        "ability": "Protean",
+        "gender": "",
+        "nature": "Hasty",
+        "evs": {
+            "hp": 0,
+            "atk": 4,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Mat Block",
+            "Ice Beam",
+            "Extrasensory",
+            "Gunk Shot"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Incineroar",
+        "item": "Figy Berry",
+        "ability": "Intimidate",
+        "gender": "",
+        "nature": "Impish",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 252,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Knock Off",
+            "Flare Blitz",
+            "Fake Out",
+            "U Turn"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Hoopa-Unbound",
+        "item": "Dark Gem",
+        "ability": "",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Hyperspace Fury",
+            "Zen Headbutt",
+            "Gunk Shot",
+            "Protect"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Absol",
+        "item": "Absolite",
+        "ability": "",
+        "gender": "",
+        "nature": "Naive",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 0,
+            "spa": 4,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 2,
+        "moves": [
+            "Knock Off",
+            "Play Rough",
+            "Fire Blast",
+            "Close Combat"
+        ]
+    }
+]

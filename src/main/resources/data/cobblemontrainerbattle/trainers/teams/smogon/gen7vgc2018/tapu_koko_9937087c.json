@@ -1,0 +1,132 @@
+[
+    {
+        "species": "Tapu Koko",
+        "item": "Assault Vest",
+        "ability": "Electric Surge",
+        "level": 50,
+        "evs": {
+            "hp": 100,
+            "spd": 228,
+            "spe": 180
+        },
+        "nature": "Timid",
+        "moves": [
+            "Electroweb",
+            "Hidden Power Ice",
+            "Sky Drop",
+            "Volt Switch"
+        ],
+        "ivs": {
+            "atk": 30,
+            "def": 30
+        }
+    },
+    {
+        "species": "Aegislash",
+        "gender": "M",
+        "item": "Ghostium Z",
+        "ability": "Stance Change",
+        "level": 50,
+        "evs": {
+            "hp": 204,
+            "def": 4,
+            "spa": 252,
+            "spd": 4,
+            "spe": 44
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Flash Cannon",
+            "King's Shield",
+            "Shadow Ball",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Amoonguss",
+        "gender": "M",
+        "item": "Iapapa Berry",
+        "ability": "Regenerator",
+        "level": 50,
+        "evs": {
+            "hp": 236,
+            "def": 164,
+            "spd": 108
+        },
+        "nature": "Relaxed",
+        "ivs": {
+            "atk": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Clear Smog",
+            "Protect",
+            "Rage Powder",
+            "Spore"
+        ]
+    },
+    {
+        "species": "Azumarill",
+        "gender": "M",
+        "item": "Sitrus Berry",
+        "ability": "Huge Power",
+        "level": 50,
+        "evs": {
+            "hp": 244,
+            "atk": 244,
+            "def": 4,
+            "spd": 4,
+            "spe": 12
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Aqua Jet",
+            "Belly Drum",
+            "Knock Off",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Salamence",
+        "gender": "M",
+        "item": "Salamencite",
+        "ability": "Intimidate",
+        "level": 50,
+        "evs": {
+            "hp": 20,
+            "atk": 60,
+            "def": 4,
+            "spd": 204,
+            "spe": 220
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Double-Edge",
+            "Dragon Dance",
+            "Protect",
+            "Roost"
+        ]
+    },
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Sand Stream",
+        "level": 50,
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Crunch",
+            "Low Kick",
+            "Protect",
+            "Rock Slide"
+        ]
+    }
+]

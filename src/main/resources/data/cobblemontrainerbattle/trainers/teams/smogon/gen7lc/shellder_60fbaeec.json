@@ -1,0 +1,114 @@
+[
+    {
+        "species": "Shellder",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Skill Link",
+        "evs": {
+            "atk": 236,
+            "spd": 76,
+            "spe": 196
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Icicle Spear",
+            "Razor Shell",
+            "Rock Blast",
+            "Shell Smash"
+        ]
+    },
+    {
+        "species": "Cottonee",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Prankster",
+        "evs": {
+            "hp": 36,
+            "def": 196,
+            "spa": 60,
+            "spd": 196
+        },
+        "nature": "Bold",
+        "moves": [
+            "Dazzling Gleam",
+            "Giga Drain",
+            "Knock Off",
+            "Memento"
+        ]
+    },
+    {
+        "species": "Diglett",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Arena Trap",
+        "evs": {
+            "hp": 36,
+            "atk": 236,
+            "spe": 236
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Memento",
+            "Rock Slide",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Pawniard",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Defiant",
+        "evs": {
+            "atk": 236,
+            "def": 36,
+            "spd": 36,
+            "spe": 196
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Brick Break",
+            "Iron Head",
+            "Knock Off",
+            "Pursuit"
+        ]
+    },
+    {
+        "species": "Timburr",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Guts",
+        "evs": {
+            "atk": 116,
+            "def": 156,
+            "spd": 236
+        },
+        "nature": "Careful",
+        "moves": [
+            "Bulk Up",
+            "Drain Punch",
+            "Knock Off",
+            "Mach Punch"
+        ]
+    },
+    {
+        "species": "Zigzagoon",
+        "gender": "M",
+        "item": "Berry Juice",
+        "ability": "Pickup",
+        "evs": {
+            "hp": 132,
+            "atk": 196,
+            "def": 108,
+            "spd": 28,
+            "spe": 36
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Belly Drum",
+            "Extreme Speed",
+            "Protect",
+            "Thief"
+        ]
+    }
+]

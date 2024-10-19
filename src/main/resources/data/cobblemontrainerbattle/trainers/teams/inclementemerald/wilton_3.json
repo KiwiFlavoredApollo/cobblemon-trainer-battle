@@ -1,0 +1,157 @@
+[
+    {
+        "name": "",
+        "species": "Doublade",
+        "item": "Eviolite",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Shadow Claw",
+            "Iron Head",
+            "Psycho Cut",
+            "Shadow Sneak"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Reuniclus",
+        "item": "Leftovers",
+        "ability": "Magic Guard",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Psyshock",
+            "Recover",
+            "Thunder",
+            "Signal Beam"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Gabite",
+        "item": "Rocky Helmet",
+        "ability": "Rough Skin",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Earthquake",
+            "Dual Chop",
+            "Poison Jab",
+            "Flamethrower"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Staraptor",
+        "item": "Choice Band",
+        "ability": "Reckless",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Brave Bird",
+            "Return",
+            "Close Combat",
+            "U Turn"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Grimmsnarl",
+        "item": "Leftovers",
+        "ability": "Prankster",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Sucker Punch",
+            "Spirit Break",
+            "Bulk Up",
+            "Drain Punch"
+        ]
+    }
+]

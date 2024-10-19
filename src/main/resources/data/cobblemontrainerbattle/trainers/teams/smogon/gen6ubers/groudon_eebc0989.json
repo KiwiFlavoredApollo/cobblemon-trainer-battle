@@ -1,0 +1,114 @@
+[
+    {
+        "species": "Groudon",
+        "item": "Red Orb",
+        "ability": "Drought",
+        "evs": {
+            "hp": 168,
+            "atk": 252,
+            "spd": 32,
+            "spe": 56
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Precipice Blades",
+            "Rock Slide",
+            "Stealth Rock",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Arceus-Ground",
+        "item": "Earth Plate",
+        "ability": "Multitype",
+        "evs": {
+            "hp": 248,
+            "def": 68,
+            "spe": 192
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Ice Beam",
+            "Judgment",
+            "Recover"
+        ]
+    },
+    {
+        "species": "Diancie",
+        "item": "Diancite",
+        "ability": "Clear Body",
+        "evs": {
+            "hp": 180,
+            "spa": 152,
+            "spe": 176
+        },
+        "nature": "Timid",
+        "moves": [
+            "Diamond Storm",
+            "Heal Bell",
+            "Moonblast",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Ferrothorn",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Iron Barbs",
+        "evs": {
+            "hp": 248,
+            "atk": 8,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Gyro Ball",
+            "Leech Seed",
+            "Protect",
+            "Spikes"
+        ]
+    },
+    {
+        "species": "Ho-Oh",
+        "item": "Life Orb",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 248,
+            "atk": 160,
+            "spd": 52,
+            "spe": 48
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Brave Bird",
+            "Recover",
+            "Sacred Fire",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Yveltal",
+        "item": "Choice Scarf",
+        "ability": "Dark Aura",
+        "evs": {
+            "atk": 220,
+            "def": 32,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Foul Play",
+            "Knock Off",
+            "Roost",
+            "U-turn"
+        ]
+    }
+]

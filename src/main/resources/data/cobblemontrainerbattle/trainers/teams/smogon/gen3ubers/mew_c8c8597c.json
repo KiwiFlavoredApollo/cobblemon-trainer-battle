@@ -1,0 +1,121 @@
+[
+    {
+        "species": "Mew",
+        "item": "Lum Berry",
+        "ability": "Synchronize",
+        "evs": {
+            "hp": 252,
+            "def": 80,
+            "spa": 104,
+            "spd": 52,
+            "spe": 20
+        },
+        "nature": "Modest",
+        "moves": [
+            "Explosion",
+            "Fire Blast",
+            "Thunder",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Deoxys-Attack",
+        "item": "Choice Band",
+        "ability": "Pressure",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Extreme Speed",
+            "Rock Slide",
+            "Shadow Ball",
+            "Superpower"
+        ]
+    },
+    {
+        "species": "Groudon",
+        "item": "Salac Berry",
+        "ability": "Drought",
+        "evs": {
+            "hp": 60,
+            "atk": 252,
+            "def": 8,
+            "spe": 188
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Hidden Power Ghost",
+            "Substitute",
+            "Swords Dance"
+        ],
+        "ivs": {
+            "def": 30,
+            "spd": 30
+        }
+    },
+    {
+        "species": "Latios",
+        "item": "Soul Dew",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Ice Beam",
+            "Recover",
+            "Refresh",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Metagross",
+        "item": "Leftovers",
+        "ability": "Clear Body",
+        "evs": {
+            "hp": 252,
+            "atk": 236,
+            "def": 20
+        },
+        "nature": "Brave",
+        "moves": [
+            "Explosion",
+            "Hidden Power Fire",
+            "Meteor Mash",
+            "Pursuit"
+        ],
+        "ivs": {
+            "atk": 30,
+            "spa": 30,
+            "spe": 30
+        }
+    },
+    {
+        "species": "Snorlax",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Immunity",
+        "evs": {
+            "hp": 52,
+            "atk": 252,
+            "def": 28,
+            "spd": 176
+        },
+        "nature": "Brave",
+        "moves": [
+            "Body Slam",
+            "Fire Blast",
+            "Self-Destruct",
+            "Shadow Ball"
+        ]
+    }
+]

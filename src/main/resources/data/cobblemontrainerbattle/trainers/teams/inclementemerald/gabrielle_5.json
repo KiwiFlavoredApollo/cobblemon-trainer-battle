@@ -1,0 +1,158 @@
+[
+    {
+        "name": "",
+        "species": "Delcatty",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 3,
+        "moves": []
+    },
+    {
+        "name": "",
+        "species": "Mightyena",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 3,
+        "moves": []
+    },
+    {
+        "name": "",
+        "species": "Linoone",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 3,
+        "moves": []
+    },
+    {
+        "name": "",
+        "species": "Ludicolo",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 3,
+        "moves": []
+    },
+    {
+        "name": "",
+        "species": "Shiftry",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 3,
+        "moves": []
+    },
+    {
+        "name": "",
+        "species": "Swellow",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 3,
+        "moves": []
+    }
+]

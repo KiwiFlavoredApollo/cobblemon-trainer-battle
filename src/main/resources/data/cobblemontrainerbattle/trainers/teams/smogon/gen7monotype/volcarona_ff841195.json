@@ -1,0 +1,119 @@
+[
+    {
+        "species": "Volcarona",
+        "gender": "M",
+        "item": "Firium Z",
+        "ability": "Flame Body",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Fire Blast",
+            "Giga Drain",
+            "Hidden Power Ground",
+            "Quiver Dance"
+        ],
+        "hpType": "Ground"
+    },
+    {
+        "species": "Armaldo",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Battle Armor",
+        "evs": {
+            "hp": 252,
+            "def": 84,
+            "spd": 172
+        },
+        "nature": "Careful",
+        "moves": [
+            "Knock Off",
+            "Rapid Spin",
+            "Stealth Rock",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Galvantula",
+        "gender": "M",
+        "item": "Focus Sash",
+        "ability": "Compound Eyes",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Energy Ball",
+            "Hidden Power Ice",
+            "Sticky Web",
+            "Thunder"
+        ],
+        "hpType": "Ice"
+    },
+    {
+        "species": "Heracross",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Moxie",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Megahorn",
+            "Pursuit",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Pinsir",
+        "gender": "M",
+        "item": "Pinsirite",
+        "ability": "Moxie",
+        "happiness": 0,
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Frustration",
+            "Quick Attack",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Scizor",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Technician",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bullet Punch",
+            "Knock Off",
+            "Superpower",
+            "U-turn"
+        ]
+    }
+]

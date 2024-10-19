@@ -1,0 +1,126 @@
+[
+    {
+        "name": "",
+        "species": "Hoppip",
+        "item": "None",
+        "ability": "Leaf Guard",
+        "gender": "M",
+        "nature": "Sassy",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "level": 46,
+        "moves": [
+            "U-turn",
+            "Worry Seed",
+            "Giga Drain",
+            "Bounce"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Hoppip",
+        "item": "None",
+        "ability": "Leaf Guard",
+        "gender": "M",
+        "nature": "Rash",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "level": 47,
+        "moves": [
+            "U-turn",
+            "Worry Seed",
+            "Giga Drain",
+            "Bounce"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Skiploom",
+        "item": "None",
+        "ability": "Leaf Guard",
+        "gender": "F",
+        "nature": "Docile",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "level": 47,
+        "moves": [
+            "Acrobatics",
+            "Rage Powder",
+            "Cotton Spore",
+            "U-turn"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Skiploom",
+        "item": "None",
+        "ability": "Leaf Guard",
+        "gender": "M",
+        "nature": "Hasty",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "level": 48,
+        "moves": [
+            "Rage Powder",
+            "Cotton Spore",
+            "U-turn",
+            "Worry Seed"
+        ]
+    }
+]

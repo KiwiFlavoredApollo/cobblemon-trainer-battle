@@ -1,0 +1,65 @@
+[
+    {
+        "species": "Poliwag",
+        "level": 5,
+        "ivs": {
+            "atk": 1
+        },
+        "moves": [
+            "Amnesia",
+            "Blizzard",
+            "Lovely Kiss",
+            "Surf"
+        ]
+    },
+    {
+        "species": "Abra",
+        "level": 5,
+        "moves": [
+            "Ice Punch",
+            "Psychic",
+            "Thunder Punch",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Diglett",
+        "level": 5,
+        "moves": [
+            "Earthquake",
+            "Rock Slide",
+            "Slash",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Exeggcute",
+        "level": 5,
+        "moves": [
+            "Mega Drain",
+            "Psychic",
+            "Sleep Powder",
+            "Stun Spore"
+        ]
+    },
+    {
+        "species": "Pikachu",
+        "level": 5,
+        "moves": [
+            "Quick Attack",
+            "Surf",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Staryu",
+        "level": 5,
+        "moves": [
+            "Blizzard",
+            "Surf",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    }
+]

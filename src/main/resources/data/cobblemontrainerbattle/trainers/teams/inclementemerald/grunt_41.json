@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Scrafty",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "High Jump Kick",
+            "Crunch",
+            "Poison Jab",
+            "Head Smash"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Nidoking",
+        "item": "",
+        "ability": "Sheer Force",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Sludge Bomb",
+            "Earth Power",
+            "Megahorn",
+            "Shadow Ball"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Magcargo",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Fire Blast",
+            "Stone Edge",
+            "Earth Power",
+            "Shell Smash"
+        ]
+    }
+]

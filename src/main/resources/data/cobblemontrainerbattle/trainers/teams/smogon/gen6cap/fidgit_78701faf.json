@@ -1,0 +1,113 @@
+[
+    {
+        "species": "Fidgit",
+        "gender": "M",
+        "item": "Focus Sash",
+        "ability": "Vital Spirit",
+        "evs": {
+            "hp": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Spikes",
+            "Stealth Rock",
+            "Taunt",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Azumarill",
+        "gender": "M",
+        "item": "Sitrus Berry",
+        "ability": "Huge Power",
+        "evs": {
+            "hp": 28,
+            "atk": 252,
+            "spe": 228
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Aqua Jet",
+            "Belly Drum",
+            "Knock Off",
+            "Play Rough"
+        ]
+    },
+    {
+        "species": "Bisharp",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Defiant",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Iron Head",
+            "Knock Off",
+            "Sucker Punch",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Necturna",
+        "item": "White Herb",
+        "ability": "Forewarn",
+        "evs": {
+            "hp": 8,
+            "atk": 252,
+            "spe": 248
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Power Whip",
+            "Shadow Claw",
+            "Shadow Sneak",
+            "Shell Smash"
+        ]
+    },
+    {
+        "species": "Pinsir",
+        "gender": "M",
+        "item": "Pinsirite",
+        "ability": "Hyper Cutter",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Quick Attack",
+            "Return",
+            "Swords Dance"
+        ],
+        "happiness": 255
+    },
+    {
+        "species": "Serperior",
+        "gender": "M",
+        "item": "Light Clay",
+        "ability": "Contrary",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Glare",
+            "Leaf Storm",
+            "Light Screen",
+            "Reflect"
+        ]
+    }
+]

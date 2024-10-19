@@ -1,0 +1,56 @@
+[
+    {
+        "species": "Jynx",
+        "moves": [
+            "Blizzard",
+            "Lovely Kiss",
+            "Psychic",
+            "Rest"
+        ]
+    },
+    {
+        "species": "Alakazam",
+        "moves": [
+            "Psychic",
+            "Recover",
+            "Seismic Toss",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Chansey",
+        "moves": [
+            "Counter",
+            "Ice Beam",
+            "Soft-Boiled",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Snorlax",
+        "moves": [
+            "Body Slam",
+            "Hyper Beam",
+            "Reflect",
+            "Rest"
+        ]
+    },
+    {
+        "species": "Starmie",
+        "moves": [
+            "Recover",
+            "Surf",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Tauros",
+        "moves": [
+            "Blizzard",
+            "Body Slam",
+            "Earthquake",
+            "Hyper Beam"
+        ]
+    }
+]

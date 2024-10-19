@@ -1,0 +1,126 @@
+[
+    {
+        "name": "",
+        "species": "Golbat",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Brave Bird",
+            "Effect Toxic",
+            "Confuse Ray",
+            "Roost"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Clawitzer",
+        "item": "",
+        "ability": "Mega Launcher",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Water Pulse",
+            "Aura Sphere",
+            "Dragon Pulse",
+            "Dark Pulse"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Muk-Alola",
+        "item": "",
+        "ability": "Poison Touch",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Poison Jab",
+            "Crunch",
+            "Disable",
+            "Minimize"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Eelektross",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Wild Charge",
+            "Crunch",
+            "Aqua Tail",
+            "Dragon Claw"
+        ]
+    }
+]

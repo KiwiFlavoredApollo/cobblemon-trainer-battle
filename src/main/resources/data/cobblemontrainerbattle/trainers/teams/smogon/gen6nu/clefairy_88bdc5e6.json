@@ -1,0 +1,116 @@
+[
+    {
+        "species": "Clefairy",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Magic Guard",
+        "evs": {
+            "hp": 248,
+            "def": 8,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "moves": [
+            "Knock Off",
+            "Seismic Toss",
+            "Soft-Boiled",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Hariyama",
+        "gender": "M",
+        "item": "Assault Vest",
+        "ability": "Thick Fat",
+        "evs": {
+            "atk": 216,
+            "spd": 220,
+            "spe": 72
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bullet Punch",
+            "Close Combat",
+            "Fake Out",
+            "Knock Off"
+        ]
+    },
+    {
+        "species": "Liepard",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Limber",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Knock Off",
+            "Pursuit",
+            "Seed Bomb",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Steelix",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sturdy",
+        "evs": {
+            "hp": 248,
+            "atk": 56,
+            "spd": 204
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Heavy Slam",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Vileplume",
+        "gender": "M",
+        "item": "Black Sludge",
+        "ability": "Effect Spore",
+        "evs": {
+            "hp": 248,
+            "def": 216,
+            "spe": 44
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Giga Drain",
+            "Moonlight",
+            "Sludge Bomb",
+            "Worry Seed"
+        ]
+    },
+    {
+        "species": "Xatu",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Magic Bounce",
+        "evs": {
+            "hp": 248,
+            "def": 204,
+            "spe": 56
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Heat Wave",
+            "Psyshock",
+            "Roost"
+        ]
+    }
+]

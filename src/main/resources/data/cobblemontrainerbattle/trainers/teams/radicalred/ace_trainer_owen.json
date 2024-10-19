@@ -1,0 +1,157 @@
+[
+    {
+        "name": "",
+        "species": "Nidorino",
+        "item": "None",
+        "ability": "Poison Touch",
+        "gender": "M",
+        "nature": "Sassy",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 25,
+            "atk": 25,
+            "def": 25,
+            "spa": 25,
+            "spd": 25,
+            "spe": 25
+        },
+        "level": 42,
+        "moves": [
+            "Scratch",
+            "Poison Sting",
+            "Double Kick",
+            "Bite"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Nidorina",
+        "item": "None",
+        "ability": "Poison Touch",
+        "gender": "F",
+        "nature": "Calm",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 25,
+            "atk": 25,
+            "def": 25,
+            "spa": 25,
+            "spd": 25,
+            "spe": 25
+        },
+        "level": 42,
+        "moves": [
+            "Horn Attack",
+            "Poison Sting",
+            "Double Kick",
+            "Leer"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Raticate",
+        "item": "None",
+        "ability": "Run Away",
+        "gender": "M",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 25,
+            "atk": 25,
+            "def": 25,
+            "spa": 25,
+            "spd": 25,
+            "spe": 25
+        },
+        "level": 42,
+        "moves": [
+            "Super Fang",
+            "Pursuit",
+            "Scary Face",
+            "Quick Attack"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Sandslash",
+        "item": "None",
+        "ability": "Sand Veil",
+        "gender": "F",
+        "nature": "Quirky",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 25,
+            "atk": 25,
+            "def": 25,
+            "spa": 25,
+            "spd": 25,
+            "spe": 25
+        },
+        "level": 42,
+        "moves": [
+            "Fury Swipes",
+            "Swift",
+            "Slash",
+            "Poison Sting"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Rhyhorn",
+        "item": "None",
+        "ability": "Lightning Rod",
+        "gender": "F",
+        "nature": "Relaxed",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 25,
+            "atk": 25,
+            "def": 25,
+            "spa": 25,
+            "spd": 25,
+            "spe": 25
+        },
+        "level": 42,
+        "moves": [
+            "Rock Blast",
+            "Scary Face",
+            "Stomp",
+            "Tail Whip"
+        ]
+    }
+]

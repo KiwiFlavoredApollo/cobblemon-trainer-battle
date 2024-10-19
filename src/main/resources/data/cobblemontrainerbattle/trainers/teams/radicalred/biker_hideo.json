@@ -1,0 +1,157 @@
+[
+    {
+        "name": "",
+        "species": "Stunfisk",
+        "item": "Focus Sash",
+        "ability": "Sand Veil",
+        "gender": "F",
+        "nature": "Calm",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -4,
+        "moves": [
+            "Stealth Rock",
+            "Thunder Wave",
+            "Earth Power",
+            "Volt Switch"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Dracovish",
+        "item": "Mystic Water",
+        "ability": "Sand Rush",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 4,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -5,
+        "moves": [
+            "FishiousRend",
+            "Dragon Claw",
+            "Psychic Fang",
+            "Crunch"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Beedrill",
+        "item": "Beedrillite",
+        "ability": "Swarm",
+        "gender": "M",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 4,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -5,
+        "moves": [
+            "U-turn",
+            "Drill Run",
+            "Poison Jab",
+            "Pursuit"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Rotom-Heat",
+        "item": "Charti Berry",
+        "ability": "Levitate",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 30,
+            "def": 31,
+            "spa": 30,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -5,
+        "moves": [
+            "Thunderbolt",
+            "Flamethrower",
+            "Nasty Plot",
+            "Hidden Power"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Greninja",
+        "item": "Life Orb",
+        "ability": "Protean",
+        "gender": "F",
+        "nature": "Naive",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -5,
+        "moves": [
+            "U-turn",
+            "Hydro Pump",
+            "Gunk Shot",
+            "Ice Beam"
+        ]
+    }
+]

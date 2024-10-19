@@ -1,0 +1,129 @@
+[
+    {
+        "species": "Vaporeon",
+        "gender": "M",
+        "item": "Salac Berry",
+        "ability": "Water Absorb",
+        "evs": {
+            "hp": 16,
+            "spa": 228,
+            "spd": 12,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Baton Pass",
+            "Hydro Pump",
+            "Ice Beam",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Aerodactyl",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Rock Head",
+        "evs": {
+            "atk": 224,
+            "spd": 32,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Double-Edge",
+            "Earthquake",
+            "Hidden Power Bug",
+            "Rock Slide"
+        ],
+        "ivs": {
+            "atk": 30,
+            "def": 30,
+            "spd": 30
+        }
+    },
+    {
+        "species": "Gengar",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 8,
+            "def": 196,
+            "spa": 104,
+            "spe": 200
+        },
+        "nature": "Timid",
+        "moves": [
+            "Explosion",
+            "Fire Punch",
+            "Hidden Power Grass",
+            "Ice Punch"
+        ],
+        "ivs": {
+            "atk": 30,
+            "spa": 30
+        }
+    },
+    {
+        "species": "Metagross",
+        "item": "Leftovers",
+        "ability": "Clear Body",
+        "evs": {
+            "atk": 32,
+            "spa": 252,
+            "spe": 224
+        },
+        "nature": "Rash",
+        "moves": [
+            "Earthquake",
+            "Explosion",
+            "Hidden Power Grass",
+            "Thunder Punch"
+        ],
+        "ivs": {
+            "atk": 30,
+            "spa": 30
+        }
+    },
+    {
+        "species": "Smeargle",
+        "gender": "M",
+        "item": "Salac Berry",
+        "ability": "Own Tempo",
+        "evs": {
+            "hp": 4,
+            "atk": 20,
+            "spd": 232,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Explosion",
+            "Spikes",
+            "Spore",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Lum Berry",
+        "ability": "Sand Stream",
+        "evs": {
+            "hp": 228,
+            "atk": 80,
+            "spd": 84,
+            "spe": 116
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Double-Edge",
+            "Dragon Dance",
+            "Earthquake",
+            "Rock Slide"
+        ]
+    }
+]

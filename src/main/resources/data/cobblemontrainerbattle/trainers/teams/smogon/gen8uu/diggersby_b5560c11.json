@@ -1,0 +1,119 @@
+[
+    {
+        "species": "Diggersby",
+        "gender": "M",
+        "item": "Chople Berry",
+        "ability": "Huge Power",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Body Slam",
+            "Earthquake",
+            "Quick Attack",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Cobalion",
+        "item": "Rocky Helmet",
+        "ability": "Justified",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Iron Head",
+            "Stealth Rock",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Salamence",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 248,
+            "def": 72,
+            "spd": 188
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Flamethrower",
+            "Hurricane",
+            "Roost"
+        ]
+    },
+    {
+        "species": "Salazzle",
+        "item": "Heavy-Duty Boots",
+        "ability": "Corrosion",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Encore",
+            "Flamethrower",
+            "Nasty Plot",
+            "Sludge Bomb"
+        ]
+    },
+    {
+        "species": "Slowking",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spd": 8
+        },
+        "nature": "Relaxed",
+        "ivs": {
+            "atk": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Scald",
+            "Slack Off",
+            "Teleport",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Tangrowth",
+        "gender": "M",
+        "item": "Assault Vest",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 252,
+            "def": 84,
+            "spd": 168,
+            "spe": 4
+        },
+        "nature": "Bold",
+        "moves": [
+            "Focus Blast",
+            "Knock Off",
+            "Leaf Storm",
+            "Sludge Bomb"
+        ]
+    }
+]

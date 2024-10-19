@@ -1,0 +1,118 @@
+[
+    {
+        "species": "Ribombee",
+        "gender": "M",
+        "item": "Focus Sash",
+        "ability": "Shield Dust",
+        "teraType": "Ghost",
+        "evs": {
+            "hp": 248,
+            "atk": 8,
+            "spe": 252
+        },
+        "nature": "Hasty",
+        "moves": [
+            "Moonblast",
+            "Pounce",
+            "Sticky Web",
+            "Stun Spore"
+        ]
+    },
+    {
+        "species": "Arceus",
+        "item": "Heavy-Duty Boots",
+        "ability": "Multitype",
+        "teraType": "Fire",
+        "evs": {
+            "hp": 204,
+            "atk": 252,
+            "spe": 52
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Extreme Speed",
+            "Recover",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Calyrex-Shadow",
+        "item": "Heavy-Duty Boots",
+        "ability": "As One (Spectrier)",
+        "teraType": "Normal",
+        "evs": {
+            "hp": 232,
+            "spa": 252,
+            "spe": 20
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Agility",
+            "Astral Barrage",
+            "Grass Knot",
+            "Nasty Plot"
+        ]
+    },
+    {
+        "species": "Koraidon",
+        "item": "Loaded Dice",
+        "ability": "Orichalcum Pulse",
+        "teraType": "Steel",
+        "evs": {
+            "hp": 48,
+            "atk": 252,
+            "def": 28,
+            "spe": 180
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Flare Blitz",
+            "Low Kick",
+            "Scale Shot",
+            "Swords Dance"
+        ],
+        "hpType": "Ghost"
+    },
+    {
+        "species": "Miraidon",
+        "item": "Electric Seed",
+        "ability": "Hadron Engine",
+        "teraType": "Fairy",
+        "evs": {
+            "hp": 156,
+            "spa": 252,
+            "spe": 100
+        },
+        "nature": "Modest",
+        "moves": [
+            "Agility",
+            "Calm Mind",
+            "Dazzling Gleam",
+            "Electro Drift"
+        ],
+        "hpType": "Ghost"
+    },
+    {
+        "species": "Zacian",
+        "item": "Rusted Sword",
+        "ability": "Intrepid Sword",
+        "teraType": "Ground",
+        "evs": {
+            "hp": 88,
+            "atk": 252,
+            "def": 4,
+            "spe": 164
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Iron Head",
+            "Swords Dance",
+            "Tera Blast",
+            "Wild Charge"
+        ]
+    }
+]

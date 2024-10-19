@@ -1,0 +1,126 @@
+[
+    {
+        "name": "",
+        "species": "Golisopod",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "First Impression",
+            "Razor Shell",
+            "Drill Run",
+            "Aqua Jet"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Jellicent",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Surf",
+            "Giga Drain",
+            "Shadow Ball",
+            "Recover"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Cloyster",
+        "item": "",
+        "ability": "Skill Link",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Icicle Spear",
+            "Rock Blast",
+            "Hydro Pump",
+            "Rapid Spin"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Gyarados",
+        "item": "",
+        "ability": "Moxie",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Waterfall",
+            "Bounce",
+            "Crunch",
+            "Dragon Dance"
+        ]
+    }
+]

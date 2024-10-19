@@ -1,0 +1,64 @@
+[
+    {
+        "name": "",
+        "species": "Larvesta",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 25,
+            "atk": 25,
+            "def": 25,
+            "spa": 25,
+            "spd": 25,
+            "spe": 25
+        },
+        "level": -3,
+        "moves": [
+            "Flare Blitz",
+            "Bug Bite",
+            "Double Edge",
+            "String Shot"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Simipour",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 25,
+            "atk": 25,
+            "def": 25,
+            "spa": 25,
+            "spd": 25,
+            "spe": 25
+        },
+        "level": -3,
+        "moves": [
+            "Scald",
+            "Crunch",
+            "Acrobatics",
+            "Work Up"
+        ]
+    }
+]

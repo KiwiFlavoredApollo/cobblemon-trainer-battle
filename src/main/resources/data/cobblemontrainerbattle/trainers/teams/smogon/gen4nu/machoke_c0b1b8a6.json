@@ -1,0 +1,118 @@
+[
+    {
+        "species": "Machoke",
+        "gender": "F",
+        "item": "Lum Berry",
+        "ability": "No Guard",
+        "evs": {
+            "hp": 248,
+            "atk": 252,
+            "spd": 8
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bullet Punch",
+            "Dynamic Punch",
+            "Ice Punch",
+            "Payback"
+        ]
+    },
+    {
+        "species": "Charizard",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Blaze",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Air Slash",
+            "Fire Blast",
+            "Hidden Power Grass",
+            "Roost"
+        ],
+        "ivs": {
+            "atk": 30,
+            "spa": 30
+        }
+    },
+    {
+        "species": "Jumpluff",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Chlorophyll",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Aerial Ace",
+            "Seed Bomb",
+            "Sleep Powder",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Manectric",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Static",
+        "evs": {
+            "hp": 40,
+            "spa": 252,
+            "spe": 216
+        },
+        "nature": "Timid",
+        "moves": [
+            "Flamethrower",
+            "Hidden Power Grass",
+            "Switcheroo",
+            "Thunderbolt"
+        ],
+        "ivs": {
+            "atk": 30,
+            "spa": 30
+        }
+    },
+    {
+        "species": "Sandslash",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sand Veil",
+        "evs": {
+            "hp": 248,
+            "atk": 252,
+            "spe": 8
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Rapid Spin",
+            "Shadow Claw",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Whiscash",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Anticipation",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Dragon Dance",
+            "Earthquake",
+            "Stone Edge",
+            "Waterfall"
+        ]
+    }
+]

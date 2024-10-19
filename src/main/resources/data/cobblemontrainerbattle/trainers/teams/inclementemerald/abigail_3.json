@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Jolteon",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Discharge",
+            "Thunder Wave",
+            "Hyper Voice",
+            "Quick Attack"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Magneton",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Discharge",
+            "Flash Cannon",
+            "Thunder Wave",
+            "Metal Sound"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Blaziken",
+        "item": "",
+        "ability": "Speed Boost",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Blaze Kick",
+            "Sky Uppercut",
+            "Bulk Up",
+            "Quick Attack"
+        ]
+    }
+]

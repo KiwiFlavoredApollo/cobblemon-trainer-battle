@@ -1,0 +1,125 @@
+[
+    {
+        "species": "Landorus-Therian",
+        "item": "Rocky Helmet",
+        "ability": "Intimidate",
+        "teraType": "Water",
+        "evs": {
+            "hp": 252,
+            "def": 32,
+            "spe": 224
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earth Power",
+            "Stealth Rock",
+            "Taunt",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Gholdengo",
+        "item": "Air Balloon",
+        "ability": "Good as Gold",
+        "teraType": "Fairy",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Make It Rain",
+            "Nasty Plot",
+            "Recover",
+            "Shadow Ball"
+        ]
+    },
+    {
+        "species": "Hemogoblin",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Pixilate",
+        "teraType": "Fairy",
+        "evs": {
+            "atk": 252,
+            "spd": 36,
+            "spe": 220
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bulk Up",
+            "Extreme Speed",
+            "Flare Blitz",
+            "Moonlight"
+        ]
+    },
+    {
+        "species": "Ogerpon-Wellspring",
+        "item": "Wellspring Mask",
+        "ability": "Water Absorb",
+        "teraType": "Water",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Horn Leech",
+            "Ivy Cudgel",
+            "Play Rough",
+            "Swords Dance"
+        ],
+        "hpType": "Poison"
+    },
+    {
+        "species": "Raging Bolt",
+        "item": "Eject Pack",
+        "ability": "Protosynthesis",
+        "teraType": "Steel",
+        "evs": {
+            "hp": 64,
+            "def": 28,
+            "spa": 252,
+            "spe": 164
+        },
+        "nature": "Modest",
+        "ivs": {
+            "hp": 20,
+            "atk": 20,
+            "def": 20,
+            "spa": 20,
+            "spd": 20,
+            "spe": 20
+        },
+        "moves": [
+            "Calm Mind",
+            "Draco Meteor",
+            "Thunderbolt",
+            "Thunderclap"
+        ],
+        "hpType": "Fighting"
+    },
+    {
+        "species": "Roaring Moon",
+        "item": "Booster Energy",
+        "ability": "Protosynthesis",
+        "teraType": "Flying",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Acrobatics",
+            "Dragon Dance",
+            "Earthquake",
+            "Knock Off"
+        ]
+    }
+]

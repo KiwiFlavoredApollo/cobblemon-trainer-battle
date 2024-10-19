@@ -1,0 +1,88 @@
+[
+    {
+        "species": "Flareon",
+        "gender": "M",
+        "item": "Leftovers",
+        "ivs": {
+            "hp": 7,
+            "atk": 29,
+            "def": 29
+        },
+        "moves": [
+            "Baton Pass",
+            "Fire Blast",
+            "Growth",
+            "Hidden Power Grass"
+        ]
+    },
+    {
+        "species": "Dewgong",
+        "gender": "M",
+        "item": "Leftovers",
+        "ivs": {
+            "hp": 7,
+            "atk": 29,
+            "def": 29
+        },
+        "moves": [
+            "Hidden Power Grass",
+            "Ice Beam",
+            "Protect",
+            "Surf"
+        ]
+    },
+    {
+        "species": "Stantler",
+        "gender": "M",
+        "item": "Leftovers",
+        "happiness": 0,
+        "moves": [
+            "Curse",
+            "Earthquake",
+            "Frustration",
+            "Light Screen"
+        ]
+    },
+    {
+        "species": "Weezing",
+        "gender": "M",
+        "item": "Leftovers",
+        "ivs": {
+            "hp": 15,
+            "atk": 29,
+            "def": 27
+        },
+        "moves": [
+            "Explosion",
+            "Hidden Power Water",
+            "Sludge Bomb",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Wigglytuff",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Curse",
+            "Double-Edge",
+            "Rest",
+            "Sleep Talk"
+        ]
+    },
+    {
+        "species": "Xatu",
+        "gender": "M",
+        "item": "Leftovers",
+        "ivs": {
+            "hp": 15,
+            "atk": 29
+        },
+        "moves": [
+            "Hidden Power Electric",
+            "Psychic",
+            "Rest",
+            "Sleep Talk"
+        ]
+    }
+]

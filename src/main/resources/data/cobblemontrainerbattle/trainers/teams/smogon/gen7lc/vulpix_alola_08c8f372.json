@@ -1,0 +1,123 @@
+[
+    {
+        "species": "Vulpix-Alola",
+        "gender": "M",
+        "item": "Light Clay",
+        "ability": "Snow Warning",
+        "evs": {
+            "hp": 212,
+            "def": 36,
+            "spe": 236
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Aurora Veil",
+            "Blizzard",
+            "Encore",
+            "Safeguard"
+        ]
+    },
+    {
+        "species": "Diglett",
+        "gender": "M",
+        "item": "Focus Sash",
+        "ability": "Arena Trap",
+        "evs": {
+            "hp": 36,
+            "atk": 236,
+            "spe": 236
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Memento",
+            "Protect",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Magby",
+        "gender": "M",
+        "item": "Berry Juice",
+        "ability": "Vital Spirit",
+        "evs": {
+            "hp": 76,
+            "atk": 156,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Belly Drum",
+            "Fire Punch",
+            "Mach Punch",
+            "Thunder Punch"
+        ]
+    },
+    {
+        "species": "Scraggy",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Moxie",
+        "evs": {
+            "hp": 36,
+            "atk": 156,
+            "def": 36,
+            "spd": 36,
+            "spe": 212
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Dragon Dance",
+            "Dual Chop",
+            "High Jump Kick",
+            "Zen Headbutt"
+        ]
+    },
+    {
+        "species": "Spritzee",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Aroma Veil",
+        "evs": {
+            "hp": 52,
+            "def": 116,
+            "spa": 252,
+            "spd": 76,
+            "spe": 12
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Moonblast",
+            "Nasty Plot",
+            "Psychic",
+            "Trick Room"
+        ]
+    },
+    {
+        "species": "Vullaby",
+        "item": "Berry Juice",
+        "ability": "Weak Armor",
+        "evs": {
+            "hp": 36,
+            "spa": 240,
+            "spe": 196
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0,
+            "spa": 30
+        },
+        "moves": [
+            "Air Slash",
+            "Heat Wave",
+            "Hidden Power Grass",
+            "Nasty Plot"
+        ]
+    }
+]

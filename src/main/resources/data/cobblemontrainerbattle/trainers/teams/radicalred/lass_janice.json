@@ -1,0 +1,64 @@
+[
+    {
+        "name": "",
+        "species": "Pidgeotto",
+        "item": "None",
+        "ability": "Frisk",
+        "gender": "F",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "level": 28,
+        "moves": [
+            "Take Down",
+            "Whirlwind",
+            "Return",
+            "Roost"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Pidgeotto",
+        "item": "None",
+        "ability": "Frisk",
+        "gender": "F",
+        "nature": "Naive",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "level": 28,
+        "moves": [
+            "Take Down",
+            "Whirlwind",
+            "Return",
+            "Roost"
+        ]
+    }
+]

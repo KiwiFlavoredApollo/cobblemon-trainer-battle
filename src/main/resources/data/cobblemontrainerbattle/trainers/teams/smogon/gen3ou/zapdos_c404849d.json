@@ -1,0 +1,123 @@
+[
+    {
+        "species": "Zapdos",
+        "item": "Leftovers",
+        "ability": "Pressure",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "def": 30
+        },
+        "moves": [
+            "Baton Pass",
+            "Hidden Power Ice",
+            "Substitute",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Blissey",
+        "item": "Leftovers",
+        "ability": "Natural Cure",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Bold",
+        "moves": [
+            "Ice Beam",
+            "Seismic Toss",
+            "Soft-Boiled",
+            "Wish"
+        ]
+    },
+    {
+        "species": "Hariyama",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Guts",
+        "evs": {
+            "atk": 216,
+            "def": 108,
+            "spd": 124,
+            "spe": 60
+        },
+        "nature": "Adamant",
+        "ivs": {
+            "spd": 30,
+            "spe": 30
+        },
+        "moves": [
+            "Brick Break",
+            "Focus Punch",
+            "Hidden Power Bug",
+            "Rock Slide"
+        ]
+    },
+    {
+        "species": "Metagross",
+        "item": "Leftovers",
+        "ability": "Clear Body",
+        "evs": {
+            "hp": 252,
+            "def": 152,
+            "spd": 60,
+            "spe": 44
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Explosion",
+            "Meteor Mash",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Starmie",
+        "item": "Leftovers",
+        "ability": "Natural Cure",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Rapid Spin",
+            "Recover",
+            "Surf",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sand Stream",
+        "evs": {
+            "atk": 144,
+            "spa": 252,
+            "spe": 112
+        },
+        "nature": "Mild",
+        "moves": [
+            "Fire Blast",
+            "Focus Punch",
+            "Hidden Power Grass",
+            "Rock Slide"
+        ],
+        "ivs": {
+            "atk": 30,
+            "spa": 30
+        }
+    }
+]

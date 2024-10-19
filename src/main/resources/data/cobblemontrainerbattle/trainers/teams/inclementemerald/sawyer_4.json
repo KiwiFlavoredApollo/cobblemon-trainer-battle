@@ -1,0 +1,157 @@
+[
+    {
+        "name": "",
+        "species": "Carbink",
+        "item": "Light Clay",
+        "ability": "",
+        "gender": "",
+        "nature": "Impish",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 252,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Explosion",
+            "Moonblast",
+            "Reflect",
+            "Light Screen"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Lycanroc-Midnight",
+        "item": "Rock Gem",
+        "ability": "No Guard",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Stone Edge",
+            "Crunch",
+            "Close Combat",
+            "Psychic Fangs"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Abomasnow",
+        "item": "White Herb",
+        "ability": "Soundproof",
+        "gender": "",
+        "nature": "Quiet",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 0
+        },
+        "level": -2,
+        "moves": [
+            "Ice Shard",
+            "Leaf Storm",
+            "Earth Power",
+            "Freeze Dry"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Mamoswine",
+        "item": "Assault Vest",
+        "ability": "Thick Fat",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Ice Shard",
+            "Earthquake",
+            "Icicle Crash",
+            "Knock Off"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Stonjourner",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Stone Edge",
+            "Heavy Slam",
+            "Heat Crash",
+            "Earthquake"
+        ]
+    }
+]

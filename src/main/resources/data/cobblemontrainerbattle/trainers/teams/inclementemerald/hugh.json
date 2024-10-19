@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Noctowl",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 60,
+            "atk": 60,
+            "def": 60,
+            "spa": 60,
+            "spd": 60,
+            "spe": 60
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Boomburst",
+            "Air Slash",
+            "Hypnosis",
+            "Roost"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Fearow",
+        "item": "",
+        "ability": "Sniper",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 60,
+            "atk": 60,
+            "def": 60,
+            "spa": 60,
+            "spd": 60,
+            "spe": 60
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Drill Peck",
+            "Drill Run",
+            "Focus Energy",
+            "None"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Tropius",
+        "item": "",
+        "ability": "Aerilate",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 60,
+            "atk": 60,
+            "def": 60,
+            "spa": 60,
+            "spd": 60,
+            "spe": 60
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Body Slam",
+            "Dragon Hammer",
+            "Leaf Blade",
+            "Dragon Dance"
+        ]
+    }
+]

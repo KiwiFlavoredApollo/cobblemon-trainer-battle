@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Zorua",
+        "item": "None",
+        "ability": "Illusion",
+        "gender": "F",
+        "nature": "Relaxed",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "level": 34,
+        "moves": [
+            "Scary Face",
+            "Taunt",
+            "Foul Play",
+            "Torment"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Clobbopus",
+        "item": "None",
+        "ability": "Limber",
+        "gender": "F",
+        "nature": "Docile",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "level": 35,
+        "moves": [
+            "Low Sweep",
+            "Bulk Up",
+            "Submission",
+            "Taunt"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Golduck",
+        "item": "None",
+        "ability": "Swift Swim",
+        "gender": "M",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "level": 35,
+        "moves": [
+            "Zen Headbutt",
+            "Aqua Tail",
+            "Soak",
+            "Psychic"
+        ]
+    }
+]

@@ -1,0 +1,70 @@
+[
+    {
+        "species": "Mewtwo",
+        "item": "Leftovers",
+        "moves": [
+            "Blizzard",
+            "Fire Blast",
+            "Psychic",
+            "Self-Destruct"
+        ]
+    },
+    {
+        "species": "Cloyster",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Explosion",
+            "Spikes",
+            "Surf",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Mew",
+        "item": "Leftovers",
+        "moves": [
+            "Shadow Ball",
+            "Soft-Boiled",
+            "Submission",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Snorlax",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Curse",
+            "Double-Edge",
+            "Lovely Kiss",
+            "Rest"
+        ]
+    },
+    {
+        "species": "Steelix",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Curse",
+            "Earthquake",
+            "Explosion",
+            "Roar"
+        ]
+    },
+    {
+        "species": "Zapdos",
+        "item": "Leftovers",
+        "ivs": {
+            "hp": 15,
+            "atk": 29,
+            "def": 27
+        },
+        "moves": [
+            "Hidden Power Water",
+            "Rest",
+            "Sleep Talk",
+            "Thunder"
+        ]
+    }
+]

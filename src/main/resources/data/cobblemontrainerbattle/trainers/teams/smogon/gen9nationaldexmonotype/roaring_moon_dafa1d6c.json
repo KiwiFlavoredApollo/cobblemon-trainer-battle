@@ -1,0 +1,121 @@
+[
+    {
+        "species": "Roaring Moon",
+        "item": "Choice Scarf",
+        "ability": "Protosynthesis",
+        "teraType": "Dragon",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Crunch",
+            "Iron Head",
+            "Outrage",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Altaria",
+        "gender": "M",
+        "item": "Altarianite",
+        "ability": "Natural Cure",
+        "teraType": "Dragon",
+        "evs": {
+            "hp": 252,
+            "def": 80,
+            "spe": 176
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Body Slam",
+            "Defog",
+            "Roost",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Dragalge",
+        "gender": "M",
+        "item": "Black Sludge",
+        "ability": "Adaptability",
+        "teraType": "Poison",
+        "evs": {
+            "hp": 252,
+            "atk": 4,
+            "spd": 252
+        },
+        "nature": "Sassy",
+        "ivs": {
+            "spe": 24
+        },
+        "moves": [
+            "Flip Turn",
+            "Gunk Shot",
+            "Protect",
+            "Toxic Spikes"
+        ]
+    },
+    {
+        "species": "Garchomp",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Rough Skin",
+        "teraType": "Dragon",
+        "evs": {
+            "hp": 248,
+            "spd": 20,
+            "spe": 240
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Fire Blast",
+            "Roar",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Kommo-o",
+        "gender": "M",
+        "item": "Kommonium Z",
+        "ability": "Soundproof",
+        "teraType": "Dragon",
+        "evs": {
+            "atk": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Clanging Scales",
+            "Drain Punch",
+            "Flamethrower",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Kyurem",
+        "item": "Heavy-Duty Boots",
+        "ability": "Pressure",
+        "teraType": "Dragon",
+        "evs": {
+            "hp": 56,
+            "spa": 192,
+            "spd": 8,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earth Power",
+            "Freeze-Dry",
+            "Roost",
+            "Substitute"
+        ]
+    }
+]

@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Kecleon",
+        "item": "Expert Belt",
+        "ability": "Protean",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 40,
+            "atk": 40,
+            "def": 40,
+            "spa": 40,
+            "spd": 40,
+            "spe": 40
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Fire Punch",
+            "Drain Punch",
+            "Aqua Tail",
+            "Recover"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Incineroar",
+        "item": "Sitrus Berry",
+        "ability": "Intimidate",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 40,
+            "atk": 40,
+            "def": 40,
+            "spa": 40,
+            "spd": 40,
+            "spe": 40
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Fire Punch",
+            "Darkest Lariat",
+            "Leech Life",
+            "Will O Wisp"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Octillery",
+        "item": "Fire Gem",
+        "ability": "Moody",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 40,
+            "atk": 40,
+            "def": 40,
+            "spa": 40,
+            "spd": 40,
+            "spe": 40
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Flamethrower",
+            "Water Pulse",
+            "Aurora Beam",
+            "Protect"
+        ]
+    }
+]

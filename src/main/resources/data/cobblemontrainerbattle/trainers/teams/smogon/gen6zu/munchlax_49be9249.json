@@ -1,0 +1,119 @@
+[
+    {
+        "species": "Munchlax",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Thick Fat",
+        "evs": {
+            "atk": 4,
+            "def": 252,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "moves": [
+            "Earthquake",
+            "Rest",
+            "Sleep Talk",
+            "Whirlwind"
+        ]
+    },
+    {
+        "species": "Gourgeist-Large",
+        "gender": "M",
+        "item": "Colbur Berry",
+        "ability": "Frisk",
+        "evs": {
+            "hp": 252,
+            "def": 232,
+            "spe": 24
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Foul Play",
+            "Leech Seed",
+            "Synthesis",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Krokorok",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Intimidate",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Knock Off",
+            "Pursuit",
+            "Stone Edge"
+        ]
+    },
+    {
+        "species": "Lairon",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Rock Head",
+        "evs": {
+            "hp": 212,
+            "atk": 252,
+            "spe": 44
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Head Smash",
+            "Heavy Slam",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Wartortle",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Torrent",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Foresight",
+            "Rapid Spin",
+            "Scald",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Whirlipede",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Speed Boost",
+        "evs": {
+            "hp": 248,
+            "spd": 8,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Endeavor",
+            "Protect",
+            "Spikes",
+            "Toxic"
+        ]
+    }
+]

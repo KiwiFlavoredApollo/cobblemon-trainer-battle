@@ -1,0 +1,118 @@
+[
+    {
+        "species": "Medicham",
+        "gender": "M",
+        "item": "Medichamite",
+        "ability": "Telepathy",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Fake Out",
+            "High Jump Kick",
+            "Ice Punch",
+            "Zen Headbutt"
+        ]
+    },
+    {
+        "species": "Greninja-Bond",
+        "item": "Choice Specs",
+        "ability": "Battle Bond",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Dark Pulse",
+            "Hydro Pump",
+            "Spikes",
+            "Water Shuriken"
+        ],
+        "hpType": "Ghost"
+    },
+    {
+        "species": "Landorus-Therian",
+        "item": "Rockium Z",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 252,
+            "atk": 60,
+            "def": 140,
+            "spe": 56
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Stealth Rock",
+            "Stone Edge",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Magearna",
+        "item": "Assault Vest",
+        "ability": "Soul-Heart",
+        "evs": {
+            "hp": 252,
+            "def": 96,
+            "spd": 160
+        },
+        "nature": "Sassy",
+        "moves": [
+            "Hidden Power Fire",
+            "Ice Beam",
+            "Iron Head",
+            "Volt Switch"
+        ],
+        "ivs": {
+            "atk": 30,
+            "spa": 30,
+            "spe": 30
+        },
+        "hpType": "Fire"
+    },
+    {
+        "species": "Rotom-Wash",
+        "item": "Choice Scarf",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 232,
+            "def": 4,
+            "spa": 12,
+            "spd": 8,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hydro Pump",
+            "Trick",
+            "Volt Switch",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Tornadus-Therian",
+        "item": "Rocky Helmet",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 248,
+            "def": 8,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Defog",
+            "Heat Wave",
+            "Hurricane",
+            "U-turn"
+        ]
+    }
+]

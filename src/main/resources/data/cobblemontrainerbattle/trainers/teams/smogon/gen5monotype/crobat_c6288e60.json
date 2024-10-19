@@ -1,0 +1,122 @@
+[
+    {
+        "species": "Crobat",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Infiltrator",
+        "evs": {
+            "hp": 252,
+            "atk": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Brave Bird",
+            "Roost",
+            "Super Fang",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Amoonguss",
+        "gender": "F",
+        "item": "Black Sludge",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spa": 4
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 2,
+            "def": 30
+        },
+        "moves": [
+            "Foul Play",
+            "Giga Drain",
+            "Hidden Power Ice",
+            "Stun Spore"
+        ]
+    },
+    {
+        "species": "Gengar",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Levitate",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Focus Blast",
+            "Shadow Ball",
+            "Sludge Wave",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Nidoking",
+        "item": "Life Orb",
+        "ability": "Sheer Force",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earth Power",
+            "Flamethrower",
+            "Ice Beam",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Skuntank",
+        "gender": "M",
+        "item": "Black Sludge",
+        "ability": "Aftermath",
+        "evs": {
+            "atk": 252,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Naive",
+        "moves": [
+            "Crunch",
+            "Fire Blast",
+            "Pursuit",
+            "Sucker Punch"
+        ]
+    },
+    {
+        "species": "Tentacruel",
+        "gender": "M",
+        "item": "Black Sludge",
+        "ability": "Rain Dish",
+        "evs": {
+            "hp": 252,
+            "spd": 240,
+            "spe": 16
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Protect",
+            "Rapid Spin",
+            "Scald",
+            "Toxic Spikes"
+        ]
+    }
+]

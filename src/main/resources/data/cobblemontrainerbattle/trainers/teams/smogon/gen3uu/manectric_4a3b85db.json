@@ -1,0 +1,126 @@
+[
+    {
+        "species": "Manectric",
+        "gender": "F",
+        "item": "Leftovers",
+        "ability": "Static",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 2,
+            "def": 30
+        },
+        "moves": [
+            "Hidden Power Ice",
+            "Substitute",
+            "Thunder",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Kangaskhan",
+        "item": "Leftovers",
+        "ability": "Early Bird",
+        "evs": {
+            "hp": 216,
+            "atk": 56,
+            "def": 12,
+            "spd": 216,
+            "spe": 8
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Focus Punch",
+            "Rest",
+            "Return",
+            "Toxic"
+        ],
+        "happiness": 255
+    },
+    {
+        "species": "Nidoqueen",
+        "item": "Leftovers",
+        "ability": "Poison Point",
+        "evs": {
+            "hp": 60,
+            "atk": 216,
+            "def": 16,
+            "spe": 216
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Ice Beam",
+            "Shadow Ball",
+            "Superpower"
+        ]
+    },
+    {
+        "species": "Omastar",
+        "gender": "F",
+        "item": "Leftovers",
+        "ability": "Swift Swim",
+        "evs": {
+            "hp": 252,
+            "def": 176,
+            "spa": 72,
+            "spe": 8
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 3,
+            "spa": 30
+        },
+        "moves": [
+            "Hidden Power Electric",
+            "Protect",
+            "Spikes",
+            "Surf"
+        ]
+    },
+    {
+        "species": "Scyther",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Swarm",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Double-Edge",
+            "Hidden Power Bug",
+            "Quick Attack",
+            "Reversal"
+        ],
+        "ivs": {
+            "atk": 30,
+            "def": 30,
+            "spd": 30
+        }
+    },
+    {
+        "species": "Walrein",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Thick Fat",
+        "evs": {
+            "hp": 236,
+            "def": 96,
+            "spa": 176
+        },
+        "nature": "Quiet",
+        "moves": [
+            "Earthquake",
+            "Ice Beam",
+            "Protect",
+            "Roar"
+        ]
+    }
+]

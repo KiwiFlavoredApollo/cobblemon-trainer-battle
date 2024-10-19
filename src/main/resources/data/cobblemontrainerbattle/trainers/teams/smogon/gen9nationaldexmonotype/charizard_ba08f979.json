@@ -1,0 +1,127 @@
+[
+    {
+        "species": "Charizard",
+        "gender": "M",
+        "item": "Charizardite Y",
+        "ability": "Blaze",
+        "teraType": "Fire",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Focus Blast",
+            "Roost",
+            "Solar Beam",
+            "Weather Ball"
+        ]
+    },
+    {
+        "species": "Arcanine-Hisui",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Rock Head",
+        "teraType": "Fire",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Extreme Speed",
+            "Flare Blitz",
+            "Head Smash",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Blacephalon",
+        "item": "Choice Scarf",
+        "ability": "Beast Boost",
+        "teraType": "Fire",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Flamethrower",
+            "Hidden Power Ice",
+            "Shadow Ball",
+            "Trick"
+        ],
+        "hpType": "Ice"
+    },
+    {
+        "species": "Cinderace",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Blaze",
+        "teraType": "Fire",
+        "evs": {
+            "hp": 224,
+            "atk": 32,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Court Change",
+            "Pyro Ball",
+            "U-turn",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Volcanion",
+        "item": "Heavy-Duty Boots",
+        "ability": "Water Absorb",
+        "teraType": "Fire",
+        "evs": {
+            "hp": 248,
+            "spd": 144,
+            "spe": 116
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Earth Power",
+            "Sludge Bomb",
+            "Steam Eruption"
+        ]
+    },
+    {
+        "species": "Volcarona",
+        "gender": "M",
+        "item": "Psychium Z",
+        "ability": "Flame Body",
+        "teraType": "Bug",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Fiery Dance",
+            "Giga Drain",
+            "Psychic",
+            "Quiver Dance"
+        ]
+    }
+]

@@ -1,0 +1,110 @@
+[
+    {
+        "species": "Mamoswine",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Thick Fat",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Ice Shard",
+            "Icicle Crash",
+            "Knock Off"
+        ]
+    },
+    {
+        "species": "Celesteela",
+        "item": "Leftovers",
+        "ability": "Beast Boost",
+        "evs": {
+            "hp": 252,
+            "def": 124,
+            "spd": 132
+        },
+        "nature": "Sassy",
+        "moves": [
+            "Flamethrower",
+            "Heavy Slam",
+            "Leech Seed",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Cobalion",
+        "item": "Rocky Helmet",
+        "ability": "Justified",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Stealth Rock",
+            "Stone Edge",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Salazzle",
+        "item": "Heavy-Duty Boots",
+        "ability": "Corrosion",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Flamethrower",
+            "Knock Off",
+            "Sludge Bomb",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Slowking",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 248,
+            "def": 252,
+            "spd": 8
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Psyshock",
+            "Scald",
+            "Slack Off",
+            "Teleport"
+        ]
+    },
+    {
+        "species": "Zarude-Dada",
+        "item": "Heavy-Duty Boots",
+        "ability": "Leaf Guard",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Darkest Lariat",
+            "Jungle Healing",
+            "Power Whip",
+            "U-turn"
+        ]
+    }
+]

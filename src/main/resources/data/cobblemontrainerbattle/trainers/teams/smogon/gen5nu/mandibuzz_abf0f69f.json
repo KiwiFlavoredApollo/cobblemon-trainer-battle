@@ -1,0 +1,122 @@
+[
+    {
+        "species": "Mandibuzz",
+        "item": "Leftovers",
+        "ability": "Big Pecks",
+        "evs": {
+            "hp": 208,
+            "spd": 176,
+            "spe": 124
+        },
+        "nature": "Careful",
+        "moves": [
+            "Foul Play",
+            "Roost",
+            "Taunt",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Alomomola",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 248,
+            "def": 12,
+            "spd": 244,
+            "spe": 4
+        },
+        "nature": "Careful",
+        "moves": [
+            "Mirror Coat",
+            "Protect",
+            "Waterfall",
+            "Wish"
+        ]
+    },
+    {
+        "species": "Garbodor",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Aftermath",
+        "evs": {
+            "hp": 248,
+            "def": 128,
+            "spe": 132
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Drain Punch",
+            "Gunk Shot",
+            "Spikes",
+            "Toxic Spikes"
+        ]
+    },
+    {
+        "species": "Haunter",
+        "gender": "F",
+        "item": "Life Orb",
+        "ability": "Levitate",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0,
+            "spa": 30,
+            "spd": 30
+        },
+        "moves": [
+            "Hidden Power Ground",
+            "Shadow Ball",
+            "Sludge Wave",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Piloswine",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Thick Fat",
+        "evs": {
+            "hp": 240,
+            "def": 96,
+            "spd": 156,
+            "spe": 16
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Ice Shard",
+            "Roar",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Serperior",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Overgrow",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "hp": 30,
+            "atk": 2,
+            "spd": 30,
+            "spe": 30
+        },
+        "moves": [
+            "Calm Mind",
+            "Giga Drain",
+            "Hidden Power Rock",
+            "Substitute"
+        ]
+    }
+]

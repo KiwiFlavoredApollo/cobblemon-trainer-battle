@@ -1,0 +1,113 @@
+[
+    {
+        "species": "Hippowdon",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sand Stream",
+        "evs": {
+            "hp": 252,
+            "def": 32,
+            "spd": 224
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Slack Off",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Breloom",
+        "gender": "M",
+        "item": "Toxic Orb",
+        "ability": "Poison Heal",
+        "evs": {
+            "hp": 216,
+            "atk": 188,
+            "spe": 104
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Mach Punch",
+            "Seed Bomb",
+            "Spore",
+            "Superpower"
+        ]
+    },
+    {
+        "species": "Jirachi",
+        "item": "Leftovers",
+        "ability": "Serene Grace",
+        "evs": {
+            "hp": 40,
+            "atk": 252,
+            "spe": 216
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Body Slam",
+            "Fire Punch",
+            "Iron Head",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Krilowatt",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Magic Guard",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Copycat",
+            "Discharge",
+            "Substitute",
+            "Surf"
+        ]
+    },
+    {
+        "species": "Latias",
+        "item": "Choice Scarf",
+        "ability": "Levitate",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Draco Meteor",
+            "Healing Wish",
+            "Ice Beam",
+            "Trick"
+        ]
+    },
+    {
+        "species": "Stratagem",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Flamethrower",
+            "Shadow Ball",
+            "Weather Ball"
+        ]
+    }
+]

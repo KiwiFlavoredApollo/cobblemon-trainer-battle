@@ -1,0 +1,126 @@
+[
+    {
+        "name": "",
+        "species": "Scizor",
+        "item": "Assault Vest",
+        "ability": "Technician",
+        "gender": "M",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 30,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Bullet Punch",
+            "U-turn",
+            "Rock Smash",
+            "DualWingbeat"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Haxorus",
+        "item": "Lum Berry",
+        "ability": "Mold Breaker",
+        "gender": "F",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Swords Dance",
+            "Scale Shot",
+            "Poison Jab",
+            "Close Combat"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Golem",
+        "item": "Custap Berry",
+        "ability": "Sturdy",
+        "gender": "M",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "HeadlongRush",
+            "Stone Edge",
+            "Sucker Punch",
+            "Explosion"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Manectric",
+        "item": "Manectite",
+        "ability": "Intimidate",
+        "gender": "M",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Volt Switch",
+            "Hidden Power",
+            "Flamethrower",
+            "Thunderbolt"
+        ]
+    }
+]

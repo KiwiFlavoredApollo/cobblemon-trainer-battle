@@ -1,0 +1,188 @@
+[
+    {
+        "name": "",
+        "species": "Meloetta-Pirouette",
+        "item": "Life Orb",
+        "ability": "Serene Grace",
+        "gender": "",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "U-turn",
+            "Body Slam",
+            "Close Combat",
+            "Rock Slide"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Mew",
+        "item": "Mewnium Z",
+        "ability": "Synchronize",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Psychic",
+            "Flamethrower",
+            "Aura Sphere",
+            "Ice Beam"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Kingler",
+        "item": "Kinglerite",
+        "ability": "Hyper Cutter",
+        "gender": "F",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Crabhammer",
+            "Iron Head",
+            "Aqua Jet",
+            "Close Combat"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Giratina-Origin",
+        "item": "Griseous Orb",
+        "ability": "Levitate",
+        "gender": "",
+        "nature": "Quiet",
+        "evs": {
+            "hp": 244,
+            "atk": 12,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Hex",
+            "Draco Meteor",
+            "Shadow Sneak",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Enamorus-Therian",
+        "item": "Assault Vest",
+        "ability": "Overcoat",
+        "gender": "F",
+        "nature": "Modest",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 4,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Moonblast",
+            "U-turn",
+            "Focus Blast",
+            "Psychic"
+        ]
+    },
+    {
+        "name": "",
+        "species": "zebstrikasevii",
+        "item": "Life Orb",
+        "ability": "Illuminate",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -2,
+        "moves": [
+            "Blizzard",
+            "Thunder",
+            "Volt Switch",
+            "Freeze-Dry"
+        ]
+    }
+]

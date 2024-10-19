@@ -1,0 +1,122 @@
+[
+    {
+        "species": "Kingdra",
+        "gender": "M",
+        "item": "Choice Specs",
+        "ability": "Swift Swim",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Draco Meteor",
+            "Hurricane",
+            "Hydro Pump",
+            "Muddy Water"
+        ]
+    },
+    {
+        "species": "Ferrothorn",
+        "gender": "M",
+        "item": "Assault Vest",
+        "ability": "Iron Barbs",
+        "evs": {
+            "hp": 248,
+            "atk": 252,
+            "spd": 8
+        },
+        "nature": "Brave",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Gyro Ball",
+            "Knock Off",
+            "Power Whip",
+            "Steel Roller"
+        ]
+    },
+    {
+        "species": "Politoed",
+        "gender": "M",
+        "item": "Eject Button",
+        "ability": "Drizzle",
+        "evs": {
+            "hp": 248,
+            "def": 240,
+            "spe": 20
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Helping Hand",
+            "Protect",
+            "Scald",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Tsareena",
+        "item": "Wide Lens",
+        "ability": "Queenly Majesty",
+        "evs": {
+            "hp": 252,
+            "atk": 36,
+            "def": 16,
+            "spd": 76,
+            "spe": 128
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Power Whip",
+            "Taunt",
+            "Triple Axel",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Urshifu-Rapid-Strike",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Unseen Fist",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Aqua Jet",
+            "Close Combat",
+            "Surging Strikes",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Zapdos",
+        "item": "Safety Goggles",
+        "ability": "Static",
+        "evs": {
+            "hp": 56,
+            "spa": 200,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hurricane",
+            "Protect",
+            "Tailwind",
+            "Thunder"
+        ]
+    }
+]

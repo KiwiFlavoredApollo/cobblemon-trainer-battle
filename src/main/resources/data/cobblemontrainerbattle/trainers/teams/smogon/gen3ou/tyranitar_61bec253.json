@@ -1,0 +1,115 @@
+[
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Sand Stream",
+        "evs": {
+            "hp": 252,
+            "def": 16,
+            "spa": 240
+        },
+        "nature": "Quiet",
+        "moves": [
+            "Brick Break",
+            "Crunch",
+            "Ice Beam",
+            "Pursuit"
+        ]
+    },
+    {
+        "species": "Aerodactyl",
+        "gender": "M",
+        "item": "Liechi Berry",
+        "ability": "Rock Head",
+        "evs": {
+            "hp": 12,
+            "atk": 244,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Double-Edge",
+            "Earthquake",
+            "Rock Slide",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Celebi",
+        "item": "Leftovers",
+        "ability": "Natural Cure",
+        "evs": {
+            "hp": 252,
+            "def": 76,
+            "spd": 144,
+            "spe": 36
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Baton Pass",
+            "Leech Seed",
+            "Recover",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Magneton",
+        "item": "Magnet",
+        "ability": "Magnet Pull",
+        "evs": {
+            "spa": 252,
+            "spd": 40,
+            "spe": 216
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "spa": 30
+        },
+        "moves": [
+            "Hidden Power Grass",
+            "Substitute",
+            "Thunderbolt",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Metagross",
+        "item": "Lum Berry",
+        "ability": "Clear Body",
+        "evs": {
+            "hp": 72,
+            "atk": 252,
+            "spe": 184
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Agility",
+            "Earthquake",
+            "Explosion",
+            "Meteor Mash"
+        ]
+    },
+    {
+        "species": "Swampert",
+        "gender": "F",
+        "item": "Leftovers",
+        "ability": "Torrent",
+        "evs": {
+            "atk": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Rash",
+        "moves": [
+            "Earthquake",
+            "Focus Punch",
+            "Hydro Pump",
+            "Ice Beam"
+        ]
+    }
+]

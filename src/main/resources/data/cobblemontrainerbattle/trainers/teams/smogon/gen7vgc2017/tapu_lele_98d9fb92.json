@@ -1,0 +1,131 @@
+[
+    {
+        "species": "Tapu Lele",
+        "item": "Choice Scarf",
+        "ability": "Psychic Surge",
+        "level": 50,
+        "evs": {
+            "hp": 92,
+            "spa": 252,
+            "spe": 164
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hidden Power Fire",
+            "Moonblast",
+            "Psychic",
+            "Psyshock"
+        ]
+    },
+    {
+        "species": "Arcanine",
+        "gender": "M",
+        "item": "Firium Z",
+        "ability": "Intimidate",
+        "level": 50,
+        "evs": {
+            "hp": 204,
+            "atk": 132,
+            "def": 12,
+            "spd": 116,
+            "spe": 44
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bulldoze",
+            "Extreme Speed",
+            "Flare Blitz",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Gigalith",
+        "gender": "M",
+        "item": "Figy Berry",
+        "ability": "Sand Stream",
+        "level": 50,
+        "evs": {
+            "hp": 236,
+            "atk": 212,
+            "spd": 60
+        },
+        "nature": "Brave",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Curse",
+            "Protect",
+            "Rock Slide",
+            "Wide Guard"
+        ]
+    },
+    {
+        "species": "Kartana",
+        "item": "Scope Lens",
+        "ability": "Beast Boost",
+        "level": 50,
+        "evs": {
+            "hp": 84,
+            "atk": 68,
+            "def": 4,
+            "spd": 100,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Detect",
+            "Leaf Blade",
+            "Sacred Sword",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Porygon2",
+        "item": "Eviolite",
+        "ability": "Download",
+        "level": 50,
+        "evs": {
+            "hp": 244,
+            "def": 108,
+            "spd": 156
+        },
+        "nature": "Sassy",
+        "ivs": {
+            "atk": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Ice Beam",
+            "Recover",
+            "Thunderbolt",
+            "Trick Room"
+        ]
+    },
+    {
+        "species": "Xurkitree",
+        "item": "Wiki Berry",
+        "ability": "Beast Boost",
+        "level": 50,
+        "evs": {
+            "hp": 252,
+            "def": 116,
+            "spa": 4,
+            "spd": 44,
+            "spe": 92
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Dazzling Gleam",
+            "Protect",
+            "Tail Glow",
+            "Thunderbolt"
+        ]
+    }
+]

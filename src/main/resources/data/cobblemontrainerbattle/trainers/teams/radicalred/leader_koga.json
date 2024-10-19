@@ -1,0 +1,184 @@
+[
+    {
+        "name": "",
+        "species": "Swellow",
+        "item": "Choice Specs",
+        "ability": "Aerilate",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 67,
+        "moves": [
+            "Boomburst",
+            "U-turn"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Accelgor",
+        "item": "Life Orb",
+        "ability": "Sheer Force",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 68,
+        "moves": [
+            "Bug Buzz",
+            "U-turn",
+            "Focus Blast",
+            "Sludge Bomb"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Greninja",
+        "item": "Life Orb",
+        "ability": "Battle Bond",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 68,
+        "moves": [
+            "Surf",
+            "Water Star",
+            "Dark Pulse",
+            "Ice Beam"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Drapion",
+        "item": "Choice Scarf",
+        "ability": "Sniper",
+        "gender": "F",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 68,
+        "moves": [
+            "Wicked Blow",
+            "Cross Poison"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Dragapult",
+        "item": "Life Orb",
+        "ability": "Infiltrator",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 68,
+        "moves": [
+            "Shadow Ball",
+            "Flamethrower",
+            "Dragon Pulse",
+            "U-turn"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Toxtricity",
+        "item": "Toxtricitite",
+        "ability": "Punk Rock or Plus",
+        "gender": "M",
+        "nature": "Timid",
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 68,
+        "moves": [
+            "Volt Switch",
+            "Boomburst",
+            "Sludge Bomb",
+            "Overdrive"
+        ]
+    }
+]

@@ -1,0 +1,126 @@
+[
+    {
+        "name": "",
+        "species": "Blaziken",
+        "item": "None",
+        "ability": "Striker",
+        "gender": "F",
+        "nature": "Sassy",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 56,
+        "moves": [
+            "Trip Arrows",
+            "Brave Bird",
+            "Sky Uppercut",
+            "Flare Blitz"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Braviary",
+        "item": "None",
+        "ability": "Sheer Force",
+        "gender": "M",
+        "nature": "Modest",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 56,
+        "moves": [
+            "Crush Claw",
+            "Sky Drop",
+            "Whirlwind",
+            "Double-Edge"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Altaria",
+        "item": "None",
+        "ability": "Natural Cure",
+        "gender": "F",
+        "nature": "Careful",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 55,
+        "moves": [
+            "Cotton Guard",
+            "Dragon Claw",
+            "Perish Song",
+            "Moonblast"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Dartrix",
+        "item": "None",
+        "ability": "Overgrow",
+        "gender": "F",
+        "nature": "Mild",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "level": 55,
+        "moves": [
+            "Leaf Blade",
+            "FeatherDance",
+            "Brave Bird",
+            "Nasty Plot"
+        ]
+    }
+]

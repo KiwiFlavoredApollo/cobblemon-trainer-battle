@@ -1,0 +1,122 @@
+[
+    {
+        "species": "Mudbray",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Stamina",
+        "evs": {
+            "hp": 116,
+            "atk": 196,
+            "def": 36,
+            "spe": 156
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Counter",
+            "Earthquake",
+            "Heavy Slam",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Foongus",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 124,
+            "def": 156,
+            "spd": 156
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0,
+            "spa": 30,
+            "spe": 30
+        },
+        "moves": [
+            "Giga Drain",
+            "Hidden Power Fire",
+            "Sludge Bomb",
+            "Spore"
+        ]
+    },
+    {
+        "species": "Pawniard",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Defiant",
+        "evs": {
+            "atk": 236,
+            "def": 36,
+            "spd": 36,
+            "spe": 196
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Iron Head",
+            "Knock Off",
+            "Pursuit",
+            "Sucker Punch"
+        ]
+    },
+    {
+        "species": "Ponyta",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Flame Body",
+        "evs": {
+            "atk": 76,
+            "def": 156,
+            "spd": 76,
+            "spe": 196
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Flame Charge",
+            "Flare Blitz",
+            "Morning Sun",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Staryu",
+        "item": "Eviolite",
+        "ability": "Analytic",
+        "evs": {
+            "def": 156,
+            "spa": 116,
+            "spe": 236
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Hydro Pump",
+            "Rapid Spin",
+            "Recover",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Vullaby",
+        "item": "Berry Juice",
+        "ability": "Weak Armor",
+        "evs": {
+            "hp": 116,
+            "spa": 236,
+            "spe": 116
+        },
+        "nature": "Modest",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Air Slash",
+            "Dark Pulse",
+            "Heat Wave",
+            "Nasty Plot"
+        ]
+    }
+]

@@ -1,0 +1,121 @@
+[
+    {
+        "species": "Roserade",
+        "gender": "F",
+        "item": "Focus Sash",
+        "ability": "Poison Point",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 3,
+            "spa": 30,
+            "spd": 30
+        },
+        "moves": [
+            "Hidden Power Ground",
+            "Leaf Storm",
+            "Sleep Powder",
+            "Toxic Spikes"
+        ]
+    },
+    {
+        "species": "Heatran",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Flash Fire",
+        "evs": {
+            "hp": 240,
+            "atk": 24,
+            "spd": 244
+        },
+        "nature": "Sassy",
+        "moves": [
+            "Explosion",
+            "Lava Plume",
+            "Protect",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Jirachi",
+        "item": "Choice Scarf",
+        "ability": "Serene Grace",
+        "evs": {
+            "hp": 16,
+            "atk": 212,
+            "spd": 28,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Fire Punch",
+            "Iron Head",
+            "Trick",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Latias",
+        "item": "Choice Specs",
+        "ability": "Levitate",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Draco Meteor",
+            "Healing Wish",
+            "Surf",
+            "Trick"
+        ]
+    },
+    {
+        "species": "Rotom-Heat",
+        "item": "Leftovers",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 112,
+            "spa": 192,
+            "spe": 204
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Charge Beam",
+            "Shadow Ball",
+            "Substitute",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Suicune",
+        "item": "Leftovers",
+        "ability": "Pressure",
+        "evs": {
+            "hp": 252,
+            "spa": 120,
+            "spe": 136
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Hydro Pump",
+            "Ice Beam",
+            "Substitute"
+        ]
+    }
+]

@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Kecleon",
+        "item": "Sitrus Berry",
+        "ability": "Protean",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 40,
+            "atk": 40,
+            "def": 40,
+            "spa": 40,
+            "spd": 40,
+            "spe": 40
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Sucker Punch",
+            "Return",
+            "Fire Punch",
+            "Trick Room"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Slowbro",
+        "item": "Sitrus Berry",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 40,
+            "atk": 40,
+            "def": 40,
+            "spa": 40,
+            "spd": 40,
+            "spe": 40
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Surf",
+            "Psychic",
+            "Grass Knot",
+            "Trick Room"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Sandslash-Alola",
+        "item": "Never Melt Ice",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 40,
+            "atk": 40,
+            "def": 40,
+            "spa": 40,
+            "spd": 40,
+            "spe": 40
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -3,
+        "moves": [
+            "Icicle Crash",
+            "Iron Head",
+            "Drill Run",
+            "Swords Dance"
+        ]
+    }
+]

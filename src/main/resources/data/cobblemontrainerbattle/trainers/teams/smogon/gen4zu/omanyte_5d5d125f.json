@@ -1,0 +1,122 @@
+[
+    {
+        "species": "Omanyte",
+        "gender": "M",
+        "item": "Custap Berry",
+        "ability": "Swift Swim",
+        "evs": {
+            "hp": 252,
+            "spa": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Endure",
+            "Spikes",
+            "Stealth Rock",
+            "Surf"
+        ]
+    },
+    {
+        "species": "Arbok",
+        "gender": "M",
+        "item": "Choice Scarf",
+        "ability": "Intimidate",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Poison Jab",
+            "Seed Bomb",
+            "Switcheroo"
+        ]
+    },
+    {
+        "species": "Grovyle",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Overgrow",
+        "evs": {
+            "atk": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Hasty",
+        "moves": [
+            "Hidden Power Ice",
+            "Leaf Storm",
+            "Low Kick",
+            "Rock Slide"
+        ],
+        "ivs": {
+            "atk": 30,
+            "def": 30
+        }
+    },
+    {
+        "species": "Lairon",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Rock Head",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Head Smash",
+            "Iron Head",
+            "Rock Polish"
+        ]
+    },
+    {
+        "species": "Luxray",
+        "gender": "M",
+        "item": "Expert Belt",
+        "ability": "Intimidate",
+        "evs": {
+            "atk": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Rash",
+        "moves": [
+            "Hidden Power Water",
+            "Signal Beam",
+            "Superpower",
+            "Thunderbolt"
+        ],
+        "ivs": {
+            "atk": 30,
+            "def": 30,
+            "spa": 30
+        }
+    },
+    {
+        "species": "Whiscash",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Anticipation",
+        "evs": {
+            "hp": 4,
+            "atk": 252,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Dragon Dance",
+            "Earthquake",
+            "Stone Edge",
+            "Waterfall"
+        ]
+    }
+]

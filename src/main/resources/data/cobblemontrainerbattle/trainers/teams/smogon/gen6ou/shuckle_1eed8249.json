@@ -1,0 +1,118 @@
+[
+    {
+        "species": "Shuckle",
+        "gender": "M",
+        "item": "Mental Herb",
+        "ability": "Sturdy",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Encore",
+            "Infestation",
+            "Stealth Rock",
+            "Sticky Web"
+        ]
+    },
+    {
+        "species": "Azumarill",
+        "gender": "M",
+        "item": "Sitrus Berry",
+        "ability": "Huge Power",
+        "evs": {
+            "hp": 80,
+            "atk": 252,
+            "spe": 176
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Aqua Jet",
+            "Belly Drum",
+            "Knock Off",
+            "Play Rough"
+        ]
+    },
+    {
+        "species": "Bisharp",
+        "gender": "M",
+        "item": "Black Glasses",
+        "ability": "Defiant",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Iron Head",
+            "Knock Off",
+            "Sucker Punch",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Hoopa",
+        "item": "Choice Scarf",
+        "ability": "Magician",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Focus Blast",
+            "Hyperspace Hole",
+            "Shadow Ball",
+            "Trick"
+        ]
+    },
+    {
+        "species": "Scizor",
+        "gender": "M",
+        "item": "Scizorite",
+        "ability": "Light Metal",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Bug Bite",
+            "Bullet Punch",
+            "Superpower",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Thundurus",
+        "item": "Leftovers",
+        "ability": "Prankster",
+        "evs": {
+            "def": 4,
+            "spa": 252,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0,
+            "def": 30
+        },
+        "moves": [
+            "Focus Blast",
+            "Hidden Power Ice",
+            "Nasty Plot",
+            "Thunderbolt"
+        ]
+    }
+]

@@ -1,0 +1,113 @@
+[
+    {
+        "species": "Swoobat",
+        "gender": "M",
+        "item": "Choice Specs",
+        "ability": "Unaware",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Heat Wave",
+            "Psychic",
+            "Signal Beam",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Dwebble",
+        "gender": "M",
+        "item": "Custap Berry",
+        "ability": "Sturdy",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Knock Off",
+            "Rock Blast",
+            "Spikes",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Klang",
+        "item": "Eviolite",
+        "ability": "Clear Body",
+        "evs": {
+            "hp": 248,
+            "def": 8,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "ivs": {
+            "atk": 0,
+            "spe": 30
+        },
+        "moves": [
+            "Rest",
+            "Sleep Talk",
+            "Toxic",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Monferno",
+        "gender": "M",
+        "item": "Eviolite",
+        "ability": "Blaze",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Close Combat",
+            "Flare Blitz",
+            "Mach Punch",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Scraggy",
+        "gender": "F",
+        "item": "Eviolite",
+        "ability": "Shed Skin",
+        "evs": {
+            "hp": 248,
+            "spd": 228,
+            "spe": 32
+        },
+        "nature": "Careful",
+        "moves": [
+            "Bulk Up",
+            "Crunch",
+            "Drain Punch",
+            "Rest"
+        ]
+    },
+    {
+        "species": "Torterra",
+        "gender": "M",
+        "item": "Yache Berry",
+        "ability": "Overgrow",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Earthquake",
+            "Rock Polish",
+            "Stone Edge",
+            "Wood Hammer"
+        ]
+    }
+]

@@ -1,0 +1,127 @@
+[
+    {
+        "species": "Amoonguss",
+        "gender": "M",
+        "item": "Mental Herb",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 252,
+            "def": 64,
+            "spd": 192
+        },
+        "nature": "Sassy",
+        "ivs": {
+            "atk": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Giga Drain",
+            "Protect",
+            "Rage Powder",
+            "Spore"
+        ]
+    },
+    {
+        "species": "Cresselia",
+        "item": "Sitrus Berry",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 252,
+            "def": 76,
+            "spa": 172,
+            "spd": 8
+        },
+        "nature": "Sassy",
+        "ivs": {
+            "atk": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Ice Beam",
+            "Psychic",
+            "Sunny Day",
+            "Trick Room"
+        ]
+    },
+    {
+        "species": "Heatran",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Flash Fire",
+        "evs": {
+            "hp": 252,
+            "def": 28,
+            "spa": 228
+        },
+        "nature": "Quiet",
+        "ivs": {
+            "atk": 0,
+            "spe": 17
+        },
+        "moves": [
+            "Earth Power",
+            "Heat Wave",
+            "Protect",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Hitmontop",
+        "item": "Fighting Gem",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 252,
+            "atk": 172,
+            "spe": 84
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Close Combat",
+            "Fake Out",
+            "Feint",
+            "Mach Punch"
+        ]
+    },
+    {
+        "species": "Jellicent",
+        "gender": "F",
+        "item": "Ghost Gem",
+        "ability": "Water Absorb",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spa": 252
+        },
+        "nature": "Quiet",
+        "ivs": {
+            "atk": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Recover",
+            "Shadow Ball",
+            "Trick Room",
+            "Water Spout"
+        ]
+    },
+    {
+        "species": "Kyurem-Black",
+        "item": "Choice Scarf",
+        "ability": "Teravolt",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Draco Meteor",
+            "Earth Power",
+            "Ice Beam",
+            "Toxic"
+        ]
+    }
+]

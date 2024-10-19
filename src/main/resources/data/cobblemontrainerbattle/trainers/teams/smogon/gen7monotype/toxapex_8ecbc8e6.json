@@ -1,0 +1,121 @@
+[
+    {
+        "species": "Toxapex",
+        "gender": "M",
+        "item": "Black Sludge",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spd": 4
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Haze",
+            "Recover",
+            "Scald",
+            "Sludge Bomb"
+        ]
+    },
+    {
+        "species": "Greninja",
+        "gender": "M",
+        "item": "Icium Z",
+        "ability": "Protean",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Grass Knot",
+            "Hidden Power Electric",
+            "Ice Beam",
+            "Toxic Spikes"
+        ],
+        "hpType": "Electric"
+    },
+    {
+        "species": "Keldeo",
+        "item": "Leftovers",
+        "ability": "Justified",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Scald",
+            "Secret Sword",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Rotom-Wash",
+        "item": "Choice Scarf",
+        "ability": "Levitate",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Defog",
+            "Hydro Pump",
+            "Thunder Wave",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Sharpedo",
+        "gender": "M",
+        "item": "Sharpedonite",
+        "ability": "Speed Boost",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Crunch",
+            "Protect",
+            "Psychic Fangs",
+            "Substitute"
+        ]
+    },
+    {
+        "species": "Swampert",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Damp",
+        "evs": {
+            "hp": 252,
+            "def": 188,
+            "spd": 68
+        },
+        "nature": "Impish",
+        "moves": [
+            "Earthquake",
+            "Roar",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    }
+]

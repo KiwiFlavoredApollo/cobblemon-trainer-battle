@@ -1,0 +1,80 @@
+[
+    {
+        "species": "Granbull",
+        "gender": "M",
+        "item": "Leftovers",
+        "happiness": 0,
+        "ivs": {
+            "hp": 15,
+            "atk": 25
+        },
+        "moves": [
+            "Curse",
+            "Frustration",
+            "Hidden Power Ground",
+            "Lovely Kiss"
+        ]
+    },
+    {
+        "species": "Electrode",
+        "item": "Miracle Berry",
+        "moves": [
+            "Explosion",
+            "Light Screen",
+            "Reflect",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Haunter",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Destiny Bond",
+            "Explosion",
+            "Psychic",
+            "Thunder"
+        ]
+    },
+    {
+        "species": "Mr. Mime",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Baton Pass",
+            "Psychic",
+            "Thunder",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Pinsir",
+        "gender": "M",
+        "item": "Leftovers",
+        "ivs": {
+            "hp": 15,
+            "atk": 25
+        },
+        "moves": [
+            "Body Slam",
+            "Double-Edge",
+            "Hidden Power Ground",
+            "Swords Dance"
+        ]
+    },
+    {
+        "species": "Scyther",
+        "gender": "M",
+        "item": "Miracle Berry",
+        "ivs": {
+            "hp": 15,
+            "atk": 25
+        },
+        "moves": [
+            "Double-Edge",
+            "Hidden Power Ground",
+            "Swords Dance",
+            "Wing Attack"
+        ]
+    }
+]

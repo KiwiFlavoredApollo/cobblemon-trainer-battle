@@ -1,0 +1,111 @@
+[
+    {
+        "species": "Landorus-Therian",
+        "item": "Leftovers",
+        "ability": "Intimidate",
+        "evs": {
+            "hp": 252,
+            "def": 52,
+            "spd": 204
+        },
+        "nature": "Careful",
+        "moves": [
+            "Defog",
+            "Earthquake",
+            "Toxic",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Dragapult",
+        "gender": "M",
+        "item": "Choice Specs",
+        "ability": "Infiltrator",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "moves": [
+            "Draco Meteor",
+            "Flamethrower",
+            "Shadow Ball",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Ferrothorn",
+        "gender": "M",
+        "item": "Rocky Helmet",
+        "ability": "Iron Barbs",
+        "evs": {
+            "hp": 252,
+            "def": 224,
+            "spd": 32
+        },
+        "nature": "Relaxed",
+        "ivs": {
+            "spe": 0
+        },
+        "moves": [
+            "Gyro Ball",
+            "Knock Off",
+            "Leech Seed",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Tapu Lele",
+        "item": "Choice Scarf",
+        "ability": "Psychic Surge",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Modest",
+        "moves": [
+            "Focus Blast",
+            "Future Sight",
+            "Moonblast",
+            "Psyshock"
+        ]
+    },
+    {
+        "species": "Tornadus-Therian",
+        "item": "Assault Vest",
+        "ability": "Regenerator",
+        "evs": {
+            "hp": 244,
+            "def": 56,
+            "spd": 40,
+            "spe": 168
+        },
+        "nature": "Timid",
+        "moves": [
+            "Hurricane",
+            "Icy Wind",
+            "Knock Off",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Urshifu-Rapid-Strike",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Unseen Fist",
+        "evs": {
+            "atk": 252,
+            "def": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Aqua Jet",
+            "Close Combat",
+            "Surging Strikes",
+            "U-turn"
+        ]
+    }
+]

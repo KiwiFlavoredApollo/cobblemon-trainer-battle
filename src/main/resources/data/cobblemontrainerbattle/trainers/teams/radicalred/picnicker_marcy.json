@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Paras",
+        "item": "None",
+        "ability": "Dry Skin",
+        "gender": "M",
+        "nature": "Careful",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "level": 48,
+        "moves": [
+            "Swords Dance",
+            "Leaf Blade",
+            "Crabhammer",
+            "Aromatherapy"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Paras",
+        "item": "None",
+        "ability": "Dry Skin",
+        "gender": "M",
+        "nature": "Gentle",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "level": 48,
+        "moves": [
+            "Swords Dance",
+            "Leaf Blade",
+            "Crabhammer",
+            "Aromatherapy"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Parasect",
+        "item": "None",
+        "ability": "Dry Skin",
+        "gender": "F",
+        "nature": "Rash",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "level": 49,
+        "moves": [
+            "Leech Life",
+            "Swords Dance",
+            "Sappy Seed",
+            "Crabhammer"
+        ]
+    }
+]

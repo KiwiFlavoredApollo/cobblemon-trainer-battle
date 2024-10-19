@@ -1,0 +1,120 @@
+[
+    {
+        "species": "Galvantula",
+        "gender": "M",
+        "item": "Choice Specs",
+        "ability": "Compound Eyes",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Bug Buzz",
+            "Giga Drain",
+            "Thunder",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Druddigon",
+        "gender": "M",
+        "item": "Choice Band",
+        "ability": "Sheer Force",
+        "evs": {
+            "hp": 64,
+            "atk": 252,
+            "spe": 192
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Fire Punch",
+            "Outrage",
+            "Sucker Punch",
+            "Thunder Punch"
+        ]
+    },
+    {
+        "species": "Golurk",
+        "item": "Rindo Berry",
+        "ability": "Iron Fist",
+        "evs": {
+            "hp": 64,
+            "atk": 224,
+            "def": 4,
+            "spe": 216
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Earthquake",
+            "Ice Punch",
+            "Shadow Punch",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Kabutops",
+        "gender": "M",
+        "item": "Rock Gem",
+        "ability": "Weak Armor",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Aqua Jet",
+            "Rapid Spin",
+            "Stone Edge",
+            "Waterfall"
+        ]
+    },
+    {
+        "species": "Magneton",
+        "item": "Choice Scarf",
+        "ability": "Magnet Pull",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 2,
+            "spa": 30,
+            "spe": 30
+        },
+        "moves": [
+            "Flash Cannon",
+            "Hidden Power Fire",
+            "Thunderbolt",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Sigilyph",
+        "gender": "M",
+        "item": "Life Orb",
+        "ability": "Magic Guard",
+        "evs": {
+            "def": 76,
+            "spa": 180,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Heat Wave",
+            "Psychic",
+            "Roost"
+        ]
+    }
+]

@@ -1,0 +1,124 @@
+[
+    {
+        "species": "Iron Valiant",
+        "item": "Booster Energy",
+        "ability": "Quark Drive",
+        "teraType": "Ghost",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Encore",
+            "Hex",
+            "Moonblast"
+        ]
+    },
+    {
+        "species": "Darkrai",
+        "item": "Fightinium Z",
+        "ability": "Bad Dreams",
+        "teraType": "Dark",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Dark Pulse",
+            "Focus Blast",
+            "Nasty Plot",
+            "Sludge Bomb"
+        ]
+    },
+    {
+        "species": "Garganacl",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Purifying Salt",
+        "teraType": "Psychic",
+        "evs": {
+            "hp": 252,
+            "def": 4,
+            "spd": 252
+        },
+        "nature": "Careful",
+        "moves": [
+            "Protect",
+            "Recover",
+            "Salt Cure",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Landorus-Therian",
+        "item": "Rocky Helmet",
+        "ability": "Intimidate",
+        "teraType": "Fairy",
+        "evs": {
+            "hp": 252,
+            "def": 132,
+            "spa": 76,
+            "spe": 48
+        },
+        "nature": "Bold",
+        "moves": [
+            "Defog",
+            "Earth Power",
+            "Toxic",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Ogerpon-Wellspring",
+        "item": "Wellspring Mask",
+        "ability": "Water Absorb",
+        "teraType": "Water",
+        "evs": {
+            "atk": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Horn Leech",
+            "Ivy Cudgel",
+            "Superpower",
+            "Swords Dance"
+        ],
+        "hpType": "Poison"
+    },
+    {
+        "species": "Slowking-Galar",
+        "gender": "M",
+        "item": "Heavy-Duty Boots",
+        "ability": "Regenerator",
+        "teraType": "Dragon",
+        "evs": {
+            "hp": 252,
+            "def": 184,
+            "spa": 36,
+            "spd": 36
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Chilly Reception",
+            "Future Sight",
+            "Sludge Bomb",
+            "Thunder Wave"
+        ]
+    }
+]

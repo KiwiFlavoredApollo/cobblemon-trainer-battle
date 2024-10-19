@@ -1,0 +1,95 @@
+[
+    {
+        "name": "",
+        "species": "Hippowdon",
+        "item": "",
+        "ability": "",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Earthquake",
+            "Ice Fang",
+            "Slack Off",
+            "Rock Slide"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Sandslash",
+        "item": "",
+        "ability": "Sand Rush",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Earthquake",
+            "Stone Edge",
+            "X Scissor",
+            "Swords Dance"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Gastrodon",
+        "item": "",
+        "ability": "Sand Force",
+        "gender": "",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 80,
+            "atk": 80,
+            "def": 80,
+            "spa": 80,
+            "spd": 80,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": -1,
+        "moves": [
+            "Earth Power",
+            "Scald",
+            "Sludge Wave",
+            "Recover"
+        ]
+    }
+]

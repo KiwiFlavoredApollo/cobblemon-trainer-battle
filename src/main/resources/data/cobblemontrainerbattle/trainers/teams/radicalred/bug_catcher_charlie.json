@@ -1,0 +1,90 @@
+[
+    {
+        "name": "",
+        "species": "Nincada",
+        "item": "None",
+        "ability": "Compound Eyes",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 1,
+            "atk": 1,
+            "def": 1,
+            "spa": 1,
+            "spd": 1,
+            "spe": 1
+        },
+        "level": 6,
+        "moves": [
+            "Scratch",
+            "Harden",
+            "Absorb"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Spewpa",
+        "item": "None",
+        "ability": "Shed Skin",
+        "gender": "F",
+        "nature": "Hardy",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 1,
+            "atk": 1,
+            "def": 1,
+            "spa": 1,
+            "spd": 1,
+            "spe": 1
+        },
+        "level": 9,
+        "moves": [
+            "Detect",
+            "Harden"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Metapod",
+        "item": "None",
+        "ability": "Shed Skin",
+        "gender": "F",
+        "nature": "Quiet",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 1,
+            "atk": 1,
+            "def": 1,
+            "spa": 1,
+            "spd": 1,
+            "spe": 1
+        },
+        "level": 8,
+        "moves": [
+            "Harden",
+            "Bug Bite"
+        ]
+    }
+]

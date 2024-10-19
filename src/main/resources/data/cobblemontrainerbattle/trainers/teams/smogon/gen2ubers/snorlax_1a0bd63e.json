@@ -1,0 +1,75 @@
+[
+    {
+        "species": "Snorlax",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Curse",
+            "Double-Edge",
+            "Lovely Kiss",
+            "Rest"
+        ]
+    },
+    {
+        "species": "Forretress",
+        "gender": "M",
+        "item": "Leftovers",
+        "ivs": {
+            "hp": 7,
+            "atk": 29,
+            "def": 25
+        },
+        "moves": [
+            "Explosion",
+            "Hidden Power Fire",
+            "Rapid Spin",
+            "Spikes"
+        ]
+    },
+    {
+        "species": "Gengar",
+        "gender": "M",
+        "moves": [
+            "Dynamic Punch",
+            "Explosion",
+            "Ice Punch",
+            "Thief"
+        ]
+    },
+    {
+        "species": "Mewtwo",
+        "item": "Leftovers",
+        "moves": [
+            "Barrier",
+            "Flamethrower",
+            "Recover",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Tyranitar",
+        "gender": "M",
+        "item": "Leftovers",
+        "moves": [
+            "Curse",
+            "Rest",
+            "Roar",
+            "Rock Slide"
+        ]
+    },
+    {
+        "species": "Zapdos",
+        "item": "Leftovers",
+        "ivs": {
+            "hp": 15,
+            "atk": 29,
+            "def": 27
+        },
+        "moves": [
+            "Hidden Power Water",
+            "Rest",
+            "Sleep Talk",
+            "Thunder"
+        ]
+    }
+]

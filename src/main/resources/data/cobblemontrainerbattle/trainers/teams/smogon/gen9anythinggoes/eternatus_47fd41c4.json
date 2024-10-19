@@ -1,0 +1,120 @@
+[
+    {
+        "species": "Eternatus",
+        "item": "Heavy-Duty Boots",
+        "ability": "Pressure",
+        "teraType": "Steel",
+        "evs": {
+            "hp": 252,
+            "spd": 212,
+            "spe": 44
+        },
+        "nature": "Calm",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Dynamax Cannon",
+            "Recover",
+            "Toxic",
+            "Toxic Spikes"
+        ]
+    },
+    {
+        "species": "Arceus-Water",
+        "item": "Splash Plate",
+        "ability": "Multitype",
+        "teraType": "Poison",
+        "evs": {
+            "hp": 236,
+            "def": 252,
+            "spe": 20
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Calm Mind",
+            "Judgment",
+            "Recover",
+            "Will-O-Wisp"
+        ]
+    },
+    {
+        "species": "Calyrex-Shadow",
+        "item": "Choice Scarf",
+        "ability": "As One (Spectrier)",
+        "teraType": "Ghost",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Astral Barrage",
+            "Baton Pass",
+            "Grass Knot",
+            "Trick"
+        ]
+    },
+    {
+        "species": "Ho-Oh",
+        "item": "Heavy-Duty Boots",
+        "ability": "Regenerator",
+        "teraType": "Fairy",
+        "evs": {
+            "hp": 208,
+            "atk": 212,
+            "def": 28,
+            "spe": 60
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Brave Bird",
+            "Earthquake",
+            "Recover",
+            "Sacred Fire"
+        ]
+    },
+    {
+        "species": "Ting-Lu",
+        "item": "Leftovers",
+        "ability": "Vessel of Ruin",
+        "teraType": "Grass",
+        "evs": {
+            "hp": 252,
+            "spd": 252,
+            "spe": 4
+        },
+        "nature": "Careful",
+        "moves": [
+            "Earthquake",
+            "Ruination",
+            "Spikes",
+            "Whirlwind"
+        ]
+    },
+    {
+        "species": "Zacian",
+        "item": "Rusted Sword",
+        "ability": "Intrepid Sword",
+        "teraType": "Dark",
+        "evs": {
+            "hp": 140,
+            "atk": 216,
+            "spe": 152
+        },
+        "nature": "Jolly",
+        "moves": [
+            "Crunch",
+            "Play Rough",
+            "Swords Dance",
+            "Wild Charge"
+        ]
+    }
+]

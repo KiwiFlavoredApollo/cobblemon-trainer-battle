@@ -1,0 +1,113 @@
+[
+    {
+        "species": "Braviary",
+        "item": "Heavy-Duty Boots",
+        "ability": "Defiant",
+        "evs": {
+            "hp": 64,
+            "atk": 252,
+            "spd": 4,
+            "spe": 188
+        },
+        "nature": "Adamant",
+        "moves": [
+            "Brave Bird",
+            "Bulk Up",
+            "Close Combat",
+            "Roost"
+        ]
+    },
+    {
+        "species": "Gastrodon",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Storm Drain",
+        "evs": {
+            "hp": 252,
+            "def": 252,
+            "spe": 4
+        },
+        "nature": "Bold",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Earth Power",
+            "Ice Beam",
+            "Recover",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Rotom-Mow",
+        "item": "Choice Scarf",
+        "ability": "Levitate",
+        "evs": {
+            "hp": 8,
+            "spa": 248,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "moves": [
+            "Defog",
+            "Leaf Storm",
+            "Trick",
+            "Volt Switch"
+        ]
+    },
+    {
+        "species": "Salazzle",
+        "item": "Heavy-Duty Boots",
+        "ability": "Corrosion",
+        "evs": {
+            "spa": 252,
+            "spd": 4,
+            "spe": 252
+        },
+        "nature": "Timid",
+        "ivs": {
+            "atk": 0
+        },
+        "moves": [
+            "Encore",
+            "Nasty Plot",
+            "Overheat",
+            "Sludge Bomb"
+        ]
+    },
+    {
+        "species": "Stakataka",
+        "item": "Leftovers",
+        "ability": "Beast Boost",
+        "evs": {
+            "hp": 252,
+            "spd": 244,
+            "spe": 12
+        },
+        "nature": "Careful",
+        "moves": [
+            "Body Press",
+            "Heavy Slam",
+            "Stealth Rock",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Sylveon",
+        "gender": "M",
+        "item": "Leftovers",
+        "ability": "Pixilate",
+        "evs": {
+            "hp": 252,
+            "def": 188,
+            "spd": 68
+        },
+        "nature": "Calm",
+        "moves": [
+            "Heal Bell",
+            "Hyper Voice",
+            "Protect",
+            "Wish"
+        ]
+    }
+]
