@@ -14,37 +14,37 @@ public class PlayerBattleHistory {
         recordRegistry = new HashMap<>();
     }
 
-    public void addPlayerVictory(Identifier trainer) {
-        PlayerBattleRecord record = getTrainerBattleRecord(trainer);
+    public void addPlayerVictory(Identifier opponent) {
+        PlayerBattleRecord record = getPlayerBattleRecord(opponent);
 
         record.victory += 1;
         record.timestamp = Instant.now();
 
-        recordRegistry.put(trainer, record);
+        recordRegistry.put(opponent, record);
     }
 
-    public void addPlayerDefeat(Identifier trainer) {
-        PlayerBattleRecord record = getTrainerBattleRecord(trainer);
+    public void addPlayerDefeat(Identifier opponent) {
+        PlayerBattleRecord record = getPlayerBattleRecord(opponent);
 
         record.defeat += 1;
         record.timestamp = Instant.now();
 
-        recordRegistry.put(trainer, record);
+        recordRegistry.put(opponent, record);
     }
 
-    private PlayerBattleRecord getTrainerBattleRecord(Identifier trainer) {
-        if (recordRegistry.containsKey(trainer)) {
-            return recordRegistry.get(trainer);
+    private PlayerBattleRecord getPlayerBattleRecord(Identifier opponent) {
+        if (recordRegistry.containsKey(opponent)) {
+            return recordRegistry.get(opponent);
         } else {
             return new PlayerBattleRecord();
         }
     }
 
-    public boolean isTrainerDefeated(Identifier trainer) {
-        if (!recordRegistry.containsKey(trainer)) {
+    public boolean isOpponentDefeated(Identifier opponent) {
+        if (!recordRegistry.containsKey(opponent)) {
             return false;
         } else {
-            return recordRegistry.get(trainer).victory > 0;
+            return recordRegistry.get(opponent).victory > 0;
         }
     }
 
@@ -52,8 +52,8 @@ public class PlayerBattleHistory {
         recordRegistry.put(identifier, record);
     }
 
-    public void remove(Identifier trainer) {
-        recordRegistry.remove(trainer);
+    public void remove(Identifier opponent) {
+        recordRegistry.remove(opponent);
     }
 
     public NbtCompound writeToNbt(NbtCompound nbt) {
@@ -78,10 +78,10 @@ public class PlayerBattleHistory {
 
     public static PlayerBattleHistory readFromNbt(NbtCompound nbt) {
         PlayerBattleHistory history = new PlayerBattleHistory();
-        for (String trainer : nbt.getKeys()) {
+        for (String opponent : nbt.getKeys()) {
             history.put(
-                    new Identifier(trainer),
-                    readTrainerBattleRecordFromNbt(nbt.getCompound(trainer))
+                    new Identifier(opponent),
+                    readTrainerBattleRecordFromNbt(nbt.getCompound(opponent))
             );
         }
         return history;

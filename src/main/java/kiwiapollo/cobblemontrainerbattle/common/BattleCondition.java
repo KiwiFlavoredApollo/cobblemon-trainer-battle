@@ -7,7 +7,7 @@ public class BattleCondition {
 
     public BattleCondition() {
         this.isRematchAllowedAfterVictory = true;
-        this.minimumPartyLevel = 0;
+        this.minimumPartyLevel = 1;
         this.maximumPartyLevel = 100;
     }
 

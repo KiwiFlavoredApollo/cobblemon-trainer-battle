@@ -38,7 +38,7 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
         TrainerProfile trainerProfile = CobblemonTrainerBattle.trainerProfileRegistry.get(identifier);
         this.condition = new BattleCondition(
                 trainerProfile.condition().isRematchAllowedAfterVictory,
-                0,
+                1,
                 100
         );
 

@@ -11,13 +11,13 @@ import net.minecraft.util.Identifier;
 import java.util.List;
 import java.util.UUID;
 
-public class BattleConditionInjectedNormalBattleTrainer implements TrainerBattleParticipant {
+public class FlatGroupBattleTrainer implements TrainerBattleParticipant {
     private final TrainerBattleParticipant trainer;
     private final BattleCondition condition;
 
-    public BattleConditionInjectedNormalBattleTrainer(Identifier identifier, ServerPlayerEntity player, BattleCondition condition) {
-        this.trainer = new NormalBattleTrainer(identifier, player);
-        this.condition = condition;
+    public FlatGroupBattleTrainer(Identifier identifier, ServerPlayerEntity player, BattleCondition groupBattleCondition, int level) {
+        this.trainer = new FlatBattleTrainer(identifier, player, level);
+        this.condition = new BattleCondition();
     }
 
     @Override

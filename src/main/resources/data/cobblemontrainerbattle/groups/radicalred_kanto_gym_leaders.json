@@ -9,6 +9,11 @@
     "trainer:radicalred/leader_blaine",
     "trainer:radicalred/leader_giovanni"
   ],
+  "condition": {
+    "isRematchAllowedAfterVictory": true,
+    "maximumPartyLevel": 100,
+    "minimumPartyLevel": 1
+  },
   "onVictory": {
     "balance": 0,
     "commands": []

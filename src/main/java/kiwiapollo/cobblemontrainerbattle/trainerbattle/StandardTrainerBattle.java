@@ -43,7 +43,7 @@ public class StandardTrainerBattle implements TrainerBattle {
             PlayerValidator.assertPlayerPartyNotFaint(player.getParty());
             PlayerValidator.assertPlayerPartyAtOrAboveRelativeLevelThreshold(player.getParty());
             PlayerValidator.assertPlayerNotBusyWithPokemonBattle(player.getPlayerEntity());
-            BattleConditionValidator.assertBattleConditionSatisfied(this);
+            BattleConditionValidator.assertAllBattleConditionMet(this);
 
             Cobblemon.INSTANCE.getStorage()
                     .getParty(player.getPlayerEntity()).toGappyList().stream()

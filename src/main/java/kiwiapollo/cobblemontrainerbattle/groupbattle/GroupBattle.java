@@ -9,6 +9,7 @@ import kiwiapollo.cobblemontrainerbattle.battleparticipant.factory.NormalGroupBa
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.factory.BattleParticipantFactory;
 import kiwiapollo.cobblemontrainerbattle.common.*;
 import kiwiapollo.cobblemontrainerbattle.exception.*;
+import kiwiapollo.cobblemontrainerbattle.exception.battlecondition.RematchNotAllowedException;
 import kiwiapollo.cobblemontrainerbattle.postbattle.RecordedBattleResultHandler;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.postbattle.BattleResultHandler;
@@ -46,6 +47,8 @@ public class GroupBattle {
 
             TrainerGroupProfile trainerGroupProfile = CobblemonTrainerBattle.trainerGroupProfileRegistry.get(identifier);
             List<Identifier> trainersToDefeat = trainerGroupProfile.trainers.stream().map(Identifier::new).toList();
+
+            BattleConditionValidator.assertRematchAllowedAfterVictory(player, identifier, trainerGroupProfile.condition);
 
             BattleResultHandler battleResultHandler = new RecordedBattleResultHandler(
                     player,
@@ -91,6 +94,14 @@ public class GroupBattle {
 
             String groupResourcePath = StringArgumentType.getString(context, "group");
             MutableText message = Text.translatable("command.cobblemontrainerbattle.common.resource.cannot_be_read", groupResourcePath);
+            player.sendMessage(message.formatted(Formatting.RED));
+
+            return 0;
+
+        } catch (RematchNotAllowedException e) {
+            ServerPlayerEntity player = context.getSource().getPlayer();
+
+            MutableText message = Text.translatable("command.cobblemontrainerbattle.condition.is_rematch_allowed_after_victory.groupbattle");
             player.sendMessage(message.formatted(Formatting.RED));
 
             return 0;

@@ -5,6 +5,7 @@ import kiwiapollo.cobblemontrainerbattle.battleparticipant.factory.BattlePartici
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.TrainerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.common.BattleCondition;
+import kiwiapollo.cobblemontrainerbattle.common.BattleConditionValidator;
 import kiwiapollo.cobblemontrainerbattle.postbattle.ParameterizedBattleResultHandler;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;

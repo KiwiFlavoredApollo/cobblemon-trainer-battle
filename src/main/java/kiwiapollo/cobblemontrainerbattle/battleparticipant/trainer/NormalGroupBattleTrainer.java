@@ -11,16 +11,16 @@ import net.minecraft.util.Identifier;
 import java.util.List;
 import java.util.UUID;
 
-public class BattleConditionInjectedFlatBattleTrainer implements TrainerBattleParticipant {
+public class NormalGroupBattleTrainer implements TrainerBattleParticipant {
     private final TrainerBattleParticipant trainer;
     private final BattleCondition condition;
 
-    public BattleConditionInjectedFlatBattleTrainer(Identifier identifier, ServerPlayerEntity player, BattleCondition condition, int level) {
-        this.trainer = new FlatBattleTrainer(identifier, player, level);
+    public NormalGroupBattleTrainer(Identifier identifier, ServerPlayerEntity player, BattleCondition groupBattleCondition) {
+        this.trainer = new NormalBattleTrainer(identifier, player);
         this.condition = new BattleCondition(
-                condition.isRematchAllowedAfterVictory,
-                0,
-                100
+                true,
+                groupBattleCondition.minimumPartyLevel,
+                groupBattleCondition.maximumPartyLevel
         );
     }
 

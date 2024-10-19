@@ -4,10 +4,12 @@ import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.PlayerBattleParticipant;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.TrainerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.exception.battlecondition.MaximumPartyLevelException;
 import kiwiapollo.cobblemontrainerbattle.exception.battlecondition.MinimumPartyLevelException;
 import kiwiapollo.cobblemontrainerbattle.exception.battlecondition.RematchNotAllowedException;
+import kiwiapollo.cobblemontrainerbattle.parser.PlayerBattleHistory;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
@@ -16,15 +18,18 @@ import net.minecraft.util.Identifier;
 import java.util.Objects;
 
 public class BattleConditionValidator {
-    public static void assertBattleConditionSatisfied(TrainerBattle trainerBattle) throws BattleStartException {
+    public static void assertAllBattleConditionMet(TrainerBattle trainerBattle) throws BattleStartException {
         try {
-            assertIsRematchAllowedAfterVictorySatisfied(trainerBattle);
-            assertMinimumPartyLevelSatisfied(trainerBattle);
-            assertMaximumPartyLevelSatisfied(trainerBattle);
+            PlayerBattleParticipant player = trainerBattle.getPlayer();
+            TrainerBattleParticipant trainer = trainerBattle.getTrainer();
+            assertRematchAllowedAfterVictory(player.getPlayerEntity(), trainer.getIdentifier(), trainer.getBattleCondition());
+
+            assertAtOrAboveMinimumPartyLevel(player.getParty(), trainer.getBattleCondition());
+            assertAtOrBelowMaximumPartyLevel(player.getParty(), trainer.getBattleCondition());
 
         } catch (RematchNotAllowedException e) {
             PlayerBattleParticipant player = trainerBattle.getPlayer();
-            player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.condition.is_rematch_allowed_after_victory"));
+            player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.condition.is_rematch_allowed_after_victory.trainerbattle"));
 
             throw new BattleStartException();
 
@@ -42,14 +47,10 @@ public class BattleConditionValidator {
         }
     }
 
-    private static void assertIsRematchAllowedAfterVictorySatisfied(TrainerBattle trainerBattle) throws RematchNotAllowedException {
+    public static void assertRematchAllowedAfterVictory(ServerPlayerEntity player, Identifier opponent, BattleCondition condition) throws RematchNotAllowedException {
         try {
-            ServerPlayerEntity player = trainerBattle.getPlayer().getPlayerEntity();
-            Identifier trainer = trainerBattle.getTrainer().getIdentifier();
-            BattleCondition condition = trainerBattle.getTrainer().getBattleCondition();
-
-            boolean isTrainerDefeated = CobblemonTrainerBattle.playerBattleHistoryRegistry.get(player.getUuid()).isTrainerDefeated(trainer);
-            if (!condition.isRematchAllowedAfterVictory && isTrainerDefeated) {
+            PlayerBattleHistory history = CobblemonTrainerBattle.playerBattleHistoryRegistry.get(player.getUuid());
+            if (!condition.isRematchAllowedAfterVictory && history.isOpponentDefeated(opponent)) {
                 throw new RematchNotAllowedException();
             }
 
@@ -58,11 +59,8 @@ public class BattleConditionValidator {
         }
     }
 
-    private static void assertMaximumPartyLevelSatisfied(TrainerBattle trainerBattle) throws MaximumPartyLevelException {
+    public static void assertAtOrBelowMaximumPartyLevel(PartyStore party, BattleCondition condition) throws MaximumPartyLevelException {
         try {
-            PartyStore party = trainerBattle.getPlayer().getParty();
-            BattleCondition condition = trainerBattle.getTrainer().getBattleCondition();
-
             boolean isAtOrBelowMaximumPartyLevel = party.toGappyList().stream()
                     .filter(Objects::nonNull)
                     .map(Pokemon::getLevel)
@@ -77,11 +75,8 @@ public class BattleConditionValidator {
         }
     }
 
-    private static void assertMinimumPartyLevelSatisfied(TrainerBattle trainerBattle) throws MinimumPartyLevelException {
+    public static void assertAtOrAboveMinimumPartyLevel(PartyStore party, BattleCondition condition) throws MinimumPartyLevelException {
         try {
-            PartyStore party = trainerBattle.getPlayer().getParty();
-            BattleCondition condition = trainerBattle.getTrainer().getBattleCondition();
-
             boolean isAtOrAboveMinimumPartyLevel = party.toGappyList().stream()
                     .filter(Objects::nonNull)
                     .map(Pokemon::getLevel)
