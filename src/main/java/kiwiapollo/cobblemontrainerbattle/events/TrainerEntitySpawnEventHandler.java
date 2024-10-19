@@ -8,10 +8,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 
 public class TrainerEntitySpawnEventHandler {
-    private static final int SPAWN_INTERVAL = 100;
+    private static final int SPAWN_INTERVAL = 1200;
     private static final int MAXIMUM_RADIUS = 30;
     private static final int MINIMUM_RADIUS = 5;
-    private static final int MAXIMUM_TRAINER_COUNT = 2;
+    private static final int MAXIMUM_TRAINER_COUNT = 1;
 
     public static void onEndWorldTick(ServerWorld world) {
         if (!CobblemonTrainerBattle.config.enableTrainerSpawn) {

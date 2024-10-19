@@ -9,7 +9,7 @@ import kiwiapollo.cobblemontrainerbattle.battleparticipant.factory.NormalGroupBa
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.factory.BattleParticipantFactory;
 import kiwiapollo.cobblemontrainerbattle.common.*;
 import kiwiapollo.cobblemontrainerbattle.exception.*;
-import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultActionHandler;
+import kiwiapollo.cobblemontrainerbattle.resulthandler.RecordedSessionResultHandler;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultHandler;
 import net.minecraft.server.command.ServerCommandSource;
@@ -47,8 +47,9 @@ public class GroupBattle {
             TrainerGroupProfile trainerGroupProfile = CobblemonTrainerBattle.trainerGroupProfileRegistry.get(identifier);
             List<Identifier> trainersToDefeat = trainerGroupProfile.trainers.stream().map(Identifier::new).toList();
 
-            ResultHandler resultHandler = new ResultActionHandler(
+            ResultHandler resultHandler = new RecordedSessionResultHandler(
                     player,
+                    identifier,
                     trainerGroupProfile.onVictory,
                     trainerGroupProfile.onDefeat
             );

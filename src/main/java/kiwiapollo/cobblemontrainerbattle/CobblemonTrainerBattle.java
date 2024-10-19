@@ -11,8 +11,10 @@ import kiwiapollo.cobblemontrainerbattle.economy.EconomyFactory;
 import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.events.*;
 import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattle;
+import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattleSession;
 import kiwiapollo.cobblemontrainerbattle.groupbattle.TrainerGroupProfile;
 import kiwiapollo.cobblemontrainerbattle.parser.*;
+import kiwiapollo.cobblemontrainerbattle.session.Session;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerProfile;
 import kotlin.Unit;
@@ -106,13 +108,19 @@ public class CobblemonTrainerBattle implements ModInitializer {
 		ServerPlayConnectionEvents.DISCONNECT.register((handler, server) -> {
 			UUID playerUuid = handler.getPlayer().getUuid();
 
-			GroupBattle.sessionRegistry.remove(playerUuid);
-            BattleFactory.sessionRegistry.remove(playerUuid);
-
 			if (trainerBattleRegistry.containsKey(playerUuid)) {
-				UUID battleId = trainerBattleRegistry.get(playerUuid).getBattleId();
-				Cobblemon.INSTANCE.getBattleRegistry().getBattle(battleId).end();
+				trainerBattleRegistry.get(playerUuid).onPlayerDefeat();
 				trainerBattleRegistry.remove(playerUuid);
+			}
+
+			if (GroupBattle.sessionRegistry.containsKey(playerUuid)) {
+				GroupBattle.sessionRegistry.get(playerUuid).onSessionStop();
+				GroupBattle.sessionRegistry.remove(playerUuid);
+			}
+
+			if (BattleFactory.sessionRegistry.containsKey(playerUuid)) {
+				BattleFactory.sessionRegistry.get(playerUuid).onSessionStop();
+				BattleFactory.sessionRegistry.remove(playerUuid);
 			}
 		});
 
