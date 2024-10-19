@@ -12,8 +12,8 @@
   "command.cobblemontrainerbattle.condition.minimum_party_level": "Your Pokémon must be at least level %d.",
   "command.cobblemontrainerbattle.condition.maximum_party_level": "Your Pokémon must be no higher than level %d.",
 
-  "command.cobblemontrainerbattle.common.resource.not_found": "Couldn’t find %s.",
-  "command.cobblemontrainerbattle.common.resource.cannot_be_read": "An error occurred while reading %s.",
+  "command.cobblemontrainerbattle.common.resource.trainer_not_found": "Couldn’t find the trainer.",
+  "command.cobblemontrainerbattle.common.resource.group_not_found": "Couldn’t find the group.",
 
   "command.cobblemontrainerbattle.groupbattle.startsession.success": "Group Battle session started.",
   "command.cobblemontrainerbattle.groupbattle.stopsession.success": "Group Battle session ended.",

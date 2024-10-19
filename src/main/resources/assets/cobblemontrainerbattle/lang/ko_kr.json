@@ -12,8 +12,8 @@
   "command.cobblemontrainerbattle.condition.minimum_party_level": "모든 포켓몬의 레벨이 %d 보다 낮지 않아야 합니다",
   "command.cobblemontrainerbattle.condition.maximum_party_level": "모든 포켓몬의 레벨이 %d 보다 높지 않아야 합니다",
 
-  "command.cobblemontrainerbattle.common.resource.not_found": "%s을 찾을 수 없습니다",
-  "command.cobblemontrainerbattle.common.resource.cannot_be_read": "%s을 읽는 도중에 오류가 발생했습니다",
+  "command.cobblemontrainerbattle.common.resource.trainer_not_found": "트레이너를 찾을 수 없습니다",
+  "command.cobblemontrainerbattle.common.resource.group_not_found": "그룹을 찾을 수 없습니다",
 
   "command.cobblemontrainerbattle.groupbattle.startsession.success": "그룹배틀 세션이 시작되었습니다",
   "command.cobblemontrainerbattle.groupbattle.stopsession.success": "그룹배틀 세션이 중단되었습니다",

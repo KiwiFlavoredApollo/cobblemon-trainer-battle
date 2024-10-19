@@ -11,6 +11,7 @@ import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.FlatBattlePlay
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.FlatBattleTrainer;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.TrainerBattleParticipant;
+import kiwiapollo.cobblemontrainerbattle.common.ResourceValidator;
 import kiwiapollo.cobblemontrainerbattle.postbattle.RecordedBattleResultHandler;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerProfile;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
@@ -20,7 +21,10 @@ import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.postbattle.BattleResultHandler;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+
+import java.io.FileNotFoundException;
 
 public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerCommandSource> {
     public TrainerBattleFlatCommand() {
@@ -70,6 +74,8 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
 
     private int startBattleWithTrainer(ServerPlayerEntity player, Identifier trainer) {
         try {
+            ResourceValidator.assertTrainerExist(trainer);
+
             PlayerBattleParticipant playerBattleParticipant = new FlatBattlePlayer(player, StandardTrainerBattle.FLAT_LEVEL);
             TrainerBattleParticipant trainerBattleParticipant = new FlatBattleTrainer(trainer, player, StandardTrainerBattle.FLAT_LEVEL);
 
@@ -82,6 +88,10 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
             CobblemonTrainerBattle.trainerBattleRegistry.put(player.getUuid(), trainerBattle);
 
             return Command.SINGLE_SUCCESS;
+
+        } catch (FileNotFoundException e) {
+            player.sendMessage(Text.translatable("command.cobblemontrainerbattle.common.resource.trainer_not_found"));
+            return 0;
 
         } catch (BattleStartException e) {
             return 0;

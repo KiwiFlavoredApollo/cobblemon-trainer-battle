@@ -115,14 +115,30 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
             try (InputStream inputStream = resourceManager.getResourceOrThrow(identifier).getInputStream()) {
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
                 TrainerGroupProfile trainerGroupProfile = new Gson().fromJson(bufferedReader, TrainerGroupProfile.class);
+
+                assertTrainerGroupProfileValid(trainerGroupProfile);
+
                 trainerGroupProfileMap.put(toTrainerGroupIdentifier(identifier), trainerGroupProfile);
 
-            } catch (IOException | NullPointerException ignored) {
-
+            } catch (IOException | NullPointerException | IllegalArgumentException ignored) {
+                CobblemonTrainerBattle.LOGGER.error("An error occurred while loading {}", identifier.toString());
             }
         }));
 
         return trainerGroupProfileMap;
+    }
+
+    private void assertTrainerGroupProfileValid(TrainerGroupProfile profile) {
+        if (profile.trainers.isEmpty()) {
+            throw new IllegalArgumentException();
+        }
+
+        boolean isExistAllTrainers = profile.trainers.stream()
+                .map(Identifier::new)
+                .allMatch(CobblemonTrainerBattle.trainerProfileRegistry::containsKey);
+        if (!isExistAllTrainers) {
+            throw new IllegalArgumentException();
+        }
     }
 
     private Identifier toTrainerGroupIdentifier(Identifier identifier) {

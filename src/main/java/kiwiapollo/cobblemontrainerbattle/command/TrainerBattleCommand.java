@@ -7,6 +7,7 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.common.ResourceValidator;
 import kiwiapollo.cobblemontrainerbattle.postbattle.RecordedBattleResultHandler;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
@@ -20,7 +21,10 @@ import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.NormalBattlePl
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.NormalBattleTrainer;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+
+import java.io.FileNotFoundException;
 
 public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSource> {
     public TrainerBattleCommand() {
@@ -70,6 +74,8 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
 
     private int startBattleWithTrainer(ServerPlayerEntity player, Identifier trainer) {
         try {
+            ResourceValidator.assertTrainerExist(trainer);
+
             PlayerBattleParticipant playerBattleParticipant = new NormalBattlePlayer(player);
             TrainerBattleParticipant trainerBattleParticipant = new NormalBattleTrainer(trainer, player);
 
@@ -82,6 +88,10 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
             CobblemonTrainerBattle.trainerBattleRegistry.put(player.getUuid(), trainerBattle);
 
             return Command.SINGLE_SUCCESS;
+
+        } catch (FileNotFoundException e) {
+            player.sendMessage(Text.translatable("command.cobblemontrainerbattle.common.resource.trainer_not_found"));
+            return 0;
 
         } catch (BattleStartException e) {
             return 0;

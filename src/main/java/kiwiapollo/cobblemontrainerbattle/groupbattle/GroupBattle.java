@@ -42,7 +42,6 @@ public class GroupBattle {
             Identifier identifier = new Identifier(StringArgumentType.getString(context, "group"));
 
             ResourceValidator.assertTrainerGroupExist(identifier);
-            ResourceValidator.assertTrainerGroupValid(identifier);
             SessionValidator.assertSessionNotExist(sessionRegistry, player);
 
             TrainerGroupProfile trainerGroupProfile = CobblemonTrainerBattle.trainerGroupProfileRegistry.get(identifier);
@@ -83,17 +82,7 @@ public class GroupBattle {
         } catch (FileNotFoundException e) {
             ServerPlayerEntity player = context.getSource().getPlayer();
 
-            String groupResourcePath = StringArgumentType.getString(context, "group");
-            MutableText message = Text.translatable("command.cobblemontrainerbattle.common.resource.not_found", groupResourcePath);
-            player.sendMessage(message.formatted(Formatting.RED));
-
-            return 0;
-
-        } catch (IllegalArgumentException e) {
-            ServerPlayerEntity player = context.getSource().getPlayer();
-
-            String groupResourcePath = StringArgumentType.getString(context, "group");
-            MutableText message = Text.translatable("command.cobblemontrainerbattle.common.resource.cannot_be_read", groupResourcePath);
+            MutableText message = Text.translatable("command.cobblemontrainerbattle.common.resource.group_not_found");
             player.sendMessage(message.formatted(Formatting.RED));
 
             return 0;
