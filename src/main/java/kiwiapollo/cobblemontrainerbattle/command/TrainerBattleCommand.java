@@ -11,13 +11,13 @@ import kiwiapollo.cobblemontrainerbattle.resulthandler.RecordedBattleResultHandl
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerIdentifierFactory;
-import kiwiapollo.cobblemontrainerbattle.common.TrainerProfile;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerProfile;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultHandler;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.PlayerBattleParticipant;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.TrainerBattleParticipant;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.NormalBattlePlayer;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.VirtualNormalBattleTrainer;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.PlayerBattleParticipant;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.TrainerBattleParticipant;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.NormalBattlePlayer;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.NormalBattleTrainer;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
@@ -71,7 +71,7 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
     private int startBattleWithTrainer(ServerPlayerEntity player, Identifier trainer) {
         try {
             PlayerBattleParticipant playerBattleParticipant = new NormalBattlePlayer(player);
-            TrainerBattleParticipant trainerBattleParticipant = new VirtualNormalBattleTrainer(trainer, player);
+            TrainerBattleParticipant trainerBattleParticipant = new NormalBattleTrainer(trainer, player);
 
             TrainerProfile trainerProfile = CobblemonTrainerBattle.trainerProfileRegistry.get(trainer);
             ResultHandler resultHandler = new RecordedBattleResultHandler(playerBattleParticipant, trainerBattleParticipant, trainerProfile.onVictory(), trainerProfile.onDefeat());

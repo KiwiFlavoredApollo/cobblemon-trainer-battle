@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.battleparticipant;
+package kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer;
 
 import com.cobblemon.mod.common.api.battles.model.actor.AIBattleActor;
 import com.cobblemon.mod.common.api.battles.model.ai.BattleAI;
@@ -10,7 +10,7 @@ import kiwiapollo.cobblemontrainerbattle.battleactor.DisposableBattlePokemonFact
 import kiwiapollo.cobblemontrainerbattle.battleactor.VirtualTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.common.BattleCondition;
 import kiwiapollo.cobblemontrainerbattle.common.Generation5AI;
-import kiwiapollo.cobblemontrainerbattle.common.TrainerProfile;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerProfile;
 import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
 import kiwiapollo.cobblemontrainerbattle.parser.SmogonPokemon;
 import kiwiapollo.cobblemontrainerbattle.parser.SmogonPokemonParser;
@@ -24,7 +24,7 @@ import java.util.UUID;
 public class FlatBattleTrainer implements TrainerBattleParticipant {
     private final Identifier identifier;
     private final UUID uuid;
-    private final BattleCondition battleCondition;
+    private final BattleCondition condition;
     private final ServerPlayerEntity player;
 
     private PartyStore party;
@@ -36,7 +36,7 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
         this.player = player;
 
         TrainerProfile trainerProfile = CobblemonTrainerBattle.trainerProfileRegistry.get(identifier);
-        this.battleCondition = new BattleCondition(
+        this.condition = new BattleCondition(
                 trainerProfile.condition().isRematchAllowedAfterVictory,
                 0,
                 100
@@ -67,7 +67,7 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
 
     @Override
     public BattleCondition getBattleCondition() {
-        return battleCondition;
+        return condition;
     }
 
     @Override

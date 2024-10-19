@@ -3,17 +3,18 @@ package kiwiapollo.cobblemontrainerbattle;
 import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.Priority;
 import com.cobblemon.mod.common.api.events.CobblemonEvents;
-import kiwiapollo.cobblemontrainerbattle.battleactor.EntityBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactory;
+import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactoryProfile;
 import kiwiapollo.cobblemontrainerbattle.command.*;
-import kiwiapollo.cobblemontrainerbattle.common.*;
 import kiwiapollo.cobblemontrainerbattle.economy.Economy;
 import kiwiapollo.cobblemontrainerbattle.economy.EconomyFactory;
 import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.events.*;
 import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattle;
+import kiwiapollo.cobblemontrainerbattle.groupbattle.TrainerGroupProfile;
 import kiwiapollo.cobblemontrainerbattle.parser.*;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerProfile;
 import kotlin.Unit;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
@@ -25,7 +26,6 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.item.Item;
@@ -40,7 +40,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.*;
-import java.util.stream.StreamSupport;
 
 public class CobblemonTrainerBattle implements ModInitializer {
 	public static final String NAMESPACE = "cobblemontrainerbattle";

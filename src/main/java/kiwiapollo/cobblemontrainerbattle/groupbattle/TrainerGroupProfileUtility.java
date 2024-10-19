@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.common;
+package kiwiapollo.cobblemontrainerbattle.groupbattle;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.parser.ResourceReloadListener;

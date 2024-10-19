@@ -1,7 +1,5 @@
 package kiwiapollo.cobblemontrainerbattle.resulthandler;
 
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.TrainerBattleParticipant;
-
 public class SessionBattleResultHandler implements ResultHandler {
     private final Runnable onVictory;
     private final Runnable onDefeat;

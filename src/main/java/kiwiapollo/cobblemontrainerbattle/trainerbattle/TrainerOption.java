@@ -1,5 +1,6 @@
-package kiwiapollo.cobblemontrainerbattle.common;
+package kiwiapollo.cobblemontrainerbattle.trainerbattle;
 
+import kiwiapollo.cobblemontrainerbattle.common.BattleCondition;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultAction;
 
 public class TrainerOption {

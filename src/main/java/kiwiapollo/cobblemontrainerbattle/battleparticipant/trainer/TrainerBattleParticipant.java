@@ -1,7 +1,7 @@
-package kiwiapollo.cobblemontrainerbattle.battleparticipant;
+package kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer;
 
-import com.cobblemon.mod.common.api.battles.model.actor.AIBattleActor;
 import com.cobblemon.mod.common.api.battles.model.ai.BattleAI;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.BattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.common.BattleCondition;
 import net.minecraft.util.Identifier;
 

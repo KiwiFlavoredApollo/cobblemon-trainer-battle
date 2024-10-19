@@ -1,11 +1,11 @@
-package kiwiapollo.cobblemontrainerbattle.battleparticipant;
+package kiwiapollo.cobblemontrainerbattle.battleparticipant.player;
 
+import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
+import com.cobblemon.mod.common.api.storage.party.PlayerPartyStore;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
-import kiwiapollo.cobblemontrainerbattle.battleactor.DisposableBattlePokemonFactory;
-import kiwiapollo.cobblemontrainerbattle.battlefactory.RandomPartyFactory;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.MutableText;
 import net.minecraft.util.Formatting;
@@ -14,13 +14,13 @@ import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
-public class BattleFactoryPlayer implements PlayerBattleParticipant {
+public class NormalBattlePlayer implements PlayerBattleParticipant {
     private final ServerPlayerEntity player;
-    private PartyStore party;
+    private PlayerPartyStore party;
 
-    public BattleFactoryPlayer(ServerPlayerEntity player) {
+    public NormalBattlePlayer(ServerPlayerEntity player) {
         this.player = player;
-        this.party = RandomPartyFactory.create(player);
+        this.party = Cobblemon.INSTANCE.getStorage().getParty(player);
     }
 
     public UUID getUuid() {
@@ -28,13 +28,13 @@ public class BattleFactoryPlayer implements PlayerBattleParticipant {
     }
 
     @Override
-    public PartyStore getParty() {
+    public PlayerPartyStore getParty() {
         return party;
     }
 
     @Override
     public void setParty(PartyStore party) {
-        this.party = party;
+        this.party = (PlayerPartyStore) party;
     }
 
     public ServerPlayerEntity getPlayerEntity() {
@@ -47,7 +47,12 @@ public class BattleFactoryPlayer implements PlayerBattleParticipant {
     }
 
     public List<BattlePokemon> getBattleTeam() {
-        return party.toGappyList().stream().filter(Objects::nonNull).map(DisposableBattlePokemonFactory::create).toList();
+        UUID leadingPokemon = party.toGappyList().stream()
+                .filter(Objects::nonNull)
+                .filter(pokemon -> !pokemon.isFainted())
+                .findFirst().get().getUuid();
+
+        return party.toBattleTeam(false, false, leadingPokemon);
     }
 
     @Override

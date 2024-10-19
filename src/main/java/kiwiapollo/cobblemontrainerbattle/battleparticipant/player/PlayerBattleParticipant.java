@@ -1,5 +1,6 @@
-package kiwiapollo.cobblemontrainerbattle.battleparticipant;
+package kiwiapollo.cobblemontrainerbattle.battleparticipant.player;
 
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.BattleParticipant;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.MutableText;
 

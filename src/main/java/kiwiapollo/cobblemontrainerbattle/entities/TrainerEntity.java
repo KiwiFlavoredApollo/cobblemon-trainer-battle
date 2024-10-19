@@ -5,11 +5,14 @@ import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactor.EntityBackedTrainerBattleActor;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.*;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.NormalBattlePlayer;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.PlayerBattleParticipant;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.EntityBackedTrainer;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.TrainerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerIdentifierFactory;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.common.TrainerProfile;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerProfile;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.exception.BusyWithPokemonBattleException;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultActionHandler;
@@ -120,7 +123,7 @@ public class TrainerEntity extends PathAwareEntity {
             this.velocityDirty = true;
 
             PlayerBattleParticipant playerBattleParticipant = new NormalBattlePlayer((ServerPlayerEntity) player);
-            TrainerBattleParticipant trainerBattleParticipant = new EntityBackedNormalBattleTrainer(trainer, this, (ServerPlayerEntity) player);
+            TrainerBattleParticipant trainerBattleParticipant = new EntityBackedTrainer(trainer, this, (ServerPlayerEntity) player);
 
             TrainerProfile trainerProfile = CobblemonTrainerBattle.trainerProfileRegistry.get(trainer);
             ResultHandler resultHandler = new ResultActionHandler((ServerPlayerEntity) player, trainerProfile.onVictory(), trainerProfile.onDefeat());

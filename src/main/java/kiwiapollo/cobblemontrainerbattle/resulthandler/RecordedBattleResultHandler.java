@@ -1,8 +1,8 @@
 package kiwiapollo.cobblemontrainerbattle.resulthandler;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.PlayerBattleParticipant;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.TrainerBattleParticipant;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.PlayerBattleParticipant;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.TrainerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.parser.TrainerBattleHistory;
 
 public class RecordedBattleResultHandler implements ResultHandler {

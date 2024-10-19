@@ -1,11 +1,12 @@
-package kiwiapollo.cobblemontrainerbattle.battleparticipant;
+package kiwiapollo.cobblemontrainerbattle.battleparticipant.player;
 
 import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
-import com.cobblemon.mod.common.api.storage.party.PlayerPartyStore;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
+import com.cobblemon.mod.common.pokemon.Pokemon;
+import kiwiapollo.cobblemontrainerbattle.battleactor.DisposableBattlePokemonFactory;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.MutableText;
 import net.minecraft.util.Formatting;
@@ -14,13 +15,27 @@ import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
-public class NormalBattlePlayer implements PlayerBattleParticipant {
+public class FlatBattlePlayer implements PlayerBattleParticipant {
     private final ServerPlayerEntity player;
-    private PlayerPartyStore party;
+    private PartyStore party;
 
-    public NormalBattlePlayer(ServerPlayerEntity player) {
+    public FlatBattlePlayer(ServerPlayerEntity player, int level) {
         this.player = player;
-        this.party = Cobblemon.INSTANCE.getStorage().getParty(player);
+        this.party = cloneParty(player, level);
+    }
+
+    private static PartyStore cloneParty(ServerPlayerEntity player, int level) {
+        PartyStore original = Cobblemon.INSTANCE.getStorage().getParty(player);
+        PartyStore clone = new PartyStore(player.getUuid());
+
+        for (Pokemon pokemon : original.toGappyList().stream().filter(Objects::nonNull).toList()) {
+            clone.add(pokemon.clone(true, true));
+        }
+
+        clone.toGappyList().stream().filter(Objects::nonNull).forEach(Pokemon::heal);
+        clone.toGappyList().stream().filter(Objects::nonNull).forEach(pokemon -> pokemon.setLevel(level));
+
+        return clone;
     }
 
     public UUID getUuid() {
@@ -28,13 +43,13 @@ public class NormalBattlePlayer implements PlayerBattleParticipant {
     }
 
     @Override
-    public PlayerPartyStore getParty() {
+    public PartyStore getParty() {
         return party;
     }
 
     @Override
     public void setParty(PartyStore party) {
-        this.party = (PlayerPartyStore) party;
+        this.party = party;
     }
 
     public ServerPlayerEntity getPlayerEntity() {
@@ -47,12 +62,7 @@ public class NormalBattlePlayer implements PlayerBattleParticipant {
     }
 
     public List<BattlePokemon> getBattleTeam() {
-        UUID leadingPokemon = party.toGappyList().stream()
-                .filter(Objects::nonNull)
-                .filter(pokemon -> !pokemon.isFainted())
-                .findFirst().get().getUuid();
-
-        return party.toBattleTeam(false, false, leadingPokemon);
+        return party.toGappyList().stream().filter(Objects::nonNull).map(DisposableBattlePokemonFactory::create).toList();
     }
 
     @Override

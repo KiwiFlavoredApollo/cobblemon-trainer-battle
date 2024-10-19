@@ -1,10 +1,13 @@
 package kiwiapollo.cobblemontrainerbattle.groupbattle;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.factory.BattleParticipantFactory;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.PlayerBattleParticipant;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.TrainerBattleParticipant;
+import kiwiapollo.cobblemontrainerbattle.common.BattleCondition;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.SessionBattleResultHandler;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.*;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.exception.DefeatedAllTrainersException;
 import kiwiapollo.cobblemontrainerbattle.exception.DefeatedToTrainerException;
@@ -20,6 +23,7 @@ import java.util.List;
 public class GroupBattleSession implements Session {
     private final ServerPlayerEntity player;
     private final List<Identifier> trainersToDefeat;
+    private final BattleCondition condition;
     private final ResultHandler resultHandler;
     private final BattleParticipantFactory battleParticipantFactory;
 
@@ -30,11 +34,13 @@ public class GroupBattleSession implements Session {
     public GroupBattleSession(
             ServerPlayerEntity player,
             List<Identifier> trainersToDefeat,
+            BattleCondition condition,
             ResultHandler resultHandler,
             BattleParticipantFactory battleParticipantFactory
     ) {
         this.player = player;
         this.trainersToDefeat = trainersToDefeat;
+        this.condition = condition;
         this.resultHandler = resultHandler;
         this.battleParticipantFactory = battleParticipantFactory;
 
@@ -51,7 +57,7 @@ public class GroupBattleSession implements Session {
             PlayerBattleParticipant playerBattleParticipant = battleParticipantFactory.createPlayer(player);
 
             Identifier trainer = trainersToDefeat.get(defeatedTrainersCount);
-            TrainerBattleParticipant trainerBattleParticipant = battleParticipantFactory.createTrainer(trainer, player);
+            TrainerBattleParticipant trainerBattleParticipant = battleParticipantFactory.createTrainer(trainer, player, condition);
 
             ResultHandler resultHandler = new SessionBattleResultHandler(this::onBattleVictory, this::onBattleDefeat);
 

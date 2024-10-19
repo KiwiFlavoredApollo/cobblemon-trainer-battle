@@ -1,12 +1,11 @@
-package kiwiapollo.cobblemontrainerbattle.battleparticipant;
+package kiwiapollo.cobblemontrainerbattle.battleparticipant.player;
 
-import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
-import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.battleactor.DisposableBattlePokemonFactory;
+import kiwiapollo.cobblemontrainerbattle.battlefactory.RandomPartyFactory;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.MutableText;
 import net.minecraft.util.Formatting;
@@ -15,27 +14,13 @@ import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
-public class FlatBattlePlayer implements PlayerBattleParticipant {
+public class BattleFactoryPlayer implements PlayerBattleParticipant {
     private final ServerPlayerEntity player;
     private PartyStore party;
 
-    public FlatBattlePlayer(ServerPlayerEntity player, int level) {
+    public BattleFactoryPlayer(ServerPlayerEntity player) {
         this.player = player;
-        this.party = cloneParty(player, level);
-    }
-
-    private static PartyStore cloneParty(ServerPlayerEntity player, int level) {
-        PartyStore original = Cobblemon.INSTANCE.getStorage().getParty(player);
-        PartyStore clone = new PartyStore(player.getUuid());
-
-        for (Pokemon pokemon : original.toGappyList().stream().filter(Objects::nonNull).toList()) {
-            clone.add(pokemon.clone(true, true));
-        }
-
-        clone.toGappyList().stream().filter(Objects::nonNull).forEach(Pokemon::heal);
-        clone.toGappyList().stream().filter(Objects::nonNull).forEach(pokemon -> pokemon.setLevel(level));
-
-        return clone;
+        this.party = RandomPartyFactory.create(player);
     }
 
     public UUID getUuid() {

@@ -5,8 +5,9 @@ import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.BattleSide;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.PlayerBattleParticipant;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.TrainerBattleParticipant;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.PlayerBattleParticipant;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.TrainerBattleParticipant;
+import kiwiapollo.cobblemontrainerbattle.common.BattleConditionValidator;
 import kiwiapollo.cobblemontrainerbattle.common.PlayerValidator;
 import kiwiapollo.cobblemontrainerbattle.exception.*;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultHandler;
@@ -42,7 +43,7 @@ public class StandardTrainerBattle implements TrainerBattle {
             PlayerValidator.assertPlayerPartyNotFaint(player.getParty());
             PlayerValidator.assertPlayerPartyAtOrAboveRelativeLevelThreshold(player.getParty());
             PlayerValidator.assertPlayerNotBusyWithPokemonBattle(player.getPlayerEntity());
-            PlayerValidator.assertBattleConditionSatisfied(this);
+            BattleConditionValidator.assertBattleConditionSatisfied(this);
 
             Cobblemon.INSTANCE.getStorage()
                     .getParty(player.getPlayerEntity()).toGappyList().stream()

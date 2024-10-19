@@ -1,10 +1,9 @@
-package kiwiapollo.cobblemontrainerbattle.battleparticipant;
+package kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer;
 
 import com.cobblemon.mod.common.api.battles.model.actor.AIBattleActor;
 import com.cobblemon.mod.common.api.battles.model.ai.BattleAI;
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
-import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactor.DisposableBattlePokemonFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactor.VirtualTrainerBattleActor;
@@ -16,21 +15,22 @@ import kiwiapollo.cobblemontrainerbattle.parser.SmogonPokemonParser;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
-import java.util.*;
+import java.util.List;
+import java.util.Objects;
+import java.util.UUID;
 
-public class BattleFactoryTrainer implements TrainerBattleParticipant {
+public class NormalBattleTrainer implements TrainerBattleParticipant {
     private final Identifier identifier;
     private final UUID uuid;
     private final ServerPlayerEntity player;
 
     private PartyStore party;
 
-
-    public BattleFactoryTrainer(Identifier identifier, ServerPlayerEntity player, int level) {
+    public NormalBattleTrainer(Identifier identifier, ServerPlayerEntity player) {
         this.identifier = identifier;
         this.uuid = UUID.randomUUID();
         this.player = player;
-        this.party = toParty(CobblemonTrainerBattle.trainerProfileRegistry.get(identifier).team(), player, level);
+        this.party = toParty(CobblemonTrainerBattle.trainerProfileRegistry.get(identifier).team(), player);
     }
 
     @Override
@@ -94,23 +94,17 @@ public class BattleFactoryTrainer implements TrainerBattleParticipant {
         return party.toGappyList().stream().filter(Objects::nonNull).map(DisposableBattlePokemonFactory::create).toList();
     }
 
-    private static PartyStore toParty(List<SmogonPokemon> pokemons, ServerPlayerEntity player, int level) {
+    private static PartyStore toParty(List<SmogonPokemon> pokemons, ServerPlayerEntity player) {
         SmogonPokemonParser parser = new SmogonPokemonParser(player);
 
-        List<SmogonPokemon> randomParty = new ArrayList<>(pokemons);
-        Collections.shuffle(randomParty);
-
         PartyStore party = new PartyStore(UUID.randomUUID());
-        for (SmogonPokemon smogonPokemon : randomParty.subList(0, 3)) {
+        for (SmogonPokemon smogonPokemon : pokemons) {
             try {
                 party.add(parser.toCobblemonPokemon(smogonPokemon));
             } catch (PokemonParseException ignored) {
 
             }
         }
-
-        party.toGappyList().stream().filter(Objects::nonNull).forEach(Pokemon::heal);
-        party.toGappyList().stream().filter(Objects::nonNull).forEach(pokemon -> pokemon.setLevel(level));
 
         return party;
     }

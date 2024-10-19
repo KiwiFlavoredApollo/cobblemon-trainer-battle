@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.battleparticipant;
+package kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer;
 
 import com.cobblemon.mod.common.api.battles.model.actor.AIBattleActor;
 import com.cobblemon.mod.common.api.battles.model.ai.BattleAI;
@@ -20,45 +20,38 @@ import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
-public class EntityBackedNormalBattleTrainer implements TrainerBattleParticipant {
-    private final Identifier identifier;
-    private final UUID uuid;
+public class EntityBackedTrainer implements TrainerBattleParticipant {
+    private final TrainerBattleParticipant trainer;
     private final TrainerEntity entity;
-    private final ServerPlayerEntity player;
 
-    private PartyStore party;
-
-    public EntityBackedNormalBattleTrainer(Identifier identifier, TrainerEntity entity, ServerPlayerEntity player) {
-        this.identifier = identifier;
-        this.uuid = UUID.randomUUID();
+    public EntityBackedTrainer(Identifier identifier, TrainerEntity entity, ServerPlayerEntity player) {
+        this.trainer = new NormalBattleTrainer(identifier, player);
         this.entity = entity;
-        this.player = player;
-        this.party = toParty(CobblemonTrainerBattle.trainerProfileRegistry.get(identifier).team(), player);
     }
 
     @Override
     public String getName() {
-        return CobblemonTrainerBattle.trainerProfileRegistry.get(identifier).name();
+        return trainer.getName();
     }
 
     @Override
     public UUID getUuid() {
-        return uuid;
+        return trainer.getUuid();
     }
 
     @Override
     public Identifier getIdentifier() {
-        return identifier;
+        return trainer.getIdentifier();
     }
 
     @Override
     public BattleAI getBattleAI() {
-        return new Generation5AI();
+        return trainer.getBattleAI();
     }
 
     @Override
     public BattleCondition getBattleCondition() {
-        return CobblemonTrainerBattle.trainerProfileRegistry.get(identifier).condition();
+        return trainer.getBattleCondition();
     }
 
     @Override
@@ -84,31 +77,16 @@ public class EntityBackedNormalBattleTrainer implements TrainerBattleParticipant
 
     @Override
     public PartyStore getParty() {
-        return party;
+        return trainer.getParty();
     }
 
     @Override
     public void setParty(PartyStore party) {
-        this.party = party;
+        trainer.setParty(party);
     }
 
     @Override
     public List<BattlePokemon> getBattleTeam() {
-        return party.toGappyList().stream().filter(Objects::nonNull).map(DisposableBattlePokemonFactory::create).toList();
-    }
-
-    private static PartyStore toParty(List<SmogonPokemon> pokemons, ServerPlayerEntity player) {
-        SmogonPokemonParser parser = new SmogonPokemonParser(player);
-
-        PartyStore party = new PartyStore(UUID.randomUUID());
-        for (SmogonPokemon smogonPokemon : pokemons) {
-            try {
-                party.add(parser.toCobblemonPokemon(smogonPokemon));
-            } catch (PokemonParseException ignored) {
-
-            }
-        }
-
-        return party;
+        return trainer.getBattleTeam();
     }
 }

@@ -1,10 +1,10 @@
 package kiwiapollo.cobblemontrainerbattle.common;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.groupbattle.TrainerGroupProfile;
 import net.minecraft.util.Identifier;
 
 import java.io.FileNotFoundException;
-import java.util.Objects;
 
 public class ResourceValidator {
     public static void assertTrainerExist(Identifier identifier) throws FileNotFoundException {

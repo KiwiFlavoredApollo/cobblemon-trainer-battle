@@ -4,9 +4,9 @@ import com.mojang.brigadier.Command;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.FlatBattleParticipantFactory;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.NormalBattleParticipantFactory;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.BattleParticipantFactory;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.factory.FlatGroupBattleParticipantFactory;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.factory.NormalGroupBattleParticipantFactory;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.factory.BattleParticipantFactory;
 import kiwiapollo.cobblemontrainerbattle.common.*;
 import kiwiapollo.cobblemontrainerbattle.exception.*;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.ResultActionHandler;
@@ -27,11 +27,11 @@ public class GroupBattle {
     public static Map<UUID, GroupBattleSession> sessionRegistry = new HashMap<>();
 
     public static int startNormalGroupBattleSession(CommandContext<ServerCommandSource> context) {
-        return startSession(context, new NormalBattleParticipantFactory());
+        return startSession(context, new NormalGroupBattleParticipantFactory());
     }
 
     public static int startFlatGroupBattleSession(CommandContext<ServerCommandSource> context) {
-        return startSession(context, new FlatBattleParticipantFactory(FLAT_LEVEL));
+        return startSession(context, new FlatGroupBattleParticipantFactory(FLAT_LEVEL));
     }
 
     private static int startSession(CommandContext<ServerCommandSource> context, BattleParticipantFactory battleParticipantFactory) {
@@ -56,6 +56,7 @@ public class GroupBattle {
             GroupBattleSession session = new GroupBattleSession(
                     player,
                     trainersToDefeat,
+                    trainerGroupProfile.condition,
                     resultHandler,
                     battleParticipantFactory
             );
