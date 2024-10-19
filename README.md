@@ -2,13 +2,14 @@
 
 ## 1.5.0 Changelog
 
-- Trainer teams are stored under `trainers/team/<namespace>`
+- Data packs made for earlier versions will NOT be compatible
+- Trainer teams are stored under `trainers/teams/<namespace>`
 - Trainer options are stored under `trainers/options/<namespace>`
-- Renamed Smogon trainer to be shorter and uniform
+- Renamed Smogon trainer to be short and uniform
 - Fixed bug where Pokemon entities drop held items
 - Trainer can be selected in `<namespace>:<trainer>`
 - `/trainerbattle radicalred:biker_alex`
-- Added new trainer condition `isRematchAllowedAfterVictory` 
+- Added new trainer condition `isRematchAllowedAfterVictory`
 
 ## Configuration
 
