@@ -59,7 +59,7 @@
 ## Battle Factory
 
 - Mini-game for players who wants to test their luck and skills
-- Players must defeat 21 trainers
+- Players must defeat 7 trainers per round
 - Three random Pokemons are given to player
 - Player can trade Pokemons with trainers once obtained victory
 
