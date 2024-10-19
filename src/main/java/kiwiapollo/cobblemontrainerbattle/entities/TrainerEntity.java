@@ -6,6 +6,7 @@ import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactor.EntityBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.*;
+import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerIdentifierFactory;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.SafetyCheckedTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.common.TrainerProfile;
@@ -61,7 +62,7 @@ public class TrainerEntity extends PathAwareEntity {
     public TrainerEntity(EntityType<? extends PathAwareEntity> entityType, World world) {
         super(entityType, world);
 
-        this.trainer = getRandomTrainerIdentifier();
+        this.trainer = getRandomTrainer();
         this.texture = getRandomTexture();
         this.trainerBattle = null;
     }
@@ -77,14 +78,11 @@ public class TrainerEntity extends PathAwareEntity {
         }
     }
 
-    private Identifier getRandomTrainerIdentifier() {
+    private Identifier getRandomTrainer() {
         try {
-            List<Identifier> identifiers = new ArrayList<>(CobblemonTrainerBattle.trainerProfileRegistry.keySet());
-            Collections.shuffle(identifiers);
-            return identifiers.get(0);
-
+            return new RandomTrainerIdentifierFactory().create();
         } catch (IndexOutOfBoundsException e) {
-            throw new RuntimeException();
+            return null;
         }
     }
 
