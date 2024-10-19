@@ -16,7 +16,7 @@ import net.minecraft.text.Text;
 import java.util.Objects;
 import java.util.UUID;
 
-public class SafetyCheckedTrainerBattle implements TrainerBattle {
+public class StandardTrainerBattle implements TrainerBattle {
     public static final int FLAT_LEVEL = 100;
 
     private final PlayerBattleParticipant player;
@@ -25,7 +25,7 @@ public class SafetyCheckedTrainerBattle implements TrainerBattle {
 
     private UUID battleId;
 
-    public SafetyCheckedTrainerBattle(
+    public StandardTrainerBattle(
             PlayerBattleParticipant player,
             TrainerBattleParticipant trainer,
             ResultHandler resultHandler

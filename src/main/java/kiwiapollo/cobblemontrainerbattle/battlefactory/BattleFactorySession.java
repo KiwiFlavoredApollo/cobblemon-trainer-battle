@@ -8,7 +8,7 @@ import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.cobblemon.mod.common.pokemon.PokemonStats;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.SessionBattleResultHandler;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.SafetyCheckedTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.*;
 import kiwiapollo.cobblemontrainerbattle.exception.*;
@@ -63,7 +63,7 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Pokem
 
             ResultHandler resultHandler = new SessionBattleResultHandler(this::onBattleVictory, this::onBattleDefeat);
 
-            TrainerBattle trainerBattle = new SafetyCheckedTrainerBattle(player, trainer, resultHandler);
+            TrainerBattle trainerBattle = new StandardTrainerBattle(player, trainer, resultHandler);
             trainerBattle.start();
 
             CobblemonTrainerBattle.trainerBattleRegistry.put(player.getUuid(), trainerBattle);

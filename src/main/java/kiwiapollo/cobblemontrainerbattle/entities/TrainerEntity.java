@@ -7,7 +7,7 @@ import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactor.EntityBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.*;
 import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerIdentifierFactory;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.SafetyCheckedTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.common.TrainerProfile;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
@@ -27,7 +27,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
@@ -126,7 +125,7 @@ public class TrainerEntity extends PathAwareEntity {
             TrainerProfile trainerProfile = CobblemonTrainerBattle.trainerProfileRegistry.get(trainer);
             ResultHandler resultHandler = new ResultActionHandler((ServerPlayerEntity) player, trainerProfile.onVictory(), trainerProfile.onDefeat());
 
-            TrainerBattle trainerBattle = new SafetyCheckedTrainerBattle(
+            TrainerBattle trainerBattle = new StandardTrainerBattle(
                     playerBattleParticipant,
                     trainerBattleParticipant,
                     resultHandler

@@ -7,10 +7,8 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.common.PlayerValidator;
-import kiwiapollo.cobblemontrainerbattle.exception.EmptyPlayerPartyException;
 import kiwiapollo.cobblemontrainerbattle.resulthandler.RecordedBattleResultHandler;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.SafetyCheckedTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerIdentifierFactory;
 import kiwiapollo.cobblemontrainerbattle.common.TrainerProfile;
@@ -78,7 +76,7 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
             TrainerProfile trainerProfile = CobblemonTrainerBattle.trainerProfileRegistry.get(trainer);
             ResultHandler resultHandler = new RecordedBattleResultHandler(playerBattleParticipant, trainerBattleParticipant, trainerProfile.onVictory(), trainerProfile.onDefeat());
 
-            TrainerBattle trainerBattle = new SafetyCheckedTrainerBattle(playerBattleParticipant, trainerBattleParticipant, resultHandler);
+            TrainerBattle trainerBattle = new StandardTrainerBattle(playerBattleParticipant, trainerBattleParticipant, resultHandler);
             trainerBattle.start();
 
             CobblemonTrainerBattle.trainerBattleRegistry.put(player.getUuid(), trainerBattle);
