@@ -42,27 +42,10 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
     }
 
     private Map<Identifier, TrainerProfile> loadTrainerProfileRegistry(ResourceManager resourceManager) {
-        List<String> namespaces = List.of(
-                "radicalred",
-                "inclementemerald",
-                "smogon",
-                "custom"
-        );
-
-        Map<Identifier, TrainerProfile> trainers = new HashMap<>();
-        for (String namespace : namespaces) {
-            trainers.putAll(loadTrainersByNamespace(resourceManager, namespace));
-            CobblemonTrainerBattle.LOGGER.info(String.format("Loaded %s", namespace));
-        }
-
-        return trainers;
-    }
-
-    private Map<Identifier, TrainerProfile> loadTrainersByNamespace(ResourceManager resourceManager, String namespace) {
         TrainerOption defaultOption = loadDefaultTrainerOption(resourceManager);
 
-        Map<Identifier, Resource> teamResourceMap = resourceManager.findResources(String.format("%s/%s", TRAINER_TEAM_DIR, namespace), this::isJsonFile);
-        Map<Identifier, Resource> optionResourceMap = resourceManager.findResources(String.format("%s/%s", TRAINER_OPTION_DIR, namespace), this::isJsonFile);
+        Map<Identifier, Resource> teamResourceMap = resourceManager.findResources(TRAINER_TEAM_DIR, this::isJsonFile);
+        Map<Identifier, Resource> optionResourceMap = resourceManager.findResources(TRAINER_OPTION_DIR, this::isJsonFile);
 
         Map<Identifier, TrainerProfile> trainers = new HashMap<>();
         for (Map.Entry<Identifier, Resource> entry : teamResourceMap.entrySet()) {
