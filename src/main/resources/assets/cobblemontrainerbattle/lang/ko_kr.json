@@ -1,4 +1,5 @@
 {
+  "entity.cobblemontrainerbattles.trainer": "트레이너",
   "item.cobblemontrainerbattle.trainer_spawn_egg": "트레이너 생성 알",
 
   "command.cobblemontrainerbattle.trainerbattle.success": "%s와(과)의 배틀이 시작되었습니다",
