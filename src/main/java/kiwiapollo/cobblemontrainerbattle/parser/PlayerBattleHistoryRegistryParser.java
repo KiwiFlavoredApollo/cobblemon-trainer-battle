@@ -4,7 +4,6 @@ import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtIo;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.WorldSavePath;
 
 import java.io.File;
@@ -15,11 +14,11 @@ import java.util.Map;
 import java.util.UUID;
 
 public class PlayerBattleHistoryRegistryParser {
-    private static final int SAVE_INTERVAL = 100;
+    private static final int SAVE_INTERVAL = 24000;
 
-    public static void onEndWorldTick(ServerWorld world) {
-        if (world.getServer().getTicks() % SAVE_INTERVAL == 0) {
-            saveToNbt(world.getServer());
+    public static void onEndServerTick(MinecraftServer server) {
+        if (server.getTicks() % SAVE_INTERVAL == 0) {
+            saveToNbt(server);
         }
     }
 
@@ -43,6 +42,8 @@ public class PlayerBattleHistoryRegistryParser {
                 CobblemonTrainerBattle.LOGGER.error("An error occurred while loading from {}", file.getName());
             }
         }
+
+        CobblemonTrainerBattle.LOGGER.info("Loaded player battle history registry");
     }
 
     public static void saveToNbt(MinecraftServer server) {
@@ -71,6 +72,8 @@ public class PlayerBattleHistoryRegistryParser {
                 CobblemonTrainerBattle.LOGGER.error("An error occurred while saving to {}.dat", playerUuid);
             }
         }
+
+        CobblemonTrainerBattle.LOGGER.info("Saved player battle history registry");
     }
 
     private static File getTrainerBattleHistoryDir(MinecraftServer server) {

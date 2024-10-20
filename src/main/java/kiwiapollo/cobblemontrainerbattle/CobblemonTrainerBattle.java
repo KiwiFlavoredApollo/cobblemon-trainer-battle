@@ -124,7 +124,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 		ServerLifecycleEvents.SERVER_STARTED.register(PlayerBattleHistoryRegistryParser::loadFromNbt);
 
 		ServerLifecycleEvents.SERVER_STOPPED.register(PlayerBattleHistoryRegistryParser::saveToNbt);
-		ServerTickEvents.END_WORLD_TICK.register(PlayerBattleHistoryRegistryParser::onEndWorldTick);
+		ServerTickEvents.END_SERVER_TICK.register(PlayerBattleHistoryRegistryParser::onEndServerTick);
 
 		ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new ResourceReloadListener());
 
