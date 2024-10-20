@@ -1,6 +1,6 @@
 # README
 
-## 1.5.1 Changelog
+## 1.5.X Changelog
 
 - Data packs made for earlier versions will NOT be compatible
 - Trainer teams are stored under `trainers/teams/<namespace>`
@@ -10,6 +10,7 @@
 - Trainer selector starts with `trainer:`
 - For example, `/trainerbattle trainer:radicalred/biker_alex`
 - Added new battle condition `isRematchAllowedAfterVictory`
+- Added new trainer option `isSpawningAllowed`
 
 ## Configuration
 
@@ -128,6 +129,7 @@ datapacks/
 
 ```json
 {
+  "isSpawningAllowed": true,
   "condition": {
     "isRematchAllowedAfterVictory": true,
     "maximumPartyLevel": 100,
