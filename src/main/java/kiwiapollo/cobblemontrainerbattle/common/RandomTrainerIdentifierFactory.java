@@ -16,12 +16,24 @@ public class RandomTrainerIdentifierFactory {
         return identifiers.get(0);
     }
 
-    public Identifier createInNamespace(String namespace) {
+    public Identifier create(String regex) {
         List<Identifier> identifiers = new ArrayList<>(CobblemonTrainerBattle.trainerProfileRegistry.keySet().stream()
-                .filter(identifier -> identifier.getPath().startsWith(namespace)).toList());
+                .filter(identifier -> identifier.getPath().matches(regex)).toList());
         Collections.shuffle(identifiers);
 
         return identifiers.get(0);
+    }
+
+    public Identifier createSpawningAllowed() {
+        List<Identifier> identifiers = new ArrayList<>(CobblemonTrainerBattle.trainerProfileRegistry.keySet().stream()
+                .filter(this::isSpawningAllowedTrainer).toList());
+        Collections.shuffle(identifiers);
+
+        return identifiers.get(0);
+    }
+
+    private boolean isSpawningAllowedTrainer(Identifier trainer) {
+        return CobblemonTrainerBattle.trainerProfileRegistry.get(trainer).isSpawningAllowed();
     }
 
     public Identifier createForBattleFactory() {

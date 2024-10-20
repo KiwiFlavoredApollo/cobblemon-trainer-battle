@@ -23,10 +23,16 @@ import java.util.UUID;
 public class EntityBackedTrainer implements TrainerBattleParticipant {
     private final TrainerBattleParticipant trainer;
     private final TrainerEntity entity;
+    private final BattleCondition condition;
 
     public EntityBackedTrainer(Identifier identifier, TrainerEntity entity, ServerPlayerEntity player) {
         this.trainer = new NormalBattleTrainer(identifier, player);
         this.entity = entity;
+        this.condition = new BattleCondition(
+                true,
+                trainer.getBattleCondition().minimumPartyLevel,
+                trainer.getBattleCondition().maximumPartyLevel
+        );
     }
 
     @Override
@@ -51,7 +57,7 @@ public class EntityBackedTrainer implements TrainerBattleParticipant {
 
     @Override
     public BattleCondition getBattleCondition() {
-        return trainer.getBattleCondition();
+        return condition;
     }
 
     @Override

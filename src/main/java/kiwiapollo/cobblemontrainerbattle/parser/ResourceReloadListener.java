@@ -68,9 +68,10 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
                         new TrainerProfile(
                                 name,
                                 team,
+                                option.isSpawningAllowed,
+                                option.condition,
                                 option.onVictory,
-                                option.onDefeat,
-                                option.condition
+                                option.onDefeat
                         )
                 );
 

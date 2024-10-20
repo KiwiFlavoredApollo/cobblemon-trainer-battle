@@ -1,4 +1,5 @@
 {
+  "isSpawningAllowed": true,
   "condition": {
     "isRematchAllowedAfterVictory": true,
     "maximumPartyLevel": 100,

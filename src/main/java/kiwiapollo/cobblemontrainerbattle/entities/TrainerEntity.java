@@ -82,7 +82,7 @@ public class TrainerEntity extends PathAwareEntity {
 
     private Identifier getRandomTrainer() {
         try {
-            return new RandomTrainerIdentifierFactory().create();
+            return new RandomTrainerIdentifierFactory().createSpawningAllowed();
         } catch (IndexOutOfBoundsException e) {
             return null;
         }

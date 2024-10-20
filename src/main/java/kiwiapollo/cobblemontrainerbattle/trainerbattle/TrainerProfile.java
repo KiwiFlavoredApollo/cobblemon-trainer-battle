@@ -9,7 +9,8 @@ import java.util.List;
 public record TrainerProfile(
         String name,
         List<SmogonPokemon> team,
+        boolean isSpawningAllowed,
+        BattleCondition condition,
         PostBattleActionSet onVictory,
-        PostBattleActionSet onDefeat,
-        BattleCondition condition
+        PostBattleActionSet onDefeat
 ) {}
