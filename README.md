@@ -12,6 +12,7 @@
 - Added new battle condition `isRematchAllowedAfterVictory`
 - Added new trainer option `isSpawningAllowed`
 - Removed restrictions on custom trainer team needed to be put into `custom` directory
+- Pokemon entity spawns when battling with trainer 
 
 ## Configuration
 
