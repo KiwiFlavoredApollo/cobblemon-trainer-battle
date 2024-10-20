@@ -22,8 +22,8 @@ public class CobblemonPokemonParser {
                 toSmogonGender(pokemon.getGender()),
                 pokemon.getNature().getName().toString(),
                 pokemon.getLevel(),
-                toSmogonStats(pokemon.getIvs()),
                 toSmogonStats(pokemon.getEvs()),
+                toSmogonStats(pokemon.getIvs()),
                 toSmogonMoveSet(pokemon.getMoveSet())
         );
     }
