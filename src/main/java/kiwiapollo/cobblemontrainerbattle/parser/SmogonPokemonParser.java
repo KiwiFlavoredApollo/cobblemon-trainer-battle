@@ -195,8 +195,8 @@ public class SmogonPokemonParser {
         try {
             Objects.requireNonNull(nature);
 
-            boolean isNamespaceProvided = nature.contains(":");
-            if (isNamespaceProvided) {
+            boolean isContainNamespace = nature.contains(":");
+            if (isContainNamespace) {
                 pokemon.setNature(Objects.requireNonNull(Natures.INSTANCE.getNature(new Identifier(nature.toLowerCase()))));
 
             } else {
@@ -226,8 +226,8 @@ public class SmogonPokemonParser {
         try {
             Objects.requireNonNull(item);
 
-            boolean isNamespaceProvided = item.contains(":");
-            if (isNamespaceProvided) {
+            boolean isContainNamespace = item.contains(":");
+            if (isContainNamespace) {
                 Item itemToHold = Registries.ITEM.get(Identifier.tryParse(item.toLowerCase()));
                 pokemon.swapHeldItem(new ItemStack(itemToHold), false);
 
