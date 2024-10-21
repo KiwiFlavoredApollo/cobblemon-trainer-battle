@@ -6,6 +6,7 @@ import com.cobblemon.mod.common.api.moves.Move;
 import com.cobblemon.mod.common.api.moves.Moves;
 import com.cobblemon.mod.common.api.pokemon.Natures;
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
+import com.cobblemon.mod.common.api.pokemon.feature.FlagSpeciesFeature;
 import com.cobblemon.mod.common.api.pokemon.stats.Stats;
 import com.cobblemon.mod.common.pokemon.FormData;
 import com.cobblemon.mod.common.pokemon.Gender;
@@ -39,10 +40,24 @@ public class SmogonPokemonParser {
             "Alola",
             "Galar",
             "Hisui",
+            "Hisui Bias",
             "Paldea-Aqua",
             "Paldea-Blaze",
             "Paldea-Combat",
-            "Therian"
+            "Therian",
+            "Galar-Zen"
+    );
+    public static final Map<String, Set<String>> FORM_ASPECTS = Map.of(
+            "Alola", Set.of("alolan"),
+            "Galar", Set.of("glarian"),
+            "Hisui", Set.of("hisuian"),
+            "Hisui Bias", Set.of("region-bias-hisui"),
+            "Paldea", Set.of("paldean"),
+            "Paldea-Aqua", Set.of("paldean-breed-aqua"),
+            "Paldea-Blaze", Set.of("paldean-breed-blaze"),
+            "Paldea-Combat", Set.of("paldean-breed-combat"),
+            "Therian", Set.of("therian"),
+            "Galar-Zen", Set.of("galarian", "zen_mode")
     );
 
     private final ServerPlayerEntity player;
@@ -107,7 +122,22 @@ public class SmogonPokemonParser {
         // aspects are calculated based off of data
         // You're better off waiting until 1.6,
         // there is a "forcedAspects" property you'll be able to use to do what you want
-        pokemon.setForm(toFormData(pokemon, form));
+
+        // TODO I am not sure why this isn't working
+        // Even if form is set, aspects get override by following methods
+        //
+        // Case 1
+        // pokemon.setForm(toFormData(pokemon, form));
+
+        // Case 2
+        // try {
+        //     Set<String> aspects = new HashSet<>(pokemon.getAspects());
+        //     aspects.addAll(FORM_ASPECTS.get(form));
+        //     pokemon.setAspects(aspects);
+        //
+        // } catch (NullPointerException ignored) {
+        //
+        // }
     }
 
     private FormData toFormData(Pokemon pokemon, String form) {
