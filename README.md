@@ -1,18 +1,12 @@
 # README
 
-## 1.5.2 Changelog
+## 1.5.4 Changelog
 
-- Data packs made for earlier versions will NOT be compatible
-- Trainer teams are stored under `trainers/teams/`
-- Trainer options are stored under `trainers/options/`
-- Renamed Smogon trainer to be short and uniform
 - Fixed bug where Pokemon entities drop held items
-- Trainer selector starts with `trainer:`
-- For example, `/trainerbattle trainer:radicalred/biker_alex`
 - Added new battle condition `isRematchAllowedAfterVictory`
 - Added new trainer option `isSpawningAllowed`
-- Removed restrictions on custom trainer team needed to be put into `custom` directory
-- Pokemon entity spawns when battling with trainer 
+- Pokemon entity spawns when battling with trainer
+- Added new trainer team attributes, `form` and `shiny`
 
 ## Configuration
 
