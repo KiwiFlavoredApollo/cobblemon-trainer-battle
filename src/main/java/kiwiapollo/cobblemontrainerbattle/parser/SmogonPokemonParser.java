@@ -7,6 +7,7 @@ import com.cobblemon.mod.common.api.moves.Moves;
 import com.cobblemon.mod.common.api.pokemon.Natures;
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
 import com.cobblemon.mod.common.api.pokemon.stats.Stats;
+import com.cobblemon.mod.common.pokemon.FormData;
 import com.cobblemon.mod.common.pokemon.Gender;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
@@ -34,6 +35,15 @@ public class SmogonPokemonParser {
             "Aqua Fang", "aquajet",
             "Teary Look", "tearfullook"
     );
+    public static final List<String> FORM_NAMES = List.of(
+            "Alola",
+            "Galar",
+            "Hisui",
+            "Paldea-Aqua",
+            "Paldea-Blaze",
+            "Paldea-Combat",
+            "Therian"
+    );
 
     private final ServerPlayerEntity player;
 
@@ -44,6 +54,8 @@ public class SmogonPokemonParser {
     public Pokemon toCobblemonPokemon(SmogonPokemon smogonPokemon) throws PokemonParseException {
         Pokemon pokemon = createBasePokemon(smogonPokemon);
 
+        setPokemonForm(pokemon, getFormName(smogonPokemon.species, smogonPokemon.form));
+        setPokemonShiny(pokemon, smogonPokemon.shiny);
         setPokemonStats(pokemon::setEV, smogonPokemon.evs);
         setPokemonStats(pokemon::setIV, smogonPokemon.ivs);
         setPokemonGender(pokemon, smogonPokemon.gender);
@@ -66,17 +78,59 @@ public class SmogonPokemonParser {
         }
     }
 
-    private Identifier toSpeciesIdentifier(String species) throws PokemonParseException {
-        try {
-            boolean isNamespaceProvided = species.contains(":");
-            if (isNamespaceProvided) {
-                return Objects.requireNonNull(Identifier.tryParse(species.toLowerCase()));
-            } else {
-                return Objects.requireNonNull(Identifier.of("cobblemon", species.toLowerCase()));
+    private Identifier toSpeciesIdentifier(String species) throws NullPointerException {
+        boolean isSpeciesContainNamespace = species.contains(":");
+        boolean isSpeciesContainForm = FORM_NAMES.stream().anyMatch(species::contains);
+
+        if (isSpeciesContainNamespace) {
+            return Objects.requireNonNull(Identifier.tryParse(toLowerCaseNonAscii(species)));
+
+        } else if (isSpeciesContainForm) {
+            String cropped = species;
+
+            for (String form : FORM_NAMES) {
+                cropped = cropped.replaceAll(form, "");
             }
-        } catch (NullPointerException e) {
-            throw new PokemonParseException();
+            cropped = cropped.replaceAll("-", "");
+            cropped = toLowerCaseNonAscii(cropped);
+
+            return Objects.requireNonNull(Identifier.of("cobblemon", cropped));
+
+        } else {
+            return Objects.requireNonNull(Identifier.of("cobblemon", toLowerCaseNonAscii(species)));
         }
+    }
+
+    private void setPokemonForm(Pokemon pokemon, String form) {
+        pokemon.setForm(toFormData(pokemon, form));
+    }
+
+    private FormData toFormData(Pokemon pokemon, String form) {
+        try {
+            return pokemon.getSpecies().getForms().stream()
+                    .filter(formData -> formData.getName().equals(form)).toList().get(0);
+
+        } catch (NullPointerException | IndexOutOfBoundsException e) {
+            return pokemon.getSpecies().getStandardForm();
+        }
+    }
+
+    private String getFormName(String species, String form) {
+        boolean isSpeciesContainForm = FORM_NAMES.stream().anyMatch(species::contains);
+        if (isSpeciesContainForm) {
+            return FORM_NAMES.stream().filter(species::contains).findFirst().get();
+        } else {
+            return form;
+        }
+    }
+
+    private String toLowerCaseNonAscii(String string) {
+        String nonAscii = "[^\\x00-\\x7F]";
+        return string.toLowerCase().replaceAll(nonAscii, "");
+    }
+
+    private void setPokemonShiny(Pokemon pokemon, boolean shiny) {
+        pokemon.setShiny(shiny);
     }
 
     private void setPokemonLevel(Pokemon pokemon, int level) {

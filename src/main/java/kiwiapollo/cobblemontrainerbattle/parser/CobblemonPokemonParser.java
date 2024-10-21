@@ -17,6 +17,8 @@ public class CobblemonPokemonParser {
         return new SmogonPokemon(
                 getNickName(pokemon),
                 pokemon.getSpecies().getResourceIdentifier().toString(),
+                pokemon.getForm().getName(),
+                pokemon.getShiny(),
                 Registries.ITEM.getId(pokemon.heldItem().getItem()).toString(),
                 pokemon.getAbility().getName(),
                 toSmogonGender(pokemon.getGender()),
