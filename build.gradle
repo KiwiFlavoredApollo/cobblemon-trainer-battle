@@ -1,8 +1,9 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-	id 'fabric-loom' version '1.5-SNAPSHOT'
 	id 'maven-publish'
+	id 'dev.architectury.loom' version '1.5-SNAPSHOT'
+	id "architectury-plugin" version "3.4-SNAPSHOT"
 	id 'org.jetbrains.kotlin.jvm' version '2.0.20'
 }
 
@@ -11,6 +12,11 @@ group = project.maven_group
 
 base {
 	archivesName = project.archives_base_name
+}
+
+architectury {
+	platformSetupLoomIde()
+	fabric()
 }
 
 repositories {
@@ -59,9 +65,9 @@ dependencies {
 	// NickImpact suggested using "com.cobblemon:mod" for modCompileOnly
 	// However, class names could not be resolved
 	// [Error type: Unresolved type for net. minecraft. class_3222]
-	// modCompileOnly("com.cobblemon:mod:${project.cobblemon_version}")
-	// modRuntimeOnly("com.cobblemon:fabric:${project.cobblemon_version}")
-	modImplementation("com.cobblemon:fabric:${project.cobblemon_version}")
+	modCompileOnly("com.cobblemon:mod:${project.cobblemon_version}")
+	modRuntimeOnly("com.cobblemon:fabric:${project.cobblemon_version}")
+	// modImplementation("com.cobblemon:fabric:${project.cobblemon_version}")
 
 	modImplementation("net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}")
 	compileOnly("net.luckperms:api:${project.luckperms_version}")
