@@ -102,6 +102,11 @@ public class SmogonPokemonParser {
     }
 
     private void setPokemonForm(Pokemon pokemon, String form) {
+        // Hiroku said:
+        // Nope aspects can't be set like that
+        // aspects are calculated based off of data
+        // You're better off waiting until 1.6,
+        // there is a "forcedAspects" property you'll be able to use to do what you want
         pokemon.setForm(toFormData(pokemon, form));
     }
 
