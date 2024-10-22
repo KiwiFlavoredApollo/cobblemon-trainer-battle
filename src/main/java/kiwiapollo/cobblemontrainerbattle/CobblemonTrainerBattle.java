@@ -2,6 +2,7 @@ package kiwiapollo.cobblemontrainerbattle;
 
 import com.cobblemon.mod.common.api.Priority;
 import com.cobblemon.mod.common.api.events.CobblemonEvents;
+import com.cobblemon.mod.common.api.pokemon.aspect.AspectProvider;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactory;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactoryProfile;
 import kiwiapollo.cobblemontrainerbattle.command.*;
@@ -61,7 +62,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
     @Override
 	public void onInitialize() {
-		new FormAspectProvider().register();
+		AspectProvider.Companion.register(new FormAspectProvider());
 
 		Registry.register(Registries.ITEM, new Identifier(NAMESPACE, "trainer_spawn_egg"), TRAINER_SPAWN_EGG);
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(entries -> entries.add(TRAINER_SPAWN_EGG));
