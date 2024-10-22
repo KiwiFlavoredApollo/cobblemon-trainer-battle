@@ -61,6 +61,8 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
     @Override
 	public void onInitialize() {
+		new FormAspectProvider().register();
+
 		Registry.register(Registries.ITEM, new Identifier(NAMESPACE, "trainer_spawn_egg"), TRAINER_SPAWN_EGG);
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(entries -> entries.add(TRAINER_SPAWN_EGG));
 

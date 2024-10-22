@@ -24,57 +24,16 @@ import java.util.function.BiConsumer;
 public class SmogonPokemonParser {
     public static final int DEFAULT_LEVEL = 50;
     public static final int RELATIVE_LEVEL_THRESHOLD = 10;
-    public static final Map<String, String> EXCEPTIONAL_MOVE_NAMES = Map.of(
-            "Drain Kiss", "drainingkiss",
-            "Bad Tantrum", "stompingtantrum",
-            "FirstImpress", "firstimpression",
-            "Dark Hole", "darkvoid",
-            "Para Charge", "paraboliccharge",
-            "HiHorsepower", "highhorsepower",
-            "Expand Force", "expandingforce",
-            "Aqua Fang", "aquajet",
-            "Teary Look", "tearfullook"
-    );
-    public static final List<String> FORM_NAMES = List.of(
-            "Alola",
-            "Alola Bias",
-
-            "Galar",
-            "Galar Bias",
-
-            "Hisui",
-            "Hisui Bias",
-
-            "Paldea-Aqua",
-            "Paldea-Blaze",
-            "Paldea-Combat",
-
-            "Therian",
-
-            "Zen",
-            "Galar-Zen"
-    );
-    public static final Map<String, Set<String>> FORM_ASPECTS = Map.ofEntries(
-            Map.entry("Alola", Set.of("alolan")),
-            Map.entry("Alola Bias", Set.of("region-bias-alola")),
-
-            Map.entry("Galar", Set.of("galarian")),
-            Map.entry("Galar Bias", Set.of("region-bias-galar")),
-
-            Map.entry("Hisui", Set.of("hisuian")),
-            Map.entry("Hisui Bias", Set.of("region-bias-hisui")),
-
-            Map.entry("Paldea", Set.of("paldean")),
-            Map.entry("Paldea Bias", Set.of("region-bias-paldea")),
-
-            Map.entry("Paldea-Aqua", Set.of("paldean-breed-aqua")),
-            Map.entry("Paldea-Blaze", Set.of("paldean-breed-blaze")),
-            Map.entry("Paldea-Combat", Set.of("paldean-breed-combat")),
-
-            Map.entry("Therian", Set.of("therian")),
-
-            Map.entry("Zen", Set.of("zen_mode")),
-            Map.entry("Galar-Zen", Set.of("galarian", "zen_mode"))
+    public static final Map<String, String> EXCEPTIONAL_MOVE_NAMES = Map.ofEntries(
+            Map.entry("Drain Kiss", "drainingkiss"),
+            Map.entry("Bad Tantrum", "stompingtantrum"),
+            Map.entry("FirstImpress", "firstimpression"),
+            Map.entry("Dark Hole", "darkvoid"),
+            Map.entry("Para Charge", "paraboliccharge"),
+            Map.entry("HiHorsepower", "highhorsepower"),
+            Map.entry("Expand Force", "expandingforce"),
+            Map.entry("Aqua Fang", "aquajet"),
+            Map.entry("Teary Look", "tearfullook")
     );
 
     private final ServerPlayerEntity player;
@@ -86,49 +45,18 @@ public class SmogonPokemonParser {
     public Pokemon toCobblemonPokemon(SmogonPokemon smogonPokemon) throws PokemonParseException {
         Pokemon pokemon = createBasePokemon(smogonPokemon);
 
-        // setPokemonForm(pokemon, getFormName(smogonPokemon.species, smogonPokemon.form));
-        // setPokemonShiny(pokemon, smogonPokemon.shiny);
+        setPokemonForm(pokemon, getFormName(smogonPokemon.species, smogonPokemon.form));
+        setPokemonShiny(pokemon, smogonPokemon.shiny);
         setPokemonStats(pokemon::setEV, smogonPokemon.evs);
         setPokemonStats(pokemon::setIV, smogonPokemon.ivs);
-        // setPokemonGender(pokemon, smogonPokemon.gender);
+        setPokemonGender(pokemon, smogonPokemon.gender);
         setPokemonMoveSet(pokemon, smogonPokemon.moves);
         setPokemonHeldItem(pokemon, smogonPokemon.item);
         setPokemonAbility(pokemon, smogonPokemon.ability);
         setPokemonLevel(pokemon, smogonPokemon.level);
         setPokemonNature(pokemon, smogonPokemon.nature);
 
-        setPokemonAspects(pokemon, smogonPokemon);
-
         return pokemon;
-    }
-
-    private void setPokemonAspects(Pokemon pokemon, SmogonPokemon smogonPokemon) {
-        Set<String> aspects = new HashSet<>();
-
-        try {
-            String form = getFormName(smogonPokemon.species, smogonPokemon.form);
-            aspects.addAll(FORM_ASPECTS.get(form));
-
-        } catch (NullPointerException ignored) {
-            String form = getFormName(smogonPokemon.species, smogonPokemon.form);
-
-            CobblemonTrainerBattle.LOGGER.error(String.format("Form not found: %s", form));
-            CobblemonTrainerBattle.LOGGER.error("Please report to mod author");
-        }
-
-        try {
-            Gender gender = toGender(smogonPokemon.gender);
-            aspects.add(toGenderAspect(gender));
-        } catch (IllegalArgumentException e) {
-            Gender gender = pokemon.getGender();
-            aspects.add(toGenderAspect(gender));
-        }
-
-        if (smogonPokemon.shiny) {
-            aspects.add("shiny");
-        }
-
-        pokemon.setAspects(aspects);
     }
 
     private Pokemon createBasePokemon(SmogonPokemon smogonPokemon) throws PokemonParseException {
@@ -143,7 +71,7 @@ public class SmogonPokemonParser {
 
     private Identifier toSpeciesIdentifier(String species) throws NullPointerException {
         boolean isSpeciesContainNamespace = species.contains(":");
-        boolean isSpeciesContainForm = FORM_NAMES.stream().anyMatch(species::contains);
+        boolean isSpeciesContainForm = FormAspectProvider.FORM_ASPECTS.keySet().stream().anyMatch(species::contains);
 
         if (isSpeciesContainNamespace) {
             return Objects.requireNonNull(Identifier.tryParse(toLowerCaseNonAscii(species)));
@@ -151,7 +79,7 @@ public class SmogonPokemonParser {
         } else if (isSpeciesContainForm) {
             String cropped = species;
 
-            for (String form : FORM_NAMES) {
+            for (String form : FormAspectProvider.FORM_ASPECTS.keySet()) {
                 cropped = cropped.replaceAll(form, "");
             }
             cropped = cropped.replaceAll("-", "");
@@ -187,9 +115,9 @@ public class SmogonPokemonParser {
     }
 
     private String getFormName(String species, String form) {
-        boolean isSpeciesContainForm = FORM_NAMES.stream().anyMatch(species::contains);
+        boolean isSpeciesContainForm = FormAspectProvider.FORM_ASPECTS.keySet().stream().anyMatch(species::contains);
         if (isSpeciesContainForm) {
-            return FORM_NAMES.stream().filter(species::contains).findFirst().get();
+            return FormAspectProvider.FORM_ASPECTS.keySet().stream().filter(species::contains).findFirst().get();
         } else {
             return form;
         }
