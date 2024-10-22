@@ -1,0 +1,21 @@
+{
+    "display": {
+        "icon": {
+            "item": "minecraft:iron_sword"
+        },
+        "title": {
+            "translate": "advancement.cobblemontrainerbattle.root.title"
+        },
+        "description": {
+            "translate": "advancement.cobblemontrainerbattle.root.description"
+        },
+        "background": "minecraft:textures/gui/advancements/backgrounds/stone.png",
+        "show_toast": true,
+        "announce_to_chat": true
+    },
+    "criteria": {
+        "requirement": {
+            "trigger": "cobblemontrainerbattle:defeat_trainer"
+        }
+    }
+}
