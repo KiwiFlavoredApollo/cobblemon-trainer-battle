@@ -2,7 +2,9 @@
   "parent": "cobblemontrainerbattle:defeat_first_trainer",
   "criteria": {
     "defeat_tenth_trainer": {
-      "conditions": {},
+      "conditions": {
+        "count": 3
+      },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }
   },

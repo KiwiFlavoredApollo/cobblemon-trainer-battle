@@ -48,6 +48,10 @@ public class PlayerBattleHistory {
         }
     }
 
+    public int getTotalVictoryCount() {
+        return recordRegistry.values().stream().map(record -> record.victory).reduce(Integer::sum).orElse(0);
+    }
+
     private void put(Identifier identifier, PlayerBattleRecord record) {
         recordRegistry.put(identifier, record);
     }

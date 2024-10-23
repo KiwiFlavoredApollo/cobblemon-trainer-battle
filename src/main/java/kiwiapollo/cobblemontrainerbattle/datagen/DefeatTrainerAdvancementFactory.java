@@ -13,7 +13,7 @@ import java.util.List;
 public class DefeatTrainerAdvancementFactory implements AdvancementFactory {
     private static final Advancement FIRST = Advancement.Builder.createUntelemetered()
             .parent(DataGenerator.AdvancementProvider.ROOT)
-            .criterion("defeat_first_trainer", new DefeatTrainerCriterion.Conditions())
+            .criterion("defeat_first_trainer", new DefeatTrainerCriterion.Conditions(1))
             .display(
                     Registries.ITEM.get(Identifier.of("cobblemon", "poke_ball")),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_trainer.first.title"),
@@ -28,7 +28,7 @@ public class DefeatTrainerAdvancementFactory implements AdvancementFactory {
 
     private static final Advancement TENTH = Advancement.Builder.createUntelemetered()
             .parent(FIRST)
-            .criterion("defeat_tenth_trainer", new DefeatTrainerCriterion.Conditions())
+            .criterion("defeat_tenth_trainer", new DefeatTrainerCriterion.Conditions(10))
             .display(
                     Registries.ITEM.get(Identifier.of("cobblemon", "great_ball")),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_trainer.tenth.title"),

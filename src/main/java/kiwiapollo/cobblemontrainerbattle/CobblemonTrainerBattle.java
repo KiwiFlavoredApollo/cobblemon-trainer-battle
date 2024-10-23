@@ -53,6 +53,9 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
 	public static final int FLEE_DISTANCE = 20;
 
+	public static DefeatTrainerCriterion DEFEAT_TRAINER_CRITERION = new DefeatTrainerCriterion();
+	public static PlayerInteractWithTrainerCriterion PLAYER_INTERACTED_WITH_TRAINER_CRITERION = new PlayerInteractWithTrainerCriterion();
+
 	public static Config config = ConfigLoader.load();
 	public static Economy economy = EconomyFactory.create(config.economy);
 
@@ -62,9 +65,6 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
 	public static Map<UUID, TrainerBattle> trainerBattleRegistry = new HashMap<>();
 	public static Map<UUID, PlayerBattleHistory> playerBattleHistoryRegistry = new HashMap<>();
-
-	public static DefeatTrainerCriterion DEFEAT_TRAINER_CRITERION = new DefeatTrainerCriterion();
-	public static PlayerInteractWithTrainerCriterion PLAYER_INTERACTED_WITH_TRAINER_CRITERION = new PlayerInteractWithTrainerCriterion();
 
     @Override
 	public void onInitialize() {
@@ -98,7 +98,9 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
 			if (isPlayerVictory) {
 				trainerBattleRegistry.get(player.getUuid()).onPlayerVictory();
+
 				DEFEAT_TRAINER_CRITERION.trigger(player);
+
 			} else {
 				trainerBattleRegistry.get(player.getUuid()).onPlayerDefeat();
 			}
