@@ -5,7 +5,7 @@ import com.cobblemon.mod.common.api.events.CobblemonEvents;
 import com.cobblemon.mod.common.api.pokemon.aspect.AspectProvider;
 import kiwiapollo.cobblemontrainerbattle.advancement.DefeatTrainerCriterion;
 import kiwiapollo.cobblemontrainerbattle.advancement.KillTrainerCriterion;
-import kiwiapollo.cobblemontrainerbattle.advancement.PlayerInteractWithTrainerCriterion;
+import kiwiapollo.cobblemontrainerbattle.advancement.InteractTrainerCriterion;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactory;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactoryProfile;
 import kiwiapollo.cobblemontrainerbattle.command.*;
@@ -56,7 +56,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
 	public static DefeatTrainerCriterion DEFEAT_TRAINER_CRITERION = new DefeatTrainerCriterion();
 	public static KillTrainerCriterion KILL_TRAINER_CRITERION = new KillTrainerCriterion();
-	public static PlayerInteractWithTrainerCriterion PLAYER_INTERACTED_WITH_TRAINER_CRITERION = new PlayerInteractWithTrainerCriterion();
+	public static InteractTrainerCriterion INTERACT_TRAINER_CRITERION = new InteractTrainerCriterion();
 
 	public static Config config = ConfigLoader.load();
 	public static Economy economy = EconomyFactory.create(config.economy);
@@ -72,7 +72,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 	public void onInitialize() {
 		Criteria.register(DEFEAT_TRAINER_CRITERION);
 		Criteria.register(KILL_TRAINER_CRITERION);
-		Criteria.register(PLAYER_INTERACTED_WITH_TRAINER_CRITERION);
+		Criteria.register(INTERACT_TRAINER_CRITERION);
 
 		AspectProvider.Companion.register(new FormAspectProvider());
 

@@ -141,7 +141,7 @@ public class TrainerEntity extends PathAwareEntity {
             this.setAiDisabled(false);
         }
 
-        CobblemonTrainerBattle.PLAYER_INTERACTED_WITH_TRAINER_CRITERION.trigger((ServerPlayerEntity) player, new ItemStack(Items.AIR), this);
+        CobblemonTrainerBattle.INTERACT_TRAINER_CRITERION.trigger((ServerPlayerEntity) player, new ItemStack(Items.AIR), this);
 
         return super.interactMob(player, hand);
     }

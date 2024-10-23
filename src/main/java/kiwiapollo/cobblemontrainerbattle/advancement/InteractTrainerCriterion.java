@@ -16,7 +16,7 @@ import net.minecraft.predicate.item.ItemPredicate;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
-public class PlayerInteractWithTrainerCriterion extends AbstractCriterion<PlayerInteractWithTrainerCriterion.Conditions> {
+public class InteractTrainerCriterion extends AbstractCriterion<InteractTrainerCriterion.Conditions> {
     private static final Identifier ID = Identifier.of(CobblemonTrainerBattle.NAMESPACE, "interact_trainer");
 
     @Override

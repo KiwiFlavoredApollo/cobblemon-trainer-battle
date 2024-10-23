@@ -1,7 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.datagen;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.advancement.PlayerInteractWithTrainerCriterion;
+import kiwiapollo.cobblemontrainerbattle.advancement.InteractTrainerCriterion;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -26,7 +26,7 @@ public class DataGenerator implements DataGeneratorEntrypoint {
         static final Identifier BACKGROUND = new Identifier("textures/gui/advancements/backgrounds/adventure.png");
 
         static final Advancement ROOT = Advancement.Builder.createUntelemetered()
-                .criterion("root", new PlayerInteractWithTrainerCriterion.Conditions())
+                .criterion("root", new InteractTrainerCriterion.Conditions())
                 .display(
                         Registries.ITEM.get(Identifier.of("cobblemon", "link_cable")),
                         Text.translatable("advancement.cobblemontrainerbattle.root.title"),
