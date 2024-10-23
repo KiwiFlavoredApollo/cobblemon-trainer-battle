@@ -34,10 +34,7 @@ public class InteractTrainerCriterion extends AbstractCriterion<InteractTrainerC
     }
 
     public void trigger(ServerPlayerEntity player, ItemStack itemStack, TrainerEntity trainer) {
-        trigger(player, conditions -> {
-            LootContext lootContext = EntityPredicate.createAdvancementEntityLootContext(player, trainer);
-            return conditions.test(itemStack, lootContext);
-        });
+        trigger(player, conditions -> conditions.test(player, itemStack, trainer));
     }
 
     public static class Conditions extends AbstractCriterionConditions {
@@ -53,7 +50,8 @@ public class InteractTrainerCriterion extends AbstractCriterion<InteractTrainerC
             );
         }
 
-        boolean test(ItemStack itemStack, LootContext lootContext) {
+        boolean test(ServerPlayerEntity player, ItemStack itemStack, TrainerEntity trainer) {
+            LootContext lootContext = EntityPredicate.createAdvancementEntityLootContext(player, trainer);
             return conditions.test(itemStack, lootContext);
         }
     }

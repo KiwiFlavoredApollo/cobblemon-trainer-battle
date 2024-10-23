@@ -41,12 +41,12 @@ public class KillTrainerCriterion extends AbstractCriterion<KillTrainerCriterion
 
     public static class Conditions extends AbstractCriterionConditions {
         private final SimpleCountableCriterionCondition countConditions;
-        private final OnKilledCriterion.Conditions entityCondition;
+        private final OnKilledCriterion.Conditions killConditions;
 
         public Conditions(int count) {
             super(ID, LootContextPredicate.EMPTY);
 
-            this.entityCondition = OnKilledCriterion.Conditions.createPlayerKilledEntity(
+            this.killConditions = OnKilledCriterion.Conditions.createPlayerKilledEntity(
                     new EntityPredicate.Builder().type(CobblemonTrainerBattle.TRAINER_ENTITY_TYPE).build()
             );
 
@@ -60,9 +60,12 @@ public class KillTrainerCriterion extends AbstractCriterion<KillTrainerCriterion
         }
 
         boolean test(ServerPlayerEntity player, TrainerEntity trainer, DamageSource damageSource, int count) {
+            boolean isCountConditionsMet = countConditions.matches(player, new CountableContext(count));
+
             LootContext lootContext = EntityPredicate.createAdvancementEntityLootContext(player, trainer);
-            return countConditions.matches(player, new CountableContext(count))
-                    && entityCondition.test(player, lootContext, damageSource);
+            boolean isKillConditionsMet = killConditions.test(player, lootContext, damageSource);
+
+            return isCountConditionsMet && isKillConditionsMet;
         }
     }
 }
