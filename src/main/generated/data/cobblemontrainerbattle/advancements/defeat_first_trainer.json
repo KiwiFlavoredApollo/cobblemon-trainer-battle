@@ -1,6 +1,7 @@
 {
+  "parent": "cobblemontrainerbattle:root",
   "criteria": {
-    "root": {
+    "defeat_first_trainer": {
       "conditions": {},
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }
@@ -9,7 +10,7 @@
     "announce_to_chat": true,
     "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
     "description": {
-      "translate": "advancement.cobblemontrainerbattle.root.description"
+      "translate": "advancement.cobblemontrainerbattle.defeat_trainer.first.description"
     },
     "frame": "task",
     "hidden": false,
@@ -18,12 +19,12 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.cobblemontrainerbattle.root.title"
+      "translate": "advancement.cobblemontrainerbattle.defeat_trainer.first.title"
     }
   },
   "requirements": [
     [
-      "root"
+      "defeat_first_trainer"
     ]
   ],
   "sends_telemetry_event": false

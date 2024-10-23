@@ -19,6 +19,7 @@ import kiwiapollo.cobblemontrainerbattle.postbattle.PostBattleActionSetHandler;
 import kiwiapollo.cobblemontrainerbattle.postbattle.BattleResultHandler;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.*;
@@ -27,6 +28,8 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
@@ -141,6 +144,8 @@ public class TrainerEntity extends PathAwareEntity {
         } catch (BattleStartException ignored) {
             this.setAiDisabled(false);
         }
+
+        Criteria.PLAYER_INTERACTED_WITH_ENTITY.trigger((ServerPlayerEntity) player, new ItemStack(Items.AIR), this);
 
         return super.interactMob(player, hand);
     }

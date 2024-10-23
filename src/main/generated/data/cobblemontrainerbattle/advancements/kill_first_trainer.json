@@ -1,7 +1,7 @@
 {
   "parent": "cobblemontrainerbattle:root",
   "criteria": {
-    "kill_trainer": {
+    "kill_first_trainer": {
       "conditions": {
         "entity": [
           {
@@ -20,7 +20,7 @@
     "announce_to_chat": true,
     "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
     "description": {
-      "translate": "advancement.cobblemontrainerbattle.murderer.description"
+      "translate": "advancement.cobblemontrainerbattle.kill_trainer.first.description"
     },
     "frame": "task",
     "hidden": false,
@@ -30,12 +30,12 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.cobblemontrainerbattle.murderer.title"
+      "translate": "advancement.cobblemontrainerbattle.kill_trainer.first.title"
     }
   },
   "requirements": [
     [
-      "kill_trainer"
+      "kill_first_trainer"
     ]
   ],
   "sends_telemetry_event": false
