@@ -32,6 +32,15 @@ public class PlayerBattleHistory {
         recordRegistry.put(opponent, record);
     }
 
+    public void addPlayerKill(Identifier opponent) {
+        PlayerBattleRecord record = getPlayerBattleRecord(opponent);
+
+        record.kill += 1;
+        record.timestamp = Instant.now();
+
+        recordRegistry.put(opponent, record);
+    }
+
     private PlayerBattleRecord getPlayerBattleRecord(Identifier opponent) {
         if (recordRegistry.containsKey(opponent)) {
             return recordRegistry.get(opponent);
@@ -50,6 +59,10 @@ public class PlayerBattleHistory {
 
     public int getTotalVictoryCount() {
         return recordRegistry.values().stream().map(record -> record.victory).reduce(Integer::sum).orElse(0);
+    }
+
+    public int getTotalKillCount() {
+        return recordRegistry.values().stream().map(record -> record.kill).reduce(Integer::sum).orElse(0);
     }
 
     private void put(Identifier identifier, PlayerBattleRecord record) {
@@ -76,6 +89,7 @@ public class PlayerBattleHistory {
         nbt.putLong("timestamp", record.timestamp.toEpochMilli());
         nbt.putInt("victory", record.victory);
         nbt.putInt("defeat", record.defeat);
+        nbt.putInt("kill", record.kill);
 
         return nbt;
     }
@@ -95,7 +109,8 @@ public class PlayerBattleHistory {
         return new PlayerBattleRecord(
                 Instant.ofEpochMilli(nbt.getLong("timestamp")),
                 nbt.getInt("victory"),
-                nbt.getInt("defeat")
+                nbt.getInt("defeat"),
+                nbt.getInt("kill")
         );
     }
 }

@@ -8,7 +8,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricAdvancementProvider;
 import net.minecraft.advancement.Advancement;
 import net.minecraft.advancement.AdvancementFrame;
-import net.minecraft.item.Items;
+import net.minecraft.registry.Registries;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
@@ -28,7 +28,7 @@ public class DataGenerator implements DataGeneratorEntrypoint {
         static final Advancement ROOT = Advancement.Builder.createUntelemetered()
                 .criterion("root", new PlayerInteractWithTrainerCriterion.Conditions())
                 .display(
-                        Items.EMERALD,
+                        Registries.ITEM.get(Identifier.of("cobblemon", "link_cable")),
                         Text.translatable("advancement.cobblemontrainerbattle.root.title"),
                         Text.translatable("advancement.cobblemontrainerbattle.root.description"),
                         BACKGROUND,

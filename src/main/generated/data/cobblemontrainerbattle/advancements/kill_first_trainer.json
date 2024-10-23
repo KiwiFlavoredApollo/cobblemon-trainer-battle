@@ -3,17 +3,9 @@
   "criteria": {
     "kill_first_trainer": {
       "conditions": {
-        "entity": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "type": "cobblemontrainerbattle:trainer"
-            }
-          }
-        ]
+        "count": 1
       },
-      "trigger": "minecraft:player_killed_entity"
+      "trigger": "cobblemontrainerbattle:kill_trainer"
     }
   },
   "display": {

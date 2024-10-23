@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.api.Priority;
 import com.cobblemon.mod.common.api.events.CobblemonEvents;
 import com.cobblemon.mod.common.api.pokemon.aspect.AspectProvider;
 import kiwiapollo.cobblemontrainerbattle.advancement.DefeatTrainerCriterion;
+import kiwiapollo.cobblemontrainerbattle.advancement.KillTrainerCriterion;
 import kiwiapollo.cobblemontrainerbattle.advancement.PlayerInteractWithTrainerCriterion;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactory;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactoryProfile;
@@ -54,6 +55,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 	public static final int FLEE_DISTANCE = 20;
 
 	public static DefeatTrainerCriterion DEFEAT_TRAINER_CRITERION = new DefeatTrainerCriterion();
+	public static KillTrainerCriterion KILL_TRAINER_CRITERION = new KillTrainerCriterion();
 	public static PlayerInteractWithTrainerCriterion PLAYER_INTERACTED_WITH_TRAINER_CRITERION = new PlayerInteractWithTrainerCriterion();
 
 	public static Config config = ConfigLoader.load();
@@ -69,6 +71,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
     @Override
 	public void onInitialize() {
 		Criteria.register(DEFEAT_TRAINER_CRITERION);
+		Criteria.register(KILL_TRAINER_CRITERION);
 		Criteria.register(PLAYER_INTERACTED_WITH_TRAINER_CRITERION);
 
 		AspectProvider.Companion.register(new FormAspectProvider());
@@ -104,6 +107,8 @@ public class CobblemonTrainerBattle implements ModInitializer {
 			} else {
 				trainerBattleRegistry.get(player.getUuid()).onPlayerDefeat();
 			}
+
+			trainerBattleRegistry.remove(player.getUuid());
 
 			return Unit.INSTANCE;
         });

@@ -10,6 +10,7 @@ import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.PlayerBattlePa
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.EntityBackedTrainer;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.TrainerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerIdentifierFactory;
+import kiwiapollo.cobblemontrainerbattle.parser.PlayerBattleHistory;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerProfile;
@@ -157,7 +158,7 @@ public class TrainerEntity extends PathAwareEntity {
             boolean isDamaged = super.damage(source, amount);
             boolean isLivingEntityAttacker = source.getAttacker() instanceof LivingEntity;
 
-            if (isDamaged && isLivingEntityAttacker) {
+            if (isDamaged && isLivingEntityAttacker && !source.isSourceCreativePlayer()) {
                 this.setTarget((LivingEntity) source.getAttacker());
             }
 
@@ -169,34 +170,17 @@ public class TrainerEntity extends PathAwareEntity {
     }
 
     private void assertNotBusyWithPokemonBattle() throws BusyWithPokemonBattleException {
-        try {
-            getPokemonBattle();
+        if (isPokemonBattleExist()) {
             throw new BusyWithPokemonBattleException();
-
-        } catch (NoSuchElementException ignored) {
-
         }
     }
 
-    private PokemonBattle getPokemonBattle() {
+    private boolean isPokemonBattleExist() {
         try {
             UUID battleId = trainerBattle.getBattleId();
-            return Objects.requireNonNull(Cobblemon.INSTANCE.getBattleRegistry().getBattle(battleId));
+            return Objects.nonNull(Cobblemon.INSTANCE.getBattleRegistry().getBattle(battleId));
 
         } catch (NullPointerException e) {
-            throw new NoSuchElementException();
-        }
-    }
-
-    private List<BattleActor> getBattleActorsOf(PokemonBattle pokemonBattle) {
-        return StreamSupport.stream(pokemonBattle.getActors().spliterator(), false).toList();
-    }
-
-    private boolean isEntityOf(BattleActor battleActor) {
-        try {
-            return ((EntityBackedTrainerBattleActor) battleActor).getEntity().equals(this);
-
-        } catch (NullPointerException | ClassCastException e) {
             return false;
         }
     }
@@ -210,13 +194,25 @@ public class TrainerEntity extends PathAwareEntity {
 
     @Override
     public void onDeath(DamageSource damageSource) {
-        try {
-            getPokemonBattle().end();
-            super.onDeath(damageSource);
-
-        } catch (NoSuchElementException e) {
-            super.onDeath(damageSource);
+        if (damageSource.getSource() instanceof ServerPlayerEntity player) {
+            addPlayerKillRecord(player);
+            CobblemonTrainerBattle.KILL_TRAINER_CRITERION.trigger(player, this, damageSource);
         }
+
+        if(isPokemonBattleExist()) {
+            UUID battleId = trainerBattle.getBattleId();
+            Cobblemon.INSTANCE.getBattleRegistry().getBattle(battleId).end();
+        }
+
+        super.onDeath(damageSource);
+    }
+
+    private void addPlayerKillRecord(ServerPlayerEntity player) {
+        if (!CobblemonTrainerBattle.playerBattleHistoryRegistry.containsKey(player.getUuid())) {
+            CobblemonTrainerBattle.playerBattleHistoryRegistry.put(player.getUuid(), new PlayerBattleHistory());
+        }
+
+        CobblemonTrainerBattle.playerBattleHistoryRegistry.get(player.getUuid()).addPlayerKill(trainer);
     }
 
     public void setTrainer(Identifier trainer) {

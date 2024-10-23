@@ -1,11 +1,10 @@
 package kiwiapollo.cobblemontrainerbattle.datagen;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.advancement.KillTrainerCriterion;
 import net.minecraft.advancement.Advancement;
 import net.minecraft.advancement.AdvancementFrame;
-import net.minecraft.advancement.criterion.OnKilledCriterion;
 import net.minecraft.item.Items;
-import net.minecraft.predicate.entity.EntityPredicate;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
@@ -14,9 +13,7 @@ import java.util.List;
 public class KillTrainerAdvancementFactory implements AdvancementFactory {
     private static final Advancement FIRST = Advancement.Builder.createUntelemetered()
             .parent(DataGenerator.AdvancementProvider.ROOT)
-            .criterion("kill_first_trainer", OnKilledCriterion.Conditions.createPlayerKilledEntity(
-                    new EntityPredicate.Builder().type(CobblemonTrainerBattle.TRAINER_ENTITY_TYPE).build()
-            ))
+            .criterion("kill_first_trainer", new KillTrainerCriterion.Conditions(1))
             .display(
                     Items.STONE_SWORD,
                     Text.translatable("advancement.cobblemontrainerbattle.kill_trainer.first.title"),
@@ -31,9 +28,7 @@ public class KillTrainerAdvancementFactory implements AdvancementFactory {
 
     private static final Advancement TENTH = Advancement.Builder.createUntelemetered()
             .parent(FIRST)
-            .criterion("kill_tenth_trainer", OnKilledCriterion.Conditions.createPlayerKilledEntity(
-                    new EntityPredicate.Builder().type(CobblemonTrainerBattle.TRAINER_ENTITY_TYPE).build()
-            ))
+            .criterion("kill_tenth_trainer", new KillTrainerCriterion.Conditions(3))
             .display(
                     Items.IRON_SWORD,
                     Text.translatable("advancement.cobblemontrainerbattle.kill_trainer.tenth.title"),

@@ -2,6 +2,9 @@
   "entity.cobblemontrainerbattle.trainer": "트레이너",
   "item.cobblemontrainerbattle.trainer_spawn_egg": "트레이너 생성 알",
 
+  "advancement.cobblemontrainerbattle.root.title": "트레이너",
+  "advancement.cobblemontrainerbattle.root.description": "트레이너와 상호작용 해보세요",
+
   "advancement.cobblemontrainerbattle.defeat_trainer.first.title": "첫 승리",
   "advancement.cobblemontrainerbattle.defeat_trainer.first.description": "트레이너 배틀에서 이기세요",
   "advancement.cobblemontrainerbattle.defeat_trainer.tenth.title": "아마추어 트레이너",
