@@ -18,16 +18,33 @@ public class KillTrainerAdvancementFactory implements AdvancementFactory {
                     new EntityPredicate.Builder().type(CobblemonTrainerBattle.TRAINER_ENTITY_TYPE).build()
             ))
             .display(
-                    Items.IRON_SWORD,
+                    Items.STONE_SWORD,
                     Text.translatable("advancement.cobblemontrainerbattle.kill_trainer.first.title"),
                     Text.translatable("advancement.cobblemontrainerbattle.kill_trainer.first.description"),
-                    new Identifier("textures/gui/advancements/backgrounds/adventure.png"),
+                    DataGenerator.AdvancementProvider.BACKGROUND,
                     AdvancementFrame.TASK,
                     true,
                     true,
                     false
             )
             .build(Identifier.of(CobblemonTrainerBattle.NAMESPACE, "kill_first_trainer"));
+
+    private static final Advancement TENTH = Advancement.Builder.createUntelemetered()
+            .parent(FIRST)
+            .criterion("kill_tenth_trainer", OnKilledCriterion.Conditions.createPlayerKilledEntity(
+                    new EntityPredicate.Builder().type(CobblemonTrainerBattle.TRAINER_ENTITY_TYPE).build()
+            ))
+            .display(
+                    Items.IRON_SWORD,
+                    Text.translatable("advancement.cobblemontrainerbattle.kill_trainer.tenth.title"),
+                    Text.translatable("advancement.cobblemontrainerbattle.kill_trainer.tenth.description"),
+                    DataGenerator.AdvancementProvider.BACKGROUND,
+                    AdvancementFrame.TASK,
+                    true,
+                    true,
+                    false
+            )
+            .build(Identifier.of(CobblemonTrainerBattle.NAMESPACE, "kill_tenth_trainer"));
 
     public KillTrainerAdvancementFactory() {
 
@@ -36,7 +53,8 @@ public class KillTrainerAdvancementFactory implements AdvancementFactory {
     @Override
     public List<Advancement> create() {
         return List.of(
-                FIRST
+                FIRST,
+                TENTH
         );
     }
 }

@@ -1,7 +1,7 @@
 {
-  "parent": "cobblemontrainerbattle:root",
+  "parent": "cobblemontrainerbattle:kill_first_trainer",
   "criteria": {
-    "kill_first_trainer": {
+    "kill_tenth_trainer": {
       "conditions": {
         "entity": [
           {
@@ -20,22 +20,22 @@
     "announce_to_chat": true,
     "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
     "description": {
-      "translate": "advancement.cobblemontrainerbattle.kill_trainer.first.description"
+      "translate": "advancement.cobblemontrainerbattle.kill_trainer.tenth.description"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "minecraft:stone_sword",
+      "item": "minecraft:iron_sword",
       "nbt": "{Damage:0}"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.cobblemontrainerbattle.kill_trainer.first.title"
+      "translate": "advancement.cobblemontrainerbattle.kill_trainer.tenth.title"
     }
   },
   "requirements": [
     [
-      "kill_first_trainer"
+      "kill_tenth_trainer"
     ]
   ],
   "sends_telemetry_event": false

@@ -7,9 +7,13 @@
 
   "advancement.cobblemontrainerbattle.defeat_trainer.first.title": "The First Victory",
   "advancement.cobblemontrainerbattle.defeat_trainer.first.description": "Defeat a trainer in a Pokémon battle",
+  "advancement.cobblemontrainerbattle.defeat_trainer.tenth.title": "Amateur Trainer",
+  "advancement.cobblemontrainerbattle.defeat_trainer.tenth.description": "Defeat 10 trainers in a Pokémon battle",
 
-  "advancement.cobblemontrainerbattle.kill_trainer.first.title": "The First Blood",
+  "advancement.cobblemontrainerbattle.kill_trainer.first.title": "You, Murderer!",
   "advancement.cobblemontrainerbattle.kill_trainer.first.description": "Kill a trainer",
+  "advancement.cobblemontrainerbattle.kill_trainer.tenth.title": "Unstoppable",
+  "advancement.cobblemontrainerbattle.kill_trainer.tenth.description": "Kill 10 trainers",
 
   "command.cobblemontrainerbattle.trainerbattle.success": "A battle has begun against %s!",
   "command.cobblemontrainerbattle.trainerbattle.empty_player_party": "You have no Pokémon in your party.",

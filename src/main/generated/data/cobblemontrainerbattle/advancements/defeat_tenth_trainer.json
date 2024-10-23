@@ -1,29 +1,30 @@
 {
+  "parent": "cobblemontrainerbattle:defeat_first_trainer",
   "criteria": {
-    "root": {
+    "defeat_tenth_trainer": {
       "conditions": {},
-      "trigger": "cobblemontrainerbattle:interact_trainer"
+      "trigger": "cobblemontrainerbattle:defeat_trainer"
     }
   },
   "display": {
     "announce_to_chat": true,
     "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
     "description": {
-      "translate": "advancement.cobblemontrainerbattle.root.description"
+      "translate": "advancement.cobblemontrainerbattle.defeat_trainer.tenth.description"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "minecraft:emerald"
+      "item": "cobblemon:great_ball"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.cobblemontrainerbattle.root.title"
+      "translate": "advancement.cobblemontrainerbattle.defeat_trainer.tenth.title"
     }
   },
   "requirements": [
     [
-      "root"
+      "defeat_tenth_trainer"
     ]
   ],
   "sends_telemetry_event": false

@@ -1,5 +1,8 @@
 package kiwiapollo.cobblemontrainerbattle.advancement;
 
+import com.cobblemon.mod.common.advancement.criterion.CountableCriterionCondition;
+import com.cobblemon.mod.common.advancement.criterion.CountableCriterionKt;
+import com.cobblemon.mod.common.advancement.criterion.SimpleCountableCriterionCondition;
 import com.google.gson.JsonObject;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import net.minecraft.advancement.criterion.AbstractCriterion;
@@ -27,15 +30,16 @@ public class DefeatTrainerCriterion extends AbstractCriterion<DefeatTrainerCrite
     }
 
     public void trigger(ServerPlayerEntity player) {
-        trigger(player, Conditions::requirementsMet);
+        trigger(player, Conditions::test);
     }
 
     public static class Conditions extends AbstractCriterionConditions {
+
         public Conditions() {
             super(ID, LootContextPredicate.EMPTY);
         }
 
-        boolean requirementsMet() {
+        boolean test() {
             return true;
         }
     }

@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.api.Priority;
 import com.cobblemon.mod.common.api.events.CobblemonEvents;
 import com.cobblemon.mod.common.api.pokemon.aspect.AspectProvider;
 import kiwiapollo.cobblemontrainerbattle.advancement.DefeatTrainerCriterion;
+import kiwiapollo.cobblemontrainerbattle.advancement.PlayerInteractWithTrainerCriterion;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactory;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactoryProfile;
 import kiwiapollo.cobblemontrainerbattle.command.*;
@@ -63,10 +64,12 @@ public class CobblemonTrainerBattle implements ModInitializer {
 	public static Map<UUID, PlayerBattleHistory> playerBattleHistoryRegistry = new HashMap<>();
 
 	public static DefeatTrainerCriterion DEFEAT_TRAINER_CRITERION = new DefeatTrainerCriterion();
+	public static PlayerInteractWithTrainerCriterion PLAYER_INTERACTED_WITH_TRAINER_CRITERION = new PlayerInteractWithTrainerCriterion();
 
     @Override
 	public void onInitialize() {
 		Criteria.register(DEFEAT_TRAINER_CRITERION);
+		Criteria.register(PLAYER_INTERACTED_WITH_TRAINER_CRITERION);
 
 		AspectProvider.Companion.register(new FormAspectProvider());
 

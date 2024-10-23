@@ -4,7 +4,7 @@ import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.advancement.DefeatTrainerCriterion;
 import net.minecraft.advancement.Advancement;
 import net.minecraft.advancement.AdvancementFrame;
-import net.minecraft.item.Items;
+import net.minecraft.registry.Registries;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
@@ -15,16 +15,31 @@ public class DefeatTrainerAdvancementFactory implements AdvancementFactory {
             .parent(DataGenerator.AdvancementProvider.ROOT)
             .criterion("defeat_first_trainer", new DefeatTrainerCriterion.Conditions())
             .display(
-                    Items.BELL,
+                    Registries.ITEM.get(Identifier.of("cobblemon", "poke_ball")),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_trainer.first.title"),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_trainer.first.description"),
-                    new Identifier("textures/gui/advancements/backgrounds/adventure.png"),
+                    DataGenerator.AdvancementProvider.BACKGROUND,
                     AdvancementFrame.TASK,
                     true,
                     true,
                     false
             )
             .build(Identifier.of(CobblemonTrainerBattle.NAMESPACE, "defeat_first_trainer"));
+
+    private static final Advancement TENTH = Advancement.Builder.createUntelemetered()
+            .parent(FIRST)
+            .criterion("defeat_tenth_trainer", new DefeatTrainerCriterion.Conditions())
+            .display(
+                    Registries.ITEM.get(Identifier.of("cobblemon", "great_ball")),
+                    Text.translatable("advancement.cobblemontrainerbattle.defeat_trainer.tenth.title"),
+                    Text.translatable("advancement.cobblemontrainerbattle.defeat_trainer.tenth.description"),
+                    DataGenerator.AdvancementProvider.BACKGROUND,
+                    AdvancementFrame.TASK,
+                    true,
+                    true,
+                    false
+            )
+            .build(Identifier.of(CobblemonTrainerBattle.NAMESPACE, "defeat_tenth_trainer"));
 
     public DefeatTrainerAdvancementFactory() {
 
@@ -33,7 +48,8 @@ public class DefeatTrainerAdvancementFactory implements AdvancementFactory {
     @Override
     public List<Advancement> create() {
         return List.of(
-                FIRST
+                FIRST,
+                TENTH
         );
     }
 }

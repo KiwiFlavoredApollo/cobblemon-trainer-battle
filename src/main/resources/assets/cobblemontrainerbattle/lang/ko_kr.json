@@ -4,9 +4,13 @@
 
   "advancement.cobblemontrainerbattle.defeat_trainer.first.title": "첫 승리",
   "advancement.cobblemontrainerbattle.defeat_trainer.first.description": "트레이너 배틀에서 이기세요",
+  "advancement.cobblemontrainerbattle.defeat_trainer.tenth.title": "아마추어 트레이너",
+  "advancement.cobblemontrainerbattle.defeat_trainer.tenth.description": "트레이너 10명을 배틀에서 이기세요",
 
-  "advancement.cobblemontrainerbattle.kill_trainer.first.title": "살인이야!",
+  "advancement.cobblemontrainerbattle.kill_trainer.first.title": "이 더러운 살인자!",
   "advancement.cobblemontrainerbattle.kill_trainer.first.description": "트레이너를 죽이세요",
+  "advancement.cobblemontrainerbattle.kill_trainer.tenth.title": "미쳐 날뛰고 있습니다",
+  "advancement.cobblemontrainerbattle.kill_trainer.tenth.description": "트레이너 10명을 죽이세요",
 
   "command.cobblemontrainerbattle.trainerbattle.success": "%s와(과)의 배틀이 시작되었습니다",
   "command.cobblemontrainerbattle.trainerbattle.empty_player_party": "가지고 있는 포켓몬이 없습니다",
