@@ -30,7 +30,7 @@ public class DefeatTrainerCriterion extends AbstractCriterion<DefeatTrainerCrite
     }
 
     public void trigger(ServerPlayerEntity player) {
-        int count = CobblemonTrainerBattle.playerBattleHistoryRegistry.get(player.getUuid()).getTotalVictoryCount();
+        int count = CobblemonTrainerBattle.playerHistoryRegistry.get(player.getUuid()).getTotalVictoryCount();
         trigger(player, conditions -> conditions.test(player, count));
     }
 

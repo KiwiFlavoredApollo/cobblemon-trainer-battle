@@ -1,7 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.postbattle;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.parser.PlayerBattleHistory;
+import kiwiapollo.cobblemontrainerbattle.parser.PlayerHistory;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
@@ -25,21 +25,21 @@ public class RecordedBattleResultHandler implements BattleResultHandler {
     public void onVictory() {
         battleResultHandler.onVictory();
 
-        if (!CobblemonTrainerBattle.playerBattleHistoryRegistry.containsKey(player.getUuid())) {
-            CobblemonTrainerBattle.playerBattleHistoryRegistry.put(player.getUuid(), new PlayerBattleHistory());
+        if (!CobblemonTrainerBattle.playerHistoryRegistry.containsKey(player.getUuid())) {
+            CobblemonTrainerBattle.playerHistoryRegistry.put(player.getUuid(), new PlayerHistory());
         }
 
-        CobblemonTrainerBattle.playerBattleHistoryRegistry.get(player.getUuid()).addPlayerVictory(identifier);
+        CobblemonTrainerBattle.playerHistoryRegistry.get(player.getUuid()).addPlayerVictory(identifier);
     }
 
     @Override
     public void onDefeat() {
         battleResultHandler.onDefeat();
 
-        if (!CobblemonTrainerBattle.playerBattleHistoryRegistry.containsKey(player.getUuid())) {
-            CobblemonTrainerBattle.playerBattleHistoryRegistry.put(player.getUuid(), new PlayerBattleHistory());
+        if (!CobblemonTrainerBattle.playerHistoryRegistry.containsKey(player.getUuid())) {
+            CobblemonTrainerBattle.playerHistoryRegistry.put(player.getUuid(), new PlayerHistory());
         }
 
-        CobblemonTrainerBattle.playerBattleHistoryRegistry.get(player.getUuid()).addPlayerDefeat(identifier);
+        CobblemonTrainerBattle.playerHistoryRegistry.get(player.getUuid()).addPlayerDefeat(identifier);
     }
 }

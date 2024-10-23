@@ -6,84 +6,84 @@ import net.minecraft.util.Identifier;
 import java.time.Instant;
 import java.util.*;
 
-public class PlayerBattleHistory {
+public class PlayerHistory {
 
-    private final Map<Identifier, PlayerBattleRecord> recordRegistry;
+    private final Map<Identifier, TrainerRecord> trainerRecordRegistry;
 
-    public PlayerBattleHistory() {
-        recordRegistry = new HashMap<>();
+    public PlayerHistory() {
+        trainerRecordRegistry = new HashMap<>();
     }
 
     public void addPlayerVictory(Identifier opponent) {
-        PlayerBattleRecord record = getPlayerBattleRecord(opponent);
+        TrainerRecord record = getPlayerBattleRecord(opponent);
 
         record.victory += 1;
         record.timestamp = Instant.now();
 
-        recordRegistry.put(opponent, record);
+        trainerRecordRegistry.put(opponent, record);
     }
 
     public void addPlayerDefeat(Identifier opponent) {
-        PlayerBattleRecord record = getPlayerBattleRecord(opponent);
+        TrainerRecord record = getPlayerBattleRecord(opponent);
 
         record.defeat += 1;
         record.timestamp = Instant.now();
 
-        recordRegistry.put(opponent, record);
+        trainerRecordRegistry.put(opponent, record);
     }
 
     public void addPlayerKill(Identifier opponent) {
-        PlayerBattleRecord record = getPlayerBattleRecord(opponent);
+        TrainerRecord record = getPlayerBattleRecord(opponent);
 
         record.kill += 1;
         record.timestamp = Instant.now();
 
-        recordRegistry.put(opponent, record);
+        trainerRecordRegistry.put(opponent, record);
     }
 
-    private PlayerBattleRecord getPlayerBattleRecord(Identifier opponent) {
-        if (recordRegistry.containsKey(opponent)) {
-            return recordRegistry.get(opponent);
+    private TrainerRecord getPlayerBattleRecord(Identifier opponent) {
+        if (trainerRecordRegistry.containsKey(opponent)) {
+            return trainerRecordRegistry.get(opponent);
         } else {
-            return new PlayerBattleRecord();
+            return new TrainerRecord();
         }
     }
 
     public boolean isOpponentDefeated(Identifier opponent) {
-        if (!recordRegistry.containsKey(opponent)) {
+        if (!trainerRecordRegistry.containsKey(opponent)) {
             return false;
         } else {
-            return recordRegistry.get(opponent).victory > 0;
+            return trainerRecordRegistry.get(opponent).victory > 0;
         }
     }
 
     public int getTotalVictoryCount() {
-        return recordRegistry.values().stream().map(record -> record.victory).reduce(Integer::sum).orElse(0);
+        return trainerRecordRegistry.values().stream().map(record -> record.victory).reduce(Integer::sum).orElse(0);
     }
 
     public int getTotalKillCount() {
-        return recordRegistry.values().stream().map(record -> record.kill).reduce(Integer::sum).orElse(0);
+        return trainerRecordRegistry.values().stream().map(record -> record.kill).reduce(Integer::sum).orElse(0);
     }
 
-    private void put(Identifier identifier, PlayerBattleRecord record) {
-        recordRegistry.put(identifier, record);
+    private void put(Identifier identifier, TrainerRecord record) {
+        trainerRecordRegistry.put(identifier, record);
     }
 
     public void remove(Identifier opponent) {
-        recordRegistry.remove(opponent);
+        trainerRecordRegistry.remove(opponent);
     }
 
     public NbtCompound writeToNbt(NbtCompound nbt) {
-        for (Map.Entry<Identifier, PlayerBattleRecord> recordEntry: recordRegistry.entrySet()) {
+        for (Map.Entry<Identifier, TrainerRecord> recordEntry: trainerRecordRegistry.entrySet()) {
             Identifier trainer = recordEntry.getKey();
-            PlayerBattleRecord record = recordEntry.getValue();
+            TrainerRecord record = recordEntry.getValue();
 
             nbt.put(trainer.toString(), writeTrainerBattleRecordToNbt(record));
         }
         return nbt;
     }
 
-    private NbtCompound writeTrainerBattleRecordToNbt(PlayerBattleRecord record) {
+    private NbtCompound writeTrainerBattleRecordToNbt(TrainerRecord record) {
         NbtCompound nbt = new NbtCompound();
 
         nbt.putLong("timestamp", record.timestamp.toEpochMilli());
@@ -94,8 +94,8 @@ public class PlayerBattleHistory {
         return nbt;
     }
 
-    public static PlayerBattleHistory readFromNbt(NbtCompound nbt) {
-        PlayerBattleHistory history = new PlayerBattleHistory();
+    public static PlayerHistory readFromNbt(NbtCompound nbt) {
+        PlayerHistory history = new PlayerHistory();
         for (String opponent : nbt.getKeys()) {
             history.put(
                     new Identifier(opponent),
@@ -105,8 +105,8 @@ public class PlayerBattleHistory {
         return history;
     }
 
-    private static PlayerBattleRecord readTrainerBattleRecordFromNbt(NbtCompound nbt) {
-        return new PlayerBattleRecord(
+    private static TrainerRecord readTrainerBattleRecordFromNbt(NbtCompound nbt) {
+        return new TrainerRecord(
                 Instant.ofEpochMilli(nbt.getLong("timestamp")),
                 nbt.getInt("victory"),
                 nbt.getInt("defeat"),

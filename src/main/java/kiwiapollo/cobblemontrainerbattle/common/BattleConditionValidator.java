@@ -9,7 +9,7 @@ import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.exception.battlecondition.MaximumPartyLevelException;
 import kiwiapollo.cobblemontrainerbattle.exception.battlecondition.MinimumPartyLevelException;
 import kiwiapollo.cobblemontrainerbattle.exception.battlecondition.RematchNotAllowedException;
-import kiwiapollo.cobblemontrainerbattle.parser.PlayerBattleHistory;
+import kiwiapollo.cobblemontrainerbattle.parser.PlayerHistory;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
@@ -49,7 +49,7 @@ public class BattleConditionValidator {
 
     public static void assertRematchAllowedAfterVictory(ServerPlayerEntity player, Identifier opponent, BattleCondition condition) throws RematchNotAllowedException {
         try {
-            PlayerBattleHistory history = CobblemonTrainerBattle.playerBattleHistoryRegistry.get(player.getUuid());
+            PlayerHistory history = CobblemonTrainerBattle.playerHistoryRegistry.get(player.getUuid());
             if (!condition.isRematchAllowedAfterVictory && history.isOpponentDefeated(opponent)) {
                 throw new RematchNotAllowedException();
             }

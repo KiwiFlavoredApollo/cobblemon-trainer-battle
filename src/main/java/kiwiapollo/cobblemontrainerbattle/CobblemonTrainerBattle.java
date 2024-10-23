@@ -66,7 +66,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 	public static BattleFactoryProfile battleFactoryProfile;
 
 	public static Map<UUID, TrainerBattle> trainerBattleRegistry = new HashMap<>();
-	public static Map<UUID, PlayerBattleHistory> playerBattleHistoryRegistry = new HashMap<>();
+	public static Map<UUID, PlayerHistory> playerHistoryRegistry = new HashMap<>();
 
     @Override
 	public void onInitialize() {
@@ -141,10 +141,10 @@ public class CobblemonTrainerBattle implements ModInitializer {
 			}
 		});
 
-		ServerLifecycleEvents.SERVER_STARTED.register(PlayerBattleHistoryRegistryParser::loadFromNbt);
+		ServerLifecycleEvents.SERVER_STARTED.register(PlayerHistoryRegistryParser::loadFromNbt);
 
-		ServerLifecycleEvents.SERVER_STOPPED.register(PlayerBattleHistoryRegistryParser::saveToNbt);
-		ServerTickEvents.END_SERVER_TICK.register(PlayerBattleHistoryRegistryParser::onEndServerTick);
+		ServerLifecycleEvents.SERVER_STOPPED.register(PlayerHistoryRegistryParser::saveToNbt);
+		ServerTickEvents.END_SERVER_TICK.register(PlayerHistoryRegistryParser::onEndServerTick);
 
 		ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new ResourceReloadListener());
 

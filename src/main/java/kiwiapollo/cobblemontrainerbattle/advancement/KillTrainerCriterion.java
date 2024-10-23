@@ -35,7 +35,7 @@ public class KillTrainerCriterion extends AbstractCriterion<KillTrainerCriterion
     }
 
     public void trigger(ServerPlayerEntity player, TrainerEntity trainer, DamageSource damageSource) {
-        int count = CobblemonTrainerBattle.playerBattleHistoryRegistry.get(player.getUuid()).getTotalKillCount();
+        int count = CobblemonTrainerBattle.playerHistoryRegistry.get(player.getUuid()).getTotalKillCount();
         trigger(player, conditions -> conditions.test(player, trainer, damageSource, count));
     }
 
