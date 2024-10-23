@@ -3,6 +3,7 @@ package kiwiapollo.cobblemontrainerbattle;
 import com.cobblemon.mod.common.api.Priority;
 import com.cobblemon.mod.common.api.events.CobblemonEvents;
 import com.cobblemon.mod.common.api.pokemon.aspect.AspectProvider;
+import kiwiapollo.cobblemontrainerbattle.advancement.DefeatTrainerCriterion;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactory;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactoryProfile;
 import kiwiapollo.cobblemontrainerbattle.command.*;
@@ -26,6 +27,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
+import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.item.Item;
@@ -60,8 +62,12 @@ public class CobblemonTrainerBattle implements ModInitializer {
 	public static Map<UUID, TrainerBattle> trainerBattleRegistry = new HashMap<>();
 	public static Map<UUID, PlayerBattleHistory> playerBattleHistoryRegistry = new HashMap<>();
 
+	public static DefeatTrainerCriterion DEFEAT_TRAINER_CRITERION = new DefeatTrainerCriterion();
+
     @Override
 	public void onInitialize() {
+		Criteria.register(DEFEAT_TRAINER_CRITERION);
+
 		AspectProvider.Companion.register(new FormAspectProvider());
 
 		Registry.register(Registries.ITEM, new Identifier(NAMESPACE, "trainer_spawn_egg"), TRAINER_SPAWN_EGG);
@@ -89,6 +95,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
 			if (isPlayerVictory) {
 				trainerBattleRegistry.get(player.getUuid()).onPlayerVictory();
+				DEFEAT_TRAINER_CRITERION.trigger(player);
 			} else {
 				trainerBattleRegistry.get(player.getUuid()).onPlayerDefeat();
 			}

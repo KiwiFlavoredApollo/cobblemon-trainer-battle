@@ -1,0 +1,42 @@
+{
+  "parent": "cobblemontrainerbattle:root",
+  "criteria": {
+    "kill_trainer": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "cobblemontrainerbattle:trainer"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.murderer.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:iron_sword",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.murderer.title"
+    }
+  },
+  "requirements": [
+    [
+      "kill_trainer"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

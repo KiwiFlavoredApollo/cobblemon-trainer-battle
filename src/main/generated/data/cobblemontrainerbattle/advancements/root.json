@@ -1,0 +1,30 @@
+{
+  "criteria": {
+    "defeat_trainer": {
+      "conditions": {},
+      "trigger": "cobblemontrainerbattle:defeat_trainer"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.root.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:bell"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "defeat_trainer"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

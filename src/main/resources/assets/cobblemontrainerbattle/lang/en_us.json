@@ -2,6 +2,12 @@
   "entity.cobblemontrainerbattle.trainer": "Trainer",
   "item.cobblemontrainerbattle.trainer_spawn_egg": "Trainer Spawn Egg",
 
+  "advancement.cobblemontrainerbattle.root.title": "The First Victory",
+  "advancement.cobblemontrainerbattle.root.description": "Defeat a trainer in a Pokemon battle",
+
+  "advancement.cobblemontrainerbattle.murderer.title": "You Murderer!",
+  "advancement.cobblemontrainerbattle.murderer.description": "Kill a trainer",
+
   "command.cobblemontrainerbattle.trainerbattle.success": "A battle has begun against %s!",
   "command.cobblemontrainerbattle.trainerbattle.empty_player_party": "You have no Pokémon in your party.",
   "command.cobblemontrainerbattle.trainerbattle.fainted_player_party": "All of your Pokémon have fainted.",

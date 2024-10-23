@@ -15,6 +15,9 @@
 	"icon": "assets/cobblemontrainerbattle/icon.png",
 	"environment": "*",
 	"entrypoints": {
+		"fabric-datagen": [
+			"kiwiapollo.cobblemontrainerbattle.datagen.DataGenerator"
+		],
 		"main": [
 			"kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle"
 		],
