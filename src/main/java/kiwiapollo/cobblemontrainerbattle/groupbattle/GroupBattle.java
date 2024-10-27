@@ -10,10 +10,13 @@ import kiwiapollo.cobblemontrainerbattle.battleparticipant.factory.BattlePartici
 import kiwiapollo.cobblemontrainerbattle.common.*;
 import kiwiapollo.cobblemontrainerbattle.exception.*;
 import kiwiapollo.cobblemontrainerbattle.exception.battlecondition.RematchNotAllowedException;
+import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistry;
 import kiwiapollo.cobblemontrainerbattle.postbattle.RecordedBattleResultHandler;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.postbattle.BattleResultHandler;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
+import net.minecraft.server.network.ServerPlayNetworkHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
@@ -44,7 +47,7 @@ public class GroupBattle {
             ResourceValidator.assertTrainerGroupExist(identifier);
             SessionValidator.assertSessionNotExist(sessionRegistry, player);
 
-            TrainerGroupProfile trainerGroupProfile = CobblemonTrainerBattle.trainerGroupProfileRegistry.get(identifier);
+            TrainerGroupProfile trainerGroupProfile = ProfileRegistry.trainerGroup.get(identifier);
             List<Identifier> trainersToDefeat = trainerGroupProfile.trainers.stream().map(Identifier::new).toList();
 
             BattleConditionValidator.assertRematchAllowedAfterVictory(player, identifier, trainerGroupProfile.condition);
@@ -154,5 +157,16 @@ public class GroupBattle {
         } catch (BattleStartException e) {
             return 0;
         }
+    }
+
+    public static void removeDisconnectedPlayerSession(ServerPlayNetworkHandler handler, MinecraftServer server) {
+        ServerPlayerEntity player = handler.getPlayer();
+
+        if (!GroupBattle.sessionRegistry.containsKey(player.getUuid())) {
+            return;
+        }
+
+        GroupBattle.sessionRegistry.get(player.getUuid()).onSessionStop();
+        GroupBattle.sessionRegistry.remove(player.getUuid());
     }
 }

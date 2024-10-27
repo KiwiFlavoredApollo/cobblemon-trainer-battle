@@ -8,10 +8,13 @@ import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerIdentifierFactory;
 import kiwiapollo.cobblemontrainerbattle.common.SessionValidator;
 import kiwiapollo.cobblemontrainerbattle.exception.*;
 import kiwiapollo.cobblemontrainerbattle.common.PlayerValidator;
+import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistry;
 import kiwiapollo.cobblemontrainerbattle.postbattle.PostBattleActionSetHandler;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.postbattle.BattleResultHandler;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
+import net.minecraft.server.network.ServerPlayNetworkHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
@@ -40,8 +43,8 @@ public class BattleFactory {
 
             BattleResultHandler battleResultHandler = new PostBattleActionSetHandler(
                     player,
-                    CobblemonTrainerBattle.battleFactoryProfile.onVictory,
-                    CobblemonTrainerBattle.battleFactoryProfile.onDefeat
+                    ProfileRegistry.battleFactory.onVictory,
+                    ProfileRegistry.battleFactory.onDefeat
             );
 
             BattleFactorySession session = new BattleFactorySession(
@@ -236,5 +239,16 @@ public class BattleFactory {
 
             return 0;
         }
+    }
+
+    public static void removeDisconnectedPlayerSession(ServerPlayNetworkHandler handler, MinecraftServer server) {
+        ServerPlayerEntity player = handler.getPlayer();
+
+        if (!BattleFactory.sessionRegistry.containsKey(player.getUuid())) {
+            return;
+        }
+
+        BattleFactory.sessionRegistry.get(player.getUuid()).onSessionStop();
+        BattleFactory.sessionRegistry.remove(player.getUuid());
     }
 }

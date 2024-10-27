@@ -19,15 +19,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ResourceReloadListener implements SimpleSynchronousResourceReloadListener {
-    public static final String TRAINER_TEAM_DIR = "trainers/teams";
-    public static final String TRAINER_OPTION_DIR = "trainers/options";
-    public static final String DEFAULT_TRAINER_OPTION = String.format("%s/%s", TRAINER_OPTION_DIR, "defaults.json");
+public class ProfileRegistry implements SimpleSynchronousResourceReloadListener {
+    private static final String TRAINER_TEAM_DIR = "trainers/teams";
+    private static final String TRAINER_OPTION_DIR = "trainers/options";
+    private static final String DEFAULT_TRAINER_OPTION = String.format("%s/%s", TRAINER_OPTION_DIR, "defaults.json");
 
-    public static final String GROUP_DIR = "groups";
+    private static final String GROUP_DIR = "groups";
 
-    public static final String MINIGAME_DIR = "minigames";
-    public static final String BATTLE_FACTORY_PROFILE = String.format("%s/%s", MINIGAME_DIR, "battlefactory.json");
+    private static final String MINIGAME_DIR = "minigames";
+    private static final String BATTLE_FACTORY_PROFILE = String.format("%s/%s", MINIGAME_DIR, "battlefactory.json");
+
+    public static Map<Identifier, TrainerProfile> trainer = new HashMap<>();
+    public static Map<Identifier, TrainerGroupProfile> trainerGroup = new HashMap<>();
+    public static BattleFactoryProfile battleFactory;
 
     @Override
     public Identifier getFabricId() {
@@ -36,9 +40,9 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
 
     @Override
     public void reload(ResourceManager resourceManager) {
-        CobblemonTrainerBattle.trainerProfileRegistry = loadTrainerProfileRegistry(resourceManager);
-        CobblemonTrainerBattle.trainerGroupProfileRegistry = loadTrainerGroupProfileRegistry(resourceManager);
-        CobblemonTrainerBattle.battleFactoryProfile = loadBattleFactoryProfile(resourceManager);
+        ProfileRegistry.trainer = loadTrainerProfileRegistry(resourceManager);
+        ProfileRegistry.trainerGroup = loadTrainerGroupProfileRegistry(resourceManager);
+        ProfileRegistry.battleFactory = loadBattleFactoryProfile(resourceManager);
     }
 
     private Map<Identifier, TrainerProfile> loadTrainerProfileRegistry(ResourceManager resourceManager) {
@@ -136,7 +140,7 @@ public class ResourceReloadListener implements SimpleSynchronousResourceReloadLi
 
         boolean isExistAllTrainers = profile.trainers.stream()
                 .map(Identifier::new)
-                .allMatch(CobblemonTrainerBattle.trainerProfileRegistry::containsKey);
+                .allMatch(ProfileRegistry.trainer::containsKey);
         if (!isExistAllTrainers) {
             throw new IllegalArgumentException();
         }

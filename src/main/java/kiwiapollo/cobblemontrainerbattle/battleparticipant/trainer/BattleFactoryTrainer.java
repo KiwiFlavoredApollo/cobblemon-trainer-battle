@@ -5,13 +5,12 @@ import com.cobblemon.mod.common.api.battles.model.ai.BattleAI;
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
-import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactor.DisposableBattlePokemonFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactor.PlayerBackedTrainerBattleActor;
-import kiwiapollo.cobblemontrainerbattle.battleactor.VirtualTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.common.BattleCondition;
 import kiwiapollo.cobblemontrainerbattle.common.Generation5AI;
 import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
+import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistry;
 import kiwiapollo.cobblemontrainerbattle.parser.SmogonPokemon;
 import kiwiapollo.cobblemontrainerbattle.parser.SmogonPokemonParser;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -30,12 +29,12 @@ public class BattleFactoryTrainer implements TrainerBattleParticipant {
         this.identifier = identifier;
         this.uuid = UUID.randomUUID();
         this.player = player;
-        this.party = toParty(CobblemonTrainerBattle.trainerProfileRegistry.get(identifier).team(), player, level);
+        this.party = toParty(ProfileRegistry.trainer.get(identifier).team(), player, level);
     }
 
     @Override
     public String getName() {
-        return CobblemonTrainerBattle.trainerProfileRegistry.get(identifier).name();
+        return ProfileRegistry.trainer.get(identifier).name();
     }
 
     @Override
@@ -55,7 +54,7 @@ public class BattleFactoryTrainer implements TrainerBattleParticipant {
 
     @Override
     public BattleCondition getBattleCondition() {
-        return CobblemonTrainerBattle.trainerProfileRegistry.get(identifier).condition();
+        return ProfileRegistry.trainer.get(identifier).condition();
     }
 
     @Override

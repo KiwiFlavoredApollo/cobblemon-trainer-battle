@@ -5,12 +5,11 @@ import com.cobblemon.mod.common.api.battles.model.ai.BattleAI;
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
-import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactor.DisposableBattlePokemonFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactor.PlayerBackedTrainerBattleActor;
-import kiwiapollo.cobblemontrainerbattle.battleactor.VirtualTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.common.BattleCondition;
 import kiwiapollo.cobblemontrainerbattle.common.Generation5AI;
+import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistry;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerProfile;
 import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
 import kiwiapollo.cobblemontrainerbattle.parser.SmogonPokemon;
@@ -36,7 +35,7 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
         this.uuid = UUID.randomUUID();
         this.player = player;
 
-        TrainerProfile trainerProfile = CobblemonTrainerBattle.trainerProfileRegistry.get(identifier);
+        TrainerProfile trainerProfile = ProfileRegistry.trainer.get(identifier);
         this.condition = new BattleCondition(
                 trainerProfile.condition().isRematchAllowedAfterVictory,
                 1,
@@ -48,7 +47,7 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
 
     @Override
     public String getName() {
-        return CobblemonTrainerBattle.trainerProfileRegistry.get(identifier).name();
+        return ProfileRegistry.trainer.get(identifier).name();
     }
 
     @Override

@@ -8,6 +8,7 @@ import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.common.ResourceValidator;
+import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistry;
 import kiwiapollo.cobblemontrainerbattle.postbattle.RecordedBattleResultHandler;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
@@ -43,7 +44,7 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
         return RequiredArgumentBuilder.<ServerCommandSource, String>argument("trainer", StringArgumentType.greedyString())
                 .requires(new PlayerCommandPredicate(permission))
                 .suggests((context, builder) -> {
-                    CobblemonTrainerBattle.trainerProfileRegistry.keySet().stream()
+                    ProfileRegistry.trainer.keySet().stream()
                             .map(Identifier::toString)
                             .forEach(builder::suggest);
                     return builder.buildFuture();
@@ -79,7 +80,7 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
             PlayerBattleParticipant playerBattleParticipant = new NormalBattlePlayer(player);
             TrainerBattleParticipant trainerBattleParticipant = new NormalBattleTrainer(trainer, player);
 
-            TrainerProfile trainerProfile = CobblemonTrainerBattle.trainerProfileRegistry.get(trainer);
+            TrainerProfile trainerProfile = ProfileRegistry.trainer.get(trainer);
             BattleResultHandler battleResultHandler = new RecordedBattleResultHandler(player, trainer, trainerProfile.onVictory(), trainerProfile.onDefeat());
 
             TrainerBattle trainerBattle = new StandardTrainerBattle(playerBattleParticipant, trainerBattleParticipant, battleResultHandler);

@@ -1,20 +1,19 @@
 package kiwiapollo.cobblemontrainerbattle.common;
 
-import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.groupbattle.TrainerGroupProfile;
+import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistry;
 import net.minecraft.util.Identifier;
 
 import java.io.FileNotFoundException;
 
 public class ResourceValidator {
     public static void assertTrainerExist(Identifier identifier) throws FileNotFoundException {
-        if (!CobblemonTrainerBattle.trainerProfileRegistry.containsKey(identifier)) {
+        if (!ProfileRegistry.trainer.containsKey(identifier)) {
             throw new FileNotFoundException();
         }
     }
 
     public static void assertTrainerGroupExist(Identifier identifier) throws FileNotFoundException {
-        if (!CobblemonTrainerBattle.trainerGroupProfileRegistry.containsKey(identifier)) {
+        if (!ProfileRegistry.trainerGroup.containsKey(identifier)) {
             throw new FileNotFoundException();
         }
     }

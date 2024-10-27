@@ -7,19 +7,16 @@ import kiwiapollo.cobblemontrainerbattle.advancement.DefeatTrainerCriterion;
 import kiwiapollo.cobblemontrainerbattle.advancement.KillTrainerCriterion;
 import kiwiapollo.cobblemontrainerbattle.advancement.InteractTrainerCriterion;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactory;
-import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactoryProfile;
 import kiwiapollo.cobblemontrainerbattle.command.*;
 import kiwiapollo.cobblemontrainerbattle.economy.Economy;
 import kiwiapollo.cobblemontrainerbattle.economy.EconomyFactory;
 import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.events.*;
 import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattle;
-import kiwiapollo.cobblemontrainerbattle.groupbattle.TrainerGroupProfile;
 import kiwiapollo.cobblemontrainerbattle.item.ItemRegistry;
 import kiwiapollo.cobblemontrainerbattle.loot.DefeatedInBattleLootCondition;
 import kiwiapollo.cobblemontrainerbattle.parser.*;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerProfile;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
@@ -38,6 +35,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayNetworkHandler;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -58,10 +56,6 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
 	public static Config config = ConfigLoader.load();
 	public static Economy economy = EconomyFactory.create(config.economy);
-
-	public static Map<Identifier, TrainerProfile> trainerProfileRegistry = new HashMap<>();
-	public static Map<Identifier, TrainerGroupProfile> trainerGroupProfileRegistry = new HashMap<>();
-	public static BattleFactoryProfile battleFactoryProfile;
 
 	public static Map<UUID, TrainerBattle> trainerBattleRegistry = new HashMap<>();
 	public static Map<UUID, PlayerHistory> playerHistoryRegistry = new HashMap<>();
@@ -87,7 +81,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 			dispatcher.register(new CobblemonTrainerBattleCommand());
 		});
 
-		ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new ResourceReloadListener());
+		ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new ProfileRegistry());
 
 		Registry.register(Registries.ENTITY_TYPE, Identifier.of(NAMESPACE, "trainer"), TRAINER_ENTITY_TYPE);
 		FabricDefaultAttributeRegistry.register(TRAINER_ENTITY_TYPE, TrainerEntity.createMobAttributes());
@@ -97,9 +91,9 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
 		ServerPlayConnectionEvents.JOIN.register(this::initializePlayerHistory);
 
-		ServerPlayConnectionEvents.DISCONNECT.register(this::removeTrainerBattle);
-		ServerPlayConnectionEvents.DISCONNECT.register(this::removeGroupBattleSession);
-		ServerPlayConnectionEvents.DISCONNECT.register(this::removeBattleFactorySession);
+		ServerPlayConnectionEvents.DISCONNECT.register(this::removeDisconnectedPlayerTrainerBattle);
+		ServerPlayConnectionEvents.DISCONNECT.register(GroupBattle::removeDisconnectedPlayerSession);
+		ServerPlayConnectionEvents.DISCONNECT.register(BattleFactory::removeDisconnectedPlayerSession);
 
 		ServerLifecycleEvents.SERVER_STARTED.register(PlayerHistoryRegistryParser::loadFromNbt);
 		ServerLifecycleEvents.SERVER_STOPPED.register(PlayerHistoryRegistryParser::saveToNbt);
@@ -121,36 +115,14 @@ public class CobblemonTrainerBattle implements ModInitializer {
 		CobblemonTrainerBattle.playerHistoryRegistry.put(playerUuid, new PlayerHistory());
 	}
 
-	private void removeTrainerBattle(ServerPlayNetworkHandler handler, MinecraftServer server) {
-		UUID playerUuid = handler.getPlayer().getUuid();
+	private void removeDisconnectedPlayerTrainerBattle(ServerPlayNetworkHandler handler, MinecraftServer server) {
+		ServerPlayerEntity player = handler.getPlayer();
 
-		if (!CobblemonTrainerBattle.trainerBattleRegistry.containsKey(playerUuid)) {
+		if (!CobblemonTrainerBattle.trainerBattleRegistry.containsKey(player.getUuid())) {
 			return;
 		}
 
-		CobblemonTrainerBattle.trainerBattleRegistry.get(playerUuid).onPlayerDefeat();
-		CobblemonTrainerBattle.trainerBattleRegistry.remove(playerUuid);
-	}
-
-	private void removeGroupBattleSession(ServerPlayNetworkHandler handler, MinecraftServer server) {
-		UUID playerUuid = handler.getPlayer().getUuid();
-
-		if (!GroupBattle.sessionRegistry.containsKey(playerUuid)) {
-			return;
-		}
-
-		GroupBattle.sessionRegistry.get(playerUuid).onSessionStop();
-		GroupBattle.sessionRegistry.remove(playerUuid);
-	}
-
-	private void removeBattleFactorySession(ServerPlayNetworkHandler handler, MinecraftServer server) {
-		UUID playerUuid = handler.getPlayer().getUuid();
-
-		if (!BattleFactory.sessionRegistry.containsKey(playerUuid)) {
-			return;
-		}
-
-		BattleFactory.sessionRegistry.get(playerUuid).onSessionStop();
-		BattleFactory.sessionRegistry.remove(playerUuid);
+		CobblemonTrainerBattle.trainerBattleRegistry.get(player.getUuid()).onPlayerDefeat();
+		CobblemonTrainerBattle.trainerBattleRegistry.remove(player.getUuid());
 	}
 }
