@@ -2,7 +2,6 @@ package kiwiapollo.cobblemontrainerbattle.mixin;
 
 import com.cobblemon.mod.common.api.drop.DropTable;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
-import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattleRegistry;
 import kotlin.ranges.IntRange;
