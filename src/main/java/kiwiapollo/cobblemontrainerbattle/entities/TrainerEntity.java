@@ -61,6 +61,8 @@ public class TrainerEntity extends PathAwareEntity {
             .map(file -> TEXTURE_PARENTS + file)
             .map(path -> Identifier.of(CobblemonTrainerBattle.NAMESPACE, path)).toList();
 
+    public static final int FLEE_DISTANCE = 20;
+
     private Identifier trainer;
     private Identifier texture;
     private TrainerBattle trainerBattle;
