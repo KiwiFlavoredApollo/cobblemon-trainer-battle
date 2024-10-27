@@ -27,6 +27,7 @@ import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
@@ -217,5 +218,24 @@ public class TrainerEntity extends PathAwareEntity {
 
     public void setTexture(Identifier texture) {
         this.texture = texture;
+    }
+
+    @Override
+    public void writeCustomDataToNbt(NbtCompound nbt) {
+        super.writeCustomDataToNbt(nbt);
+        nbt.putString("trainer", trainer.toString());
+        nbt.putString("texture", texture.toString());
+    }
+
+    @Override
+    public void readCustomDataFromNbt(NbtCompound nbt) {
+        try {
+            super.readCustomDataFromNbt(nbt);
+            trainer = Objects.requireNonNull(Identifier.tryParse(nbt.getString("trainer")));
+            texture = Objects.requireNonNull(Identifier.tryParse(nbt.getString("texture")));
+
+        } catch (NullPointerException e) {
+            discard();
+        }
     }
 }
