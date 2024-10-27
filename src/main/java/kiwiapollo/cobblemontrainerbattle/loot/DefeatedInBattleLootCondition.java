@@ -12,46 +12,44 @@ import net.minecraft.loot.context.LootContext;
 import net.minecraft.loot.context.LootContextParameters;
 import net.minecraft.util.JsonSerializer;
 
-public class DefeatedToBattleLootCondition implements LootCondition {
-    static final DefeatedToBattleLootCondition INSTANCE = new DefeatedToBattleLootCondition();
-
+public class DefeatedInBattleLootCondition implements LootCondition {
     @Override
     public LootConditionType getType() {
-        return CobblemonTrainerBattle.DEFEATED_TO_BATTLE;
+        return CobblemonTrainerBattle.DEFEATED_IN_BATTLE;
     }
 
     @Override
     public boolean test(LootContext lootContext) {
         try {
             DamageSource generic = lootContext.getWorld().getDamageSources().generic();
-            boolean isGeneric = lootContext.get(LootContextParameters.DAMAGE_SOURCE).getType().equals(generic.getType());
-            boolean isTrainer = lootContext.get(LootContextParameters.THIS_ENTITY) instanceof TrainerEntity;
+            boolean isGenericDamageSource = lootContext.get(LootContextParameters.DAMAGE_SOURCE).getType().equals(generic.getType());
+            boolean isTrainerEntity = lootContext.get(LootContextParameters.THIS_ENTITY) instanceof TrainerEntity;
 
-            return isGeneric && isTrainer;
+            return isGenericDamageSource && isTrainerEntity;
 
         } catch (NullPointerException e) {
             return false;
         }
     }
 
-    public static class Serializer implements JsonSerializer<DefeatedToBattleLootCondition> {
+    public static class Serializer implements JsonSerializer<DefeatedInBattleLootCondition> {
         public Serializer() {
 
         }
 
         public void toJson(
                 JsonObject jsonObject,
-                DefeatedToBattleLootCondition survivesExplosionLootCondition,
+                DefeatedInBattleLootCondition survivesExplosionLootCondition,
                 JsonSerializationContext jsonSerializationContext
         ) {
 
         }
 
-        public DefeatedToBattleLootCondition fromJson(
+        public DefeatedInBattleLootCondition fromJson(
                 JsonObject jsonObject,
                 JsonDeserializationContext jsonDeserializationContext
         ) {
-            return DefeatedToBattleLootCondition.INSTANCE;
+            return new DefeatedInBattleLootCondition();
         }
     }
 }

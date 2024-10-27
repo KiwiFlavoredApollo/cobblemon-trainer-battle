@@ -15,7 +15,7 @@ import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.events.*;
 import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattle;
 import kiwiapollo.cobblemontrainerbattle.groupbattle.TrainerGroupProfile;
-import kiwiapollo.cobblemontrainerbattle.loot.DefeatedToBattleLootCondition;
+import kiwiapollo.cobblemontrainerbattle.loot.DefeatedInBattleLootCondition;
 import kiwiapollo.cobblemontrainerbattle.parser.*;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerProfile;
@@ -72,7 +72,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 	public static final RegistryKey<ItemGroup> ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(NAMESPACE, "item_group"));
 	public static final ItemGroup ITEM_GROUP = FabricItemGroup.builder().icon(() -> new ItemStack(BLUE_VS_SEEKER)).displayName(Text.literal("Trainers")).build();
 
-	public static final LootConditionType DEFEATED_TO_BATTLE = new LootConditionType(new DefeatedToBattleLootCondition.Serializer());
+	public static final LootConditionType DEFEATED_IN_BATTLE = new LootConditionType(new DefeatedInBattleLootCondition.Serializer());
 
 	public static Config config = ConfigLoader.load();
 	public static Economy economy = EconomyFactory.create(config.economy);
@@ -112,7 +112,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 			itemGroup.add(RADICALRED_LEADER_BROCK_TOKEN);
 		});
 
-		Registry.register(Registries.LOOT_CONDITION_TYPE, Identifier.of(NAMESPACE, "defeated_to_battle"), DEFEATED_TO_BATTLE);
+		Registry.register(Registries.LOOT_CONDITION_TYPE, Identifier.of(NAMESPACE, "defeated_in_battle"), DEFEATED_IN_BATTLE);
 
 		AspectProvider.Companion.register(new FormAspectProvider());
 
