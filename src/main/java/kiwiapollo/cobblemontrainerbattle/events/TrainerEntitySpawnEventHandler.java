@@ -34,7 +34,7 @@ public class TrainerEntitySpawnEventHandler {
             trainerEntity.refreshPositionAndAngles(spawnPos, player.getYaw(), player.getPitch());
             world.spawnEntity(trainerEntity);
 
-            CobblemonTrainerBattle.LOGGER.info(String.format("Spawned trainer on %s %s", world.getRegistryKey().getValue(), spawnPos.toString()));
+            CobblemonTrainerBattle.LOGGER.info("Spawned trainer on {} {}", world.getRegistryKey().getValue(), spawnPos.toString());
 
         } catch (AssertionError | IllegalStateException ignored) {
 
