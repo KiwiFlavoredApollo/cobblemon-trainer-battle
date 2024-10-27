@@ -59,9 +59,9 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
 		Registry.register(Registries.LOOT_CONDITION_TYPE, Identifier.of(NAMESPACE, "defeated_in_battle"), DEFEATED_IN_BATTLE);
 
-		new ItemRegistry().register();
-
 		AspectProvider.Companion.register(new FormAspectProvider());
+
+		new ItemRegistry().register();
 
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
 			dispatcher.register(new TrainerBattleCommand());
