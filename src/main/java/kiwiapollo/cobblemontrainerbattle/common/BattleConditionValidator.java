@@ -2,7 +2,6 @@ package kiwiapollo.cobblemontrainerbattle.common;
 
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.pokemon.Pokemon;
-import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.TrainerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
@@ -10,6 +9,7 @@ import kiwiapollo.cobblemontrainerbattle.exception.battlecondition.MaximumPartyL
 import kiwiapollo.cobblemontrainerbattle.exception.battlecondition.MinimumPartyLevelException;
 import kiwiapollo.cobblemontrainerbattle.exception.battlecondition.RematchNotAllowedException;
 import kiwiapollo.cobblemontrainerbattle.parser.PlayerHistory;
+import kiwiapollo.cobblemontrainerbattle.parser.PlayerHistoryRegistry;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
@@ -49,7 +49,7 @@ public class BattleConditionValidator {
 
     public static void assertRematchAllowedAfterVictory(ServerPlayerEntity player, Identifier opponent, BattleCondition condition) throws RematchNotAllowedException {
         try {
-            PlayerHistory history = CobblemonTrainerBattle.playerHistoryRegistry.get(player.getUuid());
+            PlayerHistory history = PlayerHistoryRegistry.get(player.getUuid());
             if (!condition.isRematchAllowedAfterVictory && history.isOpponentDefeated(opponent)) {
                 throw new RematchNotAllowedException();
             }

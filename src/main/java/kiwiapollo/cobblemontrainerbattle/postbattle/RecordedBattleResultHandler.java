@@ -1,7 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.postbattle;
 
-import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.parser.PlayerHistory;
+import kiwiapollo.cobblemontrainerbattle.parser.PlayerHistoryRegistry;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
@@ -10,7 +10,7 @@ public class RecordedBattleResultHandler implements BattleResultHandler {
     private final Identifier trainer;
 
     public RecordedBattleResultHandler(ServerPlayerEntity player, Identifier trainer) {
-        this.history = CobblemonTrainerBattle.playerHistoryRegistry.get(player.getUuid());
+        this.history = PlayerHistoryRegistry.get(player.getUuid());
         this.trainer = trainer;
     }
 

@@ -5,6 +5,7 @@ import com.cobblemon.mod.common.advancement.criterion.SimpleCountableCriterionCo
 import com.google.gson.JsonObject;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
+import kiwiapollo.cobblemontrainerbattle.parser.PlayerHistoryRegistry;
 import net.minecraft.advancement.criterion.AbstractCriterion;
 import net.minecraft.advancement.criterion.AbstractCriterionConditions;
 import net.minecraft.advancement.criterion.OnKilledCriterion;
@@ -35,7 +36,7 @@ public class KillTrainerCriterion extends AbstractCriterion<KillTrainerCriterion
     }
 
     public void trigger(ServerPlayerEntity player, TrainerEntity trainer, DamageSource damageSource) {
-        int count = CobblemonTrainerBattle.playerHistoryRegistry.get(player.getUuid()).getTotalKillCount();
+        int count = PlayerHistoryRegistry.get(player.getUuid()).getTotalKillCount();
         trigger(player, conditions -> conditions.test(player, trainer, damageSource, count));
     }
 

@@ -8,6 +8,7 @@ import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.EntityBackedT
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.TrainerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerIdentifierFactory;
 import kiwiapollo.cobblemontrainerbattle.parser.PlayerHistory;
+import kiwiapollo.cobblemontrainerbattle.parser.PlayerHistoryRegistry;
 import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistries;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
@@ -230,11 +231,11 @@ public class TrainerEntity extends PathAwareEntity {
     }
 
     private void addPlayerKillRecord(ServerPlayerEntity player) {
-        if (!CobblemonTrainerBattle.playerHistoryRegistry.containsKey(player.getUuid())) {
-            CobblemonTrainerBattle.playerHistoryRegistry.put(player.getUuid(), new PlayerHistory());
+        if (!PlayerHistoryRegistry.containsKey(player.getUuid())) {
+            PlayerHistoryRegistry.put(player.getUuid(), new PlayerHistory());
         }
 
-        CobblemonTrainerBattle.playerHistoryRegistry.get(player.getUuid()).addPlayerKill(trainer);
+        PlayerHistoryRegistry.get(player.getUuid()).addPlayerKill(trainer);
     }
 
     public void setTrainer(Identifier trainer) {

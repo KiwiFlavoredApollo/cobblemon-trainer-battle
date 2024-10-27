@@ -58,7 +58,6 @@ public class CobblemonTrainerBattle implements ModInitializer {
 	public static Economy economy = EconomyFactory.create(config.economy);
 
 	public static Map<UUID, TrainerBattle> trainerBattleRegistry = new HashMap<>();
-	public static Map<UUID, PlayerHistory> playerHistoryRegistry = new HashMap<>();
 
     @Override
 	public void onInitialize() {
@@ -95,9 +94,9 @@ public class CobblemonTrainerBattle implements ModInitializer {
 		ServerPlayConnectionEvents.DISCONNECT.register(GroupBattle::removeDisconnectedPlayerSession);
 		ServerPlayConnectionEvents.DISCONNECT.register(BattleFactory::removeDisconnectedPlayerSession);
 
-		ServerLifecycleEvents.SERVER_STARTED.register(PlayerHistoryRegistryParser::loadFromNbt);
-		ServerLifecycleEvents.SERVER_STOPPED.register(PlayerHistoryRegistryParser::saveToNbt);
-		ServerTickEvents.END_SERVER_TICK.register(PlayerHistoryRegistryParser::onEndServerTick);
+		ServerLifecycleEvents.SERVER_STARTED.register(PlayerHistoryRegistry::loadFromNbt);
+		ServerLifecycleEvents.SERVER_STOPPED.register(PlayerHistoryRegistry::saveToNbt);
+		ServerTickEvents.END_SERVER_TICK.register(PlayerHistoryRegistry::onEndServerTick);
 
 		ServerTickEvents.END_WORLD_TICK.register(TrainerEntitySpawnEventHandler::onEndWorldTick);
 		ServerEntityEvents.ENTITY_LOAD.register(TrainerEntityLoadEventHandler::onEntityLoad);
@@ -108,11 +107,11 @@ public class CobblemonTrainerBattle implements ModInitializer {
 	private void initializePlayerHistory(ServerPlayNetworkHandler handler, PacketSender sender, MinecraftServer server) {
 		UUID playerUuid = handler.getPlayer().getUuid();
 
-		if (CobblemonTrainerBattle.playerHistoryRegistry.containsKey(playerUuid)) {
+		if (PlayerHistoryRegistry.containsKey(playerUuid)) {
 			return;
 		}
 
-		CobblemonTrainerBattle.playerHistoryRegistry.put(playerUuid, new PlayerHistory());
+		PlayerHistoryRegistry.put(playerUuid, new PlayerHistory());
 	}
 
 	private void removeDisconnectedPlayerTrainerBattle(ServerPlayNetworkHandler handler, MinecraftServer server) {

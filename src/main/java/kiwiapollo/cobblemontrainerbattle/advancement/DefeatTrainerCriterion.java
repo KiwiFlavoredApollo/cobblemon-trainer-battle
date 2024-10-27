@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.advancement.criterion.CountableContext;
 import com.cobblemon.mod.common.advancement.criterion.SimpleCountableCriterionCondition;
 import com.google.gson.JsonObject;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.parser.PlayerHistoryRegistry;
 import net.minecraft.advancement.criterion.AbstractCriterion;
 import net.minecraft.advancement.criterion.AbstractCriterionConditions;
 import net.minecraft.predicate.entity.AdvancementEntityPredicateDeserializer;
@@ -30,7 +31,7 @@ public class DefeatTrainerCriterion extends AbstractCriterion<DefeatTrainerCrite
     }
 
     public void trigger(ServerPlayerEntity player) {
-        int count = CobblemonTrainerBattle.playerHistoryRegistry.get(player.getUuid()).getTotalVictoryCount();
+        int count = PlayerHistoryRegistry.get(player.getUuid()).getTotalVictoryCount();
         trigger(player, conditions -> conditions.test(player, count));
     }
 

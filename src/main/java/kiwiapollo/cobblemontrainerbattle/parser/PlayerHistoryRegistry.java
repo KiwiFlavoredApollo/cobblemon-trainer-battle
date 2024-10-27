@@ -8,17 +8,28 @@ import net.minecraft.util.WorldSavePath;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
-public class PlayerHistoryRegistryParser {
+public class PlayerHistoryRegistry {
     private static final int SAVE_INTERVAL = 24000;
+
+    private static Map<UUID, PlayerHistory> histories = new HashMap<>();
+
+    public static boolean containsKey(UUID uuid) {
+        return histories.containsKey(uuid);
+    }
+
+    public static PlayerHistory get(UUID uuid) {
+        return histories.get(uuid);
+    }
+
+    public static void put(UUID uuid, PlayerHistory history) {
+        histories.put(uuid, history);
+    }
 
     public static void onEndServerTick(MinecraftServer server) {
         if (server.getTicks() % SAVE_INTERVAL == 0) {
-            PlayerHistoryRegistryParser.saveToNbt(server);
+            PlayerHistoryRegistry.saveToNbt(server);
         }
     }
 
@@ -29,14 +40,14 @@ public class PlayerHistoryRegistryParser {
             return;
         }
 
-        CobblemonTrainerBattle.playerHistoryRegistry.clear();
+        PlayerHistoryRegistry.histories.clear();
         List<File> datFileList = Arrays.stream(historyDir.listFiles())
-                .filter(PlayerHistoryRegistryParser::isDatFile).toList();
+                .filter(PlayerHistoryRegistry::isDatFile).toList();
         for (File file : datFileList) {
             try {
                 PlayerHistory playerHistory = PlayerHistory.readFromNbt(NbtIo.readCompressed(file));
                 UUID playerUuid = UUID.fromString(file.getName().replace(".dat", ""));
-                CobblemonTrainerBattle.playerHistoryRegistry.put(playerUuid, playerHistory);
+                PlayerHistoryRegistry.histories.put(playerUuid, playerHistory);
 
             } catch (NullPointerException | IOException ignored) {
                 CobblemonTrainerBattle.LOGGER.error("An error occurred while loading from {}", file.getName());
@@ -53,7 +64,7 @@ public class PlayerHistoryRegistryParser {
             historyDir.mkdirs();
         }
 
-        for (Map.Entry<UUID, PlayerHistory> historyEntry: CobblemonTrainerBattle.playerHistoryRegistry.entrySet()) {
+        for (Map.Entry<UUID, PlayerHistory> historyEntry: PlayerHistoryRegistry.histories.entrySet()) {
             try {
                 UUID playerUuid = historyEntry.getKey();
                 PlayerHistory playerHistory = historyEntry.getValue();
