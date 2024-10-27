@@ -25,6 +25,7 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -32,13 +33,13 @@ import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
-import net.minecraft.item.SpawnEggItem;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -54,9 +55,20 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
 	public static final int FLEE_DISTANCE = 20;
 
-	public static DefeatTrainerCriterion DEFEAT_TRAINER_CRITERION = new DefeatTrainerCriterion();
-	public static KillTrainerCriterion KILL_TRAINER_CRITERION = new KillTrainerCriterion();
-	public static InteractTrainerCriterion INTERACT_TRAINER_CRITERION = new InteractTrainerCriterion();
+	public static final DefeatTrainerCriterion DEFEAT_TRAINER_CRITERION = new DefeatTrainerCriterion();
+	public static final KillTrainerCriterion KILL_TRAINER_CRITERION = new KillTrainerCriterion();
+	public static final InteractTrainerCriterion INTERACT_TRAINER_CRITERION = new InteractTrainerCriterion();
+
+	public static final Item BLUE_VS_SEEKER = new Item(new Item.Settings());
+	public static final Item RED_VS_SEEKER = new Item(new Item.Settings());
+	public static final Item GREEN_VS_SEEKER = new Item(new Item.Settings());
+	public static final Item PURPLE_VS_SEEKER = new Item(new Item.Settings());
+	public static final Item TRAINER_TOKEN = new Item(new Item.Settings());
+	public static final Item RADICALRED_LEADER_BROCK_TICKET = new Item(new Item.Settings());
+	public static final Item RADICALRED_LEADER_BROCK_TOKEN = new Item(new Item.Settings());
+
+	public static final RegistryKey<ItemGroup> ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(NAMESPACE, "item_group"));
+	public static final ItemGroup ITEM_GROUP = FabricItemGroup.builder().icon(() -> new ItemStack(BLUE_VS_SEEKER)).displayName(Text.literal("Trainers")).build();
 
 	public static Config config = ConfigLoader.load();
 	public static Economy economy = EconomyFactory.create(config.economy);
@@ -74,10 +86,29 @@ public class CobblemonTrainerBattle implements ModInitializer {
 		Criteria.register(KILL_TRAINER_CRITERION);
 		Criteria.register(INTERACT_TRAINER_CRITERION);
 
-		AspectProvider.Companion.register(new FormAspectProvider());
+		Registry.register(Registries.ITEM, Identifier.of(NAMESPACE, "trainer_spawn_egg"), TRAINER_SPAWN_EGG);
+		Registry.register(Registries.ITEM, Identifier.of(NAMESPACE, "blue_vs_seeker"), BLUE_VS_SEEKER);
+		Registry.register(Registries.ITEM, Identifier.of(NAMESPACE, "red_vs_seeker"), RED_VS_SEEKER);
+		Registry.register(Registries.ITEM, Identifier.of(NAMESPACE, "green_vs_seeker"), GREEN_VS_SEEKER);
+		Registry.register(Registries.ITEM, Identifier.of(NAMESPACE, "purple_vs_seeker"), PURPLE_VS_SEEKER);
+		Registry.register(Registries.ITEM, Identifier.of(NAMESPACE, "trainer_token"), TRAINER_TOKEN);
+		Registry.register(Registries.ITEM, Identifier.of(NAMESPACE, "radicalred_leader_brock_ticket"), RADICALRED_LEADER_BROCK_TICKET);
+		Registry.register(Registries.ITEM, Identifier.of(NAMESPACE, "radicalred_leader_brock_token"), RADICALRED_LEADER_BROCK_TOKEN);
 
-		Registry.register(Registries.ITEM, new Identifier(NAMESPACE, "trainer_spawn_egg"), TRAINER_SPAWN_EGG);
-		ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(entries -> entries.add(TRAINER_SPAWN_EGG));
+		Registry.register(Registries.ITEM_GROUP, ITEM_GROUP_KEY, ITEM_GROUP);
+
+		ItemGroupEvents.modifyEntriesEvent(ITEM_GROUP_KEY).register(itemGroup -> {
+			itemGroup.add(TRAINER_SPAWN_EGG);
+			itemGroup.add(BLUE_VS_SEEKER);
+			itemGroup.add(RED_VS_SEEKER);
+			itemGroup.add(GREEN_VS_SEEKER);
+			itemGroup.add(PURPLE_VS_SEEKER);
+			itemGroup.add(TRAINER_TOKEN);
+			itemGroup.add(RADICALRED_LEADER_BROCK_TICKET);
+			itemGroup.add(RADICALRED_LEADER_BROCK_TOKEN);
+		});
+
+		AspectProvider.Companion.register(new FormAspectProvider());
 
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
 			dispatcher.register(new TrainerBattleCommand());
