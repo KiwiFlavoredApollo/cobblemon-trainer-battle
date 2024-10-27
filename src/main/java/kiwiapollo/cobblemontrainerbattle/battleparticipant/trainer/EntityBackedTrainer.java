@@ -78,7 +78,7 @@ public class EntityBackedTrainer implements TrainerBattleParticipant {
 
     @Override
     public void onDefeat() {
-        entity.discard();
+        entity.onDefeat();
     }
 
     @Override

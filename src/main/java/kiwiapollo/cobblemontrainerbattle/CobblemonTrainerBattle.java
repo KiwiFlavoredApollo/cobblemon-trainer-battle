@@ -15,6 +15,7 @@ import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.events.*;
 import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattle;
 import kiwiapollo.cobblemontrainerbattle.groupbattle.TrainerGroupProfile;
+import kiwiapollo.cobblemontrainerbattle.loot.DefeatedToBattleLootCondition;
 import kiwiapollo.cobblemontrainerbattle.parser.*;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerProfile;
@@ -34,6 +35,7 @@ import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.item.*;
+import net.minecraft.loot.condition.LootConditionType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -69,6 +71,8 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
 	public static final RegistryKey<ItemGroup> ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(NAMESPACE, "item_group"));
 	public static final ItemGroup ITEM_GROUP = FabricItemGroup.builder().icon(() -> new ItemStack(BLUE_VS_SEEKER)).displayName(Text.literal("Trainers")).build();
+
+	public static final LootConditionType DEFEATED_TO_BATTLE = new LootConditionType(new DefeatedToBattleLootCondition.Serializer());
 
 	public static Config config = ConfigLoader.load();
 	public static Economy economy = EconomyFactory.create(config.economy);
@@ -107,6 +111,8 @@ public class CobblemonTrainerBattle implements ModInitializer {
 			itemGroup.add(RADICALRED_LEADER_BROCK_TICKET);
 			itemGroup.add(RADICALRED_LEADER_BROCK_TOKEN);
 		});
+
+		Registry.register(Registries.LOOT_CONDITION_TYPE, Identifier.of(NAMESPACE, "defeated_to_battle"), DEFEATED_TO_BATTLE);
 
 		AspectProvider.Companion.register(new FormAspectProvider());
 
@@ -151,6 +157,16 @@ public class CobblemonTrainerBattle implements ModInitializer {
 			new LootDroppedEventHandler().onLootDropped(lootDroppedEvent);
 
 			return Unit.INSTANCE;
+        });
+
+		ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {
+			UUID playerUuid = handler.getPlayer().getUuid();
+
+			if (playerHistoryRegistry.containsKey(playerUuid)) {
+				return;
+			}
+
+			playerHistoryRegistry.put(playerUuid, new PlayerHistory());
         });
 
 		ServerPlayConnectionEvents.DISCONNECT.register((handler, server) -> {

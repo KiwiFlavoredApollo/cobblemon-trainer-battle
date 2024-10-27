@@ -27,6 +27,10 @@ import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.loot.LootTable;
+import net.minecraft.loot.context.LootContextParameterSet;
+import net.minecraft.loot.context.LootContextParameters;
+import net.minecraft.loot.context.LootContextTypes;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -202,6 +206,24 @@ public class TrainerEntity extends PathAwareEntity {
         }
 
         super.onDeath(damageSource);
+    }
+
+    public void onDefeat() {
+        dropDefeatLoot();
+        discard();
+    }
+
+    private void dropDefeatLoot() {
+        Identifier identifier = this.getLootTable();
+        LootTable lootTable = this.getWorld().getServer().getLootManager().getLootTable(identifier);
+
+        LootContextParameterSet.Builder builder = (new LootContextParameterSet.Builder((ServerWorld)this.getWorld()))
+                .add(LootContextParameters.THIS_ENTITY, this)
+                .add(LootContextParameters.ORIGIN, this.getPos())
+                .add(LootContextParameters.DAMAGE_SOURCE, getWorld().getDamageSources().generic());
+
+        LootContextParameterSet lootContextParameterSet = builder.build(LootContextTypes.ENTITY);
+        lootTable.generateLoot(lootContextParameterSet, this.getLootTableSeed(), this::dropStack);
     }
 
     private void addPlayerKillRecord(ServerPlayerEntity player) {
