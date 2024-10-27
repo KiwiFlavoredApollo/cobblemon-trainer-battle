@@ -15,33 +15,29 @@ import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.events.*;
 import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattle;
 import kiwiapollo.cobblemontrainerbattle.groupbattle.TrainerGroupProfile;
+import kiwiapollo.cobblemontrainerbattle.item.ItemRegistry;
 import kiwiapollo.cobblemontrainerbattle.loot.DefeatedInBattleLootCondition;
 import kiwiapollo.cobblemontrainerbattle.parser.*;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerProfile;
-import kotlin.Unit;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.networking.v1.PacketSender;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
-import net.minecraft.item.*;
 import net.minecraft.loot.condition.LootConditionType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
 import net.minecraft.resource.ResourceType;
-import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.text.Text;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.network.ServerPlayNetworkHandler;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -53,24 +49,10 @@ public class CobblemonTrainerBattle implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger(NAMESPACE);
 
 	public static final EntityType<TrainerEntity> TRAINER_ENTITY_TYPE = EntityType.Builder.create(TrainerEntity::new, SpawnGroup.CREATURE).setDimensions(0.6f, 1.8f).build("trainer");
-	public static final Item TRAINER_SPAWN_EGG = new SpawnEggItem(TRAINER_ENTITY_TYPE, 0xAAAAAA, 0xFF5555, new FabricItemSettings().maxCount(64));
-
-	public static final int FLEE_DISTANCE = 20;
 
 	public static final DefeatTrainerCriterion DEFEAT_TRAINER_CRITERION = new DefeatTrainerCriterion();
 	public static final KillTrainerCriterion KILL_TRAINER_CRITERION = new KillTrainerCriterion();
 	public static final InteractTrainerCriterion INTERACT_TRAINER_CRITERION = new InteractTrainerCriterion();
-
-	public static final Item BLUE_VS_SEEKER = new Item(new Item.Settings());
-	public static final Item RED_VS_SEEKER = new Item(new Item.Settings());
-	public static final Item GREEN_VS_SEEKER = new Item(new Item.Settings());
-	public static final Item PURPLE_VS_SEEKER = new Item(new Item.Settings());
-	public static final Item TRAINER_TOKEN = new Item(new Item.Settings());
-	public static final Item RADICALRED_LEADER_BROCK_TICKET = new Item(new Item.Settings());
-	public static final Item RADICALRED_LEADER_BROCK_TOKEN = new Item(new Item.Settings());
-
-	public static final RegistryKey<ItemGroup> ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(NAMESPACE, "item_group"));
-	public static final ItemGroup ITEM_GROUP = FabricItemGroup.builder().icon(() -> new ItemStack(BLUE_VS_SEEKER)).displayName(Text.literal("Trainers")).build();
 
 	public static final LootConditionType DEFEATED_IN_BATTLE = new LootConditionType(new DefeatedInBattleLootCondition.Serializer());
 
@@ -90,29 +72,9 @@ public class CobblemonTrainerBattle implements ModInitializer {
 		Criteria.register(KILL_TRAINER_CRITERION);
 		Criteria.register(INTERACT_TRAINER_CRITERION);
 
-		Registry.register(Registries.ITEM, Identifier.of(NAMESPACE, "trainer_spawn_egg"), TRAINER_SPAWN_EGG);
-		Registry.register(Registries.ITEM, Identifier.of(NAMESPACE, "blue_vs_seeker"), BLUE_VS_SEEKER);
-		Registry.register(Registries.ITEM, Identifier.of(NAMESPACE, "red_vs_seeker"), RED_VS_SEEKER);
-		Registry.register(Registries.ITEM, Identifier.of(NAMESPACE, "green_vs_seeker"), GREEN_VS_SEEKER);
-		Registry.register(Registries.ITEM, Identifier.of(NAMESPACE, "purple_vs_seeker"), PURPLE_VS_SEEKER);
-		Registry.register(Registries.ITEM, Identifier.of(NAMESPACE, "trainer_token"), TRAINER_TOKEN);
-		Registry.register(Registries.ITEM, Identifier.of(NAMESPACE, "radicalred_leader_brock_ticket"), RADICALRED_LEADER_BROCK_TICKET);
-		Registry.register(Registries.ITEM, Identifier.of(NAMESPACE, "radicalred_leader_brock_token"), RADICALRED_LEADER_BROCK_TOKEN);
-
-		Registry.register(Registries.ITEM_GROUP, ITEM_GROUP_KEY, ITEM_GROUP);
-
-		ItemGroupEvents.modifyEntriesEvent(ITEM_GROUP_KEY).register(itemGroup -> {
-			itemGroup.add(TRAINER_SPAWN_EGG);
-			itemGroup.add(BLUE_VS_SEEKER);
-			itemGroup.add(RED_VS_SEEKER);
-			itemGroup.add(GREEN_VS_SEEKER);
-			itemGroup.add(PURPLE_VS_SEEKER);
-			itemGroup.add(TRAINER_TOKEN);
-			itemGroup.add(RADICALRED_LEADER_BROCK_TICKET);
-			itemGroup.add(RADICALRED_LEADER_BROCK_TOKEN);
-		});
-
 		Registry.register(Registries.LOOT_CONDITION_TYPE, Identifier.of(NAMESPACE, "defeated_in_battle"), DEFEATED_IN_BATTLE);
+
+		new ItemRegistry().register();
 
 		AspectProvider.Companion.register(new FormAspectProvider());
 
@@ -125,81 +87,70 @@ public class CobblemonTrainerBattle implements ModInitializer {
 			dispatcher.register(new CobblemonTrainerBattleCommand());
 		});
 
-		CobblemonEvents.BATTLE_VICTORY.subscribe(Priority.NORMAL, battleVictoryEvent -> {
-			// BATTLE_VICTORY event fires even if the player loses
-			List<UUID> battleIds = trainerBattleRegistry.values().stream().map(TrainerBattle::getBattleId).toList();
-			if (!battleIds.contains(battleVictoryEvent.getBattle().getBattleId())) {
-				return Unit.INSTANCE;
-			}
-
-			ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
-			boolean isPlayerVictory = battleVictoryEvent.getWinners().stream()
-					.anyMatch(battleActor -> battleActor.isForPlayer(player));
-
-			if (isPlayerVictory) {
-				trainerBattleRegistry.get(player.getUuid()).onPlayerVictory();
-
-				DEFEAT_TRAINER_CRITERION.trigger(player);
-
-			} else {
-				trainerBattleRegistry.get(player.getUuid()).onPlayerDefeat();
-			}
-
-			trainerBattleRegistry.remove(player.getUuid());
-
-			return Unit.INSTANCE;
-        });
-
-		CobblemonEvents.LOOT_DROPPED.subscribe(Priority.HIGHEST, lootDroppedEvent -> {
-			// LOOT_DROPPED event fires before BATTLE_VICTORY event
-			// Cobblemon Discord, Hiroku: It's only used if the player kills the pokemon by hand, not by battle
-			// However Pokemons drop loot when defeated in battles, at least on 1.5.1
-			new LootDroppedEventHandler().onLootDropped(lootDroppedEvent);
-
-			return Unit.INSTANCE;
-        });
-
-		ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {
-			UUID playerUuid = handler.getPlayer().getUuid();
-
-			if (playerHistoryRegistry.containsKey(playerUuid)) {
-				return;
-			}
-
-			playerHistoryRegistry.put(playerUuid, new PlayerHistory());
-        });
-
-		ServerPlayConnectionEvents.DISCONNECT.register((handler, server) -> {
-			UUID playerUuid = handler.getPlayer().getUuid();
-
-			if (trainerBattleRegistry.containsKey(playerUuid)) {
-				trainerBattleRegistry.get(playerUuid).onPlayerDefeat();
-				trainerBattleRegistry.remove(playerUuid);
-			}
-
-			if (GroupBattle.sessionRegistry.containsKey(playerUuid)) {
-				GroupBattle.sessionRegistry.get(playerUuid).onSessionStop();
-				GroupBattle.sessionRegistry.remove(playerUuid);
-			}
-
-			if (BattleFactory.sessionRegistry.containsKey(playerUuid)) {
-				BattleFactory.sessionRegistry.get(playerUuid).onSessionStop();
-				BattleFactory.sessionRegistry.remove(playerUuid);
-			}
-		});
-
-		ServerLifecycleEvents.SERVER_STARTED.register(PlayerHistoryRegistryParser::loadFromNbt);
-
-		ServerLifecycleEvents.SERVER_STOPPED.register(PlayerHistoryRegistryParser::saveToNbt);
-		ServerTickEvents.END_SERVER_TICK.register(PlayerHistoryRegistryParser::onEndServerTick);
-
 		ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new ResourceReloadListener());
 
 		Registry.register(Registries.ENTITY_TYPE, Identifier.of(NAMESPACE, "trainer"), TRAINER_ENTITY_TYPE);
 		FabricDefaultAttributeRegistry.register(TRAINER_ENTITY_TYPE, TrainerEntity.createMobAttributes());
+
+		CobblemonEvents.BATTLE_VICTORY.subscribe(Priority.NORMAL, BattleVictoryEventHandler::onBattleVictory);
+		CobblemonEvents.LOOT_DROPPED.subscribe(Priority.HIGHEST, LootDroppedEventHandler::onLootDropped);
+
+		ServerPlayConnectionEvents.JOIN.register(this::initializePlayerHistory);
+
+		ServerPlayConnectionEvents.DISCONNECT.register(this::removeTrainerBattle);
+		ServerPlayConnectionEvents.DISCONNECT.register(this::removeGroupBattleSession);
+		ServerPlayConnectionEvents.DISCONNECT.register(this::removeBattleFactorySession);
+
+		ServerLifecycleEvents.SERVER_STARTED.register(PlayerHistoryRegistryParser::loadFromNbt);
+		ServerLifecycleEvents.SERVER_STOPPED.register(PlayerHistoryRegistryParser::saveToNbt);
+		ServerTickEvents.END_SERVER_TICK.register(PlayerHistoryRegistryParser::onEndServerTick);
+
 		ServerTickEvents.END_WORLD_TICK.register(TrainerEntitySpawnEventHandler::onEndWorldTick);
 		ServerEntityEvents.ENTITY_LOAD.register(TrainerEntityLoadEventHandler::onEntityLoad);
 
 		ServerTickEvents.END_WORLD_TICK.register(TrainerBattleFledEventHandler::onEndWorldTick);
+	}
+
+	private void initializePlayerHistory(ServerPlayNetworkHandler handler, PacketSender sender, MinecraftServer server) {
+		UUID playerUuid = handler.getPlayer().getUuid();
+
+		if (CobblemonTrainerBattle.playerHistoryRegistry.containsKey(playerUuid)) {
+			return;
+		}
+
+		CobblemonTrainerBattle.playerHistoryRegistry.put(playerUuid, new PlayerHistory());
+	}
+
+	private void removeTrainerBattle(ServerPlayNetworkHandler handler, MinecraftServer server) {
+		UUID playerUuid = handler.getPlayer().getUuid();
+
+		if (!CobblemonTrainerBattle.trainerBattleRegistry.containsKey(playerUuid)) {
+			return;
+		}
+
+		CobblemonTrainerBattle.trainerBattleRegistry.get(playerUuid).onPlayerDefeat();
+		CobblemonTrainerBattle.trainerBattleRegistry.remove(playerUuid);
+	}
+
+	private void removeGroupBattleSession(ServerPlayNetworkHandler handler, MinecraftServer server) {
+		UUID playerUuid = handler.getPlayer().getUuid();
+
+		if (!GroupBattle.sessionRegistry.containsKey(playerUuid)) {
+			return;
+		}
+
+		GroupBattle.sessionRegistry.get(playerUuid).onSessionStop();
+		GroupBattle.sessionRegistry.remove(playerUuid);
+	}
+
+	private void removeBattleFactorySession(ServerPlayNetworkHandler handler, MinecraftServer server) {
+		UUID playerUuid = handler.getPlayer().getUuid();
+
+		if (!BattleFactory.sessionRegistry.containsKey(playerUuid)) {
+			return;
+		}
+
+		BattleFactory.sessionRegistry.get(playerUuid).onSessionStop();
+		BattleFactory.sessionRegistry.remove(playerUuid);
 	}
 }
