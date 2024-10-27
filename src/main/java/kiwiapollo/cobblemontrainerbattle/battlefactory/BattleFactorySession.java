@@ -20,6 +20,7 @@ import kiwiapollo.cobblemontrainerbattle.session.PokemonShowFeature;
 import kiwiapollo.cobblemontrainerbattle.session.PokemonTradeFeature;
 import kiwiapollo.cobblemontrainerbattle.session.RentalPokemonFeature;
 import kiwiapollo.cobblemontrainerbattle.session.Session;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattleRegistry;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
@@ -69,7 +70,7 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Pokem
             TrainerBattle trainerBattle = new StandardTrainerBattle(player, trainer, battleResultHandler);
             trainerBattle.start();
 
-            CobblemonTrainerBattle.trainerBattleRegistry.put(player.getUuid(), trainerBattle);
+            TrainerBattleRegistry.put(player.getUuid(), trainerBattle);
 
             this.lastTrainerBattle = trainerBattle;
 

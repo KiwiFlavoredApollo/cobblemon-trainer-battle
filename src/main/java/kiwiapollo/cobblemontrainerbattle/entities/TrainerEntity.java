@@ -12,6 +12,7 @@ import kiwiapollo.cobblemontrainerbattle.parser.PlayerHistoryRegistry;
 import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistries;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattleRegistry;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerProfile;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.exception.BusyWithPokemonBattleException;
@@ -143,7 +144,7 @@ public class TrainerEntity extends PathAwareEntity {
             );
             trainerBattle.start();
 
-            CobblemonTrainerBattle.trainerBattleRegistry.put(player.getUuid(), trainerBattle);
+            TrainerBattleRegistry.put(player.getUuid(), trainerBattle);
             this.trainerBattle = trainerBattle;
 
         } catch (BattleStartException ignored) {

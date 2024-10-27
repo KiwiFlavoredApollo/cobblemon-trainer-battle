@@ -14,6 +14,7 @@ import kiwiapollo.cobblemontrainerbattle.exception.DefeatedAllTrainersException;
 import kiwiapollo.cobblemontrainerbattle.exception.DefeatedToTrainerException;
 import kiwiapollo.cobblemontrainerbattle.postbattle.BattleResultHandler;
 import kiwiapollo.cobblemontrainerbattle.session.Session;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattleRegistry;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
@@ -69,7 +70,7 @@ public class GroupBattleSession implements Session {
             );
             trainerBattle.start();
 
-            CobblemonTrainerBattle.trainerBattleRegistry.put(player.getUuid(), trainerBattle);
+            TrainerBattleRegistry.put(player.getUuid(), trainerBattle);
 
             this.lastTrainerBattle = trainerBattle;
 

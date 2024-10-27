@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.api.events.drops.LootDroppedEvent;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattleRegistry;
 import kotlin.Unit;
 
 public class LootDroppedEventHandler {
@@ -17,7 +18,7 @@ public class LootDroppedEventHandler {
         }
 
         PokemonEntity pokemonEntity = (PokemonEntity) lootDroppedEvent.getEntity();
-        boolean isTrainerBattle = CobblemonTrainerBattle.trainerBattleRegistry.values().stream()
+        boolean isTrainerBattle = TrainerBattleRegistry.values().stream()
                 .map(TrainerBattle::getBattleId)
                 .toList().contains(pokemonEntity.getBattleId());
 

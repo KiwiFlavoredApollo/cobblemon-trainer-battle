@@ -16,7 +16,7 @@ import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattle;
 import kiwiapollo.cobblemontrainerbattle.item.ItemRegistry;
 import kiwiapollo.cobblemontrainerbattle.loot.DefeatedInBattleLootCondition;
 import kiwiapollo.cobblemontrainerbattle.parser.*;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattleRegistry;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
@@ -35,7 +35,6 @@ import net.minecraft.registry.Registry;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayNetworkHandler;
-import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -56,8 +55,6 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
 	public static Config config = ConfigLoader.load();
 	public static Economy economy = EconomyFactory.create(config.economy);
-
-	public static Map<UUID, TrainerBattle> trainerBattleRegistry = new HashMap<>();
 
     @Override
 	public void onInitialize() {
@@ -90,7 +87,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
 		ServerPlayConnectionEvents.JOIN.register(this::initializePlayerHistory);
 
-		ServerPlayConnectionEvents.DISCONNECT.register(this::removeDisconnectedPlayerTrainerBattle);
+		ServerPlayConnectionEvents.DISCONNECT.register(TrainerBattleRegistry::removeDisconnectedPlayerBattle);
 		ServerPlayConnectionEvents.DISCONNECT.register(GroupBattle::removeDisconnectedPlayerSession);
 		ServerPlayConnectionEvents.DISCONNECT.register(BattleFactory::removeDisconnectedPlayerSession);
 
@@ -112,16 +109,5 @@ public class CobblemonTrainerBattle implements ModInitializer {
 		}
 
 		PlayerHistoryRegistry.put(playerUuid, new PlayerHistory());
-	}
-
-	private void removeDisconnectedPlayerTrainerBattle(ServerPlayNetworkHandler handler, MinecraftServer server) {
-		ServerPlayerEntity player = handler.getPlayer();
-
-		if (!CobblemonTrainerBattle.trainerBattleRegistry.containsKey(player.getUuid())) {
-			return;
-		}
-
-		CobblemonTrainerBattle.trainerBattleRegistry.get(player.getUuid()).onPlayerDefeat();
-		CobblemonTrainerBattle.trainerBattleRegistry.remove(player.getUuid());
 	}
 }

@@ -15,6 +15,7 @@ import kiwiapollo.cobblemontrainerbattle.postbattle.BatchedBattleResultHandler;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerIdentifierFactory;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattleRegistry;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerProfile;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.postbattle.BattleResultHandler;
@@ -91,7 +92,7 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
             TrainerBattle trainerBattle = new StandardTrainerBattle(playerBattleParticipant, trainerBattleParticipant, battleResultHandler);
             trainerBattle.start();
 
-            CobblemonTrainerBattle.trainerBattleRegistry.put(player.getUuid(), trainerBattle);
+            TrainerBattleRegistry.put(player.getUuid(), trainerBattle);
 
             return Command.SINGLE_SUCCESS;
 
