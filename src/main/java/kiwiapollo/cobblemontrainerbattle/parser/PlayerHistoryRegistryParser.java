@@ -18,7 +18,7 @@ public class PlayerHistoryRegistryParser {
 
     public static void onEndServerTick(MinecraftServer server) {
         if (server.getTicks() % SAVE_INTERVAL == 0) {
-            saveToNbt(server);
+            PlayerHistoryRegistryParser.saveToNbt(server);
         }
     }
 
