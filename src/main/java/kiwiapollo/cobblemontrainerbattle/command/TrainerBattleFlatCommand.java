@@ -12,7 +12,7 @@ import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.PlayerBattlePa
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.FlatBattleTrainer;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.TrainerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.common.ResourceValidator;
-import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistry;
+import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistries;
 import kiwiapollo.cobblemontrainerbattle.postbattle.RecordedBattleResultHandler;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerProfile;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
@@ -44,7 +44,7 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
         return RequiredArgumentBuilder.<ServerCommandSource, String>argument("trainer", StringArgumentType.greedyString())
                 .requires(new PlayerCommandPredicate(permission))
                 .suggests((context, builder) -> {
-                    ProfileRegistry.trainer.keySet().stream()
+                    ProfileRegistries.trainer.keySet().stream()
                             .map(Identifier::toString)
                             .forEach(builder::suggest);
                     return builder.buildFuture();
@@ -80,7 +80,7 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
             PlayerBattleParticipant playerBattleParticipant = new FlatBattlePlayer(player, StandardTrainerBattle.FLAT_LEVEL);
             TrainerBattleParticipant trainerBattleParticipant = new FlatBattleTrainer(trainer, player, StandardTrainerBattle.FLAT_LEVEL);
 
-            TrainerProfile trainerProfile = ProfileRegistry.trainer.get(trainer);
+            TrainerProfile trainerProfile = ProfileRegistries.trainer.get(trainer);
             BattleResultHandler battleResultHandler = new RecordedBattleResultHandler(player, trainer, trainerProfile.onVictory(), trainerProfile.onDefeat());
 
             TrainerBattle trainerBattle = new StandardTrainerBattle(playerBattleParticipant, trainerBattleParticipant, battleResultHandler);

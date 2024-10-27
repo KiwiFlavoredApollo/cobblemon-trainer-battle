@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ProfileRegistry implements SimpleSynchronousResourceReloadListener {
+public class ProfileRegistries implements SimpleSynchronousResourceReloadListener {
     private static final String TRAINER_TEAM_DIR = "trainers/teams";
     private static final String TRAINER_OPTION_DIR = "trainers/options";
     private static final String DEFAULT_TRAINER_OPTION = String.format("%s/%s", TRAINER_OPTION_DIR, "defaults.json");
@@ -40,9 +40,9 @@ public class ProfileRegistry implements SimpleSynchronousResourceReloadListener 
 
     @Override
     public void reload(ResourceManager resourceManager) {
-        ProfileRegistry.trainer = loadTrainerProfileRegistry(resourceManager);
-        ProfileRegistry.trainerGroup = loadTrainerGroupProfileRegistry(resourceManager);
-        ProfileRegistry.battleFactory = loadBattleFactoryProfile(resourceManager);
+        ProfileRegistries.trainer = loadTrainerProfileRegistry(resourceManager);
+        ProfileRegistries.trainerGroup = loadTrainerGroupProfileRegistry(resourceManager);
+        ProfileRegistries.battleFactory = loadBattleFactoryProfile(resourceManager);
     }
 
     private Map<Identifier, TrainerProfile> loadTrainerProfileRegistry(ResourceManager resourceManager) {
@@ -140,7 +140,7 @@ public class ProfileRegistry implements SimpleSynchronousResourceReloadListener 
 
         boolean isExistAllTrainers = profile.trainers.stream()
                 .map(Identifier::new)
-                .allMatch(ProfileRegistry.trainer::containsKey);
+                .allMatch(ProfileRegistries.trainer::containsKey);
         if (!isExistAllTrainers) {
             throw new IllegalArgumentException();
         }

@@ -8,7 +8,7 @@ import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerIdentifierFactory;
 import kiwiapollo.cobblemontrainerbattle.common.SessionValidator;
 import kiwiapollo.cobblemontrainerbattle.exception.*;
 import kiwiapollo.cobblemontrainerbattle.common.PlayerValidator;
-import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistry;
+import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistries;
 import kiwiapollo.cobblemontrainerbattle.postbattle.PostBattleActionSetHandler;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.postbattle.BattleResultHandler;
@@ -43,8 +43,8 @@ public class BattleFactory {
 
             BattleResultHandler battleResultHandler = new PostBattleActionSetHandler(
                     player,
-                    ProfileRegistry.battleFactory.onVictory,
-                    ProfileRegistry.battleFactory.onDefeat
+                    ProfileRegistries.battleFactory.onVictory,
+                    ProfileRegistries.battleFactory.onDefeat
             );
 
             BattleFactorySession session = new BattleFactorySession(

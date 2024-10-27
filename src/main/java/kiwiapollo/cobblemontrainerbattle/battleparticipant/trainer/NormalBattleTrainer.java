@@ -9,7 +9,7 @@ import kiwiapollo.cobblemontrainerbattle.battleactor.PlayerBackedTrainerBattleAc
 import kiwiapollo.cobblemontrainerbattle.common.BattleCondition;
 import kiwiapollo.cobblemontrainerbattle.common.Generation5AI;
 import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
-import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistry;
+import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistries;
 import kiwiapollo.cobblemontrainerbattle.parser.SmogonPokemon;
 import kiwiapollo.cobblemontrainerbattle.parser.SmogonPokemonParser;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -30,12 +30,12 @@ public class NormalBattleTrainer implements TrainerBattleParticipant {
         this.identifier = identifier;
         this.uuid = UUID.randomUUID();
         this.player = player;
-        this.party = toParty(ProfileRegistry.trainer.get(identifier).team(), player);
+        this.party = toParty(ProfileRegistries.trainer.get(identifier).team(), player);
     }
 
     @Override
     public String getName() {
-        return ProfileRegistry.trainer.get(identifier).name();
+        return ProfileRegistries.trainer.get(identifier).name();
     }
 
     @Override
@@ -55,7 +55,7 @@ public class NormalBattleTrainer implements TrainerBattleParticipant {
 
     @Override
     public BattleCondition getBattleCondition() {
-        return ProfileRegistry.trainer.get(identifier).condition();
+        return ProfileRegistries.trainer.get(identifier).condition();
     }
 
     @Override

@@ -81,7 +81,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 			dispatcher.register(new CobblemonTrainerBattleCommand());
 		});
 
-		ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new ProfileRegistry());
+		ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new ProfileRegistries());
 
 		Registry.register(Registries.ENTITY_TYPE, Identifier.of(NAMESPACE, "trainer"), TRAINER_ENTITY_TYPE);
 		FabricDefaultAttributeRegistry.register(TRAINER_ENTITY_TYPE, TrainerEntity.createMobAttributes());

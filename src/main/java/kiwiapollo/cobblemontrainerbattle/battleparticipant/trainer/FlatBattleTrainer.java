@@ -9,7 +9,7 @@ import kiwiapollo.cobblemontrainerbattle.battleactor.DisposableBattlePokemonFact
 import kiwiapollo.cobblemontrainerbattle.battleactor.PlayerBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.common.BattleCondition;
 import kiwiapollo.cobblemontrainerbattle.common.Generation5AI;
-import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistry;
+import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistries;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerProfile;
 import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
 import kiwiapollo.cobblemontrainerbattle.parser.SmogonPokemon;
@@ -35,7 +35,7 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
         this.uuid = UUID.randomUUID();
         this.player = player;
 
-        TrainerProfile trainerProfile = ProfileRegistry.trainer.get(identifier);
+        TrainerProfile trainerProfile = ProfileRegistries.trainer.get(identifier);
         this.condition = new BattleCondition(
                 trainerProfile.condition().isRematchAllowedAfterVictory,
                 1,
@@ -47,7 +47,7 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
 
     @Override
     public String getName() {
-        return ProfileRegistry.trainer.get(identifier).name();
+        return ProfileRegistries.trainer.get(identifier).name();
     }
 
     @Override

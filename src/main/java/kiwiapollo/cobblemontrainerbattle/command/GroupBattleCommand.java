@@ -6,7 +6,7 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattle;
-import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistry;
+import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistries;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.util.Identifier;
 
@@ -25,7 +25,7 @@ public class GroupBattleCommand extends LiteralArgumentBuilder<ServerCommandSour
         return LiteralArgumentBuilder.<ServerCommandSource>literal("startsession")
                 .then(RequiredArgumentBuilder.<ServerCommandSource, String>argument("group", StringArgumentType.greedyString())
                         .suggests((context, builder) -> {
-                            ProfileRegistry.trainerGroup.keySet().stream()
+                            ProfileRegistries.trainerGroup.keySet().stream()
                                     .map(Identifier::toString)
                                     .forEach(builder::suggest);
                             return builder.buildFuture();
