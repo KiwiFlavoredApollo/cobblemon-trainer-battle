@@ -43,7 +43,7 @@ public class PlayerHistoryRegistry {
         PlayerHistoryRegistry.put(playerUuid, new PlayerHistory());
     }
 
-    public static void onEndServerTick(MinecraftServer server) {
+    public static void periodicallySavePlayerHistory(MinecraftServer server) {
         if (server.getTicks() % SAVE_INTERVAL == 0) {
             PlayerHistoryRegistry.saveToNbt(server);
         }

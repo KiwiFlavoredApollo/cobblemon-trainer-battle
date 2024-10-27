@@ -16,7 +16,7 @@ import java.util.Objects;
 import java.util.stream.StreamSupport;
 
 public class TrainerBattleFledEventHandler {
-    public static void onEndWorldTick(ServerWorld world) {
+    public static void endFledTrainerBattle(ServerWorld world) {
         world.getPlayers().forEach(player -> {
             if (!TrainerBattleRegistry.containsKey(player.getUuid())) {
                 return;

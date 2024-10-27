@@ -13,7 +13,7 @@ public class TrainerEntitySpawnEventHandler {
     private static final int MINIMUM_RADIUS = 5;
     private static final int MAXIMUM_TRAINER_COUNT = 1;
 
-    public static void onEndWorldTick(ServerWorld world) {
+    public static void periodicallySpawnTrainerEntity(ServerWorld world) {
         if (!CobblemonTrainerBattle.config.enableTrainerSpawn) {
             return;
         }

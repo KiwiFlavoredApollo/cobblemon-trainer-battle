@@ -22,7 +22,6 @@ import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
-import net.fabricmc.fabric.api.networking.v1.PacketSender;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
@@ -33,13 +32,9 @@ import net.minecraft.loot.condition.LootConditionType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.resource.ResourceType;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.network.ServerPlayNetworkHandler;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.*;
 
 public class CobblemonTrainerBattle implements ModInitializer {
 	public static final String NAMESPACE = "cobblemontrainerbattle";
@@ -93,11 +88,11 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
 		ServerLifecycleEvents.SERVER_STARTED.register(PlayerHistoryRegistry::loadFromNbt);
 		ServerLifecycleEvents.SERVER_STOPPED.register(PlayerHistoryRegistry::saveToNbt);
-		ServerTickEvents.END_SERVER_TICK.register(PlayerHistoryRegistry::onEndServerTick);
+		ServerTickEvents.END_SERVER_TICK.register(PlayerHistoryRegistry::periodicallySavePlayerHistory);
 
-		ServerTickEvents.END_WORLD_TICK.register(TrainerEntitySpawnEventHandler::onEndWorldTick);
-		ServerEntityEvents.ENTITY_LOAD.register(TrainerEntityLoadEventHandler::onEntityLoad);
+		ServerTickEvents.END_WORLD_TICK.register(TrainerEntitySpawnEventHandler::periodicallySpawnTrainerEntity);
+		ServerEntityEvents.ENTITY_LOAD.register(TrainerEntityLoadEventHandler::synchronizeTrainerEntity);
 
-		ServerTickEvents.END_WORLD_TICK.register(TrainerBattleFledEventHandler::onEndWorldTick);
+		ServerTickEvents.END_WORLD_TICK.register(TrainerBattleFledEventHandler::endFledTrainerBattle);
 	}
 }
