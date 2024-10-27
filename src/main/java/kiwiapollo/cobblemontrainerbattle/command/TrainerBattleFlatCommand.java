@@ -14,6 +14,8 @@ import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.TrainerBattle
 import kiwiapollo.cobblemontrainerbattle.common.ResourceValidator;
 import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistries;
 import kiwiapollo.cobblemontrainerbattle.postbattle.RecordedBattleResultHandler;
+import kiwiapollo.cobblemontrainerbattle.postbattle.PostBattleActionSetHandler;
+import kiwiapollo.cobblemontrainerbattle.postbattle.BatchedBattleResultHandler;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerProfile;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
@@ -80,8 +82,11 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
             PlayerBattleParticipant playerBattleParticipant = new FlatBattlePlayer(player, StandardTrainerBattle.FLAT_LEVEL);
             TrainerBattleParticipant trainerBattleParticipant = new FlatBattleTrainer(trainer, player, StandardTrainerBattle.FLAT_LEVEL);
 
-            TrainerProfile trainerProfile = ProfileRegistries.trainer.get(trainer);
-            BattleResultHandler battleResultHandler = new RecordedBattleResultHandler(player, trainer, trainerProfile.onVictory(), trainerProfile.onDefeat());
+            TrainerProfile profile = ProfileRegistries.trainer.get(trainer);
+            BattleResultHandler battleResultHandler = new BatchedBattleResultHandler(
+                    new RecordedBattleResultHandler(player, trainer),
+                    new PostBattleActionSetHandler(player, profile.onVictory(), profile.onDefeat())
+            );
 
             TrainerBattle trainerBattle = new StandardTrainerBattle(playerBattleParticipant, trainerBattleParticipant, battleResultHandler);
             trainerBattle.start();

@@ -12,6 +12,8 @@ import kiwiapollo.cobblemontrainerbattle.exception.*;
 import kiwiapollo.cobblemontrainerbattle.exception.battlecondition.RematchNotAllowedException;
 import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistries;
 import kiwiapollo.cobblemontrainerbattle.postbattle.RecordedBattleResultHandler;
+import kiwiapollo.cobblemontrainerbattle.postbattle.PostBattleActionSetHandler;
+import kiwiapollo.cobblemontrainerbattle.postbattle.BatchedBattleResultHandler;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.postbattle.BattleResultHandler;
 import net.minecraft.server.MinecraftServer;
@@ -42,27 +44,25 @@ public class GroupBattle {
         try {
             ServerPlayerEntity player = context.getSource().getPlayer();
 
-            Identifier identifier = new Identifier(StringArgumentType.getString(context, "group"));
+            Identifier trainer = new Identifier(StringArgumentType.getString(context, "group"));
 
-            ResourceValidator.assertTrainerGroupExist(identifier);
+            ResourceValidator.assertTrainerGroupExist(trainer);
             SessionValidator.assertSessionNotExist(sessionRegistry, player);
 
-            TrainerGroupProfile trainerGroupProfile = ProfileRegistries.trainerGroup.get(identifier);
-            List<Identifier> trainersToDefeat = trainerGroupProfile.trainers.stream().map(Identifier::new).toList();
+            TrainerGroupProfile profile = ProfileRegistries.trainerGroup.get(trainer);
+            List<Identifier> trainersToDefeat = profile.trainers.stream().map(Identifier::new).toList();
 
-            BattleConditionValidator.assertRematchAllowedAfterVictory(player, identifier, trainerGroupProfile.condition);
+            BattleConditionValidator.assertRematchAllowedAfterVictory(player, trainer, profile.condition);
 
-            BattleResultHandler battleResultHandler = new RecordedBattleResultHandler(
-                    player,
-                    identifier,
-                    trainerGroupProfile.onVictory,
-                    trainerGroupProfile.onDefeat
+            BattleResultHandler battleResultHandler = new BatchedBattleResultHandler(
+                    new RecordedBattleResultHandler(player, trainer),
+                    new PostBattleActionSetHandler(player, profile.onVictory, profile.onDefeat)
             );
 
             GroupBattleSession session = new GroupBattleSession(
                     player,
                     trainersToDefeat,
-                    trainerGroupProfile.condition,
+                    profile.condition,
                     battleResultHandler,
                     battleParticipantFactory
             );
