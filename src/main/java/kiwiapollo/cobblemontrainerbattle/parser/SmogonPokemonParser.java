@@ -203,7 +203,7 @@ public class SmogonPokemonParser {
     private void setPokemonGender(Pokemon pokemon, String gender) {
         try {
             pokemon.setGender(toGender(gender));
-        } catch (IllegalArgumentException ignored) {
+        } catch (NullPointerException | IllegalArgumentException ignored) {
 
         }
     }
