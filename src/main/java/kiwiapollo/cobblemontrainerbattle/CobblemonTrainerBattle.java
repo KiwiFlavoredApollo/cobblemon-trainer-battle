@@ -85,7 +85,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 		CobblemonEvents.BATTLE_VICTORY.subscribe(Priority.NORMAL, BattleVictoryEventHandler::onBattleVictory);
 		CobblemonEvents.LOOT_DROPPED.subscribe(Priority.HIGHEST, LootDroppedEventHandler::onLootDropped);
 
-		ServerPlayConnectionEvents.JOIN.register(this::initializePlayerHistory);
+		ServerPlayConnectionEvents.JOIN.register(PlayerHistoryRegistry::initializePlayerHistory);
 
 		ServerPlayConnectionEvents.DISCONNECT.register(TrainerBattleRegistry::removeDisconnectedPlayerBattle);
 		ServerPlayConnectionEvents.DISCONNECT.register(GroupBattle::removeDisconnectedPlayerSession);
@@ -99,15 +99,5 @@ public class CobblemonTrainerBattle implements ModInitializer {
 		ServerEntityEvents.ENTITY_LOAD.register(TrainerEntityLoadEventHandler::onEntityLoad);
 
 		ServerTickEvents.END_WORLD_TICK.register(TrainerBattleFledEventHandler::onEndWorldTick);
-	}
-
-	private void initializePlayerHistory(ServerPlayNetworkHandler handler, PacketSender sender, MinecraftServer server) {
-		UUID playerUuid = handler.getPlayer().getUuid();
-
-		if (PlayerHistoryRegistry.containsKey(playerUuid)) {
-			return;
-		}
-
-		PlayerHistoryRegistry.put(playerUuid, new PlayerHistory());
 	}
 }

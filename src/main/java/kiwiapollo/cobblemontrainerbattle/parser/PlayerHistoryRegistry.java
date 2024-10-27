@@ -1,9 +1,11 @@
 package kiwiapollo.cobblemontrainerbattle.parser;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import net.fabricmc.fabric.api.networking.v1.PacketSender;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtIo;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.network.ServerPlayNetworkHandler;
 import net.minecraft.util.WorldSavePath;
 
 import java.io.File;
@@ -16,15 +18,29 @@ public class PlayerHistoryRegistry {
     private static Map<UUID, PlayerHistory> histories = new HashMap<>();
 
     public static boolean containsKey(UUID uuid) {
-        return histories.containsKey(uuid);
+        return PlayerHistoryRegistry.histories.containsKey(uuid);
     }
 
     public static PlayerHistory get(UUID uuid) {
-        return histories.get(uuid);
+        return PlayerHistoryRegistry.histories.get(uuid);
     }
 
     public static void put(UUID uuid, PlayerHistory history) {
-        histories.put(uuid, history);
+        PlayerHistoryRegistry.histories.put(uuid, history);
+    }
+
+    public static void initializePlayerHistory(
+            ServerPlayNetworkHandler handler,
+            PacketSender sender,
+            MinecraftServer server
+    ) {
+        UUID playerUuid = handler.getPlayer().getUuid();
+
+        if (PlayerHistoryRegistry.containsKey(playerUuid)) {
+            return;
+        }
+
+        PlayerHistoryRegistry.put(playerUuid, new PlayerHistory());
     }
 
     public static void onEndServerTick(MinecraftServer server) {
