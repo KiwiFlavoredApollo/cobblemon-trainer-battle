@@ -28,7 +28,7 @@ public class KillTrainerAdvancementFactory implements AdvancementFactory {
 
     private static final Advancement TENTH = Advancement.Builder.createUntelemetered()
             .parent(FIRST)
-            .criterion("kill_tenth_trainer", new KillTrainerCriterion.Conditions(3))
+            .criterion("kill_tenth_trainer", new KillTrainerCriterion.Conditions(10))
             .display(
                     Items.IRON_SWORD,
                     Text.translatable("advancement.cobblemontrainerbattle.kill_trainer.tenth.title"),
