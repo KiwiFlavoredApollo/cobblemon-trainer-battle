@@ -4,7 +4,8 @@ import com.mojang.brigadier.Command;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerIdentifierFactory;
+import kiwiapollo.cobblemontrainerbattle.common.IdentifierFactory;
+import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.common.SessionValidator;
 import kiwiapollo.cobblemontrainerbattle.exception.*;
 import kiwiapollo.cobblemontrainerbattle.common.PlayerValidator;
@@ -35,10 +36,11 @@ public class BattleFactory {
             ServerPlayerEntity player = context.getSource().getPlayer();
 
             SessionValidator.assertSessionNotExist(sessionRegistry, player);
+            IdentifierFactory trainerFactory = new RandomTrainerFactory(BattleFactory::hasMinimumPokemon);
 
             List<Identifier> trainersToDefeat = new ArrayList<>();
             for (int i = 0; i < BATTLE_COUNT; i++) {
-                trainersToDefeat.add(new RandomTrainerIdentifierFactory().createForBattleFactory());
+                trainersToDefeat.add(trainerFactory.create());
             }
 
             BattleResultHandler battleResultHandler = new PostBattleActionSetHandler(
@@ -250,5 +252,9 @@ public class BattleFactory {
 
         BattleFactory.sessionRegistry.get(player.getUuid()).onSessionStop();
         BattleFactory.sessionRegistry.remove(player.getUuid());
+    }
+
+    private static boolean hasMinimumPokemon(Identifier trainer) {
+        return ProfileRegistries.trainer.get(trainer).team().size() > BattleFactory.POKEMON_COUNT;
     }
 }

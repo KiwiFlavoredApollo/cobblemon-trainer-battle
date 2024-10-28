@@ -2,6 +2,7 @@ package kiwiapollo.cobblemontrainerbattle.events;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.entities.EntityTypes;
+import kiwiapollo.cobblemontrainerbattle.entities.RandomTrainerEntityFactory;
 import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
@@ -31,7 +32,7 @@ public class TrainerEntitySpawnEventHandler {
             assertBelowMaximumTrainerCount(world, player);
 
             BlockPos spawnPos = getRandomSpawnPosition(world, player);
-            TrainerEntity trainerEntity = new TrainerEntity(EntityTypes.TRAINER, world);
+            TrainerEntity trainerEntity = new RandomTrainerEntityFactory().create(EntityTypes.TRAINER, world);
             trainerEntity.refreshPositionAndAngles(spawnPos, player.getYaw(), player.getPitch());
             world.spawnEntity(trainerEntity);
 

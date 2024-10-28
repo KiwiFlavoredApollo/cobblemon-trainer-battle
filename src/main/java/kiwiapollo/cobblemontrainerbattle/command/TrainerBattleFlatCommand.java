@@ -20,7 +20,7 @@ import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattleRegistry;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerProfile;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerIdentifierFactory;
+import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.postbattle.BattleResultHandler;
 import net.minecraft.server.command.ServerCommandSource;
@@ -71,7 +71,7 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
 
     private int startBattleWithRandomTrainer(CommandContext<ServerCommandSource> context) {
         ServerPlayerEntity player = context.getSource().getPlayer();
-        Identifier trainer = new RandomTrainerIdentifierFactory().create();
+        Identifier trainer = new RandomTrainerFactory().create();
 
         return startBattleWithTrainer(player, trainer);
     }
