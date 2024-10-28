@@ -37,10 +37,10 @@ public class TrainerEntitySpawnEventHandler {
             BlockPos spawnPos = getRandomSpawnPosition(world, player);
 
             EntityType.EntityFactory<TrainerEntity> factory = createTrainerEntityFactory(player.getInventory());
-            TrainerEntity trainerEntity = factory.create(EntityTypes.TRAINER, world);
+            TrainerEntity entity = factory.create(EntityTypes.TRAINER, world);
 
-            trainerEntity.refreshPositionAndAngles(spawnPos, player.getYaw(), player.getPitch());
-            world.spawnEntity(trainerEntity);
+            entity.refreshPositionAndAngles(spawnPos, player.getYaw(), player.getPitch());
+            world.spawnEntity(entity);
 
             CobblemonTrainerBattle.LOGGER.info("Spawned trainer on {} {}", world.getRegistryKey().getValue(), spawnPos);
 
