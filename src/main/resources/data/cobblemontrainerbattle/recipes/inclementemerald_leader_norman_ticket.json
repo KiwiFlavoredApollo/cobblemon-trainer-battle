@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "TDT",
+        "TGT",
+        "TTT"
+    ],
+    "key": {
+        "D": {
+            "item": "minecraft:green_dye"
+        },
+        "G": {
+            "item": "cobblemon:normal_gem"
+        },
+        "T": {
+            "item": "cobblemontrainerbattle:trainer_token"
+        }
+    },
+    "result": {
+        "item": "cobblemontrainerbattle:inclementemerald_leader_norman_ticket",
+        "count": 1
+    }
+}
