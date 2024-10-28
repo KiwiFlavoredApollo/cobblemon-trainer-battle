@@ -46,12 +46,14 @@ public class ItemRegistry {
         });
     }
 
+    public static final int VS_SEEKER_MAX_COUNT = 1;
+
     public static final Item TRAINER_SPAWN_EGG = new SpawnEggItem(EntityTypes.TRAINER, 0xAAAAAA, 0xFF5555, new FabricItemSettings().maxCount(64));
 
-    public static final Item BLUE_VS_SEEKER = new Item(new Item.Settings());
-    public static final Item RED_VS_SEEKER = new Item(new Item.Settings());
-    public static final Item GREEN_VS_SEEKER = new Item(new Item.Settings());
-    public static final Item PURPLE_VS_SEEKER = new Item(new Item.Settings());
+    public static final Item BLUE_VS_SEEKER = new Item(new Item.Settings().maxCount(VS_SEEKER_MAX_COUNT));
+    public static final Item RED_VS_SEEKER = new Item(new Item.Settings().maxCount(VS_SEEKER_MAX_COUNT));
+    public static final Item GREEN_VS_SEEKER = new Item(new Item.Settings().maxCount(VS_SEEKER_MAX_COUNT));
+    public static final Item PURPLE_VS_SEEKER = new Item(new Item.Settings().maxCount(VS_SEEKER_MAX_COUNT));
 
     public static final Item TRAINER_TOKEN = new Item(new Item.Settings());
 

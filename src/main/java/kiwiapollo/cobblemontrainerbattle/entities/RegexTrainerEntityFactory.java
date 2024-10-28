@@ -6,15 +6,15 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 
-public class RandomTrainerEntityFactory implements EntityType.EntityFactory<TrainerEntity> {
+public class RegexTrainerEntityFactory implements EntityType.EntityFactory<TrainerEntity> {
     private static final Identifier FALLBACK_TRAINER = Identifier.of("trainer", "radicalred/youngster_joey");
     private final String regex;
 
-    public RandomTrainerEntityFactory() {
+    public RegexTrainerEntityFactory() {
         this(".*");
     }
 
-    public RandomTrainerEntityFactory(String regex) {
+    public RegexTrainerEntityFactory(String regex) {
         this.regex = regex;
     }
 
