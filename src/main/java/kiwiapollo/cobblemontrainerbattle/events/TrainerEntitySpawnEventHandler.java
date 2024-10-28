@@ -2,17 +2,16 @@ package kiwiapollo.cobblemontrainerbattle.events;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.entities.EntityTypes;
-import kiwiapollo.cobblemontrainerbattle.entities.RegexTrainerEntityFactory;
+import kiwiapollo.cobblemontrainerbattle.entities.RandomTrainerEntityFactory;
 import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.item.ItemRegistry;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 
 public class TrainerEntitySpawnEventHandler {
@@ -36,8 +35,10 @@ public class TrainerEntitySpawnEventHandler {
             assertPlayerHasVsSeeker(player);
 
             BlockPos spawnPos = getRandomSpawnPosition(world, player);
-            String regex = toRegex(player.getInventory());
-            TrainerEntity trainerEntity = new RegexTrainerEntityFactory(regex).create(EntityTypes.TRAINER, world);
+
+            EntityType.EntityFactory<TrainerEntity> factory = createTrainerEntityFactory(player.getInventory());
+            TrainerEntity trainerEntity = factory.create(EntityTypes.TRAINER, world);
+
             trainerEntity.refreshPositionAndAngles(spawnPos, player.getYaw(), player.getPitch());
             world.spawnEntity(trainerEntity);
 
@@ -67,38 +68,30 @@ public class TrainerEntitySpawnEventHandler {
         }
     }
 
-    private static String toRegex(Inventory inventory) {
-        final String WILDCARD = ".*";
+    private static EntityType.EntityFactory<TrainerEntity> createTrainerEntityFactory(Inventory inventory) {
+        RandomTrainerEntityFactory.Builder builder = new RandomTrainerEntityFactory.Builder();
 
         boolean hasBlueVsSeeker = inventory.containsAny(Set.of(ItemRegistry.BLUE_VS_SEEKER));
         if (hasBlueVsSeeker) {
-            return WILDCARD;
+            builder = builder.addWildcard();
         }
-
-        List<String> patterns = new ArrayList<>();
 
         boolean hasRedVsSeeker = inventory.containsAny(Set.of(ItemRegistry.RED_VS_SEEKER));
         if (hasRedVsSeeker) {
-            patterns.add("radicalred");
+            builder = builder.addRadicalRed();
         }
 
         boolean hasGreenVsSeeker = inventory.containsAny(Set.of(ItemRegistry.GREEN_VS_SEEKER));
         if (hasGreenVsSeeker) {
-            patterns.add("inclementemerald");
+            builder = builder.addInclementEmerald();
         }
 
         boolean hasPurpleVsSeeker = inventory.containsAny(Set.of(ItemRegistry.PURPLE_VS_SEEKER));
         if (hasPurpleVsSeeker) {
-            patterns.add("smogon");
+            builder = builder.addSmogon();
         }
 
-        if (patterns.isEmpty()) {
-            throw new IllegalStateException();
-        }
-
-        String group = "(" + String.join("|", patterns) + ")";
-
-        return String.format("^%s/.+", group);
+        return builder.build();
     }
 
     private static void assertBelowMaximumTrainerCount(ServerWorld world, PlayerEntity player) {
