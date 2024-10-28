@@ -31,8 +31,8 @@ public class TrainerEntitySpawnEventHandler {
     private static void spawnTrainersAroundPlayer(ServerWorld world, PlayerEntity player) {
         try {
             assertTrainerSpawnEnabled();
-            assertBelowMaximumTrainerCount(world, player);
             assertPlayerHasVsSeeker(player);
+            assertBelowMaximumTrainerCount(world, player);
 
             BlockPos spawnPos = getRandomSpawnPosition(world, player);
 
