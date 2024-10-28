@@ -2,6 +2,7 @@ package kiwiapollo.cobblemontrainerbattle.advancement;
 
 import com.google.gson.JsonObject;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.entities.EntityTypes;
 import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import net.minecraft.advancement.criterion.AbstractCriterion;
 import net.minecraft.advancement.criterion.AbstractCriterionConditions;
@@ -45,7 +46,7 @@ public class InteractTrainerCriterion extends AbstractCriterion<InteractTrainerC
             this.conditions = PlayerInteractedWithEntityCriterion.Conditions.create(
                     ItemPredicate.Builder.create().items(Items.AIR),
                     EntityPredicate.asLootContextPredicate(
-                            EntityPredicate.Builder.create().type(CobblemonTrainerBattle.TRAINER_ENTITY_TYPE).build()
+                            EntityPredicate.Builder.create().type(EntityTypes.TRAINER).build()
                     )
             );
         }

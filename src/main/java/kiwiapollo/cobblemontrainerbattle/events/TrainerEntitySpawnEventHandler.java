@@ -1,6 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.events;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.entities.EntityTypes;
 import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
@@ -30,7 +31,7 @@ public class TrainerEntitySpawnEventHandler {
             assertBelowMaximumTrainerCount(world, player);
 
             BlockPos spawnPos = getRandomSpawnPosition(world, player);
-            TrainerEntity trainerEntity = new TrainerEntity(CobblemonTrainerBattle.TRAINER_ENTITY_TYPE, world);
+            TrainerEntity trainerEntity = new TrainerEntity(EntityTypes.TRAINER, world);
             trainerEntity.refreshPositionAndAngles(spawnPos, player.getYaw(), player.getPitch());
             world.spawnEntity(trainerEntity);
 
@@ -42,7 +43,7 @@ public class TrainerEntitySpawnEventHandler {
     }
 
     private static void assertBelowMaximumTrainerCount(ServerWorld world, PlayerEntity player) throws AssertionError {
-        int trainerCount = world.getEntitiesByType(CobblemonTrainerBattle.TRAINER_ENTITY_TYPE,
+        int trainerCount = world.getEntitiesByType(EntityTypes.TRAINER,
                 player.getBoundingBox().expand(MAXIMUM_RADIUS), entity -> true).size();
         if (trainerCount >= MAXIMUM_TRAINER_COUNT) {
             throw new AssertionError();

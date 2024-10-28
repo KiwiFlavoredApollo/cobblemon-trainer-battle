@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.advancement.criterion.CountableContext;
 import com.cobblemon.mod.common.advancement.criterion.SimpleCountableCriterionCondition;
 import com.google.gson.JsonObject;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.entities.EntityTypes;
 import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.parser.PlayerHistoryRegistry;
 import net.minecraft.advancement.criterion.AbstractCriterion;
@@ -48,7 +49,7 @@ public class KillTrainerCriterion extends AbstractCriterion<KillTrainerCriterion
             super(ID, LootContextPredicate.EMPTY);
 
             this.killConditions = OnKilledCriterion.Conditions.createPlayerKilledEntity(
-                    new EntityPredicate.Builder().type(CobblemonTrainerBattle.TRAINER_ENTITY_TYPE).build()
+                    new EntityPredicate.Builder().type(EntityTypes.TRAINER).build()
             );
 
             this.countConditions = new SimpleCountableCriterionCondition(ID, LootContextPredicate.EMPTY);

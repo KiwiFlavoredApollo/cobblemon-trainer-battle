@@ -1,6 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.item;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.entities.EntityTypes;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -45,7 +46,7 @@ public class ItemRegistry {
         });
     }
 
-    public static final Item TRAINER_SPAWN_EGG = new SpawnEggItem(CobblemonTrainerBattle.TRAINER_ENTITY_TYPE, 0xAAAAAA, 0xFF5555, new FabricItemSettings().maxCount(64));
+    public static final Item TRAINER_SPAWN_EGG = new SpawnEggItem(EntityTypes.TRAINER, 0xAAAAAA, 0xFF5555, new FabricItemSettings().maxCount(64));
 
     public static final Item BLUE_VS_SEEKER = new Item(new Item.Settings());
     public static final Item RED_VS_SEEKER = new Item(new Item.Settings());

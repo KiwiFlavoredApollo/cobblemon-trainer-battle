@@ -1,5 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle;
 
+import kiwiapollo.cobblemontrainerbattle.entities.EntityTypes;
 import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntityPackets;
 import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntityRenderer;
@@ -13,7 +14,7 @@ public class CobblemonTrainerBattleClient implements ClientModInitializer {
 
 	@Override
 	public void onInitializeClient() {
-		EntityRendererRegistry.register(CobblemonTrainerBattle.TRAINER_ENTITY_TYPE, TrainerEntityRenderer::new);
+		EntityRendererRegistry.register(EntityTypes.TRAINER, TrainerEntityRenderer::new);
 
 		ClientPlayNetworking.registerGlobalReceiver(TrainerEntityPackets.TRAINER_ENTITY_SYNC, (client, handler, buf, responseSender) -> {
 			int entityId = buf.readInt();
