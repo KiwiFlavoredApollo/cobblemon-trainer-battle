@@ -1,12 +1,27 @@
 # README
 
-## 1.5.4 Changelog
+## Items (>=1.6.0)
 
-- Fixed bug where Pokemon entities drop held items
-- Added new battle condition `isRematchAllowedAfterVictory`
-- Added new trainer option `isSpawningAllowed`
-- Pokemon entity spawns when battling with trainer
-- Added new trainer team attributes, `form` and `shiny`
+### VS Seekers
+
+- Can be used to filter trainers spawning around player
+- If the player does not have VS Seeker, trainers do not spawn
+- Blue VS Seeker - All Trainers
+- Red VS Seeker - Radical Red
+- Green VS Seeker - Inclement Emerald
+- Purple VS Seeker - Smogon
+
+### Tokens
+
+- Tokens are ingredients for crafting tickets
+- Gym leaders drop special tokens when defeated
+- Killing trainer entities does not drop tokens
+
+### Tickets
+
+- Tickets can be crafted
+- Tickets can be used for spawning gym leaders
+- Use (right-click) VS Seeker while holding a ticket on the other hand
 
 ## Configuration
 
@@ -38,6 +53,9 @@
 
 /trainerbattleflat <trainer>
 /trainerbattleflat random
+
+/trainerbattleother <player> <trainer>
+/trainerbattleflatother <player> <trainer>
 ```
 
 - Initiates Pokemon battle with trainers
@@ -85,33 +103,43 @@
 ```dtd
 datapacks/
 └── your_datapack_name/
-    ├── data/
-    │   └── cobblemontrainerbattle/
-    │       ├── trainers/
-    │       │   ├── teams/
-    │       │   │   ├── radicalred/
-    │       │   │   ├── inclementemerald/
-    │       │   │   ├── smogon/
-    │       │   │   └── custom/
-    │       │   │       ├── custom_trainer_1.json
-    │       │   │       └── custom_trainer_2.json
-    │       │   └── options/
-    │       │       ├── radicalred/
-    │       │       ├── inclementemerald/
-    │       │       ├── smogon/
-    │       │       ├── custom/
-    │       │       │   ├── custom_trainer_1.json
-    │       │       │   └── custom_trainer_2.json
-    │       │       └── defaults.json
-    │       │
-    │       ├── groups/
-    │       │   ├── custom_group_1.json
-    │       │   └── custom_group_1.json
-    │       │
-    │       └── minigames/
-    │           └── battlefactory.json
-    │
-    └── pack.mcmeta
+    ├── pack.mcmeta
+    └── data/
+        └── cobblemontrainerbattle/
+            ├── trainers/
+            │   ├── teams/
+            │   │   ├── radicalred/
+            │   │   ├── inclementemerald/
+            │   │   ├── smogon/
+            │   │   └── custom/
+            │   │       ├── custom_trainer_1.json
+            │   │       └── custom_trainer_2.json
+            │   │
+            │   └── options/
+            │       ├── radicalred/
+            │       ├── inclementemerald/
+            │       ├── smogon/
+            │       ├── custom/
+            │       │   ├── custom_trainer_1.json
+            │       │   └── custom_trainer_2.json
+            │       └── defaults.json
+            │
+            ├── groups/
+            │   ├── custom_group_1.json
+            │   └── custom_group_1.json
+            │
+            ├── minigames/
+            │   └── battlefactory.json
+            │
+            └── loot_tables/
+                └── trainers/
+                    ├── radicalred/
+                    ├── inclementemerald/
+                    ├── smogon/
+                    └── custom/
+                        ├── custom_trainer_1.json
+                        └── custom_trainer_2.json
+
 ```
 
 ### Custom Trainer Team
@@ -195,6 +223,8 @@ datapacks/
 
 ```
 /cobblemontrainerbattle export <player>
+/cobblemontrainerbattle exportflat <player> <level>
+/cobblemontrainerbattle exportrelative <player>
 ```
 
 - While it's not strictly formatted like the Smogon team JSON format, it can be used for adding custom trainers 
