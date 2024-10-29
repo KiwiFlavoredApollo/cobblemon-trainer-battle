@@ -14,19 +14,23 @@ import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
+import java.util.List;
+
 public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerCommandSource> {
     public TrainerBattleFlatCommand() {
         super("trainerbattleflat");
 
-        this.requires(new PlayerCommandPredicate(
-                        String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), "trainer"),
-                        String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), "random")
-                ))
-                .then(getSpecificTrainerBattleCommand())
+        List<String> permissions = List.of(
+                String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), "trainer"),
+                String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), "random")
+        );
+
+        this.requires(new PlayerCommandPredicate(permissions.toArray(String[]::new)))
+                .then(getSelectedTrainerBattleCommand())
                 .then(getRandomTrainerBattleCommand());
     }
 
-    private ArgumentBuilder<ServerCommandSource, ?> getSpecificTrainerBattleCommand() {
+    private ArgumentBuilder<ServerCommandSource, ?> getSelectedTrainerBattleCommand() {
         String permission = String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), "trainer");
         return RequiredArgumentBuilder.<ServerCommandSource, String>argument("trainer", StringArgumentType.greedyString())
                 .requires(new PlayerCommandPredicate(permission))
