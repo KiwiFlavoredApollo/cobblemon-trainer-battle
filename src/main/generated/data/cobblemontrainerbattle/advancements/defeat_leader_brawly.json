@@ -3,7 +3,7 @@
   "criteria": {
     "defeat_leader_brawly": {
       "conditions": {
-        "trainer": "trainer:inclementemerald/brawly_1"
+        "trainer": "trainer:entity/leader_brawly"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

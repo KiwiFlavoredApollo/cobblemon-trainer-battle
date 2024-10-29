@@ -3,7 +3,7 @@
   "criteria": {
     "defeat_leader_juan": {
       "conditions": {
-        "trainer": "trainer:inclementemerald/juan_1"
+        "trainer": "trainer:entity/leader_juan"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

@@ -3,7 +3,7 @@
   "criteria": {
     "defeat_leader_roxanne": {
       "conditions": {
-        "trainer": "trainer:inclementemerald/roxanne_1"
+        "trainer": "trainer:entity/leader_roxanne"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

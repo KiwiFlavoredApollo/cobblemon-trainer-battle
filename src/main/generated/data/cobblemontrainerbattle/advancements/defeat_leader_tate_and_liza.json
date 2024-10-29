@@ -3,7 +3,7 @@
   "criteria": {
     "defeat_leader_tate_and_liza": {
       "conditions": {
-        "trainer": "trainer:inclementemerald/tate_and_liza_1"
+        "trainer": "trainer:entity/leader_tate_and_liza"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

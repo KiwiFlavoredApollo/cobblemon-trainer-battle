@@ -3,7 +3,7 @@
   "criteria": {
     "defeat_leader_winona": {
       "conditions": {
-        "trainer": "trainer:inclementemerald/winona_1"
+        "trainer": "trainer:entity/leader_winona"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

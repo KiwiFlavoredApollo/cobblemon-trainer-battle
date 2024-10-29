@@ -3,7 +3,7 @@
   "criteria": {
     "defeat_leader_wattson": {
       "conditions": {
-        "trainer": "trainer:inclementemerald/wattson_1"
+        "trainer": "trainer:entity/leader_wattson"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

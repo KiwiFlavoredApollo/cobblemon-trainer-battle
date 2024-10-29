@@ -3,7 +3,7 @@
   "criteria": {
     "defeat_leader_norman": {
       "conditions": {
-        "trainer": "trainer:inclementemerald/norman_1"
+        "trainer": "trainer:entity/leader_norman"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

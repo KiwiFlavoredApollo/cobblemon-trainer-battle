@@ -3,7 +3,7 @@
   "criteria": {
     "defeat_leader_flannery": {
       "conditions": {
-        "trainer": "trainer:inclementemerald/flannery_1"
+        "trainer": "trainer:entity/leader_flannery"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }
