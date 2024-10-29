@@ -215,7 +215,7 @@ public class TrainerEntity extends PathAwareEntity {
     }
 
     private LootTable getCustomLootTable() throws IllegalStateException {
-        Identifier custom = Identifier.of(CobblemonTrainerBattle.NAMESPACE, String.format("trainers/%s", trainer.getPath()));
+        Identifier custom = Identifier.of(CobblemonTrainerBattle.MOD_ID, String.format("trainers/%s", trainer.getPath()));
         LootTable lootTable = this.getWorld().getServer().getLootManager().getLootTable(custom);
 
         if (lootTable.equals(LootTable.EMPTY)) {
@@ -226,7 +226,7 @@ public class TrainerEntity extends PathAwareEntity {
     }
 
     private LootTable getDefaultLootTable() {
-        Identifier defaults = Identifier.of(CobblemonTrainerBattle.NAMESPACE, "trainers/defaults");
+        Identifier defaults = Identifier.of(CobblemonTrainerBattle.MOD_ID, "trainers/defaults");
         return this.getWorld().getServer().getLootManager().getLootTable(defaults);
     }
 

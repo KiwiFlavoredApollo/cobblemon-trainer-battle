@@ -55,7 +55,7 @@ public class DataGenerator implements DataGeneratorEntrypoint {
                         true,
                         false
                 )
-                .build(Identifier.of(CobblemonTrainerBattle.NAMESPACE, "root"));
+                .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "root"));
 
         protected AdvancementProvider(FabricDataOutput output) {
             super(output);

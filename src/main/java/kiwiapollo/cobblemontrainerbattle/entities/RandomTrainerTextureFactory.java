@@ -25,7 +25,7 @@ public class RandomTrainerTextureFactory implements IdentifierFactory {
     );
     private static final List<Identifier> TEXTURES = TEXTURE_FILES.stream()
             .map(file -> TEXTURE_PARENTS + file)
-            .map(path -> Identifier.of(CobblemonTrainerBattle.NAMESPACE, path)).toList();
+            .map(path -> Identifier.of(CobblemonTrainerBattle.MOD_ID, path)).toList();
 
     @Override
     public Identifier create() {

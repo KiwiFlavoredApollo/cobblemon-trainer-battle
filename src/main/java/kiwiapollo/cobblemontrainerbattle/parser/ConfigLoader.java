@@ -10,7 +10,7 @@ import java.nio.file.StandardCopyOption;
 
 public class ConfigLoader {
     private static final File GLOBAL_CONFIG_DIR = FabricLoader.getInstance().getConfigDir().toFile();
-    private static final File CONFIG_DIR = new File(GLOBAL_CONFIG_DIR, CobblemonTrainerBattle.NAMESPACE);
+    private static final File CONFIG_DIR = new File(GLOBAL_CONFIG_DIR, CobblemonTrainerBattle.MOD_ID);
     private static final File CONFIG_FILE = new File(CONFIG_DIR, "config.json");
 
     public static Config load() {

@@ -14,7 +14,7 @@ import net.minecraft.util.Identifier;
 import java.util.Objects;
 
 public class KillTrainerCriterion extends AbstractCriterion<KillTrainerCriterion.Conditions> {
-    private static final Identifier ID = Identifier.of(CobblemonTrainerBattle.NAMESPACE, "kill_trainer");
+    private static final Identifier ID = Identifier.of(CobblemonTrainerBattle.MOD_ID, "kill_trainer");
 
     @Override
     public Identifier getId() {

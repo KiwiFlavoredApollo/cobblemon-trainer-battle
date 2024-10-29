@@ -106,7 +106,7 @@ public class PlayerHistoryRegistry {
     private static File getTrainerBattleHistoryDir(MinecraftServer server) {
         File worldDir = server.getSavePath(WorldSavePath.ROOT).toFile();
 
-        return new File(worldDir, CobblemonTrainerBattle.NAMESPACE);
+        return new File(worldDir, CobblemonTrainerBattle.MOD_ID);
     }
 
     private static boolean isDatFile(File file) {

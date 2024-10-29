@@ -20,36 +20,36 @@ import net.minecraft.util.Identifier;
 public class ItemRegistry {
 
     public void register() {
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.NAMESPACE, "trainer_spawn_egg"), TRAINER_SPAWN_EGG);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "trainer_spawn_egg"), TRAINER_SPAWN_EGG);
 
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.NAMESPACE, "blue_vs_seeker"), BLUE_VS_SEEKER);
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.NAMESPACE, "red_vs_seeker"), RED_VS_SEEKER);
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.NAMESPACE, "green_vs_seeker"), GREEN_VS_SEEKER);
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.NAMESPACE, "purple_vs_seeker"), PURPLE_VS_SEEKER);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "blue_vs_seeker"), BLUE_VS_SEEKER);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "red_vs_seeker"), RED_VS_SEEKER);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "green_vs_seeker"), GREEN_VS_SEEKER);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "purple_vs_seeker"), PURPLE_VS_SEEKER);
 
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.NAMESPACE, "trainer_token"), TRAINER_TOKEN);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "trainer_token"), TRAINER_TOKEN);
 
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.NAMESPACE, "radicalred_leader_brock_token"), RADICALRED_LEADER_BROCK_TOKEN);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "radicalred_leader_brock_token"), RADICALRED_LEADER_BROCK_TOKEN);
 
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.NAMESPACE, "radicalred_leader_brock_ticket"), RADICALRED_LEADER_BROCK_TICKET);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "radicalred_leader_brock_ticket"), RADICALRED_LEADER_BROCK_TICKET);
 
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.NAMESPACE, "inclementemerald_leader_roxanne_token"), INCLEMENTEMERALD_LEADER_ROXANNE_TOKEN);
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.NAMESPACE, "inclementemerald_leader_brawly_token"), INCLEMENTEMERALD_LEADER_BRAWLY_TOKEN);
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.NAMESPACE, "inclementemerald_leader_wattson_token"), INCLEMENTEMERALD_LEADER_WATTSON_TOKEN);
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.NAMESPACE, "inclementemerald_leader_flannery_token"), INCLEMENTEMERALD_LEADER_FLANNERY_TOKEN);
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.NAMESPACE, "inclementemerald_leader_norman_token"), INCLEMENTEMERALD_LEADER_NORMAN_TOKEN);
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.NAMESPACE, "inclementemerald_leader_winona_token"), INCLEMENTEMERALD_LEADER_WINONA_TOKEN);
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.NAMESPACE, "inclementemerald_leader_tate_and_liza_token"), INCLEMENTEMERALD_LEADER_TATE_AND_LIZA_TOKEN);
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.NAMESPACE, "inclementemerald_leader_juan_token"), INCLEMENTEMERALD_LEADER_JUAN_TOKEN);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "inclementemerald_leader_roxanne_token"), INCLEMENTEMERALD_LEADER_ROXANNE_TOKEN);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "inclementemerald_leader_brawly_token"), INCLEMENTEMERALD_LEADER_BRAWLY_TOKEN);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "inclementemerald_leader_wattson_token"), INCLEMENTEMERALD_LEADER_WATTSON_TOKEN);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "inclementemerald_leader_flannery_token"), INCLEMENTEMERALD_LEADER_FLANNERY_TOKEN);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "inclementemerald_leader_norman_token"), INCLEMENTEMERALD_LEADER_NORMAN_TOKEN);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "inclementemerald_leader_winona_token"), INCLEMENTEMERALD_LEADER_WINONA_TOKEN);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "inclementemerald_leader_tate_and_liza_token"), INCLEMENTEMERALD_LEADER_TATE_AND_LIZA_TOKEN);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "inclementemerald_leader_juan_token"), INCLEMENTEMERALD_LEADER_JUAN_TOKEN);
 
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.NAMESPACE, "inclementemerald_leader_roxanne_ticket"), INCLEMENTEMERALD_LEADER_ROXANNE_TICKET);
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.NAMESPACE, "inclementemerald_leader_brawly_ticket"), INCLEMENTEMERALD_LEADER_BRAWLY_TICKET);
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.NAMESPACE, "inclementemerald_leader_wattson_ticket"), INCLEMENTEMERALD_LEADER_WATTSON_TICKET);
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.NAMESPACE, "inclementemerald_leader_flannery_ticket"), INCLEMENTEMERALD_LEADER_FLANNERY_TICKET);
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.NAMESPACE, "inclementemerald_leader_norman_ticket"), INCLEMENTEMERALD_LEADER_NORMAN_TICKET);
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.NAMESPACE, "inclementemerald_leader_winona_ticket"), INCLEMENTEMERALD_LEADER_WINONA_TICKET);
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.NAMESPACE, "inclementemerald_leader_tate_and_liza_ticket"), INCLEMENTEMERALD_LEADER_TATE_AND_LIZA_TICKET);
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.NAMESPACE, "inclementemerald_leader_juan_ticket"), INCLEMENTEMERALD_LEADER_JUAN_TICKET);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "inclementemerald_leader_roxanne_ticket"), INCLEMENTEMERALD_LEADER_ROXANNE_TICKET);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "inclementemerald_leader_brawly_ticket"), INCLEMENTEMERALD_LEADER_BRAWLY_TICKET);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "inclementemerald_leader_wattson_ticket"), INCLEMENTEMERALD_LEADER_WATTSON_TICKET);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "inclementemerald_leader_flannery_ticket"), INCLEMENTEMERALD_LEADER_FLANNERY_TICKET);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "inclementemerald_leader_norman_ticket"), INCLEMENTEMERALD_LEADER_NORMAN_TICKET);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "inclementemerald_leader_winona_ticket"), INCLEMENTEMERALD_LEADER_WINONA_TICKET);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "inclementemerald_leader_tate_and_liza_ticket"), INCLEMENTEMERALD_LEADER_TATE_AND_LIZA_TICKET);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "inclementemerald_leader_juan_ticket"), INCLEMENTEMERALD_LEADER_JUAN_TICKET);
         
         Registry.register(Registries.ITEM_GROUP, ITEM_GROUP_KEY, ITEM_GROUP);
 
@@ -96,7 +96,7 @@ public class ItemRegistry {
     public static final Item GREEN_VS_SEEKER = new VsSeeker(new Item.Settings().maxCount(VS_SEEKER_MAX_COUNT));
     public static final Item PURPLE_VS_SEEKER = new VsSeeker(new Item.Settings().maxCount(VS_SEEKER_MAX_COUNT));
 
-    public static final RegistryKey<ItemGroup> ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(CobblemonTrainerBattle.NAMESPACE, "item_group"));
+    public static final RegistryKey<ItemGroup> ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(CobblemonTrainerBattle.MOD_ID, "item_group"));
     public static final ItemGroup ITEM_GROUP = FabricItemGroup.builder().icon(() -> new ItemStack(BLUE_VS_SEEKER)).displayName(Text.literal("Trainers")).build();
 
     public static final Item TRAINER_TOKEN = new Item(new Item.Settings());

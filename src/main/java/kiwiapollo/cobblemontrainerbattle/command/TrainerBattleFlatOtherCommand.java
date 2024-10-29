@@ -38,15 +38,15 @@ public class TrainerBattleFlatOtherCommand extends LiteralArgumentBuilder<Server
         super("trainerbattleflatother");
 
         this.requires(new PlayerCommandPredicate(
-                        String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "trainer"),
-                        String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "random")
+                        String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), "trainer"),
+                        String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), "random")
                 ))
                 .then(getSpecificTrainerBattleCommand())
                 .then(getRandomTrainerBattleCommand());
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getSpecificTrainerBattleCommand() {
-        String permission = String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "trainer");
+        String permission = String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), "trainer");
         return RequiredArgumentBuilder.<ServerCommandSource, EntitySelector>argument("player", EntityArgumentType.player())
                 .requires(new PlayerCommandPredicate(permission))
                 .then(RequiredArgumentBuilder.<ServerCommandSource, String>argument("trainer", StringArgumentType.greedyString())
@@ -60,7 +60,7 @@ public class TrainerBattleFlatOtherCommand extends LiteralArgumentBuilder<Server
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getRandomTrainerBattleCommand() {
-        String permission = String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "random");
+        String permission = String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), "random");
         return RequiredArgumentBuilder.<ServerCommandSource, EntitySelector>argument("player", EntityArgumentType.player())
                 .requires(new PlayerCommandPredicate(permission))
                 .then(LiteralArgumentBuilder.<ServerCommandSource>literal("random")

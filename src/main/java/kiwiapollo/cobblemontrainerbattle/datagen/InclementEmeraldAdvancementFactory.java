@@ -25,7 +25,7 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
                     true,
                     false
             )
-            .build(Identifier.of(CobblemonTrainerBattle.NAMESPACE, "defeat_roxanne"));
+            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_roxanne"));
 
     private static final Advancement BRAWLY = Advancement.Builder.createUntelemetered()
             .parent(ROXANNE)
@@ -40,7 +40,7 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
                     true,
                     false
             )
-            .build(Identifier.of(CobblemonTrainerBattle.NAMESPACE, "defeat_brawly"));
+            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_brawly"));
 
     private static final Advancement WATTSON = Advancement.Builder.createUntelemetered()
             .parent(BRAWLY)
@@ -55,7 +55,7 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
                     true,
                     false
             )
-            .build(Identifier.of(CobblemonTrainerBattle.NAMESPACE, "defeat_wattson"));
+            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_wattson"));
 
     private static final Advancement FLANNERY = Advancement.Builder.createUntelemetered()
             .parent(WATTSON)
@@ -70,7 +70,7 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
                     true,
                     false
             )
-            .build(Identifier.of(CobblemonTrainerBattle.NAMESPACE, "defeat_flannery"));
+            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_flannery"));
 
     private static final Advancement NORMAN = Advancement.Builder.createUntelemetered()
             .parent(FLANNERY)
@@ -85,7 +85,7 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
                     true,
                     false
             )
-            .build(Identifier.of(CobblemonTrainerBattle.NAMESPACE, "defeat_norman"));
+            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_norman"));
 
     private static final Advancement WINONA = Advancement.Builder.createUntelemetered()
             .parent(NORMAN)
@@ -100,7 +100,7 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
                     true,
                     false
             )
-            .build(Identifier.of(CobblemonTrainerBattle.NAMESPACE, "defeat_winona"));
+            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_winona"));
 
     private static final Advancement TATE_AND_LIZA = Advancement.Builder.createUntelemetered()
             .parent(WINONA)
@@ -115,7 +115,7 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
                     true,
                     false
             )
-            .build(Identifier.of(CobblemonTrainerBattle.NAMESPACE, "defeat_tate_and_liza"));
+            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_tate_and_liza"));
 
     private static final Advancement JUAN = Advancement.Builder.createUntelemetered()
             .parent(TATE_AND_LIZA)
@@ -130,7 +130,7 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
                     true,
                     false
             )
-            .build(Identifier.of(CobblemonTrainerBattle.NAMESPACE, "defeat_juan"));
+            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_juan"));
 
     @Override
     public List<Advancement> create() {

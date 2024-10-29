@@ -11,7 +11,7 @@ import java.util.List;
 
 public class SmogonPokemonExporter {
     private static final File GAME_DIR = FabricLoader.getInstance().getGameDir().toFile();
-    public static final File EXPORT_DIR = new File(GAME_DIR, CobblemonTrainerBattle.NAMESPACE);
+    public static final File EXPORT_DIR = new File(GAME_DIR, CobblemonTrainerBattle.MOD_ID);
 
     public SmogonPokemonExporter() {
         if (!EXPORT_DIR.exists()) {

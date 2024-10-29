@@ -13,7 +13,7 @@ public class BattleFactoryCommand extends LiteralArgumentBuilder<ServerCommandSo
     public BattleFactoryCommand() {
         super("battlefactory");
 
-        this.requires(new PlayerCommandPredicate(String.format("%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral())))
+        this.requires(new PlayerCommandPredicate(String.format("%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral())))
                 .then(getBattleFactoryStartSessionCommand())
                 .then(getBattleFactoryStopSessionCommand())
                 .then(getBattleFactoryStartBattleCommand())

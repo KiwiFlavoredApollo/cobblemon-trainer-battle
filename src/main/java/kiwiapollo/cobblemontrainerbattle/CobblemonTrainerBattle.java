@@ -33,8 +33,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class CobblemonTrainerBattle implements ModInitializer {
-	public static final String NAMESPACE = "cobblemontrainerbattle";
-	public static final Logger LOGGER = LoggerFactory.getLogger(NAMESPACE);
+	public static final String MOD_ID = "cobblemontrainerbattle";
+	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	public static Config config = ConfigLoader.load();
 	public static Economy economy = EconomyFactory.create(config.economy);
@@ -44,7 +44,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 		Criteria.register(CustomCriteria.DEFEAT_TRAINER_CRITERION);
 		Criteria.register(CustomCriteria.KILL_TRAINER_CRITERION);
 
-		Registry.register(Registries.LOOT_CONDITION_TYPE, Identifier.of(NAMESPACE, "defeated_in_battle"), CustomLootConditionTypes.DEFEATED_IN_BATTLE);
+		Registry.register(Registries.LOOT_CONDITION_TYPE, Identifier.of(MOD_ID, "defeated_in_battle"), CustomLootConditionTypes.DEFEATED_IN_BATTLE);
 
 		AspectProvider.Companion.register(new FormAspectProvider());
 
@@ -63,7 +63,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
 		ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new ProfileRegistries());
 
-		Registry.register(Registries.ENTITY_TYPE, Identifier.of(NAMESPACE, "trainer"), EntityTypes.TRAINER);
+		Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "trainer"), EntityTypes.TRAINER);
 		FabricDefaultAttributeRegistry.register(EntityTypes.TRAINER, TrainerEntity.createMobAttributes());
 
 		CobblemonEvents.BATTLE_VICTORY.subscribe(Priority.NORMAL, BattleVictoryEventHandler::onBattleVictory);

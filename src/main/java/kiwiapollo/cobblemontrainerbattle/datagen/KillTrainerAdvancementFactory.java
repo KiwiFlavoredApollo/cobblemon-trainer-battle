@@ -24,7 +24,7 @@ public class KillTrainerAdvancementFactory implements AdvancementFactory {
                     true,
                     false
             )
-            .build(Identifier.of(CobblemonTrainerBattle.NAMESPACE, "kill_first_trainer"));
+            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "kill_first_trainer"));
 
     private static final Advancement TENTH = Advancement.Builder.createUntelemetered()
             .parent(FIRST)
@@ -39,7 +39,7 @@ public class KillTrainerAdvancementFactory implements AdvancementFactory {
                     true,
                     false
             )
-            .build(Identifier.of(CobblemonTrainerBattle.NAMESPACE, "kill_tenth_trainer"));
+            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "kill_tenth_trainer"));
 
     public KillTrainerAdvancementFactory() {
 

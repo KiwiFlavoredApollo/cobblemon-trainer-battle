@@ -34,7 +34,7 @@ import java.util.Objects;
 public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSource> {
 
     public CobblemonTrainerBattleCommand() {
-        super(CobblemonTrainerBattle.NAMESPACE);
+        super(CobblemonTrainerBattle.MOD_ID);
 
         this.requires(new PlayerCommandPredicate(String.format("%s.%s", getLiteral(), "reload"), String.format("%s.%s", getLiteral(), "export")))
                 .then(LiteralArgumentBuilder.<ServerCommandSource>literal("reload")

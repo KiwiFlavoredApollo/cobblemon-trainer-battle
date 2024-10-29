@@ -35,7 +35,7 @@ public class ProfileRegistries implements SimpleSynchronousResourceReloadListene
 
     @Override
     public Identifier getFabricId() {
-        return Identifier.of(CobblemonTrainerBattle.NAMESPACE, "resourceloader");
+        return Identifier.of(CobblemonTrainerBattle.MOD_ID, "resourceloader");
     }
 
     @Override
@@ -165,7 +165,7 @@ public class ProfileRegistries implements SimpleSynchronousResourceReloadListene
 
     private Resource getDefaultTrainerOptionResource(ResourceManager resourceManager)
             throws FileNotFoundException {
-        Identifier identifier = Identifier.of(CobblemonTrainerBattle.NAMESPACE, DEFAULT_TRAINER_OPTION);
+        Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, DEFAULT_TRAINER_OPTION);
         return resourceManager.getResourceOrThrow(identifier);
     }
 
@@ -184,7 +184,7 @@ public class ProfileRegistries implements SimpleSynchronousResourceReloadListene
     }
 
     private Resource getBattleFactoryProfileResource(ResourceManager resourceManager) throws FileNotFoundException {
-        Identifier identifier = Identifier.of(CobblemonTrainerBattle.NAMESPACE, BATTLE_FACTORY_PROFILE);
+        Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, BATTLE_FACTORY_PROFILE);
         return resourceManager.getResourceOrThrow(identifier);
     }
 
