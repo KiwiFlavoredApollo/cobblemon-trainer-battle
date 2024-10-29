@@ -2,6 +2,32 @@
   "entity.cobblemontrainerbattle.trainer": "Trainer",
   "item.cobblemontrainerbattle.trainer_spawn_egg": "Trainer Spawn Egg",
 
+  "item.cobblemontrainerbattle.blue_vs_seeker": "Blue VS Seeker",
+  "item.cobblemontrainerbattle.red_vs_seeker": "Red VS Seeker",
+  "item.cobblemontrainerbattle.green_vs_seeker": "Green VS Seeker",
+  "item.cobblemontrainerbattle.purple_vs_seeker": "Purple VS Seeker",
+
+  "item.cobblemontrainerbattle.trainer_token": "Trainer Token",
+
+  "item.cobblemontrainerbattle.leader_roxanne_token": "Roxanne Token",
+  "item.cobblemontrainerbattle.leader_brawly_token": "Brawly Token",
+  "item.cobblemontrainerbattle.leader_wattson_token": "Wattson Token",
+  "item.cobblemontrainerbattle.leader_flannery_token": "Flannery Token",
+  "item.cobblemontrainerbattle.leader_norman_token": "Norman Token",
+  "item.cobblemontrainerbattle.leader_winona_token": "Winona Token",
+  "item.cobblemontrainerbattle.leader_tate_and_liza_token": "Tate and Liza Token",
+  "item.cobblemontrainerbattle.leader_juan_token": "Juan Token",
+
+  "item.cobblemontrainerbattle.leader_roxanne_ticket": "Roxanne Ticket",
+  "item.cobblemontrainerbattle.leader_brawly_ticket": "Brawly Ticket",
+  "item.cobblemontrainerbattle.leader_wattson_ticket": "Wattson Ticket",
+  "item.cobblemontrainerbattle.leader_flannery_ticket": "Flannery Ticket",
+  "item.cobblemontrainerbattle.leader_norman_ticket": "Norman Ticket",
+  "item.cobblemontrainerbattle.leader_winona_ticket": "Winona Ticket",
+  "item.cobblemontrainerbattle.leader_tate_and_liza_ticket": "Tate and Liza Ticket",
+  "item.cobblemontrainerbattle.leader_juan_ticket": "Juan Ticket",
+
+
   "advancement.cobblemontrainerbattle.root.title": "Trainers",
   "advancement.cobblemontrainerbattle.root.description": "Interact with a trainer",
 
@@ -14,6 +40,23 @@
   "advancement.cobblemontrainerbattle.kill_trainer.first.description": "Kill a trainer",
   "advancement.cobblemontrainerbattle.kill_trainer.tenth.title": "Unstoppable",
   "advancement.cobblemontrainerbattle.kill_trainer.tenth.description": "Kill 10 trainers",
+
+  "advancement.cobblemontrainerbattle.defeat_leader_roxanne.title": "Rock Solid",
+  "advancement.cobblemontrainerbattle.defeat_leader_roxanne.description": "Defeat Roxanne",
+  "advancement.cobblemontrainerbattle.defeat_leader_brawly.title": "Keep Lights On",
+  "advancement.cobblemontrainerbattle.defeat_leader_brawly.description": "Defeat Brawly",
+  "advancement.cobblemontrainerbattle.defeat_leader_wattson.title": "You Wattage May Vary",
+  "advancement.cobblemontrainerbattle.defeat_leader_wattson.description": "Defeat Wattson",
+  "advancement.cobblemontrainerbattle.defeat_leader_flannery.title": "Hot Spring",
+  "advancement.cobblemontrainerbattle.defeat_leader_flannery.description": "Defeat Flannery",
+  "advancement.cobblemontrainerbattle.defeat_leader_norman.title": "Hello, Daddy",
+  "advancement.cobblemontrainerbattle.defeat_leader_norman.description": "Defeat Norman",
+  "advancement.cobblemontrainerbattle.defeat_leader_winona.title": "You Have a Dragon?",
+  "advancement.cobblemontrainerbattle.defeat_leader_winona.description": "Defeat Winona",
+  "advancement.cobblemontrainerbattle.defeat_leader_tate_and_liza.title": "Where's Bill Cypher?",
+  "advancement.cobblemontrainerbattle.defeat_leader_tate_and_liza.description": "Defeat Tate and Liza",
+  "advancement.cobblemontrainerbattle.defeat_leader_juan.title": "What Happened to Wallace?",
+  "advancement.cobblemontrainerbattle.defeat_leader_juan.description": "Defeat Juan",
 
   "command.cobblemontrainerbattle.trainerbattle.success": "A battle has begun against %s!",
   "command.cobblemontrainerbattle.trainerbattle.empty_player_party": "You have no Pokémon in your party.",
