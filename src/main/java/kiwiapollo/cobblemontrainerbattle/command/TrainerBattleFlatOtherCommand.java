@@ -33,9 +33,9 @@ import net.minecraft.util.Identifier;
 
 import java.io.FileNotFoundException;
 
-public class TrainerBattleOtherFlatCommand extends LiteralArgumentBuilder<ServerCommandSource> {
-    public TrainerBattleOtherFlatCommand() {
-        super("trainerbattleotherflat");
+public class TrainerBattleFlatOtherCommand extends LiteralArgumentBuilder<ServerCommandSource> {
+    public TrainerBattleFlatOtherCommand() {
+        super("trainerbattleflatother");
 
         this.requires(new PlayerCommandPredicate(
                         String.format("%s.%s.%s", CobblemonTrainerBattle.NAMESPACE, getLiteral(), "trainer"),

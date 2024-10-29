@@ -3,9 +3,7 @@ package kiwiapollo.cobblemontrainerbattle;
 import com.cobblemon.mod.common.api.Priority;
 import com.cobblemon.mod.common.api.events.CobblemonEvents;
 import com.cobblemon.mod.common.api.pokemon.aspect.AspectProvider;
-import kiwiapollo.cobblemontrainerbattle.advancement.DefeatTrainerCriterion;
-import kiwiapollo.cobblemontrainerbattle.advancement.KillTrainerCriterion;
-import kiwiapollo.cobblemontrainerbattle.advancement.InteractTrainerCriterion;
+import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactory;
 import kiwiapollo.cobblemontrainerbattle.command.*;
 import kiwiapollo.cobblemontrainerbattle.economy.Economy;
@@ -15,7 +13,7 @@ import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.events.*;
 import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattle;
 import kiwiapollo.cobblemontrainerbattle.item.ItemRegistry;
-import kiwiapollo.cobblemontrainerbattle.loot.DefeatedInBattleLootCondition;
+import kiwiapollo.cobblemontrainerbattle.loot.CustomLootConditionTypes;
 import kiwiapollo.cobblemontrainerbattle.parser.*;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattleRegistry;
 import net.fabricmc.api.ModInitializer;
@@ -27,7 +25,6 @@ import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.minecraft.advancement.criterion.Criteria;
-import net.minecraft.loot.condition.LootConditionType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.resource.ResourceType;
@@ -39,22 +36,15 @@ public class CobblemonTrainerBattle implements ModInitializer {
 	public static final String NAMESPACE = "cobblemontrainerbattle";
 	public static final Logger LOGGER = LoggerFactory.getLogger(NAMESPACE);
 
-	public static final DefeatTrainerCriterion DEFEAT_TRAINER_CRITERION = new DefeatTrainerCriterion();
-	public static final KillTrainerCriterion KILL_TRAINER_CRITERION = new KillTrainerCriterion();
-	public static final InteractTrainerCriterion INTERACT_TRAINER_CRITERION = new InteractTrainerCriterion();
-
-	public static final LootConditionType DEFEATED_IN_BATTLE = new LootConditionType(new DefeatedInBattleLootCondition.Serializer());
-
 	public static Config config = ConfigLoader.load();
 	public static Economy economy = EconomyFactory.create(config.economy);
 
     @Override
 	public void onInitialize() {
-		Criteria.register(DEFEAT_TRAINER_CRITERION);
-		Criteria.register(KILL_TRAINER_CRITERION);
-		Criteria.register(INTERACT_TRAINER_CRITERION);
+		Criteria.register(CustomCriteria.DEFEAT_TRAINER_CRITERION);
+		Criteria.register(CustomCriteria.KILL_TRAINER_CRITERION);
 
-		Registry.register(Registries.LOOT_CONDITION_TYPE, Identifier.of(NAMESPACE, "defeated_in_battle"), DEFEATED_IN_BATTLE);
+		Registry.register(Registries.LOOT_CONDITION_TYPE, Identifier.of(NAMESPACE, "defeated_in_battle"), CustomLootConditionTypes.DEFEATED_IN_BATTLE);
 
 		AspectProvider.Companion.register(new FormAspectProvider());
 
@@ -64,7 +54,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 			dispatcher.register(new TrainerBattleCommand());
 			dispatcher.register(new TrainerBattleFlatCommand());
 			dispatcher.register(new TrainerBattleOtherCommand());
-			dispatcher.register(new TrainerBattleOtherFlatCommand());
+			dispatcher.register(new TrainerBattleFlatOtherCommand());
 			dispatcher.register(new GroupBattleCommand());
 			dispatcher.register(new GroupBattleFlatCommand());
 			dispatcher.register(new BattleFactoryCommand());

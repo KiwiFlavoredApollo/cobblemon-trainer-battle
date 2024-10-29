@@ -33,7 +33,7 @@ public class VsSeeker extends Item {
             ItemStack ticketStack = user.getStackInHand(getOtherHand(hand));
             TrainerTicket ticket = (TrainerTicket) ticketStack.getItem();
 
-            TrainerEntity entity = ticket.createTrainerEntity(EntityTypes.TRAINER, world);
+            TrainerEntity entity = new TrainerEntity(EntityTypes.TRAINER, world, ticket.getTrainerEntityPreset());
 
             entity.refreshPositionAndAngles(spawnPos, user.getYaw(), user.getPitch());
             world.spawnEntity(entity);

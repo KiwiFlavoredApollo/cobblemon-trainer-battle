@@ -2,6 +2,7 @@ package kiwiapollo.cobblemontrainerbattle.datagen;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.advancement.DefeatTrainerCriterion;
+import kiwiapollo.cobblemontrainerbattle.trainerpreset.InclementEmeraldTrainerEntityPresetRegistry;
 import net.minecraft.advancement.Advancement;
 import net.minecraft.advancement.AdvancementFrame;
 import net.minecraft.registry.Registries;
@@ -13,7 +14,7 @@ import java.util.List;
 public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
     private static final Advancement ROXANNE = Advancement.Builder.createUntelemetered()
             .parent(DataGenerator.AdvancementProvider.ROOT)
-            .criterion("defeat_roxanne", new DefeatTrainerCriterion.Conditions(1)) // TODO
+            .criterion("defeat_roxanne", new DefeatTrainerCriterion.Conditions(InclementEmeraldTrainerEntityPresetRegistry.LEADER_ROXANNE.trainer()))
             .display(
                     Registries.ITEM.get(Identifier.of("cobblemon", "poke_ball")),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_roxanne.title"),
@@ -28,7 +29,7 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
 
     private static final Advancement BRAWLY = Advancement.Builder.createUntelemetered()
             .parent(ROXANNE)
-            .criterion("defeat_brawly", new DefeatTrainerCriterion.Conditions(1)) // TODO
+            .criterion("defeat_brawly", new DefeatTrainerCriterion.Conditions(InclementEmeraldTrainerEntityPresetRegistry.LEADER_BRAWLY.trainer()))
             .display(
                     Registries.ITEM.get(Identifier.of("cobblemon", "poke_ball")),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_brawly.title"),
@@ -43,7 +44,7 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
 
     private static final Advancement WATTSON = Advancement.Builder.createUntelemetered()
             .parent(BRAWLY)
-            .criterion("defeat_wattson", new DefeatTrainerCriterion.Conditions(1)) // TODO
+            .criterion("defeat_wattson", new DefeatTrainerCriterion.Conditions(InclementEmeraldTrainerEntityPresetRegistry.LEADER_WATTSON.trainer()))
             .display(
                     Registries.ITEM.get(Identifier.of("cobblemon", "poke_ball")),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_wattson.title"),
@@ -58,7 +59,7 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
 
     private static final Advancement FLANNERY = Advancement.Builder.createUntelemetered()
             .parent(WATTSON)
-            .criterion("defeat_flannery", new DefeatTrainerCriterion.Conditions(1)) // TODO
+            .criterion("defeat_flannery", new DefeatTrainerCriterion.Conditions(InclementEmeraldTrainerEntityPresetRegistry.LEADER_FLANNERY.trainer()))
             .display(
                     Registries.ITEM.get(Identifier.of("cobblemon", "poke_ball")),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_flannery.title"),
@@ -73,7 +74,7 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
 
     private static final Advancement NORMAN = Advancement.Builder.createUntelemetered()
             .parent(FLANNERY)
-            .criterion("defeat_norman", new DefeatTrainerCriterion.Conditions(1)) // TODO
+            .criterion("defeat_norman", new DefeatTrainerCriterion.Conditions(InclementEmeraldTrainerEntityPresetRegistry.LEADER_NORMAN.trainer()))
             .display(
                     Registries.ITEM.get(Identifier.of("cobblemon", "poke_ball")),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_norman.title"),
@@ -88,7 +89,7 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
 
     private static final Advancement WINONA = Advancement.Builder.createUntelemetered()
             .parent(NORMAN)
-            .criterion("defeat_winona", new DefeatTrainerCriterion.Conditions(1)) // TODO
+            .criterion("defeat_winona", new DefeatTrainerCriterion.Conditions(InclementEmeraldTrainerEntityPresetRegistry.LEADER_WINONA.trainer()))
             .display(
                     Registries.ITEM.get(Identifier.of("cobblemon", "poke_ball")),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_winona.title"),
@@ -103,7 +104,7 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
 
     private static final Advancement TATE_AND_LIZA = Advancement.Builder.createUntelemetered()
             .parent(WINONA)
-            .criterion("defeat_tate_and_liza", new DefeatTrainerCriterion.Conditions(1)) // TODO
+            .criterion("defeat_tate_and_liza", new DefeatTrainerCriterion.Conditions(InclementEmeraldTrainerEntityPresetRegistry.LEADER_TATE_AND_LIZA.trainer()))
             .display(
                     Registries.ITEM.get(Identifier.of("cobblemon", "poke_ball")),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_tate_and_liza.title"),
@@ -118,7 +119,7 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
 
     private static final Advancement JUAN = Advancement.Builder.createUntelemetered()
             .parent(TATE_AND_LIZA)
-            .criterion("defeat_juan", new DefeatTrainerCriterion.Conditions(1)) // TODO
+            .criterion("defeat_juan", new DefeatTrainerCriterion.Conditions(InclementEmeraldTrainerEntityPresetRegistry.LEADER_JUAN.trainer()))
             .display(
                     Registries.ITEM.get(Identifier.of("cobblemon", "poke_ball")),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_juan.title"),

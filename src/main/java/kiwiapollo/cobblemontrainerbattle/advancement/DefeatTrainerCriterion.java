@@ -1,7 +1,5 @@
 package kiwiapollo.cobblemontrainerbattle.advancement;
 
-import com.cobblemon.mod.common.advancement.criterion.CountableContext;
-import com.cobblemon.mod.common.advancement.criterion.SimpleCountableCriterionCondition;
 import com.google.gson.JsonObject;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.parser.PlayerHistoryRegistry;
@@ -12,6 +10,8 @@ import net.minecraft.predicate.entity.AdvancementEntityPredicateSerializer;
 import net.minecraft.predicate.entity.LootContextPredicate;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
+
+import java.util.Objects;
 
 public class DefeatTrainerCriterion extends AbstractCriterion<DefeatTrainerCriterion.Conditions> {
     private static final Identifier ID = Identifier.of(CobblemonTrainerBattle.NAMESPACE, "defeat_trainer");
@@ -27,31 +27,80 @@ public class DefeatTrainerCriterion extends AbstractCriterion<DefeatTrainerCrite
             LootContextPredicate playerPredicate,
             AdvancementEntityPredicateDeserializer predicateDeserializer
     ) {
-        return new Conditions(obj.get("count").getAsInt());
+        Identifier trainer = null;
+        if (obj.has("trainer")) {
+            trainer = Identifier.tryParse(obj.get("trainer").getAsString());
+        }
+
+        Integer count = null;
+        if (obj.has("count")) {
+            count = obj.get("count").getAsInt();
+        }
+
+        return new DefeatTrainerCriterion.Conditions(trainer, count);
     }
 
     public void trigger(ServerPlayerEntity player) {
-        int count = PlayerHistoryRegistry.get(player.getUuid()).getTotalVictoryCount();
-        trigger(player, conditions -> conditions.test(player, count));
+        trigger(player, conditions -> conditions.test(player));
     }
 
     public static class Conditions extends AbstractCriterionConditions {
-        private final SimpleCountableCriterionCondition conditions;
+        private final Identifier trainer;
+        private final Integer count;
 
-        public Conditions(int count) {
+        public Conditions(Identifier trainer) {
+            this(trainer, null);
+        }
+
+        public Conditions(Integer count) {
+            this(null, count);
+        }
+
+        public Conditions(Identifier trainer, Integer count) {
             super(ID, LootContextPredicate.EMPTY);
 
-            this.conditions = new SimpleCountableCriterionCondition(ID, LootContextPredicate.EMPTY);
-            this.conditions.setCount(count);
+            this.trainer = trainer;
+            this.count = count;
         }
 
         @Override
         public JsonObject toJson(AdvancementEntityPredicateSerializer predicateSerializer) {
-            return conditions.toJson(predicateSerializer);
+            JsonObject jsonObject = new JsonObject();
+
+            if (Objects.nonNull(trainer)) {
+                jsonObject.addProperty("trainer", trainer.toString());
+            }
+
+            if (Objects.nonNull(count)) {
+                jsonObject.addProperty("count", count);
+            }
+
+            return jsonObject;
         }
 
-        boolean test(ServerPlayerEntity player, int count) {
-            return conditions.matches(player, new CountableContext(count));
+        boolean test(ServerPlayerEntity player) {
+            if (Objects.isNull(trainer)) {
+                return testTotalVictoryCount(player);
+
+            } else {
+                return testTrainerVictoryCount(player);
+            }
+        }
+
+        private boolean testTotalVictoryCount(ServerPlayerEntity player) {
+            try {
+                return count < PlayerHistoryRegistry.get(player.getUuid()).getTotalVictoryCount();
+            } catch (NullPointerException e) {
+                return 0 < PlayerHistoryRegistry.get(player.getUuid()).getTotalVictoryCount();
+            }
+        }
+
+        private boolean testTrainerVictoryCount(ServerPlayerEntity player) {
+            try {
+                return count < PlayerHistoryRegistry.get(player.getUuid()).getTrainerVictoryCount(trainer);
+            } catch (NullPointerException e) {
+                return 0 < PlayerHistoryRegistry.get(player.getUuid()).getTrainerVictoryCount(trainer);
+            }
         }
     }
 }

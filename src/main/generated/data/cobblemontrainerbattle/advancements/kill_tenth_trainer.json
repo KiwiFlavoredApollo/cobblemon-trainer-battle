@@ -3,7 +3,7 @@
   "criteria": {
     "kill_tenth_trainer": {
       "conditions": {
-        "count": 3
+        "count": 10
       },
       "trigger": "cobblemontrainerbattle:kill_trainer"
     }

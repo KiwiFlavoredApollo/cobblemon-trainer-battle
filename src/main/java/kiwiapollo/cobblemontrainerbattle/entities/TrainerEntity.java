@@ -1,7 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.entities;
 
 import com.cobblemon.mod.common.Cobblemon;
-import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.NormalBattlePlayer;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.EntityBackedTrainer;
@@ -17,8 +17,10 @@ import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.exception.BusyWithPokemonBattleException;
 import kiwiapollo.cobblemontrainerbattle.postbattle.PostBattleActionSetHandler;
 import kiwiapollo.cobblemontrainerbattle.postbattle.BattleResultHandler;
+import kiwiapollo.cobblemontrainerbattle.trainerpreset.TrainerEntityPreset;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.*;
@@ -27,8 +29,6 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.context.LootContextParameterSet;
 import net.minecraft.loot.context.LootContextParameters;
@@ -51,12 +51,16 @@ public class TrainerEntity extends PathAwareEntity {
     private Identifier texture;
     private TrainerBattle trainerBattle;
 
-    public TrainerEntity(EntityType<? extends PathAwareEntity> entityType, World world, Identifier trainer, Identifier texture) {
-        super(entityType, world);
+    public TrainerEntity(EntityType<? extends PathAwareEntity> type, World world, Identifier trainer, Identifier texture) {
+        super(type, world);
 
         this.trainer = trainer;
         this.texture = texture;
         this.trainerBattle = null;
+    }
+
+    public TrainerEntity(EntityType<? extends PathAwareEntity> type, World world, TrainerEntityPreset preset) {
+        this(type, world, preset.trainer(), preset.texture());
     }
 
     public void synchronizeClient(ServerWorld world) {
@@ -102,7 +106,11 @@ public class TrainerEntity extends PathAwareEntity {
             TrainerBattleParticipant trainerBattleParticipant = new EntityBackedTrainer(trainer, this, (ServerPlayerEntity) player);
 
             TrainerProfile trainerProfile = ProfileRegistries.trainer.get(trainer);
-            BattleResultHandler battleResultHandler = new PostBattleActionSetHandler((ServerPlayerEntity) player, trainerProfile.onVictory(), trainerProfile.onDefeat());
+            BattleResultHandler battleResultHandler = new PostBattleActionSetHandler(
+                    (ServerPlayerEntity) player,
+                    trainerProfile.onVictory(),
+                    trainerProfile.onDefeat()
+            );
 
             TrainerBattle trainerBattle = new StandardTrainerBattle(
                     playerBattleParticipant,
@@ -118,7 +126,7 @@ public class TrainerEntity extends PathAwareEntity {
             this.setAiDisabled(false);
         }
 
-        CobblemonTrainerBattle.INTERACT_TRAINER_CRITERION.trigger((ServerPlayerEntity) player, new ItemStack(Items.AIR), this);
+        Criteria.PLAYER_INTERACTED_WITH_ENTITY.trigger((ServerPlayerEntity) player, player.getStackInHand(hand), this);
 
         return super.interactMob(player, hand);
     }
@@ -169,7 +177,7 @@ public class TrainerEntity extends PathAwareEntity {
     public void onDeath(DamageSource damageSource) {
         if (damageSource.getSource() instanceof ServerPlayerEntity player) {
             addPlayerKillRecord(player);
-            CobblemonTrainerBattle.KILL_TRAINER_CRITERION.trigger(player, this, damageSource);
+            CustomCriteria.KILL_TRAINER_CRITERION.trigger(player);
         }
 
         if(isPokemonBattleExist()) {

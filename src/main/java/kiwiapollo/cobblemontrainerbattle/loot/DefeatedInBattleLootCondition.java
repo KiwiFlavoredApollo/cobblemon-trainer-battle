@@ -3,7 +3,6 @@ package kiwiapollo.cobblemontrainerbattle.loot;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
-import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.loot.condition.LootCondition;
@@ -15,7 +14,7 @@ import net.minecraft.util.JsonSerializer;
 public class DefeatedInBattleLootCondition implements LootCondition {
     @Override
     public LootConditionType getType() {
-        return CobblemonTrainerBattle.DEFEATED_IN_BATTLE;
+        return CustomLootConditionTypes.DEFEATED_IN_BATTLE;
     }
 
     @Override

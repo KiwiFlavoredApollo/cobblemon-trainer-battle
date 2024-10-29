@@ -1,13 +1,17 @@
 package kiwiapollo.cobblemontrainerbattle.datagen;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.advancement.InteractTrainerCriterion;
+import kiwiapollo.cobblemontrainerbattle.entities.EntityTypes;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricAdvancementProvider;
 import net.minecraft.advancement.Advancement;
 import net.minecraft.advancement.AdvancementFrame;
+import net.minecraft.advancement.criterion.PlayerInteractedWithEntityCriterion;
+import net.minecraft.predicate.entity.EntityPredicate;
+import net.minecraft.predicate.entity.LootContextPredicate;
+import net.minecraft.predicate.item.ItemPredicate;
 import net.minecraft.registry.Registries;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
@@ -25,8 +29,14 @@ public class DataGenerator implements DataGeneratorEntrypoint {
     static class AdvancementProvider extends FabricAdvancementProvider {
         static final Identifier BACKGROUND = new Identifier("textures/gui/advancements/backgrounds/adventure.png");
 
+        private static final PlayerInteractedWithEntityCriterion.Conditions CONDITIONS = new PlayerInteractedWithEntityCriterion.Conditions(
+                LootContextPredicate.EMPTY,
+                ItemPredicate.ANY,
+                EntityPredicate.asLootContextPredicate(EntityPredicate.Builder.create().type(EntityTypes.TRAINER).build())
+        );
+
         static final Advancement ROOT = Advancement.Builder.createUntelemetered()
-                .criterion("root", new InteractTrainerCriterion.Conditions())
+                .criterion("root", CONDITIONS)
                 .display(
                         Registries.ITEM.get(Identifier.of("cobblemon", "link_cable")),
                         Text.translatable("advancement.cobblemontrainerbattle.root.title"),

@@ -1,19 +1,17 @@
 package kiwiapollo.cobblemontrainerbattle.item;
 
-import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
-import net.minecraft.entity.EntityType;
+import kiwiapollo.cobblemontrainerbattle.trainerpreset.TrainerEntityPreset;
 import net.minecraft.item.Item;
-import net.minecraft.world.World;
 
 public class TrainerTicket extends Item {
-    private final EntityType.EntityFactory<TrainerEntity> factory;
+    private final TrainerEntityPreset preset;
 
-    public TrainerTicket(Settings settings, EntityType.EntityFactory<TrainerEntity> factory) {
+    public TrainerTicket(Settings settings, TrainerEntityPreset preset) {
         super(settings);
-        this.factory = factory;
+        this.preset = preset;
     }
 
-    public TrainerEntity createTrainerEntity(EntityType<TrainerEntity> type, World world) {
-        return factory.create(type, world);
+    public TrainerEntityPreset getTrainerEntityPreset() {
+        return preset;
     }
 }

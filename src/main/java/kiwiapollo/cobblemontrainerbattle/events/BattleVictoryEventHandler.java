@@ -1,7 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.events;
 
 import com.cobblemon.mod.common.api.events.battles.BattleVictoryEvent;
-import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattleRegistry;
 import kotlin.Unit;
@@ -40,7 +40,7 @@ public class BattleVictoryEventHandler {
         ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
 
         TrainerBattleRegistry.get(player.getUuid()).onPlayerVictory();
-        CobblemonTrainerBattle.DEFEAT_TRAINER_CRITERION.trigger(player);
+        CustomCriteria.DEFEAT_TRAINER_CRITERION.trigger(player);
 
         TrainerBattleRegistry.remove(player.getUuid());
     }

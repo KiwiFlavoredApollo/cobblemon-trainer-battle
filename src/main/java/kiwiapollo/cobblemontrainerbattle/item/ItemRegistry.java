@@ -2,7 +2,8 @@ package kiwiapollo.cobblemontrainerbattle.item;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.entities.EntityTypes;
-import kiwiapollo.cobblemontrainerbattle.entities.SelectedTrainerEntityFactory;
+import kiwiapollo.cobblemontrainerbattle.trainerpreset.InclementEmeraldTrainerEntityPresetRegistry;
+import kiwiapollo.cobblemontrainerbattle.trainerpreset.RadicalRedTrainerEntityPresetRegistry;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -102,13 +103,7 @@ public class ItemRegistry {
 
     public static final Item RADICALRED_LEADER_BROCK_TOKEN = new Item(new Item.Settings());
 
-    public static final Item RADICALRED_LEADER_BROCK_TICKET = new TrainerTicket(
-            new Item.Settings(),
-            new SelectedTrainerEntityFactory(
-                    Identifier.of("trainer", "radicalred/leader_brock"),
-                    Identifier.of("minecraft", "textures/entity/player/slim/steve.png")
-            )
-    );
+    public static final Item RADICALRED_LEADER_BROCK_TICKET = new TrainerTicket(new Item.Settings(), RadicalRedTrainerEntityPresetRegistry.LEADER_BROCK);
 
     public static final Item INCLEMENTEMERALD_LEADER_ROXANNE_TOKEN = new Item(new Item.Settings());
     public static final Item INCLEMENTEMERALD_LEADER_BRAWLY_TOKEN = new Item(new Item.Settings());
@@ -119,61 +114,12 @@ public class ItemRegistry {
     public static final Item INCLEMENTEMERALD_LEADER_TATE_AND_LIZA_TOKEN = new Item(new Item.Settings());
     public static final Item INCLEMENTEMERALD_LEADER_JUAN_TOKEN = new Item(new Item.Settings());
 
-
-    public static final Item INCLEMENTEMERALD_LEADER_ROXANNE_TICKET = new TrainerTicket(
-            new Item.Settings(),
-            new SelectedTrainerEntityFactory(
-                    Identifier.of("trainer", "inclementemerald/roxanne_2"),
-                    Identifier.of("minecraft", "textures/entity/player/slim/alex.png")
-            )
-    );
-    public static final Item INCLEMENTEMERALD_LEADER_BRAWLY_TICKET = new TrainerTicket(
-            new Item.Settings(),
-            new SelectedTrainerEntityFactory(
-                    Identifier.of("trainer", "inclementemerald/brawly_2"),
-                    Identifier.of("minecraft", "textures/entity/player/slim/alex.png")
-            )
-    );
-    public static final Item INCLEMENTEMERALD_LEADER_WATTSON_TICKET = new TrainerTicket(
-            new Item.Settings(),
-            new SelectedTrainerEntityFactory(
-                    Identifier.of("trainer", "inclementemerald/wattson_2"),
-                    Identifier.of("minecraft", "textures/entity/player/slim/alex.png")
-            )
-    );
-    public static final Item INCLEMENTEMERALD_LEADER_FLANNERY_TICKET = new TrainerTicket(
-            new Item.Settings(),
-            new SelectedTrainerEntityFactory(
-                    Identifier.of("trainer", "inclementemerald/flannery_2"),
-                    Identifier.of("minecraft", "textures/entity/player/slim/alex.png")
-            )
-    );
-    public static final Item INCLEMENTEMERALD_LEADER_NORMAN_TICKET = new TrainerTicket(
-            new Item.Settings(),
-            new SelectedTrainerEntityFactory(
-                    Identifier.of("trainer", "inclementemerald/norman_2"),
-                    Identifier.of("minecraft", "textures/entity/player/slim/alex.png")
-            )
-    );
-    public static final Item INCLEMENTEMERALD_LEADER_WINONA_TICKET = new TrainerTicket(
-            new Item.Settings(),
-            new SelectedTrainerEntityFactory(
-                    Identifier.of("trainer", "inclementemerald/winona_2"),
-                    Identifier.of("minecraft", "textures/entity/player/slim/alex.png")
-            )
-    );
-    public static final Item INCLEMENTEMERALD_LEADER_TATE_AND_LIZA_TICKET = new TrainerTicket(
-            new Item.Settings(),
-            new SelectedTrainerEntityFactory(
-                    Identifier.of("trainer", "inclementemerald/tate_and_liza_2"),
-                    Identifier.of("minecraft", "textures/entity/player/slim/alex.png")
-            )
-    );
-    public static final Item INCLEMENTEMERALD_LEADER_JUAN_TICKET = new TrainerTicket(
-            new Item.Settings(),
-            new SelectedTrainerEntityFactory(
-                    Identifier.of("trainer", "inclementemerald/juan_2"),
-                    Identifier.of("minecraft", "textures/entity/player/slim/alex.png")
-            )
-    );
+    public static final Item INCLEMENTEMERALD_LEADER_ROXANNE_TICKET = new TrainerTicket(new Item.Settings(), InclementEmeraldTrainerEntityPresetRegistry.LEADER_ROXANNE);
+    public static final Item INCLEMENTEMERALD_LEADER_BRAWLY_TICKET = new TrainerTicket(new Item.Settings(), InclementEmeraldTrainerEntityPresetRegistry.LEADER_BRAWLY);
+    public static final Item INCLEMENTEMERALD_LEADER_WATTSON_TICKET = new TrainerTicket(new Item.Settings(), InclementEmeraldTrainerEntityPresetRegistry.LEADER_WATTSON);
+    public static final Item INCLEMENTEMERALD_LEADER_FLANNERY_TICKET = new TrainerTicket(new Item.Settings(), InclementEmeraldTrainerEntityPresetRegistry.LEADER_FLANNERY);
+    public static final Item INCLEMENTEMERALD_LEADER_NORMAN_TICKET = new TrainerTicket(new Item.Settings(), InclementEmeraldTrainerEntityPresetRegistry.LEADER_NORMAN);
+    public static final Item INCLEMENTEMERALD_LEADER_WINONA_TICKET = new TrainerTicket(new Item.Settings(), InclementEmeraldTrainerEntityPresetRegistry.LEADER_WINONA);
+    public static final Item INCLEMENTEMERALD_LEADER_TATE_AND_LIZA_TICKET = new TrainerTicket(new Item.Settings(), InclementEmeraldTrainerEntityPresetRegistry.LEADER_TATE_AND_LIZA);
+    public static final Item INCLEMENTEMERALD_LEADER_JUAN_TICKET = new TrainerTicket(new Item.Settings(), InclementEmeraldTrainerEntityPresetRegistry.LEADER_JUAN);
 }

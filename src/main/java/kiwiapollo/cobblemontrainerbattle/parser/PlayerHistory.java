@@ -57,6 +57,22 @@ public class PlayerHistory {
         }
     }
 
+    public int getTrainerVictoryCount(Identifier trainer) {
+        try {
+            return trainerRecordRegistry.get(trainer).victory;
+        } catch (NullPointerException | ClassCastException e) {
+            return 0;
+        }
+    }
+
+    public int getTrainerKillCount(Identifier trainer) {
+        try {
+            return trainerRecordRegistry.get(trainer).kill;
+        } catch (NullPointerException | ClassCastException e) {
+            return 0;
+        }
+    }
+
     public int getTotalVictoryCount() {
         return trainerRecordRegistry.values().stream().map(record -> record.victory).reduce(Integer::sum).orElse(0);
     }
