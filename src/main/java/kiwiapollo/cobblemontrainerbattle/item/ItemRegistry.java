@@ -29,9 +29,8 @@ public class ItemRegistry {
 
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "trainer_token"), TRAINER_TOKEN);
 
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_brock_token"), LEADER_BROCK_TOKEN);
-
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_brock_ticket"), LEADER_BROCK_TICKET);
+//        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_brock_token"), LEADER_BROCK_TOKEN);
+//        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_brock_ticket"), LEADER_BROCK_TICKET);
 
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_roxanne_token"), LEADER_ROXANNE_TOKEN);
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_brawly_token"), LEADER_BRAWLY_TOKEN);
@@ -63,9 +62,8 @@ public class ItemRegistry {
 
             itemGroup.add(TRAINER_TOKEN);
 
-            itemGroup.add(LEADER_BROCK_TOKEN);
-
-            itemGroup.add(LEADER_BROCK_TICKET);
+//            itemGroup.add(LEADER_BROCK_TOKEN);
+//            itemGroup.add(LEADER_BROCK_TICKET);
             
             itemGroup.add(LEADER_ROXANNE_TOKEN);
             itemGroup.add(LEADER_BRAWLY_TOKEN);
@@ -87,23 +85,20 @@ public class ItemRegistry {
         });
     }
 
-    public static final int VS_SEEKER_MAX_COUNT = 1;
-
     public static final Item TRAINER_SPAWN_EGG = new SpawnEggItem(EntityTypes.TRAINER, 0xAAAAAA, 0xFF5555, new FabricItemSettings().maxCount(64));
 
-    public static final Item BLUE_VS_SEEKER = new VsSeeker(new Item.Settings().maxCount(VS_SEEKER_MAX_COUNT));
-    public static final Item RED_VS_SEEKER = new VsSeeker(new Item.Settings().maxCount(VS_SEEKER_MAX_COUNT));
-    public static final Item GREEN_VS_SEEKER = new VsSeeker(new Item.Settings().maxCount(VS_SEEKER_MAX_COUNT));
-    public static final Item PURPLE_VS_SEEKER = new VsSeeker(new Item.Settings().maxCount(VS_SEEKER_MAX_COUNT));
+    public static final Item BLUE_VS_SEEKER = new VsSeeker();
+    public static final Item RED_VS_SEEKER = new VsSeeker();
+    public static final Item GREEN_VS_SEEKER = new VsSeeker();
+    public static final Item PURPLE_VS_SEEKER = new VsSeeker();
 
     public static final RegistryKey<ItemGroup> ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(CobblemonTrainerBattle.MOD_ID, "item_group"));
     public static final ItemGroup ITEM_GROUP = FabricItemGroup.builder().icon(() -> new ItemStack(BLUE_VS_SEEKER)).displayName(Text.literal("Trainers")).build();
 
     public static final Item TRAINER_TOKEN = new Item(new Item.Settings());
 
-    public static final Item LEADER_BROCK_TOKEN = new Item(new Item.Settings());
-
-    public static final Item LEADER_BROCK_TICKET = new TrainerTicket(new Item.Settings(), RadicalRedTrainerEntityPresetRegistry.LEADER_BROCK);
+//    public static final Item LEADER_BROCK_TOKEN = new Item(new Item.Settings());
+//    public static final Item LEADER_BROCK_TICKET = new TrainerTicket(new Item.Settings(), RadicalRedTrainerEntityPresetRegistry.LEADER_BROCK);
 
     public static final Item LEADER_ROXANNE_TOKEN = new Item(new Item.Settings());
     public static final Item LEADER_BRAWLY_TOKEN = new Item(new Item.Settings());

@@ -13,9 +13,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class VsSeeker extends Item {
+    public static final int MAX_COUNT = 1;
 
-    public VsSeeker(Item.Settings settings) {
-        super(settings);
+    public VsSeeker() {
+        super(new Item.Settings().maxCount(MAX_COUNT));
     }
 
     @Override
