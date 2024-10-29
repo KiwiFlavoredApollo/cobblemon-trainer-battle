@@ -1,0 +1,33 @@
+{
+  "parent": "cobblemontrainerbattle:defeat_leader_wattson",
+  "criteria": {
+    "defeat_leader_flannery": {
+      "conditions": {
+        "trainer": "trainer:inclementemerald/flannery_1"
+      },
+      "trigger": "cobblemontrainerbattle:defeat_trainer"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_leader_flannery.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "cobblemontrainerbattle:leader_flannery_token"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_leader_flannery.title"
+    }
+  },
+  "requirements": [
+    [
+      "defeat_leader_flannery"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

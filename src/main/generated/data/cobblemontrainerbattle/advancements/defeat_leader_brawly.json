@@ -1,0 +1,33 @@
+{
+  "parent": "cobblemontrainerbattle:defeat_leader_roxanne",
+  "criteria": {
+    "defeat_leader_brawly": {
+      "conditions": {
+        "trainer": "trainer:inclementemerald/brawly_1"
+      },
+      "trigger": "cobblemontrainerbattle:defeat_trainer"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_leader_brawly.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "cobblemontrainerbattle:leader_brawly_token"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_leader_brawly.title"
+    }
+  },
+  "requirements": [
+    [
+      "defeat_leader_brawly"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

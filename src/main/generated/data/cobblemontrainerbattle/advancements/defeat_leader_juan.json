@@ -1,0 +1,33 @@
+{
+  "parent": "cobblemontrainerbattle:defeat_leader_tate_and_liza",
+  "criteria": {
+    "defeat_leader_juan": {
+      "conditions": {
+        "trainer": "trainer:inclementemerald/juan_1"
+      },
+      "trigger": "cobblemontrainerbattle:defeat_trainer"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_leader_juan.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "cobblemontrainerbattle:leader_juan_token"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_leader_juan.title"
+    }
+  },
+  "requirements": [
+    [
+      "defeat_leader_juan"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

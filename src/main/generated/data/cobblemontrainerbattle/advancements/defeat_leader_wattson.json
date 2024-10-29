@@ -1,0 +1,33 @@
+{
+  "parent": "cobblemontrainerbattle:defeat_leader_brawly",
+  "criteria": {
+    "defeat_leader_wattson": {
+      "conditions": {
+        "trainer": "trainer:inclementemerald/wattson_1"
+      },
+      "trigger": "cobblemontrainerbattle:defeat_trainer"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_leader_wattson.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "cobblemontrainerbattle:leader_wattson_token"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_leader_wattson.title"
+    }
+  },
+  "requirements": [
+    [
+      "defeat_leader_wattson"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

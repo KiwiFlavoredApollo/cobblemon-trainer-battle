@@ -86,7 +86,7 @@ public class DataGenerator implements DataGeneratorEntrypoint {
 
         @Override
         public void generate(Consumer<RecipeJsonProvider> exporter) {
-            ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ItemRegistry.INCLEMENTEMERALD_LEADER_ROXANNE_TICKET)
+            ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ItemRegistry.LEADER_ROXANNE_TICKET)
                     .input(ItemRegistry.TRAINER_TOKEN, 6)
                     .input(Items.GREEN_DYE)
                     .input(CobblemonItems.ROCK_GEM)
@@ -94,7 +94,7 @@ public class DataGenerator implements DataGeneratorEntrypoint {
                     .criterion(FabricRecipeProvider.hasItem(CobblemonItems.ROCK_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.ROCK_GEM))
                     .offerTo(exporter);
 
-            ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ItemRegistry.INCLEMENTEMERALD_LEADER_BRAWLY_TICKET)
+            ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ItemRegistry.LEADER_BRAWLY_TICKET)
                     .input(ItemRegistry.TRAINER_TOKEN, 6)
                     .input(Items.GREEN_DYE)
                     .input(CobblemonItems.FIGHTING_GEM)
@@ -102,7 +102,7 @@ public class DataGenerator implements DataGeneratorEntrypoint {
                     .criterion(FabricRecipeProvider.hasItem(CobblemonItems.FIGHTING_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.FIGHTING_GEM))
                     .offerTo(exporter);
 
-            ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ItemRegistry.INCLEMENTEMERALD_LEADER_WATTSON_TICKET)
+            ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ItemRegistry.LEADER_WATTSON_TICKET)
                     .input(ItemRegistry.TRAINER_TOKEN, 6)
                     .input(Items.GREEN_DYE)
                     .input(CobblemonItems.ELECTRIC_GEM)
@@ -110,7 +110,7 @@ public class DataGenerator implements DataGeneratorEntrypoint {
                     .criterion(FabricRecipeProvider.hasItem(CobblemonItems.ELECTRIC_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.ELECTRIC_GEM))
                     .offerTo(exporter);
 
-            ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ItemRegistry.INCLEMENTEMERALD_LEADER_FLANNERY_TICKET)
+            ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ItemRegistry.LEADER_FLANNERY_TICKET)
                     .input(ItemRegistry.TRAINER_TOKEN, 6)
                     .input(Items.GREEN_DYE)
                     .input(CobblemonItems.FIRE_GEM)
@@ -118,7 +118,7 @@ public class DataGenerator implements DataGeneratorEntrypoint {
                     .criterion(FabricRecipeProvider.hasItem(CobblemonItems.FIRE_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.FIRE_GEM))
                     .offerTo(exporter);
 
-            ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ItemRegistry.INCLEMENTEMERALD_LEADER_NORMAN_TICKET)
+            ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ItemRegistry.LEADER_NORMAN_TICKET)
                     .input(ItemRegistry.TRAINER_TOKEN, 6)
                     .input(Items.GREEN_DYE)
                     .input(CobblemonItems.NORMAL_GEM)
@@ -126,7 +126,7 @@ public class DataGenerator implements DataGeneratorEntrypoint {
                     .criterion(FabricRecipeProvider.hasItem(CobblemonItems.NORMAL_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.NORMAL_GEM))
                     .offerTo(exporter);
 
-            ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ItemRegistry.INCLEMENTEMERALD_LEADER_WINONA_TICKET)
+            ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ItemRegistry.LEADER_WINONA_TICKET)
                     .input(ItemRegistry.TRAINER_TOKEN, 6)
                     .input(Items.GREEN_DYE)
                     .input(CobblemonItems.FLYING_GEM)
@@ -134,7 +134,7 @@ public class DataGenerator implements DataGeneratorEntrypoint {
                     .criterion(FabricRecipeProvider.hasItem(CobblemonItems.FLYING_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.FLYING_GEM))
                     .offerTo(exporter);
 
-            ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ItemRegistry.INCLEMENTEMERALD_LEADER_TATE_AND_LIZA_TICKET)
+            ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ItemRegistry.LEADER_TATE_AND_LIZA_TICKET)
                     .input(ItemRegistry.TRAINER_TOKEN, 6)
                     .input(Items.GREEN_DYE)
                     .input(CobblemonItems.PSYCHIC_GEM)
@@ -142,7 +142,7 @@ public class DataGenerator implements DataGeneratorEntrypoint {
                     .criterion(FabricRecipeProvider.hasItem(CobblemonItems.PSYCHIC_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.PSYCHIC_GEM))
                     .offerTo(exporter);
 
-            ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ItemRegistry.INCLEMENTEMERALD_LEADER_JUAN_TICKET)
+            ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ItemRegistry.LEADER_JUAN_TICKET)
                     .input(ItemRegistry.TRAINER_TOKEN, 6)
                     .input(Items.GREEN_DYE)
                     .input(CobblemonItems.WATER_GEM)

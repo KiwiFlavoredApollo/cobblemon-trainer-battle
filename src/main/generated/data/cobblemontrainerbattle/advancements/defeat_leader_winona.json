@@ -1,0 +1,33 @@
+{
+  "parent": "cobblemontrainerbattle:defeat_leader_norman",
+  "criteria": {
+    "defeat_leader_winona": {
+      "conditions": {
+        "trainer": "trainer:inclementemerald/winona_1"
+      },
+      "trigger": "cobblemontrainerbattle:defeat_trainer"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_leader_winona.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "cobblemontrainerbattle:leader_winona_token"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_leader_winona.title"
+    }
+  },
+  "requirements": [
+    [
+      "defeat_leader_winona"
+    ]
+  ],
+  "sends_telemetry_event": false
+}
