@@ -4,25 +4,33 @@ import com.cobblemon.mod.common.CobblemonItems;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.entities.EntityTypes;
 import kiwiapollo.cobblemontrainerbattle.item.ItemRegistry;
+import kiwiapollo.cobblemontrainerbattle.item.ItemTagRegistry;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricAdvancementProvider;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.advancement.Advancement;
 import net.minecraft.advancement.AdvancementFrame;
 import net.minecraft.advancement.criterion.PlayerInteractedWithEntityCriterion;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
+import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
+import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.predicate.entity.EntityPredicate;
 import net.minecraft.predicate.entity.LootContextPredicate;
 import net.minecraft.predicate.item.ItemPredicate;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.Registries;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
+import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 
 public class DataGenerator implements DataGeneratorEntrypoint {
@@ -32,6 +40,7 @@ public class DataGenerator implements DataGeneratorEntrypoint {
 
         pack.addProvider(AdvancementProvider::new);
         pack.addProvider(RecipeProvider::new);
+        pack.addProvider(TagProvider::new);
     }
 
     static class AdvancementProvider extends FabricAdvancementProvider {
@@ -149,6 +158,57 @@ public class DataGenerator implements DataGeneratorEntrypoint {
                     .criterion(FabricRecipeProvider.hasItem(ItemRegistry.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(ItemRegistry.TRAINER_TOKEN))
                     .criterion(FabricRecipeProvider.hasItem(CobblemonItems.WATER_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.WATER_GEM))
                     .offerTo(exporter);
+
+            ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ItemRegistry.BLUE_VS_SEEKER)
+                    .pattern("IRI")
+                    .pattern("IBI")
+                    .pattern("III")
+                    .input('I', Items.IRON_INGOT)
+                    .input('R', Items.REDSTONE_TORCH)
+                    .input('B', Items.BLUE_STAINED_GLASS)
+                    .criterion(FabricRecipeProvider.hasItem(Items.REDSTONE_TORCH), FabricRecipeProvider.conditionsFromItem(Items.REDSTONE_TORCH))
+                    .offerTo(exporter);
+
+            String VS_SEEKER_RECIPE_SUFFIX = "from_vs_seeker";
+
+            ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ItemRegistry.BLUE_VS_SEEKER)
+                    .input(ItemTagRegistry.VS_SEEKERS)
+                    .input(Items.BLUE_DYE)
+                    .criterion(FabricRecipeProvider.hasItem(ItemRegistry.BLUE_VS_SEEKER), FabricRecipeProvider.conditionsFromItem(ItemRegistry.BLUE_VS_SEEKER))
+                    .offerTo(exporter, String.format("%s_%s", getRecipeName(ItemRegistry.BLUE_VS_SEEKER), VS_SEEKER_RECIPE_SUFFIX));
+
+            ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ItemRegistry.RED_VS_SEEKER)
+                    .input(ItemTagRegistry.VS_SEEKERS)
+                    .input(Items.RED_DYE)
+                    .criterion(FabricRecipeProvider.hasItem(ItemRegistry.BLUE_VS_SEEKER), FabricRecipeProvider.conditionsFromItem(ItemRegistry.BLUE_VS_SEEKER))
+                    .offerTo(exporter, String.format("%s_%s", getRecipeName(ItemRegistry.RED_VS_SEEKER), VS_SEEKER_RECIPE_SUFFIX));
+
+            ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ItemRegistry.GREEN_VS_SEEKER)
+                    .input(ItemTagRegistry.VS_SEEKERS)
+                    .input(Items.GREEN_DYE)
+                    .criterion(FabricRecipeProvider.hasItem(ItemRegistry.BLUE_VS_SEEKER), FabricRecipeProvider.conditionsFromItem(ItemRegistry.BLUE_VS_SEEKER))
+                    .offerTo(exporter, String.format("%s_%s", getRecipeName(ItemRegistry.GREEN_VS_SEEKER), VS_SEEKER_RECIPE_SUFFIX));
+
+            ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ItemRegistry.PURPLE_VS_SEEKER)
+                    .input(ItemTagRegistry.VS_SEEKERS)
+                    .input(Items.PURPLE_DYE)
+                    .criterion(FabricRecipeProvider.hasItem(ItemRegistry.BLUE_VS_SEEKER), FabricRecipeProvider.conditionsFromItem(ItemRegistry.BLUE_VS_SEEKER))
+                    .offerTo(exporter, String.format("%s_%s", getRecipeName(ItemRegistry.PURPLE_VS_SEEKER), VS_SEEKER_RECIPE_SUFFIX));
+        }
+    }
+
+    private static class TagProvider extends FabricTagProvider<Item> {
+        public TagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+            super(output, RegistryKeys.ITEM, registriesFuture);
+        }
+
+        @Override
+        protected void configure(RegistryWrapper.WrapperLookup lookup) {
+            getOrCreateTagBuilder(ItemTagRegistry.VS_SEEKERS)
+                    .add(ItemRegistry.BLUE_VS_SEEKER)
+                    .add(ItemRegistry.RED_VS_SEEKER)
+                    .add(ItemRegistry.GREEN_VS_SEEKER)
+                    .add(ItemRegistry.PURPLE_VS_SEEKER);
         }
     }
 }

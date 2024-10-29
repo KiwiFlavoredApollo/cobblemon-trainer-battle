@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:blue_stained_glass"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "R": {
+      "item": "minecraft:redstone_torch"
+    }
+  },
+  "pattern": [
+    "IRI",
+    "IBI",
+    "III"
+  ],
+  "result": {
+    "item": "cobblemontrainerbattle:blue_vs_seeker"
+  },
+  "show_notification": true
+}
