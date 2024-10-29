@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "cobblemontrainerbattle:inclementemerald_leader_juan_token"
+          "name": "cobblemontrainerbattle:leader_juan_token"
         }
       ],
       "conditions": [

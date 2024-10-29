@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "cobblemontrainerbattle:inclementemerald_leader_norman_token"
+          "name": "cobblemontrainerbattle:leader_norman_token"
         }
       ],
       "conditions": [

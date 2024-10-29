@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "cobblemontrainerbattle:inclementemerald_leader_tate_and_liza_token"
+          "name": "cobblemontrainerbattle:leader_tate_and_liza_token"
         }
       ],
       "conditions": [
