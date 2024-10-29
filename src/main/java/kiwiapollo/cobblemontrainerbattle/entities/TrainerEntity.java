@@ -176,7 +176,7 @@ public class TrainerEntity extends PathAwareEntity {
     @Override
     public void onDeath(DamageSource damageSource) {
         if (damageSource.getSource() instanceof ServerPlayerEntity player) {
-            addPlayerKillRecord(player);
+            PlayerHistoryRegistry.get(player.getUuid()).addPlayerKill(trainer);
             CustomCriteria.KILL_TRAINER_CRITERION.trigger(player);
         }
 
@@ -204,14 +204,6 @@ public class TrainerEntity extends PathAwareEntity {
 
         LootContextParameterSet lootContextParameterSet = builder.build(LootContextTypes.ENTITY);
         lootTable.generateLoot(lootContextParameterSet, this.getLootTableSeed(), this::dropStack);
-    }
-
-    private void addPlayerKillRecord(ServerPlayerEntity player) {
-        if (!PlayerHistoryRegistry.containsKey(player.getUuid())) {
-            PlayerHistoryRegistry.put(player.getUuid(), new PlayerHistory());
-        }
-
-        PlayerHistoryRegistry.get(player.getUuid()).addPlayerKill(trainer);
     }
 
     public void setTrainer(Identifier trainer) {
