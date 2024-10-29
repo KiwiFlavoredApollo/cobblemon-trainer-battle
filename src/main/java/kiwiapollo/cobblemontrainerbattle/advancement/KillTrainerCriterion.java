@@ -89,7 +89,7 @@ public class KillTrainerCriterion extends AbstractCriterion<KillTrainerCriterion
 
         private boolean testTotalKillCount(ServerPlayerEntity player) {
             try {
-                return count < PlayerHistoryRegistry.get(player.getUuid()).getTotalKillCount();
+                return count <= PlayerHistoryRegistry.get(player.getUuid()).getTotalKillCount();
             } catch (NullPointerException e) {
                 return 0 < PlayerHistoryRegistry.get(player.getUuid()).getTotalKillCount();
             }
@@ -97,7 +97,7 @@ public class KillTrainerCriterion extends AbstractCriterion<KillTrainerCriterion
 
         private boolean testTrainerKillCount(ServerPlayerEntity player) {
             try {
-                return count < PlayerHistoryRegistry.get(player.getUuid()).getTrainerKillCount(trainer);
+                return count <= PlayerHistoryRegistry.get(player.getUuid()).getTrainerKillCount(trainer);
             } catch (NullPointerException e) {
                 return 0 < PlayerHistoryRegistry.get(player.getUuid()).getTrainerKillCount(trainer);
             }

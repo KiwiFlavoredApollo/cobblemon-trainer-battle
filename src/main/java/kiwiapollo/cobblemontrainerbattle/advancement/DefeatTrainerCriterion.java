@@ -89,7 +89,7 @@ public class DefeatTrainerCriterion extends AbstractCriterion<DefeatTrainerCrite
 
         private boolean testTotalVictoryCount(ServerPlayerEntity player) {
             try {
-                return count < PlayerHistoryRegistry.get(player.getUuid()).getTotalVictoryCount();
+                return count <= PlayerHistoryRegistry.get(player.getUuid()).getTotalVictoryCount();
             } catch (NullPointerException e) {
                 return 0 < PlayerHistoryRegistry.get(player.getUuid()).getTotalVictoryCount();
             }
@@ -97,7 +97,7 @@ public class DefeatTrainerCriterion extends AbstractCriterion<DefeatTrainerCrite
 
         private boolean testTrainerVictoryCount(ServerPlayerEntity player) {
             try {
-                return count < PlayerHistoryRegistry.get(player.getUuid()).getTrainerVictoryCount(trainer);
+                return count <= PlayerHistoryRegistry.get(player.getUuid()).getTrainerVictoryCount(trainer);
             } catch (NullPointerException e) {
                 return 0 < PlayerHistoryRegistry.get(player.getUuid()).getTrainerVictoryCount(trainer);
             }
