@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "cobblemontrainerbattle:inclementemerald_roxanne_token"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "cobblemontrainerbattle:defeated_in_battle"
+        }
+      ]
+    }
+  ]
+}
