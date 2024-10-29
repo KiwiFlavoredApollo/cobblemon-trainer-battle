@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.trainerpreset;
+package kiwiapollo.cobblemontrainerbattle.entities;
 
 import net.minecraft.util.Identifier;
 

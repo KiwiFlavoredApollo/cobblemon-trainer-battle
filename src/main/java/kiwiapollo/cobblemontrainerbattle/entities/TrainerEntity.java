@@ -17,7 +17,6 @@ import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.exception.BusyWithPokemonBattleException;
 import kiwiapollo.cobblemontrainerbattle.postbattle.PostBattleActionSetHandler;
 import kiwiapollo.cobblemontrainerbattle.postbattle.BattleResultHandler;
-import kiwiapollo.cobblemontrainerbattle.trainerpreset.TrainerEntityPreset;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.advancement.criterion.Criteria;
