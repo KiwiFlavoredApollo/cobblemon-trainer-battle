@@ -4,8 +4,8 @@
 
 ### VS Seekers
 
-- Can be used to filter trainers spawning around player
-- If the player does not have VS Seeker, trainers do not spawn
+- VS Seekers can be used to filter trainers spawning around player
+- If players do not have VS Seekers, trainers do not spawn
 - Blue VS Seeker - All Trainers
 - Red VS Seeker - Radical Red
 - Green VS Seeker - Inclement Emerald
@@ -13,13 +13,13 @@
 
 ### Tokens
 
+- Trainers drop tokens when defeated in battle
+- Trainers do not drop tokens when killed
 - Tokens are ingredients for crafting tickets
 - Gym leaders drop special tokens when defeated
-- Killing trainer entities does not drop tokens
 
 ### Tickets
 
-- Tickets can be crafted
 - Tickets can be used for spawning gym leaders
 - Use (right-click) VS Seeker while holding a ticket on the other hand
 
