@@ -4,9 +4,10 @@ import com.mojang.brigadier.Command;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.factory.BattleParticipantFactory;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.factory.GroupBattleParticipantFactoryBuilder;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.factory.FlatGroupBattleParticipantFactory;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.factory.NormalGroupBattleParticipantFactory;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.factory.BattleParticipantFactory;
 import kiwiapollo.cobblemontrainerbattle.common.*;
 import kiwiapollo.cobblemontrainerbattle.exception.*;
 import kiwiapollo.cobblemontrainerbattle.exception.battlecondition.RematchNotAllowedException;
@@ -33,36 +34,39 @@ public class GroupBattle {
     public static Map<UUID, GroupBattleSession> sessionRegistry = new HashMap<>();
 
     public static int startNormalGroupBattleSession(CommandContext<ServerCommandSource> context) {
-        return startSession(context, new NormalGroupBattleParticipantFactory());
+        return startSession(context, new NormalGroupBattleParticipantFactory.Builder());
     }
 
     public static int startFlatGroupBattleSession(CommandContext<ServerCommandSource> context) {
-        return startSession(context, new FlatGroupBattleParticipantFactory(FLAT_LEVEL));
+        return startSession(context, new FlatGroupBattleParticipantFactory.Builder(FLAT_LEVEL));
     }
 
-    private static int startSession(CommandContext<ServerCommandSource> context, BattleParticipantFactory battleParticipantFactory) {
+    private static int startSession(
+            CommandContext<ServerCommandSource> context,
+            GroupBattleParticipantFactoryBuilder battleParticipantFactoryBuilder
+    ) {
         try {
             ServerPlayerEntity player = context.getSource().getPlayer();
+            Identifier group = new Identifier(StringArgumentType.getString(context, "group"));
 
-            Identifier trainer = new Identifier(StringArgumentType.getString(context, "group"));
-
-            ResourceValidator.assertTrainerGroupExist(trainer);
+            ResourceValidator.assertTrainerGroupExist(group);
             SessionValidator.assertSessionNotExist(sessionRegistry, player);
 
-            TrainerGroupProfile profile = ProfileRegistries.trainerGroup.get(trainer);
-            List<Identifier> trainersToDefeat = profile.trainers.stream().map(Identifier::new).toList();
+            TrainerGroupProfile profile = ProfileRegistries.trainerGroup.get(group);
+            List<Identifier> trainer = profile.trainers.stream().map(Identifier::new).toList();
 
-            BattleConditionValidator.assertRematchAllowedAfterVictory(player, trainer, profile.condition);
+            BattleConditionValidator.assertRematchAllowedAfterVictory(player, group, profile.condition);
 
             BattleResultHandler battleResultHandler = new BatchedBattleResultHandler(
-                    new RecordedBattleResultHandler(player, trainer),
+                    new RecordedBattleResultHandler(player, group),
                     new PostBattleActionSetHandler(player, profile.onVictory, profile.onDefeat)
             );
 
+            BattleParticipantFactory battleParticipantFactory = battleParticipantFactoryBuilder.addCondition(profile.condition).build();
+
             GroupBattleSession session = new GroupBattleSession(
                     player,
-                    trainersToDefeat,
-                    profile.condition,
+                    trainer,
                     battleResultHandler,
                     battleParticipantFactory
             );
@@ -76,7 +80,6 @@ public class GroupBattle {
 
         } catch (IllegalStateException e) {
             ServerPlayerEntity player = context.getSource().getPlayer();
-
             MutableText message = Text.translatable("command.cobblemontrainerbattle.groupbattle.common.valid_session_exist");
             player.sendMessage(message.formatted(Formatting.RED));
 
@@ -84,7 +87,6 @@ public class GroupBattle {
 
         } catch (FileNotFoundException e) {
             ServerPlayerEntity player = context.getSource().getPlayer();
-
             MutableText message = Text.translatable("command.cobblemontrainerbattle.common.resource.group_not_found");
             player.sendMessage(message.formatted(Formatting.RED));
 
@@ -92,7 +94,6 @@ public class GroupBattle {
 
         } catch (RematchNotAllowedException e) {
             ServerPlayerEntity player = context.getSource().getPlayer();
-
             MutableText message = Text.translatable("command.cobblemontrainerbattle.condition.is_rematch_allowed_after_victory.groupbattle");
             player.sendMessage(message.formatted(Formatting.RED));
 

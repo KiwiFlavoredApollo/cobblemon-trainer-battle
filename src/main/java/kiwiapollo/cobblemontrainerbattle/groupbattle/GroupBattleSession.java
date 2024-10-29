@@ -23,7 +23,6 @@ import java.util.List;
 public class GroupBattleSession implements Session {
     private final ServerPlayerEntity player;
     private final List<Identifier> trainersToDefeat;
-    private final BattleCondition condition;
     private final BattleResultHandler battleResultHandler;
     private final BattleParticipantFactory battleParticipantFactory;
 
@@ -34,13 +33,11 @@ public class GroupBattleSession implements Session {
     public GroupBattleSession(
             ServerPlayerEntity player,
             List<Identifier> trainersToDefeat,
-            BattleCondition condition,
             BattleResultHandler battleResultHandler,
             BattleParticipantFactory battleParticipantFactory
     ) {
         this.player = player;
         this.trainersToDefeat = trainersToDefeat;
-        this.condition = condition;
         this.battleResultHandler = battleResultHandler;
         this.battleParticipantFactory = battleParticipantFactory;
 
@@ -57,7 +54,7 @@ public class GroupBattleSession implements Session {
             PlayerBattleParticipant playerBattleParticipant = battleParticipantFactory.createPlayer(player);
 
             Identifier trainer = trainersToDefeat.get(defeatedTrainersCount);
-            TrainerBattleParticipant trainerBattleParticipant = battleParticipantFactory.createTrainer(trainer, player, condition);
+            TrainerBattleParticipant trainerBattleParticipant = battleParticipantFactory.createTrainer(trainer, player);
 
             BattleResultHandler battleResultHandler = new ParameterizedBattleResultHandler(this::onBattleVictory, this::onBattleDefeat);
 

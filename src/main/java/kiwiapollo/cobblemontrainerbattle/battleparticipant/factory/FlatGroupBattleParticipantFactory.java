@@ -10,9 +10,11 @@ import net.minecraft.util.Identifier;
 
 public class FlatGroupBattleParticipantFactory implements BattleParticipantFactory {
     private final int level;
+    private final BattleCondition condition;
 
-    public FlatGroupBattleParticipantFactory(int level) {
+    public FlatGroupBattleParticipantFactory(int level, BattleCondition condition) {
         this.level = level;
+        this.condition = condition;
     }
 
     @Override
@@ -21,7 +23,29 @@ public class FlatGroupBattleParticipantFactory implements BattleParticipantFacto
     }
 
     @Override
-    public TrainerBattleParticipant createTrainer(Identifier trainer, ServerPlayerEntity player, BattleCondition condition) {
+    public TrainerBattleParticipant createTrainer(Identifier trainer, ServerPlayerEntity player) {
         return new FlatGroupBattleTrainer(trainer, player, condition, level);
+    }
+
+    public static class Builder implements GroupBattleParticipantFactoryBuilder {
+        private final int level;
+
+        private BattleCondition condition;
+
+        public Builder(int level) {
+            this.level = level;
+            this.condition = new BattleCondition();
+        }
+
+        @Override
+        public GroupBattleParticipantFactoryBuilder addCondition(BattleCondition condition) {
+            this.condition = condition;
+            return this;
+        }
+
+        @Override
+        public BattleParticipantFactory build() {
+            return new FlatGroupBattleParticipantFactory(level, condition);
+        }
     }
 }
