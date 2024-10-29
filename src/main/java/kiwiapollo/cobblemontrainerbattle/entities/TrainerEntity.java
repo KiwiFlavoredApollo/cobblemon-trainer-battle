@@ -1,12 +1,12 @@
 package kiwiapollo.cobblemontrainerbattle.entities;
 
 import com.cobblemon.mod.common.Cobblemon;
+import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.NormalBattlePlayer;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.EntityBackedTrainer;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.TrainerBattleParticipant;
-import kiwiapollo.cobblemontrainerbattle.parser.PlayerHistory;
 import kiwiapollo.cobblemontrainerbattle.parser.PlayerHistoryRegistry;
 import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistries;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
@@ -188,22 +188,61 @@ public class TrainerEntity extends PathAwareEntity {
         super.onDeath(damageSource);
     }
 
+    @Override
+    protected void dropLoot(DamageSource damageSource, boolean causedByPlayer) {
+        LootContextParameterSet.Builder builder = (new LootContextParameterSet.Builder((ServerWorld)this.getWorld()))
+                .add(LootContextParameters.THIS_ENTITY, this)
+                .add(LootContextParameters.ORIGIN, this.getPos())
+                .add(LootContextParameters.DAMAGE_SOURCE, damageSource)
+                .addOptional(LootContextParameters.KILLER_ENTITY, damageSource.getAttacker())
+                .addOptional(LootContextParameters.DIRECT_KILLER_ENTITY, damageSource.getSource());
+
+        if (causedByPlayer && this.attackingPlayer != null) {
+            builder = builder.add(LootContextParameters.LAST_DAMAGE_PLAYER, this.attackingPlayer).luck(this.attackingPlayer.getLuck());
+        }
+
+        LootContextParameterSet lootContextParameterSet = builder.build(LootContextTypes.ENTITY);
+        getTrainerLootTable().generateLoot(lootContextParameterSet, this.getLootTableSeed(), this::dropStack);
+    }
+
+    private LootTable getTrainerLootTable() {
+        try {
+            return getCustomLootTable();
+
+        } catch (IllegalStateException e) {
+            return getDefaultLootTable();
+        }
+    }
+
+    private LootTable getCustomLootTable() throws IllegalStateException {
+        Identifier custom = Identifier.of(CobblemonTrainerBattle.NAMESPACE, String.format("trainers/%s", trainer.getPath()));
+        LootTable lootTable = this.getWorld().getServer().getLootManager().getLootTable(custom);
+
+        if (lootTable.equals(LootTable.EMPTY)) {
+            throw new IllegalStateException();
+        }
+
+        return lootTable;
+    }
+
+    private LootTable getDefaultLootTable() {
+        Identifier defaults = Identifier.of(CobblemonTrainerBattle.NAMESPACE, "trainers/defaults");
+        return this.getWorld().getServer().getLootManager().getLootTable(defaults);
+    }
+
     public void onDefeat() {
         dropDefeatLoot();
         discard();
     }
 
     private void dropDefeatLoot() {
-        Identifier identifier = this.getLootTable();
-        LootTable lootTable = this.getWorld().getServer().getLootManager().getLootTable(identifier);
-
         LootContextParameterSet.Builder builder = (new LootContextParameterSet.Builder((ServerWorld)this.getWorld()))
                 .add(LootContextParameters.THIS_ENTITY, this)
                 .add(LootContextParameters.ORIGIN, this.getPos())
                 .add(LootContextParameters.DAMAGE_SOURCE, getWorld().getDamageSources().generic());
 
         LootContextParameterSet lootContextParameterSet = builder.build(LootContextTypes.ENTITY);
-        lootTable.generateLoot(lootContextParameterSet, this.getLootTableSeed(), this::dropStack);
+        getTrainerLootTable().generateLoot(lootContextParameterSet, this.getLootTableSeed(), this::dropStack);
     }
 
     public void setTrainer(Identifier trainer) {
