@@ -37,26 +37,38 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
         super(CobblemonTrainerBattle.MOD_ID);
 
         this.requires(new PlayerCommandPredicate(String.format("%s.%s", getLiteral(), "reload"), String.format("%s.%s", getLiteral(), "export")))
-                .then(LiteralArgumentBuilder.<ServerCommandSource>literal("reload")
-                        .requires(new PlayerCommandPredicate(String.format("%s.%s", getLiteral(), "reload")))
-                        .executes(this::reloadConfig))
-                .then(LiteralArgumentBuilder.<ServerCommandSource>literal("export")
-                        .requires(new PlayerCommandPredicate(String.format("%s.%s", getLiteral(), "export")))
-                        .then(RequiredArgumentBuilder.<ServerCommandSource, EntitySelector>
-                                        argument("player", EntityArgumentType.player())
-                                .executes(this::exportPlayer)))
-                .then(LiteralArgumentBuilder.<ServerCommandSource>literal("exportflat")
-                        .requires(new PlayerCommandPredicate(String.format("%s.%s", getLiteral(), "export")))
-                        .then(RequiredArgumentBuilder.<ServerCommandSource, EntitySelector>
-                                        argument("player", EntityArgumentType.player())
-                                .then(RequiredArgumentBuilder.<ServerCommandSource, Integer>
-                                                argument("level", IntegerArgumentType.integer(20, 100))
-                                        .executes(this::exportPlayerWithFlatLevel))))
-                .then(LiteralArgumentBuilder.<ServerCommandSource>literal("exportrelative")
-                        .requires(new PlayerCommandPredicate(String.format("%s.%s", getLiteral(), "export")))
-                        .then(RequiredArgumentBuilder.<ServerCommandSource, EntitySelector>
-                                        argument("player", EntityArgumentType.player())
-                                .executes(this::exportPlayerWithRelativeLevel)));
+                .then(getReloadCommand())
+                .then(getExportCommand())
+                .then(getExportFlatCommand())
+                .then(getExportRelativeCommand());
+    }
+
+    private LiteralArgumentBuilder<ServerCommandSource> getReloadCommand() {
+        return LiteralArgumentBuilder.<ServerCommandSource>literal("reload")
+                .requires(new PlayerCommandPredicate(String.format("%s.%s", getLiteral(), "reload")))
+                .executes(this::reloadConfig);
+    }
+
+    private LiteralArgumentBuilder<ServerCommandSource> getExportCommand() {
+        return LiteralArgumentBuilder.<ServerCommandSource>literal("export")
+                .requires(new PlayerCommandPredicate(String.format("%s.%s", getLiteral(), "export")))
+                .then(RequiredArgumentBuilder.<ServerCommandSource, EntitySelector>argument("player", EntityArgumentType.player())
+                        .executes(this::exportPlayer));
+    }
+
+    private LiteralArgumentBuilder<ServerCommandSource> getExportFlatCommand() {
+        return LiteralArgumentBuilder.<ServerCommandSource>literal("exportflat")
+                .requires(new PlayerCommandPredicate(String.format("%s.%s", getLiteral(), "export")))
+                .then(RequiredArgumentBuilder.<ServerCommandSource, EntitySelector>argument("player", EntityArgumentType.player())
+                        .then(RequiredArgumentBuilder.<ServerCommandSource, Integer>argument("level", IntegerArgumentType.integer(20, 100))
+                                .executes(this::exportPlayerWithFlatLevel)));
+    }
+
+    private LiteralArgumentBuilder<ServerCommandSource> getExportRelativeCommand() {
+        return LiteralArgumentBuilder.<ServerCommandSource>literal("exportrelative")
+                .requires(new PlayerCommandPredicate(String.format("%s.%s", getLiteral(), "export")))
+                .then(RequiredArgumentBuilder.<ServerCommandSource, EntitySelector>argument("player", EntityArgumentType.player())
+                        .executes(this::exportPlayerWithRelativeLevel));
     }
 
     private int reloadConfig(CommandContext<ServerCommandSource> context) {
