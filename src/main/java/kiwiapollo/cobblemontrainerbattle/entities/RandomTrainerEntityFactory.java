@@ -25,7 +25,7 @@ public class RandomTrainerEntityFactory implements EntityType.EntityFactory<Trai
         try {
             return new RandomTrainerFactory(this::isSatisfyAll).create();
         } catch (UnsupportedOperationException | IndexOutOfBoundsException e) {
-            throw new IllegalStateException();
+            return null;
         }
     }
 
