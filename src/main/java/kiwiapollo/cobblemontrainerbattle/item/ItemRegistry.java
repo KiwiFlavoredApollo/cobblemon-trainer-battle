@@ -41,6 +41,13 @@ public class ItemRegistry {
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_tate_and_liza_token"), LEADER_TATE_AND_LIZA_TOKEN);
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_juan_token"), LEADER_JUAN_TOKEN);
 
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "elite_sydney_token"), ELITE_SYDNEY_TOKEN);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "elite_phoebe_token"), ELITE_PHOEBE_TOKEN);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "elite_glacia_token"), ELITE_GLACIA_TOKEN);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "elite_drake_token"), ELITE_DRAKE_TOKEN);
+
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "champion_wallace_token"), CHAMPION_WALLACE_TOKEN);
+
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_roxanne_ticket"), LEADER_ROXANNE_TICKET);
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_brawly_ticket"), LEADER_BRAWLY_TICKET);
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_wattson_ticket"), LEADER_WATTSON_TICKET);
@@ -49,7 +56,14 @@ public class ItemRegistry {
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_winona_ticket"), LEADER_WINONA_TICKET);
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_tate_and_liza_ticket"), LEADER_TATE_AND_LIZA_TICKET);
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_juan_ticket"), LEADER_JUAN_TICKET);
-        
+
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "elite_sydney_ticket"), ELITE_SYDNEY_TICKET);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "elite_phoebe_ticket"), ELITE_PHOEBE_TICKET);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "elite_glacia_ticket"), ELITE_GLACIA_TICKET);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "elite_drake_ticket"), ELITE_DRAKE_TICKET);
+
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "champion_wallace_ticket"), CHAMPION_WALLACE_TICKET);
+
         Registry.register(Registries.ITEM_GROUP, ITEM_GROUP_KEY, ITEM_GROUP);
 
         ItemGroupEvents.modifyEntriesEvent(ITEM_GROUP_KEY).register(itemGroup -> {
@@ -64,7 +78,7 @@ public class ItemRegistry {
 
 //            itemGroup.add(LEADER_BROCK_TOKEN);
 //            itemGroup.add(LEADER_BROCK_TICKET);
-            
+
             itemGroup.add(LEADER_ROXANNE_TOKEN);
             itemGroup.add(LEADER_BRAWLY_TOKEN);
             itemGroup.add(LEADER_WATTSON_TOKEN);
@@ -74,6 +88,13 @@ public class ItemRegistry {
             itemGroup.add(LEADER_TATE_AND_LIZA_TOKEN);
             itemGroup.add(LEADER_JUAN_TOKEN);
 
+            itemGroup.add(ELITE_SYDNEY_TOKEN);
+            itemGroup.add(ELITE_PHOEBE_TOKEN);
+            itemGroup.add(ELITE_GLACIA_TOKEN);
+            itemGroup.add(ELITE_DRAKE_TOKEN);
+
+            itemGroup.add(CHAMPION_WALLACE_TOKEN);
+
             itemGroup.add(LEADER_ROXANNE_TICKET);
             itemGroup.add(LEADER_BRAWLY_TICKET);
             itemGroup.add(LEADER_WATTSON_TICKET);
@@ -82,6 +103,13 @@ public class ItemRegistry {
             itemGroup.add(LEADER_WINONA_TICKET);
             itemGroup.add(LEADER_TATE_AND_LIZA_TICKET);
             itemGroup.add(LEADER_JUAN_TICKET);
+
+            itemGroup.add(ELITE_SYDNEY_TICKET);
+            itemGroup.add(ELITE_PHOEBE_TICKET);
+            itemGroup.add(ELITE_GLACIA_TICKET);
+            itemGroup.add(ELITE_DRAKE_TICKET);
+
+            itemGroup.add(CHAMPION_WALLACE_TICKET);
         });
     }
 
@@ -109,6 +137,13 @@ public class ItemRegistry {
     public static final Item LEADER_TATE_AND_LIZA_TOKEN = new Item(new Item.Settings());
     public static final Item LEADER_JUAN_TOKEN = new Item(new Item.Settings());
 
+    public static final Item ELITE_SYDNEY_TOKEN = new Item(new Item.Settings());
+    public static final Item ELITE_PHOEBE_TOKEN = new Item(new Item.Settings());
+    public static final Item ELITE_GLACIA_TOKEN = new Item(new Item.Settings());
+    public static final Item ELITE_DRAKE_TOKEN = new Item(new Item.Settings());
+
+    public static final Item CHAMPION_WALLACE_TOKEN = new Item(new Item.Settings());
+
     public static final Item LEADER_ROXANNE_TICKET = new TrainerTicket(new Item.Settings(), InclementEmeraldTrainerEntityPresetRegistry.LEADER_ROXANNE);
     public static final Item LEADER_BRAWLY_TICKET = new TrainerTicket(new Item.Settings(), InclementEmeraldTrainerEntityPresetRegistry.LEADER_BRAWLY);
     public static final Item LEADER_WATTSON_TICKET = new TrainerTicket(new Item.Settings(), InclementEmeraldTrainerEntityPresetRegistry.LEADER_WATTSON);
@@ -117,4 +152,11 @@ public class ItemRegistry {
     public static final Item LEADER_WINONA_TICKET = new TrainerTicket(new Item.Settings(), InclementEmeraldTrainerEntityPresetRegistry.LEADER_WINONA);
     public static final Item LEADER_TATE_AND_LIZA_TICKET = new TrainerTicket(new Item.Settings(), InclementEmeraldTrainerEntityPresetRegistry.LEADER_TATE_AND_LIZA);
     public static final Item LEADER_JUAN_TICKET = new TrainerTicket(new Item.Settings(), InclementEmeraldTrainerEntityPresetRegistry.LEADER_JUAN);
+
+    public static final Item ELITE_SYDNEY_TICKET = new TrainerTicket(new Item.Settings(), InclementEmeraldTrainerEntityPresetRegistry.ELITE_SYDNEY);
+    public static final Item ELITE_PHOEBE_TICKET = new TrainerTicket(new Item.Settings(), InclementEmeraldTrainerEntityPresetRegistry.ELITE_PHOEBE);
+    public static final Item ELITE_GLACIA_TICKET = new TrainerTicket(new Item.Settings(), InclementEmeraldTrainerEntityPresetRegistry.ELITE_GLACIA);
+    public static final Item ELITE_DRAKE_TICKET = new TrainerTicket(new Item.Settings(), InclementEmeraldTrainerEntityPresetRegistry.ELITE_DRAKE);
+
+    public static final Item CHAMPION_WALLACE_TICKET = new TrainerTicket(new Item.Settings(), InclementEmeraldTrainerEntityPresetRegistry.CHAMPION_WALLACE);
 }
