@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "cobblemontrainerbattle:elite_sidney_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:elite_phoebe_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:elite_glacia_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:elite_drake_token"
+    },
+    {
+      "item": "minecraft:nether_star"
+    }
+  ],
+  "result": {
+    "item": "cobblemontrainerbattle:champion_wallace_ticket"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "cobblemontrainerbattle:leader_wattson_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:leader_flannery_token"
+    },
+    {
+      "item": "cobblemon:reaper_cloth"
+    }
+  ],
+  "result": {
+    "item": "cobblemontrainerbattle:elite_phoebe_ticket"
+  }
+}

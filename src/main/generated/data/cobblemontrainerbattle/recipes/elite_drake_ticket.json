@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "cobblemontrainerbattle:leader_tate_and_liza_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:leader_juan_token"
+    },
+    {
+      "item": "cobblemon:dragon_scale"
+    }
+  ],
+  "result": {
+    "item": "cobblemontrainerbattle:elite_drake_ticket"
+  }
+}

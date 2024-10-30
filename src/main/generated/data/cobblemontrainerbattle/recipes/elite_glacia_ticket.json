@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "cobblemontrainerbattle:leader_norman_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:leader_winona_token"
+    },
+    {
+      "item": "cobblemon:never_melt_ice"
+    }
+  ],
+  "result": {
+    "item": "cobblemontrainerbattle:elite_glacia_ticket"
+  }
+}

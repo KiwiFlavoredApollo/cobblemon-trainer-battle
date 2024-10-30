@@ -159,6 +159,50 @@ public class DataGenerator implements DataGeneratorEntrypoint {
                     .criterion(FabricRecipeProvider.hasItem(CobblemonItems.WATER_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.WATER_GEM))
                     .offerTo(exporter);
 
+            ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ItemRegistry.ELITE_SIDNEY_TICKET)
+                    .input(ItemRegistry.LEADER_ROXANNE_TOKEN)
+                    .input(ItemRegistry.LEADER_BRAWLY_TOKEN)
+                    .input(CobblemonItems.BLACK_GLASSES)
+                    .criterion(FabricRecipeProvider.hasItem(ItemRegistry.LEADER_ROXANNE_TOKEN), FabricRecipeProvider.conditionsFromItem(ItemRegistry.LEADER_ROXANNE_TOKEN))
+                    .criterion(FabricRecipeProvider.hasItem(ItemRegistry.LEADER_BRAWLY_TOKEN), FabricRecipeProvider.conditionsFromItem(ItemRegistry.LEADER_BRAWLY_TOKEN))
+                    .offerTo(exporter);
+
+            ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ItemRegistry.ELITE_PHOEBE_TICKET)
+                    .input(ItemRegistry.LEADER_WATTSON_TOKEN)
+                    .input(ItemRegistry.LEADER_FLANNERY_TOKEN)
+                    .input(CobblemonItems.REAPER_CLOTH)
+                    .criterion(FabricRecipeProvider.hasItem(ItemRegistry.LEADER_WATTSON_TOKEN), FabricRecipeProvider.conditionsFromItem(ItemRegistry.LEADER_WATTSON_TOKEN))
+                    .criterion(FabricRecipeProvider.hasItem(ItemRegistry.LEADER_FLANNERY_TOKEN), FabricRecipeProvider.conditionsFromItem(ItemRegistry.LEADER_FLANNERY_TOKEN))
+                    .offerTo(exporter);
+
+            ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ItemRegistry.ELITE_GLACIA_TICKET)
+                    .input(ItemRegistry.LEADER_NORMAN_TOKEN)
+                    .input(ItemRegistry.LEADER_WINONA_TOKEN)
+                    .input(CobblemonItems.NEVER_MELT_ICE)
+                    .criterion(FabricRecipeProvider.hasItem(ItemRegistry.LEADER_NORMAN_TOKEN), FabricRecipeProvider.conditionsFromItem(ItemRegistry.LEADER_NORMAN_TOKEN))
+                    .criterion(FabricRecipeProvider.hasItem(ItemRegistry.LEADER_WINONA_TOKEN), FabricRecipeProvider.conditionsFromItem(ItemRegistry.LEADER_WINONA_TOKEN))
+                    .offerTo(exporter);
+
+            ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ItemRegistry.ELITE_DRAKE_TICKET)
+                    .input(ItemRegistry.LEADER_TATE_AND_LIZA_TOKEN)
+                    .input(ItemRegistry.LEADER_JUAN_TOKEN)
+                    .input(CobblemonItems.DRAGON_SCALE)
+                    .criterion(FabricRecipeProvider.hasItem(ItemRegistry.LEADER_TATE_AND_LIZA_TOKEN), FabricRecipeProvider.conditionsFromItem(ItemRegistry.LEADER_TATE_AND_LIZA_TOKEN))
+                    .criterion(FabricRecipeProvider.hasItem(ItemRegistry.LEADER_JUAN_TOKEN), FabricRecipeProvider.conditionsFromItem(ItemRegistry.LEADER_JUAN_TOKEN))
+                    .offerTo(exporter);
+
+            ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ItemRegistry.CHAMPION_WALLACE_TICKET)
+                    .input(ItemRegistry.ELITE_SIDNEY_TOKEN)
+                    .input(ItemRegistry.ELITE_PHOEBE_TOKEN)
+                    .input(ItemRegistry.ELITE_GLACIA_TOKEN)
+                    .input(ItemRegistry.ELITE_DRAKE_TOKEN)
+                    .input(Items.NETHER_STAR)
+                    .criterion(FabricRecipeProvider.hasItem(ItemRegistry.ELITE_SIDNEY_TOKEN), FabricRecipeProvider.conditionsFromItem(ItemRegistry.ELITE_SIDNEY_TOKEN))
+                    .criterion(FabricRecipeProvider.hasItem(ItemRegistry.ELITE_PHOEBE_TOKEN), FabricRecipeProvider.conditionsFromItem(ItemRegistry.ELITE_PHOEBE_TOKEN))
+                    .criterion(FabricRecipeProvider.hasItem(ItemRegistry.ELITE_GLACIA_TOKEN), FabricRecipeProvider.conditionsFromItem(ItemRegistry.ELITE_GLACIA_TOKEN))
+                    .criterion(FabricRecipeProvider.hasItem(ItemRegistry.ELITE_DRAKE_TOKEN), FabricRecipeProvider.conditionsFromItem(ItemRegistry.ELITE_DRAKE_TOKEN))
+                    .offerTo(exporter);
+
             ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ItemRegistry.BLUE_VS_SEEKER)
                     .pattern("IRI")
                     .pattern("IBI")
