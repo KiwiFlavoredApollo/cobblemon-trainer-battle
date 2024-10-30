@@ -136,10 +136,10 @@ datapacks/
                     ├── radicalred/
                     ├── inclementemerald/
                     ├── smogon/
-                    └── custom/
-                        ├── custom_trainer_1.json
-                        └── custom_trainer_2.json
-
+                    ├── custom/
+                    │   ├── custom_trainer_1.json
+                    │   └── custom_trainer_2.json
+                    └── defaults.json
 ```
 
 ### Custom Trainer Team
