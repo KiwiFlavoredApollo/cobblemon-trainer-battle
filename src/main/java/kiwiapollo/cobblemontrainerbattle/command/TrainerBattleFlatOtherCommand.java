@@ -28,7 +28,7 @@ public class TrainerBattleFlatOtherCommand extends LiteralArgumentBuilder<Server
                 String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), "random")
         );
 
-        this.requires(new PlayerCommandPredicate(permissions.toArray(String[]::new)))
+        this.requires(new MultiCommandSourcePredicate(permissions.toArray(String[]::new)))
                 .then(getSelectedTrainerBattleCommand())
                 .then(getRandomTrainerBattleCommand());
     }
@@ -36,7 +36,7 @@ public class TrainerBattleFlatOtherCommand extends LiteralArgumentBuilder<Server
     private ArgumentBuilder<ServerCommandSource, ?> getSelectedTrainerBattleCommand() {
         String permission = String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), "trainer");
         return RequiredArgumentBuilder.<ServerCommandSource, EntitySelector>argument("player", EntityArgumentType.player())
-                .requires(new PlayerCommandPredicate(permission))
+                .requires(new MultiCommandSourcePredicate(permission))
                 .then(RequiredArgumentBuilder.<ServerCommandSource, String>argument("trainer", StringArgumentType.greedyString())
                         .suggests((context, builder) -> {
                             ProfileRegistries.trainer.keySet().stream()
@@ -50,9 +50,8 @@ public class TrainerBattleFlatOtherCommand extends LiteralArgumentBuilder<Server
     private ArgumentBuilder<ServerCommandSource, ?> getRandomTrainerBattleCommand() {
         String permission = String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), "random");
         return RequiredArgumentBuilder.<ServerCommandSource, EntitySelector>argument("player", EntityArgumentType.player())
-                .requires(new PlayerCommandPredicate(permission))
+                .requires(new MultiCommandSourcePredicate(permission))
                 .then(LiteralArgumentBuilder.<ServerCommandSource>literal("random")
-                        .requires(new PlayerCommandPredicate(permission))
                         .executes(this::makePlayerStartBattleWithRandomTrainer));
     }
 

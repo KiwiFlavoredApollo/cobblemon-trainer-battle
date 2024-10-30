@@ -11,31 +11,37 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class PlayerCommandPredicate implements Predicate<ServerCommandSource> {
+public class PlayerCommandSourcePredicate implements Predicate<ServerCommandSource> {
     private static final int OP_LEVEL = 2;
     private final List<String> permissions;
 
-    public PlayerCommandPredicate(String... permissions) {
+    public PlayerCommandSourcePredicate(String... permissions) {
         this.permissions = Arrays.asList(permissions);
     }
 
     @Override
     public boolean test(ServerCommandSource source) {
         try {
+            assertPlayerCommandSource(source);
             assertLoadedLuckPerms();
             return isExistLuckPermsPermission(source);
 
-        } catch (AssertionError e) {
+        } catch (IllegalStateException e) {
+            return false;
+
+        } catch (ClassNotFoundException e) {
             return isExistOpPermission(source);
         }
     }
 
-    private void assertLoadedLuckPerms() throws AssertionError {
-        try {
-            Class.forName("net.luckperms.api.LuckPerms");
-        } catch (ClassNotFoundException e) {
-            throw new AssertionError();
+    private void assertPlayerCommandSource(ServerCommandSource source) throws IllegalStateException {
+        if (source.getPlayer() == null) {
+            throw new IllegalStateException();
         }
+    }
+
+    private void assertLoadedLuckPerms() throws ClassNotFoundException {
+        Class.forName("net.luckperms.api.LuckPerms");
     }
 
     protected boolean isExistLuckPermsPermission(ServerCommandSource source) {

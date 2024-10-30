@@ -15,7 +15,7 @@ public class GroupBattleCommand extends LiteralArgumentBuilder<ServerCommandSour
     public GroupBattleCommand() {
         super("groupbattle");
 
-        this.requires(new PlayerCommandPredicate(String.format("%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral())))
+        this.requires(new PlayerCommandSourcePredicate(String.format("%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral())))
                 .then(getStartSessionCommand())
                 .then(getStopSessionCommand())
                 .then(getStartBattleCommand());

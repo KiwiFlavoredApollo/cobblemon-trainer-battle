@@ -25,7 +25,7 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
                 String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), "random")
         );
 
-        this.requires(new PlayerCommandPredicate(permissions.toArray(String[]::new)))
+        this.requires(new PlayerCommandSourcePredicate(permissions.toArray(String[]::new)))
                 .then(getSelectedTrainerBattleCommand())
                 .then(getRandomTrainerBattleCommand());
     }
@@ -33,7 +33,7 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
     private ArgumentBuilder<ServerCommandSource, ?> getSelectedTrainerBattleCommand() {
         String permission = String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), "trainer");
         return RequiredArgumentBuilder.<ServerCommandSource, String>argument("trainer", StringArgumentType.greedyString())
-                .requires(new PlayerCommandPredicate(permission))
+                .requires(new PlayerCommandSourcePredicate(permission))
                 .suggests((context, builder) -> {
                     ProfileRegistries.trainer.keySet().stream()
                             .map(Identifier::toString)
@@ -46,7 +46,7 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
     private ArgumentBuilder<ServerCommandSource, ?> getRandomTrainerBattleCommand() {
         String permission = String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), "random");
         return LiteralArgumentBuilder.<ServerCommandSource>literal("random")
-                .requires(new PlayerCommandPredicate(permission))
+                .requires(new PlayerCommandSourcePredicate(permission))
                 .executes(this::startBattleWithRandomTrainer);
     }
 

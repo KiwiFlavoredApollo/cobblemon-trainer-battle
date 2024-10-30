@@ -36,7 +36,12 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
     public CobblemonTrainerBattleCommand() {
         super(CobblemonTrainerBattle.MOD_ID);
 
-        this.requires(new PlayerCommandPredicate(String.format("%s.%s", getLiteral(), "reload"), String.format("%s.%s", getLiteral(), "export")))
+        List<String> permissions = List.of(
+                String.format("%s.%s", getLiteral(), "reload"),
+                String.format("%s.%s", getLiteral(), "export")
+        );
+
+        this.requires(new MultiCommandSourcePredicate(permissions.toArray(String[]::new)))
                 .then(getReloadCommand())
                 .then(getExportCommand())
                 .then(getExportFlatCommand())
@@ -44,29 +49,33 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
     }
 
     private LiteralArgumentBuilder<ServerCommandSource> getReloadCommand() {
+        String permission = String.format("%s.%s", getLiteral(), "reload");
         return LiteralArgumentBuilder.<ServerCommandSource>literal("reload")
-                .requires(new PlayerCommandPredicate(String.format("%s.%s", getLiteral(), "reload")))
+                .requires(new MultiCommandSourcePredicate(permission))
                 .executes(this::reloadConfig);
     }
 
     private LiteralArgumentBuilder<ServerCommandSource> getExportCommand() {
+        String permission = String.format("%s.%s", getLiteral(), "export");
         return LiteralArgumentBuilder.<ServerCommandSource>literal("export")
-                .requires(new PlayerCommandPredicate(String.format("%s.%s", getLiteral(), "export")))
+                .requires(new MultiCommandSourcePredicate(permission))
                 .then(RequiredArgumentBuilder.<ServerCommandSource, EntitySelector>argument("player", EntityArgumentType.player())
                         .executes(this::exportPlayer));
     }
 
     private LiteralArgumentBuilder<ServerCommandSource> getExportFlatCommand() {
+        String permission = String.format("%s.%s", getLiteral(), "export");
         return LiteralArgumentBuilder.<ServerCommandSource>literal("exportflat")
-                .requires(new PlayerCommandPredicate(String.format("%s.%s", getLiteral(), "export")))
+                .requires(new MultiCommandSourcePredicate(permission))
                 .then(RequiredArgumentBuilder.<ServerCommandSource, EntitySelector>argument("player", EntityArgumentType.player())
                         .then(RequiredArgumentBuilder.<ServerCommandSource, Integer>argument("level", IntegerArgumentType.integer(20, 100))
                                 .executes(this::exportPlayerWithFlatLevel)));
     }
 
     private LiteralArgumentBuilder<ServerCommandSource> getExportRelativeCommand() {
+        String permission = String.format("%s.%s", getLiteral(), "export");
         return LiteralArgumentBuilder.<ServerCommandSource>literal("exportrelative")
-                .requires(new PlayerCommandPredicate(String.format("%s.%s", getLiteral(), "export")))
+                .requires(new MultiCommandSourcePredicate(permission))
                 .then(RequiredArgumentBuilder.<ServerCommandSource, EntitySelector>argument("player", EntityArgumentType.player())
                         .executes(this::exportPlayerWithRelativeLevel));
     }
