@@ -35,4 +35,26 @@ public class InclementEmeraldTrainerEntityPresetRegistry {
             Identifier.of("trainer", "entity/leader_juan"),
             Identifier.of("minecraft", "textures/entity/player/slim/alex.png")
     );
+
+    public static final TrainerEntityPreset ELITE_SYDNEY = new TrainerEntityPreset(
+            Identifier.of("trainer", "entity/elite_sydney"),
+            Identifier.of("minecraft", "textures/entity/player/slim/alex.png")
+    );
+    public static final TrainerEntityPreset ELITE_PHOEBE = new TrainerEntityPreset(
+            Identifier.of("trainer", "entity/elite_phoebe"),
+            Identifier.of("minecraft", "textures/entity/player/slim/alex.png")
+    );
+    public static final TrainerEntityPreset ELITE_GLACIA = new TrainerEntityPreset(
+            Identifier.of("trainer", "entity/elite_glacia"),
+            Identifier.of("minecraft", "textures/entity/player/slim/alex.png")
+    );
+    public static final TrainerEntityPreset ELITE_DRAKE = new TrainerEntityPreset(
+            Identifier.of("trainer", "entity/elite_drake"),
+            Identifier.of("minecraft", "textures/entity/player/slim/alex.png")
+    );
+
+    public static final TrainerEntityPreset CHAMPION_WALLACE = new TrainerEntityPreset(
+            Identifier.of("trainer", "entity/champion_wallace"),
+            Identifier.of("minecraft", "textures/entity/player/slim/alex.png")
+    );
 }
