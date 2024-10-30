@@ -14,7 +14,7 @@
     "description": {
       "translate": "advancement.cobblemontrainerbattle.defeat_elite_glacia.description"
     },
-    "frame": "task",
+    "frame": "challenge",
     "hidden": false,
     "icon": {
       "item": "cobblemontrainerbattle:elite_glacia_token"

@@ -11,7 +11,7 @@ import net.minecraft.util.Identifier;
 import java.util.List;
 
 public class DefeatTrainerAdvancementFactory implements AdvancementFactory {
-    private static final Advancement FIRST = Advancement.Builder.createUntelemetered()
+    private static final Advancement DEFEAT_FIRST = Advancement.Builder.createUntelemetered()
             .parent(DataGenerator.AdvancementProvider.ROOT)
             .criterion("defeat_first_trainer", new DefeatTrainerCriterion.Conditions(1))
             .display(
@@ -26,8 +26,8 @@ public class DefeatTrainerAdvancementFactory implements AdvancementFactory {
             )
             .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_first_trainer"));
 
-    private static final Advancement TENTH = Advancement.Builder.createUntelemetered()
-            .parent(FIRST)
+    private static final Advancement DEFEAT_TENTH = Advancement.Builder.createUntelemetered()
+            .parent(DEFEAT_FIRST)
             .criterion("defeat_tenth_trainer", new DefeatTrainerCriterion.Conditions(10))
             .display(
                     CobblemonItems.GREAT_BALL,
@@ -48,8 +48,8 @@ public class DefeatTrainerAdvancementFactory implements AdvancementFactory {
     @Override
     public List<Advancement> create() {
         return List.of(
-                FIRST,
-                TENTH
+                DEFEAT_FIRST,
+                DEFEAT_TENTH
         );
     }
 }

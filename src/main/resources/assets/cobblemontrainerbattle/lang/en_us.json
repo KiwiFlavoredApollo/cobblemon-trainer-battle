@@ -78,6 +78,9 @@
   "advancement.cobblemontrainerbattle.defeat_champion_wallace.title": "We Meet at Last",
   "advancement.cobblemontrainerbattle.defeat_champion_wallace.description": "Defeat Wallace",
 
+  "advancement.cobblemontrainerbattle.kill_champion_wallace.title": "If I Can't Have it, No One Can",
+  "advancement.cobblemontrainerbattle.kill_champion_wallace.description": "Kill Wallace",
+
   "command.cobblemontrainerbattle.trainerbattle.success": "A battle has begun against %s!",
   "command.cobblemontrainerbattle.trainerbattle.empty_player_party": "You have no Pokémon in your party.",
   "command.cobblemontrainerbattle.trainerbattle.fainted_player_party": "All of your Pokémon have fainted.",

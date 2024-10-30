@@ -11,7 +11,7 @@ import net.minecraft.util.Identifier;
 import java.util.List;
 
 public class KillTrainerAdvancementFactory implements AdvancementFactory {
-    private static final Advancement FIRST = Advancement.Builder.createUntelemetered()
+    private static final Advancement KILL_FIRST = Advancement.Builder.createUntelemetered()
             .parent(DataGenerator.AdvancementProvider.ROOT)
             .criterion("kill_first_trainer", new KillTrainerCriterion.Conditions(1))
             .display(
@@ -26,8 +26,8 @@ public class KillTrainerAdvancementFactory implements AdvancementFactory {
             )
             .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "kill_first_trainer"));
 
-    private static final Advancement TENTH = Advancement.Builder.createUntelemetered()
-            .parent(FIRST)
+    private static final Advancement KILL_TENTH = Advancement.Builder.createUntelemetered()
+            .parent(KILL_FIRST)
             .criterion("kill_tenth_trainer", new KillTrainerCriterion.Conditions(10))
             .display(
                     Items.IRON_SWORD,
@@ -48,8 +48,8 @@ public class KillTrainerAdvancementFactory implements AdvancementFactory {
     @Override
     public List<Advancement> create() {
         return List.of(
-                FIRST,
-                TENTH
+                KILL_FIRST,
+                KILL_TENTH
         );
     }
 }

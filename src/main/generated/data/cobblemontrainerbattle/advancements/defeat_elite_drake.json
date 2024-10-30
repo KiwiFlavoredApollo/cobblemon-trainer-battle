@@ -14,7 +14,7 @@
     "description": {
       "translate": "advancement.cobblemontrainerbattle.defeat_elite_drake.description"
     },
-    "frame": "task",
+    "frame": "challenge",
     "hidden": false,
     "icon": {
       "item": "cobblemontrainerbattle:elite_drake_token"
