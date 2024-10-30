@@ -1,0 +1,33 @@
+{
+  "parent": "cobblemontrainerbattle:defeat_elite_phoebe",
+  "criteria": {
+    "defeat_elite_glacia": {
+      "conditions": {
+        "trainer": "trainer:entity/elite_glacia"
+      },
+      "trigger": "cobblemontrainerbattle:defeat_trainer"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_elite_glacia.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "cobblemontrainerbattle:elite_glacia_token"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_elite_glacia.title"
+    }
+  },
+  "requirements": [
+    [
+      "defeat_elite_glacia"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

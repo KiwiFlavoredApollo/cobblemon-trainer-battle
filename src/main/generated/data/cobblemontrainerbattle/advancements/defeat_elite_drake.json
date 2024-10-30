@@ -1,0 +1,33 @@
+{
+  "parent": "cobblemontrainerbattle:defeat_elite_glacia",
+  "criteria": {
+    "defeat_elite_drake": {
+      "conditions": {
+        "trainer": "trainer:entity/elite_drake"
+      },
+      "trigger": "cobblemontrainerbattle:defeat_trainer"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_elite_drake.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "cobblemontrainerbattle:elite_drake_token"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_elite_drake.title"
+    }
+  },
+  "requirements": [
+    [
+      "defeat_elite_drake"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

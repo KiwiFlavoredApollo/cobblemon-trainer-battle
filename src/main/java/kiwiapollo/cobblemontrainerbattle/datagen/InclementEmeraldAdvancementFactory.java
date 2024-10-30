@@ -132,6 +132,81 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
             )
             .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_leader_juan"));
 
+    private static final Advancement SIDNEY = Advancement.Builder.createUntelemetered()
+            .parent(DataGenerator.AdvancementProvider.ROOT)
+            .criterion("defeat_elite_sidney", new DefeatTrainerCriterion.Conditions(InclementEmeraldTrainerEntityPresetRegistry.ELITE_SIDNEY.trainer()))
+            .display(
+                    ItemRegistry.ELITE_SIDNEY_TOKEN,
+                    Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_sidney.title"),
+                    Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_sidney.description"),
+                    DataGenerator.AdvancementProvider.BACKGROUND,
+                    AdvancementFrame.TASK,
+                    true,
+                    true,
+                    false
+            )
+            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_elite_sidney"));
+
+    private static final Advancement PHOEBE = Advancement.Builder.createUntelemetered()
+            .parent(SIDNEY)
+            .criterion("defeat_elite_phoebe", new DefeatTrainerCriterion.Conditions(InclementEmeraldTrainerEntityPresetRegistry.ELITE_PHOEBE.trainer()))
+            .display(
+                    ItemRegistry.ELITE_PHOEBE_TOKEN,
+                    Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_phoebe.title"),
+                    Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_phoebe.description"),
+                    DataGenerator.AdvancementProvider.BACKGROUND,
+                    AdvancementFrame.TASK,
+                    true,
+                    true,
+                    false
+            )
+            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_elite_phoebe"));
+
+    private static final Advancement GLACIA = Advancement.Builder.createUntelemetered()
+            .parent(PHOEBE)
+            .criterion("defeat_elite_glacia", new DefeatTrainerCriterion.Conditions(InclementEmeraldTrainerEntityPresetRegistry.ELITE_GLACIA.trainer()))
+            .display(
+                    ItemRegistry.ELITE_GLACIA_TOKEN,
+                    Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_glacia.title"),
+                    Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_glacia.description"),
+                    DataGenerator.AdvancementProvider.BACKGROUND,
+                    AdvancementFrame.TASK,
+                    true,
+                    true,
+                    false
+            )
+            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_elite_glacia"));
+
+    private static final Advancement DRAKE = Advancement.Builder.createUntelemetered()
+            .parent(GLACIA)
+            .criterion("defeat_elite_drake", new DefeatTrainerCriterion.Conditions(InclementEmeraldTrainerEntityPresetRegistry.ELITE_DRAKE.trainer()))
+            .display(
+                    ItemRegistry.ELITE_DRAKE_TOKEN,
+                    Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_drake.title"),
+                    Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_drake.description"),
+                    DataGenerator.AdvancementProvider.BACKGROUND,
+                    AdvancementFrame.TASK,
+                    true,
+                    true,
+                    false
+            )
+            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_elite_drake"));
+
+    private static final Advancement WALLACE = Advancement.Builder.createUntelemetered()
+            .parent(DRAKE)
+            .criterion("defeat_champion_wallace", new DefeatTrainerCriterion.Conditions(InclementEmeraldTrainerEntityPresetRegistry.CHAMPION_WALLACE.trainer()))
+            .display(
+                    ItemRegistry.CHAMPION_WALLACE_TOKEN,
+                    Text.translatable("advancement.cobblemontrainerbattle.defeat_champion_wallace.title"),
+                    Text.translatable("advancement.cobblemontrainerbattle.defeat_champion_wallace.description"),
+                    DataGenerator.AdvancementProvider.BACKGROUND,
+                    AdvancementFrame.TASK,
+                    true,
+                    true,
+                    false
+            )
+            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_champion_wallace"));
+
     @Override
     public List<Advancement> create() {
         return List.of(
@@ -142,7 +217,12 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
                 NORMAN,
                 WINONA,
                 TATE_AND_LIZA,
-                JUAN
+                JUAN,
+                SIDNEY,
+                PHOEBE,
+                GLACIA,
+                DRAKE,
+                WALLACE
         );
     }
 }

@@ -1,0 +1,33 @@
+{
+  "parent": "cobblemontrainerbattle:defeat_elite_sidney",
+  "criteria": {
+    "defeat_elite_phoebe": {
+      "conditions": {
+        "trainer": "trainer:entity/elite_phoebe"
+      },
+      "trigger": "cobblemontrainerbattle:defeat_trainer"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_elite_phoebe.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "cobblemontrainerbattle:elite_phoebe_token"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_elite_phoebe.title"
+    }
+  },
+  "requirements": [
+    [
+      "defeat_elite_phoebe"
+    ]
+  ],
+  "sends_telemetry_event": false
+}
