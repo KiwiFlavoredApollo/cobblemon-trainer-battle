@@ -36,8 +36,8 @@ public class InclementEmeraldTrainerEntityPresetRegistry {
             Identifier.of("minecraft", "textures/entity/player/slim/alex.png")
     );
 
-    public static final TrainerEntityPreset ELITE_SYDNEY = new TrainerEntityPreset(
-            Identifier.of("trainer", "entity/elite_sydney"),
+    public static final TrainerEntityPreset ELITE_SIDNEY = new TrainerEntityPreset(
+            Identifier.of("trainer", "entity/elite_sidney"),
             Identifier.of("minecraft", "textures/entity/player/slim/alex.png")
     );
     public static final TrainerEntityPreset ELITE_PHOEBE = new TrainerEntityPreset(

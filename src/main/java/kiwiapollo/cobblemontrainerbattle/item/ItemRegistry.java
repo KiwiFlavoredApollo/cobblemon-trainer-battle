@@ -3,7 +3,6 @@ package kiwiapollo.cobblemontrainerbattle.item;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.entities.EntityTypes;
 import kiwiapollo.cobblemontrainerbattle.entities.InclementEmeraldTrainerEntityPresetRegistry;
-import kiwiapollo.cobblemontrainerbattle.entities.RadicalRedTrainerEntityPresetRegistry;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -41,7 +40,7 @@ public class ItemRegistry {
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_tate_and_liza_token"), LEADER_TATE_AND_LIZA_TOKEN);
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_juan_token"), LEADER_JUAN_TOKEN);
 
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "elite_sydney_token"), ELITE_SYDNEY_TOKEN);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "elite_sidney_token"), ELITE_SIDNEY_TOKEN);
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "elite_phoebe_token"), ELITE_PHOEBE_TOKEN);
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "elite_glacia_token"), ELITE_GLACIA_TOKEN);
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "elite_drake_token"), ELITE_DRAKE_TOKEN);
@@ -57,7 +56,7 @@ public class ItemRegistry {
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_tate_and_liza_ticket"), LEADER_TATE_AND_LIZA_TICKET);
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_juan_ticket"), LEADER_JUAN_TICKET);
 
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "elite_sydney_ticket"), ELITE_SYDNEY_TICKET);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "elite_sidney_ticket"), ELITE_SIDNEY_TICKET);
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "elite_phoebe_ticket"), ELITE_PHOEBE_TICKET);
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "elite_glacia_ticket"), ELITE_GLACIA_TICKET);
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "elite_drake_ticket"), ELITE_DRAKE_TICKET);
@@ -88,7 +87,7 @@ public class ItemRegistry {
             itemGroup.add(LEADER_TATE_AND_LIZA_TOKEN);
             itemGroup.add(LEADER_JUAN_TOKEN);
 
-            itemGroup.add(ELITE_SYDNEY_TOKEN);
+            itemGroup.add(ELITE_SIDNEY_TOKEN);
             itemGroup.add(ELITE_PHOEBE_TOKEN);
             itemGroup.add(ELITE_GLACIA_TOKEN);
             itemGroup.add(ELITE_DRAKE_TOKEN);
@@ -104,7 +103,7 @@ public class ItemRegistry {
             itemGroup.add(LEADER_TATE_AND_LIZA_TICKET);
             itemGroup.add(LEADER_JUAN_TICKET);
 
-            itemGroup.add(ELITE_SYDNEY_TICKET);
+            itemGroup.add(ELITE_SIDNEY_TICKET);
             itemGroup.add(ELITE_PHOEBE_TICKET);
             itemGroup.add(ELITE_GLACIA_TICKET);
             itemGroup.add(ELITE_DRAKE_TICKET);
@@ -137,7 +136,7 @@ public class ItemRegistry {
     public static final Item LEADER_TATE_AND_LIZA_TOKEN = new Item(new Item.Settings());
     public static final Item LEADER_JUAN_TOKEN = new Item(new Item.Settings());
 
-    public static final Item ELITE_SYDNEY_TOKEN = new Item(new Item.Settings());
+    public static final Item ELITE_SIDNEY_TOKEN = new Item(new Item.Settings());
     public static final Item ELITE_PHOEBE_TOKEN = new Item(new Item.Settings());
     public static final Item ELITE_GLACIA_TOKEN = new Item(new Item.Settings());
     public static final Item ELITE_DRAKE_TOKEN = new Item(new Item.Settings());
@@ -153,7 +152,7 @@ public class ItemRegistry {
     public static final Item LEADER_TATE_AND_LIZA_TICKET = new TrainerTicket(new Item.Settings(), InclementEmeraldTrainerEntityPresetRegistry.LEADER_TATE_AND_LIZA);
     public static final Item LEADER_JUAN_TICKET = new TrainerTicket(new Item.Settings(), InclementEmeraldTrainerEntityPresetRegistry.LEADER_JUAN);
 
-    public static final Item ELITE_SYDNEY_TICKET = new TrainerTicket(new Item.Settings(), InclementEmeraldTrainerEntityPresetRegistry.ELITE_SYDNEY);
+    public static final Item ELITE_SIDNEY_TICKET = new TrainerTicket(new Item.Settings(), InclementEmeraldTrainerEntityPresetRegistry.ELITE_SIDNEY);
     public static final Item ELITE_PHOEBE_TICKET = new TrainerTicket(new Item.Settings(), InclementEmeraldTrainerEntityPresetRegistry.ELITE_PHOEBE);
     public static final Item ELITE_GLACIA_TICKET = new TrainerTicket(new Item.Settings(), InclementEmeraldTrainerEntityPresetRegistry.ELITE_GLACIA);
     public static final Item ELITE_DRAKE_TICKET = new TrainerTicket(new Item.Settings(), InclementEmeraldTrainerEntityPresetRegistry.ELITE_DRAKE);
