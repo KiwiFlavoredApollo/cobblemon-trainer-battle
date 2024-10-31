@@ -1,0 +1,74 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_elite_agatha_token": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "cobblemontrainerbattle:elite_agatha_token"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_elite_bruno_token": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "cobblemontrainerbattle:elite_bruno_token"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_elite_lance_token": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "cobblemontrainerbattle:elite_lance_token"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_elite_lorelei_token": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "cobblemontrainerbattle:elite_lorelei_token"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "cobblemontrainerbattle:champion_terry_ticket"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_elite_lorelei_token",
+      "has_elite_bruno_token",
+      "has_elite_agatha_token",
+      "has_elite_lance_token",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "cobblemontrainerbattle:champion_terry_ticket"
+    ]
+  },
+  "sends_telemetry_event": false
+}

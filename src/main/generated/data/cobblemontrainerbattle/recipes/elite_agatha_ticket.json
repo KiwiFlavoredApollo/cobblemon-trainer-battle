@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "cobblemontrainerbattle:leader_falkner_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:leader_bugsy_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:leader_whitney_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:leader_morty_token"
+    },
+    {
+      "item": "cobblemon:spell_tag"
+    }
+  ],
+  "result": {
+    "item": "cobblemontrainerbattle:elite_agatha_ticket"
+  }
+}

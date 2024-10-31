@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "cobblemontrainerbattle:elite_lorelei_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:elite_bruno_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:elite_agatha_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:elite_lance_token"
+    },
+    {
+      "item": "minecraft:nether_star"
+    }
+  ],
+  "result": {
+    "item": "cobblemontrainerbattle:champion_terry_ticket"
+  }
+}

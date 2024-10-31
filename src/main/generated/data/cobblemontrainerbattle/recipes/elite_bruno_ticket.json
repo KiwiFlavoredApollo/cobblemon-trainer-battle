@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "cobblemontrainerbattle:leader_koga_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:leader_sabrina_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:leader_blaine_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:leader_giovanni_token"
+    },
+    {
+      "item": "cobblemon:black_belt"
+    }
+  ],
+  "result": {
+    "item": "cobblemontrainerbattle:elite_bruno_ticket"
+  }
+}

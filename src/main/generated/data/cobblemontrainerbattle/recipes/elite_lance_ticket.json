@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "cobblemontrainerbattle:leader_chuck_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:leader_jasmine_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:leader_pryce_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:leader_clair_token"
+    },
+    {
+      "item": "cobblemon:dragon_fang"
+    }
+  ],
+  "result": {
+    "item": "cobblemontrainerbattle:elite_lance_ticket"
+  }
+}

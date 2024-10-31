@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "cobblemontrainerbattle:leader_brock_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:leader_misty_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:leader_lt_surge_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:leader_erika_token"
+    },
+    {
+      "item": "cobblemon:mystic_water"
+    }
+  ],
+  "result": {
+    "item": "cobblemontrainerbattle:elite_lorelei_ticket"
+  }
+}
