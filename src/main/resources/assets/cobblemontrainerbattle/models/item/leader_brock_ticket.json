@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "cobblemontrainerbattle:item/radicalred_leader_brock_ticket"
+        "layer0": "cobblemontrainerbattle:item/leader_brock_ticket"
     }
 }
