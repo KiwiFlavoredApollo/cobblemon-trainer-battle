@@ -1,0 +1,9 @@
+site_name: Cobblemon Trainer Battle
+nav:
+  - Home: index.md
+  - Commands: commands.md
+  - NPC Trainers: npctrainers.md
+  - Items: items.md
+  - Creating a Data Pack: datapack.md
+  - Exporting Player as Trainer: exporting.md
+theme: readthedocs
