@@ -1,0 +1,157 @@
+[
+    {
+        "name": "",
+        "species": "Gengar",
+        "item": "None",
+        "ability": "Levitate",
+        "gender": "F",
+        "nature": "Lax",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 2,
+        "moves": [
+            "Shadow Ball",
+            "Psychic",
+            "Confuse Ray",
+            "Hypnosis"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Crobat",
+        "item": "None",
+        "ability": "Infiltrator",
+        "gender": "F",
+        "nature": "Bashful",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 2,
+        "moves": [
+            "Sludge Bomb",
+            "Air Cutter",
+            "Shadow Ball",
+            "Confuse Ray"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Misdreavus",
+        "item": "None",
+        "ability": "Levitate",
+        "gender": "M",
+        "nature": "Docile",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 2,
+        "moves": [
+            "Shadow Ball",
+            "Psychic",
+            "Thunderbolt",
+            "Attract"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Arbok",
+        "item": "None",
+        "ability": "Intimidate",
+        "gender": "F",
+        "nature": "Serious",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 2,
+        "moves": [
+            "Sludge Bomb",
+            "Earthquake",
+            "Giga Drain",
+            "Double Team"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Gengar",
+        "item": "Chesto Berry",
+        "ability": "Levitate",
+        "gender": "F",
+        "nature": "Naughty",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 2,
+        "moves": [
+            "Shadow Ball",
+            "Psychic",
+            "Thunderbolt",
+            "Sludge Bomb"
+        ]
+    }
+]

@@ -1,0 +1,188 @@
+[
+    {
+        "name": "",
+        "species": "Aerodactyl",
+        "item": "Focus Sash",
+        "ability": "Rock Head or Pressure",
+        "gender": "F",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Stealth Rock",
+            "Stone Edge",
+            "Earthquake",
+            "Taunt"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Dracovish",
+        "item": "Choice Scarf",
+        "ability": "Strong Jaw",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "FishiousRend",
+            "Psychic Fang",
+            "Outrage",
+            "Crunch"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Dragonite",
+        "item": "WeaknessPol.",
+        "ability": "Multiscale",
+        "gender": "F",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Extremespeed",
+            "Dragon Dance",
+            "Fire Punch",
+            "DualWingbeat"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Magearna",
+        "item": "Leftovers",
+        "ability": "Soul-Heart",
+        "gender": "",
+        "nature": "Modest",
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Shift Gear",
+            "Fleur Cannon",
+            "Flash Cannon",
+            "Aura Sphere"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Naganadel",
+        "item": "Life Orb",
+        "ability": "Beast Boost",
+        "gender": "",
+        "nature": "Timid",
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Nasty Plot",
+            "Sludge Wave",
+            "Draco Meteor",
+            "Flamethrower"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Duraludon",
+        "item": "Duraludite",
+        "ability": "Light Metal or Heavy Metal",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Draco Meteor",
+            "Steel Beam",
+            "Thunderbolt",
+            "Dark Pulse"
+        ]
+    }
+]

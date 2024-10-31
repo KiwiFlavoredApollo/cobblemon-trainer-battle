@@ -1,0 +1,157 @@
+[
+    {
+        "name": "",
+        "species": "Rhyhorn",
+        "item": "None",
+        "ability": "Lightning Rod",
+        "gender": "F",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Take Down",
+            "Rock Blast",
+            "Scary Face",
+            "Earthquake"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Dugtrio",
+        "item": "None",
+        "ability": "Sand Veil",
+        "gender": "F",
+        "nature": "Docile",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Slash",
+            "Sand Tomb",
+            "Mud-Slap",
+            "Earthquake"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Nidoqueen",
+        "item": "None",
+        "ability": "Poison Touch",
+        "gender": "F",
+        "nature": "Sassy",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Body Slam",
+            "Double Kick",
+            "Poison Sting",
+            "Earthquake"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Nidoking",
+        "item": "None",
+        "ability": "Poison Touch",
+        "gender": "M",
+        "nature": "Sassy",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Thrash",
+            "Double Kick",
+            "Poison Sting",
+            "Earthquake"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Rhyhorn",
+        "item": "None",
+        "ability": "Lightning Rod",
+        "gender": "F",
+        "nature": "Sassy",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Take Down",
+            "Rock Blast",
+            "Scary Face",
+            "Earthquake"
+        ]
+    }
+]

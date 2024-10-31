@@ -1,0 +1,157 @@
+[
+    {
+        "name": "",
+        "species": "Rillaboom",
+        "item": "Terrain Ext.",
+        "ability": "Grassy Surge",
+        "gender": "F",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 4,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Grassy Glide",
+            "U-turn",
+            "HiHorsepower",
+            "Drain Punch"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Serperior",
+        "item": "Focus Sash",
+        "ability": "Contrary",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 30,
+            "def": 31,
+            "spa": 30,
+            "spd": 31,
+            "spe": 30
+        },
+        "level": 1,
+        "moves": [
+            "Leaf Storm",
+            "Giga Drain",
+            "Hidden Power",
+            "Dragon Pulse"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Venusaur",
+        "item": "Venusaurite",
+        "ability": "Overgrow",
+        "gender": "F",
+        "nature": "Modest",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Giga Drain",
+            "Sludge Bomb",
+            "Sleep Powder",
+            "Earth Power"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Meganium",
+        "item": "Grassy Seed",
+        "ability": "Triage",
+        "gender": "F",
+        "nature": "Modest",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 30,
+            "def": 31,
+            "spa": 30,
+            "spd": 31,
+            "spe": 30
+        },
+        "level": 1,
+        "moves": [
+            "AncientPower",
+            "Giga Drain",
+            "Dazzle Gleam",
+            "Hidden Power"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Electrode-Hisui",
+        "item": "Life Orb",
+        "ability": "Reckless",
+        "gender": "",
+        "nature": "Naive",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 30,
+            "def": 30,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Thunderbolt",
+            "Chloroblast",
+            "Hidden Power",
+            "Explosion"
+        ]
+    }
+]

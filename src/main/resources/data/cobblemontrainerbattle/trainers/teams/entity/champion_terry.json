@@ -1,0 +1,188 @@
+[
+    {
+        "name": "",
+        "species": "Heracross",
+        "item": "None",
+        "ability": "Guts",
+        "gender": "M",
+        "nature": "Careful",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 3,
+        "moves": [
+            "Megahorn",
+            "Earthquake",
+            "Counter",
+            "Rock Tomb"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Alakazam",
+        "item": "None",
+        "ability": "Inner Focus",
+        "gender": "F",
+        "nature": "Lax",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 3,
+        "moves": [
+            "Psychic",
+            "Shadow Ball",
+            "Calm Mind",
+            "Reflect"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Tyranitar",
+        "item": "None",
+        "ability": "Sand Stream",
+        "gender": "F",
+        "nature": "Bashful",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 3,
+        "moves": [
+            "Crunch",
+            "Earthquake",
+            "Thunderbolt",
+            "Aerial Ace"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Exeggutor",
+        "item": "None",
+        "ability": "Chlorophyll",
+        "gender": "M",
+        "nature": "Gentle",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 3,
+        "moves": [
+            "Giga Drain",
+            "Psychic",
+            "Sleep Powder",
+            "Light Screen"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Gyarados",
+        "item": "None",
+        "ability": "Intimidate",
+        "gender": "M",
+        "nature": "Lonely",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 3,
+        "moves": [
+            "Hydro Pump",
+            "Dragon Dance",
+            "Earthquake",
+            "Hyper Beam"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Charizard",
+        "item": "Sitrus Berry",
+        "ability": "Blaze",
+        "gender": "F",
+        "nature": "Relaxed",
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 3,
+        "moves": [
+            "Fire Blast",
+            "Dragon Claw",
+            "Aerial Ace",
+            "Earthquake"
+        ]
+    }
+]

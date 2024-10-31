@@ -1,0 +1,188 @@
+[
+    {
+        "name": "",
+        "species": "Torkoal",
+        "item": "Heat Rock",
+        "ability": "Drought",
+        "gender": "F",
+        "nature": "Quiet",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 4,
+            "spa": 252,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Stealth Rock",
+            "Explosion",
+            "Lava Plume",
+            "Earth Power"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Cinderace",
+        "item": "Life Orb",
+        "ability": "Protean",
+        "gender": "F",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Pyro Ball",
+            "Sucker Punch",
+            "Hi Jump Kick",
+            "Zen Headbutt"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Exeggutor",
+        "item": "Focus Sash",
+        "ability": "Harvest",
+        "gender": "M",
+        "nature": "Timid",
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Growth",
+            "Giga Drain",
+            "Psyshock",
+            "Weather Ball"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Typhlosion",
+        "item": "HeavyDBoots",
+        "ability": "Blazing Soul",
+        "gender": "F",
+        "nature": "Modest",
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 30,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Eruption",
+            "Flamethrower",
+            "Hidden Power",
+            "Focus Blast"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Sunflora",
+        "item": "Life Orb",
+        "ability": "Chlorophyll",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Seed Flare",
+            "Flamethrower",
+            "Earth Power",
+            "Sunny Day"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Charizard",
+        "item": "CharzarditeY",
+        "ability": "Blaze",
+        "gender": "F",
+        "nature": "Timid",
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Flamethrower",
+            "Air Slash",
+            "Solar Beam",
+            "Dragon Pulse"
+        ]
+    }
+]

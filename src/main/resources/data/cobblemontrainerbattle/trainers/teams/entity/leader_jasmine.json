@@ -1,0 +1,188 @@
+[
+    {
+        "name": "",
+        "species": "Steelix",
+        "item": "Chople Berry",
+        "ability": "Sturdy",
+        "gender": "F",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 6
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Stealth Rock",
+            "Iron Head",
+            "Earthquake",
+            "Roar"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Melmetal",
+        "item": "Choice Band",
+        "ability": "Iron Fist",
+        "gender": "",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 6
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Dbl IronBash",
+            "Earthquake",
+            "Superpower",
+            "ThunderPunch"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Duraludon",
+        "item": "Assault Vest",
+        "ability": "Light Metal or Heavy Metal",
+        "gender": "F",
+        "nature": "Modest",
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 6
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Draco Meteor",
+            "Flash Cannon",
+            "Thunderbolt",
+            "Dragon Pulse"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Durant",
+        "item": "Life Orb",
+        "ability": "Hustle",
+        "gender": "F",
+        "nature": "Jolly",
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Iron Head",
+            "Superpower",
+            "X-Scissor",
+            "Hone Claws"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Aegislash",
+        "item": "Leftovers",
+        "ability": "Stance Change",
+        "gender": "F",
+        "nature": "Rash",
+        "evs": {
+            "hp": 6,
+            "atk": 128,
+            "def": 0,
+            "spa": 128,
+            "spd": 0,
+            "spe": 252
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Shadow Ball",
+            "Shadow Sneak",
+            "Close Combat",
+            "Kings Shield"
+        ]
+    },
+    {
+        "name": "",
+        "species": "Aggron",
+        "item": "Aggronite",
+        "ability": "Rock Head",
+        "gender": "F",
+        "nature": "Adamant",
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 6
+        },
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "level": 1,
+        "moves": [
+            "Heavy Slam",
+            "Earthquake",
+            "Fire Punch",
+            "Dragon Claw"
+        ]
+    }
+]
