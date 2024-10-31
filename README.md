@@ -9,7 +9,9 @@ Cobblemon Trainer Battle is a side mod for Cobblemon that offers trainer battle 
 - NPC Trainers and Items
 - Inclement Emerald Progression System
 
-## [Documentation](https://kiwiflavoredapollo.github.io/CobblemonTrainerBattle/)
+## Documentation
+
+Refer to [GitHub Pages](https://kiwiflavoredapollo.github.io/CobblemonTrainerBattle/) for documentation 
 
 ## Credits
 
