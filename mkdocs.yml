@@ -7,3 +7,4 @@ nav:
   - Creating a Data Pack: datapack.md
   - Exporting Player as Trainer: exporting.md
 theme: readthedocs
+remote_name: github
