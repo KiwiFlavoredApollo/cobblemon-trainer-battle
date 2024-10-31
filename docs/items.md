@@ -10,14 +10,14 @@ Gym Leaders, Elite Four and Champion drop special kind of Tokens when defeated. 
 
 VS Seekers are available in various colors. However, They are not just for aesthetic purposes. VS Seekers serve two purposes.
 
-### 1. Enabling and Filtering Spawning of Trainers
+### 1. Filtering Trainer Spawning
 
 - Blue VS Seeker allows all trainers
 - Red VS Seeker allows Radical Red trainers
 - Green VS Seeker allows Inclement Emerald trainers
 - Purple VS Seeker allows Smogon trainers
 
-If players have no VS Seeker in their inventories, trainers do not spawn around them. Player can have multiple VS Seekers, allowing more than one group of trainers to spawn.
+Player can have multiple VS Seekers, allowing more than one group of trainers to spawn.
 
 ### 2. Spawning Gym Leaders, Elite Four and the Champion
 
@@ -28,5 +28,5 @@ Tickets alone cannot spawn trainers. Players must use (right-click) VS Seeker in
 Trainer Spawn Egg spawns random players. However, Trainer Spawn Egg can be configured to spawn specific trainer in specific texture.
 
 ```
-/give @p cobblemontrainerbattle:trainer_spawn_egg{EntityTag:{trainer:"trainer:radicalred/leader_brock", texture:"cobblemontrainerbattle:entity/trainer/slim/alola_leaf_piikapiika"}}
+/give @p cobblemontrainerbattle:trainer_spawn_egg{EntityTag:{trainer:"trainer:radicalred/leader_brock",texture:"cobblemontrainerbattle:entity/trainer/slim/alola_leaf_piikapiika"}}
 ```
