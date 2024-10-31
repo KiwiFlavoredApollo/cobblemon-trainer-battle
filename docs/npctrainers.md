@@ -6,7 +6,7 @@ NPC trainers make Cobblemon experience more interesting. Players must have VS Se
 
 ```
 /summon cobblemontrainerbattle:trainer
-/summon cobblemontrainerbattle:trainer{trainer:"trainer:radicalred/leader_brock",texture:"cobblemontrainerbattle:entity/trainer/slim/alola_leaf_piikapiika"}
+/summon cobblemontrainerbattle:trainer{trainer:"trainer:radicalred/leader_brock",texture:"minecraft:textures/entity/player/slim/steve.png"}
 ```
 
 ## Trainer Tokens
