@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Creating a Data Pack - Cobblemon Trainer Battle</title>
+    <title>Configuration - Cobblemon Trainer Battle</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Creating a Data Pack";
-        var mkdocs_page_input_path = "datapack.md";
+        var mkdocs_page_name = "Configuration";
+        var mkdocs_page_input_path = "configuration.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -43,6 +43,16 @@
                 <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
                 </li>
               </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Configuration</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#available-economy-options">Available economy Options</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#deprecation-notice">Deprecation Notice</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../commands/">Commands</a>
                 </li>
@@ -55,12 +65,8 @@
                 <li class="toctree-l1"><a class="reference internal" href="../items/">Items</a>
                 </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">Creating a Data Pack</a>
-                </li>
-              </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../exporting/">Exporting Player as Trainer</a>
+                <li class="toctree-l1"><a class="reference internal" href="../customization/">Customization</a>
                 </li>
               </ul>
       </div>
@@ -77,7 +83,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Creating a Data Pack</li>
+      <li class="breadcrumb-item active">Configuration</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -86,13 +92,26 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                
+                <h1 id="configuration">Configuration</h1>
+<p>The file is located at <code>.minecraft/config/cobblemontrainerbattle/config.json</code></p>
+<pre><code class="language-json">{
+  &quot;economy&quot;: &quot;None&quot;,
+  &quot;enableTrainerSpawn&quot;: true
+}
+</code></pre>
+<h2 id="available-economy-options">Available <code>economy</code> Options</h2>
+<ul>
+<li><code>None</code></li>
+<li><code>OctoEconomy</code></li>
+</ul>
+<h2 id="deprecation-notice">Deprecation Notice</h2>
+<p><code>OctoEconomy</code> (thus economy feature itself) will likely be removed when Cobblemon Trainer Battle is ported to Cobblemon 1.6  </p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../items/" class="btn btn-neutral float-left" title="Items"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../exporting/" class="btn btn-neutral float-right" title="Exporting Player as Trainer">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../commands/" class="btn btn-neutral float-right" title="Commands">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -115,10 +134,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../items/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../exporting/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../commands/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

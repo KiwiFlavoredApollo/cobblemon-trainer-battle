@@ -44,12 +44,20 @@
                 </li>
               </ul>
               <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuration</a>
+                </li>
+              </ul>
+              <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../commands/">Commands</a>
                 </li>
               </ul>
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">NPC Trainers</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#npc-trainers">NPC Trainers</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#trainer-tokens">Trainer Tokens</a>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -58,11 +66,7 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../datapack/">Creating a Data Pack</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../exporting/">Exporting Player as Trainer</a>
+                <li class="toctree-l1"><a class="reference internal" href="../customization/">Customization</a>
                 </li>
               </ul>
       </div>
@@ -88,8 +92,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="npc-trainers">NPC Trainers</h1>
-<p>NPC trainers spawn around players if the players have vs seeker item in their inventories.</p>
+                <h1 id="npc-trainers-items">NPC Trainers &amp; Items</h1>
+<h2 id="npc-trainers">NPC Trainers</h2>
+<p>NPC trainers make Cobblemon experience more interesting. Players must have VS Seeker in their inventories in order to spawn trainers around them. </p>
+<pre><code>/summon cobblemontrainerbattle:trainer
+/summon cobblemontrainerbattle:trainer{trainer:&quot;trainer:radicalred/leader_brock&quot;,texture:&quot;cobblemontrainerbattle:entity/trainer/slim/alola_leaf_piikapiika&quot;}
+</code></pre>
+<h2 id="trainer-tokens">Trainer Tokens</h2>
+<p>NPC trainers drop Trainer Tokens when defeated in Pokémon battle. They do not drop the items when killed.</p>
               
             </div>
           </div><footer>

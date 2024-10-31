@@ -43,9 +43,15 @@
                 <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
                 </li>
               </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuration</a>
+                </li>
+              </ul>
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">Commands</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#utility-commands">Utility Commands</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#trainer-battle">Trainer Battle</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#group-battle">Group Battle</a>
@@ -64,11 +70,7 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../datapack/">Creating a Data Pack</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../exporting/">Exporting Player as Trainer</a>
+                <li class="toctree-l1"><a class="reference internal" href="../customization/">Customization</a>
                 </li>
               </ul>
       </div>
@@ -95,6 +97,15 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="commands">Commands</h1>
+<h2 id="utility-commands">Utility Commands</h2>
+<pre><code>/cobblemontrainerbattle reload
+</code></pre>
+<p>Reloads <code>.minecraft/config/cobblemontrainerbattle/config.json</code></p>
+<pre><code>/cobblemontrainerbattle export &lt;player&gt;
+/cobblemontrainerbattle exportflat &lt;player&gt; &lt;level&gt;
+/cobblemontrainerbattle exportrelative &lt;player&gt;
+</code></pre>
+<p>Exports player Pokémon to <code>.minecraft/cobblemontrainerbattle/</code>. While it's not strictly formatted like the Showdown team JSON format, it can be used for adding custom trainers.</p>
 <h2 id="trainer-battle">Trainer Battle</h2>
 <pre><code>/trainerbattle random
 /trainerbattle &lt;trainer&gt;
@@ -118,24 +129,21 @@
 /groupbattleflat startbattle
 </code></pre>
 <h2 id="battle-factory">Battle Factory</h2>
-<p>Battle Factory is a mini-game introduced in main Pokémon series where players start battling random trainers with three rental Pokémon. Players get a chance to trade Pokémon with their opponent once obtained victory.</p>
-<pre><code>/trainerbattle random
-/trainerbattle &lt;trainer&gt;
-
-/trainerbattleother &lt;player&gt; random
-/trainerbattleother &lt;player&gt; &lt;trainer&gt;
-
-/trainerbattleflat random
-/trainerbattleflat &lt;trainer&gt;
-
-/trainerbattleflatother &lt;player&gt; random
-/trainerbattleflatother &lt;player&gt; &lt;trainer&gt;
+<p><a href="https://bulbapedia.bulbagarden.net/wiki/Battle_Factory_(Generation_III)">Battle Factory</a> is a mini-game introduced in main Pokémon series where players start battling random trainers with three rental Pokémon. Players get a chance to trade Pokémon with their opponent once obtained victory.</p>
+<pre><code>/battlefactory startsession
+/battlefactory stopsession
+/battlefactory startbattle
+/battlefactory showpokemon
+/battlefactory rerollpokemon
+/battlefactory tradepokemon
+/battlefactory tradepokemon &lt;playerslot&gt; &lt;trainerslot&gt;
+/battlefactory winningstreak
 </code></pre>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../configuration/" class="btn btn-neutral float-left" title="Configuration"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         <a href="../npctrainers/" class="btn btn-neutral float-right" title="NPC Trainers">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
@@ -159,7 +167,7 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../configuration/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
       <span><a href="../npctrainers/" style="color: #fcfcfc">Next &raquo;</a></span>
