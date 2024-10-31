@@ -17,7 +17,7 @@ Refer to [GitHub Pages](https://kiwiflavoredapollo.github.io/CobblemonTrainerBat
 
 ### Translation
 
-- [Voldir Silver](https://discord.com/user/291233979196243968) for French Translation
+- [Voldir Silver](https://discordapp.com/users/291233979196243968) for French Translation
 
 ### Trainer Skins
 - [piikapiika](https://www.minecraftskins.com/profile/5894998/piikapiika)
