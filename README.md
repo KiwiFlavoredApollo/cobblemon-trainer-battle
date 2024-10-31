@@ -15,31 +15,36 @@ Refer to [GitHub Pages](https://kiwiflavoredapollo.github.io/CobblemonTrainerBat
 
 ## Credits
 
-### Translation
+### Translations
 
-- [Voldir Silver](https://discordapp.com/users/291233979196243968) for French Translation
+- French Translation by [Voldir Silver](https://discordapp.com/users/291233979196243968)
 
-### Trainer Skins
-- [piikapiika](https://www.minecraftskins.com/profile/5894998/piikapiika)
-  - White (Hilda) | Pokemon
-  - Black (Hilbert) | Pokemon
-  - Alola Leaf | Pokemon
-  - Leaf | Pokemon
-  - Silver | Pokemon
-  - Red - Pokemon
-  - Blue/Ookido Green | Pokemon
+### Trainer Textures
 
-- [idkgraceorsmth](https://www.minecraftskins.com/profile/8183289/idkgraceorsmth)
-  - Diner Waitress - Mia
-  - Cherry Blossom Garden - Selene
-  - Blacksmith - Roxie
+#### Created by [piikapiika](https://www.minecraftskins.com/profile/5894998/piikapiika)
+
+- White (Hilda) | Pokemon
+- Black (Hilbert) | Pokemon
+- Alola Leaf | Pokemon
+- Leaf | Pokemon
+- Silver | Pokemon
+- Red - Pokemon
+- Blue/Ookido Green | Pokemon
+
+#### Created by [idkgraceorsmth](https://www.minecraftskins.com/profile/8183289/idkgraceorsmth)
+
+- Diner Waitress - Mia
+- Cherry Blossom Garden - Selene
+- Blacksmith - Roxie
 
 ## TODOs
+
 - [ ] Fix bug SimpleTM TM/TR drop
 - [ ] Add feature defining Battle Frontier trainer sequence by data pack
 - [ ] When on Battle Frontier battle, player Pokemons are slightly damaged
 
 ## Reference
+
 - [Pokemon Showdown Team Formats - Cobblemon Showdown](https://gitlab.com/cable-mc/cobblemon-showdown/-/blob/master/sim/TEAMS.md#packed-format)
 - [Cobblemon - Gitlab](https://gitlab.com/cable-mc/cobblemon)
 - [Cobblemon Challenge - Github](https://github.com/TurtleHoarder/Cobblemon-Challenge)
