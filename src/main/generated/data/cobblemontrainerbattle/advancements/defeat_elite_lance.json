@@ -1,0 +1,33 @@
+{
+  "parent": "cobblemontrainerbattle:defeat_elite_agatha",
+  "criteria": {
+    "defeat_elite_lance": {
+      "conditions": {
+        "trainer": "trainer:entity/elite_lance"
+      },
+      "trigger": "cobblemontrainerbattle:defeat_trainer"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_elite_lance.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "cobblemontrainerbattle:elite_lance_token"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_elite_lance.title"
+    }
+  },
+  "requirements": [
+    [
+      "defeat_elite_lance"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

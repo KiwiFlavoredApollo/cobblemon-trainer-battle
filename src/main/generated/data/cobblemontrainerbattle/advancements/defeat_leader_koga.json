@@ -1,0 +1,33 @@
+{
+  "parent": "cobblemontrainerbattle:defeat_leader_erika",
+  "criteria": {
+    "defeat_leader_koga": {
+      "conditions": {
+        "trainer": "trainer:entity/leader_koga"
+      },
+      "trigger": "cobblemontrainerbattle:defeat_trainer"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_leader_koga.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "cobblemontrainerbattle:leader_koga_token"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_leader_koga.title"
+    }
+  },
+  "requirements": [
+    [
+      "defeat_leader_koga"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

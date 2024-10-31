@@ -85,6 +85,10 @@ public class DataGenerator implements DataGeneratorEntrypoint {
             for (Advancement advancement : new InclementEmeraldAdvancementFactory().create()) {
                 consumer.accept(advancement);
             }
+
+            for (Advancement advancement : new RadicalRedAdvancementFactory().create()) {
+                consumer.accept(advancement);
+            }
         }
     }
 

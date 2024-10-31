@@ -3,6 +3,7 @@ package kiwiapollo.cobblemontrainerbattle.item;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.entities.EntityTypes;
 import kiwiapollo.cobblemontrainerbattle.entities.InclementEmeraldTrainerEntityPresetRegistry;
+import kiwiapollo.cobblemontrainerbattle.entities.RadicalRedTrainerEntityPresetRegistry;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -28,8 +29,55 @@ public class ItemRegistry {
 
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "trainer_token"), TRAINER_TOKEN);
 
-//        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_brock_token"), LEADER_BROCK_TOKEN);
-//        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_brock_ticket"), LEADER_BROCK_TICKET);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_brock_token"), LEADER_BROCK_TOKEN);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_misty_token"), LEADER_MISTY_TOKEN);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_lt_surge_token"), LEADER_LT_SURGE_TOKEN);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_erika_token"), LEADER_ERIKA_TOKEN);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_koga_token"), LEADER_KOGA_TOKEN);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_sabrina_token"), LEADER_SABRINA_TOKEN);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_blaine_token"), LEADER_BLAINE_TOKEN);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_giovanni_token"), LEADER_GIOVANNI_TOKEN);
+
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_falkner_token"), LEADER_FALKNER_TOKEN);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_bugsy_token"), LEADER_BUGSY_TOKEN);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_whitney_token"), LEADER_WHITNEY_TOKEN);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_morty_token"), LEADER_MORTY_TOKEN);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_chuck_token"), LEADER_CHUCK_TOKEN);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_jasmine_token"), LEADER_JASMINE_TOKEN);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_pryce_token"), LEADER_PRYCE_TOKEN);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_clair_token"), LEADER_CLAIR_TOKEN);
+
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "elite_lorelei_token"), ELITE_LORELEI_TOKEN);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "elite_bruno_token"), ELITE_BRUNO_TOKEN);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "elite_agatha_token"), ELITE_AGATHA_TOKEN);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "elite_lance_token"), ELITE_LANCE_TOKEN);
+
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "champion_terry_token"), CHAMPION_TERRY_TOKEN);
+
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_brock_ticket"), LEADER_BROCK_TICKET);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_misty_ticket"), LEADER_MISTY_TICKET);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_lt_surge_ticket"), LEADER_LT_SURGE_TICKET);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_erika_ticket"), LEADER_ERIKA_TICKET);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_koga_ticket"), LEADER_KOGA_TICKET);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_sabrina_ticket"), LEADER_SABRINA_TICKET);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_blaine_ticket"), LEADER_BLAINE_TICKET);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_giovanni_ticket"), LEADER_GIOVANNI_TICKET);
+
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_falkner_ticket"), LEADER_FALKNER_TICKET);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_bugsy_ticket"), LEADER_BUGSY_TICKET);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_whitney_ticket"), LEADER_WHITNEY_TICKET);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_morty_ticket"), LEADER_MORTY_TICKET);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_chuck_ticket"), LEADER_CHUCK_TICKET);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_jasmine_ticket"), LEADER_JASMINE_TICKET);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_pryce_ticket"), LEADER_PRYCE_TICKET);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_clair_ticket"), LEADER_CLAIR_TICKET);
+
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "elite_lorelei_ticket"), ELITE_LORELEI_TICKET);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "elite_bruno_ticket"), ELITE_BRUNO_TICKET);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "elite_agatha_ticket"), ELITE_AGATHA_TICKET);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "elite_lance_ticket"), ELITE_LANCE_TICKET);
+
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "champion_terry_ticket"), CHAMPION_TERRY_TICKET);
 
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_roxanne_token"), LEADER_ROXANNE_TOKEN);
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "leader_brawly_token"), LEADER_BRAWLY_TOKEN);
@@ -75,8 +123,55 @@ public class ItemRegistry {
 
             itemGroup.add(TRAINER_TOKEN);
 
-//            itemGroup.add(LEADER_BROCK_TOKEN);
-//            itemGroup.add(LEADER_BROCK_TICKET);
+            itemGroup.add(LEADER_BROCK_TOKEN);
+            itemGroup.add(LEADER_MISTY_TOKEN);
+            itemGroup.add(LEADER_LT_SURGE_TOKEN);
+            itemGroup.add(LEADER_ERIKA_TOKEN);
+            itemGroup.add(LEADER_KOGA_TOKEN);
+            itemGroup.add(LEADER_SABRINA_TOKEN);
+            itemGroup.add(LEADER_BLAINE_TOKEN);
+            itemGroup.add(LEADER_GIOVANNI_TOKEN);
+
+            itemGroup.add(LEADER_FALKNER_TOKEN);
+            itemGroup.add(LEADER_BUGSY_TOKEN);
+            itemGroup.add(LEADER_WHITNEY_TOKEN);
+            itemGroup.add(LEADER_MORTY_TOKEN);
+            itemGroup.add(LEADER_CHUCK_TOKEN);
+            itemGroup.add(LEADER_JASMINE_TOKEN);
+            itemGroup.add(LEADER_PRYCE_TOKEN);
+            itemGroup.add(LEADER_CLAIR_TOKEN);
+
+            itemGroup.add(ELITE_LORELEI_TOKEN);
+            itemGroup.add(ELITE_BRUNO_TOKEN);
+            itemGroup.add(ELITE_AGATHA_TOKEN);
+            itemGroup.add(ELITE_LANCE_TOKEN);
+
+            itemGroup.add(CHAMPION_TERRY_TOKEN);
+
+            itemGroup.add(LEADER_BROCK_TICKET);
+            itemGroup.add(LEADER_MISTY_TICKET);
+            itemGroup.add(LEADER_LT_SURGE_TICKET);
+            itemGroup.add(LEADER_ERIKA_TICKET);
+            itemGroup.add(LEADER_KOGA_TICKET);
+            itemGroup.add(LEADER_SABRINA_TICKET);
+            itemGroup.add(LEADER_BLAINE_TICKET);
+            itemGroup.add(LEADER_GIOVANNI_TICKET);
+
+            itemGroup.add(LEADER_FALKNER_TICKET);
+            itemGroup.add(LEADER_BUGSY_TICKET);
+            itemGroup.add(LEADER_WHITNEY_TICKET);
+            itemGroup.add(LEADER_MORTY_TICKET);
+            itemGroup.add(LEADER_CHUCK_TICKET);
+            itemGroup.add(LEADER_JASMINE_TICKET);
+            itemGroup.add(LEADER_PRYCE_TICKET);
+            itemGroup.add(LEADER_CLAIR_TICKET);
+
+            itemGroup.add(ELITE_LORELEI_TICKET);
+            itemGroup.add(ELITE_BRUNO_TICKET);
+            itemGroup.add(ELITE_AGATHA_TICKET);
+            itemGroup.add(ELITE_LANCE_TICKET);
+
+            itemGroup.add(CHAMPION_TERRY_TICKET);            
 
             itemGroup.add(LEADER_ROXANNE_TOKEN);
             itemGroup.add(LEADER_BRAWLY_TOKEN);
@@ -124,9 +219,56 @@ public class ItemRegistry {
 
     public static final Item TRAINER_TOKEN = new Item(new Item.Settings());
 
-//    public static final Item LEADER_BROCK_TOKEN = new Item(new Item.Settings());
-//    public static final Item LEADER_BROCK_TICKET = new TrainerTicket(new Item.Settings(), RadicalRedTrainerEntityPresetRegistry.LEADER_BROCK);
+    public static final Item LEADER_BROCK_TOKEN = new Item(new Item.Settings());
+    public static final Item LEADER_MISTY_TOKEN = new Item(new Item.Settings());
+    public static final Item LEADER_LT_SURGE_TOKEN = new Item(new Item.Settings());
+    public static final Item LEADER_ERIKA_TOKEN = new Item(new Item.Settings());
+    public static final Item LEADER_KOGA_TOKEN = new Item(new Item.Settings());
+    public static final Item LEADER_SABRINA_TOKEN = new Item(new Item.Settings());
+    public static final Item LEADER_BLAINE_TOKEN = new Item(new Item.Settings());
+    public static final Item LEADER_GIOVANNI_TOKEN = new Item(new Item.Settings());
 
+    public static final Item LEADER_FALKNER_TOKEN = new Item(new Item.Settings());
+    public static final Item LEADER_BUGSY_TOKEN = new Item(new Item.Settings());
+    public static final Item LEADER_WHITNEY_TOKEN = new Item(new Item.Settings());
+    public static final Item LEADER_MORTY_TOKEN = new Item(new Item.Settings());
+    public static final Item LEADER_CHUCK_TOKEN = new Item(new Item.Settings());
+    public static final Item LEADER_JASMINE_TOKEN = new Item(new Item.Settings());
+    public static final Item LEADER_PRYCE_TOKEN = new Item(new Item.Settings());
+    public static final Item LEADER_CLAIR_TOKEN = new Item(new Item.Settings());
+
+    public static final Item ELITE_LORELEI_TOKEN = new Item(new Item.Settings());
+    public static final Item ELITE_BRUNO_TOKEN = new Item(new Item.Settings());
+    public static final Item ELITE_AGATHA_TOKEN = new Item(new Item.Settings());
+    public static final Item ELITE_LANCE_TOKEN = new Item(new Item.Settings());
+
+    public static final Item CHAMPION_TERRY_TOKEN = new Item(new Item.Settings());
+
+    public static final Item LEADER_BROCK_TICKET = new TrainerTicket(new Item.Settings(), RadicalRedTrainerEntityPresetRegistry.LEADER_BROCK);
+    public static final Item LEADER_MISTY_TICKET = new TrainerTicket(new Item.Settings(), RadicalRedTrainerEntityPresetRegistry.LEADER_MISTY);
+    public static final Item LEADER_LT_SURGE_TICKET = new TrainerTicket(new Item.Settings(), RadicalRedTrainerEntityPresetRegistry.LEADER_LT_SURGE);
+    public static final Item LEADER_ERIKA_TICKET = new TrainerTicket(new Item.Settings(), RadicalRedTrainerEntityPresetRegistry.LEADER_ERIKA);
+    public static final Item LEADER_KOGA_TICKET = new TrainerTicket(new Item.Settings(), RadicalRedTrainerEntityPresetRegistry.LEADER_KOGA);
+    public static final Item LEADER_SABRINA_TICKET = new TrainerTicket(new Item.Settings(), RadicalRedTrainerEntityPresetRegistry.LEADER_SABRINA);
+    public static final Item LEADER_BLAINE_TICKET = new TrainerTicket(new Item.Settings(), RadicalRedTrainerEntityPresetRegistry.LEADER_BLAINE);
+    public static final Item LEADER_GIOVANNI_TICKET = new TrainerTicket(new Item.Settings(), RadicalRedTrainerEntityPresetRegistry.LEADER_GIOVANNI);
+
+    public static final Item LEADER_FALKNER_TICKET = new TrainerTicket(new Item.Settings(), RadicalRedTrainerEntityPresetRegistry.LEADER_FALKNER);
+    public static final Item LEADER_BUGSY_TICKET = new TrainerTicket(new Item.Settings(), RadicalRedTrainerEntityPresetRegistry.LEADER_BUGSY);
+    public static final Item LEADER_WHITNEY_TICKET = new TrainerTicket(new Item.Settings(), RadicalRedTrainerEntityPresetRegistry.LEADER_WHITNEY);
+    public static final Item LEADER_MORTY_TICKET = new TrainerTicket(new Item.Settings(), RadicalRedTrainerEntityPresetRegistry.LEADER_MORTY);
+    public static final Item LEADER_CHUCK_TICKET = new TrainerTicket(new Item.Settings(), RadicalRedTrainerEntityPresetRegistry.LEADER_CHUCK);
+    public static final Item LEADER_JASMINE_TICKET = new TrainerTicket(new Item.Settings(), RadicalRedTrainerEntityPresetRegistry.LEADER_JASMINE);
+    public static final Item LEADER_PRYCE_TICKET = new TrainerTicket(new Item.Settings(), RadicalRedTrainerEntityPresetRegistry.LEADER_PRYCE);
+    public static final Item LEADER_CLAIR_TICKET = new TrainerTicket(new Item.Settings(), RadicalRedTrainerEntityPresetRegistry.LEADER_CLAIR);
+
+    public static final Item ELITE_LORELEI_TICKET = new TrainerTicket(new Item.Settings(), RadicalRedTrainerEntityPresetRegistry.ELITE_LORELEI);
+    public static final Item ELITE_BRUNO_TICKET = new TrainerTicket(new Item.Settings(), RadicalRedTrainerEntityPresetRegistry.ELITE_BRUNO);
+    public static final Item ELITE_AGATHA_TICKET = new TrainerTicket(new Item.Settings(), RadicalRedTrainerEntityPresetRegistry.ELITE_AGATHA);
+    public static final Item ELITE_LANCE_TICKET = new TrainerTicket(new Item.Settings(), RadicalRedTrainerEntityPresetRegistry.ELITE_LANCE);
+
+    public static final Item CHAMPION_TERRY_TICKET = new TrainerTicket(new Item.Settings(), RadicalRedTrainerEntityPresetRegistry.CHAMPION_TERRY);
+    
     public static final Item LEADER_ROXANNE_TOKEN = new Item(new Item.Settings());
     public static final Item LEADER_BRAWLY_TOKEN = new Item(new Item.Settings());
     public static final Item LEADER_WATTSON_TOKEN = new Item(new Item.Settings());

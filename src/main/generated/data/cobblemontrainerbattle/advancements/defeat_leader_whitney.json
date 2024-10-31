@@ -1,0 +1,33 @@
+{
+  "parent": "cobblemontrainerbattle:defeat_leader_bugsy",
+  "criteria": {
+    "defeat_leader_whitney": {
+      "conditions": {
+        "trainer": "trainer:entity/leader_whitney"
+      },
+      "trigger": "cobblemontrainerbattle:defeat_trainer"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_leader_whitney.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "cobblemontrainerbattle:leader_whitney_token"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_leader_whitney.title"
+    }
+  },
+  "requirements": [
+    [
+      "defeat_leader_whitney"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

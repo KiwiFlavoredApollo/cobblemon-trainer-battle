@@ -1,0 +1,34 @@
+{
+  "parent": "cobblemontrainerbattle:defeat_elite_lance",
+  "criteria": {
+    "kill_champion_terry": {
+      "conditions": {
+        "trainer": "trainer:entity/champion_terry"
+      },
+      "trigger": "cobblemontrainerbattle:kill_trainer"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.kill_champion_terry.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:netherite_sword",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.kill_champion_terry.title"
+    }
+  },
+  "requirements": [
+    [
+      "kill_champion_terry"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

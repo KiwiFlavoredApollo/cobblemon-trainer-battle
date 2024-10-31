@@ -1,0 +1,33 @@
+{
+  "parent": "cobblemontrainerbattle:root",
+  "criteria": {
+    "defeat_leader_brock": {
+      "conditions": {
+        "trainer": "trainer:entity/leader_brock"
+      },
+      "trigger": "cobblemontrainerbattle:defeat_trainer"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_leader_brock.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "cobblemontrainerbattle:leader_brock_token"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_leader_brock.title"
+    }
+  },
+  "requirements": [
+    [
+      "defeat_leader_brock"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

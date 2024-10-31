@@ -1,0 +1,33 @@
+{
+  "parent": "cobblemontrainerbattle:defeat_elite_lance",
+  "criteria": {
+    "defeat_champion_terry": {
+      "conditions": {
+        "trainer": "trainer:entity/champion_terry"
+      },
+      "trigger": "cobblemontrainerbattle:defeat_trainer"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_champion_terry.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "cobblemontrainerbattle:champion_terry_token"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_champion_terry.title"
+    }
+  },
+  "requirements": [
+    [
+      "defeat_champion_terry"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

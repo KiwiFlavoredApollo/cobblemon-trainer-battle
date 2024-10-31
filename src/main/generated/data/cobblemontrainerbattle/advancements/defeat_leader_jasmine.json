@@ -1,0 +1,33 @@
+{
+  "parent": "cobblemontrainerbattle:defeat_leader_chuck",
+  "criteria": {
+    "defeat_leader_jasmine": {
+      "conditions": {
+        "trainer": "trainer:entity/leader_jasmine"
+      },
+      "trigger": "cobblemontrainerbattle:defeat_trainer"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_leader_jasmine.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "cobblemontrainerbattle:leader_jasmine_token"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_leader_jasmine.title"
+    }
+  },
+  "requirements": [
+    [
+      "defeat_leader_jasmine"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

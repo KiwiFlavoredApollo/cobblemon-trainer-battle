@@ -1,0 +1,33 @@
+{
+  "parent": "cobblemontrainerbattle:defeat_elite_bruno",
+  "criteria": {
+    "defeat_elite_agatha": {
+      "conditions": {
+        "trainer": "trainer:entity/elite_agatha"
+      },
+      "trigger": "cobblemontrainerbattle:defeat_trainer"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_elite_agatha.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "cobblemontrainerbattle:elite_agatha_token"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_elite_agatha.title"
+    }
+  },
+  "requirements": [
+    [
+      "defeat_elite_agatha"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

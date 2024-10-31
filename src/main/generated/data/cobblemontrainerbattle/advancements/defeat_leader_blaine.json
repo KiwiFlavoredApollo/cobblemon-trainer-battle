@@ -1,0 +1,33 @@
+{
+  "parent": "cobblemontrainerbattle:defeat_leader_sabrina",
+  "criteria": {
+    "defeat_leader_blaine": {
+      "conditions": {
+        "trainer": "trainer:entity/leader_blaine"
+      },
+      "trigger": "cobblemontrainerbattle:defeat_trainer"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_leader_blaine.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "cobblemontrainerbattle:leader_blaine_token"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_leader_blaine.title"
+    }
+  },
+  "requirements": [
+    [
+      "defeat_leader_blaine"
+    ]
+  ],
+  "sends_telemetry_event": false
+}
