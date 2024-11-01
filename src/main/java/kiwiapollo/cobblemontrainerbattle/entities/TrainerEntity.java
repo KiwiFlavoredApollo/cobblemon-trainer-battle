@@ -96,17 +96,21 @@ public class TrainerEntity extends PathAwareEntity {
             return ActionResult.FAIL;
         }
 
-        try {
-            this.setVelocity(0, 0, 0);
-            this.setAiDisabled(true);
-            this.velocityDirty = true;
+        startTrainerBattle((ServerPlayerEntity) player, hand);
 
-            PlayerBattleParticipant playerBattleParticipant = new NormalBattlePlayer((ServerPlayerEntity) player);
-            TrainerBattleParticipant trainerBattleParticipant = new EntityBackedTrainer(trainer, this, (ServerPlayerEntity) player);
+        return super.interactMob(player, hand);
+    }
+
+    private void startTrainerBattle(ServerPlayerEntity player, Hand hand) {
+        try {
+            assertNotBusyWithPokemonBattle();
+
+            PlayerBattleParticipant playerBattleParticipant = new NormalBattlePlayer(player);
+            TrainerBattleParticipant trainerBattleParticipant = new EntityBackedTrainer(trainer, this, player);
 
             TrainerProfile trainerProfile = ProfileRegistries.trainer.get(trainer);
             BattleResultHandler battleResultHandler = new PostBattleActionSetHandler(
-                    (ServerPlayerEntity) player,
+                    player,
                     trainerProfile.onVictory(),
                     trainerProfile.onDefeat()
             );
@@ -121,13 +125,15 @@ public class TrainerEntity extends PathAwareEntity {
             TrainerBattleRegistry.put(player.getUuid(), trainerBattle);
             this.trainerBattle = trainerBattle;
 
-        } catch (BattleStartException ignored) {
-            this.setAiDisabled(false);
+            this.setVelocity(0, 0, 0);
+            this.setAiDisabled(true);
+            this.velocityDirty = true;
+
+            Criteria.PLAYER_INTERACTED_WITH_ENTITY.trigger(player, player.getStackInHand(hand), this);
+
+        } catch (BusyWithPokemonBattleException | BattleStartException ignored) {
+
         }
-
-        Criteria.PLAYER_INTERACTED_WITH_ENTITY.trigger((ServerPlayerEntity) player, player.getStackInHand(hand), this);
-
-        return super.interactMob(player, hand);
     }
 
     @Override
