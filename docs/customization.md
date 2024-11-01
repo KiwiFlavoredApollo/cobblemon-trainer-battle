@@ -187,4 +187,4 @@ Loot tables can be set for each trainer. Trainers without loot tables will drop 
 
 ## Trainer Textures
 
-Gym Leaders, Elite Four and Champion textures (skins) can be overridden via resource pack. Make sure you have the right path. For example, if you want to override Gym Leader Brock's texture, the path should be `your_data_pack/assets/cobblemontrainerbattle/textures/entity/trainer/slim/leader_brock.png`
+Gym Leaders, Elite Four and Champion textures (skins) can be overridden via resource pack. Make sure you have the right path. For example, if you want to override Gym Leader Brock's texture, the path should be `your_resource_pack/assets/cobblemontrainerbattle/textures/entity/trainer/slim/leader_brock.png`
