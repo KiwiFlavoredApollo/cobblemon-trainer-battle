@@ -4,7 +4,7 @@
 
 Trainers drop Trainer Tokens when defeated. Trainer entities do not drop Tokens when killed by players. Trainer Tokens are used for crafting Tickets for battling Gym Leaders.
 
-Gym Leaders, Elite Four and Champion drop special kind of Tokens when defeated. Gym Leader Tokens are used for crafting Tickets for battling Elite Four Ticket, and Elite Four Tokens are used for crafting Ticket for battling Champion.
+Gym Leaders, Elite Four and Champion drop special kind of Tokens when defeated. Gym Leader Tokens are used for crafting Tickets for battling Elite Four Ticket, and Elite Four Tokens are used for crafting Ticket for battling Champion. Using recipe mods like EMI is highly recommended. 
 
 ## VS Seeker
 
