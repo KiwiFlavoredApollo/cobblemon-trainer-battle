@@ -8,6 +8,7 @@ Cobblemon Trainer Battle is a side mod for Cobblemon that offers trainer battle 
 - Battle Factory Mini Game
 - NPC Trainers and Items
 - Inclement Emerald Progression System
+- Radical Red Progression System
 
 ## Documentation
 
