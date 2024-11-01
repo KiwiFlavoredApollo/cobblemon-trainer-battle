@@ -6,7 +6,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
-package com.selfdot.cobblemontrainers
+package kiwiapollo.cobblemontrainerbattle.common
 
 import com.cobblemon.mod.common.CobblemonItems
 import com.cobblemon.mod.common.api.abilities.Abilities
