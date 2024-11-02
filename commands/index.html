@@ -51,10 +51,32 @@
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">Commands</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#utility-commands">Utility Commands</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#reload">Reload</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#export">Export</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#trainer-battle">Trainer Battle</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#trainerbattle">/trainerbattle</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#trainerbattleother">/trainerbattleother</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#trainerbattleflat">/trainerbattleflat</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#trainerbattleflatother">/trainerbattleflatother</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#group-battle">Group Battle</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#groupbattle">/groupbattle</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#groupbattleflat">/groupbattleflat</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#battle-factory">Battle Factory</a>
     </li>
@@ -98,35 +120,63 @@
               
                 <h1 id="commands">Commands</h1>
 <h2 id="utility-commands">Utility Commands</h2>
+<h3 id="reload">Reload</h3>
 <pre><code>/cobblemontrainerbattle reload
 </code></pre>
-<p>Reloads <code>.minecraft/config/cobblemontrainerbattle/config.json</code></p>
+<pre><code>cobblemontrainerbattle.reload
+</code></pre>
+<p>Reloads configuration file located at <code>.minecraft/config/cobblemontrainerbattle/config.json</code></p>
+<h3 id="export">Export</h3>
 <pre><code>/cobblemontrainerbattle export &lt;player&gt;
 /cobblemontrainerbattle exportflat &lt;player&gt; &lt;level&gt;
 /cobblemontrainerbattle exportrelative &lt;player&gt;
 </code></pre>
+<pre><code>cobblemontrainerbattle.export
+</code></pre>
 <p>Exports player Pokémon to <code>.minecraft/cobblemontrainerbattle/</code>. While it's not strictly formatted like the Showdown team JSON format, it can be used for adding custom trainers.</p>
 <h2 id="trainer-battle">Trainer Battle</h2>
+<h3 id="trainerbattle"><code>/trainerbattle</code></h3>
 <pre><code>/trainerbattle random
 /trainerbattle &lt;trainer&gt;
-
-/trainerbattleother &lt;player&gt; random
+</code></pre>
+<pre><code>cobblemontrainerbattle.trainerbattle.random
+cobblemontrainerbattle.trainerbattle.trainer
+</code></pre>
+<h3 id="trainerbattleother"><code>/trainerbattleother</code></h3>
+<pre><code>/trainerbattleother &lt;player&gt; random
 /trainerbattleother &lt;player&gt; &lt;trainer&gt;
-
-/trainerbattleflat random
+</code></pre>
+<pre><code>cobblemontrainerbattle.trainerbattleother.random
+cobblemontrainerbattle.trainerbattleother.trainer
+</code></pre>
+<h3 id="trainerbattleflat"><code>/trainerbattleflat</code></h3>
+<pre><code>/trainerbattleflat random
 /trainerbattleflat &lt;trainer&gt;
-
-/trainerbattleflatother &lt;player&gt; random
+</code></pre>
+<pre><code>cobblemontrainerbattle.trainerbattleflat.random
+cobblemontrainerbattle.trainerbattleflat.trainer
+</code></pre>
+<h3 id="trainerbattleflatother"><code>/trainerbattleflatother</code></h3>
+<pre><code>/trainerbattleflatother &lt;player&gt; random
 /trainerbattleflatother &lt;player&gt; &lt;trainer&gt;
 </code></pre>
+<pre><code>cobblemontrainerbattle.trainerbattleflatother.random
+cobblemontrainerbattle.trainerbattleflatother.trainer
+</code></pre>
 <h2 id="group-battle">Group Battle</h2>
+<h3 id="groupbattle"><code>/groupbattle</code></h3>
 <pre><code>/groupbattle startsession &lt;group&gt;
 /groupbattle stopsession
 /groupbattle startbattle
-
-/groupbattleflat startsession &lt;group&gt;
+</code></pre>
+<pre><code>cobblemontrainerbattle.groupbattle
+</code></pre>
+<h3 id="groupbattleflat"><code>/groupbattleflat</code></h3>
+<pre><code>/groupbattleflat startsession &lt;group&gt;
 /groupbattleflat stopsession
 /groupbattleflat startbattle
+</code></pre>
+<pre><code>cobblemontrainerbattle.groupbattleflat
 </code></pre>
 <h2 id="battle-factory">Battle Factory</h2>
 <p><a href="https://bulbapedia.bulbagarden.net/wiki/Battle_Factory_(Generation_III)">Battle Factory</a> is a mini-game introduced in main Pokémon series where players start battling random trainers with three rental Pokémon. Players get a chance to trade Pokémon with their opponent once obtained victory.</p>
@@ -138,6 +188,8 @@
 /battlefactory tradepokemon
 /battlefactory tradepokemon &lt;playerslot&gt; &lt;trainerslot&gt;
 /battlefactory winningstreak
+</code></pre>
+<pre><code>cobblemontrainerbattle.battlefactory
 </code></pre>
               
             </div>
