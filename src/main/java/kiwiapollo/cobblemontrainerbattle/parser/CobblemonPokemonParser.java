@@ -59,8 +59,6 @@ public class CobblemonPokemonParser {
     }
 
     private List<String> toShowdownMoveSet(MoveSet cobblemonMoveSet) {
-        return cobblemonMoveSet.getMoves().stream()
-                .map(Move::getDisplayName)
-                .map(MutableText::getString).toList();
+        return cobblemonMoveSet.getMoves().stream().map(Move::getName).toList();
     }
 }
