@@ -93,9 +93,6 @@ Few attributes can be Minecraft-friendly, and additional attributes are availabl
 ```
 "species": "cobblemon:pikachu"
 ```
-```
-"species": "cobblemon:megacharizardx"
-```
 
 #### Item
 
@@ -115,21 +112,34 @@ Few attributes can be Minecraft-friendly, and additional attributes are availabl
 "nature": "cobblemon:jolly"
 ```
 
+#### Moves
+
+```
+"moves": ["Surf", "Giga Drain", "Ice Beam", "Rain Dance"]
+```
+```
+"moves": ["flamecharge", "quickattack", "ember", "scratch"]
+``` 
+
 #### Shiny (Additional Attribute)
 
 ```
 "shiny": true
 ```
-
-`shiny` attribute can either be true or false.
+```
+"shiny": false
+```
 
 #### Form (Additional Attribute)
 
 ```
 "form": "Galar"
 ```
+```
+"form": "Hisui Bias"
+```
 
-`form` attribute takes form names. Few other options are `Hisui Bias`, `Paldea-Combat` and `Galar-Zen`. You can identify form names from [Cobblemon species file](https://gitlab.com/cable-mc/cobblemon/-/tree/main/common/src/main/resources/data/cobblemon/species?ref_type=heads).
+`form` attribute takes form names. Few other options are `Therian`, `Paldea-Combat` and `Galar-Zen`. You can identify form names from [Cobblemon species file](https://gitlab.com/cable-mc/cobblemon/-/tree/main/common/src/main/resources/data/cobblemon/species?ref_type=heads).
 
 ## Trainer Option
 
