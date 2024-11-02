@@ -82,6 +82,55 @@ datapacks/
 ]
 ```
 
+### Additional Features
+
+Few attributes can be Minecraft-friendly, and additional attributes are available.
+
+#### Species
+```
+"species": "Articuno"
+```
+```
+"species": "cobblemon:pikachu"
+```
+```
+"species": "cobblemon:megacharizardx"
+```
+
+#### Item
+
+```
+"item": "Leftovers"
+```
+```
+"item": "minecraft:diamond"
+```
+
+#### Nature
+
+```
+"nature": "Modest"
+```
+```
+"nature": "cobblemon:jolly"
+```
+
+#### Shiny (Additional Attribute)
+
+```
+"shiny": true
+```
+
+`shiny` attribute can either be true or false.
+
+#### Form (Additional Attribute)
+
+```
+"form": "Galar"
+```
+
+`form` attribute takes form names. Few other options are `Hisui Bias`, `Paldea-Combat` and `Galar-Zen`. You can identify form names from [Cobblemon species file](https://gitlab.com/cable-mc/cobblemon/-/tree/main/common/src/main/resources/data/cobblemon/species?ref_type=heads).
+
 ## Trainer Option
 
 - Multiple commands are supported
