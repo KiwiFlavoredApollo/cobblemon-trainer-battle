@@ -60,7 +60,7 @@ public class ProfileRegistries implements SimpleSynchronousResourceReloadListene
                 Identifier optionIdentifier = toOptionIdentifier(teamIdentifier);
 
                 String name = Paths.get(teamIdentifier.getPath()).getFileName().toString().replace(".json", "");
-                List<SmogonPokemon> team = readTeamResource(teamResource);
+                List<ShowdownPokemon> team = readTeamResource(teamResource);
 
                 TrainerOption option = defaultOption;
                 if (optionResourceMap.containsKey(optionIdentifier)) {
@@ -169,10 +169,10 @@ public class ProfileRegistries implements SimpleSynchronousResourceReloadListene
         return resourceManager.getResourceOrThrow(identifier);
     }
 
-    private List<SmogonPokemon> readTeamResource(Resource resource) throws IOException, JsonParseException {
+    private List<ShowdownPokemon> readTeamResource(Resource resource) throws IOException, JsonParseException {
         try (InputStream inputStream = resource.getInputStream()) {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-            return new Gson().fromJson(bufferedReader, new TypeToken<List<SmogonPokemon>>(){}.getType());
+            return new Gson().fromJson(bufferedReader, new TypeToken<List<ShowdownPokemon>>(){}.getType());
         }
     }
 

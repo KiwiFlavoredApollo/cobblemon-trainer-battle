@@ -13,20 +13,20 @@ import java.util.List;
 import java.util.Map;
 
 public class CobblemonPokemonParser {
-    public SmogonPokemon toSmogonPokemon(Pokemon pokemon) {
-        return new SmogonPokemon(
+    public ShowdownPokemon toShowdownPokemon(Pokemon pokemon) {
+        return new ShowdownPokemon(
                 getNickName(pokemon),
                 pokemon.getSpecies().getResourceIdentifier().toString(),
                 pokemon.getForm().getName(),
                 pokemon.getShiny(),
                 Registries.ITEM.getId(pokemon.heldItem().getItem()).toString(),
                 pokemon.getAbility().getName(),
-                toSmogonGender(pokemon.getGender()),
+                toShowdownGender(pokemon.getGender()),
                 pokemon.getNature().getName().toString(),
                 pokemon.getLevel(),
-                toSmogonStats(pokemon.getEvs()),
-                toSmogonStats(pokemon.getIvs()),
-                toSmogonMoveSet(pokemon.getMoveSet())
+                toShowdownStats(pokemon.getEvs()),
+                toShowdownStats(pokemon.getIvs()),
+                toShowdownMoveSet(pokemon.getMoveSet())
         );
     }
 
@@ -39,7 +39,7 @@ public class CobblemonPokemonParser {
         }
     }
 
-    private String toSmogonGender(Gender gender) {
+    private String toShowdownGender(Gender gender) {
         return switch(gender) {
             case MALE -> "M";
             case FEMALE -> "F";
@@ -47,7 +47,7 @@ public class CobblemonPokemonParser {
         };
     }
 
-    private Map<String, Integer> toSmogonStats(PokemonStats cobblemonStats) {
+    private Map<String, Integer> toShowdownStats(PokemonStats cobblemonStats) {
         return Map.of(
                 "hp", cobblemonStats.getOrDefault(Stats.HP),
                 "atk", cobblemonStats.getOrDefault(Stats.ATTACK),
@@ -58,7 +58,7 @@ public class CobblemonPokemonParser {
         );
     }
 
-    private List<String> toSmogonMoveSet(MoveSet cobblemonMoveSet) {
+    private List<String> toShowdownMoveSet(MoveSet cobblemonMoveSet) {
         return cobblemonMoveSet.getMoves().stream()
                 .map(Move::getDisplayName)
                 .map(MutableText::getString).toList();

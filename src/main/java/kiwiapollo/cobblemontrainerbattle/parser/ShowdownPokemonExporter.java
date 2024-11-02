@@ -9,20 +9,20 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
-public class SmogonPokemonExporter {
+public class ShowdownPokemonExporter {
     private static final File GAME_DIR = FabricLoader.getInstance().getGameDir().toFile();
     public static final File EXPORT_DIR = new File(GAME_DIR, CobblemonTrainerBattle.MOD_ID);
 
-    public SmogonPokemonExporter() {
+    public ShowdownPokemonExporter() {
         if (!EXPORT_DIR.exists()) {
             EXPORT_DIR.mkdirs();
         }
     }
 
-    public void toJson(List<SmogonPokemon> smogonPokemons, File exportFile) throws IOException {
+    public void toJson(List<ShowdownPokemon> showdownPokemons, File exportFile) throws IOException {
         try (FileWriter fileWriter = new FileWriter(exportFile)) {
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            gson.toJson(new Gson().toJsonTree(smogonPokemons), fileWriter);
+            gson.toJson(new Gson().toJsonTree(showdownPokemons), fileWriter);
         }
     }
 }

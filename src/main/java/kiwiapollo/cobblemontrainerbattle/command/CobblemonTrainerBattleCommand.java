@@ -14,8 +14,8 @@ import kiwiapollo.cobblemontrainerbattle.economy.EconomyFactory;
 import kiwiapollo.cobblemontrainerbattle.exception.EmptyPlayerPartyException;
 import kiwiapollo.cobblemontrainerbattle.parser.CobblemonPokemonParser;
 import kiwiapollo.cobblemontrainerbattle.parser.ConfigLoader;
-import kiwiapollo.cobblemontrainerbattle.parser.SmogonPokemon;
-import kiwiapollo.cobblemontrainerbattle.parser.SmogonPokemonExporter;
+import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemon;
+import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemonExporter;
 import net.minecraft.command.EntitySelector;
 import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.server.command.ServerCommandSource;
@@ -96,14 +96,14 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
                     .getParty(player).toGappyList().stream()
                     .filter(Objects::nonNull).toList();
 
-            List<SmogonPokemon> smogonPokemons = pokemons.stream().map(new CobblemonPokemonParser()::toSmogonPokemon).toList();
+            List<ShowdownPokemon> showdownPokemons = pokemons.stream().map(new CobblemonPokemonParser()::toShowdownPokemon).toList();
 
             LocalDateTime dateTime = LocalDateTime.ofInstant(Instant.now(), ZoneId.systemDefault());
             String timestamp = dateTime.format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
 
             String exportFileName = String.format("%s_%s.json", player.getGameProfile().getName().toLowerCase(), timestamp);
-            File exportFile = new File(SmogonPokemonExporter.EXPORT_DIR, exportFileName);
-            new SmogonPokemonExporter().toJson(smogonPokemons, exportFile);
+            File exportFile = new File(ShowdownPokemonExporter.EXPORT_DIR, exportFileName);
+            new ShowdownPokemonExporter().toJson(showdownPokemons, exportFile);
 
             context.getSource().sendMessage(Text.literal(String.format("Exported %s's Pokemon team", player.getGameProfile().getName())));
             CobblemonTrainerBattle.LOGGER.info(String.format("Successfully exported trainer file: %s", exportFile.getPath()));
@@ -135,15 +135,15 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
                     .getParty(player).toGappyList().stream()
                     .filter(Objects::nonNull).toList();
 
-            List<SmogonPokemon> smogonPokemons = pokemons.stream().map(new CobblemonPokemonParser()::toSmogonPokemon).toList();
-            smogonPokemons.forEach(smogonPokemon -> smogonPokemon.level = level);
+            List<ShowdownPokemon> showdownPokemons = pokemons.stream().map(new CobblemonPokemonParser()::toShowdownPokemon).toList();
+            showdownPokemons.forEach(smogonPokemon -> smogonPokemon.level = level);
 
             LocalDateTime dateTime = LocalDateTime.ofInstant(Instant.now(), ZoneId.systemDefault());
             String timestamp = dateTime.format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
 
             String exportFileName = String.format("%s_flat_%s.json", player.getGameProfile().getName().toLowerCase(), timestamp);
-            File exportFile = new File(SmogonPokemonExporter.EXPORT_DIR, exportFileName);
-            new SmogonPokemonExporter().toJson(smogonPokemons, exportFile);
+            File exportFile = new File(ShowdownPokemonExporter.EXPORT_DIR, exportFileName);
+            new ShowdownPokemonExporter().toJson(showdownPokemons, exportFile);
 
             context.getSource().sendMessage(Text.literal(String.format("Exported %s's Pokemon team", player.getGameProfile().getName())));
             CobblemonTrainerBattle.LOGGER.info(String.format("Successfully exported trainer file: %s", exportFile.getPath()));
@@ -173,15 +173,15 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
                     .getParty(player).toGappyList().stream()
                     .filter(Objects::nonNull).toList();
 
-            List<SmogonPokemon> smogonPokemons = pokemons.stream().map(new CobblemonPokemonParser()::toSmogonPokemon).toList();
-            smogonPokemons.forEach(smogonPokemon -> smogonPokemon.level = 0);
+            List<ShowdownPokemon> showdownPokemons = pokemons.stream().map(new CobblemonPokemonParser()::toShowdownPokemon).toList();
+            showdownPokemons.forEach(smogonPokemon -> smogonPokemon.level = 0);
 
             LocalDateTime dateTime = LocalDateTime.ofInstant(Instant.now(), ZoneId.systemDefault());
             String timestamp = dateTime.format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
 
             String exportFileName = String.format("%s_relative_%s.json", player.getGameProfile().getName().toLowerCase(), timestamp);
-            File exportFile = new File(SmogonPokemonExporter.EXPORT_DIR, exportFileName);
-            new SmogonPokemonExporter().toJson(smogonPokemons, exportFile);
+            File exportFile = new File(ShowdownPokemonExporter.EXPORT_DIR, exportFileName);
+            new ShowdownPokemonExporter().toJson(showdownPokemons, exportFile);
 
             context.getSource().sendMessage(Text.literal(String.format("Exported %s's Pokemon team", player.getGameProfile().getName())));
             CobblemonTrainerBattle.LOGGER.info(String.format("Successfully exported trainer file: %s", exportFile.getPath()));

@@ -3,7 +3,7 @@ package kiwiapollo.cobblemontrainerbattle.parser;
 import java.util.List;
 import java.util.Map;
 
-public class SmogonPokemon {
+public class ShowdownPokemon {
     public String name;
     public String species;
     public String form;
@@ -17,7 +17,7 @@ public class SmogonPokemon {
     public int level;
     public List<String> moves;
 
-    public SmogonPokemon(
+    public ShowdownPokemon(
             String name,
             String species,
             String form,

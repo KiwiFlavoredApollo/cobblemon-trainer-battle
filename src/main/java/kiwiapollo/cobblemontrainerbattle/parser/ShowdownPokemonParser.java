@@ -21,7 +21,7 @@ import net.minecraft.util.Identifier;
 import java.util.*;
 import java.util.function.BiConsumer;
 
-public class SmogonPokemonParser {
+public class ShowdownPokemonParser {
     public static final int DEFAULT_LEVEL = 50;
     public static final int RELATIVE_LEVEL_THRESHOLD = 10;
     public static final Map<String, String> EXCEPTIONAL_MOVE_NAMES = Map.ofEntries(
@@ -38,30 +38,30 @@ public class SmogonPokemonParser {
 
     private final ServerPlayerEntity player;
 
-    public SmogonPokemonParser(ServerPlayerEntity player) {
+    public ShowdownPokemonParser(ServerPlayerEntity player) {
         this.player = player;
     }
 
-    public Pokemon toCobblemonPokemon(SmogonPokemon smogonPokemon) throws PokemonParseException {
-        Pokemon pokemon = createBasePokemon(smogonPokemon);
+    public Pokemon toCobblemonPokemon(ShowdownPokemon showdownPokemon) throws PokemonParseException {
+        Pokemon pokemon = createBasePokemon(showdownPokemon);
 
-        setPokemonForm(pokemon, getFormName(smogonPokemon.species, smogonPokemon.form));
-        setPokemonShiny(pokemon, smogonPokemon.shiny);
-        setPokemonStats(pokemon::setEV, smogonPokemon.evs);
-        setPokemonStats(pokemon::setIV, smogonPokemon.ivs);
-        setPokemonGender(pokemon, smogonPokemon.gender);
-        setPokemonMoveSet(pokemon, smogonPokemon.moves);
-        setPokemonHeldItem(pokemon, smogonPokemon.item);
-        setPokemonAbility(pokemon, smogonPokemon.ability);
-        setPokemonLevel(pokemon, smogonPokemon.level);
-        setPokemonNature(pokemon, smogonPokemon.nature);
+        setPokemonForm(pokemon, getFormName(showdownPokemon.species, showdownPokemon.form));
+        setPokemonShiny(pokemon, showdownPokemon.shiny);
+        setPokemonStats(pokemon::setEV, showdownPokemon.evs);
+        setPokemonStats(pokemon::setIV, showdownPokemon.ivs);
+        setPokemonGender(pokemon, showdownPokemon.gender);
+        setPokemonMoveSet(pokemon, showdownPokemon.moves);
+        setPokemonHeldItem(pokemon, showdownPokemon.item);
+        setPokemonAbility(pokemon, showdownPokemon.ability);
+        setPokemonLevel(pokemon, showdownPokemon.level);
+        setPokemonNature(pokemon, showdownPokemon.nature);
 
         return pokemon;
     }
 
-    private Pokemon createBasePokemon(SmogonPokemon smogonPokemon) throws PokemonParseException {
+    private Pokemon createBasePokemon(ShowdownPokemon showdownPokemon) throws PokemonParseException {
         try {
-            Identifier identifier = toSpeciesIdentifier(smogonPokemon.species);
+            Identifier identifier = toSpeciesIdentifier(showdownPokemon.species);
             return PokemonSpecies.INSTANCE.getByIdentifier(identifier).create(DEFAULT_LEVEL);
 
         } catch (NullPointerException e) {

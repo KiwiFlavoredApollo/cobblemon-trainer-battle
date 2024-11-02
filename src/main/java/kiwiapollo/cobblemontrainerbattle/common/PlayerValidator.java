@@ -3,17 +3,9 @@ package kiwiapollo.cobblemontrainerbattle.common;
 import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.pokemon.Pokemon;
-import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.exception.*;
-import kiwiapollo.cobblemontrainerbattle.exception.battlecondition.MaximumPartyLevelException;
-import kiwiapollo.cobblemontrainerbattle.exception.battlecondition.MinimumPartyLevelException;
-import kiwiapollo.cobblemontrainerbattle.exception.battlecondition.RematchNotAllowedException;
-import kiwiapollo.cobblemontrainerbattle.parser.SmogonPokemonParser;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemonParser;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
 
 import java.util.Objects;
 
@@ -40,7 +32,7 @@ public class PlayerValidator {
         boolean isAtOrBelowRelativeLevelThreshold = party.toGappyList().stream()
                 .filter(Objects::nonNull)
                 .map(Pokemon::getLevel)
-                .allMatch(level -> level < SmogonPokemonParser.RELATIVE_LEVEL_THRESHOLD);
+                .allMatch(level -> level < ShowdownPokemonParser.RELATIVE_LEVEL_THRESHOLD);
 
         if (isAtOrBelowRelativeLevelThreshold) {
             throw new BelowRelativeLevelThresholdException();

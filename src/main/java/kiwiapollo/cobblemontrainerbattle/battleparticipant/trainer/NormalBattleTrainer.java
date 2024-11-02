@@ -10,8 +10,8 @@ import kiwiapollo.cobblemontrainerbattle.common.BattleCondition;
 import kiwiapollo.cobblemontrainerbattle.common.Generation5AI;
 import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
 import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistries;
-import kiwiapollo.cobblemontrainerbattle.parser.SmogonPokemon;
-import kiwiapollo.cobblemontrainerbattle.parser.SmogonPokemonParser;
+import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemon;
+import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemonParser;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
@@ -94,13 +94,13 @@ public class NormalBattleTrainer implements TrainerBattleParticipant {
         return party.toGappyList().stream().filter(Objects::nonNull).map(DisposableBattlePokemonFactory::create).toList();
     }
 
-    private static PartyStore toParty(List<SmogonPokemon> pokemons, ServerPlayerEntity player) {
-        SmogonPokemonParser parser = new SmogonPokemonParser(player);
+    private static PartyStore toParty(List<ShowdownPokemon> pokemons, ServerPlayerEntity player) {
+        ShowdownPokemonParser parser = new ShowdownPokemonParser(player);
 
         PartyStore party = new PartyStore(UUID.randomUUID());
-        for (SmogonPokemon smogonPokemon : pokemons) {
+        for (ShowdownPokemon showdownPokemon : pokemons) {
             try {
-                party.add(parser.toCobblemonPokemon(smogonPokemon));
+                party.add(parser.toCobblemonPokemon(showdownPokemon));
             } catch (PokemonParseException ignored) {
 
             }
