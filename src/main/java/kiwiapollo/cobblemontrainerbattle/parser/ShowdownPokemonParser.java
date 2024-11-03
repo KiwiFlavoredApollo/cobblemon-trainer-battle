@@ -24,17 +24,6 @@ import java.util.function.BiConsumer;
 public class ShowdownPokemonParser {
     public static final int DEFAULT_LEVEL = 50;
     public static final int RELATIVE_LEVEL_THRESHOLD = 10;
-    public static final Map<String, String> EXCEPTIONAL_MOVE_NAMES = Map.ofEntries(
-            Map.entry("Drain Kiss", "drainingkiss"),
-            Map.entry("Bad Tantrum", "stompingtantrum"),
-            Map.entry("FirstImpress", "firstimpression"),
-            Map.entry("Dark Hole", "darkvoid"),
-            Map.entry("Para Charge", "paraboliccharge"),
-            Map.entry("HiHorsepower", "highhorsepower"),
-            Map.entry("Expand Force", "expandingforce"),
-            Map.entry("Aqua Fang", "aquajet"),
-            Map.entry("Teary Look", "tearfullook")
-    );
 
     private final ServerPlayerEntity player;
 
@@ -240,27 +229,13 @@ public class ShowdownPokemonParser {
         pokemon.getMoveSet().clear();
         for (String moveName : moveSet) {
             try {
-                Move move = Moves.INSTANCE.getByName(toCobblemonMoveName(moveName)).create();
+                Move move = Moves.INSTANCE.getByName(new ShowdownMoveParser().toCobblemonMove(moveName)).create();
                 pokemon.getMoveSet().add(move);
 
             } catch (NullPointerException e) {
-                CobblemonTrainerBattle.LOGGER.error(String.format("Move not found: %s", moveName));
-                CobblemonTrainerBattle.LOGGER.error("Please report to mod author");
+                CobblemonTrainerBattle.LOGGER.error("Move not found: {}", moveName);
+                CobblemonTrainerBattle.LOGGER.error("Please report this to mod author");
             }
         }
-    }
-
-    private String normalizeMoveName(String moveName) {
-        return moveName.replace(" ", "")
-                .replace("-", "")
-                .toLowerCase();
-    }
-
-    private String toCobblemonMoveName(String moveName) {
-        if (EXCEPTIONAL_MOVE_NAMES.containsKey(moveName)) {
-            return EXCEPTIONAL_MOVE_NAMES.get(moveName);
-        }
-
-        return normalizeMoveName(moveName);
     }
 }
