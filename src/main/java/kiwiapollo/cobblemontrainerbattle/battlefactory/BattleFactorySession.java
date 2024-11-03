@@ -125,7 +125,7 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Pokem
 
         } catch (NotExistDefeatedTrainerException e) {
             player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.defeated_trainer_not_exist"));
-            CobblemonTrainerBattle.LOGGER.error(String.format("Player has no defeated trainers: %s", player.getName()));
+            CobblemonTrainerBattle.LOGGER.error("Player has no defeated trainers: {}", player.getName());
 
         } catch (TradedPokemonException e) {
             player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.already_traded_pokemon"));

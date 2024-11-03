@@ -106,7 +106,7 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
             new ShowdownPokemonExporter().toJson(showdownPokemons, exportFile);
 
             context.getSource().sendMessage(Text.literal(String.format("Exported %s's Pokemon team", player.getGameProfile().getName())));
-            CobblemonTrainerBattle.LOGGER.info(String.format("Successfully exported trainer file: %s", exportFile.getPath()));
+            CobblemonTrainerBattle.LOGGER.info("Successfully exported trainer file: {}", exportFile.getPath());
 
             return Command.SINGLE_SUCCESS;
 
@@ -146,7 +146,7 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
             new ShowdownPokemonExporter().toJson(showdownPokemons, exportFile);
 
             context.getSource().sendMessage(Text.literal(String.format("Exported %s's Pokemon team", player.getGameProfile().getName())));
-            CobblemonTrainerBattle.LOGGER.info(String.format("Successfully exported trainer file: %s", exportFile.getPath()));
+            CobblemonTrainerBattle.LOGGER.info("Successfully exported trainer file: {}", exportFile.getPath());
 
             return Command.SINGLE_SUCCESS;
 
@@ -184,7 +184,7 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
             new ShowdownPokemonExporter().toJson(showdownPokemons, exportFile);
 
             context.getSource().sendMessage(Text.literal(String.format("Exported %s's Pokemon team", player.getGameProfile().getName())));
-            CobblemonTrainerBattle.LOGGER.info(String.format("Successfully exported trainer file: %s", exportFile.getPath()));
+            CobblemonTrainerBattle.LOGGER.info("Successfully exported trainer file: {}", exportFile.getPath());
 
             return Command.SINGLE_SUCCESS;
 
