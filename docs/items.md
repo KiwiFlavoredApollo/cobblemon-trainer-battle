@@ -25,7 +25,7 @@ Tickets alone cannot spawn trainers. Players must use (right-click) VS Seeker in
 
 ## Trainer Spawn Egg
 
-Trainer Spawn Egg spawns random players. However, Trainer Spawn Egg can be configured to spawn specific trainer in specific texture.
+By default, Trainer Spawn Egg spawns random trainers. However, Trainer Spawn Egg can be configured to spawn specific trainer in specific texture.
 
 ```
 /give @p cobblemontrainerbattle:trainer_spawn_egg{EntityTag:{trainer:"trainer:radicalred/leader_brock",texture:"minecraft:textures/entity/player/slim/steve.png"}}
