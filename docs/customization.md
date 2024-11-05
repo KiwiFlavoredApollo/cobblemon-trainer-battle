@@ -146,6 +146,7 @@ Few attributes can be Minecraft-friendly, and additional attributes are availabl
 - Multiple commands are supported
 - Commands are run as server
 - `%player%` placeholder can be used to indicate the player in battle
+- `battleTheme` can be configured per trainer (>= 1.6.7)
 - Configuration can be set globally by modifying `defaults.json`
 
 ```json
@@ -156,6 +157,7 @@ Few attributes can be Minecraft-friendly, and additional attributes are availabl
     "maximumPartyLevel": 100,
     "minimumPartyLevel": 1
   },
+  "battleTheme": "cobblemon:battle.pvn.default",
   "onVictory": {
     "balance": 0,
     "commands": [
