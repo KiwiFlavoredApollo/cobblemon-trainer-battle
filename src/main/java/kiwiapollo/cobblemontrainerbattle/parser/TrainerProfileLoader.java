@@ -19,9 +19,6 @@ import java.util.List;
 import java.util.Map;
 
 public class TrainerProfileLoader implements SimpleSynchronousResourceReloadListener {
-    private static final String TRAINER_TEAM_DIR = "trainers/teams";
-    private static final String TRAINER_OPTION_DIR = "trainers/options";
-    private static final String DEFAULT_TRAINER_OPTION_PATH = String.format("%s/%s", TRAINER_OPTION_DIR, "defaults.json");
     private static final Gson TRAINER_OPTION_GSON = new GsonBuilder().registerTypeAdapter(SoundEvent.class, new BattleThemeDeserializer()).create();
 
     @Override
@@ -31,29 +28,19 @@ public class TrainerProfileLoader implements SimpleSynchronousResourceReloadList
 
     @Override
     public void reload(ResourceManager resourceManager) {
-        TrainerOption defaultOption = readDefaultTrainerOptionResource(getDefaultTrainerOptionResource(resourceManager));
-
-        Map<Identifier, Resource> teamResourceMap = resourceManager.findResources(TRAINER_TEAM_DIR, this::isJsonFile);
-        Map<Identifier, Resource> optionResourceMap = resourceManager.findResources(TRAINER_OPTION_DIR, this::isJsonFile);
-
         TrainerProfileStorage.clear();
-        for (Map.Entry<Identifier, Resource> entry : teamResourceMap.entrySet()) {
+        for (Map.Entry<Identifier, TrainerResource> entry : new TrainerResourceMapFactory(resourceManager).create().entrySet()) {
             try {
-                Identifier teamIdentifier = entry.getKey();
-                Resource teamResource = entry.getValue();
+                Identifier identifier = entry.getKey();
+                Resource teamResource = entry.getValue().team();
+                Resource optionResource = entry.getValue().option();
 
-                Identifier optionIdentifier = toOptionIdentifier(teamIdentifier);
-
-                String name = Paths.get(teamIdentifier.getPath()).getFileName().toString().replace(".json", "");
+                String name = Paths.get(identifier.getPath()).getFileName().toString();
                 List<ShowdownPokemon> team = readTrainerTeamResource(teamResource);
-
-                TrainerOption option = defaultOption;
-                if (optionResourceMap.containsKey(optionIdentifier)) {
-                    option = readTrainerOptionResource(optionResourceMap.get(optionIdentifier));
-                }
+                TrainerOption option = readTrainerOptionResource(optionResource);
 
                 TrainerProfileStorage.put(
-                        toTrainerIdentifier(teamIdentifier),
+                        identifier,
                         new TrainerProfile(
                                 name,
                                 team,
@@ -72,45 +59,10 @@ public class TrainerProfileLoader implements SimpleSynchronousResourceReloadList
         }
     }
 
-    private Identifier toOptionIdentifier(Identifier teamIdentifier) {
-        String namespace = teamIdentifier.getNamespace();
-        String path = teamIdentifier.getPath().replace(TRAINER_TEAM_DIR, TRAINER_OPTION_DIR);
-
-        return Identifier.of(namespace, path);
-    }
-
-    private Identifier toTrainerIdentifier(Identifier teamIdentifier) {
-        String prefix = String.format("^%s/", TRAINER_TEAM_DIR);
-        String suffix = "\\.json$";
-        String path = teamIdentifier.getPath().replaceAll(prefix, "").replaceAll(suffix, "");
-
-        return Identifier.of("trainer", path);
-    }
-
-    private Resource getDefaultTrainerOptionResource(ResourceManager resourceManager) {
-        try {
-            Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, DEFAULT_TRAINER_OPTION_PATH);
-            return resourceManager.getResourceOrThrow(identifier);
-
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     private List<ShowdownPokemon> readTrainerTeamResource(Resource resource) throws IOException, JsonParseException {
         try (InputStream inputStream = resource.getInputStream()) {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
             return new Gson().fromJson(bufferedReader, new TypeToken<List<ShowdownPokemon>>(){}.getType());
-        }
-    }
-
-    private TrainerOption readDefaultTrainerOptionResource(Resource resource) {
-        try (InputStream inputStream = resource.getInputStream()) {
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-            return TRAINER_OPTION_GSON.fromJson(bufferedReader, TrainerOption.class);
-
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
     }
 
@@ -119,9 +71,5 @@ public class TrainerProfileLoader implements SimpleSynchronousResourceReloadList
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
             return TRAINER_OPTION_GSON.fromJson(bufferedReader, TrainerOption.class);
         }
-    }
-
-    private boolean isJsonFile(Identifier identifier) {
-        return identifier.toString().endsWith(".json");
     }
 }

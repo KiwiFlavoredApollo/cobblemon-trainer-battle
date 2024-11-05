@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class TrainerProfileStorage {
-    private static Map<Identifier, TrainerProfile> profiles = new HashMap<>();
+    private static final Map<Identifier, TrainerProfile> profiles = new HashMap<>();
 
     public static void clear() {
         profiles.clear();

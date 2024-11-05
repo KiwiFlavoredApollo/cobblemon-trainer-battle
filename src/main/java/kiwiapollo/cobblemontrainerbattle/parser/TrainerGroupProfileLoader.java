@@ -51,14 +51,14 @@ public class TrainerGroupProfileLoader implements SimpleSynchronousResourceReloa
         }
     }
 
-    private Identifier toTrainerGroupIdentifier(Identifier identifier) {
+    private Identifier toTrainerGroupIdentifier(Identifier group) {
         String prefix = String.format("^%s/", GROUP_DIR);
         String suffix = "\\.json$";
-        String path = identifier.getPath().replaceAll(prefix, "").replaceAll(suffix, "");
+        String path = group.getPath().replaceAll(prefix, "").replaceAll(suffix, "");
         return Identifier.of("group", path);
     }
 
-    private boolean isJsonFile(Identifier identifier) {
-        return identifier.toString().endsWith(".json");
+    private boolean isJsonFile(Identifier file) {
+        return file.toString().endsWith(".json");
     }
 }
