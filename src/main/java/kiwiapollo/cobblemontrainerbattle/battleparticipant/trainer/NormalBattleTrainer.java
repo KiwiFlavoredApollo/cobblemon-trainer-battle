@@ -31,7 +31,22 @@ public class NormalBattleTrainer implements TrainerBattleParticipant {
         this.identifier = identifier;
         this.uuid = UUID.randomUUID();
         this.player = player;
-        this.party = toParty(TrainerProfileStorage.get(identifier).team(), player);
+        this.party = showdownTeamToParty(TrainerProfileStorage.get(identifier).team(), player);
+    }
+
+    private static PartyStore showdownTeamToParty(List<ShowdownPokemon> pokemons, ServerPlayerEntity player) {
+        ShowdownPokemonParser parser = new ShowdownPokemonParser(player);
+
+        PartyStore party = new PartyStore(UUID.randomUUID());
+        for (ShowdownPokemon showdownPokemon : pokemons) {
+            try {
+                party.add(parser.toCobblemonPokemon(showdownPokemon));
+            } catch (PokemonParseException ignored) {
+
+            }
+        }
+
+        return party;
     }
 
     @Override
@@ -98,20 +113,5 @@ public class NormalBattleTrainer implements TrainerBattleParticipant {
     @Override
     public List<BattlePokemon> getBattleTeam() {
         return party.toGappyList().stream().filter(Objects::nonNull).map(DisposableBattlePokemonFactory::create).toList();
-    }
-
-    private static PartyStore toParty(List<ShowdownPokemon> pokemons, ServerPlayerEntity player) {
-        ShowdownPokemonParser parser = new ShowdownPokemonParser(player);
-
-        PartyStore party = new PartyStore(UUID.randomUUID());
-        for (ShowdownPokemon showdownPokemon : pokemons) {
-            try {
-                party.add(parser.toCobblemonPokemon(showdownPokemon));
-            } catch (PokemonParseException ignored) {
-
-            }
-        }
-
-        return party;
     }
 }

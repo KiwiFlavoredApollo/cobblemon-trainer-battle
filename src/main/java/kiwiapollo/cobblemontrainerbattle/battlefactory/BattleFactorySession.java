@@ -31,10 +31,10 @@ import java.util.List;
 import java.util.Objects;
 
 public class BattleFactorySession implements Session, PokemonTradeFeature, PokemonShowFeature, RentalPokemonFeature {
-    private final PlayerBattleParticipant player;
     private final List<Identifier> trainersToDefeat;
     private final BattleResultHandler battleResultHandler;
 
+    private PlayerBattleParticipant player;
     private TrainerBattle lastTrainerBattle;
     private int defeatedTrainersCount;
     private boolean isPlayerDefeated;
@@ -45,7 +45,7 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Pokem
             List<Identifier> trainersToDefeat,
             BattleResultHandler battleResultHandler
     ) {
-        this.player = new BattleFactoryPlayer(player);
+        this.player = new BattleFactoryPlayer(player, BattleFactory.LEVEL);
         this.trainersToDefeat = trainersToDefeat;
         this.defeatedTrainersCount = 0;
         this.isPlayerDefeated = false;
@@ -142,7 +142,7 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Pokem
     public void rerollPokemon() {
         try {
             assertNotExistDefeatedTrainer();
-            player.setParty(RandomPartyFactory.create(player.getPlayerEntity()));
+            player = new BattleFactoryPlayer(player.getPlayerEntity(), BattleFactory.LEVEL);
             printPokemons(player, player.getParty());
 
             player.sendInfoMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.rerollpokemon.success"));

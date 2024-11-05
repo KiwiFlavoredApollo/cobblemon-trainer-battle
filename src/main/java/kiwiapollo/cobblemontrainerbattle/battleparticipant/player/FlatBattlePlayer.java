@@ -21,10 +21,10 @@ public class FlatBattlePlayer implements PlayerBattleParticipant {
 
     public FlatBattlePlayer(ServerPlayerEntity player, int level) {
         this.player = player;
-        this.party = cloneParty(player, level);
+        this.party = createFlatLevelClonedParty(player, level);
     }
 
-    private static PartyStore cloneParty(ServerPlayerEntity player, int level) {
+    private PartyStore createFlatLevelClonedParty(ServerPlayerEntity player, int level) {
         PartyStore original = Cobblemon.INSTANCE.getStorage().getParty(player);
         PartyStore clone = new PartyStore(player.getUuid());
 

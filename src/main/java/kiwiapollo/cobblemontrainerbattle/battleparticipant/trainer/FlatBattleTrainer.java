@@ -43,7 +43,25 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
                 100
         );
 
-        this.party = toParty(trainerProfile.team(), player, level);
+        this.party = showdownTeamToFlatLevelParty(trainerProfile.team(), player, level);
+    }
+
+    private static PartyStore showdownTeamToFlatLevelParty(List<ShowdownPokemon> pokemons, ServerPlayerEntity player, int level) {
+        ShowdownPokemonParser parser = new ShowdownPokemonParser(player);
+
+        PartyStore party = new PartyStore(UUID.randomUUID());
+        for (ShowdownPokemon showdownPokemon : pokemons) {
+            try {
+                party.add(parser.toCobblemonPokemon(showdownPokemon));
+            } catch (PokemonParseException ignored) {
+
+            }
+        }
+
+        party.toGappyList().stream().filter(Objects::nonNull).forEach(Pokemon::heal);
+        party.toGappyList().stream().filter(Objects::nonNull).forEach(pokemon -> pokemon.setLevel(level));
+
+        return party;
     }
 
     @Override
@@ -110,23 +128,5 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
     @Override
     public List<BattlePokemon> getBattleTeam() {
         return party.toGappyList().stream().filter(Objects::nonNull).map(DisposableBattlePokemonFactory::create).toList();
-    }
-
-    private static PartyStore toParty(List<ShowdownPokemon> pokemons, ServerPlayerEntity player, int level) {
-        ShowdownPokemonParser parser = new ShowdownPokemonParser(player);
-
-        PartyStore party = new PartyStore(UUID.randomUUID());
-        for (ShowdownPokemon showdownPokemon : pokemons) {
-            try {
-                party.add(parser.toCobblemonPokemon(showdownPokemon));
-            } catch (PokemonParseException ignored) {
-
-            }
-        }
-
-        party.toGappyList().stream().filter(Objects::nonNull).forEach(Pokemon::heal);
-        party.toGappyList().stream().filter(Objects::nonNull).forEach(pokemon -> pokemon.setLevel(level));
-
-        return party;
     }
 }

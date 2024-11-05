@@ -23,6 +23,7 @@ public class BattleFactoryTrainer implements TrainerBattleParticipant {
     private final Identifier identifier;
     private final UUID uuid;
     private final ServerPlayerEntity player;
+    private final BattleCondition condition;
 
     private PartyStore party;
 
@@ -30,7 +31,29 @@ public class BattleFactoryTrainer implements TrainerBattleParticipant {
         this.identifier = identifier;
         this.uuid = UUID.randomUUID();
         this.player = player;
-        this.party = toParty(TrainerProfileStorage.get(identifier).team(), player, level);
+        this.condition = new BattleCondition();
+        this.party = showdownTeamToFlatLevelParty(TrainerProfileStorage.get(identifier).team(), player, level);
+    }
+
+    private PartyStore showdownTeamToFlatLevelParty(List<ShowdownPokemon> pokemons, ServerPlayerEntity player, int level) {
+        ShowdownPokemonParser parser = new ShowdownPokemonParser(player);
+
+        List<ShowdownPokemon> randomParty = new ArrayList<>(pokemons);
+        Collections.shuffle(randomParty);
+
+        PartyStore party = new PartyStore(UUID.randomUUID());
+        for (ShowdownPokemon showdownPokemon : randomParty.subList(0, 3)) {
+            try {
+                party.add(parser.toCobblemonPokemon(showdownPokemon));
+            } catch (PokemonParseException ignored) {
+
+            }
+        }
+
+        party.toGappyList().stream().filter(Objects::nonNull).forEach(Pokemon::heal);
+        party.toGappyList().stream().filter(Objects::nonNull).forEach(pokemon -> pokemon.setLevel(level));
+
+        return party;
     }
 
     @Override
@@ -55,7 +78,7 @@ public class BattleFactoryTrainer implements TrainerBattleParticipant {
 
     @Override
     public BattleCondition getBattleCondition() {
-        return TrainerProfileStorage.get(identifier).condition();
+        return this.condition;
     }
 
     @Override
@@ -97,26 +120,5 @@ public class BattleFactoryTrainer implements TrainerBattleParticipant {
     @Override
     public List<BattlePokemon> getBattleTeam() {
         return party.toGappyList().stream().filter(Objects::nonNull).map(DisposableBattlePokemonFactory::create).toList();
-    }
-
-    private static PartyStore toParty(List<ShowdownPokemon> pokemons, ServerPlayerEntity player, int level) {
-        ShowdownPokemonParser parser = new ShowdownPokemonParser(player);
-
-        List<ShowdownPokemon> randomParty = new ArrayList<>(pokemons);
-        Collections.shuffle(randomParty);
-
-        PartyStore party = new PartyStore(UUID.randomUUID());
-        for (ShowdownPokemon showdownPokemon : randomParty.subList(0, 3)) {
-            try {
-                party.add(parser.toCobblemonPokemon(showdownPokemon));
-            } catch (PokemonParseException ignored) {
-
-            }
-        }
-
-        party.toGappyList().stream().filter(Objects::nonNull).forEach(Pokemon::heal);
-        party.toGappyList().stream().filter(Objects::nonNull).forEach(pokemon -> pokemon.setLevel(level));
-
-        return party;
     }
 }

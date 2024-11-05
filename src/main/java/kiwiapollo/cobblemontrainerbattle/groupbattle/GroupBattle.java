@@ -31,7 +31,7 @@ import java.util.*;
 
 public class GroupBattle {
     public static final int FLAT_LEVEL = 100;
-    public static Map<UUID, GroupBattleSession> sessionRegistry = new HashMap<>();
+    private static Map<UUID, GroupBattleSession> sessions = new HashMap<>();
 
     public static int startNormalGroupBattleSession(CommandContext<ServerCommandSource> context) {
         return startSession(context, new NormalGroupBattleParticipantFactory.Builder());
@@ -50,7 +50,7 @@ public class GroupBattle {
             Identifier group = new Identifier(StringArgumentType.getString(context, "group"));
 
             ResourceValidator.assertTrainerGroupExist(group);
-            SessionValidator.assertSessionNotExist(sessionRegistry, player);
+            SessionValidator.assertSessionNotExist(sessions, player);
 
             TrainerGroupProfile profile = TrainerGroupProfileStorage.get(group);
             List<Identifier> trainer = profile.trainers.stream().map(Identifier::new).toList();
@@ -71,7 +71,7 @@ public class GroupBattle {
                     battleParticipantFactory
             );
 
-            sessionRegistry.put(player.getUuid(), session);
+            sessions.put(player.getUuid(), session);
 
             player.sendMessage(Text.translatable("command.cobblemontrainerbattle.groupbattle.startsession.success"));
             CobblemonTrainerBattle.LOGGER.info("Started group battle session: {}", player.getGameProfile().getName());
@@ -105,13 +105,13 @@ public class GroupBattle {
         try {
             ServerPlayerEntity player = context.getSource().getPlayer();
 
-            SessionValidator.assertSessionExist(sessionRegistry, player);
+            SessionValidator.assertSessionExist(sessions, player);
             PlayerValidator.assertPlayerNotBusyWithPokemonBattle(player);
 
-            GroupBattleSession session = sessionRegistry.get(player.getUuid());
+            GroupBattleSession session = sessions.get(player.getUuid());
             session.onSessionStop();
 
-            sessionRegistry.remove(player.getUuid());
+            sessions.remove(player.getUuid());
 
             player.sendMessage(Text.translatable("command.cobblemontrainerbattle.groupbattle.stopsession.success"));
             CobblemonTrainerBattle.LOGGER.info("Stopped group battle session: {}", player.getGameProfile().getName());
@@ -140,9 +140,9 @@ public class GroupBattle {
         try {
             ServerPlayerEntity player = context.getSource().getPlayer();
 
-            SessionValidator.assertSessionExist(sessionRegistry, player);
+            SessionValidator.assertSessionExist(sessions, player);
 
-            GroupBattleSession session = sessionRegistry.get(player.getUuid());
+            GroupBattleSession session = sessions.get(player.getUuid());
             session.startBattle();
 
             return Command.SINGLE_SUCCESS;
@@ -163,11 +163,11 @@ public class GroupBattle {
     public static void removeDisconnectedPlayerSession(ServerPlayNetworkHandler handler, MinecraftServer server) {
         ServerPlayerEntity player = handler.getPlayer();
 
-        if (!GroupBattle.sessionRegistry.containsKey(player.getUuid())) {
+        if (!GroupBattle.sessions.containsKey(player.getUuid())) {
             return;
         }
 
-        GroupBattle.sessionRegistry.get(player.getUuid()).onSessionStop();
-        GroupBattle.sessionRegistry.remove(player.getUuid());
+        GroupBattle.sessions.get(player.getUuid()).onSessionStop();
+        GroupBattle.sessions.remove(player.getUuid());
     }
 }
