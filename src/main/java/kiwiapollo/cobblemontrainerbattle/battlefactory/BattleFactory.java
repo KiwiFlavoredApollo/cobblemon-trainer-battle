@@ -4,6 +4,8 @@ import com.mojang.brigadier.Command;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.factory.BattleFactoryParticipantFactory;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.factory.BattleParticipantFactory;
 import kiwiapollo.cobblemontrainerbattle.common.IdentifierFactory;
 import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.common.SessionValidator;
@@ -26,9 +28,9 @@ import net.minecraft.util.Identifier;
 import java.util.*;
 
 public class BattleFactory {
-    public static final int LEVEL = 100;
-    public static final int POKEMON_COUNT = 3;
-    public static final int ROUND_COUNT = 7;
+    private static final int LEVEL = 100;
+    private static final int POKEMON_COUNT = 3;
+    private static final int ROUND_COUNT = 7;
 
     private static Map<UUID, BattleFactorySession> sessions = new HashMap<>();
 
@@ -50,10 +52,13 @@ public class BattleFactory {
                     MiniGameProfileStorage.getBattleFactoryProfile().onDefeat
             );
 
+            BattleParticipantFactory battleParticipantFactory = new BattleFactoryParticipantFactory(BattleFactory.LEVEL);
+
             BattleFactorySession session = new BattleFactorySession(
                     player,
                     trainersToDefeat,
-                    battleResultHandler
+                    battleResultHandler,
+                    battleParticipantFactory
             );
 
             session.showPartyPokemon();

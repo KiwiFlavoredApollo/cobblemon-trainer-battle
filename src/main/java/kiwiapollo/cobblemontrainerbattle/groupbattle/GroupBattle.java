@@ -30,7 +30,7 @@ import java.io.FileNotFoundException;
 import java.util.*;
 
 public class GroupBattle {
-    public static final int FLAT_LEVEL = 100;
+    private static final int FLAT_LEVEL = 100;
     private static Map<UUID, GroupBattleSession> sessions = new HashMap<>();
 
     public static int startNormalGroupBattleSession(CommandContext<ServerCommandSource> context) {

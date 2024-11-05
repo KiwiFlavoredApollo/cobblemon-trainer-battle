@@ -7,9 +7,8 @@ import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.cobblemon.mod.common.pokemon.PokemonStats;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.BattleFactoryPlayer;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.factory.BattleParticipantFactory;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.PlayerBattleParticipant;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.BattleFactoryTrainer;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.TrainerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.postbattle.ParameterizedBattleResultHandler;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
@@ -33,6 +32,7 @@ import java.util.Objects;
 public class BattleFactorySession implements Session, PokemonTradeFeature, PokemonShowFeature, RentalPokemonFeature {
     private final List<Identifier> trainersToDefeat;
     private final BattleResultHandler battleResultHandler;
+    private final BattleParticipantFactory battleParticipantFactory;
 
     private PlayerBattleParticipant player;
     private TrainerBattle lastTrainerBattle;
@@ -43,14 +43,16 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Pokem
     public BattleFactorySession(
             ServerPlayerEntity player,
             List<Identifier> trainersToDefeat,
-            BattleResultHandler battleResultHandler
+            BattleResultHandler battleResultHandler,
+            BattleParticipantFactory battleParticipantFactory
     ) {
-        this.player = new BattleFactoryPlayer(player, BattleFactory.LEVEL);
+        this.player = battleParticipantFactory.createPlayer(player);
         this.trainersToDefeat = trainersToDefeat;
         this.defeatedTrainersCount = 0;
         this.isPlayerDefeated = false;
         this.isTradedPokemon = false;
         this.battleResultHandler = battleResultHandler;
+        this.battleParticipantFactory = battleParticipantFactory;
     }
 
     @Override
@@ -59,12 +61,7 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Pokem
             assertNotPlayerDefeated();
             assertNotDefeatedAllTrainers();
 
-            TrainerBattleParticipant trainer = new BattleFactoryTrainer(
-                    trainersToDefeat.get(defeatedTrainersCount),
-                    player.getPlayerEntity(),
-                    BattleFactory.LEVEL
-            );
-
+            TrainerBattleParticipant trainer = battleParticipantFactory.createTrainer(trainersToDefeat.get(defeatedTrainersCount), player.getPlayerEntity());
             BattleResultHandler battleResultHandler = new ParameterizedBattleResultHandler(this::onBattleVictory, this::onBattleDefeat);
 
             TrainerBattle trainerBattle = new StandardTrainerBattle(player, trainer, battleResultHandler);
@@ -142,7 +139,7 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Pokem
     public void rerollPokemon() {
         try {
             assertNotExistDefeatedTrainer();
-            player = new BattleFactoryPlayer(player.getPlayerEntity(), BattleFactory.LEVEL);
+            player = battleParticipantFactory.createPlayer(player.getPlayerEntity());
             printPokemons(player, player.getParty());
 
             player.sendInfoMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.rerollpokemon.success"));
