@@ -10,9 +10,9 @@ import kiwiapollo.cobblemontrainerbattle.battleactor.PlayerBackedTrainerBattleAc
 import kiwiapollo.cobblemontrainerbattle.common.BattleCondition;
 import kiwiapollo.cobblemontrainerbattle.common.Generation5AI;
 import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
-import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistries;
 import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemon;
 import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemonParser;
+import kiwiapollo.cobblemontrainerbattle.parser.TrainerProfileStorage;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
@@ -30,12 +30,12 @@ public class BattleFactoryTrainer implements TrainerBattleParticipant {
         this.identifier = identifier;
         this.uuid = UUID.randomUUID();
         this.player = player;
-        this.party = toParty(ProfileRegistries.trainer.get(identifier).team(), player, level);
+        this.party = toParty(TrainerProfileStorage.get(identifier).team(), player, level);
     }
 
     @Override
     public String getName() {
-        return ProfileRegistries.trainer.get(identifier).name();
+        return TrainerProfileStorage.get(identifier).name();
     }
 
     @Override
@@ -55,12 +55,12 @@ public class BattleFactoryTrainer implements TrainerBattleParticipant {
 
     @Override
     public BattleCondition getBattleCondition() {
-        return ProfileRegistries.trainer.get(identifier).condition();
+        return TrainerProfileStorage.get(identifier).condition();
     }
 
     @Override
     public SoundEvent getBattleTheme() {
-        return ProfileRegistries.trainer.get(identifier).battleTheme();
+        return TrainerProfileStorage.get(identifier).battleTheme();
     }
 
     @Override

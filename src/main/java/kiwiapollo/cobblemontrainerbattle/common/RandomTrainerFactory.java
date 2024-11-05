@@ -1,6 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.common;
 
-import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistries;
+import kiwiapollo.cobblemontrainerbattle.parser.TrainerProfileStorage;
 import net.minecraft.util.Identifier;
 
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ public class RandomTrainerFactory implements IdentifierFactory {
     }
 
     @Override public Identifier create() {
-        List<Identifier> trainers = new ArrayList<>(ProfileRegistries.trainer.keySet().stream()
+        List<Identifier> trainers = new ArrayList<>(TrainerProfileStorage.keySet().stream()
                 .filter(predicate).toList());
         Collections.shuffle(trainers);
 

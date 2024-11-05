@@ -1,0 +1,64 @@
+package kiwiapollo.cobblemontrainerbattle.parser;
+
+import com.google.gson.Gson;
+import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.groupbattle.TrainerGroupProfile;
+import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
+import net.minecraft.resource.ResourceManager;
+import net.minecraft.util.Identifier;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
+public class TrainerGroupProfileLoader implements SimpleSynchronousResourceReloadListener {
+    private static final String GROUP_DIR = "groups";
+
+    @Override
+    public Identifier getFabricId() {
+        return Identifier.of(CobblemonTrainerBattle.MOD_ID, "trainer_group_profile_loader");
+    }
+
+    @Override
+    public void reload(ResourceManager resourceManager) {
+        TrainerGroupProfileStorage.clear();
+        resourceManager.findResources(GROUP_DIR, this::isJsonFile).forEach(((identifier, resource) -> {
+            try (InputStream inputStream = resourceManager.getResourceOrThrow(identifier).getInputStream()) {
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+                TrainerGroupProfile trainerGroupProfile = new Gson().fromJson(bufferedReader, TrainerGroupProfile.class);
+
+                assertTrainerGroupProfileValid(trainerGroupProfile);
+
+                TrainerGroupProfileStorage.put(toTrainerGroupIdentifier(identifier), trainerGroupProfile);
+
+            } catch (IOException | NullPointerException | IllegalArgumentException ignored) {
+                CobblemonTrainerBattle.LOGGER.error("An error occurred while loading {}", identifier.toString());
+            }
+        }));
+    }
+
+    private void assertTrainerGroupProfileValid(TrainerGroupProfile profile) {
+        if (profile.trainers.isEmpty()) {
+            throw new IllegalArgumentException();
+        }
+
+        boolean isExistAllTrainers = profile.trainers.stream()
+                .map(Identifier::new)
+                .allMatch(TrainerProfileStorage::containsKey);
+        if (!isExistAllTrainers) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    private Identifier toTrainerGroupIdentifier(Identifier identifier) {
+        String prefix = String.format("^%s/", GROUP_DIR);
+        String suffix = "\\.json$";
+        String path = identifier.getPath().replaceAll(prefix, "").replaceAll(suffix, "");
+        return Identifier.of("group", path);
+    }
+
+    private boolean isJsonFile(Identifier identifier) {
+        return identifier.toString().endsWith(".json");
+    }
+}

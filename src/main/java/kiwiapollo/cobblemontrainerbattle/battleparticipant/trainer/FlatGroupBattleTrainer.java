@@ -5,7 +5,7 @@ import com.cobblemon.mod.common.api.battles.model.ai.BattleAI;
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import kiwiapollo.cobblemontrainerbattle.common.BattleCondition;
-import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistries;
+import kiwiapollo.cobblemontrainerbattle.parser.TrainerProfileStorage;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
@@ -39,7 +39,7 @@ public class FlatGroupBattleTrainer implements TrainerBattleParticipant {
 
     @Override
     public SoundEvent getBattleTheme() {
-        return ProfileRegistries.trainer.get(trainer.getIdentifier()).battleTheme();
+        return TrainerProfileStorage.get(trainer.getIdentifier()).battleTheme();
     }
 
     @Override

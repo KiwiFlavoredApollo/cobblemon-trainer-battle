@@ -11,7 +11,7 @@ import kiwiapollo.cobblemontrainerbattle.battleparticipant.factory.NormalGroupBa
 import kiwiapollo.cobblemontrainerbattle.common.*;
 import kiwiapollo.cobblemontrainerbattle.exception.*;
 import kiwiapollo.cobblemontrainerbattle.exception.battlecondition.RematchNotAllowedException;
-import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistries;
+import kiwiapollo.cobblemontrainerbattle.parser.TrainerGroupProfileStorage;
 import kiwiapollo.cobblemontrainerbattle.postbattle.RecordedBattleResultHandler;
 import kiwiapollo.cobblemontrainerbattle.postbattle.PostBattleActionSetHandler;
 import kiwiapollo.cobblemontrainerbattle.postbattle.BatchedBattleResultHandler;
@@ -52,7 +52,7 @@ public class GroupBattle {
             ResourceValidator.assertTrainerGroupExist(group);
             SessionValidator.assertSessionNotExist(sessionRegistry, player);
 
-            TrainerGroupProfile profile = ProfileRegistries.trainerGroup.get(group);
+            TrainerGroupProfile profile = TrainerGroupProfileStorage.get(group);
             List<Identifier> trainer = profile.trainers.stream().map(Identifier::new).toList();
 
             BattleConditionValidator.assertRematchAllowedAfterVictory(player, group, profile.condition);

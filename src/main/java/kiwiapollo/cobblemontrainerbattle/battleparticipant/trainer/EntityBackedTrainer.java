@@ -7,7 +7,7 @@ import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import kiwiapollo.cobblemontrainerbattle.battleactor.EntityBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.common.BattleCondition;
 import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
-import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistries;
+import kiwiapollo.cobblemontrainerbattle.parser.TrainerProfileStorage;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
@@ -57,7 +57,7 @@ public class EntityBackedTrainer implements TrainerBattleParticipant {
 
     @Override
     public SoundEvent getBattleTheme() {
-        return ProfileRegistries.trainer.get(trainer.getIdentifier()).battleTheme();
+        return TrainerProfileStorage.get(trainer.getIdentifier()).battleTheme();
     }
 
     @Override

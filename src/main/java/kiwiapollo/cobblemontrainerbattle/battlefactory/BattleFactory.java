@@ -9,7 +9,8 @@ import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.common.SessionValidator;
 import kiwiapollo.cobblemontrainerbattle.exception.*;
 import kiwiapollo.cobblemontrainerbattle.common.PlayerValidator;
-import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistries;
+import kiwiapollo.cobblemontrainerbattle.parser.MiniGameProfileStorage;
+import kiwiapollo.cobblemontrainerbattle.parser.TrainerProfileStorage;
 import kiwiapollo.cobblemontrainerbattle.postbattle.PostBattleActionSetHandler;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.postbattle.BattleResultHandler;
@@ -45,8 +46,8 @@ public class BattleFactory {
 
             BattleResultHandler battleResultHandler = new PostBattleActionSetHandler(
                     player,
-                    ProfileRegistries.battleFactory.onVictory,
-                    ProfileRegistries.battleFactory.onDefeat
+                    MiniGameProfileStorage.getBattleFactoryProfile().onVictory,
+                    MiniGameProfileStorage.getBattleFactoryProfile().onDefeat
             );
 
             BattleFactorySession session = new BattleFactorySession(
@@ -255,6 +256,6 @@ public class BattleFactory {
     }
 
     private static boolean hasMinimumPokemon(Identifier trainer) {
-        return ProfileRegistries.trainer.get(trainer).team().size() > BattleFactory.POKEMON_COUNT;
+        return TrainerProfileStorage.get(trainer).team().size() > BattleFactory.POKEMON_COUNT;
     }
 }

@@ -7,7 +7,7 @@ import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.factory.FlatTrainerBattleParticipantFactory;
-import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistries;
+import kiwiapollo.cobblemontrainerbattle.parser.TrainerProfileStorage;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.*;
 import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerFactory;
 import net.minecraft.server.command.ServerCommandSource;
@@ -35,7 +35,7 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
         return RequiredArgumentBuilder.<ServerCommandSource, String>argument("trainer", StringArgumentType.greedyString())
                 .requires(new PlayerCommandSourcePredicate(permission))
                 .suggests((context, builder) -> {
-                    ProfileRegistries.trainer.keySet().stream()
+                    TrainerProfileStorage.keySet().stream()
                             .map(Identifier::toString)
                             .forEach(builder::suggest);
                     return builder.buildFuture();

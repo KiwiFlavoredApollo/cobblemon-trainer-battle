@@ -9,7 +9,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.factory.FlatTrainerBattleParticipantFactory;
 import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerFactory;
-import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistries;
+import kiwiapollo.cobblemontrainerbattle.parser.TrainerProfileStorage;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.*;
 import net.minecraft.command.EntitySelector;
 import net.minecraft.command.argument.EntityArgumentType;
@@ -39,7 +39,7 @@ public class TrainerBattleFlatOtherCommand extends LiteralArgumentBuilder<Server
                 .requires(new MultiCommandSourcePredicate(permission))
                 .then(RequiredArgumentBuilder.<ServerCommandSource, String>argument("trainer", StringArgumentType.greedyString())
                         .suggests((context, builder) -> {
-                            ProfileRegistries.trainer.keySet().stream()
+                            TrainerProfileStorage.keySet().stream()
                                     .map(Identifier::toString)
                                     .forEach(builder::suggest);
                             return builder.buildFuture();

@@ -6,7 +6,7 @@ import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.PlayerBattlePa
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.TrainerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.common.ResourceValidator;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
-import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistries;
+import kiwiapollo.cobblemontrainerbattle.parser.TrainerProfileStorage;
 import kiwiapollo.cobblemontrainerbattle.postbattle.BatchedBattleResultHandler;
 import kiwiapollo.cobblemontrainerbattle.postbattle.BattleResultHandler;
 import kiwiapollo.cobblemontrainerbattle.postbattle.PostBattleActionSetHandler;
@@ -25,7 +25,7 @@ public class CommandTrainerBattleStarter {
             PlayerBattleParticipant playerBattleParticipant = battleParticipantFactory.createPlayer(player);
             TrainerBattleParticipant trainerBattleParticipant = battleParticipantFactory.createTrainer(trainer, player);
 
-            TrainerProfile profile = ProfileRegistries.trainer.get(trainer);
+            TrainerProfile profile = TrainerProfileStorage.get(trainer);
             BattleResultHandler battleResultHandler = new BatchedBattleResultHandler(
                     new RecordedBattleResultHandler(player, trainer),
                     new PostBattleActionSetHandler(player, profile.onVictory(), profile.onDefeat())
