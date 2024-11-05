@@ -5,6 +5,7 @@
     "maximumPartyLevel": 100,
     "minimumPartyLevel": 1
   },
+  "battleTheme": "cobblemon:battle.pvn.default",
   "onVictory": {
     "balance": 0,
     "commands": []

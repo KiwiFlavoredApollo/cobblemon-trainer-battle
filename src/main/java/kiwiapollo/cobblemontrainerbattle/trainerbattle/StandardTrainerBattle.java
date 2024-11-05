@@ -3,7 +3,9 @@ package kiwiapollo.cobblemontrainerbattle.trainerbattle;
 import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.BattleSide;
+import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.cobblemon.mod.common.pokemon.Pokemon;
+import com.cobblemon.mod.common.util.PlayerExtensionsKt;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.TrainerBattleParticipant;
@@ -12,7 +14,9 @@ import kiwiapollo.cobblemontrainerbattle.common.PlayerValidator;
 import kiwiapollo.cobblemontrainerbattle.exception.*;
 import kiwiapollo.cobblemontrainerbattle.postbattle.BattleResultHandler;
 import kotlin.Unit;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
 
 import java.util.Objects;
 import java.util.UUID;
@@ -57,6 +61,8 @@ public class StandardTrainerBattle implements TrainerBattle {
                     false
             ).ifSuccessful(pokemonBattle -> {
                 battleId = pokemonBattle.getBattleId();
+
+                ((PlayerBattleActor) pokemonBattle.getActor(player.getPlayerEntity())).setBattleTheme(trainer.getBattleTheme());
 
                 player.sendInfoMessage(Text.translatable("command.cobblemontrainerbattle.trainerbattle.success", trainer.getName()));
                 CobblemonTrainerBattle.LOGGER.info("Started virtual trainer battle: {} versus {}", player.getName(), trainer.getName());

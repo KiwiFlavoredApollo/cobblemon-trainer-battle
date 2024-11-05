@@ -14,6 +14,7 @@ import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistries;
 import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemon;
 import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemonParser;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
 import java.util.*;
@@ -55,6 +56,11 @@ public class BattleFactoryTrainer implements TrainerBattleParticipant {
     @Override
     public BattleCondition getBattleCondition() {
         return ProfileRegistries.trainer.get(identifier).condition();
+    }
+
+    @Override
+    public SoundEvent getBattleTheme() {
+        return ProfileRegistries.trainer.get(identifier).battleTheme();
     }
 
     @Override

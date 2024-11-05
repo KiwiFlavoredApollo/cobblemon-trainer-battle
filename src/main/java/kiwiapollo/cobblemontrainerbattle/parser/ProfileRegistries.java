@@ -2,6 +2,7 @@ package kiwiapollo.cobblemontrainerbattle.parser;
 
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParseException;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactoryProfile;
@@ -11,6 +12,7 @@ import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerProfile;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
 import net.minecraft.resource.Resource;
 import net.minecraft.resource.ResourceManager;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
 import java.io.*;
@@ -28,6 +30,8 @@ public class ProfileRegistries implements SimpleSynchronousResourceReloadListene
 
     private static final String MINIGAME_DIR = "minigames";
     private static final String BATTLE_FACTORY_PROFILE = String.format("%s/%s", MINIGAME_DIR, "battlefactory.json");
+
+    private static final Gson TRAINER_OPTION_GSON = new GsonBuilder().registerTypeAdapter(SoundEvent.class, new BattleThemeDeserializer()).create();
 
     public static Map<Identifier, TrainerProfile> trainer = new HashMap<>();
     public static Map<Identifier, TrainerGroupProfile> trainerGroup = new HashMap<>();
@@ -74,6 +78,7 @@ public class ProfileRegistries implements SimpleSynchronousResourceReloadListene
                                 team,
                                 option.isSpawningAllowed,
                                 option.condition,
+                                option.battleTheme,
                                 option.onVictory,
                                 option.onDefeat
                         )
@@ -91,7 +96,7 @@ public class ProfileRegistries implements SimpleSynchronousResourceReloadListene
     private TrainerOption loadDefaultTrainerOption(ResourceManager resourceManager) {
         try (InputStream inputStream = getDefaultTrainerOptionResource(resourceManager).getInputStream()) {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-            return new Gson().fromJson(bufferedReader, TrainerOption.class);
+            return TRAINER_OPTION_GSON.fromJson(bufferedReader, TrainerOption.class);
 
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -179,7 +184,7 @@ public class ProfileRegistries implements SimpleSynchronousResourceReloadListene
     private TrainerOption readTrainerOptionResource(Resource resource) throws IOException {
         try (InputStream inputStream = resource.getInputStream()) {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-            return new Gson().fromJson(bufferedReader, TrainerOption.class);
+            return TRAINER_OPTION_GSON.fromJson(bufferedReader, TrainerOption.class);
         }
     }
 

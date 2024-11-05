@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.api.battles.model.actor.AIBattleActor;
 import com.cobblemon.mod.common.api.battles.model.ai.BattleAI;
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
+import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactor.DisposableBattlePokemonFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactor.PlayerBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.common.BattleCondition;
@@ -13,6 +14,7 @@ import kiwiapollo.cobblemontrainerbattle.parser.ProfileRegistries;
 import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemon;
 import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemonParser;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
@@ -56,6 +58,11 @@ public class NormalBattleTrainer implements TrainerBattleParticipant {
     @Override
     public BattleCondition getBattleCondition() {
         return ProfileRegistries.trainer.get(identifier).condition();
+    }
+
+    @Override
+    public SoundEvent getBattleTheme() {
+        return ProfileRegistries.trainer.get(identifier).battleTheme();
     }
 
     @Override
