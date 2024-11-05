@@ -3,13 +3,13 @@
 	"id": "cobblemontrainerbattle",
 	"version": "${version}",
 	"name": "Cobblemon Trainer Battle",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Cobblemon Trainer Battle is a side mod for Cobblemon that offers trainer battle system",
 	"authors": [
-		"Me!"
+		"KiwiFlavoredApollo"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://modrinth.com/mod/cobblemon-trainer-battle",
+		"sources": "https://github.com/KiwiFlavoredApollo/CobblemonTrainerBattle"
 	},
 	"license": "GPL-3.0",
 	"icon": "assets/cobblemontrainerbattle/icon.png",
