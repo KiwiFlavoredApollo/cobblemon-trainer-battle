@@ -18,7 +18,6 @@ public class TrainerEntitySpawnEventHandler {
     private static final int SPAWN_INTERVAL = 1200;
     private static final int MAXIMUM_RADIUS = 30;
     private static final int MINIMUM_RADIUS = 5;
-    private static final int MAXIMUM_TRAINER_COUNT = 1;
 
     public static void periodicallySpawnTrainerEntity(ServerWorld world) {
         if (world.getServer().getTicks() % SPAWN_INTERVAL == 0) {
@@ -30,7 +29,6 @@ public class TrainerEntitySpawnEventHandler {
 
     private static void spawnTrainersAroundPlayer(ServerWorld world, PlayerEntity player) {
         try {
-            assertTrainerSpawnEnabled();
             assertPlayerHasVsSeeker(player);
             assertBelowMaximumTrainerCount(world, player);
 
@@ -46,12 +44,6 @@ public class TrainerEntitySpawnEventHandler {
 
         } catch (IllegalStateException ignored) {
 
-        }
-    }
-
-    private static void assertTrainerSpawnEnabled() {
-        if (!CobblemonTrainerBattle.config.enableTrainerSpawn) {
-            throw new IllegalStateException();
         }
     }
 
@@ -97,7 +89,7 @@ public class TrainerEntitySpawnEventHandler {
     private static void assertBelowMaximumTrainerCount(ServerWorld world, PlayerEntity player) {
         int trainerCount = world.getEntitiesByType(EntityTypes.TRAINER,
                 player.getBoundingBox().expand(MAXIMUM_RADIUS), entity -> true).size();
-        if (trainerCount >= MAXIMUM_TRAINER_COUNT) {
+        if (trainerCount >= CobblemonTrainerBattle.config.maximumTrainerSpawnCount) {
             throw new IllegalStateException();
         }
     }

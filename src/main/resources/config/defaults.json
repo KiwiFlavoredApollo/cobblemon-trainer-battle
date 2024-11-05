@@ -1,4 +1,4 @@
 {
   "economy": "None",
-  "enableTrainerSpawn": true
+  "maximumTrainerSpawnCount": 1
 }
