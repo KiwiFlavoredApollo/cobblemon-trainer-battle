@@ -1,6 +1,6 @@
-package kiwiapollo.cobblemontrainerbattle.events;
+package kiwiapollo.cobblemontrainerbattle.event;
 
-import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
+import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.server.world.ServerWorld;
 

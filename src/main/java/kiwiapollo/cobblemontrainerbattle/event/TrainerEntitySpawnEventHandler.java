@@ -1,9 +1,9 @@
-package kiwiapollo.cobblemontrainerbattle.events;
+package kiwiapollo.cobblemontrainerbattle.event;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.entities.EntityTypes;
-import kiwiapollo.cobblemontrainerbattle.entities.RandomTrainerEntityFactory;
-import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
+import kiwiapollo.cobblemontrainerbattle.entity.EntityTypes;
+import kiwiapollo.cobblemontrainerbattle.entity.RandomTrainerEntityFactory;
+import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.item.ItemRegistry;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;

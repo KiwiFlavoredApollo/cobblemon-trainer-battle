@@ -1,7 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.item;
 
-import kiwiapollo.cobblemontrainerbattle.entities.EntityTypes;
-import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
+import kiwiapollo.cobblemontrainerbattle.entity.EntityTypes;
+import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

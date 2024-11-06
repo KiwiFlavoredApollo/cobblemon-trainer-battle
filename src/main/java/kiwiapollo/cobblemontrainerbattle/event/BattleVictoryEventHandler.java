@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.events;
+package kiwiapollo.cobblemontrainerbattle.event;
 
 import com.cobblemon.mod.common.api.events.battles.BattleVictoryEvent;
 import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;

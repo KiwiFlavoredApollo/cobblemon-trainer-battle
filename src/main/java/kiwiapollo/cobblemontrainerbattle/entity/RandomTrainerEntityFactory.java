@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.entities;
+package kiwiapollo.cobblemontrainerbattle.entity;
 
 import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerProfileStorage;

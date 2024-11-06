@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.events;
+package kiwiapollo.cobblemontrainerbattle.event;
 
 import com.cobblemon.mod.common.api.events.drops.LootDroppedEvent;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;

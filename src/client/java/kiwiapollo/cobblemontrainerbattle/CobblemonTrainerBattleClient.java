@@ -1,9 +1,9 @@
 package kiwiapollo.cobblemontrainerbattle;
 
-import kiwiapollo.cobblemontrainerbattle.entities.EntityTypes;
-import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
-import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntityPackets;
-import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntityRenderer;
+import kiwiapollo.cobblemontrainerbattle.entity.EntityTypes;
+import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntity;
+import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntityPackets;
+import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntityRenderer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;

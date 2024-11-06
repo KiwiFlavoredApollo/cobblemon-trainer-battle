@@ -1,6 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.item;
 
-import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntityPreset;
+import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntityPreset;
 import net.minecraft.item.Item;
 
 public class TrainerTicket extends Item {

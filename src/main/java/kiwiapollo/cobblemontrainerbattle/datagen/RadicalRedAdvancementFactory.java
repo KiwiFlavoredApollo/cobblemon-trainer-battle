@@ -3,7 +3,7 @@ package kiwiapollo.cobblemontrainerbattle.datagen;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.advancement.DefeatTrainerCriterion;
 import kiwiapollo.cobblemontrainerbattle.advancement.KillTrainerCriterion;
-import kiwiapollo.cobblemontrainerbattle.entities.RadicalRedTrainerEntityPresetRegistry;
+import kiwiapollo.cobblemontrainerbattle.entity.RadicalRedTrainerEntityPresetRegistry;
 import kiwiapollo.cobblemontrainerbattle.item.ItemRegistry;
 import net.minecraft.advancement.Advancement;
 import net.minecraft.advancement.AdvancementFrame;
