@@ -5,6 +5,7 @@ import com.cobblemon.mod.common.api.events.CobblemonEvents;
 import com.cobblemon.mod.common.api.pokemon.aspect.AspectProvider;
 import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
 import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactory;
+import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactorySessionStorage;
 import kiwiapollo.cobblemontrainerbattle.command.*;
 import kiwiapollo.cobblemontrainerbattle.economy.Economy;
 import kiwiapollo.cobblemontrainerbattle.economy.EconomyFactory;
@@ -12,10 +13,15 @@ import kiwiapollo.cobblemontrainerbattle.entities.EntityTypes;
 import kiwiapollo.cobblemontrainerbattle.entities.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.events.*;
 import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattle;
+import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattleSessionStorage;
 import kiwiapollo.cobblemontrainerbattle.item.ItemRegistry;
 import kiwiapollo.cobblemontrainerbattle.loot.CustomLootConditionTypes;
 import kiwiapollo.cobblemontrainerbattle.parser.*;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattleRegistry;
+import kiwiapollo.cobblemontrainerbattle.parser.history.PlayerHistoryManager;
+import kiwiapollo.cobblemontrainerbattle.parser.profile.MiniGameProfileLoader;
+import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerGroupProfileLoader;
+import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerProfileLoader;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattleStorage;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
@@ -71,15 +77,14 @@ public class CobblemonTrainerBattle implements ModInitializer {
 		CobblemonEvents.BATTLE_VICTORY.subscribe(Priority.NORMAL, BattleVictoryEventHandler::onBattleVictory);
 		CobblemonEvents.LOOT_DROPPED.subscribe(Priority.HIGHEST, LootDroppedEventHandler::onLootDropped);
 
-		ServerPlayConnectionEvents.JOIN.register(PlayerHistoryRegistry::initializePlayerHistory);
+		ServerPlayConnectionEvents.DISCONNECT.register(TrainerBattleStorage::removeDisconnectedPlayerBattle);
+		ServerPlayConnectionEvents.DISCONNECT.register(GroupBattleSessionStorage::removeDisconnectedPlayerSession);
+		ServerPlayConnectionEvents.DISCONNECT.register(BattleFactorySessionStorage::removeDisconnectedPlayerSession);
 
-		ServerPlayConnectionEvents.DISCONNECT.register(TrainerBattleRegistry::removeDisconnectedPlayerBattle);
-		ServerPlayConnectionEvents.DISCONNECT.register(GroupBattle::removeDisconnectedPlayerSession);
-		ServerPlayConnectionEvents.DISCONNECT.register(BattleFactory::removeDisconnectedPlayerSession);
-
-		ServerLifecycleEvents.SERVER_STARTED.register(PlayerHistoryRegistry::loadFromNbt);
-		ServerLifecycleEvents.SERVER_STOPPED.register(PlayerHistoryRegistry::saveToNbt);
-		ServerTickEvents.END_SERVER_TICK.register(PlayerHistoryRegistry::periodicallySavePlayerHistory);
+		ServerPlayConnectionEvents.JOIN.register(PlayerHistoryManager::initializePlayerHistory);
+		ServerLifecycleEvents.SERVER_STARTED.register(PlayerHistoryManager::loadFromNbt);
+		ServerLifecycleEvents.SERVER_STOPPED.register(PlayerHistoryManager::saveToNbt);
+		ServerTickEvents.END_SERVER_TICK.register(PlayerHistoryManager::periodicallySavePlayerHistory);
 
 		ServerTickEvents.END_WORLD_TICK.register(TrainerEntitySpawnEventHandler::periodicallySpawnTrainerEntity);
 		ServerEntityEvents.ENTITY_LOAD.register(TrainerEntityLoadEventHandler::synchronizeTrainerEntity);

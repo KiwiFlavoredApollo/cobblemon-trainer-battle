@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.parser;
+package kiwiapollo.cobblemontrainerbattle.parser.history;
 
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.Identifier;

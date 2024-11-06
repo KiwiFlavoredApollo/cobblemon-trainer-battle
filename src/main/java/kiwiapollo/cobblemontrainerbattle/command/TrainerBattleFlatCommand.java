@@ -7,7 +7,7 @@ import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.factory.FlatTrainerBattleParticipantFactory;
-import kiwiapollo.cobblemontrainerbattle.parser.TrainerProfileStorage;
+import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerProfileStorage;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.*;
 import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerFactory;
 import net.minecraft.server.command.ServerCommandSource;

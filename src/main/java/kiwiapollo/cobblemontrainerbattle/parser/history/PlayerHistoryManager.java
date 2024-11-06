@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.parser;
+package kiwiapollo.cobblemontrainerbattle.parser.history;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import net.fabricmc.fabric.api.networking.v1.PacketSender;
@@ -12,21 +12,21 @@ import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
-public class PlayerHistoryRegistry {
+public class PlayerHistoryManager {
     private static final int SAVE_INTERVAL = 24000;
 
     private static Map<UUID, PlayerHistory> histories = new HashMap<>();
 
     public static boolean containsKey(UUID uuid) {
-        return PlayerHistoryRegistry.histories.containsKey(uuid);
+        return PlayerHistoryManager.histories.containsKey(uuid);
     }
 
     public static PlayerHistory get(UUID uuid) {
-        return PlayerHistoryRegistry.histories.get(uuid);
+        return PlayerHistoryManager.histories.get(uuid);
     }
 
     public static void put(UUID uuid, PlayerHistory history) {
-        PlayerHistoryRegistry.histories.put(uuid, history);
+        PlayerHistoryManager.histories.put(uuid, history);
     }
 
     public static void initializePlayerHistory(
@@ -36,16 +36,16 @@ public class PlayerHistoryRegistry {
     ) {
         UUID playerUuid = handler.getPlayer().getUuid();
 
-        if (PlayerHistoryRegistry.containsKey(playerUuid)) {
+        if (PlayerHistoryManager.containsKey(playerUuid)) {
             return;
         }
 
-        PlayerHistoryRegistry.put(playerUuid, new PlayerHistory());
+        PlayerHistoryManager.put(playerUuid, new PlayerHistory());
     }
 
     public static void periodicallySavePlayerHistory(MinecraftServer server) {
         if (server.getTicks() % SAVE_INTERVAL == 0) {
-            PlayerHistoryRegistry.saveToNbt(server);
+            PlayerHistoryManager.saveToNbt(server);
         }
     }
 
@@ -56,14 +56,14 @@ public class PlayerHistoryRegistry {
             return;
         }
 
-        PlayerHistoryRegistry.histories.clear();
+        PlayerHistoryManager.histories.clear();
         List<File> datFileList = Arrays.stream(historyDir.listFiles())
-                .filter(PlayerHistoryRegistry::isDatFile).toList();
+                .filter(PlayerHistoryManager::isDatFile).toList();
         for (File file : datFileList) {
             try {
                 PlayerHistory playerHistory = PlayerHistory.readFromNbt(NbtIo.readCompressed(file));
                 UUID playerUuid = UUID.fromString(file.getName().replace(".dat", ""));
-                PlayerHistoryRegistry.histories.put(playerUuid, playerHistory);
+                PlayerHistoryManager.histories.put(playerUuid, playerHistory);
 
             } catch (NullPointerException | IOException ignored) {
                 CobblemonTrainerBattle.LOGGER.error("An error occurred while loading from {}", file.getName());
@@ -80,7 +80,7 @@ public class PlayerHistoryRegistry {
             historyDir.mkdirs();
         }
 
-        for (Map.Entry<UUID, PlayerHistory> historyEntry: PlayerHistoryRegistry.histories.entrySet()) {
+        for (Map.Entry<UUID, PlayerHistory> historyEntry: PlayerHistoryManager.histories.entrySet()) {
             try {
                 UUID playerUuid = historyEntry.getKey();
                 PlayerHistory playerHistory = historyEntry.getValue();

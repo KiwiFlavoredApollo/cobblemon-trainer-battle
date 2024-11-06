@@ -6,7 +6,7 @@ import com.cobblemon.mod.common.api.battles.model.actor.FleeableBattleActor;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleactor.EntityBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattleRegistry;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattleStorage;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.Vec3d;
@@ -18,11 +18,11 @@ import java.util.stream.StreamSupport;
 public class TrainerBattleFledEventHandler {
     public static void endFledTrainerBattle(ServerWorld world) {
         world.getPlayers().forEach(player -> {
-            if (!TrainerBattleRegistry.containsKey(player.getUuid())) {
+            if (!TrainerBattleStorage.containsKey(player.getUuid())) {
                 return;
             }
 
-            TrainerBattle trainerBattle = TrainerBattleRegistry.get(player.getUuid());
+            TrainerBattle trainerBattle = TrainerBattleStorage.get(player.getUuid());
             PokemonBattle pokemonBattle = Cobblemon.INSTANCE.getBattleRegistry().getBattle(trainerBattle.getBattleId());
             if (!isFledBattle(pokemonBattle, player)) {
                 return;

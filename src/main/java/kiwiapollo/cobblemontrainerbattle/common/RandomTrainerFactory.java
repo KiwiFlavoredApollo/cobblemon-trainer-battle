@@ -1,6 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.common;
 
-import kiwiapollo.cobblemontrainerbattle.parser.TrainerProfileStorage;
+import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerProfileStorage;
 import net.minecraft.util.Identifier;
 
 import java.util.ArrayList;

@@ -15,11 +15,10 @@ import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.exception.*;
 import kiwiapollo.cobblemontrainerbattle.postbattle.BattleResultHandler;
-import kiwiapollo.cobblemontrainerbattle.session.PokemonShowFeature;
 import kiwiapollo.cobblemontrainerbattle.session.PokemonTradeFeature;
 import kiwiapollo.cobblemontrainerbattle.session.RentalPokemonFeature;
 import kiwiapollo.cobblemontrainerbattle.session.Session;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattleRegistry;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattleStorage;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
@@ -29,7 +28,7 @@ import net.minecraft.util.Identifier;
 import java.util.List;
 import java.util.Objects;
 
-public class BattleFactorySession implements Session, PokemonTradeFeature, PokemonShowFeature, RentalPokemonFeature {
+public class BattleFactorySession implements Session, PokemonTradeFeature, RentalPokemonFeature {
     private final List<Identifier> trainersToDefeat;
     private final BattleResultHandler battleResultHandler;
     private final BattleParticipantFactory battleParticipantFactory;
@@ -67,7 +66,7 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Pokem
             TrainerBattle trainerBattle = new StandardTrainerBattle(player, trainer, battleResultHandler);
             trainerBattle.start();
 
-            TrainerBattleRegistry.put(player.getUuid(), trainerBattle);
+            TrainerBattleStorage.put(player.getUuid(), trainerBattle);
 
             this.lastTrainerBattle = trainerBattle;
 
@@ -136,7 +135,7 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Pokem
     }
 
     @Override
-    public void rerollPokemon() {
+    public void rerollPartyPokemon() {
         try {
             assertNotExistDefeatedTrainer();
             player = battleParticipantFactory.createPlayer(player.getPlayerEntity());

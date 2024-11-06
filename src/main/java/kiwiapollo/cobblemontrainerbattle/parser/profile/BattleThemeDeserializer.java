@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.parser;
+package kiwiapollo.cobblemontrainerbattle.parser.profile;
 
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;

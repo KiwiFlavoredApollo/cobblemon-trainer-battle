@@ -12,7 +12,7 @@ import kiwiapollo.cobblemontrainerbattle.common.Generation5AI;
 import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
 import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemon;
 import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemonParser;
-import kiwiapollo.cobblemontrainerbattle.parser.TrainerProfileStorage;
+import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerProfileStorage;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;

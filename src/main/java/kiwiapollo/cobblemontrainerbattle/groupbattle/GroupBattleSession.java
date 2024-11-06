@@ -3,7 +3,6 @@ package kiwiapollo.cobblemontrainerbattle.groupbattle;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.factory.BattleParticipantFactory;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.TrainerBattleParticipant;
-import kiwiapollo.cobblemontrainerbattle.common.BattleCondition;
 import kiwiapollo.cobblemontrainerbattle.postbattle.ParameterizedBattleResultHandler;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
@@ -12,7 +11,7 @@ import kiwiapollo.cobblemontrainerbattle.exception.DefeatedAllTrainersException;
 import kiwiapollo.cobblemontrainerbattle.exception.DefeatedToTrainerException;
 import kiwiapollo.cobblemontrainerbattle.postbattle.BattleResultHandler;
 import kiwiapollo.cobblemontrainerbattle.session.Session;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattleRegistry;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattleStorage;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
@@ -65,7 +64,7 @@ public class GroupBattleSession implements Session {
             );
             trainerBattle.start();
 
-            TrainerBattleRegistry.put(player.getUuid(), trainerBattle);
+            TrainerBattleStorage.put(player.getUuid(), trainerBattle);
 
             this.lastTrainerBattle = trainerBattle;
 

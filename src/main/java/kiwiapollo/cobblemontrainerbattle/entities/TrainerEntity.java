@@ -7,11 +7,11 @@ import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.NormalBattlePl
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.EntityBackedTrainer;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.TrainerBattleParticipant;
-import kiwiapollo.cobblemontrainerbattle.parser.PlayerHistoryRegistry;
-import kiwiapollo.cobblemontrainerbattle.parser.TrainerProfileStorage;
+import kiwiapollo.cobblemontrainerbattle.parser.history.PlayerHistoryManager;
+import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerProfileStorage;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattleRegistry;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattleStorage;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerProfile;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.exception.BusyWithPokemonBattleException;
@@ -122,7 +122,7 @@ public class TrainerEntity extends PathAwareEntity {
             );
             trainerBattle.start();
 
-            TrainerBattleRegistry.put(player.getUuid(), trainerBattle);
+            TrainerBattleStorage.put(player.getUuid(), trainerBattle);
             this.trainerBattle = trainerBattle;
 
             this.setVelocity(0, 0, 0);
@@ -181,7 +181,7 @@ public class TrainerEntity extends PathAwareEntity {
     @Override
     public void onDeath(DamageSource damageSource) {
         if (damageSource.getSource() instanceof ServerPlayerEntity player) {
-            PlayerHistoryRegistry.get(player.getUuid()).addPlayerKill(trainer);
+            PlayerHistoryManager.get(player.getUuid()).addPlayerKill(trainer);
             CustomCriteria.KILL_TRAINER_CRITERION.trigger(player);
         }
 

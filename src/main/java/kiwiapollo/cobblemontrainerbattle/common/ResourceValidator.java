@@ -1,7 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.common;
 
-import kiwiapollo.cobblemontrainerbattle.parser.TrainerGroupProfileStorage;
-import kiwiapollo.cobblemontrainerbattle.parser.TrainerProfileStorage;
+import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerGroupProfileStorage;
+import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerProfileStorage;
 import net.minecraft.util.Identifier;
 
 import java.io.FileNotFoundException;

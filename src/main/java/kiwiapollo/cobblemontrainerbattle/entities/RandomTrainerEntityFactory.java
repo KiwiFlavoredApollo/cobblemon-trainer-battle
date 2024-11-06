@@ -1,7 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.entities;
 
 import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerFactory;
-import kiwiapollo.cobblemontrainerbattle.parser.TrainerProfileStorage;
+import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerProfileStorage;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;

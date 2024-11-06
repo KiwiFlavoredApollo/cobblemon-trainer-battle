@@ -3,7 +3,7 @@ package kiwiapollo.cobblemontrainerbattle.mixin;
 import com.cobblemon.mod.common.api.drop.DropTable;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattleRegistry;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattleStorage;
 import kotlin.ranges.IntRange;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -35,7 +35,7 @@ public class DropTableMixin {
             return;
         }
 
-        boolean isTrainerBattle = TrainerBattleRegistry.values().stream()
+        boolean isTrainerBattle = TrainerBattleStorage.values().stream()
                 .map(TrainerBattle::getBattleId)
                 .toList().contains(pokemonEntity.getBattleId());
         if (!isTrainerBattle) {

@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.parser;
+package kiwiapollo.cobblemontrainerbattle.parser.profile;
 
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerProfile;
 import net.minecraft.util.Identifier;

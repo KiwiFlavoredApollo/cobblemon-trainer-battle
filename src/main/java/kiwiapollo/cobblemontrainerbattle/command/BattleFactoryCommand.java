@@ -41,7 +41,7 @@ public class BattleFactoryCommand extends LiteralArgumentBuilder<ServerCommandSo
     private ArgumentBuilder<ServerCommandSource, ?> getBattleFactoryRerollPokemonCommand() {
         return LiteralArgumentBuilder
                 .<ServerCommandSource>literal("rerollpokemon")
-                .executes(BattleFactory::rerollPokemon);
+                .executes(BattleFactory::rerollPartyPokemon);
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getBattleFactoryTradePokemonCommand() {

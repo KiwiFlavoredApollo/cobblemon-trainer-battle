@@ -1,10 +1,11 @@
-package kiwiapollo.cobblemontrainerbattle.parser;
+package kiwiapollo.cobblemontrainerbattle.parser.profile;
 
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParseException;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemon;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerOption;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerProfile;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;

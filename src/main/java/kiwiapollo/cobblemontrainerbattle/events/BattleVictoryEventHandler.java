@@ -3,7 +3,7 @@ package kiwiapollo.cobblemontrainerbattle.events;
 import com.cobblemon.mod.common.api.events.battles.BattleVictoryEvent;
 import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattleRegistry;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattleStorage;
 import kotlin.Unit;
 import net.minecraft.server.network.ServerPlayerEntity;
 
@@ -14,7 +14,7 @@ public class BattleVictoryEventHandler {
     public static Unit onBattleVictory(BattleVictoryEvent battleVictoryEvent) {
         // BATTLE_VICTORY event fires even if the player loses
 
-        List<UUID> battleIds = TrainerBattleRegistry.values().stream()
+        List<UUID> battleIds = TrainerBattleStorage.values().stream()
                 .map(TrainerBattle::getBattleId).toList();
 
         if (!battleIds.contains(battleVictoryEvent.getBattle().getBattleId())) {
@@ -39,17 +39,17 @@ public class BattleVictoryEventHandler {
     private static void onPlayerVictory(BattleVictoryEvent battleVictoryEvent) {
         ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
 
-        TrainerBattleRegistry.get(player.getUuid()).onPlayerVictory();
+        TrainerBattleStorage.get(player.getUuid()).onPlayerVictory();
         CustomCriteria.DEFEAT_TRAINER_CRITERION.trigger(player);
 
-        TrainerBattleRegistry.remove(player.getUuid());
+        TrainerBattleStorage.remove(player.getUuid());
     }
 
     private static void onPlayerDefeat(BattleVictoryEvent battleVictoryEvent) {
         ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
 
-        TrainerBattleRegistry.get(player.getUuid()).onPlayerDefeat();
+        TrainerBattleStorage.get(player.getUuid()).onPlayerDefeat();
 
-        TrainerBattleRegistry.remove(player.getUuid());
+        TrainerBattleStorage.remove(player.getUuid());
     }
 }

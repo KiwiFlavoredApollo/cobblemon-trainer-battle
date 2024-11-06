@@ -9,7 +9,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.factory.FlatTrainerBattleParticipantFactory;
 import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerFactory;
-import kiwiapollo.cobblemontrainerbattle.parser.TrainerProfileStorage;
+import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerProfileStorage;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.*;
 import net.minecraft.command.EntitySelector;
 import net.minecraft.command.argument.EntityArgumentType;

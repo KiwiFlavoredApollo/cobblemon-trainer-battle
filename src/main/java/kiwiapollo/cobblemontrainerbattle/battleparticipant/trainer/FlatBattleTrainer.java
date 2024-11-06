@@ -9,7 +9,7 @@ import kiwiapollo.cobblemontrainerbattle.battleactor.DisposableBattlePokemonFact
 import kiwiapollo.cobblemontrainerbattle.battleactor.PlayerBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.common.BattleCondition;
 import kiwiapollo.cobblemontrainerbattle.common.Generation5AI;
-import kiwiapollo.cobblemontrainerbattle.parser.TrainerProfileStorage;
+import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerProfileStorage;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerProfile;
 import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
 import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemon;
