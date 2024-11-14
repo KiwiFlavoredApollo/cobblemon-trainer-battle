@@ -1,10 +1,8 @@
 {
   "isSpawningAllowed": true,
-  "condition": {
-    "isRematchAllowedAfterVictory": true,
-    "maximumPartyLevel": 100,
-    "minimumPartyLevel": 1
-  },
+  "isRematchAllowed": true,
+  "maximumPartyLevel": 100,
+  "minimumPartyLevel": 1,
   "battleTheme": "cobblemon:battle.pvn.default",
   "onVictory": {
     "balance": 0,
