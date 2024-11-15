@@ -62,10 +62,10 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Renta
         this.isTradedPokemon = false;
     }
 
-    private List<Identifier> createTrainersToDefeat() {
+    private static List<Identifier> createTrainersToDefeat() {
         List<Identifier> trainers = new ArrayList<>();
         for (int i = 0; i < ROUND_COUNT; i++) {
-            trainersToDefeat.add(new RandomTrainerFactory(BattleFactorySession::hasMinimumPokemon).create());
+            trainers.add(new RandomTrainerFactory(BattleFactorySession::hasMinimumPokemon).create());
         }
         return trainers;
     }
@@ -161,6 +161,7 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Renta
     @Override
     public void rerollPartyPokemon() throws SessionOperationException {
         List<MessagePredicate<BattleFactorySession>> predicates = List.of(
+                new PlayerNotDefeatedPredicate<>(),
                 new AllTrainerNotDefeatedPredicate<>()
         );
 
