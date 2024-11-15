@@ -20,7 +20,6 @@ import kiwiapollo.cobblemontrainerbattle.battle.predicates.MinimumPartyLevelPred
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.RematchAllowedPredicate;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerProfile;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
@@ -86,11 +85,6 @@ public class NormalBattleTrainer implements TrainerBattleParticipant {
     @Override
     public BattleAI getBattleAI() {
         return new Generation5AI();
-    }
-
-    @Override
-    public SoundEvent getBattleTheme() {
-        return TrainerProfileStorage.getProfileRegistry().get(identifier).battleTheme();
     }
 
     @Override

@@ -13,7 +13,6 @@ public record TrainerProfile(
         boolean isRematchAllowed,
         int maximumPartyLevel,
         int minimumPartyLevel,
-        SoundEvent battleTheme,
         PostBattleActionSet onVictory,
         PostBattleActionSet onDefeat
 ) {}

@@ -19,7 +19,6 @@ import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
 import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemon;
 import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemonParser;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
@@ -87,11 +86,6 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
     @Override
     public BattleAI getBattleAI() {
         return new Generation5AI();
-    }
-
-    @Override
-    public SoundEvent getBattleTheme() {
-        return TrainerProfileStorage.getProfileRegistry().get(identifier).battleTheme();
     }
 
     @Override

@@ -1,8 +1,10 @@
 package kiwiapollo.cobblemontrainerbattle.battle.trainerbattle;
 
 import com.cobblemon.mod.common.Cobblemon;
+import com.cobblemon.mod.common.CobblemonSounds;
 import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.BattleSide;
+import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
@@ -59,6 +61,8 @@ public class BaseTrainerBattle implements TrainerBattle {
                 false
         ).ifSuccessful(pokemonBattle -> {
             battleId = pokemonBattle.getBattleId();
+
+            ((PlayerBattleActor) pokemonBattle.getActor(player.getPlayerEntity())).setBattleTheme(CobblemonSounds.PVN_BATTLE);
 
             player.sendInfoMessage(Text.translatable("command.cobblemontrainerbattle.trainerbattle.success", trainer.getName()));
             CobblemonTrainerBattle.LOGGER.info("Started virtual trainer battle: {} versus {}", player.getName(), trainer.getName());

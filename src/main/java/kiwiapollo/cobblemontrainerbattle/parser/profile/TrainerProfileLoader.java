@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 public class TrainerProfileLoader implements SimpleSynchronousResourceReloadListener {
-    private static final Gson TRAINER_OPTION_GSON = new GsonBuilder().registerTypeAdapter(SoundEvent.class, new BattleThemeDeserializer()).create();
+    private static final Gson TRAINER_OPTION_GSON = new GsonBuilder().create();
 
     @Override
     public Identifier getFabricId() {
@@ -49,7 +49,6 @@ public class TrainerProfileLoader implements SimpleSynchronousResourceReloadList
                                 option.isRematchAllowed,
                                 option.maximumPartyLevel,
                                 option.minimumPartyLevel,
-                                option.battleTheme,
                                 option.onVictory,
                                 option.onDefeat
                         )

@@ -37,18 +37,6 @@ public class SessionTrainerBattle implements TrainerBattle {
         }
 
         battle.start();
-
-        setBattleTheme();
-    }
-
-    private void setBattleTheme() {
-        try {
-            PokemonBattle battle =  Cobblemon.INSTANCE.getBattleRegistry().getBattle(getBattleId());
-            PlayerBattleActor player = (PlayerBattleActor) battle.getActor(getPlayer().getPlayerEntity());
-            player.setBattleTheme(CobblemonSounds.PVN_BATTLE);
-        } catch (NullPointerException ignored) {
-
-        }
     }
 
     @Override
