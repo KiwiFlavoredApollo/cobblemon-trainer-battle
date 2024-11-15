@@ -8,7 +8,6 @@ import kiwiapollo.cobblemontrainerbattle.battle.predicates.*;
 import kiwiapollo.cobblemontrainerbattle.battle.session.GroupBattleSessionStorage;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerGroupProfileStorage;
-import kiwiapollo.cobblemontrainerbattle.battle.session.SessionRegistry;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
@@ -18,8 +17,6 @@ import net.minecraft.util.Identifier;
 import java.util.List;
 
 public class GroupBattle {
-    private static final SessionRegistry<GroupBattleSession> sessions = new SessionRegistry<>();
-
     public static int startSession(CommandContext<ServerCommandSource> context, GroupBattleSessionFactory factory) {
         ServerPlayerEntity player = context.getSource().getPlayer();
         Identifier group = new Identifier(StringArgumentType.getString(context, "group"));
@@ -31,7 +28,7 @@ public class GroupBattle {
         }
 
         List<MessagePredicate<ServerPlayerEntity>> predicates = List.of(
-                new SessionNotExistPredicate(GroupBattle.getSessionStorage()),
+                new SessionNotExistPredicate(GroupBattleSessionStorage.getSessionRegistry()),
                 new PlayerNotBusyPredicate<>()
         );
 
@@ -56,7 +53,7 @@ public class GroupBattle {
         ServerPlayerEntity player = context.getSource().getPlayer();
 
         List<MessagePredicate<ServerPlayerEntity>> predicates = List.of(
-                new SessionExistPredicate(GroupBattle.getSessionStorage()),
+                new SessionExistPredicate(GroupBattleSessionStorage.getSessionRegistry()),
                 new PlayerNotBusyPredicate<>()
         );
 
@@ -67,10 +64,10 @@ public class GroupBattle {
             }
         }
 
-        GroupBattleSession session = GroupBattle.getSessionStorage().get(player.getUuid());
+        GroupBattleSession session = GroupBattleSessionStorage.getSessionRegistry().get(player.getUuid());
         session.onSessionStop();
 
-        GroupBattle.getSessionStorage().remove(player.getUuid());
+        GroupBattleSessionStorage.getSessionRegistry().remove(player.getUuid());
 
         player.sendMessage(Text.translatable("command.cobblemontrainerbattle.groupbattle.stopsession.success"));
         CobblemonTrainerBattle.LOGGER.info("Stopped group battle session: {}", player.getGameProfile().getName());
@@ -83,7 +80,7 @@ public class GroupBattle {
             ServerPlayerEntity player = context.getSource().getPlayer();
 
             List<MessagePredicate<ServerPlayerEntity>> predicates = List.of(
-                    new SessionExistPredicate(GroupBattle.getSessionStorage()),
+                    new SessionExistPredicate(GroupBattleSessionStorage.getSessionRegistry()),
                     new PlayerNotBusyPredicate<>()
             );
 
@@ -102,9 +99,5 @@ public class GroupBattle {
         } catch (BattleStartException e) {
             return 0;
         }
-    }
-
-    public static SessionRegistry<GroupBattleSession> getSessionStorage() {
-        return sessions;
     }
 }
