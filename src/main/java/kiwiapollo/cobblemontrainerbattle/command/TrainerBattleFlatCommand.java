@@ -1,13 +1,16 @@
 package kiwiapollo.cobblemontrainerbattle.command;
 
+import com.mojang.brigadier.Command;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.factory.FlatTrainerBattleParticipantFactory;
+import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerProfileStorage;
+import kiwiapollo.cobblemontrainerbattle.predicates.MessagePredicate;
+import kiwiapollo.cobblemontrainerbattle.predicates.ProfileExistPredicate;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.*;
 import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerFactory;
 import net.minecraft.server.command.ServerCommandSource;
@@ -35,7 +38,7 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
         return RequiredArgumentBuilder.<ServerCommandSource, String>argument("trainer", StringArgumentType.greedyString())
                 .requires(new PlayerCommandSourcePredicate(permission))
                 .suggests((context, builder) -> {
-                    TrainerProfileStorage.keySet().stream()
+                    TrainerProfileStorage.getProfileRegistry().keySet().stream()
                             .map(Identifier::toString)
                             .forEach(builder::suggest);
                     return builder.buildFuture();
@@ -51,16 +54,48 @@ public class TrainerBattleFlatCommand extends LiteralArgumentBuilder<ServerComma
     }
 
     private int startBattleWithSelectedTrainer(CommandContext<ServerCommandSource> context) {
-        ServerPlayerEntity player = context.getSource().getPlayer();
-        Identifier trainer = new Identifier(StringArgumentType.getString(context, "trainer"));
+        try {
+            ServerPlayerEntity player = context.getSource().getPlayer();
+            Identifier trainer = new Identifier(StringArgumentType.getString(context, "trainer"));
 
-        return CommandTrainerBattleStarter.startBattle(player, trainer, new FlatTrainerBattleParticipantFactory(StandardTrainerBattle.FLAT_LEVEL));
+            MessagePredicate<Identifier> isTrainerProfileExist = new ProfileExistPredicate(TrainerProfileStorage.getProfileRegistry());
+            if (!isTrainerProfileExist.test(trainer)) {
+                player.sendMessage(isTrainerProfileExist.getMessage());
+                return 0;
+            }
+
+            TrainerBattle trainerBattle = new RecordedTrainerBattle(new StandaloneFlatTrainerBattle(player, trainer));
+            trainerBattle.start();
+
+            TrainerBattleStorage.getTrainerBattleRegistry().put(player.getUuid(), trainerBattle);
+
+            return Command.SINGLE_SUCCESS;
+
+        } catch (BattleStartException e) {
+            return 0;
+        }
     }
 
     private int startBattleWithRandomTrainer(CommandContext<ServerCommandSource> context) {
-        ServerPlayerEntity player = context.getSource().getPlayer();
-        Identifier trainer = new RandomTrainerFactory().create();
+        try {
+            ServerPlayerEntity player = context.getSource().getPlayer();
+            Identifier trainer = new RandomTrainerFactory().create();
 
-        return CommandTrainerBattleStarter.startBattle(player, trainer, new FlatTrainerBattleParticipantFactory(StandardTrainerBattle.FLAT_LEVEL));
+            MessagePredicate<Identifier> isTrainerProfileExist = new ProfileExistPredicate(TrainerProfileStorage.getProfileRegistry());
+            if (!isTrainerProfileExist.test(trainer)) {
+                player.sendMessage(isTrainerProfileExist.getMessage());
+                return 0;
+            }
+
+            TrainerBattle trainerBattle = new RecordedTrainerBattle(new StandaloneFlatTrainerBattle(player, trainer));
+            trainerBattle.start();
+
+            TrainerBattleStorage.getTrainerBattleRegistry().put(player.getUuid(), trainerBattle);
+
+            return Command.SINGLE_SUCCESS;
+
+        } catch (BattleStartException e) {
+            return 0;
+        }
     }
 }

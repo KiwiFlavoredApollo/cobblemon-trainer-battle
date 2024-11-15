@@ -5,7 +5,7 @@ import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.groupbattle.GroupBattle;
+import kiwiapollo.cobblemontrainerbattle.groupbattle.FlatGroupBattle;
 import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerGroupProfileStorage;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.util.Identifier;
@@ -25,21 +25,21 @@ public class GroupBattleFlatCommand extends LiteralArgumentBuilder<ServerCommand
         return LiteralArgumentBuilder.<ServerCommandSource>literal("startsession")
                 .then(RequiredArgumentBuilder.<ServerCommandSource, String>argument("group", StringArgumentType.greedyString())
                         .suggests((context, builder) -> {
-                            TrainerGroupProfileStorage.keySet().stream()
+                            TrainerGroupProfileStorage.getProfileRegistry().keySet().stream()
                                     .map(Identifier::toString)
                                     .forEach(builder::suggest);
                             return builder.buildFuture();
                         })
-                        .executes(GroupBattle::startFlatGroupBattleSession));
+                        .executes(FlatGroupBattle::startSession));
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getStopSessionCommand() {
         return LiteralArgumentBuilder.<ServerCommandSource>literal("stopsession")
-                .executes(GroupBattle::stopSession);
+                .executes(FlatGroupBattle::stopSession);
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getStartBattleCommand() {
         return LiteralArgumentBuilder.<ServerCommandSource>literal("startbattle")
-                .executes(GroupBattle::startBattle);
+                .executes(FlatGroupBattle::startBattle);
     }
 }

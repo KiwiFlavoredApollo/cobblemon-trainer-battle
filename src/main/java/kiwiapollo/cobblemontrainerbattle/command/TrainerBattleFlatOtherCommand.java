@@ -1,5 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.command;
 
+import com.mojang.brigadier.Command;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
@@ -7,9 +8,11 @@ import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.factory.FlatTrainerBattleParticipantFactory;
 import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerFactory;
+import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerProfileStorage;
+import kiwiapollo.cobblemontrainerbattle.predicates.MessagePredicate;
+import kiwiapollo.cobblemontrainerbattle.predicates.ProfileExistPredicate;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.*;
 import net.minecraft.command.EntitySelector;
 import net.minecraft.command.argument.EntityArgumentType;
@@ -39,7 +42,7 @@ public class TrainerBattleFlatOtherCommand extends LiteralArgumentBuilder<Server
                 .requires(new MultiCommandSourcePredicate(permission))
                 .then(RequiredArgumentBuilder.<ServerCommandSource, String>argument("trainer", StringArgumentType.greedyString())
                         .suggests((context, builder) -> {
-                            TrainerProfileStorage.keySet().stream()
+                            TrainerProfileStorage.getProfileRegistry().keySet().stream()
                                     .map(Identifier::toString)
                                     .forEach(builder::suggest);
                             return builder.buildFuture();
@@ -60,10 +63,24 @@ public class TrainerBattleFlatOtherCommand extends LiteralArgumentBuilder<Server
             ServerPlayerEntity player = EntityArgumentType.getPlayer(context, "player");
             Identifier trainer = new Identifier(StringArgumentType.getString(context, "trainer"));
 
-            return CommandTrainerBattleStarter.startBattle(player, trainer, new FlatTrainerBattleParticipantFactory(StandardTrainerBattle.FLAT_LEVEL));
+            MessagePredicate<Identifier> isTrainerProfileExist = new ProfileExistPredicate(TrainerProfileStorage.getProfileRegistry());
+            if (!isTrainerProfileExist.test(trainer)) {
+                player.sendMessage(isTrainerProfileExist.getMessage());
+                return 0;
+            }
+
+            TrainerBattle trainerBattle = new RecordedTrainerBattle(new StandaloneFlatTrainerBattle(player, trainer));
+            trainerBattle.start();
+
+            TrainerBattleStorage.getTrainerBattleRegistry().put(player.getUuid(), trainerBattle);
+
+            return Command.SINGLE_SUCCESS;
 
         } catch (CommandSyntaxException e) {
             CobblemonTrainerBattle.LOGGER.error("Unknown player");
+            return 0;
+
+        } catch (BattleStartException e) {
             return 0;
         }
     }
@@ -73,10 +90,24 @@ public class TrainerBattleFlatOtherCommand extends LiteralArgumentBuilder<Server
             ServerPlayerEntity player = EntityArgumentType.getPlayer(context, "player");
             Identifier trainer = new RandomTrainerFactory().create();
 
-            return CommandTrainerBattleStarter.startBattle(player, trainer, new FlatTrainerBattleParticipantFactory(StandardTrainerBattle.FLAT_LEVEL));
+            MessagePredicate<Identifier> isTrainerProfileExist = new ProfileExistPredicate(TrainerProfileStorage.getProfileRegistry());
+            if (!isTrainerProfileExist.test(trainer)) {
+                player.sendMessage(isTrainerProfileExist.getMessage());
+                return 0;
+            }
+
+            TrainerBattle trainerBattle = new RecordedTrainerBattle(new StandaloneFlatTrainerBattle(player, trainer));
+            trainerBattle.start();
+
+            TrainerBattleStorage.getTrainerBattleRegistry().put(player.getUuid(), trainerBattle);
+
+            return Command.SINGLE_SUCCESS;
 
         } catch (CommandSyntaxException e) {
             CobblemonTrainerBattle.LOGGER.error("Unknown player");
+            return 0;
+
+        } catch (BattleStartException e) {
             return 0;
         }
     }
