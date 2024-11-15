@@ -1,16 +1,16 @@
 package kiwiapollo.cobblemontrainerbattle.predicates;
 
 import kiwiapollo.cobblemontrainerbattle.session.Session;
-import kiwiapollo.cobblemontrainerbattle.session.SessionStorage;
+import kiwiapollo.cobblemontrainerbattle.session.SessionRegistry;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 
 public class SessionNotExistPredicate implements MessagePredicate<ServerPlayerEntity> {
-    private final SessionStorage<? extends Session> storage;
+    private final SessionRegistry<? extends Session> registry;
 
-    public SessionNotExistPredicate(SessionStorage<? extends Session> storage) {
-        this.storage = storage;
+    public SessionNotExistPredicate(SessionRegistry<? extends Session> registry) {
+        this.registry = registry;
     }
 
     @Override
@@ -20,6 +20,6 @@ public class SessionNotExistPredicate implements MessagePredicate<ServerPlayerEn
 
     @Override
     public boolean test(ServerPlayerEntity player) {
-        return !storage.containsKey(player.getUuid());
+        return !registry.containsKey(player.getUuid());
     }
 }

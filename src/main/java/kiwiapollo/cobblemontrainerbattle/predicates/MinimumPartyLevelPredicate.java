@@ -24,6 +24,6 @@ public class MinimumPartyLevelPredicate implements MessagePredicate<PlayerBattle
         return player.getParty().toGappyList().stream()
                 .filter(Objects::nonNull)
                 .map(Pokemon::getLevel)
-                .allMatch(level -> level <= minimum);
+                .allMatch(level -> level >= minimum);
     }
 }

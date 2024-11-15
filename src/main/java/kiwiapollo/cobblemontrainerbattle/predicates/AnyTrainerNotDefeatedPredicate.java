@@ -4,14 +4,14 @@ import kiwiapollo.cobblemontrainerbattle.session.Session;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 
-public class AnyTrainerDefeatedPredicate<T extends Session> implements MessagePredicate<T> {
+public class AnyTrainerNotDefeatedPredicate<T extends Session> implements MessagePredicate<T> {
     @Override
     public MutableText getMessage() {
-        return Text.translatable("command.cobblemontrainerbattle.battlefactory.rerollpokemon.defeated_trainer_exist");
+        return Text.translatable("command.cobblemontrainerbattle.groupbattle.startbattle.any_trainer_not_defeated");
     }
 
     @Override
     public boolean test(T session) {
-        return session.isAnyTrainerDefeated();
+        return !session.isAllTrainerDefeated();
     }
 }

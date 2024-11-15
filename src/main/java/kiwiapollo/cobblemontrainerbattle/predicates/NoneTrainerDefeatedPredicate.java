@@ -4,7 +4,7 @@ import kiwiapollo.cobblemontrainerbattle.session.Session;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 
-public class AnyTrainerDefeatedPredicate<T extends Session> implements MessagePredicate<T> {
+public class NoneTrainerDefeatedPredicate<T extends Session> implements MessagePredicate<T> {
     @Override
     public MutableText getMessage() {
         return Text.translatable("command.cobblemontrainerbattle.battlefactory.rerollpokemon.defeated_trainer_exist");
@@ -12,6 +12,6 @@ public class AnyTrainerDefeatedPredicate<T extends Session> implements MessagePr
 
     @Override
     public boolean test(T session) {
-        return session.isAnyTrainerDefeated();
+        return !session.isAnyTrainerDefeated();
     }
 }
