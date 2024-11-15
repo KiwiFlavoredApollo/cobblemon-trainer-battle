@@ -170,23 +170,21 @@
   "advancement.cobblemontrainerbattle.kill_champion_wallace.title": "If I Can't Have it, No One Can",
   "advancement.cobblemontrainerbattle.kill_champion_wallace.description": "Kill Wallace",
 
-  "predicate.cobblemontrainerbattle.error.all_trainer_defeated": "You cannot proceed when all trainers are defeated.",
-  "predicate.cobblemontrainerbattle.error.any_trainer_defeated": "You cannot proceed when any trainers are defeated.",
-  "predicate.cobblemontrainerbattle.error.any_trainer_not_defeated": "You cannot proceed when not all trainers are defeated.",
-  "predicate.cobblemontrainerbattle.error.none_trainer_defeated": "You cannot proceed when any trainers are not defeated.",
-  "predicate.cobblemontrainerbattle.error.player_not_defeated": "You can’t continue a defeated Group Battle session.",
-  "predicate.cobblemontrainerbattle.error.player_not_busy": "You can’t use this command during a Pokémon battle.",
-  "predicate.cobblemontrainerbattle.error.player_not_trade_pokemon": "You’ve already traded your Pokémon.",
-  "predicate.cobblemontrainerbattle.error.empty_player_party": "You have no Pokémon in your party.",
-  "predicate.cobblemontrainerbattle.error.fainted_player_party": "All of your Pokémon have fainted.",
-  "predicate.cobblemontrainerbattle.error.profile_exist": "Couldn’t find the trainer.",
-  "predicate.cobblemontrainerbattle.error.relative_level": "Your Pokémon must be above level %d.",
-  "predicate.cobblemontrainerbattle.error.session_exist": "A valid Group Battle session is already in progress.",
-  "predicate.cobblemontrainerbattle.error.session_not_exist": "No valid Group Battle session found.",
+  "predicate.cobblemontrainerbattle.error.all_trainer_not_defeated": "You cannot proceed when any trainers are defeated.",
+  "predicate.cobblemontrainerbattle.error.any_trainer_defeated": "You cannot proceed when no trainers are defeated.",
+  "predicate.cobblemontrainerbattle.error.any_trainer_not_defeated": "You cannot proceed when all trainers are defeated.",
+  "predicate.cobblemontrainerbattle.error.player_not_defeated": "You cannot proceed after being defeated.",
+  "predicate.cobblemontrainerbattle.error.player_not_busy": "You cannot proceed while in a Pokémon battle.",
+  "predicate.cobblemontrainerbattle.error.player_not_trade_pokemon": "You cannot proceed after you have traded your Pokémon.",
+  "predicate.cobblemontrainerbattle.error.empty_player_party": "You cannot proceed when you have no Pokémon.",
+  "predicate.cobblemontrainerbattle.error.fainted_player_party": "You cannot proceed with all your Pokémon fainted.",
+  "predicate.cobblemontrainerbattle.error.profile_exist": "Unable to find the opponent.",
+  "predicate.cobblemontrainerbattle.error.session_exist": "You have no ongoing session.",
+  "predicate.cobblemontrainerbattle.error.session_not_exist": "You have ongoing session.",
 
-  "predicate.cobblemontrainerbattle.error.is_rematch_allowed": "You can't battle this trainer again.",
-  "predicate.cobblemontrainerbattle.error.maximum_party_level": "Your Pokémon must be no higher than level %d.",
-  "predicate.cobblemontrainerbattle.error.minimum_party_level": "Your Pokémon must be at least level %d.",
+  "predicate.cobblemontrainerbattle.error.is_rematch_allowed": "Rematch for this opponent is prohibited.",
+  "predicate.cobblemontrainerbattle.error.maximum_party_level": "Maximum level of %d is required.",
+  "predicate.cobblemontrainerbattle.error.minimum_party_level": "Minimum level of %d is required.",
 
   "command.cobblemontrainerbattle.trainerbattle.success": "A battle has begun against %s!",
 
@@ -195,7 +193,6 @@
 
   "command.cobblemontrainerbattle.battlefactory.startsession.success": "Battle Factory session started.",
   "command.cobblemontrainerbattle.battlefactory.stopsession.success": "Battle Factory session ended.",
-  "command.cobblemontrainerbattle.battlefactory.tradepokemon.success": "You traded %s for %s.",
-  "command.cobblemontrainerbattle.battlefactory.rerollpokemon.success": "Pokémon re-rolled.",
+  "command.cobblemontrainerbattle.battlefactory.tradepokemon.success": "Traded %s for %s.",
   "command.cobblemontrainerbattle.battlefactory.winningstreak.success": "Winning Streak: %d"
 }
