@@ -16,6 +16,7 @@ import kiwiapollo.cobblemontrainerbattle.parser.CobblemonPokemonParser;
 import kiwiapollo.cobblemontrainerbattle.parser.ConfigLoader;
 import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemon;
 import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemonExporter;
+import kiwiapollo.cobblemontrainerbattle.predicates.PlayerPartyNotEmptyPredicate;
 import net.minecraft.command.EntitySelector;
 import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.server.command.ServerCommandSource;
@@ -90,7 +91,11 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
     private int exportPlayer(CommandContext<ServerCommandSource> context) {
         try {
             ServerPlayerEntity player = EntityArgumentType.getPlayer(context, "player");
-            PlayerValidator.assertPlayerPartyNotEmpty(Cobblemon.INSTANCE.getStorage().getParty(player));
+
+            PlayerPartyNotEmptyPredicate<ServerPlayerEntity> isPlayerPartyNotEmpty = new PlayerPartyNotEmptyPredicate<>();
+            if (!isPlayerPartyNotEmpty.test(player)) {
+                return 0;
+            }
 
             List<Pokemon> pokemons = com.cobblemon.mod.common.Cobblemon.INSTANCE.getStorage()
                     .getParty(player).toGappyList().stream()
@@ -114,10 +119,6 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
             CobblemonTrainerBattle.LOGGER.error("Unknown player");
             return 0;
 
-        } catch (EmptyPlayerPartyException e) {
-            CobblemonTrainerBattle.LOGGER.error("Player has no Pokemon");
-            return 0;
-
         } catch (IOException e) {
             CobblemonTrainerBattle.LOGGER.error("An error occurred while exporting trainer file");
             return 0;
@@ -127,7 +128,11 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
     private int exportPlayerWithFlatLevel(CommandContext<ServerCommandSource> context) {
         try {
             ServerPlayerEntity player = EntityArgumentType.getPlayer(context, "player");
-            PlayerValidator.assertPlayerPartyNotEmpty(Cobblemon.INSTANCE.getStorage().getParty(player));
+
+            PlayerPartyNotEmptyPredicate<ServerPlayerEntity> isPlayerPartyNotEmpty = new PlayerPartyNotEmptyPredicate<>();
+            if (!isPlayerPartyNotEmpty.test(player)) {
+                return 0;
+            }
 
             int level = IntegerArgumentType.getInteger(context, "level");
 
@@ -154,10 +159,6 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
             CobblemonTrainerBattle.LOGGER.error("Unknown player");
             return 0;
 
-        } catch (EmptyPlayerPartyException e) {
-            CobblemonTrainerBattle.LOGGER.error("Player has no Pokemon");
-            return 0;
-
         } catch (IOException e) {
             CobblemonTrainerBattle.LOGGER.error("An error occurred while exporting trainer file");
             return 0;
@@ -167,7 +168,11 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
     private int exportPlayerWithRelativeLevel(CommandContext<ServerCommandSource> context) {
         try {
             ServerPlayerEntity player = EntityArgumentType.getPlayer(context, "player");
-            PlayerValidator.assertPlayerPartyNotEmpty(Cobblemon.INSTANCE.getStorage().getParty(player));
+
+            PlayerPartyNotEmptyPredicate<ServerPlayerEntity> isPlayerPartyNotEmpty = new PlayerPartyNotEmptyPredicate<>();
+            if (!isPlayerPartyNotEmpty.test(player)) {
+                return 0;
+            }
 
             List<Pokemon> pokemons = com.cobblemon.mod.common.Cobblemon.INSTANCE.getStorage()
                     .getParty(player).toGappyList().stream()
@@ -190,10 +195,6 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
 
         } catch (CommandSyntaxException e) {
             CobblemonTrainerBattle.LOGGER.error("Unknown player");
-            return 0;
-
-        } catch (EmptyPlayerPartyException e) {
-            CobblemonTrainerBattle.LOGGER.error("Player has no Pokemon");
             return 0;
 
         } catch (IOException e) {
