@@ -13,7 +13,7 @@ public class ProfileExistPredicate implements MessagePredicate<Identifier> {
     }
 
     @Override
-    public MutableText getMessage() {
+    public MutableText getErrorMessage() {
         return Text.translatable("predicate.cobblemontrainerbattle.error.profile_exist");
     }
 

@@ -8,7 +8,6 @@ import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.TrainerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.exception.*;
-import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemonParser;
 import kiwiapollo.cobblemontrainerbattle.predicates.*;
 import kotlin.Unit;
 import net.minecraft.text.Text;
@@ -42,7 +41,7 @@ public class BaseTrainerBattle implements TrainerBattle {
     public void start() throws BattleStartException {
         for (MessagePredicate<PlayerBattleParticipant> predicate : PREDICATES) {
             if (!predicate.test(player)) {
-                player.sendErrorMessage(predicate.getMessage());
+                player.sendErrorMessage(predicate.getErrorMessage());
                 throw new BattleStartException();
             }
         }

@@ -15,7 +15,7 @@ public class MinimumPartyLevelPredicate implements MessagePredicate<PlayerBattle
     }
 
     @Override
-    public MutableText getMessage() {
+    public MutableText getErrorMessage() {
         return Text.translatable("predicate.cobblemontrainerbattle.error.minimum_party_level", minimum);
     }
 

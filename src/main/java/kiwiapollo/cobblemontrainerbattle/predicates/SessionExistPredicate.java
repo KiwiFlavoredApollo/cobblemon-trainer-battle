@@ -14,7 +14,7 @@ public class SessionExistPredicate implements MessagePredicate<ServerPlayerEntit
     }
 
     @Override
-    public MutableText getMessage() {
+    public MutableText getErrorMessage() {
         return Text.translatable("predicate.cobblemontrainerbattle.error.session_exist");
     }
 

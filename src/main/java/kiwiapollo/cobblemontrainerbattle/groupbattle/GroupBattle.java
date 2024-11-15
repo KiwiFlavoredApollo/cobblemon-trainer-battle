@@ -26,7 +26,7 @@ public class GroupBattle {
 
         MessagePredicate<Identifier> isProfileExist = new ProfileExistPredicate(TrainerGroupProfileStorage.getProfileRegistry());
         if (!isProfileExist.test(group)) {
-            player.sendMessage(isProfileExist.getMessage().formatted(Formatting.RED));
+            player.sendMessage(isProfileExist.getErrorMessage().formatted(Formatting.RED));
             return 0;
         }
 
@@ -37,7 +37,7 @@ public class GroupBattle {
 
         for (MessagePredicate<ServerPlayerEntity> predicate: predicates) {
             if (!predicate.test(player)) {
-                player.sendMessage(predicate.getMessage().formatted(Formatting.RED));
+                player.sendMessage(predicate.getErrorMessage().formatted(Formatting.RED));
                 return 0;
             }
         }
@@ -62,7 +62,7 @@ public class GroupBattle {
 
         for (MessagePredicate<ServerPlayerEntity> predicate: predicates) {
             if (!predicate.test(player)) {
-                player.sendMessage(predicate.getMessage().formatted(Formatting.RED));
+                player.sendMessage(predicate.getErrorMessage().formatted(Formatting.RED));
                 return 0;
             }
         }
@@ -89,7 +89,7 @@ public class GroupBattle {
 
             for (MessagePredicate<ServerPlayerEntity> predicate: predicates) {
                 if (!predicate.test(player)) {
-                    player.sendMessage(predicate.getMessage().formatted(Formatting.RED));
+                    player.sendMessage(predicate.getErrorMessage().formatted(Formatting.RED));
                     return 0;
                 }
             }

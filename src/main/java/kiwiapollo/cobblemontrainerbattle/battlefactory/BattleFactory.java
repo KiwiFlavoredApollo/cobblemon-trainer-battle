@@ -33,7 +33,7 @@ public class BattleFactory {
 
         for (MessagePredicate<ServerPlayerEntity> predicate: predicates) {
             if (!predicate.test(player)) {
-                player.sendMessage(predicate.getMessage().formatted(Formatting.RED));
+                player.sendMessage(predicate.getErrorMessage().formatted(Formatting.RED));
                 return 0;
             }
         }
@@ -59,7 +59,7 @@ public class BattleFactory {
 
         for (MessagePredicate<ServerPlayerEntity> predicate: predicates) {
             if (!predicate.test(player)) {
-                player.sendMessage(predicate.getMessage().formatted(Formatting.RED));
+                player.sendMessage(predicate.getErrorMessage().formatted(Formatting.RED));
                 return 0;
             }
         }
@@ -86,7 +86,7 @@ public class BattleFactory {
 
             for (MessagePredicate<ServerPlayerEntity> predicate: predicates) {
                 if (!predicate.test(player)) {
-                    player.sendMessage(predicate.getMessage().formatted(Formatting.RED));
+                    player.sendMessage(predicate.getErrorMessage().formatted(Formatting.RED));
                     return 0;
                 }
             }
@@ -112,7 +112,7 @@ public class BattleFactory {
 
             for (MessagePredicate<ServerPlayerEntity> predicate: predicates) {
                 if (!predicate.test(player)) {
-                    player.sendMessage(predicate.getMessage().formatted(Formatting.RED));
+                    player.sendMessage(predicate.getErrorMessage().formatted(Formatting.RED));
                     return 0;
                 }
             }
@@ -141,7 +141,7 @@ public class BattleFactory {
 
             for (MessagePredicate<ServerPlayerEntity> predicate: predicates) {
                 if (!predicate.test(player)) {
-                    player.sendMessage(predicate.getMessage().formatted(Formatting.RED));
+                    player.sendMessage(predicate.getErrorMessage().formatted(Formatting.RED));
                     return 0;
                 }
             }
@@ -165,7 +165,7 @@ public class BattleFactory {
 
         for (MessagePredicate<ServerPlayerEntity> predicate: predicates) {
             if (!predicate.test(player)) {
-                player.sendMessage(predicate.getMessage().formatted(Formatting.RED));
+                player.sendMessage(predicate.getErrorMessage().formatted(Formatting.RED));
                 return 0;
             }
         }
@@ -187,7 +187,7 @@ public class BattleFactory {
 
             for (MessagePredicate<ServerPlayerEntity> predicate: predicates) {
                 if (!predicate.test(player)) {
-                    player.sendMessage(predicate.getMessage().formatted(Formatting.RED));
+                    player.sendMessage(predicate.getErrorMessage().formatted(Formatting.RED));
                     return 0;
                 }
             }
@@ -211,7 +211,7 @@ public class BattleFactory {
 
         for (MessagePredicate<ServerPlayerEntity> predicate: predicates) {
             if (!predicate.test(player)) {
-                player.sendMessage(predicate.getMessage().formatted(Formatting.RED));
+                player.sendMessage(predicate.getErrorMessage().formatted(Formatting.RED));
                 return 0;
             }
         }

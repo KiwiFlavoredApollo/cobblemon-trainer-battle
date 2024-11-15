@@ -6,7 +6,7 @@ import net.minecraft.text.Text;
 
 public class PlayerNotDefeatedPredicate<T extends Session> implements MessagePredicate<T> {
     @Override
-    public MutableText getMessage() {
+    public MutableText getErrorMessage() {
         return Text.translatable("predicate.cobblemontrainerbattle.error.player_not_defeated");
     }
 

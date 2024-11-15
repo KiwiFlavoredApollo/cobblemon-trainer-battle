@@ -10,7 +10,7 @@ import java.util.function.Predicate;
 
 public class PlayerPartyNotFaintPredicate implements MessagePredicate<PlayerBattleParticipant> {
     @Override
-    public MutableText getMessage() {
+    public MutableText getErrorMessage() {
         return Text.translatable("predicate.cobblemontrainerbattle.error.fainted_player_party");
     }
 

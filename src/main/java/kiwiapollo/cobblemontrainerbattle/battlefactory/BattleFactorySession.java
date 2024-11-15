@@ -83,7 +83,7 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Renta
 
         for (MessagePredicate<BattleFactorySession> predicate: predicates) {
             if (!predicate.test(this)) {
-                player.sendErrorMessage(predicate.getMessage());
+                player.sendErrorMessage(predicate.getErrorMessage());
                 throw new BattleStartException();
             }
         }
@@ -111,7 +111,7 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Renta
 
         for (MessagePredicate<BattleFactorySession> predicate : predicates) {
             if (!predicate.test(this)) {
-                player.sendErrorMessage(predicate.getMessage());
+                player.sendErrorMessage(predicate.getErrorMessage());
                 throw new SessionOperationException();
             }
         }
@@ -140,7 +140,7 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Renta
 
         for (MessagePredicate<BattleFactorySession> predicate : predicates) {
             if (!predicate.test(this)) {
-                player.sendErrorMessage(predicate.getMessage());
+                player.sendErrorMessage(predicate.getErrorMessage());
                 throw new SessionOperationException();
             }
         }
@@ -166,7 +166,7 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Renta
 
         for (MessagePredicate<BattleFactorySession> predicate : predicates) {
             if (!predicate.test(this)) {
-                player.sendErrorMessage(predicate.getMessage());
+                player.sendErrorMessage(predicate.getErrorMessage());
                 throw new SessionOperationException();
             }
         }

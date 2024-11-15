@@ -29,7 +29,7 @@ public class SessionTrainerBattle implements TrainerBattle {
     public void start() throws BattleStartException {
         for (MessagePredicate<PlayerBattleParticipant> predicate : session.getBattlePredicates()) {
             if (!predicate.test(getPlayer())) {
-                getPlayer().sendErrorMessage(predicate.getMessage());
+                getPlayer().sendErrorMessage(predicate.getErrorMessage());
                 throw new BattleStartException();
             }
         }

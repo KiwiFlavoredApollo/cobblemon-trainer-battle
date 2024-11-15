@@ -16,7 +16,7 @@ public class RematchAllowedPredicate implements MessagePredicate<PlayerBattlePar
     }
 
     @Override
-    public MutableText getMessage() {
+    public MutableText getErrorMessage() {
         return Text.translatable("predicate.cobblemontrainerbattle.error.is_rematch_allowed");
     }
 

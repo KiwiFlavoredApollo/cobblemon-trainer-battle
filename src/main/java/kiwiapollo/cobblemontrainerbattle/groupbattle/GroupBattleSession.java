@@ -53,7 +53,7 @@ public class GroupBattleSession implements Session {
 
         for (MessagePredicate<GroupBattleSession> predicate: predicates) {
             if (!predicate.test(this)) {
-                player.sendMessage(predicate.getMessage().formatted(Formatting.RED));
+                player.sendMessage(predicate.getErrorMessage().formatted(Formatting.RED));
                 throw new BattleStartException();
             }
         }

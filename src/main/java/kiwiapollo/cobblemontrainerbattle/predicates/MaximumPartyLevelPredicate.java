@@ -15,7 +15,7 @@ public class MaximumPartyLevelPredicate implements MessagePredicate<PlayerBattle
     }
 
     @Override
-    public MutableText getMessage() {
+    public MutableText getErrorMessage() {
         return Text.translatable("predicate.cobblemontrainerbattle.error.maximum_party_level", maximum);
     }
 

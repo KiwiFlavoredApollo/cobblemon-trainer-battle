@@ -60,7 +60,7 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
 
             MessagePredicate<Identifier> isTrainerProfileExist = new ProfileExistPredicate(TrainerProfileStorage.getProfileRegistry());
             if (!isTrainerProfileExist.test(trainer)) {
-                player.sendMessage(isTrainerProfileExist.getMessage());
+                player.sendMessage(isTrainerProfileExist.getErrorMessage());
                 return 0;
             }
 
@@ -83,7 +83,7 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
 
             MessagePredicate<Identifier> isTrainerProfileExist = new ProfileExistPredicate(TrainerProfileStorage.getProfileRegistry());
             if (!isTrainerProfileExist.test(trainer)) {
-                player.sendMessage(isTrainerProfileExist.getMessage());
+                player.sendMessage(isTrainerProfileExist.getErrorMessage());
                 return 0;
             }
 

@@ -6,7 +6,7 @@ import net.minecraft.text.Text;
 
 public class PlayerNotTradedPokemonPredicate<T extends PokemonTradeFeature> implements MessagePredicate<T> {
     @Override
-    public MutableText getMessage() {
+    public MutableText getErrorMessage() {
         return Text.translatable("predicate.cobblemontrainerbattle.error.player_not_trade_pokemon");
     }
 

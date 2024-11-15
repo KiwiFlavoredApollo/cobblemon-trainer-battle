@@ -21,7 +21,7 @@ public class PlayerPartyNotEmptyPredicate<T> implements MessagePredicate<T> {
     }
 
     @Override
-    public MutableText getMessage() {
+    public MutableText getErrorMessage() {
         return Text.translatable("predicate.cobblemontrainerbattle.error.empty_player_party");
     }
 

@@ -25,7 +25,7 @@ public class PlayerNotBusyPredicate<T> implements MessagePredicate<T> {
     }
 
     @Override
-    public MutableText getMessage() {
+    public MutableText getErrorMessage() {
         return Text.translatable("predicate.cobblemontrainerbattle.error.player_not_busy");
     }
 
