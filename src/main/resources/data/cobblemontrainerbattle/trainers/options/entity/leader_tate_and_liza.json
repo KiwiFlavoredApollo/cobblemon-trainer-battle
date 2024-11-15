@@ -1,10 +1,8 @@
 {
   "isSpawningAllowed": false,
-  "condition": {
-    "isRematchAllowedAfterVictory": true,
-    "maximumPartyLevel": 100,
-    "minimumPartyLevel": 1
-  },
+  "isRematchAllowed": true,
+  "maximumPartyLevel": 100,
+  "minimumPartyLevel": 1,
   "onVictory": {
     "balance": 0,
     "commands": []
