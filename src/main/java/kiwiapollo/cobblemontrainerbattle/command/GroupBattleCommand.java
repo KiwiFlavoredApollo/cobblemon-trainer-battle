@@ -5,7 +5,7 @@ import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.groupbattle.NormalGroupBattle;
+import kiwiapollo.cobblemontrainerbattle.battle.groupbattle.NormalGroupBattle;
 import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerGroupProfileStorage;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.util.Identifier;

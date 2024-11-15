@@ -1,6 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.parser.profile;
 
-import kiwiapollo.cobblemontrainerbattle.battlefactory.BattleFactoryProfile;
+import kiwiapollo.cobblemontrainerbattle.battle.battlefactory.BattleFactoryProfile;
 
 public class MiniGameProfileStorage {
     private static BattleFactoryProfile battleFactory;

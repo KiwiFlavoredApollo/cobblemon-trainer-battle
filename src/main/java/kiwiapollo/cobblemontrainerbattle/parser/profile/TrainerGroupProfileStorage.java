@@ -1,6 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.parser.profile;
 
-import kiwiapollo.cobblemontrainerbattle.groupbattle.TrainerGroupProfile;
+import kiwiapollo.cobblemontrainerbattle.battle.groupbattle.TrainerGroupProfile;
 
 public class TrainerGroupProfileStorage {
     private static final ProfileRegistry<TrainerGroupProfile> profiles = new ProfileRegistry<>();

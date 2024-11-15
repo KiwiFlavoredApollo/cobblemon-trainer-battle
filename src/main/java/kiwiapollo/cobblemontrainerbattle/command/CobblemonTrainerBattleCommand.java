@@ -13,7 +13,7 @@ import kiwiapollo.cobblemontrainerbattle.parser.CobblemonPokemonParser;
 import kiwiapollo.cobblemontrainerbattle.parser.ConfigLoader;
 import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemon;
 import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemonExporter;
-import kiwiapollo.cobblemontrainerbattle.predicates.PlayerPartyNotEmptyPredicate;
+import kiwiapollo.cobblemontrainerbattle.battle.predicates.PlayerPartyNotEmptyPredicate;
 import net.minecraft.command.EntitySelector;
 import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.server.command.ServerCommandSource;

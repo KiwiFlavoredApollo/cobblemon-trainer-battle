@@ -2,7 +2,7 @@ package kiwiapollo.cobblemontrainerbattle.parser.profile;
 
 import com.google.gson.Gson;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.groupbattle.TrainerGroupProfile;
+import kiwiapollo.cobblemontrainerbattle.battle.groupbattle.TrainerGroupProfile;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
 import net.minecraft.resource.ResourceManager;
 import net.minecraft.util.Identifier;
