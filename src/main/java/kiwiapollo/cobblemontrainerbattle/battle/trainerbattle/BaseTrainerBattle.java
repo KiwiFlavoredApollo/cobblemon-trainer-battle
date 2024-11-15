@@ -9,6 +9,7 @@ import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerB
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer.TrainerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.*;
 import kiwiapollo.cobblemontrainerbattle.exception.*;
+import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemonParser;
 import kotlin.Unit;
 import net.minecraft.text.Text;
 
@@ -19,9 +20,9 @@ import java.util.UUID;
 public class BaseTrainerBattle implements TrainerBattle {
     private static final List<MessagePredicate<PlayerBattleParticipant>> PREDICATES = List.of(
             new PlayerNotBusyPredicate<>(PlayerBattleParticipant::getPlayerEntity),
-            new PlayerPartyNotEmptyPredicate(),
+            new PlayerPartyNotEmptyPredicate<>(),
             new PlayerPartyNotFaintPredicate(),
-            new RelativeLevelPredicate()
+            new MinimumPartyLevelPredicate(ShowdownPokemonParser.MAXIMUM_RELATIVE_LEVEL)
     );
 
     private final PlayerBattleParticipant player;

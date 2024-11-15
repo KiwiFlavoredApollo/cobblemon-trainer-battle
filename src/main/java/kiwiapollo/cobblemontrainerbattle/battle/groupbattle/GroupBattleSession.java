@@ -10,7 +10,6 @@ import kiwiapollo.cobblemontrainerbattle.battle.postbattle.VictoryActionSetHandl
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.AnyTrainerNotDefeatedPredicate;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.MessagePredicate;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.PlayerNotDefeatedPredicate;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.*;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.battle.session.Session;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.session.SessionTrainerBattleFactory;

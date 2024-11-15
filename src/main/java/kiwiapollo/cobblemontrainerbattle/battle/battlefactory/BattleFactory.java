@@ -19,10 +19,6 @@ import net.minecraft.util.Formatting;
 import java.util.List;
 
 public class BattleFactory {
-    private static final int LEVEL = 100;
-    private static final int POKEMON_COUNT = 3;
-    private static final int ROUND_COUNT = 7;
-
     public static int startSession(CommandContext<ServerCommandSource> context) {
         ServerPlayerEntity player = context.getSource().getPlayer();
 

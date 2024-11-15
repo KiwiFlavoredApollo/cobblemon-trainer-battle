@@ -66,7 +66,7 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
         return LiteralArgumentBuilder.<ServerCommandSource>literal("exportflat")
                 .requires(new MultiCommandSourcePredicate(permission))
                 .then(RequiredArgumentBuilder.<ServerCommandSource, EntitySelector>argument("player", EntityArgumentType.player())
-                        .then(RequiredArgumentBuilder.<ServerCommandSource, Integer>argument("level", IntegerArgumentType.integer(20, 100))
+                        .then(RequiredArgumentBuilder.<ServerCommandSource, Integer>argument("level", IntegerArgumentType.integer(10, 100))
                                 .executes(this::exportPlayerWithFlatLevel)));
     }
 

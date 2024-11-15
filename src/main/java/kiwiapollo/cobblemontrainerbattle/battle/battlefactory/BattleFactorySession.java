@@ -161,7 +161,7 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Renta
     @Override
     public void rerollPartyPokemon() throws SessionOperationException {
         List<MessagePredicate<BattleFactorySession>> predicates = List.of(
-                new NoneTrainerDefeatedPredicate<>()
+                new AllTrainerNotDefeatedPredicate<>()
         );
 
         for (MessagePredicate<BattleFactorySession> predicate : predicates) {

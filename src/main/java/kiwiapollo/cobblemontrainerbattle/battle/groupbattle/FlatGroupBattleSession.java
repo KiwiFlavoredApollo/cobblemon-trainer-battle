@@ -11,8 +11,6 @@ import net.minecraft.util.Identifier;
 import java.util.List;
 
 public class FlatGroupBattleSession extends GroupBattleSession {
-    private static final int LEVEL = 100;
-
     private final List<MessagePredicate<PlayerBattleParticipant>> predicates;
 
     public FlatGroupBattleSession(ServerPlayerEntity player, Identifier group) {
