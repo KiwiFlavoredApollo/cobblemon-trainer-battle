@@ -17,7 +17,7 @@ import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerProfileStorage;
 import kiwiapollo.cobblemontrainerbattle.postbattle.DefeatActionSetHandler;
 import kiwiapollo.cobblemontrainerbattle.postbattle.VictoryActionSetHandler;
 import kiwiapollo.cobblemontrainerbattle.predicates.*;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.SessionTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.session.SessionTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.exception.*;
 import kiwiapollo.cobblemontrainerbattle.session.PokemonTradeFeature;

@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.trainerbattle;
+package kiwiapollo.cobblemontrainerbattle.trainerbattle.standalone;
 
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.NormalBattlePlayer;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.NormalBattleTrainer;

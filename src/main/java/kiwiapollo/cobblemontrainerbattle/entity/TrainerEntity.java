@@ -6,6 +6,7 @@ import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
 import kiwiapollo.cobblemontrainerbattle.parser.history.PlayerHistoryManager;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.*;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.standalone.EntityBackedTrainerBattle;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.advancement.criterion.Criteria;

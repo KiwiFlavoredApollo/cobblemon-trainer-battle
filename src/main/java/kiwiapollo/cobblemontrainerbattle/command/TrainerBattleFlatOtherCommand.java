@@ -14,6 +14,7 @@ import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerProfileStorage;
 import kiwiapollo.cobblemontrainerbattle.predicates.MessagePredicate;
 import kiwiapollo.cobblemontrainerbattle.predicates.ProfileExistPredicate;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.*;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.standalone.StandaloneFlatTrainerBattle;
 import net.minecraft.command.EntitySelector;
 import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.server.command.ServerCommandSource;

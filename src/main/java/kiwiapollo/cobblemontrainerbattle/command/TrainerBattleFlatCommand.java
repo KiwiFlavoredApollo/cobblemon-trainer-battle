@@ -13,6 +13,7 @@ import kiwiapollo.cobblemontrainerbattle.predicates.MessagePredicate;
 import kiwiapollo.cobblemontrainerbattle.predicates.ProfileExistPredicate;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.*;
 import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerFactory;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.standalone.StandaloneFlatTrainerBattle;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;

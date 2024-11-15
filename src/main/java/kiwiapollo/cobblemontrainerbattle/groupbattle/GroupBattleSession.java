@@ -11,6 +11,7 @@ import kiwiapollo.cobblemontrainerbattle.predicates.PlayerNotDefeatedPredicate;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.*;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.session.Session;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.session.SessionTrainerBattleFactory;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;

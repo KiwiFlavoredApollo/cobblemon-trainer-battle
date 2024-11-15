@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.trainerbattle;
+package kiwiapollo.cobblemontrainerbattle.trainerbattle.session;
 
 import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.CobblemonSounds;
@@ -9,6 +9,8 @@ import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.TrainerBattle
 import kiwiapollo.cobblemontrainerbattle.exception.*;
 import kiwiapollo.cobblemontrainerbattle.predicates.MessagePredicate;
 import kiwiapollo.cobblemontrainerbattle.session.Session;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.BaseTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 
 import java.util.UUID;
 

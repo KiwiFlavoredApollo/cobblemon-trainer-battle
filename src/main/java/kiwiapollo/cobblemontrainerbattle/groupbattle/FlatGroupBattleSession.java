@@ -3,7 +3,7 @@ package kiwiapollo.cobblemontrainerbattle.groupbattle;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerGroupProfileStorage;
 import kiwiapollo.cobblemontrainerbattle.predicates.*;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.SessionFlatTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.session.SessionFlatTrainerBattle;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
