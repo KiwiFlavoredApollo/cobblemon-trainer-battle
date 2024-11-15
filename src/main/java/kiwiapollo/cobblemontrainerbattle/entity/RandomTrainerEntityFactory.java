@@ -42,7 +42,7 @@ public class RandomTrainerEntityFactory implements EntityType.EntityFactory<Trai
     }
 
     private boolean isSpawningAllowed(Identifier trainer) {
-        return TrainerProfileStorage.get(trainer).isSpawningAllowed();
+        return TrainerProfileStorage.getProfileRegistry().get(trainer).isSpawningAllowed();
     }
 
     public static class Builder {

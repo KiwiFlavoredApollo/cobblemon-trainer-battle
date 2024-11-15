@@ -8,13 +8,13 @@ import java.io.FileNotFoundException;
 
 public class ResourceValidator {
     public static void assertTrainerExist(Identifier identifier) throws FileNotFoundException {
-        if (!TrainerProfileStorage.containsKey(identifier)) {
+        if (!TrainerProfileStorage.getProfileRegistry().containsKey(identifier)) {
             throw new FileNotFoundException();
         }
     }
 
     public static void assertTrainerGroupExist(Identifier identifier) throws FileNotFoundException {
-        if (!TrainerGroupProfileStorage.containsKey(identifier)) {
+        if (!TrainerGroupProfileStorage.getProfileRegistry().containsKey(identifier)) {
             throw new FileNotFoundException();
         }
     }

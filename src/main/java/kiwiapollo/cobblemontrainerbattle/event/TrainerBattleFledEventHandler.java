@@ -18,11 +18,11 @@ import java.util.stream.StreamSupport;
 public class TrainerBattleFledEventHandler {
     public static void endFledTrainerBattle(ServerWorld world) {
         world.getPlayers().forEach(player -> {
-            if (!TrainerBattleStorage.containsKey(player.getUuid())) {
+            if (!TrainerBattleStorage.getTrainerBattleRegistry().containsKey(player.getUuid())) {
                 return;
             }
 
-            TrainerBattle trainerBattle = TrainerBattleStorage.get(player.getUuid());
+            TrainerBattle trainerBattle = TrainerBattleStorage.getTrainerBattleRegistry().get(player.getUuid());
             PokemonBattle pokemonBattle = Cobblemon.INSTANCE.getBattleRegistry().getBattle(trainerBattle.getBattleId());
             if (!isFledBattle(pokemonBattle, player)) {
                 return;

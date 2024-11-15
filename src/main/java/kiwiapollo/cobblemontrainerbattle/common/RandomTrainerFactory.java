@@ -20,7 +20,7 @@ public class RandomTrainerFactory implements IdentifierFactory {
     }
 
     @Override public Identifier create() {
-        List<Identifier> trainers = new ArrayList<>(TrainerProfileStorage.keySet().stream()
+        List<Identifier> trainers = new ArrayList<>(TrainerProfileStorage.getProfileRegistry().keySet().stream()
                 .filter(predicate).toList());
         Collections.shuffle(trainers);
 

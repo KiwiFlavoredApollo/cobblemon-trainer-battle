@@ -14,7 +14,7 @@ public class BattleVictoryEventHandler {
     public static Unit onBattleVictory(BattleVictoryEvent battleVictoryEvent) {
         // BATTLE_VICTORY event fires even if the player loses
 
-        List<UUID> battleIds = TrainerBattleStorage.values().stream()
+        List<UUID> battleIds = TrainerBattleStorage.getTrainerBattleRegistry().values().stream()
                 .map(TrainerBattle::getBattleId).toList();
 
         if (!battleIds.contains(battleVictoryEvent.getBattle().getBattleId())) {
@@ -39,17 +39,17 @@ public class BattleVictoryEventHandler {
     private static void onPlayerVictory(BattleVictoryEvent battleVictoryEvent) {
         ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
 
-        TrainerBattleStorage.get(player.getUuid()).onPlayerVictory();
+        TrainerBattleStorage.getTrainerBattleRegistry().get(player.getUuid()).onPlayerVictory();
         CustomCriteria.DEFEAT_TRAINER_CRITERION.trigger(player);
 
-        TrainerBattleStorage.remove(player.getUuid());
+        TrainerBattleStorage.getTrainerBattleRegistry().remove(player.getUuid());
     }
 
     private static void onPlayerDefeat(BattleVictoryEvent battleVictoryEvent) {
         ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
 
-        TrainerBattleStorage.get(player.getUuid()).onPlayerDefeat();
+        TrainerBattleStorage.getTrainerBattleRegistry().get(player.getUuid()).onPlayerDefeat();
 
-        TrainerBattleStorage.remove(player.getUuid());
+        TrainerBattleStorage.getTrainerBattleRegistry().remove(player.getUuid());
     }
 }

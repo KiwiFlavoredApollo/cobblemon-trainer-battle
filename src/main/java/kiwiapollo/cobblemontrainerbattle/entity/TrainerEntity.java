@@ -3,20 +3,10 @@ package kiwiapollo.cobblemontrainerbattle.entity;
 import com.cobblemon.mod.common.Cobblemon;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.NormalBattlePlayer;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.PlayerBattleParticipant;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.EntityBackedTrainer;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.TrainerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.parser.history.PlayerHistoryManager;
-import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerProfileStorage;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattleStorage;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerProfile;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.*;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.exception.BusyWithPokemonBattleException;
-import kiwiapollo.cobblemontrainerbattle.postbattle.PostBattleActionSetHandler;
-import kiwiapollo.cobblemontrainerbattle.postbattle.BattleResultHandler;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.advancement.criterion.Criteria;
@@ -103,26 +93,14 @@ public class TrainerEntity extends PathAwareEntity {
 
     private void startTrainerBattle(ServerPlayerEntity player, Hand hand) {
         try {
-            assertNotBusyWithPokemonBattle();
+            if (isPokemonBattleExist()) {
+                return;
+            }
 
-            PlayerBattleParticipant playerBattleParticipant = new NormalBattlePlayer(player);
-            TrainerBattleParticipant trainerBattleParticipant = new EntityBackedTrainer(trainer, this, player);
-
-            TrainerProfile trainerProfile = TrainerProfileStorage.get(trainer);
-            BattleResultHandler battleResultHandler = new PostBattleActionSetHandler(
-                    player,
-                    trainerProfile.onVictory(),
-                    trainerProfile.onDefeat()
-            );
-
-            TrainerBattle trainerBattle = new StandardTrainerBattle(
-                    playerBattleParticipant,
-                    trainerBattleParticipant,
-                    battleResultHandler
-            );
+            TrainerBattle trainerBattle = new RecordedTrainerBattle(new EntityBackedTrainerBattle(player, this, trainer));
             trainerBattle.start();
 
-            TrainerBattleStorage.put(player.getUuid(), trainerBattle);
+            TrainerBattleStorage.getTrainerBattleRegistry().put(player.getUuid(), trainerBattle);
             this.trainerBattle = trainerBattle;
 
             this.setVelocity(0, 0, 0);
@@ -131,7 +109,7 @@ public class TrainerEntity extends PathAwareEntity {
 
             Criteria.PLAYER_INTERACTED_WITH_ENTITY.trigger(player, player.getStackInHand(hand), this);
 
-        } catch (BusyWithPokemonBattleException | BattleStartException ignored) {
+        } catch (BattleStartException ignored) {
 
         }
     }
@@ -233,6 +211,10 @@ public class TrainerEntity extends PathAwareEntity {
     private LootTable getDefaultLootTable() {
         Identifier defaults = Identifier.of(CobblemonTrainerBattle.MOD_ID, "trainers/defaults");
         return this.getWorld().getServer().getLootManager().getLootTable(defaults);
+    }
+
+    public void onVictory() {
+        setAiDisabled(false);
     }
 
     public void onDefeat() {

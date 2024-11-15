@@ -18,7 +18,7 @@ public class LootDroppedEventHandler {
         }
 
         PokemonEntity pokemonEntity = (PokemonEntity) lootDroppedEvent.getEntity();
-        boolean isTrainerBattle = TrainerBattleStorage.values().stream()
+        boolean isTrainerBattle = TrainerBattleStorage.getTrainerBattleRegistry().values().stream()
                 .map(TrainerBattle::getBattleId)
                 .toList().contains(pokemonEntity.getBattleId());
 

@@ -35,7 +35,7 @@ public class DropTableMixin {
             return;
         }
 
-        boolean isTrainerBattle = TrainerBattleStorage.values().stream()
+        boolean isTrainerBattle = TrainerBattleStorage.getTrainerBattleRegistry().values().stream()
                 .map(TrainerBattle::getBattleId)
                 .toList().contains(pokemonEntity.getBattleId());
         if (!isTrainerBattle) {
