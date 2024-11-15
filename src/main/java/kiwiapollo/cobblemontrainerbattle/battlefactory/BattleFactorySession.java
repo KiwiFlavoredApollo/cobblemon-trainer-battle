@@ -7,14 +7,19 @@ import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.cobblemon.mod.common.pokemon.PokemonStats;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.factory.BattleParticipantFactory;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.BattleFactoryPlayer;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.PlayerBattleParticipant;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.BattleFactoryTrainer;
 import kiwiapollo.cobblemontrainerbattle.battleparticipant.trainer.TrainerBattleParticipant;
-import kiwiapollo.cobblemontrainerbattle.postbattle.ParameterizedBattleResultHandler;
-import kiwiapollo.cobblemontrainerbattle.trainerbattle.StandardTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerFactory;
+import kiwiapollo.cobblemontrainerbattle.parser.profile.MiniGameProfileStorage;
+import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerProfileStorage;
+import kiwiapollo.cobblemontrainerbattle.postbattle.DefeatActionSetHandler;
+import kiwiapollo.cobblemontrainerbattle.postbattle.VictoryActionSetHandler;
+import kiwiapollo.cobblemontrainerbattle.predicates.*;
+import kiwiapollo.cobblemontrainerbattle.trainerbattle.SessionTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.exception.*;
-import kiwiapollo.cobblemontrainerbattle.postbattle.BattleResultHandler;
 import kiwiapollo.cobblemontrainerbattle.session.PokemonTradeFeature;
 import kiwiapollo.cobblemontrainerbattle.session.RentalPokemonFeature;
 import kiwiapollo.cobblemontrainerbattle.session.Session;
@@ -25,13 +30,18 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class BattleFactorySession implements Session, PokemonTradeFeature, RentalPokemonFeature {
+    private static final int LEVEL = 100;
+    private static final int POKEMON_COUNT = 3;
+    private static final int ROUND_COUNT = 7;
+
     private final List<Identifier> trainersToDefeat;
-    private final BattleResultHandler battleResultHandler;
-    private final BattleParticipantFactory battleParticipantFactory;
+    private final VictoryActionSetHandler sessionVictoryHandler;
+    private final DefeatActionSetHandler sessionDefeatHandler;
 
     private PlayerBattleParticipant player;
     private TrainerBattle lastTrainerBattle;
@@ -39,94 +49,108 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Renta
     private boolean isPlayerDefeated;
     private boolean isTradedPokemon;
 
-    public BattleFactorySession(
-            ServerPlayerEntity player,
-            List<Identifier> trainersToDefeat,
-            BattleResultHandler battleResultHandler,
-            BattleParticipantFactory battleParticipantFactory
-    ) {
-        this.player = battleParticipantFactory.createPlayer(player);
-        this.trainersToDefeat = trainersToDefeat;
+    public BattleFactorySession(ServerPlayerEntity player) {
+        this.player = new BattleFactoryPlayer(player, LEVEL);
+
+        this.trainersToDefeat = createTrainersToDefeat();
+        BattleFactoryProfile profile = MiniGameProfileStorage.getBattleFactoryProfile();
+        this.sessionVictoryHandler = new VictoryActionSetHandler(player, profile.onVictory);
+        this.sessionDefeatHandler = new DefeatActionSetHandler(player, profile.onDefeat);
+
         this.defeatedTrainersCount = 0;
         this.isPlayerDefeated = false;
         this.isTradedPokemon = false;
-        this.battleResultHandler = battleResultHandler;
-        this.battleParticipantFactory = battleParticipantFactory;
+    }
+
+    private List<Identifier> createTrainersToDefeat() {
+        List<Identifier> trainers = new ArrayList<>();
+        for (int i = 0; i < ROUND_COUNT; i++) {
+            trainersToDefeat.add(new RandomTrainerFactory(BattleFactorySession::hasMinimumPokemon).create());
+        }
+        return trainers;
+    }
+
+    private static boolean hasMinimumPokemon(Identifier trainer) {
+        return TrainerProfileStorage.getProfileRegistry().get(trainer).team().size() > POKEMON_COUNT;
     }
 
     @Override
     public void startBattle() throws BattleStartException {
-        try {
-            assertNotPlayerDefeated();
-            assertNotDefeatedAllTrainers();
+        List<MessagePredicate<BattleFactorySession>> predicates = List.of(
+                new PlayerNotDefeatedPredicate<>(),
+                new AnyTrainerNotDefeatedPredicate<>()
+        );
 
-            TrainerBattleParticipant trainer = battleParticipantFactory.createTrainer(trainersToDefeat.get(defeatedTrainersCount), player.getPlayerEntity());
-            BattleResultHandler battleResultHandler = new ParameterizedBattleResultHandler(this::onBattleVictory, this::onBattleDefeat);
-
-            TrainerBattle trainerBattle = new StandardTrainerBattle(player, trainer, battleResultHandler);
-            trainerBattle.start();
-
-            TrainerBattleStorage.put(player.getUuid(), trainerBattle);
-
-            this.lastTrainerBattle = trainerBattle;
-
-        } catch (DefeatedToTrainerException e) {
-            player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.startbattle.defeated_to_trainer"));
-            throw new BattleStartException();
-
-        } catch (DefeatedAllTrainersException e) {
-            player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.startbattle.defeated_all_trainers"));
-            throw new BattleStartException();
+        for (MessagePredicate<BattleFactorySession> predicate: predicates) {
+            if (!predicate.test(this)) {
+                player.sendErrorMessage(predicate.getMessage());
+                throw new BattleStartException();
+            }
         }
+
+        TrainerBattleParticipant trainer = new BattleFactoryTrainer(getNextTrainer(), player.getPlayerEntity(), LEVEL);
+        TrainerBattle trainerBattle = new SessionTrainerBattle(player, trainer, this);
+        trainerBattle.start();
+
+        TrainerBattleStorage.getTrainerBattleRegistry().put(player.getUuid(), trainerBattle);
+
+        this.lastTrainerBattle = trainerBattle;
+    }
+
+    private Identifier getNextTrainer() {
+        return trainersToDefeat.get(defeatedTrainersCount);
     }
 
     @Override
-    public void tradePokemon(int playerSlot, int trainerSlot) {
-        try {
-            assertNotPlayerDefeated();
-            assertExistDefeatedTrainer();
-            assertNotPlayerTradedPokemon();
+    public void tradePokemon(int playerSlot, int trainerSlot) throws SessionOperationException {
+        List<MessagePredicate<BattleFactorySession>> predicates = List.of(
+                new PlayerNotDefeatedPredicate<>(),
+                new AnyTrainerDefeatedPredicate<>(),
+                new PlayerNotTradedPokemonPredicate<>()
+        );
 
-            TrainerBattleParticipant trainer = lastTrainerBattle.getTrainer();
-
-            Pokemon trainerPokemon = trainer.getParty().get(trainerSlot - 1);
-            Pokemon playerPokemon = player.getParty().get(playerSlot - 1);
-
-            trainer.getParty().set(trainerSlot, playerPokemon);
-            player.getParty().set(playerSlot, trainerPokemon);
-
-            isTradedPokemon = true;
-
-            player.sendInfoMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.success", playerPokemon.getDisplayName(), trainerPokemon.getDisplayName()));
-            CobblemonTrainerBattle.LOGGER.info("{} traded {} for {}", player.getName(), playerPokemon.getDisplayName(), trainerPokemon.getDisplayName());
-
-        } catch (DefeatedToTrainerException e) {
-            player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.defeated_to_trainer"));
-
-        } catch (NotExistDefeatedTrainerException e) {
-            player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.defeated_trainer_not_exist"));
-
-        } catch (TradedPokemonException e) {
-            player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.already_traded_pokemon"));
+        for (MessagePredicate<BattleFactorySession> predicate : predicates) {
+            if (!predicate.test(this)) {
+                player.sendErrorMessage(predicate.getMessage());
+                throw new SessionOperationException();
+            }
         }
+
+        TrainerBattleParticipant trainer = lastTrainerBattle.getTrainer();
+
+        Pokemon trainerPokemon = trainer.getParty().get(trainerSlot - 1);
+        Pokemon playerPokemon = player.getParty().get(playerSlot - 1);
+
+        trainer.getParty().set(trainerSlot, playerPokemon);
+        player.getParty().set(playerSlot, trainerPokemon);
+
+        isTradedPokemon = true;
+
+        player.sendInfoMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.success", playerPokemon.getDisplayName(), trainerPokemon.getDisplayName()));
+        CobblemonTrainerBattle.LOGGER.info("{} traded {} for {}", player.getName(), playerPokemon.getDisplayName(), trainerPokemon.getDisplayName());
     }
 
     @Override
-    public void showTradeablePokemon() {
-        try {
-            assertExistDefeatedTrainer();
-            assertNotPlayerTradedPokemon();
+    public void showTradeablePokemon() throws SessionOperationException {
+        List<MessagePredicate<BattleFactorySession>> predicates = List.of(
+                new PlayerNotDefeatedPredicate<>(),
+                new AnyTrainerDefeatedPredicate<>(),
+                new PlayerNotTradedPokemonPredicate<>()
+        );
 
-            printPokemons(player, lastTrainerBattle.getTrainer().getParty());
-
-        } catch (NotExistDefeatedTrainerException e) {
-            player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.defeated_trainer_not_exist"));
-            CobblemonTrainerBattle.LOGGER.error("Player has no defeated trainers: {}", player.getName());
-
-        } catch (TradedPokemonException e) {
-            player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.already_traded_pokemon"));
-            CobblemonTrainerBattle.LOGGER.error("Player has already traded a Pokemon: {}", player.getName());
+        for (MessagePredicate<BattleFactorySession> predicate : predicates) {
+            if (!predicate.test(this)) {
+                player.sendErrorMessage(predicate.getMessage());
+                throw new SessionOperationException();
+            }
         }
+
+        printPokemons(player, lastTrainerBattle.getTrainer().getParty());
+    }
+
+    @Override
+    public boolean isTradedPokemon() {
+        return isTradedPokemon;
     }
 
     @Override
@@ -135,19 +159,23 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Renta
     }
 
     @Override
-    public void rerollPartyPokemon() {
-        try {
-            assertNotExistDefeatedTrainer();
-            player = battleParticipantFactory.createPlayer(player.getPlayerEntity());
-            printPokemons(player, player.getParty());
+    public void rerollPartyPokemon() throws SessionOperationException {
+        List<MessagePredicate<BattleFactorySession>> predicates = List.of(
+                new NoneTrainerDefeatedPredicate<>()
+        );
 
-            player.sendInfoMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.rerollpokemon.success"));
-            CobblemonTrainerBattle.LOGGER.info("{} rerolled Pokemon", player.getName());
-
-        } catch (ExistDefeatedTrainerException e) {
-            player.sendErrorMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.rerollpokemon.defeated_trainer_exist"));
-            CobblemonTrainerBattle.LOGGER.error("Player has defeated trainers: {}", player.getName());
+        for (MessagePredicate<BattleFactorySession> predicate : predicates) {
+            if (!predicate.test(this)) {
+                player.sendErrorMessage(predicate.getMessage());
+                throw new SessionOperationException();
+            }
         }
+
+        player = new BattleFactoryPlayer(player.getPlayerEntity(), LEVEL);
+        printPokemons(player, player.getParty());
+
+        player.sendInfoMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.rerollpokemon.success"));
+        CobblemonTrainerBattle.LOGGER.info("{} rerolled Pokemon", player.getName());
     }
 
     private static void printPokemons(PlayerBattleParticipant player, PartyStore party) {
@@ -193,10 +221,10 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Renta
 
     @Override
     public void onSessionStop() {
-        if (isDefeatedAllTrainers()) {
-            battleResultHandler.onVictory();
+        if (isAllTrainerDefeated()) {
+            sessionVictoryHandler.run();
         } else {
-            battleResultHandler.onDefeat();
+            sessionDefeatHandler.run();
         }
     }
 
@@ -205,37 +233,23 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Renta
         return defeatedTrainersCount;
     }
 
-    private void assertNotPlayerDefeated() throws DefeatedToTrainerException {
-        if (isPlayerDefeated) {
-            throw new DefeatedToTrainerException();
-        }
+    @Override
+    public List<MessagePredicate<PlayerBattleParticipant>> getBattlePredicates() {
+        return List.of();
     }
 
-    private void assertNotDefeatedAllTrainers() throws DefeatedAllTrainersException {
-        if (isDefeatedAllTrainers()) {
-            throw new DefeatedAllTrainersException();
-        }
+    @Override
+    public boolean isPlayerDefeated() {
+        return isPlayerDefeated;
     }
 
-    private boolean isDefeatedAllTrainers() {
+    @Override
+    public boolean isAllTrainerDefeated() {
         return defeatedTrainersCount == trainersToDefeat.size();
     }
 
-    private void assertNotPlayerTradedPokemon() throws TradedPokemonException {
-        if (isTradedPokemon) {
-            throw new TradedPokemonException();
-        }
-    }
-
-    private void assertExistDefeatedTrainer() throws NotExistDefeatedTrainerException {
-        if (defeatedTrainersCount == 0) {
-            throw new NotExistDefeatedTrainerException();
-        }
-    }
-
-    private void assertNotExistDefeatedTrainer() throws ExistDefeatedTrainerException {
-        if (defeatedTrainersCount != 0) {
-            throw new ExistDefeatedTrainerException();
-        }
+    @Override
+    public boolean isAnyTrainerDefeated() {
+        return defeatedTrainersCount > 0;
     }
 }
