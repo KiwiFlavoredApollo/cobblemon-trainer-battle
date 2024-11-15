@@ -10,6 +10,16 @@ import java.util.function.Function;
 public class PlayerNotBusyPredicate<T> implements MessagePredicate<T> {
     private final Function<T, ServerPlayerEntity> toServerPlayerEntity;
 
+    public PlayerNotBusyPredicate() {
+        this(player -> {
+            try {
+                return (ServerPlayerEntity) player;
+            } catch (ClassCastException e) {
+                throw new RuntimeException(e);
+            }
+        });
+    }
+
     public PlayerNotBusyPredicate(Function<T, ServerPlayerEntity> toServerPlayerEntity) {
         this.toServerPlayerEntity = toServerPlayerEntity;
     }

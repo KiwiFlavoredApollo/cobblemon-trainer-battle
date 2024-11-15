@@ -4,156 +4,105 @@ import com.mojang.brigadier.Command;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.factory.BattleParticipantFactory;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.factory.GroupBattleParticipantFactoryBuilder;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.factory.FlatGroupBattleParticipantFactory;
-import kiwiapollo.cobblemontrainerbattle.battleparticipant.factory.NormalGroupBattleParticipantFactory;
-import kiwiapollo.cobblemontrainerbattle.common.*;
-import kiwiapollo.cobblemontrainerbattle.exception.*;
-import kiwiapollo.cobblemontrainerbattle.exception.battlecondition.RematchNotAllowedException;
-import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerGroupProfileStorage;
-import kiwiapollo.cobblemontrainerbattle.postbattle.RecordedBattleResultHandler;
-import kiwiapollo.cobblemontrainerbattle.postbattle.PostBattleActionSetHandler;
-import kiwiapollo.cobblemontrainerbattle.postbattle.BatchedBattleResultHandler;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
-import kiwiapollo.cobblemontrainerbattle.postbattle.BattleResultHandler;
+import kiwiapollo.cobblemontrainerbattle.predicates.*;
+import kiwiapollo.cobblemontrainerbattle.session.SessionStorage;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 
-import java.io.FileNotFoundException;
-import java.util.*;
+import java.util.List;
 
 public class GroupBattle {
-    private static final int FLAT_LEVEL = 100;
+    private static final SessionStorage<GroupBattleSession> sessions = new SessionStorage<>();
 
-    public static int startNormalGroupBattleSession(CommandContext<ServerCommandSource> context) {
-        return startSession(context, new NormalGroupBattleParticipantFactory.Builder());
-    }
+    public static int startSession(CommandContext<ServerCommandSource> context, GroupBattleSessionFactory factory) {
+        ServerPlayerEntity player = context.getSource().getPlayer();
+        Identifier group = new Identifier(StringArgumentType.getString(context, "group"));
 
-    public static int startFlatGroupBattleSession(CommandContext<ServerCommandSource> context) {
-        return startSession(context, new FlatGroupBattleParticipantFactory.Builder(FLAT_LEVEL));
-    }
-
-    private static int startSession(
-            CommandContext<ServerCommandSource> context,
-            GroupBattleParticipantFactoryBuilder battleParticipantFactoryBuilder
-    ) {
-        try {
-            ServerPlayerEntity player = context.getSource().getPlayer();
-            Identifier group = new Identifier(StringArgumentType.getString(context, "group"));
-
-            ResourceValidator.assertTrainerGroupExist(group);
-            GroupBattleSessionStorage.assertSessionNotExist(player);
-
-            TrainerGroupProfile profile = TrainerGroupProfileStorage.get(group);
-            List<Identifier> trainer = profile.trainers.stream().map(Identifier::new).toList();
-
-            BattleConditionValidator.assertRematchAllowedAfterVictory(player, group, profile.condition);
-
-            BattleResultHandler battleResultHandler = new BatchedBattleResultHandler(
-                    new RecordedBattleResultHandler(player, group),
-                    new PostBattleActionSetHandler(player, profile.onVictory, profile.onDefeat)
-            );
-
-            BattleParticipantFactory battleParticipantFactory = battleParticipantFactoryBuilder.addCondition(profile.condition).build();
-
-            GroupBattleSession session = new GroupBattleSession(
-                    player,
-                    trainer,
-                    battleResultHandler,
-                    battleParticipantFactory
-            );
-
-            GroupBattleSessionStorage.put(player.getUuid(), session);
-
-            player.sendMessage(Text.translatable("command.cobblemontrainerbattle.groupbattle.startsession.success"));
-            CobblemonTrainerBattle.LOGGER.info("Started group battle session: {}", player.getGameProfile().getName());
-
-            return Command.SINGLE_SUCCESS;
-
-        } catch (IllegalStateException e) {
-            ServerPlayerEntity player = context.getSource().getPlayer();
-            MutableText message = Text.translatable("command.cobblemontrainerbattle.groupbattle.common.valid_session_exist");
-            player.sendMessage(message.formatted(Formatting.RED));
-
-            return 0;
-
-        } catch (FileNotFoundException e) {
-            ServerPlayerEntity player = context.getSource().getPlayer();
-            MutableText message = Text.translatable("command.cobblemontrainerbattle.common.resource.group_not_found");
-            player.sendMessage(message.formatted(Formatting.RED));
-
-            return 0;
-
-        } catch (RematchNotAllowedException e) {
-            ServerPlayerEntity player = context.getSource().getPlayer();
-            MutableText message = Text.translatable("command.cobblemontrainerbattle.condition.is_rematch_allowed_after_victory.groupbattle");
-            player.sendMessage(message.formatted(Formatting.RED));
-
+        MessagePredicate<Identifier> isProfileExist = new TrainerGroupProfileExistPredicate();
+        if (!isProfileExist.test(group)) {
+            player.sendMessage(isProfileExist.getMessage().formatted(Formatting.RED));
             return 0;
         }
+
+        List<MessagePredicate<ServerPlayerEntity>> predicates = List.of(
+                new SessionNotExistPredicate(GroupBattle.getSessionStorage()),
+                new PlayerNotBusyPredicate<>()
+        );
+
+        for (MessagePredicate<ServerPlayerEntity> predicate: predicates) {
+            if (!predicate.test(player)) {
+                player.sendMessage(predicate.getMessage().formatted(Formatting.RED));
+                return 0;
+            }
+        }
+
+        GroupBattleSession session = factory.create(player, group);
+
+        GroupBattleSessionStorage.put(player.getUuid(), session);
+
+        player.sendMessage(Text.translatable("command.cobblemontrainerbattle.groupbattle.startsession.success"));
+        CobblemonTrainerBattle.LOGGER.info("Started group battle session: {}", player.getGameProfile().getName());
+
+        return Command.SINGLE_SUCCESS;
     }
 
     public static int stopSession(CommandContext<ServerCommandSource> context) {
-        try {
-            ServerPlayerEntity player = context.getSource().getPlayer();
+        ServerPlayerEntity player = context.getSource().getPlayer();
 
-            GroupBattleSessionStorage.assertSessionExist(player);
-            PlayerValidator.assertPlayerNotBusyWithPokemonBattle(player);
+        List<MessagePredicate<ServerPlayerEntity>> predicates = List.of(
+                new SessionExistPredicate(GroupBattle.getSessionStorage()),
+                new PlayerNotBusyPredicate<>()
+        );
 
-            GroupBattleSession session = GroupBattleSessionStorage.get(player.getUuid());
-            session.onSessionStop();
-
-            GroupBattleSessionStorage.remove(player.getUuid());
-
-            player.sendMessage(Text.translatable("command.cobblemontrainerbattle.groupbattle.stopsession.success"));
-            CobblemonTrainerBattle.LOGGER.info("Stopped group battle session: {}", player.getGameProfile().getName());
-
-            return Command.SINGLE_SUCCESS;
-
-        } catch (IllegalStateException e) {
-            ServerPlayerEntity player = context.getSource().getPlayer();
-
-            MutableText message = Text.translatable("command.cobblemontrainerbattle.groupbattle.common.valid_session_not_exist");
-            player.sendMessage(message.formatted(Formatting.RED));
-
-            return 0;
-
-        } catch (BusyWithPokemonBattleException e) {
-            ServerPlayerEntity player = context.getSource().getPlayer();
-
-            MutableText message = Text.translatable("command.cobblemontrainerbattle.trainerbattle.busy_with_pokemon_battle");
-            player.sendMessage(message.formatted(Formatting.RED));
-
-            return 0;
+        for (MessagePredicate<ServerPlayerEntity> predicate: predicates) {
+            if (!predicate.test(player)) {
+                player.sendMessage(predicate.getMessage().formatted(Formatting.RED));
+                return 0;
+            }
         }
+
+        GroupBattleSession session = GroupBattle.getSessionStorage().get(player.getUuid());
+        session.onSessionStop();
+
+        GroupBattle.getSessionStorage().remove(player.getUuid());
+
+        player.sendMessage(Text.translatable("command.cobblemontrainerbattle.groupbattle.stopsession.success"));
+        CobblemonTrainerBattle.LOGGER.info("Stopped group battle session: {}", player.getGameProfile().getName());
+
+        return Command.SINGLE_SUCCESS;
     }
 
     public static int startBattle(CommandContext<ServerCommandSource> context) {
         try {
             ServerPlayerEntity player = context.getSource().getPlayer();
 
-            GroupBattleSessionStorage.assertSessionExist(player);
+            List<MessagePredicate<ServerPlayerEntity>> predicates = List.of(
+                    new SessionExistPredicate(GroupBattle.getSessionStorage()),
+                    new PlayerNotBusyPredicate<>()
+            );
+
+            for (MessagePredicate<ServerPlayerEntity> predicate: predicates) {
+                if (!predicate.test(player)) {
+                    player.sendMessage(predicate.getMessage().formatted(Formatting.RED));
+                    return 0;
+                }
+            }
 
             GroupBattleSession session = GroupBattleSessionStorage.get(player.getUuid());
             session.startBattle();
 
             return Command.SINGLE_SUCCESS;
 
-        } catch (IllegalStateException e) {
-            ServerPlayerEntity player = context.getSource().getPlayer();
-
-            MutableText message = Text.translatable("command.cobblemontrainerbattle.groupbattle.common.valid_session_not_exist");
-            player.sendMessage(message.formatted(Formatting.RED));
-
-            return 0;
-
         } catch (BattleStartException e) {
             return 0;
         }
+    }
+
+    public static SessionStorage<GroupBattleSession> getSessionStorage() {
+        return sessions;
     }
 }
