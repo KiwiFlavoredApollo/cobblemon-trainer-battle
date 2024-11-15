@@ -5,8 +5,10 @@ import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
+import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerGroupProfileStorage;
 import kiwiapollo.cobblemontrainerbattle.predicates.*;
-import kiwiapollo.cobblemontrainerbattle.session.SessionStorage;
+import kiwiapollo.cobblemontrainerbattle.session.GroupBattleSessionStorage;
+import kiwiapollo.cobblemontrainerbattle.session.SessionRegistry;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
@@ -16,13 +18,13 @@ import net.minecraft.util.Identifier;
 import java.util.List;
 
 public class GroupBattle {
-    private static final SessionStorage<GroupBattleSession> sessions = new SessionStorage<>();
+    private static final SessionRegistry<GroupBattleSession> sessions = new SessionRegistry<>();
 
     public static int startSession(CommandContext<ServerCommandSource> context, GroupBattleSessionFactory factory) {
         ServerPlayerEntity player = context.getSource().getPlayer();
         Identifier group = new Identifier(StringArgumentType.getString(context, "group"));
 
-        MessagePredicate<Identifier> isProfileExist = new TrainerGroupProfileExistPredicate();
+        MessagePredicate<Identifier> isProfileExist = new ProfileExistPredicate(TrainerGroupProfileStorage.getProfileRegistry());
         if (!isProfileExist.test(group)) {
             player.sendMessage(isProfileExist.getMessage().formatted(Formatting.RED));
             return 0;
@@ -42,7 +44,7 @@ public class GroupBattle {
 
         GroupBattleSession session = factory.create(player, group);
 
-        GroupBattleSessionStorage.put(player.getUuid(), session);
+        GroupBattleSessionStorage.getSessionRegistry().put(player.getUuid(), session);
 
         player.sendMessage(Text.translatable("command.cobblemontrainerbattle.groupbattle.startsession.success"));
         CobblemonTrainerBattle.LOGGER.info("Started group battle session: {}", player.getGameProfile().getName());
@@ -92,7 +94,7 @@ public class GroupBattle {
                 }
             }
 
-            GroupBattleSession session = GroupBattleSessionStorage.get(player.getUuid());
+            GroupBattleSession session = GroupBattleSessionStorage.getSessionRegistry().get(player.getUuid());
             session.startBattle();
 
             return Command.SINGLE_SUCCESS;
@@ -102,7 +104,7 @@ public class GroupBattle {
         }
     }
 
-    public static SessionStorage<GroupBattleSession> getSessionStorage() {
+    public static SessionRegistry<GroupBattleSession> getSessionStorage() {
         return sessions;
     }
 }
