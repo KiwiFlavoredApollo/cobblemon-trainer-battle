@@ -32,11 +32,6 @@ public class NormalBattlePlayer implements PlayerBattleParticipant {
         return party;
     }
 
-    @Override
-    public void setParty(PartyStore party) {
-        this.party = (PlayerPartyStore) party;
-    }
-
     public ServerPlayerEntity getPlayerEntity() {
         return player;
     }

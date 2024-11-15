@@ -7,9 +7,16 @@ import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.battleactor.DisposableBattlePokemonFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactor.PlayerBackedTrainerBattleActor;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.common.BattleCondition;
 import kiwiapollo.cobblemontrainerbattle.common.Generation5AI;
 import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerProfileStorage;
+import kiwiapollo.cobblemontrainerbattle.postbattle.DefeatActionSetHandler;
+import kiwiapollo.cobblemontrainerbattle.postbattle.VictoryActionSetHandler;
+import kiwiapollo.cobblemontrainerbattle.predicates.MaximumPartyLevelPredicate;
+import kiwiapollo.cobblemontrainerbattle.predicates.MessagePredicate;
+import kiwiapollo.cobblemontrainerbattle.predicates.MinimumPartyLevelPredicate;
+import kiwiapollo.cobblemontrainerbattle.predicates.RematchAllowedPredicate;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.TrainerProfile;
 import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
 import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemon;
@@ -25,8 +32,10 @@ import java.util.UUID;
 public class FlatBattleTrainer implements TrainerBattleParticipant {
     private final Identifier identifier;
     private final UUID uuid;
-    private final BattleCondition condition;
     private final ServerPlayerEntity player;
+    private final VictoryActionSetHandler onVictory;
+    private final DefeatActionSetHandler onDefeat;
+    private final List<MessagePredicate<PlayerBattleParticipant>> predicates;
 
     private PartyStore party;
 
@@ -36,14 +45,13 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
         this.uuid = UUID.randomUUID();
         this.player = player;
 
-        TrainerProfile trainerProfile = TrainerProfileStorage.get(identifier);
-        this.condition = new BattleCondition(
-                trainerProfile.condition().isRematchAllowedAfterVictory,
-                1,
-                100
+        TrainerProfile profile = TrainerProfileStorage.getProfileRegistry().get(identifier);
+        this.party = showdownTeamToFlatLevelParty(profile.team(), player, level);
+        this.onVictory = new VictoryActionSetHandler(player, profile.onVictory());
+        this.onDefeat = new DefeatActionSetHandler(player, profile.onDefeat());
+        this.predicates = List.of(
+                new RematchAllowedPredicate(identifier, profile.isRematchAllowed())
         );
-
-        this.party = showdownTeamToFlatLevelParty(trainerProfile.team(), player, level);
     }
 
     private static PartyStore showdownTeamToFlatLevelParty(List<ShowdownPokemon> pokemons, ServerPlayerEntity player, int level) {
@@ -66,7 +74,7 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
 
     @Override
     public String getName() {
-        return TrainerProfileStorage.get(identifier).name();
+        return TrainerProfileStorage.getProfileRegistry().get(identifier).name();
     }
 
     @Override
@@ -85,13 +93,16 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
     }
 
     @Override
-    public BattleCondition getBattleCondition() {
-        return condition;
+    public SoundEvent getBattleTheme() {
+        return TrainerProfileStorage.getProfileRegistry().get(identifier).battleTheme();
     }
 
     @Override
-    public SoundEvent getBattleTheme() {
-        return TrainerProfileStorage.get(identifier).battleTheme();
+    public List<MessagePredicate<PlayerBattleParticipant>> getPredicates() {
+        TrainerProfile profile = TrainerProfileStorage.getProfileRegistry().get(identifier);
+        return List.of(
+                new RematchAllowedPredicate(identifier, profile.isRematchAllowed())
+        );
     }
 
     @Override
@@ -107,22 +118,17 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
 
     @Override
     public void onVictory() {
-
+        onDefeat.run();
     }
 
     @Override
     public void onDefeat() {
-
+        onVictory.run();
     }
 
     @Override
     public PartyStore getParty() {
         return party;
-    }
-
-    @Override
-    public void setParty(PartyStore party) {
-        this.party = party;
     }
 
     @Override

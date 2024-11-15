@@ -14,8 +14,6 @@ public interface BattleParticipant {
 
     PartyStore getParty();
 
-    void setParty(PartyStore party);
-
     List<BattlePokemon> getBattleTeam();
 
     BattleActor createBattleActor();

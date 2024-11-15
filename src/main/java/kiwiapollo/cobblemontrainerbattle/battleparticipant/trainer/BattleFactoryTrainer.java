@@ -7,12 +7,14 @@ import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.battleactor.DisposableBattlePokemonFactory;
 import kiwiapollo.cobblemontrainerbattle.battleactor.PlayerBackedTrainerBattleActor;
+import kiwiapollo.cobblemontrainerbattle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.common.BattleCondition;
 import kiwiapollo.cobblemontrainerbattle.common.Generation5AI;
 import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
 import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemon;
 import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemonParser;
 import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerProfileStorage;
+import kiwiapollo.cobblemontrainerbattle.predicates.MessagePredicate;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
@@ -23,7 +25,6 @@ public class BattleFactoryTrainer implements TrainerBattleParticipant {
     private final Identifier identifier;
     private final UUID uuid;
     private final ServerPlayerEntity player;
-    private final BattleCondition condition;
 
     private PartyStore party;
 
@@ -31,8 +32,7 @@ public class BattleFactoryTrainer implements TrainerBattleParticipant {
         this.identifier = identifier;
         this.uuid = UUID.randomUUID();
         this.player = player;
-        this.condition = new BattleCondition();
-        this.party = showdownTeamToFlatLevelParty(TrainerProfileStorage.get(identifier).team(), player, level);
+        this.party = showdownTeamToFlatLevelParty(TrainerProfileStorage.getProfileRegistry().get(identifier).team(), player, level);
     }
 
     private PartyStore showdownTeamToFlatLevelParty(List<ShowdownPokemon> pokemons, ServerPlayerEntity player, int level) {
@@ -58,7 +58,7 @@ public class BattleFactoryTrainer implements TrainerBattleParticipant {
 
     @Override
     public String getName() {
-        return TrainerProfileStorage.get(identifier).name();
+        return TrainerProfileStorage.getProfileRegistry().get(identifier).name();
     }
 
     @Override
@@ -77,13 +77,13 @@ public class BattleFactoryTrainer implements TrainerBattleParticipant {
     }
 
     @Override
-    public BattleCondition getBattleCondition() {
-        return this.condition;
+    public SoundEvent getBattleTheme() {
+        return TrainerProfileStorage.getProfileRegistry().get(identifier).battleTheme();
     }
 
     @Override
-    public SoundEvent getBattleTheme() {
-        return TrainerProfileStorage.get(identifier).battleTheme();
+    public List<MessagePredicate<PlayerBattleParticipant>> getPredicates() {
+        return List.of();
     }
 
     @Override
@@ -110,11 +110,6 @@ public class BattleFactoryTrainer implements TrainerBattleParticipant {
     @Override
     public PartyStore getParty() {
         return party;
-    }
-
-    @Override
-    public void setParty(PartyStore party) {
-        this.party = party;
     }
 
     @Override

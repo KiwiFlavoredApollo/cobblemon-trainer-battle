@@ -47,11 +47,6 @@ public class FlatBattlePlayer implements PlayerBattleParticipant {
         return party;
     }
 
-    @Override
-    public void setParty(PartyStore party) {
-        this.party = party;
-    }
-
     public ServerPlayerEntity getPlayerEntity() {
         return player;
     }
