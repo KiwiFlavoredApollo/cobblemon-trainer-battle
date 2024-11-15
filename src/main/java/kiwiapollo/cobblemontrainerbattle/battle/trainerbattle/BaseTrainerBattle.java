@@ -20,8 +20,8 @@ import java.util.UUID;
 public class BaseTrainerBattle implements TrainerBattle {
     private static final List<MessagePredicate<PlayerBattleParticipant>> PREDICATES = List.of(
             new PlayerNotBusyPredicate<>(PlayerBattleParticipant::getPlayerEntity),
-            new PlayerPartyNotEmptyPredicate<>(),
-            new PlayerPartyNotFaintPredicate(),
+            new PlayerPartyNotEmptyPredicate<>(PlayerBattleParticipant::getParty),
+            new PlayerPartyNotFaintPredicate<>(PlayerBattleParticipant::getParty),
             new MinimumPartyLevelPredicate(ShowdownPokemonParser.MAXIMUM_RELATIVE_LEVEL)
     );
 
