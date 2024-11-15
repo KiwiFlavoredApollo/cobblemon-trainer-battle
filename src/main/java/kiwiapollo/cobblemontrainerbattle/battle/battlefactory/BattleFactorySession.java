@@ -174,7 +174,6 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Renta
         player = new BattleFactoryPlayer(player.getPlayerEntity(), LEVEL);
         printPokemons(player, player.getParty());
 
-        player.sendInfoMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.rerollpokemon.success"));
         CobblemonTrainerBattle.LOGGER.info("{} rerolled Pokemon", player.getName());
     }
 
