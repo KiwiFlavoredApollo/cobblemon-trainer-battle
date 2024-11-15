@@ -1,5 +1,8 @@
 package kiwiapollo.cobblemontrainerbattle.parser.profile;
 
+import com.cobblemon.mod.common.api.abilities.Ability;
+import com.cobblemon.mod.common.api.moves.Move;
+import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -9,9 +12,9 @@ import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemon;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerOption;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerProfile;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
+import net.minecraft.item.ItemStack;
 import net.minecraft.resource.Resource;
 import net.minecraft.resource.ResourceManager;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
 import java.io.*;
@@ -20,7 +23,12 @@ import java.util.List;
 import java.util.Map;
 
 public class TrainerProfileLoader implements SimpleSynchronousResourceReloadListener {
-    private static final Gson TRAINER_OPTION_GSON = new GsonBuilder().create();
+    private static final Gson TRAINER_OPTION_GSON = new GsonBuilder()
+            .registerTypeAdapter(Pokemon.class, new PokemonDeserializer())
+            .registerTypeAdapter(ItemStack.class, new HeldItemDeserializer())
+            .registerTypeAdapter(Ability.class, new AbilityDeserializer())
+            .registerTypeAdapter(Move.class, new MoveDeserializer())
+            .create();
 
     @Override
     public Identifier getFabricId() {
@@ -49,6 +57,14 @@ public class TrainerProfileLoader implements SimpleSynchronousResourceReloadList
                                 option.isRematchAllowed,
                                 option.maximumPartyLevel,
                                 option.minimumPartyLevel,
+                                option.requiredPokemon,
+                                option.requiredHeldItem,
+                                option.requiredAbility,
+                                option.requiredMove,
+                                option.forbiddenPokemon,
+                                option.forbiddenHeldItem,
+                                option.forbiddenAbility,
+                                option.forbiddenMove,
                                 option.onVictory,
                                 option.onDefeat
                         )

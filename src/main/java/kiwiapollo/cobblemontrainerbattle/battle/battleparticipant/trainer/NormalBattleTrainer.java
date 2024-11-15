@@ -7,6 +7,7 @@ import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.DisposableBattlePokemonFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.PlayerBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
+import kiwiapollo.cobblemontrainerbattle.battle.predicates.*;
 import kiwiapollo.cobblemontrainerbattle.common.Generation5AI;
 import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
 import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemon;
@@ -14,10 +15,6 @@ import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemonParser;
 import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerProfileStorage;
 import kiwiapollo.cobblemontrainerbattle.battle.postbattle.DefeatActionSetHandler;
 import kiwiapollo.cobblemontrainerbattle.battle.postbattle.VictoryActionSetHandler;
-import kiwiapollo.cobblemontrainerbattle.battle.predicates.MaximumPartyLevelPredicate;
-import kiwiapollo.cobblemontrainerbattle.battle.predicates.MessagePredicate;
-import kiwiapollo.cobblemontrainerbattle.battle.predicates.MinimumPartyLevelPredicate;
-import kiwiapollo.cobblemontrainerbattle.battle.predicates.RematchAllowedPredicate;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerProfile;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
@@ -48,7 +45,15 @@ public class NormalBattleTrainer implements TrainerBattleParticipant {
         this.predicates = List.of(
                 new RematchAllowedPredicate(identifier, profile.isRematchAllowed()),
                 new MaximumPartyLevelPredicate(profile.maximumPartyLevel()),
-                new MinimumPartyLevelPredicate(profile.minimumPartyLevel())
+                new MinimumPartyLevelPredicate(profile.minimumPartyLevel()),
+                new RequiredPokemonExistPredicate(profile.requiredPokemon()),
+                new RequiredHeldItemExistPredicate(profile.requiredHeldItem()),
+                new RequiredAbilityExistPredicate(profile.requiredAbility()),
+                new RequiredMoveExistPredicate(profile.requiredMove()),
+                new ForbiddenPokemonNotExistPredicate(profile.forbiddenPokemon()),
+                new ForbiddenHeldItemNotExistPredicate(profile.forbiddenHeldItem()),
+                new ForbiddenAbilityNotExistPredicate(profile.forbiddenAbility()),
+                new ForbiddenMoveNotExistPredicate(profile.forbiddenMove())
         );
     }
 

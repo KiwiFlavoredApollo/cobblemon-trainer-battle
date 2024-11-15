@@ -8,12 +8,11 @@ import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.DisposableBattlePokemonFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.PlayerBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
+import kiwiapollo.cobblemontrainerbattle.battle.predicates.*;
 import kiwiapollo.cobblemontrainerbattle.common.Generation5AI;
 import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerProfileStorage;
 import kiwiapollo.cobblemontrainerbattle.battle.postbattle.DefeatActionSetHandler;
 import kiwiapollo.cobblemontrainerbattle.battle.postbattle.VictoryActionSetHandler;
-import kiwiapollo.cobblemontrainerbattle.battle.predicates.MessagePredicate;
-import kiwiapollo.cobblemontrainerbattle.battle.predicates.RematchAllowedPredicate;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerProfile;
 import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
 import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemon;
@@ -92,7 +91,15 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
     public List<MessagePredicate<PlayerBattleParticipant>> getPredicates() {
         TrainerProfile profile = TrainerProfileStorage.getProfileRegistry().get(identifier);
         return List.of(
-                new RematchAllowedPredicate(identifier, profile.isRematchAllowed())
+                new RematchAllowedPredicate(identifier, profile.isRematchAllowed()),
+                new RequiredPokemonExistPredicate(profile.requiredPokemon()),
+                new RequiredHeldItemExistPredicate(profile.requiredHeldItem()),
+                new RequiredAbilityExistPredicate(profile.requiredAbility()),
+                new RequiredMoveExistPredicate(profile.requiredMove()),
+                new ForbiddenPokemonNotExistPredicate(profile.forbiddenPokemon()),
+                new ForbiddenHeldItemNotExistPredicate(profile.forbiddenHeldItem()),
+                new ForbiddenAbilityNotExistPredicate(profile.forbiddenAbility()),
+                new ForbiddenMoveNotExistPredicate(profile.forbiddenMove())
         );
     }
 
