@@ -23,7 +23,8 @@ import java.util.function.BiConsumer;
 
 public class ShowdownPokemonParser {
     public static final int DEFAULT_LEVEL = 50;
-    public static final int RELATIVE_LEVEL_THRESHOLD = 10;
+    public static final int MAXIMUM_RELATIVE_LEVEL = 7;
+    public static final int MINIMUM_RELATIVE_LEVEL = -7;
 
     private final ServerPlayerEntity player;
 
@@ -113,19 +114,25 @@ public class ShowdownPokemonParser {
         pokemon.setShiny(shiny);
     }
 
-    private void setPokemonLevel(Pokemon pokemon, int level) {
+    private void setPokemonLevel(Pokemon pokemon, int level) throws PokemonParseException {
         try {
-            if (level >= RELATIVE_LEVEL_THRESHOLD) {
-                pokemon.setLevel(level);
+            boolean isRelativeLevel = MINIMUM_RELATIVE_LEVEL <= level && level <= MAXIMUM_RELATIVE_LEVEL;
 
-            } else {
+            if (isRelativeLevel) {
                 int maximumPartyLevel = Cobblemon.INSTANCE.getStorage().getParty(player).toGappyList().stream()
                         .filter(Objects::nonNull)
                         .map(Pokemon::getLevel)
                         .max(Comparator.naturalOrder()).get();
 
                 pokemon.setLevel(maximumPartyLevel + level);
+
+            } else if (level > MAXIMUM_RELATIVE_LEVEL) {
+                pokemon.setLevel(level);
+
+            } else {
+                throw new PokemonParseException();
             }
+
         } catch (NullPointerException | NoSuchElementException ignored) {
 
         }
