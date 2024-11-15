@@ -22,7 +22,7 @@ public class PlayerPartyNotEmptyPredicate<T> implements MessagePredicate<T> {
 
     @Override
     public MutableText getMessage() {
-        return Text.translatable("command.cobblemontrainerbattle.trainerbattle.empty_player_party");
+        return Text.translatable("predicate.cobblemontrainerbattle.error.empty_player_party");
     }
 
     @Override

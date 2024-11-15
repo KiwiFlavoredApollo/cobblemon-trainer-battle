@@ -7,7 +7,7 @@ import net.minecraft.text.Text;
 public class NoneTrainerDefeatedPredicate<T extends Session> implements MessagePredicate<T> {
     @Override
     public MutableText getMessage() {
-        return Text.translatable("command.cobblemontrainerbattle.battlefactory.rerollpokemon.defeated_trainer_exist");
+        return Text.translatable("predicate.cobblemontrainerbattle.error.none_trainer_defeated");
     }
 
     @Override

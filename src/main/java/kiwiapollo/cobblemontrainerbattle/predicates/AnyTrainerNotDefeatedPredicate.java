@@ -7,7 +7,7 @@ import net.minecraft.text.Text;
 public class AnyTrainerNotDefeatedPredicate<T extends Session> implements MessagePredicate<T> {
     @Override
     public MutableText getMessage() {
-        return Text.translatable("command.cobblemontrainerbattle.groupbattle.startbattle.any_trainer_not_defeated");
+        return Text.translatable("predicate.cobblemontrainerbattle.error.any_trainer_not_defeated");
     }
 
     @Override

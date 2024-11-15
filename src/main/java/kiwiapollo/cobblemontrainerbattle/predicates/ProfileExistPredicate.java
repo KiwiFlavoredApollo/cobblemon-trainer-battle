@@ -14,7 +14,7 @@ public class ProfileExistPredicate implements MessagePredicate<Identifier> {
 
     @Override
     public MutableText getMessage() {
-        return Text.translatable("command.cobblemontrainerbattle.common.resource.trainer_not_found");
+        return Text.translatable("predicate.cobblemontrainerbattle.error.profile_exist");
     }
 
     @Override

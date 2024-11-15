@@ -11,7 +11,7 @@ import java.util.function.Predicate;
 public class PlayerPartyNotFaintPredicate implements MessagePredicate<PlayerBattleParticipant> {
     @Override
     public MutableText getMessage() {
-        return Text.translatable("command.cobblemontrainerbattle.trainerbattle.fainted_player_party");
+        return Text.translatable("predicate.cobblemontrainerbattle.error.fainted_player_party");
     }
 
     @Override

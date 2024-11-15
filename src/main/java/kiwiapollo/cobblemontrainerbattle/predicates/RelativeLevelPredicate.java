@@ -14,7 +14,7 @@ public class RelativeLevelPredicate implements MessagePredicate<PlayerBattlePart
 
     @Override
     public MutableText getMessage() {
-        return Text.translatable("command.cobblemontrainerbattle.trainerbattle.below_relative_level_threshold");
+        return Text.translatable("predicate.cobblemontrainerbattle.error.relative_level");
     }
 
     @Override
