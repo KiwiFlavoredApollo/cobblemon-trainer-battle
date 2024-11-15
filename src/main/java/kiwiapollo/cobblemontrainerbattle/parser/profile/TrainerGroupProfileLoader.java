@@ -22,7 +22,7 @@ public class TrainerGroupProfileLoader implements SimpleSynchronousResourceReloa
 
     @Override
     public void reload(ResourceManager resourceManager) {
-        TrainerGroupProfileStorage.clear();
+        TrainerGroupProfileStorage.getProfileRegistry().clear();
         resourceManager.findResources(GROUP_DIR, this::isJsonFile).forEach(((identifier, resource) -> {
             try (InputStream inputStream = resourceManager.getResourceOrThrow(identifier).getInputStream()) {
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
@@ -30,7 +30,7 @@ public class TrainerGroupProfileLoader implements SimpleSynchronousResourceReloa
 
                 assertTrainerGroupProfileValid(trainerGroupProfile);
 
-                TrainerGroupProfileStorage.put(toTrainerGroupIdentifier(identifier), trainerGroupProfile);
+                TrainerGroupProfileStorage.getProfileRegistry().put(toTrainerGroupIdentifier(identifier), trainerGroupProfile);
 
             } catch (IOException | NullPointerException | IllegalArgumentException ignored) {
                 CobblemonTrainerBattle.LOGGER.error("An error occurred while loading {}", identifier.toString());
@@ -45,7 +45,7 @@ public class TrainerGroupProfileLoader implements SimpleSynchronousResourceReloa
 
         boolean isExistAllTrainers = profile.trainers.stream()
                 .map(Identifier::new)
-                .allMatch(TrainerProfileStorage::containsKey);
+                .allMatch(TrainerProfileStorage.getProfileRegistry()::containsKey);
         if (!isExistAllTrainers) {
             throw new IllegalArgumentException();
         }

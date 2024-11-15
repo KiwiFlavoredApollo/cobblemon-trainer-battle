@@ -29,7 +29,7 @@ public class TrainerProfileLoader implements SimpleSynchronousResourceReloadList
 
     @Override
     public void reload(ResourceManager resourceManager) {
-        TrainerProfileStorage.clear();
+        TrainerProfileStorage.getProfileRegistry().clear();
         for (Map.Entry<Identifier, TrainerResource> entry : new TrainerResourceMapFactory(resourceManager).create().entrySet()) {
             try {
                 Identifier identifier = entry.getKey();
@@ -40,13 +40,15 @@ public class TrainerProfileLoader implements SimpleSynchronousResourceReloadList
                 List<ShowdownPokemon> team = readTrainerTeamResource(teamResource);
                 TrainerOption option = readTrainerOptionResource(optionResource);
 
-                TrainerProfileStorage.put(
+                TrainerProfileStorage.getProfileRegistry().put(
                         identifier,
                         new TrainerProfile(
                                 name,
                                 team,
                                 option.isSpawningAllowed,
-                                option.condition,
+                                option.isRematchAllowed,
+                                option.maximumPartyLevel,
+                                option.minimumPartyLevel,
                                 option.battleTheme,
                                 option.onVictory,
                                 option.onDefeat
