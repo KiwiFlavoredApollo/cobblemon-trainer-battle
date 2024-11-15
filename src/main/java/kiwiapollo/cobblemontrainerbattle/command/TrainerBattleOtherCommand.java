@@ -79,11 +79,7 @@ public class TrainerBattleOtherCommand extends LiteralArgumentBuilder<ServerComm
 
             return Command.SINGLE_SUCCESS;
 
-        } catch (CommandSyntaxException e) {
-            CobblemonTrainerBattle.LOGGER.error("Unknown player");
-            return 0;
-
-        } catch (BattleStartException e) {
+        } catch (CommandSyntaxException | BattleStartException e) {
             return 0;
         }
     }
@@ -106,11 +102,7 @@ public class TrainerBattleOtherCommand extends LiteralArgumentBuilder<ServerComm
 
             return Command.SINGLE_SUCCESS;
 
-        } catch (CommandSyntaxException e) {
-            CobblemonTrainerBattle.LOGGER.error("Unknown player");
-            return 0;
-
-        } catch (BattleStartException e) {
+        } catch (CommandSyntaxException | BattleStartException e) {
             return 0;
         }
     }
