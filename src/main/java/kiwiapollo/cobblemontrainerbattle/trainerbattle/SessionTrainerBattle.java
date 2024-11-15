@@ -28,7 +28,7 @@ public class SessionTrainerBattle implements TrainerBattle {
     @Override
     public void start() throws BattleStartException {
         for (MessagePredicate<PlayerBattleParticipant> predicate : session.getBattlePredicates()) {
-            if (predicate.test(getPlayer())) {
+            if (!predicate.test(getPlayer())) {
                 getPlayer().sendErrorMessage(predicate.getMessage());
                 throw new BattleStartException();
             }

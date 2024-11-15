@@ -24,7 +24,7 @@ public class StandaloneTrainerBattle implements TrainerBattle {
     @Override
     public void start() throws BattleStartException {
         for (MessagePredicate<PlayerBattleParticipant> predicate : getTrainer().getPredicates()) {
-            if (predicate.test(getPlayer())) {
+            if (!predicate.test(getPlayer())) {
                 getPlayer().sendErrorMessage(predicate.getMessage());
                 throw new BattleStartException();
             }

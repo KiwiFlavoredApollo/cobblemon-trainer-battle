@@ -41,7 +41,7 @@ public class BaseTrainerBattle implements TrainerBattle {
     @Override
     public void start() throws BattleStartException {
         for (MessagePredicate<PlayerBattleParticipant> predicate : PREDICATES) {
-            if (predicate.test(player)) {
+            if (!predicate.test(player)) {
                 player.sendErrorMessage(predicate.getMessage());
                 throw new BattleStartException();
             }
