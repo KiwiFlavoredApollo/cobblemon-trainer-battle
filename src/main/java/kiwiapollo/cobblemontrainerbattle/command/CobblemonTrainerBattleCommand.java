@@ -1,6 +1,5 @@
 package kiwiapollo.cobblemontrainerbattle.command;
 
-import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
@@ -9,9 +8,7 @@ import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.common.*;
 import kiwiapollo.cobblemontrainerbattle.economy.EconomyFactory;
-import kiwiapollo.cobblemontrainerbattle.exception.EmptyPlayerPartyException;
 import kiwiapollo.cobblemontrainerbattle.parser.CobblemonPokemonParser;
 import kiwiapollo.cobblemontrainerbattle.parser.ConfigLoader;
 import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemon;

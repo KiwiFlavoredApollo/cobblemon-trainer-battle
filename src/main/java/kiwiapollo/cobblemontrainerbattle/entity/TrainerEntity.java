@@ -6,7 +6,6 @@ import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
 import kiwiapollo.cobblemontrainerbattle.parser.history.PlayerHistoryManager;
 import kiwiapollo.cobblemontrainerbattle.trainerbattle.*;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
-import kiwiapollo.cobblemontrainerbattle.exception.BusyWithPokemonBattleException;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.advancement.criterion.Criteria;
@@ -116,27 +115,18 @@ public class TrainerEntity extends PathAwareEntity {
 
     @Override
     public boolean damage(DamageSource source, float amount) {
-        try {
-            assertNotBusyWithPokemonBattle();
-
-            boolean isDamaged = super.damage(source, amount);
-            boolean isLivingEntityAttacker = source.getAttacker() instanceof LivingEntity;
-
-            if (isDamaged && isLivingEntityAttacker && !source.isSourceCreativePlayer()) {
-                this.setTarget((LivingEntity) source.getAttacker());
-            }
-
-            return isDamaged;
-
-        } catch (BusyWithPokemonBattleException e) {
+        if (isPokemonBattleExist()) {
             return false;
         }
-    }
 
-    private void assertNotBusyWithPokemonBattle() throws BusyWithPokemonBattleException {
-        if (isPokemonBattleExist()) {
-            throw new BusyWithPokemonBattleException();
+        boolean isDamaged = super.damage(source, amount);
+        boolean isLivingEntityAttacker = source.getAttacker() instanceof LivingEntity;
+
+        if (isDamaged && isLivingEntityAttacker && !source.isSourceCreativePlayer()) {
+            this.setTarget((LivingEntity) source.getAttacker());
         }
+
+        return isDamaged;
     }
 
     private boolean isPokemonBattleExist() {
