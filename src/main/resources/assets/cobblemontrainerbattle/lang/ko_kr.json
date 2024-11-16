@@ -169,40 +169,37 @@
   "advancement.cobblemontrainerbattle.kill_champion_wallace.title": "갖지 못한다면 부셔버리겠어",
   "advancement.cobblemontrainerbattle.kill_champion_wallace.description": "윤진을 죽이세요",
 
+  "predicate.cobblemontrainerbattle.error.all_trainer_not_defeated": "이긴 트레이너가 있기 때문에 진행할 수 없습니다.",
+  "predicate.cobblemontrainerbattle.error.any_trainer_defeated": "이긴 트레이너가 없기 때문에 진행할 수 없습니다.",
+  "predicate.cobblemontrainerbattle.error.any_trainer_not_defeated": "모든 트레이너를 이겼기 때문에 진행할 수 없습니다.",
+  "predicate.cobblemontrainerbattle.error.player_not_defeated": "패배했기 때문에 진행할 수 없습니다.",
+  "predicate.cobblemontrainerbattle.error.player_not_busy": "배틀 중에는 진행할 수 없습니다.",
+  "predicate.cobblemontrainerbattle.error.player_not_trade_pokemon": "이미 포켓몬을 교환했기 때문에 진행할 수 없습니다.",
+  "predicate.cobblemontrainerbattle.error.empty_player_party": "지닌 포켓몬이 없기 때문에 진행할 수 없습니다.",
+  "predicate.cobblemontrainerbattle.error.fainted_player_party": "지닌 포켓몬이 모두 기절했기 때문에 진행할 수 없습니다.",
+  "predicate.cobblemontrainerbattle.error.profile_exist": "상대를 찾을 수 없습니다.",
+  "predicate.cobblemontrainerbattle.error.session_exist": "진행 중인 세션이 없습니다.",
+  "predicate.cobblemontrainerbattle.error.session_not_exist": "이미 진행 중인 세션이 있습니다.",
+
+  "predicate.cobblemontrainerbattle.error.is_rematch_allowed": "이 상대와는 다시 배틀할 수 없습니다",
+  "predicate.cobblemontrainerbattle.error.maximum_party_level": "모든 포켓몬의 레벨이 %d 보다 높지 않아야 합니다",
+  "predicate.cobblemontrainerbattle.error.minimum_party_level": "모든 포켓몬의 레벨이 %d 보다 낮지 않아야 합니다",
+  "predicate.cobblemontrainerbattle.error.required_pokemon_exist": "필요한 포켓몬 %s.",
+  "predicate.cobblemontrainerbattle.error.required_held_item_exist": "필요한 지닌물건 %s.",
+  "predicate.cobblemontrainerbattle.error.required_ability_exist": "필요한 특성 %s.",
+  "predicate.cobblemontrainerbattle.error.required_move_exist": "필요한 기술 %s.",
+  "predicate.cobblemontrainerbattle.error.forbidden_pokemon_not_exist": "금지된 포켓몬 %s.",
+  "predicate.cobblemontrainerbattle.error.forbidden_held_item_not_exist": "금지된 지닌물건 %s.",
+  "predicate.cobblemontrainerbattle.error.forbidden_ability_not_exist": "금지된 특성 %s.",
+  "predicate.cobblemontrainerbattle.error.forbidden_move_not_exist": "금지된 기술 %s.",
+
   "command.cobblemontrainerbattle.trainerbattle.success": "%s와(과)의 배틀이 시작되었습니다",
-  "command.cobblemontrainerbattle.trainerbattle.empty_player_party": "가지고 있는 포켓몬이 없습니다",
-  "command.cobblemontrainerbattle.trainerbattle.fainted_player_party": "모든 포켓몬이 기절해 있습니다",
-  "command.cobblemontrainerbattle.trainerbattle.busy_with_pokemon_battle": "포켓몬 배틀 중에는 이 명령어는 실행할 수 없습니다",
-  "command.cobblemontrainerbattle.trainerbattle.below_relative_level_threshold": "포켓몬 레벨이 %d 보다 높아야 합니다",
-
-  "command.cobblemontrainerbattle.condition.is_rematch_allowed_after_victory.trainerbattle": "이 트레이너와는 다시 배틀할 수 없습니다",
-  "command.cobblemontrainerbattle.condition.is_rematch_allowed_after_victory.groupbattle": "이 그룹과는 다시 배틀할 수 없습니다",
-  "command.cobblemontrainerbattle.condition.minimum_party_level": "모든 포켓몬의 레벨이 %d 보다 낮지 않아야 합니다",
-  "command.cobblemontrainerbattle.condition.maximum_party_level": "모든 포켓몬의 레벨이 %d 보다 높지 않아야 합니다",
-
-  "command.cobblemontrainerbattle.common.resource.trainer_not_found": "트레이너를 찾을 수 없습니다",
-  "command.cobblemontrainerbattle.common.resource.group_not_found": "그룹을 찾을 수 없습니다",
 
   "command.cobblemontrainerbattle.groupbattle.startsession.success": "그룹배틀 세션이 시작되었습니다",
   "command.cobblemontrainerbattle.groupbattle.stopsession.success": "그룹배틀 세션이 중단되었습니다",
 
-  "command.cobblemontrainerbattle.groupbattle.common.valid_session_exist": "그룹배틀 세션이 이미 존재합니다",
-  "command.cobblemontrainerbattle.groupbattle.common.valid_session_not_exist": "그룹배틀 세션이 존재하지 않습니다",
-  "command.cobblemontrainerbattle.groupbattle.startbattle.defeated_all_trainers": "그룹배틀 세션이 완료되어 더 이상 진행할 수 없습니다",
-  "command.cobblemontrainerbattle.groupbattle.startbattle.defeated_to_trainer": "배틀에서 패배하여 그룹세션을 진행할 수 없습니다",
-
   "command.cobblemontrainerbattle.battlefactory.startsession.success": "배틀팩토리 세션이 시작되었습니다",
   "command.cobblemontrainerbattle.battlefactory.stopsession.success": "배틀팩토리 세션이 중단되었습니다",
   "command.cobblemontrainerbattle.battlefactory.tradepokemon.success": "%s와 %s를 교환했습니다",
-  "command.cobblemontrainerbattle.battlefactory.rerollpokemon.success": "포켓몬을 다시 뽑았습니다",
-  "command.cobblemontrainerbattle.battlefactory.winningstreak.success": "이긴 횟수: %d",
-
-  "command.cobblemontrainerbattle.battlefactory.common.valid_session_exist": "배틀팩토리 세션이 이미 존재합니다",
-  "command.cobblemontrainerbattle.battlefactory.common.valid_session_not_exist": "배틀팩토리 세션이 존재하지 않습니다",
-  "command.cobblemontrainerbattle.battlefactory.startbattle.defeated_all_trainers": "배틀팩토리 새션이 완료되어 더 이상 진행할 수 없습니다",
-  "command.cobblemontrainerbattle.battlefactory.startbattle.defeated_to_trainer": "배틀에서 패배하여 배틀팩토리 세션을 진행할 수 없습니다",
-  "command.cobblemontrainerbattle.battlefactory.rerollpokemon.defeated_trainer_exist": "배틀을 시작한 이후로는 포켓몬을 다시 뽑을 수 없습니다",
-  "command.cobblemontrainerbattle.battlefactory.tradepokemon.defeated_to_trainer": "배틀에서 패배하여 포켓몬을 교환할 수 없습니다",
-  "command.cobblemontrainerbattle.battlefactory.tradepokemon.defeated_trainer_not_exist": "트레이너를 이겨야 포켓몬을 교환할 수 있습니다",
-  "command.cobblemontrainerbattle.battlefactory.tradepokemon.already_traded_pokemon": "이미 포켓몬을 교환했습니다"
+  "command.cobblemontrainerbattle.battlefactory.winningstreak.success": "이긴 횟수: %d"
 }
