@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class RequiredHeldItemExistPredicate implements MessagePredicate<PlayerBattleParticipant> {
+public class RequiredHeldItemExistPredicate extends HeldItemPredicate {
     private final List<ItemStack> required;
     private ItemStack error;
 
@@ -38,14 +38,5 @@ public class RequiredHeldItemExistPredicate implements MessagePredicate<PlayerBa
             }
         }
         return true;
-    }
-
-    private boolean containsItemStack(Set<ItemStack> party, ItemStack required) {
-        for (ItemStack p : party) {
-            if (p.getItem().equals(required.getItem())) {
-                return true;
-            }
-        }
-        return false;
     }
 }

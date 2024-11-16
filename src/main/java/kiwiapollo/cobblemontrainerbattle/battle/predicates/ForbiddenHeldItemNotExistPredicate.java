@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class ForbiddenHeldItemNotExistPredicate implements MessagePredicate<PlayerBattleParticipant> {
+public class ForbiddenHeldItemNotExistPredicate extends HeldItemPredicate {
     private final List<ItemStack> forbidden;
     private ItemStack error;
 
@@ -38,14 +38,5 @@ public class ForbiddenHeldItemNotExistPredicate implements MessagePredicate<Play
             }
         }
         return true;
-    }
-
-    private boolean containsItemStack(Set<ItemStack> party, ItemStack forbidden) {
-        for (ItemStack p : party) {
-            if (p.getItem().equals(forbidden.getItem())) {
-                return true;
-            }
-        }
-        return false;
     }
 }
