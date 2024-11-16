@@ -42,6 +42,7 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Renta
     private final List<Identifier> trainersToDefeat;
     private final VictoryActionSetHandler sessionVictoryHandler;
     private final DefeatActionSetHandler sessionDefeatHandler;
+    private final List<MessagePredicate<PlayerBattleParticipant>> predicates;
 
     private PlayerBattleParticipant player;
     private TrainerBattle lastTrainerBattle;
@@ -56,6 +57,18 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Renta
         BattleFactoryProfile profile = MiniGameProfileStorage.getBattleFactoryProfile();
         this.sessionVictoryHandler = new VictoryActionSetHandler(player, profile.onVictory);
         this.sessionDefeatHandler = new DefeatActionSetHandler(player, profile.onDefeat);
+        this.predicates = List.of(
+                new RequiredLabelExistPredicate(profile.requiredLabel),
+                new RequiredPokemonExistPredicate(profile.requiredPokemon),
+                new RequiredHeldItemExistPredicate(profile.requiredHeldItem),
+                new RequiredAbilityExistPredicate(profile.requiredAbility),
+                new RequiredMoveExistPredicate(profile.requiredMove),
+                new ForbiddenLabelNotExistPredicate(profile.forbiddenLabel),
+                new ForbiddenPokemonNotExistPredicate(profile.forbiddenPokemon),
+                new ForbiddenHeldItemNotExistPredicate(profile.forbiddenHeldItem),
+                new ForbiddenAbilityNotExistPredicate(profile.forbiddenAbility),
+                new ForbiddenMoveNotExistPredicate(profile.forbiddenMove)
+        );
 
         this.defeatedTrainersCount = 0;
         this.isPlayerDefeated = false;
@@ -235,7 +248,7 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Renta
 
     @Override
     public List<MessagePredicate<PlayerBattleParticipant>> getBattlePredicates() {
-        return List.of();
+        return predicates;
     }
 
     @Override
