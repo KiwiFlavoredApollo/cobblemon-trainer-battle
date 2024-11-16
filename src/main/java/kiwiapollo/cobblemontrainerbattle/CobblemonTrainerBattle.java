@@ -6,6 +6,7 @@ import com.cobblemon.mod.common.api.pokemon.aspect.AspectProvider;
 import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
 import kiwiapollo.cobblemontrainerbattle.battle.session.BattleFactorySessionStorage;
 import kiwiapollo.cobblemontrainerbattle.command.*;
+import kiwiapollo.cobblemontrainerbattle.common.CustomSoundEvents;
 import kiwiapollo.cobblemontrainerbattle.economy.Economy;
 import kiwiapollo.cobblemontrainerbattle.economy.EconomyFactory;
 import kiwiapollo.cobblemontrainerbattle.entity.EntityTypes;
@@ -29,6 +30,7 @@ import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.minecraft.advancement.criterion.Criteria;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.resource.ResourceType;
@@ -53,6 +55,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 		AspectProvider.Companion.register(new FormAspectProvider());
 
 		new ItemRegistry().register();
+		CustomSoundEvents.register();
 
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
 			dispatcher.register(new TrainerBattleCommand());
