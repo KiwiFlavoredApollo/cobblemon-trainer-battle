@@ -2,6 +2,7 @@ package kiwiapollo.cobblemontrainerbattle.battle.predicates;
 
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
+import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemon;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 
@@ -9,9 +10,9 @@ import java.util.List;
 import java.util.Objects;
 
 public class RequiredPokemonExistPredicate implements MessagePredicate<PlayerBattleParticipant> {
-    private final List<Pokemon> required;
+    private final List<ShowdownPokemon> required;
 
-    public RequiredPokemonExistPredicate(List<Pokemon> required) {
+    public RequiredPokemonExistPredicate(List<ShowdownPokemon> required) {
         this.required = required.stream().filter(Objects::nonNull).toList();
     }
 
@@ -26,10 +27,10 @@ public class RequiredPokemonExistPredicate implements MessagePredicate<PlayerBat
             return true;
         }
 
-        for (Pokemon r : required) {
-            for (Pokemon p : player.getParty().toGappyList().stream().filter(Objects::nonNull).toList()) {
-                boolean isSpeciesEqual = p.getSpecies().equals(r.getSpecies());
-                boolean isFormEqual = p.getForm().equals(r.getForm());
+        for (Pokemon p : player.getParty().toGappyList().stream().filter(Objects::nonNull).toList()) {
+            for (ShowdownPokemon r : required) {
+                boolean isSpeciesEqual = normalize(p.getSpecies().getName()).equals(normalize(r.species));
+                boolean isFormEqual = p.getForm().getName().equals(r.form);
 
                 if (isSpeciesEqual && isFormEqual) {
                     return true;
@@ -37,5 +38,12 @@ public class RequiredPokemonExistPredicate implements MessagePredicate<PlayerBat
             }
         }
         return false;
+    }
+
+    private String normalize(String species) {
+        String normalized = species;
+        normalized = normalized.toLowerCase();
+        normalized = normalized.replace("cobblemon:", "");
+        return normalized;
     }
 }

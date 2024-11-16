@@ -9,12 +9,13 @@ import net.minecraft.text.Text;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class RequiredMoveExistPredicate implements MessagePredicate<PlayerBattleParticipant> {
-    private final List<Move> required;
+    private final List<String> required;
 
-    public RequiredMoveExistPredicate(List<Move> required) {
+    public RequiredMoveExistPredicate(List<String> required) {
         this.required = required.stream().filter(Objects::nonNull).toList();
     }
 
@@ -29,9 +30,17 @@ public class RequiredMoveExistPredicate implements MessagePredicate<PlayerBattle
             return true;
         }
 
-        for (Move r : required) {
-            for (Move p : player.getParty().toGappyList().stream().filter(Objects::nonNull).map(Pokemon::getMoveSet).map(MoveSet::getMoves).flatMap(List::stream).collect(Collectors.toSet())) {
-                boolean isMoveEqual = p.getName().equals(r.getName());
+        Set<String> moves = player.getParty().toGappyList().stream()
+                .filter(Objects::nonNull)
+                .map(Pokemon::getMoveSet)
+                .map(MoveSet::getMoves)
+                .flatMap(List::stream)
+                .map(Move::getName)
+                .collect(Collectors.toSet());
+
+        for (String p : moves) {
+            for (String r : required) {
+                boolean isMoveEqual = p.equals(r);
 
                 if (isMoveEqual) {
                     return true;

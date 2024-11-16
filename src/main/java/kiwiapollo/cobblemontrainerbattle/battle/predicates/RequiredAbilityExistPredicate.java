@@ -8,11 +8,13 @@ import net.minecraft.text.Text;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class RequiredAbilityExistPredicate implements MessagePredicate<PlayerBattleParticipant> {
-    private final List<Ability> required;
+    private final List<String> required;
 
-    public RequiredAbilityExistPredicate(List<Ability> required) {
+    public RequiredAbilityExistPredicate(List<String> required) {
         this.required = required.stream().filter(Objects::nonNull).toList();
     }
 
@@ -27,9 +29,15 @@ public class RequiredAbilityExistPredicate implements MessagePredicate<PlayerBat
             return true;
         }
 
-        for (Ability r : required) {
-            for (Ability p : player.getParty().toGappyList().stream().filter(Objects::nonNull).map(Pokemon::getAbility).toList()) {
-                boolean isAbilityEqual = p.getName().equals(r.getName());
+        Set<String> abilities = player.getParty().toGappyList().stream()
+                .filter(Objects::nonNull)
+                .map(Pokemon::getAbility)
+                .map(Ability::getName)
+                .collect(Collectors.toSet());
+
+        for (String p : abilities) {
+            for (String r : required) {
+                boolean isAbilityEqual = p.equals(r);
 
                 if (isAbilityEqual) {
                     return true;
