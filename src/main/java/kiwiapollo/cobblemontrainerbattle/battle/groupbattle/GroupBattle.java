@@ -43,7 +43,7 @@ public class GroupBattle {
 
         GroupBattleSessionStorage.getSessionRegistry().put(player.getUuid(), session);
 
-        player.sendMessage(Text.translatable("command.cobblemontrainerbattle.groupbattle.startsession.success"));
+        player.sendMessage(Text.translatable("command.cobblemontrainerbattle.groupbattle.startsession.success", group.getPath()));
         CobblemonTrainerBattle.LOGGER.info("Started group battle session: {}", player.getGameProfile().getName());
 
         return Command.SINGLE_SUCCESS;
