@@ -1,10 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.battle.groupbattle;
 
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
-import kiwiapollo.cobblemontrainerbattle.battle.predicates.MaximumPartyLevelPredicate;
-import kiwiapollo.cobblemontrainerbattle.battle.predicates.MessagePredicate;
-import kiwiapollo.cobblemontrainerbattle.battle.predicates.MinimumPartyLevelPredicate;
-import kiwiapollo.cobblemontrainerbattle.battle.predicates.RematchAllowedPredicate;
+import kiwiapollo.cobblemontrainerbattle.battle.predicates.*;
 import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerGroupProfileStorage;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.session.SessionNormalTrainerBattle;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -22,7 +19,17 @@ public class NormalGroupBattleSession extends GroupBattleSession {
         this.predicates = List.of(
                 new RematchAllowedPredicate(group, profile.isRematchAllowed),
                 new MaximumPartyLevelPredicate(profile.maximumPartyLevel),
-                new MinimumPartyLevelPredicate(profile.minimumPartyLevel)
+                new MinimumPartyLevelPredicate(profile.minimumPartyLevel),
+                new RequiredLabelExistPredicate(profile.requiredLabel),
+                new RequiredPokemonExistPredicate(profile.requiredPokemon),
+                new RequiredHeldItemExistPredicate(profile.requiredHeldItem),
+                new RequiredAbilityExistPredicate(profile.requiredAbility),
+                new RequiredMoveExistPredicate(profile.requiredMove),
+                new ForbiddenLabelNotExistPredicate(profile.forbiddenLabel),
+                new ForbiddenPokemonNotExistPredicate(profile.forbiddenPokemon),
+                new ForbiddenHeldItemNotExistPredicate(profile.forbiddenHeldItem),
+                new ForbiddenAbilityNotExistPredicate(profile.forbiddenAbility),
+                new ForbiddenMoveNotExistPredicate(profile.forbiddenMove)
         );
     }
 
