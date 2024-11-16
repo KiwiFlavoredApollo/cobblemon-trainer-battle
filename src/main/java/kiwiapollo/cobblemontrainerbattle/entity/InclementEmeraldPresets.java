@@ -3,7 +3,7 @@ package kiwiapollo.cobblemontrainerbattle.entity;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import net.minecraft.util.Identifier;
 
-public class InclementEmeraldTrainerEntityPresetRegistry {
+public class InclementEmeraldPresets {
     public static final TrainerEntityPreset LEADER_ROXANNE = new TrainerEntityPreset(
             Identifier.of("trainer", "entity/leader_roxanne"),
             Identifier.of(CobblemonTrainerBattle.MOD_ID, "textures/entity/trainer/slim/leader_roxanne.png")
