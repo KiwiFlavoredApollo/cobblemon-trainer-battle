@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 
 public class ForbiddenAbilityNotExistPredicate implements MessagePredicate<PlayerBattleParticipant> {
     private final List<String> forbidden;
+    private String error;
 
     public ForbiddenAbilityNotExistPredicate(List<String> forbidden) {
         this.forbidden = forbidden.stream().filter(Objects::nonNull).toList();
@@ -20,28 +21,21 @@ public class ForbiddenAbilityNotExistPredicate implements MessagePredicate<Playe
 
     @Override
     public MutableText getErrorMessage() {
-        return Text.literal("");
+        return Text.translatable("predicate.cobblemontrainerbattle.error.forbidden_ability_not_exist", error);
     }
 
     @Override
     public boolean test(PlayerBattleParticipant player) {
-        if (forbidden.isEmpty()) {
-            return true;
-        }
-
-        Set<String> abilities = player.getParty().toGappyList().stream()
+        Set<String> party = player.getParty().toGappyList().stream()
                 .filter(Objects::nonNull)
                 .map(Pokemon::getAbility)
                 .map(Ability::getName)
                 .collect(Collectors.toSet());
 
-        for (String p : abilities) {
-            for (String f : forbidden) {
-                boolean isAbilityEqual = p.equals(f);
-
-                if (isAbilityEqual) {
-                    return false;
-                }
+        for (String f : forbidden) {
+            if (party.contains(f)) {
+                error = f;
+                return false;
             }
         }
         return true;

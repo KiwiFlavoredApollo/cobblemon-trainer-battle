@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 
 public class ForbiddenMoveNotExistPredicate implements MessagePredicate<PlayerBattleParticipant> {
     private final List<String> forbidden;
+    private String error;
 
     public ForbiddenMoveNotExistPredicate(List<String> forbidden) {
         this.forbidden = forbidden.stream().filter(Objects::nonNull).toList();
@@ -21,16 +22,12 @@ public class ForbiddenMoveNotExistPredicate implements MessagePredicate<PlayerBa
 
     @Override
     public MutableText getErrorMessage() {
-        return Text.literal("");
+        return Text.translatable("predicate.cobblemontrainerbattle.error.forbidden_move_not_exist", error);
     }
 
     @Override
     public boolean test(PlayerBattleParticipant player) {
-        if (forbidden.isEmpty()) {
-            return true;
-        }
-
-        Set<String> moves = player.getParty().toGappyList().stream()
+        Set<String> party = player.getParty().toGappyList().stream()
                 .filter(Objects::nonNull)
                 .map(Pokemon::getMoveSet)
                 .map(MoveSet::getMoves)
@@ -38,13 +35,10 @@ public class ForbiddenMoveNotExistPredicate implements MessagePredicate<PlayerBa
                 .map(Move::getName)
                 .collect(Collectors.toSet());
 
-        for (String p : moves) {
-            for (String f : forbidden) {
-                boolean isMoveEqual = p.equals(f);
-
-                if (isMoveEqual) {
-                    return false;
-                }
+        for (String f : forbidden) {
+            if (party.contains(f)) {
+                error = f;
+                return false;
             }
         }
         return true;

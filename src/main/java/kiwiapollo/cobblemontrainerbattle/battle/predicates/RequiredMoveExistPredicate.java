@@ -15,22 +15,21 @@ import java.util.stream.Collectors;
 public class RequiredMoveExistPredicate implements MessagePredicate<PlayerBattleParticipant> {
     private final List<String> required;
 
+    private String error;
+
     public RequiredMoveExistPredicate(List<String> required) {
         this.required = required.stream().filter(Objects::nonNull).toList();
+        this.error = null;
     }
 
     @Override
     public MutableText getErrorMessage() {
-        return Text.literal("");
+        return Text.translatable("predicate.cobblemontrainerbattle.error.required_move_exist", error);
     }
 
     @Override
     public boolean test(PlayerBattleParticipant player) {
-        if (required.isEmpty()) {
-            return true;
-        }
-
-        Set<String> moves = player.getParty().toGappyList().stream()
+        Set<String> party = player.getParty().toGappyList().stream()
                 .filter(Objects::nonNull)
                 .map(Pokemon::getMoveSet)
                 .map(MoveSet::getMoves)
@@ -38,15 +37,12 @@ public class RequiredMoveExistPredicate implements MessagePredicate<PlayerBattle
                 .map(Move::getName)
                 .collect(Collectors.toSet());
 
-        for (String p : moves) {
-            for (String r : required) {
-                boolean isMoveEqual = p.equals(r);
-
-                if (isMoveEqual) {
-                    return true;
-                }
+        for (String r : required) {
+            if (!party.contains(r)) {
+                error = r;
+                return false;
             }
         }
-        return false;
+        return true;
     }
 }

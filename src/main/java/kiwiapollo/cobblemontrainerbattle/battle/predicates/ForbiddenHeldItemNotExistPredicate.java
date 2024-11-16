@@ -8,9 +8,12 @@ import net.minecraft.text.Text;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class ForbiddenHeldItemNotExistPredicate implements MessagePredicate<PlayerBattleParticipant> {
     private final List<ItemStack> forbidden;
+    private ItemStack error;
 
     public ForbiddenHeldItemNotExistPredicate(List<ItemStack> forbidden) {
         this.forbidden = forbidden.stream().filter(Objects::nonNull).toList();
@@ -18,24 +21,31 @@ public class ForbiddenHeldItemNotExistPredicate implements MessagePredicate<Play
 
     @Override
     public MutableText getErrorMessage() {
-        return Text.literal("");
+        return Text.translatable("predicate.cobblemontrainerbattle.error.forbidden_held_item_not_exist", error);
     }
 
     @Override
     public boolean test(PlayerBattleParticipant player) {
-        if (forbidden.isEmpty()) {
-            return true;
-        }
+        Set<ItemStack> party = player.getParty().toGappyList().stream()
+                .filter(Objects::nonNull)
+                .map(Pokemon::heldItem)
+                .collect(Collectors.toSet());
 
         for (ItemStack f : forbidden) {
-            for (ItemStack p : player.getParty().toGappyList().stream().filter(Objects::nonNull).map(Pokemon::heldItem).toList()) {
-                boolean isItemEqual = p.getItem().equals(f.getItem());
-
-                if (isItemEqual) {
-                    return false;
-                }
+            if (containsItemStack(party, f)) {
+                error = f;
+                return false;
             }
         }
         return true;
+    }
+
+    private boolean containsItemStack(Set<ItemStack> party, ItemStack forbidden) {
+        for (ItemStack p : party) {
+            if (p.getItem().equals(forbidden.getItem())) {
+                return true;
+            }
+        }
+        return false;
     }
 }
