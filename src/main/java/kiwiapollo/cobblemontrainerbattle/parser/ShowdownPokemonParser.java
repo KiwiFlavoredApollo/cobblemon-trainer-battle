@@ -60,25 +60,11 @@ public class ShowdownPokemonParser {
     }
 
     private Identifier toSpeciesIdentifier(String species) throws NullPointerException {
-        boolean isSpeciesContainNamespace = species.contains(":");
-        boolean isSpeciesContainForm = FormAspectProvider.FORM_ASPECTS.keySet().stream().anyMatch(species::contains);
-
-        if (isSpeciesContainNamespace) {
-            return Objects.requireNonNull(Identifier.tryParse(toLowerCaseNonAscii(species)));
-
-        } else if (isSpeciesContainForm) {
-            String cropped = species;
-
-            for (String form : FormAspectProvider.FORM_ASPECTS.keySet()) {
-                cropped = cropped.replaceAll(form, "");
-            }
-            cropped = cropped.replaceAll("-", "");
-            cropped = toLowerCaseNonAscii(cropped);
-
-            return Objects.requireNonNull(Identifier.of("cobblemon", cropped));
+        if (species.contains(":")) {
+            return Objects.requireNonNull(Identifier.tryParse(normalize(species)));
 
         } else {
-            return Objects.requireNonNull(Identifier.of("cobblemon", toLowerCaseNonAscii(species)));
+            return Objects.requireNonNull(Identifier.of("cobblemon", normalize(species)));
         }
     }
 
@@ -105,9 +91,19 @@ public class ShowdownPokemonParser {
         }
     }
 
-    private String toLowerCaseNonAscii(String string) {
+    private String normalize(String species) {
+        String normalized = species;
+
+        for (String form : FormAspectProvider.FORM_ASPECTS.keySet()) {
+            normalized = normalized.replaceAll(form, "");
+        }
+
         String nonAscii = "[^\\x00-\\x7F]";
-        return string.toLowerCase().replaceAll(nonAscii, "");
+        normalized = normalized.replaceAll(nonAscii, "");
+        normalized = normalized.replaceAll("[-\\s]", "");
+        normalized = normalized.toLowerCase();
+
+        return normalized;
     }
 
     private void setPokemonShiny(Pokemon pokemon, boolean shiny) {
