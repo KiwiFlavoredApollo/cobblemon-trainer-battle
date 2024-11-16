@@ -1,7 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.session;
 
 import com.cobblemon.mod.common.Cobblemon;
-import com.cobblemon.mod.common.CobblemonSounds;
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
@@ -37,6 +36,17 @@ public class SessionTrainerBattle implements TrainerBattle {
         }
 
         battle.start();
+
+        setBattleTheme();
+    }
+
+    private void setBattleTheme() {
+        if (session.getBattleTheme().isPresent()) {
+            PokemonBattle battle = Cobblemon.INSTANCE.getBattleRegistry().getBattle(getBattleId());
+            PlayerBattleActor player = (PlayerBattleActor) battle.getActor(getPlayer().getPlayerEntity());
+
+            player.setBattleTheme(session.getBattleTheme().get());
+        }
     }
 
     @Override

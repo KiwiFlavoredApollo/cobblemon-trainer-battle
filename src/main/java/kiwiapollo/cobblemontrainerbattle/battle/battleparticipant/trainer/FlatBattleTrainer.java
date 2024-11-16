@@ -18,10 +18,12 @@ import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
 import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemon;
 import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemonParser;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.UUID;
 
 public class FlatBattleTrainer implements TrainerBattleParticipant {
@@ -30,6 +32,7 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
     private final ServerPlayerEntity player;
     private final VictoryActionSetHandler onVictory;
     private final DefeatActionSetHandler onDefeat;
+    private final SoundEvent battleTheme;
     private final List<MessagePredicate<PlayerBattleParticipant>> predicates;
 
     private PartyStore party;
@@ -44,6 +47,7 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
         this.party = showdownTeamToFlatLevelParty(profile.team(), player, level);
         this.onVictory = new VictoryActionSetHandler(player, profile.onVictory());
         this.onDefeat = new DefeatActionSetHandler(player, profile.onDefeat());
+        this.battleTheme = profile.battleTheme();
         this.predicates = List.of(
                 new RematchAllowedPredicate(identifier, profile.isRematchAllowed())
         );
@@ -103,6 +107,11 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
                 new ForbiddenAbilityNotExistPredicate(profile.forbiddenAbility()),
                 new ForbiddenMoveNotExistPredicate(profile.forbiddenMove())
         );
+    }
+
+    @Override
+    public Optional<SoundEvent> getBattleTheme() {
+        return Optional.ofNullable(battleTheme);
     }
 
     @Override

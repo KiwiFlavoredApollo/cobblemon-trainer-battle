@@ -3,6 +3,7 @@ package kiwiapollo.cobblemontrainerbattle.battle.trainerbattle;
 import kiwiapollo.cobblemontrainerbattle.battle.postbattle.PostBattleActionSet;
 import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemon;
 import net.minecraft.item.ItemStack;
+import net.minecraft.sound.SoundEvent;
 
 import java.util.List;
 
@@ -21,6 +22,7 @@ public class TrainerOption {
     public List<ItemStack> forbiddenHeldItem;
     public List<String> forbiddenAbility;
     public List<String> forbiddenMove;
+    public SoundEvent battleTheme;
     public PostBattleActionSet onVictory;
     public PostBattleActionSet onDefeat;
 
@@ -39,6 +41,7 @@ public class TrainerOption {
         this.forbiddenHeldItem = List.of();
         this.forbiddenAbility = List.of();
         this.forbiddenMove = List.of();
+        this.battleTheme = null;
         this.onVictory = new PostBattleActionSet();
         this.onDefeat = new PostBattleActionSet();
     }

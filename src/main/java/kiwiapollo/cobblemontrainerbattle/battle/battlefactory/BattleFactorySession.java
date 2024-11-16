@@ -25,6 +25,7 @@ import kiwiapollo.cobblemontrainerbattle.battle.session.RentalPokemonFeature;
 import kiwiapollo.cobblemontrainerbattle.battle.session.Session;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattleStorage;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
@@ -33,6 +34,7 @@ import net.minecraft.util.Identifier;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 public class BattleFactorySession implements Session, PokemonTradeFeature, RentalPokemonFeature {
     private static final int LEVEL = 100;
@@ -42,6 +44,7 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Renta
     private final List<Identifier> trainersToDefeat;
     private final VictoryActionSetHandler sessionVictoryHandler;
     private final DefeatActionSetHandler sessionDefeatHandler;
+    private final SoundEvent battleTheme;
     private final List<MessagePredicate<PlayerBattleParticipant>> predicates;
 
     private PlayerBattleParticipant player;
@@ -57,6 +60,7 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Renta
         BattleFactoryProfile profile = MiniGameProfileStorage.getBattleFactoryProfile();
         this.sessionVictoryHandler = new VictoryActionSetHandler(player, profile.onVictory);
         this.sessionDefeatHandler = new DefeatActionSetHandler(player, profile.onDefeat);
+        this.battleTheme = profile.battleTheme;
         this.predicates = List.of(
                 new RequiredLabelExistPredicate(profile.requiredLabel),
                 new RequiredPokemonExistPredicate(profile.requiredPokemon),
@@ -264,5 +268,10 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Renta
     @Override
     public boolean isAnyTrainerDefeated() {
         return defeatedTrainersCount > 0;
+    }
+
+    @Override
+    public Optional<SoundEvent> getBattleTheme() {
+        return Optional.ofNullable(battleTheme);
     }
 }

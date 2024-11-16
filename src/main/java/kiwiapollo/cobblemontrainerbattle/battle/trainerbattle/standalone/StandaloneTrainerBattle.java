@@ -33,6 +33,17 @@ public class StandaloneTrainerBattle implements TrainerBattle {
         }
 
         battle.start();
+
+        setBattleTheme();
+    }
+
+    private void setBattleTheme() {
+        if (getTrainer().getBattleTheme().isPresent()) {
+            PokemonBattle battle = Cobblemon.INSTANCE.getBattleRegistry().getBattle(getBattleId());
+            PlayerBattleActor player = (PlayerBattleActor) battle.getActor(getPlayer().getPlayerEntity());
+
+            player.setBattleTheme(getTrainer().getBattleTheme().get());
+        }
     }
 
     @Override

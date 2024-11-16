@@ -15,6 +15,7 @@ import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemonParser;
 import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerProfileStorage;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.MessagePredicate;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
 import java.util.*;
@@ -23,8 +24,7 @@ public class BattleFactoryTrainer implements TrainerBattleParticipant {
     private final Identifier identifier;
     private final UUID uuid;
     private final ServerPlayerEntity player;
-
-    private PartyStore party;
+    private final PartyStore party;
 
     public BattleFactoryTrainer(Identifier identifier, ServerPlayerEntity player, int level) {
         this.identifier = identifier;
@@ -77,6 +77,11 @@ public class BattleFactoryTrainer implements TrainerBattleParticipant {
     @Override
     public List<MessagePredicate<PlayerBattleParticipant>> getPredicates() {
         return List.of();
+    }
+
+    @Override
+    public Optional<SoundEvent> getBattleTheme() {
+        return Optional.empty();
     }
 
     @Override

@@ -3,8 +3,10 @@ package kiwiapollo.cobblemontrainerbattle.battle.session;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.MessagePredicate;
+import net.minecraft.sound.SoundEvent;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface Session {
     void startBattle() throws BattleStartException;
@@ -24,4 +26,6 @@ public interface Session {
     boolean isAllTrainerDefeated();
 
     boolean isAnyTrainerDefeated();
+
+    Optional<SoundEvent> getBattleTheme();
 }

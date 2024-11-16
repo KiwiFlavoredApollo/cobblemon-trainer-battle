@@ -1,8 +1,5 @@
 package kiwiapollo.cobblemontrainerbattle.parser.profile;
 
-import com.cobblemon.mod.common.api.abilities.Ability;
-import com.cobblemon.mod.common.api.moves.Move;
-import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -15,6 +12,7 @@ import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
 import net.minecraft.item.ItemStack;
 import net.minecraft.resource.Resource;
 import net.minecraft.resource.ResourceManager;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
 import java.io.*;
@@ -23,7 +21,8 @@ import java.util.List;
 import java.util.Map;
 
 public class TrainerProfileLoader implements SimpleSynchronousResourceReloadListener {
-    private static final Gson TRAINER_OPTION_GSON = new GsonBuilder()
+    private static final Gson GSON = new GsonBuilder()
+            .registerTypeAdapter(SoundEvent .class, new BattleThemeDeserializer())
             .registerTypeAdapter(ItemStack.class, new HeldItemDeserializer())
             .create();
 
@@ -64,6 +63,7 @@ public class TrainerProfileLoader implements SimpleSynchronousResourceReloadList
                                 option.forbiddenHeldItem,
                                 option.forbiddenAbility,
                                 option.forbiddenMove,
+                                option.battleTheme,
                                 option.onVictory,
                                 option.onDefeat
                         )
@@ -79,14 +79,14 @@ public class TrainerProfileLoader implements SimpleSynchronousResourceReloadList
     private List<ShowdownPokemon> readTrainerTeamResource(Resource resource) throws IOException, JsonParseException {
         try (InputStream inputStream = resource.getInputStream()) {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-            return new Gson().fromJson(bufferedReader, new TypeToken<List<ShowdownPokemon>>(){}.getType());
+            return GSON.fromJson(bufferedReader, new TypeToken<List<ShowdownPokemon>>(){}.getType());
         }
     }
 
     private TrainerOption readTrainerOptionResource(Resource resource) throws IOException {
         try (InputStream inputStream = resource.getInputStream()) {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-            return TRAINER_OPTION_GSON.fromJson(bufferedReader, TrainerOption.class);
+            return GSON.fromJson(bufferedReader, TrainerOption.class);
         }
     }
 }

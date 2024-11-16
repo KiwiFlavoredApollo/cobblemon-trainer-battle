@@ -8,6 +8,7 @@ import kiwiapollo.cobblemontrainerbattle.battle.groupbattle.TrainerGroupProfile;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
 import net.minecraft.item.ItemStack;
 import net.minecraft.resource.ResourceManager;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
 import java.io.BufferedReader;
@@ -18,6 +19,7 @@ import java.io.InputStreamReader;
 public class TrainerGroupProfileLoader implements SimpleSynchronousResourceReloadListener {
     private static final String GROUP_DIR = "groups";
     private static final Gson GSON = new GsonBuilder()
+            .registerTypeAdapter(SoundEvent.class, new BattleThemeDeserializer())
             .registerTypeAdapter(ItemStack.class, new HeldItemDeserializer())
             .create();
 

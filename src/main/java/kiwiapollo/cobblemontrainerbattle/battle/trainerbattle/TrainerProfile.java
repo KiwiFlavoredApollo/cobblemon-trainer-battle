@@ -3,6 +3,7 @@ package kiwiapollo.cobblemontrainerbattle.battle.trainerbattle;
 import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemon;
 import kiwiapollo.cobblemontrainerbattle.battle.postbattle.PostBattleActionSet;
 import net.minecraft.item.ItemStack;
+import net.minecraft.sound.SoundEvent;
 
 import java.util.List;
 
@@ -23,6 +24,7 @@ public record TrainerProfile(
         List<ItemStack> forbiddenHeldItem,
         List<String> forbiddenAbility,
         List<String> forbiddenMove,
+        SoundEvent battleTheme,
         PostBattleActionSet onVictory,
         PostBattleActionSet onDefeat
 ) {}

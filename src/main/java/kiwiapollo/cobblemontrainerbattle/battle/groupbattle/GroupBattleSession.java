@@ -14,10 +14,12 @@ import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.battle.session.Session;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.session.SessionTrainerBattleFactory;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
+import java.util.Optional;
 
 public class GroupBattleSession implements Session {
     private final ServerPlayerEntity player;
@@ -27,6 +29,7 @@ public class GroupBattleSession implements Session {
     private final List<Identifier> trainersToDefeat;
     private final VictoryActionSetHandler sessionVictoryHandler;
     private final DefeatActionSetHandler sessionDefeatHandler;
+    private final SoundEvent battleTheme;
 
     private TrainerBattle lastTrainerBattle;
     private int defeatedTrainersCount;
@@ -41,6 +44,7 @@ public class GroupBattleSession implements Session {
         this.trainersToDefeat = profile.trainers.stream().map(Identifier::tryParse).toList();
         this.sessionVictoryHandler = new VictoryActionSetHandler(player, profile.onVictory);
         this.sessionDefeatHandler = new DefeatActionSetHandler(player, profile.onDefeat);
+        this.battleTheme = profile.battleTheme;
 
         this.defeatedTrainersCount = 0;
         this.isPlayerDefeated = false;
@@ -116,5 +120,10 @@ public class GroupBattleSession implements Session {
     @Override
     public boolean isAnyTrainerDefeated() {
         return defeatedTrainersCount > 0;
+    }
+
+    @Override
+    public Optional<SoundEvent> getBattleTheme() {
+        return Optional.ofNullable(battleTheme);
     }
 }

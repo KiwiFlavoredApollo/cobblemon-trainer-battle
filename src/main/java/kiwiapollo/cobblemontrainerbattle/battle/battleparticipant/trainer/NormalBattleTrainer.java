@@ -17,10 +17,12 @@ import kiwiapollo.cobblemontrainerbattle.battle.postbattle.DefeatActionSetHandle
 import kiwiapollo.cobblemontrainerbattle.battle.postbattle.VictoryActionSetHandler;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerProfile;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.UUID;
 
 public class NormalBattleTrainer implements TrainerBattleParticipant {
@@ -29,6 +31,7 @@ public class NormalBattleTrainer implements TrainerBattleParticipant {
     private final ServerPlayerEntity player;
     private final VictoryActionSetHandler onVictory;
     private final DefeatActionSetHandler onDefeat;
+    private final SoundEvent battleTheme;
     private final List<MessagePredicate<PlayerBattleParticipant>> predicates;
 
     private PartyStore party;
@@ -42,6 +45,7 @@ public class NormalBattleTrainer implements TrainerBattleParticipant {
         this.party = showdownTeamToParty(profile.team(), player);
         this.onVictory = new VictoryActionSetHandler(player, profile.onVictory());
         this.onDefeat = new DefeatActionSetHandler(player, profile.onDefeat());
+        this.battleTheme = profile.battleTheme();
         this.predicates = List.of(
                 new RematchAllowedPredicate(identifier, profile.isRematchAllowed()),
                 new MaximumPartyLevelPredicate(profile.maximumPartyLevel()),
@@ -97,6 +101,11 @@ public class NormalBattleTrainer implements TrainerBattleParticipant {
     @Override
     public List<MessagePredicate<PlayerBattleParticipant>> getPredicates() {
         return predicates;
+    }
+
+    @Override
+    public Optional<SoundEvent> getBattleTheme() {
+        return Optional.ofNullable(battleTheme);
     }
 
     @Override
