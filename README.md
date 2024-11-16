@@ -43,6 +43,9 @@ Refer to [GitHub Pages](https://kiwiflavoredapollo.github.io/CobblemonTrainerBat
 - [ ] Fix bug SimpleTM TM/TR drop
 - [ ] Add feature defining Battle Frontier trainer sequence by data pack
 - [ ] When on Battle Frontier battle, player Pokemons are slightly damaged
+- [ ] BattleTheme for each trainer
+- [ ] Infinite mode Battle Factory
+- [ ] Forbidden held item with NBT
 
 ## Reference
 
