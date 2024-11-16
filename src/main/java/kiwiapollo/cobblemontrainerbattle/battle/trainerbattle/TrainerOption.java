@@ -5,6 +5,7 @@ import com.cobblemon.mod.common.api.moves.Move;
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.battle.postbattle.PostBattleActionSet;
+import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemon;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundEvent;
 
@@ -15,14 +16,14 @@ public class TrainerOption {
     public boolean isRematchAllowed;
     public int maximumPartyLevel;
     public int minimumPartyLevel;
-    public List<Pokemon> requiredPokemon;
+    public List<ShowdownPokemon> requiredPokemon;
     public List<ItemStack> requiredHeldItem;
-    public List<Ability> requiredAbility;
-    public List<Move> requiredMove;
-    public List<Pokemon> forbiddenPokemon;
+    public List<String> requiredAbility;
+    public List<String> requiredMove;
+    public List<ShowdownPokemon> forbiddenPokemon;
     public List<ItemStack> forbiddenHeldItem;
-    public List<Ability> forbiddenAbility;
-    public List<Move> forbiddenMove;
+    public List<String> forbiddenAbility;
+    public List<String> forbiddenMove;
     public PostBattleActionSet onVictory;
     public PostBattleActionSet onDefeat;
 

@@ -1,8 +1,5 @@
 package kiwiapollo.cobblemontrainerbattle.battle.trainerbattle;
 
-import com.cobblemon.mod.common.api.abilities.Ability;
-import com.cobblemon.mod.common.api.moves.Move;
-import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemon;
 import kiwiapollo.cobblemontrainerbattle.battle.postbattle.PostBattleActionSet;
 import net.minecraft.item.ItemStack;
@@ -16,14 +13,14 @@ public record TrainerProfile(
         boolean isRematchAllowed,
         int maximumPartyLevel,
         int minimumPartyLevel,
-        List<Pokemon> requiredPokemon,
+        List<ShowdownPokemon> requiredPokemon,
         List<ItemStack> requiredHeldItem,
-        List<Ability> requiredAbility,
-        List<Move> requiredMove,
-        List<Pokemon> forbiddenPokemon,
+        List<String> requiredAbility,
+        List<String> requiredMove,
+        List<ShowdownPokemon> forbiddenPokemon,
         List<ItemStack> forbiddenHeldItem,
-        List<Ability> forbiddenAbility,
-        List<Move> forbiddenMove,
+        List<String> forbiddenAbility,
+        List<String> forbiddenMove,
         PostBattleActionSet onVictory,
         PostBattleActionSet onDefeat
 ) {}

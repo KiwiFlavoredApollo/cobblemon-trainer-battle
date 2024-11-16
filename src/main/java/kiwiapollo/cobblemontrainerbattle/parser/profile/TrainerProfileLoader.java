@@ -24,10 +24,7 @@ import java.util.Map;
 
 public class TrainerProfileLoader implements SimpleSynchronousResourceReloadListener {
     private static final Gson TRAINER_OPTION_GSON = new GsonBuilder()
-            .registerTypeAdapter(Pokemon.class, new PokemonDeserializer())
             .registerTypeAdapter(ItemStack.class, new HeldItemDeserializer())
-            .registerTypeAdapter(Ability.class, new AbilityDeserializer())
-            .registerTypeAdapter(Move.class, new MoveDeserializer())
             .create();
 
     @Override
