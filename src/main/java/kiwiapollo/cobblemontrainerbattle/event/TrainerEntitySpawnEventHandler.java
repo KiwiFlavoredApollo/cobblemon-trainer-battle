@@ -4,7 +4,7 @@ import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.entity.EntityTypes;
 import kiwiapollo.cobblemontrainerbattle.entity.RandomTrainerEntityFactory;
 import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntity;
-import kiwiapollo.cobblemontrainerbattle.item.ItemRegistry;
+import kiwiapollo.cobblemontrainerbattle.item.MiscItems;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventory;
@@ -49,10 +49,10 @@ public class TrainerEntitySpawnEventHandler {
 
     private static void assertPlayerHasVsSeeker(PlayerEntity player) {
         boolean hasVsSeeker = player.getInventory().containsAny(Set.of(
-                ItemRegistry.BLUE_VS_SEEKER,
-                ItemRegistry.RED_VS_SEEKER,
-                ItemRegistry.GREEN_VS_SEEKER,
-                ItemRegistry.PURPLE_VS_SEEKER
+                MiscItems.BLUE_VS_SEEKER,
+                MiscItems.RED_VS_SEEKER,
+                MiscItems.GREEN_VS_SEEKER,
+                MiscItems.PURPLE_VS_SEEKER
         ));
 
         if (!hasVsSeeker) {
@@ -63,22 +63,22 @@ public class TrainerEntitySpawnEventHandler {
     private static EntityType.EntityFactory<TrainerEntity> createTrainerEntityFactory(Inventory inventory) {
         RandomTrainerEntityFactory.Builder builder = new RandomTrainerEntityFactory.Builder();
 
-        boolean hasBlueVsSeeker = inventory.containsAny(Set.of(ItemRegistry.BLUE_VS_SEEKER));
+        boolean hasBlueVsSeeker = inventory.containsAny(Set.of(MiscItems.BLUE_VS_SEEKER));
         if (hasBlueVsSeeker) {
             builder = builder.addWildcard();
         }
 
-        boolean hasRedVsSeeker = inventory.containsAny(Set.of(ItemRegistry.RED_VS_SEEKER));
+        boolean hasRedVsSeeker = inventory.containsAny(Set.of(MiscItems.RED_VS_SEEKER));
         if (hasRedVsSeeker) {
             builder = builder.addRadicalRed();
         }
 
-        boolean hasGreenVsSeeker = inventory.containsAny(Set.of(ItemRegistry.GREEN_VS_SEEKER));
+        boolean hasGreenVsSeeker = inventory.containsAny(Set.of(MiscItems.GREEN_VS_SEEKER));
         if (hasGreenVsSeeker) {
             builder = builder.addInclementEmerald();
         }
 
-        boolean hasPurpleVsSeeker = inventory.containsAny(Set.of(ItemRegistry.PURPLE_VS_SEEKER));
+        boolean hasPurpleVsSeeker = inventory.containsAny(Set.of(MiscItems.PURPLE_VS_SEEKER));
         if (hasPurpleVsSeeker) {
             builder = builder.addSmogon();
         }

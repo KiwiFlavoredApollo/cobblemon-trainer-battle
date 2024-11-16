@@ -13,7 +13,8 @@ import kiwiapollo.cobblemontrainerbattle.entity.EntityTypes;
 import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.event.*;
 import kiwiapollo.cobblemontrainerbattle.battle.session.GroupBattleSessionStorage;
-import kiwiapollo.cobblemontrainerbattle.item.ItemRegistry;
+import kiwiapollo.cobblemontrainerbattle.item.CustomItemGroup;
+import kiwiapollo.cobblemontrainerbattle.item.CustomItems;
 import kiwiapollo.cobblemontrainerbattle.loot.CustomLootConditionTypes;
 import kiwiapollo.cobblemontrainerbattle.parser.*;
 import kiwiapollo.cobblemontrainerbattle.parser.history.PlayerHistoryManager;
@@ -30,7 +31,6 @@ import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.minecraft.advancement.criterion.Criteria;
-import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.resource.ResourceType;
@@ -54,7 +54,8 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
 		AspectProvider.Companion.register(new FormAspectProvider());
 
-		new ItemRegistry().register();
+		CustomItems.register();
+		CustomItemGroup.register();
 		CustomSoundEvents.register();
 
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {

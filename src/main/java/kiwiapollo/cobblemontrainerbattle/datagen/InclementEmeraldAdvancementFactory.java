@@ -3,7 +3,7 @@ package kiwiapollo.cobblemontrainerbattle.datagen;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.advancement.DefeatTrainerCriterion;
 import kiwiapollo.cobblemontrainerbattle.advancement.KillTrainerCriterion;
-import kiwiapollo.cobblemontrainerbattle.item.ItemRegistry;
+import kiwiapollo.cobblemontrainerbattle.item.InclementEmeraldTokens;
 import kiwiapollo.cobblemontrainerbattle.entity.InclementEmeraldTrainerEntityPresetRegistry;
 import net.minecraft.advancement.Advancement;
 import net.minecraft.advancement.AdvancementFrame;
@@ -18,7 +18,7 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
             .parent(DataGenerator.AdvancementProvider.ROOT)
             .criterion("defeat_leader_roxanne", new DefeatTrainerCriterion.Conditions(InclementEmeraldTrainerEntityPresetRegistry.LEADER_ROXANNE.trainer()))
             .display(
-                    ItemRegistry.LEADER_ROXANNE_TOKEN,
+                    InclementEmeraldTokens.LEADER_ROXANNE_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_roxanne.title"),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_roxanne.description"),
                     DataGenerator.AdvancementProvider.BACKGROUND,
@@ -33,7 +33,7 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
             .parent(DEFEAT_ROXANNE)
             .criterion("defeat_leader_brawly", new DefeatTrainerCriterion.Conditions(InclementEmeraldTrainerEntityPresetRegistry.LEADER_BRAWLY.trainer()))
             .display(
-                    ItemRegistry.LEADER_BRAWLY_TOKEN,
+                    InclementEmeraldTokens.LEADER_BRAWLY_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_brawly.title"),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_brawly.description"),
                     DataGenerator.AdvancementProvider.BACKGROUND,
@@ -48,7 +48,7 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
             .parent(DEFEAT_BRAWLY)
             .criterion("defeat_leader_wattson", new DefeatTrainerCriterion.Conditions(InclementEmeraldTrainerEntityPresetRegistry.LEADER_WATTSON.trainer()))
             .display(
-                    ItemRegistry.LEADER_WATTSON_TOKEN,
+                    InclementEmeraldTokens.LEADER_WATTSON_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_wattson.title"),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_wattson.description"),
                     DataGenerator.AdvancementProvider.BACKGROUND,
@@ -63,7 +63,7 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
             .parent(DEFEAT_WATTSON)
             .criterion("defeat_leader_flannery", new DefeatTrainerCriterion.Conditions(InclementEmeraldTrainerEntityPresetRegistry.LEADER_FLANNERY.trainer()))
             .display(
-                    ItemRegistry.LEADER_FLANNERY_TOKEN,
+                    InclementEmeraldTokens.LEADER_FLANNERY_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_flannery.title"),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_flannery.description"),
                     DataGenerator.AdvancementProvider.BACKGROUND,
@@ -78,7 +78,7 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
             .parent(DEFEAT_FLANNERY)
             .criterion("defeat_leader_norman", new DefeatTrainerCriterion.Conditions(InclementEmeraldTrainerEntityPresetRegistry.LEADER_NORMAN.trainer()))
             .display(
-                    ItemRegistry.LEADER_NORMAN_TOKEN,
+                    InclementEmeraldTokens.LEADER_NORMAN_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_norman.title"),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_norman.description"),
                     DataGenerator.AdvancementProvider.BACKGROUND,
@@ -93,7 +93,7 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
             .parent(DEFEAT_NORMAN)
             .criterion("defeat_leader_winona", new DefeatTrainerCriterion.Conditions(InclementEmeraldTrainerEntityPresetRegistry.LEADER_WINONA.trainer()))
             .display(
-                    ItemRegistry.LEADER_WINONA_TOKEN,
+                    InclementEmeraldTokens.LEADER_WINONA_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_winona.title"),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_winona.description"),
                     DataGenerator.AdvancementProvider.BACKGROUND,
@@ -108,7 +108,7 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
             .parent(DEFEAT_WINONA)
             .criterion("defeat_leader_tate_and_liza", new DefeatTrainerCriterion.Conditions(InclementEmeraldTrainerEntityPresetRegistry.LEADER_TATE_AND_LIZA.trainer()))
             .display(
-                    ItemRegistry.LEADER_TATE_AND_LIZA_TOKEN,
+                    InclementEmeraldTokens.LEADER_TATE_AND_LIZA_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_tate_and_liza.title"),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_tate_and_liza.description"),
                     DataGenerator.AdvancementProvider.BACKGROUND,
@@ -123,7 +123,7 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
             .parent(DEFEAT_TATE_AND_LIZA)
             .criterion("defeat_leader_juan", new DefeatTrainerCriterion.Conditions(InclementEmeraldTrainerEntityPresetRegistry.LEADER_JUAN.trainer()))
             .display(
-                    ItemRegistry.LEADER_JUAN_TOKEN,
+                    InclementEmeraldTokens.LEADER_JUAN_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_juan.title"),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_juan.description"),
                     DataGenerator.AdvancementProvider.BACKGROUND,
@@ -138,7 +138,7 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
             .parent(DataGenerator.AdvancementProvider.ROOT)
             .criterion("defeat_elite_sidney", new DefeatTrainerCriterion.Conditions(InclementEmeraldTrainerEntityPresetRegistry.ELITE_SIDNEY.trainer()))
             .display(
-                    ItemRegistry.ELITE_SIDNEY_TOKEN,
+                    InclementEmeraldTokens.ELITE_SIDNEY_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_sidney.title"),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_sidney.description"),
                     DataGenerator.AdvancementProvider.BACKGROUND,
@@ -153,7 +153,7 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
             .parent(DEFEAT_SIDNEY)
             .criterion("defeat_elite_phoebe", new DefeatTrainerCriterion.Conditions(InclementEmeraldTrainerEntityPresetRegistry.ELITE_PHOEBE.trainer()))
             .display(
-                    ItemRegistry.ELITE_PHOEBE_TOKEN,
+                    InclementEmeraldTokens.ELITE_PHOEBE_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_phoebe.title"),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_phoebe.description"),
                     DataGenerator.AdvancementProvider.BACKGROUND,
@@ -168,7 +168,7 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
             .parent(DEFEAT_PHOEBE)
             .criterion("defeat_elite_glacia", new DefeatTrainerCriterion.Conditions(InclementEmeraldTrainerEntityPresetRegistry.ELITE_GLACIA.trainer()))
             .display(
-                    ItemRegistry.ELITE_GLACIA_TOKEN,
+                    InclementEmeraldTokens.ELITE_GLACIA_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_glacia.title"),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_glacia.description"),
                     DataGenerator.AdvancementProvider.BACKGROUND,
@@ -183,7 +183,7 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
             .parent(DEFEAT_GLACIA)
             .criterion("defeat_elite_drake", new DefeatTrainerCriterion.Conditions(InclementEmeraldTrainerEntityPresetRegistry.ELITE_DRAKE.trainer()))
             .display(
-                    ItemRegistry.ELITE_DRAKE_TOKEN,
+                    InclementEmeraldTokens.ELITE_DRAKE_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_drake.title"),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_drake.description"),
                     DataGenerator.AdvancementProvider.BACKGROUND,
@@ -198,7 +198,7 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
             .parent(DEFEAT_DRAKE)
             .criterion("defeat_champion_wallace", new DefeatTrainerCriterion.Conditions(InclementEmeraldTrainerEntityPresetRegistry.CHAMPION_WALLACE.trainer()))
             .display(
-                    ItemRegistry.CHAMPION_WALLACE_TOKEN,
+                    InclementEmeraldTokens.CHAMPION_WALLACE_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_champion_wallace.title"),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_champion_wallace.description"),
                     DataGenerator.AdvancementProvider.BACKGROUND,
