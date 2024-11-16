@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 public class ForbiddenHeldItemNotExistPredicate extends HeldItemPredicate {
     private final List<ItemStack> forbidden;
-    private ItemStack error;
+    private Text error;
 
     public ForbiddenHeldItemNotExistPredicate(List<ItemStack> forbidden) {
         this.forbidden = forbidden.stream().filter(Objects::nonNull).toList();
@@ -33,7 +33,7 @@ public class ForbiddenHeldItemNotExistPredicate extends HeldItemPredicate {
 
         for (ItemStack f : forbidden) {
             if (containsItemStack(party, f)) {
-                error = f;
+                error = f.getName();
                 return false;
             }
         }

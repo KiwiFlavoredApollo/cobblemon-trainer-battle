@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 public class RequiredHeldItemExistPredicate extends HeldItemPredicate {
     private final List<ItemStack> required;
-    private ItemStack error;
+    private Text error;
 
     public RequiredHeldItemExistPredicate(List<ItemStack> required) {
         this.required = required.stream().filter(Objects::nonNull).toList();
@@ -33,7 +33,7 @@ public class RequiredHeldItemExistPredicate extends HeldItemPredicate {
 
         for (ItemStack r : required) {
             if (!containsItemStack(party, r)) {
-                error = r;
+                error = r.getName();
                 return false;
             }
         }
