@@ -184,22 +184,24 @@
   "predicate.cobblemontrainerbattle.error.is_rematch_allowed": "Rematch for this opponent is not allowed.",
   "predicate.cobblemontrainerbattle.error.maximum_party_level": "Maximum level of %d is required.",
   "predicate.cobblemontrainerbattle.error.minimum_party_level": "Minimum level of %d is required.",
+  "predicate.cobblemontrainerbattle.error.required_label_exist": "Required label %s",
   "predicate.cobblemontrainerbattle.error.required_pokemon_exist": "Required Pokémon %s.",
   "predicate.cobblemontrainerbattle.error.required_held_item_exist": "Required held item %s.",
   "predicate.cobblemontrainerbattle.error.required_ability_exist": "Required ability %s.",
   "predicate.cobblemontrainerbattle.error.required_move_exist": "Required move %s.",
+  "predicate.cobblemontrainerbattle.error.forbidden_label_not_exist": "Forbidden label %s",
   "predicate.cobblemontrainerbattle.error.forbidden_pokemon_not_exist": "Forbidden Pokémon %s.",
   "predicate.cobblemontrainerbattle.error.forbidden_held_item_not_exist": "Forbidden held item %s.",
   "predicate.cobblemontrainerbattle.error.forbidden_ability_not_exist": "Forbidden ability %s.",
   "predicate.cobblemontrainerbattle.error.forbidden_move_not_exist": "Forbidden move %s.",
 
-  "command.cobblemontrainerbattle.trainerbattle.success": "A battle has begun against %s!",
+  "command.cobblemontrainerbattle.trainerbattle.success": "Battle has started against %s.",
 
-  "command.cobblemontrainerbattle.groupbattle.startsession.success": "Group Battle session started.",
-  "command.cobblemontrainerbattle.groupbattle.stopsession.success": "Group Battle session ended.",
+  "command.cobblemontrainerbattle.groupbattle.startsession.success": "Group Battle session has started against %s.",
+  "command.cobblemontrainerbattle.groupbattle.stopsession.success": "Group Battle session has ended.",
 
-  "command.cobblemontrainerbattle.battlefactory.startsession.success": "Battle Factory session started.",
-  "command.cobblemontrainerbattle.battlefactory.stopsession.success": "Battle Factory session ended.",
+  "command.cobblemontrainerbattle.battlefactory.startsession.success": "Battle Factory session has started.",
+  "command.cobblemontrainerbattle.battlefactory.stopsession.success": "Battle Factory session has ended.",
   "command.cobblemontrainerbattle.battlefactory.tradepokemon.success": "Traded %s for %s.",
   "command.cobblemontrainerbattle.battlefactory.winningstreak.success": "Winning Streak: %d"
 }

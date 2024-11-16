@@ -92,10 +92,12 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
         TrainerProfile profile = TrainerProfileStorage.getProfileRegistry().get(identifier);
         return List.of(
                 new RematchAllowedPredicate(identifier, profile.isRematchAllowed()),
+                new RequiredLabelExistPredicate(profile.requiredLabel()),
                 new RequiredPokemonExistPredicate(profile.requiredPokemon()),
                 new RequiredHeldItemExistPredicate(profile.requiredHeldItem()),
                 new RequiredAbilityExistPredicate(profile.requiredAbility()),
                 new RequiredMoveExistPredicate(profile.requiredMove()),
+                new ForbiddenLabelNotExistPredicate(profile.forbiddenLabel()),
                 new ForbiddenPokemonNotExistPredicate(profile.forbiddenPokemon()),
                 new ForbiddenHeldItemNotExistPredicate(profile.forbiddenHeldItem()),
                 new ForbiddenAbilityNotExistPredicate(profile.forbiddenAbility()),
