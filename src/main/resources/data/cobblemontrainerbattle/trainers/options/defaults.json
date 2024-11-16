@@ -3,27 +3,14 @@
   "isRematchAllowed": true,
   "maximumPartyLevel": 100,
   "minimumPartyLevel": 1,
-  "requiredPokemon": [
-    {
-      "species": "cobblemon:ninetales",
-      "form": "Alola"
-    }
-  ],
-  "requiredHeldItem": [
-    "minecraft:diamond"
-  ],
-  "requiredAbility": [
-    ""
-  ],
-  "requiredMove": [
-    "hyperbeam"
-  ],
+  "requiredPokemon": [],
+  "requiredHeldItem": [],
+  "requiredAbility": [],
+  "requiredMove": [],
   "forbiddenPokemon": [],
   "forbiddenHeldItem": [],
   "forbiddenAbility": [],
-  "forbiddenMove": [
-    "tackle"
-  ],
+  "forbiddenMove": [],
   "onVictory": {
     "balance": 0,
     "commands": []
