@@ -1,9 +1,12 @@
 package kiwiapollo.cobblemontrainerbattle.parser.profile;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.groupbattle.TrainerGroupProfile;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
+import net.minecraft.item.ItemStack;
 import net.minecraft.resource.ResourceManager;
 import net.minecraft.util.Identifier;
 
@@ -14,6 +17,9 @@ import java.io.InputStreamReader;
 
 public class TrainerGroupProfileLoader implements SimpleSynchronousResourceReloadListener {
     private static final String GROUP_DIR = "groups";
+    private static final Gson GSON = new GsonBuilder()
+            .registerTypeAdapter(ItemStack.class, new HeldItemDeserializer())
+            .create();
 
     @Override
     public Identifier getFabricId() {
@@ -26,13 +32,13 @@ public class TrainerGroupProfileLoader implements SimpleSynchronousResourceReloa
         resourceManager.findResources(GROUP_DIR, this::isJsonFile).forEach(((identifier, resource) -> {
             try (InputStream inputStream = resourceManager.getResourceOrThrow(identifier).getInputStream()) {
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-                TrainerGroupProfile trainerGroupProfile = new Gson().fromJson(bufferedReader, TrainerGroupProfile.class);
+                TrainerGroupProfile trainerGroupProfile = GSON.fromJson(bufferedReader, TrainerGroupProfile.class);
 
                 assertTrainerGroupProfileValid(trainerGroupProfile);
 
                 TrainerGroupProfileStorage.getProfileRegistry().put(toTrainerGroupIdentifier(identifier), trainerGroupProfile);
 
-            } catch (IOException | NullPointerException | IllegalArgumentException ignored) {
+            } catch (JsonParseException | IOException | NullPointerException | IllegalArgumentException ignored) {
                 CobblemonTrainerBattle.LOGGER.error("An error occurred while loading {}", identifier.toString());
             }
         }));
