@@ -23,8 +23,8 @@ public enum BattleSounds {
 
     private final Identifier identifier;
 
-    BattleSounds(String soundPath) {
-        this.identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, soundPath);
+    BattleSounds(String path) {
+        this.identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, path);
     }
 
     public SoundEvent getSoundEvent() {
