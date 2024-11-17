@@ -211,7 +211,7 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
 
     private static final Advancement KILL_WALLACE = Advancement.Builder.createUntelemetered()
             .parent(DEFEAT_DRAKE)
-            .criterion("kill_champion_wallace", new KillTrainerCriterion.Conditions(InclementEmeraldPresets.CHAMPION_WALLACE.trainer()))
+            .criterion("kill_champion_wallace", new KillTrainerCriterion.TrainerCountConditions(InclementEmeraldPresets.CHAMPION_WALLACE.trainer()))
             .display(
                     Items.NETHERITE_SWORD,
                     Text.translatable("advancement.cobblemontrainerbattle.kill_champion_wallace.title"),

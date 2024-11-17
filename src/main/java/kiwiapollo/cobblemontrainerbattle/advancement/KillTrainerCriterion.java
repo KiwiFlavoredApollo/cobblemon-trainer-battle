@@ -12,10 +12,9 @@ import net.minecraft.predicate.entity.LootContextPredicate;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
-import java.util.Objects;
-
 public class KillTrainerCriterion extends AbstractCriterion<KillTrainerCriterion.Conditions> {
     private static final Identifier ID = Identifier.of(CobblemonTrainerBattle.MOD_ID, "kill_trainer");
+    private static final int ONE = 1;
 
     @Override
     public Identifier getId() {
@@ -28,38 +27,63 @@ public class KillTrainerCriterion extends AbstractCriterion<KillTrainerCriterion
             LootContextPredicate playerPredicate,
             AdvancementEntityPredicateDeserializer predicateDeserializer
     ) {
-        Identifier trainer = null;
-        if (obj.has("trainer")) {
-            trainer = Identifier.tryParse(obj.get("trainer").getAsString());
-        }
+        if (isTrainerConditionExist(obj)) {
+            return new KillTrainerCriterion.TrainerCountConditions(getTrainerCondition(obj), getCountCondition(obj));
 
-        Integer count = null;
-        if (obj.has("count")) {
-            count = obj.get("count").getAsInt();
+        } else {
+            return new KillTrainerCriterion.TotalCountConditions(getCountCondition(obj));
         }
+    }
 
-        return new KillTrainerCriterion.Conditions(trainer, count);
+    private boolean isTrainerConditionExist(JsonObject obj) {
+        return obj.has("trainer");
+    }
+
+    private Identifier getTrainerCondition(JsonObject obj) {
+        return Identifier.tryParse(obj.get("trainer").getAsString());
+    }
+
+    private int getCountCondition(JsonObject obj) {
+        return obj.has("count") ? obj.get("count").getAsInt() : ONE;
     }
 
     public void trigger(ServerPlayerEntity player) {
         trigger(player, conditions -> conditions.test(player));
     }
 
-    public static class Conditions extends AbstractCriterionConditions {
-        private final Identifier trainer;
-        private final Integer count;
+    public static class TotalCountConditions extends KillTrainerCriterion.Conditions {
+        private final int count;
 
-        public Conditions(Identifier trainer) {
-            this(trainer, null);
-        }
-
-        public Conditions(Integer count) {
-            this(null, count);
-        }
-
-        public Conditions(Identifier trainer, Integer count) {
+        public TotalCountConditions(int count) {
             super(ID, LootContextPredicate.EMPTY);
+            this.count = count;
+        }
 
+        @Override
+        public JsonObject toJson(AdvancementEntityPredicateSerializer predicateSerializer) {
+            JsonObject jsonObject = new JsonObject();
+
+            jsonObject.addProperty("count", count);
+
+            return jsonObject;
+        }
+
+        boolean test(ServerPlayerEntity player) {
+            int total = PlayerHistoryManager.get(player.getUuid()).getTotalTrainerKillCount();
+            return total >= count;
+        }
+    }
+
+    public static class TrainerCountConditions extends KillTrainerCriterion.Conditions {
+        private final Identifier trainer;
+        private final int count;
+
+        public TrainerCountConditions(Identifier trainer) {
+            this(trainer, ONE);
+        }
+
+        public TrainerCountConditions(Identifier trainer, int count) {
+            super(ID, LootContextPredicate.EMPTY);
             this.trainer = trainer;
             this.count = count;
         }
@@ -68,40 +92,23 @@ public class KillTrainerCriterion extends AbstractCriterion<KillTrainerCriterion
         public JsonObject toJson(AdvancementEntityPredicateSerializer predicateSerializer) {
             JsonObject jsonObject = new JsonObject();
 
-            if (Objects.nonNull(trainer)) {
-                jsonObject.addProperty("trainer", trainer.toString());
-            }
-
-            if (Objects.nonNull(count)) {
-                jsonObject.addProperty("count", count);
-            }
+            jsonObject.addProperty("trainer", trainer.toString());
+            jsonObject.addProperty("count", count);
 
             return jsonObject;
         }
 
         boolean test(ServerPlayerEntity player) {
-            if (Objects.isNull(trainer)) {
-                return testTotalKillCount(player);
+            int record = ((EntityRecord) PlayerHistoryManager.get(player.getUuid()).get(trainer)).getKillCount();
+            return record >= count;
+        }
+    }
 
-            } else {
-                return testTrainerKillCount(player);
-            }
+    public static abstract class Conditions extends AbstractCriterionConditions {
+        public Conditions(Identifier id, LootContextPredicate entity) {
+            super(id, entity);
         }
 
-        private boolean testTotalKillCount(ServerPlayerEntity player) {
-            try {
-                return count <= PlayerHistoryManager.get(player.getUuid()).getTotalTrainerKillCount();
-            } catch (NullPointerException e) {
-                return 0 < PlayerHistoryManager.get(player.getUuid()).getTotalTrainerKillCount();
-            }
-        }
-
-        private boolean testTrainerKillCount(ServerPlayerEntity player) {
-            try {
-                return count <= ((EntityRecord) PlayerHistoryManager.get(player.getUuid()).get(trainer)).getKillCount();
-            } catch (NullPointerException e) {
-                return 0 < ((EntityRecord) PlayerHistoryManager.get(player.getUuid()).get(trainer)).getKillCount();
-            }
-        }
+        abstract boolean test(ServerPlayerEntity player);
     }
 }

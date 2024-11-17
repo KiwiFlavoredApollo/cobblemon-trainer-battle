@@ -13,7 +13,7 @@ import java.util.List;
 public class KillTrainerAdvancementFactory implements AdvancementFactory {
     private static final Advancement KILL_FIRST = Advancement.Builder.createUntelemetered()
             .parent(DataGenerator.AdvancementProvider.ROOT)
-            .criterion("kill_first_trainer", new KillTrainerCriterion.Conditions(1))
+            .criterion("kill_first_trainer", new KillTrainerCriterion.TotalCountConditions(1))
             .display(
                     Items.STONE_SWORD,
                     Text.translatable("advancement.cobblemontrainerbattle.kill_trainer.first.title"),
@@ -28,7 +28,7 @@ public class KillTrainerAdvancementFactory implements AdvancementFactory {
 
     private static final Advancement KILL_TENTH = Advancement.Builder.createUntelemetered()
             .parent(KILL_FIRST)
-            .criterion("kill_tenth_trainer", new KillTrainerCriterion.Conditions(10))
+            .criterion("kill_tenth_trainer", new KillTrainerCriterion.TotalCountConditions(10))
             .display(
                     Items.IRON_SWORD,
                     Text.translatable("advancement.cobblemontrainerbattle.kill_trainer.tenth.title"),

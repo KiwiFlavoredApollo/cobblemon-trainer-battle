@@ -331,7 +331,7 @@ public class RadicalRedAdvancementFactory implements AdvancementFactory {
 
     private static final Advancement KILL_TERRY = Advancement.Builder.createUntelemetered()
             .parent(DEFEAT_LANCE)
-            .criterion("kill_champion_terry", new KillTrainerCriterion.Conditions(RadicalRedPresets.CHAMPION_TERRY.trainer()))
+            .criterion("kill_champion_terry", new KillTrainerCriterion.TrainerCountConditions(RadicalRedPresets.CHAMPION_TERRY.trainer()))
             .display(
                     Items.NETHERITE_SWORD,
                     Text.translatable("advancement.cobblemontrainerbattle.kill_champion_terry.title"),
