@@ -102,6 +102,7 @@ cobblemontrainerbattle.groupbattleflat
 
 ```
 /battlefactory startsession
+/battlefactory startsession infinite
 /battlefactory stopsession
 /battlefactory startbattle
 /battlefactory showpokemon

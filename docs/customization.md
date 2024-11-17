@@ -146,17 +146,32 @@ Few attributes can be Minecraft-friendly, and additional attributes are availabl
 - Multiple commands are supported
 - Commands are run as server
 - `%player%` placeholder can be used to indicate the player in battle
-- `battleTheme` can be configured per trainer (>= 1.6.7)
+- `battleTheme` can be configured per trainer
 - Configuration can be set globally by modifying `defaults.json`
 
 ```json
 {
   "isSpawningAllowed": true,
-  "condition": {
-    "isRematchAllowedAfterVictory": true,
-    "maximumPartyLevel": 100,
-    "minimumPartyLevel": 1
-  },
+  "isRematchAllowed": true,
+  "maximumPartyLevel": 100,
+  "minimumPartyLevel": 1,
+  "requiredLabel": ["legendary", "gen3"],
+  "requiredPokemon": [
+    {
+      "species": "cobblemon:ninetales",
+      "form": "Alola"
+    }
+  ],
+  "requiredHeldItem": [
+    "minecraft:dirt"
+  ],
+  "requiredAbility": ["pressure", "static"],
+  "requiredMove": ["tackle", "ember"],
+  "forbiddenLabel": [],
+  "forbiddenPokemon": [],
+  "forbiddenHeldItem": [],
+  "forbiddenAbility": [],
+  "forbiddenMove": [],
   "battleTheme": "cobblemon:battle.pvn.default",
   "onVictory": {
     "balance": 0,
@@ -185,11 +200,20 @@ Few attributes can be Minecraft-friendly, and additional attributes are availabl
     "trainer:radicalred/leader_pryce",
     "trainer:radicalred/leader_clair"
   ],
-  "condition": {
-    "isRematchAllowedAfterVictory": true,
-    "maximumPartyLevel": 100,
-    "minimumPartyLevel": 1
-  },
+  "isRematchAllowed": true,
+  "maximumPartyLevel": 100,
+  "minimumPartyLevel": 1,
+  "requiredLabel": [],
+  "requiredPokemon": [],
+  "requiredHeldItem": [],
+  "requiredAbility": [],
+  "requiredMove": [],
+  "forbiddenLabel": [],
+  "forbiddenPokemon": [],
+  "forbiddenHeldItem": [],
+  "forbiddenAbility": [],
+  "forbiddenMove": [],
+  "battleTheme": "battle.gym_leader.disc_1",
   "onVictory": {
     "balance": 0,
     "commands": []
@@ -205,6 +229,7 @@ Few attributes can be Minecraft-friendly, and additional attributes are availabl
 
 ```json
 {
+  "battleTheme": "battle.elite_four.disc_1",
   "onVictory": {
     "balance": 0,
     "commands": []
@@ -246,6 +271,58 @@ Loot tables can be set for each trainer. Trainers without loot tables will drop 
 }
 ```
 
+## Resource Pack Structure
+
+```
+resourcepacks/
+└── your_resourcepack_name/
+    ├── pack.mcmeta
+    └── assets/
+        └── cobblemontrainerbattle/
+            ├── sounds.json
+            ├── sounds/
+            │   └── battle/
+            │       ├── my_disc_1.ogg
+            │       └── my_disc_2.ogg
+            │
+            └── textures/
+                └── entity/
+                    └── trainer/
+                        └── slim/
+                            ├── leader_brock.png
+                            └── leader_misty.png
+```
+
 ## Trainer Textures
 
-Gym Leaders, Elite Four and Champion textures (skins) can be overridden via resource pack. Make sure you have the right path. For example, if you want to override Gym Leader Brock's texture, the path should be `your_resource_pack/assets/cobblemontrainerbattle/textures/entity/trainer/slim/leader_brock.png`
+Gym Leaders, Elite Four and Champion textures (skins) can be overridden via resource pack. Make sure you have the right path.
+
+## Battle Themes
+
+Cobblemon provides three default sound keys. You can use them when configuring battle themes for trainers.
+
+```
+cobblemon:battle.pvw.default
+cobblemon:battle.pvp.default
+cobblemon:battle.pvn.default
+```
+
+Cobblemon Trainer Battle provides custom sound keys as well. You can use either `battle.default.disc_1` or `cobblemontrainerbattle:battle.default.disc_1`
+
+```
+battle.default.disc_1
+battle.default.disc_2
+battle.default.disc_3
+
+battle.gym_leader.disc_1
+battle.gym_leader.disc_2
+battle.gym_leader.disc_3
+
+battle.elite_four.disc_1
+battle.elite_four.disc_2
+battle.elite_four.disc_3
+
+battle.champion.disc_1
+battle.champion.disc_2
+battle.champion.disc_3
+```
