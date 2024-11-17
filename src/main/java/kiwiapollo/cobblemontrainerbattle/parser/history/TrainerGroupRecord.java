@@ -23,6 +23,7 @@ public class TrainerGroupRecord implements PlayerHistoryRecord, BattleRecord {
     @Override
     public void setVictoryCount(int count) {
         victory = count;
+        updateTimestamp();
     }
 
     @Override
@@ -33,11 +34,7 @@ public class TrainerGroupRecord implements PlayerHistoryRecord, BattleRecord {
     @Override
     public void setDefeatCount(int count) {
         defeat = count;
-    }
-
-    @Override
-    public void updateTimestamp() {
-        timestamp = Instant.now();
+        updateTimestamp();
     }
 
     @Override
@@ -56,5 +53,9 @@ public class TrainerGroupRecord implements PlayerHistoryRecord, BattleRecord {
         defeat = nbt.getInt("defeat");
 
         return this;
+    }
+
+    private void updateTimestamp() {
+        timestamp = Instant.now();
     }
 }

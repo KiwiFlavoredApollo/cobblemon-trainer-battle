@@ -25,6 +25,7 @@ public class BattleFactoryRecord implements PlayerHistoryRecord, BattleRecord, M
     @Override
     public void setVictoryCount(int count) {
         victory = count;
+        updateTimestamp();
     }
 
     @Override
@@ -35,6 +36,7 @@ public class BattleFactoryRecord implements PlayerHistoryRecord, BattleRecord, M
     @Override
     public void setDefeatCount(int count) {
         defeat = count;
+        updateTimestamp();
     }
 
     @Override
@@ -45,11 +47,7 @@ public class BattleFactoryRecord implements PlayerHistoryRecord, BattleRecord, M
     @Override
     public void setMaximumStreak(int count) {
         streak = count;
-    }
-
-    @Override
-    public void updateTimestamp() {
-        timestamp = Instant.now();
+        updateTimestamp();
     }
 
     @Override
@@ -70,5 +68,9 @@ public class BattleFactoryRecord implements PlayerHistoryRecord, BattleRecord, M
         defeat = nbt.getInt("defeat");
 
         return this;
+    }
+
+    private void updateTimestamp() {
+        timestamp = Instant.now();
     }
 }
