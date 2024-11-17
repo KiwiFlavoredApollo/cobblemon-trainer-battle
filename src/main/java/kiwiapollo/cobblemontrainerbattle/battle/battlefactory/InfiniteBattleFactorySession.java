@@ -1,5 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.battle.battlefactory;
 
+import kiwiapollo.cobblemontrainerbattle.advancement.BattleFactoryWinningStreakCriterion;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.factory.InfiniteBattleFactoryParticipantFactory;
 import kiwiapollo.cobblemontrainerbattle.parser.history.MaximumStreakRecord;
 import kiwiapollo.cobblemontrainerbattle.parser.history.PlayerHistoryManager;
@@ -14,6 +15,7 @@ public class InfiniteBattleFactorySession extends BattleFactorySession {
     @Override
     public void onSessionStop() {
         updateStreakRecord();
+        new BattleFactoryWinningStreakCriterion().trigger(player.getPlayerEntity());
     }
 
     private MaximumStreakRecord getBattleRecord() {

@@ -49,6 +49,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 	public void onInitialize() {
 		Criteria.register(CustomCriteria.DEFEAT_TRAINER_CRITERION);
 		Criteria.register(CustomCriteria.KILL_TRAINER_CRITERION);
+		Criteria.register(CustomCriteria.BATTLE_FACTORY_WINNING_STREAK_CRITERION);
 
 		Registry.register(Registries.LOOT_CONDITION_TYPE, Identifier.of(MOD_ID, "defeated_in_battle"), CustomLootConditionTypes.DEFEATED_IN_BATTLE);
 

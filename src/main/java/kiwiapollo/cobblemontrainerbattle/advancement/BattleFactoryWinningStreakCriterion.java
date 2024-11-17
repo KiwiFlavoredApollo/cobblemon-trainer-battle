@@ -13,7 +13,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
 public class BattleFactoryWinningStreakCriterion extends AbstractCriterion<BattleFactoryWinningStreakCriterion.Condition> {
-    private static final Identifier ID = Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_trainer");
+    private static final Identifier ID = Identifier.of(CobblemonTrainerBattle.MOD_ID, "battlefactory_winning_streak");
 
     @Override
     protected Condition conditionsFromJson(
