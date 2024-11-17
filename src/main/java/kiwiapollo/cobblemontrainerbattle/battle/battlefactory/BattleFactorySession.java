@@ -58,6 +58,7 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Renta
             }
         }
 
+        player.getParty().heal();
         TrainerBattleParticipant trainer = factory.createTrainer(this);
         TrainerBattle trainerBattle = new SessionTrainerBattle(player, trainer, this);
         trainerBattle.start();
