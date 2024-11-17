@@ -42,13 +42,14 @@ public class BattleFactoryWinningStreakCriterion extends AbstractCriterion<Battl
             this.count = count;
         }
 
+        @Override
         public JsonObject toJson(AdvancementEntityPredicateSerializer predicateSerializer) {
             JsonObject jsonObject = new JsonObject();
             jsonObject.addProperty("count", count);
             return jsonObject;
         }
 
-        public boolean test(ServerPlayerEntity player) {
+        boolean test(ServerPlayerEntity player) {
             MaximumStreakRecord record = (MaximumStreakRecord) PlayerHistoryManager.get(player.getUuid()).get(Identifier.tryParse("minigame:battlefactory"));
             return record.getMaximumStreak() >= count;
         }

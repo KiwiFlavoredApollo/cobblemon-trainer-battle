@@ -26,7 +26,7 @@ public enum BattleFactoryWinningStreakAdvancements implements CustomAdvancements
 
     WINNING_STREAK_TENTH(Advancement.Builder.createUntelemetered()
             .parent(BattleFactoryWinningStreakAdvancements.WINNING_STREAK_FIRST.getAdvancement())
-            .criterion("battlefactory_tenth_winning_streak", new BattleFactoryWinningStreakCriterion.Condition(2))
+            .criterion("battlefactory_tenth_winning_streak", new BattleFactoryWinningStreakCriterion.Condition(10))
             .display(
                     CobblemonItems.BLUE_APRICORN,
                     Text.translatable("advancement.cobblemontrainerbattle.battlefactory_winning_streak.tenth.title"),

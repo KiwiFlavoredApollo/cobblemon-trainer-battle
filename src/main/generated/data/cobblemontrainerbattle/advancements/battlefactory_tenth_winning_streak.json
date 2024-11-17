@@ -3,7 +3,7 @@
   "criteria": {
     "battlefactory_tenth_winning_streak": {
       "conditions": {
-        "count": 2
+        "count": 10
       },
       "trigger": "cobblemontrainerbattle:battlefactory_winning_streak"
     }
