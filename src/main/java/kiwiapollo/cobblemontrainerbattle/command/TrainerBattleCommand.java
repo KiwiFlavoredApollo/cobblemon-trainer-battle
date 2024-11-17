@@ -7,7 +7,6 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.RecordedTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattleStorage;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
@@ -67,7 +66,7 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
                 return 0;
             }
 
-            TrainerBattle trainerBattle = new RecordedTrainerBattle(new StandaloneNormalTrainerBattle(player, trainer));
+            TrainerBattle trainerBattle = new StandaloneNormalTrainerBattle(player, trainer);
             trainerBattle.start();
 
             TrainerBattleStorage.getTrainerBattleRegistry().put(player.getUuid(), trainerBattle);
@@ -90,7 +89,7 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
                 return 0;
             }
 
-            TrainerBattle trainerBattle = new RecordedTrainerBattle(new StandaloneNormalTrainerBattle(player, trainer));
+            TrainerBattle trainerBattle = new StandaloneNormalTrainerBattle(player, trainer);
             trainerBattle.start();
 
             TrainerBattleStorage.getTrainerBattleRegistry().put(player.getUuid(), trainerBattle);

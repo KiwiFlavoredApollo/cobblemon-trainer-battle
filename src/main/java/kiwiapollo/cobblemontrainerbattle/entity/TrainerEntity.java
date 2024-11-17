@@ -3,7 +3,6 @@ package kiwiapollo.cobblemontrainerbattle.entity;
 import com.cobblemon.mod.common.Cobblemon;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
-import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.RecordedTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattleStorage;
 import kiwiapollo.cobblemontrainerbattle.parser.history.EntityRecord;
@@ -100,7 +99,7 @@ public class TrainerEntity extends PathAwareEntity {
                 return;
             }
 
-            TrainerBattle trainerBattle = new RecordedTrainerBattle(new EntityBackedTrainerBattle(player, this, trainer));
+            TrainerBattle trainerBattle = new EntityBackedTrainerBattle(player, this, trainer);
             trainerBattle.start();
 
             TrainerBattleStorage.getTrainerBattleRegistry().put(player.getUuid(), trainerBattle);

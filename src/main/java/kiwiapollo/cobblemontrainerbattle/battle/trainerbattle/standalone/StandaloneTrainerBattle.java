@@ -10,6 +10,8 @@ import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.MessagePredicate;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.BaseTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.parser.history.BattleRecord;
+import kiwiapollo.cobblemontrainerbattle.parser.history.PlayerHistoryManager;
 
 import java.util.UUID;
 
@@ -50,12 +52,26 @@ public class StandaloneTrainerBattle implements TrainerBattle {
     public void onPlayerVictory() {
         getPlayer().onVictory();
         getTrainer().onDefeat();
+        updateVictoryRecord();
     }
 
     @Override
     public void onPlayerDefeat() {
         getPlayer().onDefeat();
         getTrainer().onVictory();
+        updateDefeatRecord();
+    }
+
+    private BattleRecord getBattleRecord() {
+        return (BattleRecord) PlayerHistoryManager.get(getPlayer().getUuid()).get(getTrainer().getIdentifier());
+    }
+
+    private void updateVictoryRecord() {
+        getBattleRecord().setVictoryCount(getBattleRecord().getVictoryCount() + 1);
+    }
+
+    private void updateDefeatRecord() {
+        getBattleRecord().setDefeatCount(getBattleRecord().getDefeatCount() + 1);
     }
 
     @Override
