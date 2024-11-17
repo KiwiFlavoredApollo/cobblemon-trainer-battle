@@ -124,7 +124,7 @@ public class BattleFactory {
         }
     }
 
-    public static int showTradeablePokemon(CommandContext<ServerCommandSource> context) {
+    public static int showTradablePokemon(CommandContext<ServerCommandSource> context) {
         try {
             ServerPlayerEntity player = context.getSource().getPlayer();
 
@@ -141,7 +141,7 @@ public class BattleFactory {
             }
 
             BattleFactorySession session = BattleFactorySessionStorage.getSessionRegistry().get(player.getUuid());
-            session.showTradeablePokemon();
+            session.showTradablePokemon();
 
             return Command.SINGLE_SUCCESS;
 
@@ -212,7 +212,7 @@ public class BattleFactory {
 
         BattleFactorySession session = BattleFactorySessionStorage.getSessionRegistry().get(player.getUuid());
 
-        player.sendMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.winningstreak.success", session.getDefeatedTrainersCount()));
+        player.sendMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.winningstreak.success", session.getStreak()));
 
         return Command.SINGLE_SUCCESS;
     }

@@ -30,18 +30,18 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Renta
 
     private final SoundEvent battleTheme;
     private TrainerBattle lastTrainerBattle;
-    private int defeatedTrainersCount;
+    private int streak;
     private boolean isPlayerDefeated;
-    private boolean isTradedPokemon;
+    private boolean isPokemonTraded;
 
     public BattleFactorySession(SessionBattleParticipantFactory factory) {
         this.factory = factory;
         this.player = factory.createPlayer(this);
 
         this.battleTheme = MiniGameProfileStorage.getBattleFactoryProfile().battleTheme;
-        this.defeatedTrainersCount = 0;
+        this.streak = 0;
         this.isPlayerDefeated = false;
-        this.isTradedPokemon = false;
+        this.isPokemonTraded = false;
     }
 
     @Override
@@ -91,14 +91,14 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Renta
         trainer.getParty().set(trainerSlot, playerPokemon);
         player.getParty().set(playerSlot, trainerPokemon);
 
-        isTradedPokemon = true;
+        isPokemonTraded = true;
 
         player.sendInfoMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.success", playerPokemon.getDisplayName(), trainerPokemon.getDisplayName()));
         CobblemonTrainerBattle.LOGGER.info("{} traded {} for {}", player.getName(), playerPokemon.getDisplayName(), trainerPokemon.getDisplayName());
     }
 
     @Override
-    public void showTradeablePokemon() throws SessionOperationException {
+    public void showTradablePokemon() throws SessionOperationException {
         List<MessagePredicate<BattleFactorySession>> predicates = List.of(
                 new PlayerNotDefeatedPredicate<>(),
                 new AnyTrainerDefeatedPredicate<>(),
@@ -116,8 +116,8 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Renta
     }
 
     @Override
-    public boolean isTradedPokemon() {
-        return isTradedPokemon;
+    public boolean isPokemonTraded() {
+        return isPokemonTraded;
     }
 
     @Override
@@ -146,8 +146,8 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Renta
     }
 
     public void onBattleVictory() {
-        defeatedTrainersCount += 1;
-        isTradedPokemon = false;
+        streak += 1;
+        isPokemonTraded = false;
     }
 
     public void onBattleDefeat() {
@@ -160,8 +160,8 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Renta
     }
 
     @Override
-    public int getDefeatedTrainersCount() {
-        return defeatedTrainersCount;
+    public int getStreak() {
+        return streak;
     }
 
     @Override
@@ -187,7 +187,7 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Renta
 
     @Override
     public boolean isAnyTrainerDefeated() {
-        return defeatedTrainersCount > 0;
+        return streak > 0;
     }
 
     @Override

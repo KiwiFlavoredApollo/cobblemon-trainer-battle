@@ -7,7 +7,6 @@ import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.battlefactory.BattleFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battlefactory.InfiniteBattleFactory;
-import kiwiapollo.cobblemontrainerbattle.battle.battlefactory.InfiniteBattleFactorySession;
 import kiwiapollo.cobblemontrainerbattle.battle.battlefactory.NormalBattleFactory;
 import net.minecraft.server.command.ServerCommandSource;
 
@@ -51,7 +50,7 @@ public class BattleFactoryCommand extends LiteralArgumentBuilder<ServerCommandSo
 
     private ArgumentBuilder<ServerCommandSource, ?> getBattleFactoryTradePokemonCommand() {
         return LiteralArgumentBuilder.<ServerCommandSource>literal("tradepokemon")
-                .executes(BattleFactory::showTradeablePokemon)
+                .executes(BattleFactory::showTradablePokemon)
                 .then(RequiredArgumentBuilder
                         .<ServerCommandSource, Integer>argument("playerslot", IntegerArgumentType.integer(1, 3))
                         .then(RequiredArgumentBuilder

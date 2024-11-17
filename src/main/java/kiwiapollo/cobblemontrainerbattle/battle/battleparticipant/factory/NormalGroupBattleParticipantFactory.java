@@ -45,14 +45,14 @@ public class NormalGroupBattleParticipantFactory implements SessionBattlePartici
         @Override
         public NormalBattleTrainer create(Session session) {
             try {
-                return new NormalBattleTrainer(getNextTrainer(session.getDefeatedTrainersCount()), player);
+                return new NormalBattleTrainer(getNextTrainer(session.getStreak()), player);
             } catch (IndexOutOfBoundsException e) {
                 throw new AllTrainerDefeatedException(e);
             }
         }
 
-        private Identifier getNextTrainer(int round) {
-            return trainers.get(round);
+        private Identifier getNextTrainer(int index) {
+            return trainers.get(index);
         }
     }
 }

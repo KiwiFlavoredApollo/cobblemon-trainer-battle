@@ -33,7 +33,7 @@ public class GroupBattleSession implements Session {
     private final SoundEvent battleTheme;
 
     private TrainerBattle lastTrainerBattle;
-    private int defeatedTrainersCount;
+    private int streak;
     private boolean isPlayerDefeated;
 
     public GroupBattleSession(ServerPlayerEntity player, Identifier group, SessionBattleParticipantFactory factory) {
@@ -46,7 +46,7 @@ public class GroupBattleSession implements Session {
         this.sessionDefeatHandler = new DefeatActionSetHandler(player, profile.onDefeat);
         this.battleTheme = profile.battleTheme;
 
-        this.defeatedTrainersCount = 0;
+        this.streak = 0;
         this.isPlayerDefeated = false;
     }
 
@@ -78,7 +78,7 @@ public class GroupBattleSession implements Session {
 
     @Override
     public void onBattleVictory() {
-        defeatedTrainersCount += 1;
+        streak += 1;
     }
 
     @Override
@@ -110,8 +110,8 @@ public class GroupBattleSession implements Session {
     }
 
     @Override
-    public int getDefeatedTrainersCount() {
-        return defeatedTrainersCount;
+    public int getStreak() {
+        return streak;
     }
 
     @Override
@@ -137,7 +137,7 @@ public class GroupBattleSession implements Session {
 
     @Override
     public boolean isAnyTrainerDefeated() {
-        return defeatedTrainersCount > 0;
+        return streak > 0;
     }
 
     @Override

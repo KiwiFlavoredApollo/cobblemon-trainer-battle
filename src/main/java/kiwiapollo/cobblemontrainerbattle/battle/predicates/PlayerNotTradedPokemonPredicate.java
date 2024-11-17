@@ -12,6 +12,6 @@ public class PlayerNotTradedPokemonPredicate<T extends PokemonTradeFeature> impl
 
     @Override
     public boolean test(T session) {
-        return !session.isTradedPokemon();
+        return !session.isPokemonTraded();
     }
 }

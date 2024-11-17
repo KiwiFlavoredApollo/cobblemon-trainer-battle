@@ -22,7 +22,7 @@ public class InfiniteBattleFactorySession extends BattleFactorySession {
 
     private void updateStreakRecord() {
         int oldStreak = getBattleRecord().getMaximumStreak();
-        int newStreak = getDefeatedTrainersCount();
+        int newStreak = getStreak();
 
         if (newStreak > oldStreak) {
             getBattleRecord().setMaximumStreak(newStreak);

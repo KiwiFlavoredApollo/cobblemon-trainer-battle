@@ -47,14 +47,14 @@ public class FlatGroupBattleParticipantFactory implements SessionBattleParticipa
         @Override
         public FlatBattleTrainer create(Session session) {
             try {
-                return new FlatBattleTrainer(getNextTrainer(session.getDefeatedTrainersCount()), player, LEVEL);
+                return new FlatBattleTrainer(getNextTrainer(session.getStreak()), player, LEVEL);
             } catch (IndexOutOfBoundsException e) {
                 throw new AllTrainerDefeatedException(e);
             }
         }
 
-        private Identifier getNextTrainer(int round) {
-            return trainers.get(round);
+        private Identifier getNextTrainer(int index) {
+            return trainers.get(index);
         }
     }
 }
