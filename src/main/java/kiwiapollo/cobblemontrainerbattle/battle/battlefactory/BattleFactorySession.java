@@ -251,14 +251,16 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Renta
         }
     }
 
+    private BattleRecord getBattleRecord() {
+        return (BattleRecord) PlayerHistoryManager.get(player.getUuid()).get(Identifier.tryParse("minigame:battlefactory"));
+    }
+
     private void updateVictoryRecord() {
-        BattleRecord record = (BattleRecord) PlayerHistoryManager.get(player.getUuid()).get(Identifier.tryParse("minigame:battlefactory"));
-        record.setVictoryCount(record.getVictoryCount() + 1);
+        getBattleRecord().setVictoryCount(getBattleRecord().getVictoryCount() + 1);
     }
 
     private void updateDefeatRecord() {
-        BattleRecord record = (BattleRecord) PlayerHistoryManager.get(player.getUuid()).get(Identifier.tryParse("minigame:battlefactory"));
-        record.setDefeatCount(record.getDefeatCount() + 1);
+        getBattleRecord().setDefeatCount(getBattleRecord().getDefeatCount() + 1);
     }
 
     // TODO do I need this for NORMAL BattleFactorySession

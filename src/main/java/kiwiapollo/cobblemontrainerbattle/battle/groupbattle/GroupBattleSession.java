@@ -100,14 +100,16 @@ public class GroupBattleSession implements Session {
         }
     }
 
+    private BattleRecord getBattleRecord() {
+        return (BattleRecord) PlayerHistoryManager.get(player.getUuid()).get(group);
+    }
+
     private void updateVictoryRecord() {
-        BattleRecord record = (BattleRecord) PlayerHistoryManager.get(player.getUuid()).get(group);
-        record.setVictoryCount(record.getVictoryCount() + 1);
+        getBattleRecord().setVictoryCount(getBattleRecord().getVictoryCount() + 1);
     }
 
     private void updateDefeatRecord() {
-        BattleRecord record = (BattleRecord) PlayerHistoryManager.get(player.getUuid()).get(group);
-        record.setDefeatCount(record.getDefeatCount() + 1);
+        getBattleRecord().setDefeatCount(getBattleRecord().getDefeatCount() + 1);
     }
 
     @Override
