@@ -21,7 +21,7 @@ public class BattleFactoryWinningStreakCriterion extends AbstractCriterion<Battl
             LootContextPredicate playerPredicate,
             AdvancementEntityPredicateDeserializer predicateDeserializer
     ) {
-        long streak = obj.get("count").getAsLong();
+        int streak = obj.get("count").getAsInt();
         return new BattleFactoryWinningStreakCriterion.Condition(streak);
     }
 
@@ -35,9 +35,9 @@ public class BattleFactoryWinningStreakCriterion extends AbstractCriterion<Battl
     }
 
     public static class Condition extends AbstractCriterionConditions {
-        private final long count;
+        private final int count;
 
-        public Condition(long count) {
+        public Condition(int count) {
             super(ID, LootContextPredicate.EMPTY);
             this.count = count;
         }
