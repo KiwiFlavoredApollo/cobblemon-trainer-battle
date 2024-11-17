@@ -94,6 +94,11 @@
   "advancement.cobblemontrainerbattle.kill_trainer.tenth.title": "Unstoppable",
   "advancement.cobblemontrainerbattle.kill_trainer.tenth.description": "Kill 10 trainers",
 
+  "advancement.cobblemontrainerbattle.battlefactory_winning_streak.first.title": "Birds Don't Just Fly",
+  "advancement.cobblemontrainerbattle.battlefactory_winning_streak.first.description": "Achieve first winning streak in infinite Battle Factory",
+  "advancement.cobblemontrainerbattle.battlefactory_winning_streak.tenth.title": "Hard-Earned Victory",
+  "advancement.cobblemontrainerbattle.battlefactory_winning_streak.tenth.description": "Achieve tenth winning streak in infinite Battle Factory",
+
   "advancement.cobblemontrainerbattle.defeat_leader_brock.title": "So Classic",
   "advancement.cobblemontrainerbattle.defeat_leader_brock.description": "Defeat Brock",
   "advancement.cobblemontrainerbattle.defeat_leader_misty.title": "Yay, Bikinis!",

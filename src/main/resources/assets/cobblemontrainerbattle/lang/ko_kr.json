@@ -94,6 +94,11 @@
   "advancement.cobblemontrainerbattle.kill_trainer.tenth.title": "미쳐 날뛰고 있습니다",
   "advancement.cobblemontrainerbattle.kill_trainer.tenth.description": "트레이너 10명을 죽이세요",
 
+  "advancement.cobblemontrainerbattle.battlefactory_winning_streak.first.title": "천 리 길도 한 걸음부터",
+  "advancement.cobblemontrainerbattle.battlefactory_winning_streak.first.description": "무한 배틀팩토리에서 첫 승을 달성하세요",
+  "advancement.cobblemontrainerbattle.battlefactory_winning_streak.tenth.title": "어렵게 얻은 승리",
+  "advancement.cobblemontrainerbattle.battlefactory_winning_streak.tenth.description": "무한 배틀팩토리에서 연속 10연승을 달성하세요",
+
   "advancement.cobblemontrainerbattle.defeat_leader_brock.title": "웅이는 늘 밥을 해줬어",
   "advancement.cobblemontrainerbattle.defeat_leader_brock.description": "웅이를 이기세요",
   "advancement.cobblemontrainerbattle.defeat_leader_misty.title": "와! 비키니",
