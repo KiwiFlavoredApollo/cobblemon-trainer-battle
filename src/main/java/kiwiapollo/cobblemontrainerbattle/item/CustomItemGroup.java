@@ -21,6 +21,15 @@ public class CustomItemGroup {
         Registry.register(Registries.ITEM_GROUP, ITEM_GROUP_KEY, ITEM_GROUP);
 
         ItemGroupEvents.modifyEntriesEvent(ITEM_GROUP_KEY).register(itemGroup -> {
+            itemGroup.add(MiscItems.TRAINER_SPAWN_EGG);
+
+            itemGroup.add(MiscItems.BLUE_VS_SEEKER);
+            itemGroup.add(MiscItems.RED_VS_SEEKER);
+            itemGroup.add(MiscItems.GREEN_VS_SEEKER);
+            itemGroup.add(MiscItems.PURPLE_VS_SEEKER);
+
+            itemGroup.add(MiscItems.TRAINER_TOKEN);
+
             Arrays.stream(InclementEmeraldTickets.values()).forEach(item -> {
                 itemGroup.add(item.getItem());
             });
@@ -36,15 +45,6 @@ public class CustomItemGroup {
             Arrays.stream(RadicalRedTokens.values()).forEach(item -> {
                 itemGroup.add(item.getItem());
             });
-
-            itemGroup.add(MiscItems.TRAINER_SPAWN_EGG);
-
-            itemGroup.add(MiscItems.BLUE_VS_SEEKER);
-            itemGroup.add(MiscItems.RED_VS_SEEKER);
-            itemGroup.add(MiscItems.GREEN_VS_SEEKER);
-            itemGroup.add(MiscItems.PURPLE_VS_SEEKER);
-
-            itemGroup.add(MiscItems.TRAINER_TOKEN);
         });
     }
 }
