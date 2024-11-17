@@ -3,7 +3,10 @@ package kiwiapollo.cobblemontrainerbattle.battle.groupbattle;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattleStorage;
+import kiwiapollo.cobblemontrainerbattle.parser.history.BattleFactoryRecord;
+import kiwiapollo.cobblemontrainerbattle.parser.history.BattleRecord;
 import kiwiapollo.cobblemontrainerbattle.parser.history.PlayerHistoryManager;
+import kiwiapollo.cobblemontrainerbattle.parser.history.TrainerGroupRecord;
 import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerGroupProfileStorage;
 import kiwiapollo.cobblemontrainerbattle.battle.postbattle.DefeatActionSetHandler;
 import kiwiapollo.cobblemontrainerbattle.battle.postbattle.VictoryActionSetHandler;
@@ -90,11 +93,21 @@ public class GroupBattleSession implements Session {
     public void onSessionStop() {
         if (isAllTrainerDefeated()) {
             sessionVictoryHandler.run();
-            PlayerHistoryManager.get(player.getUuid()).addPlayerVictory(group);
+            updateVictoryRecord();
         } else {
             sessionDefeatHandler.run();
-            PlayerHistoryManager.get(player.getUuid()).addPlayerDefeat(group);
+            updateDefeatRecord();
         }
+    }
+
+    private void updateVictoryRecord() {
+        BattleRecord record = (BattleRecord) PlayerHistoryManager.get(player.getUuid()).get(group);
+        record.setVictoryCount(record.getVictoryCount() + 1);
+    }
+
+    private void updateDefeatRecord() {
+        BattleRecord record = (BattleRecord) PlayerHistoryManager.get(player.getUuid()).get(group);
+        record.setDefeatCount(record.getDefeatCount() + 1);
     }
 
     @Override

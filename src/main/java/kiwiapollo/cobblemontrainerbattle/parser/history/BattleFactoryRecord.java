@@ -4,17 +4,17 @@ import net.minecraft.nbt.NbtCompound;
 
 import java.time.Instant;
 
-public class TrainerRecord implements PlayerHistoryRecord, BattleRecord, EntityRecord {
+public class BattleFactoryRecord implements PlayerHistoryRecord, BattleRecord, MaximumStreakRecord {
     private Instant timestamp;
+    private int streak;
     private int victory;
     private int defeat;
-    private int kill;
 
-    public TrainerRecord() {
+    public BattleFactoryRecord() {
         this.timestamp = Instant.now();
+        this.streak = 0;
         this.victory = 0;
         this.defeat = 0;
-        this.kill = 0;
     }
 
     @Override
@@ -38,13 +38,13 @@ public class TrainerRecord implements PlayerHistoryRecord, BattleRecord, EntityR
     }
 
     @Override
-    public int getKillCount() {
-        return kill;
+    public int getMaximumStreak() {
+        return streak;
     }
 
     @Override
-    public void setKillCount(int count) {
-        kill = count;
+    public void setMaximumStreak(int count) {
+        streak = count;
     }
 
     @Override
@@ -55,19 +55,19 @@ public class TrainerRecord implements PlayerHistoryRecord, BattleRecord, EntityR
     @Override
     public NbtCompound writeToNbt(NbtCompound nbt) {
         nbt.putLong("timestamp", timestamp.toEpochMilli());
+        nbt.putInt("streak", streak);
         nbt.putInt("victory", victory);
         nbt.putInt("defeat", defeat);
-        nbt.putInt("kill", kill);
 
         return nbt;
     }
 
     @Override
-    public TrainerRecord readFromNbt(NbtCompound nbt) {
+    public BattleFactoryRecord readFromNbt(NbtCompound nbt) {
         timestamp = Instant.ofEpochMilli(nbt.getLong("timestamp"));
+        streak = nbt.getInt("streak");
         victory = nbt.getInt("victory");
         defeat = nbt.getInt("defeat");
-        kill = nbt.getInt("kill");
 
         return this;
     }

@@ -4,17 +4,15 @@ import net.minecraft.nbt.NbtCompound;
 
 import java.time.Instant;
 
-public class TrainerRecord implements PlayerHistoryRecord, BattleRecord, EntityRecord {
-    private Instant timestamp;
+public class TrainerGroupRecord implements PlayerHistoryRecord, BattleRecord {
     private int victory;
     private int defeat;
-    private int kill;
+    private Instant timestamp;
 
-    public TrainerRecord() {
-        this.timestamp = Instant.now();
+    public TrainerGroupRecord() {
         this.victory = 0;
         this.defeat = 0;
-        this.kill = 0;
+        this.timestamp = Instant.now();
     }
 
     @Override
@@ -38,16 +36,6 @@ public class TrainerRecord implements PlayerHistoryRecord, BattleRecord, EntityR
     }
 
     @Override
-    public int getKillCount() {
-        return kill;
-    }
-
-    @Override
-    public void setKillCount(int count) {
-        kill = count;
-    }
-
-    @Override
     public void updateTimestamp() {
         timestamp = Instant.now();
     }
@@ -57,17 +45,15 @@ public class TrainerRecord implements PlayerHistoryRecord, BattleRecord, EntityR
         nbt.putLong("timestamp", timestamp.toEpochMilli());
         nbt.putInt("victory", victory);
         nbt.putInt("defeat", defeat);
-        nbt.putInt("kill", kill);
 
         return nbt;
     }
 
     @Override
-    public TrainerRecord readFromNbt(NbtCompound nbt) {
+    public TrainerGroupRecord readFromNbt(NbtCompound nbt) {
         timestamp = Instant.ofEpochMilli(nbt.getLong("timestamp"));
         victory = nbt.getInt("victory");
         defeat = nbt.getInt("defeat");
-        kill = nbt.getInt("kill");
 
         return this;
     }

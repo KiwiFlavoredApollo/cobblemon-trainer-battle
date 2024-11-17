@@ -1,132 +1,86 @@
 package kiwiapollo.cobblemontrainerbattle.parser.history;
 
+import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.Identifier;
 
-import java.time.Instant;
 import java.util.*;
 
 public class PlayerHistory {
-
-    private final Map<Identifier, TrainerRecord> trainerRecordRegistry;
+    private final Map<Identifier, PlayerHistoryRecord> records;
 
     public PlayerHistory() {
-        trainerRecordRegistry = new HashMap<>();
+        this.records = new HashMap<>();
     }
 
-    public void addPlayerVictory(Identifier opponent) {
-        TrainerRecord record = getPlayerBattleRecord(opponent);
-
-        record.victory += 1;
-        record.timestamp = Instant.now();
-
-        trainerRecordRegistry.put(opponent, record);
-    }
-
-    public void addPlayerDefeat(Identifier opponent) {
-        TrainerRecord record = getPlayerBattleRecord(opponent);
-
-        record.defeat += 1;
-        record.timestamp = Instant.now();
-
-        trainerRecordRegistry.put(opponent, record);
-    }
-
-    public void addPlayerKill(Identifier opponent) {
-        TrainerRecord record = getPlayerBattleRecord(opponent);
-
-        record.kill += 1;
-        record.timestamp = Instant.now();
-
-        trainerRecordRegistry.put(opponent, record);
-    }
-
-    private TrainerRecord getPlayerBattleRecord(Identifier opponent) {
-        if (trainerRecordRegistry.containsKey(opponent)) {
-            return trainerRecordRegistry.get(opponent);
-        } else {
-            return new TrainerRecord();
+    public PlayerHistoryRecord get(Identifier identifier) {
+        if (!records.containsKey(identifier)) {
+            records.put(identifier, createPlayerHistoryRecord(identifier.toString()));
         }
+
+        return records.get(identifier);
     }
 
-    public boolean isOpponentDefeated(Identifier opponent) {
-        if (!trainerRecordRegistry.containsKey(opponent)) {
-            return false;
-        } else {
-            return trainerRecordRegistry.get(opponent).victory > 0;
-        }
+    public void put(Identifier identifier, PlayerHistoryRecord record) {
+        records.put(identifier, record);
     }
 
-    public int getTrainerVictoryCount(Identifier trainer) {
-        try {
-            return trainerRecordRegistry.get(trainer).victory;
-        } catch (NullPointerException | ClassCastException e) {
-            return 0;
-        }
+    public void remove(Identifier identifier) {
+        records.remove(identifier);
     }
 
-    public int getTrainerKillCount(Identifier trainer) {
-        try {
-            return trainerRecordRegistry.get(trainer).kill;
-        } catch (NullPointerException | ClassCastException e) {
-            return 0;
-        }
+    public int getTotalTrainerVictoryCount() {
+        return records.values().stream()
+                .filter(record -> record instanceof TrainerRecord)
+                .map(record -> (TrainerRecord) record)
+                .map(TrainerRecord::getVictoryCount)
+                .reduce(Integer::sum).orElse(0);
     }
 
-    public int getTotalVictoryCount() {
-        return trainerRecordRegistry.values().stream().map(record -> record.victory).reduce(Integer::sum).orElse(0);
-    }
-
-    public int getTotalKillCount() {
-        return trainerRecordRegistry.values().stream().map(record -> record.kill).reduce(Integer::sum).orElse(0);
-    }
-
-    private void put(Identifier identifier, TrainerRecord record) {
-        trainerRecordRegistry.put(identifier, record);
-    }
-
-    public void remove(Identifier opponent) {
-        trainerRecordRegistry.remove(opponent);
+    public int getTotalTrainerKillCount() {
+        return records.values().stream()
+                .filter(record -> record instanceof EntityRecord)
+                .map(record -> (EntityRecord) record)
+                .map(EntityRecord::getKillCount)
+                .reduce(Integer::sum).orElse(0);
     }
 
     public NbtCompound writeToNbt(NbtCompound nbt) {
-        for (Map.Entry<Identifier, TrainerRecord> recordEntry: trainerRecordRegistry.entrySet()) {
-            Identifier trainer = recordEntry.getKey();
-            TrainerRecord record = recordEntry.getValue();
+        for (Map.Entry<Identifier, ? extends PlayerHistoryRecord> recordEntry: records.entrySet()) {
+            Identifier identifier = recordEntry.getKey();
+            PlayerHistoryRecord record = recordEntry.getValue();
 
-            nbt.put(trainer.toString(), writeTrainerBattleRecordToNbt(record));
+            nbt.put(identifier.toString(), record.writeToNbt(new NbtCompound()));
         }
-        return nbt;
-    }
-
-    private NbtCompound writeTrainerBattleRecordToNbt(TrainerRecord record) {
-        NbtCompound nbt = new NbtCompound();
-
-        nbt.putLong("timestamp", record.timestamp.toEpochMilli());
-        nbt.putInt("victory", record.victory);
-        nbt.putInt("defeat", record.defeat);
-        nbt.putInt("kill", record.kill);
-
         return nbt;
     }
 
     public static PlayerHistory readFromNbt(NbtCompound nbt) {
         PlayerHistory history = new PlayerHistory();
-        for (String opponent : nbt.getKeys()) {
-            history.put(
-                    new Identifier(opponent),
-                    readTrainerBattleRecordFromNbt(nbt.getCompound(opponent))
-            );
+        for (String identifier : nbt.getKeys()) {
+            try {
+                NbtCompound record = nbt.getCompound(identifier);
+                history.get(Identifier.tryParse(identifier)).readFromNbt(record);
+
+            } catch (IllegalArgumentException ignored) {
+                CobblemonTrainerBattle.LOGGER.error("");
+            }
         }
         return history;
     }
 
-    private static TrainerRecord readTrainerBattleRecordFromNbt(NbtCompound nbt) {
-        return new TrainerRecord(
-                Instant.ofEpochMilli(nbt.getLong("timestamp")),
-                nbt.getInt("victory"),
-                nbt.getInt("defeat"),
-                nbt.getInt("kill")
-        );
+    private static PlayerHistoryRecord createPlayerHistoryRecord(String identifier) {
+        if (identifier.matches("^trainer:.+")) {
+            return new TrainerRecord();
+
+        } else if (identifier.matches("^group:.+")) {
+            return new TrainerGroupRecord();
+
+        } else if (identifier.equals("minigame:battlefactory")) {
+            return new BattleFactoryRecord();
+
+        } else {
+            throw new IllegalArgumentException();
+        }
     }
 }

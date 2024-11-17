@@ -2,6 +2,7 @@ package kiwiapollo.cobblemontrainerbattle.advancement;
 
 import com.google.gson.JsonObject;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.parser.history.BattleRecord;
 import kiwiapollo.cobblemontrainerbattle.parser.history.PlayerHistoryManager;
 import net.minecraft.advancement.criterion.AbstractCriterion;
 import net.minecraft.advancement.criterion.AbstractCriterionConditions;
@@ -89,17 +90,17 @@ public class DefeatTrainerCriterion extends AbstractCriterion<DefeatTrainerCrite
 
         private boolean testTotalVictoryCount(ServerPlayerEntity player) {
             try {
-                return count <= PlayerHistoryManager.get(player.getUuid()).getTotalVictoryCount();
+                return count <= PlayerHistoryManager.get(player.getUuid()).getTotalTrainerVictoryCount();
             } catch (NullPointerException e) {
-                return 0 < PlayerHistoryManager.get(player.getUuid()).getTotalVictoryCount();
+                return 0 < PlayerHistoryManager.get(player.getUuid()).getTotalTrainerVictoryCount();
             }
         }
 
         private boolean testTrainerVictoryCount(ServerPlayerEntity player) {
             try {
-                return count <= PlayerHistoryManager.get(player.getUuid()).getTrainerVictoryCount(trainer);
+                return count <= ((BattleRecord) PlayerHistoryManager.get(player.getUuid()).get(trainer)).getVictoryCount();
             } catch (NullPointerException e) {
-                return 0 < PlayerHistoryManager.get(player.getUuid()).getTrainerVictoryCount(trainer);
+                return 0 < ((BattleRecord) PlayerHistoryManager.get(player.getUuid()).get(trainer)).getVictoryCount();
             }
         }
     }

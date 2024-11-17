@@ -13,6 +13,9 @@ import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer.Battle
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer.TrainerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.*;
 import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerFactory;
+import kiwiapollo.cobblemontrainerbattle.parser.history.BattleRecord;
+import kiwiapollo.cobblemontrainerbattle.parser.history.PlayerHistoryManager;
+import kiwiapollo.cobblemontrainerbattle.parser.history.MaximumStreakRecord;
 import kiwiapollo.cobblemontrainerbattle.parser.profile.MiniGameProfileStorage;
 import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerProfileStorage;
 import kiwiapollo.cobblemontrainerbattle.battle.postbattle.DefeatActionSetHandler;
@@ -240,8 +243,33 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Renta
     public void onSessionStop() {
         if (isAllTrainerDefeated()) {
             sessionVictoryHandler.run();
+            updateVictoryRecord();
+
         } else {
             sessionDefeatHandler.run();
+            updateDefeatRecord();
+        }
+    }
+
+    private void updateVictoryRecord() {
+        BattleRecord record = (BattleRecord) PlayerHistoryManager.get(player.getUuid()).get(Identifier.tryParse("minigame:battlefactory"));
+        record.setVictoryCount(record.getVictoryCount() + 1);
+    }
+
+    private void updateDefeatRecord() {
+        BattleRecord record = (BattleRecord) PlayerHistoryManager.get(player.getUuid()).get(Identifier.tryParse("minigame:battlefactory"));
+        record.setDefeatCount(record.getDefeatCount() + 1);
+    }
+
+    // TODO do I need this for NORMAL BattleFactorySession
+    private void updateStreakRecord() {
+        MaximumStreakRecord record = (MaximumStreakRecord) PlayerHistoryManager.get(player.getUuid()).get(Identifier.tryParse("minigame:battlefactory"));
+
+        int oldStreak = record.getMaximumStreak();
+        int newStreak = getDefeatedTrainersCount();
+
+        if (newStreak > oldStreak) {
+            record.setMaximumStreak(newStreak);
         }
     }
 

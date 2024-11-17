@@ -2,6 +2,7 @@ package kiwiapollo.cobblemontrainerbattle.advancement;
 
 import com.google.gson.JsonObject;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.parser.history.EntityRecord;
 import kiwiapollo.cobblemontrainerbattle.parser.history.PlayerHistoryManager;
 import net.minecraft.advancement.criterion.AbstractCriterion;
 import net.minecraft.advancement.criterion.AbstractCriterionConditions;
@@ -89,17 +90,17 @@ public class KillTrainerCriterion extends AbstractCriterion<KillTrainerCriterion
 
         private boolean testTotalKillCount(ServerPlayerEntity player) {
             try {
-                return count <= PlayerHistoryManager.get(player.getUuid()).getTotalKillCount();
+                return count <= PlayerHistoryManager.get(player.getUuid()).getTotalTrainerKillCount();
             } catch (NullPointerException e) {
-                return 0 < PlayerHistoryManager.get(player.getUuid()).getTotalKillCount();
+                return 0 < PlayerHistoryManager.get(player.getUuid()).getTotalTrainerKillCount();
             }
         }
 
         private boolean testTrainerKillCount(ServerPlayerEntity player) {
             try {
-                return count <= PlayerHistoryManager.get(player.getUuid()).getTrainerKillCount(trainer);
+                return count <= ((EntityRecord) PlayerHistoryManager.get(player.getUuid()).get(trainer)).getKillCount();
             } catch (NullPointerException e) {
-                return 0 < PlayerHistoryManager.get(player.getUuid()).getTrainerKillCount(trainer);
+                return 0 < ((EntityRecord) PlayerHistoryManager.get(player.getUuid()).get(trainer)).getKillCount();
             }
         }
     }

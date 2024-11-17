@@ -6,6 +6,7 @@ import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.RecordedTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattleStorage;
+import kiwiapollo.cobblemontrainerbattle.parser.history.EntityRecord;
 import kiwiapollo.cobblemontrainerbattle.parser.history.PlayerHistoryManager;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.standalone.EntityBackedTrainerBattle;
@@ -152,7 +153,8 @@ public class TrainerEntity extends PathAwareEntity {
     @Override
     public void onDeath(DamageSource damageSource) {
         if (damageSource.getSource() instanceof ServerPlayerEntity player) {
-            PlayerHistoryManager.get(player.getUuid()).addPlayerKill(trainer);
+            EntityRecord record = (EntityRecord) PlayerHistoryManager.get(player.getUuid()).get(trainer);
+            record.setKillCount(record.getKillCount() + 1);
             CustomCriteria.KILL_TRAINER_CRITERION.trigger(player);
         }
 
