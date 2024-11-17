@@ -1,9 +1,9 @@
 package kiwiapollo.cobblemontrainerbattle.battle.groupbattle;
 
+import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.factory.FlatGroupBattleParticipantFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.*;
 import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerGroupProfileStorage;
-import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.session.SessionFlatTrainerBattle;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
@@ -13,7 +13,7 @@ public class FlatGroupBattleSession extends GroupBattleSession {
     private final List<MessagePredicate<PlayerBattleParticipant>> predicates;
 
     public FlatGroupBattleSession(ServerPlayerEntity player, Identifier group) {
-        super(player, group, SessionFlatTrainerBattle::new);
+        super(player, group, new FlatGroupBattleParticipantFactory(group, player));
 
         TrainerGroupProfile profile = TrainerGroupProfileStorage.getProfileRegistry().get(group);
         this.predicates = List.of(

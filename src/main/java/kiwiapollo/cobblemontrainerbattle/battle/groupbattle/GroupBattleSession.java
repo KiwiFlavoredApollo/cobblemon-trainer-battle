@@ -1,12 +1,12 @@
 package kiwiapollo.cobblemontrainerbattle.battle.groupbattle;
 
+import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.factory.SessionBattleParticipantFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattleStorage;
-import kiwiapollo.cobblemontrainerbattle.parser.history.BattleFactoryRecord;
+import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.session.SessionTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.parser.history.BattleRecord;
 import kiwiapollo.cobblemontrainerbattle.parser.history.PlayerHistoryManager;
-import kiwiapollo.cobblemontrainerbattle.parser.history.TrainerGroupRecord;
 import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerGroupProfileStorage;
 import kiwiapollo.cobblemontrainerbattle.battle.postbattle.DefeatActionSetHandler;
 import kiwiapollo.cobblemontrainerbattle.battle.postbattle.VictoryActionSetHandler;
@@ -15,7 +15,6 @@ import kiwiapollo.cobblemontrainerbattle.battle.predicates.MessagePredicate;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.PlayerNotDefeatedPredicate;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.battle.session.Session;
-import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.session.SessionTrainerBattleFactory;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Formatting;
@@ -27,9 +26,8 @@ import java.util.Optional;
 public class GroupBattleSession implements Session {
     private final ServerPlayerEntity player;
     private final Identifier group;
-    private final SessionTrainerBattleFactory factory;
+    private final SessionBattleParticipantFactory factory;
 
-    private final List<Identifier> trainersToDefeat;
     private final VictoryActionSetHandler sessionVictoryHandler;
     private final DefeatActionSetHandler sessionDefeatHandler;
     private final SoundEvent battleTheme;
@@ -38,13 +36,12 @@ public class GroupBattleSession implements Session {
     private int defeatedTrainersCount;
     private boolean isPlayerDefeated;
 
-    public GroupBattleSession(ServerPlayerEntity player, Identifier group, SessionTrainerBattleFactory factory) {
+    public GroupBattleSession(ServerPlayerEntity player, Identifier group, SessionBattleParticipantFactory factory) {
         this.player = player;
         this.group = group;
         this.factory = factory;
 
         TrainerGroupProfile profile = TrainerGroupProfileStorage.getProfileRegistry().get(group);
-        this.trainersToDefeat = profile.trainers.stream().map(Identifier::tryParse).toList();
         this.sessionVictoryHandler = new VictoryActionSetHandler(player, profile.onVictory);
         this.sessionDefeatHandler = new DefeatActionSetHandler(player, profile.onDefeat);
         this.battleTheme = profile.battleTheme;
@@ -67,16 +64,16 @@ public class GroupBattleSession implements Session {
             }
         }
 
-        TrainerBattle trainerBattle = factory.create(player, getNextTrainer(), this);
+        TrainerBattle trainerBattle = new SessionTrainerBattle(
+                factory.createPlayer(this),
+                factory.createTrainer(this),
+                this
+        );
         trainerBattle.start();
 
         TrainerBattleStorage.getTrainerBattleRegistry().put(player.getUuid(), trainerBattle);
 
         this.lastTrainerBattle = trainerBattle;
-    }
-
-    private Identifier getNextTrainer() {
-        return trainersToDefeat.get(defeatedTrainersCount);
     }
 
     @Override
@@ -129,7 +126,13 @@ public class GroupBattleSession implements Session {
 
     @Override
     public boolean isAllTrainerDefeated() {
-        return trainersToDefeat.size() == defeatedTrainersCount;
+        try {
+            factory.createTrainer(this);
+            return false;
+
+        } catch (IllegalStateException e ) {
+            return true;
+        }
     }
 
     @Override

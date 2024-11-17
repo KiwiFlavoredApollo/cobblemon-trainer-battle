@@ -17,7 +17,7 @@ public interface Session {
 
     void onSessionStop();
 
-    int getDefeatedTrainersCount();
+    int getDefeatedTrainersCount(); // TODO rename it getRoundCount()
 
     List<MessagePredicate<PlayerBattleParticipant>> getBattlePredicates();
 
