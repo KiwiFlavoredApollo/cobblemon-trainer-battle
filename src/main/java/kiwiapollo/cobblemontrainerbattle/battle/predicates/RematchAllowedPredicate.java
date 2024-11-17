@@ -7,7 +7,6 @@ import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
-// TODO rename, BattleAllowedPredicate
 public class RematchAllowedPredicate implements MessagePredicate<PlayerBattleParticipant> {
     private final Identifier opponent;
     private final boolean isRematchAllowed;
