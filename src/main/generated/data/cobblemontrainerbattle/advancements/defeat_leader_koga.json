@@ -3,6 +3,7 @@
   "criteria": {
     "defeat_leader_koga": {
       "conditions": {
+        "count": 1,
         "trainer": "trainer:entity/leader_koga"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"

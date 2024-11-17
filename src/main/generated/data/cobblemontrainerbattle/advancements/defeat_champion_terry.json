@@ -3,6 +3,7 @@
   "criteria": {
     "defeat_champion_terry": {
       "conditions": {
+        "count": 1,
         "trainer": "trainer:entity/champion_terry"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"

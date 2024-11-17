@@ -3,6 +3,7 @@
   "criteria": {
     "defeat_elite_lance": {
       "conditions": {
+        "count": 1,
         "trainer": "trainer:entity/elite_lance"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"

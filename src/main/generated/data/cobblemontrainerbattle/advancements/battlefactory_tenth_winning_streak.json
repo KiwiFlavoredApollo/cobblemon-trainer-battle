@@ -1,0 +1,33 @@
+{
+  "parent": "cobblemontrainerbattle:battlefactory_first_winning_streak",
+  "criteria": {
+    "battlefactory_tenth_winning_streak": {
+      "conditions": {
+        "count": 2
+      },
+      "trigger": "cobblemontrainerbattle:battlefactory_winning_streak"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.battlefactory_winning_streak.tenth.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "cobblemon:blue_apricorn"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.battlefactory_winning_streak.tenth.title"
+    }
+  },
+  "requirements": [
+    [
+      "battlefactory_tenth_winning_streak"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

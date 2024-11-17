@@ -3,6 +3,7 @@
   "criteria": {
     "defeat_leader_sabrina": {
       "conditions": {
+        "count": 1,
         "trainer": "trainer:entity/leader_sabrina"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"

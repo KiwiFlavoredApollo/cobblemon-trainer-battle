@@ -3,6 +3,7 @@
   "criteria": {
     "defeat_leader_flannery": {
       "conditions": {
+        "count": 1,
         "trainer": "trainer:entity/leader_flannery"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"

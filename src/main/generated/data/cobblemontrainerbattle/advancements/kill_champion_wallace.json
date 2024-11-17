@@ -3,6 +3,7 @@
   "criteria": {
     "kill_champion_wallace": {
       "conditions": {
+        "count": 1,
         "trainer": "trainer:entity/champion_wallace"
       },
       "trigger": "cobblemontrainerbattle:kill_trainer"

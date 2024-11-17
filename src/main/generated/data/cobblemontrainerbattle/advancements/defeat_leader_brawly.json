@@ -3,6 +3,7 @@
   "criteria": {
     "defeat_leader_brawly": {
       "conditions": {
+        "count": 1,
         "trainer": "trainer:entity/leader_brawly"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"

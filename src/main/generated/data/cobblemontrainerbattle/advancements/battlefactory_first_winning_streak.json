@@ -1,33 +1,32 @@
 {
   "parent": "cobblemontrainerbattle:root",
   "criteria": {
-    "defeat_leader_falkner": {
+    "battlefactory_first_winning_streak": {
       "conditions": {
-        "count": 1,
-        "trainer": "trainer:entity/leader_falkner"
+        "count": 1
       },
-      "trigger": "cobblemontrainerbattle:defeat_trainer"
+      "trigger": "cobblemontrainerbattle:battlefactory_winning_streak"
     }
   },
   "display": {
     "announce_to_chat": true,
     "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
     "description": {
-      "translate": "advancement.cobblemontrainerbattle.defeat_leader_falkner.description"
+      "translate": "advancement.cobblemontrainerbattle.battlefactory_winning_streak.first.description"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "cobblemontrainerbattle:leader_falkner_token"
+      "item": "cobblemon:red_apricorn"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.cobblemontrainerbattle.defeat_leader_falkner.title"
+      "translate": "advancement.cobblemontrainerbattle.battlefactory_winning_streak.first.title"
     }
   },
   "requirements": [
     [
-      "defeat_leader_falkner"
+      "battlefactory_first_winning_streak"
     ]
   ],
   "sends_telemetry_event": false
