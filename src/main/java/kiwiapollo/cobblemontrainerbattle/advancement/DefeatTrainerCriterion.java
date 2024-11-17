@@ -3,6 +3,7 @@ package kiwiapollo.cobblemontrainerbattle.advancement;
 import com.google.gson.JsonObject;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.parser.history.BattleRecord;
+import kiwiapollo.cobblemontrainerbattle.parser.history.EntityRecord;
 import kiwiapollo.cobblemontrainerbattle.parser.history.PlayerHistoryManager;
 import net.minecraft.advancement.criterion.AbstractCriterion;
 import net.minecraft.advancement.criterion.AbstractCriterionConditions;
@@ -16,6 +17,7 @@ import java.util.Objects;
 
 public class DefeatTrainerCriterion extends AbstractCriterion<DefeatTrainerCriterion.Conditions> {
     private static final Identifier ID = Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_trainer");
+    private static final int ONE = 1;
 
     @Override
     public Identifier getId() {
@@ -23,43 +25,68 @@ public class DefeatTrainerCriterion extends AbstractCriterion<DefeatTrainerCrite
     }
 
     @Override
-    protected Conditions conditionsFromJson(
+    protected DefeatTrainerCriterion.Conditions conditionsFromJson(
             JsonObject obj,
             LootContextPredicate playerPredicate,
             AdvancementEntityPredicateDeserializer predicateDeserializer
     ) {
-        Identifier trainer = null;
-        if (obj.has("trainer")) {
-            trainer = Identifier.tryParse(obj.get("trainer").getAsString());
-        }
+        if (isTrainerConditionExist(obj)) {
+            return new DefeatTrainerCriterion.TrainerCountConditions(getTrainerCondition(obj), getCountCondition(obj));
 
-        Integer count = null;
-        if (obj.has("count")) {
-            count = obj.get("count").getAsInt();
+        } else {
+            return new DefeatTrainerCriterion.TotalCountConditions(getCountCondition(obj));
         }
+    }
 
-        return new DefeatTrainerCriterion.Conditions(trainer, count);
+    private boolean isTrainerConditionExist(JsonObject obj) {
+        return obj.has("trainer");
+    }
+
+    private Identifier getTrainerCondition(JsonObject obj) {
+        return Identifier.tryParse(obj.get("trainer").getAsString());
+    }
+
+    private int getCountCondition(JsonObject obj) {
+        return obj.has("count") ? obj.get("count").getAsInt() : ONE;
     }
 
     public void trigger(ServerPlayerEntity player) {
         trigger(player, conditions -> conditions.test(player));
     }
 
-    public static class Conditions extends AbstractCriterionConditions {
-        private final Identifier trainer;
-        private final Integer count;
+    public static class TotalCountConditions extends DefeatTrainerCriterion.Conditions {
+        private final int count;
 
-        public Conditions(Identifier trainer) {
-            this(trainer, null);
-        }
-
-        public Conditions(Integer count) {
-            this(null, count);
-        }
-
-        public Conditions(Identifier trainer, Integer count) {
+        public TotalCountConditions(int count) {
             super(ID, LootContextPredicate.EMPTY);
+            this.count = count;
+        }
 
+        @Override
+        public JsonObject toJson(AdvancementEntityPredicateSerializer predicateSerializer) {
+            JsonObject jsonObject = new JsonObject();
+
+            jsonObject.addProperty("count", count);
+
+            return jsonObject;
+        }
+
+        boolean test(ServerPlayerEntity player) {
+            int total = PlayerHistoryManager.get(player.getUuid()).getTotalTrainerVictoryCount();
+            return total >= count;
+        }
+    }
+
+    public static class TrainerCountConditions extends DefeatTrainerCriterion.Conditions {
+        private final Identifier trainer;
+        private final int count;
+
+        public TrainerCountConditions(Identifier trainer) {
+            this(trainer, ONE);
+        }
+
+        public TrainerCountConditions(Identifier trainer, int count) {
+            super(ID, LootContextPredicate.EMPTY);
             this.trainer = trainer;
             this.count = count;
         }
@@ -68,40 +95,23 @@ public class DefeatTrainerCriterion extends AbstractCriterion<DefeatTrainerCrite
         public JsonObject toJson(AdvancementEntityPredicateSerializer predicateSerializer) {
             JsonObject jsonObject = new JsonObject();
 
-            if (Objects.nonNull(trainer)) {
-                jsonObject.addProperty("trainer", trainer.toString());
-            }
-
-            if (Objects.nonNull(count)) {
-                jsonObject.addProperty("count", count);
-            }
+            jsonObject.addProperty("trainer", trainer.toString());
+            jsonObject.addProperty("count", count);
 
             return jsonObject;
         }
 
         boolean test(ServerPlayerEntity player) {
-            if (Objects.isNull(trainer)) {
-                return testTotalVictoryCount(player);
+            int record = ((BattleRecord) PlayerHistoryManager.get(player.getUuid()).get(trainer)).getVictoryCount();
+            return record >= count;
+        }
+    }
 
-            } else {
-                return testTrainerVictoryCount(player);
-            }
+    public static abstract class Conditions extends AbstractCriterionConditions {
+        public Conditions(Identifier id, LootContextPredicate entity) {
+            super(id, entity);
         }
 
-        private boolean testTotalVictoryCount(ServerPlayerEntity player) {
-            try {
-                return count <= PlayerHistoryManager.get(player.getUuid()).getTotalTrainerVictoryCount();
-            } catch (NullPointerException e) {
-                return 0 < PlayerHistoryManager.get(player.getUuid()).getTotalTrainerVictoryCount();
-            }
-        }
-
-        private boolean testTrainerVictoryCount(ServerPlayerEntity player) {
-            try {
-                return count <= ((BattleRecord) PlayerHistoryManager.get(player.getUuid()).get(trainer)).getVictoryCount();
-            } catch (NullPointerException e) {
-                return 0 < ((BattleRecord) PlayerHistoryManager.get(player.getUuid()).get(trainer)).getVictoryCount();
-            }
-        }
+        abstract boolean test(ServerPlayerEntity player);
     }
 }
