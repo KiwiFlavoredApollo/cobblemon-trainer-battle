@@ -8,10 +8,8 @@ import net.minecraft.advancement.AdvancementFrame;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
-import java.util.List;
-
-public class DefeatTrainerAdvancementFactory implements AdvancementFactory {
-    private static final Advancement DEFEAT_FIRST = Advancement.Builder.createUntelemetered()
+public enum DefeatTrainerAdvancements implements CustomAdvancements {
+    DEFEAT_FIRST(Advancement.Builder.createUntelemetered()
             .parent(DataGenerator.AdvancementProvider.ROOT)
             .criterion("defeat_first_trainer", new DefeatTrainerCriterion.TotalCountConditions(1))
             .display(
@@ -24,10 +22,10 @@ public class DefeatTrainerAdvancementFactory implements AdvancementFactory {
                     true,
                     false
             )
-            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_first_trainer"));
+            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_first_trainer"))),
 
-    private static final Advancement DEFEAT_TENTH = Advancement.Builder.createUntelemetered()
-            .parent(DEFEAT_FIRST)
+    DEFEAT_TENTH(Advancement.Builder.createUntelemetered()
+            .parent(DefeatTrainerAdvancements.DEFEAT_FIRST.getAdvancement())
             .criterion("defeat_tenth_trainer", new DefeatTrainerCriterion.TotalCountConditions(10))
             .display(
                     CobblemonItems.GREAT_BALL,
@@ -39,17 +37,16 @@ public class DefeatTrainerAdvancementFactory implements AdvancementFactory {
                     true,
                     false
             )
-            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_tenth_trainer"));
+            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_tenth_trainer")));
 
-    public DefeatTrainerAdvancementFactory() {
+    private final Advancement advancement;
 
+    DefeatTrainerAdvancements(Advancement advancement) {
+        this.advancement = advancement;
     }
 
     @Override
-    public List<Advancement> create() {
-        return List.of(
-                DEFEAT_FIRST,
-                DEFEAT_TENTH
-        );
+    public Advancement getAdvancement() {
+        return advancement;
     }
 }

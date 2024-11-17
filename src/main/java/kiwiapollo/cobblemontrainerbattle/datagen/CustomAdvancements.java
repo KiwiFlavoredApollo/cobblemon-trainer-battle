@@ -2,8 +2,6 @@ package kiwiapollo.cobblemontrainerbattle.datagen;
 
 import net.minecraft.advancement.Advancement;
 
-import java.util.List;
-
-public interface AdvancementFactory {
-    List<Advancement> create();
+public interface CustomAdvancements {
+    Advancement getAdvancement();
 }

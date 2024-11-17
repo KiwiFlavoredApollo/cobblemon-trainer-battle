@@ -13,8 +13,8 @@ import net.minecraft.util.Identifier;
 
 import java.util.List;
 
-public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
-    private static final Advancement DEFEAT_ROXANNE = Advancement.Builder.createUntelemetered()
+public enum InclementEmeraldAdvancements implements CustomAdvancements {
+    DEFEAT_ROXANNE(Advancement.Builder.createUntelemetered()
             .parent(DataGenerator.AdvancementProvider.ROOT)
             .criterion("defeat_leader_roxanne", new DefeatTrainerCriterion.TrainerCountConditions(InclementEmeraldPresets.LEADER_ROXANNE.trainer()))
             .display(
@@ -27,10 +27,10 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
                     true,
                     false
             )
-            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_leader_roxanne"));
+            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_leader_roxanne"))),
 
-    private static final Advancement DEFEAT_BRAWLY = Advancement.Builder.createUntelemetered()
-            .parent(DEFEAT_ROXANNE)
+    DEFEAT_BRAWLY(Advancement.Builder.createUntelemetered()
+            .parent(InclementEmeraldAdvancements.DEFEAT_ROXANNE.getAdvancement())
             .criterion("defeat_leader_brawly", new DefeatTrainerCriterion.TrainerCountConditions(InclementEmeraldPresets.LEADER_BRAWLY.trainer()))
             .display(
                     InclementEmeraldTokens.LEADER_BRAWLY_TOKEN.getItem(),
@@ -42,10 +42,10 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
                     true,
                     false
             )
-            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_leader_brawly"));
+            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_leader_brawly"))),
 
-    private static final Advancement DEFEAT_WATTSON = Advancement.Builder.createUntelemetered()
-            .parent(DEFEAT_BRAWLY)
+    DEFEAT_WATTSON(Advancement.Builder.createUntelemetered()
+            .parent(InclementEmeraldAdvancements.DEFEAT_BRAWLY.getAdvancement())
             .criterion("defeat_leader_wattson", new DefeatTrainerCriterion.TrainerCountConditions(InclementEmeraldPresets.LEADER_WATTSON.trainer()))
             .display(
                     InclementEmeraldTokens.LEADER_WATTSON_TOKEN.getItem(),
@@ -57,10 +57,10 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
                     true,
                     false
             )
-            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_leader_wattson"));
+            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_leader_wattson"))),
 
-    private static final Advancement DEFEAT_FLANNERY = Advancement.Builder.createUntelemetered()
-            .parent(DEFEAT_WATTSON)
+    DEFEAT_FLANNERY(Advancement.Builder.createUntelemetered()
+            .parent(InclementEmeraldAdvancements.DEFEAT_WATTSON.getAdvancement())
             .criterion("defeat_leader_flannery", new DefeatTrainerCriterion.TrainerCountConditions(InclementEmeraldPresets.LEADER_FLANNERY.trainer()))
             .display(
                     InclementEmeraldTokens.LEADER_FLANNERY_TOKEN.getItem(),
@@ -72,10 +72,10 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
                     true,
                     false
             )
-            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_leader_flannery"));
+            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_leader_flannery"))),
 
-    private static final Advancement DEFEAT_NORMAN = Advancement.Builder.createUntelemetered()
-            .parent(DEFEAT_FLANNERY)
+    DEFEAT_NORMAN(Advancement.Builder.createUntelemetered()
+            .parent(InclementEmeraldAdvancements.DEFEAT_FLANNERY.getAdvancement())
             .criterion("defeat_leader_norman", new DefeatTrainerCriterion.TrainerCountConditions(InclementEmeraldPresets.LEADER_NORMAN.trainer()))
             .display(
                     InclementEmeraldTokens.LEADER_NORMAN_TOKEN.getItem(),
@@ -87,10 +87,10 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
                     true,
                     false
             )
-            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_leader_norman"));
+            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_leader_norman"))),
 
-    private static final Advancement DEFEAT_WINONA = Advancement.Builder.createUntelemetered()
-            .parent(DEFEAT_NORMAN)
+    DEFEAT_WINONA(Advancement.Builder.createUntelemetered()
+            .parent(InclementEmeraldAdvancements.DEFEAT_NORMAN.getAdvancement())
             .criterion("defeat_leader_winona", new DefeatTrainerCriterion.TrainerCountConditions(InclementEmeraldPresets.LEADER_WINONA.trainer()))
             .display(
                     InclementEmeraldTokens.LEADER_WINONA_TOKEN.getItem(),
@@ -102,10 +102,10 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
                     true,
                     false
             )
-            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_leader_winona"));
+            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_leader_winona"))),
 
-    private static final Advancement DEFEAT_TATE_AND_LIZA = Advancement.Builder.createUntelemetered()
-            .parent(DEFEAT_WINONA)
+    DEFEAT_TATE_AND_LIZA(Advancement.Builder.createUntelemetered()
+            .parent(InclementEmeraldAdvancements.DEFEAT_WINONA.getAdvancement())
             .criterion("defeat_leader_tate_and_liza", new DefeatTrainerCriterion.TrainerCountConditions(InclementEmeraldPresets.LEADER_TATE_AND_LIZA.trainer()))
             .display(
                     InclementEmeraldTokens.LEADER_TATE_AND_LIZA_TOKEN.getItem(),
@@ -117,10 +117,10 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
                     true,
                     false
             )
-            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_leader_tate_and_liza"));
+            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_leader_tate_and_liza"))),
 
-    private static final Advancement DEFEAT_JUAN = Advancement.Builder.createUntelemetered()
-            .parent(DEFEAT_TATE_AND_LIZA)
+    DEFEAT_JUAN(Advancement.Builder.createUntelemetered()
+            .parent(InclementEmeraldAdvancements.DEFEAT_TATE_AND_LIZA.getAdvancement())
             .criterion("defeat_leader_juan", new DefeatTrainerCriterion.TrainerCountConditions(InclementEmeraldPresets.LEADER_JUAN.trainer()))
             .display(
                     InclementEmeraldTokens.LEADER_JUAN_TOKEN.getItem(),
@@ -132,9 +132,9 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
                     true,
                     false
             )
-            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_leader_juan"));
+            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_leader_juan"))),
 
-    private static final Advancement DEFEAT_SIDNEY = Advancement.Builder.createUntelemetered()
+    DEFEAT_SIDNEY(Advancement.Builder.createUntelemetered()
             .parent(DataGenerator.AdvancementProvider.ROOT)
             .criterion("defeat_elite_sidney", new DefeatTrainerCriterion.TrainerCountConditions(InclementEmeraldPresets.ELITE_SIDNEY.trainer()))
             .display(
@@ -147,10 +147,10 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
                     true,
                     false
             )
-            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_elite_sidney"));
+            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_elite_sidney"))),
 
-    private static final Advancement DEFEAT_PHOEBE = Advancement.Builder.createUntelemetered()
-            .parent(DEFEAT_SIDNEY)
+    DEFEAT_PHOEBE(Advancement.Builder.createUntelemetered()
+            .parent(InclementEmeraldAdvancements.DEFEAT_SIDNEY.getAdvancement())
             .criterion("defeat_elite_phoebe", new DefeatTrainerCriterion.TrainerCountConditions(InclementEmeraldPresets.ELITE_PHOEBE.trainer()))
             .display(
                     InclementEmeraldTokens.ELITE_PHOEBE_TOKEN.getItem(),
@@ -162,10 +162,10 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
                     true,
                     false
             )
-            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_elite_phoebe"));
+            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_elite_phoebe"))),
 
-    private static final Advancement DEFEAT_GLACIA = Advancement.Builder.createUntelemetered()
-            .parent(DEFEAT_PHOEBE)
+    DEFEAT_GLACIA(Advancement.Builder.createUntelemetered()
+            .parent(InclementEmeraldAdvancements.DEFEAT_PHOEBE.getAdvancement())
             .criterion("defeat_elite_glacia", new DefeatTrainerCriterion.TrainerCountConditions(InclementEmeraldPresets.ELITE_GLACIA.trainer()))
             .display(
                     InclementEmeraldTokens.ELITE_GLACIA_TOKEN.getItem(),
@@ -177,10 +177,10 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
                     true,
                     false
             )
-            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_elite_glacia"));
+            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_elite_glacia"))),
 
-    private static final Advancement DEFEAT_DRAKE = Advancement.Builder.createUntelemetered()
-            .parent(DEFEAT_GLACIA)
+    DEFEAT_DRAKE(Advancement.Builder.createUntelemetered()
+            .parent(InclementEmeraldAdvancements.DEFEAT_GLACIA.getAdvancement())
             .criterion("defeat_elite_drake", new DefeatTrainerCriterion.TrainerCountConditions(InclementEmeraldPresets.ELITE_DRAKE.trainer()))
             .display(
                     InclementEmeraldTokens.ELITE_DRAKE_TOKEN.getItem(),
@@ -192,10 +192,10 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
                     true,
                     false
             )
-            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_elite_drake"));
+            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_elite_drake"))),
 
-    private static final Advancement DEFEAT_WALLACE = Advancement.Builder.createUntelemetered()
-            .parent(DEFEAT_DRAKE)
+    DEFEAT_WALLACE(Advancement.Builder.createUntelemetered()
+            .parent(InclementEmeraldAdvancements.DEFEAT_DRAKE.getAdvancement())
             .criterion("defeat_champion_wallace", new DefeatTrainerCriterion.TrainerCountConditions(InclementEmeraldPresets.CHAMPION_WALLACE.trainer()))
             .display(
                     InclementEmeraldTokens.CHAMPION_WALLACE_TOKEN.getItem(),
@@ -207,10 +207,10 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
                     true,
                     false
             )
-            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_champion_wallace"));
+            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_champion_wallace"))),
 
-    private static final Advancement KILL_WALLACE = Advancement.Builder.createUntelemetered()
-            .parent(DEFEAT_DRAKE)
+    KILL_WALLACE(Advancement.Builder.createUntelemetered()
+            .parent(InclementEmeraldAdvancements.DEFEAT_DRAKE.getAdvancement())
             .criterion("kill_champion_wallace", new KillTrainerCriterion.TrainerCountConditions(InclementEmeraldPresets.CHAMPION_WALLACE.trainer()))
             .display(
                     Items.NETHERITE_SWORD,
@@ -222,25 +222,16 @@ public class InclementEmeraldAdvancementFactory implements AdvancementFactory {
                     true,
                     false
             )
-            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "kill_champion_wallace"));
+            .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "kill_champion_wallace")));
 
+    private final Advancement advancement;
+    
+    InclementEmeraldAdvancements(Advancement advancement) {
+        this.advancement = advancement;
+    }
+    
     @Override
-    public List<Advancement> create() {
-        return List.of(
-                DEFEAT_ROXANNE,
-                DEFEAT_BRAWLY,
-                DEFEAT_WATTSON,
-                DEFEAT_FLANNERY,
-                DEFEAT_NORMAN,
-                DEFEAT_WINONA,
-                DEFEAT_TATE_AND_LIZA,
-                DEFEAT_JUAN,
-                DEFEAT_SIDNEY,
-                DEFEAT_PHOEBE,
-                DEFEAT_GLACIA,
-                DEFEAT_DRAKE,
-                DEFEAT_WALLACE,
-                KILL_WALLACE
-        );
+    public Advancement getAdvancement() {
+        return advancement;
     }
 }

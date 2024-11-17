@@ -24,6 +24,7 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
+import java.util.Arrays;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 
@@ -68,21 +69,11 @@ public class DataGenerator implements DataGeneratorEntrypoint {
         public void generateAdvancement(Consumer<Advancement> consumer) {
             consumer.accept(ROOT);
 
-            for (Advancement advancement : new DefeatTrainerAdvancementFactory().create()) {
-                consumer.accept(advancement);
-            }
-
-            for (Advancement advancement : new KillTrainerAdvancementFactory().create()) {
-                consumer.accept(advancement);
-            }
-
-            for (Advancement advancement : new InclementEmeraldAdvancementFactory().create()) {
-                consumer.accept(advancement);
-            }
-
-            for (Advancement advancement : new RadicalRedAdvancementFactory().create()) {
-                consumer.accept(advancement);
-            }
+            Arrays.stream(DefeatTrainerAdvancements.values()).map(CustomAdvancements::getAdvancement).forEach(consumer);
+            Arrays.stream(KillTrainerAdvancements.values()).map(CustomAdvancements::getAdvancement).forEach(consumer);
+            Arrays.stream(InclementEmeraldAdvancements.values()).map(CustomAdvancements::getAdvancement).forEach(consumer);
+            Arrays.stream(RadicalRedAdvancements.values()).map(CustomAdvancements::getAdvancement).forEach(consumer);
+            Arrays.stream(BattleFactoryWinningStreakAdvancements.values()).map(CustomAdvancements::getAdvancement).forEach(consumer);
         }
     }
 
