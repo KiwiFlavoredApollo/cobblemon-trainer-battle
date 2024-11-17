@@ -16,7 +16,7 @@ import net.minecraft.util.Formatting;
 import java.util.List;
 
 public class BattleFactory {
-    public static int startSession(CommandContext<ServerCommandSource> context) {
+    public static int startSession(CommandContext<ServerCommandSource> context, BattleFactorySessionFactory factory) {
         ServerPlayerEntity player = context.getSource().getPlayer();
 
         List<MessagePredicate<ServerPlayerEntity>> predicates = List.of(
@@ -30,7 +30,8 @@ public class BattleFactory {
                 return 0;
             }
         }
-        BattleFactorySession session = new BattleFactorySession(player);
+
+        BattleFactorySession session = factory.create(player);
 
         session.showPartyPokemon();
 

@@ -6,6 +6,9 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.battlefactory.BattleFactory;
+import kiwiapollo.cobblemontrainerbattle.battle.battlefactory.InfiniteBattleFactory;
+import kiwiapollo.cobblemontrainerbattle.battle.battlefactory.InfiniteBattleFactorySession;
+import kiwiapollo.cobblemontrainerbattle.battle.battlefactory.NormalBattleFactory;
 import net.minecraft.server.command.ServerCommandSource;
 
 public class BattleFactoryCommand extends LiteralArgumentBuilder<ServerCommandSource> {
@@ -25,7 +28,9 @@ public class BattleFactoryCommand extends LiteralArgumentBuilder<ServerCommandSo
 
     private ArgumentBuilder<ServerCommandSource, ?> getBattleFactoryStartSessionCommand() {
         return LiteralArgumentBuilder.<ServerCommandSource>literal("startsession")
-                .executes(BattleFactory::startSession);
+                .executes(NormalBattleFactory::startSession)
+                .then(LiteralArgumentBuilder.<ServerCommandSource>literal("infinite")
+                        .executes(InfiniteBattleFactory::startSession));
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getBattleFactoryStopSessionCommand() {
