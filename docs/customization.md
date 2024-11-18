@@ -241,6 +241,8 @@ Few attributes can be Minecraft-friendly, and additional attributes are availabl
 }
 ```
 
+- `onVictory` and `onDefeat` will only take effect in normal Battle Factory session.
+
 ## Loot Table
 
 Loot tables can be set for each trainer. Trainers without loot tables will drop loots according to `defaults.json`.
@@ -295,21 +297,15 @@ resourcepacks/
 
 ## Trainer Textures
 
-Gym Leaders, Elite Four and Champion textures (skins) can be overridden via resource pack. Make sure you have the right path.
+- Gym Leaders, Elite Four and Champion textures (skins) can be overridden via resource pack.
 
 ## Battle Themes
-
-Cobblemon provides three default sound keys. You can use them when configuring battle themes for trainers.
 
 ```
 cobblemon:battle.pvw.default
 cobblemon:battle.pvp.default
 cobblemon:battle.pvn.default
-```
 
-Cobblemon Trainer Battle provides custom sound keys as well. You can use either `battle.default.disc_1` or `cobblemontrainerbattle:battle.default.disc_1`
-
-```
 battle.default.disc_1
 battle.default.disc_2
 battle.default.disc_3
@@ -326,3 +322,6 @@ battle.champion.disc_1
 battle.champion.disc_2
 battle.champion.disc_3
 ```
+
+- Cobblemon provides three default sound keys. They must be prefixed with `cobblemon` namespace.
+- Cobblemon Trainer Battle provides custom sound keys. They do not have to be prefixed with `cobblemontrainerbattle` namespace.
