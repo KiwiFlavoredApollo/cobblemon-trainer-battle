@@ -63,7 +63,7 @@ public class PlayerHistory {
                 history.get(Identifier.tryParse(identifier)).readFromNbt(record);
 
             } catch (IllegalArgumentException ignored) {
-                CobblemonTrainerBattle.LOGGER.error("");
+                CobblemonTrainerBattle.LOGGER.error("Unable to load record : {}", identifier);
             }
         }
         return history;
