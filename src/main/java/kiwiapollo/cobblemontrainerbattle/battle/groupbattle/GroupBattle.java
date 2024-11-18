@@ -43,7 +43,7 @@ public class GroupBattle {
 
         GroupBattleSessionStorage.getSessionRegistry().put(player.getUuid(), session);
 
-        player.sendMessage(Text.translatable("command.cobblemontrainerbattle.groupbattle.startsession.success", group.getPath()));
+        player.sendMessage(Text.translatable("command.cobblemontrainerbattle.success.groupbattle.startsession", group.getPath()));
         CobblemonTrainerBattle.LOGGER.info("Started group battle session: {}", player.getGameProfile().getName());
 
         return Command.SINGLE_SUCCESS;
@@ -69,7 +69,7 @@ public class GroupBattle {
 
         GroupBattleSessionStorage.getSessionRegistry().remove(player.getUuid());
 
-        player.sendMessage(Text.translatable("command.cobblemontrainerbattle.groupbattle.stopsession.success"));
+        player.sendMessage(Text.translatable("command.cobblemontrainerbattle.success.groupbattle.stopsession"));
         CobblemonTrainerBattle.LOGGER.info("Stopped group battle session: {}", player.getGameProfile().getName());
 
         return Command.SINGLE_SUCCESS;

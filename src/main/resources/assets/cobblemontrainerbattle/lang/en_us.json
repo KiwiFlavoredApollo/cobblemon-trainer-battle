@@ -200,13 +200,13 @@
   "predicate.cobblemontrainerbattle.error.forbidden_ability_not_exist": "Forbidden ability %s.",
   "predicate.cobblemontrainerbattle.error.forbidden_move_not_exist": "Forbidden move %s.",
 
-  "command.cobblemontrainerbattle.trainerbattle.success": "Battle has started against %s.",
+  "command.cobblemontrainerbattle.success.trainerbattle": "Battle has started against %s.",
 
-  "command.cobblemontrainerbattle.groupbattle.startsession.success": "Group Battle session has started against %s.",
-  "command.cobblemontrainerbattle.groupbattle.stopsession.success": "Group Battle session has ended.",
+  "command.cobblemontrainerbattle.success.groupbattle.startsession": "Group Battle session has started against %s.",
+  "command.cobblemontrainerbattle.success.groupbattle.stopsession": "Group Battle session has ended.",
 
-  "command.cobblemontrainerbattle.battlefactory.startsession.success": "Battle Factory session has started.",
-  "command.cobblemontrainerbattle.battlefactory.stopsession.success": "Battle Factory session has ended.",
-  "command.cobblemontrainerbattle.battlefactory.tradepokemon.success": "Traded %s for %s.",
-  "command.cobblemontrainerbattle.battlefactory.winningstreak.success": "Winning Streak: %d"
+  "command.cobblemontrainerbattle.success.battlefactory.startsession": "Battle Factory session has started.",
+  "command.cobblemontrainerbattle.success.battlefactory.stopsession": "Battle Factory session has ended.",
+  "command.cobblemontrainerbattle.success.battlefactory.tradepokemon": "Traded %s for %s.",
+  "command.cobblemontrainerbattle.success.battlefactory.winningstreak": "Winning Streak: %d"
 }

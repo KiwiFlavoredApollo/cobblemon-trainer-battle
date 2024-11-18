@@ -200,13 +200,13 @@
   "predicate.cobblemontrainerbattle.error.forbidden_ability_not_exist": "Talent interdit : %s.",
   "predicate.cobblemontrainerbattle.error.forbidden_move_not_exist": "Attaque interdite : %s.",
 
-  "command.cobblemontrainerbattle.trainerbattle.success": "Le combat a commencé contre %s.",
+  "command.cobblemontrainerbattle.success.trainerbattle": "Le combat a commencé contre %s.",
 
-  "command.cobblemontrainerbattle.groupbattle.startsession.success": "Le Combat Multi a commencé contre %s.",
-  "command.cobblemontrainerbattle.groupbattle.stopsession.success": "Le Combat Multi s'est terminé.",
+  "command.cobblemontrainerbattle.success.groupbattle.startsession": "Le Combat Multi a commencé contre %s.",
+  "command.cobblemontrainerbattle.success.groupbattle.stopsession": "Le Combat Multi s'est terminé.",
 
-  "command.cobblemontrainerbattle.battlefactory.startsession.success": "L'Usine de Combat a commencé.",
-  "command.cobblemontrainerbattle.battlefactory.stopsession.success": "L'Usine de Combat s'est terminé.",
-  "command.cobblemontrainerbattle.battlefactory.tradepokemon.success": "%s échangé pour %s.",
-  "command.cobblemontrainerbattle.battlefactory.winningstreak.success": "Série de Victoire : %d"
+  "command.cobblemontrainerbattle.success.battlefactory.startsession": "L'Usine de Combat a commencé.",
+  "command.cobblemontrainerbattle.success.battlefactory.stopsession": "L'Usine de Combat s'est terminé.",
+  "command.cobblemontrainerbattle.success.battlefactory.tradepokemon": "%s échangé pour %s.",
+  "command.cobblemontrainerbattle.success.battlefactory.winningstreak": "Série de Victoire : %d"
 }

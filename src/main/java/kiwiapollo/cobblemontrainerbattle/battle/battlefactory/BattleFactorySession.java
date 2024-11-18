@@ -93,7 +93,7 @@ public class BattleFactorySession implements Session, PokemonTradeFeature, Renta
 
         isPokemonTraded = true;
 
-        player.sendInfoMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.tradepokemon.success", playerPokemon.getDisplayName(), trainerPokemon.getDisplayName()));
+        player.sendInfoMessage(Text.translatable("command.cobblemontrainerbattle.success.battlefactory.tradepokemon", playerPokemon.getDisplayName(), trainerPokemon.getDisplayName()));
         CobblemonTrainerBattle.LOGGER.info("{} traded {} for {}", player.getName(), playerPokemon.getDisplayName(), trainerPokemon.getDisplayName());
     }
 

@@ -37,7 +37,7 @@ public class BattleFactory {
 
         BattleFactorySessionStorage.getSessionRegistry().put(player.getUuid(), session);
 
-        player.sendMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.startsession.success"));
+        player.sendMessage(Text.translatable("command.cobblemontrainerbattle.success.battlefactory.startsession"));
         CobblemonTrainerBattle.LOGGER.info("Started battle factory session: {}", player.getGameProfile().getName());
 
         return Command.SINGLE_SUCCESS;
@@ -63,7 +63,7 @@ public class BattleFactory {
 
         BattleFactorySessionStorage.getSessionRegistry().remove(player.getUuid());
 
-        player.sendMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.stopsession.success"));
+        player.sendMessage(Text.translatable("command.cobblemontrainerbattle.success.battlefactory.stopsession"));
         CobblemonTrainerBattle.LOGGER.info("Stopped battle factory session: {}", player.getGameProfile().getName());
 
         return Command.SINGLE_SUCCESS;
@@ -212,7 +212,7 @@ public class BattleFactory {
 
         BattleFactorySession session = BattleFactorySessionStorage.getSessionRegistry().get(player.getUuid());
 
-        player.sendMessage(Text.translatable("command.cobblemontrainerbattle.battlefactory.winningstreak.success", session.getStreak()));
+        player.sendMessage(Text.translatable("command.cobblemontrainerbattle.success.battlefactory.winningstreak", session.getStreak()));
 
         return Command.SINGLE_SUCCESS;
     }

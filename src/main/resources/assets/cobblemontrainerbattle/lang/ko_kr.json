@@ -198,13 +198,13 @@
   "predicate.cobblemontrainerbattle.error.forbidden_ability_not_exist": "금지된 특성 %s.",
   "predicate.cobblemontrainerbattle.error.forbidden_move_not_exist": "금지된 기술 %s.",
 
-  "command.cobblemontrainerbattle.trainerbattle.success": "%s와(과)의 배틀이 시작되었습니다",
+  "command.cobblemontrainerbattle.success.trainerbattle": "%s와(과)의 배틀이 시작되었습니다",
 
-  "command.cobblemontrainerbattle.groupbattle.startsession.success": "그룹배틀 세션이 시작되었습니다",
-  "command.cobblemontrainerbattle.groupbattle.stopsession.success": "그룹배틀 세션이 중단되었습니다",
+  "command.cobblemontrainerbattle.success.groupbattle.startsession": "그룹배틀 세션이 시작되었습니다",
+  "command.cobblemontrainerbattle.success.groupbattle.stopsession": "그룹배틀 세션이 중단되었습니다",
 
-  "command.cobblemontrainerbattle.battlefactory.startsession.success": "배틀팩토리 세션이 시작되었습니다",
-  "command.cobblemontrainerbattle.battlefactory.stopsession.success": "배틀팩토리 세션이 중단되었습니다",
-  "command.cobblemontrainerbattle.battlefactory.tradepokemon.success": "%s와 %s를 교환했습니다",
-  "command.cobblemontrainerbattle.battlefactory.winningstreak.success": "이긴 횟수: %d"
+  "command.cobblemontrainerbattle.success.battlefactory.startsession": "배틀팩토리 세션이 시작되었습니다",
+  "command.cobblemontrainerbattle.success.battlefactory.stopsession": "배틀팩토리 세션이 중단되었습니다",
+  "command.cobblemontrainerbattle.success.battlefactory.tradepokemon": "%s와 %s를 교환했습니다",
+  "command.cobblemontrainerbattle.success.battlefactory.winningstreak": "이긴 횟수: %d"
 }
