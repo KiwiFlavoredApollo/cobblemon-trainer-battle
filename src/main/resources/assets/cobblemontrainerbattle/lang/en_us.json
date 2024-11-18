@@ -189,16 +189,16 @@
   "predicate.cobblemontrainerbattle.error.is_rematch_allowed": "Rematch for this opponent is not allowed.",
   "predicate.cobblemontrainerbattle.error.maximum_party_level": "Maximum level of %d is required.",
   "predicate.cobblemontrainerbattle.error.minimum_party_level": "Minimum level of %d is required.",
-  "predicate.cobblemontrainerbattle.error.required_label_exist": "Required label %s",
-  "predicate.cobblemontrainerbattle.error.required_pokemon_exist": "Required Pokémon %s.",
-  "predicate.cobblemontrainerbattle.error.required_held_item_exist": "Required held item %s.",
-  "predicate.cobblemontrainerbattle.error.required_ability_exist": "Required ability %s.",
-  "predicate.cobblemontrainerbattle.error.required_move_exist": "Required move %s.",
-  "predicate.cobblemontrainerbattle.error.forbidden_label_not_exist": "Forbidden label %s",
-  "predicate.cobblemontrainerbattle.error.forbidden_pokemon_not_exist": "Forbidden Pokémon %s.",
-  "predicate.cobblemontrainerbattle.error.forbidden_held_item_not_exist": "Forbidden held item %s.",
-  "predicate.cobblemontrainerbattle.error.forbidden_ability_not_exist": "Forbidden ability %s.",
-  "predicate.cobblemontrainerbattle.error.forbidden_move_not_exist": "Forbidden move %s.",
+  "predicate.cobblemontrainerbattle.error.required_label_exist": "Required label : %s",
+  "predicate.cobblemontrainerbattle.error.required_pokemon_exist": "Required Pokémon : %s",
+  "predicate.cobblemontrainerbattle.error.required_held_item_exist": "Required held item : %s",
+  "predicate.cobblemontrainerbattle.error.required_ability_exist": "Required ability : %s",
+  "predicate.cobblemontrainerbattle.error.required_move_exist": "Required move : %s",
+  "predicate.cobblemontrainerbattle.error.forbidden_label_not_exist": "Forbidden label : %s",
+  "predicate.cobblemontrainerbattle.error.forbidden_pokemon_not_exist": "Forbidden Pokémon : %s",
+  "predicate.cobblemontrainerbattle.error.forbidden_held_item_not_exist": "Forbidden held item : %s",
+  "predicate.cobblemontrainerbattle.error.forbidden_ability_not_exist": "Forbidden ability : %s",
+  "predicate.cobblemontrainerbattle.error.forbidden_move_not_exist": "Forbidden move : %s",
 
   "command.cobblemontrainerbattle.success.trainerbattle": "Battle has started against %s.",
 
@@ -208,5 +208,5 @@
   "command.cobblemontrainerbattle.success.battlefactory.startsession": "Battle Factory session has started.",
   "command.cobblemontrainerbattle.success.battlefactory.stopsession": "Battle Factory session has ended.",
   "command.cobblemontrainerbattle.success.battlefactory.tradepokemon": "Traded %s for %s.",
-  "command.cobblemontrainerbattle.success.battlefactory.winningstreak": "Winning Streak: %d"
+  "command.cobblemontrainerbattle.success.battlefactory.winningstreak": "Winning Streak : %d"
 }
