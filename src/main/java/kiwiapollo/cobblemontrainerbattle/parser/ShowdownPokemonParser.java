@@ -12,7 +12,6 @@ import com.cobblemon.mod.common.pokemon.Gender;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -51,20 +50,11 @@ public class ShowdownPokemonParser {
 
     private Pokemon createBasePokemon(ShowdownPokemon showdownPokemon) throws PokemonParseException {
         try {
-            Identifier identifier = toSpeciesIdentifier(showdownPokemon.species);
+            Identifier identifier = toSpeciesResourceIdentifier(showdownPokemon.species);
             return PokemonSpecies.INSTANCE.getByIdentifier(identifier).create(DEFAULT_LEVEL);
 
         } catch (NullPointerException e) {
             throw new PokemonParseException();
-        }
-    }
-
-    private Identifier toSpeciesIdentifier(String species) throws NullPointerException {
-        if (species.contains(":")) {
-            return Objects.requireNonNull(Identifier.tryParse(normalize(species)));
-
-        } else {
-            return Objects.requireNonNull(Identifier.of("cobblemon", normalize(species)));
         }
     }
 
@@ -89,21 +79,6 @@ public class ShowdownPokemonParser {
         } else {
             return form;
         }
-    }
-
-    private String normalize(String species) {
-        String normalized = species;
-
-        for (String form : FormAspectProvider.FORM_ASPECTS.keySet()) {
-            normalized = normalized.replaceAll(form, "");
-        }
-
-        String nonAscii = "[^\\x00-\\x7F]";
-        normalized = normalized.replaceAll(nonAscii, "");
-        normalized = normalized.replaceAll("[-\\s]", "");
-        normalized = normalized.toLowerCase();
-
-        return normalized;
     }
 
     private void setPokemonShiny(Pokemon pokemon, boolean shiny) {
@@ -211,20 +186,21 @@ public class ShowdownPokemonParser {
 
     private void setPokemonHeldItem(Pokemon pokemon, String item) {
         try {
-            Objects.requireNonNull(item);
-
-            boolean isContainNamespace = item.contains(":");
-            if (isContainNamespace) {
-                Item itemToHold = Registries.ITEM.get(Identifier.tryParse(item.toLowerCase()));
-                pokemon.swapHeldItem(new ItemStack(itemToHold), false);
-
-            } else {
-                Item itemToHold = Registries.ITEM.get(Identifier.of("cobblemon", item.toLowerCase()));
-                pokemon.swapHeldItem(new ItemStack(itemToHold), false);
-            }
-
+            pokemon.swapHeldItem(toHeldItem(item), false);
         } catch (NullPointerException ignored) {
+            
+        }
+    }
 
+    private ItemStack toHeldItem(String item) {
+        if (item.contains(":")) {
+            return new ItemStack(Registries.ITEM.get(Identifier.tryParse(item)));
+
+        } else {
+            String path = item;
+            path = path.toLowerCase();
+            path = removeNonLowerCaseAlphanumeric(path);
+            return new ItemStack(Registries.ITEM.get(Identifier.of("cobblemon", path)));
         }
     }
 
@@ -240,5 +216,37 @@ public class ShowdownPokemonParser {
                 CobblemonTrainerBattle.LOGGER.error("Please report this to mod author");
             }
         }
+    }
+
+    public static Identifier toSpeciesResourceIdentifier(String species) {
+        if (species.contains(":")) {
+            return Identifier.tryParse(species);
+        } else {
+            return Identifier.of("cobblemon", toSpeciesResourcePath(species));
+        }
+    }
+
+    private static String toSpeciesResourcePath(String species) {
+        String path = species;
+
+        path = removeFormName(path);
+        path = path.toLowerCase();
+        path = removeNonLowerCaseAlphanumeric(path);
+
+        return path;
+    }
+
+    private static String removeNonLowerCaseAlphanumeric(String species) {
+        return species.replaceAll("[^a-z0-9]", "");
+    }
+
+    private static String removeFormName(String species) {
+        String s = species;
+
+        for (String form : FormAspectProvider.FORM_ASPECTS.keySet()) {
+            s = s.replaceAll(form, "");
+        }
+
+        return s;
     }
 }

@@ -1,51 +1,64 @@
 package kiwiapollo.cobblemontrainerbattle.battle.predicates;
 
+import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
 import com.cobblemon.mod.common.pokemon.Pokemon;
+import com.cobblemon.mod.common.pokemon.Species;
+import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemon;
+import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemonParser;
+import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
 
 import java.util.List;
 
 public abstract class PokemonPredicate implements MessagePredicate<PlayerBattleParticipant> {
     protected boolean containsPokemon(List<Pokemon> party, ShowdownPokemon required) {
         for (Pokemon p : party) {
-            boolean isSpeciesEqual = normalize(p.getSpecies().getName()).equals(normalize(required.species));
-            boolean isFormEqual = p.getForm().getName().equals(required.form);
-
-            if (isSpeciesEqual && isFormEqual) {
+            if (isSpeciesEqual(p, required) && isFormEqual(p, required)) {
                 return true;
             }
         }
         return false;
     }
 
-    private String normalize(String species) {
-        String normalized = species;
-        normalized = normalized.replaceAll("^cobblemon:", "");
-        normalized = normalized.replaceAll("[-\\s]", "");
-        normalized = normalized.toLowerCase();
-        return normalized;
+    private boolean isSpeciesEqual(Pokemon party, ShowdownPokemon required) {
+        try {
+            Identifier p = party.getSpecies().getResourceIdentifier();
+            Identifier r = ShowdownPokemonParser.toSpeciesResourceIdentifier(required.species);
+            return p.equals(r);
+
+        } catch (NullPointerException e) {
+            return false;
+        }
     }
 
-    private String toPascalCase(String input) {
-        if (input == null || input.isEmpty()) {
-            return input;
+    private boolean isFormEqual(Pokemon party, ShowdownPokemon required) {
+        if (required.form == null) {
+            return true;
+        } else {
+            return party.getForm().getName().equals(required.form);
         }
+    }
 
-        String[] words = input.split("[^a-zA-Z0-9]+");
-        StringBuilder pascalCased = new StringBuilder();
+    protected Text toPokemonDescriptor(ShowdownPokemon pokemon) {
+        try {
+            Identifier identifier = ShowdownPokemonParser.toSpeciesResourceIdentifier(pokemon.species);
+            Species species = PokemonSpecies.INSTANCE.getByIdentifier(identifier);
 
-        for (String word : words) {
-            if (!word.isEmpty()) {
-                pascalCased.append(Character.toUpperCase(word.charAt(0)))
-                        .append(word.substring(1).toLowerCase());
+            boolean isFormExist = pokemon.form != null;
+
+            if (isFormExist) {
+                return species.getTranslatedName().append(" ").append(pokemon.form);
+
+            } else {
+                return species.getTranslatedName();
             }
+
+        } catch (NullPointerException e) {
+            Identifier identifier = ShowdownPokemonParser.toSpeciesResourceIdentifier(pokemon.species);
+            CobblemonTrainerBattle.LOGGER.error("Unknown Pokemon species: {}", identifier);
+            throw new IllegalStateException(e);
         }
-
-        return pascalCased.toString();
-    }
-
-    protected String toPokemonDescriptor(ShowdownPokemon pokemon) {
-        return String.format("%s %s", toPascalCase(normalize(pokemon.species)), pokemon.form);
     }
 }
