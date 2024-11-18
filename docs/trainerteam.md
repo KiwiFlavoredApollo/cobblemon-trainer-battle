@@ -1,6 +1,6 @@
 # Trainer Team
 
-Trainer team files follow Showdown team JSON format. Additional attributes are available and can be set Minecraft-friendly. Manually writing trainer team files can be quite painful, please consider using `/cobblemontrainerbattle export <player>` command to facilitate the process.
+Trainer team files follow Showdown team JSON format. Additional attributes are available. Few attributes can be set Minecraft-friendly. Manually writing trainer team files can be quite painful, please consider using `/cobblemontrainerbattle export <player>` command to facilitate the process.
 
 ## Example
 
