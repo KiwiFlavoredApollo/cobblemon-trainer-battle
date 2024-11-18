@@ -17,6 +17,7 @@ public class BattleFactoryCommand extends LiteralArgumentBuilder<ServerCommandSo
 
         this.requires(new PlayerCommandSourcePredicate(String.format("%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral())))
                 .then(getBattleFactoryStartSessionCommand())
+                .then(getBattleFactoryStartSessionInfiniteCommand())
                 .then(getBattleFactoryStopSessionCommand())
                 .then(getBattleFactoryStartBattleCommand())
                 .then(getBattleFactoryRerollPokemonCommand())
@@ -27,7 +28,11 @@ public class BattleFactoryCommand extends LiteralArgumentBuilder<ServerCommandSo
 
     private ArgumentBuilder<ServerCommandSource, ?> getBattleFactoryStartSessionCommand() {
         return LiteralArgumentBuilder.<ServerCommandSource>literal("startsession")
-                .executes(NormalBattleFactory::startSession)
+                .executes(NormalBattleFactory::startSession);
+    }
+
+    private ArgumentBuilder<ServerCommandSource, ?> getBattleFactoryStartSessionInfiniteCommand() {
+        return LiteralArgumentBuilder.<ServerCommandSource>literal("startsession")
                 .then(LiteralArgumentBuilder.<ServerCommandSource>literal("infinite")
                         .executes(InfiniteBattleFactory::startSession));
     }
