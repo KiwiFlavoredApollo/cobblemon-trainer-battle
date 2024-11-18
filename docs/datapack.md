@@ -1,8 +1,4 @@
-# Customization
-
-## Introduction
-
-Server admins can create data packs for Cobblemon Trainer Battle
+# Data Pack
 
 ## Data Pack Structure
 
@@ -48,105 +44,13 @@ datapacks/
                     └── defaults.json
 ```
 
-## Trainer Team
+## Trainer
 
-- Trainer team files follows Showdown team JSON format
-- Trainer Pokémon levels can be set relative to player Pokémon maximum level
-- Manually writing trainer team files can be quite painful, please consider using `/cobblemontrainerbattle export <player>` command
-
-```json
-[
-  {
-    "name": "",
-    "species": "Articuno",
-    "gender": "",
-    "level": 0,
-    "item": "Leftovers",
-    "ability": "Pressure",
-    "evs": {"hp": 252, "atk": 0, "def": 0, "spa": 252, "spd": 4, "spe": 0},
-    "nature": "Modest",
-    "ivs": {"hp": 31, "atk": 31, "def": 31, "spa": 30, "spd": 30, "spe": 31},
-    "moves": ["Ice Beam", "Hurricane", "Substitute", "Roost"]
-  },
-  {
-    "name": "",
-    "species": "Ludicolo",
-    "gender": "",
-    "level": 0,
-    "item": "Life Orb",
-    "ability": "Swift Swim",
-    "evs": {"hp": 4, "atk": 0, "def": 0, "spa": 252, "spd": 0, "spe": 252},
-    "nature": "Modest",
-    "moves": ["Surf", "Giga Drain", "Ice Beam", "Rain Dance"]
-  }
-]
-```
-
-### Additional Features
-
-Few attributes can be Minecraft-friendly, and additional attributes are available.
-
-#### Species
-```
-"species": "Articuno"
-```
-```
-"species": "cobblemon:pikachu"
-```
-
-#### Item
-
-```
-"item": "Leftovers"
-```
-```
-"item": "minecraft:diamond"
-```
-
-#### Nature
-
-```
-"nature": "Modest"
-```
-```
-"nature": "cobblemon:jolly"
-```
-
-#### Moves
-
-```
-"moves": ["Surf", "Giga Drain", "Ice Beam", "Rain Dance"]
-```
-```
-"moves": ["flamecharge", "quickattack", "ember", "scratch"]
-``` 
-
-#### Shiny (Additional Attribute)
-
-```
-"shiny": true
-```
-```
-"shiny": false
-```
-
-#### Form (Additional Attribute)
-
-```
-"form": "Galar"
-```
-```
-"form": "Hisui Bias"
-```
-
-`form` attribute takes form names. Few other options are `Therian`, `Paldea-Combat` and `Galar-Zen`. You can identify form names from [Cobblemon species file](https://gitlab.com/cable-mc/cobblemon/-/tree/main/common/src/main/resources/data/cobblemon/species?ref_type=heads).
-
-## Trainer Option
+> Please refer to [Trainer Team](../trainerteam) for adding custom trainer team files
 
 - Multiple commands are supported
 - Commands are run as server
 - `%player%` placeholder can be used to indicate the player in battle
-- `battleTheme` can be configured per trainer
 - Configuration can be set globally by modifying `defaults.json`
 
 ```json
@@ -245,7 +149,7 @@ Few attributes can be Minecraft-friendly, and additional attributes are availabl
 
 ## Loot Table
 
-Loot tables can be set for each trainer. Trainers without loot tables will drop loots according to `defaults.json`.
+Cobblemon Trainer Battle offers a custom loot condition `cobblemontrainerbattle:defeated_in_battle` where trainers drop loots only when the trainer is defeated in Pokémon battle. Loot tables can be set for each trainer. Trainers without loot tables will drop loots according to `defaults.json`.
 
 ```
 {
@@ -273,55 +177,49 @@ Loot tables can be set for each trainer. Trainers without loot tables will drop 
 }
 ```
 
-## Resource Pack Structure
+## Advancement
+
+Cobblemon Trainer Battle offers custom advancement criteria. Please refer to [GitHub repository](https://github.com/KiwiFlavoredApollo/CobblemonTrainerBattle/tree/master/src/main/generated/data/cobblemontrainerbattle/advancements) for specific usages.
 
 ```
-resourcepacks/
-└── your_resourcepack_name/
-    ├── pack.mcmeta
-    └── assets/
-        └── cobblemontrainerbattle/
-            ├── sounds.json
-            ├── sounds/
-            │   └── battle/
-            │       ├── my_disc_1.ogg
-            │       └── my_disc_2.ogg
-            │
-            └── textures/
-                └── entity/
-                    └── trainer/
-                        └── slim/
-                            ├── leader_brock.png
-                            └── leader_misty.png
+cobblemontrainerbattle:defeat_trainer
+cobblemontrainerbattle:kill_trainer
+cobblemontrainerbattle:battlefactory_winning_streak
 ```
 
-## Trainer Textures
-
-- Gym Leaders, Elite Four and Champion textures (skins) can be overridden via resource pack.
-
-## Battle Themes
-
 ```
-cobblemon:battle.pvw.default
-cobblemon:battle.pvp.default
-cobblemon:battle.pvn.default
-
-battle.default.disc_1
-battle.default.disc_2
-battle.default.disc_3
-
-battle.gym_leader.disc_1
-battle.gym_leader.disc_2
-battle.gym_leader.disc_3
-
-battle.elite_four.disc_1
-battle.elite_four.disc_2
-battle.elite_four.disc_3
-
-battle.champion.disc_1
-battle.champion.disc_2
-battle.champion.disc_3
+{
+  "parent": "cobblemontrainerbattle:defeat_elite_drake",
+  "criteria": {
+    "defeat_champion_wallace": {
+      "conditions": {
+        "count": 1,
+        "trainer": "trainer:entity/champion_wallace"
+      },
+      "trigger": "cobblemontrainerbattle:defeat_trainer"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_champion_wallace.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "cobblemontrainerbattle:champion_wallace_token"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_champion_wallace.title"
+    }
+  },
+  "requirements": [
+    [
+      "defeat_champion_wallace"
+    ]
+  ],
+  "sends_telemetry_event": false
+}
 ```
-
-- Cobblemon provides three default sound keys. They must be prefixed with `cobblemon` namespace.
-- Cobblemon Trainer Battle provides custom sound keys. They do not have to be prefixed with `cobblemontrainerbattle` namespace.

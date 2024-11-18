@@ -5,6 +5,8 @@ nav:
   - Commands: commands.md
   - NPC Trainers: npctrainers.md
   - Items: items.md
-  - Customization: customization.md
+  - Data Pack: datapack.md
+  - Resource Pack: resourcepack.md
+  - Trainer Team: trainerteam.md
 theme: readthedocs
 remote_name: github
