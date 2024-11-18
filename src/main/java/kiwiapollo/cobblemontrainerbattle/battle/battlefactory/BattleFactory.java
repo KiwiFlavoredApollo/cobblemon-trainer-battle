@@ -38,7 +38,7 @@ public class BattleFactory {
         BattleFactorySessionStorage.getSessionRegistry().put(player.getUuid(), session);
 
         player.sendMessage(Text.translatable("command.cobblemontrainerbattle.success.battlefactory.startsession"));
-        CobblemonTrainerBattle.LOGGER.info("Started battle factory session: {}", player.getGameProfile().getName());
+        CobblemonTrainerBattle.LOGGER.info("Started battle factory session : {}", player.getGameProfile().getName());
 
         return Command.SINGLE_SUCCESS;
     }
