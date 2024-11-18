@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>NPC Trainers - Cobblemon Trainer Battle</title>
+    <title>Trainer Team - Cobblemon Trainer Battle</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "NPC Trainers";
-        var mkdocs_page_input_path = "npctrainers.md";
+        var mkdocs_page_name = "Trainer Team";
+        var mkdocs_page_input_path = "trainerteam.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -52,10 +52,8 @@
                 <li class="toctree-l1"><a class="reference internal" href="../commands/">Commands</a>
                 </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">NPC Trainers</a>
-    <ul class="current">
-    </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../npctrainers/">NPC Trainers</a>
                 </li>
               </ul>
               <ul>
@@ -70,8 +68,16 @@
                 <li class="toctree-l1"><a class="reference internal" href="../resourcepack/">Resource Pack</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../trainerteam/">Trainer Team</a>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Trainer Team</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#example">Example</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#relative-level">Relative Level</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#form-names">Form Names</a>
+    </li>
+    </ul>
                 </li>
               </ul>
       </div>
@@ -88,7 +94,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">NPC Trainers</li>
+      <li class="breadcrumb-item active">Trainer Team</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -97,17 +103,63 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="npc-trainers">NPC Trainers</h1>
-<p>NPC trainers make Cobblemon experience more interesting. Players must have VS Seeker in their inventories in order to spawn trainers around them. NPC Trainers can either be spawned with Trainer Spawn Eggs or with following commands.</p>
-<pre><code>/summon cobblemontrainerbattle:trainer
-/summon cobblemontrainerbattle:trainer{trainer:&quot;trainer:radicalred/leader_brock&quot;,texture:&quot;minecraft:textures/entity/player/slim/steve.png&quot;}
+                <h1 id="trainer-team">Trainer Team</h1>
+<p>Trainer team files follow Showdown team JSON format. Additional attributes are available and can be set Minecraft-friendly. Manually writing trainer team files can be quite painful, please consider using <code>/cobblemontrainerbattle export &lt;player&gt;</code> command to facilitate the process.</p>
+<h2 id="example">Example</h2>
+<pre><code class="language-json">[
+  {
+    &quot;name&quot;: &quot;&quot;,
+    &quot;species&quot;: &quot;Articuno&quot;,
+    &quot;gender&quot;: &quot;&quot;,
+    &quot;level&quot;: 0,
+    &quot;item&quot;: &quot;Leftovers&quot;,
+    &quot;ability&quot;: &quot;Pressure&quot;,
+    &quot;evs&quot;: {&quot;hp&quot;: 252, &quot;atk&quot;: 0, &quot;def&quot;: 0, &quot;spa&quot;: 252, &quot;spd&quot;: 4, &quot;spe&quot;: 0},
+    &quot;nature&quot;: &quot;Modest&quot;,
+    &quot;ivs&quot;: {&quot;hp&quot;: 31, &quot;atk&quot;: 31, &quot;def&quot;: 31, &quot;spa&quot;: 30, &quot;spd&quot;: 30, &quot;spe&quot;: 31},
+    &quot;moves&quot;: [&quot;Ice Beam&quot;, &quot;Hurricane&quot;, &quot;Substitute&quot;, &quot;Roost&quot;]
+  },
+  {
+    &quot;name&quot;: &quot;&quot;,
+    &quot;species&quot;: &quot;cobblemon:ninetales&quot;,
+    &quot;form&quot;: &quot;Alola&quot;,
+    &quot;shiny&quot;: true,
+    &quot;gender&quot;: &quot;&quot;,
+    &quot;level&quot;: 0,
+    &quot;item&quot;: &quot;cobblemon:life_orb&quot;,
+    &quot;ability&quot;: &quot;Swift Swim&quot;,
+    &quot;evs&quot;: {&quot;hp&quot;: 4, &quot;atk&quot;: 0, &quot;def&quot;: 0, &quot;spa&quot;: 252, &quot;spd&quot;: 0, &quot;spe&quot;: 252},
+    &quot;nature&quot;: &quot;cobblemon:jolly&quot;,
+    &quot;moves&quot;: [&quot;flamecharge&quot;, &quot;quickattack&quot;, &quot;ember&quot;, &quot;scratch&quot;]
+  }
+]
+</code></pre>
+<h2 id="relative-level">Relative Level</h2>
+<ul>
+<li>Pokémon levels ranging from -7 to 7 (inclusive) are considered as relative level</li>
+<li>Pivot point is the highest Pokémon level in the player's party</li>
+</ul>
+<h2 id="form-names">Form Names</h2>
+<p>Few other options for form names are <code>Therian</code>, <code>Paldea-Combat</code> and <code>Galar-Zen</code>. Form names for a Pokémon can be identified from <a href="https://gitlab.com/cable-mc/cobblemon/-/tree/main/common/src/main/resources/data/cobblemon/species?ref_type=heads">Cobblemon species file</a>.</p>
+<pre><code class="language-json">{
+  &quot;implemented&quot;: true,
+  &quot;name&quot;: &quot;Arcanine&quot;,
+  &quot;nationalPokedexNumber&quot;: 59,
+  &quot;primaryType&quot;: &quot;fire&quot;,
+  &quot;forms&quot;: [
+    {
+      &quot;name&quot;: &quot;Hisui&quot;,
+      &quot;primaryType&quot;: &quot;fire&quot;,
+      &quot;secondaryType&quot;: &quot;rock&quot;
+    }
+  ]
+}
 </code></pre>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../commands/" class="btn btn-neutral float-left" title="Commands"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../items/" class="btn btn-neutral float-right" title="Items">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../resourcepack/" class="btn btn-neutral float-left" title="Resource Pack"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
 
   <hr/>
@@ -130,10 +182,8 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../commands/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../resourcepack/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="../items/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

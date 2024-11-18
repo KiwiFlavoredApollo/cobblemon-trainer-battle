@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Customization - Cobblemon Trainer Battle</title>
+    <title>Data Pack - Cobblemon Trainer Battle</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Customization";
-        var mkdocs_page_input_path = "customization.md";
+        var mkdocs_page_name = "Data Pack";
+        var mkdocs_page_input_path = "datapack.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -61,33 +61,11 @@
                 </li>
               </ul>
               <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">Customization</a>
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Data Pack</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
-    </li>
     <li class="toctree-l2"><a class="reference internal" href="#data-pack-structure">Data Pack Structure</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#trainer-team">Trainer Team</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#additional-features">Additional Features</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#species">Species</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#item">Item</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#nature">Nature</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#moves">Moves</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#shiny-additional-attribute">Shiny (Additional Attribute)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#form-additional-attribute">Form (Additional Attribute)</a>
-    </li>
-        </ul>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#trainer-option">Trainer Option</a>
+    <li class="toctree-l2"><a class="reference internal" href="#trainer">Trainer</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#trainer-group">Trainer Group</a>
     </li>
@@ -95,13 +73,17 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#loot-table">Loot Table</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#resource-pack-structure">Resource Pack Structure</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#trainer-textures">Trainer Textures</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#battle-themes">Battle Themes</a>
+    <li class="toctree-l2"><a class="reference internal" href="#advancement">Advancement</a>
     </li>
     </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../resourcepack/">Resource Pack</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../trainerteam/">Trainer Team</a>
                 </li>
               </ul>
       </div>
@@ -118,7 +100,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Customization</li>
+      <li class="breadcrumb-item active">Data Pack</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -127,9 +109,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="customization">Customization</h1>
-<h2 id="introduction">Introduction</h2>
-<p>Server admins can create data packs for Cobblemon Trainer Battle</p>
+                <h1 id="data-pack">Data Pack</h1>
 <h2 id="data-pack-structure">Data Pack Structure</h2>
 <pre><code>datapacks/
 └── your_datapack_name/
@@ -171,77 +151,14 @@
                     │   └── custom_trainer_2.json
                     └── defaults.json
 </code></pre>
-<h2 id="trainer-team">Trainer Team</h2>
-<ul>
-<li>Trainer team files follows Showdown team JSON format</li>
-<li>Trainer Pokémon levels can be set relative to player Pokémon maximum level</li>
-<li>Manually writing trainer team files can be quite painful, please consider using <code>/cobblemontrainerbattle export &lt;player&gt;</code> command</li>
-</ul>
-<pre><code class="language-json">[
-  {
-    &quot;name&quot;: &quot;&quot;,
-    &quot;species&quot;: &quot;Articuno&quot;,
-    &quot;gender&quot;: &quot;&quot;,
-    &quot;level&quot;: 0,
-    &quot;item&quot;: &quot;Leftovers&quot;,
-    &quot;ability&quot;: &quot;Pressure&quot;,
-    &quot;evs&quot;: {&quot;hp&quot;: 252, &quot;atk&quot;: 0, &quot;def&quot;: 0, &quot;spa&quot;: 252, &quot;spd&quot;: 4, &quot;spe&quot;: 0},
-    &quot;nature&quot;: &quot;Modest&quot;,
-    &quot;ivs&quot;: {&quot;hp&quot;: 31, &quot;atk&quot;: 31, &quot;def&quot;: 31, &quot;spa&quot;: 30, &quot;spd&quot;: 30, &quot;spe&quot;: 31},
-    &quot;moves&quot;: [&quot;Ice Beam&quot;, &quot;Hurricane&quot;, &quot;Substitute&quot;, &quot;Roost&quot;]
-  },
-  {
-    &quot;name&quot;: &quot;&quot;,
-    &quot;species&quot;: &quot;Ludicolo&quot;,
-    &quot;gender&quot;: &quot;&quot;,
-    &quot;level&quot;: 0,
-    &quot;item&quot;: &quot;Life Orb&quot;,
-    &quot;ability&quot;: &quot;Swift Swim&quot;,
-    &quot;evs&quot;: {&quot;hp&quot;: 4, &quot;atk&quot;: 0, &quot;def&quot;: 0, &quot;spa&quot;: 252, &quot;spd&quot;: 0, &quot;spe&quot;: 252},
-    &quot;nature&quot;: &quot;Modest&quot;,
-    &quot;moves&quot;: [&quot;Surf&quot;, &quot;Giga Drain&quot;, &quot;Ice Beam&quot;, &quot;Rain Dance&quot;]
-  }
-]
-</code></pre>
-<h3 id="additional-features">Additional Features</h3>
-<p>Few attributes can be Minecraft-friendly, and additional attributes are available.</p>
-<h4 id="species">Species</h4>
-<pre><code>&quot;species&quot;: &quot;Articuno&quot;
-</code></pre>
-<pre><code>&quot;species&quot;: &quot;cobblemon:pikachu&quot;
-</code></pre>
-<h4 id="item">Item</h4>
-<pre><code>&quot;item&quot;: &quot;Leftovers&quot;
-</code></pre>
-<pre><code>&quot;item&quot;: &quot;minecraft:diamond&quot;
-</code></pre>
-<h4 id="nature">Nature</h4>
-<pre><code>&quot;nature&quot;: &quot;Modest&quot;
-</code></pre>
-<pre><code>&quot;nature&quot;: &quot;cobblemon:jolly&quot;
-</code></pre>
-<h4 id="moves">Moves</h4>
-<pre><code>&quot;moves&quot;: [&quot;Surf&quot;, &quot;Giga Drain&quot;, &quot;Ice Beam&quot;, &quot;Rain Dance&quot;]
-</code></pre>
-<pre><code>&quot;moves&quot;: [&quot;flamecharge&quot;, &quot;quickattack&quot;, &quot;ember&quot;, &quot;scratch&quot;]
-</code></pre>
-<h4 id="shiny-additional-attribute">Shiny (Additional Attribute)</h4>
-<pre><code>&quot;shiny&quot;: true
-</code></pre>
-<pre><code>&quot;shiny&quot;: false
-</code></pre>
-<h4 id="form-additional-attribute">Form (Additional Attribute)</h4>
-<pre><code>&quot;form&quot;: &quot;Galar&quot;
-</code></pre>
-<pre><code>&quot;form&quot;: &quot;Hisui Bias&quot;
-</code></pre>
-<p><code>form</code> attribute takes form names. Few other options are <code>Therian</code>, <code>Paldea-Combat</code> and <code>Galar-Zen</code>. You can identify form names from <a href="https://gitlab.com/cable-mc/cobblemon/-/tree/main/common/src/main/resources/data/cobblemon/species?ref_type=heads">Cobblemon species file</a>.</p>
-<h2 id="trainer-option">Trainer Option</h2>
+<h2 id="trainer">Trainer</h2>
+<blockquote>
+<p>Please refer to <a href="../trainerteam">Trainer Team</a> for adding custom trainer team files</p>
+</blockquote>
 <ul>
 <li>Multiple commands are supported</li>
 <li>Commands are run as server</li>
 <li><code>%player%</code> placeholder can be used to indicate the player in battle</li>
-<li><code>battleTheme</code> can be configured per trainer</li>
 <li>Configuration can be set globally by modifying <code>defaults.json</code></li>
 </ul>
 <pre><code class="language-json">{
@@ -332,7 +249,7 @@
 <li><code>onVictory</code> and <code>onDefeat</code> will only take effect in normal Battle Factory session.</li>
 </ul>
 <h2 id="loot-table">Loot Table</h2>
-<p>Loot tables can be set for each trainer. Trainers without loot tables will drop loots according to <code>defaults.json</code>.</p>
+<p>Cobblemon Trainer Battle offers a custom loot condition <code>cobblemontrainerbattle:defeated_in_battle</code> where trainers drop loots only when the trainer is defeated in Pokémon battle. Loot tables can be set for each trainer. Trainers without loot tables will drop loots according to <code>defaults.json</code>.</p>
 <pre><code>{
   &quot;type&quot;: &quot;minecraft:entity&quot;,
   &quot;pools&quot;: [
@@ -357,59 +274,53 @@
   ]
 }
 </code></pre>
-<h2 id="resource-pack-structure">Resource Pack Structure</h2>
-<pre><code>resourcepacks/
-└── your_resourcepack_name/
-    ├── pack.mcmeta
-    └── assets/
-        └── cobblemontrainerbattle/
-            ├── sounds.json
-            ├── sounds/
-            │   └── battle/
-            │       ├── my_disc_1.ogg
-            │       └── my_disc_2.ogg
-            │
-            └── textures/
-                └── entity/
-                    └── trainer/
-                        └── slim/
-                            ├── leader_brock.png
-                            └── leader_misty.png
+<h2 id="advancement">Advancement</h2>
+<p>Cobblemon Trainer Battle offers custom advancement criteria. Please refer to <a href="https://github.com/KiwiFlavoredApollo/CobblemonTrainerBattle/tree/master/src/main/generated/data/cobblemontrainerbattle/advancements">GitHub repository</a> for specific usages.</p>
+<pre><code>cobblemontrainerbattle:defeat_trainer
+cobblemontrainerbattle:kill_trainer
+cobblemontrainerbattle:battlefactory_winning_streak
 </code></pre>
-<h2 id="trainer-textures">Trainer Textures</h2>
-<ul>
-<li>Gym Leaders, Elite Four and Champion textures (skins) can be overridden via resource pack.</li>
-</ul>
-<h2 id="battle-themes">Battle Themes</h2>
-<pre><code>cobblemon:battle.pvw.default
-cobblemon:battle.pvp.default
-cobblemon:battle.pvn.default
-
-battle.default.disc_1
-battle.default.disc_2
-battle.default.disc_3
-
-battle.gym_leader.disc_1
-battle.gym_leader.disc_2
-battle.gym_leader.disc_3
-
-battle.elite_four.disc_1
-battle.elite_four.disc_2
-battle.elite_four.disc_3
-
-battle.champion.disc_1
-battle.champion.disc_2
-battle.champion.disc_3
+<pre><code>{
+  &quot;parent&quot;: &quot;cobblemontrainerbattle:defeat_elite_drake&quot;,
+  &quot;criteria&quot;: {
+    &quot;defeat_champion_wallace&quot;: {
+      &quot;conditions&quot;: {
+        &quot;count&quot;: 1,
+        &quot;trainer&quot;: &quot;trainer:entity/champion_wallace&quot;
+      },
+      &quot;trigger&quot;: &quot;cobblemontrainerbattle:defeat_trainer&quot;
+    }
+  },
+  &quot;display&quot;: {
+    &quot;announce_to_chat&quot;: true,
+    &quot;background&quot;: &quot;minecraft:textures/gui/advancements/backgrounds/adventure.png&quot;,
+    &quot;description&quot;: {
+      &quot;translate&quot;: &quot;advancement.cobblemontrainerbattle.defeat_champion_wallace.description&quot;
+    },
+    &quot;frame&quot;: &quot;goal&quot;,
+    &quot;hidden&quot;: false,
+    &quot;icon&quot;: {
+      &quot;item&quot;: &quot;cobblemontrainerbattle:champion_wallace_token&quot;
+    },
+    &quot;show_toast&quot;: true,
+    &quot;title&quot;: {
+      &quot;translate&quot;: &quot;advancement.cobblemontrainerbattle.defeat_champion_wallace.title&quot;
+    }
+  },
+  &quot;requirements&quot;: [
+    [
+      &quot;defeat_champion_wallace&quot;
+    ]
+  ],
+  &quot;sends_telemetry_event&quot;: false
+}
 </code></pre>
-<ul>
-<li>Cobblemon provides three default sound keys. They must be prefixed with <code>cobblemon</code> namespace.</li>
-<li>Cobblemon Trainer Battle provides custom sound keys. They do not have to be prefixed with <code>cobblemontrainerbattle</code> namespace.</li>
-</ul>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../items/" class="btn btn-neutral float-left" title="Items"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../resourcepack/" class="btn btn-neutral float-right" title="Resource Pack">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -434,6 +345,8 @@ battle.champion.disc_3
     
       <span><a href="../items/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
+    
+      <span><a href="../resourcepack/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
