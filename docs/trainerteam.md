@@ -41,7 +41,7 @@ Trainer team files follow Showdown team JSON format. Additional attributes are a
 
 ## Form Names
 
-Few other options for form names are `Therian`, `Paldea-Combat` and `Galar-Zen`. Form names for a Pokémon can be identified from [Cobblemon species file](https://gitlab.com/cable-mc/cobblemon/-/tree/main/common/src/main/resources/data/cobblemon/species?ref_type=heads).
+Few other options for form names are `Hisui`, `Therian`, `Paldea-Combat` and `Galar-Zen`. Form names for a Pokémon can be found in [Cobblemon species file](https://gitlab.com/cable-mc/cobblemon/-/tree/main/common/src/main/resources/data/cobblemon/species?ref_type=heads).
 
 ```json
 {
