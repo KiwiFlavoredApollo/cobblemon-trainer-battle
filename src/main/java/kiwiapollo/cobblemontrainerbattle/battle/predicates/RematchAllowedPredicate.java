@@ -24,7 +24,7 @@ public class RematchAllowedPredicate implements MessagePredicate<PlayerBattlePar
     @Override
     public boolean test(PlayerBattleParticipant player) {
         try {
-            boolean isOpponentDefeated = ((BattleRecord) PlayerHistoryManager.get(player.getUuid()).get(opponent)).getVictoryCount() > 0;
+            boolean isOpponentDefeated = ((BattleRecord) PlayerHistoryManager.getPlayerHistory(player.getUuid()).getOrCreateRecord(opponent)).getVictoryCount() > 0;
             return isRematchAllowed || !isOpponentDefeated;
 
         } catch (ClassCastException e) {

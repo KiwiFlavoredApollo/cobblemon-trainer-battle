@@ -15,41 +15,31 @@ import java.util.*;
 public class PlayerHistoryManager {
     private static final int SAVE_INTERVAL = 24000;
 
-    private static Map<UUID, PlayerHistory> histories = new HashMap<>();
+    private static final Map<UUID, PlayerHistory> histories = new HashMap<>();
 
     public static boolean containsKey(UUID uuid) {
         return PlayerHistoryManager.histories.containsKey(uuid);
     }
 
-    public static PlayerHistory get(UUID uuid) {
+    public static PlayerHistory getPlayerHistory(UUID uuid) {
         return PlayerHistoryManager.histories.get(uuid);
     }
 
-    public static void put(UUID uuid, PlayerHistory history) {
-        PlayerHistoryManager.histories.put(uuid, history);
-    }
-
-    public static void initializePlayerHistory(
+    public static void initializePlayerHistoryIfNotExist(
             ServerPlayNetworkHandler handler,
             PacketSender sender,
             MinecraftServer server
     ) {
-        UUID playerUuid = handler.getPlayer().getUuid();
+        UUID uuid = handler.getPlayer().getUuid();
 
-        if (PlayerHistoryManager.containsKey(playerUuid)) {
+        if (PlayerHistoryManager.containsKey(uuid)) {
             return;
         }
 
-        PlayerHistoryManager.put(playerUuid, new PlayerHistory());
+        PlayerHistoryManager.histories.put(uuid, new PlayerHistory());
     }
 
-    public static void periodicallySavePlayerHistory(MinecraftServer server) {
-        if (server.getTicks() % SAVE_INTERVAL == 0) {
-            PlayerHistoryManager.saveToNbt(server);
-        }
-    }
-
-    public static void loadFromNbt(MinecraftServer server) {
+    public static void loadPlayerHistory(MinecraftServer server) {
         File historyDir = getTrainerBattleHistoryDir(server);
 
         if (!historyDir.isDirectory()) {
@@ -57,50 +47,67 @@ public class PlayerHistoryManager {
         }
 
         PlayerHistoryManager.histories.clear();
-        List<File> datFileList = Arrays.stream(historyDir.listFiles())
-                .filter(PlayerHistoryManager::isDatFile).toList();
+        List<File> datFileList = Arrays.stream(historyDir.listFiles()).filter(PlayerHistoryManager::isDatFile).toList();
         for (File file : datFileList) {
             try {
-                PlayerHistory playerHistory = PlayerHistory.readFromNbt(NbtIo.readCompressed(file));
-                UUID playerUuid = UUID.fromString(file.getName().replace(".dat", ""));
-                PlayerHistoryManager.histories.put(playerUuid, playerHistory);
+                UUID uuid = UUID.fromString(file.getName().replace(".dat", ""));
+                PlayerHistory history = new PlayerHistory();
+                history.readFromNbt(NbtIo.readCompressed(file));
+                PlayerHistoryManager.histories.put(uuid, history);
 
-            } catch (NullPointerException | IOException ignored) {
-                CobblemonTrainerBattle.LOGGER.error("An error occurred while loading from {}", file.getName());
+            } catch (NullPointerException | IOException e) {
+                UUID uuid = UUID.fromString(file.getName().replace(".dat", ""));
+
+                File backup = new File(historyDir, String.format("%s.dat_bak", uuid));
+                file.renameTo(backup);
+
+                PlayerHistoryManager.histories.put(uuid, new PlayerHistory());
+
+                CobblemonTrainerBattle.LOGGER.error("Error occurred while loading {}", file.getName());
+                CobblemonTrainerBattle.LOGGER.error("Created backup : {}", backup.getName());
             }
         }
 
-        CobblemonTrainerBattle.LOGGER.info("Loaded player battle history registry");
+        CobblemonTrainerBattle.LOGGER.info("Loaded player histories");
     }
 
-    public static void saveToNbt(MinecraftServer server) {
+    public static void savePlayerHistory(MinecraftServer server) {
         File historyDir = getTrainerBattleHistoryDir(server);
 
         if (!historyDir.exists()) {
             historyDir.mkdirs();
         }
 
-        for (Map.Entry<UUID, PlayerHistory> historyEntry: PlayerHistoryManager.histories.entrySet()) {
+        for (Map.Entry<UUID, PlayerHistory> entry: PlayerHistoryManager.histories.entrySet()) {
             try {
-                UUID playerUuid = historyEntry.getKey();
-                PlayerHistory playerHistory = historyEntry.getValue();
+                UUID uuid = entry.getKey();
+                PlayerHistory history = entry.getValue();
 
-                File newPlayerHistory = new File(historyDir, String.format("%s.dat", playerUuid));
-                File oldPlayerHistory = new File(historyDir, String.format("%s.dat_old", playerUuid));
+                File newHistory = new File(historyDir, String.format("%s.dat", uuid));
+                File oldHistory = new File(historyDir, String.format("%s.dat_old", uuid));
 
-                if (newPlayerHistory.exists()) {
-                    newPlayerHistory.renameTo(oldPlayerHistory);
+                if (newHistory.exists()) {
+                    newHistory.renameTo(oldHistory);
                 }
 
-                NbtIo.writeCompressed(playerHistory.writeToNbt(new NbtCompound()), newPlayerHistory);
+                NbtCompound nbt = new NbtCompound();
+                history.writeToNbt(nbt);
+                NbtIo.writeCompressed(nbt, newHistory);
 
             } catch (IOException e) {
-                UUID playerUuid = historyEntry.getKey();
-                CobblemonTrainerBattle.LOGGER.error("An error occurred while saving to {}.dat", playerUuid);
+                UUID uuid = entry.getKey();
+                File file = new File(historyDir, String.format("%s.dat", uuid));
+                CobblemonTrainerBattle.LOGGER.error("Error occurred while saving {}", file.getName());
             }
         }
 
-        CobblemonTrainerBattle.LOGGER.info("Saved player battle history registry");
+        CobblemonTrainerBattle.LOGGER.info("Saved player histories");
+    }
+
+    public static void periodicallySavePlayerHistory(MinecraftServer server) {
+        if (server.getTicks() % SAVE_INTERVAL == 0) {
+            PlayerHistoryManager.savePlayerHistory(server);
+        }
     }
 
     private static File getTrainerBattleHistoryDir(MinecraftServer server) {

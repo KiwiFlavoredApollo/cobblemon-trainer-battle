@@ -152,7 +152,7 @@ public class TrainerEntity extends PathAwareEntity {
     @Override
     public void onDeath(DamageSource damageSource) {
         if (damageSource.getSource() instanceof ServerPlayerEntity player) {
-            EntityRecord record = (EntityRecord) PlayerHistoryManager.get(player.getUuid()).get(trainer);
+            EntityRecord record = (EntityRecord) PlayerHistoryManager.getPlayerHistory(player.getUuid()).getOrCreateRecord(trainer);
             record.setKillCount(record.getKillCount() + 1);
             CustomCriteria.KILL_TRAINER_CRITERION.trigger(player);
         }

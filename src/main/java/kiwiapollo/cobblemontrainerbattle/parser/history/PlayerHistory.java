@@ -1,6 +1,5 @@
 package kiwiapollo.cobblemontrainerbattle.parser.history;
 
-import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.Identifier;
 
@@ -13,20 +12,12 @@ public class PlayerHistory {
         this.records = new HashMap<>();
     }
 
-    public PlayerHistoryRecord get(Identifier identifier) {
+    public PlayerHistoryRecord getOrCreateRecord(Identifier identifier) throws IllegalArgumentException {
         if (!records.containsKey(identifier)) {
-            records.put(identifier, createPlayerHistoryRecord(identifier.toString()));
+            records.put(identifier, createRecord(identifier));
         }
 
         return records.get(identifier);
-    }
-
-    public void put(Identifier identifier, PlayerHistoryRecord record) {
-        records.put(identifier, record);
-    }
-
-    public void remove(Identifier identifier) {
-        records.remove(identifier);
     }
 
     public int getTotalTrainerVictoryCount() {
@@ -45,38 +36,46 @@ public class PlayerHistory {
                 .reduce(Integer::sum).orElse(0);
     }
 
-    public NbtCompound writeToNbt(NbtCompound nbt) {
-        for (Map.Entry<Identifier, ? extends PlayerHistoryRecord> recordEntry: records.entrySet()) {
-            Identifier identifier = recordEntry.getKey();
-            PlayerHistoryRecord record = recordEntry.getValue();
+    public void readFromNbt(NbtCompound nbt) {
+        records.clear();
 
-            nbt.put(identifier.toString(), record.writeToNbt(new NbtCompound()));
+        List<Identifier> identifiers = nbt.getKeys().stream()
+                .map(Identifier::tryParse)
+                .filter(Objects::nonNull).toList();
+
+        for (Identifier identifier : identifiers) {
+            try {
+                PlayerHistoryRecord record = createRecord(identifier);
+                record.readFromNbt(nbt.getCompound(identifier.toString()));
+
+                records.put(identifier, record);
+
+            } catch (NullPointerException | IllegalArgumentException ignored) {
+
+            }
         }
+    }
+
+    public void writeToNbt(NbtCompound nbt) {
+        records.forEach((identifier, record) -> {
+            nbt.put(identifier.toString(), toNbtCompound(record));
+        });
+    }
+
+    private NbtCompound toNbtCompound(PlayerHistoryRecord record) {
+        NbtCompound nbt = new NbtCompound();
+        record.writeToNbt(nbt);
         return nbt;
     }
 
-    public static PlayerHistory readFromNbt(NbtCompound nbt) {
-        PlayerHistory history = new PlayerHistory();
-        for (String identifier : nbt.getKeys()) {
-            try {
-                NbtCompound record = nbt.getCompound(identifier);
-                history.get(Identifier.tryParse(identifier)).readFromNbt(record);
-
-            } catch (IllegalArgumentException ignored) {
-                CobblemonTrainerBattle.LOGGER.error("Unable to load record : {}", identifier);
-            }
-        }
-        return history;
-    }
-
-    private static PlayerHistoryRecord createPlayerHistoryRecord(String identifier) {
-        if (identifier.matches("^trainer:.+")) {
+    private PlayerHistoryRecord createRecord(Identifier identifier) {
+        if (identifier.getNamespace().equals("trainer")) {
             return new TrainerRecord();
 
-        } else if (identifier.matches("^group:.+")) {
+        } else if (identifier.getNamespace().equals("group")) {
             return new TrainerGroupRecord();
 
-        } else if (identifier.equals("minigame:battlefactory")) {
+        } else if (identifier.toString().equals("minigame:battlefactory")) {
             return new BattleFactoryRecord();
 
         } else {

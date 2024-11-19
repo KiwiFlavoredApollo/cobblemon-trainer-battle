@@ -3,7 +3,6 @@ package kiwiapollo.cobblemontrainerbattle.advancement;
 import com.google.gson.JsonObject;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.parser.history.BattleRecord;
-import kiwiapollo.cobblemontrainerbattle.parser.history.EntityRecord;
 import kiwiapollo.cobblemontrainerbattle.parser.history.PlayerHistoryManager;
 import net.minecraft.advancement.criterion.AbstractCriterion;
 import net.minecraft.advancement.criterion.AbstractCriterionConditions;
@@ -12,8 +11,6 @@ import net.minecraft.predicate.entity.AdvancementEntityPredicateSerializer;
 import net.minecraft.predicate.entity.LootContextPredicate;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
-
-import java.util.Objects;
 
 public class DefeatTrainerCriterion extends AbstractCriterion<DefeatTrainerCriterion.Conditions> {
     private static final Identifier ID = Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_trainer");
@@ -72,7 +69,7 @@ public class DefeatTrainerCriterion extends AbstractCriterion<DefeatTrainerCrite
         }
 
         boolean test(ServerPlayerEntity player) {
-            int total = PlayerHistoryManager.get(player.getUuid()).getTotalTrainerVictoryCount();
+            int total = PlayerHistoryManager.getPlayerHistory(player.getUuid()).getTotalTrainerVictoryCount();
             return total >= count;
         }
     }
@@ -102,7 +99,7 @@ public class DefeatTrainerCriterion extends AbstractCriterion<DefeatTrainerCrite
         }
 
         boolean test(ServerPlayerEntity player) {
-            int record = ((BattleRecord) PlayerHistoryManager.get(player.getUuid()).get(trainer)).getVictoryCount();
+            int record = ((BattleRecord) PlayerHistoryManager.getPlayerHistory(player.getUuid()).getOrCreateRecord(trainer)).getVictoryCount();
             return record >= count;
         }
     }

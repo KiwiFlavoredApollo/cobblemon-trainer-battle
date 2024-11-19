@@ -34,7 +34,7 @@ public class NormalBattleFactorySession extends BattleFactorySession {
     }
 
     private BattleRecord getBattleRecord() {
-        return (BattleRecord) PlayerHistoryManager.get(player.getUuid()).get(Identifier.tryParse("minigame:battlefactory"));
+        return (BattleRecord) PlayerHistoryManager.getPlayerHistory(player.getUuid()).getOrCreateRecord(Identifier.tryParse("minigame:battlefactory"));
     }
 
     private void updateVictoryRecord() {

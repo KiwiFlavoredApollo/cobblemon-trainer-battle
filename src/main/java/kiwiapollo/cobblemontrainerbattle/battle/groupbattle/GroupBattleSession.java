@@ -98,7 +98,7 @@ public class GroupBattleSession implements Session {
     }
 
     private BattleRecord getBattleRecord() {
-        return (BattleRecord) PlayerHistoryManager.get(player.getUuid()).get(group);
+        return (BattleRecord) PlayerHistoryManager.getPlayerHistory(player.getUuid()).getOrCreateRecord(group);
     }
 
     private void updateVictoryRecord() {

@@ -1,7 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.standalone;
 
 import com.cobblemon.mod.common.Cobblemon;
-import com.cobblemon.mod.common.CobblemonSounds;
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
@@ -63,7 +62,7 @@ public class StandaloneTrainerBattle implements TrainerBattle {
     }
 
     private BattleRecord getBattleRecord() {
-        return (BattleRecord) PlayerHistoryManager.get(getPlayer().getUuid()).get(getTrainer().getIdentifier());
+        return (BattleRecord) PlayerHistoryManager.getPlayerHistory(getPlayer().getUuid()).getOrCreateRecord(getTrainer().getIdentifier());
     }
 
     private void updateVictoryRecord() {

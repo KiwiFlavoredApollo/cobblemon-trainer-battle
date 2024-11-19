@@ -50,7 +50,7 @@ public class BattleFactoryWinningStreakCriterion extends AbstractCriterion<Battl
         }
 
         boolean test(ServerPlayerEntity player) {
-            MaximumStreakRecord record = (MaximumStreakRecord) PlayerHistoryManager.get(player.getUuid()).get(Identifier.tryParse("minigame:battlefactory"));
+            MaximumStreakRecord record = (MaximumStreakRecord) PlayerHistoryManager.getPlayerHistory(player.getUuid()).getOrCreateRecord(Identifier.tryParse("minigame:battlefactory"));
             return record.getMaximumStreak() >= count;
         }
     }

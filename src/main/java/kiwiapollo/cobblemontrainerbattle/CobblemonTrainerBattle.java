@@ -84,9 +84,9 @@ public class CobblemonTrainerBattle implements ModInitializer {
 		ServerPlayConnectionEvents.DISCONNECT.register(GroupBattleSessionStorage::removeDisconnectedPlayerSession);
 		ServerPlayConnectionEvents.DISCONNECT.register(BattleFactorySessionStorage::removeDisconnectedPlayerSession);
 
-		ServerPlayConnectionEvents.JOIN.register(PlayerHistoryManager::initializePlayerHistory);
-		ServerLifecycleEvents.SERVER_STARTED.register(PlayerHistoryManager::loadFromNbt);
-		ServerLifecycleEvents.SERVER_STOPPED.register(PlayerHistoryManager::saveToNbt);
+		ServerPlayConnectionEvents.JOIN.register(PlayerHistoryManager::initializePlayerHistoryIfNotExist);
+		ServerLifecycleEvents.SERVER_STARTED.register(PlayerHistoryManager::loadPlayerHistory);
+		ServerLifecycleEvents.SERVER_STOPPED.register(PlayerHistoryManager::savePlayerHistory);
 		ServerTickEvents.END_SERVER_TICK.register(PlayerHistoryManager::periodicallySavePlayerHistory);
 
 		ServerTickEvents.END_WORLD_TICK.register(TrainerEntitySpawnEventHandler::periodicallySpawnTrainerEntity);
