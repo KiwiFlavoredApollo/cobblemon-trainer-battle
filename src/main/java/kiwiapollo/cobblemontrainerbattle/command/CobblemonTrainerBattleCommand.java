@@ -91,7 +91,7 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
             return Command.SINGLE_SUCCESS;
 
         } catch (CommandSyntaxException | IOException e) {
-            CobblemonTrainerBattle.LOGGER.error("An error occurred while exporting trainer file");
+            CobblemonTrainerBattle.LOGGER.error("Error occurred while exporting trainer file");
             return 0;
         }
     }
@@ -111,7 +111,7 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
             return Command.SINGLE_SUCCESS;
 
         } catch (CommandSyntaxException | IOException e) {
-            CobblemonTrainerBattle.LOGGER.error("An error occurred while exporting trainer file");
+            CobblemonTrainerBattle.LOGGER.error("Error occurred while exporting trainer file");
             return 0;
         }
     }
@@ -130,7 +130,7 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
             return Command.SINGLE_SUCCESS;
 
         } catch (CommandSyntaxException | IOException e) {
-            CobblemonTrainerBattle.LOGGER.error("An error occurred while exporting trainer file");
+            CobblemonTrainerBattle.LOGGER.error("Error occurred while exporting trainer file");
             return 0;
         }
     }

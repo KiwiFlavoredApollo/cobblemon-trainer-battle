@@ -42,7 +42,7 @@ public class TrainerResourceMapFactory {
 
             } catch (JsonParseException e) {
                 Identifier team = entry.getKey();
-                CobblemonTrainerBattle.LOGGER.error("An error occurred while loading {}", team.toString());
+                CobblemonTrainerBattle.LOGGER.error("Error occurred while loading {}", team.toString());
             }
         }
 

@@ -71,7 +71,7 @@ public class TrainerProfileLoader implements SimpleSynchronousResourceReloadList
 
             } catch (JsonParseException | IOException e) {
                 Identifier teamIdentifier = entry.getKey();
-                CobblemonTrainerBattle.LOGGER.error("An error occurred while loading {}", teamIdentifier.toString());
+                CobblemonTrainerBattle.LOGGER.error("Error occurred while loading {}", teamIdentifier.toString());
             }
         }
     }

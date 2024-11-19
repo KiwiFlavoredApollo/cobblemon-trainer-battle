@@ -41,7 +41,7 @@ public class TrainerGroupProfileLoader implements SimpleSynchronousResourceReloa
                 TrainerGroupProfileStorage.getProfileRegistry().put(toTrainerGroupIdentifier(identifier), trainerGroupProfile);
 
             } catch (JsonParseException | IOException | NullPointerException | IllegalArgumentException ignored) {
-                CobblemonTrainerBattle.LOGGER.error("An error occurred while loading {}", identifier.toString());
+                CobblemonTrainerBattle.LOGGER.error("Error occurred while loading {}", identifier.toString());
             }
         }));
     }

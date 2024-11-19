@@ -38,7 +38,7 @@ public class MiniGameProfileLoader implements SimpleSynchronousResourceReloadLis
             MiniGameProfileStorage.setBattleFactoryProfile(GSON.fromJson(bufferedReader, BattleFactoryProfile.class));
 
         } catch (JsonParseException | IOException e) {
-            CobblemonTrainerBattle.LOGGER.error("An error occurred while loading {}", BATTLE_FACTORY_PROFILE_PATH);
+            CobblemonTrainerBattle.LOGGER.error("Error occurred while loading {}", BATTLE_FACTORY_PROFILE_PATH);
             throw new RuntimeException(e);
         }
     }
