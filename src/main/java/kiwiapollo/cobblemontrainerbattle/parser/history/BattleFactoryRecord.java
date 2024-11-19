@@ -51,23 +51,19 @@ public class BattleFactoryRecord implements PlayerHistoryRecord, BattleRecord, M
     }
 
     @Override
-    public NbtCompound writeToNbt(NbtCompound nbt) {
-        nbt.putLong("timestamp", timestamp.toEpochMilli());
-        nbt.putInt("streak", streak);
-        nbt.putInt("victory", victory);
-        nbt.putInt("defeat", defeat);
-
-        return nbt;
-    }
-
-    @Override
-    public BattleFactoryRecord readFromNbt(NbtCompound nbt) {
+    public void readFromNbt(NbtCompound nbt) {
         timestamp = Instant.ofEpochMilli(nbt.getLong("timestamp"));
         streak = nbt.getInt("streak");
         victory = nbt.getInt("victory");
         defeat = nbt.getInt("defeat");
+    }
 
-        return this;
+    @Override
+    public void writeToNbt(NbtCompound nbt) {
+        nbt.putLong("timestamp", timestamp.toEpochMilli());
+        nbt.putInt("streak", streak);
+        nbt.putInt("victory", victory);
+        nbt.putInt("defeat", defeat);
     }
 
     private void updateTimestamp() {

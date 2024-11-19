@@ -38,21 +38,17 @@ public class TrainerGroupRecord implements PlayerHistoryRecord, BattleRecord {
     }
 
     @Override
-    public NbtCompound writeToNbt(NbtCompound nbt) {
-        nbt.putLong("timestamp", timestamp.toEpochMilli());
-        nbt.putInt("victory", victory);
-        nbt.putInt("defeat", defeat);
-
-        return nbt;
-    }
-
-    @Override
-    public TrainerGroupRecord readFromNbt(NbtCompound nbt) {
+    public void readFromNbt(NbtCompound nbt) {
         timestamp = Instant.ofEpochMilli(nbt.getLong("timestamp"));
         victory = nbt.getInt("victory");
         defeat = nbt.getInt("defeat");
+    }
 
-        return this;
+    @Override
+    public void writeToNbt(NbtCompound nbt) {
+        nbt.putLong("timestamp", timestamp.toEpochMilli());
+        nbt.putInt("victory", victory);
+        nbt.putInt("defeat", defeat);
     }
 
     private void updateTimestamp() {

@@ -51,23 +51,19 @@ public class TrainerRecord implements PlayerHistoryRecord, BattleRecord, EntityR
     }
 
     @Override
-    public NbtCompound writeToNbt(NbtCompound nbt) {
-        nbt.putLong("timestamp", timestamp.toEpochMilli());
-        nbt.putInt("victory", victory);
-        nbt.putInt("defeat", defeat);
-        nbt.putInt("kill", kill);
-
-        return nbt;
-    }
-
-    @Override
-    public TrainerRecord readFromNbt(NbtCompound nbt) {
+    public void readFromNbt(NbtCompound nbt) {
         timestamp = Instant.ofEpochMilli(nbt.getLong("timestamp"));
         victory = nbt.getInt("victory");
         defeat = nbt.getInt("defeat");
         kill = nbt.getInt("kill");
+    }
 
-        return this;
+    @Override
+    public void writeToNbt(NbtCompound nbt) {
+        nbt.putLong("timestamp", timestamp.toEpochMilli());
+        nbt.putInt("victory", victory);
+        nbt.putInt("defeat", defeat);
+        nbt.putInt("kill", kill);
     }
 
     private void updateTimestamp() {
