@@ -24,7 +24,7 @@ public class PlayerPartyNotFaintPredicate<T> implements MessagePredicate<T> {
 
     @Override
     public MutableText getErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.fainted_player_party");
+        return Text.translatable("predicate.cobblemontrainerbattle.error.player_party_not_fainted");
     }
 
     @Override
