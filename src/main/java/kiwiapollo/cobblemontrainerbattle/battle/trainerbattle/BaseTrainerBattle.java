@@ -23,7 +23,7 @@ public class BaseTrainerBattle implements TrainerBattle {
     private static final List<MessagePredicate<PlayerBattleParticipant>> PREDICATES = List.of(
             new PlayerNotBusyPredicate<>(PlayerBattleParticipant::getPlayerEntity),
             new PlayerPartyNotEmptyPredicate<>(PlayerBattleParticipant::getParty),
-            new PlayerPartyNotFaintPredicate<>(PlayerBattleParticipant::getParty),
+            new PlayerPartyNotFaintedPredicate<>(PlayerBattleParticipant::getParty),
             new MinimumPartyLevelPredicate(ShowdownPokemonParser.MAXIMUM_RELATIVE_LEVEL)
     );
 

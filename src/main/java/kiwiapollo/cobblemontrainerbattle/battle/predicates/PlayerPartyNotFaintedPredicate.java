@@ -11,14 +11,14 @@ import java.util.Objects;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
-public class PlayerPartyNotFaintPredicate<T> implements MessagePredicate<T> {
+public class PlayerPartyNotFaintedPredicate<T> implements MessagePredicate<T> {
     private final Function<T, PartyStore> getPlayerParty;
 
-    public PlayerPartyNotFaintPredicate() {
+    public PlayerPartyNotFaintedPredicate() {
         this(player -> Cobblemon.INSTANCE.getStorage().getParty((ServerPlayerEntity) player));
     }
 
-    public PlayerPartyNotFaintPredicate(Function<T, PartyStore> getPlayerParty) {
+    public PlayerPartyNotFaintedPredicate(Function<T, PartyStore> getPlayerParty) {
         this.getPlayerParty = getPlayerParty;
     }
 
