@@ -38,6 +38,8 @@ cobblemon:battle.pvn.default
 
 Cobblemon Trainer Battle provides custom sound keys. They can be prefixed with `cobblemontrainerbattle` namespace, but it is not required.
 
+> Custom sound keys are not available for SERVERONLY version
+
 ```
 battle.default.disc_1
 battle.default.disc_2
