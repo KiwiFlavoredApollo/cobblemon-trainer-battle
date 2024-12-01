@@ -12,8 +12,8 @@ import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.NormalB
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.MessagePredicate;
 import kiwiapollo.cobblemontrainerbattle.economy.EconomyFactory;
-import kiwiapollo.cobblemontrainerbattle.parser.*;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.PlayerPartyNotEmptyPredicate;
+import kiwiapollo.cobblemontrainerbattle.parser.config.ConfigLoader;
 import kiwiapollo.cobblemontrainerbattle.parser.exporter.FlatShowdownPokemonExporter;
 import kiwiapollo.cobblemontrainerbattle.parser.exporter.NormalShowdownPokemonExporter;
 import kiwiapollo.cobblemontrainerbattle.parser.exporter.RelativeShowdownPokemonExporter;
