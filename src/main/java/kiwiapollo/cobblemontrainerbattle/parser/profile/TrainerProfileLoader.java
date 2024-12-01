@@ -44,49 +44,50 @@ public class TrainerProfileLoader implements SimpleSynchronousResourceReloadList
                 List<ShowdownPokemon> team = readTrainerTeamResource(teamResource);
                 TrainerOption option = readTrainerOptionResource(optionResource);
 
-                TrainerProfileStorage.getProfileRegistry().put(
-                        identifier,
-                        new TrainerProfile(
-                                name,
-                                team,
-                                option.isSpawningAllowed,
-                                option.isRematchAllowed,
-                                option.maximumPartyLevel,
-                                option.minimumPartyLevel,
-                                option.requiredLabel,
-                                option.requiredPokemon,
-                                option.requiredHeldItem,
-                                option.requiredAbility,
-                                option.requiredMove,
-                                option.forbiddenLabel,
-                                option.forbiddenPokemon,
-                                option.forbiddenHeldItem,
-                                option.forbiddenAbility,
-                                option.forbiddenMove,
-                                option.battleTheme,
-                                option.onVictory,
-                                option.onDefeat
-                        )
+                TrainerProfile profile = new TrainerProfile(
+                        name,
+                        team,
+                        option.battleFormat,
+                        option.battleSkill,
+                        option.isSpawningAllowed,
+                        option.isRematchAllowed,
+                        option.maximumPartySize,
+                        option.minimumPartySize,
+                        option.maximumPartyLevel,
+                        option.minimumPartyLevel,
+                        option.requiredLabel,
+                        option.requiredPokemon,
+                        option.requiredHeldItem,
+                        option.requiredAbility,
+                        option.requiredMove,
+                        option.forbiddenLabel,
+                        option.forbiddenPokemon,
+                        option.forbiddenHeldItem,
+                        option.forbiddenAbility,
+                        option.forbiddenMove,
+                        option.battleTheme,
+                        option.onVictory,
+                        option.onDefeat
                 );
 
-            } catch (JsonParseException | IOException e) {
-                Identifier teamIdentifier = entry.getKey();
-                CobblemonTrainerBattle.LOGGER.error("Error occurred while loading {}", teamIdentifier.toString());
+                TrainerProfileStorage.getProfileRegistry().put(identifier, profile);
+
+            } catch (IllegalStateException | JsonParseException | IOException e) {
+                Identifier identifier = entry.getKey();
+                CobblemonTrainerBattle.LOGGER.error("Error occurred while loading {}", identifier);
             }
         }
     }
 
     private List<ShowdownPokemon> readTrainerTeamResource(Resource resource) throws IOException, JsonParseException {
-        try (InputStream inputStream = resource.getInputStream()) {
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-            return GSON.fromJson(bufferedReader, new TypeToken<List<ShowdownPokemon>>(){}.getType());
+        try (BufferedReader reader = resource.getReader()) {
+            return GSON.fromJson(reader, new TypeToken<List<ShowdownPokemon>>(){}.getType());
         }
     }
 
     private TrainerOption readTrainerOptionResource(Resource resource) throws IOException {
-        try (InputStream inputStream = resource.getInputStream()) {
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-            return GSON.fromJson(bufferedReader, TrainerOption.class);
+        try (BufferedReader reader = resource.getReader()) {
+            return GSON.fromJson(reader, TrainerOption.class);
         }
     }
 }
