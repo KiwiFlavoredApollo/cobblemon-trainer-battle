@@ -10,6 +10,9 @@ import java.util.List;
 public class TrainerOption {
     public String displayName;
 
+    public String battleFormat;
+    public String battleAI;
+
     public boolean isSpawningAllowed;
     public boolean isRematchAllowed;
 
@@ -38,6 +41,9 @@ public class TrainerOption {
 
     public TrainerOption() {
         this.displayName = null;
+
+        this.battleFormat = "single";
+        this.battleAI = "generation5";
 
         this.isSpawningAllowed = true;
         this.isRematchAllowed = true;

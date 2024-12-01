@@ -12,6 +12,9 @@ public class TrainerProfile {
 
     public final String displayName;
 
+    public final String battleFormat;
+    public final String battleAI;
+
     public final boolean isSpawningAllowed;
     public final boolean isRematchAllowed;
 
@@ -37,11 +40,14 @@ public class TrainerProfile {
 
     public final PostBattleActionSet onVictory;
     public final PostBattleActionSet onDefeat;
-    
+
     public TrainerProfile(List<ShowdownPokemon> team, TrainerOption option) {
         this.team = team;
 
         this.displayName = option.displayName;
+
+        this.battleFormat = "single";
+        this.battleAI = option.battleAI;
 
         this.isSpawningAllowed = option.isSpawningAllowed;
         this.isRematchAllowed = option.isRematchAllowed;

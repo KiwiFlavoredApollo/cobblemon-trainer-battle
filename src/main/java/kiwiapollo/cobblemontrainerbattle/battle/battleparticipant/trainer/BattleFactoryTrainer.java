@@ -8,12 +8,14 @@ import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.DisposableBattlePokemonFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.PlayerBackedTrainerBattleActor;
+import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.BattleAIFactory;
+import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.BattleFormatFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerProfile;
-import kiwiapollo.cobblemontrainerbattle.common.Generation5AI;
 import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
 import kiwiapollo.cobblemontrainerbattle.parser.pokemon.ShowdownPokemon;
 import kiwiapollo.cobblemontrainerbattle.parser.pokemon.ShowdownPokemonParser;
+import kiwiapollo.cobblemontrainerbattle.parser.profile.MiniGameProfileStorage;
 import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerProfileStorage;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.MessagePredicate;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -25,6 +27,8 @@ import java.nio.file.Paths;
 import java.util.*;
 
 public class BattleFactoryTrainer implements TrainerBattleParticipant {
+    private static final String BATTLE_FORMAT = "single";
+
     private final Identifier identifier;
     private final UUID uuid;
     private final ServerPlayerEntity player;
@@ -39,7 +43,7 @@ public class BattleFactoryTrainer implements TrainerBattleParticipant {
         TrainerProfile profile = TrainerProfileStorage.getProfileRegistry().get(identifier);
         this.name = Text.translatable(Optional.ofNullable(profile.displayName).orElse(Paths.get(identifier.getPath()).getFileName().toString())).getString();
         this.party = showdownTeamToFlatLevelParty(profile.team, player, level);
-        this.battleAI = new Generation5AI();
+        this.battleAI = new BattleAIFactory(BATTLE_FORMAT, MiniGameProfileStorage.getBattleFactoryProfile().battleAI).create();
     }
 
     private PartyStore showdownTeamToFlatLevelParty(List<ShowdownPokemon> pokemons, ServerPlayerEntity player, int level) {
@@ -80,7 +84,7 @@ public class BattleFactoryTrainer implements TrainerBattleParticipant {
 
     @Override
     public BattleFormat getBattleFormat() {
-        return BattleFormat.Companion.getGEN_9_SINGLES();
+        return new BattleFormatFactory().create(BATTLE_FORMAT);
     }
 
     @Override

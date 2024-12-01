@@ -1,10 +1,13 @@
 package kiwiapollo.cobblemontrainerbattle.parser.profile;
 
+import com.cobblemon.mod.common.battles.BattleFormat;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParseException;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.BattleFormatFactory;
+import kiwiapollo.cobblemontrainerbattle.battle.predicates.MinimumPartySizePredicate;
 import kiwiapollo.cobblemontrainerbattle.parser.pokemon.ShowdownPokemon;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerOption;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerProfile;
@@ -41,9 +44,15 @@ public class TrainerProfileLoader implements SimpleSynchronousResourceReloadList
 
                 TrainerProfile profile = new TrainerProfile(team, option);
 
+                BattleFormat format = new BattleFormatFactory().create(profile.battleFormat);
+                if (!new MinimumPartySizePredicate.TrainerProfilePredicate(format).test(profile)) {
+                    CobblemonTrainerBattle.LOGGER.error("Illegal party size : {}", identifier);
+                    throw new IllegalStateException();
+                }
+
                 TrainerProfileStorage.getProfileRegistry().put(identifier, profile);
 
-            } catch (JsonParseException | IOException e) {
+            } catch (IllegalStateException | JsonParseException | IOException e) {
                 Identifier identifier = entry.getKey();
                 CobblemonTrainerBattle.LOGGER.error("Error occurred while loading {}", identifier);
             }

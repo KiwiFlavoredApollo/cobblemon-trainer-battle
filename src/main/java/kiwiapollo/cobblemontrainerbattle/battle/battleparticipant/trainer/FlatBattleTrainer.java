@@ -8,9 +8,10 @@ import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.DisposableBattlePokemonFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.PlayerBackedTrainerBattleActor;
+import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.BattleAIFactory;
+import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.BattleFormatFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.*;
-import kiwiapollo.cobblemontrainerbattle.common.Generation5AI;
 import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerProfileStorage;
 import kiwiapollo.cobblemontrainerbattle.battle.postbattle.DefeatActionSetHandler;
 import kiwiapollo.cobblemontrainerbattle.battle.postbattle.VictoryActionSetHandler;
@@ -43,7 +44,6 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
 
     private PartyStore party;
 
-
     public FlatBattleTrainer(Identifier identifier, ServerPlayerEntity player, int level) {
         this.identifier = identifier;
         this.uuid = UUID.randomUUID();
@@ -52,8 +52,8 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
         TrainerProfile profile = TrainerProfileStorage.getProfileRegistry().get(identifier);
         this.name = Text.translatable(Optional.ofNullable(profile.displayName).orElse(Paths.get(identifier.getPath()).getFileName().toString())).getString();
         this.party = showdownTeamToFlatLevelParty(profile.team, player, level);
-        this.battleFormat = BattleFormat.Companion.getGEN_9_SINGLES();
-        this.battleAI = new Generation5AI();
+        this.battleFormat = new BattleFormatFactory().create(profile.battleFormat);
+        this.battleAI = new BattleAIFactory(profile.battleFormat, profile.battleAI).create();
         this.onVictory = new VictoryActionSetHandler(player, profile.onVictory);
         this.onDefeat = new DefeatActionSetHandler(player, profile.onDefeat);
         this.battleTheme = profile.battleTheme;
@@ -94,7 +94,7 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
 
     @Override
     public String getName() {
-        return TrainerProfileStorage.getProfileRegistry().get(identifier).displayName;
+        return name;
     }
 
     @Override

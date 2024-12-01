@@ -1,4 +1,6 @@
 {
+  "battleAI": "generation5",
+
   "isSpawningAllowed": true,
   "isRematchAllowed": true,
 

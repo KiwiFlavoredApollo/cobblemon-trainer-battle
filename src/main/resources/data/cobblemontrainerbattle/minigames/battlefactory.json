@@ -1,4 +1,6 @@
 {
+  "battleAI": "generation5",
+
   "onVictory": {
     "balance": 0,
     "commands": []
