@@ -9,24 +9,25 @@ import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 
 public class ConfigLoader {
-    private static final File GLOBAL_CONFIG_DIR = FabricLoader.getInstance().getConfigDir().toFile();
-    private static final File CONFIG_DIR = new File(GLOBAL_CONFIG_DIR, CobblemonTrainerBattle.MOD_ID);
+    private static final File CONFIG_DIR = new File(FabricLoader.getInstance().getConfigDir().toFile(), CobblemonTrainerBattle.MOD_ID);
     private static final File CONFIG_FILE = new File(CONFIG_DIR, "config.json");
+    private static final Gson GSON = new Gson();
 
-    public static Config load() {
+    public Config load() {
         try {
-            Config config = loadExistingConfig();
-            assertSuccessLoadingConfig(config);
-            return config;
+            return loadExistingConfig();
 
-        } catch (IOException | AssertionError e) {
+        } catch (IllegalStateException e) {
+            CobblemonTrainerBattle.LOGGER.error("Failed to load config");
+
             copyDefaultConfig();
+
             return loadDefaultConfig();
         }
     }
 
-    private static void copyDefaultConfig() {
-        try (InputStream defaults = getDefaultConfigResourceInputStream()) {
+    private void copyDefaultConfig() {
+        try (InputStream defaults = getDefaultConfigInputStream()) {
             if (!CONFIG_DIR.exists()) {
                 CONFIG_DIR.mkdirs();
             }
@@ -38,32 +39,25 @@ public class ConfigLoader {
         }
     }
 
-    private static Config loadExistingConfig() throws IOException {
+    private Config loadExistingConfig() {
         try (FileReader reader = new FileReader(CONFIG_FILE)) {
-            return new Gson().fromJson(reader, Config.class);
+            return GSON.fromJson(reader, Config.class);
+
+        } catch (IOException e) {
+            throw new IllegalStateException(e);
         }
     }
 
-    private static Config loadDefaultConfig() {
-        try (
-                InputStream defaults = getDefaultConfigResourceInputStream();
-                InputStreamReader reader = new InputStreamReader(defaults)
-        ) {
-            return new Gson().fromJson(reader, Config.class);
+    private Config loadDefaultConfig() {
+        try (InputStreamReader reader = new InputStreamReader(getDefaultConfigInputStream())) {
+            return GSON.fromJson(reader, Config.class);
 
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    private static InputStream getDefaultConfigResourceInputStream() {
-        String defaultConfigResourcePath = "config/defaults.json";
-        return ConfigLoader.class.getClassLoader().getResourceAsStream(defaultConfigResourcePath);
-    }
-
-    private static void assertSuccessLoadingConfig(Config config) throws AssertionError {
-        if (config == null) {
-           throw new AssertionError();
-        }
+    private InputStream getDefaultConfigInputStream() {
+        return ConfigLoader.class.getClassLoader().getResourceAsStream("config/defaults.json");
     }
 }

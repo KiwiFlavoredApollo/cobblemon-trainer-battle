@@ -44,8 +44,8 @@ public class CobblemonTrainerBattle implements ModInitializer {
 	public static final String MOD_ID = "cobblemontrainerbattle";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-	public static Config config = ConfigLoader.load();
-	public static Economy economy = EconomyFactory.create(config.economy);
+	public static Config config = new ConfigLoader().load();
+	public static Economy economy = new EconomyFactory().create(config.economy);
 
     @Override
 	public void onInitialize() {

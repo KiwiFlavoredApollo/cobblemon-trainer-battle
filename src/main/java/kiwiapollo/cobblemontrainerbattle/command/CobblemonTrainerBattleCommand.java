@@ -75,8 +75,8 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
     }
 
     private int reloadConfig(CommandContext<ServerCommandSource> context) {
-        CobblemonTrainerBattle.config = ConfigLoader.load();
-        CobblemonTrainerBattle.economy = EconomyFactory.create(CobblemonTrainerBattle.config.economy);
+        CobblemonTrainerBattle.config = new ConfigLoader().load();
+        CobblemonTrainerBattle.economy = new EconomyFactory().create(CobblemonTrainerBattle.config.economy);
         CobblemonTrainerBattle.LOGGER.info("Reloaded configuration");
         return Command.SINGLE_SUCCESS;
     }

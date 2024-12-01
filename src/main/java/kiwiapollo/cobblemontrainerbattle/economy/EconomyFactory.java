@@ -4,7 +4,7 @@ package kiwiapollo.cobblemontrainerbattle.economy;
 import kiwiapollo.cobblemontrainerbattle.exception.EconomyNotLoadedException;
 
 public class EconomyFactory {
-    public static Economy create(String identifier) {
+    public Economy create(String identifier) {
         try {
             return switch (identifier) {
                 case "OctoEconomy" -> new OctoEconomy();
