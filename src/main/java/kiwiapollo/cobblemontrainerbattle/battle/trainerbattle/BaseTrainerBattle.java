@@ -2,7 +2,6 @@ package kiwiapollo.cobblemontrainerbattle.battle.trainerbattle;
 
 import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.CobblemonSounds;
-import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.BattleSide;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.cobblemon.mod.common.pokemon.Pokemon;
@@ -20,13 +19,6 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class BaseTrainerBattle implements TrainerBattle {
-    private static final List<MessagePredicate<PlayerBattleParticipant>> PREDICATES = List.of(
-            new PlayerNotBusyPredicate<>(PlayerBattleParticipant::getPlayerEntity),
-            new PlayerPartyNotEmptyPredicate<>(PlayerBattleParticipant::getParty),
-            new PlayerPartyNotFaintedPredicate<>(PlayerBattleParticipant::getParty),
-            new MinimumPartyLevelPredicate(ShowdownPokemonParser.MAXIMUM_RELATIVE_LEVEL)
-    );
-
     private final PlayerBattleParticipant player;
     private final TrainerBattleParticipant trainer;
 
@@ -42,7 +34,15 @@ public class BaseTrainerBattle implements TrainerBattle {
 
     @Override
     public void start() throws BattleStartException {
-        for (MessagePredicate<PlayerBattleParticipant> predicate : PREDICATES) {
+        List<MessagePredicate<PlayerBattleParticipant>> predicates = List.of(
+                new PlayerNotBusyPredicate.PlayerBattleParticipantPredicate(),
+                new PlayerPartyNotEmptyPredicate(),
+                new PlayerPartyNotFaintedPredicate(),
+                new MinimumPartySizePredicate.PlayerPredicate(trainer.getBattleFormat()),
+                new MinimumPartyLevelPredicate(ShowdownPokemonParser.MAXIMUM_RELATIVE_LEVEL)
+        );
+
+        for (MessagePredicate<PlayerBattleParticipant> predicate : predicates) {
             if (!predicate.test(player)) {
                 player.sendErrorMessage(predicate.getErrorMessage());
                 throw new BattleStartException();
@@ -55,7 +55,7 @@ public class BaseTrainerBattle implements TrainerBattle {
                 .forEach(Pokemon::recall);
 
         Cobblemon.INSTANCE.getBattleRegistry().startBattle(
-                BattleFormat.Companion.getGEN_9_SINGLES(),
+                trainer.getBattleFormat(),
                 new BattleSide(player.createBattleActor()),
                 new BattleSide(trainer.createBattleActor()),
                 false

@@ -21,7 +21,7 @@ public class BattleFactory {
 
         List<MessagePredicate<ServerPlayerEntity>> predicates = List.of(
                 new SessionNotExistPredicate(BattleFactorySessionStorage.getSessionRegistry()),
-                new PlayerNotBusyPredicate<>()
+                new PlayerNotBusyPredicate.ServerPlayerEntityPredicate()
         );
 
         for (MessagePredicate<ServerPlayerEntity> predicate: predicates) {
@@ -48,7 +48,7 @@ public class BattleFactory {
 
         List<MessagePredicate<ServerPlayerEntity>> predicates = List.of(
                 new SessionExistPredicate(BattleFactorySessionStorage.getSessionRegistry()),
-                new PlayerNotBusyPredicate<>()
+                new PlayerNotBusyPredicate.ServerPlayerEntityPredicate()
         );
 
         for (MessagePredicate<ServerPlayerEntity> predicate: predicates) {
@@ -75,7 +75,7 @@ public class BattleFactory {
 
             List<MessagePredicate<ServerPlayerEntity>> predicates = List.of(
                     new SessionExistPredicate(BattleFactorySessionStorage.getSessionRegistry()),
-                    new PlayerNotBusyPredicate<>()
+                    new PlayerNotBusyPredicate.ServerPlayerEntityPredicate()
             );
 
             for (MessagePredicate<ServerPlayerEntity> predicate: predicates) {
@@ -101,7 +101,7 @@ public class BattleFactory {
 
             List<MessagePredicate<ServerPlayerEntity>> predicates = List.of(
                     new SessionExistPredicate(BattleFactorySessionStorage.getSessionRegistry()),
-                    new PlayerNotBusyPredicate<>()
+                    new PlayerNotBusyPredicate.ServerPlayerEntityPredicate()
             );
 
             for (MessagePredicate<ServerPlayerEntity> predicate: predicates) {
@@ -130,7 +130,7 @@ public class BattleFactory {
 
             List<MessagePredicate<ServerPlayerEntity>> predicates = List.of(
                     new SessionExistPredicate(BattleFactorySessionStorage.getSessionRegistry()),
-                    new PlayerNotBusyPredicate<>()
+                    new PlayerNotBusyPredicate.ServerPlayerEntityPredicate()
             );
 
             for (MessagePredicate<ServerPlayerEntity> predicate: predicates) {
@@ -176,7 +176,7 @@ public class BattleFactory {
 
             List<MessagePredicate<ServerPlayerEntity>> predicates = List.of(
                     new SessionExistPredicate(BattleFactorySessionStorage.getSessionRegistry()),
-                    new PlayerNotBusyPredicate<>()
+                    new PlayerNotBusyPredicate.ServerPlayerEntityPredicate()
             );
 
             for (MessagePredicate<ServerPlayerEntity> predicate: predicates) {

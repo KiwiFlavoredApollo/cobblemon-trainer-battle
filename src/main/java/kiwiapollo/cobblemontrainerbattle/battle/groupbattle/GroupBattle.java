@@ -29,7 +29,7 @@ public class GroupBattle {
 
         List<MessagePredicate<ServerPlayerEntity>> predicates = List.of(
                 new SessionNotExistPredicate(GroupBattleSessionStorage.getSessionRegistry()),
-                new PlayerNotBusyPredicate<>()
+                new PlayerNotBusyPredicate.ServerPlayerEntityPredicate()
         );
 
         for (MessagePredicate<ServerPlayerEntity> predicate: predicates) {
@@ -54,7 +54,7 @@ public class GroupBattle {
 
         List<MessagePredicate<ServerPlayerEntity>> predicates = List.of(
                 new SessionExistPredicate(GroupBattleSessionStorage.getSessionRegistry()),
-                new PlayerNotBusyPredicate<>()
+                new PlayerNotBusyPredicate.ServerPlayerEntityPredicate()
         );
 
         for (MessagePredicate<ServerPlayerEntity> predicate: predicates) {
@@ -81,7 +81,7 @@ public class GroupBattle {
 
             List<MessagePredicate<ServerPlayerEntity>> predicates = List.of(
                     new SessionExistPredicate(GroupBattleSessionStorage.getSessionRegistry()),
-                    new PlayerNotBusyPredicate<>()
+                    new PlayerNotBusyPredicate.ServerPlayerEntityPredicate()
             );
 
             for (MessagePredicate<ServerPlayerEntity> predicate: predicates) {

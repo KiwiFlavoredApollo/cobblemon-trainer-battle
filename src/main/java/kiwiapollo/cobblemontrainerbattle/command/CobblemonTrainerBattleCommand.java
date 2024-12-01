@@ -7,6 +7,10 @@ import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.FlatBattlePlayer;
+import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.NormalBattlePlayer;
+import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
+import kiwiapollo.cobblemontrainerbattle.battle.predicates.MessagePredicate;
 import kiwiapollo.cobblemontrainerbattle.economy.EconomyFactory;
 import kiwiapollo.cobblemontrainerbattle.parser.*;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.PlayerPartyNotEmptyPredicate;
@@ -81,8 +85,9 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
         try {
             ServerPlayerEntity player = EntityArgumentType.getPlayer(context, "player");
 
-            PlayerPartyNotEmptyPredicate<ServerPlayerEntity> isPlayerPartyNotEmpty = new PlayerPartyNotEmptyPredicate<>();
-            if (!isPlayerPartyNotEmpty.test(player)) {
+            MessagePredicate<PlayerBattleParticipant> predicate = new PlayerPartyNotEmptyPredicate();
+            if (!predicate.test(new NormalBattlePlayer(player))) {
+                player.sendMessage(predicate.getErrorMessage());
                 return 0;
             }
 
@@ -101,8 +106,9 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
             ServerPlayerEntity player = EntityArgumentType.getPlayer(context, "player");
             int level = IntegerArgumentType.getInteger(context, "level");
 
-            PlayerPartyNotEmptyPredicate<ServerPlayerEntity> isPlayerPartyNotEmpty = new PlayerPartyNotEmptyPredicate<>();
-            if (!isPlayerPartyNotEmpty.test(player)) {
+            MessagePredicate<PlayerBattleParticipant> predicate = new PlayerPartyNotEmptyPredicate();
+            if (!predicate.test(new FlatBattlePlayer(player, level))) {
+                player.sendMessage(predicate.getErrorMessage());
                 return 0;
             }
 
@@ -120,8 +126,9 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
         try {
             ServerPlayerEntity player = EntityArgumentType.getPlayer(context, "player");
 
-            PlayerPartyNotEmptyPredicate<ServerPlayerEntity> isPlayerPartyNotEmpty = new PlayerPartyNotEmptyPredicate<>();
-            if (!isPlayerPartyNotEmpty.test(player)) {
+            MessagePredicate<PlayerBattleParticipant> predicate = new PlayerPartyNotEmptyPredicate();
+            if (!predicate.test(new NormalBattlePlayer(player))) {
+                player.sendMessage(predicate.getErrorMessage());
                 return 0;
             }
 

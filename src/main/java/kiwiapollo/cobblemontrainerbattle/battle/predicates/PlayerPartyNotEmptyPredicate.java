@@ -1,23 +1,16 @@
 package kiwiapollo.cobblemontrainerbattle.battle.predicates;
 
-import com.cobblemon.mod.common.Cobblemon;
-import com.cobblemon.mod.common.api.storage.party.PartyStore;
-import net.minecraft.server.network.ServerPlayerEntity;
+import com.cobblemon.mod.common.battles.BattleFormat;
+import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 
-import java.util.Objects;
-import java.util.function.Function;
-
-public class PlayerPartyNotEmptyPredicate<T> implements MessagePredicate<T> {
-    private final Function<T, PartyStore> getPlayerParty;
+public class PlayerPartyNotEmptyPredicate implements MessagePredicate<PlayerBattleParticipant> {
+    private final MessagePredicate<PlayerBattleParticipant> predicate;
 
     public PlayerPartyNotEmptyPredicate() {
-        this(player -> Cobblemon.INSTANCE.getStorage().getParty((ServerPlayerEntity) player));
-    }
-
-    public PlayerPartyNotEmptyPredicate(Function<T, PartyStore> getPlayerParty) {
-        this.getPlayerParty = getPlayerParty;
+        int required = BattleFormat.Companion.getGEN_9_SINGLES().getBattleType().getSlotsPerActor();
+        this.predicate = new MinimumPartySizePredicate.PlayerPredicate(required);
     }
 
     @Override
@@ -26,7 +19,7 @@ public class PlayerPartyNotEmptyPredicate<T> implements MessagePredicate<T> {
     }
 
     @Override
-    public boolean test(T player) {
-        return getPlayerParty.apply(player).toGappyList().stream().anyMatch(Objects::nonNull);
+    public boolean test(PlayerBattleParticipant player) {
+        return predicate.test(player);
     }
 }
