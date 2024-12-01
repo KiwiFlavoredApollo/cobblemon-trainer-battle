@@ -9,11 +9,11 @@ import com.mojang.brigadier.context.CommandContext;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattleStorage;
+import kiwiapollo.cobblemontrainerbattle.common.GlobalRandomTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerProfileStorage;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.MessagePredicate;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.ProfileExistPredicate;
-import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.standalone.StandaloneNormalTrainerBattle;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -81,7 +81,7 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
     private int startBattleWithRandomTrainer(CommandContext<ServerCommandSource> context) {
         try {
             ServerPlayerEntity player = context.getSource().getPlayer();
-            Identifier trainer = new RandomTrainerFactory().create();
+            Identifier trainer = new GlobalRandomTrainerFactory().create();
 
             MessagePredicate<Identifier> isTrainerProfileExist = new ProfileExistPredicate(TrainerProfileStorage.getProfileRegistry());
             if (!isTrainerProfileExist.test(trainer)) {
