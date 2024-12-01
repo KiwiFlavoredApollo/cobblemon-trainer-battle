@@ -1,6 +1,8 @@
 package kiwiapollo.cobblemontrainerbattle.event;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.battle.predicates.SpawningAllowedPredicate;
+import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.entity.EntityTypes;
 import kiwiapollo.cobblemontrainerbattle.entity.RandomTrainerEntityFactory;
 import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntity;
@@ -61,29 +63,27 @@ public class TrainerEntitySpawnEventHandler {
     }
 
     private static EntityType.EntityFactory<TrainerEntity> createTrainerEntityFactory(Inventory inventory) {
-        RandomTrainerEntityFactory.Builder builder = new RandomTrainerEntityFactory.Builder();
+        RandomTrainerFactory.Builder builder = new RandomTrainerFactory.Builder();
 
-        boolean hasBlueVsSeeker = inventory.containsAny(Set.of(MiscItems.BLUE_VS_SEEKER));
-        if (hasBlueVsSeeker) {
-            builder = builder.addWildcard();
+        if (inventory.containsAny(Set.of(MiscItems.BLUE_VS_SEEKER))) {
+            builder = builder.addAllTrainers();
         }
 
-        boolean hasRedVsSeeker = inventory.containsAny(Set.of(MiscItems.RED_VS_SEEKER));
-        if (hasRedVsSeeker) {
-            builder = builder.addRadicalRed();
+        if (inventory.containsAny(Set.of(MiscItems.RED_VS_SEEKER))) {
+            builder = builder.addRadicalRedTrainers();
         }
 
-        boolean hasGreenVsSeeker = inventory.containsAny(Set.of(MiscItems.GREEN_VS_SEEKER));
-        if (hasGreenVsSeeker) {
-            builder = builder.addInclementEmerald();
+        if (inventory.containsAny(Set.of(MiscItems.GREEN_VS_SEEKER))) {
+            builder = builder.addInclementEmeraldTrainers();
         }
 
-        boolean hasPurpleVsSeeker = inventory.containsAny(Set.of(MiscItems.PURPLE_VS_SEEKER));
-        if (hasPurpleVsSeeker) {
-            builder = builder.addSmogon();
+        if (inventory.containsAny(Set.of(MiscItems.PURPLE_VS_SEEKER))) {
+            builder = builder.addSmogonTrainers();
         }
 
-        return builder.build();
+        RandomTrainerFactory trainerFactory = builder.addPredicate(new SpawningAllowedPredicate()).build();
+
+        return new RandomTrainerEntityFactory(trainerFactory);
     }
 
     private static void assertBelowMaximumTrainerCount(ServerWorld world, PlayerEntity player) {

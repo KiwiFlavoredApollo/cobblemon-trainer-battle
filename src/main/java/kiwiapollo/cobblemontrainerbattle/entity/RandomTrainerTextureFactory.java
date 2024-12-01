@@ -1,14 +1,14 @@
 package kiwiapollo.cobblemontrainerbattle.entity;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.common.IdentifierFactory;
+import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
 import net.minecraft.util.Identifier;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class RandomTrainerTextureFactory implements IdentifierFactory {
+public class RandomTrainerTextureFactory implements SimpleFactory<Identifier> {
     private static final String TEXTURE_PARENTS = "textures/entity/trainer/slim/";
     private static final List<String> TEXTURE_FILES = List.of(
             "red_piikapiika.png",
