@@ -33,9 +33,8 @@ public class MiniGameProfileLoader implements SimpleSynchronousResourceReloadLis
     }
 
     private void reloadBattleFactoryProfile(ResourceManager resourceManager) {
-        try (InputStream inputStream = getBattleFactoryProfileResource(resourceManager).getInputStream()) {
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-            MiniGameProfileStorage.setBattleFactoryProfile(GSON.fromJson(bufferedReader, BattleFactoryProfile.class));
+        try (BufferedReader reader = getBattleFactoryProfileResource(resourceManager).getReader()) {
+            MiniGameProfileStorage.setBattleFactoryProfile(GSON.fromJson(reader, BattleFactoryProfile.class));
 
         } catch (JsonParseException | IOException e) {
             CobblemonTrainerBattle.LOGGER.error("Error occurred while loading {}", BATTLE_FACTORY_PROFILE_PATH);

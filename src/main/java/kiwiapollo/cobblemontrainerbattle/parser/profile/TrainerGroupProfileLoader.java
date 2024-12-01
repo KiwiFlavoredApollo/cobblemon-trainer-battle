@@ -13,8 +13,6 @@ import net.minecraft.util.Identifier;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 
 public class TrainerGroupProfileLoader implements SimpleSynchronousResourceReloadListener {
     private static final String GROUP_DIR = "groups";
@@ -32,9 +30,8 @@ public class TrainerGroupProfileLoader implements SimpleSynchronousResourceReloa
     public void reload(ResourceManager resourceManager) {
         TrainerGroupProfileStorage.getProfileRegistry().clear();
         resourceManager.findResources(GROUP_DIR, this::isJsonFile).forEach(((identifier, resource) -> {
-            try (InputStream inputStream = resourceManager.getResourceOrThrow(identifier).getInputStream()) {
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-                TrainerGroupProfile trainerGroupProfile = GSON.fromJson(bufferedReader, TrainerGroupProfile.class);
+            try (BufferedReader reader = resourceManager.getResourceOrThrow(identifier).getReader()) {
+                TrainerGroupProfile trainerGroupProfile = GSON.fromJson(reader, TrainerGroupProfile.class);
 
                 assertTrainerGroupProfileValid(trainerGroupProfile);
 
