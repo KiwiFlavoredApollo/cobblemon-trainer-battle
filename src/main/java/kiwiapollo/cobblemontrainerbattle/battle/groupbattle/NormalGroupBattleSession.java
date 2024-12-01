@@ -18,6 +18,8 @@ public class NormalGroupBattleSession extends GroupBattleSession {
         TrainerGroupProfile profile = TrainerGroupProfileStorage.getProfileRegistry().get(group);
         this.predicates = List.of(
                 new RematchAllowedPredicate(group, profile.isRematchAllowed),
+                new MaximumPartySizePredicate.PlayerPredicate(profile.maximumPartySize),
+                new MinimumPartySizePredicate.PlayerPredicate(profile.minimumPartySize),
                 new MaximumPartyLevelPredicate(profile.maximumPartyLevel),
                 new MinimumPartyLevelPredicate(profile.minimumPartyLevel),
                 new RequiredLabelExistPredicate(profile.requiredLabel),

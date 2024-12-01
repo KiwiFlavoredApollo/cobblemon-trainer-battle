@@ -10,21 +10,35 @@ import java.util.List;
 public record TrainerProfile(
         String name,
         List<ShowdownPokemon> team,
+
+        String battleFormat,
+        int battleSkill,
+
         boolean isSpawningAllowed,
         boolean isRematchAllowed,
+
+        int maximumPartySize,
+        int minimumPartySize,
+
         int maximumPartyLevel,
         int minimumPartyLevel,
+
         List<String> requiredLabel,
         List<ShowdownPokemon> requiredPokemon,
         List<ItemStack> requiredHeldItem,
         List<String> requiredAbility,
         List<String> requiredMove,
+
         List<String> forbiddenLabel,
         List<ShowdownPokemon> forbiddenPokemon,
         List<ItemStack> forbiddenHeldItem,
         List<String> forbiddenAbility,
         List<String> forbiddenMove,
+
         SoundEvent battleTheme,
+
         PostBattleActionSet onVictory,
         PostBattleActionSet onDefeat
-) {}
+) {
+
+}

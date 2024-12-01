@@ -5,6 +5,7 @@ import net.minecraft.sound.SoundEvent;
 
 public class BattleFactoryProfile {
     public SoundEvent battleTheme;
+    public int battleSkill;
     public PostBattleActionSet onVictory;
     public PostBattleActionSet onDefeat;
 }

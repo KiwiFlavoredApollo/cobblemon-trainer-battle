@@ -9,19 +9,27 @@
     "trainer:radicalred/leader_pryce",
     "trainer:radicalred/leader_clair"
   ],
+
   "isRematchAllowed": true,
+
+  "maximumPartySize": 6,
+  "minimumPartySize": 1,
+
   "maximumPartyLevel": 100,
   "minimumPartyLevel": 1,
+
   "requiredLabel": [],
   "requiredPokemon": [],
   "requiredHeldItem": [],
   "requiredAbility": [],
   "requiredMove": [],
+
   "forbiddenLabel": [],
   "forbiddenPokemon": [],
   "forbiddenHeldItem": [],
   "forbiddenAbility": [],
   "forbiddenMove": [],
+
   "onVictory": {
     "balance": 0,
     "commands": []

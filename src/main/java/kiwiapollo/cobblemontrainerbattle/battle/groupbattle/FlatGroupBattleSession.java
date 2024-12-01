@@ -18,6 +18,8 @@ public class FlatGroupBattleSession extends GroupBattleSession {
         TrainerGroupProfile profile = TrainerGroupProfileStorage.getProfileRegistry().get(group);
         this.predicates = List.of(
                 new RematchAllowedPredicate(group, profile.isRematchAllowed),
+                new MaximumPartySizePredicate.PlayerPredicate(profile.maximumPartySize),
+                new MinimumPartySizePredicate.PlayerPredicate(profile.minimumPartySize),
                 new RequiredLabelExistPredicate(profile.requiredLabel),
                 new RequiredPokemonExistPredicate(profile.requiredPokemon),
                 new RequiredHeldItemExistPredicate(profile.requiredHeldItem),
