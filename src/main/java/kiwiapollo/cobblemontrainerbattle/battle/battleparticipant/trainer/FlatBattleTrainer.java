@@ -3,6 +3,7 @@ package kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer;
 import com.cobblemon.mod.common.api.battles.model.actor.AIBattleActor;
 import com.cobblemon.mod.common.api.battles.model.ai.BattleAI;
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
+import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.DisposableBattlePokemonFactory;
@@ -30,6 +31,8 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
     private final Identifier identifier;
     private final UUID uuid;
     private final ServerPlayerEntity player;
+    private final BattleFormat battleFormat;
+    private final BattleAI battleAI;
     private final VictoryActionSetHandler onVictory;
     private final DefeatActionSetHandler onDefeat;
     private final SoundEvent battleTheme;
@@ -45,11 +48,25 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
 
         TrainerProfile profile = TrainerProfileStorage.getProfileRegistry().get(identifier);
         this.party = showdownTeamToFlatLevelParty(profile.team(), player, level);
+        this.battleFormat = BattleFormat.Companion.getGEN_9_SINGLES();
+        this.battleAI = new Generation5AI();
         this.onVictory = new VictoryActionSetHandler(player, profile.onVictory());
         this.onDefeat = new DefeatActionSetHandler(player, profile.onDefeat());
         this.battleTheme = profile.battleTheme();
         this.predicates = List.of(
-                new RematchAllowedPredicate(identifier, profile.isRematchAllowed())
+                new RematchAllowedPredicate(identifier, profile.isRematchAllowed()),
+                new MaximumPartySizePredicate.PlayerPredicate(profile.maximumPartySize()),
+                new MinimumPartySizePredicate.PlayerPredicate(profile.minimumPartySize()),
+                new RequiredLabelExistPredicate(profile.requiredLabel()),
+                new RequiredPokemonExistPredicate(profile.requiredPokemon()),
+                new RequiredHeldItemExistPredicate(profile.requiredHeldItem()),
+                new RequiredAbilityExistPredicate(profile.requiredAbility()),
+                new RequiredMoveExistPredicate(profile.requiredMove()),
+                new ForbiddenLabelNotExistPredicate(profile.forbiddenLabel()),
+                new ForbiddenPokemonNotExistPredicate(profile.forbiddenPokemon()),
+                new ForbiddenHeldItemNotExistPredicate(profile.forbiddenHeldItem()),
+                new ForbiddenAbilityNotExistPredicate(profile.forbiddenAbility()),
+                new ForbiddenMoveNotExistPredicate(profile.forbiddenMove())
         );
     }
 
@@ -87,8 +104,13 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
     }
 
     @Override
+    public BattleFormat getBattleFormat() {
+        return battleFormat;
+    }
+
+    @Override
     public BattleAI getBattleAI() {
-        return new Generation5AI();
+        return battleAI;
     }
 
     @Override

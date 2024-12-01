@@ -1,6 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer;
 
 import com.cobblemon.mod.common.api.battles.model.ai.BattleAI;
+import com.cobblemon.mod.common.battles.BattleFormat;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.BattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.MessagePredicate;
@@ -12,6 +13,8 @@ import java.util.Optional;
 
 public interface TrainerBattleParticipant extends BattleParticipant {
     Identifier getIdentifier();
+
+    BattleFormat getBattleFormat();
 
     BattleAI getBattleAI();
 

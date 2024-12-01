@@ -3,6 +3,7 @@ package kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer;
 import com.cobblemon.mod.common.api.battles.model.actor.AIBattleActor;
 import com.cobblemon.mod.common.api.battles.model.ai.BattleAI;
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
+import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.DisposableBattlePokemonFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.PlayerBackedTrainerBattleActor;
@@ -29,6 +30,8 @@ public class NormalBattleTrainer implements TrainerBattleParticipant {
     private final Identifier identifier;
     private final UUID uuid;
     private final ServerPlayerEntity player;
+    private final BattleFormat battleFormat;
+    private final BattleAI battleAI;
     private final VictoryActionSetHandler onVictory;
     private final DefeatActionSetHandler onDefeat;
     private final SoundEvent battleTheme;
@@ -43,11 +46,15 @@ public class NormalBattleTrainer implements TrainerBattleParticipant {
 
         TrainerProfile profile = TrainerProfileStorage.getProfileRegistry().get(identifier);
         this.party = showdownTeamToParty(profile.team(), player);
+        this.battleFormat = BattleFormat.Companion.getGEN_9_SINGLES();
+        this.battleAI = new Generation5AI();
         this.onVictory = new VictoryActionSetHandler(player, profile.onVictory());
         this.onDefeat = new DefeatActionSetHandler(player, profile.onDefeat());
         this.battleTheme = profile.battleTheme();
         this.predicates = List.of(
                 new RematchAllowedPredicate(identifier, profile.isRematchAllowed()),
+                new MaximumPartySizePredicate.PlayerPredicate(profile.maximumPartySize()),
+                new MinimumPartySizePredicate.PlayerPredicate(profile.minimumPartySize()),
                 new MaximumPartyLevelPredicate(profile.maximumPartyLevel()),
                 new MinimumPartyLevelPredicate(profile.minimumPartyLevel()),
                 new RequiredLabelExistPredicate(profile.requiredLabel()),
@@ -94,8 +101,13 @@ public class NormalBattleTrainer implements TrainerBattleParticipant {
     }
 
     @Override
+    public BattleFormat getBattleFormat() {
+        return battleFormat;
+    }
+
+    @Override
     public BattleAI getBattleAI() {
-        return new Generation5AI();
+        return battleAI;
     }
 
     @Override
