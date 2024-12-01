@@ -59,26 +59,13 @@ public class ShowdownPokemonParser {
     }
 
     private void setPokemonForm(Pokemon pokemon, String form) {
-        pokemon.setForm(toFormData(pokemon, form));
-    }
-
-    private FormData toFormData(Pokemon pokemon, String form) {
-        try {
-            return pokemon.getSpecies().getForms().stream()
-                    .filter(formData -> formData.getName().equals(form)).toList().get(0);
-
-        } catch (NullPointerException | IndexOutOfBoundsException e) {
-            return pokemon.getSpecies().getStandardForm();
-        }
+        pokemon.getSpecies().getForms().stream()
+                .filter(formData -> formData.getName().equals(form)).findFirst()
+                .ifPresent(pokemon::setForm);
     }
 
     private String getFormName(String species, String form) {
-        boolean isSpeciesContainForm = FormAspectProvider.FORM_ASPECTS.keySet().stream().anyMatch(species::contains);
-        if (isSpeciesContainForm) {
-            return FormAspectProvider.FORM_ASPECTS.keySet().stream().filter(species::contains).findFirst().get();
-        } else {
-            return form;
-        }
+        return FormAspectProvider.FORM_ASPECTS.keySet().stream().filter(species::contains).findFirst().orElse(form);
     }
 
     private void setPokemonShiny(Pokemon pokemon, boolean shiny) {
