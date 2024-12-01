@@ -5,7 +5,8 @@ import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerB
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer.BattleFactoryTrainer;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer.TrainerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.session.Session;
-import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerFactory;
+import kiwiapollo.cobblemontrainerbattle.common.BattleFactoryRandomTrainerFactory;
+import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
@@ -30,11 +31,13 @@ public class InfiniteBattleFactoryParticipantFactory implements SessionBattlePar
         return sessionTrainerFactory.create(session);
     }
 
-    private static class InfiniteBattleFactorySessionTrainerFactory extends BattleFactorySessionTrainerFactory {
+    private static class InfiniteBattleFactorySessionTrainerFactory implements SessionTrainerFactory {
         private final ServerPlayerEntity player;
+        private final SimpleFactory<Identifier> factory;
 
         public InfiniteBattleFactorySessionTrainerFactory(ServerPlayerEntity player) {
             this.player = player;
+            this.factory = new BattleFactoryRandomTrainerFactory();
         }
 
         @Override
@@ -43,7 +46,7 @@ public class InfiniteBattleFactoryParticipantFactory implements SessionBattlePar
         }
 
         private Identifier getNextTrainer() {
-            return new RandomTrainerFactory(super::hasMinimumPokemon).create();
+            return factory.create();
         }
     }
 }

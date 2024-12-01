@@ -5,7 +5,7 @@ import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerB
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer.BattleFactoryTrainer;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer.TrainerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.session.Session;
-import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerFactory;
+import kiwiapollo.cobblemontrainerbattle.common.BattleFactoryRandomTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.exception.AllTrainerDefeatedException;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
@@ -34,7 +34,7 @@ public class NormalBattleFactoryParticipantFactory implements SessionBattleParti
         return sessionTrainerFactory.create(session);
     }
 
-    private static class NormalBattleFactorySessionTrainerFactory extends BattleFactorySessionTrainerFactory {
+    private static class NormalBattleFactorySessionTrainerFactory implements SessionTrainerFactory {
         private static final int ROUND_COUNT = 7;
 
         private final ServerPlayerEntity player;
@@ -47,9 +47,11 @@ public class NormalBattleFactoryParticipantFactory implements SessionBattleParti
 
         private List<Identifier> createRandomTrainers() {
             List<Identifier> trainers = new ArrayList<>();
+
             for (int i = 0; i < ROUND_COUNT; i++) {
-                trainers.add(new RandomTrainerFactory(super::hasMinimumPokemon).create());
+                trainers.add(new BattleFactoryRandomTrainerFactory().create());
             }
+
             return trainers;
         }
 
