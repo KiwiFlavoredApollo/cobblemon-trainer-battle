@@ -24,6 +24,7 @@ import java.util.Optional;
 
 public class BattleFactorySession implements Session, PokemonTradeFeature, RentalPokemonFeature {
     private static final int LEVEL = 100;
+    public static final int POKEMON_COUNT = 3;
 
     private final SessionBattleParticipantFactory factory;
     protected PlayerBattleParticipant player;
