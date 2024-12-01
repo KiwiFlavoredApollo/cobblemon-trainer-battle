@@ -3,8 +3,8 @@ package kiwiapollo.cobblemontrainerbattle.parser.exporter;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.google.gson.*;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.parser.CobblemonPokemonParser;
-import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemon;
+import kiwiapollo.cobblemontrainerbattle.parser.pokemon.CobblemonPokemonParser;
+import kiwiapollo.cobblemontrainerbattle.parser.pokemon.ShowdownPokemon;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.server.network.ServerPlayerEntity;
 

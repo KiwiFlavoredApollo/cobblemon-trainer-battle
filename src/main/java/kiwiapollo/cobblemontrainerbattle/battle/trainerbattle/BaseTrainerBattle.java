@@ -10,7 +10,7 @@ import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerB
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer.TrainerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.*;
 import kiwiapollo.cobblemontrainerbattle.exception.*;
-import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemonParser;
+import kiwiapollo.cobblemontrainerbattle.parser.pokemon.ShowdownPokemonParser;
 import kotlin.Unit;
 import net.minecraft.text.Text;
 

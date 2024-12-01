@@ -2,7 +2,7 @@ package kiwiapollo.cobblemontrainerbattle.battle.predicates;
 
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
-import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemon;
+import kiwiapollo.cobblemontrainerbattle.parser.pokemon.ShowdownPokemon;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 

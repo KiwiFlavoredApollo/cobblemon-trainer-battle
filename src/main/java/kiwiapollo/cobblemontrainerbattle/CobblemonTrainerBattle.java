@@ -16,10 +16,10 @@ import kiwiapollo.cobblemontrainerbattle.battle.session.GroupBattleSessionStorag
 import kiwiapollo.cobblemontrainerbattle.item.CustomItemGroup;
 import kiwiapollo.cobblemontrainerbattle.item.CustomItems;
 import kiwiapollo.cobblemontrainerbattle.loot.CustomLootConditionTypes;
-import kiwiapollo.cobblemontrainerbattle.parser.*;
 import kiwiapollo.cobblemontrainerbattle.parser.config.Config;
 import kiwiapollo.cobblemontrainerbattle.parser.config.ConfigLoader;
 import kiwiapollo.cobblemontrainerbattle.parser.history.PlayerHistoryManager;
+import kiwiapollo.cobblemontrainerbattle.parser.pokemon.FormAspectProvider;
 import kiwiapollo.cobblemontrainerbattle.parser.profile.MiniGameProfileLoader;
 import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerGroupProfileLoader;
 import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerProfileLoader;

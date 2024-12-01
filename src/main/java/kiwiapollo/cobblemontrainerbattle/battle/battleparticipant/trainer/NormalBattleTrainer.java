@@ -11,8 +11,8 @@ import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerB
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.*;
 import kiwiapollo.cobblemontrainerbattle.common.Generation5AI;
 import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
-import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemon;
-import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemonParser;
+import kiwiapollo.cobblemontrainerbattle.parser.pokemon.ShowdownPokemon;
+import kiwiapollo.cobblemontrainerbattle.parser.pokemon.ShowdownPokemonParser;
 import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerProfileStorage;
 import kiwiapollo.cobblemontrainerbattle.battle.postbattle.DefeatActionSetHandler;
 import kiwiapollo.cobblemontrainerbattle.battle.postbattle.VictoryActionSetHandler;

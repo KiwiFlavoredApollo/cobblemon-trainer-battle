@@ -5,8 +5,8 @@ import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.cobblemon.mod.common.pokemon.Species;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
-import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemon;
-import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemonParser;
+import kiwiapollo.cobblemontrainerbattle.parser.pokemon.ShowdownPokemon;
+import kiwiapollo.cobblemontrainerbattle.parser.pokemon.ShowdownPokemonParser;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 

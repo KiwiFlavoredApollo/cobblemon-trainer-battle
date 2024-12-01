@@ -11,8 +11,8 @@ import kiwiapollo.cobblemontrainerbattle.battle.battleactor.PlayerBackedTrainerB
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.common.Generation5AI;
 import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
-import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemon;
-import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemonParser;
+import kiwiapollo.cobblemontrainerbattle.parser.pokemon.ShowdownPokemon;
+import kiwiapollo.cobblemontrainerbattle.parser.pokemon.ShowdownPokemonParser;
 import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerProfileStorage;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.MessagePredicate;
 import net.minecraft.server.network.ServerPlayerEntity;

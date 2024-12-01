@@ -5,7 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParseException;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemon;
+import kiwiapollo.cobblemontrainerbattle.parser.pokemon.ShowdownPokemon;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerOption;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerProfile;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;

@@ -1,6 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.battle.trainerbattle;
 
-import kiwiapollo.cobblemontrainerbattle.parser.ShowdownPokemon;
+import kiwiapollo.cobblemontrainerbattle.parser.pokemon.ShowdownPokemon;
 import kiwiapollo.cobblemontrainerbattle.battle.postbattle.PostBattleActionSet;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundEvent;
