@@ -187,13 +187,16 @@
   "predicate.cobblemontrainerbattle.error.session_not_exist": "Session déjà en cours.",
 
   "predicate.cobblemontrainerbattle.error.is_rematch_allowed": "Re-combattre ce Dreseur n'est pas autorisé.",
+
   "predicate.cobblemontrainerbattle.error.maximum_party_level": "Niveau Max de %d requis.",
   "predicate.cobblemontrainerbattle.error.minimum_party_level": "Niveau Min de %d requis.",
+
   "predicate.cobblemontrainerbattle.error.required_label_exist": "Texte requis : %s",
   "predicate.cobblemontrainerbattle.error.required_pokemon_exist": "Pokémon requis : %s",
   "predicate.cobblemontrainerbattle.error.required_held_item_exist": "Objet tenu requis : %s",
   "predicate.cobblemontrainerbattle.error.required_ability_exist": "Talent Requis : %s",
   "predicate.cobblemontrainerbattle.error.required_move_exist": "Attaque Requise : %s",
+
   "predicate.cobblemontrainerbattle.error.forbidden_label_not_exist": "Texte interdit : %s",
   "predicate.cobblemontrainerbattle.error.forbidden_pokemon_not_exist": "Pokémon interdit : %s",
   "predicate.cobblemontrainerbattle.error.forbidden_held_item_not_exist": "Objet tenu interdit : %s",

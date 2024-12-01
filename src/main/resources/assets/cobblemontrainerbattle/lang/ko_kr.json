@@ -187,13 +187,19 @@
   "predicate.cobblemontrainerbattle.error.session_not_exist": "이미 진행 중인 세션이 있습니다.",
 
   "predicate.cobblemontrainerbattle.error.is_rematch_allowed": "이 상대와는 다시 배틀할 수 없습니다.",
-  "predicate.cobblemontrainerbattle.error.maximum_party_level": "모든 포켓몬의 레벨이 %d 보다 높지 않아야 합니다.",
-  "predicate.cobblemontrainerbattle.error.minimum_party_level": "모든 포켓몬의 레벨이 %d 보다 낮지 않아야 합니다.",
+
+  "predicate.cobblemontrainerbattle.error.maximum_party_size": "필요한 최대 포켓몬 마릿 수 : %d",
+  "predicate.cobblemontrainerbattle.error.minimum_party_size": "필요한 최소 포켓몬 마릿 수 : %d",
+
+  "predicate.cobblemontrainerbattle.error.maximum_party_level": "필요한 최대 포켓몬 레벨 : %d",
+  "predicate.cobblemontrainerbattle.error.minimum_party_level": "필요한 최소 포켓몬 레벨 : %d",
+
   "predicate.cobblemontrainerbattle.error.required_label_exist": "필요한 레이블 : %s",
   "predicate.cobblemontrainerbattle.error.required_pokemon_exist": "필요한 포켓몬 : %s",
   "predicate.cobblemontrainerbattle.error.required_held_item_exist": "필요한 지닌물건 : %s",
   "predicate.cobblemontrainerbattle.error.required_ability_exist": "필요한 특성 : %s",
   "predicate.cobblemontrainerbattle.error.required_move_exist": "필요한 기술 : %s",
+
   "predicate.cobblemontrainerbattle.error.forbidden_label_not_exist": "금지된 레이블 : %s",
   "predicate.cobblemontrainerbattle.error.forbidden_pokemon_not_exist": "금지된 포켓몬 : %s",
   "predicate.cobblemontrainerbattle.error.forbidden_held_item_not_exist": "금지된 지닌물건 : %s",
