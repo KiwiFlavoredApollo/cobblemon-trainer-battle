@@ -47,8 +47,6 @@ public class TrainerProfileLoader implements SimpleSynchronousResourceReloadList
                 TrainerProfile profile = new TrainerProfile(
                         name,
                         team,
-                        option.battleFormat,
-                        option.battleSkill,
                         option.isSpawningAllowed,
                         option.isRematchAllowed,
                         option.maximumPartySize,

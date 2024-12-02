@@ -8,9 +8,6 @@ import net.minecraft.sound.SoundEvent;
 import java.util.List;
 
 public class TrainerOption {
-    public String battleFormat;
-    public int battleSkill;
-
     public boolean isSpawningAllowed;
     public boolean isRematchAllowed;
 
@@ -38,9 +35,6 @@ public class TrainerOption {
     public PostBattleActionSet onDefeat;
 
     public TrainerOption() {
-        this.battleFormat = "single";
-        this.battleSkill = 1;
-
         this.isSpawningAllowed = true;
         this.isRematchAllowed = true;
 

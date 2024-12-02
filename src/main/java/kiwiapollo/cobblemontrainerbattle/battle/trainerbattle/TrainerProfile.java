@@ -11,9 +11,6 @@ public record TrainerProfile(
         String name,
         List<ShowdownPokemon> team,
 
-        String battleFormat,
-        int battleSkill,
-
         boolean isSpawningAllowed,
         boolean isRematchAllowed,
 

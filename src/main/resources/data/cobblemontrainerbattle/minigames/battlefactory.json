@@ -1,5 +1,4 @@
 {
-  "battleSkill": 3,
   "onVictory": {
     "balance": 0,
     "commands": []

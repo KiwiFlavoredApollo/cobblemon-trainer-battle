@@ -1,7 +1,4 @@
 {
-  "battleFormat": "single",
-  "battleSkill": 3,
-
   "isSpawningAllowed": true,
   "isRematchAllowed": true,
 
