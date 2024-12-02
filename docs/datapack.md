@@ -55,10 +55,16 @@ datapacks/
 
 ```json
 {
+  "displayName": "My Trainer",
   "isSpawningAllowed": true,
   "isRematchAllowed": true,
+    
+  "maximumPartySize": 6,
+  "minimumPartySize": 1,
+
   "maximumPartyLevel": 100,
   "minimumPartyLevel": 1,
+    
   "requiredLabel": ["legendary", "gen3"],
   "requiredPokemon": [
     {
@@ -71,12 +77,15 @@ datapacks/
   ],
   "requiredAbility": ["pressure", "static"],
   "requiredMove": ["tackle", "ember"],
+    
   "forbiddenLabel": [],
   "forbiddenPokemon": [],
   "forbiddenHeldItem": [],
   "forbiddenAbility": [],
   "forbiddenMove": [],
+    
   "battleTheme": "cobblemon:battle.pvn.default",
+    
   "onVictory": {
     "balance": 0,
     "commands": [
@@ -105,19 +114,27 @@ datapacks/
     "trainer:radicalred/leader_clair"
   ],
   "isRematchAllowed": true,
+
+  "maximumPartySize": 6,
+  "minimumPartySize": 1,
+    
   "maximumPartyLevel": 100,
   "minimumPartyLevel": 1,
+    
   "requiredLabel": [],
   "requiredPokemon": [],
   "requiredHeldItem": [],
   "requiredAbility": [],
   "requiredMove": [],
+    
   "forbiddenLabel": [],
   "forbiddenPokemon": [],
   "forbiddenHeldItem": [],
   "forbiddenAbility": [],
   "forbiddenMove": [],
+    
   "battleTheme": "battle.gym_leader.disc_1",
+    
   "onVictory": {
     "balance": 0,
     "commands": []
