@@ -16,7 +16,6 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
 import java.io.*;
-import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
 
@@ -37,16 +36,12 @@ public class TrainerProfileLoader implements SimpleSynchronousResourceReloadList
         for (Map.Entry<Identifier, TrainerResource> entry : new TrainerResourceMapFactory(resourceManager).create().entrySet()) {
             try {
                 Identifier identifier = entry.getKey();
-                Resource teamResource = entry.getValue().team();
-                Resource optionResource = entry.getValue().option();
-
-                String name = Paths.get(identifier.getPath()).getFileName().toString();
-                List<ShowdownPokemon> team = readTrainerTeamResource(teamResource);
-                TrainerOption option = readTrainerOptionResource(optionResource);
+                List<ShowdownPokemon> team = readTrainerTeamResource(entry.getValue().team());
+                TrainerOption option = readTrainerOptionResource(entry.getValue().option());
 
                 TrainerProfile profile = new TrainerProfile(
-                        name,
                         team,
+                        option.displayName,
                         option.isSpawningAllowed,
                         option.isRematchAllowed,
                         option.maximumPartySize,

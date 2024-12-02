@@ -65,7 +65,7 @@ public class BaseTrainerBattle implements TrainerBattle {
             ((PlayerBattleActor) pokemonBattle.getActor(player.getPlayerEntity())).setBattleTheme(CobblemonSounds.PVN_BATTLE);
 
             player.sendInfoMessage(Text.translatable("command.cobblemontrainerbattle.success.trainerbattle", trainer.getName()));
-            CobblemonTrainerBattle.LOGGER.info("Started trainer battle : {} versus {}", player.getName(), trainer.getName());
+            CobblemonTrainerBattle.LOGGER.info("Started trainer battle : {} versus {}", player.getName(), trainer.getIdentifier());
 
             return Unit.INSTANCE;
         });

@@ -8,8 +8,9 @@ import net.minecraft.sound.SoundEvent;
 import java.util.List;
 
 public record TrainerProfile(
-        String name,
         List<ShowdownPokemon> team,
+
+        String displayName,
 
         boolean isSpawningAllowed,
         boolean isRematchAllowed,

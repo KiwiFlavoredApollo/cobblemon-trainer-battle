@@ -8,6 +8,8 @@ import net.minecraft.sound.SoundEvent;
 import java.util.List;
 
 public class TrainerOption {
+    public String displayName;
+
     public boolean isSpawningAllowed;
     public boolean isRematchAllowed;
 
@@ -35,6 +37,8 @@ public class TrainerOption {
     public PostBattleActionSet onDefeat;
 
     public TrainerOption() {
+        this.displayName = null;
+
         this.isSpawningAllowed = true;
         this.isRematchAllowed = true;
 

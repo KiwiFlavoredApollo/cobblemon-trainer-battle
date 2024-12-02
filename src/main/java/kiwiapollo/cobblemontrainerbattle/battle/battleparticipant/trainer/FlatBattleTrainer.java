@@ -22,6 +22,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -31,6 +32,7 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
     private final Identifier identifier;
     private final UUID uuid;
     private final ServerPlayerEntity player;
+    private final String name;
     private final BattleFormat battleFormat;
     private final BattleAI battleAI;
     private final VictoryActionSetHandler onVictory;
@@ -47,6 +49,7 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
         this.player = player;
 
         TrainerProfile profile = TrainerProfileStorage.getProfileRegistry().get(identifier);
+        this.name = Optional.ofNullable(profile.displayName()).orElse(Paths.get(identifier.getPath()).getFileName().toString());
         this.party = showdownTeamToFlatLevelParty(profile.team(), player, level);
         this.battleFormat = BattleFormat.Companion.getGEN_9_SINGLES();
         this.battleAI = new Generation5AI();
@@ -90,7 +93,7 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
 
     @Override
     public String getName() {
-        return TrainerProfileStorage.getProfileRegistry().get(identifier).name();
+        return TrainerProfileStorage.getProfileRegistry().get(identifier).displayName();
     }
 
     @Override

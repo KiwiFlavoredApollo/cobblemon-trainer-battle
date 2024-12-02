@@ -9,6 +9,7 @@ import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.DisposableBattlePokemonFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.PlayerBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
+import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerProfile;
 import kiwiapollo.cobblemontrainerbattle.common.Generation5AI;
 import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
 import kiwiapollo.cobblemontrainerbattle.parser.pokemon.ShowdownPokemon;
@@ -19,12 +20,14 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
+import java.nio.file.Paths;
 import java.util.*;
 
 public class BattleFactoryTrainer implements TrainerBattleParticipant {
     private final Identifier identifier;
     private final UUID uuid;
     private final ServerPlayerEntity player;
+    private final String name;
     private final PartyStore party;
     private final BattleAI battleAI;
 
@@ -32,7 +35,9 @@ public class BattleFactoryTrainer implements TrainerBattleParticipant {
         this.identifier = identifier;
         this.uuid = UUID.randomUUID();
         this.player = player;
-        this.party = showdownTeamToFlatLevelParty(TrainerProfileStorage.getProfileRegistry().get(identifier).team(), player, level);
+        TrainerProfile profile = TrainerProfileStorage.getProfileRegistry().get(identifier);
+        this.name = Optional.ofNullable(profile.displayName()).orElse(Paths.get(identifier.getPath()).getFileName().toString());
+        this.party = showdownTeamToFlatLevelParty(profile.team(), player, level);
         this.battleAI = new Generation5AI();
     }
 
@@ -59,7 +64,7 @@ public class BattleFactoryTrainer implements TrainerBattleParticipant {
 
     @Override
     public String getName() {
-        return TrainerProfileStorage.getProfileRegistry().get(identifier).name();
+        return name;
     }
 
     @Override
