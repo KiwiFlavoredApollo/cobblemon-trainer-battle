@@ -18,6 +18,7 @@ import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerProfileStorage;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.MessagePredicate;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 import java.nio.file.Paths;
@@ -36,7 +37,7 @@ public class BattleFactoryTrainer implements TrainerBattleParticipant {
         this.uuid = UUID.randomUUID();
         this.player = player;
         TrainerProfile profile = TrainerProfileStorage.getProfileRegistry().get(identifier);
-        this.name = Optional.ofNullable(profile.displayName()).orElse(Paths.get(identifier.getPath()).getFileName().toString());
+        this.name = Text.translatable(Optional.ofNullable(profile.displayName()).orElse(Paths.get(identifier.getPath()).getFileName().toString())).getString();
         this.party = showdownTeamToFlatLevelParty(profile.team(), player, level);
         this.battleAI = new Generation5AI();
     }

@@ -19,6 +19,7 @@ import kiwiapollo.cobblemontrainerbattle.battle.postbattle.VictoryActionSetHandl
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerProfile;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 import java.nio.file.Paths;
@@ -47,7 +48,7 @@ public class NormalBattleTrainer implements TrainerBattleParticipant {
         this.player = player;
 
         TrainerProfile profile = TrainerProfileStorage.getProfileRegistry().get(identifier);
-        this.name = Optional.ofNullable(profile.displayName()).orElse(Paths.get(identifier.getPath()).getFileName().toString());
+        this.name = Text.translatable(Optional.ofNullable(profile.displayName()).orElse(Paths.get(identifier.getPath()).getFileName().toString())).getString();
         this.party = showdownTeamToParty(profile.team(), player);
         this.battleFormat = BattleFormat.Companion.getGEN_9_SINGLES();
         this.battleAI = new Generation5AI();
