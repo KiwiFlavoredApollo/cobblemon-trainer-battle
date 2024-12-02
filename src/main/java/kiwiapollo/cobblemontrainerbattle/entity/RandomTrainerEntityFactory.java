@@ -1,6 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.entity;
 
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.SpawningAllowedPredicate;
+import kiwiapollo.cobblemontrainerbattle.battle.predicates.TrainerRegexPredicate;
 import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
 import net.minecraft.entity.EntityType;
@@ -11,7 +12,9 @@ public class RandomTrainerEntityFactory implements EntityType.EntityFactory<Trai
     private final SimpleFactory<Identifier> trainerFactory;
 
     public RandomTrainerEntityFactory() {
-        this.trainerFactory = new RandomTrainerFactory.Builder().addAllTrainers().addPredicate(new SpawningAllowedPredicate()).build();
+        this.trainerFactory = new RandomTrainerFactory.Builder()
+                .filter(new TrainerRegexPredicate.Builder().addWildcard().build())
+                .filter(new SpawningAllowedPredicate()).build();
     }
 
     public RandomTrainerEntityFactory(RandomTrainerFactory trainerFactory) {

@@ -2,6 +2,7 @@ package kiwiapollo.cobblemontrainerbattle.event;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.SpawningAllowedPredicate;
+import kiwiapollo.cobblemontrainerbattle.battle.predicates.TrainerRegexPredicate;
 import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.entity.EntityTypes;
 import kiwiapollo.cobblemontrainerbattle.entity.RandomTrainerEntityFactory;
@@ -63,27 +64,32 @@ public class TrainerEntitySpawnEventHandler {
     }
 
     private static EntityType.EntityFactory<TrainerEntity> createTrainerEntityFactory(Inventory inventory) {
-        RandomTrainerFactory.Builder builder = new RandomTrainerFactory.Builder();
+        return new RandomTrainerEntityFactory(new RandomTrainerFactory.Builder()
+                .filter(createTrainerRegexPredicate(inventory))
+                .filter(new SpawningAllowedPredicate())
+                .build());
+    }
+
+    private static TrainerRegexPredicate createTrainerRegexPredicate(Inventory inventory) {
+        TrainerRegexPredicate.Builder builder = new TrainerRegexPredicate.Builder();
 
         if (inventory.containsAny(Set.of(MiscItems.BLUE_VS_SEEKER))) {
-            builder = builder.addAllTrainers();
+            builder = builder.addWildcard();
         }
 
         if (inventory.containsAny(Set.of(MiscItems.RED_VS_SEEKER))) {
-            builder = builder.addRadicalRedTrainers();
+            builder = builder.addRadicalRed();
         }
 
         if (inventory.containsAny(Set.of(MiscItems.GREEN_VS_SEEKER))) {
-            builder = builder.addInclementEmeraldTrainers();
+            builder = builder.addInclementEmerald();
         }
 
         if (inventory.containsAny(Set.of(MiscItems.PURPLE_VS_SEEKER))) {
-            builder = builder.addSmogonTrainers();
+            builder = builder.addSmogon();
         }
 
-        RandomTrainerFactory trainerFactory = builder.addPredicate(new SpawningAllowedPredicate()).build();
-
-        return new RandomTrainerEntityFactory(trainerFactory);
+        return builder.build();
     }
 
     private static void assertBelowMaximumTrainerCount(ServerWorld world, PlayerEntity player) {

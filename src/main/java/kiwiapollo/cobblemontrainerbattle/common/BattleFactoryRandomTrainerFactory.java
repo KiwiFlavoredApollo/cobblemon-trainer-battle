@@ -2,6 +2,7 @@ package kiwiapollo.cobblemontrainerbattle.common;
 
 import kiwiapollo.cobblemontrainerbattle.battle.battlefactory.BattleFactorySession;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.MinimumPartySizePredicate;
+import kiwiapollo.cobblemontrainerbattle.battle.predicates.TrainerRegexPredicate;
 import net.minecraft.util.Identifier;
 
 public class BattleFactoryRandomTrainerFactory implements SimpleFactory<Identifier> {
@@ -9,8 +10,8 @@ public class BattleFactoryRandomTrainerFactory implements SimpleFactory<Identifi
 
     public BattleFactoryRandomTrainerFactory() {
         this.factory = new RandomTrainerFactory.Builder()
-                .addAllTrainers()
-                .addPredicate(new MinimumPartySizePredicate.TrainerPredicate(BattleFactorySession.POKEMON_COUNT))
+                .filter(new TrainerRegexPredicate.Builder().addWildcard().build())
+                .filter(new MinimumPartySizePredicate.TrainerPredicate(BattleFactorySession.POKEMON_COUNT))
                 .build();
     }
     @Override
