@@ -56,7 +56,7 @@ public class MinimumPartySizePredicate implements MessagePredicate<Integer> {
 
         @Override
         public boolean test(Identifier trainer) {
-            return predicate.test(TrainerProfileStorage.getProfileRegistry().get(trainer).team().size());
+            return predicate.test(TrainerProfileStorage.getProfileRegistry().get(trainer).team.size());
         }
 
         @Override
@@ -78,7 +78,7 @@ public class MinimumPartySizePredicate implements MessagePredicate<Integer> {
 
         @Override
         public boolean test(TrainerProfile trainer) {
-            return predicate.test(trainer.team().size());
+            return predicate.test(trainer.team.size());
         }
 
         @Override

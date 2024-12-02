@@ -50,27 +50,27 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
         this.player = player;
 
         TrainerProfile profile = TrainerProfileStorage.getProfileRegistry().get(identifier);
-        this.name = Text.translatable(Optional.ofNullable(profile.displayName()).orElse(Paths.get(identifier.getPath()).getFileName().toString())).getString();
-        this.party = showdownTeamToFlatLevelParty(profile.team(), player, level);
+        this.name = Text.translatable(Optional.ofNullable(profile.displayName).orElse(Paths.get(identifier.getPath()).getFileName().toString())).getString();
+        this.party = showdownTeamToFlatLevelParty(profile.team, player, level);
         this.battleFormat = BattleFormat.Companion.getGEN_9_SINGLES();
         this.battleAI = new Generation5AI();
-        this.onVictory = new VictoryActionSetHandler(player, profile.onVictory());
-        this.onDefeat = new DefeatActionSetHandler(player, profile.onDefeat());
-        this.battleTheme = profile.battleTheme();
+        this.onVictory = new VictoryActionSetHandler(player, profile.onVictory);
+        this.onDefeat = new DefeatActionSetHandler(player, profile.onDefeat);
+        this.battleTheme = profile.battleTheme;
         this.predicates = List.of(
-                new RematchAllowedPredicate(identifier, profile.isRematchAllowed()),
-                new MaximumPartySizePredicate.PlayerPredicate(profile.maximumPartySize()),
-                new MinimumPartySizePredicate.PlayerPredicate(profile.minimumPartySize()),
-                new RequiredLabelExistPredicate(profile.requiredLabel()),
-                new RequiredPokemonExistPredicate(profile.requiredPokemon()),
-                new RequiredHeldItemExistPredicate(profile.requiredHeldItem()),
-                new RequiredAbilityExistPredicate(profile.requiredAbility()),
-                new RequiredMoveExistPredicate(profile.requiredMove()),
-                new ForbiddenLabelNotExistPredicate(profile.forbiddenLabel()),
-                new ForbiddenPokemonNotExistPredicate(profile.forbiddenPokemon()),
-                new ForbiddenHeldItemNotExistPredicate(profile.forbiddenHeldItem()),
-                new ForbiddenAbilityNotExistPredicate(profile.forbiddenAbility()),
-                new ForbiddenMoveNotExistPredicate(profile.forbiddenMove())
+                new RematchAllowedPredicate(identifier, profile.isRematchAllowed),
+                new MaximumPartySizePredicate.PlayerPredicate(profile.maximumPartySize),
+                new MinimumPartySizePredicate.PlayerPredicate(profile.minimumPartySize),
+                new RequiredLabelExistPredicate(profile.requiredLabel),
+                new RequiredPokemonExistPredicate(profile.requiredPokemon),
+                new RequiredHeldItemExistPredicate(profile.requiredHeldItem),
+                new RequiredAbilityExistPredicate(profile.requiredAbility),
+                new RequiredMoveExistPredicate(profile.requiredMove),
+                new ForbiddenLabelNotExistPredicate(profile.forbiddenLabel),
+                new ForbiddenPokemonNotExistPredicate(profile.forbiddenPokemon),
+                new ForbiddenHeldItemNotExistPredicate(profile.forbiddenHeldItem),
+                new ForbiddenAbilityNotExistPredicate(profile.forbiddenAbility),
+                new ForbiddenMoveNotExistPredicate(profile.forbiddenMove)
         );
     }
 
@@ -94,7 +94,7 @@ public class FlatBattleTrainer implements TrainerBattleParticipant {
 
     @Override
     public String getName() {
-        return TrainerProfileStorage.getProfileRegistry().get(identifier).displayName();
+        return TrainerProfileStorage.getProfileRegistry().get(identifier).displayName;
     }
 
     @Override

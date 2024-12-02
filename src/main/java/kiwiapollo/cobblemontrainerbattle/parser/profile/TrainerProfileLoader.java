@@ -39,29 +39,7 @@ public class TrainerProfileLoader implements SimpleSynchronousResourceReloadList
                 List<ShowdownPokemon> team = readTrainerTeamResource(entry.getValue().team());
                 TrainerOption option = readTrainerOptionResource(entry.getValue().option());
 
-                TrainerProfile profile = new TrainerProfile(
-                        team,
-                        option.displayName,
-                        option.isSpawningAllowed,
-                        option.isRematchAllowed,
-                        option.maximumPartySize,
-                        option.minimumPartySize,
-                        option.maximumPartyLevel,
-                        option.minimumPartyLevel,
-                        option.requiredLabel,
-                        option.requiredPokemon,
-                        option.requiredHeldItem,
-                        option.requiredAbility,
-                        option.requiredMove,
-                        option.forbiddenLabel,
-                        option.forbiddenPokemon,
-                        option.forbiddenHeldItem,
-                        option.forbiddenAbility,
-                        option.forbiddenMove,
-                        option.battleTheme,
-                        option.onVictory,
-                        option.onDefeat
-                );
+                TrainerProfile profile = new TrainerProfile(team, option);
 
                 TrainerProfileStorage.getProfileRegistry().put(identifier, profile);
 

@@ -9,6 +9,6 @@ public class SpawningAllowedPredicate implements Predicate<Identifier> {
 
     @Override
     public boolean test(Identifier trainer) {
-        return TrainerProfileStorage.getProfileRegistry().get(trainer).isSpawningAllowed();
+        return TrainerProfileStorage.getProfileRegistry().get(trainer).isSpawningAllowed;
     }
 }
