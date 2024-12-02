@@ -1,5 +1,8 @@
 {
   "entity.cobblemontrainerbattle.trainer": "Trainer",
+
+  "tag.item.cobblemontrainerbattle.vs_seekers": "VS Seekers",
+
   "item.cobblemontrainerbattle.trainer_spawn_egg": "Trainer Spawn Egg",
 
   "item.cobblemontrainerbattle.blue_vs_seeker": "Blue VS Seeker",

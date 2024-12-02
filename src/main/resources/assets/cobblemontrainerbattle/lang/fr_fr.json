@@ -1,5 +1,8 @@
 {
   "entity.cobblemontrainerbattle.trainer": "Dresseur",
+
+  "tag.item.cobblemontrainerbattle.vs_seekers": "Cherch'Combat",
+
   "item.cobblemontrainerbattle.trainer_spawn_egg": "Œuf de Dresseur",
 
   "item.cobblemontrainerbattle.blue_vs_seeker": "Cherch'Combat Bleu",
