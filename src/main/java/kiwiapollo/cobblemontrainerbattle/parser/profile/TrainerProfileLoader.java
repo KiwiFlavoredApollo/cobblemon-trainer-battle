@@ -70,7 +70,7 @@ public class TrainerProfileLoader implements SimpleSynchronousResourceReloadList
 
                 TrainerProfileStorage.getProfileRegistry().put(identifier, profile);
 
-            } catch (IllegalStateException | JsonParseException | IOException e) {
+            } catch (JsonParseException | IOException e) {
                 Identifier identifier = entry.getKey();
                 CobblemonTrainerBattle.LOGGER.error("Error occurred while loading {}", identifier);
             }
