@@ -162,10 +162,16 @@
 <li>Configuration can be set globally by modifying <code>defaults.json</code></li>
 </ul>
 <pre><code class="language-json">{
+  &quot;displayName&quot;: &quot;My Trainer&quot;,
   &quot;isSpawningAllowed&quot;: true,
   &quot;isRematchAllowed&quot;: true,
+
+  &quot;maximumPartySize&quot;: 6,
+  &quot;minimumPartySize&quot;: 1,
+
   &quot;maximumPartyLevel&quot;: 100,
   &quot;minimumPartyLevel&quot;: 1,
+
   &quot;requiredLabel&quot;: [&quot;legendary&quot;, &quot;gen3&quot;],
   &quot;requiredPokemon&quot;: [
     {
@@ -178,12 +184,15 @@
   ],
   &quot;requiredAbility&quot;: [&quot;pressure&quot;, &quot;static&quot;],
   &quot;requiredMove&quot;: [&quot;tackle&quot;, &quot;ember&quot;],
+
   &quot;forbiddenLabel&quot;: [],
   &quot;forbiddenPokemon&quot;: [],
   &quot;forbiddenHeldItem&quot;: [],
   &quot;forbiddenAbility&quot;: [],
   &quot;forbiddenMove&quot;: [],
+
   &quot;battleTheme&quot;: &quot;cobblemon:battle.pvn.default&quot;,
+
   &quot;onVictory&quot;: {
     &quot;balance&quot;: 0,
     &quot;commands&quot;: [
@@ -209,19 +218,27 @@
     &quot;trainer:radicalred/leader_clair&quot;
   ],
   &quot;isRematchAllowed&quot;: true,
+
+  &quot;maximumPartySize&quot;: 6,
+  &quot;minimumPartySize&quot;: 1,
+
   &quot;maximumPartyLevel&quot;: 100,
   &quot;minimumPartyLevel&quot;: 1,
+
   &quot;requiredLabel&quot;: [],
   &quot;requiredPokemon&quot;: [],
   &quot;requiredHeldItem&quot;: [],
   &quot;requiredAbility&quot;: [],
   &quot;requiredMove&quot;: [],
+
   &quot;forbiddenLabel&quot;: [],
   &quot;forbiddenPokemon&quot;: [],
   &quot;forbiddenHeldItem&quot;: [],
   &quot;forbiddenAbility&quot;: [],
   &quot;forbiddenMove&quot;: [],
+
   &quot;battleTheme&quot;: &quot;battle.gym_leader.disc_1&quot;,
+
   &quot;onVictory&quot;: {
     &quot;balance&quot;: 0,
     &quot;commands&quot;: []
