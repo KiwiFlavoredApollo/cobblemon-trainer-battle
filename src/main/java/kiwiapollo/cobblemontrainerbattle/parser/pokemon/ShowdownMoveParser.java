@@ -11,6 +11,8 @@ public class ShowdownMoveParser {
             Map.entry("HiHorsepower", "highhorsepower"),
             Map.entry("Expand Force", "expandingforce"),
             Map.entry("Teary Look", "tearfullook"),
+            Map.entry("Mist Terrain", "mistyterrain"),
+            Map.entry("Draco Hammer", "dragonhammer"),
 
             Map.entry("Aqua Fang", "aquajet")
     );
