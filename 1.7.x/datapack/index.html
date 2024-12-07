@@ -160,9 +160,16 @@
 <li>Commands are run as server</li>
 <li><code>%player%</code> placeholder can be used to indicate the player in battle</li>
 <li>Configuration can be set globally by modifying <code>defaults.json</code></li>
+<li><code>battleAI</code> takes one of following: </li>
+<li><code>random</code></li>
+<li><code>generation5</code></li>
+<li><code>strong0</code> ~ <code>strong5</code></li>
 </ul>
 <pre><code class="language-json">{
   &quot;displayName&quot;: &quot;My Trainer&quot;,
+
+  &quot;battleAI&quot;: &quot;generation5&quot;,
+
   &quot;isSpawningAllowed&quot;: true,
   &quot;isRematchAllowed&quot;: true,
 
@@ -251,6 +258,7 @@
 </code></pre>
 <h2 id="battle-factory">Battle Factory</h2>
 <pre><code class="language-json">{
+  &quot;battleAI&quot;: &quot;generation5&quot;,
   &quot;battleTheme&quot;: &quot;battle.elite_four.disc_1&quot;,
   &quot;onVictory&quot;: {
     &quot;balance&quot;: 0,
