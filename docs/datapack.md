@@ -52,10 +52,17 @@ datapacks/
 - Commands are run as server
 - `%player%` placeholder can be used to indicate the player in battle
 - Configuration can be set globally by modifying `defaults.json`
+- `battleAI` takes one of following: 
+  - `random`
+  - `generation5`
+  - `strong0` ~ `strong5`
 
 ```json
 {
   "displayName": "My Trainer",
+    
+  "battleAI": "generation5",
+    
   "isSpawningAllowed": true,
   "isRematchAllowed": true,
     
@@ -150,6 +157,7 @@ datapacks/
 
 ```json
 {
+  "battleAI": "generation5",
   "battleTheme": "battle.elite_four.disc_1",
   "onVictory": {
     "balance": 0,
