@@ -84,7 +84,7 @@ public class BattleFactoryTrainer implements TrainerBattleParticipant {
 
     @Override
     public BattleFormat getBattleFormat() {
-        return new BattleFormatFactory().create(BATTLE_FORMAT);
+        return new BattleFormatFactory(BATTLE_FORMAT).create();
     }
 
     @Override

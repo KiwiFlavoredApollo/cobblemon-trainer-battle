@@ -51,7 +51,7 @@ public class NormalBattleTrainer implements TrainerBattleParticipant {
         TrainerProfile profile = TrainerProfileStorage.getProfileRegistry().get(identifier);
         this.name = Text.translatable(Optional.ofNullable(profile.displayName).orElse(Paths.get(identifier.getPath()).getFileName().toString())).getString();
         this.party = showdownTeamToParty(profile.team, player);
-        this.battleFormat = new BattleFormatFactory().create(profile.battleFormat);
+        this.battleFormat = new BattleFormatFactory(profile.battleFormat).create();
         this.battleAI = new BattleAIFactory(profile.battleFormat, profile.battleAI).create();
         this.onVictory = new VictoryActionSetHandler(player, profile.onVictory);
         this.onDefeat = new DefeatActionSetHandler(player, profile.onDefeat);

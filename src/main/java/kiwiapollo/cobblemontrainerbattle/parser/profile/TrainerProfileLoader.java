@@ -44,7 +44,7 @@ public class TrainerProfileLoader implements SimpleSynchronousResourceReloadList
 
                 TrainerProfile profile = new TrainerProfile(team, option);
 
-                BattleFormat format = new BattleFormatFactory().create(profile.battleFormat);
+                BattleFormat format = new BattleFormatFactory(profile.battleFormat).create();
                 if (!new MinimumPartySizePredicate.TrainerProfilePredicate(format).test(profile)) {
                     CobblemonTrainerBattle.LOGGER.error("Illegal party size : {}", identifier);
                     throw new IllegalStateException();
