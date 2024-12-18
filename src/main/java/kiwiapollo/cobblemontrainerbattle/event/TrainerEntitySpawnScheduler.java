@@ -8,6 +8,7 @@ import kiwiapollo.cobblemontrainerbattle.entity.EntityTypes;
 import kiwiapollo.cobblemontrainerbattle.entity.RandomTrainerEntityFactory;
 import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.item.MiscItems;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventory;
@@ -17,12 +18,13 @@ import net.minecraft.util.math.random.Random;
 
 import java.util.Set;
 
-public class TrainerEntitySpawnEventHandler {
+public class TrainerEntitySpawnScheduler implements ServerTickEvents.EndWorldTick {
     private static final int SPAWN_INTERVAL = 1200;
     private static final int MAXIMUM_RADIUS = 30;
     private static final int MINIMUM_RADIUS = 5;
 
-    public static void periodicallySpawnTrainerEntity(ServerWorld world) {
+    @Override
+    public void onEndTick(ServerWorld world) {
         if (world.getServer().getTicks() % SPAWN_INTERVAL == 0) {
             for (PlayerEntity player : world.getPlayers()) {
                 spawnTrainersAroundPlayer(world, player);
@@ -30,7 +32,7 @@ public class TrainerEntitySpawnEventHandler {
         }
     }
 
-    private static void spawnTrainersAroundPlayer(ServerWorld world, PlayerEntity player) {
+    private void spawnTrainersAroundPlayer(ServerWorld world, PlayerEntity player) {
         try {
             assertPlayerHasVsSeeker(player);
             assertBelowMaximumTrainerCount(world, player);
@@ -50,7 +52,7 @@ public class TrainerEntitySpawnEventHandler {
         }
     }
 
-    private static void assertPlayerHasVsSeeker(PlayerEntity player) {
+    private void assertPlayerHasVsSeeker(PlayerEntity player) {
         boolean hasVsSeeker = player.getInventory().containsAny(Set.of(
                 MiscItems.BLUE_VS_SEEKER,
                 MiscItems.RED_VS_SEEKER,
@@ -63,14 +65,14 @@ public class TrainerEntitySpawnEventHandler {
         }
     }
 
-    private static EntityType.EntityFactory<TrainerEntity> createTrainerEntityFactory(Inventory inventory) {
+    private EntityType.EntityFactory<TrainerEntity> createTrainerEntityFactory(Inventory inventory) {
         return new RandomTrainerEntityFactory(new RandomTrainerFactory.Builder()
                 .filter(createTrainerRegexPredicate(inventory))
                 .filter(new SpawningAllowedPredicate())
                 .build());
     }
 
-    private static TrainerRegexPredicate createTrainerRegexPredicate(Inventory inventory) {
+    private TrainerRegexPredicate createTrainerRegexPredicate(Inventory inventory) {
         TrainerRegexPredicate.Builder builder = new TrainerRegexPredicate.Builder();
 
         if (inventory.containsAny(Set.of(MiscItems.BLUE_VS_SEEKER))) {
@@ -92,7 +94,7 @@ public class TrainerEntitySpawnEventHandler {
         return builder.build();
     }
 
-    private static void assertBelowMaximumTrainerCount(ServerWorld world, PlayerEntity player) {
+    private void assertBelowMaximumTrainerCount(ServerWorld world, PlayerEntity player) {
         int trainerCount = world.getEntitiesByType(EntityTypes.TRAINER,
                 player.getBoundingBox().expand(MAXIMUM_RADIUS), entity -> true).size();
         if (trainerCount >= CobblemonTrainerBattle.config.maximumTrainerSpawnCount) {
@@ -100,7 +102,7 @@ public class TrainerEntitySpawnEventHandler {
         }
     }
 
-    private static BlockPos getRandomSpawnPosition(ServerWorld world, PlayerEntity player) throws IllegalStateException {
+    private BlockPos getRandomSpawnPosition(ServerWorld world, PlayerEntity player) throws IllegalStateException {
         BlockPos playerPos = player.getBlockPos();
         final int MAXIMUM_RETRIES = 50;
 

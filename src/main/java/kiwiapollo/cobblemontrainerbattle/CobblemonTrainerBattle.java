@@ -91,8 +91,8 @@ public class CobblemonTrainerBattle implements ModInitializer {
 		ServerLifecycleEvents.SERVER_STOPPED.register(PlayerHistoryManager::savePlayerHistory);
 		ServerTickEvents.END_SERVER_TICK.register(PlayerHistoryManager::periodicallySavePlayerHistory);
 
-		ServerTickEvents.END_WORLD_TICK.register(TrainerEntitySpawnEventHandler::periodicallySpawnTrainerEntity);
-		ServerEntityEvents.ENTITY_LOAD.register(TrainerEntityLoadEventHandler::synchronizeTrainerEntity);
+		ServerTickEvents.END_WORLD_TICK.register(new TrainerEntitySpawnScheduler());
+		ServerEntityEvents.ENTITY_LOAD.register(new TrainerEntitySynchronizer());
 
 		ServerTickEvents.END_WORLD_TICK.register(TrainerBattleFledEventHandler::endFledTrainerBattle);
 	}
