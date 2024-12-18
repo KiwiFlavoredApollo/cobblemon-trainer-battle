@@ -13,7 +13,8 @@ public class RandomTrainerFactory implements SimpleFactory<Identifier> {
         this.predicate = predicate;
     }
 
-    @Override public Identifier create() {
+    @Override
+    public Identifier create() {
         List<Identifier> trainers = TrainerProfileStorage.getProfileRegistry().keySet().stream().filter(predicate).toList();
         List<Identifier> random = new ArrayList<>(trainers);
         Collections.shuffle(random);

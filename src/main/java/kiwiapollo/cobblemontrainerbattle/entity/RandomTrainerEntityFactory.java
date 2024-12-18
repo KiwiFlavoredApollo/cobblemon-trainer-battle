@@ -8,8 +8,6 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 
-import java.util.NoSuchElementException;
-
 public class RandomTrainerEntityFactory implements EntityType.EntityFactory<TrainerEntity> {
     private final SimpleFactory<Identifier> trainerFactory;
 
@@ -31,7 +29,7 @@ public class RandomTrainerEntityFactory implements EntityType.EntityFactory<Trai
     private Identifier createRandomTrainer() {
         try {
             return trainerFactory.create();
-        } catch (UnsupportedOperationException | NoSuchElementException e) {
+        } catch (UnsupportedOperationException | IndexOutOfBoundsException e) {
             return null;
         }
     }
