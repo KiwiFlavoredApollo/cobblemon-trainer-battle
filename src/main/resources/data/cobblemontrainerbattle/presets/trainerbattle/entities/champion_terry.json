@@ -1,7 +1,5 @@
 {
   "displayName": "trainer.cobblemontrainerbattle.champion_terry",
-
   "team": "cobblemontrainerbattle:entities/champion_terry",
-
   "isSpawningAllowed": false
 }

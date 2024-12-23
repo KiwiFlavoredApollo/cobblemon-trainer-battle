@@ -1,15 +1,5 @@
 {
   "displayName": "trainer.cobblemontrainerbattle.leader_pryce",
-  "isSpawningAllowed": false,
-  "isRematchAllowed": true,
-  "maximumPartyLevel": 100,
-  "minimumPartyLevel": 1,
-  "onVictory": {
-    "balance": 0,
-    "commands": []
-  },
-  "onDefeat": {
-    "balance": 0,
-    "commands": []
-  }
+  "team": "cobblemontrainerbattle:entities/leader_pryce",
+  "isSpawningAllowed": false
 }

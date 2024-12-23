@@ -1,15 +1,5 @@
 {
   "displayName": "trainer.cobblemontrainerbattle.champion_wallace",
-  "isSpawningAllowed": false,
-  "isRematchAllowed": true,
-  "maximumPartyLevel": 100,
-  "minimumPartyLevel": 1,
-  "onVictory": {
-    "balance": 0,
-    "commands": []
-  },
-  "onDefeat": {
-    "balance": 0,
-    "commands": []
-  }
+  "team": "cobblemontrainerbattle:entities/champion_wallace",
+  "isSpawningAllowed": false
 }
