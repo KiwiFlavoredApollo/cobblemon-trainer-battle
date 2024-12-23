@@ -1,16 +1,21 @@
 {
+  "displayName": "",
+
+  "group": [],
+
   "battleAI": "generation5",
-  "battleFormat": "",
-  "battleTheme": "",
+  "battleFormat": "single",
+  "battleTheme": "cobblemon:battle.pvn.default",
 
   "isSpawningAllowed": true,
   "isRematchAllowed": true,
-
-  "maximumPartySize": 6,
-  "minimumPartySize": 1,
+  "isFlatBattle": false,
 
   "maximumPartyLevel": 100,
   "minimumPartyLevel": 1,
+
+  "maximumPartySize": 6,
+  "minimumPartySize": 1,
 
   "requiredLabel": [],
   "requiredPokemon": [],

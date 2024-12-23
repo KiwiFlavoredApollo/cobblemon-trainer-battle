@@ -1,5 +1,6 @@
 {
   "battleAI": "generation5",
+  "battleTheme": "cobblemon:battle.pvn.default",
 
   "rewards": [
     {
@@ -12,6 +13,14 @@
     },
     {
       "streak": 30,
+      "commands": []
+    },
+    {
+      "streak": 40,
+      "commands": []
+    },
+    {
+      "streak": 50,
       "commands": []
     }
   ]

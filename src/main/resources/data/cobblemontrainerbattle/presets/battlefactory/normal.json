@@ -1,6 +1,7 @@
 {
   "battleAI": "generation5",
+  "battleTheme": "cobblemon:battle.pvn.default",
 
-  "victoryCommands": [],
-  "defeatCommands": []
+  "onVictoryCommands": [],
+  "onDefeatCommands": []
 }
