@@ -1,0 +1,18 @@
+{
+  "battleAI": "generation5",
+
+  "rewards": [
+    {
+      "streak": 10,
+      "commands": []
+    },
+    {
+      "streak": 20,
+      "commands": []
+    },
+    {
+      "streak": 30,
+      "commands": []
+    }
+  ]
+}

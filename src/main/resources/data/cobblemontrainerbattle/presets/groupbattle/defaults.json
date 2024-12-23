@@ -1,5 +1,7 @@
 {
   "battleAI": "generation5",
+  "battleFormat": "",
+  "battleTheme": "",
 
   "isSpawningAllowed": true,
   "isRematchAllowed": true,
@@ -22,12 +24,6 @@
   "forbiddenAbility": [],
   "forbiddenMove": [],
 
-  "onVictory": {
-    "balance": 0,
-    "commands": []
-  },
-  "onDefeat": {
-    "balance": 0,
-    "commands": []
-  }
+  "onVictoryCommands": [],
+  "onDefeatCommands": []
 }
