@@ -12,7 +12,7 @@ Cobblemon Trainer Battle is a side mod for Cobblemon that offers trainer battle 
 
 ## Documentation
 
-Refer to [GitHub Pages](https://kiwiflavoredapollo.github.io/CobblemonTrainerBattle/) for documentation 
+Refer to [GitHub Pages](https://kiwiflavoredapollo.github.io/cobblemon-trainer-battle/) for documentation 
 
 ## Credits
 
