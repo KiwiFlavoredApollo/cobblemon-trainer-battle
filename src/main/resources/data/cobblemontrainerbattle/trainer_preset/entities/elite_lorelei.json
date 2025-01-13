@@ -1,5 +1,6 @@
 {
-  "displayName": "trainer.cobblemontrainerbattle.elite_lorelei",
+  "display_name": "trainer.cobblemontrainerbattle.elite_lorelei",
   "team": "cobblemontrainerbattle:entities/elite_lorelei",
-  "isSpawningAllowed": false
+  "is_spawning_allowed": false,
+  "level_mode": "relative"
 }

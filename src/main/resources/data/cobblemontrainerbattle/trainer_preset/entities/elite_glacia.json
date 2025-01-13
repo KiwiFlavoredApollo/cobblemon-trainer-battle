@@ -1,5 +1,6 @@
 {
-  "displayName": "trainer.cobblemontrainerbattle.elite_glacia",
+  "display_name": "trainer.cobblemontrainerbattle.elite_glacia",
   "team": "cobblemontrainerbattle:entities/elite_glacia",
-  "isSpawningAllowed": false
+  "is_spawning_allowed": false,
+  "level_mode": "relative"
 }

@@ -1,5 +1,6 @@
 {
-  "displayName": "trainer.cobblemontrainerbattle.leader_bugsy",
+  "display_name": "trainer.cobblemontrainerbattle.leader_bugsy",
   "team": "cobblemontrainerbattle:entities/leader_bugsy",
-  "isSpawningAllowed": false
+  "is_spawning_allowed": false,
+  "level_mode": "relative"
 }

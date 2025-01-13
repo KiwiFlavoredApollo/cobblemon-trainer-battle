@@ -1,5 +1,6 @@
 {
-  "displayName": "trainer.cobblemontrainerbattle.leader_roxanne",
+  "display_name": "trainer.cobblemontrainerbattle.leader_roxanne",
   "team": "cobblemontrainerbattle:entities/leader_roxanne",
-  "isSpawningAllowed": false
+  "is_spawning_allowed": false,
+  "level_mode": "relative"
 }

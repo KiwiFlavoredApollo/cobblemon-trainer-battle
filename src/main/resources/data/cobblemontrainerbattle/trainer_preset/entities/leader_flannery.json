@@ -1,5 +1,6 @@
 {
-  "displayName": "trainer.cobblemontrainerbattle.leader_flannery",
+  "display_name": "trainer.cobblemontrainerbattle.leader_flannery",
   "team": "cobblemontrainerbattle:entities/leader_flannery",
-  "isSpawningAllowed": false
+  "is_spawning_allowed": false,
+  "level_mode": "relative"
 }

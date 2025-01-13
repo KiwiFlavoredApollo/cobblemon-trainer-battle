@@ -1,5 +1,6 @@
 {
-  "displayName": "trainer.cobblemontrainerbattle.leader_norman",
+  "display_name": "trainer.cobblemontrainerbattle.leader_norman",
   "team": "cobblemontrainerbattle:entities/leader_norman",
-  "isSpawningAllowed": false
+  "is_spawning_allowed": false,
+  "level_mode": "relative"
 }

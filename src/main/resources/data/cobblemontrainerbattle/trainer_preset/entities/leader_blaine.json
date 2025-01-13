@@ -1,5 +1,6 @@
 {
-  "displayName": "trainer.cobblemontrainerbattle.leader_blaine",
+  "display_name": "trainer.cobblemontrainerbattle.leader_blaine",
   "team": "cobblemontrainerbattle:entities/leader_blaine",
-  "isSpawningAllowed": false
+  "is_spawning_allowed": false,
+  "level_mode": "relative"
 }

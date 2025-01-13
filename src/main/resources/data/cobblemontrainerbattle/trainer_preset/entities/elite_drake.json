@@ -1,5 +1,6 @@
 {
-  "displayName": "trainer.cobblemontrainerbattle.elite_drake",
+  "display_name": "trainer.cobblemontrainerbattle.elite_drake",
   "team": "cobblemontrainerbattle:entities/elite_drake",
-  "isSpawningAllowed": false
+  "is_spawning_allowed": false,
+  "level_mode": "relative"
 }

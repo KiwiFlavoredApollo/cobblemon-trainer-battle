@@ -1,5 +1,6 @@
 {
-  "displayName": "trainer.cobblemontrainerbattle.elite_bruno",
+  "display_name": "trainer.cobblemontrainerbattle.elite_bruno",
   "team": "cobblemontrainerbattle:entities/elite_bruno",
-  "isSpawningAllowed": false
+  "is_spawning_allowed": false,
+  "level_mode": "relative"
 }

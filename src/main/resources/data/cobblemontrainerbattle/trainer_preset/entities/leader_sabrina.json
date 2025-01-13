@@ -1,5 +1,6 @@
 {
-  "displayName": "trainer.cobblemontrainerbattle.leader_sabrina",
+  "display_name": "trainer.cobblemontrainerbattle.leader_sabrina",
   "team": "cobblemontrainerbattle:entities/leader_sabrina",
-  "isSpawningAllowed": false
+  "is_spawning_allowed": false,
+  "level_mode": "relative"
 }

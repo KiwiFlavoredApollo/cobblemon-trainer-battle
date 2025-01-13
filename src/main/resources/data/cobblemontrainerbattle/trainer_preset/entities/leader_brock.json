@@ -1,5 +1,6 @@
 {
-  "displayName": "trainer.cobblemontrainerbattle.leader_brock",
+  "display_name": "trainer.cobblemontrainerbattle.leader_brock",
   "team": "cobblemontrainerbattle:entities/leader_brock",
-  "isSpawningAllowed": false
+  "is_spawning_allowed": false,
+  "level_mode": "relative"
 }

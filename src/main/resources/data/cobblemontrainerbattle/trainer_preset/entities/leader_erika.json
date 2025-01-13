@@ -1,5 +1,6 @@
 {
-  "displayName": "trainer.cobblemontrainerbattle.leader_erika",
+  "display_name": "trainer.cobblemontrainerbattle.leader_erika",
   "team": "cobblemontrainerbattle:entities/leader_erika",
-  "isSpawningAllowed": false
+  "is_spawning_allowed": false,
+  "level_mode": "relative"
 }

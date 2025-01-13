@@ -1,5 +1,6 @@
 {
-  "displayName": "trainer.cobblemontrainerbattle.leader_pryce",
+  "display_name": "trainer.cobblemontrainerbattle.leader_pryce",
   "team": "cobblemontrainerbattle:entities/leader_pryce",
-  "isSpawningAllowed": false
+  "is_spawning_allowed": false,
+  "level_mode": "relative"
 }

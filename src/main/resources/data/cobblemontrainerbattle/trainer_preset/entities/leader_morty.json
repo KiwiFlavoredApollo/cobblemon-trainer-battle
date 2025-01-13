@@ -1,5 +1,6 @@
 {
-  "displayName": "trainer.cobblemontrainerbattle.leader_morty",
+  "display_name": "trainer.cobblemontrainerbattle.leader_morty",
   "team": "cobblemontrainerbattle:entities/leader_morty",
-  "isSpawningAllowed": false
+  "is_spawning_allowed": false,
+  "level_mode": "relative"
 }

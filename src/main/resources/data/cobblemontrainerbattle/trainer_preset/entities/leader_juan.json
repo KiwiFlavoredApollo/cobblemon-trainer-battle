@@ -1,5 +1,6 @@
 {
-  "displayName": "trainer.cobblemontrainerbattle.leader_juan",
+  "display_name": "trainer.cobblemontrainerbattle.leader_juan",
   "team": "cobblemontrainerbattle:entities/leader_juan",
-  "isSpawningAllowed": false
+  "is_spawning_allowed": false,
+  "level_mode": "relative"
 }

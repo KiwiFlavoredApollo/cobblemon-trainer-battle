@@ -1,5 +1,6 @@
 {
-  "displayName": "trainer.cobblemontrainerbattle.leader_jasmine",
+  "display_name": "trainer.cobblemontrainerbattle.leader_jasmine",
   "team": "cobblemontrainerbattle:entities/leader_jasmine",
-  "isSpawningAllowed": false
+  "is_spawning_allowed": false,
+  "level_mode": "relative"
 }

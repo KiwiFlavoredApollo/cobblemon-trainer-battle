@@ -1,5 +1,6 @@
 {
-  "displayName": "trainer.cobblemontrainerbattle.leader_falkner",
+  "display_name": "trainer.cobblemontrainerbattle.leader_falkner",
   "team": "cobblemontrainerbattle:entities/leader_falkner",
-  "isSpawningAllowed": false
+  "is_spawning_allowed": false,
+  "level_mode": "relative"
 }
