@@ -67,10 +67,10 @@ public class TrainerPreset {
         this.team = List.of();
 
         this.displayName = null;
-
         this.levelMode = "normal";
         this.battleFormat = "single";
         this.battleAI = "generation5";
+        this.battleTheme = "cobblemon:battle.pvn.default";
 
         this.isSpawningAllowed = true;
         this.isRematchAllowed = true;
@@ -92,8 +92,6 @@ public class TrainerPreset {
         this.forbiddenHeldItem = List.of();
         this.forbiddenAbility = List.of();
         this.forbiddenMove = List.of();
-
-        this.battleTheme = "cobblemon:battle.pvn.default";
 
         this.onVictoryCommands = List.of();
         this.onDefeatCommands = List.of();
