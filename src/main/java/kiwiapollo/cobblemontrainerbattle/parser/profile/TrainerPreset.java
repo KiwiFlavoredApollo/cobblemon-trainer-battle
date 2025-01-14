@@ -1,14 +1,12 @@
 package kiwiapollo.cobblemontrainerbattle.parser.profile;
 
 import com.google.gson.annotations.SerializedName;
-import kiwiapollo.cobblemontrainerbattle.parser.pokemon.ShowdownPokemon;
-import net.minecraft.item.ItemStack;
 
 import java.util.List;
 
 public class TrainerPreset {
     @SerializedName("team")
-    public final List<ShowdownPokemon> team;
+    public final String team;
 
     @SerializedName("display_name")
     public final String displayName;
@@ -44,9 +42,9 @@ public class TrainerPreset {
     @SerializedName("required_label")
     public final List<String> requiredLabel;
     @SerializedName("required_pokemon")
-    public final List<ShowdownPokemon> requiredPokemon;
+    public final List<String> requiredPokemon;
     @SerializedName("required_held_item")
-    public final List<ItemStack> requiredHeldItem;
+    public final List<String> requiredHeldItem;
     @SerializedName("required_ability")
     public final List<String> requiredAbility;
     @SerializedName("required_move")
@@ -55,16 +53,16 @@ public class TrainerPreset {
     @SerializedName("forbidden_label")
     public final List<String> forbiddenLabel;
     @SerializedName("forbidden_pokemon")
-    public final List<ShowdownPokemon> forbiddenPokemon;
+    public final List<String> forbiddenPokemon;
     @SerializedName("forbidden_held_item")
-    public final List<ItemStack> forbiddenHeldItem;
+    public final List<String> forbiddenHeldItem;
     @SerializedName("forbidden_ability")
     public final List<String> forbiddenAbility;
     @SerializedName("forbidden_move")
     public final List<String> forbiddenMove;
 
     public TrainerPreset() {
-        this.team = List.of();
+        this.team = null;
 
         this.displayName = null;
         this.levelMode = "normal";
