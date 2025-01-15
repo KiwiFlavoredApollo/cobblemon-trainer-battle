@@ -3,12 +3,17 @@ package kiwiapollo.cobblemontrainerbattle.entity;
 import com.cobblemon.mod.common.Cobblemon;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
+import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
+import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipantFactory;
+import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer.TrainerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattleStorage;
 import kiwiapollo.cobblemontrainerbattle.parser.history.EntityRecord;
-import kiwiapollo.cobblemontrainerbattle.parser.history.PlayerHistoryManager;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
-import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.standalone.EntityBackedTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.EntityBackedTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.parser.history.PlayerHistory;
+import kiwiapollo.cobblemontrainerbattle.parser.history.PlayerHistoryStorage;
+import kiwiapollo.cobblemontrainerbattle.parser.player.BattleContextStorage;
+import kiwiapollo.cobblemontrainerbattle.parser.preset.TrainerStorage;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.advancement.criterion.Criteria;
@@ -38,11 +43,11 @@ import java.util.*;
 public class TrainerEntity extends PathAwareEntity {
     public static final int FLEE_DISTANCE = 20;
 
-    private Identifier trainer;
+    private String trainer;
     private Identifier texture;
     private TrainerBattle trainerBattle;
 
-    public TrainerEntity(EntityType<? extends PathAwareEntity> type, World world, Identifier trainer, Identifier texture) {
+    public TrainerEntity(EntityType<? extends PathAwareEntity> type, World world, String trainer, Identifier texture) {
         super(type, world);
 
         this.trainer = trainer;
@@ -57,7 +62,7 @@ public class TrainerEntity extends PathAwareEntity {
     public void synchronizeClient(ServerWorld world) {
         PacketByteBuf buf = PacketByteBufs.create();
         buf.writeInt(this.getId());
-        buf.writeIdentifier(this.trainer);
+        buf.writeString(this.trainer);
         buf.writeIdentifier(this.texture);
 
         for (ServerPlayerEntity player : world.getPlayers()) {
@@ -95,14 +100,17 @@ public class TrainerEntity extends PathAwareEntity {
 
     private void startTrainerBattle(ServerPlayerEntity player, Hand hand) {
         try {
-            if (isPokemonBattleExist()) {
+            if (isTrainerBattleExist()) {
                 return;
             }
 
-            TrainerBattle trainerBattle = new EntityBackedTrainerBattle(player, this, trainer);
+            TrainerBattleParticipant trainerBattleParticipant = TrainerStorage.getInstance().get(trainer);
+            PlayerBattleParticipant playerBattleParticipant = new PlayerBattleParticipantFactory(player, trainerBattleParticipant.getLevelMode()).create();
+
+            TrainerBattle trainerBattle = new EntityBackedTrainerBattle(playerBattleParticipant, trainerBattleParticipant, this);
             trainerBattle.start();
 
-            TrainerBattleStorage.getTrainerBattleRegistry().put(player.getUuid(), trainerBattle);
+            BattleContextStorage.getInstance().getOrCreate(playerBattleParticipant.getUuid()).setTrainerBattle(trainerBattle);
             this.trainerBattle = trainerBattle;
 
             this.setVelocity(0, 0, 0);
@@ -118,7 +126,7 @@ public class TrainerEntity extends PathAwareEntity {
 
     @Override
     public boolean damage(DamageSource source, float amount) {
-        if (isPokemonBattleExist()) {
+        if (isTrainerBattleExist()) {
             return false;
         }
 
@@ -132,7 +140,7 @@ public class TrainerEntity extends PathAwareEntity {
         return isDamaged;
     }
 
-    private boolean isPokemonBattleExist() {
+    private boolean isTrainerBattleExist() {
         try {
             UUID battleId = trainerBattle.getBattleId();
             return Objects.nonNull(Cobblemon.INSTANCE.getBattleRegistry().getBattle(battleId));
@@ -152,12 +160,13 @@ public class TrainerEntity extends PathAwareEntity {
     @Override
     public void onDeath(DamageSource damageSource) {
         if (damageSource.getSource() instanceof ServerPlayerEntity player) {
-            EntityRecord record = (EntityRecord) PlayerHistoryManager.getPlayerHistory(player.getUuid()).getOrCreateRecord(trainer);
+            PlayerHistory history = PlayerHistoryStorage.getInstance().getOrCreate(player.getUuid());
+            EntityRecord record = (EntityRecord) history.getOrCreate(trainer);
             record.setKillCount(record.getKillCount() + 1);
             CustomCriteria.KILL_TRAINER_CRITERION.trigger(player);
         }
 
-        if(isPokemonBattleExist()) {
+        if(isTrainerBattleExist()) {
             UUID battleId = trainerBattle.getBattleId();
             Cobblemon.INSTANCE.getBattleRegistry().getBattle(battleId).end();
         }
@@ -165,68 +174,28 @@ public class TrainerEntity extends PathAwareEntity {
         super.onDeath(damageSource);
     }
 
-    @Override
-    protected void dropLoot(DamageSource damageSource, boolean causedByPlayer) {
-        LootContextParameterSet.Builder builder = (new LootContextParameterSet.Builder((ServerWorld)this.getWorld()))
-                .add(LootContextParameters.THIS_ENTITY, this)
-                .add(LootContextParameters.ORIGIN, this.getPos())
-                .add(LootContextParameters.DAMAGE_SOURCE, damageSource)
-                .addOptional(LootContextParameters.KILLER_ENTITY, damageSource.getAttacker())
-                .addOptional(LootContextParameters.DIRECT_KILLER_ENTITY, damageSource.getSource());
-
-        if (causedByPlayer && this.attackingPlayer != null) {
-            builder = builder.add(LootContextParameters.LAST_DAMAGE_PLAYER, this.attackingPlayer).luck(this.attackingPlayer.getLuck());
-        }
-
-        LootContextParameterSet lootContextParameterSet = builder.build(LootContextTypes.ENTITY);
-        getTrainerLootTable().generateLoot(lootContextParameterSet, this.getLootTableSeed(), this::dropStack);
-    }
-
-    private LootTable getTrainerLootTable() {
-        try {
-            return getCustomLootTable();
-
-        } catch (IllegalStateException e) {
-            return getDefaultLootTable();
-        }
-    }
-
-    private LootTable getCustomLootTable() throws IllegalStateException {
-        Identifier custom = Identifier.of(CobblemonTrainerBattle.MOD_ID, String.format("trainers/%s", trainer.getPath()));
-        LootTable lootTable = this.getWorld().getServer().getLootManager().getLootTable(custom);
-
-        if (lootTable.equals(LootTable.EMPTY)) {
-            throw new IllegalStateException();
-        }
-
-        return lootTable;
-    }
-
-    private LootTable getDefaultLootTable() {
-        Identifier defaults = Identifier.of(CobblemonTrainerBattle.MOD_ID, "trainers/defaults");
-        return this.getWorld().getServer().getLootManager().getLootTable(defaults);
-    }
-
-    public void onVictory() {
+    public void onPlayerDefeat() {
         setAiDisabled(false);
     }
 
-    public void onDefeat() {
-        dropDefeatLoot();
+    public void onPlayerVictory() {
+        dropDefeatInBattleLoot();
         discard();
     }
 
-    private void dropDefeatLoot() {
+    private void dropDefeatInBattleLoot() {
+        Identifier identifier = this.getLootTable();
+        LootTable lootTable = this.getWorld().getServer().getLootManager().getLootTable(identifier);
         LootContextParameterSet.Builder builder = (new LootContextParameterSet.Builder((ServerWorld)this.getWorld()))
                 .add(LootContextParameters.THIS_ENTITY, this)
                 .add(LootContextParameters.ORIGIN, this.getPos())
                 .add(LootContextParameters.DAMAGE_SOURCE, getWorld().getDamageSources().generic());
 
         LootContextParameterSet lootContextParameterSet = builder.build(LootContextTypes.ENTITY);
-        getTrainerLootTable().generateLoot(lootContextParameterSet, this.getLootTableSeed(), this::dropStack);
+        lootTable.generateLoot(lootContextParameterSet, this.getLootTableSeed(), this::dropStack);
     }
 
-    public void setTrainer(Identifier trainer) {
+    public void setTrainer(String trainer) {
         this.trainer = trainer;
     }
 
@@ -237,7 +206,7 @@ public class TrainerEntity extends PathAwareEntity {
     @Override
     public void writeCustomDataToNbt(NbtCompound nbt) {
         super.writeCustomDataToNbt(nbt);
-        nbt.putString("trainer", trainer.toString());
+        nbt.putString("trainer", trainer);
         nbt.putString("texture", texture.toString());
     }
 
@@ -245,8 +214,8 @@ public class TrainerEntity extends PathAwareEntity {
     public void readCustomDataFromNbt(NbtCompound nbt) {
         try {
             super.readCustomDataFromNbt(nbt);
-            trainer = Objects.requireNonNull(Identifier.tryParse(nbt.getString("trainer")));
-            texture = Objects.requireNonNull(Identifier.tryParse(nbt.getString("texture")));
+            trainer = nbt.getString("trainer");
+            texture = Identifier.tryParse(nbt.getString("texture"));
 
         } catch (NullPointerException e) {
             discard();

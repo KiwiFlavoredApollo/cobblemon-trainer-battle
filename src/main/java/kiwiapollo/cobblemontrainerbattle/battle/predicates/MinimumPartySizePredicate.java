@@ -2,11 +2,9 @@ package kiwiapollo.cobblemontrainerbattle.battle.predicates;
 
 import com.cobblemon.mod.common.battles.BattleFormat;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
-import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerProfile;
-import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerProfileStorage;
+import kiwiapollo.cobblemontrainerbattle.parser.preset.TrainerPreset;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
 
 public class MinimumPartySizePredicate implements MessagePredicate<Integer> {
     private final int required;
@@ -47,38 +45,20 @@ public class MinimumPartySizePredicate implements MessagePredicate<Integer> {
         }
     }
 
-    public static class TrainerPredicate implements MessagePredicate<Identifier> {
+    public static class BattleFormatPredicate implements MessagePredicate<Integer> {
         private final MinimumPartySizePredicate predicate;
 
-        public TrainerPredicate(int required) {
-            this.predicate = new MinimumPartySizePredicate(required);
-        }
-
-        @Override
-        public boolean test(Identifier trainer) {
-            return predicate.test(TrainerProfileStorage.getProfileRegistry().get(trainer).team.size());
-        }
-
-        @Override
-        public MutableText getErrorMessage() {
-            return predicate.getErrorMessage();
-        }
-    }
-
-    public static class TrainerProfilePredicate implements MessagePredicate<TrainerProfile> {
-        private final MinimumPartySizePredicate predicate;
-
-        public TrainerProfilePredicate(BattleFormat format) {
+        public BattleFormatPredicate(BattleFormat format) {
             this(format.getBattleType().getSlotsPerActor());
         }
 
-        public TrainerProfilePredicate(int required) {
+        public BattleFormatPredicate(int required) {
             this.predicate = new MinimumPartySizePredicate(required);
         }
 
         @Override
-        public boolean test(TrainerProfile trainer) {
-            return predicate.test(trainer.team.size());
+        public boolean test(Integer required) {
+            return predicate.test(required);
         }
 
         @Override

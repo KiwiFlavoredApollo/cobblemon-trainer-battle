@@ -1,40 +1,56 @@
 package kiwiapollo.cobblemontrainerbattle.common;
 
-import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerProfileStorage;
-import net.minecraft.util.Identifier;
+import kiwiapollo.cobblemontrainerbattle.parser.preset.TrainerStorage;
 
 import java.util.*;
-import java.util.function.Predicate;
 
-public class RandomTrainerFactory implements SimpleFactory<Identifier> {
-    private final Predicate<Identifier> predicate;
+public class RandomTrainerFactory implements SimpleFactory<String> {
+    private final List<String> trainers;
 
-    private RandomTrainerFactory(Predicate<Identifier> predicate) {
-        this.predicate = predicate;
+    public RandomTrainerFactory() {
+        this(TrainerStorage.getInstance().keySet().stream().toList());
+    }
+
+    private RandomTrainerFactory(List<String> trainers) {
+        this.trainers = trainers;
     }
 
     @Override
-    public Identifier create() {
-        List<Identifier> trainers = TrainerProfileStorage.getProfileRegistry().keySet().stream().filter(predicate).toList();
-        List<Identifier> random = new ArrayList<>(trainers);
+    public String create() {
+        List<String> random = new ArrayList<>(trainers);
         Collections.shuffle(random);
 
         return random.get(0);
     }
 
     public static class Builder {
-        private Predicate<Identifier> predicate;
+        private List<String> trainers;
 
         public Builder() {
-            this.predicate = trainer -> true;
+            this.trainers = new ArrayList<>();
         }
 
         public RandomTrainerFactory build() {
-            return new RandomTrainerFactory(predicate);
+            return new RandomTrainerFactory(trainers.stream().distinct().toList());
         }
 
-        public Builder filter(Predicate<Identifier> predicate) {
-            this.predicate = this.predicate.and(predicate);
+        public Builder addAll() {
+            trainers.addAll(TrainerStorage.getInstance().keySet().stream().toList());
+            return this;
+        }
+
+        public Builder addRadicalRed() {
+            trainers.addAll(TrainerStorage.getInstance().keySet().stream().filter(trainer -> trainer.matches("^radicalred/")).toList());
+            return this;
+        }
+
+        public Builder addInclementEmerald() {
+            trainers.addAll(TrainerStorage.getInstance().keySet().stream().filter(trainer -> trainer.matches("^inclementemerald/")).toList());
+            return this;
+        }
+
+        public Builder addSmogon() {
+            trainers.addAll(TrainerStorage.getInstance().keySet().stream().filter(trainer -> trainer.matches("^smogon/")).toList());
             return this;
         }
     }

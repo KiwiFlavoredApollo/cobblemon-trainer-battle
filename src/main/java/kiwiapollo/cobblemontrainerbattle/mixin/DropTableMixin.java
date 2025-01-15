@@ -2,10 +2,13 @@ package kiwiapollo.cobblemontrainerbattle.mixin;
 
 import com.cobblemon.mod.common.api.drop.DropTable;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
+import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.NullTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattleStorage;
+import kiwiapollo.cobblemontrainerbattle.parser.player.BattleContext;
+import kiwiapollo.cobblemontrainerbattle.parser.player.BattleContextStorage;
 import kotlin.ranges.IntRange;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.Vec3d;
@@ -13,6 +16,10 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
 
 @SuppressWarnings("unused")
 @Mixin(DropTable.class)
@@ -35,13 +42,25 @@ public class DropTableMixin {
             return;
         }
 
-        boolean isTrainerBattle = TrainerBattleStorage.getTrainerBattleRegistry().values().stream()
-                .map(TrainerBattle::getBattleId)
-                .toList().contains(pokemonEntity.getBattleId());
-        if (!isTrainerBattle) {
+        if (!isTrainerBattle(pokemonEntity.getServer(), pokemonEntity.getBattleId())) {
             return;
         }
 
         callbackInfo.cancel();
+    }
+
+    private boolean isTrainerBattle(MinecraftServer server, UUID battleId) {
+        List<UUID> battleIds = new ArrayList<>();
+
+        server.getPlayerManager().getPlayerList().forEach(player -> {
+            try {
+                BattleContext context = BattleContextStorage.getInstance().getOrCreate(player.getUuid());
+                battleIds.add(context.getTrainerBattle().getBattleId());
+            } catch (NullPointerException ignored) {
+
+            }
+        });
+
+        return battleIds.contains(battleId);
     }
 }

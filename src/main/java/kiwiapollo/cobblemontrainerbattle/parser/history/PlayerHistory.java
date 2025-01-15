@@ -1,25 +1,47 @@
 package kiwiapollo.cobblemontrainerbattle.parser.history;
 
+import kiwiapollo.cobblemontrainerbattle.common.LazyMap;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.util.Identifier;
 
 import java.util.*;
 
-public class PlayerHistory {
-    private final Map<Identifier, PlayerHistoryRecord> records;
+public class PlayerHistory implements NbtConvertible, RecordStatisticsProvider, LazyMap<String, TrainerRecord> {
+    private final Map<String, TrainerRecord> records;
 
     public PlayerHistory() {
         this.records = new HashMap<>();
     }
 
-    public PlayerHistoryRecord getOrCreateRecord(Identifier identifier) throws IllegalArgumentException {
-        if (!records.containsKey(identifier)) {
-            records.put(identifier, createRecord(identifier));
+    @Override
+    public TrainerRecord getOrCreate(String trainer) {
+        if (!records.containsKey(trainer)) {
+            records.put(trainer, new TrainerRecord());
         }
 
-        return records.get(identifier);
+        return records.get(trainer);
     }
 
+    @Override
+    public void put(String trainer, TrainerRecord record) {
+        records.put(trainer, record);
+    }
+
+    @Override
+    public void clear() {
+        records.clear();
+    }
+
+    @Override
+    public void remove(String trainer) {
+        records.remove(trainer);
+    }
+
+    @Override
+    public Iterable<? extends Map.Entry<String, TrainerRecord>> entrySet() {
+        return records.entrySet();
+    }
+
+    @Override
     public int getTotalTrainerVictoryCount() {
         return records.values().stream()
                 .filter(record -> record instanceof TrainerRecord)
@@ -28,6 +50,7 @@ public class PlayerHistory {
                 .reduce(Integer::sum).orElse(0);
     }
 
+    @Override
     public int getTotalTrainerKillCount() {
         return records.values().stream()
                 .filter(record -> record instanceof EntityRecord)
@@ -36,19 +59,15 @@ public class PlayerHistory {
                 .reduce(Integer::sum).orElse(0);
     }
 
+    @Override
     public void readFromNbt(NbtCompound nbt) {
         records.clear();
 
-        List<Identifier> identifiers = nbt.getKeys().stream()
-                .map(Identifier::tryParse)
-                .filter(Objects::nonNull).toList();
-
-        for (Identifier identifier : identifiers) {
+        for (String trainer : nbt.getKeys()) {
             try {
-                PlayerHistoryRecord record = createRecord(identifier);
-                record.readFromNbt(nbt.getCompound(identifier.toString()));
-
-                records.put(identifier, record);
+                TrainerRecord record = new TrainerRecord();
+                record.readFromNbt(nbt.getCompound(trainer));
+                records.put(toNonLegacyTrainer(trainer), record);
 
             } catch (NullPointerException | IllegalArgumentException ignored) {
 
@@ -56,30 +75,19 @@ public class PlayerHistory {
         }
     }
 
-    public void writeToNbt(NbtCompound nbt) {
-        records.forEach((identifier, record) -> {
-            nbt.put(identifier.toString(), toNbtCompound(record));
-        });
+    private String toNonLegacyTrainer(String trainer) {
+        return trainer.replace("^trainer:", "");
     }
 
-    private NbtCompound toNbtCompound(PlayerHistoryRecord record) {
-        NbtCompound nbt = new NbtCompound();
-        record.writeToNbt(nbt);
+    @Override
+    public NbtCompound writeToNbt(NbtCompound nbt) {
+        records.forEach((identifier, record) -> nbt.put(identifier, toNbtCompound(record)));
         return nbt;
     }
 
-    private PlayerHistoryRecord createRecord(Identifier identifier) {
-        if (identifier.getNamespace().equals("trainer")) {
-            return new TrainerRecord();
-
-        } else if (identifier.getNamespace().equals("group")) {
-            return new TrainerGroupRecord();
-
-        } else if (identifier.toString().equals("minigame:battlefactory")) {
-            return new BattleFactoryRecord();
-
-        } else {
-            throw new IllegalArgumentException();
-        }
+    private NbtCompound toNbtCompound(NbtConvertible record) {
+        NbtCompound nbt = new NbtCompound();
+        record.writeToNbt(nbt);
+        return nbt;
     }
 }

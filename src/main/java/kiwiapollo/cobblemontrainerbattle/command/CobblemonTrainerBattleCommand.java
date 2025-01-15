@@ -7,11 +7,10 @@ import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.FlatBattlePlayer;
-import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.NormalBattlePlayer;
+import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.FlatLevelPlayer;
+import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.NormalLevelPlayer;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.MessagePredicate;
-import kiwiapollo.cobblemontrainerbattle.economy.EconomyFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.PlayerPartyNotEmptyPredicate;
 import kiwiapollo.cobblemontrainerbattle.parser.config.ConfigLoader;
 import kiwiapollo.cobblemontrainerbattle.parser.exporter.FlatShowdownPokemonExporter;
@@ -37,9 +36,7 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
 
         this.requires(new MultiCommandSourcePredicate(permissions.toArray(String[]::new)))
                 .then(getReloadCommand())
-                .then(getExportCommand())
-                .then(getExportFlatCommand())
-                .then(getExportRelativeCommand());
+                .then(getExportCommand());
     }
 
     private LiteralArgumentBuilder<ServerCommandSource> getReloadCommand() {
@@ -57,26 +54,8 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
                         .executes(this::exportPlayer));
     }
 
-    private LiteralArgumentBuilder<ServerCommandSource> getExportFlatCommand() {
-        String permission = String.format("%s.%s", getLiteral(), "export");
-        return LiteralArgumentBuilder.<ServerCommandSource>literal("exportflat")
-                .requires(new MultiCommandSourcePredicate(permission))
-                .then(RequiredArgumentBuilder.<ServerCommandSource, EntitySelector>argument("player", EntityArgumentType.player())
-                        .then(RequiredArgumentBuilder.<ServerCommandSource, Integer>argument("level", IntegerArgumentType.integer(10, 100))
-                                .executes(this::exportPlayerWithFlatLevel)));
-    }
-
-    private LiteralArgumentBuilder<ServerCommandSource> getExportRelativeCommand() {
-        String permission = String.format("%s.%s", getLiteral(), "export");
-        return LiteralArgumentBuilder.<ServerCommandSource>literal("exportrelative")
-                .requires(new MultiCommandSourcePredicate(permission))
-                .then(RequiredArgumentBuilder.<ServerCommandSource, EntitySelector>argument("player", EntityArgumentType.player())
-                        .executes(this::exportPlayerWithRelativeLevel));
-    }
-
     private int reloadConfig(CommandContext<ServerCommandSource> context) {
         CobblemonTrainerBattle.config = new ConfigLoader().load();
-        CobblemonTrainerBattle.economy = new EconomyFactory().create(CobblemonTrainerBattle.config.economy);
         CobblemonTrainerBattle.LOGGER.info("Reloaded configuration");
         return Command.SINGLE_SUCCESS;
     }
@@ -86,53 +65,12 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
             ServerPlayerEntity player = EntityArgumentType.getPlayer(context, "player");
 
             MessagePredicate<PlayerBattleParticipant> predicate = new PlayerPartyNotEmptyPredicate();
-            if (!predicate.test(new NormalBattlePlayer(player))) {
+            if (!predicate.test(new NormalLevelPlayer(player))) {
                 player.sendMessage(predicate.getErrorMessage());
                 return 0;
             }
 
             new NormalShowdownPokemonExporter(player).toJson();
-
-            return Command.SINGLE_SUCCESS;
-
-        } catch (CommandSyntaxException | IOException e) {
-            CobblemonTrainerBattle.LOGGER.error("Error occurred while exporting trainer file");
-            return 0;
-        }
-    }
-
-    private int exportPlayerWithFlatLevel(CommandContext<ServerCommandSource> context) {
-        try {
-            ServerPlayerEntity player = EntityArgumentType.getPlayer(context, "player");
-            int level = IntegerArgumentType.getInteger(context, "level");
-
-            MessagePredicate<PlayerBattleParticipant> predicate = new PlayerPartyNotEmptyPredicate();
-            if (!predicate.test(new FlatBattlePlayer(player, level))) {
-                player.sendMessage(predicate.getErrorMessage());
-                return 0;
-            }
-
-            new FlatShowdownPokemonExporter(player, level).toJson();
-
-            return Command.SINGLE_SUCCESS;
-
-        } catch (CommandSyntaxException | IOException e) {
-            CobblemonTrainerBattle.LOGGER.error("Error occurred while exporting trainer file");
-            return 0;
-        }
-    }
-
-    private int exportPlayerWithRelativeLevel(CommandContext<ServerCommandSource> context) {
-        try {
-            ServerPlayerEntity player = EntityArgumentType.getPlayer(context, "player");
-
-            MessagePredicate<PlayerBattleParticipant> predicate = new PlayerPartyNotEmptyPredicate();
-            if (!predicate.test(new NormalBattlePlayer(player))) {
-                player.sendMessage(predicate.getErrorMessage());
-                return 0;
-            }
-
-            new RelativeShowdownPokemonExporter(player).toJson();
 
             return Command.SINGLE_SUCCESS;
 

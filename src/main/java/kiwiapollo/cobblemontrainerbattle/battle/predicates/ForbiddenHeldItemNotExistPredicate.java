@@ -2,9 +2,12 @@ package kiwiapollo.cobblemontrainerbattle.battle.predicates;
 
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
 
 import java.util.List;
 import java.util.Objects;
@@ -15,8 +18,12 @@ public class ForbiddenHeldItemNotExistPredicate extends HeldItemPredicate {
     private final List<ItemStack> forbidden;
     private Text error;
 
-    public ForbiddenHeldItemNotExistPredicate(List<ItemStack> forbidden) {
-        this.forbidden = forbidden.stream().filter(Objects::nonNull).toList();
+    public ForbiddenHeldItemNotExistPredicate(List<String> forbidden) {
+        this.forbidden = forbidden.stream()
+                .map(item -> Registries.ITEM.get(Identifier.tryParse(item)))
+                .map(Item::getDefaultStack)
+                .filter(stack -> !stack.isEmpty())
+                .toList();
     }
 
     @Override

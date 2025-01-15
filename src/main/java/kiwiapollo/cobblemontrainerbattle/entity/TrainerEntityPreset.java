@@ -3,6 +3,6 @@ package kiwiapollo.cobblemontrainerbattle.entity;
 import net.minecraft.util.Identifier;
 
 public record TrainerEntityPreset(
-        Identifier trainer,
+        String trainer,
         Identifier texture
 ) {}

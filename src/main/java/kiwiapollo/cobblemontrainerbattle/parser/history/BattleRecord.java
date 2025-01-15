@@ -1,5 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.parser.history;
 
+import java.time.Instant;
+
 public interface BattleRecord {
     int getVictoryCount();
 
@@ -8,4 +10,6 @@ public interface BattleRecord {
     int getDefeatCount();
 
     void setDefeatCount(int count);
+
+    Instant getTimestamp();
 }

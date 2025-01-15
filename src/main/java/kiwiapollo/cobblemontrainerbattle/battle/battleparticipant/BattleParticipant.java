@@ -1,6 +1,5 @@
 package kiwiapollo.cobblemontrainerbattle.battle.battleparticipant;
 
-import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 
@@ -15,10 +14,4 @@ public interface BattleParticipant {
     PartyStore getParty();
 
     List<BattlePokemon> getBattleTeam();
-
-    BattleActor createBattleActor();
-
-    void onVictory();
-
-    void onDefeat();
 }

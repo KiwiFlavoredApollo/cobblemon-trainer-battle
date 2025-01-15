@@ -18,7 +18,7 @@ public class CobblemonTrainerBattleClient implements ClientModInitializer {
 
 		ClientPlayNetworking.registerGlobalReceiver(TrainerEntityPackets.TRAINER_ENTITY_SYNC, (client, handler, buf, responseSender) -> {
 			int entityId = buf.readInt();
-			Identifier trainer = buf.readIdentifier();
+			String trainer = buf.readString();
 			Identifier texture = buf.readIdentifier();
 
 			client.execute(() -> {

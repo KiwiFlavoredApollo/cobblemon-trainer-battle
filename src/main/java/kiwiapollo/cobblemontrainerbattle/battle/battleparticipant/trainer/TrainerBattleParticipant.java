@@ -1,24 +1,36 @@
 package kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer;
 
+import com.cobblemon.mod.common.api.battles.model.actor.AIBattleActor;
 import com.cobblemon.mod.common.api.battles.model.ai.BattleAI;
 import com.cobblemon.mod.common.battles.BattleFormat;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.BattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.MessagePredicate;
+import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
-import net.minecraft.util.Identifier;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface TrainerBattleParticipant extends BattleParticipant {
-    Identifier getIdentifier();
-
-    BattleFormat getBattleFormat();
+    String getId();
 
     BattleAI getBattleAI();
 
-    List<MessagePredicate<PlayerBattleParticipant>> getPredicates();
+    BattleFormat getBattleFormat();
 
     Optional<SoundEvent> getBattleTheme();
+
+    LevelMode getLevelMode();
+
+    boolean isSpawningAllowed();
+
+    List<MessagePredicate<PlayerBattleParticipant>> getPredicates();
+
+    AIBattleActor createBattleActor(ServerPlayerEntity player);
+
+    void onPlayerDefeat(ServerPlayerEntity player);
+
+    void onPlayerVictory(ServerPlayerEntity player);
 }

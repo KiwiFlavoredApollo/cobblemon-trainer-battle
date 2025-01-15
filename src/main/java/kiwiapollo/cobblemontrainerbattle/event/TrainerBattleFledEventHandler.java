@@ -6,7 +6,8 @@ import com.cobblemon.mod.common.api.battles.model.actor.FleeableBattleActor;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.EntityBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattleStorage;
+import kiwiapollo.cobblemontrainerbattle.parser.player.BattleContextStorage;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.Vec3d;
@@ -15,33 +16,38 @@ import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.stream.StreamSupport;
 
-public class TrainerBattleFledEventHandler {
-    public static void endFledTrainerBattle(ServerWorld world) {
+public class TrainerBattleFledEventHandler implements ServerTickEvents.EndWorldTick {
+    @Override
+    public void onEndTick(ServerWorld world) {
         world.getPlayers().forEach(player -> {
-            if (!TrainerBattleStorage.getTrainerBattleRegistry().containsKey(player.getUuid())) {
-                return;
+            try {
+                endFledTrainerBattle(player);
+            } catch (NullPointerException ignored) {
+
             }
-
-            TrainerBattle trainerBattle = TrainerBattleStorage.getTrainerBattleRegistry().get(player.getUuid());
-            PokemonBattle pokemonBattle = Cobblemon.INSTANCE.getBattleRegistry().getBattle(trainerBattle.getBattleId());
-            if (!isFledBattle(pokemonBattle, player)) {
-                return;
-            }
-
-            StreamSupport.stream(pokemonBattle.getActors().spliterator(), false)
-                    .filter(battleActor -> battleActor instanceof EntityBackedTrainerBattleActor)
-                    .map(battleActor -> ((EntityBackedTrainerBattleActor) battleActor))
-                    .map(EntityBackedTrainerBattleActor::getEntity)
-                    .filter(Objects::nonNull)
-                    .forEach(trainerEntity -> trainerEntity.setAiDisabled(false));
-
-            pokemonBattle.end();
-
-            CobblemonTrainerBattle.LOGGER.info("Battle was fled: {}", player.getGameProfile().getName());
         });
     }
 
-    private static boolean isFledBattle(PokemonBattle trainerBattle, ServerPlayerEntity player) {
+    private void endFledTrainerBattle(ServerPlayerEntity player) {
+        TrainerBattle trainerBattle = BattleContextStorage.getInstance().getOrCreate(player.getUuid()).getTrainerBattle();
+        PokemonBattle pokemonBattle = Cobblemon.INSTANCE.getBattleRegistry().getBattle(trainerBattle.getBattleId());
+        if (!isFledBattle(pokemonBattle, player)) {
+            return;
+        }
+
+        StreamSupport.stream(pokemonBattle.getActors().spliterator(), false)
+                .filter(battleActor -> battleActor instanceof EntityBackedTrainerBattleActor)
+                .map(battleActor -> ((EntityBackedTrainerBattleActor) battleActor))
+                .map(EntityBackedTrainerBattleActor::getEntity)
+                .filter(Objects::nonNull)
+                .forEach(trainerEntity -> trainerEntity.setAiDisabled(false));
+
+        pokemonBattle.end();
+
+        CobblemonTrainerBattle.LOGGER.info("Battle was fled: {}", player.getGameProfile().getName());
+    }
+
+    private boolean isFledBattle(PokemonBattle trainerBattle, ServerPlayerEntity player) {
         try {
             FleeableBattleActor trainerBattleActor =
                     StreamSupport.stream(trainerBattle.getActors().spliterator(), false)

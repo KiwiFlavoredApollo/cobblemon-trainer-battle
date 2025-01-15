@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class TrainerRegexPredicate implements Predicate<Identifier> {
+public class TrainerRegexPredicate implements Predicate<String> {
     private final String regex;
 
     private TrainerRegexPredicate(String regex) {
@@ -14,8 +14,8 @@ public class TrainerRegexPredicate implements Predicate<Identifier> {
     }
 
     @Override
-    public boolean test(Identifier trainer) {
-        return trainer.getPath().matches(regex);
+    public boolean test(String trainer) {
+        return trainer.matches(regex);
     }
 
     public static class Builder {

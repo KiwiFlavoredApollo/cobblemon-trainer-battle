@@ -1,20 +1,17 @@
 package kiwiapollo.cobblemontrainerbattle.parser.pokemon;
 
-import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.abilities.Abilities;
 import com.cobblemon.mod.common.api.moves.Move;
 import com.cobblemon.mod.common.api.moves.Moves;
 import com.cobblemon.mod.common.api.pokemon.Natures;
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
 import com.cobblemon.mod.common.api.pokemon.stats.Stats;
-import com.cobblemon.mod.common.pokemon.FormData;
 import com.cobblemon.mod.common.pokemon.Gender;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
-import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
 import java.util.*;
@@ -22,14 +19,6 @@ import java.util.function.BiConsumer;
 
 public class ShowdownPokemonParser {
     public static final int DEFAULT_LEVEL = 50;
-    public static final int MAXIMUM_RELATIVE_LEVEL = 7;
-    public static final int MINIMUM_RELATIVE_LEVEL = -7;
-
-    private final ServerPlayerEntity player;
-
-    public ShowdownPokemonParser(ServerPlayerEntity player) {
-        this.player = player;
-    }
 
     public Pokemon toCobblemonPokemon(ShowdownPokemon showdownPokemon) throws PokemonParseException {
         Pokemon pokemon = createBasePokemon(showdownPokemon);
@@ -72,28 +61,8 @@ public class ShowdownPokemonParser {
         pokemon.setShiny(shiny);
     }
 
-    private void setPokemonLevel(Pokemon pokemon, int level) throws PokemonParseException {
-        try {
-            boolean isRelativeLevel = MINIMUM_RELATIVE_LEVEL <= level && level <= MAXIMUM_RELATIVE_LEVEL;
-
-            if (isRelativeLevel) {
-                int maximumPartyLevel = Cobblemon.INSTANCE.getStorage().getParty(player).toGappyList().stream()
-                        .filter(Objects::nonNull)
-                        .map(Pokemon::getLevel)
-                        .max(Comparator.naturalOrder()).get();
-
-                pokemon.setLevel(maximumPartyLevel + level);
-
-            } else if (level > MAXIMUM_RELATIVE_LEVEL) {
-                pokemon.setLevel(level);
-
-            } else {
-                throw new PokemonParseException();
-            }
-
-        } catch (NullPointerException | NoSuchElementException ignored) {
-
-        }
+    protected void setPokemonLevel(Pokemon pokemon, int level) {
+        pokemon.setLevel(level);
     }
 
     private void setPokemonAbility(Pokemon pokemon, String ability) {

@@ -3,7 +3,7 @@ package kiwiapollo.cobblemontrainerbattle.advancement;
 import com.google.gson.JsonObject;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.parser.history.EntityRecord;
-import kiwiapollo.cobblemontrainerbattle.parser.history.PlayerHistoryManager;
+import kiwiapollo.cobblemontrainerbattle.parser.history.PlayerHistoryStorage;
 import net.minecraft.advancement.criterion.AbstractCriterion;
 import net.minecraft.advancement.criterion.AbstractCriterionConditions;
 import net.minecraft.predicate.entity.AdvancementEntityPredicateDeserializer;
@@ -39,8 +39,8 @@ public class KillTrainerCriterion extends AbstractCriterion<KillTrainerCriterion
         return obj.has("trainer");
     }
 
-    private Identifier getTrainerCondition(JsonObject obj) {
-        return Identifier.tryParse(obj.get("trainer").getAsString());
+    private String getTrainerCondition(JsonObject obj) {
+        return obj.get("trainer").getAsString();
     }
 
     private int getCountCondition(JsonObject obj) {
@@ -69,20 +69,20 @@ public class KillTrainerCriterion extends AbstractCriterion<KillTrainerCriterion
         }
 
         boolean test(ServerPlayerEntity player) {
-            int total = PlayerHistoryManager.getPlayerHistory(player.getUuid()).getTotalTrainerKillCount();
+            int total = PlayerHistoryStorage.getInstance().getOrCreate(player.getUuid()).getTotalTrainerKillCount();
             return total >= count;
         }
     }
 
     public static class TrainerCountConditions extends KillTrainerCriterion.Conditions {
-        private final Identifier trainer;
+        private final String trainer;
         private final int count;
 
-        public TrainerCountConditions(Identifier trainer) {
+        public TrainerCountConditions(String trainer) {
             this(trainer, ONE);
         }
 
-        public TrainerCountConditions(Identifier trainer, int count) {
+        public TrainerCountConditions(String trainer, int count) {
             super(ID, LootContextPredicate.EMPTY);
             this.trainer = trainer;
             this.count = count;
@@ -99,7 +99,7 @@ public class KillTrainerCriterion extends AbstractCriterion<KillTrainerCriterion
         }
 
         boolean test(ServerPlayerEntity player) {
-            int record = ((EntityRecord) PlayerHistoryManager.getPlayerHistory(player.getUuid()).getOrCreateRecord(trainer)).getKillCount();
+            int record = ((EntityRecord) PlayerHistoryStorage.getInstance().getOrCreate(player.getUuid()).getOrCreate(trainer)).getKillCount();
             return record >= count;
         }
     }

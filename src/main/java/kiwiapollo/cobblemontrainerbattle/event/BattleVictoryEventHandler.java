@@ -2,54 +2,64 @@ package kiwiapollo.cobblemontrainerbattle.event;
 
 import com.cobblemon.mod.common.api.events.battles.BattleVictoryEvent;
 import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
-import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattleStorage;
+import kiwiapollo.cobblemontrainerbattle.parser.player.BattleContextStorage;
 import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
 import net.minecraft.server.network.ServerPlayerEntity;
 
-import java.util.List;
 import java.util.UUID;
 
-public class BattleVictoryEventHandler {
-    public static Unit onBattleVictory(BattleVictoryEvent battleVictoryEvent) {
-        // BATTLE_VICTORY event fires even if the player loses
-
-        List<UUID> battleIds = TrainerBattleStorage.getTrainerBattleRegistry().values().stream()
-                .map(TrainerBattle::getBattleId).toList();
-
-        if (!battleIds.contains(battleVictoryEvent.getBattle().getBattleId())) {
+public class BattleVictoryEventHandler implements Function1<BattleVictoryEvent, Unit> {
+    /**
+     * BATTLE_VICTORY event fires even if the player loses
+     */
+    @Override
+    public Unit invoke(BattleVictoryEvent event) {
+        if (!isTrainerBattle(event)) {
             return Unit.INSTANCE;
         }
 
-        if (isPlayerVictory(battleVictoryEvent)) {
-            onPlayerVictory(battleVictoryEvent);
+        if (isPlayerVictory(event)) {
+            onPlayerVictory(event);
 
         } else {
-            onPlayerDefeat(battleVictoryEvent);
+            onPlayerDefeat(event);
         }
 
         return Unit.INSTANCE;
     }
 
-    private static boolean isPlayerVictory(BattleVictoryEvent battleVictoryEvent) {
-        ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
-        return battleVictoryEvent.getWinners().stream().anyMatch(battleActor -> battleActor.isForPlayer(player));
+    private boolean isTrainerBattle(BattleVictoryEvent event) {
+        try {
+            ServerPlayerEntity player = event.getBattle().getPlayers().get(0);
+            UUID battleId = BattleContextStorage.getInstance().getOrCreate(player.getUuid()).getTrainerBattle().getBattleId();
+
+            return battleId.equals(event.getBattle().getBattleId());
+
+        } catch (NullPointerException e) {
+            return false;
+        }
     }
 
-    private static void onPlayerVictory(BattleVictoryEvent battleVictoryEvent) {
-        ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
+    private boolean isPlayerVictory(BattleVictoryEvent event) {
+        ServerPlayerEntity player = event.getBattle().getPlayers().get(0);
+        return event.getWinners().stream().anyMatch(battleActor -> battleActor.isForPlayer(player));
+    }
 
-        TrainerBattleStorage.getTrainerBattleRegistry().get(player.getUuid()).onPlayerVictory();
+    private void onPlayerVictory(BattleVictoryEvent event) {
+        ServerPlayerEntity player = event.getBattle().getPlayers().get(0);
+
+        BattleContextStorage.getInstance().getOrCreate(player.getUuid()).getTrainerBattle().onPlayerVictory();
         CustomCriteria.DEFEAT_TRAINER_CRITERION.trigger(player);
 
-        TrainerBattleStorage.getTrainerBattleRegistry().remove(player.getUuid());
+        BattleContextStorage.getInstance().getOrCreate(player.getUuid()).clearTrainerBattle();
     }
 
-    private static void onPlayerDefeat(BattleVictoryEvent battleVictoryEvent) {
-        ServerPlayerEntity player = battleVictoryEvent.getBattle().getPlayers().get(0);
+    private void onPlayerDefeat(BattleVictoryEvent event) {
+        ServerPlayerEntity player = event.getBattle().getPlayers().get(0);
 
-        TrainerBattleStorage.getTrainerBattleRegistry().get(player.getUuid()).onPlayerDefeat();
+        BattleContextStorage.getInstance().getOrCreate(player.getUuid()).getTrainerBattle().onPlayerDefeat();
 
-        TrainerBattleStorage.getTrainerBattleRegistry().remove(player.getUuid());
+        BattleContextStorage.getInstance().getOrCreate(player.getUuid()).clearTrainerBattle();
     }
 }

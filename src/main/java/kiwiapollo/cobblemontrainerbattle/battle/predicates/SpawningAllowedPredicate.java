@@ -1,14 +1,13 @@
 package kiwiapollo.cobblemontrainerbattle.battle.predicates;
 
-import kiwiapollo.cobblemontrainerbattle.parser.profile.TrainerProfileStorage;
-import net.minecraft.util.Identifier;
+import kiwiapollo.cobblemontrainerbattle.parser.preset.TrainerPreset;
 
 import java.util.function.Predicate;
 
-public class SpawningAllowedPredicate implements Predicate<Identifier> {
-
+@Deprecated
+public class SpawningAllowedPredicate implements Predicate<TrainerPreset> {
     @Override
-    public boolean test(Identifier trainer) {
-        return TrainerProfileStorage.getProfileRegistry().get(trainer).isSpawningAllowed;
+    public boolean test(TrainerPreset preset) {
+        return preset.isSpawningAllowed;
     }
 }

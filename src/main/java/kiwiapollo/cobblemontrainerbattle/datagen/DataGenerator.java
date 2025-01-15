@@ -36,6 +36,7 @@ public class DataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(AdvancementProvider::new);
         pack.addProvider(RecipeProvider::new);
         pack.addProvider(TagProvider::new);
+        pack.addProvider(TrainerEntityLootTableProvider::new);
     }
 
     static class AdvancementProvider extends FabricAdvancementProvider {
@@ -73,7 +74,6 @@ public class DataGenerator implements DataGeneratorEntrypoint {
             Arrays.stream(KillTrainerAdvancements.values()).map(CustomAdvancements::getAdvancement).forEach(consumer);
             Arrays.stream(InclementEmeraldAdvancements.values()).map(CustomAdvancements::getAdvancement).forEach(consumer);
             Arrays.stream(RadicalRedAdvancements.values()).map(CustomAdvancements::getAdvancement).forEach(consumer);
-            Arrays.stream(BattleFactoryWinningStreakAdvancements.values()).map(CustomAdvancements::getAdvancement).forEach(consumer);
         }
     }
 

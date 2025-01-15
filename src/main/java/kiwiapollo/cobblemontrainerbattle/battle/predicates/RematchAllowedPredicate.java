@@ -2,17 +2,16 @@ package kiwiapollo.cobblemontrainerbattle.battle.predicates;
 
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.parser.history.BattleRecord;
-import kiwiapollo.cobblemontrainerbattle.parser.history.PlayerHistoryManager;
+import kiwiapollo.cobblemontrainerbattle.parser.history.PlayerHistoryStorage;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
 
 public class RematchAllowedPredicate implements MessagePredicate<PlayerBattleParticipant> {
-    private final Identifier opponent;
+    private final String id;
     private final boolean isRematchAllowed;
 
-    public RematchAllowedPredicate(Identifier opponent, boolean isRematchAllowed) {
-        this.opponent = opponent;
+    public RematchAllowedPredicate(String id, boolean isRematchAllowed) {
+        this.id = id;
         this.isRematchAllowed = isRematchAllowed;
     }
 
@@ -24,7 +23,7 @@ public class RematchAllowedPredicate implements MessagePredicate<PlayerBattlePar
     @Override
     public boolean test(PlayerBattleParticipant player) {
         try {
-            boolean isOpponentDefeated = ((BattleRecord) PlayerHistoryManager.getPlayerHistory(player.getUuid()).getOrCreateRecord(opponent)).getVictoryCount() > 0;
+            boolean isOpponentDefeated = ((BattleRecord) PlayerHistoryStorage.getInstance().getOrCreate(player.getUuid()).getOrCreate(id)).getVictoryCount() > 0;
             return isRematchAllowed || !isOpponentDefeated;
 
         } catch (ClassCastException e) {

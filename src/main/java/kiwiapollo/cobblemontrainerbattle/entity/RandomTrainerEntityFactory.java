@@ -1,20 +1,16 @@
 package kiwiapollo.cobblemontrainerbattle.entity;
 
-import kiwiapollo.cobblemontrainerbattle.battle.predicates.SpawningAllowedPredicate;
-import kiwiapollo.cobblemontrainerbattle.battle.predicates.TrainerRegexPredicate;
 import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerFactory;
-import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
+import kiwiapollo.cobblemontrainerbattle.parser.preset.TrainerStorage;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 
 public class RandomTrainerEntityFactory implements EntityType.EntityFactory<TrainerEntity> {
-    private final SimpleFactory<Identifier> trainerFactory;
+    private final RandomTrainerFactory trainerFactory;
 
     public RandomTrainerEntityFactory() {
-        this.trainerFactory = new RandomTrainerFactory.Builder()
-                .filter(new TrainerRegexPredicate.Builder().addWildcard().build())
-                .filter(new SpawningAllowedPredicate()).build();
+        this.trainerFactory = new RandomTrainerFactory.Builder().addAll().build();
     }
 
     public RandomTrainerEntityFactory(RandomTrainerFactory trainerFactory) {
@@ -26,12 +22,22 @@ public class RandomTrainerEntityFactory implements EntityType.EntityFactory<Trai
         return new TrainerEntity(type, world, createRandomTrainer(), createRandomTexture());
     }
 
-    private Identifier createRandomTrainer() {
+    private String createRandomTrainer() {
         try {
-            return trainerFactory.create();
+            String trainer;
+            do {
+                trainer = trainerFactory.create();
+            } while (!isSpawningAllowed(trainer));
+
+            return trainer;
+
         } catch (UnsupportedOperationException | IndexOutOfBoundsException e) {
             return null;
         }
+    }
+
+    private boolean isSpawningAllowed(String trainer) {
+        return TrainerStorage.getInstance().get(trainer).isSpawningAllowed();
     }
 
     private Identifier createRandomTexture() {
