@@ -14,6 +14,10 @@ public class ConfigStorage {
         return instance;
     }
 
+    private ConfigStorage() {
+
+    }
+
     public void update(Config config) {
         this.maximumTrainerSpawnCount = config.maximumTrainerSpawnCount;
         this.trainerSpawnIntervalInSeconds = config.trainerSpawnIntervalInSeconds;

@@ -21,7 +21,7 @@ public class ConfigLoader implements Command<ServerCommandSource> {
     public int run(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
         try {
             ConfigStorage.getInstance().update(load());
-            CobblemonTrainerBattle.LOGGER.info("Reloaded configuration");
+            CobblemonTrainerBattle.LOGGER.info("Loaded configuration");
             return Command.SINGLE_SUCCESS;
 
         } catch (Exception e) {
@@ -29,7 +29,7 @@ public class ConfigLoader implements Command<ServerCommandSource> {
         }
     }
 
-    private Config load() {
+    public Config load() {
         try {
             return loadExistingConfig();
 

@@ -5,6 +5,8 @@ import com.cobblemon.mod.common.api.events.CobblemonEvents;
 import com.cobblemon.mod.common.api.pokemon.aspect.AspectProvider;
 import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
 import kiwiapollo.cobblemontrainerbattle.command.*;
+import kiwiapollo.cobblemontrainerbattle.global.config.ConfigLoader;
+import kiwiapollo.cobblemontrainerbattle.global.config.ConfigStorage;
 import kiwiapollo.cobblemontrainerbattle.sound.CustomSoundEvents;
 import kiwiapollo.cobblemontrainerbattle.entity.EntityTypes;
 import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntity;
@@ -41,6 +43,9 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
     @Override
 	public void onInitialize() {
+		ConfigStorage.getInstance().update(new ConfigLoader().load());
+		CobblemonTrainerBattle.LOGGER.info("Loaded configuration");
+
 		Criteria.register(CustomCriteria.DEFEAT_TRAINER_CRITERION);
 		Criteria.register(CustomCriteria.KILL_TRAINER_CRITERION);
 
