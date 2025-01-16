@@ -9,7 +9,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class RandomTrainerTextureFactory implements SimpleFactory<Identifier> {
-    private static final String TEXTURE_PARENTS = "textures/entity/trainer/slim/";
+    private static final String TEXTURE_DIR = "textures/entity/trainer/slim/";
     private static final List<String> TEXTURE_FILES = List.of(
             "red_piikapiika.png",
             "green_piikapiika.png",
@@ -24,7 +24,7 @@ public class RandomTrainerTextureFactory implements SimpleFactory<Identifier> {
             "diner_waitress_mia_idkgraceorsmth.png"
     );
     private static final List<Identifier> TEXTURES = TEXTURE_FILES.stream()
-            .map(file -> TEXTURE_PARENTS + file)
+            .map(file -> TEXTURE_DIR + file)
             .map(path -> Identifier.of(CobblemonTrainerBattle.MOD_ID, path)).toList();
 
     @Override

@@ -3,6 +3,7 @@ package kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer;
 import com.cobblemon.mod.common.api.battles.model.actor.AIBattleActor;
 import com.cobblemon.mod.common.api.battles.model.ai.BattleAI;
 import com.cobblemon.mod.common.battles.BattleFormat;
+import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.BattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.MessagePredicate;
@@ -23,6 +24,8 @@ public interface TrainerBattleParticipant extends BattleParticipant {
     Optional<SoundEvent> getBattleTheme();
 
     LevelMode getLevelMode();
+
+    List<BattlePokemon> getBattleTeam(ServerPlayerEntity player);
 
     boolean isSpawningAllowed();
 

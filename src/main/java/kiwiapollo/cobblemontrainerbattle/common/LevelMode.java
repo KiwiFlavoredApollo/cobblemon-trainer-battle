@@ -6,6 +6,7 @@ public enum LevelMode {
     FLAT();
 
     LevelMode() {
+
     }
 
     public static class Factory implements SimpleFactory<LevelMode> {

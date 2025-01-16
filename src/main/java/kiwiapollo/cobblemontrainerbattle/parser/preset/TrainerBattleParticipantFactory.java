@@ -10,12 +10,12 @@ import kiwiapollo.cobblemontrainerbattle.parser.pokemon.ShowdownPokemon;
 
 import java.util.List;
 
-public class TrainerFactory implements SimpleFactory<TrainerBattleParticipant> {
+public class TrainerBattleParticipantFactory implements SimpleFactory<TrainerBattleParticipant> {
     private final String id;
     private final TrainerPreset preset;
     private final List<ShowdownPokemon> team;
 
-    public TrainerFactory(String id, TrainerPreset preset, List<ShowdownPokemon> team) {
+    public TrainerBattleParticipantFactory(String id, TrainerPreset preset, List<ShowdownPokemon> team) {
         this.id = id;
         this.preset = preset;
         this.team = team;

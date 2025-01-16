@@ -9,7 +9,6 @@ import net.minecraft.text.MutableText;
 import net.minecraft.util.Formatting;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.UUID;
 
 public class AbstractPlayerBattleParticipant implements PlayerBattleParticipant {
@@ -39,15 +38,6 @@ public class AbstractPlayerBattleParticipant implements PlayerBattleParticipant 
         return player.getGameProfile().getName();
     }
 
-    public List<BattlePokemon> getBattleTeam() {
-        UUID leadingPokemon = party.toGappyList().stream()
-                .filter(Objects::nonNull)
-                .filter(pokemon -> !pokemon.isFainted())
-                .findFirst().get().getUuid();
-
-        return party.toBattleTeam(false, false, leadingPokemon);
-    }
-
     @Override
     public BattleActor createBattleActor() {
         return new PlayerBattleActor(
@@ -64,5 +54,9 @@ public class AbstractPlayerBattleParticipant implements PlayerBattleParticipant 
     @Override
     public void sendErrorMessage(MutableText message) {
         this.player.sendMessage(message.formatted(Formatting.RED));
+    }
+
+    private List<BattlePokemon> getBattleTeam() {
+        return party.toBattleTeam(false, false, null);
     }
 }

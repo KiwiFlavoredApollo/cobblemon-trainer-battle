@@ -1,12 +1,11 @@
 package kiwiapollo.cobblemontrainerbattle.entity;
 
 import com.cobblemon.mod.common.Cobblemon;
-import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
-import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipantFactory;
-import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer.TrainerBattleParticipant;
+import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer.TrainerBattleParticipantFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
 import kiwiapollo.cobblemontrainerbattle.parser.history.EntityRecord;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.EntityBackedTrainerBattle;
@@ -104,13 +103,14 @@ public class TrainerEntity extends PathAwareEntity {
                 return;
             }
 
-            TrainerBattleParticipant trainerBattleParticipant = TrainerStorage.getInstance().get(trainer);
-            PlayerBattleParticipant playerBattleParticipant = new PlayerBattleParticipantFactory(player, trainerBattleParticipant.getLevelMode()).create();
-
-            TrainerBattle trainerBattle = new EntityBackedTrainerBattle(playerBattleParticipant, trainerBattleParticipant, this);
+            TrainerBattle trainerBattle = new EntityBackedTrainerBattle(
+                    new PlayerBattleParticipantFactory(player, getLevelMode(trainer)).create(),
+                    new TrainerBattleParticipantFactory(trainer).create(),
+                    this
+            );
             trainerBattle.start();
 
-            BattleContextStorage.getInstance().getOrCreate(playerBattleParticipant.getUuid()).setTrainerBattle(trainerBattle);
+            BattleContextStorage.getInstance().getOrCreate(player.getUuid()).setTrainerBattle(trainerBattle);
             this.trainerBattle = trainerBattle;
 
             this.setVelocity(0, 0, 0);
@@ -122,6 +122,10 @@ public class TrainerEntity extends PathAwareEntity {
         } catch (BattleStartException ignored) {
 
         }
+    }
+
+    private LevelMode getLevelMode(String trainer) {
+        return TrainerStorage.getInstance().get(trainer).getLevelMode();
     }
 
     @Override

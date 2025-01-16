@@ -1,6 +1,12 @@
 package kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer;
 
+import com.cobblemon.mod.common.Cobblemon;
+import com.cobblemon.mod.common.api.battles.model.actor.AIBattleActor;
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
+import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
+import com.cobblemon.mod.common.pokemon.Pokemon;
+import kiwiapollo.cobblemontrainerbattle.battle.battleactor.PlayerBackedTrainerBattleActor;
+import kiwiapollo.cobblemontrainerbattle.battle.battleactor.SafeCopyBattlePokemonFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.*;
 import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
@@ -8,8 +14,11 @@ import kiwiapollo.cobblemontrainerbattle.parser.pokemon.RelativeLevelShowdownPok
 import kiwiapollo.cobblemontrainerbattle.parser.pokemon.ShowdownPokemon;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
 import kiwiapollo.cobblemontrainerbattle.parser.preset.TrainerPreset;
+import net.minecraft.server.network.ServerPlayerEntity;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 public class RelativeLevelTrainer extends AbstractTrainerBattleParticipant {
@@ -61,5 +70,44 @@ public class RelativeLevelTrainer extends AbstractTrainerBattleParticipant {
     @Override
     public LevelMode getLevelMode() {
         return LevelMode.NORMAL;
+    }
+
+    @Override
+    public AIBattleActor createBattleActor(ServerPlayerEntity player) {
+        return new PlayerBackedTrainerBattleActor(
+                getName(),
+                getUuid(),
+                getBattleTeam(player),
+                getBattleAI(),
+                player
+        );
+    }
+
+    @Override
+    public List<BattlePokemon> getBattleTeam(ServerPlayerEntity player) {
+        int pivot = getMaximumPlayerLevel(player);
+
+        List<BattlePokemon> team = new ArrayList<>();
+        getParty().forEach(pokemon -> {
+            Pokemon clone = pokemon.clone(true, true);
+            clone.setLevel(toAbsoluteLevel(pivot, toRelativeLevel(pokemon.getLevel())));
+            team.add(new SafeCopyBattlePokemonFactory().apply(clone));
+        });
+
+        team.forEach(pokemon -> pokemon.getEffectedPokemon().heal());
+
+        return team;
+    }
+
+    private int toAbsoluteLevel(int pivot, int relativeLevel) {
+        return pivot + relativeLevel;
+    }
+
+    private int toRelativeLevel(int level) {
+        return level - RelativeLevelShowdownPokemonParser.PIVOT;
+    }
+
+    private int getMaximumPlayerLevel(ServerPlayerEntity player) {
+        return Cobblemon.INSTANCE.getStorage().getParty(player).toGappyList().stream().filter(Objects::nonNull).map(Pokemon::getLevel).max(Integer::compare).orElseThrow();
     }
 }

@@ -2,8 +2,10 @@ package kiwiapollo.cobblemontrainerbattle.event;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerFactory;
+import kiwiapollo.cobblemontrainerbattle.common.SpawnableRandomTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.entity.EntityTypes;
 import kiwiapollo.cobblemontrainerbattle.entity.RandomTrainerEntityFactory;
+import kiwiapollo.cobblemontrainerbattle.entity.RandomTrainerTextureFactory;
 import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.item.MiscItems;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
@@ -54,7 +56,14 @@ public class TrainerEntitySpawner implements ServerTickEvents.EndWorldTick {
     }
 
     private RandomTrainerEntityFactory createRandomTrainerEntityFactory(Inventory inventory) {
-        RandomTrainerFactory.Builder builder = new RandomTrainerFactory.Builder();
+        SpawnableRandomTrainerFactory trainer = createSpawnableRandomTrainerFactory(inventory);
+        RandomTrainerTextureFactory texture = new RandomTrainerTextureFactory();
+
+        return new RandomTrainerEntityFactory(trainer, texture);
+    }
+
+    private SpawnableRandomTrainerFactory createSpawnableRandomTrainerFactory(Inventory inventory) {
+        SpawnableRandomTrainerFactory.Builder builder = new SpawnableRandomTrainerFactory.Builder();
         if (inventory.containsAny(Set.of(MiscItems.BLUE_VS_SEEKER))) {
             builder = builder.addAll();
         }
@@ -71,7 +80,7 @@ public class TrainerEntitySpawner implements ServerTickEvents.EndWorldTick {
             builder = builder.addSmogon();
         }
 
-        return new RandomTrainerEntityFactory(builder.build());
+        return builder.build();
     }
 
     private boolean containsVsSeeker(Inventory inventory) {

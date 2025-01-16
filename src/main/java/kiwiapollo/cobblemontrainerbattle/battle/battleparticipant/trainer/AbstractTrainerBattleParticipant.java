@@ -6,8 +6,8 @@ import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.mojang.brigadier.CommandDispatcher;
-import kiwiapollo.cobblemontrainerbattle.battle.battleactor.DisposableBattlePokemonFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.PlayerBackedTrainerBattleActor;
+import kiwiapollo.cobblemontrainerbattle.battle.battleactor.SafeCopyBattlePokemonFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.BattleAIFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.BattleFormatFactory;
 import kiwiapollo.cobblemontrainerbattle.parser.preset.TrainerPreset;
@@ -17,10 +17,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 
 public abstract class AbstractTrainerBattleParticipant implements TrainerBattleParticipant {
     private final String id;
@@ -87,7 +84,7 @@ public abstract class AbstractTrainerBattleParticipant implements TrainerBattleP
         return new PlayerBackedTrainerBattleActor(
                 getName(),
                 getUuid(),
-                getBattleTeam(),
+                getBattleTeam(player),
                 getBattleAI(),
                 player
         );
@@ -109,8 +106,8 @@ public abstract class AbstractTrainerBattleParticipant implements TrainerBattleP
     }
 
     @Override
-    public List<BattlePokemon> getBattleTeam() {
-        return party.toGappyList().stream().filter(Objects::nonNull).map(DisposableBattlePokemonFactory::create).toList();
+    public List<BattlePokemon> getBattleTeam(ServerPlayerEntity player) {
+        return getParty().toGappyList().stream().filter(Objects::nonNull).map(new SafeCopyBattlePokemonFactory()).toList();
     }
 
     private void executeCommand(String command, ServerPlayerEntity player) {

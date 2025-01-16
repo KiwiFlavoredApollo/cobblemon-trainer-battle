@@ -1,46 +1,38 @@
 package kiwiapollo.cobblemontrainerbattle.entity;
 
-import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerFactory;
-import kiwiapollo.cobblemontrainerbattle.parser.preset.TrainerStorage;
+import kiwiapollo.cobblemontrainerbattle.common.SpawnableRandomTrainerFactory;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 
 public class RandomTrainerEntityFactory implements EntityType.EntityFactory<TrainerEntity> {
-    private final RandomTrainerFactory trainerFactory;
+    private final SpawnableRandomTrainerFactory trainer;
+    private final RandomTrainerTextureFactory texture;
 
     public RandomTrainerEntityFactory() {
-        this.trainerFactory = new RandomTrainerFactory.Builder().addAll().build();
+        this(new SpawnableRandomTrainerFactory(), new RandomTrainerTextureFactory());
     }
 
-    public RandomTrainerEntityFactory(RandomTrainerFactory trainerFactory) {
-        this.trainerFactory = trainerFactory;
+    public RandomTrainerEntityFactory(SpawnableRandomTrainerFactory trainer, RandomTrainerTextureFactory texture) {
+        this.trainer = trainer;
+        this.texture = texture;
     }
 
     @Override
     public TrainerEntity create(EntityType<TrainerEntity> type, World world) {
-        return new TrainerEntity(type, world, createRandomTrainer(), createRandomTexture());
+        return new TrainerEntity(type, world, createTrainer(), createTexture());
     }
 
-    private String createRandomTrainer() {
+    private String createTrainer() {
         try {
-            String trainer;
-            do {
-                trainer = trainerFactory.create();
-            } while (!isSpawningAllowed(trainer));
+            return trainer.create();
 
-            return trainer;
-
-        } catch (UnsupportedOperationException | IndexOutOfBoundsException e) {
+        } catch (UnsupportedOperationException | NullPointerException | IndexOutOfBoundsException e) {
             return null;
         }
     }
 
-    private boolean isSpawningAllowed(String trainer) {
-        return TrainerStorage.getInstance().get(trainer).isSpawningAllowed();
-    }
-
-    private Identifier createRandomTexture() {
-        return new RandomTrainerTextureFactory().create();
+    private Identifier createTexture() {
+        return texture.create();
     }
 }

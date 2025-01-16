@@ -66,10 +66,15 @@ public class EntityBackedTrainer implements TrainerBattleParticipant {
         return new EntityBackedTrainerBattleActor(
                 getName(),
                 getUuid(),
-                getBattleTeam(),
+                getBattleTeam(player),
                 getBattleAI(),
                 entity
         );
+    }
+
+    @Override
+    public List<BattlePokemon> getBattleTeam(ServerPlayerEntity player) {
+        return trainer.getBattleTeam(player);
     }
 
     @Override
@@ -97,10 +102,5 @@ public class EntityBackedTrainer implements TrainerBattleParticipant {
     @Override
     public PartyStore getParty() {
         return trainer.getParty();
-    }
-
-    @Override
-    public List<BattlePokemon> getBattleTeam() {
-        return trainer.getBattleTeam();
     }
 }

@@ -1,5 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.parser.preset;
 
+import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.battles.BattleFormat;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
@@ -8,7 +9,7 @@ import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.BattleFormatFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer.TrainerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.MinimumPartySizePredicate;
-import kiwiapollo.cobblemontrainerbattle.common.ReadOnlyMap;
+import kiwiapollo.cobblemontrainerbattle.common.ImmutableMap;
 import kiwiapollo.cobblemontrainerbattle.parser.pokemon.ShowdownPokemon;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
 import net.minecraft.resource.ResourceManager;
@@ -17,7 +18,7 @@ import net.minecraft.util.Identifier;
 import java.io.*;
 import java.util.*;
 
-public class TrainerStorage implements SimpleSynchronousResourceReloadListener, ReadOnlyMap<String, TrainerBattleParticipant> {
+public class TrainerStorage implements SimpleSynchronousResourceReloadListener, ImmutableMap<String, TrainerBattleParticipant> {
     private static final String TEAM_DIR = "trainer_team";
     private static final String PRESET_DIR = "trainer_preset";
     private static final Gson GSON = new Gson();
@@ -49,8 +50,20 @@ public class TrainerStorage implements SimpleSynchronousResourceReloadListener, 
     }
 
     @Override
+    public Collection<TrainerBattleParticipant> values() {
+        return storage.values();
+    }
+
+    @Override
     public Identifier getFabricId() {
         return Identifier.of(CobblemonTrainerBattle.MOD_ID, "trainer_storage");
+    }
+
+    @Override
+    public Collection<Identifier> getFabricDependencies() {
+        return List.of(
+                Identifier.of(Cobblemon.MODID, "data_resources")
+        );
     }
 
     @Override
@@ -68,7 +81,7 @@ public class TrainerStorage implements SimpleSynchronousResourceReloadListener, 
                 continue;
             }
 
-            storage.put(toTrainerId(trainer), new TrainerFactory(toTrainerId(trainer), toTrainerPreset(trainer), team).create());
+            storage.put(toTrainerId(trainer), new TrainerBattleParticipantFactory(toTrainerId(trainer), toTrainerPreset(trainer), team).create());
         }
     }
 
