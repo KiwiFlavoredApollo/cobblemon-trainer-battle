@@ -133,11 +133,6 @@
   "advancement.cobblemontrainerbattle.kill_trainer.tenth.title": "Unstoppable",
   "advancement.cobblemontrainerbattle.kill_trainer.tenth.description": "Kill 10 trainers",
 
-  "advancement.cobblemontrainerbattle.battlefactory_winning_streak.first.title": "Birds Don't Just Fly",
-  "advancement.cobblemontrainerbattle.battlefactory_winning_streak.first.description": "Achieve first winning streak in infinite Battle Factory",
-  "advancement.cobblemontrainerbattle.battlefactory_winning_streak.tenth.title": "Hard-Earned Victory",
-  "advancement.cobblemontrainerbattle.battlefactory_winning_streak.tenth.description": "Achieve tenth winning streak in infinite Battle Factory",
-
   "advancement.cobblemontrainerbattle.defeat_leader_brock.title": "So Classic",
   "advancement.cobblemontrainerbattle.defeat_leader_brock.description": "Defeat Brock",
   "advancement.cobblemontrainerbattle.defeat_leader_misty.title": "Yay, Bikinis!",
@@ -213,17 +208,9 @@
   "advancement.cobblemontrainerbattle.kill_champion_wallace.title": "If I Can't Have it, No One Can",
   "advancement.cobblemontrainerbattle.kill_champion_wallace.description": "Kill Wallace",
 
-  "predicate.cobblemontrainerbattle.error.all_trainer_not_defeated": "You cannot proceed when any trainers are defeated.",
-  "predicate.cobblemontrainerbattle.error.any_trainer_defeated": "You cannot proceed when no trainers are defeated.",
-  "predicate.cobblemontrainerbattle.error.any_trainer_not_defeated": "You cannot proceed when all trainers are defeated.",
-  "predicate.cobblemontrainerbattle.error.player_not_defeated": "You cannot proceed after being defeated.",
   "predicate.cobblemontrainerbattle.error.player_not_busy": "You cannot proceed while in a Pokémon battle.",
-  "predicate.cobblemontrainerbattle.error.player_not_traded_pokemon": "You cannot proceed after you have traded your Pokémon.",
   "predicate.cobblemontrainerbattle.error.player_party_not_empty": "You cannot proceed when you have no Pokémon.",
   "predicate.cobblemontrainerbattle.error.player_party_not_fainted": "You cannot proceed with all your Pokémon fainted.",
-  "predicate.cobblemontrainerbattle.error.profile_exist": "Unable to find the opponent.",
-  "predicate.cobblemontrainerbattle.error.session_exist": "You have no ongoing session.",
-  "predicate.cobblemontrainerbattle.error.session_not_exist": "You have ongoing session.",
 
   "predicate.cobblemontrainerbattle.error.is_rematch_allowed": "Rematch for this opponent is not allowed.",
 
@@ -245,13 +232,5 @@
   "predicate.cobblemontrainerbattle.error.forbidden_ability_not_exist": "Forbidden ability : %s",
   "predicate.cobblemontrainerbattle.error.forbidden_move_not_exist": "Forbidden move : %s",
 
-  "command.cobblemontrainerbattle.success.trainerbattle": "Battle has started against %s.",
-
-  "command.cobblemontrainerbattle.success.groupbattle.startsession": "Group Battle session has started against %s.",
-  "command.cobblemontrainerbattle.success.groupbattle.stopsession": "Group Battle session has ended.",
-
-  "command.cobblemontrainerbattle.success.battlefactory.startsession": "Battle Factory session has started.",
-  "command.cobblemontrainerbattle.success.battlefactory.stopsession": "Battle Factory session has ended.",
-  "command.cobblemontrainerbattle.success.battlefactory.tradepokemon": "Traded %s for %s.",
-  "command.cobblemontrainerbattle.success.battlefactory.winningstreak": "Winning Streak : %d"
+  "command.cobblemontrainerbattle.success.trainerbattle": "Battle has started against %s."
 }
