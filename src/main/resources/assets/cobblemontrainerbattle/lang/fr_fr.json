@@ -133,11 +133,6 @@
   "advancement.cobblemontrainerbattle.kill_trainer.tenth.title": "Rageux",
   "advancement.cobblemontrainerbattle.kill_trainer.tenth.description": "Tue 10 Dresseurs",
 
-  "advancement.cobblemontrainerbattle.battlefactory_winning_streak.first.title": "Tel Ikare",
-  "advancement.cobblemontrainerbattle.battlefactory_winning_streak.first.description": "Gagne une première victoire dans l'Usine de Combat",
-  "advancement.cobblemontrainerbattle.battlefactory_winning_streak.tenth.title": "Attention aux ailes",
-  "advancement.cobblemontrainerbattle.battlefactory_winning_streak.tenth.description": "Gagne dix victoires dans l'Usine de Combat",
-
   "advancement.cobblemontrainerbattle.defeat_leader_brock.title": "La base",
   "advancement.cobblemontrainerbattle.defeat_leader_brock.description": "Gagne contre Pierre",
   "advancement.cobblemontrainerbattle.defeat_leader_misty.title": "Vamos a la playa",
@@ -213,17 +208,9 @@
   "advancement.cobblemontrainerbattle.kill_champion_wallace.title": "Rageux Over 9000",
   "advancement.cobblemontrainerbattle.kill_champion_wallace.description": "Tue Marc",
 
-  "predicate.cobblemontrainerbattle.error.all_trainer_not_defeated": "Impossible. Tous les Dresseurs ne sont pas vaincus.",
-  "predicate.cobblemontrainerbattle.error.any_trainer_defeated": "Impossible. Tous les Dresseurs ne sont pas vaincus.",
-  "predicate.cobblemontrainerbattle.error.any_trainer_not_defeated": "Impossible. Tous les Dresseurs sont vaincus.",
-  "predicate.cobblemontrainerbattle.error.player_not_defeated": "Impossible. Vous êtes vaincu.",
   "predicate.cobblemontrainerbattle.error.player_not_busy": "Impossible. Déjà dans un combat.",
-  "predicate.cobblemontrainerbattle.error.player_not_traded_pokemon": "Impossible après avoir échangé un Pokémon.",
   "predicate.cobblemontrainerbattle.error.player_party_not_empty": "Impossible. Votre équipe est vide.",
   "predicate.cobblemontrainerbattle.error.player_party_not_fainted": "Impossible. Votre équipe est K.O.",
-  "predicate.cobblemontrainerbattle.error.profile_exist": "Impossible de trouver l'Adversaire.",
-  "predicate.cobblemontrainerbattle.error.session_exist": "Aucune session en cours.",
-  "predicate.cobblemontrainerbattle.error.session_not_exist": "Session déjà en cours.",
 
   "predicate.cobblemontrainerbattle.error.is_rematch_allowed": "Re-combattre ce Dreseur n'est pas autorisé.",
 
@@ -246,12 +233,14 @@
   "predicate.cobblemontrainerbattle.error.forbidden_move": "Attaque interdite : %s",
 
   "command.cobblemontrainerbattle.success.trainerbattle": "Le combat a commencé contre %s.",
+  "command.cobblemontrainerbattle.success.rentalpokemon.trade": "%s échangé pour %s.",
 
-  "command.cobblemontrainerbattle.success.groupbattle.startsession": "Le Combat Multi a commencé contre %s.",
-  "command.cobblemontrainerbattle.success.groupbattle.stopsession": "Le Combat Multi s'est terminé.",
+  "command.cobblemontrainerbattle.error.rentalbattle.trainer_minimum_party_size": "Le dresseur n'a pas assez de Pokémon : %d",
+  "command.cobblemontrainerbattle.error.rentalbattle.player_minimum_party_size": "Le joueur n'a pas assez de Pokémon : %d",
 
-  "command.cobblemontrainerbattle.success.battlefactory.startsession": "L'Usine de Combat a commencé.",
-  "command.cobblemontrainerbattle.success.battlefactory.stopsession": "L'Usine de Combat s'est terminé.",
-  "command.cobblemontrainerbattle.success.battlefactory.tradepokemon": "%s échangé pour %s.",
-  "command.cobblemontrainerbattle.success.battlefactory.winningstreak": "Série de Victoire : %d"
+  "command.cobblemontrainerbattle.error.rentalpokemon.trainer_minimum_party_size": "Le dresseur n'a pas assez de Pokémon : %d",
+  "command.cobblemontrainerbattle.error.rentalpokemon.player_minimum_party_size": "Le joueur n'a pas assez de Pokémon : %d",
+
+  "command.cobblemontrainerbattle.error.rentalpokemon.rental_pokemon_not_exist": "Le joueur n'a pas de Pokémon de location.",
+  "command.cobblemontrainerbattle.error.rentalpokemon.tradable_pokemon_not_exist": "Le joueur n'a pas de Pokémon échangeables."
 }
