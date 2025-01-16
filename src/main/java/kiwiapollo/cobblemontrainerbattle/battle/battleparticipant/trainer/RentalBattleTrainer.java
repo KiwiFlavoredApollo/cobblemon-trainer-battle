@@ -9,6 +9,7 @@ import kiwiapollo.cobblemontrainerbattle.battle.battleactor.PlayerBackedTrainerB
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.SafeCopyBattlePokemonFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.predicate.*;
+import kiwiapollo.cobblemontrainerbattle.battle.preset.RentalBattlePreset;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
 import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
 import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerStorage;
@@ -18,8 +19,6 @@ import net.minecraft.sound.SoundEvent;
 import java.util.*;
 
 public class RentalBattleTrainer implements TrainerBattleParticipant {
-    private final int LEVEL = 50;
-
     private final TrainerBattleParticipant trainer;
 
     public RentalBattleTrainer(String trainer) {
@@ -46,7 +45,7 @@ public class RentalBattleTrainer implements TrainerBattleParticipant {
     public List<BattlePokemon> getBattleTeam(ServerPlayerEntity player) {
         List<BattlePokemon> team = getParty().toGappyList().stream().filter(Objects::nonNull).map(new SafeCopyBattlePokemonFactory()).toList();
 
-        team.forEach(pokemon -> pokemon.getEffectedPokemon().setLevel(LEVEL));
+        team.forEach(pokemon -> pokemon.getEffectedPokemon().setLevel(RentalBattlePreset.LEVEL));
         team.forEach(pokemon -> pokemon.getEffectedPokemon().heal());
 
         return team;

@@ -9,8 +9,6 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import java.util.List;
 
 public class RentalBattlePlayer extends AbstractPlayerBattleParticipant {
-    private static final int LEVEL = 50;
-
     public RentalBattlePlayer(ServerPlayerEntity player) {
         super(player, BattleContextStorage.getInstance().getOrCreate(player.getUuid()).getRentalPokemon());
     }
