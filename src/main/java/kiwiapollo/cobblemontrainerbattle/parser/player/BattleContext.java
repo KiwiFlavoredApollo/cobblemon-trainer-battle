@@ -7,14 +7,14 @@ import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
 import java.util.UUID;
 
 public class BattleContext implements TrainerBattleStorage, RentalPokemonStorage {
-    private final UUID uuid;
     private TrainerBattle trainerBattle;
     private PartyStore rentalPokemon;
+    private PartyStore tradablePokemon;
 
-    public BattleContext(UUID uuid) {
-        this.uuid = uuid;
+    public BattleContext() {
         this.trainerBattle = new NullTrainerBattle();
-        this.rentalPokemon = new PartyStore(uuid);
+        this.rentalPokemon = new PartyStore(UUID.randomUUID());
+        this.tradablePokemon = new PartyStore(UUID.randomUUID());
     }
 
     @Override
@@ -28,13 +28,8 @@ public class BattleContext implements TrainerBattleStorage, RentalPokemonStorage
     }
 
     @Override
-    public boolean hasRentalPokemon() {
-        return rentalPokemon.occupied() > 0;
-    }
-
-    @Override
     public void clearRentalPokemon() {
-        this.rentalPokemon = new PartyStore(uuid);
+        this.rentalPokemon = new PartyStore(UUID.randomUUID());
     }
 
     @Override
@@ -50,5 +45,20 @@ public class BattleContext implements TrainerBattleStorage, RentalPokemonStorage
     @Override
     public void clearTrainerBattle() {
         this.trainerBattle = new NullTrainerBattle();
+    }
+
+    @Override
+    public PartyStore getTradablePokemon() {
+        return tradablePokemon;
+    }
+
+    @Override
+    public void setTradablePokemon(PartyStore pokemon) {
+        this.tradablePokemon = pokemon;
+    }
+
+    @Override
+    public void clearTradablePokemon() {
+        this.tradablePokemon = new PartyStore(UUID.randomUUID());
     }
 }

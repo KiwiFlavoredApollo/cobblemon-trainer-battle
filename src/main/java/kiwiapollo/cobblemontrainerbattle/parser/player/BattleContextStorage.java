@@ -23,9 +23,10 @@ public class BattleContextStorage implements LazyMap<UUID, BattleContext> {
         this.storage = new HashMap<>();
     }
 
+    @Override
     public BattleContext getOrCreate(UUID uuid) {
         if (!storage.containsKey(uuid)) {
-            storage.put(uuid, new BattleContext(uuid));
+            storage.put(uuid, new BattleContext());
         }
 
         return storage.get(uuid);

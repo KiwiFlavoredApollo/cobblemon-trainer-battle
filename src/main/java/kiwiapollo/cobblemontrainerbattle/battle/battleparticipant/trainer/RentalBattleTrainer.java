@@ -10,6 +10,7 @@ import kiwiapollo.cobblemontrainerbattle.battle.battleactor.SafeCopyBattlePokemo
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.*;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
+import kiwiapollo.cobblemontrainerbattle.parser.player.BattleContextStorage;
 import kiwiapollo.cobblemontrainerbattle.parser.preset.TrainerStorage;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
@@ -59,6 +60,13 @@ public class RentalBattleTrainer implements TrainerBattleParticipant {
     @Override
     public void onPlayerVictory(ServerPlayerEntity player) {
         trainer.onPlayerVictory(player);
+        BattleContextStorage.getInstance().getOrCreate(player.getUuid()).setTradablePokemon(toClone(getParty()));
+    }
+
+    private PartyStore toClone(PartyStore party) {
+        PartyStore clone = new PartyStore(UUID.randomUUID());
+        party.forEach(pokemon -> clone.add(pokemon.clone(true, true)));
+        return clone;
     }
 
     @Override

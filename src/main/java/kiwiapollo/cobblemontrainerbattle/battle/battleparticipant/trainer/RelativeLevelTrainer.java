@@ -9,6 +9,7 @@ import kiwiapollo.cobblemontrainerbattle.battle.battleactor.PlayerBackedTrainerB
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.SafeCopyBattlePokemonFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.*;
+import kiwiapollo.cobblemontrainerbattle.common.RelativeLevelBattle;
 import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
 import kiwiapollo.cobblemontrainerbattle.parser.pokemon.RelativeLevelShowdownPokemonParser;
 import kiwiapollo.cobblemontrainerbattle.parser.pokemon.ShowdownPokemon;
@@ -104,7 +105,7 @@ public class RelativeLevelTrainer extends AbstractTrainerBattleParticipant {
     }
 
     private int toRelativeLevel(int level) {
-        return level - RelativeLevelShowdownPokemonParser.PIVOT;
+        return level - RelativeLevelBattle.PIVOT;
     }
 
     private int getMaximumPlayerLevel(ServerPlayerEntity player) {

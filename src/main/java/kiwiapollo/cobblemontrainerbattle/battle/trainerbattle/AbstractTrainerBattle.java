@@ -6,7 +6,9 @@ import com.cobblemon.mod.common.battles.BattleSide;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
+import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer.RentalBattleTrainer;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer.TrainerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.*;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
@@ -80,6 +82,7 @@ public class AbstractTrainerBattle implements TrainerBattle {
     public void onPlayerVictory() {
         trainer.onPlayerVictory(player.getPlayerEntity());
         updateVictoryRecord();
+        CustomCriteria.DEFEAT_TRAINER_CRITERION.trigger(player.getPlayerEntity());
     }
 
     @Override

@@ -7,14 +7,14 @@ import java.util.Collections;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class SpawnableRandomTrainerFactory implements SimpleFactory<String> {
+public class RandomSpawnableTrainerFactory implements SimpleFactory<String> {
     private final Predicate<String> predicate;
 
-    public SpawnableRandomTrainerFactory() {
+    public RandomSpawnableTrainerFactory() {
         this(t -> true);
     }
 
-    private SpawnableRandomTrainerFactory(Predicate<String> predicate) {
+    private RandomSpawnableTrainerFactory(Predicate<String> predicate) {
         this.predicate = predicate;
     }
 
@@ -43,8 +43,8 @@ public class SpawnableRandomTrainerFactory implements SimpleFactory<String> {
             this.trainers = new ArrayList<>(List.of(t -> false));
         }
 
-        public SpawnableRandomTrainerFactory build() {
-            return new SpawnableRandomTrainerFactory(toPredicate());
+        public RandomSpawnableTrainerFactory build() {
+            return new RandomSpawnableTrainerFactory(toPredicate());
         }
 
         private Predicate<String> toPredicate() {

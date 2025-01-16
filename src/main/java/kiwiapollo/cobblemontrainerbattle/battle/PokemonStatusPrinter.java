@@ -3,26 +3,30 @@ package kiwiapollo.cobblemontrainerbattle.battle;
 import com.cobblemon.mod.common.api.moves.Move;
 import com.cobblemon.mod.common.api.moves.MoveSet;
 import com.cobblemon.mod.common.api.pokemon.stats.Stats;
-import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.cobblemon.mod.common.pokemon.PokemonStats;
+import com.mojang.brigadier.Command;
+import com.mojang.brigadier.context.CommandContext;
+import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 
 import java.util.List;
-import java.util.Objects;
 
-public class PokemonStatusPrinter {
-    private final ServerPlayerEntity player;
+public abstract class PokemonStatusPrinter implements Command<ServerCommandSource> {
+    @Override
+    public int run(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
+        ServerPlayerEntity player = context.getSource().getPlayerOrThrow();
+        List<Pokemon> pokemons = getPokemons(player);
 
-    public PokemonStatusPrinter(ServerPlayerEntity player) {
-        this.player = player;
-    }
+        if (pokemons.isEmpty()) {
+            player.sendMessage(Text.translatable("No Pokemon to show"));
+            return 0;
+        }
 
-    public void print(PartyStore party) {
-        List<Pokemon> pokemons = party.toGappyList().stream().filter(Objects::nonNull).toList();
         for (int i = 0; i < pokemons.size(); i++) {
             Pokemon pokemon = pokemons.get(i);
 
@@ -33,7 +37,11 @@ public class PokemonStatusPrinter {
             player.sendMessage(Text.literal("EVs ").append(getPokemonStats(pokemon.getEvs())));
             player.sendMessage(Text.literal("IVs ").append(getPokemonStats(pokemon.getIvs())));
         }
+
+        return Command.SINGLE_SUCCESS;
     }
+
+    protected abstract List<Pokemon> getPokemons(ServerPlayerEntity player);
 
     private MutableText getPokemonSpecies(Pokemon pokemon) {
         return pokemon.getSpecies().getTranslatedName();

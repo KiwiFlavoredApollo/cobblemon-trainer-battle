@@ -50,7 +50,6 @@ public class BattleVictoryEventHandler implements Function1<BattleVictoryEvent, 
         ServerPlayerEntity player = event.getBattle().getPlayers().get(0);
 
         BattleContextStorage.getInstance().getOrCreate(player.getUuid()).getTrainerBattle().onPlayerVictory();
-        CustomCriteria.DEFEAT_TRAINER_CRITERION.trigger(player);
 
         BattleContextStorage.getInstance().getOrCreate(player.getUuid()).clearTrainerBattle();
     }

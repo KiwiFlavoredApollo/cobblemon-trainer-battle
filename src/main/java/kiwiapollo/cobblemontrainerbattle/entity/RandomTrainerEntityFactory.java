@@ -1,19 +1,19 @@
 package kiwiapollo.cobblemontrainerbattle.entity;
 
-import kiwiapollo.cobblemontrainerbattle.common.SpawnableRandomTrainerFactory;
+import kiwiapollo.cobblemontrainerbattle.common.RandomSpawnableTrainerFactory;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 
 public class RandomTrainerEntityFactory implements EntityType.EntityFactory<TrainerEntity> {
-    private final SpawnableRandomTrainerFactory trainer;
+    private final RandomSpawnableTrainerFactory trainer;
     private final RandomTrainerTextureFactory texture;
 
     public RandomTrainerEntityFactory() {
-        this(new SpawnableRandomTrainerFactory(), new RandomTrainerTextureFactory());
+        this(new RandomSpawnableTrainerFactory(), new RandomTrainerTextureFactory());
     }
 
-    public RandomTrainerEntityFactory(SpawnableRandomTrainerFactory trainer, RandomTrainerTextureFactory texture) {
+    public RandomTrainerEntityFactory(RandomSpawnableTrainerFactory trainer, RandomTrainerTextureFactory texture) {
         this.trainer = trainer;
         this.texture = texture;
     }

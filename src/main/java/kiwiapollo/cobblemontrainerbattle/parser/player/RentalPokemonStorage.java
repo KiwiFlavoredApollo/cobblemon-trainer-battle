@@ -7,7 +7,11 @@ public interface RentalPokemonStorage {
 
     void setRentalPokemon(PartyStore pokemon);
 
-    boolean hasRentalPokemon();
-
     void clearRentalPokemon();
+
+    PartyStore getTradablePokemon();
+
+    void setTradablePokemon(PartyStore pokemon);
+
+    void clearTradablePokemon();
 }

@@ -42,7 +42,7 @@ public abstract class TrainerBattleStarter implements Command<ServerCommandSourc
     public static class BetweenThisPlayerAndSelectedTrainer extends TrainerBattleStarter {
         @Override
         public int run(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
-            ServerPlayerEntity player = context.getSource().getPlayer();
+            ServerPlayerEntity player = context.getSource().getPlayerOrThrow();
             String trainer = StringArgumentType.getString(context, "trainer");
 
             return super.run(player, trainer);
@@ -52,7 +52,7 @@ public abstract class TrainerBattleStarter implements Command<ServerCommandSourc
     public static class BetweenThisPlayerAndRandomTrainer extends TrainerBattleStarter {
         @Override
         public int run(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
-            ServerPlayerEntity player = context.getSource().getPlayer();
+            ServerPlayerEntity player = context.getSource().getPlayerOrThrow();
             String trainer = new RandomTrainerFactory().create();
 
             return super.run(player, trainer);
