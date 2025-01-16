@@ -7,6 +7,8 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.server.command.ServerCommandSource;
+import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.text.Text;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -21,7 +23,11 @@ public class ConfigLoader implements Command<ServerCommandSource> {
     public int run(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
         try {
             ConfigStorage.getInstance().update(load());
+
+            ServerPlayerEntity player = context.getSource().getPlayerOrThrow();
+            player.sendMessage(Text.translatable("command.cobblemontrainerbattle.success.reload"));
             CobblemonTrainerBattle.LOGGER.info("Loaded configuration");
+
             return Command.SINGLE_SUCCESS;
 
         } catch (Exception e) {

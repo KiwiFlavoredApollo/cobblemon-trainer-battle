@@ -16,6 +16,7 @@ import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.text.Text;
 import net.minecraft.util.WorldSavePath;
 
 import java.io.File;
@@ -47,6 +48,8 @@ public class ShowdownPokemonExporter implements Command<ServerCommandSource> {
             }
 
             writeJsonFile(player);
+
+            player.sendMessage(Text.translatable("command.cobblemontrainerbattle.success.export"));
 
             return Command.SINGLE_SUCCESS;
 
