@@ -13,6 +13,17 @@ public class ShowdownMoveParser {
             Map.entry("Teary Look", "tearfullook"),
             Map.entry("Mist Terrain", "mistyterrain"),
             Map.entry("Draco Hammer", "dragonhammer"),
+            Map.entry("Hi Jump Kick", "highjumpkick"),
+            Map.entry("Dazzle Gleam", "dazzlinggleam"),
+            Map.entry("King's Shield", "kingsshield"),
+            Map.entry("Psychic Fang", "psychicfangs"),
+            Map.entry("Disarm Cry", "disarmingvoice"),
+            Map.entry("SurgeStrikes", "surgingstrikes"),
+            Map.entry("SmellingSalt", "smellingsalts"),
+            Map.entry("Nature's Madness", "naturesmadness"),
+            Map.entry("Clang Scales", "clangingscales"),
+            Map.entry("Dark Lariat", "darkestlariat"),
+            Map.entry("TrickoTreat", "trickortreat"),
 
             Map.entry("Aqua Fang", "aquajet")
     );
