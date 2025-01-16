@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.config;
+package kiwiapollo.cobblemontrainerbattle.global.config;
 
 public class ConfigStorage {
     private static ConfigStorage instance;

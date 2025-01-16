@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.config;
+package kiwiapollo.cobblemontrainerbattle.global.config;
 
 import com.google.gson.Gson;
 import com.mojang.brigadier.Command;

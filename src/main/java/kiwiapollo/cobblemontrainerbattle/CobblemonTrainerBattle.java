@@ -12,8 +12,6 @@ import kiwiapollo.cobblemontrainerbattle.event.*;
 import kiwiapollo.cobblemontrainerbattle.item.CustomItemGroup;
 import kiwiapollo.cobblemontrainerbattle.item.CustomItems;
 import kiwiapollo.cobblemontrainerbattle.loot.CustomLootConditionTypes;
-import kiwiapollo.cobblemontrainerbattle.config.Config;
-import kiwiapollo.cobblemontrainerbattle.config.ConfigLoader;
 import kiwiapollo.cobblemontrainerbattle.global.history.PlayerHistoryGenerator;
 import kiwiapollo.cobblemontrainerbattle.global.history.PlayerHistoryLoader;
 import kiwiapollo.cobblemontrainerbattle.global.history.PlayerHistorySaver;
