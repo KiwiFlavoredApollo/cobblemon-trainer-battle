@@ -22,7 +22,7 @@ public abstract class RentalBattleStarter implements Command<ServerCommandSource
     public int run(ServerPlayerEntity player, String trainer) {
         try {
             if (TrainerStorage.getInstance().get(trainer).getParty().occupied() != RentalBattlePreset.PARTY_SIZE) {
-                player.sendMessage(Text.literal("Trainer need three pokemon"));
+                player.sendMessage(Text.translatable("command.cobblemontrainerbattle.error.rentalbattle.trainer_party_size", RentalBattlePreset.PARTY_SIZE));
                 return 0;
             }
 

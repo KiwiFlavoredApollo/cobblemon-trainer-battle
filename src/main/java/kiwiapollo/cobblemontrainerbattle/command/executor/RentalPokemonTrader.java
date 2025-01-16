@@ -20,7 +20,7 @@ public class RentalPokemonTrader implements Command<ServerCommandSource> {
             ServerPlayerEntity player = context.getSource().getPlayerOrThrow();
 
             if (canTradePokemon(player)) {
-                player.sendMessage(Text.literal("You cannot trade Pokemon"));
+                player.sendMessage(Text.translatable("command.cobblemontrainerbattle.error.rentalpokemon_trade"));
                 return 0;
             }
 

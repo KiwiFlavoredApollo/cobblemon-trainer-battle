@@ -23,7 +23,7 @@ public abstract class PokemonStatusPrinter implements Command<ServerCommandSourc
         List<Pokemon> pokemons = getPokemons(player);
 
         if (pokemons.isEmpty()) {
-            player.sendMessage(Text.translatable("No Pokemon to show"));
+            player.sendMessage(Text.translatable("predicate.cobblemontrainerbattle.error.player_party_not_empty"));
             return 0;
         }
 

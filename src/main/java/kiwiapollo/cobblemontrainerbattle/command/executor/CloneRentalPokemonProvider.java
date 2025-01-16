@@ -12,6 +12,7 @@ import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 
 import java.util.Objects;
 import java.util.UUID;
@@ -24,7 +25,7 @@ public class CloneRentalPokemonProvider implements Command<ServerCommandSource> 
             ServerPlayerEntity player = context.getSource().getPlayerOrThrow();
 
             if (!hasMinimumPartySize(player)) {
-                player.sendMessage(Text.translatable("You must have minimum party size of 3"));
+                player.sendMessage(Text.translatable("predicate.cobblemontrainerbattle.error.minimum_party_size", RentalBattlePreset.PARTY_SIZE).formatted(Formatting.RED));
                 return 0;
             }
 
@@ -33,6 +34,8 @@ public class CloneRentalPokemonProvider implements Command<ServerCommandSource> 
             PartyStore rental = toRental(clone);
 
             BattleContextStorage.getInstance().getOrCreate(player.getUuid()).setRentalPokemon(rental);
+
+            new RentalPokemonStatusPrinter().run(context);
 
             return Command.SINGLE_SUCCESS;
 
