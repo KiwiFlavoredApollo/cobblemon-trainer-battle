@@ -69,7 +69,7 @@ public class TrainerStorage implements SimpleSynchronousResourceReloadListener, 
         storage.clear();
 
         for (Map.Entry<Identifier, TrainerPreset> trainer: presets.entrySet()) {
-            List<ShowdownPokemon> team = teams.getOrDefault(trainer.getValue().team, List.of());
+            List<ShowdownPokemon> team = teams.getOrDefault(toTeamId(trainer.getValue().team), List.of());
 
             if (!isValidTrainer(trainer, team)) {
                 CobblemonTrainerBattle.LOGGER.error("Invalid trainer preset : {}", toSimplePath(trainer));
@@ -152,6 +152,12 @@ public class TrainerStorage implements SimpleSynchronousResourceReloadListener, 
         String teamId = team.toString();
         teamId = teamId.replace(TEAM_DIR + "/", "");
         teamId = teamId.replace(".json", "");
+
+        return teamId;
+    }
+
+    private String toTeamId(String team) {
+        String teamId = team;
 
         if (!teamId.contains(":")) {
             teamId = CobblemonTrainerBattle.MOD_ID + ":" + teamId;
