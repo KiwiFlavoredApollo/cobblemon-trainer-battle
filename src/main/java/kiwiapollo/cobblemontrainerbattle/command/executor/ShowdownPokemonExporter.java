@@ -16,6 +16,7 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.util.WorldSavePath;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -28,8 +29,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class ShowdownPokemonExporter implements Command<ServerCommandSource> {
-    private static final File GAME_DIR = FabricLoader.getInstance().getGameDir().toFile();
-    public static final File EXPORT_DIR = new File(GAME_DIR, CobblemonTrainerBattle.MOD_ID);
+    private static final String EXPORT_DIR = "export";
 
     @Override
     public int run(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
@@ -42,8 +42,11 @@ public class ShowdownPokemonExporter implements Command<ServerCommandSource> {
                 return 0;
             }
 
-            if (!EXPORT_DIR.exists()) {
-                EXPORT_DIR.mkdirs();
+            File worldDir = player.getServer().getSavePath(WorldSavePath.ROOT).toFile();
+            File exportPath = new File(worldDir, CobblemonTrainerBattle.MOD_ID + "/" + EXPORT_DIR);
+
+            if (!exportPath.exists()) {
+                exportPath.mkdirs();
             }
 
             writeJsonFile(player);
