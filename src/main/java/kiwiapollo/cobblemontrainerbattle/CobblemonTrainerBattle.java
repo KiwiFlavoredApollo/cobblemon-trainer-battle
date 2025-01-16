@@ -5,7 +5,7 @@ import com.cobblemon.mod.common.api.events.CobblemonEvents;
 import com.cobblemon.mod.common.api.pokemon.aspect.AspectProvider;
 import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
 import kiwiapollo.cobblemontrainerbattle.command.*;
-import kiwiapollo.cobblemontrainerbattle.common.CustomSoundEvents;
+import kiwiapollo.cobblemontrainerbattle.sound.CustomSoundEvents;
 import kiwiapollo.cobblemontrainerbattle.entity.EntityTypes;
 import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.event.*;

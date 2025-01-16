@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.common;
+package kiwiapollo.cobblemontrainerbattle.sound;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import net.minecraft.sound.SoundEvent;

@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.common;
+package kiwiapollo.cobblemontrainerbattle.sound;
 
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
