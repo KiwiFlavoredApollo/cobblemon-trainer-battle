@@ -32,6 +32,8 @@ public class RentalPokemonTrader implements Command<ServerCommandSource> {
 
             setRentalPokemon(player, playerslot, trainerPokemon);
 
+            clearTradablePokemon(player);
+
             player.sendMessage(Text.translatable("command.cobblemontrainerbattle.success.battlefactory.tradepokemon", playerPokemon.getDisplayName(), trainerPokemon.getDisplayName()));
             CobblemonTrainerBattle.LOGGER.info("{} traded {} for {}", player.getName(), playerPokemon.getDisplayName(), trainerPokemon.getDisplayName());
 
@@ -42,15 +44,19 @@ public class RentalPokemonTrader implements Command<ServerCommandSource> {
         }
     }
 
+    private void clearTradablePokemon(ServerPlayerEntity player) {
+        BattleContext context = BattleContextStorage.getInstance().getOrCreate(player.getUuid());
+        context.clearTradablePokemon();
+    }
+
     private boolean canTradePokemon(ServerPlayerEntity player) {
         BattleContext context = BattleContextStorage.getInstance().getOrCreate(player.getUuid());
-        return context.getTradablePokemon().occupied() < RentalBattlePreset.PARTY_SIZE;
+        return context.getTradablePokemon().occupied() == RentalBattlePreset.PARTY_SIZE;
     }
 
     private void setRentalPokemon(ServerPlayerEntity player, int slot, Pokemon trainerPokemon) {
         BattleContext context = BattleContextStorage.getInstance().getOrCreate(player.getUuid());
         context.getRentalPokemon().set(slot, trainerPokemon);
-        context.clearTradablePokemon();
     }
 
     private Pokemon getPlayerPokemon(ServerPlayerEntity player, int slot) {
