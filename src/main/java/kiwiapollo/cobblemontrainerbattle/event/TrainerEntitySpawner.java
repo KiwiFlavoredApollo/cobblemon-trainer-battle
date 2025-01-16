@@ -1,6 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.event;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.config.ConfigStorage;
 import kiwiapollo.cobblemontrainerbattle.entity.RandomSpawnableTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.entity.EntityTypes;
 import kiwiapollo.cobblemontrainerbattle.entity.RandomTrainerEntityFactory;
@@ -93,7 +94,7 @@ public class TrainerEntitySpawner implements ServerTickEvents.EndWorldTick {
 
     private boolean isBelowMaximumTrainerCount(ServerWorld world, PlayerEntity player) {
         int count = world.getEntitiesByType(EntityTypes.TRAINER, player.getBoundingBox().expand(MAXIMUM_RADIUS), entity -> true).size();
-        return count >= CobblemonTrainerBattle.config.maximumTrainerSpawnCount;
+        return count >= ConfigStorage.getInstance().getMaximumTrainerSpawnCount();
     }
 
     private BlockPos getRandomSpawnPosition(ServerWorld world, PlayerEntity player) throws IllegalStateException {

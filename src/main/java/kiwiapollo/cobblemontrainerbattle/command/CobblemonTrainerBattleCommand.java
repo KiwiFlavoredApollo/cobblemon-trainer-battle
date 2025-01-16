@@ -33,7 +33,7 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
         String permission = String.format("%s.%s", getLiteral(), "reload");
         return LiteralArgumentBuilder.<ServerCommandSource>literal("reload")
                 .requires(new MultiCommandSourcePredicate(permission))
-                .executes(this::reloadConfig);
+                .executes(new ConfigLoader());
     }
 
     private LiteralArgumentBuilder<ServerCommandSource> getExportCommand() {
@@ -42,11 +42,5 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
                 .requires(new MultiCommandSourcePredicate(permission))
                 .then(RequiredArgumentBuilder.<ServerCommandSource, EntitySelector>argument("player", EntityArgumentType.player())
                         .executes(new ShowdownPokemonExporter()));
-    }
-
-    private int reloadConfig(CommandContext<ServerCommandSource> context) {
-        CobblemonTrainerBattle.config = new ConfigLoader().load();
-        CobblemonTrainerBattle.LOGGER.info("Reloaded configuration");
-        return Command.SINGLE_SUCCESS;
     }
 }

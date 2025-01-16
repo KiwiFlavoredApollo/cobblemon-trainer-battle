@@ -1,19 +1,35 @@
 package kiwiapollo.cobblemontrainerbattle.config;
 
 import com.google.gson.Gson;
+import com.mojang.brigadier.Command;
+import com.mojang.brigadier.context.CommandContext;
+import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.server.command.ServerCommandSource;
 
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 
-public class ConfigLoader {
+public class ConfigLoader implements Command<ServerCommandSource> {
     private static final File CONFIG_DIR = new File(FabricLoader.getInstance().getConfigDir().toFile(), CobblemonTrainerBattle.MOD_ID);
     private static final File CONFIG_FILE = new File(CONFIG_DIR, "config.json");
     private static final Gson GSON = new Gson();
 
-    public Config load() {
+    @Override
+    public int run(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
+        try {
+            ConfigStorage.getInstance().update(load());
+            CobblemonTrainerBattle.LOGGER.info("Reloaded configuration");
+            return Command.SINGLE_SUCCESS;
+
+        } catch (Exception e) {
+            return 0;
+        }
+    }
+
+    private Config load() {
         try {
             return loadExistingConfig();
 
