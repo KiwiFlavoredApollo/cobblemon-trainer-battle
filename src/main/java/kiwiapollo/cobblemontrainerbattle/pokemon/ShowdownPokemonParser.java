@@ -168,8 +168,13 @@ public class ShowdownPokemonParser {
                 pokemon.getMoveSet().add(move);
 
             } catch (NullPointerException e) {
+                List<String> ignore = List.of("None");
+
+                if (ignore.contains(moveName)) {
+                    return;
+                }
+
                 CobblemonTrainerBattle.LOGGER.error("Move not found: {}", moveName);
-                CobblemonTrainerBattle.LOGGER.error("Please report this to mod author");
             }
         }
     }
