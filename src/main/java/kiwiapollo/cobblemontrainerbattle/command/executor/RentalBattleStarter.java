@@ -8,7 +8,7 @@ import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.RentalB
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer.RentalBattleTrainer;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.PlayerBackedTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.common.RandomRentalBattleTrainerFactory;
+import kiwiapollo.cobblemontrainerbattle.battle.random.RandomRentalBattleTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.preset.RentalBattlePreset;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.parser.player.BattleContextStorage;

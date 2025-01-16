@@ -9,7 +9,7 @@ import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer.Traine
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.PlayerBackedTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
-import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerFactory;
+import kiwiapollo.cobblemontrainerbattle.battle.random.RandomTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.parser.player.BattleContextStorage;
 import kiwiapollo.cobblemontrainerbattle.parser.preset.TrainerStorage;

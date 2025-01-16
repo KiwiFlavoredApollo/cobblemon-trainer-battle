@@ -1,6 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.entity;
 
-import kiwiapollo.cobblemontrainerbattle.common.RandomSpawnableTrainerFactory;
+import kiwiapollo.cobblemontrainerbattle.battle.random.RandomSpawnableTrainerFactory;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
