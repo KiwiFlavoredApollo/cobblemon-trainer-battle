@@ -18,10 +18,10 @@ public class PlayerHistorySaver implements ServerLifecycleEvents.ServerStopped, 
 
     private void save(MinecraftServer server) {
         File worldDir = server.getSavePath(WorldSavePath.ROOT).toFile();
-        File historyDir = new File(worldDir, CobblemonTrainerBattle.MOD_ID);
+        File historyPath = PlayerHistoryUtils.toHistoryPath(worldDir);
 
-        if (!historyDir.exists()) {
-            historyDir.mkdirs();
+        if (!historyPath.exists()) {
+            historyPath.mkdirs();
         }
 
         for (Map.Entry<UUID, PlayerHistory> entry: PlayerHistoryStorage.getInstance().entrySet()) {
@@ -29,8 +29,8 @@ public class PlayerHistorySaver implements ServerLifecycleEvents.ServerStopped, 
                 UUID uuid = entry.getKey();
                 PlayerHistory history = entry.getValue();
 
-                File newHistory = new File(historyDir, String.format("%s.dat", uuid));
-                File oldHistory = new File(historyDir, String.format("%s.dat_old", uuid));
+                File newHistory = new File(historyPath, String.format("%s.dat", uuid));
+                File oldHistory = new File(historyPath, String.format("%s.dat_old", uuid));
 
                 if (newHistory.exists()) {
                     newHistory.renameTo(oldHistory);
@@ -40,7 +40,7 @@ public class PlayerHistorySaver implements ServerLifecycleEvents.ServerStopped, 
 
             } catch (IOException e) {
                 UUID uuid = entry.getKey();
-                File file = new File(historyDir, String.format("%s.dat", uuid));
+                File file = new File(historyPath, String.format("%s.dat", uuid));
                 CobblemonTrainerBattle.LOGGER.error("Error occurred while saving {}", file.getName());
             }
         }

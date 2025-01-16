@@ -16,14 +16,14 @@ public class PlayerHistoryLoader implements ServerLifecycleEvents.ServerStarted 
     @Override
     public void onServerStarted(MinecraftServer server) {
         File worldDir = server.getSavePath(WorldSavePath.ROOT).toFile();
-        File historyDir = new File(worldDir, CobblemonTrainerBattle.MOD_ID);
+        File historyPath = PlayerHistoryUtils.toHistoryPath(worldDir);
 
-        if (!historyDir.isDirectory()) {
+        if (!historyPath.isDirectory()) {
             return;
         }
 
         PlayerHistoryStorage.getInstance().clear();
-        List<File> datFileList = Arrays.stream(historyDir.listFiles()).filter(this::isDatFile).toList();
+        List<File> datFileList = Arrays.stream(historyPath.listFiles()).filter(this::isDatFile).toList();
         for (File file : datFileList) {
             try {
                 UUID uuid = UUID.fromString(file.getName().replace(".dat", ""));
@@ -36,7 +36,7 @@ public class PlayerHistoryLoader implements ServerLifecycleEvents.ServerStarted 
             } catch (NullPointerException | IOException e) {
                 UUID uuid = UUID.fromString(file.getName().replace(".dat", ""));
 
-                File backup = new File(historyDir, String.format("%s.dat_bak", uuid));
+                File backup = new File(historyPath, String.format("%s.dat_bak", uuid));
                 file.renameTo(backup);
                 PlayerHistory history = new PlayerHistory();
 
