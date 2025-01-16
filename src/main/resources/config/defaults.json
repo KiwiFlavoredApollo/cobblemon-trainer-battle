@@ -1,4 +1,4 @@
 {
-  "economy": "None",
-  "maximumTrainerSpawnCount": 1
+  "maximum_trainer_spawn_count": 1,
+  "spawn_interval_in_seconds": 60
 }
