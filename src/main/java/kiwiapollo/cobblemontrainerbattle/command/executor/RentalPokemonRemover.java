@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.battle;
+package kiwiapollo.cobblemontrainerbattle.command.executor;
 
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.context.CommandContext;

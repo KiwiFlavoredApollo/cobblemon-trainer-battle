@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.battle;
+package kiwiapollo.cobblemontrainerbattle.command.executor;
 
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
 import com.cobblemon.mod.common.api.storage.party.PartyStore;

@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.battle;
+package kiwiapollo.cobblemontrainerbattle.command.executor;
 
 import com.cobblemon.mod.common.api.moves.Move;
 import com.cobblemon.mod.common.api.moves.MoveSet;

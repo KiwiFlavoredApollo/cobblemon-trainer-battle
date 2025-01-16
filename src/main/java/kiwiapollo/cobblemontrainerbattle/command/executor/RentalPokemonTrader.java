@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.command;
+package kiwiapollo.cobblemontrainerbattle.command.executor;
 
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.mojang.brigadier.Command;

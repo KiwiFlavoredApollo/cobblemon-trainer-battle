@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.command;
+package kiwiapollo.cobblemontrainerbattle.command.executor;
 
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.arguments.StringArgumentType;
@@ -9,7 +9,6 @@ import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer.Rental
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.PlayerBackedTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.common.RandomRentalBattleTrainerFactory;
-import kiwiapollo.cobblemontrainerbattle.common.RandomTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.common.RentalBattle;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.parser.player.BattleContextStorage;
