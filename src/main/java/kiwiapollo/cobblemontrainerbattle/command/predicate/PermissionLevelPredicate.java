@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.command;
+package kiwiapollo.cobblemontrainerbattle.command.predicate;
 
 import net.minecraft.server.command.ServerCommandSource;
 

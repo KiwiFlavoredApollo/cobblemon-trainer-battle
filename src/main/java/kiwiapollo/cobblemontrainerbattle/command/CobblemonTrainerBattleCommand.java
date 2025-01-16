@@ -1,21 +1,18 @@
 package kiwiapollo.cobblemontrainerbattle.command;
 
 import com.mojang.brigadier.Command;
-import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.FlatLevelPlayer;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.NormalLevelPlayer;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.MessagePredicate;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.PlayerPartyNotEmptyPredicate;
+import kiwiapollo.cobblemontrainerbattle.command.predicate.MultiCommandSourcePredicate;
 import kiwiapollo.cobblemontrainerbattle.parser.config.ConfigLoader;
-import kiwiapollo.cobblemontrainerbattle.parser.exporter.FlatShowdownPokemonExporter;
 import kiwiapollo.cobblemontrainerbattle.parser.exporter.NormalShowdownPokemonExporter;
-import kiwiapollo.cobblemontrainerbattle.parser.exporter.RelativeShowdownPokemonExporter;
 import net.minecraft.command.EntitySelector;
 import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.server.command.ServerCommandSource;

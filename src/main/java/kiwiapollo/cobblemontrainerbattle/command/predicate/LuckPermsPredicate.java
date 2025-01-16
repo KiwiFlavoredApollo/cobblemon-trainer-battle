@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.command;
+package kiwiapollo.cobblemontrainerbattle.command.predicate;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.luckperms.api.LuckPermsProvider;
