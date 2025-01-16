@@ -39,7 +39,7 @@ public class RentalPokemonTrader implements Command<ServerCommandSource> {
 
             clearTradablePokemon(player);
 
-            player.sendMessage(Text.translatable("command.cobblemontrainerbattle.success.battlefactory.tradepokemon", playerPokemon.getDisplayName(), trainerPokemon.getDisplayName()));
+            player.sendMessage(Text.translatable("command.cobblemontrainerbattle.success.rentalpokemon.trade", playerPokemon.getDisplayName(), trainerPokemon.getDisplayName()));
             CobblemonTrainerBattle.LOGGER.info("{} traded {} for {}", player.getName(), playerPokemon.getDisplayName(), trainerPokemon.getDisplayName());
 
             return Command.SINGLE_SUCCESS;
