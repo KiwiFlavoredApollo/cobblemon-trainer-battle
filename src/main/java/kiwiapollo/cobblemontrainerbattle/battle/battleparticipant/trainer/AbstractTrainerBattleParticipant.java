@@ -107,7 +107,9 @@ public abstract class AbstractTrainerBattleParticipant implements TrainerBattleP
 
     @Override
     public List<BattlePokemon> getBattleTeam(ServerPlayerEntity player) {
-        return getParty().toGappyList().stream().filter(Objects::nonNull).map(new SafeCopyBattlePokemonFactory()).toList();
+        List<BattlePokemon> team = getParty().toGappyList().stream().filter(Objects::nonNull).map(new SafeCopyBattlePokemonFactory()).toList();
+        team.forEach(pokemon -> pokemon.getEffectedPokemon().heal());
+        return team;
     }
 
     private void executeCommand(String command, ServerPlayerEntity player) {
