@@ -12,8 +12,8 @@ import kiwiapollo.cobblemontrainerbattle.battle.predicate.MessagePredicate;
 import kiwiapollo.cobblemontrainerbattle.battle.predicate.PlayerPartyNotEmptyPredicate;
 import kiwiapollo.cobblemontrainerbattle.pokemon.CobblemonPokemonParser;
 import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemon;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.command.argument.EntityArgumentType;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.WorldSavePath;
@@ -29,8 +29,6 @@ import java.util.List;
 import java.util.Objects;
 
 public class ShowdownPokemonExporter implements Command<ServerCommandSource> {
-    private static final String EXPORT_DIR = "export";
-
     @Override
     public int run(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
         try {
@@ -42,8 +40,7 @@ public class ShowdownPokemonExporter implements Command<ServerCommandSource> {
                 return 0;
             }
 
-            File worldDir = player.getServer().getSavePath(WorldSavePath.ROOT).toFile();
-            File exportPath = new File(worldDir, CobblemonTrainerBattle.MOD_ID + "/" + EXPORT_DIR);
+            File exportPath = getExportPath(player.getServer());
 
             if (!exportPath.exists()) {
                 exportPath.mkdirs();
@@ -57,6 +54,15 @@ public class ShowdownPokemonExporter implements Command<ServerCommandSource> {
             CobblemonTrainerBattle.LOGGER.error("Error occurred while exporting trainer file");
             return 0;
         }
+    }
+
+    private File getExportPath(MinecraftServer server) {
+        final String exportDir = "export";
+
+        File worldDir = server.getSavePath(WorldSavePath.ROOT).toFile();
+        String exportPath = CobblemonTrainerBattle.MOD_ID + "/" + exportDir;
+
+        return new File(worldDir, exportPath);
     }
 
     private void writeJsonFile(ServerPlayerEntity player) throws IOException {
@@ -79,6 +85,6 @@ public class ShowdownPokemonExporter implements Command<ServerCommandSource> {
         String timestamp = dateTime.format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
 
         String exportFileName = String.format("%s_%s.json", player.getGameProfile().getName().toLowerCase(), timestamp);
-        return new File(ShowdownPokemonExporter.EXPORT_DIR, exportFileName);
+        return new File(getExportPath(player.getServer()), exportFileName);
     }
 }
