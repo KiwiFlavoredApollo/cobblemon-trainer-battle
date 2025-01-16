@@ -8,13 +8,13 @@ import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.PlayerBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.SafeCopyBattlePokemonFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
-import kiwiapollo.cobblemontrainerbattle.battle.predicates.*;
+import kiwiapollo.cobblemontrainerbattle.battle.predicate.*;
 import kiwiapollo.cobblemontrainerbattle.battle.preset.RelativeLevelBattlePreset;
 import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
-import kiwiapollo.cobblemontrainerbattle.parser.pokemon.RelativeLevelShowdownPokemonParser;
-import kiwiapollo.cobblemontrainerbattle.parser.pokemon.ShowdownPokemon;
+import kiwiapollo.cobblemontrainerbattle.pokemon.RelativeLevelShowdownPokemonParser;
+import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemon;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
-import kiwiapollo.cobblemontrainerbattle.parser.preset.TrainerPreset;
+import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerPreset;
 import net.minecraft.server.network.ServerPlayerEntity;
 
 import java.util.ArrayList;

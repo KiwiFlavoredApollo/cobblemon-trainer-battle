@@ -7,7 +7,7 @@ import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.command.executor.RentalBattleStarter;
 import kiwiapollo.cobblemontrainerbattle.command.predicate.MultiCommandSourcePredicate;
-import kiwiapollo.cobblemontrainerbattle.parser.preset.TrainerStorage;
+import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerStorage;
 import net.minecraft.command.EntitySelector;
 import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.server.command.ServerCommandSource;

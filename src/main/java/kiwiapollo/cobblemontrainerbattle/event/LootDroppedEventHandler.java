@@ -3,14 +3,11 @@ package kiwiapollo.cobblemontrainerbattle.event;
 import com.cobblemon.mod.common.api.events.drops.LootDroppedEvent;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.NullTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.parser.player.BattleContext;
-import kiwiapollo.cobblemontrainerbattle.parser.player.BattleContextStorage;
+import kiwiapollo.cobblemontrainerbattle.global.context.BattleContext;
+import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.network.ServerPlayerEntity;
 
 import java.util.ArrayList;
 import java.util.List;

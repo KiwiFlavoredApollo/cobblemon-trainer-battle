@@ -1,8 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.event;
 
 import com.cobblemon.mod.common.api.events.battles.BattleVictoryEvent;
-import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
-import kiwiapollo.cobblemontrainerbattle.parser.player.BattleContextStorage;
+import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import net.minecraft.server.network.ServerPlayerEntity;

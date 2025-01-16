@@ -1,7 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.command.executor;
 
 import com.cobblemon.mod.common.pokemon.Pokemon;
-import kiwiapollo.cobblemontrainerbattle.parser.player.BattleContextStorage;
+import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
 import net.minecraft.server.network.ServerPlayerEntity;
 
 import java.util.List;

@@ -2,8 +2,8 @@ package kiwiapollo.cobblemontrainerbattle.advancement;
 
 import com.google.gson.JsonObject;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.parser.history.BattleRecord;
-import kiwiapollo.cobblemontrainerbattle.parser.history.PlayerHistoryStorage;
+import kiwiapollo.cobblemontrainerbattle.global.history.BattleRecord;
+import kiwiapollo.cobblemontrainerbattle.global.history.PlayerHistoryStorage;
 import net.minecraft.advancement.criterion.AbstractCriterion;
 import net.minecraft.advancement.criterion.AbstractCriterionConditions;
 import net.minecraft.predicate.entity.AdvancementEntityPredicateDeserializer;

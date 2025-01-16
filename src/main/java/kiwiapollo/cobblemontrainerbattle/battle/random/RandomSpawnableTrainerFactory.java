@@ -1,7 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.battle.random;
 
 import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
-import kiwiapollo.cobblemontrainerbattle.parser.preset.TrainerStorage;
+import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerStorage;
 
 import java.util.ArrayList;
 import java.util.Collections;

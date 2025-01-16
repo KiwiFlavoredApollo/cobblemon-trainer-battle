@@ -2,12 +2,12 @@ package kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer;
 
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
-import kiwiapollo.cobblemontrainerbattle.battle.predicates.*;
-import kiwiapollo.cobblemontrainerbattle.parser.pokemon.FlatLevelShowdownPokemonParser;
+import kiwiapollo.cobblemontrainerbattle.battle.predicate.*;
+import kiwiapollo.cobblemontrainerbattle.pokemon.FlatLevelShowdownPokemonParser;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
-import kiwiapollo.cobblemontrainerbattle.parser.preset.TrainerPreset;
+import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerPreset;
 import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
-import kiwiapollo.cobblemontrainerbattle.parser.pokemon.ShowdownPokemon;
+import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemon;
 
 import java.util.List;
 import java.util.UUID;

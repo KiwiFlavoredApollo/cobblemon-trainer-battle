@@ -2,10 +2,8 @@ package kiwiapollo.cobblemontrainerbattle.mixin;
 
 import com.cobblemon.mod.common.api.drop.DropTable;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
-import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.NullTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.parser.player.BattleContext;
-import kiwiapollo.cobblemontrainerbattle.parser.player.BattleContextStorage;
+import kiwiapollo.cobblemontrainerbattle.global.context.BattleContext;
+import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
 import kotlin.ranges.IntRange;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.MinecraftServer;

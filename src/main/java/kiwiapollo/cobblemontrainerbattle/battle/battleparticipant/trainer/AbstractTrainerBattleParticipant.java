@@ -10,7 +10,7 @@ import kiwiapollo.cobblemontrainerbattle.battle.battleactor.PlayerBackedTrainerB
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.SafeCopyBattlePokemonFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.BattleAIFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.BattleFormatFactory;
-import kiwiapollo.cobblemontrainerbattle.parser.preset.TrainerPreset;
+import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerPreset;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;

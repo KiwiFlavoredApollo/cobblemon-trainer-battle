@@ -3,7 +3,7 @@ package kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player;
 import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
-import kiwiapollo.cobblemontrainerbattle.parser.player.BattleContextStorage;
+import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
 import net.minecraft.server.network.ServerPlayerEntity;
 
 import java.util.List;

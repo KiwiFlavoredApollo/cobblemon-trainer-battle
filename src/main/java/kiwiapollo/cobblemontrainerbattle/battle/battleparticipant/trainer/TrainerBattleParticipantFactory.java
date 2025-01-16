@@ -1,7 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer;
 
 import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
-import kiwiapollo.cobblemontrainerbattle.parser.preset.TrainerStorage;
+import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerStorage;
 
 public class TrainerBattleParticipantFactory implements SimpleFactory<TrainerBattleParticipant> {
     private final String trainer;
