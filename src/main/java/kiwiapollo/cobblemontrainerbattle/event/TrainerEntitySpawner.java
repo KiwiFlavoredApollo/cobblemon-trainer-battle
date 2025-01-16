@@ -1,7 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.event;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battle.random.RandomSpawnableTrainerFactory;
+import kiwiapollo.cobblemontrainerbattle.entity.RandomSpawnableTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.entity.EntityTypes;
 import kiwiapollo.cobblemontrainerbattle.entity.RandomTrainerEntityFactory;
 import kiwiapollo.cobblemontrainerbattle.entity.RandomTrainerTextureFactory;

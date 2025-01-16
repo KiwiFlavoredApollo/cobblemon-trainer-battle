@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.battle.random;
+package kiwiapollo.cobblemontrainerbattle.entity;
 
 import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
 import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerStorage;
