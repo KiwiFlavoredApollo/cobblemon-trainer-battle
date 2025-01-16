@@ -1,0 +1,6 @@
+{
+  "display_name": "trainer.cobblemontrainerbattle.leader_brawly",
+  "team": "cobblemontrainerbattle:entity/leader_brawly",
+  "is_spawning_allowed": false,
+  "level_mode": "relative"
+}

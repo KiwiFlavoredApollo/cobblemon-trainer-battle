@@ -1,6 +1,0 @@
-{
-  "display_name": "trainer.cobblemontrainerbattle.leader_wattson",
-  "team": "cobblemontrainerbattle:entities/leader_wattson",
-  "is_spawning_allowed": false,
-  "level_mode": "relative"
-}

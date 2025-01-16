@@ -1,6 +1,0 @@
-{
-  "display_name": "trainer.cobblemontrainerbattle.leader_chuck",
-  "team": "cobblemontrainerbattle:entities/leader_chuck",
-  "is_spawning_allowed": false,
-  "level_mode": "relative"
-}

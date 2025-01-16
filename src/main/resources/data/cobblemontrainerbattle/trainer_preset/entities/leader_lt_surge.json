@@ -1,6 +1,0 @@
-{
-  "display_name": "trainer.cobblemontrainerbattle.leader_lt_surge",
-  "team": "cobblemontrainerbattle:entities/leader_lt_surge",
-  "is_spawning_allowed": false,
-  "level_mode": "relative"
-}

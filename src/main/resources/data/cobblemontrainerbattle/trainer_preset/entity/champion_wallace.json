@@ -1,0 +1,6 @@
+{
+  "display_name": "trainer.cobblemontrainerbattle.champion_wallace",
+  "team": "cobblemontrainerbattle:entity/champion_wallace",
+  "is_spawning_allowed": false,
+  "level_mode": "relative"
+}

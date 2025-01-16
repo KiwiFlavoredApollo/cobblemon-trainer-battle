@@ -1,0 +1,6 @@
+{
+  "display_name": "trainer.cobblemontrainerbattle.elite_sidney",
+  "team": "cobblemontrainerbattle:entity/elite_sidney",
+  "is_spawning_allowed": false,
+  "level_mode": "relative"
+}

@@ -1,6 +1,0 @@
-{
-  "display_name": "trainer.cobblemontrainerbattle.leader_koga",
-  "team": "cobblemontrainerbattle:entities/leader_koga",
-  "is_spawning_allowed": false,
-  "level_mode": "relative"
-}

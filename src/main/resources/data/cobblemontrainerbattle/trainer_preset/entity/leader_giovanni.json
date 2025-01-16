@@ -1,0 +1,6 @@
+{
+  "display_name": "trainer.cobblemontrainerbattle.leader_giovanni",
+  "team": "cobblemontrainerbattle:entity/leader_giovanni",
+  "is_spawning_allowed": false,
+  "level_mode": "relative"
+}
