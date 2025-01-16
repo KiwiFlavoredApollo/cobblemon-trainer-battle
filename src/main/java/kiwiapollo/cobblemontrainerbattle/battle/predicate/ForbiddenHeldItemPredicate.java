@@ -14,12 +14,12 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class RequiredHeldItemExistPredicate extends HeldItemPredicate {
-    private final List<ItemStack> required;
+public class ForbiddenHeldItemPredicate extends HeldItemPredicate {
+    private final List<ItemStack> forbidden;
     private Text error;
 
-    public RequiredHeldItemExistPredicate(List<String> required) {
-        this.required = required.stream()
+    public ForbiddenHeldItemPredicate(List<String> forbidden) {
+        this.forbidden = forbidden.stream()
                 .map(item -> Registries.ITEM.get(Identifier.tryParse(item)))
                 .map(Item::getDefaultStack)
                 .filter(stack -> !stack.isEmpty())
@@ -28,7 +28,7 @@ public class RequiredHeldItemExistPredicate extends HeldItemPredicate {
 
     @Override
     public MutableText getErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.required_held_item_exist", error);
+        return Text.translatable("predicate.cobblemontrainerbattle.error.forbidden_held_item", error);
     }
 
     @Override
@@ -38,9 +38,9 @@ public class RequiredHeldItemExistPredicate extends HeldItemPredicate {
                 .map(Pokemon::heldItem)
                 .collect(Collectors.toSet());
 
-        for (ItemStack r : required) {
-            if (!containsItemStack(party, r)) {
-                error = r.getName();
+        for (ItemStack f : forbidden) {
+            if (containsItemStack(party, f)) {
+                error = f.getName();
                 return false;
             }
         }

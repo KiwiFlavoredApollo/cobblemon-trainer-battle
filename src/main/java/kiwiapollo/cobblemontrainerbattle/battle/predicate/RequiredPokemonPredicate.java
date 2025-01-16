@@ -9,17 +9,17 @@ import net.minecraft.text.Text;
 import java.util.List;
 import java.util.Objects;
 
-public class RequiredPokemonExistPredicate extends PokemonPredicate {
+public class RequiredPokemonPredicate extends PokemonPredicate {
     private final List<ShowdownPokemon> required;
     private ShowdownPokemon error;
 
-    public RequiredPokemonExistPredicate(List<ShowdownPokemon> required) {
+    public RequiredPokemonPredicate(List<ShowdownPokemon> required) {
         this.required = required.stream().filter(Objects::nonNull).toList();
     }
 
     @Override
     public MutableText getErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.required_pokemon_exist", toPokemonDescriptor(error));
+        return Text.translatable("predicate.cobblemontrainerbattle.error.required_pokemon", toPokemonDescriptor(error));
     }
 
     @Override

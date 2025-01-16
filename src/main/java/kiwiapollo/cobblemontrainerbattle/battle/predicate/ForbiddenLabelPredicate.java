@@ -1,8 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.battle.predicate;
 
-import com.cobblemon.mod.common.api.moves.Move;
-import com.cobblemon.mod.common.api.moves.MoveSet;
 import com.cobblemon.mod.common.pokemon.Pokemon;
+import com.cobblemon.mod.common.pokemon.Species;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
@@ -12,34 +11,31 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class RequiredMoveExistPredicate implements MessagePredicate<PlayerBattleParticipant> {
-    private final List<String> required;
-
+public class ForbiddenLabelPredicate implements MessagePredicate<PlayerBattleParticipant> {
+    private final List<String> forbidden;
     private String error;
 
-    public RequiredMoveExistPredicate(List<String> required) {
-        this.required = required.stream().filter(Objects::nonNull).toList();
-        this.error = null;
+    public ForbiddenLabelPredicate(List<String> forbidden) {
+        this.forbidden = forbidden.stream().filter(Objects::nonNull).toList();
     }
 
     @Override
     public MutableText getErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.required_move_exist", error);
+        return Text.translatable("predicate.cobblemontrainerbattle.error.forbidden_label", error);
     }
 
     @Override
     public boolean test(PlayerBattleParticipant player) {
         Set<String> party = player.getParty().toGappyList().stream()
                 .filter(Objects::nonNull)
-                .map(Pokemon::getMoveSet)
-                .map(MoveSet::getMoves)
-                .flatMap(List::stream)
-                .map(Move::getName)
+                .map(Pokemon::getSpecies)
+                .map(Species::getLabels)
+                .flatMap(Set::stream)
                 .collect(Collectors.toSet());
 
-        for (String r : required) {
-            if (!party.contains(r)) {
-                error = r;
+        for (String f : forbidden) {
+            if (party.contains(f)) {
+                error = f;
                 return false;
             }
         }

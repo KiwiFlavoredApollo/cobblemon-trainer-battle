@@ -11,17 +11,19 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class ForbiddenAbilityNotExistPredicate implements MessagePredicate<PlayerBattleParticipant> {
-    private final List<String> forbidden;
+public class RequiredAbilityPredicate implements MessagePredicate<PlayerBattleParticipant> {
+    private final List<String> required;
+
     private String error;
 
-    public ForbiddenAbilityNotExistPredicate(List<String> forbidden) {
-        this.forbidden = forbidden.stream().filter(Objects::nonNull).toList();
+    public RequiredAbilityPredicate(List<String> required) {
+        this.required = required.stream().filter(Objects::nonNull).toList();
+        this.error = null;
     }
 
     @Override
     public MutableText getErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.forbidden_ability_not_exist", error);
+        return Text.translatable("predicate.cobblemontrainerbattle.error.required_ability", error);
     }
 
     @Override
@@ -32,9 +34,9 @@ public class ForbiddenAbilityNotExistPredicate implements MessagePredicate<Playe
                 .map(Ability::getName)
                 .collect(Collectors.toSet());
 
-        for (String f : forbidden) {
-            if (party.contains(f)) {
-                error = f;
+        for (String r : required) {
+            if (!party.contains(r)) {
+                error = r;
                 return false;
             }
         }

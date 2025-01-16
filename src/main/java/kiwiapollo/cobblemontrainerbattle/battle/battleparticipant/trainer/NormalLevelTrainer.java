@@ -25,17 +25,17 @@ public class NormalLevelTrainer extends AbstractTrainerBattleParticipant {
                 new MaximumPartyLevelPredicate(preset.maximumPartyLevel),
                 new MinimumPartyLevelPredicate(preset.minimumPartyLevel),
 
-                new RequiredLabelExistPredicate(preset.requiredLabel),
-                new RequiredPokemonExistPredicate(preset.requiredPokemon),
-                new RequiredHeldItemExistPredicate(preset.requiredHeldItem),
-                new RequiredAbilityExistPredicate(preset.requiredAbility),
-                new RequiredMoveExistPredicate(preset.requiredMove),
+                new RequiredLabelPredicate(preset.requiredLabel),
+                new RequiredPokemonPredicate(preset.requiredPokemon),
+                new RequiredHeldItemPredicate(preset.requiredHeldItem),
+                new RequiredAbilityPredicate(preset.requiredAbility),
+                new RequiredMovePredicate(preset.requiredMove),
 
-                new ForbiddenLabelNotExistPredicate(preset.forbiddenLabel),
-                new ForbiddenPokemonNotExistPredicate(preset.forbiddenPokemon),
-                new ForbiddenHeldItemNotExistPredicate(preset.forbiddenHeldItem),
-                new ForbiddenAbilityNotExistPredicate(preset.forbiddenAbility),
-                new ForbiddenMoveNotExistPredicate(preset.forbiddenMove)
+                new ForbiddenLabelPredicate(preset.forbiddenLabel),
+                new ForbiddenPokemonPredicate(preset.forbiddenPokemon),
+                new ForbiddenHeldItemPredicate(preset.forbiddenHeldItem),
+                new ForbiddenAbilityPredicate(preset.forbiddenAbility),
+                new ForbiddenMovePredicate(preset.forbiddenMove)
         );
     }
 

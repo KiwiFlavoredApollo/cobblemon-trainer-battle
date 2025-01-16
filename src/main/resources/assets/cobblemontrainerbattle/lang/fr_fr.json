@@ -233,17 +233,17 @@
   "predicate.cobblemontrainerbattle.error.maximum_party_level": "Niveau maximum de l'équipe requis : %d",
   "predicate.cobblemontrainerbattle.error.minimum_party_level": "Niveau minimum de l'équipe requis : %d",
 
-  "predicate.cobblemontrainerbattle.error.required_label_exist": "Texte requis : %s",
-  "predicate.cobblemontrainerbattle.error.required_pokemon_exist": "Pokémon requis : %s",
-  "predicate.cobblemontrainerbattle.error.required_held_item_exist": "Objet tenu requis : %s",
-  "predicate.cobblemontrainerbattle.error.required_ability_exist": "Talent Requis : %s",
-  "predicate.cobblemontrainerbattle.error.required_move_exist": "Attaque Requise : %s",
+  "predicate.cobblemontrainerbattle.error.required_label": "Texte requis : %s",
+  "predicate.cobblemontrainerbattle.error.required_pokemon": "Pokémon requis : %s",
+  "predicate.cobblemontrainerbattle.error.required_held_item": "Objet tenu requis : %s",
+  "predicate.cobblemontrainerbattle.error.required_ability": "Talent Requis : %s",
+  "predicate.cobblemontrainerbattle.error.required_move": "Attaque Requise : %s",
 
-  "predicate.cobblemontrainerbattle.error.forbidden_label_not_exist": "Texte interdit : %s",
-  "predicate.cobblemontrainerbattle.error.forbidden_pokemon_not_exist": "Pokémon interdit : %s",
-  "predicate.cobblemontrainerbattle.error.forbidden_held_item_not_exist": "Objet tenu interdit : %s",
-  "predicate.cobblemontrainerbattle.error.forbidden_ability_not_exist": "Talent interdit : %s",
-  "predicate.cobblemontrainerbattle.error.forbidden_move_not_exist": "Attaque interdite : %s",
+  "predicate.cobblemontrainerbattle.error.forbidden_label": "Texte interdit : %s",
+  "predicate.cobblemontrainerbattle.error.forbidden_pokemon": "Pokémon interdit : %s",
+  "predicate.cobblemontrainerbattle.error.forbidden_held_item": "Objet tenu interdit : %s",
+  "predicate.cobblemontrainerbattle.error.forbidden_ability": "Talent interdit : %s",
+  "predicate.cobblemontrainerbattle.error.forbidden_move": "Attaque interdite : %s",
 
   "command.cobblemontrainerbattle.success.trainerbattle": "Le combat a commencé contre %s.",
 
