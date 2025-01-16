@@ -50,11 +50,6 @@ public class TrainerStorage implements SimpleSynchronousResourceReloadListener, 
     }
 
     @Override
-    public Collection<TrainerBattleParticipant> values() {
-        return storage.values();
-    }
-
-    @Override
     public Identifier getFabricId() {
         return Identifier.of(CobblemonTrainerBattle.MOD_ID, "trainer_storage");
     }
