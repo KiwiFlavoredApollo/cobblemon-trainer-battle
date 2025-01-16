@@ -1,13 +1,18 @@
 package kiwiapollo.cobblemontrainerbattle.global.history;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.util.WorldSavePath;
 
 import java.io.File;
 
 public class PlayerHistoryUtils {
-    public static final String HISTORY_DIR = "history";
+    public static File getHistoryPath(MinecraftServer server) {
+        final String historyDir = "history";
 
-    public static File toHistoryPath(File worldDir) {
-        return new File(worldDir, CobblemonTrainerBattle.MOD_ID + "/" + PlayerHistoryUtils.HISTORY_DIR);
+        File worldDir = server.getSavePath(WorldSavePath.ROOT).toFile();
+        String historyPath = CobblemonTrainerBattle.MOD_ID + "/" + historyDir;
+
+        return new File(worldDir, historyPath);
     }
 }

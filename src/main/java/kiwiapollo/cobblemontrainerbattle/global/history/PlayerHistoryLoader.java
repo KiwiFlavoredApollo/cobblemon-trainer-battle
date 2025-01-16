@@ -4,7 +4,6 @@ import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.minecraft.nbt.NbtIo;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.util.WorldSavePath;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,8 +14,7 @@ import java.util.UUID;
 public class PlayerHistoryLoader implements ServerLifecycleEvents.ServerStarted {
     @Override
     public void onServerStarted(MinecraftServer server) {
-        File worldDir = server.getSavePath(WorldSavePath.ROOT).toFile();
-        File historyPath = PlayerHistoryUtils.toHistoryPath(worldDir);
+        File historyPath = PlayerHistoryUtils.getHistoryPath(server);
 
         if (!historyPath.isDirectory()) {
             return;

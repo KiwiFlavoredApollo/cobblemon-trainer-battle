@@ -6,7 +6,6 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtIo;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.util.WorldSavePath;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,8 +16,7 @@ public class PlayerHistorySaver implements ServerLifecycleEvents.ServerStopped, 
     private static final int SAVE_INTERVAL = 24000;
 
     private void save(MinecraftServer server) {
-        File worldDir = server.getSavePath(WorldSavePath.ROOT).toFile();
-        File historyPath = PlayerHistoryUtils.toHistoryPath(worldDir);
+        File historyPath = PlayerHistoryUtils.getHistoryPath(server);
 
         if (!historyPath.exists()) {
             historyPath.mkdirs();
