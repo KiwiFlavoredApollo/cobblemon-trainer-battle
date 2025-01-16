@@ -15,6 +15,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 import java.util.*;
@@ -34,7 +35,7 @@ public abstract class AbstractTrainerBattleParticipant implements TrainerBattleP
     public AbstractTrainerBattleParticipant(String id, TrainerPreset preset, PartyStore party) {
         this.id = id;
         this.uuid = UUID.randomUUID();
-        this.name = Optional.ofNullable(preset.displayName).orElse(id);
+        this.name = Text.translatable(Optional.ofNullable(preset.displayName).orElse(id)).getString();
         this.party = party;
         this.battleFormat = new BattleFormatFactory(preset.battleFormat).create();
         this.battleAI = new BattleAIFactory(preset.battleFormat, preset.battleAI).create();
