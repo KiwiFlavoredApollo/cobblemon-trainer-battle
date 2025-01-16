@@ -4,7 +4,7 @@
     "defeat_elite_agatha": {
       "conditions": {
         "count": 1,
-        "trainer": "trainer:entity/elite_agatha"
+        "trainer": "entity/elite_agatha"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

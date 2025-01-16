@@ -4,7 +4,7 @@
     "defeat_leader_falkner": {
       "conditions": {
         "count": 1,
-        "trainer": "trainer:entity/leader_falkner"
+        "trainer": "entity/leader_falkner"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

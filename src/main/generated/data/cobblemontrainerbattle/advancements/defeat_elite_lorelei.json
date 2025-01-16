@@ -4,7 +4,7 @@
     "defeat_elite_lorelei": {
       "conditions": {
         "count": 1,
-        "trainer": "trainer:entity/elite_lorelei"
+        "trainer": "entity/elite_lorelei"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

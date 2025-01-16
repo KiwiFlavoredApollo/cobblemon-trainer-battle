@@ -4,7 +4,7 @@
     "defeat_leader_bugsy": {
       "conditions": {
         "count": 1,
-        "trainer": "trainer:entity/leader_bugsy"
+        "trainer": "entity/leader_bugsy"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

@@ -4,7 +4,7 @@
     "defeat_leader_clair": {
       "conditions": {
         "count": 1,
-        "trainer": "trainer:entity/leader_clair"
+        "trainer": "entity/leader_clair"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

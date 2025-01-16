@@ -4,7 +4,7 @@
     "defeat_leader_roxanne": {
       "conditions": {
         "count": 1,
-        "trainer": "trainer:entity/leader_roxanne"
+        "trainer": "entity/leader_roxanne"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

@@ -4,7 +4,7 @@
     "defeat_leader_brock": {
       "conditions": {
         "count": 1,
-        "trainer": "trainer:entity/leader_brock"
+        "trainer": "entity/leader_brock"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }
