@@ -9,7 +9,7 @@ import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer.Traine
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.PlayerBackedTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
-import kiwiapollo.cobblemontrainerbattle.battle.random.RandomTrainerFactory;
+import kiwiapollo.cobblemontrainerbattle.battle.random.RandomTrainerBattleTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
 import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerStorage;
@@ -53,7 +53,7 @@ public abstract class TrainerBattleStarter implements Command<ServerCommandSourc
         @Override
         public int run(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
             ServerPlayerEntity player = context.getSource().getPlayerOrThrow();
-            String trainer = new RandomTrainerFactory().create();
+            String trainer = new RandomTrainerBattleTrainerFactory().create();
 
             return super.run(player, trainer);
         }
@@ -73,7 +73,7 @@ public abstract class TrainerBattleStarter implements Command<ServerCommandSourc
         @Override
         public int run(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
             ServerPlayerEntity player = EntityArgumentType.getPlayer(context, "player");
-            String trainer = new RandomTrainerFactory().create();
+            String trainer = new RandomTrainerBattleTrainerFactory().create();
 
             return super.run(player, trainer);
         }
