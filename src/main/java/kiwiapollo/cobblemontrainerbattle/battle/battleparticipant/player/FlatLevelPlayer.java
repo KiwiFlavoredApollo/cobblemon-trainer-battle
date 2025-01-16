@@ -4,7 +4,7 @@ import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
-import kiwiapollo.cobblemontrainerbattle.common.FlatLevelBattle;
+import kiwiapollo.cobblemontrainerbattle.battle.preset.FlatLevelBattlePreset;
 import net.minecraft.server.network.ServerPlayerEntity;
 
 import java.util.List;
@@ -24,7 +24,7 @@ public class FlatLevelPlayer extends AbstractPlayerBattleParticipant {
 
     private List<BattlePokemon> getBattleTeam() {
         List<BattlePokemon> team = getParty().toBattleTeam(true, false, null);
-        team.forEach(pokemon -> pokemon.getEffectedPokemon().setLevel(FlatLevelBattle.LEVEL));
+        team.forEach(pokemon -> pokemon.getEffectedPokemon().setLevel(FlatLevelBattlePreset.LEVEL));
         return team;
     }
 }

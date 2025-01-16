@@ -5,7 +5,7 @@ import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import kiwiapollo.cobblemontrainerbattle.common.RentalBattle;
+import kiwiapollo.cobblemontrainerbattle.battle.preset.RentalBattlePreset;
 import kiwiapollo.cobblemontrainerbattle.parser.player.BattleContextStorage;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -18,7 +18,7 @@ public class RandomRentalPokemonProvider implements Command<ServerCommandSource>
 
             PartyStore rentalPokemon = new PartyStore(player.getUuid());
 
-            for (int i = 0; i < RentalBattle.PARTY_SIZE; i++) {
+            for (int i = 0; i < RentalBattlePreset.PARTY_SIZE; i++) {
 //                rentalPokemon.add(PokemonSpecies.INSTANCE.random().create(RentalBattle.LEVEL));
                 rentalPokemon.add(PokemonSpecies.INSTANCE.random().create(100));
             }

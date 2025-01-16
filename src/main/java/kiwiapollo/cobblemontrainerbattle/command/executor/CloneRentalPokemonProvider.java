@@ -7,7 +7,7 @@ import com.mojang.brigadier.Command;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import kiwiapollo.cobblemontrainerbattle.battle.predicates.MinimumPartySizePredicate;
-import kiwiapollo.cobblemontrainerbattle.common.RentalBattle;
+import kiwiapollo.cobblemontrainerbattle.battle.preset.RentalBattlePreset;
 import kiwiapollo.cobblemontrainerbattle.parser.player.BattleContextStorage;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -52,15 +52,15 @@ public class CloneRentalPokemonProvider implements Command<ServerCommandSource> 
     private PartyStore toRental(PartyStore party) {
         PartyStore rental = new PartyStore(UUID.randomUUID());
 
-        party.toGappyList().stream().filter(Objects::nonNull).toList().subList(0, RentalBattle.PARTY_SIZE).forEach(rental::add);
-        rental.toGappyList().forEach(pokemon -> pokemon.setLevel(RentalBattle.LEVEL));
+        party.toGappyList().stream().filter(Objects::nonNull).toList().subList(0, RentalBattlePreset.PARTY_SIZE).forEach(rental::add);
+        rental.toGappyList().forEach(pokemon -> pokemon.setLevel(RentalBattlePreset.LEVEL));
 
         return rental;
     }
 
     // TODO
     private boolean hasMinimumPartySize(ServerPlayerEntity player) {
-        Predicate<Integer> minimumPartySizePredicate = new MinimumPartySizePredicate.BattleFormatPredicate(RentalBattle.PARTY_SIZE);
+        Predicate<Integer> minimumPartySizePredicate = new MinimumPartySizePredicate.BattleFormatPredicate(RentalBattlePreset.PARTY_SIZE);
         PlayerPartyStore original = Cobblemon.INSTANCE.getStorage().getParty(player);
         return minimumPartySizePredicate.test(original.occupied());
     }

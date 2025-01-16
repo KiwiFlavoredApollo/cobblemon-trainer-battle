@@ -7,7 +7,7 @@ import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.command.executor.*;
 import kiwiapollo.cobblemontrainerbattle.command.predicate.PlayerCommandSourcePredicate;
-import kiwiapollo.cobblemontrainerbattle.common.RentalBattle;
+import kiwiapollo.cobblemontrainerbattle.battle.preset.RentalBattlePreset;
 import net.minecraft.server.command.ServerCommandSource;
 
 public class RentalPokemonCommand extends LiteralArgumentBuilder<ServerCommandSource> {
@@ -35,9 +35,9 @@ public class RentalPokemonCommand extends LiteralArgumentBuilder<ServerCommandSo
     private ArgumentBuilder<ServerCommandSource, ?> getTradeRentalPokemonCommand() {
         return LiteralArgumentBuilder.<ServerCommandSource>literal("trade")
                 .then(RequiredArgumentBuilder
-                        .<ServerCommandSource, Integer>argument("playerslot", IntegerArgumentType.integer(1, RentalBattle.PARTY_SIZE))
+                        .<ServerCommandSource, Integer>argument("playerslot", IntegerArgumentType.integer(1, RentalBattlePreset.PARTY_SIZE))
                         .then(RequiredArgumentBuilder
-                                .<ServerCommandSource, Integer>argument("trainerslot", IntegerArgumentType.integer(1, RentalBattle.PARTY_SIZE))
+                                .<ServerCommandSource, Integer>argument("trainerslot", IntegerArgumentType.integer(1, RentalBattlePreset.PARTY_SIZE))
                                 .executes(new RentalPokemonTrader())))
                 .then(LiteralArgumentBuilder.<ServerCommandSource>literal("show")
                         .executes(new TradablePokemonStatusPrinter()));

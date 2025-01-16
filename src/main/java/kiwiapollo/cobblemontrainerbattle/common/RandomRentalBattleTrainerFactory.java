@@ -1,5 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.common;
 
+import kiwiapollo.cobblemontrainerbattle.battle.preset.RentalBattlePreset;
 import kiwiapollo.cobblemontrainerbattle.parser.preset.TrainerStorage;
 
 import java.util.ArrayList;
@@ -17,6 +18,6 @@ public class RandomRentalBattleTrainerFactory implements SimpleFactory<String> {
     }
 
     private boolean hasRentalBattlePartySize(String trainer) {
-        return TrainerStorage.getInstance().get(trainer).getParty().occupied() == RentalBattle.PARTY_SIZE;
+        return TrainerStorage.getInstance().get(trainer).getParty().occupied() == RentalBattlePreset.PARTY_SIZE;
     }
 }

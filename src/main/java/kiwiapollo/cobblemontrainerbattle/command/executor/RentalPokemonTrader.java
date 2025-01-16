@@ -6,7 +6,7 @@ import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.common.RentalBattle;
+import kiwiapollo.cobblemontrainerbattle.battle.preset.RentalBattlePreset;
 import kiwiapollo.cobblemontrainerbattle.parser.player.BattleContext;
 import kiwiapollo.cobblemontrainerbattle.parser.player.BattleContextStorage;
 import net.minecraft.server.command.ServerCommandSource;
@@ -44,7 +44,7 @@ public class RentalPokemonTrader implements Command<ServerCommandSource> {
 
     private boolean canTradePokemon(ServerPlayerEntity player) {
         BattleContext context = BattleContextStorage.getInstance().getOrCreate(player.getUuid());
-        return context.getTradablePokemon().occupied() < RentalBattle.PARTY_SIZE;
+        return context.getTradablePokemon().occupied() < RentalBattlePreset.PARTY_SIZE;
     }
 
     private void setRentalPokemon(ServerPlayerEntity player, int slot, Pokemon trainerPokemon) {

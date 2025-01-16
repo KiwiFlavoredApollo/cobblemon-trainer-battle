@@ -9,7 +9,7 @@ import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer.Rental
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.PlayerBackedTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.common.RandomRentalBattleTrainerFactory;
-import kiwiapollo.cobblemontrainerbattle.common.RentalBattle;
+import kiwiapollo.cobblemontrainerbattle.battle.preset.RentalBattlePreset;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.parser.player.BattleContextStorage;
 import kiwiapollo.cobblemontrainerbattle.parser.preset.TrainerStorage;
@@ -21,7 +21,7 @@ import net.minecraft.text.Text;
 public abstract class RentalBattleStarter implements Command<ServerCommandSource> {
     public int run(ServerPlayerEntity player, String trainer) {
         try {
-            if (TrainerStorage.getInstance().get(trainer).getParty().occupied() != RentalBattle.PARTY_SIZE) {
+            if (TrainerStorage.getInstance().get(trainer).getParty().occupied() != RentalBattlePreset.PARTY_SIZE) {
                 player.sendMessage(Text.literal("Trainer need three pokemon"));
                 return 0;
             }
