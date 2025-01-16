@@ -19,6 +19,6 @@ public class RandomRentalBattleTrainerFactory implements SimpleFactory<String> {
     }
 
     private boolean hasRentalBattlePartySize(String trainer) {
-        return TrainerStorage.getInstance().get(trainer).getParty().occupied() == RentalBattlePreset.PARTY_SIZE;
+        return TrainerStorage.getInstance().get(trainer).getParty().occupied() >= RentalBattlePreset.PARTY_SIZE;
     }
 }

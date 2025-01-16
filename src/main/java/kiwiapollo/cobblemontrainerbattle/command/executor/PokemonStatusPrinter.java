@@ -3,32 +3,18 @@ package kiwiapollo.cobblemontrainerbattle.command.executor;
 import com.cobblemon.mod.common.api.moves.Move;
 import com.cobblemon.mod.common.api.moves.MoveSet;
 import com.cobblemon.mod.common.api.pokemon.stats.Stats;
+import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.cobblemon.mod.common.pokemon.PokemonStats;
-import com.mojang.brigadier.Command;
-import com.mojang.brigadier.context.CommandContext;
-import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 
-import java.util.List;
-
-public abstract class PokemonStatusPrinter implements Command<ServerCommandSource> {
-    @Override
-    public int run(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
-        ServerPlayerEntity player = context.getSource().getPlayerOrThrow();
-        List<Pokemon> pokemons = getPokemons(player);
-
-        if (pokemons.isEmpty()) {
-            player.sendMessage(Text.translatable("predicate.cobblemontrainerbattle.error.player_party_not_empty"));
-            return 0;
-        }
-
-        for (int i = 0; i < pokemons.size(); i++) {
-            Pokemon pokemon = pokemons.get(i);
+public abstract class PokemonStatusPrinter {
+    protected void printPokemonStatus(PartyStore party, ServerPlayerEntity player) {
+        for (int i = 0; i < party.occupied(); i++) {
+            Pokemon pokemon = party.get(i);
 
             player.sendMessage(Text.literal("[" + (i + 1) + "] ").append(getPokemonSpecies(pokemon)).formatted(Formatting.YELLOW));
             player.sendMessage(Text.literal("Ability ").append(getPokemonAbility(pokemon)));
@@ -37,11 +23,7 @@ public abstract class PokemonStatusPrinter implements Command<ServerCommandSourc
             player.sendMessage(Text.literal("EVs ").append(getPokemonStats(pokemon.getEvs())));
             player.sendMessage(Text.literal("IVs ").append(getPokemonStats(pokemon.getIvs())));
         }
-
-        return Command.SINGLE_SUCCESS;
     }
-
-    protected abstract List<Pokemon> getPokemons(ServerPlayerEntity player);
 
     private MutableText getPokemonSpecies(Pokemon pokemon) {
         return pokemon.getSpecies().getTranslatedName();

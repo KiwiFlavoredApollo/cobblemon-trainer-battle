@@ -21,8 +21,13 @@ import net.minecraft.text.Text;
 public abstract class RentalBattleStarter implements Command<ServerCommandSource> {
     public int run(ServerPlayerEntity player, String trainer) {
         try {
-            if (TrainerStorage.getInstance().get(trainer).getParty().occupied() != RentalBattlePreset.PARTY_SIZE) {
-                player.sendMessage(Text.translatable("command.cobblemontrainerbattle.error.rentalbattle.trainer_party_size", RentalBattlePreset.PARTY_SIZE));
+            if (!hasRentalBattleMinimumPartySize(player)) {
+                player.sendMessage(Text.translatable("command.cobblemontrainerbattle.error.rentalbattle.player_minimum_party_size", RentalBattlePreset.PARTY_SIZE));
+                return 0;
+            }
+
+            if (!hasRentalBattleMinimumPartySize(trainer)) {
+                player.sendMessage(Text.translatable("command.cobblemontrainerbattle.error.rentalbattle.trainer_minimum_party_size", RentalBattlePreset.PARTY_SIZE));
                 return 0;
             }
 
@@ -39,6 +44,14 @@ public abstract class RentalBattleStarter implements Command<ServerCommandSource
         } catch (BattleStartException e) {
             return 0;
         }
+    }
+
+    private boolean hasRentalBattleMinimumPartySize(ServerPlayerEntity player) {
+        return BattleContextStorage.getInstance().getOrCreate(player.getUuid()).getRentalPokemon().occupied() >= RentalBattlePreset.PARTY_SIZE;
+    }
+
+    private boolean hasRentalBattleMinimumPartySize(String trainer) {
+        return TrainerStorage.getInstance().get(trainer).getParty().occupied() >= RentalBattlePreset.PARTY_SIZE;
     }
 
     public static class BetweenThisPlayerAndSelectedTrainer extends RentalBattleStarter {

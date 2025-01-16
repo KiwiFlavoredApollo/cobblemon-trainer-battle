@@ -43,8 +43,9 @@ public class RentalBattleTrainer implements TrainerBattleParticipant {
 
     @Override
     public List<BattlePokemon> getBattleTeam(ServerPlayerEntity player) {
-        List<BattlePokemon> team = getParty().toGappyList().stream().filter(Objects::nonNull).map(new SafeCopyBattlePokemonFactory()).toList();
-
+        List<BattlePokemon> team = new ArrayList<>(getParty().toGappyList().stream().filter(Objects::nonNull).map(new SafeCopyBattlePokemonFactory()).toList());
+        Collections.shuffle(team);
+        team = team.subList(0, RentalBattlePreset.PARTY_SIZE);
         team.forEach(pokemon -> pokemon.getEffectedPokemon().setLevel(RentalBattlePreset.LEVEL));
         team.forEach(pokemon -> pokemon.getEffectedPokemon().heal());
 

@@ -19,6 +19,7 @@ public class RentalPokemonCommand extends LiteralArgumentBuilder<ServerCommandSo
                 .then(getCloneRentalPokemonCommand())
                 .then(getTradeRentalPokemonCommand())
                 .then(getShowRentalPokemonCommand())
+                .then(getShowTradablePokemonCommand())
                 .then(getClearRentalPokemonCommand());
     }
 
@@ -38,14 +39,17 @@ public class RentalPokemonCommand extends LiteralArgumentBuilder<ServerCommandSo
                         .<ServerCommandSource, Integer>argument("playerslot", IntegerArgumentType.integer(1, RentalBattlePreset.PARTY_SIZE))
                         .then(RequiredArgumentBuilder
                                 .<ServerCommandSource, Integer>argument("trainerslot", IntegerArgumentType.integer(1, RentalBattlePreset.PARTY_SIZE))
-                                .executes(new RentalPokemonTrader())))
-                .then(LiteralArgumentBuilder.<ServerCommandSource>literal("show")
-                        .executes(new TradablePokemonStatusPrinter()));
+                                .executes(new RentalPokemonTrader())));
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getShowRentalPokemonCommand() {
-        return LiteralArgumentBuilder.<ServerCommandSource>literal("show")
+        return LiteralArgumentBuilder.<ServerCommandSource>literal("showrental")
                 .executes(new RentalPokemonStatusPrinter());
+    }
+
+    private ArgumentBuilder<ServerCommandSource, ?> getShowTradablePokemonCommand() {
+        return LiteralArgumentBuilder.<ServerCommandSource>literal("showtrade")
+                .executes(new TradablePokemonStatusPrinter());
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getClearRentalPokemonCommand() {

@@ -25,7 +25,7 @@ public class CloneRentalPokemonProvider implements Command<ServerCommandSource> 
             ServerPlayerEntity player = context.getSource().getPlayerOrThrow();
 
             if (!hasMinimumPartySize(player)) {
-                player.sendMessage(Text.translatable("predicate.cobblemontrainerbattle.error.minimum_party_size", RentalBattlePreset.PARTY_SIZE).formatted(Formatting.RED));
+                player.sendMessage(Text.translatable("command.cobblemontrainerbattle.error.rentalpokemon.player_minimum_party_size", RentalBattlePreset.PARTY_SIZE).formatted(Formatting.RED));
                 return 0;
             }
 
@@ -61,9 +61,8 @@ public class CloneRentalPokemonProvider implements Command<ServerCommandSource> 
         return rental;
     }
 
-    // TODO
     private boolean hasMinimumPartySize(ServerPlayerEntity player) {
-        Predicate<Integer> minimumPartySizePredicate = new MinimumPartySizePredicate.BattleFormatPredicate(RentalBattlePreset.PARTY_SIZE);
+        Predicate<Integer> minimumPartySizePredicate = new MinimumPartySizePredicate.ValuePredicate(RentalBattlePreset.PARTY_SIZE);
         PlayerPartyStore original = Cobblemon.INSTANCE.getStorage().getParty(player);
         return minimumPartySizePredicate.test(original.occupied());
     }

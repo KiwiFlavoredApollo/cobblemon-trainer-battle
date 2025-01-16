@@ -44,14 +44,14 @@ public class MinimumPartySizePredicate implements MessagePredicate<Integer> {
         }
     }
 
-    public static class BattleFormatPredicate implements MessagePredicate<Integer> {
+    public static class ValuePredicate implements MessagePredicate<Integer> {
         private final MinimumPartySizePredicate predicate;
 
-        public BattleFormatPredicate(BattleFormat format) {
+        public ValuePredicate(BattleFormat format) {
             this(format.getBattleType().getSlotsPerActor());
         }
 
-        public BattleFormatPredicate(int required) {
+        public ValuePredicate(int required) {
             this.predicate = new MinimumPartySizePredicate(required);
         }
 

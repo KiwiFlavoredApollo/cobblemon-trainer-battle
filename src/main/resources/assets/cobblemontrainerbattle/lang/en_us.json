@@ -232,5 +232,14 @@
   "predicate.cobblemontrainerbattle.error.forbidden_ability_not_exist": "Forbidden ability : %s",
   "predicate.cobblemontrainerbattle.error.forbidden_move_not_exist": "Forbidden move : %s",
 
-  "command.cobblemontrainerbattle.success.trainerbattle": "Battle has started against %s."
+  "command.cobblemontrainerbattle.success.trainerbattle": "Battle has started against %s.",
+
+  "command.cobblemontrainerbattle.error.rentalbattle.trainer_minimum_party_size": "Trainer does not have enough Pokémon : %d",
+  "command.cobblemontrainerbattle.error.rentalbattle.player_minimum_party_size": "Player does not have enough Pokémon : %d",
+
+  "command.cobblemontrainerbattle.error.rentalpokemon.trainer_minimum_party_size": "Trainer does not have enough Pokémon : %d",
+  "command.cobblemontrainerbattle.error.rentalpokemon.player_minimum_party_size": "Player does not have enough Pokémon : %d",
+
+  "command.cobblemontrainerbattle.error.rentalpokemon.rental_pokemon_not_exist": "Player has no rental Pokémon.",
+  "command.cobblemontrainerbattle.error.rentalpokemon.tradable_pokemon_not_exist": "Player has no tradable Pokémon."
 }

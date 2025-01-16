@@ -129,7 +129,7 @@ public class TrainerStorage implements SimpleSynchronousResourceReloadListener, 
     }
 
     private boolean isPartySizeCompatible(BattleFormat format, List<ShowdownPokemon> team) {
-        return new MinimumPartySizePredicate.BattleFormatPredicate(format).test(team.size());
+        return new MinimumPartySizePredicate.ValuePredicate(format).test(team.size());
     }
 
     private String toSimplePath(Map.Entry<Identifier, TrainerPreset> trainer) {
