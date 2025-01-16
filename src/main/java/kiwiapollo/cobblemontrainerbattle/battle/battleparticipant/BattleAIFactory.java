@@ -2,7 +2,6 @@ package kiwiapollo.cobblemontrainerbattle.battle.battleparticipant;
 
 import com.cobblemon.mod.common.api.battles.model.ai.BattleAI;
 import com.cobblemon.mod.common.battles.ai.RandomBattleAI;
-import kiwiapollo.cobblemontrainerbattle.common.Generation5AI;
 import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
 import kiwiapollo.cobblemontrainerbattle.common.StrongBattleAI;
 
