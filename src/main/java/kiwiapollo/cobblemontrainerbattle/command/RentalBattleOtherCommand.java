@@ -16,7 +16,7 @@ import java.util.List;
 
 public class RentalBattleOtherCommand extends LiteralArgumentBuilder<ServerCommandSource> {
     public RentalBattleOtherCommand() {
-        super("trainerbattleother");
+        super("rentalbattleother");
 
         List<String> permissions = List.of(
                 String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), "trainer"),
