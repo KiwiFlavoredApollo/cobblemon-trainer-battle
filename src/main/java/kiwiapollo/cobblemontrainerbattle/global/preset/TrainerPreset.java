@@ -19,6 +19,8 @@ public class TrainerPreset {
     public final String battleAI;
     @SerializedName("battle_theme")
     public final String battleTheme;
+    @SerializedName("cooldown")
+    public final int cooldown;
 
     @SerializedName("on_victory_commands")
     public final List<String> onVictoryCommands;
@@ -70,6 +72,7 @@ public class TrainerPreset {
         this.battleFormat = "single";
         this.battleAI = "generation5";
         this.battleTheme = "cobblemon:battle.pvn.default";
+        this.cooldown = 0;
 
         this.isSpawningAllowed = true;
         this.isRematchAllowed = true;
