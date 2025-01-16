@@ -18,13 +18,12 @@ import net.minecraft.util.math.random.Random;
 import java.util.Set;
 
 public class TrainerEntitySpawner implements ServerTickEvents.EndWorldTick {
-    private static final int SPAWN_INTERVAL = 60;
     private static final int MAXIMUM_RADIUS = 30;
     private static final int MINIMUM_RADIUS = 5;
 
     @Override
     public void onEndTick(ServerWorld world) {
-        if (world.getServer().getTicks() % SPAWN_INTERVAL == 0) {
+        if (world.getServer().getTicks() % ConfigStorage.getInstance().getTrainerSpawnIntervalInSeconds() == 0) {
             for (PlayerEntity player : world.getPlayers()) {
                 spawnTrainersAroundPlayer(world, player);
             }
@@ -37,7 +36,7 @@ public class TrainerEntitySpawner implements ServerTickEvents.EndWorldTick {
                 return;
             }
 
-            if (!isBelowMaximumTrainerCount(world, player)) {
+            if (!isBelowMaximumTrainerSpawnCount(world, player)) {
                 return;
             }
 
@@ -92,9 +91,9 @@ public class TrainerEntitySpawner implements ServerTickEvents.EndWorldTick {
         ));
     }
 
-    private boolean isBelowMaximumTrainerCount(ServerWorld world, PlayerEntity player) {
+    private boolean isBelowMaximumTrainerSpawnCount(ServerWorld world, PlayerEntity player) {
         int count = world.getEntitiesByType(EntityTypes.TRAINER, player.getBoundingBox().expand(MAXIMUM_RADIUS), entity -> true).size();
-        return count >= ConfigStorage.getInstance().getMaximumTrainerSpawnCount();
+        return count < ConfigStorage.getInstance().getMaximumTrainerSpawnCount();
     }
 
     private BlockPos getRandomSpawnPosition(ServerWorld world, PlayerEntity player) throws IllegalStateException {
