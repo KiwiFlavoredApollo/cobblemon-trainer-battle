@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Trainer preset is the most important part of the mod as it allows data pack authors to add custom trainers. Following is an example trainer preset file. `team` is the only required attribute. Others are optional.  
+Trainer preset is the most important part of the mod as it allows data pack authors to add custom trainers. Following is an example trainer preset file. `team` is the only required attribute. Others are optional.
 
 ```json
 {

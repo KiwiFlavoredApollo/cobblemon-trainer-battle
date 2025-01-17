@@ -1,5 +1,9 @@
 # Data Pack
 
+## Introduction
+
+Data pack authors can use [cobblemon-trainer-battle-data-pack](https://github.com/KiwiFlavoredApollo/cobblemon-trainer-battle-data-pack) as template.
+
 ## Data Pack Structure
 
 ```
