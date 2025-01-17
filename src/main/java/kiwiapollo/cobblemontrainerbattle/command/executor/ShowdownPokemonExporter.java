@@ -49,7 +49,8 @@ public class ShowdownPokemonExporter implements Command<ServerCommandSource> {
 
             writeJsonFile(player);
 
-            player.sendMessage(Text.translatable("command.cobblemontrainerbattle.success.export"));
+            player.sendMessage(Text.translatable("command.cobblemontrainerbattle.success.export", player.getGameProfile().getName()));
+            CobblemonTrainerBattle.LOGGER.error("Exported Pokémon : {}", player.getGameProfile().getName());
 
             return Command.SINGLE_SUCCESS;
 

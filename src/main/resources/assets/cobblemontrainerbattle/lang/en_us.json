@@ -235,6 +235,8 @@
 
   "command.cobblemontrainerbattle.success.trainerbattle": "Battle has started against %s.",
   "command.cobblemontrainerbattle.success.rentalpokemon.trade": "Traded %s for %s.",
+  "command.cobblemontrainerbattle.success.export": "Exported Pokémon : %s",
+  "command.cobblemontrainerbattle.success.reload": "Reloaded config.",
 
   "command.cobblemontrainerbattle.error.rentalbattle.trainer_minimum_party_size": "Trainer does not have enough Pokémon : %d",
   "command.cobblemontrainerbattle.error.rentalbattle.player_minimum_party_size": "Player does not have enough Pokémon : %d",

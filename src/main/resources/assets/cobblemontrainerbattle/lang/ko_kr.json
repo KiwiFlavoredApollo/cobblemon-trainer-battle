@@ -235,6 +235,8 @@
 
   "command.cobblemontrainerbattle.success.trainerbattle": "%s와(과)의 배틀이 시작되었습니다.",
   "command.cobblemontrainerbattle.success.rentalpokemon.trade": "%s와 %s를 교환했습니다.",
+  "command.cobblemontrainerbattle.success.export": "포켓몬 내보내기를 완료했습니다 : %s",
+  "command.cobblemontrainerbattle.success.reload": "설정값을 다시 읽어들였습니다.",
 
   "command.cobblemontrainerbattle.error.rentalbattle.trainer_minimum_party_size": "트레이너 포켓몬이 부족합니다 : %d 마리",
   "command.cobblemontrainerbattle.error.rentalbattle.player_minimum_party_size": "플레이어 포켓몬이 부족합니다 : %d 마리",
