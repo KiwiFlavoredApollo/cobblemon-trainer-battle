@@ -5,7 +5,6 @@ Cobblemon Trainer Battle is a side mod for Cobblemon that offers trainer battle 
 ## Features
 
 - Customizable Trainer Battle
-- Battle Factory Mini Game
 - NPC Trainers and Items
 - Inclement Emerald Progression System
 - Radical Red Progression System
@@ -37,13 +36,6 @@ Refer to [GitHub Pages](https://kiwiflavoredapollo.github.io/cobblemon-trainer-b
 - Diner Waitress - Mia
 - Cherry Blossom Garden - Selene
 - Blacksmith - Roxie
-
-## TODOs
-
-- [ ] Fix bug SimpleTM TM/TR drop
-- [ ] Add feature defining Battle Frontier trainer sequence by data pack
-- [ ] When on Battle Frontier battle, player Pokemons are slightly damaged
-- [ ] Infinite mode Battle Factory
 
 ## Reference
 
