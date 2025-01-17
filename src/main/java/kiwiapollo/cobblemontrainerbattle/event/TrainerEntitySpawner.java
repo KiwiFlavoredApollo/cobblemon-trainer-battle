@@ -11,6 +11,7 @@ import kiwiapollo.cobblemontrainerbattle.item.MiscItems;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventory;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
@@ -24,15 +25,15 @@ public class TrainerEntitySpawner implements ServerTickEvents.EndWorldTick {
     @Override
     public void onEndTick(ServerWorld world) {
         if (world.getServer().getTicks() % ConfigStorage.getInstance().getTrainerSpawnIntervalInSeconds() == 0) {
-            for (PlayerEntity player : world.getPlayers()) {
+            for (ServerPlayerEntity player : world.getPlayers()) {
                 spawnTrainersAroundPlayer(world, player);
             }
         }
     }
 
-    private void spawnTrainersAroundPlayer(ServerWorld world, PlayerEntity player) {
+    private void spawnTrainersAroundPlayer(ServerWorld world, ServerPlayerEntity player) {
         try {
-            if (!containsVsSeeker(player.getInventory())) {
+            if (!hasVsSeeker(player)) {
                 return;
             }
 
@@ -82,8 +83,8 @@ public class TrainerEntitySpawner implements ServerTickEvents.EndWorldTick {
         return builder.build();
     }
 
-    private boolean containsVsSeeker(Inventory inventory) {
-        return inventory.containsAny(Set.of(
+    private boolean hasVsSeeker(ServerPlayerEntity player) {
+        return player.getInventory().containsAny(Set.of(
                 MiscItems.BLUE_VS_SEEKER,
                 MiscItems.RED_VS_SEEKER,
                 MiscItems.GREEN_VS_SEEKER,
