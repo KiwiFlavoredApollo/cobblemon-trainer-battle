@@ -213,6 +213,7 @@
   "predicate.cobblemontrainerbattle.error.player_party_not_fainted": "Impossible. Votre équipe est K.O.",
 
   "predicate.cobblemontrainerbattle.error.is_rematch_allowed": "Re-combattre ce Dreseur n'est pas autorisé.",
+  "predicate.cobblemontrainerbattle.error.cooldown_elapsed": "Temps de recharge restant : %d secondes",
 
   "predicate.cobblemontrainerbattle.error.maximum_party_size": "Taille maximale de l'équipe requise : %d",
   "predicate.cobblemontrainerbattle.error.minimum_party_size": "Taille minimale de l'équipe requise : %d",

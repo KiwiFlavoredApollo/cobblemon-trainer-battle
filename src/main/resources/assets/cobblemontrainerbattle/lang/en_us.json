@@ -213,6 +213,7 @@
   "predicate.cobblemontrainerbattle.error.player_party_not_fainted": "You cannot proceed with all your Pokémon fainted.",
 
   "predicate.cobblemontrainerbattle.error.is_rematch_allowed": "Rematch for this opponent is not allowed.",
+  "predicate.cobblemontrainerbattle.error.cooldown_elapsed": "Remaining cooldown : %d seconds",
 
   "predicate.cobblemontrainerbattle.error.maximum_party_size": "Required maximum party size : %d",
   "predicate.cobblemontrainerbattle.error.minimum_party_size": "Required minimum party size : %d",

@@ -17,6 +17,7 @@ import kotlin.Unit;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.text.Text;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
@@ -24,7 +25,6 @@ import java.util.UUID;
 public class AbstractTrainerBattle implements TrainerBattle {
     private final PlayerBattleParticipant player;
     private final TrainerBattleParticipant trainer;
-    private final List<MessagePredicate<PlayerBattleParticipant>> predicates;
 
     private UUID battleId;
 
@@ -34,18 +34,11 @@ public class AbstractTrainerBattle implements TrainerBattle {
     ) {
         this.player = player;
         this.trainer = trainer;
-
-        this.predicates = List.of(
-                new PlayerNotBusyPredicate.PlayerBattleParticipantPredicate(),
-                new PlayerPartyNotEmptyPredicate(),
-                new PlayerPartyNotFaintedPredicate(),
-                new MinimumPartySizePredicate.PlayerPredicate(trainer.getBattleFormat())
-        );
     }
 
     @Override
     public void start() throws BattleStartException {
-        for (MessagePredicate<PlayerBattleParticipant> predicate : predicates) {
+        for (MessagePredicate<PlayerBattleParticipant> predicate : getPredicates()) {
             if (!predicate.test(player)) {
                 player.sendErrorMessage(predicate.getErrorMessage());
                 throw new BattleStartException();
@@ -75,6 +68,20 @@ public class AbstractTrainerBattle implements TrainerBattle {
 
             return Unit.INSTANCE;
         });
+    }
+
+    private List<MessagePredicate<PlayerBattleParticipant>> getPredicates() {
+        List<MessagePredicate<PlayerBattleParticipant>> predicates = new ArrayList<>();
+
+        predicates.addAll(List.of(
+                new PlayerNotBusyPredicate.PlayerBattleParticipantPredicate(),
+                new PlayerPartyNotEmptyPredicate(),
+                new PlayerPartyNotFaintedPredicate(),
+                new MinimumPartySizePredicate.PlayerPredicate(trainer.getBattleFormat())
+        ));
+        predicates.addAll(trainer.getPredicates());
+
+        return predicates;
     }
 
     @Override

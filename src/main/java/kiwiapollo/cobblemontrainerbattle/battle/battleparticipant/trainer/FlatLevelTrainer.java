@@ -19,6 +19,7 @@ public class FlatLevelTrainer extends AbstractTrainerBattleParticipant {
         super(id, preset, toPartyStore(team));
         this.predicates = List.of(
                 new RematchAllowedPredicate(id, preset.isRematchAllowed),
+                new CooldownElapsedPredicate(id, preset.cooldownInSeconds),
 
                 new MaximumPartySizePredicate.PlayerPredicate(preset.maximumPartySize),
                 new MinimumPartySizePredicate.PlayerPredicate(preset.minimumPartySize),

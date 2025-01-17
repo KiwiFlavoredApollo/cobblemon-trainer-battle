@@ -213,6 +213,7 @@
   "predicate.cobblemontrainerbattle.error.player_party_not_fainted": "지닌 포켓몬이 모두 기절했기 때문에 진행할 수 없습니다.",
 
   "predicate.cobblemontrainerbattle.error.is_rematch_allowed": "이 상대와는 다시 배틀할 수 없습니다.",
+  "predicate.cobblemontrainerbattle.error.cooldown_elapsed": "남아있는 쿨다운 : %d 초",
 
   "predicate.cobblemontrainerbattle.error.maximum_party_size": "필요한 최대 포켓몬 마릿 수 : %d",
   "predicate.cobblemontrainerbattle.error.minimum_party_size": "필요한 최소 포켓몬 마릿 수 : %d",
