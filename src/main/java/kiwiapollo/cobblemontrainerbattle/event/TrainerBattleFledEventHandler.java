@@ -6,6 +6,7 @@ import com.cobblemon.mod.common.api.battles.model.actor.FleeableBattleActor;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.EntityBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -40,7 +41,8 @@ public class TrainerBattleFledEventHandler implements ServerTickEvents.EndWorldT
                 .map(battleActor -> ((EntityBackedTrainerBattleActor) battleActor))
                 .map(EntityBackedTrainerBattleActor::getEntity)
                 .filter(Objects::nonNull)
-                .forEach(trainerEntity -> trainerEntity.setAiDisabled(false));
+                .filter(entity -> entity instanceof TrainerEntity)
+                .forEach(entity -> ((TrainerEntity) entity).setAiDisabled(false));
 
         pokemonBattle.end();
 

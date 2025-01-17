@@ -10,6 +10,7 @@ import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerB
 import kiwiapollo.cobblemontrainerbattle.battle.predicate.MessagePredicate;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
 import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
 
@@ -19,9 +20,9 @@ import java.util.UUID;
 
 public class EntityBackedTrainer implements TrainerBattleParticipant {
     private final TrainerBattleParticipant trainer;
-    private final TrainerEntity entity;
+    private final LivingEntity entity;
 
-    public EntityBackedTrainer(TrainerBattleParticipant trainer, TrainerEntity entity) {
+    public EntityBackedTrainer(TrainerBattleParticipant trainer, LivingEntity entity) {
         this.trainer = trainer;
         this.entity = entity;
     }
@@ -79,14 +80,30 @@ public class EntityBackedTrainer implements TrainerBattleParticipant {
 
     @Override
     public void onPlayerDefeat(ServerPlayerEntity player) {
-        entity.onPlayerDefeat();
+        onPlayerDefeatByTrainerEntity();
         trainer.onPlayerDefeat(player);
     }
 
     @Override
     public void onPlayerVictory(ServerPlayerEntity player) {
-        entity.onPlayerVictory();
+        onPlayerVictoryOverTrainerEntity();
         trainer.onPlayerVictory(player);
+    }
+
+    private void onPlayerDefeatByTrainerEntity() {
+        try {
+            ((TrainerEntity) entity).onPlayerDefeat();
+        } catch (ClassCastException ignored) {
+
+        }
+    }
+
+    private void onPlayerVictoryOverTrainerEntity() {
+        try {
+            ((TrainerEntity) entity).onPlayerVictory();
+        } catch (ClassCastException ignored) {
+
+        }
     }
 
     @Override

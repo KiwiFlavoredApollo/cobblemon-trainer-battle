@@ -8,6 +8,7 @@ import com.cobblemon.mod.common.api.battles.model.ai.BattleAI;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntity;
 import kotlin.Pair;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.MutableText;
@@ -20,25 +21,25 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.UUID;
 
-public class EntityBackedTrainerBattleActor extends AIBattleActor implements EntityBackedBattleActor<TrainerEntity>, FleeableBattleActor {
-    private final String trainerName;
-    private final TrainerEntity trainerEntity;
+public class EntityBackedTrainerBattleActor extends AIBattleActor implements EntityBackedBattleActor<LivingEntity>, FleeableBattleActor {
+    private final String name;
+    private final LivingEntity entity;
 
     public EntityBackedTrainerBattleActor(
-            String trainerName,
+            String name,
             UUID uuid,
-            List<BattlePokemon> pokemonList,
-            BattleAI artificialDecider,
-            TrainerEntity trainerEntity
+            List<BattlePokemon> pokemon,
+            BattleAI battleAI,
+            LivingEntity entity
     ) {
-        super(uuid, pokemonList, artificialDecider);
-        this.trainerName = trainerName;
-        this.trainerEntity = trainerEntity;
+        super(uuid, pokemon, battleAI);
+        this.name = name;
+        this.entity = entity;
     }
 
     @Override
-    public TrainerEntity getEntity() {
-        return this.trainerEntity;
+    public LivingEntity getEntity() {
+        return this.entity;
     }
 
     @NotNull
@@ -50,7 +51,7 @@ public class EntityBackedTrainerBattleActor extends AIBattleActor implements Ent
     @NotNull
     @Override
     public MutableText getName() {
-        return Text.literal(this.trainerName);
+        return Text.literal(this.name);
     }
 
     @NotNull
@@ -67,7 +68,7 @@ public class EntityBackedTrainerBattleActor extends AIBattleActor implements Ent
     @Nullable
     @Override
     public Pair<ServerWorld, Vec3d> getWorldAndPosition() {
-        RegistryKey<World> entityWorldRegistryKey = trainerEntity.getEntityWorld().getRegistryKey();
-        return new Pair<>(trainerEntity.getServer().getWorld(entityWorldRegistryKey), trainerEntity.getPos());
+        RegistryKey<World> entityWorldRegistryKey = entity.getEntityWorld().getRegistryKey();
+        return new Pair<>(entity.getServer().getWorld(entityWorldRegistryKey), entity.getPos());
     }
 }
