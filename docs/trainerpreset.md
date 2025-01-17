@@ -14,6 +14,7 @@ Trainer preset is the most important part of the mod as it allows data pack auth
   "battle_ai": "generation5",
   "battle_theme": "cobblemon:battle.pvn.default",
   "cooldown_in_seconds": 0,
+  "entity_uuid": "d8f7f037-33fe-4f55-8670-67b1494b7896",
     
   "is_spawning_allowed": true,
   "is_rematch_allowed": true,
@@ -84,6 +85,10 @@ Trainer preset is the most important part of the mod as it allows data pack auth
 - `strong3`
 - `strong4`
 - `strong5`
+
+## `entity_uuid`
+
+If not set, both player and trainer Poké Balls are thrown from the player. When entity UUID is assigned to the trainer, trainer Poké Balls are thrown from the trainer entity. It's for improving player experience. NPC mods like EasyNPC is highly recommended. 
 
 ## Commands
 
