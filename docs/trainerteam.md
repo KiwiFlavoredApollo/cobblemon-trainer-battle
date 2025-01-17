@@ -36,8 +36,11 @@ Trainer team files follow Showdown team JSON format. Additional attributes are a
 
 ## Relative Level
 
-- Pokémon levels ranging from -7 to 7 (inclusive) are considered as relative level
-- Pivot point is the highest Pokémon level in the player's party
+- You need to set `level_mode` to `relative` in trainer preset file
+- Sets the trainer Pokémon level relative to player's maximum party level
+- If you set to `"level": 0`, then Pokémon will have same level as the player's maximum party level 
+- If you set to `"level": 2`, then Pokémon will have two levels above the player's maximum party level
+- If you set to `"level": -2`, then Pokémon will have two levels below the player's maximum party level
 
 ## Form Names
 

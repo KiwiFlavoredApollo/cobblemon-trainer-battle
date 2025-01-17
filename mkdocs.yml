@@ -7,6 +7,7 @@ nav:
   - Items: items.md
   - Data Pack: datapack.md
   - Resource Pack: resourcepack.md
+  - Trainer Preset: trainerpreset.md
   - Trainer Team: trainerteam.md
 theme: readthedocs
 remote_name: github
