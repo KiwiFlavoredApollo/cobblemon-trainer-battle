@@ -5,6 +5,7 @@ import com.cobblemon.mod.common.api.battles.model.actor.AIBattleActor;
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
+import kiwiapollo.cobblemontrainerbattle.battle.battleactor.EntityBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.PlayerBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.SafeCopyBattlePokemonFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
@@ -76,13 +77,24 @@ public class RelativeLevelTrainer extends AbstractTrainerBattleParticipant {
 
     @Override
     public AIBattleActor createBattleActor(ServerPlayerEntity player) {
-        return new PlayerBackedTrainerBattleActor(
-                getName(),
-                getUuid(),
-                getBattleTeam(player),
-                getBattleAI(),
-                player
-        );
+        try {
+            return new EntityBackedTrainerBattleActor(
+                    getName(),
+                    getUuid(),
+                    getBattleTeam(player),
+                    getBattleAI(),
+                    getNearAttachedLivingEntity(player)
+            );
+
+        } catch (ClassCastException | NullPointerException e) {
+            return new PlayerBackedTrainerBattleActor(
+                    getName(),
+                    getUuid(),
+                    getBattleTeam(player),
+                    getBattleAI(),
+                    player
+            );
+        }
     }
 
     @Override

@@ -74,6 +74,11 @@ public class EntityBackedTrainer implements TrainerBattleParticipant {
     }
 
     @Override
+    public LivingEntity getNearAttachedLivingEntity(ServerPlayerEntity player) {
+        return trainer.getNearAttachedLivingEntity(player);
+    }
+
+    @Override
     public List<BattlePokemon> getBattleTeam(ServerPlayerEntity player) {
         return trainer.getBattleTeam(player);
     }

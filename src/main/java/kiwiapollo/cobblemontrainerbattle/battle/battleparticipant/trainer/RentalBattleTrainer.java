@@ -5,6 +5,7 @@ import com.cobblemon.mod.common.api.battles.model.ai.BattleAI;
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
+import kiwiapollo.cobblemontrainerbattle.battle.battleactor.EntityBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.PlayerBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.SafeCopyBattlePokemonFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
@@ -13,6 +14,7 @@ import kiwiapollo.cobblemontrainerbattle.battle.preset.RentalBattlePreset;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
 import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
 import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerStorage;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
 
@@ -32,13 +34,29 @@ public class RentalBattleTrainer implements TrainerBattleParticipant {
 
     @Override
     public AIBattleActor createBattleActor(ServerPlayerEntity player) {
-        return new PlayerBackedTrainerBattleActor(
-                getName(),
-                getUuid(),
-                getBattleTeam(player),
-                getBattleAI(),
-                player
-        );
+        try {
+            return new EntityBackedTrainerBattleActor(
+                    getName(),
+                    getUuid(),
+                    getBattleTeam(player),
+                    getBattleAI(),
+                    getNearAttachedLivingEntity(player)
+            );
+
+        } catch (ClassCastException | NullPointerException e) {
+            return new PlayerBackedTrainerBattleActor(
+                    getName(),
+                    getUuid(),
+                    getBattleTeam(player),
+                    getBattleAI(),
+                    player
+            );
+        }
+    }
+
+    @Override
+    public LivingEntity getNearAttachedLivingEntity(ServerPlayerEntity player) {
+        return trainer.getNearAttachedLivingEntity(player);
     }
 
     @Override

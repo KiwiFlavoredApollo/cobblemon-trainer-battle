@@ -62,8 +62,6 @@ public class CobblemonTrainerBattle implements ModInitializer {
 			dispatcher.register(new TrainerBattleOtherCommand());
 			dispatcher.register(new RentalBattleCommand());
 			dispatcher.register(new RentalBattleOtherCommand());
-			dispatcher.register(new EntityBattleCommand());
-			dispatcher.register(new EntityBattleOtherCommand());
 			dispatcher.register(new RentalPokemonCommand());
 			dispatcher.register(new CobblemonTrainerBattleCommand());
 		});

@@ -8,6 +8,7 @@ import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.BattleParticip
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.predicate.MessagePredicate;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
 
@@ -32,6 +33,8 @@ public interface TrainerBattleParticipant extends BattleParticipant {
     List<MessagePredicate<PlayerBattleParticipant>> getPredicates();
 
     AIBattleActor createBattleActor(ServerPlayerEntity player);
+
+    LivingEntity getNearAttachedLivingEntity(ServerPlayerEntity player);
 
     void onPlayerDefeat(ServerPlayerEntity player);
 

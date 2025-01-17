@@ -6,21 +6,27 @@ import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.mojang.brigadier.CommandDispatcher;
+import kiwiapollo.cobblemontrainerbattle.battle.battleactor.EntityBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.PlayerBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.SafeCopyBattlePokemonFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.BattleAIFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.BattleFormatFactory;
 import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerPreset;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 import java.util.*;
+import java.util.stream.StreamSupport;
 
 public abstract class AbstractTrainerBattleParticipant implements TrainerBattleParticipant {
+    private static final int MINIMUM_ENTITY_DISTANCE = 10;
+
     private final String id;
     private final UUID uuid;
     private final String name;
@@ -28,6 +34,7 @@ public abstract class AbstractTrainerBattleParticipant implements TrainerBattleP
     private final BattleFormat battleFormat;
     private final BattleAI battleAI;
     private final SoundEvent battleTheme;
+    private final UUID entityUuid;
     private final boolean isSpawningAllowed;
     private final List<String> onVictoryCommands;
     private final List<String> onDefeatCommands;
@@ -40,9 +47,19 @@ public abstract class AbstractTrainerBattleParticipant implements TrainerBattleP
         this.battleFormat = new BattleFormatFactory(preset.battleFormat).create();
         this.battleAI = new BattleAIFactory(preset.battleFormat, preset.battleAI).create();
         this.battleTheme = SoundEvent.of(Identifier.tryParse(preset.battleTheme));
+        this.entityUuid = toUUID(preset.entityUuid);
         this.isSpawningAllowed = preset.isSpawningAllowed;
         this.onVictoryCommands = preset.onVictoryCommands;
         this.onDefeatCommands = preset.onDefeatCommands;
+    }
+
+    private static UUID toUUID(String uuid) {
+        try {
+            return UUID.fromString(Objects.requireNonNull(uuid));
+
+        } catch (NullPointerException | IllegalArgumentException e) {
+            return UUID.randomUUID();
+        }
     }
 
     @Override
@@ -82,13 +99,39 @@ public abstract class AbstractTrainerBattleParticipant implements TrainerBattleP
 
     @Override
     public AIBattleActor createBattleActor(ServerPlayerEntity player) {
-        return new PlayerBackedTrainerBattleActor(
-                getName(),
-                getUuid(),
-                getBattleTeam(player),
-                getBattleAI(),
-                player
-        );
+        try {
+            return new EntityBackedTrainerBattleActor(
+                    getName(),
+                    getUuid(),
+                    getBattleTeam(player),
+                    getBattleAI(),
+                    getNearAttachedLivingEntity(player)
+            );
+
+        } catch (ClassCastException | NullPointerException e) {
+            return new PlayerBackedTrainerBattleActor(
+                    getName(),
+                    getUuid(),
+                    getBattleTeam(player),
+                    getBattleAI(),
+                    player
+            );
+        }
+    }
+
+    @Override
+    public LivingEntity getNearAttachedLivingEntity(ServerPlayerEntity player) {
+        for (ServerWorld world : StreamSupport.stream(player.getServer().getWorlds().spliterator(), false).toList()) {
+            LivingEntity entity = (LivingEntity) world.getEntity(entityUuid);
+
+            if (entity.distanceTo(player) > MINIMUM_ENTITY_DISTANCE) {
+                throw new NullPointerException();
+            }
+
+            return entity;
+        }
+
+        throw new NullPointerException();
     }
 
     @Override
