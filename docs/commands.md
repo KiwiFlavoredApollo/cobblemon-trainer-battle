@@ -24,8 +24,8 @@ cobblemontrainerbattle.export
 
 Exported to either:
 
-- Single Player World `.minecraft/world/cobblemontrainerbattle/export`
-- Dedicated Server `.minecraft/saves/your_world_name/cobblemontrainerbattle/export`
+- Single Player World `.minecraft/saves/your_world_name/cobblemontrainerbattle/export`
+- Dedicated Server `.minecraft/world/cobblemontrainerbattle/export`
 
 While it's not strictly formatted like the Showdown team JSON format, it can be used for adding custom trainers.
 
