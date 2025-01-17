@@ -24,17 +24,23 @@ public class RentalPokemonCommand extends LiteralArgumentBuilder<ServerCommandSo
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getRandomRentalPokemonCommand() {
-        return LiteralArgumentBuilder.<ServerCommandSource>literal("random")
+        String subcommand = "random";
+        return LiteralArgumentBuilder.<ServerCommandSource>literal(subcommand)
+                .requires(new PlayerCommandSourcePredicate(String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), subcommand)))
                 .executes(new RandomRentalPokemonProvider());
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getCloneRentalPokemonCommand() {
-        return LiteralArgumentBuilder.<ServerCommandSource>literal("clone")
+        String subcommand = "clone";
+        return LiteralArgumentBuilder.<ServerCommandSource>literal(subcommand)
+                .requires(new PlayerCommandSourcePredicate(String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), subcommand)))
                 .executes(new CloneRentalPokemonProvider());
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getTradeRentalPokemonCommand() {
-        return LiteralArgumentBuilder.<ServerCommandSource>literal("trade")
+        String subcommand = "trade";
+        return LiteralArgumentBuilder.<ServerCommandSource>literal(subcommand)
+                .requires(new PlayerCommandSourcePredicate(String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), subcommand)))
                 .then(RequiredArgumentBuilder
                         .<ServerCommandSource, Integer>argument("playerslot", IntegerArgumentType.integer(1, RentalBattlePreset.PARTY_SIZE))
                         .then(RequiredArgumentBuilder
@@ -43,17 +49,23 @@ public class RentalPokemonCommand extends LiteralArgumentBuilder<ServerCommandSo
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getShowRentalPokemonCommand() {
-        return LiteralArgumentBuilder.<ServerCommandSource>literal("showrental")
+        String subcommand = "showrental";
+        return LiteralArgumentBuilder.<ServerCommandSource>literal(subcommand)
+                .requires(new PlayerCommandSourcePredicate(String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), subcommand)))
                 .executes(new RentalPokemonStatusPrinter());
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getShowTradablePokemonCommand() {
-        return LiteralArgumentBuilder.<ServerCommandSource>literal("showtrade")
+        String subcommand = "showtrade";
+        return LiteralArgumentBuilder.<ServerCommandSource>literal(subcommand)
+                .requires(new PlayerCommandSourcePredicate(String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), subcommand)))
                 .executes(new TradablePokemonStatusPrinter());
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getClearRentalPokemonCommand() {
-        return LiteralArgumentBuilder.<ServerCommandSource>literal("clear")
+        String subcommand = "clear";
+        return LiteralArgumentBuilder.<ServerCommandSource>literal(subcommand)
+                .requires(new PlayerCommandSourcePredicate(String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), subcommand)))
                 .executes(new RentalPokemonRemover());
     }
 }
