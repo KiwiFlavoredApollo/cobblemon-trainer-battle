@@ -25,13 +25,18 @@ public class CooldownElapsedPredicate implements MessagePredicate<PlayerBattlePa
     }
 
     private long getRemainingCooldownInSeconds(PlayerBattleParticipant player) {
-        Instant timestamp = PlayerHistoryStorage.getInstance().getOrCreate(player.getUuid()).getOrCreate(trainer).getTimestamp();
-        long remains = cooldown - Duration.between(timestamp, Instant.now()).toSeconds();
+        try {
+            Instant timestamp = PlayerHistoryStorage.getInstance().getOrCreate(player.getUuid()).getOrCreate(trainer).getTimestamp();
+            long remains = cooldown - Duration.between(timestamp, Instant.now()).toSeconds();
 
-        if (remains > 0) {
-            return remains;
+            if (remains > 0) {
+                return remains;
 
-        } else {
+            } else {
+                return 0;
+            }
+
+        } catch (NullPointerException e) {
             return 0;
         }
     }

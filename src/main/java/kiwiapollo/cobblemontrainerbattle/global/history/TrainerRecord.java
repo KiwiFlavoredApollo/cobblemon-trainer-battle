@@ -1,8 +1,12 @@
 package kiwiapollo.cobblemontrainerbattle.global.history;
 
 import net.minecraft.nbt.NbtCompound;
+import org.jetbrains.annotations.NotNull;
 
 import java.time.Instant;
+import java.util.NoSuchElementException;
+import java.util.Objects;
+import java.util.Optional;
 
 public class TrainerRecord implements NbtConvertible, BattleRecord, EntityRecord {
     private Instant timestamp;
@@ -11,7 +15,7 @@ public class TrainerRecord implements NbtConvertible, BattleRecord, EntityRecord
     private int kill;
 
     public TrainerRecord() {
-        this.timestamp = Instant.now();
+        this.timestamp = null;
         this.victory = 0;
         this.defeat = 0;
         this.kill = 0;
@@ -40,8 +44,8 @@ public class TrainerRecord implements NbtConvertible, BattleRecord, EntityRecord
     }
 
     @Override
-    public Instant getTimestamp() {
-        return timestamp;
+    public Instant getTimestamp() throws NullPointerException {
+        return Objects.requireNonNull(timestamp);
     }
 
     @Override
