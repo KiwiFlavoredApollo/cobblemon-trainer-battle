@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Trainer Preset - Cobblemon Trainer Battle</title>
+    <title>Rental Battle - Cobblemon Trainer Battle</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Trainer Preset";
-        var mkdocs_page_input_path = "trainerpreset.md";
+        var mkdocs_page_name = "Rental Battle";
+        var mkdocs_page_input_path = "rentalbattle.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -60,8 +60,24 @@
                 <li class="toctree-l1"><a class="reference internal" href="../items/">Items</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../rentalbattle/">Rental Battle</a>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Rental Battle</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#rules">Rules</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#rental-pokemon">Rental Pokemon</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#random">Random</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#clone">Clone</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#trade">Trade</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#show">Show</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                 </li>
               </ul>
               <ul>
@@ -72,22 +88,8 @@
                 <li class="toctree-l1"><a class="reference internal" href="../resourcepack/">Resource Pack</a>
                 </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">Trainer Preset</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#team">team</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#level_mode">level_mode</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#battle_format">battle_format</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#battle_ai">battle_ai</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#commands">Commands</a>
-    </li>
-    </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../trainerpreset/">Trainer Preset</a>
                 </li>
               </ul>
               <ul>
@@ -108,7 +110,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Trainer Preset</li>
+      <li class="breadcrumb-item active">Rental Battle</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -117,97 +119,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="trainer-preset">Trainer Preset</h1>
-<h2 id="introduction">Introduction</h2>
-<p>Trainer preset is the most important part of the mod as it allows data pack authors to add custom trainers. Following is an example trainer preset file. <code>team</code> is the only required attribute. Others are optional.</p>
-<pre><code class="language-json">{
-  &quot;team&quot;: &quot;radicalred/leader_misty&quot;,
-
-  &quot;display_name&quot;: &quot;My Trainer&quot;,
-  &quot;level_mode&quot;: &quot;normal&quot;,
-  &quot;battle_format&quot;: &quot;single&quot;,
-  &quot;battle_ai&quot;: &quot;generation5&quot;,
-  &quot;battle_theme&quot;: &quot;cobblemon:battle.pvn.default&quot;,
-  &quot;cooldown_in_seconds&quot;: 0,
-
-  &quot;is_spawning_allowed&quot;: true,
-  &quot;is_rematch_allowed&quot;: true,
-
-  &quot;maximum_party_size&quot;: 6,
-  &quot;minimum_party_size&quot;: 1,
-
-  &quot;maximum_party_level&quot;: 100,
-  &quot;minimum_party_level&quot;: 1,
-
-  &quot;required_label&quot;: [&quot;legendary&quot;, &quot;gen3&quot;],
-  &quot;required_pokemon&quot;: [
-    {
-      &quot;species&quot;: &quot;cobblemon:ninetales&quot;,
-      &quot;form&quot;: &quot;Alola&quot;
-    }
-  ],
-  &quot;required_held_item&quot;: [
-    &quot;minecraft:dirt&quot;
-  ],
-  &quot;required_ability&quot;: [&quot;pressure&quot;, &quot;static&quot;],
-  &quot;required_move&quot;: [&quot;tackle&quot;, &quot;ember&quot;],
-
-  &quot;forbidden_label&quot;: [],
-  &quot;forbidden_pokemon&quot;: [],
-  &quot;forbidden_held_item&quot;: [],
-  &quot;forbidden_ability&quot;: [],
-  &quot;forbidden_move&quot;: [],
-
-  &quot;on_victory_commands&quot;: [
-    &quot;give %player% minecraft:diamond&quot;
-  ],
-  &quot;on_defeat_commands&quot;: [
-
-  ]
-}
+                <h1 id="rental-battle">Rental Battle</h1>
+<p>Rental Battle replaces Battle Factory from the previous versions. It basically let players battle trainers with rental Pokémon. Rental Battles can be initiated with <code>/rentalbattle &lt;trainer&gt;</code> and <code>/rentalbattleother &lt;trainer&gt;</code>.</p>
+<h2 id="rules">Rules</h2>
+<p>Rental Battle is 3 on 3 battle. Rental Battle does not start if either player or the trainer does not have three or more Pokémon.  </p>
+<h2 id="rental-pokemon">Rental Pokemon</h2>
+<p>Before starting Rental Battle, player must receive rental Pokémon. Rental Pokémon are volatile, and they are removed when player disconnects from the server. Rental Pokémon can also be removed by running <code>/rentalpokemon clear</code>.</p>
+<h3 id="random">Random</h3>
+<p><code>/rentalpokemon random</code> gives player three random Pokémon.</p>
+<h3 id="clone">Clone</h3>
+<p><code>/rentalpokemon clone</code> clones the first three Pokémon from party. If the player has no three Pokémon, the command fails and does nothing.</p>
+<h3 id="trade">Trade</h3>
+<p>When players defeat trainers on Rental Battle, they can trade their Pokémon with the defeated trainers.</p>
+<h3 id="show">Show</h3>
+<pre><code>/rentalpokemon showrental
 </code></pre>
-<h2 id="team"><code>team</code></h2>
-<p><code>team</code> must indicate a file under <code>data/cobblemontrainerbattle/trainer_team</code> without <code>.json</code> file extension. For example, if you want to use <code>data/cobblemontrainerbattle/trainer_team/custom/custom_trainer.json</code>, it should be set to <code>custom/custom_trainer</code>.</p>
-<pre><code>&quot;team&quot;: &quot;custom/custom_trainer&quot;,
+<p>Prints status of rental Pokémon.</p>
+<pre><code>/rentalpokemon showtrade
 </code></pre>
-<h2 id="level_mode"><code>level_mode</code></h2>
-<ul>
-<li><code>normal</code></li>
-<li><code>relative</code></li>
-<li><code>flat</code></li>
-</ul>
-<h2 id="battle_format"><code>battle_format</code></h2>
-<ul>
-<li><code>single</code></li>
-<li><code>double</code></li>
-<li><code>triple</code></li>
-</ul>
-<blockquote>
-<p>For <code>1.9.x+1.5.2</code>, only <code>single</code> is available</p>
-</blockquote>
-<h2 id="battle_ai"><code>battle_ai</code></h2>
-<ul>
-<li><code>random</code></li>
-<li><code>generation5</code></li>
-<li><code>strong0</code></li>
-<li><code>strong1</code></li>
-<li><code>strong2</code></li>
-<li><code>strong3</code></li>
-<li><code>strong4</code></li>
-<li><code>strong5</code></li>
-</ul>
-<h2 id="commands">Commands</h2>
-<ul>
-<li>Multiple commands are supported</li>
-<li>Commands are run as server</li>
-<li><code>%player%</code> placeholder is available</li>
-</ul>
+<p>Prints status of tradable Pokémon.</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../resourcepack/" class="btn btn-neutral float-left" title="Resource Pack"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../trainerteam/" class="btn btn-neutral float-right" title="Trainer Team">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../items/" class="btn btn-neutral float-left" title="Items"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../datapack/" class="btn btn-neutral float-right" title="Data Pack">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -230,10 +166,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../resourcepack/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../items/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../trainerteam/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../datapack/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
