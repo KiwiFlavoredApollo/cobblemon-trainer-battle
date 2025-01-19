@@ -214,16 +214,16 @@ public class TrainerEntity extends PathAwareEntity {
     @Override
     public void writeCustomDataToNbt(NbtCompound nbt) {
         super.writeCustomDataToNbt(nbt);
-        nbt.putString("trainer", trainer);
-        nbt.putString("texture", texture.toString());
+        nbt.putString("Trainer", trainer);
+        nbt.putString("Texture", texture.toString());
     }
 
     @Override
     public void readCustomDataFromNbt(NbtCompound nbt) {
         try {
             super.readCustomDataFromNbt(nbt);
-            trainer = nbt.getString("trainer");
-            texture = Identifier.tryParse(nbt.getString("texture"));
+            trainer = nbt.getString("Trainer");
+            texture = Identifier.tryParse(nbt.getString("Texture"));
 
         } catch (NullPointerException e) {
             discard();
