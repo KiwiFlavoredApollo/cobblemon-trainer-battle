@@ -31,12 +31,6 @@ Refer to [GitHub Pages](https://kiwiflavoredapollo.github.io/cobblemon-trainer-b
 - Red - Pokemon
 - Blue/Ookido Green | Pokemon
 
-#### Created by [idkgraceorsmth](https://www.minecraftskins.com/profile/8183289/idkgraceorsmth)
-
-- Diner Waitress - Mia
-- Cherry Blossom Garden - Selene
-- Blacksmith - Roxie
-
 ## Reference
 
 - [Pokemon Showdown Team Formats - Cobblemon Showdown](https://gitlab.com/cable-mc/cobblemon-showdown/-/blob/master/sim/TEAMS.md#packed-format)
