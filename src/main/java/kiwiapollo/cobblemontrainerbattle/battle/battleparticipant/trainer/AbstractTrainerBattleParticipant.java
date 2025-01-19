@@ -35,6 +35,7 @@ public abstract class AbstractTrainerBattleParticipant implements TrainerBattleP
     private final BattleAI battleAI;
     private final SoundEvent battleTheme;
     private final UUID entityUuid;
+    private final Identifier texture;
     private final boolean isSpawningAllowed;
     private final List<String> onVictoryCommands;
     private final List<String> onDefeatCommands;
@@ -48,6 +49,7 @@ public abstract class AbstractTrainerBattleParticipant implements TrainerBattleP
         this.battleAI = new BattleAIFactory(preset.battleFormat, preset.battleAI).create();
         this.battleTheme = SoundEvent.of(Identifier.tryParse(preset.battleTheme));
         this.entityUuid = toUUID(preset.entityUuid);
+        this.texture = Identifier.tryParse(preset.texture);
         this.isSpawningAllowed = preset.isSpawningAllowed;
         this.onVictoryCommands = preset.onVictoryCommands;
         this.onDefeatCommands = preset.onDefeatCommands;
@@ -163,5 +165,10 @@ public abstract class AbstractTrainerBattleParticipant implements TrainerBattleP
         CommandDispatcher<ServerCommandSource> dispatcher = server.getCommandManager().getDispatcher();
 
         server.getCommandManager().execute(dispatcher.parse(command, server.getCommandSource()), command);
+    }
+
+    @Override
+    public Identifier getTexture() {
+        return texture;
     }
 }

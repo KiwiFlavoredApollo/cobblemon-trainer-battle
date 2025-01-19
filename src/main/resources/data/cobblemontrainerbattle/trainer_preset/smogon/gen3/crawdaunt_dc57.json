@@ -1,4 +1,5 @@
 {
   "team": "cobblemontrainerbattle:smogon/gen3/crawdaunt_dc57",
-  "level_mode": "relative"
+  "level_mode": "relative",
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/silver_piikapiika.png"
 }

@@ -23,6 +23,8 @@ public class TrainerPreset {
     public final long cooldownInSeconds;
     @SerializedName("entity_uuid")
     public final String entityUuid;
+    @SerializedName("texture")
+    public final String texture;
 
     @SerializedName("on_victory_commands")
     public final List<String> onVictoryCommands;
@@ -76,6 +78,7 @@ public class TrainerPreset {
         this.battleTheme = "cobblemon:battle.pvn.default";
         this.cooldownInSeconds = 0;
         this.entityUuid = null;
+        this.texture = "cobblemontrainerbattle:textures/entity/trainer/slim/red_piikapiika.png";
 
         this.isSpawningAllowed = true;
         this.isRematchAllowed = true;

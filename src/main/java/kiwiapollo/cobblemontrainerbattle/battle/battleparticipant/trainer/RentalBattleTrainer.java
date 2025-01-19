@@ -17,6 +17,7 @@ import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerStorage;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.util.Identifier;
 
 import java.util.*;
 
@@ -79,6 +80,11 @@ public class RentalBattleTrainer implements TrainerBattleParticipant {
     public void onPlayerVictory(ServerPlayerEntity player) {
         trainer.onPlayerVictory(player);
         BattleContextStorage.getInstance().getOrCreate(player.getUuid()).setTradablePokemon(toClone(getParty()));
+    }
+
+    @Override
+    public Identifier getTexture() {
+        return trainer.getTexture();
     }
 
     private PartyStore toClone(PartyStore party) {

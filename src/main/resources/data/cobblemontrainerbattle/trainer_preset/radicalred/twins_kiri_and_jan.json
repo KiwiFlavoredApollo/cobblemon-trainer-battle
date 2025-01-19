@@ -1,4 +1,5 @@
 {
   "team": "cobblemontrainerbattle:radicalred/twins_kiri_and_jan",
-  "level_mode": "normal"
+  "level_mode": "normal",
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/red_piikapiika.png"
 }

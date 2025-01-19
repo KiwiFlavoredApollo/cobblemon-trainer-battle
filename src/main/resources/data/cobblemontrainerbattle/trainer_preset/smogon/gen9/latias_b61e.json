@@ -1,4 +1,5 @@
 {
   "team": "cobblemontrainerbattle:smogon/gen9/latias_b61e",
-  "level_mode": "normal"
+  "level_mode": "normal",
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/silver_piikapiika.png"
 }

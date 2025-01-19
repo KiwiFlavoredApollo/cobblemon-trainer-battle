@@ -1,4 +1,5 @@
 {
   "team": "cobblemontrainerbattle:inclementemerald/anna_and_meg_3",
-  "level_mode": "relative"
+  "level_mode": "relative",
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/leaf_piikapiika.png"
 }

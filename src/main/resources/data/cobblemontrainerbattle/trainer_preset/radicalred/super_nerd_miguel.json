@@ -1,4 +1,5 @@
 {
   "team": "cobblemontrainerbattle:radicalred/super_nerd_miguel",
-  "level_mode": "relative"
+  "level_mode": "relative",
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/red_piikapiika.png"
 }

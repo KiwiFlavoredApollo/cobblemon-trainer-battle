@@ -1,4 +1,5 @@
 {
   "team": "cobblemontrainerbattle:smogon/gen7/vulpix_alola_8f0e",
-  "level_mode": "relative"
+  "level_mode": "relative",
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/silver_piikapiika.png"
 }

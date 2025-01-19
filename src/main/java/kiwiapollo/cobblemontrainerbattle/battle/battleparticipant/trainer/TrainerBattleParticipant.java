@@ -11,6 +11,7 @@ import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.util.Identifier;
 
 import java.util.List;
 import java.util.Optional;
@@ -39,4 +40,6 @@ public interface TrainerBattleParticipant extends BattleParticipant {
     void onPlayerDefeat(ServerPlayerEntity player);
 
     void onPlayerVictory(ServerPlayerEntity player);
+
+    Identifier getTexture();
 }

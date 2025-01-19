@@ -1,4 +1,5 @@
 {
   "team": "cobblemontrainerbattle:smogon/gen1/dragonite_9506",
-  "level_mode": "normal"
+  "level_mode": "normal",
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/silver_piikapiika.png"
 }

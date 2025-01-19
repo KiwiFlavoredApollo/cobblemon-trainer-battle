@@ -21,61 +21,57 @@ public class VsSeeker extends Item {
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        try {
-            assertPlayerHasTicketInOtherHand(user, hand);
-            assertBlockHit(user);
-
-            BlockPos clickedPos = ((BlockHitResult) getHitResult(user)).getBlockPos();
-            assertSolidBlock(world, clickedPos);
-
-            BlockPos spawnPos = clickedPos.up();
-            assertEmptyPosition(world, spawnPos);
-
-            ItemStack ticketStack = user.getStackInHand(getOtherHand(hand));
-            TrainerTicket ticket = (TrainerTicket) ticketStack.getItem();
-
-            TrainerEntity entity = new TrainerEntity(EntityTypes.TRAINER, world, ticket.getTrainerEntityPreset());
-
-            entity.refreshPositionAndAngles(spawnPos, user.getYaw(), user.getPitch());
-            world.spawnEntity(entity);
-
-            if (!user.getAbilities().creativeMode) {
-                ticketStack.decrement(1);
-            }
-
-            return TypedActionResult.success(user.getStackInHand(hand));
-
-        } catch (IllegalStateException ignored) {
+        if (!hasTicketInOtherHand(user, hand)) {
             return TypedActionResult.success(user.getStackInHand(hand));
         }
+
+        if (!isHitBlock(user)) {
+            return TypedActionResult.success(user.getStackInHand(hand));
+        }
+
+        BlockPos clickedPos = ((BlockHitResult) getHitResult(user)).getBlockPos();
+        if (!itSolidBlock(world, clickedPos)) {
+            return TypedActionResult.success(user.getStackInHand(hand));
+        }
+
+        BlockPos spawnPos = clickedPos.up();
+        if (!isEmptyPosition(world, spawnPos)) {
+            return TypedActionResult.success(user.getStackInHand(hand));
+        }
+
+        ItemStack ticketStack = user.getStackInHand(getOtherHand(hand));
+        TrainerTicket ticket = (TrainerTicket) ticketStack.getItem();
+
+        TrainerEntity entity = new TrainerEntity(EntityTypes.TRAINER, world, ticket.getTrainer());
+
+        entity.refreshPositionAndAngles(spawnPos, user.getYaw(), user.getPitch());
+        world.spawnEntity(entity);
+
+        if (!user.getAbilities().creativeMode) {
+            ticketStack.decrement(1);
+        }
+
+        return TypedActionResult.success(user.getStackInHand(hand));
     }
 
     private HitResult getHitResult(PlayerEntity user) {
         return user.raycast(5.0D, 0.0F, false);
     }
 
-    private void assertBlockHit(PlayerEntity user) {
-        if (!getHitResult(user).getType().equals(HitResult.Type.BLOCK)) {
-            throw new IllegalStateException();
-        }
+    private boolean isHitBlock(PlayerEntity user) {
+        return getHitResult(user).getType().equals(HitResult.Type.BLOCK);
     }
 
-    private void assertSolidBlock(World world, BlockPos clickedPos) {
-        if (!world.getBlockState(clickedPos).isSolidBlock(world, clickedPos.down())) {
-            throw new IllegalStateException();
-        }
+    private boolean itSolidBlock(World world, BlockPos clickedPos) {
+        return world.getBlockState(clickedPos).isSolidBlock(world, clickedPos.down());
     }
 
-    private void assertEmptyPosition(World world, BlockPos spawnPos) {
-        if (!world.getBlockState(spawnPos).isAir()) {
-            throw new IllegalStateException();
-        }
+    private boolean isEmptyPosition(World world, BlockPos spawnPos) {
+        return world.getBlockState(spawnPos).isAir();
     }
 
-    private void assertPlayerHasTicketInOtherHand(PlayerEntity user, Hand hand) {
-        if (!(user.getStackInHand(getOtherHand(hand)).getItem() instanceof TrainerTicket)) {
-            throw new IllegalStateException();
-        }
+    private boolean hasTicketInOtherHand(PlayerEntity user, Hand hand) {
+        return user.getStackInHand(getOtherHand(hand)).getItem() instanceof TrainerTicket;
     }
 
     private Hand getOtherHand(Hand hand) {

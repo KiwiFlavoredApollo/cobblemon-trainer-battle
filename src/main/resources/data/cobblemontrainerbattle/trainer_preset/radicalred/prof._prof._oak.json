@@ -1,4 +1,5 @@
 {
   "team": "cobblemontrainerbattle:radicalred/prof._prof._oak",
-  "level_mode": "relative"
+  "level_mode": "relative",
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/red_piikapiika.png"
 }

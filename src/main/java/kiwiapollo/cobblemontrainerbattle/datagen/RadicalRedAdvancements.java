@@ -3,7 +3,6 @@ package kiwiapollo.cobblemontrainerbattle.datagen;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.advancement.DefeatTrainerCriterion;
 import kiwiapollo.cobblemontrainerbattle.advancement.KillTrainerCriterion;
-import kiwiapollo.cobblemontrainerbattle.entity.RadicalRedPresets;
 import kiwiapollo.cobblemontrainerbattle.item.RadicalRedTokens;
 import net.minecraft.advancement.Advancement;
 import net.minecraft.advancement.AdvancementFrame;
@@ -11,12 +10,10 @@ import net.minecraft.item.Items;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
-import java.util.List;
-
 public enum RadicalRedAdvancements implements CustomAdvancements {
     DEFEAT_BROCK(Advancement.Builder.createUntelemetered()
             .parent(DataGenerator.AdvancementProvider.ROOT)
-            .criterion("defeat_leader_brock", new DefeatTrainerCriterion.TrainerCountConditions(RadicalRedPresets.LEADER_BROCK.trainer()))
+            .criterion("defeat_leader_brock", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_brock"))
             .display(
                     RadicalRedTokens.LEADER_BROCK_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_brock.title"),
@@ -31,7 +28,7 @@ public enum RadicalRedAdvancements implements CustomAdvancements {
 
     DEFEAT_MISTY(Advancement.Builder.createUntelemetered()
             .parent(RadicalRedAdvancements.DEFEAT_BROCK.getAdvancement())
-            .criterion("defeat_leader_misty", new DefeatTrainerCriterion.TrainerCountConditions(RadicalRedPresets.LEADER_MISTY.trainer()))
+            .criterion("defeat_leader_misty", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_misty"))
             .display(
                     RadicalRedTokens.LEADER_MISTY_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_misty.title"),
@@ -46,7 +43,7 @@ public enum RadicalRedAdvancements implements CustomAdvancements {
 
     DEFEAT_LT_SURGE(Advancement.Builder.createUntelemetered()
             .parent(RadicalRedAdvancements.DEFEAT_MISTY.getAdvancement())
-            .criterion("defeat_leader_lt_surge", new DefeatTrainerCriterion.TrainerCountConditions(RadicalRedPresets.LEADER_LT_SURGE.trainer()))
+            .criterion("defeat_leader_lt_surge", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_lt_surge"))
             .display(
                     RadicalRedTokens.LEADER_LT_SURGE_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_lt_surge.title"),
@@ -61,7 +58,7 @@ public enum RadicalRedAdvancements implements CustomAdvancements {
 
     DEFEAT_ERIKA(Advancement.Builder.createUntelemetered()
             .parent(RadicalRedAdvancements.DEFEAT_LT_SURGE.getAdvancement())
-            .criterion("defeat_leader_erika", new DefeatTrainerCriterion.TrainerCountConditions(RadicalRedPresets.LEADER_ERIKA.trainer()))
+            .criterion("defeat_leader_erika", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_erika"))
             .display(
                     RadicalRedTokens.LEADER_ERIKA_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_erika.title"),
@@ -76,7 +73,7 @@ public enum RadicalRedAdvancements implements CustomAdvancements {
 
     DEFEAT_KOGA(Advancement.Builder.createUntelemetered()
             .parent(RadicalRedAdvancements.DEFEAT_ERIKA.getAdvancement())
-            .criterion("defeat_leader_koga", new DefeatTrainerCriterion.TrainerCountConditions(RadicalRedPresets.LEADER_KOGA.trainer()))
+            .criterion("defeat_leader_koga", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_koga"))
             .display(
                     RadicalRedTokens.LEADER_KOGA_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_koga.title"),
@@ -91,7 +88,7 @@ public enum RadicalRedAdvancements implements CustomAdvancements {
 
     DEFEAT_SABRINA(Advancement.Builder.createUntelemetered()
             .parent(RadicalRedAdvancements.DEFEAT_KOGA.getAdvancement())
-            .criterion("defeat_leader_sabrina", new DefeatTrainerCriterion.TrainerCountConditions(RadicalRedPresets.LEADER_SABRINA.trainer()))
+            .criterion("defeat_leader_sabrina", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_sabrina"))
             .display(
                     RadicalRedTokens.LEADER_SABRINA_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_sabrina.title"),
@@ -106,7 +103,7 @@ public enum RadicalRedAdvancements implements CustomAdvancements {
 
     DEFEAT_BLAINE(Advancement.Builder.createUntelemetered()
             .parent(RadicalRedAdvancements.DEFEAT_SABRINA.getAdvancement())
-            .criterion("defeat_leader_blaine", new DefeatTrainerCriterion.TrainerCountConditions(RadicalRedPresets.LEADER_BLAINE.trainer()))
+            .criterion("defeat_leader_blaine", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_blaine"))
             .display(
                     RadicalRedTokens.LEADER_BLAINE_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_blaine.title"),
@@ -121,7 +118,7 @@ public enum RadicalRedAdvancements implements CustomAdvancements {
 
     DEFEAT_GIOVANNI(Advancement.Builder.createUntelemetered()
             .parent(RadicalRedAdvancements.DEFEAT_BLAINE.getAdvancement())
-            .criterion("defeat_leader_giovanni", new DefeatTrainerCriterion.TrainerCountConditions(RadicalRedPresets.LEADER_GIOVANNI.trainer()))
+            .criterion("defeat_leader_giovanni", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_giovanni"))
             .display(
                     RadicalRedTokens.LEADER_GIOVANNI_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_giovanni.title"),
@@ -136,7 +133,7 @@ public enum RadicalRedAdvancements implements CustomAdvancements {
 
     DEFEAT_FALKNER(Advancement.Builder.createUntelemetered()
             .parent(DataGenerator.AdvancementProvider.ROOT)
-            .criterion("defeat_leader_falkner", new DefeatTrainerCriterion.TrainerCountConditions(RadicalRedPresets.LEADER_FALKNER.trainer()))
+            .criterion("defeat_leader_falkner", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_falkner"))
             .display(
                     RadicalRedTokens.LEADER_FALKNER_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_falkner.title"),
@@ -151,7 +148,7 @@ public enum RadicalRedAdvancements implements CustomAdvancements {
 
     DEFEAT_BUGSY(Advancement.Builder.createUntelemetered()
             .parent(RadicalRedAdvancements.DEFEAT_FALKNER.getAdvancement())
-            .criterion("defeat_leader_bugsy", new DefeatTrainerCriterion.TrainerCountConditions(RadicalRedPresets.LEADER_BUGSY.trainer()))
+            .criterion("defeat_leader_bugsy", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_bugsy"))
             .display(
                     RadicalRedTokens.LEADER_BUGSY_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_bugsy.title"),
@@ -166,7 +163,7 @@ public enum RadicalRedAdvancements implements CustomAdvancements {
 
     DEFEAT_WHITNEY(Advancement.Builder.createUntelemetered()
             .parent(RadicalRedAdvancements.DEFEAT_BUGSY.getAdvancement())
-            .criterion("defeat_leader_whitney", new DefeatTrainerCriterion.TrainerCountConditions(RadicalRedPresets.LEADER_WHITNEY.trainer()))
+            .criterion("defeat_leader_whitney", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_whitney"))
             .display(
                     RadicalRedTokens.LEADER_WHITNEY_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_whitney.title"),
@@ -181,7 +178,7 @@ public enum RadicalRedAdvancements implements CustomAdvancements {
 
     DEFEAT_MORTY(Advancement.Builder.createUntelemetered()
             .parent(RadicalRedAdvancements.DEFEAT_WHITNEY.getAdvancement())
-            .criterion("defeat_leader_morty", new DefeatTrainerCriterion.TrainerCountConditions(RadicalRedPresets.LEADER_MORTY.trainer()))
+            .criterion("defeat_leader_morty", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_morty"))
             .display(
                     RadicalRedTokens.LEADER_MORTY_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_morty.title"),
@@ -196,7 +193,7 @@ public enum RadicalRedAdvancements implements CustomAdvancements {
 
     DEFEAT_CHUCK(Advancement.Builder.createUntelemetered()
             .parent(RadicalRedAdvancements.DEFEAT_MORTY.getAdvancement())
-            .criterion("defeat_leader_chuck", new DefeatTrainerCriterion.TrainerCountConditions(RadicalRedPresets.LEADER_CHUCK.trainer()))
+            .criterion("defeat_leader_chuck", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_chuck"))
             .display(
                     RadicalRedTokens.LEADER_CHUCK_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_chuck.title"),
@@ -211,7 +208,7 @@ public enum RadicalRedAdvancements implements CustomAdvancements {
 
     DEFEAT_JASMINE(Advancement.Builder.createUntelemetered()
             .parent(RadicalRedAdvancements.DEFEAT_CHUCK.getAdvancement())
-            .criterion("defeat_leader_jasmine", new DefeatTrainerCriterion.TrainerCountConditions(RadicalRedPresets.LEADER_JASMINE.trainer()))
+            .criterion("defeat_leader_jasmine", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_jasmine"))
             .display(
                     RadicalRedTokens.LEADER_JASMINE_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_jasmine.title"),
@@ -226,7 +223,7 @@ public enum RadicalRedAdvancements implements CustomAdvancements {
 
     DEFEAT_PRYCE(Advancement.Builder.createUntelemetered()
             .parent(RadicalRedAdvancements.DEFEAT_JASMINE.getAdvancement())
-            .criterion("defeat_leader_pryce", new DefeatTrainerCriterion.TrainerCountConditions(RadicalRedPresets.LEADER_PRYCE.trainer()))
+            .criterion("defeat_leader_pryce", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_pryce"))
             .display(
                     RadicalRedTokens.LEADER_PRYCE_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_pryce.title"),
@@ -241,7 +238,7 @@ public enum RadicalRedAdvancements implements CustomAdvancements {
 
     DEFEAT_CLAIR(Advancement.Builder.createUntelemetered()
             .parent(RadicalRedAdvancements.DEFEAT_PRYCE.getAdvancement())
-            .criterion("defeat_leader_clair", new DefeatTrainerCriterion.TrainerCountConditions(RadicalRedPresets.LEADER_CLAIR.trainer()))
+            .criterion("defeat_leader_clair", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_clair"))
             .display(
                     RadicalRedTokens.LEADER_CLAIR_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_clair.title"),
@@ -256,7 +253,7 @@ public enum RadicalRedAdvancements implements CustomAdvancements {
 
     DEFEAT_LORELEI(Advancement.Builder.createUntelemetered()
             .parent(DataGenerator.AdvancementProvider.ROOT)
-            .criterion("defeat_elite_lorelei", new DefeatTrainerCriterion.TrainerCountConditions(RadicalRedPresets.ELITE_LORELEI.trainer()))
+            .criterion("defeat_elite_lorelei", new DefeatTrainerCriterion.TrainerCountConditions("entity/elite_lorelei"))
             .display(
                     RadicalRedTokens.ELITE_LORELEI_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_lorelei.title"),
@@ -271,7 +268,7 @@ public enum RadicalRedAdvancements implements CustomAdvancements {
 
     DEFEAT_BRUNO(Advancement.Builder.createUntelemetered()
             .parent(RadicalRedAdvancements.DEFEAT_LORELEI.getAdvancement())
-            .criterion("defeat_elite_bruno", new DefeatTrainerCriterion.TrainerCountConditions(RadicalRedPresets.ELITE_BRUNO.trainer()))
+            .criterion("defeat_elite_bruno", new DefeatTrainerCriterion.TrainerCountConditions("entity/elite_bruno"))
             .display(
                     RadicalRedTokens.ELITE_BRUNO_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_bruno.title"),
@@ -286,7 +283,7 @@ public enum RadicalRedAdvancements implements CustomAdvancements {
 
     DEFEAT_AGATHA(Advancement.Builder.createUntelemetered()
             .parent(RadicalRedAdvancements.DEFEAT_BRUNO.getAdvancement())
-            .criterion("defeat_elite_agatha", new DefeatTrainerCriterion.TrainerCountConditions(RadicalRedPresets.ELITE_AGATHA.trainer()))
+            .criterion("defeat_elite_agatha", new DefeatTrainerCriterion.TrainerCountConditions("entity/elite_agatha"))
             .display(
                     RadicalRedTokens.ELITE_AGATHA_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_agatha.title"),
@@ -301,7 +298,7 @@ public enum RadicalRedAdvancements implements CustomAdvancements {
 
     DEFEAT_LANCE(Advancement.Builder.createUntelemetered()
             .parent(RadicalRedAdvancements.DEFEAT_AGATHA.getAdvancement())
-            .criterion("defeat_elite_lance", new DefeatTrainerCriterion.TrainerCountConditions(RadicalRedPresets.ELITE_LANCE.trainer()))
+            .criterion("defeat_elite_lance", new DefeatTrainerCriterion.TrainerCountConditions("entity/elite_lance"))
             .display(
                     RadicalRedTokens.ELITE_LANCE_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_lance.title"),
@@ -316,7 +313,7 @@ public enum RadicalRedAdvancements implements CustomAdvancements {
 
     DEFEAT_TERRY(Advancement.Builder.createUntelemetered()
             .parent(RadicalRedAdvancements.DEFEAT_LANCE.getAdvancement())
-            .criterion("defeat_champion_terry", new DefeatTrainerCriterion.TrainerCountConditions(RadicalRedPresets.CHAMPION_TERRY.trainer()))
+            .criterion("defeat_champion_terry", new DefeatTrainerCriterion.TrainerCountConditions("entity/champion_terry"))
             .display(
                     RadicalRedTokens.CHAMPION_TERRY_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_champion_terry.title"),
@@ -331,7 +328,7 @@ public enum RadicalRedAdvancements implements CustomAdvancements {
 
     KILL_TERRY(Advancement.Builder.createUntelemetered()
             .parent(RadicalRedAdvancements.DEFEAT_LANCE.getAdvancement())
-            .criterion("kill_champion_terry", new KillTrainerCriterion.TrainerCountConditions(RadicalRedPresets.CHAMPION_TERRY.trainer()))
+            .criterion("kill_champion_terry", new KillTrainerCriterion.TrainerCountConditions("entity/champion_terry"))
             .display(
                     Items.NETHERITE_SWORD,
                     Text.translatable("advancement.cobblemontrainerbattle.kill_champion_terry.title"),

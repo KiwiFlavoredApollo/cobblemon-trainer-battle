@@ -13,6 +13,7 @@ import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.util.Identifier;
 
 import java.util.List;
 import java.util.Optional;
@@ -93,6 +94,11 @@ public class EntityBackedTrainer implements TrainerBattleParticipant {
     public void onPlayerVictory(ServerPlayerEntity player) {
         onPlayerVictoryOverTrainerEntity();
         trainer.onPlayerVictory(player);
+    }
+
+    @Override
+    public Identifier getTexture() {
+        return trainer.getTexture();
     }
 
     private void onPlayerDefeatByTrainerEntity() {

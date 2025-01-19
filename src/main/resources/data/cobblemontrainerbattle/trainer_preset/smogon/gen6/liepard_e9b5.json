@@ -1,4 +1,5 @@
 {
   "team": "cobblemontrainerbattle:smogon/gen6/liepard_e9b5",
-  "level_mode": "relative"
+  "level_mode": "relative",
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/silver_piikapiika.png"
 }

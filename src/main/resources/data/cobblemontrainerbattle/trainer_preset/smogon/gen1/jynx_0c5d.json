@@ -1,4 +1,5 @@
 {
   "team": "cobblemontrainerbattle:smogon/gen1/jynx_0c5d",
-  "level_mode": "normal"
+  "level_mode": "normal",
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/silver_piikapiika.png"
 }

@@ -1,4 +1,5 @@
 {
   "team": "cobblemontrainerbattle:inclementemerald/shelly_seafloor_cavern",
-  "level_mode": "relative"
+  "level_mode": "relative",
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/leaf_piikapiika.png"
 }

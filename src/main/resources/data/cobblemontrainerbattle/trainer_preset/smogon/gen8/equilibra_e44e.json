@@ -1,4 +1,5 @@
 {
   "team": "cobblemontrainerbattle:smogon/gen8/equilibra_e44e",
-  "level_mode": "relative"
+  "level_mode": "relative",
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/silver_piikapiika.png"
 }

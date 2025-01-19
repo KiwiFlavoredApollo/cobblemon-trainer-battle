@@ -1,4 +1,5 @@
 {
   "team": "cobblemontrainerbattle:smogon/gen7/kyurem_black_5b0e",
-  "level_mode": "relative"
+  "level_mode": "relative",
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/silver_piikapiika.png"
 }

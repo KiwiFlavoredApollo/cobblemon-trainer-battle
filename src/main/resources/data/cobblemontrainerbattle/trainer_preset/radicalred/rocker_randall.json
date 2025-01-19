@@ -1,4 +1,5 @@
 {
   "team": "cobblemontrainerbattle:radicalred/rocker_randall",
-  "level_mode": "normal"
+  "level_mode": "normal",
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/red_piikapiika.png"
 }

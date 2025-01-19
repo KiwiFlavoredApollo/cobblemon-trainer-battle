@@ -1,11 +1,11 @@
 package kiwiapollo.cobblemontrainerbattle.event;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
 import kiwiapollo.cobblemontrainerbattle.global.config.ConfigStorage;
 import kiwiapollo.cobblemontrainerbattle.entity.RandomSpawnableTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.entity.EntityTypes;
 import kiwiapollo.cobblemontrainerbattle.entity.RandomTrainerEntityFactory;
-import kiwiapollo.cobblemontrainerbattle.entity.RandomTrainerTextureFactory;
 import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.item.MiscItems;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
@@ -41,8 +41,9 @@ public class TrainerEntitySpawner implements ServerTickEvents.EndWorldTick {
                 return;
             }
 
-            RandomTrainerEntityFactory factory = createRandomTrainerEntityFactory(player.getInventory());
-            TrainerEntity entity = factory.create(EntityTypes.TRAINER, world);
+            SimpleFactory<String> trainerFactory = createRandomSpawnableTrainerFactory(player.getInventory());
+            RandomTrainerEntityFactory entityFactory = new RandomTrainerEntityFactory(trainerFactory);
+            TrainerEntity entity = entityFactory.create(EntityTypes.TRAINER, world);
 
             BlockPos spawnPos = getRandomSpawnPosition(world, player);
             entity.refreshPositionAndAngles(spawnPos, player.getYaw(), player.getPitch());
@@ -55,14 +56,7 @@ public class TrainerEntitySpawner implements ServerTickEvents.EndWorldTick {
         }
     }
 
-    private RandomTrainerEntityFactory createRandomTrainerEntityFactory(Inventory inventory) {
-        RandomSpawnableTrainerFactory trainer = createSpawnableRandomTrainerFactory(inventory);
-        RandomTrainerTextureFactory texture = new RandomTrainerTextureFactory();
-
-        return new RandomTrainerEntityFactory(trainer, texture);
-    }
-
-    private RandomSpawnableTrainerFactory createSpawnableRandomTrainerFactory(Inventory inventory) {
+    private RandomSpawnableTrainerFactory createRandomSpawnableTrainerFactory(Inventory inventory) {
         RandomSpawnableTrainerFactory.Builder builder = new RandomSpawnableTrainerFactory.Builder();
         if (inventory.containsAny(Set.of(MiscItems.BLUE_VS_SEEKER))) {
             builder = builder.addAll();

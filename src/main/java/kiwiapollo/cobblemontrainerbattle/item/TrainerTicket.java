@@ -1,17 +1,16 @@
 package kiwiapollo.cobblemontrainerbattle.item;
 
-import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntityPreset;
 import net.minecraft.item.Item;
 
 public class TrainerTicket extends Item {
-    private final TrainerEntityPreset preset;
+    private final String trainer;
 
-    public TrainerTicket(Settings settings, TrainerEntityPreset preset) {
+    public TrainerTicket(Settings settings, String trainer) {
         super(settings);
-        this.preset = preset;
+        this.trainer = trainer;
     }
 
-    public TrainerEntityPreset getTrainerEntityPreset() {
-        return preset;
+    public String getTrainer() {
+        return trainer;
     }
 }

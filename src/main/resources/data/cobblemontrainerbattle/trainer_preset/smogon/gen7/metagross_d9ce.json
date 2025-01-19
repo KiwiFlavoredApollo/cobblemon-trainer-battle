@@ -1,4 +1,5 @@
 {
   "team": "cobblemontrainerbattle:smogon/gen7/metagross_d9ce",
-  "level_mode": "normal"
+  "level_mode": "normal",
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/silver_piikapiika.png"
 }

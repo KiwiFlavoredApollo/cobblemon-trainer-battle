@@ -46,31 +46,27 @@ public class TrainerEntity extends PathAwareEntity {
     private Identifier texture;
     private TrainerBattle trainerBattle;
 
-    public TrainerEntity(EntityType<? extends PathAwareEntity> type, World world, String trainer, Identifier texture) {
+    public TrainerEntity(EntityType<? extends PathAwareEntity> type, World world, String trainer) {
         super(type, world);
 
         this.trainer = trainer;
-        this.texture = texture;
+        this.texture = toTexture(trainer);
         this.trainerBattle = null;
     }
 
-    public TrainerEntity(EntityType<? extends PathAwareEntity> type, World world, TrainerEntityPreset preset) {
-        this(type, world, preset.trainer(), preset.texture());
-    }
-
-    public void synchronizeClient(ServerWorld world) {
-        PacketByteBuf buf = PacketByteBufs.create();
-        buf.writeInt(this.getId());
-        buf.writeString(this.trainer);
-        buf.writeIdentifier(this.texture);
-
-        for (ServerPlayerEntity player : world.getPlayers()) {
-            ServerPlayNetworking.send(player, TrainerEntityPackets.TRAINER_ENTITY_SYNC, buf);
+    private static Identifier toTexture(String trainer) {
+        try {
+            return TrainerStorage.getInstance().get(trainer).getTexture();
+        } catch (NullPointerException e) {
+            return null;
         }
     }
 
-    public Identifier getTexture() {
-        return texture;
+    public static DefaultAttributeContainer.Builder createMobAttributes() {
+        return PathAwareEntity.createMobAttributes()
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 20.0)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2.0)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25D);
     }
 
     @Override
@@ -154,13 +150,6 @@ public class TrainerEntity extends PathAwareEntity {
         }
     }
 
-    public static DefaultAttributeContainer.Builder createMobAttributes() {
-        return PathAwareEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 20.0)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2.0)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25D);
-    }
-
     @Override
     public void onDeath(DamageSource damageSource) {
         if (damageSource.getSource() instanceof ServerPlayerEntity player) {
@@ -199,8 +188,23 @@ public class TrainerEntity extends PathAwareEntity {
         lootTable.generateLoot(lootContextParameterSet, this.getLootTableSeed(), this::dropStack);
     }
 
+    public void synchronizeClient(ServerWorld world) {
+        PacketByteBuf buf = PacketByteBufs.create();
+        buf.writeInt(this.getId());
+        buf.writeString(this.trainer);
+        buf.writeIdentifier(this.texture);
+
+        for (ServerPlayerEntity player : world.getPlayers()) {
+            ServerPlayNetworking.send(player, TrainerEntityPackets.TRAINER_ENTITY_SYNC, buf);
+        }
+    }
+
     public void setTrainer(String trainer) {
         this.trainer = trainer;
+    }
+
+    public Identifier getTexture() {
+        return texture;
     }
 
     public void setTexture(Identifier texture) {

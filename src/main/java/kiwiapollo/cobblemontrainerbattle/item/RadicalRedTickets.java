@@ -1,43 +1,41 @@
 package kiwiapollo.cobblemontrainerbattle.item;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.entity.RadicalRedPresets;
-import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntityPreset;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 
 public enum RadicalRedTickets {
-    LEADER_BROCK_TICKET("leader_brock_ticket", RadicalRedPresets.LEADER_BROCK),
-    LEADER_MISTY_TICKET("leader_misty_ticket", RadicalRedPresets.LEADER_MISTY),
-    LEADER_LT_SURGE_TICKET("leader_lt_surge_ticket", RadicalRedPresets.LEADER_LT_SURGE),
-    LEADER_ERIKA_TICKET("leader_erika_ticket", RadicalRedPresets.LEADER_ERIKA),
-    LEADER_KOGA_TICKET("leader_koga_ticket", RadicalRedPresets.LEADER_KOGA),
-    LEADER_SABRINA_TICKET("leader_sabrina_ticket", RadicalRedPresets.LEADER_SABRINA),
-    LEADER_BLAINE_TICKET("leader_blaine_ticket", RadicalRedPresets.LEADER_BLAINE),
-    LEADER_GIOVANNI_TICKET("leader_giovanni_ticket", RadicalRedPresets.LEADER_GIOVANNI),
+    LEADER_BROCK_TICKET("leader_brock_ticket", "entity/leader_brock"),
+    LEADER_MISTY_TICKET("leader_misty_ticket", "entity/leader_misty"),
+    LEADER_LT_SURGE_TICKET("leader_lt_surge_ticket", "entity/leader_lt_surge"),
+    LEADER_ERIKA_TICKET("leader_erika_ticket", "entity/leader_erika"),
+    LEADER_KOGA_TICKET("leader_koga_ticket", "entity/leader_koga"),
+    LEADER_SABRINA_TICKET("leader_sabrina_ticket", "entity/leader_sabrina"),
+    LEADER_BLAINE_TICKET("leader_blaine_ticket", "entity/leader_blaine"),
+    LEADER_GIOVANNI_TICKET("leader_giovanni_ticket", "entity/leader_giovanni"),
 
-    LEADER_FALKNER_TICKET("leader_falkner_ticket", RadicalRedPresets.LEADER_FALKNER),
-    LEADER_BUGSY_TICKET("leader_bugsy_ticket", RadicalRedPresets.LEADER_BUGSY),
-    LEADER_WHITNEY_TICKET("leader_whitney_ticket", RadicalRedPresets.LEADER_WHITNEY),
-    LEADER_MORTY_TICKET("leader_morty_ticket", RadicalRedPresets.LEADER_MORTY),
-    LEADER_CHUCK_TICKET("leader_chuck_ticket", RadicalRedPresets.LEADER_CHUCK),
-    LEADER_JASMINE_TICKET("leader_jasmine_ticket", RadicalRedPresets.LEADER_JASMINE),
-    LEADER_PRYCE_TICKET("leader_pryce_ticket", RadicalRedPresets.LEADER_PRYCE),
-    LEADER_CLAIR_TICKET("leader_clair_ticket", RadicalRedPresets.LEADER_CLAIR),
+    LEADER_FALKNER_TICKET("leader_falkner_ticket", "entity/leader_falkner"),
+    LEADER_BUGSY_TICKET("leader_bugsy_ticket", "entity/leader_bugsy"),
+    LEADER_WHITNEY_TICKET("leader_whitney_ticket", "entity/leader_whitney"),
+    LEADER_MORTY_TICKET("leader_morty_ticket", "entity/leader_morty"),
+    LEADER_CHUCK_TICKET("leader_chuck_ticket", "entity/leader_chuck"),
+    LEADER_JASMINE_TICKET("leader_jasmine_ticket", "entity/leader_jasmine"),
+    LEADER_PRYCE_TICKET("leader_pryce_ticket", "entity/leader_pryce"),
+    LEADER_CLAIR_TICKET("leader_clair_ticket", "entity/leader_clair"),
 
-    ELITE_LORELEI_TICKET("elite_lorelei_ticket", RadicalRedPresets.ELITE_LORELEI),
-    ELITE_BRUNO_TICKET("elite_bruno_ticket", RadicalRedPresets.ELITE_BRUNO),
-    ELITE_AGATHA_TICKET("elite_agatha_ticket", RadicalRedPresets.ELITE_AGATHA),
-    ELITE_LANCE_TICKET("elite_lance_ticket", RadicalRedPresets.ELITE_LANCE),
+    ELITE_LORELEI_TICKET("elite_lorelei_ticket", "entity/elite_lorelei"),
+    ELITE_BRUNO_TICKET("elite_bruno_ticket", "entity/elite_bruno"),
+    ELITE_AGATHA_TICKET("elite_agatha_ticket", "entity/elite_agatha"),
+    ELITE_LANCE_TICKET("elite_lance_ticket", "entity/elite_lance"),
 
-    CHAMPION_TERRY_TICKET("champion_terry_ticket", RadicalRedPresets.CHAMPION_TERRY);
+    CHAMPION_TERRY_TICKET("champion_terry_ticket", "entity/champion_terry");
 
     private final Identifier identifier;
     private final TrainerTicket item;
 
-    RadicalRedTickets(String path, TrainerEntityPreset preset) {
+    RadicalRedTickets(String path, String trainer) {
         this.identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, path);
-        this.item = new TrainerTicket(new Item.Settings(), preset);
+        this.item = new TrainerTicket(new Item.Settings(), trainer);
     }
 
     public Item getItem() {
