@@ -11,7 +11,7 @@ public class TrainerRecord implements NbtConvertible, BattleRecord, EntityRecord
     private int kill;
 
     public TrainerRecord() {
-        this.timestamp = Instant.MIN;
+        this.timestamp = Instant.EPOCH;
         this.victory = 0;
         this.defeat = 0;
         this.kill = 0;
