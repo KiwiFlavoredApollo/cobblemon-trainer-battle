@@ -7,6 +7,7 @@ import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.command.executor.RentalBattleStarter;
 import kiwiapollo.cobblemontrainerbattle.command.predicate.MultiCommandSourcePredicate;
+import kiwiapollo.cobblemontrainerbattle.command.suggestion.TrainerSuggestionProvider;
 import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerStorage;
 import net.minecraft.command.EntitySelector;
 import net.minecraft.command.argument.EntityArgumentType;
@@ -33,10 +34,7 @@ public class RentalBattleOtherCommand extends LiteralArgumentBuilder<ServerComma
         return RequiredArgumentBuilder.<ServerCommandSource, EntitySelector>argument("player", EntityArgumentType.player())
                 .requires(new MultiCommandSourcePredicate(permission))
                 .then(RequiredArgumentBuilder.<ServerCommandSource, String>argument("trainer", StringArgumentType.greedyString())
-                        .suggests((context, builder) -> {
-                            TrainerStorage.getInstance().keySet().stream().forEach(builder::suggest);
-                            return builder.buildFuture();
-                        })
+                        .suggests(new TrainerSuggestionProvider())
                         .executes(new RentalBattleStarter.BetweenOtherPlayerAndSelectedTrainer()));
     }
 

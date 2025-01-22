@@ -7,6 +7,7 @@ import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.command.executor.RentalBattleStarter;
 import kiwiapollo.cobblemontrainerbattle.command.predicate.PlayerCommandSourcePredicate;
+import kiwiapollo.cobblemontrainerbattle.command.suggestion.TrainerSuggestionProvider;
 import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerStorage;
 import net.minecraft.server.command.ServerCommandSource;
 
@@ -30,10 +31,7 @@ public class RentalBattleCommand extends LiteralArgumentBuilder<ServerCommandSou
         String permission = String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), "trainer");
         return RequiredArgumentBuilder.<ServerCommandSource, String>argument("trainer", StringArgumentType.greedyString())
                 .requires(new PlayerCommandSourcePredicate(permission))
-                .suggests((context, builder) -> {
-                    TrainerStorage.getInstance().keySet().forEach(builder::suggest);
-                    return builder.buildFuture();
-                })
+                .suggests(new TrainerSuggestionProvider())
                 .executes(new RentalBattleStarter.BetweenThisPlayerAndSelectedTrainer());
     }
 
