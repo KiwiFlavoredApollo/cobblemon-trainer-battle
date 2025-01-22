@@ -3,5 +3,6 @@
   "team": "cobblemontrainerbattle:entity/elite_phoebe",
   "is_spawning_allowed": false,
   "level_mode": "relative",
-  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/elite_phoebe.png"
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/elite_phoebe.png",
+  "battle_format": "single"
 }

@@ -3,5 +3,6 @@
   "team": "cobblemontrainerbattle:entity/leader_lt_surge",
   "is_spawning_allowed": false,
   "level_mode": "relative",
-  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/leader_lt_surge.png"
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/leader_lt_surge.png",
+  "battle_format": "single"
 }

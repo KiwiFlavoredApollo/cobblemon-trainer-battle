@@ -3,5 +3,6 @@
   "team": "cobblemontrainerbattle:entity/leader_tate_and_liza",
   "is_spawning_allowed": false,
   "level_mode": "relative",
-  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/leader_tate_and_liza.png"
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/leader_tate_and_liza.png",
+  "battle_format": "double"
 }

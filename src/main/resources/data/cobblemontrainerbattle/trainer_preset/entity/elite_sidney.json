@@ -3,5 +3,6 @@
   "team": "cobblemontrainerbattle:entity/elite_sidney",
   "is_spawning_allowed": false,
   "level_mode": "relative",
-  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/elite_sidney.png"
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/elite_sidney.png",
+  "battle_format": "single"
 }

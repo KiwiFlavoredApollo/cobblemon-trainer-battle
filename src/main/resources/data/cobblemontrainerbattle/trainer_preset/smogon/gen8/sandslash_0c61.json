@@ -1,5 +1,6 @@
 {
   "team": "cobblemontrainerbattle:smogon/gen8/sandslash_0c61",
   "level_mode": "relative",
-  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/silver_piikapiika.png"
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/silver_piikapiika.png",
+  "battle_format": "double"
 }

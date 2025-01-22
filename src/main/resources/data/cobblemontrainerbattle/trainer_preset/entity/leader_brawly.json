@@ -3,5 +3,6 @@
   "team": "cobblemontrainerbattle:entity/leader_brawly",
   "is_spawning_allowed": false,
   "level_mode": "relative",
-  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/leader_brawly.png"
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/leader_brawly.png",
+  "battle_format": "single"
 }

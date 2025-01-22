@@ -3,5 +3,6 @@
   "team": "cobblemontrainerbattle:entity/champion_wallace",
   "is_spawning_allowed": false,
   "level_mode": "relative",
-  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/champion_wallace.png"
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/champion_wallace.png",
+  "battle_format": "single"
 }

@@ -1,5 +1,6 @@
 {
   "team": "cobblemontrainerbattle:smogon/gen8/landorus_therian_2a2f",
   "level_mode": "relative",
-  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/silver_piikapiika.png"
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/silver_piikapiika.png",
+  "battle_format": "double"
 }

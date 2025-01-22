@@ -3,5 +3,6 @@
   "team": "cobblemontrainerbattle:entity/elite_lorelei",
   "is_spawning_allowed": false,
   "level_mode": "relative",
-  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/elite_lorelei.png"
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/elite_lorelei.png",
+  "battle_format": "single"
 }

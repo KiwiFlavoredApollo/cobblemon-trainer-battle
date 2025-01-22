@@ -3,5 +3,6 @@
   "team": "cobblemontrainerbattle:entity/elite_lance",
   "is_spawning_allowed": false,
   "level_mode": "relative",
-  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/elite_lance.png"
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/elite_lance.png",
+  "battle_format": "single"
 }

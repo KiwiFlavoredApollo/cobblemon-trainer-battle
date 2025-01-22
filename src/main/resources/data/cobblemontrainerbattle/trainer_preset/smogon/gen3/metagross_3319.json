@@ -1,5 +1,6 @@
 {
   "team": "cobblemontrainerbattle:smogon/gen3/metagross_3319",
   "level_mode": "relative",
-  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/silver_piikapiika.png"
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/silver_piikapiika.png",
+  "battle_format": "single"
 }

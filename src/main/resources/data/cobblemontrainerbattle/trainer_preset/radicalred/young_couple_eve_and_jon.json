@@ -1,5 +1,6 @@
 {
   "team": "cobblemontrainerbattle:radicalred/young_couple_eve_and_jon",
   "level_mode": "normal",
-  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/red_piikapiika.png"
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/red_piikapiika.png",
+  "battle_format": "double"
 }

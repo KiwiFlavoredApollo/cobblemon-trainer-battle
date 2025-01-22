@@ -3,5 +3,6 @@
   "team": "cobblemontrainerbattle:entity/leader_erika",
   "is_spawning_allowed": false,
   "level_mode": "relative",
-  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/leader_erika.png"
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/leader_erika.png",
+  "battle_format": "single"
 }

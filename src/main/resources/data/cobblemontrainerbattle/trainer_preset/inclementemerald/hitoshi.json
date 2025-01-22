@@ -1,5 +1,6 @@
 {
   "team": "cobblemontrainerbattle:inclementemerald/hitoshi",
   "level_mode": "relative",
-  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/leaf_piikapiika.png"
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/leaf_piikapiika.png",
+  "battle_format": "single"
 }

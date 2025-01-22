@@ -1,5 +1,6 @@
 {
   "team": "cobblemontrainerbattle:radicalred/aroma_lady_nikki",
   "level_mode": "relative",
-  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/red_piikapiika.png"
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/red_piikapiika.png",
+  "battle_format": "single"
 }

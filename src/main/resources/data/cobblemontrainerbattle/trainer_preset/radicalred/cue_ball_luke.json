@@ -1,5 +1,6 @@
 {
   "team": "cobblemontrainerbattle:radicalred/cue_ball_luke",
   "level_mode": "relative",
-  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/red_piikapiika.png"
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/red_piikapiika.png",
+  "battle_format": "single"
 }

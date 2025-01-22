@@ -3,5 +3,6 @@
   "team": "cobblemontrainerbattle:entity/leader_jasmine",
   "is_spawning_allowed": false,
   "level_mode": "relative",
-  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/leader_jasmine.png"
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/leader_jasmine.png",
+  "battle_format": "single"
 }

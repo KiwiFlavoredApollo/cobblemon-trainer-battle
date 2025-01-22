@@ -1,5 +1,6 @@
 {
   "team": "cobblemontrainerbattle:radicalred/hiker_alan",
   "level_mode": "normal",
-  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/red_piikapiika.png"
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/red_piikapiika.png",
+  "battle_format": "single"
 }

@@ -1,5 +1,6 @@
 {
   "team": "cobblemontrainerbattle:inclementemerald/amy_and_liv_3",
   "level_mode": "relative",
-  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/leaf_piikapiika.png"
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/leaf_piikapiika.png",
+  "battle_format": "double"
 }

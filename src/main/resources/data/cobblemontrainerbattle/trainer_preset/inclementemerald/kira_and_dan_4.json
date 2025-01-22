@@ -1,5 +1,6 @@
 {
   "team": "cobblemontrainerbattle:inclementemerald/kira_and_dan_4",
   "level_mode": "relative",
-  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/leaf_piikapiika.png"
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/leaf_piikapiika.png",
+  "battle_format": "double"
 }

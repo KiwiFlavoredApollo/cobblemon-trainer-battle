@@ -3,5 +3,6 @@
   "team": "cobblemontrainerbattle:entity/leader_giovanni",
   "is_spawning_allowed": false,
   "level_mode": "relative",
-  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/leader_giovanni.png"
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/leader_giovanni.png",
+  "battle_format": "single"
 }

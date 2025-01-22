@@ -3,5 +3,6 @@
   "team": "cobblemontrainerbattle:entity/leader_whitney",
   "is_spawning_allowed": false,
   "level_mode": "relative",
-  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/leader_whitney.png"
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/leader_whitney.png",
+  "battle_format": "single"
 }

@@ -1,5 +1,6 @@
 {
   "team": "cobblemontrainerbattle:smogon/gen4/scyther_e903",
   "level_mode": "relative",
-  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/silver_piikapiika.png"
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/silver_piikapiika.png",
+  "battle_format": "single"
 }

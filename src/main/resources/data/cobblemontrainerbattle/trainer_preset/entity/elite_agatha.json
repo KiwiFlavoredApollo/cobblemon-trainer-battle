@@ -3,5 +3,6 @@
   "team": "cobblemontrainerbattle:entity/elite_agatha",
   "is_spawning_allowed": false,
   "level_mode": "relative",
-  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/elite_agatha.png"
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/elite_agatha.png",
+  "battle_format": "single"
 }
