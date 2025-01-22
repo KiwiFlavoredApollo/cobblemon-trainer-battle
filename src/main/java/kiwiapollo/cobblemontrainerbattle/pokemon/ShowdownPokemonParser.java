@@ -161,6 +161,10 @@ public class ShowdownPokemonParser {
     }
 
     private void setPokemonMoveSet(Pokemon pokemon, List<String> moveSet) {
+        if (isUseDefaultMoveSet(moveSet)) {
+            return;
+        }
+
         pokemon.getMoveSet().clear();
         for (String moveName : moveSet) {
             try {
@@ -177,6 +181,10 @@ public class ShowdownPokemonParser {
                 CobblemonTrainerBattle.LOGGER.error("Move not found: {}", moveName);
             }
         }
+    }
+
+    private boolean isUseDefaultMoveSet(List<String> moveSet) {
+        return moveSet == null || moveSet.isEmpty();
     }
 
     public static Identifier toSpeciesResourceIdentifier(String species) {
