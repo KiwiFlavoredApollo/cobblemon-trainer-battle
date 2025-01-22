@@ -2,5 +2,5 @@
   "team": "cobblemontrainerbattle:inclementemerald/brandi",
   "level_mode": "relative",
   "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/leaf_piikapiika.png",
-  "battle_format": "double"
+  "battle_format": "single"
 }

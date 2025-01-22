@@ -2,5 +2,5 @@
   "team": "cobblemontrainerbattle:radicalred/channeler_amanda",
   "level_mode": "normal",
   "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/red_piikapiika.png",
-  "battle_format": "double"
+  "battle_format": "single"
 }
