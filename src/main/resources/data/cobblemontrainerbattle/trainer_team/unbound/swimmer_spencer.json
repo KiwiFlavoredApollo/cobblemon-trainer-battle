@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:seadra",
+        "form": "",
+        "level": 42,
+        "item": "",
+        "ivs": {
+            "atk": 18,
+            "def": 27,
+            "spa": 14,
+            "spd": 18,
+            "spe": 30,
+            "hp": 24
+        }
+    },
+    {
+        "species": "cobblemon:corsola",
+        "form": "",
+        "level": 42,
+        "item": "",
+        "ivs": {
+            "atk": 21,
+            "def": 15,
+            "spa": 17,
+            "spd": 12,
+            "spe": 10,
+            "hp": 3
+        }
+    }
+]

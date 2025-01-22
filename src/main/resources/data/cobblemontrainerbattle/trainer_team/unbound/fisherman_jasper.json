@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:qwilfish",
+        "form": "",
+        "level": 55,
+        "item": "",
+        "ivs": {
+            "atk": 11,
+            "def": 24,
+            "spa": 2,
+            "spd": 13,
+            "spe": 30,
+            "hp": 12
+        }
+    },
+    {
+        "species": "cobblemon:qwilfish",
+        "form": "",
+        "level": 57,
+        "item": "",
+        "ivs": {
+            "atk": 1,
+            "def": 29,
+            "spa": 10,
+            "spd": 12,
+            "spe": 24,
+            "hp": 30
+        }
+    }
+]

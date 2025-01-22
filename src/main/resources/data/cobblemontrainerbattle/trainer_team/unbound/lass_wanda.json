@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:espurr",
+        "form": "",
+        "level": 23,
+        "item": "",
+        "ivs": {
+            "atk": 6,
+            "def": 8,
+            "spa": 3,
+            "spd": 9,
+            "spe": 10,
+            "hp": 28
+        }
+    }
+]

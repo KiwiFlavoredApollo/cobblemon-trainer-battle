@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:shellos",
+        "form": "",
+        "level": 12,
+        "item": "",
+        "ivs": {
+            "atk": 7,
+            "def": 26,
+            "spa": 10,
+            "spd": 9,
+            "spe": 23,
+            "hp": 6
+        }
+    },
+    {
+        "species": "cobblemon:pikipek",
+        "form": "",
+        "level": 13,
+        "item": "",
+        "ivs": {
+            "atk": 13,
+            "def": 2,
+            "spa": 21,
+            "spd": 24,
+            "spe": 1,
+            "hp": 25
+        }
+    }
+]

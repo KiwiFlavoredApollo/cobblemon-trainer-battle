@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:nidorino",
+        "form": "",
+        "level": 26,
+        "item": "",
+        "ivs": {
+            "atk": 19,
+            "def": 21,
+            "spa": 23,
+            "spd": 24,
+            "spe": 19,
+            "hp": 6
+        }
+    },
+    {
+        "species": "cobblemon:linoone",
+        "form": "",
+        "level": 27,
+        "item": "",
+        "ivs": {
+            "atk": 9,
+            "def": 6,
+            "spa": 26,
+            "spd": 1,
+            "spe": 26,
+            "hp": 2
+        }
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:woobat",
+        "form": "",
+        "level": 17,
+        "item": "",
+        "ivs": {
+            "atk": 23,
+            "def": 22,
+            "spa": 8,
+            "spd": 12,
+            "spe": 8,
+            "hp": 0
+        }
+    }
+]

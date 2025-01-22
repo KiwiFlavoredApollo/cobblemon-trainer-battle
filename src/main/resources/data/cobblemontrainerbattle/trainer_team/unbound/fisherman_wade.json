@@ -1,0 +1,86 @@
+[
+    {
+        "species": "cobblemon:goldeen",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 3,
+            "def": 3,
+            "spa": 26,
+            "spd": 15,
+            "spe": 4,
+            "hp": 29
+        }
+    },
+    {
+        "species": "cobblemon:magikarp",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 7,
+            "def": 18,
+            "spa": 1,
+            "spd": 20,
+            "spe": 18,
+            "hp": 0
+        }
+    },
+    {
+        "species": "cobblemon:magikarp",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 19,
+            "def": 22,
+            "spa": 19,
+            "spd": 6,
+            "spe": 3,
+            "hp": 29
+        }
+    },
+    {
+        "species": "cobblemon:remoraid",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 30,
+            "def": 10,
+            "spa": 31,
+            "spd": 2,
+            "spe": 5,
+            "hp": 31
+        }
+    },
+    {
+        "species": "cobblemon:skrelp",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 29,
+            "def": 13,
+            "spa": 13,
+            "spd": 20,
+            "spe": 12,
+            "hp": 17
+        }
+    },
+    {
+        "species": "cobblemon:clauncher",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 1,
+            "def": 17,
+            "spa": 31,
+            "spd": 16,
+            "spe": 21,
+            "hp": 27
+        }
+    }
+]

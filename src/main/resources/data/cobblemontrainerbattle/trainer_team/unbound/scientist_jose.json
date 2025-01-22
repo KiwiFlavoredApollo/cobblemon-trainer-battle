@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:klang",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 12,
+            "def": 31,
+            "spa": 1,
+            "spd": 4,
+            "spe": 11,
+            "hp": 31
+        }
+    },
+    {
+        "species": "cobblemon:bronzong",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 27,
+            "def": 18,
+            "spa": 24,
+            "spd": 27,
+            "spe": 7,
+            "hp": 3
+        }
+    }
+]

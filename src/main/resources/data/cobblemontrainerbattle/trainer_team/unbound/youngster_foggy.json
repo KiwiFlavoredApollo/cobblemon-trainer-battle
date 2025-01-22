@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:patrat",
+        "form": "",
+        "level": 11,
+        "item": "",
+        "ivs": {
+            "atk": 7,
+            "def": 7,
+            "spa": 12,
+            "spd": 23,
+            "spe": 31,
+            "hp": 1
+        }
+    },
+    {
+        "species": "cobblemon:delibird",
+        "form": "",
+        "level": 12,
+        "item": "",
+        "ivs": {
+            "atk": 11,
+            "def": 26,
+            "spa": 25,
+            "spd": 16,
+            "spe": 7,
+            "hp": 22
+        }
+    }
+]

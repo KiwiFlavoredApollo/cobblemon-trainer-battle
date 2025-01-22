@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:ferrothorn",
+        "form": "",
+        "level": 60,
+        "item": "Occa Berry",
+        "ivs": {
+            "atk": 12,
+            "def": 14,
+            "spa": 8,
+            "spd": 11,
+            "spe": 15,
+            "hp": 8
+        }
+    },
+    {
+        "species": "cobblemon:vanilluxe",
+        "form": "",
+        "level": 61,
+        "item": "Occa Berry",
+        "ivs": {
+            "atk": 24,
+            "def": 12,
+            "spa": 16,
+            "spd": 6,
+            "spe": 31,
+            "hp": 29
+        }
+    }
+]

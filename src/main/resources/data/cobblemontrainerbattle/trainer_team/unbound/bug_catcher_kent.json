@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:scatterbug",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 26,
+            "def": 9,
+            "spa": 2,
+            "spd": 22,
+            "spe": 27,
+            "hp": 17
+        }
+    },
+    {
+        "species": "cobblemon:wurmple",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 12,
+            "def": 15,
+            "spa": 25,
+            "spd": 12,
+            "spe": 12,
+            "hp": 13
+        }
+    }
+]

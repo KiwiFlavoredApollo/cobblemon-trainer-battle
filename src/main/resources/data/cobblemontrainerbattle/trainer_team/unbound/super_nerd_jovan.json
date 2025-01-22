@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:bronzor",
+        "form": "",
+        "level": 25,
+        "item": "",
+        "ivs": {
+            "atk": 12,
+            "def": 6,
+            "spa": 13,
+            "spd": 21,
+            "spe": 5,
+            "hp": 29
+        }
+    },
+    {
+        "species": "cobblemon:togedemaru",
+        "form": "",
+        "level": 25,
+        "item": "",
+        "ivs": {
+            "atk": 11,
+            "def": 13,
+            "spa": 23,
+            "spd": 26,
+            "spe": 16,
+            "hp": 27
+        }
+    }
+]

@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:delibird",
+        "form": "",
+        "level": 50,
+        "item": "",
+        "ivs": {
+            "atk": 13,
+            "def": 10,
+            "spa": 19,
+            "spd": 8,
+            "spe": 7,
+            "hp": 6
+        }
+    },
+    {
+        "species": "cobblemon:noivern",
+        "form": "",
+        "level": 51,
+        "item": "",
+        "ivs": {
+            "atk": 5,
+            "def": 24,
+            "spa": 31,
+            "spd": 21,
+            "spe": 13,
+            "hp": 0
+        }
+    },
+    {
+        "species": "cobblemon:aerodactyl",
+        "form": "",
+        "level": 51,
+        "item": "",
+        "ivs": {
+            "atk": 31,
+            "def": 10,
+            "spa": 27,
+            "spd": 4,
+            "spe": 2,
+            "hp": 6
+        }
+    }
+]

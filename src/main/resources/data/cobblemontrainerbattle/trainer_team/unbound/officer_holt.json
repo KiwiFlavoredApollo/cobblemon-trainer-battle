@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:arcanine",
+        "form": "",
+        "level": 50,
+        "item": "",
+        "ivs": {
+            "atk": 17,
+            "def": 27,
+            "spa": 6,
+            "spd": 9,
+            "spe": 10,
+            "hp": 28
+        }
+    }
+]

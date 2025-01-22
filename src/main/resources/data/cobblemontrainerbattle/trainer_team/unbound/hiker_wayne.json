@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:roggenrola",
+        "form": "",
+        "level": 11,
+        "item": "",
+        "ivs": {
+            "atk": 5,
+            "def": 13,
+            "spa": 9,
+            "spd": 4,
+            "spe": 30,
+            "hp": 2
+        }
+    },
+    {
+        "species": "cobblemon:drilbur",
+        "form": "",
+        "level": 12,
+        "item": "",
+        "ivs": {
+            "atk": 8,
+            "def": 1,
+            "spa": 16,
+            "spd": 18,
+            "spe": 3,
+            "hp": 1
+        }
+    }
+]

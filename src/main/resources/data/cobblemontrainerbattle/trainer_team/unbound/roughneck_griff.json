@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:emboar",
+        "form": "",
+        "level": 50,
+        "item": "",
+        "ivs": {
+            "atk": 14,
+            "def": 6,
+            "spa": 18,
+            "spd": 0,
+            "spe": 5,
+            "hp": 25
+        }
+    }
+]

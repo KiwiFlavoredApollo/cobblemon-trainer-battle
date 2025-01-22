@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:electrike",
+        "form": "",
+        "level": 11,
+        "item": "",
+        "ivs": {
+            "atk": 8,
+            "def": 8,
+            "spa": 9,
+            "spd": 31,
+            "spe": 9,
+            "hp": 24
+        }
+    },
+    {
+        "species": "cobblemon:riolu",
+        "form": "",
+        "level": 12,
+        "item": "",
+        "ivs": {
+            "atk": 23,
+            "def": 28,
+            "spa": 28,
+            "spd": 23,
+            "spe": 11,
+            "hp": 15
+        }
+    }
+]

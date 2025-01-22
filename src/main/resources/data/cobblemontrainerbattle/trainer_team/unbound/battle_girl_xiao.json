@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:mienshao",
+        "form": "",
+        "level": 58,
+        "item": "Black Belt",
+        "ivs": {
+            "atk": 2,
+            "def": 30,
+            "spa": 9,
+            "spd": 2,
+            "spe": 1,
+            "hp": 7
+        }
+    },
+    {
+        "species": "cobblemon:throh",
+        "form": "",
+        "level": 59,
+        "item": "Black Belt",
+        "ivs": {
+            "atk": 5,
+            "def": 19,
+            "spa": 0,
+            "spd": 19,
+            "spe": 20,
+            "hp": 31
+        }
+    }
+]

@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:paras",
+        "form": "",
+        "level": 46,
+        "item": "",
+        "ivs": {
+            "atk": 7,
+            "def": 23,
+            "spa": 26,
+            "spd": 21,
+            "spe": 3,
+            "hp": 31
+        }
+    },
+    {
+        "species": "cobblemon:petilil",
+        "form": "",
+        "level": 46,
+        "item": "",
+        "ivs": {
+            "atk": 9,
+            "def": 5,
+            "spa": 31,
+            "spd": 17,
+            "spe": 9,
+            "hp": 14
+        }
+    },
+    {
+        "species": "cobblemon:surskit",
+        "form": "",
+        "level": 46,
+        "item": "",
+        "ivs": {
+            "atk": 0,
+            "def": 29,
+            "spa": 9,
+            "spd": 17,
+            "spe": 15,
+            "hp": 17
+        }
+    }
+]

@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:combusken",
+        "form": "",
+        "level": 53,
+        "item": "",
+        "ivs": {
+            "atk": 18,
+            "def": 9,
+            "spa": 21,
+            "spd": 9,
+            "spe": 15,
+            "hp": 16
+        }
+    },
+    {
+        "species": "cobblemon:garbodor",
+        "form": "",
+        "level": 53,
+        "item": "",
+        "ivs": {
+            "atk": 7,
+            "def": 6,
+            "spa": 26,
+            "spd": 7,
+            "spe": 1,
+            "hp": 6
+        }
+    },
+    {
+        "species": "cobblemon:shieldon",
+        "form": "",
+        "level": 52,
+        "item": "",
+        "ivs": {
+            "atk": 4,
+            "def": 20,
+            "spa": 27,
+            "spd": 25,
+            "spe": 16,
+            "hp": 11
+        }
+    }
+]

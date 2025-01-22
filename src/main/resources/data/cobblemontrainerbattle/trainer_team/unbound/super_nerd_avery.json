@@ -1,0 +1,58 @@
+[
+    {
+        "species": "cobblemon:amoonguss",
+        "form": "",
+        "level": 58,
+        "item": "",
+        "ivs": {
+            "atk": 8,
+            "def": 3,
+            "spa": 20,
+            "spd": 27,
+            "spe": 15,
+            "hp": 0
+        }
+    },
+    {
+        "species": "cobblemon:shelgon",
+        "form": "",
+        "level": 59,
+        "item": "",
+        "ivs": {
+            "atk": 21,
+            "def": 5,
+            "spa": 18,
+            "spd": 12,
+            "spe": 1,
+            "hp": 7
+        }
+    },
+    {
+        "species": "cobblemon:blitzle",
+        "form": "",
+        "level": 58,
+        "item": "",
+        "ivs": {
+            "atk": 3,
+            "def": 1,
+            "spa": 20,
+            "spd": 23,
+            "spe": 19,
+            "hp": 5
+        }
+    },
+    {
+        "species": "cobblemon:honedge",
+        "form": "",
+        "level": 58,
+        "item": "",
+        "ivs": {
+            "atk": 8,
+            "def": 6,
+            "spa": 31,
+            "spd": 18,
+            "spe": 23,
+            "hp": 20
+        }
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:burmy",
+        "form": "",
+        "level": 15,
+        "item": "",
+        "ivs": {
+            "atk": 2,
+            "def": 15,
+            "spa": 25,
+            "spd": 17,
+            "spe": 7,
+            "hp": 3
+        }
+    },
+    {
+        "species": "cobblemon:pansage",
+        "form": "",
+        "level": 14,
+        "item": "",
+        "ivs": {
+            "atk": 8,
+            "def": 6,
+            "spa": 11,
+            "spd": 24,
+            "spe": 19,
+            "hp": 17
+        }
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:snubbull",
+        "form": "",
+        "level": 30,
+        "item": "",
+        "ivs": {
+            "atk": 27,
+            "def": 24,
+            "spa": 18,
+            "spd": 5,
+            "spe": 11,
+            "hp": 19
+        }
+    }
+]

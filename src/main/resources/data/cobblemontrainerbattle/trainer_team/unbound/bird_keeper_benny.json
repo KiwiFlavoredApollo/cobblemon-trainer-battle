@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:talonflame",
+        "form": "",
+        "level": 33,
+        "item": "",
+        "ivs": {
+            "atk": 15,
+            "def": 22,
+            "spa": 5,
+            "spd": 22,
+            "spe": 4,
+            "hp": 6
+        }
+    }
+]

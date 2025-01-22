@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:timburr",
+        "form": "",
+        "level": 49,
+        "item": "Black Belt",
+        "ivs": {
+            "atk": 20,
+            "def": 10,
+            "spa": 4,
+            "spd": 29,
+            "spe": 22,
+            "hp": 27
+        }
+    },
+    {
+        "species": "cobblemon:crabominable",
+        "form": "",
+        "level": 50,
+        "item": "Black Belt",
+        "ivs": {
+            "atk": 19,
+            "def": 6,
+            "spa": 0,
+            "spd": 19,
+            "spe": 17,
+            "hp": 3
+        }
+    }
+]

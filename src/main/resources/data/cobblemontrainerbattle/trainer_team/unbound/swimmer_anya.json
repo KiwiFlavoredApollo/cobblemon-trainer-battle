@@ -1,0 +1,72 @@
+[
+    {
+        "species": "cobblemon:wooper",
+        "form": "",
+        "level": 39,
+        "item": "",
+        "ivs": {
+            "atk": 27,
+            "def": 19,
+            "spa": 22,
+            "spd": 0,
+            "spe": 26,
+            "hp": 30
+        }
+    },
+    {
+        "species": "cobblemon:poliwhirl",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 9,
+            "def": 22,
+            "spa": 28,
+            "spd": 23,
+            "spe": 14,
+            "hp": 3
+        }
+    },
+    {
+        "species": "cobblemon:poliwag",
+        "form": "",
+        "level": 39,
+        "item": "",
+        "ivs": {
+            "atk": 4,
+            "def": 14,
+            "spa": 14,
+            "spd": 7,
+            "spe": 20,
+            "hp": 4
+        }
+    },
+    {
+        "species": "cobblemon:floatzel",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 28,
+            "def": 13,
+            "spa": 8,
+            "spd": 12,
+            "spe": 15,
+            "hp": 2
+        }
+    },
+    {
+        "species": "cobblemon:luvdisc",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 23,
+            "def": 29,
+            "spa": 13,
+            "spd": 22,
+            "spe": 7,
+            "hp": 14
+        }
+    }
+]

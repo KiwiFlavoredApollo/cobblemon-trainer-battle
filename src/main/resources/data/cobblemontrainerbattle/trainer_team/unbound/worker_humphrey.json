@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:magnemite",
+        "form": "",
+        "level": 39,
+        "item": "",
+        "ivs": {
+            "atk": 2,
+            "def": 3,
+            "spa": 16,
+            "spd": 25,
+            "spe": 17,
+            "hp": 0
+        }
+    },
+    {
+        "species": "cobblemon:magneton",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 21,
+            "def": 2,
+            "spa": 22,
+            "spd": 26,
+            "spe": 24,
+            "hp": 0
+        }
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "species": "cobblemon:rampardos",
+        "form": "",
+        "level": 54,
+        "item": "",
+        "ivs": {
+            "atk": 3,
+            "def": 22,
+            "spa": 7,
+            "spd": 0,
+            "spe": 26,
+            "hp": 1
+        }
+    },
+    {
+        "species": "cobblemon:carracosta",
+        "form": "",
+        "level": 51,
+        "item": "",
+        "ivs": {
+            "atk": 30,
+            "def": 26,
+            "spa": 17,
+            "spd": 15,
+            "spe": 31,
+            "hp": 27
+        }
+    },
+    {
+        "species": "cobblemon:tyrantrum",
+        "form": "",
+        "level": 53,
+        "item": "",
+        "ivs": {
+            "atk": 10,
+            "def": 26,
+            "spa": 9,
+            "spd": 4,
+            "spe": 16,
+            "hp": 28
+        }
+    },
+    {
+        "species": "cobblemon:kabutops",
+        "form": "",
+        "level": 53,
+        "item": "",
+        "ivs": {
+            "atk": 10,
+            "def": 7,
+            "spa": 6,
+            "spd": 13,
+            "spe": 26,
+            "hp": 28
+        }
+    }
+]

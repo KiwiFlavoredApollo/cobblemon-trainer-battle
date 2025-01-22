@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:basculin",
+        "form": "",
+        "level": 39,
+        "item": "",
+        "ivs": {
+            "atk": 11,
+            "def": 22,
+            "spa": 26,
+            "spd": 23,
+            "spe": 18,
+            "hp": 4
+        }
+    },
+    {
+        "species": "cobblemon:gyarados",
+        "form": "",
+        "level": 42,
+        "item": "",
+        "ivs": {
+            "atk": 27,
+            "def": 29,
+            "spa": 18,
+            "spd": 26,
+            "spe": 25,
+            "hp": 19
+        }
+    },
+    {
+        "species": "cobblemon:luvdisc",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 16,
+            "def": 28,
+            "spa": 8,
+            "spd": 8,
+            "spe": 8,
+            "hp": 22
+        }
+    }
+]

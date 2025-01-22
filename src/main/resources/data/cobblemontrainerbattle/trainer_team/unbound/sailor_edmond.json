@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:machoke",
+        "form": "",
+        "level": 37,
+        "item": "",
+        "ivs": {
+            "atk": 30,
+            "def": 6,
+            "spa": 31,
+            "spd": 0,
+            "spe": 17,
+            "hp": 0
+        }
+    },
+    {
+        "species": "cobblemon:vaporeon",
+        "form": "",
+        "level": 38,
+        "item": "",
+        "ivs": {
+            "atk": 3,
+            "def": 0,
+            "spa": 26,
+            "spd": 19,
+            "spe": 10,
+            "hp": 15
+        }
+    }
+]

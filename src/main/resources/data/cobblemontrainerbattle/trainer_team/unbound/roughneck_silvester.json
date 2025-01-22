@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:pawniard",
+        "form": "",
+        "level": 48,
+        "item": "",
+        "ivs": {
+            "atk": 2,
+            "def": 2,
+            "spa": 24,
+            "spd": 23,
+            "spe": 5,
+            "hp": 10
+        }
+    },
+    {
+        "species": "cobblemon:sawk",
+        "form": "",
+        "level": 48,
+        "item": "",
+        "ivs": {
+            "atk": 19,
+            "def": 22,
+            "spa": 21,
+            "spd": 23,
+            "spe": 28,
+            "hp": 9
+        }
+    }
+]

@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:persian",
+        "form": "",
+        "level": 58,
+        "item": "",
+        "ivs": {
+            "atk": 5,
+            "def": 17,
+            "spa": 14,
+            "spd": 15,
+            "spe": 12,
+            "hp": 7
+        }
+    },
+    {
+        "species": "cobblemon:farfetchd",
+        "form": "",
+        "level": 60,
+        "item": "Leek",
+        "ivs": {
+            "atk": 18,
+            "def": 25,
+            "spa": 4,
+            "spd": 8,
+            "spe": 24,
+            "hp": 3
+        }
+    },
+    {
+        "species": "cobblemon:bouffalant",
+        "form": "",
+        "level": 59,
+        "item": "",
+        "ivs": {
+            "atk": 30,
+            "def": 3,
+            "spa": 4,
+            "spd": 15,
+            "spe": 13,
+            "hp": 26
+        }
+    }
+]

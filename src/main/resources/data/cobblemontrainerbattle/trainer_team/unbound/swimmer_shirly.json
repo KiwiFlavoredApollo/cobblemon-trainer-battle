@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:poliwhirl",
+        "form": "",
+        "level": 47,
+        "item": "",
+        "ivs": {
+            "atk": 22,
+            "def": 17,
+            "spa": 15,
+            "spd": 8,
+            "spe": 15,
+            "hp": 19
+        }
+    },
+    {
+        "species": "cobblemon:horsea",
+        "form": "",
+        "level": 46,
+        "item": "",
+        "ivs": {
+            "atk": 15,
+            "def": 18,
+            "spa": 12,
+            "spd": 14,
+            "spe": 5,
+            "hp": 17
+        }
+    },
+    {
+        "species": "cobblemon:mantyke",
+        "form": "",
+        "level": 47,
+        "item": "",
+        "ivs": {
+            "atk": 15,
+            "def": 21,
+            "spa": 28,
+            "spd": 13,
+            "spe": 19,
+            "hp": 22
+        }
+    }
+]

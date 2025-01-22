@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:pangoro",
+        "form": "",
+        "level": 49,
+        "item": "",
+        "ivs": {
+            "atk": 1,
+            "def": 31,
+            "spa": 23,
+            "spd": 8,
+            "spe": 1,
+            "hp": 15
+        }
+    }
+]

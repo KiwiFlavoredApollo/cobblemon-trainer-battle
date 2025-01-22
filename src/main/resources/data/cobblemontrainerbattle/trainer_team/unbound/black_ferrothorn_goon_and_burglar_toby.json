@@ -1,0 +1,58 @@
+[
+    {
+        "species": "cobblemon:steelix",
+        "form": "",
+        "level": 53,
+        "item": "",
+        "ivs": {
+            "atk": 9,
+            "def": 18,
+            "spa": 29,
+            "spd": 23,
+            "spe": 12,
+            "hp": 3
+        }
+    },
+    {
+        "species": "cobblemon:nidorino",
+        "form": "",
+        "level": 52,
+        "item": "",
+        "ivs": {
+            "atk": 18,
+            "def": 30,
+            "spa": 22,
+            "spd": 23,
+            "spe": 6,
+            "hp": 24
+        }
+    },
+    {
+        "species": "cobblemon:torracat",
+        "form": "",
+        "level": 52,
+        "item": "",
+        "ivs": {
+            "atk": 7,
+            "def": 20,
+            "spa": 15,
+            "spd": 15,
+            "spe": 0,
+            "hp": 16
+        }
+    },
+    {
+        "species": "cobblemon:garbodor",
+        "form": "",
+        "level": 53,
+        "item": "",
+        "ivs": {
+            "atk": 20,
+            "def": 17,
+            "spa": 27,
+            "spd": 10,
+            "spe": 30,
+            "hp": 17
+        }
+    }
+]

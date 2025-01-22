@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:beedrill",
+        "form": "",
+        "level": 58,
+        "item": "",
+        "ivs": {
+            "atk": 9,
+            "def": 24,
+            "spa": 19,
+            "spd": 8,
+            "spe": 3,
+            "hp": 6
+        }
+    }
+]

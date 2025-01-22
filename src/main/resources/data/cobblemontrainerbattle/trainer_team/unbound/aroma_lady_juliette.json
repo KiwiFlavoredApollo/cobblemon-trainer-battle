@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:torterra",
+        "form": "",
+        "level": 72,
+        "item": "",
+        "ivs": {
+            "atk": 17,
+            "def": 24,
+            "spa": 13,
+            "spd": 13,
+            "spe": 1,
+            "hp": 9
+        }
+    },
+    {
+        "species": "cobblemon:chesnaught",
+        "form": "",
+        "level": 74,
+        "item": "",
+        "ivs": {
+            "atk": 31,
+            "def": 27,
+            "spa": 15,
+            "spd": 9,
+            "spe": 5,
+            "hp": 18
+        }
+    }
+]

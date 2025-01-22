@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:wobbuffet",
+        "form": "",
+        "level": 60,
+        "item": "Focus Sash",
+        "ivs": {
+            "atk": 8,
+            "def": 21,
+            "spa": 18,
+            "spd": 17,
+            "spe": 16,
+            "hp": 8
+        }
+    },
+    {
+        "species": "cobblemon:mismagius",
+        "form": "",
+        "level": 59,
+        "item": "",
+        "ivs": {
+            "atk": 24,
+            "def": 5,
+            "spa": 20,
+            "spd": 0,
+            "spe": 18,
+            "hp": 20
+        }
+    },
+    {
+        "species": "cobblemon:lilligant",
+        "form": "",
+        "level": 58,
+        "item": "",
+        "ivs": {
+            "atk": 9,
+            "def": 15,
+            "spa": 14,
+            "spd": 17,
+            "spe": 27,
+            "hp": 14
+        }
+    }
+]

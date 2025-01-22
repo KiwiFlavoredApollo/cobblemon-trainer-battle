@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:axew",
+        "form": "",
+        "level": 36,
+        "item": "",
+        "ivs": {
+            "atk": 28,
+            "def": 17,
+            "spa": 7,
+            "spd": 15,
+            "spe": 15,
+            "hp": 30
+        }
+    },
+    {
+        "species": "cobblemon:exeggutor",
+        "form": "Alolan",
+        "level": 37,
+        "item": "",
+        "ivs": {
+            "atk": 17,
+            "def": 25,
+            "spa": 11,
+            "spd": 16,
+            "spe": 10,
+            "hp": 20
+        }
+    }
+]

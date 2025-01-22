@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:buneary",
+        "form": "",
+        "level": 24,
+        "item": "",
+        "ivs": {
+            "atk": 4,
+            "def": 27,
+            "spa": 2,
+            "spd": 31,
+            "spe": 25,
+            "hp": 5
+        }
+    }
+]

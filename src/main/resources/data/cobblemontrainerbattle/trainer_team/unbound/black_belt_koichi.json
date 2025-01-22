@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:scraggy",
+        "form": "",
+        "level": 23,
+        "item": "Black Belt",
+        "ivs": {
+            "atk": 0,
+            "def": 13,
+            "spa": 16,
+            "spd": 22,
+            "spe": 12,
+            "hp": 1
+        }
+    },
+    {
+        "species": "cobblemon:stufful",
+        "form": "",
+        "level": 24,
+        "item": "Black Belt",
+        "ivs": {
+            "atk": 15,
+            "def": 22,
+            "spa": 18,
+            "spd": 2,
+            "spe": 27,
+            "hp": 7
+        }
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:rockruff",
+        "form": "",
+        "level": 35,
+        "item": "",
+        "ivs": {
+            "atk": 5,
+            "def": 21,
+            "spa": 16,
+            "spd": 25,
+            "spe": 6,
+            "hp": 9
+        }
+    },
+    {
+        "species": "cobblemon:snubbull",
+        "form": "",
+        "level": 37,
+        "item": "",
+        "ivs": {
+            "atk": 27,
+            "def": 16,
+            "spa": 18,
+            "spd": 31,
+            "spe": 17,
+            "hp": 5
+        }
+    }
+]

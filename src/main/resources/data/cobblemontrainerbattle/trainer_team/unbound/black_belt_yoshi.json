@@ -1,0 +1,58 @@
+[
+    {
+        "species": "cobblemon:crabrawler",
+        "form": "",
+        "level": 58,
+        "item": "Black Belt",
+        "ivs": {
+            "atk": 31,
+            "def": 5,
+            "spa": 1,
+            "spd": 4,
+            "spe": 4,
+            "hp": 8
+        }
+    },
+    {
+        "species": "cobblemon:pinsir",
+        "form": "",
+        "level": 59,
+        "item": "Black Belt",
+        "ivs": {
+            "atk": 2,
+            "def": 20,
+            "spa": 30,
+            "spd": 15,
+            "spe": 18,
+            "hp": 5
+        }
+    },
+    {
+        "species": "cobblemon:heracross",
+        "form": "",
+        "level": 59,
+        "item": "Black Belt",
+        "ivs": {
+            "atk": 16,
+            "def": 31,
+            "spa": 12,
+            "spd": 29,
+            "spe": 22,
+            "hp": 1
+        }
+    },
+    {
+        "species": "cobblemon:conkeldurr",
+        "form": "",
+        "level": 60,
+        "item": "Black Belt",
+        "ivs": {
+            "atk": 9,
+            "def": 10,
+            "spa": 5,
+            "spd": 8,
+            "spe": 2,
+            "hp": 12
+        }
+    }
+]

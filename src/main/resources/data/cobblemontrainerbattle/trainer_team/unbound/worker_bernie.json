@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:klink",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 26,
+            "def": 20,
+            "spa": 19,
+            "spd": 5,
+            "spe": 18,
+            "hp": 4
+        }
+    },
+    {
+        "species": "cobblemon:magnemite",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 25,
+            "def": 12,
+            "spa": 22,
+            "spd": 20,
+            "spe": 2,
+            "hp": 4
+        }
+    },
+    {
+        "species": "cobblemon:voltorb",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 21,
+            "def": 19,
+            "spa": 13,
+            "spd": 11,
+            "spe": 29,
+            "hp": 20
+        }
+    }
+]

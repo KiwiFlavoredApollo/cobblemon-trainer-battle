@@ -1,0 +1,58 @@
+[
+    {
+        "species": "cobblemon:whismur",
+        "form": "",
+        "level": 15,
+        "item": "",
+        "ivs": {
+            "atk": 18,
+            "def": 22,
+            "spa": 6,
+            "spd": 24,
+            "spe": 24,
+            "hp": 10
+        }
+    },
+    {
+        "species": "cobblemon:happiny",
+        "form": "",
+        "level": 15,
+        "item": "",
+        "ivs": {
+            "atk": 7,
+            "def": 4,
+            "spa": 18,
+            "spd": 27,
+            "spe": 8,
+            "hp": 5
+        }
+    },
+    {
+        "species": "cobblemon:audino",
+        "form": "",
+        "level": 15,
+        "item": "",
+        "ivs": {
+            "atk": 24,
+            "def": 20,
+            "spa": 20,
+            "spd": 23,
+            "spe": 11,
+            "hp": 12
+        }
+    },
+    {
+        "species": "cobblemon:lickitung",
+        "form": "",
+        "level": 15,
+        "item": "",
+        "ivs": {
+            "atk": 12,
+            "def": 1,
+            "spa": 2,
+            "spd": 15,
+            "spe": 11,
+            "hp": 25
+        }
+    }
+]

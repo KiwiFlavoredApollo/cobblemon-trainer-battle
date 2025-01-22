@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:swablu",
+        "form": "",
+        "level": 32,
+        "item": "",
+        "ivs": {
+            "atk": 6,
+            "def": 2,
+            "spa": 9,
+            "spd": 10,
+            "spe": 5,
+            "hp": 16
+        }
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:lombre",
+        "form": "",
+        "level": 29,
+        "item": "",
+        "ivs": {
+            "atk": 0,
+            "def": 25,
+            "spa": 11,
+            "spd": 29,
+            "spe": 29,
+            "hp": 29
+        }
+    },
+    {
+        "species": "cobblemon:palpitoad",
+        "form": "",
+        "level": 30,
+        "item": "",
+        "ivs": {
+            "atk": 11,
+            "def": 6,
+            "spa": 24,
+            "spd": 30,
+            "spe": 19,
+            "hp": 23
+        }
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:bewear",
+        "form": "",
+        "level": 27,
+        "item": "Black Belt",
+        "ivs": {
+            "atk": 20,
+            "def": 10,
+            "spa": 31,
+            "spd": 20,
+            "spe": 12,
+            "hp": 0
+        }
+    },
+    {
+        "species": "cobblemon:primeape",
+        "form": "",
+        "level": 27,
+        "item": "Black Belt",
+        "ivs": {
+            "atk": 15,
+            "def": 11,
+            "spa": 25,
+            "spd": 25,
+            "spe": 23,
+            "hp": 23
+        }
+    }
+]

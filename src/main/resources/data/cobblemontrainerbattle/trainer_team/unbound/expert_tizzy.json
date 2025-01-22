@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:yanmega",
+        "form": "",
+        "level": 58,
+        "item": "",
+        "ivs": {
+            "atk": 28,
+            "def": 2,
+            "spa": 16,
+            "spd": 23,
+            "spe": 29,
+            "hp": 5
+        }
+    },
+    {
+        "species": "cobblemon:vikavolt",
+        "form": "",
+        "level": 58,
+        "item": "",
+        "ivs": {
+            "atk": 24,
+            "def": 4,
+            "spa": 16,
+            "spd": 21,
+            "spe": 30,
+            "hp": 25
+        }
+    }
+]

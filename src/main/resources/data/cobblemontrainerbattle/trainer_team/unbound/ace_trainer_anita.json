@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:simipour",
+        "form": "",
+        "level": 53,
+        "item": "",
+        "ivs": {
+            "atk": 14,
+            "def": 11,
+            "spa": 0,
+            "spd": 8,
+            "spe": 4,
+            "hp": 2
+        }
+    },
+    {
+        "species": "cobblemon:goodra",
+        "form": "",
+        "level": 53,
+        "item": "",
+        "ivs": {
+            "atk": 30,
+            "def": 19,
+            "spa": 14,
+            "spd": 19,
+            "spe": 25,
+            "hp": 2
+        }
+    },
+    {
+        "species": "cobblemon:brionne",
+        "form": "",
+        "level": 54,
+        "item": "",
+        "ivs": {
+            "atk": 6,
+            "def": 7,
+            "spa": 20,
+            "spd": 24,
+            "spe": 30,
+            "hp": 27
+        }
+    }
+]

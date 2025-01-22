@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:palpitoad",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 11,
+            "def": 8,
+            "spa": 7,
+            "spd": 12,
+            "spe": 20,
+            "hp": 28
+        }
+    },
+    {
+        "species": "cobblemon:seaking",
+        "form": "",
+        "level": 42,
+        "item": "",
+        "ivs": {
+            "atk": 25,
+            "def": 29,
+            "spa": 25,
+            "spd": 10,
+            "spe": 22,
+            "hp": 24
+        }
+    }
+]

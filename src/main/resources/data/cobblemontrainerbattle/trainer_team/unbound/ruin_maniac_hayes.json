@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:tyrunt",
+        "form": "",
+        "level": 58,
+        "item": "",
+        "ivs": {
+            "atk": 18,
+            "def": 6,
+            "spa": 11,
+            "spd": 15,
+            "spe": 2,
+            "hp": 11
+        }
+    }
+]

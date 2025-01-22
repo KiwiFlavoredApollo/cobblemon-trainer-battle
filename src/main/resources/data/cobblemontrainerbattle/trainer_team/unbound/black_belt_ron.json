@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:makuhita",
+        "form": "",
+        "level": 8,
+        "item": "",
+        "ivs": {
+            "atk": 11,
+            "def": 21,
+            "spa": 0,
+            "spd": 22,
+            "spe": 24,
+            "hp": 0
+        }
+    },
+    {
+        "species": "cobblemon:scraggy",
+        "form": "",
+        "level": 8,
+        "item": "",
+        "ivs": {
+            "atk": 23,
+            "def": 15,
+            "spa": 18,
+            "spd": 28,
+            "spe": 5,
+            "hp": 4
+        }
+    }
+]

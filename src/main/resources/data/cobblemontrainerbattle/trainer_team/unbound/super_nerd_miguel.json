@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:klink",
+        "form": "",
+        "level": 32,
+        "item": "",
+        "ivs": {
+            "atk": 20,
+            "def": 1,
+            "spa": 8,
+            "spd": 25,
+            "spe": 17,
+            "hp": 15
+        }
+    },
+    {
+        "species": "cobblemon:geodude",
+        "form": "Alolan",
+        "level": 32,
+        "item": "",
+        "ivs": {
+            "atk": 2,
+            "def": 19,
+            "spa": 19,
+            "spd": 16,
+            "spe": 1,
+            "hp": 30
+        }
+    },
+    {
+        "species": "cobblemon:magneton",
+        "form": "",
+        "level": 34,
+        "item": "",
+        "ivs": {
+            "atk": 8,
+            "def": 7,
+            "spa": 25,
+            "spd": 7,
+            "spe": 14,
+            "hp": 19
+        }
+    }
+]

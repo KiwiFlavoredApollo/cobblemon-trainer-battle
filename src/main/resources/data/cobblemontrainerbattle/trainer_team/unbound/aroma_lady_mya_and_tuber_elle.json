@@ -1,0 +1,58 @@
+[
+    {
+        "species": "cobblemon:lurantis",
+        "form": "",
+        "level": 60,
+        "item": "",
+        "ivs": {
+            "atk": 7,
+            "def": 0,
+            "spa": 13,
+            "spd": 8,
+            "spe": 12,
+            "hp": 27
+        }
+    },
+    {
+        "species": "cobblemon:sunflora",
+        "form": "",
+        "level": 59,
+        "item": "Focus Sash",
+        "ivs": {
+            "atk": 16,
+            "def": 8,
+            "spa": 22,
+            "spd": 27,
+            "spe": 28,
+            "hp": 10
+        }
+    },
+    {
+        "species": "cobblemon:wigglytuff",
+        "form": "",
+        "level": 60,
+        "item": "",
+        "ivs": {
+            "atk": 19,
+            "def": 22,
+            "spa": 22,
+            "spd": 15,
+            "spe": 23,
+            "hp": 10
+        }
+    },
+    {
+        "species": "cobblemon:morelull",
+        "form": "",
+        "level": 58,
+        "item": "",
+        "ivs": {
+            "atk": 16,
+            "def": 4,
+            "spa": 18,
+            "spd": 20,
+            "spe": 18,
+            "hp": 21
+        }
+    }
+]

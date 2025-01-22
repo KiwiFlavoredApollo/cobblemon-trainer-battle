@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:mr. mime",
+        "form": "",
+        "level": 24,
+        "item": "",
+        "ivs": {
+            "atk": 15,
+            "def": 28,
+            "spa": 13,
+            "spd": 19,
+            "spe": 9,
+            "hp": 11
+        }
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:lumineon",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 7,
+            "def": 20,
+            "spa": 4,
+            "spd": 11,
+            "spe": 14,
+            "hp": 31
+        }
+    }
+]

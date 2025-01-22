@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:sentret",
+        "form": "",
+        "level": 31,
+        "item": "",
+        "ivs": {
+            "atk": 31,
+            "def": 17,
+            "spa": 21,
+            "spd": 28,
+            "spe": 25,
+            "hp": 17
+        }
+    },
+    {
+        "species": "cobblemon:furret",
+        "form": "",
+        "level": 32,
+        "item": "",
+        "ivs": {
+            "atk": 19,
+            "def": 13,
+            "spa": 15,
+            "spd": 8,
+            "spe": 2,
+            "hp": 7
+        }
+    }
+]

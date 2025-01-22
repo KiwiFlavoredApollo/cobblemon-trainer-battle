@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:simisage",
+        "form": "",
+        "level": 59,
+        "item": "Flying Gem",
+        "ivs": {
+            "atk": 7,
+            "def": 30,
+            "spa": 21,
+            "spd": 24,
+            "spe": 12,
+            "hp": 4
+        }
+    },
+    {
+        "species": "cobblemon:chatot",
+        "form": "",
+        "level": 61,
+        "item": "Throat Spray",
+        "ivs": {
+            "atk": 13,
+            "def": 0,
+            "spa": 25,
+            "spd": 7,
+            "spe": 23,
+            "hp": 21
+        }
+    }
+]

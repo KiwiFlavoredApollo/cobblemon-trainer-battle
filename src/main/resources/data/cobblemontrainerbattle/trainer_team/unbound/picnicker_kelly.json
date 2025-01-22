@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:vanillite",
+        "form": "",
+        "level": 8,
+        "item": "",
+        "ivs": {
+            "atk": 0,
+            "def": 13,
+            "spa": 27,
+            "spd": 22,
+            "spe": 5,
+            "hp": 30
+        }
+    },
+    {
+        "species": "cobblemon:smoochum",
+        "form": "",
+        "level": 8,
+        "item": "",
+        "ivs": {
+            "atk": 16,
+            "def": 7,
+            "spa": 20,
+            "spd": 28,
+            "spe": 31,
+            "hp": 17
+        }
+    }
+]

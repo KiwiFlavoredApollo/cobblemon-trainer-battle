@@ -1,0 +1,58 @@
+[
+    {
+        "species": "cobblemon:horsea",
+        "form": "",
+        "level": 39,
+        "item": "",
+        "ivs": {
+            "atk": 29,
+            "def": 18,
+            "spa": 21,
+            "spd": 1,
+            "spe": 22,
+            "hp": 13
+        }
+    },
+    {
+        "species": "cobblemon:whiscash",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 12,
+            "def": 2,
+            "spa": 9,
+            "spd": 5,
+            "spe": 1,
+            "hp": 14
+        }
+    },
+    {
+        "species": "cobblemon:seadra",
+        "form": "",
+        "level": 31,
+        "item": "",
+        "ivs": {
+            "atk": 19,
+            "def": 17,
+            "spa": 23,
+            "spd": 4,
+            "spe": 18,
+            "hp": 21
+        }
+    },
+    {
+        "species": "cobblemon:alomomola",
+        "form": "",
+        "level": 31,
+        "item": "",
+        "ivs": {
+            "atk": 0,
+            "def": 14,
+            "spa": 21,
+            "spd": 4,
+            "spe": 31,
+            "hp": 10
+        }
+    }
+]

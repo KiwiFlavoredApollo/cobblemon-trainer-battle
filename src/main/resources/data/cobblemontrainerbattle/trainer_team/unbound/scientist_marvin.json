@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:plusle",
+        "form": "",
+        "level": 52,
+        "item": "",
+        "ivs": {
+            "atk": 8,
+            "def": 18,
+            "spa": 4,
+            "spd": 1,
+            "spe": 6,
+            "hp": 10
+        }
+    },
+    {
+        "species": "cobblemon:helioptile",
+        "form": "",
+        "level": 51,
+        "item": "",
+        "ivs": {
+            "atk": 8,
+            "def": 30,
+            "spa": 8,
+            "spd": 3,
+            "spe": 16,
+            "hp": 3
+        }
+    },
+    {
+        "species": "cobblemon:zebstrika",
+        "form": "",
+        "level": 54,
+        "item": "",
+        "ivs": {
+            "atk": 25,
+            "def": 13,
+            "spa": 17,
+            "spd": 19,
+            "spe": 16,
+            "hp": 22
+        }
+    }
+]

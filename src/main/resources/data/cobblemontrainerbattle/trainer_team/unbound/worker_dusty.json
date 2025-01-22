@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:klang",
+        "form": "",
+        "level": 48,
+        "item": "",
+        "ivs": {
+            "atk": 17,
+            "def": 22,
+            "spa": 13,
+            "spd": 25,
+            "spe": 10,
+            "hp": 2
+        }
+    },
+    {
+        "species": "cobblemon:eelektross",
+        "form": "",
+        "level": 49,
+        "item": "",
+        "ivs": {
+            "atk": 0,
+            "def": 0,
+            "spa": 1,
+            "spd": 20,
+            "spe": 31,
+            "hp": 10
+        }
+    }
+]

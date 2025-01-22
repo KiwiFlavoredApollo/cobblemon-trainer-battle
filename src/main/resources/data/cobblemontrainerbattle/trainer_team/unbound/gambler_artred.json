@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:golem",
+        "form": "Alolan",
+        "level": 38,
+        "item": "",
+        "ivs": {
+            "atk": 25,
+            "def": 13,
+            "spa": 3,
+            "spd": 17,
+            "spe": 30,
+            "hp": 5
+        }
+    },
+    {
+        "species": "cobblemon:lycanroc",
+        "form": "",
+        "level": 38,
+        "item": "",
+        "ivs": {
+            "atk": 21,
+            "def": 13,
+            "spa": 0,
+            "spd": 6,
+            "spe": 13,
+            "hp": 10
+        }
+    },
+    {
+        "species": "cobblemon:lycanroc",
+        "form": "",
+        "level": 38,
+        "item": "",
+        "ivs": {
+            "atk": 22,
+            "def": 12,
+            "spa": 3,
+            "spd": 7,
+            "spe": 22,
+            "hp": 0
+        }
+    }
+]

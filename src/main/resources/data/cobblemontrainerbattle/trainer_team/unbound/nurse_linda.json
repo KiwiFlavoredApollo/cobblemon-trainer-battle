@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:togepi",
+        "form": "",
+        "level": 39,
+        "item": "",
+        "ivs": {
+            "atk": 30,
+            "def": 1,
+            "spa": 17,
+            "spd": 18,
+            "spe": 9,
+            "hp": 17
+        }
+    },
+    {
+        "species": "cobblemon:togetic",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 23,
+            "def": 7,
+            "spa": 14,
+            "spd": 28,
+            "spe": 13,
+            "hp": 17
+        }
+    },
+    {
+        "species": "cobblemon:chansey",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 2,
+            "def": 2,
+            "spa": 11,
+            "spd": 9,
+            "spe": 16,
+            "hp": 1
+        }
+    }
+]

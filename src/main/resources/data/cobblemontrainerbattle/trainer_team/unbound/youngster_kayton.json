@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:vigoroth",
+        "form": "",
+        "level": 70,
+        "item": "",
+        "ivs": {
+            "atk": 23,
+            "def": 20,
+            "spa": 25,
+            "spd": 9,
+            "spe": 2,
+            "hp": 4
+        }
+    },
+    {
+        "species": "cobblemon:ursaring",
+        "form": "",
+        "level": 72,
+        "item": "",
+        "ivs": {
+            "atk": 30,
+            "def": 29,
+            "spa": 21,
+            "spd": 28,
+            "spe": 21,
+            "hp": 0
+        }
+    }
+]

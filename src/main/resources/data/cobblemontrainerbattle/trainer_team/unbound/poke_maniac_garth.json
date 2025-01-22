@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:togedemaru",
+        "form": "",
+        "level": 38,
+        "item": "",
+        "ivs": {
+            "atk": 20,
+            "def": 1,
+            "spa": 4,
+            "spd": 2,
+            "spe": 2,
+            "hp": 31
+        }
+    },
+    {
+        "species": "cobblemon:pachirisu",
+        "form": "",
+        "level": 38,
+        "item": "",
+        "ivs": {
+            "atk": 11,
+            "def": 11,
+            "spa": 18,
+            "spd": 28,
+            "spe": 14,
+            "hp": 8
+        }
+    },
+    {
+        "species": "cobblemon:eelektrik",
+        "form": "",
+        "level": 39,
+        "item": "",
+        "ivs": {
+            "atk": 29,
+            "def": 25,
+            "spa": 3,
+            "spd": 30,
+            "spe": 1,
+            "hp": 30
+        }
+    }
+]

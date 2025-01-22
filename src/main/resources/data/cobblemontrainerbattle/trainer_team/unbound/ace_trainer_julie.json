@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:hippowdon",
+        "form": "",
+        "level": 60,
+        "item": "Leftovers",
+        "ivs": {
+            "atk": 0,
+            "def": 30,
+            "spa": 31,
+            "spd": 4,
+            "spe": 25,
+            "hp": 29
+        }
+    },
+    {
+        "species": "cobblemon:lycanroc",
+        "form": "",
+        "level": 59,
+        "item": "Life Orb",
+        "ivs": {
+            "atk": 13,
+            "def": 22,
+            "spa": 0,
+            "spd": 24,
+            "spe": 3,
+            "hp": 6
+        }
+    },
+    {
+        "species": "cobblemon:stoutland",
+        "form": "",
+        "level": 61,
+        "item": "Sitrus Berry",
+        "ivs": {
+            "atk": 9,
+            "def": 16,
+            "spa": 27,
+            "spd": 3,
+            "spe": 22,
+            "hp": 28
+        }
+    }
+]

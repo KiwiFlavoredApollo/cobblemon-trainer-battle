@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:bidoof",
+        "form": "",
+        "level": 12,
+        "item": "",
+        "ivs": {
+            "atk": 7,
+            "def": 25,
+            "spa": 3,
+            "spd": 28,
+            "spe": 31,
+            "hp": 21
+        }
+    },
+    {
+        "species": "cobblemon:slowpoke",
+        "form": "",
+        "level": 13,
+        "item": "",
+        "ivs": {
+            "atk": 3,
+            "def": 25,
+            "spa": 11,
+            "spd": 20,
+            "spe": 0,
+            "hp": 3
+        }
+    }
+]

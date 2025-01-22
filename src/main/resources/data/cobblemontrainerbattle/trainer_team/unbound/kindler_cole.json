@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:camerupt",
+        "form": "",
+        "level": 32,
+        "item": "",
+        "ivs": {
+            "atk": 22,
+            "def": 21,
+            "spa": 27,
+            "spd": 8,
+            "spe": 1,
+            "hp": 12
+        }
+    },
+    {
+        "species": "cobblemon:simisear",
+        "form": "",
+        "level": 33,
+        "item": "",
+        "ivs": {
+            "atk": 18,
+            "def": 21,
+            "spa": 5,
+            "spd": 6,
+            "spe": 13,
+            "hp": 26
+        }
+    },
+    {
+        "species": "cobblemon:ponyta",
+        "form": "",
+        "level": 31,
+        "item": "",
+        "ivs": {
+            "atk": 18,
+            "def": 31,
+            "spa": 7,
+            "spd": 30,
+            "spe": 10,
+            "hp": 24
+        }
+    }
+]

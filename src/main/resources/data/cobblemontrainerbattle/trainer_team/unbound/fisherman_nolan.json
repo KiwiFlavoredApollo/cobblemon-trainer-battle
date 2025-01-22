@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:corsola",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 3,
+            "def": 16,
+            "spa": 5,
+            "spd": 19,
+            "spe": 10,
+            "hp": 17
+        }
+    },
+    {
+        "species": "cobblemon:mareanie",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 21,
+            "def": 31,
+            "spa": 10,
+            "spd": 14,
+            "spe": 2,
+            "hp": 28
+        }
+    }
+]

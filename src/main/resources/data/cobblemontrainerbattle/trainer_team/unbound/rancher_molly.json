@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:furfrou",
+        "form": "",
+        "level": 55,
+        "item": "",
+        "ivs": {
+            "atk": 25,
+            "def": 11,
+            "spa": 3,
+            "spd": 27,
+            "spe": 6,
+            "hp": 28
+        }
+    },
+    {
+        "species": "cobblemon:gogoat",
+        "form": "",
+        "level": 56,
+        "item": "",
+        "ivs": {
+            "atk": 1,
+            "def": 13,
+            "spa": 5,
+            "spd": 1,
+            "spe": 1,
+            "hp": 23
+        }
+    },
+    {
+        "species": "cobblemon:miltank",
+        "form": "",
+        "level": 57,
+        "item": "",
+        "ivs": {
+            "atk": 5,
+            "def": 22,
+            "spa": 19,
+            "spd": 17,
+            "spe": 12,
+            "hp": 19
+        }
+    }
+]

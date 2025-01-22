@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:luxray",
+        "form": "",
+        "level": 55,
+        "item": "",
+        "ivs": {
+            "atk": 12,
+            "def": 16,
+            "spa": 17,
+            "spd": 28,
+            "spe": 10,
+            "hp": 5
+        }
+    },
+    {
+        "species": "cobblemon:porygon2",
+        "form": "",
+        "level": 54,
+        "item": "",
+        "ivs": {
+            "atk": 19,
+            "def": 28,
+            "spa": 9,
+            "spd": 16,
+            "spe": 31,
+            "hp": 31
+        }
+    }
+]

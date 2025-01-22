@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:dewpider",
+        "form": "",
+        "level": 16,
+        "item": "",
+        "ivs": {
+            "atk": 0,
+            "def": 4,
+            "spa": 13,
+            "spd": 20,
+            "spe": 15,
+            "hp": 10
+        }
+    },
+    {
+        "species": "cobblemon:kakuna",
+        "form": "",
+        "level": 17,
+        "item": "",
+        "ivs": {
+            "atk": 16,
+            "def": 20,
+            "spa": 0,
+            "spd": 15,
+            "spe": 2,
+            "hp": 14
+        }
+    }
+]

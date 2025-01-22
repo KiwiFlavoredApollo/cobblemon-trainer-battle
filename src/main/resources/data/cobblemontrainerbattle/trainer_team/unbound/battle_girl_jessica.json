@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:meditite",
+        "form": "",
+        "level": 25,
+        "item": "",
+        "ivs": {
+            "atk": 11,
+            "def": 1,
+            "spa": 24,
+            "spd": 28,
+            "spe": 17,
+            "hp": 20
+        }
+    },
+    {
+        "species": "cobblemon:hariyama",
+        "form": "",
+        "level": 26,
+        "item": "",
+        "ivs": {
+            "atk": 28,
+            "def": 12,
+            "spa": 1,
+            "spd": 19,
+            "spe": 2,
+            "hp": 29
+        }
+    }
+]

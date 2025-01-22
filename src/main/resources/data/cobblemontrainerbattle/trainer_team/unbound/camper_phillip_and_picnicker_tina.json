@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:sandshrew",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 26,
+            "def": 19,
+            "spa": 20,
+            "spd": 0,
+            "spe": 3,
+            "hp": 10
+        }
+    },
+    {
+        "species": "cobblemon:happiny",
+        "form": "",
+        "level": 39,
+        "item": "",
+        "ivs": {
+            "atk": 6,
+            "def": 1,
+            "spa": 1,
+            "spd": 24,
+            "spe": 7,
+            "hp": 12
+        }
+    },
+    {
+        "species": "cobblemon:snivy",
+        "form": "",
+        "level": 39,
+        "item": "",
+        "ivs": {
+            "atk": 27,
+            "def": 11,
+            "spa": 19,
+            "spd": 2,
+            "spe": 8,
+            "hp": 10
+        }
+    }
+]

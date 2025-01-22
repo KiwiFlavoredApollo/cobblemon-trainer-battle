@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:sunkern",
+        "form": "",
+        "level": 26,
+        "item": "",
+        "ivs": {
+            "atk": 12,
+            "def": 31,
+            "spa": 13,
+            "spd": 6,
+            "spe": 6,
+            "hp": 3
+        }
+    },
+    {
+        "species": "cobblemon:furret",
+        "form": "",
+        "level": 26,
+        "item": "",
+        "ivs": {
+            "atk": 5,
+            "def": 21,
+            "spa": 4,
+            "spd": 24,
+            "spe": 19,
+            "hp": 15
+        }
+    },
+    {
+        "species": "cobblemon:meowstic",
+        "form": "",
+        "level": 27,
+        "item": "",
+        "ivs": {
+            "atk": 20,
+            "def": 5,
+            "spa": 8,
+            "spd": 18,
+            "spe": 21,
+            "hp": 20
+        }
+    }
+]

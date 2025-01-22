@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:shelmet",
+        "form": "",
+        "level": 31,
+        "item": "",
+        "ivs": {
+            "atk": 6,
+            "def": 13,
+            "spa": 4,
+            "spd": 2,
+            "spe": 19,
+            "hp": 4
+        }
+    }
+]

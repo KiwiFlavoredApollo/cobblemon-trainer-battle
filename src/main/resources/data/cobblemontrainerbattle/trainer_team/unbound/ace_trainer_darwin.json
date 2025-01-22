@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:tirtouga",
+        "form": "",
+        "level": 53,
+        "item": "",
+        "ivs": {
+            "atk": 20,
+            "def": 11,
+            "spa": 10,
+            "spd": 30,
+            "spe": 21,
+            "hp": 21
+        }
+    },
+    {
+        "species": "cobblemon:heliolisk",
+        "form": "",
+        "level": 53,
+        "item": "",
+        "ivs": {
+            "atk": 0,
+            "def": 10,
+            "spa": 29,
+            "spd": 21,
+            "spe": 17,
+            "hp": 24
+        }
+    },
+    {
+        "species": "cobblemon:marshtomp",
+        "form": "",
+        "level": 54,
+        "item": "",
+        "ivs": {
+            "atk": 26,
+            "def": 20,
+            "spa": 29,
+            "spd": 6,
+            "spe": 13,
+            "hp": 21
+        }
+    }
+]

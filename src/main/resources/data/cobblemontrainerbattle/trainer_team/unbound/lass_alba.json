@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:sunkern",
+        "form": "",
+        "level": 21,
+        "item": "",
+        "ivs": {
+            "atk": 2,
+            "def": 23,
+            "spa": 19,
+            "spd": 13,
+            "spe": 20,
+            "hp": 5
+        }
+    },
+    {
+        "species": "cobblemon:ledyba",
+        "form": "",
+        "level": 22,
+        "item": "",
+        "ivs": {
+            "atk": 17,
+            "def": 11,
+            "spa": 21,
+            "spd": 26,
+            "spe": 15,
+            "hp": 6
+        }
+    }
+]

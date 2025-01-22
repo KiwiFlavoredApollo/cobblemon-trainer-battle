@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:flaaffy",
+        "form": "",
+        "level": 25,
+        "item": "",
+        "ivs": {
+            "atk": 10,
+            "def": 1,
+            "spa": 11,
+            "spd": 15,
+            "spe": 0,
+            "hp": 2
+        }
+    },
+    {
+        "species": "cobblemon:chansey",
+        "form": "",
+        "level": 26,
+        "item": "",
+        "ivs": {
+            "atk": 20,
+            "def": 10,
+            "spa": 11,
+            "spd": 2,
+            "spe": 15,
+            "hp": 31
+        }
+    }
+]

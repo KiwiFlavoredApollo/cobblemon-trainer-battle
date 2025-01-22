@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:oranguru",
+        "form": "",
+        "level": 72,
+        "item": "",
+        "ivs": {
+            "atk": 29,
+            "def": 25,
+            "spa": 25,
+            "spd": 29,
+            "spe": 18,
+            "hp": 13
+        }
+    },
+    {
+        "species": "cobblemon:reuniclus",
+        "form": "",
+        "level": 74,
+        "item": "",
+        "ivs": {
+            "atk": 19,
+            "def": 29,
+            "spa": 14,
+            "spd": 8,
+            "spe": 6,
+            "hp": 11
+        }
+    }
+]

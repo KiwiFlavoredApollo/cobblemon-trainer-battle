@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:emolga",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 23,
+            "def": 6,
+            "spa": 11,
+            "spd": 4,
+            "spe": 0,
+            "hp": 29
+        }
+    },
+    {
+        "species": "cobblemon:pachirisu",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 14,
+            "def": 15,
+            "spa": 13,
+            "spd": 26,
+            "spe": 29,
+            "hp": 13
+        }
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "species": "cobblemon:poliwag",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 8,
+            "def": 5,
+            "spa": 4,
+            "spd": 5,
+            "spe": 17,
+            "hp": 4
+        }
+    },
+    {
+        "species": "cobblemon:nidorina",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 2,
+            "def": 16,
+            "spa": 13,
+            "spd": 14,
+            "spe": 30,
+            "hp": 15
+        }
+    },
+    {
+        "species": "cobblemon:goldeen",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 9,
+            "def": 27,
+            "spa": 5,
+            "spd": 26,
+            "spe": 31,
+            "hp": 3
+        }
+    },
+    {
+        "species": "cobblemon:poliwag",
+        "form": "",
+        "level": 39,
+        "item": "",
+        "ivs": {
+            "atk": 8,
+            "def": 10,
+            "spa": 12,
+            "spd": 24,
+            "spe": 24,
+            "hp": 18
+        }
+    }
+]

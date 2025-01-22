@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:nuzleaf",
+        "form": "",
+        "level": 21,
+        "item": "",
+        "ivs": {
+            "atk": 31,
+            "def": 29,
+            "spa": 17,
+            "spd": 22,
+            "spe": 26,
+            "hp": 28
+        }
+    }
+]

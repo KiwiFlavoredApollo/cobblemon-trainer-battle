@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:muk",
+        "form": "",
+        "level": 49,
+        "item": "",
+        "ivs": {
+            "atk": 28,
+            "def": 21,
+            "spa": 26,
+            "spd": 21,
+            "spe": 31,
+            "hp": 16
+        }
+    }
+]

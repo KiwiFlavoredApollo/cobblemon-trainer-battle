@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:passimian",
+        "form": "",
+        "level": 72,
+        "item": "",
+        "ivs": {
+            "atk": 22,
+            "def": 6,
+            "spa": 3,
+            "spd": 23,
+            "spe": 7,
+            "hp": 14
+        }
+    },
+    {
+        "species": "cobblemon:toxicroak",
+        "form": "",
+        "level": 73,
+        "item": "",
+        "ivs": {
+            "atk": 18,
+            "def": 16,
+            "spa": 9,
+            "spd": 19,
+            "spe": 20,
+            "hp": 1
+        }
+    },
+    {
+        "species": "cobblemon:monferno",
+        "form": "",
+        "level": 70,
+        "item": "",
+        "ivs": {
+            "atk": 19,
+            "def": 8,
+            "spa": 18,
+            "spd": 0,
+            "spe": 14,
+            "hp": 8
+        }
+    }
+]

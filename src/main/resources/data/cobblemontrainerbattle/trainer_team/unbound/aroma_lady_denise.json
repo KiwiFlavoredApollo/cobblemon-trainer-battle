@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:simisage",
+        "form": "",
+        "level": 53,
+        "item": "",
+        "ivs": {
+            "atk": 1,
+            "def": 12,
+            "spa": 22,
+            "spd": 20,
+            "spe": 25,
+            "hp": 9
+        }
+    },
+    {
+        "species": "cobblemon:steenee",
+        "form": "",
+        "level": 54,
+        "item": "",
+        "ivs": {
+            "atk": 23,
+            "def": 28,
+            "spa": 16,
+            "spd": 24,
+            "spe": 16,
+            "hp": 30
+        }
+    }
+]

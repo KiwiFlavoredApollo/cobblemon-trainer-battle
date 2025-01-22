@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:weedle",
+        "form": "",
+        "level": 16,
+        "item": "",
+        "ivs": {
+            "atk": 10,
+            "def": 27,
+            "spa": 11,
+            "spd": 12,
+            "spe": 12,
+            "hp": 9
+        }
+    },
+    {
+        "species": "cobblemon:ledyba",
+        "form": "",
+        "level": 16,
+        "item": "",
+        "ivs": {
+            "atk": 27,
+            "def": 19,
+            "spa": 21,
+            "spd": 18,
+            "spe": 17,
+            "hp": 24
+        }
+    },
+    {
+        "species": "cobblemon:kakuna",
+        "form": "",
+        "level": 17,
+        "item": "",
+        "ivs": {
+            "atk": 12,
+            "def": 7,
+            "spa": 28,
+            "spd": 24,
+            "spe": 24,
+            "hp": 5
+        }
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:klink",
+        "form": "",
+        "level": 35,
+        "item": "",
+        "ivs": {
+            "atk": 17,
+            "def": 13,
+            "spa": 11,
+            "spd": 30,
+            "spe": 17,
+            "hp": 1
+        }
+    },
+    {
+        "species": "cobblemon:bronzong",
+        "form": "",
+        "level": 36,
+        "item": "",
+        "ivs": {
+            "atk": 30,
+            "def": 24,
+            "spa": 26,
+            "spd": 29,
+            "spe": 4,
+            "hp": 16
+        }
+    }
+]

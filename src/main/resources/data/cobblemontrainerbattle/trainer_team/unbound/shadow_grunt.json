@@ -1,0 +1,58 @@
+[
+    {
+        "species": "cobblemon:phantump",
+        "form": "",
+        "level": 32,
+        "item": "",
+        "ivs": {
+            "atk": 31,
+            "def": 21,
+            "spa": 18,
+            "spd": 22,
+            "spe": 5,
+            "hp": 1
+        }
+    },
+    {
+        "species": "cobblemon:sharpedo",
+        "form": "",
+        "level": 33,
+        "item": "",
+        "ivs": {
+            "atk": 30,
+            "def": 7,
+            "spa": 10,
+            "spd": 11,
+            "spe": 21,
+            "hp": 17
+        }
+    },
+    {
+        "species": "cobblemon:sneasel",
+        "form": "",
+        "level": 33,
+        "item": "",
+        "ivs": {
+            "atk": 31,
+            "def": 17,
+            "spa": 9,
+            "spd": 6,
+            "spe": 27,
+            "hp": 9
+        }
+    },
+    {
+        "species": "cobblemon:a, rattata",
+        "form": "",
+        "level": 31,
+        "item": "",
+        "ivs": {
+            "atk": 28,
+            "def": 6,
+            "spa": 15,
+            "spd": 14,
+            "spe": 14,
+            "hp": 12
+        }
+    }
+]

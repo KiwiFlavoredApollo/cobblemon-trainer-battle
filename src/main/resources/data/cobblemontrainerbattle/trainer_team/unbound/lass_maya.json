@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:marill",
+        "form": "",
+        "level": 31,
+        "item": "",
+        "ivs": {
+            "atk": 0,
+            "def": 10,
+            "spa": 14,
+            "spd": 25,
+            "spe": 16,
+            "hp": 24
+        }
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:swablu",
+        "form": "",
+        "level": 31,
+        "item": "",
+        "ivs": {
+            "atk": 18,
+            "def": 27,
+            "spa": 26,
+            "spd": 1,
+            "spe": 11,
+            "hp": 28
+        }
+    },
+    {
+        "species": "cobblemon:fearow",
+        "form": "",
+        "level": 33,
+        "item": "",
+        "ivs": {
+            "atk": 3,
+            "def": 5,
+            "spa": 12,
+            "spd": 29,
+            "spe": 3,
+            "hp": 14
+        }
+    }
+]

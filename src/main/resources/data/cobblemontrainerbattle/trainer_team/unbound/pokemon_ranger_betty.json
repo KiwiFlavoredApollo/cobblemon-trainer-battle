@@ -1,0 +1,58 @@
+[
+    {
+        "species": "cobblemon:minun",
+        "form": "",
+        "level": 52,
+        "item": "",
+        "ivs": {
+            "atk": 4,
+            "def": 26,
+            "spa": 27,
+            "spd": 27,
+            "spe": 12,
+            "hp": 12
+        }
+    },
+    {
+        "species": "cobblemon:tangrowth",
+        "form": "",
+        "level": 54,
+        "item": "",
+        "ivs": {
+            "atk": 19,
+            "def": 11,
+            "spa": 8,
+            "spd": 31,
+            "spe": 12,
+            "hp": 11
+        }
+    },
+    {
+        "species": "cobblemon:wobbuffet",
+        "form": "",
+        "level": 54,
+        "item": "",
+        "ivs": {
+            "atk": 25,
+            "def": 26,
+            "spa": 12,
+            "spd": 26,
+            "spe": 1,
+            "hp": 4
+        }
+    },
+    {
+        "species": "cobblemon:spinda",
+        "form": "",
+        "level": 52,
+        "item": "",
+        "ivs": {
+            "atk": 1,
+            "def": 21,
+            "spa": 17,
+            "spd": 30,
+            "spe": 13,
+            "hp": 10
+        }
+    }
+]

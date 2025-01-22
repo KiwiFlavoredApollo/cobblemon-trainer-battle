@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:gourgeist",
+        "form": "",
+        "level": 31,
+        "item": "",
+        "ivs": {
+            "atk": 22,
+            "def": 15,
+            "spa": 25,
+            "spd": 14,
+            "spe": 10,
+            "hp": 20
+        }
+    },
+    {
+        "species": "cobblemon:raticate",
+        "form": "Alolan",
+        "level": 32,
+        "item": "",
+        "ivs": {
+            "atk": 19,
+            "def": 16,
+            "spa": 11,
+            "spd": 23,
+            "spe": 3,
+            "hp": 26
+        }
+    }
+]

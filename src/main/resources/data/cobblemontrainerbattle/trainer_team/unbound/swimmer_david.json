@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:gastrodon",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 4,
+            "def": 26,
+            "spa": 20,
+            "spd": 4,
+            "spe": 2,
+            "hp": 1
+        }
+    },
+    {
+        "species": "cobblemon:cloyster",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 6,
+            "def": 1,
+            "spa": 12,
+            "spd": 31,
+            "spe": 3,
+            "hp": 10
+        }
+    },
+    {
+        "species": "cobblemon:shellder",
+        "form": "",
+        "level": 39,
+        "item": "",
+        "ivs": {
+            "atk": 13,
+            "def": 18,
+            "spa": 13,
+            "spd": 8,
+            "spe": 24,
+            "hp": 21
+        }
+    }
+]

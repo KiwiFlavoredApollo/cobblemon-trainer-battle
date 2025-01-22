@@ -1,0 +1,86 @@
+[
+    {
+        "species": "cobblemon:poochyena",
+        "form": "",
+        "level": 15,
+        "item": "",
+        "ivs": {
+            "atk": 5,
+            "def": 11,
+            "spa": 13,
+            "spd": 6,
+            "spe": 19,
+            "hp": 25
+        }
+    },
+    {
+        "species": "cobblemon:pancham",
+        "form": "",
+        "level": 15,
+        "item": "",
+        "ivs": {
+            "atk": 2,
+            "def": 12,
+            "spa": 4,
+            "spd": 2,
+            "spe": 18,
+            "hp": 3
+        }
+    },
+    {
+        "species": "cobblemon:sandile",
+        "form": "",
+        "level": 15,
+        "item": "",
+        "ivs": {
+            "atk": 29,
+            "def": 22,
+            "spa": 23,
+            "spd": 6,
+            "spe": 13,
+            "hp": 1
+        }
+    },
+    {
+        "species": "cobblemon:inkay",
+        "form": "",
+        "level": 15,
+        "item": "",
+        "ivs": {
+            "atk": 13,
+            "def": 13,
+            "spa": 23,
+            "spd": 16,
+            "spe": 6,
+            "hp": 30
+        }
+    },
+    {
+        "species": "cobblemon:carvanha",
+        "form": "",
+        "level": 15,
+        "item": "",
+        "ivs": {
+            "atk": 7,
+            "def": 11,
+            "spa": 22,
+            "spd": 13,
+            "spe": 7,
+            "hp": 3
+        }
+    },
+    {
+        "species": "cobblemon:inkay",
+        "form": "",
+        "level": 15,
+        "item": "",
+        "ivs": {
+            "atk": 19,
+            "def": 8,
+            "spa": 21,
+            "spd": 30,
+            "spe": 7,
+            "hp": 23
+        }
+    }
+]

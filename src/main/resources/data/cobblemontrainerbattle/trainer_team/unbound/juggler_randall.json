@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:voltorb",
+        "form": "",
+        "level": 32,
+        "item": "",
+        "ivs": {
+            "atk": 22,
+            "def": 0,
+            "spa": 12,
+            "spd": 26,
+            "spe": 0,
+            "hp": 24
+        }
+    },
+    {
+        "species": "cobblemon:drowzee",
+        "form": "",
+        "level": 31,
+        "item": "",
+        "ivs": {
+            "atk": 8,
+            "def": 2,
+            "spa": 30,
+            "spd": 19,
+            "spe": 2,
+            "hp": 1
+        }
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:electrike",
+        "form": "",
+        "level": 18,
+        "item": "",
+        "ivs": {
+            "atk": 1,
+            "def": 31,
+            "spa": 17,
+            "spd": 27,
+            "spe": 11,
+            "hp": 14
+        }
+    },
+    {
+        "species": "cobblemon:magnemite",
+        "form": "",
+        "level": 18,
+        "item": "",
+        "ivs": {
+            "atk": 0,
+            "def": 28,
+            "spa": 1,
+            "spd": 27,
+            "spe": 10,
+            "hp": 4
+        }
+    }
+]

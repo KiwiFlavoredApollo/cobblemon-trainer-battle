@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:manectric",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 8,
+            "def": 30,
+            "spa": 18,
+            "spd": 29,
+            "spe": 25,
+            "hp": 12
+        }
+    },
+    {
+        "species": "cobblemon:electrode",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 27,
+            "def": 27,
+            "spa": 7,
+            "spd": 13,
+            "spe": 27,
+            "hp": 22
+        }
+    }
+]

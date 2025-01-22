@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:shellder",
+        "form": "",
+        "level": 19,
+        "item": "",
+        "ivs": {
+            "atk": 1,
+            "def": 2,
+            "spa": 25,
+            "spd": 16,
+            "spe": 9,
+            "hp": 5
+        }
+    },
+    {
+        "species": "cobblemon:basculin",
+        "form": "",
+        "level": 20,
+        "item": "",
+        "ivs": {
+            "atk": 14,
+            "def": 5,
+            "spa": 17,
+            "spd": 11,
+            "spe": 14,
+            "hp": 0
+        }
+    },
+    {
+        "species": "cobblemon:staryu",
+        "form": "",
+        "level": 19,
+        "item": "",
+        "ivs": {
+            "atk": 27,
+            "def": 7,
+            "spa": 28,
+            "spd": 1,
+            "spe": 30,
+            "hp": 14
+        }
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:smeargle",
+        "form": "",
+        "level": 18,
+        "item": "Rawst Berry",
+        "ivs": {
+            "atk": 6,
+            "def": 17,
+            "spa": 16,
+            "spd": 9,
+            "spe": 24,
+            "hp": 9
+        }
+    },
+    {
+        "species": "cobblemon:smeargle",
+        "form": "",
+        "level": 18,
+        "item": "Rawst Berry",
+        "ivs": {
+            "atk": 24,
+            "def": 3,
+            "spa": 31,
+            "spd": 16,
+            "spe": 3,
+            "hp": 18
+        }
+    }
+]

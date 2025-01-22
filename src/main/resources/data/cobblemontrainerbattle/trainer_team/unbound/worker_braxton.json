@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:tynamo",
+        "form": "",
+        "level": 37,
+        "item": "",
+        "ivs": {
+            "atk": 12,
+            "def": 8,
+            "spa": 22,
+            "spd": 19,
+            "spe": 31,
+            "hp": 26
+        }
+    }
+]

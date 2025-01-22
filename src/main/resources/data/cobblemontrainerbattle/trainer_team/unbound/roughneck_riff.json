@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:sawk",
+        "form": "",
+        "level": 50,
+        "item": "",
+        "ivs": {
+            "atk": 24,
+            "def": 31,
+            "spa": 3,
+            "spd": 23,
+            "spe": 6,
+            "hp": 24
+        }
+    }
+]

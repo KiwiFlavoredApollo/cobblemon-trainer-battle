@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:skrelp",
+        "form": "",
+        "level": 29,
+        "item": "",
+        "ivs": {
+            "atk": 8,
+            "def": 8,
+            "spa": 17,
+            "spd": 15,
+            "spe": 17,
+            "hp": 12
+        }
+    },
+    {
+        "species": "cobblemon:pyukumuku",
+        "form": "",
+        "level": 30,
+        "item": "",
+        "ivs": {
+            "atk": 11,
+            "def": 20,
+            "spa": 2,
+            "spd": 5,
+            "spe": 13,
+            "hp": 26
+        }
+    },
+    {
+        "species": "cobblemon:lanturn",
+        "form": "",
+        "level": 30,
+        "item": "",
+        "ivs": {
+            "atk": 30,
+            "def": 31,
+            "spa": 0,
+            "spd": 30,
+            "spe": 30,
+            "hp": 14
+        }
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:honchkrow",
+        "form": "",
+        "level": 28,
+        "item": "",
+        "ivs": {
+            "atk": 0,
+            "def": 1,
+            "spa": 4,
+            "spd": 19,
+            "spe": 10,
+            "hp": 9
+        }
+    },
+    {
+        "species": "cobblemon:pelipper",
+        "form": "",
+        "level": 28,
+        "item": "",
+        "ivs": {
+            "atk": 23,
+            "def": 25,
+            "spa": 14,
+            "spd": 7,
+            "spe": 3,
+            "hp": 17
+        }
+    }
+]

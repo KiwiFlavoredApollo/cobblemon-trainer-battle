@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:kricketot",
+        "form": "",
+        "level": 22,
+        "item": "",
+        "ivs": {
+            "atk": 7,
+            "def": 2,
+            "spa": 12,
+            "spd": 13,
+            "spe": 15,
+            "hp": 25
+        }
+    },
+    {
+        "species": "cobblemon:spinarak",
+        "form": "",
+        "level": 22,
+        "item": "",
+        "ivs": {
+            "atk": 1,
+            "def": 13,
+            "spa": 18,
+            "spd": 12,
+            "spe": 15,
+            "hp": 23
+        }
+    }
+]

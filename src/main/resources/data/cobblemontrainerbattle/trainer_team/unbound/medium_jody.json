@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:pumpkaboo",
+        "form": "",
+        "level": 17,
+        "item": "",
+        "ivs": {
+            "atk": 27,
+            "def": 21,
+            "spa": 25,
+            "spd": 6,
+            "spe": 14,
+            "hp": 19
+        }
+    },
+    {
+        "species": "cobblemon:shuppet",
+        "form": "",
+        "level": 17,
+        "item": "",
+        "ivs": {
+            "atk": 19,
+            "def": 2,
+            "spa": 1,
+            "spd": 30,
+            "spe": 19,
+            "hp": 11
+        }
+    },
+    {
+        "species": "cobblemon:gastly",
+        "form": "",
+        "level": 18,
+        "item": "",
+        "ivs": {
+            "atk": 24,
+            "def": 17,
+            "spa": 29,
+            "spd": 29,
+            "spe": 10,
+            "hp": 13
+        }
+    }
+]

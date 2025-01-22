@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:skiploom",
+        "form": "",
+        "level": 51,
+        "item": "",
+        "ivs": {
+            "atk": 10,
+            "def": 15,
+            "spa": 23,
+            "spd": 20,
+            "spe": 15,
+            "hp": 15
+        }
+    },
+    {
+        "species": "cobblemon:bagon",
+        "form": "",
+        "level": 52,
+        "item": "",
+        "ivs": {
+            "atk": 7,
+            "def": 25,
+            "spa": 20,
+            "spd": 23,
+            "spe": 11,
+            "hp": 26
+        }
+    }
+]

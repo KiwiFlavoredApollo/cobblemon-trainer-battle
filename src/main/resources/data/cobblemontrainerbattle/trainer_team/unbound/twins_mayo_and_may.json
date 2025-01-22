@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:glameow",
+        "form": "",
+        "level": 37,
+        "item": "",
+        "ivs": {
+            "atk": 14,
+            "def": 29,
+            "spa": 6,
+            "spd": 4,
+            "spe": 25,
+            "hp": 6
+        }
+    },
+    {
+        "species": "cobblemon:shellos",
+        "form": "",
+        "level": 37,
+        "item": "",
+        "ivs": {
+            "atk": 2,
+            "def": 14,
+            "spa": 19,
+            "spd": 10,
+            "spe": 14,
+            "hp": 19
+        }
+    }
+]

@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:malamar",
+        "form": "",
+        "level": 52,
+        "item": "",
+        "ivs": {
+            "atk": 12,
+            "def": 31,
+            "spa": 27,
+            "spd": 31,
+            "spe": 22,
+            "hp": 7
+        }
+    },
+    {
+        "species": "cobblemon:dragalge",
+        "form": "",
+        "level": 52,
+        "item": "",
+        "ivs": {
+            "atk": 17,
+            "def": 17,
+            "spa": 16,
+            "spd": 27,
+            "spe": 1,
+            "hp": 25
+        }
+    },
+    {
+        "species": "cobblemon:samurott",
+        "form": "",
+        "level": 51,
+        "item": "",
+        "ivs": {
+            "atk": 5,
+            "def": 12,
+            "spa": 28,
+            "spd": 11,
+            "spe": 22,
+            "hp": 16
+        }
+    }
+]

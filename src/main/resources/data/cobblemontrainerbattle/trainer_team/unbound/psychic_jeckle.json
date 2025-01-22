@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:espeon",
+        "form": "",
+        "level": 38,
+        "item": "",
+        "ivs": {
+            "atk": 1,
+            "def": 28,
+            "spa": 31,
+            "spd": 13,
+            "spe": 16,
+            "hp": 16
+        }
+    },
+    {
+        "species": "cobblemon:spoink",
+        "form": "",
+        "level": 37,
+        "item": "",
+        "ivs": {
+            "atk": 24,
+            "def": 2,
+            "spa": 5,
+            "spd": 2,
+            "spe": 12,
+            "hp": 17
+        }
+    }
+]

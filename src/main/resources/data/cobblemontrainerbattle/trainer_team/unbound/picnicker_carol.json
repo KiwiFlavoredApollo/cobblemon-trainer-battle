@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:exeggcute",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 4,
+            "def": 22,
+            "spa": 29,
+            "spd": 23,
+            "spe": 18,
+            "hp": 11
+        }
+    },
+    {
+        "species": "cobblemon:flabebe",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 16,
+            "def": 0,
+            "spa": 28,
+            "spd": 14,
+            "spe": 11,
+            "hp": 23
+        }
+    }
+]

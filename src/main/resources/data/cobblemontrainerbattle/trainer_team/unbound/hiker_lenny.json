@@ -1,0 +1,58 @@
+[
+    {
+        "species": "cobblemon:sudowoodo",
+        "form": "",
+        "level": 32,
+        "item": "",
+        "ivs": {
+            "atk": 8,
+            "def": 20,
+            "spa": 31,
+            "spd": 25,
+            "spe": 28,
+            "hp": 20
+        }
+    },
+    {
+        "species": "cobblemon:graveler",
+        "form": "Alolan",
+        "level": 32,
+        "item": "",
+        "ivs": {
+            "atk": 4,
+            "def": 21,
+            "spa": 17,
+            "spd": 24,
+            "spe": 2,
+            "hp": 26
+        }
+    },
+    {
+        "species": "cobblemon:magcargo",
+        "form": "",
+        "level": 33,
+        "item": "",
+        "ivs": {
+            "atk": 10,
+            "def": 3,
+            "spa": 30,
+            "spd": 20,
+            "spe": 14,
+            "hp": 8
+        }
+    },
+    {
+        "species": "cobblemon:steelix",
+        "form": "",
+        "level": 33,
+        "item": "",
+        "ivs": {
+            "atk": 30,
+            "def": 31,
+            "spa": 13,
+            "spd": 10,
+            "spe": 3,
+            "hp": 1
+        }
+    }
+]

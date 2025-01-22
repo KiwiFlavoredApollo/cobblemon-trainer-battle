@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:duskull",
+        "form": "",
+        "level": 16,
+        "item": "",
+        "ivs": {
+            "atk": 23,
+            "def": 5,
+            "spa": 26,
+            "spd": 10,
+            "spe": 1,
+            "hp": 18
+        }
+    },
+    {
+        "species": "cobblemon:pumpkaboo",
+        "form": "",
+        "level": 17,
+        "item": "",
+        "ivs": {
+            "atk": 6,
+            "def": 24,
+            "spa": 28,
+            "spd": 2,
+            "spe": 5,
+            "hp": 15
+        }
+    }
+]

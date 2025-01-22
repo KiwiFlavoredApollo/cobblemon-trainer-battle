@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:ariados",
+        "form": "",
+        "level": 57,
+        "item": "",
+        "ivs": {
+            "atk": 22,
+            "def": 10,
+            "spa": 15,
+            "spd": 23,
+            "spe": 13,
+            "hp": 0
+        }
+    }
+]

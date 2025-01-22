@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:gulpin",
+        "form": "",
+        "level": 51,
+        "item": "",
+        "ivs": {
+            "atk": 1,
+            "def": 4,
+            "spa": 30,
+            "spd": 23,
+            "spe": 17,
+            "hp": 1
+        }
+    },
+    {
+        "species": "cobblemon:toxicroak",
+        "form": "",
+        "level": 54,
+        "item": "",
+        "ivs": {
+            "atk": 0,
+            "def": 8,
+            "spa": 31,
+            "spd": 15,
+            "spe": 15,
+            "hp": 28
+        }
+    },
+    {
+        "species": "cobblemon:carnivine",
+        "form": "",
+        "level": 53,
+        "item": "",
+        "ivs": {
+            "atk": 11,
+            "def": 5,
+            "spa": 23,
+            "spd": 0,
+            "spe": 20,
+            "hp": 8
+        }
+    }
+]

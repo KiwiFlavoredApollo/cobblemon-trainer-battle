@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:silcoon",
+        "form": "",
+        "level": 42,
+        "item": "",
+        "ivs": {
+            "atk": 3,
+            "def": 14,
+            "spa": 0,
+            "spd": 15,
+            "spe": 28,
+            "hp": 31
+        }
+    },
+    {
+        "species": "cobblemon:cascoon",
+        "form": "",
+        "level": 42,
+        "item": "",
+        "ivs": {
+            "atk": 19,
+            "def": 14,
+            "spa": 15,
+            "spd": 13,
+            "spe": 12,
+            "hp": 18
+        }
+    },
+    {
+        "species": "cobblemon:spewpa",
+        "form": "",
+        "level": 42,
+        "item": "",
+        "ivs": {
+            "atk": 0,
+            "def": 30,
+            "spa": 21,
+            "spd": 20,
+            "spe": 28,
+            "hp": 24
+        }
+    }
+]

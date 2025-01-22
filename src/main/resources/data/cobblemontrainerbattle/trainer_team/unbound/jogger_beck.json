@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:unfezant",
+        "form": "",
+        "level": 57,
+        "item": "",
+        "ivs": {
+            "atk": 27,
+            "def": 16,
+            "spa": 9,
+            "spd": 3,
+            "spe": 7,
+            "hp": 5
+        }
+    },
+    {
+        "species": "cobblemon:unfezant",
+        "form": "",
+        "level": 56,
+        "item": "",
+        "ivs": {
+            "atk": 2,
+            "def": 18,
+            "spa": 6,
+            "spd": 30,
+            "spe": 3,
+            "hp": 28
+        }
+    }
+]

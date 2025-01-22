@@ -1,0 +1,58 @@
+[
+    {
+        "species": "cobblemon:heatmor",
+        "form": "",
+        "level": 60,
+        "item": "",
+        "ivs": {
+            "atk": 13,
+            "def": 15,
+            "spa": 15,
+            "spd": 18,
+            "spe": 27,
+            "hp": 20
+        }
+    },
+    {
+        "species": "cobblemon:durant",
+        "form": "",
+        "level": 59,
+        "item": "",
+        "ivs": {
+            "atk": 0,
+            "def": 19,
+            "spa": 8,
+            "spd": 14,
+            "spe": 26,
+            "hp": 21
+        }
+    },
+    {
+        "species": "cobblemon:durant",
+        "form": "",
+        "level": 59,
+        "item": "",
+        "ivs": {
+            "atk": 31,
+            "def": 5,
+            "spa": 20,
+            "spd": 13,
+            "spe": 29,
+            "hp": 0
+        }
+    },
+    {
+        "species": "cobblemon:durant",
+        "form": "",
+        "level": 60,
+        "item": "",
+        "ivs": {
+            "atk": 27,
+            "def": 0,
+            "spa": 4,
+            "spd": 28,
+            "spe": 12,
+            "hp": 10
+        }
+    }
+]

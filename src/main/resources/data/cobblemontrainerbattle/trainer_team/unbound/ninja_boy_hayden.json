@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:stunky",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 29,
+            "def": 4,
+            "spa": 22,
+            "spd": 28,
+            "spe": 16,
+            "hp": 7
+        }
+    },
+    {
+        "species": "cobblemon:diglett",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 31,
+            "def": 25,
+            "spa": 19,
+            "spd": 23,
+            "spe": 12,
+            "hp": 6
+        }
+    }
+]

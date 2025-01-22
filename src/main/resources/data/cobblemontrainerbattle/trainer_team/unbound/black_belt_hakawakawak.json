@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:poliwrath",
+        "form": "",
+        "level": 50,
+        "item": "",
+        "ivs": {
+            "atk": 24,
+            "def": 12,
+            "spa": 23,
+            "spd": 9,
+            "spe": 2,
+            "hp": 16
+        }
+    }
+]

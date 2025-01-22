@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:sneasel",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 19,
+            "def": 15,
+            "spa": 6,
+            "spd": 10,
+            "spe": 5,
+            "hp": 4
+        }
+    },
+    {
+        "species": "cobblemon:arbok",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 14,
+            "def": 19,
+            "spa": 1,
+            "spd": 26,
+            "spe": 9,
+            "hp": 0
+        }
+    },
+    {
+        "species": "cobblemon:victreebel",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 20,
+            "def": 7,
+            "spa": 22,
+            "spd": 14,
+            "spe": 1,
+            "hp": 29
+        }
+    }
+]

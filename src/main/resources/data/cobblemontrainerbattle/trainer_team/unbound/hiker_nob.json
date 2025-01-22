@@ -1,0 +1,58 @@
+[
+    {
+        "species": "cobblemon:drilbur",
+        "form": "",
+        "level": 12,
+        "item": "",
+        "ivs": {
+            "atk": 3,
+            "def": 31,
+            "spa": 5,
+            "spd": 31,
+            "spe": 12,
+            "hp": 18
+        }
+    },
+    {
+        "species": "cobblemon:zubat",
+        "form": "",
+        "level": 11,
+        "item": "",
+        "ivs": {
+            "atk": 5,
+            "def": 12,
+            "spa": 25,
+            "spd": 14,
+            "spe": 0,
+            "hp": 9
+        }
+    },
+    {
+        "species": "cobblemon:makuhita",
+        "form": "",
+        "level": 12,
+        "item": "",
+        "ivs": {
+            "atk": 11,
+            "def": 25,
+            "spa": 25,
+            "spd": 3,
+            "spe": 14,
+            "hp": 29
+        }
+    },
+    {
+        "species": "cobblemon:roggenrola",
+        "form": "",
+        "level": 11,
+        "item": "",
+        "ivs": {
+            "atk": 23,
+            "def": 26,
+            "spa": 8,
+            "spd": 6,
+            "spe": 12,
+            "hp": 19
+        }
+    }
+]

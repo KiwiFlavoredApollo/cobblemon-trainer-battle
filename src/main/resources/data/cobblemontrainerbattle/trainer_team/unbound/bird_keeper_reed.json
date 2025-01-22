@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:vullaby",
+        "form": "",
+        "level": 39,
+        "item": "",
+        "ivs": {
+            "atk": 30,
+            "def": 11,
+            "spa": 17,
+            "spd": 9,
+            "spe": 26,
+            "hp": 10
+        }
+    },
+    {
+        "species": "cobblemon:archen",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 1,
+            "def": 13,
+            "spa": 22,
+            "spd": 6,
+            "spe": 11,
+            "hp": 22
+        }
+    }
+]

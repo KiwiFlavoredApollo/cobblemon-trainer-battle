@@ -1,0 +1,58 @@
+[
+    {
+        "species": "cobblemon:simipour",
+        "form": "",
+        "level": 54,
+        "item": "",
+        "ivs": {
+            "atk": 12,
+            "def": 11,
+            "spa": 19,
+            "spd": 24,
+            "spe": 21,
+            "hp": 13
+        }
+    },
+    {
+        "species": "cobblemon:omanyte",
+        "form": "",
+        "level": 51,
+        "item": "",
+        "ivs": {
+            "atk": 1,
+            "def": 25,
+            "spa": 3,
+            "spd": 31,
+            "spe": 31,
+            "hp": 5
+        }
+    },
+    {
+        "species": "cobblemon:swampert",
+        "form": "",
+        "level": 54,
+        "item": "",
+        "ivs": {
+            "atk": 18,
+            "def": 16,
+            "spa": 13,
+            "spd": 28,
+            "spe": 9,
+            "hp": 7
+        }
+    },
+    {
+        "species": "cobblemon:ducklett",
+        "form": "",
+        "level": 51,
+        "item": "",
+        "ivs": {
+            "atk": 25,
+            "def": 10,
+            "spa": 9,
+            "spd": 1,
+            "spe": 1,
+            "hp": 3
+        }
+    }
+]

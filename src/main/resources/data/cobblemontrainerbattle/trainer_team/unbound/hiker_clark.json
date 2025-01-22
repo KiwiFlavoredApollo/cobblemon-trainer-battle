@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:drilbur",
+        "form": "",
+        "level": 18,
+        "item": "",
+        "ivs": {
+            "atk": 17,
+            "def": 23,
+            "spa": 28,
+            "spd": 24,
+            "spe": 25,
+            "hp": 2
+        }
+    },
+    {
+        "species": "cobblemon:geodude",
+        "form": "",
+        "level": 18,
+        "item": "",
+        "ivs": {
+            "atk": 27,
+            "def": 26,
+            "spa": 13,
+            "spd": 16,
+            "spe": 5,
+            "hp": 4
+        }
+    }
+]

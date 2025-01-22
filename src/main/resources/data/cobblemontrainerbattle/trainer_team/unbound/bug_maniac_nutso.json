@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:beedrill",
+        "form": "",
+        "level": 23,
+        "item": "",
+        "ivs": {
+            "atk": 15,
+            "def": 21,
+            "spa": 18,
+            "spd": 9,
+            "spe": 15,
+            "hp": 29
+        }
+    },
+    {
+        "species": "cobblemon:kricketune",
+        "form": "",
+        "level": 22,
+        "item": "",
+        "ivs": {
+            "atk": 9,
+            "def": 26,
+            "spa": 21,
+            "spd": 15,
+            "spe": 1,
+            "hp": 6
+        }
+    }
+]

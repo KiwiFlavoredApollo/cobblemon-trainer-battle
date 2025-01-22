@@ -1,0 +1,72 @@
+[
+    {
+        "species": "cobblemon:sealeo",
+        "form": "",
+        "level": 51,
+        "item": "",
+        "ivs": {
+            "atk": 22,
+            "def": 23,
+            "spa": 14,
+            "spd": 1,
+            "spe": 2,
+            "hp": 19
+        }
+    },
+    {
+        "species": "cobblemon:froslass",
+        "form": "",
+        "level": 51,
+        "item": "",
+        "ivs": {
+            "atk": 21,
+            "def": 27,
+            "spa": 8,
+            "spd": 16,
+            "spe": 3,
+            "hp": 18
+        }
+    },
+    {
+        "species": "cobblemon:vulpix",
+        "form": "Alolan",
+        "level": 49,
+        "item": "",
+        "ivs": {
+            "atk": 25,
+            "def": 6,
+            "spa": 18,
+            "spd": 20,
+            "spe": 30,
+            "hp": 13
+        }
+    },
+    {
+        "species": "cobblemon:avalugg",
+        "form": "",
+        "level": 51,
+        "item": "",
+        "ivs": {
+            "atk": 24,
+            "def": 9,
+            "spa": 15,
+            "spd": 27,
+            "spe": 5,
+            "hp": 4
+        }
+    },
+    {
+        "species": "cobblemon:aurorus",
+        "form": "",
+        "level": 51,
+        "item": "",
+        "ivs": {
+            "atk": 28,
+            "def": 2,
+            "spa": 10,
+            "spd": 4,
+            "spe": 17,
+            "hp": 3
+        }
+    }
+]

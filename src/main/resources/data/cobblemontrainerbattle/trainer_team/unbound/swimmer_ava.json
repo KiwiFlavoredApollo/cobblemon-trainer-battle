@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:lumineon",
+        "form": "",
+        "level": 42,
+        "item": "",
+        "ivs": {
+            "atk": 4,
+            "def": 14,
+            "spa": 2,
+            "spd": 2,
+            "spe": 2,
+            "hp": 27
+        }
+    },
+    {
+        "species": "cobblemon:wingull",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 25,
+            "def": 20,
+            "spa": 13,
+            "spd": 24,
+            "spe": 7,
+            "hp": 22
+        }
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "species": "cobblemon:joltik",
+        "form": "",
+        "level": 31,
+        "item": "",
+        "ivs": {
+            "atk": 29,
+            "def": 28,
+            "spa": 20,
+            "spd": 15,
+            "spe": 3,
+            "hp": 13
+        }
+    },
+    {
+        "species": "cobblemon:tynamo",
+        "form": "",
+        "level": 31,
+        "item": "",
+        "ivs": {
+            "atk": 10,
+            "def": 17,
+            "spa": 3,
+            "spd": 8,
+            "spe": 29,
+            "hp": 28
+        }
+    },
+    {
+        "species": "cobblemon:flaaffy",
+        "form": "",
+        "level": 33,
+        "item": "",
+        "ivs": {
+            "atk": 30,
+            "def": 20,
+            "spa": 3,
+            "spd": 25,
+            "spe": 20,
+            "hp": 11
+        }
+    },
+    {
+        "species": "cobblemon:pachirisu",
+        "form": "",
+        "level": 32,
+        "item": "",
+        "ivs": {
+            "atk": 24,
+            "def": 2,
+            "spa": 20,
+            "spd": 14,
+            "spe": 8,
+            "hp": 14
+        }
+    }
+]

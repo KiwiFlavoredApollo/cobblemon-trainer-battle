@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:eelektross",
+        "form": "",
+        "level": 59,
+        "item": "Expert Belt",
+        "ivs": {
+            "atk": 17,
+            "def": 21,
+            "spa": 18,
+            "spd": 21,
+            "spe": 10,
+            "hp": 13
+        }
+    },
+    {
+        "species": "cobblemon:araquanid",
+        "form": "",
+        "level": 61,
+        "item": "Quick Claw",
+        "ivs": {
+            "atk": 11,
+            "def": 7,
+            "spa": 26,
+            "spd": 3,
+            "spe": 26,
+            "hp": 15
+        }
+    }
+]

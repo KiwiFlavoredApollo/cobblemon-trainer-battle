@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:boldore",
+        "form": "",
+        "level": 38,
+        "item": "",
+        "ivs": {
+            "atk": 10,
+            "def": 9,
+            "spa": 2,
+            "spd": 26,
+            "spe": 26,
+            "hp": 1
+        }
+    },
+    {
+        "species": "cobblemon:jolteon",
+        "form": "",
+        "level": 38,
+        "item": "",
+        "ivs": {
+            "atk": 4,
+            "def": 16,
+            "spa": 1,
+            "spd": 0,
+            "spe": 28,
+            "hp": 30
+        }
+    }
+]

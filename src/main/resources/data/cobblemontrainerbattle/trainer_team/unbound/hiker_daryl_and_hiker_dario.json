@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:omastar",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 1,
+            "def": 6,
+            "spa": 22,
+            "spd": 10,
+            "spe": 28,
+            "hp": 10
+        }
+    },
+    {
+        "species": "cobblemon:kabuto",
+        "form": "",
+        "level": 39,
+        "item": "",
+        "ivs": {
+            "atk": 1,
+            "def": 19,
+            "spa": 22,
+            "spd": 9,
+            "spe": 19,
+            "hp": 14
+        }
+    },
+    {
+        "species": "cobblemon:aggron",
+        "form": "",
+        "level": 42,
+        "item": "",
+        "ivs": {
+            "atk": 27,
+            "def": 31,
+            "spa": 4,
+            "spd": 5,
+            "spe": 5,
+            "hp": 26
+        }
+    }
+]

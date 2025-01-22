@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:ninjask",
+        "form": "",
+        "level": 71,
+        "item": "",
+        "ivs": {
+            "atk": 14,
+            "def": 2,
+            "spa": 8,
+            "spd": 12,
+            "spe": 6,
+            "hp": 9
+        }
+    },
+    {
+        "species": "cobblemon:shedinja",
+        "form": "",
+        "level": 71,
+        "item": "",
+        "ivs": {
+            "atk": 15,
+            "def": 1,
+            "spa": 12,
+            "spd": 4,
+            "spe": 4,
+            "hp": 12
+        }
+    },
+    {
+        "species": "cobblemon:heracross",
+        "form": "",
+        "level": 74,
+        "item": "",
+        "ivs": {
+            "atk": 23,
+            "def": 20,
+            "spa": 27,
+            "spd": 12,
+            "spe": 27,
+            "hp": 28
+        }
+    }
+]

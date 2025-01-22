@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:crustle",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 25,
+            "def": 22,
+            "spa": 3,
+            "spd": 13,
+            "spe": 19,
+            "hp": 14
+        }
+    },
+    {
+        "species": "cobblemon:klinklang",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 29,
+            "def": 26,
+            "spa": 21,
+            "spd": 19,
+            "spe": 27,
+            "hp": 27
+        }
+    }
+]

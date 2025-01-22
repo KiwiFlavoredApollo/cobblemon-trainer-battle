@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:luxio",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 18,
+            "def": 6,
+            "spa": 20,
+            "spd": 18,
+            "spe": 17,
+            "hp": 29
+        }
+    },
+    {
+        "species": "cobblemon:probopass",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 22,
+            "def": 9,
+            "spa": 31,
+            "spd": 21,
+            "spe": 29,
+            "hp": 10
+        }
+    }
+]

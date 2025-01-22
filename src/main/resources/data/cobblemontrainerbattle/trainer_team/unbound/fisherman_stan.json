@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:octillery",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 3,
+            "def": 2,
+            "spa": 23,
+            "spd": 3,
+            "spe": 1,
+            "hp": 30
+        }
+    },
+    {
+        "species": "cobblemon:wailord",
+        "form": "",
+        "level": 42,
+        "item": "",
+        "ivs": {
+            "atk": 21,
+            "def": 22,
+            "spa": 2,
+            "spd": 4,
+            "spe": 9,
+            "hp": 28
+        }
+    },
+    {
+        "species": "cobblemon:crawdaunt",
+        "form": "",
+        "level": 42,
+        "item": "",
+        "ivs": {
+            "atk": 10,
+            "def": 4,
+            "spa": 27,
+            "spd": 27,
+            "spe": 25,
+            "hp": 31
+        }
+    }
+]

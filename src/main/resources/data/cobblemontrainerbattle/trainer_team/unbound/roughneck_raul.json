@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:crawdaunt",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 5,
+            "def": 26,
+            "spa": 5,
+            "spd": 7,
+            "spe": 25,
+            "hp": 11
+        }
+    },
+    {
+        "species": "cobblemon:poliwrath",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 16,
+            "def": 26,
+            "spa": 2,
+            "spd": 12,
+            "spe": 18,
+            "hp": 9
+        }
+    }
+]

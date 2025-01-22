@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:shroomish",
+        "form": "",
+        "level": 32,
+        "item": "",
+        "ivs": {
+            "atk": 25,
+            "def": 12,
+            "spa": 20,
+            "spd": 23,
+            "spe": 12,
+            "hp": 7
+        }
+    }
+]

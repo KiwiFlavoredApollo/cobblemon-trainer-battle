@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:vanillish",
+        "form": "",
+        "level": 36,
+        "item": "Babiri Berry",
+        "ivs": {
+            "atk": 20,
+            "def": 21,
+            "spa": 31,
+            "spd": 10,
+            "spe": 23,
+            "hp": 3
+        }
+    },
+    {
+        "species": "cobblemon:ribombee",
+        "form": "",
+        "level": 37,
+        "item": "Kebia Berry",
+        "ivs": {
+            "atk": 23,
+            "def": 28,
+            "spa": 28,
+            "spd": 21,
+            "spe": 8,
+            "hp": 10
+        }
+    }
+]

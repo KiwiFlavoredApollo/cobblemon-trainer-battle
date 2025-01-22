@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:panpour",
+        "form": "",
+        "level": 15,
+        "item": "",
+        "ivs": {
+            "atk": 10,
+            "def": 25,
+            "spa": 30,
+            "spd": 19,
+            "spe": 24,
+            "hp": 26
+        }
+    },
+    {
+        "species": "cobblemon:finneon",
+        "form": "",
+        "level": 15,
+        "item": "",
+        "ivs": {
+            "atk": 31,
+            "def": 15,
+            "spa": 24,
+            "spd": 11,
+            "spe": 4,
+            "hp": 16
+        }
+    },
+    {
+        "species": "cobblemon:froakie",
+        "form": "",
+        "level": 15,
+        "item": "",
+        "ivs": {
+            "atk": 23,
+            "def": 21,
+            "spa": 27,
+            "spd": 6,
+            "spe": 17,
+            "hp": 7
+        }
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:loudred",
+        "form": "",
+        "level": 70,
+        "item": "",
+        "ivs": {
+            "atk": 16,
+            "def": 27,
+            "spa": 1,
+            "spd": 22,
+            "spe": 19,
+            "hp": 7
+        }
+    },
+    {
+        "species": "cobblemon:slaking",
+        "form": "",
+        "level": 72,
+        "item": "",
+        "ivs": {
+            "atk": 30,
+            "def": 31,
+            "spa": 11,
+            "spd": 1,
+            "spe": 29,
+            "hp": 6
+        }
+    }
+]

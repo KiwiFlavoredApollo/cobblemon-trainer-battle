@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:lampent",
+        "form": "",
+        "level": 71,
+        "item": "",
+        "ivs": {
+            "atk": 3,
+            "def": 25,
+            "spa": 31,
+            "spd": 31,
+            "spe": 13,
+            "hp": 24
+        }
+    },
+    {
+        "species": "cobblemon:golurk",
+        "form": "",
+        "level": 74,
+        "item": "",
+        "ivs": {
+            "atk": 23,
+            "def": 9,
+            "spa": 18,
+            "spd": 11,
+            "spe": 5,
+            "hp": 28
+        }
+    }
+]

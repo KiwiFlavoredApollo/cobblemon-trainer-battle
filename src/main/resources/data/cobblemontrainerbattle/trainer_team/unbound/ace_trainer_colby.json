@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:haxorus",
+        "form": "",
+        "level": 59,
+        "item": "",
+        "ivs": {
+            "atk": 22,
+            "def": 24,
+            "spa": 7,
+            "spd": 8,
+            "spe": 7,
+            "hp": 24
+        }
+    },
+    {
+        "species": "cobblemon:rhyperior",
+        "form": "",
+        "level": 60,
+        "item": "",
+        "ivs": {
+            "atk": 20,
+            "def": 21,
+            "spa": 8,
+            "spd": 26,
+            "spe": 18,
+            "hp": 15
+        }
+    },
+    {
+        "species": "cobblemon:dugtrio",
+        "form": "Alolan",
+        "level": 58,
+        "item": "",
+        "ivs": {
+            "atk": 17,
+            "def": 9,
+            "spa": 21,
+            "spd": 20,
+            "spe": 26,
+            "hp": 21
+        }
+    }
+]

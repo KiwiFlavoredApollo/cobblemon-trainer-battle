@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:furfrou",
+        "form": "",
+        "level": 55,
+        "item": "",
+        "ivs": {
+            "atk": 28,
+            "def": 25,
+            "spa": 11,
+            "spd": 8,
+            "spe": 6,
+            "hp": 2
+        }
+    },
+    {
+        "species": "cobblemon:mudsdale",
+        "form": "",
+        "level": 56,
+        "item": "",
+        "ivs": {
+            "atk": 29,
+            "def": 29,
+            "spa": 0,
+            "spd": 7,
+            "spe": 20,
+            "hp": 25
+        }
+    },
+    {
+        "species": "cobblemon:tauros",
+        "form": "",
+        "level": 57,
+        "item": "",
+        "ivs": {
+            "atk": 30,
+            "def": 14,
+            "spa": 8,
+            "spd": 14,
+            "spe": 1,
+            "hp": 16
+        }
+    }
+]

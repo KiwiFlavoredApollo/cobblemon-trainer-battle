@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:ninetales",
+        "form": "Alolan",
+        "level": 27,
+        "item": "",
+        "ivs": {
+            "atk": 3,
+            "def": 3,
+            "spa": 16,
+            "spd": 3,
+            "spe": 18,
+            "hp": 30
+        }
+    },
+    {
+        "species": "cobblemon:mightyena",
+        "form": "",
+        "level": 28,
+        "item": "",
+        "ivs": {
+            "atk": 27,
+            "def": 0,
+            "spa": 16,
+            "spd": 2,
+            "spe": 14,
+            "hp": 12
+        }
+    }
+]

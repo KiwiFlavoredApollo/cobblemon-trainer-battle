@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:graveler",
+        "form": "Alolan",
+        "level": 36,
+        "item": "",
+        "ivs": {
+            "atk": 18,
+            "def": 26,
+            "spa": 15,
+            "spd": 8,
+            "spe": 22,
+            "hp": 11
+        }
+    },
+    {
+        "species": "cobblemon:graveler",
+        "form": "",
+        "level": 36,
+        "item": "",
+        "ivs": {
+            "atk": 4,
+            "def": 3,
+            "spa": 18,
+            "spd": 20,
+            "spe": 14,
+            "hp": 31
+        }
+    },
+    {
+        "species": "cobblemon:boldore",
+        "form": "",
+        "level": 37,
+        "item": "",
+        "ivs": {
+            "atk": 16,
+            "def": 27,
+            "spa": 6,
+            "spd": 8,
+            "spe": 10,
+            "hp": 14
+        }
+    }
+]

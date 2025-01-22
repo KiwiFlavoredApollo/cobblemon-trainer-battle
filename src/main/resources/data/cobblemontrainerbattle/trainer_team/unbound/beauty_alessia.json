@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:lillipup",
+        "form": "",
+        "level": 31,
+        "item": "",
+        "ivs": {
+            "atk": 22,
+            "def": 10,
+            "spa": 8,
+            "spd": 17,
+            "spe": 16,
+            "hp": 3
+        }
+    },
+    {
+        "species": "cobblemon:stufful",
+        "form": "",
+        "level": 31,
+        "item": "",
+        "ivs": {
+            "atk": 12,
+            "def": 2,
+            "spa": 15,
+            "spd": 0,
+            "spe": 0,
+            "hp": 6
+        }
+    },
+    {
+        "species": "cobblemon:dunsparce",
+        "form": "",
+        "level": 32,
+        "item": "",
+        "ivs": {
+            "atk": 15,
+            "def": 10,
+            "spa": 19,
+            "spd": 19,
+            "spe": 10,
+            "hp": 6
+        }
+    }
+]

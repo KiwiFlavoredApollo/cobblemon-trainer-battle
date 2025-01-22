@@ -1,0 +1,58 @@
+[
+    {
+        "species": "cobblemon:aurorus",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 24,
+            "def": 19,
+            "spa": 9,
+            "spd": 24,
+            "spe": 26,
+            "hp": 18
+        }
+    },
+    {
+        "species": "cobblemon:mega slowbro",
+        "form": "",
+        "level": 42,
+        "item": "Slowbronite",
+        "ivs": {
+            "atk": 8,
+            "def": 18,
+            "spa": 10,
+            "spd": 5,
+            "spe": 0,
+            "hp": 4
+        }
+    },
+    {
+        "species": "cobblemon:hitmonchan",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 0,
+            "def": 10,
+            "spa": 25,
+            "spd": 15,
+            "spe": 8,
+            "hp": 27
+        }
+    },
+    {
+        "species": "cobblemon:doublade",
+        "form": "",
+        "level": 42,
+        "item": "",
+        "ivs": {
+            "atk": 17,
+            "def": 15,
+            "spa": 3,
+            "spd": 27,
+            "spe": 6,
+            "hp": 22
+        }
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:octillery",
+        "form": "",
+        "level": 52,
+        "item": "",
+        "ivs": {
+            "atk": 11,
+            "def": 9,
+            "spa": 12,
+            "spd": 28,
+            "spe": 15,
+            "hp": 26
+        }
+    },
+    {
+        "species": "cobblemon:seadra",
+        "form": "",
+        "level": 51,
+        "item": "",
+        "ivs": {
+            "atk": 17,
+            "def": 12,
+            "spa": 12,
+            "spd": 20,
+            "spe": 8,
+            "hp": 14
+        }
+    }
+]

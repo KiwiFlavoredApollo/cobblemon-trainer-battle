@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:cutiefly",
+        "form": "",
+        "level": 19,
+        "item": "",
+        "ivs": {
+            "atk": 18,
+            "def": 20,
+            "spa": 12,
+            "spd": 3,
+            "spe": 14,
+            "hp": 23
+        }
+    },
+    {
+        "species": "cobblemon:venonat",
+        "form": "",
+        "level": 20,
+        "item": "",
+        "ivs": {
+            "atk": 26,
+            "def": 5,
+            "spa": 7,
+            "spd": 9,
+            "spe": 2,
+            "hp": 3
+        }
+    }
+]

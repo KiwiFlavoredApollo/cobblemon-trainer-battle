@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:grumpig",
+        "form": "",
+        "level": 60,
+        "item": "",
+        "ivs": {
+            "atk": 9,
+            "def": 21,
+            "spa": 6,
+            "spd": 24,
+            "spe": 9,
+            "hp": 14
+        }
+    }
+]

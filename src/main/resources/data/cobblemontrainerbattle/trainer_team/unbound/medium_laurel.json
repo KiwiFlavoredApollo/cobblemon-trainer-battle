@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:drifblim",
+        "form": "",
+        "level": 54,
+        "item": "",
+        "ivs": {
+            "atk": 16,
+            "def": 31,
+            "spa": 5,
+            "spd": 29,
+            "spe": 30,
+            "hp": 5
+        }
+    },
+    {
+        "species": "cobblemon:drifblim",
+        "form": "",
+        "level": 55,
+        "item": "",
+        "ivs": {
+            "atk": 5,
+            "def": 11,
+            "spa": 15,
+            "spd": 5,
+            "spe": 9,
+            "hp": 12
+        }
+    }
+]

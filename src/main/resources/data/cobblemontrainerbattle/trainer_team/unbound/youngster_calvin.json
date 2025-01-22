@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:growlithe",
+        "form": "",
+        "level": 20,
+        "item": "",
+        "ivs": {
+            "atk": 23,
+            "def": 15,
+            "spa": 26,
+            "spd": 15,
+            "spe": 2,
+            "hp": 15
+        }
+    },
+    {
+        "species": "cobblemon:houndour",
+        "form": "",
+        "level": 20,
+        "item": "",
+        "ivs": {
+            "atk": 25,
+            "def": 16,
+            "spa": 21,
+            "spd": 16,
+            "spe": 15,
+            "hp": 24
+        }
+    }
+]

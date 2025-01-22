@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:sandygast",
+        "form": "",
+        "level": 39,
+        "item": "",
+        "ivs": {
+            "atk": 11,
+            "def": 23,
+            "spa": 25,
+            "spd": 8,
+            "spe": 3,
+            "hp": 12
+        }
+    },
+    {
+        "species": "cobblemon:lotad",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 0,
+            "def": 12,
+            "spa": 7,
+            "spd": 19,
+            "spe": 0,
+            "hp": 11
+        }
+    },
+    {
+        "species": "cobblemon:slowpoke",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 17,
+            "def": 14,
+            "spa": 7,
+            "spd": 27,
+            "spe": 2,
+            "hp": 7
+        }
+    }
+]

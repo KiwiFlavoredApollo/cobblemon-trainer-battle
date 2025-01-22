@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:wingull",
+        "form": "",
+        "level": 12,
+        "item": "",
+        "ivs": {
+            "atk": 27,
+            "def": 17,
+            "spa": 0,
+            "spd": 2,
+            "spe": 7,
+            "hp": 25
+        }
+    },
+    {
+        "species": "cobblemon:dewpider",
+        "form": "",
+        "level": 13,
+        "item": "",
+        "ivs": {
+            "atk": 22,
+            "def": 10,
+            "spa": 12,
+            "spd": 4,
+            "spe": 12,
+            "hp": 5
+        }
+    }
+]

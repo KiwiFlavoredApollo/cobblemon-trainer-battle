@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:poliwag",
+        "form": "",
+        "level": 12,
+        "item": "",
+        "ivs": {
+            "atk": 15,
+            "def": 18,
+            "spa": 30,
+            "spd": 8,
+            "spe": 3,
+            "hp": 8
+        }
+    },
+    {
+        "species": "cobblemon:scraggy",
+        "form": "",
+        "level": 13,
+        "item": "",
+        "ivs": {
+            "atk": 6,
+            "def": 29,
+            "spa": 20,
+            "spd": 26,
+            "spe": 17,
+            "hp": 9
+        }
+    }
+]

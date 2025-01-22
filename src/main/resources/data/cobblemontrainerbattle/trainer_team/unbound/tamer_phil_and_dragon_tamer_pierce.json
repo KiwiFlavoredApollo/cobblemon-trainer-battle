@@ -1,0 +1,72 @@
+[
+    {
+        "species": "cobblemon:arcanine",
+        "form": "",
+        "level": 59,
+        "item": "",
+        "ivs": {
+            "atk": 10,
+            "def": 25,
+            "spa": 29,
+            "spd": 4,
+            "spe": 4,
+            "hp": 26
+        }
+    },
+    {
+        "species": "cobblemon:mightyena",
+        "form": "",
+        "level": 59,
+        "item": "",
+        "ivs": {
+            "atk": 21,
+            "def": 15,
+            "spa": 26,
+            "spd": 14,
+            "spe": 5,
+            "hp": 29
+        }
+    },
+    {
+        "species": "cobblemon:druddigon",
+        "form": "",
+        "level": 60,
+        "item": "",
+        "ivs": {
+            "atk": 25,
+            "def": 18,
+            "spa": 28,
+            "spd": 7,
+            "spe": 8,
+            "hp": 15
+        }
+    },
+    {
+        "species": "cobblemon:hakamoo",
+        "form": "",
+        "level": 59,
+        "item": "",
+        "ivs": {
+            "atk": 21,
+            "def": 20,
+            "spa": 30,
+            "spd": 19,
+            "spe": 5,
+            "hp": 21
+        }
+    },
+    {
+        "species": "cobblemon:drampa",
+        "form": "",
+        "level": 59,
+        "item": "",
+        "ivs": {
+            "atk": 4,
+            "def": 9,
+            "spa": 10,
+            "spd": 25,
+            "spe": 5,
+            "hp": 16
+        }
+    }
+]

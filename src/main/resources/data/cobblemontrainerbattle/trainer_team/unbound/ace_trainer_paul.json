@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:marowak",
+        "form": "Alolan",
+        "level": 59,
+        "item": "",
+        "ivs": {
+            "atk": 5,
+            "def": 24,
+            "spa": 24,
+            "spd": 0,
+            "spe": 26,
+            "hp": 21
+        }
+    },
+    {
+        "species": "cobblemon:exploud",
+        "form": "",
+        "level": 60,
+        "item": "",
+        "ivs": {
+            "atk": 25,
+            "def": 25,
+            "spa": 22,
+            "spd": 26,
+            "spe": 11,
+            "hp": 18
+        }
+    },
+    {
+        "species": "cobblemon:ambipom",
+        "form": "",
+        "level": 59,
+        "item": "",
+        "ivs": {
+            "atk": 14,
+            "def": 7,
+            "spa": 3,
+            "spd": 22,
+            "spe": 12,
+            "hp": 12
+        }
+    }
+]

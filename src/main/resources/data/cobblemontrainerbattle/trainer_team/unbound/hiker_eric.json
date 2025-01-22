@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:aron",
+        "form": "",
+        "level": 24,
+        "item": "",
+        "ivs": {
+            "atk": 10,
+            "def": 15,
+            "spa": 23,
+            "spd": 26,
+            "spe": 6,
+            "hp": 10
+        }
+    },
+    {
+        "species": "cobblemon:boldore",
+        "form": "",
+        "level": 25,
+        "item": "",
+        "ivs": {
+            "atk": 26,
+            "def": 10,
+            "spa": 18,
+            "spd": 11,
+            "spe": 29,
+            "hp": 19
+        }
+    }
+]

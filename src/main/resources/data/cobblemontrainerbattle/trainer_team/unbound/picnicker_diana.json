@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:mareep",
+        "form": "",
+        "level": 23,
+        "item": "",
+        "ivs": {
+            "atk": 6,
+            "def": 9,
+            "spa": 8,
+            "spd": 30,
+            "spe": 12,
+            "hp": 3
+        }
+    }
+]

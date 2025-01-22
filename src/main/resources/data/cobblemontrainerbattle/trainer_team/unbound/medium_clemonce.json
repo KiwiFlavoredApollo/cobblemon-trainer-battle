@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:houndour",
+        "form": "",
+        "level": 21,
+        "item": "",
+        "ivs": {
+            "atk": 19,
+            "def": 19,
+            "spa": 3,
+            "spd": 11,
+            "spe": 20,
+            "hp": 21
+        }
+    }
+]

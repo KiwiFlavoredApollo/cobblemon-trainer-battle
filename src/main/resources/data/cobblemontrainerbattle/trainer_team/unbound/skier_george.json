@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:spheal",
+        "form": "",
+        "level": 10,
+        "item": "",
+        "ivs": {
+            "atk": 11,
+            "def": 6,
+            "spa": 19,
+            "spd": 4,
+            "spe": 2,
+            "hp": 1
+        }
+    },
+    {
+        "species": "cobblemon:bergmite",
+        "form": "",
+        "level": 10,
+        "item": "",
+        "ivs": {
+            "atk": 24,
+            "def": 10,
+            "spa": 26,
+            "spd": 18,
+            "spe": 30,
+            "hp": 22
+        }
+    }
+]

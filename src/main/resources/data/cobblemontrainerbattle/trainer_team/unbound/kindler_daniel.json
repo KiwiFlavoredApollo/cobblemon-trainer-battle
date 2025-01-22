@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:oricorio",
+        "form": "",
+        "level": 15,
+        "item": "",
+        "ivs": {
+            "atk": 23,
+            "def": 0,
+            "spa": 10,
+            "spd": 29,
+            "spe": 16,
+            "hp": 11
+        }
+    },
+    {
+        "species": "cobblemon:fennekin",
+        "form": "",
+        "level": 15,
+        "item": "",
+        "ivs": {
+            "atk": 23,
+            "def": 24,
+            "spa": 1,
+            "spd": 12,
+            "spe": 30,
+            "hp": 19
+        }
+    },
+    {
+        "species": "cobblemon:litleo",
+        "form": "",
+        "level": 15,
+        "item": "",
+        "ivs": {
+            "atk": 26,
+            "def": 17,
+            "spa": 28,
+            "spd": 8,
+            "spe": 30,
+            "hp": 2
+        }
+    }
+]

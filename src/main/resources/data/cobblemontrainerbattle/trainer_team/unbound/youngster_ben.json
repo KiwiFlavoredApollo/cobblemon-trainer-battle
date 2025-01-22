@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:nidoran m",
+        "form": "",
+        "level": 20,
+        "item": "",
+        "ivs": {
+            "atk": 4,
+            "def": 15,
+            "spa": 7,
+            "spd": 24,
+            "spe": 3,
+            "hp": 15
+        }
+    },
+    {
+        "species": "cobblemon:lickitung",
+        "form": "",
+        "level": 19,
+        "item": "",
+        "ivs": {
+            "atk": 19,
+            "def": 5,
+            "spa": 20,
+            "spd": 11,
+            "spe": 19,
+            "hp": 11
+        }
+    }
+]

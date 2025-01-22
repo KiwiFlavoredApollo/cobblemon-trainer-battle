@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:duosion",
+        "form": "",
+        "level": 52,
+        "item": "",
+        "ivs": {
+            "atk": 8,
+            "def": 17,
+            "spa": 5,
+            "spd": 28,
+            "spe": 2,
+            "hp": 17
+        }
+    },
+    {
+        "species": "cobblemon:gothorita",
+        "form": "",
+        "level": 52,
+        "item": "",
+        "ivs": {
+            "atk": 28,
+            "def": 21,
+            "spa": 24,
+            "spd": 14,
+            "spe": 0,
+            "hp": 24
+        }
+    }
+]

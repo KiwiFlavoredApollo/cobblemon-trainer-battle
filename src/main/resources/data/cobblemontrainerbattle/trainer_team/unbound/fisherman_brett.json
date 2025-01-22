@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:seaking",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 9,
+            "def": 22,
+            "spa": 6,
+            "spd": 22,
+            "spe": 18,
+            "hp": 9
+        }
+    },
+    {
+        "species": "cobblemon:seadra",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 8,
+            "def": 0,
+            "spa": 4,
+            "spd": 13,
+            "spe": 0,
+            "hp": 19
+        }
+    }
+]

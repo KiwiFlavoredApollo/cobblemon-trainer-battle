@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:torkoal",
+        "form": "",
+        "level": 18,
+        "item": "",
+        "ivs": {
+            "atk": 2,
+            "def": 16,
+            "spa": 13,
+            "spd": 23,
+            "spe": 4,
+            "hp": 24
+        }
+    }
+]

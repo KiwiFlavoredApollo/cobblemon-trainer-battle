@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:doduo",
+        "form": "",
+        "level": 23,
+        "item": "",
+        "ivs": {
+            "atk": 21,
+            "def": 14,
+            "spa": 4,
+            "spd": 12,
+            "spe": 11,
+            "hp": 30
+        }
+    }
+]

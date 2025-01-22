@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:magikarp",
+        "form": "",
+        "level": 19,
+        "item": "",
+        "ivs": {
+            "atk": 8,
+            "def": 31,
+            "spa": 9,
+            "spd": 12,
+            "spe": 26,
+            "hp": 6
+        }
+    },
+    {
+        "species": "cobblemon:magikarp",
+        "form": "",
+        "level": 19,
+        "item": "",
+        "ivs": {
+            "atk": 5,
+            "def": 24,
+            "spa": 21,
+            "spd": 12,
+            "spe": 30,
+            "hp": 0
+        }
+    },
+    {
+        "species": "cobblemon:corphish",
+        "form": "",
+        "level": 20,
+        "item": "",
+        "ivs": {
+            "atk": 7,
+            "def": 31,
+            "spa": 28,
+            "spd": 31,
+            "spe": 7,
+            "hp": 10
+        }
+    }
+]

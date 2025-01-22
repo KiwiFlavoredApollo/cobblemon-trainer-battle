@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:jellicent",
+        "form": "",
+        "level": 57,
+        "item": "",
+        "ivs": {
+            "atk": 17,
+            "def": 7,
+            "spa": 19,
+            "spd": 6,
+            "spe": 8,
+            "hp": 5
+        }
+    }
+]

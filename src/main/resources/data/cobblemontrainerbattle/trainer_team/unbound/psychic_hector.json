@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:xatu",
+        "form": "",
+        "level": 53,
+        "item": "",
+        "ivs": {
+            "atk": 3,
+            "def": 10,
+            "spa": 27,
+            "spd": 20,
+            "spe": 21,
+            "hp": 8
+        }
+    },
+    {
+        "species": "cobblemon:wynaut",
+        "form": "",
+        "level": 51,
+        "item": "",
+        "ivs": {
+            "atk": 25,
+            "def": 30,
+            "spa": 9,
+            "spd": 22,
+            "spe": 14,
+            "hp": 29
+        }
+    }
+]

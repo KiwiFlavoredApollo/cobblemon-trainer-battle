@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:gyarados",
+        "form": "",
+        "level": 48,
+        "item": "",
+        "ivs": {
+            "atk": 23,
+            "def": 27,
+            "spa": 23,
+            "spd": 22,
+            "spe": 23,
+            "hp": 31
+        }
+    }
+]

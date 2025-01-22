@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:carnivine",
+        "form": "",
+        "level": 59,
+        "item": "",
+        "ivs": {
+            "atk": 3,
+            "def": 31,
+            "spa": 17,
+            "spd": 13,
+            "spe": 3,
+            "hp": 18
+        }
+    },
+    {
+        "species": "cobblemon:slowking",
+        "form": "",
+        "level": 60,
+        "item": "",
+        "ivs": {
+            "atk": 8,
+            "def": 20,
+            "spa": 29,
+            "spd": 0,
+            "spe": 1,
+            "hp": 15
+        }
+    }
+]

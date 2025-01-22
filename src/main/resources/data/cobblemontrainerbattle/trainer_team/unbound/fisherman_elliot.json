@@ -1,0 +1,58 @@
+[
+    {
+        "species": "cobblemon:mareanie",
+        "form": "",
+        "level": 29,
+        "item": "",
+        "ivs": {
+            "atk": 12,
+            "def": 26,
+            "spa": 7,
+            "spd": 15,
+            "spe": 22,
+            "hp": 21
+        }
+    },
+    {
+        "species": "cobblemon:lanturn",
+        "form": "",
+        "level": 30,
+        "item": "",
+        "ivs": {
+            "atk": 27,
+            "def": 6,
+            "spa": 10,
+            "spd": 24,
+            "spe": 3,
+            "hp": 28
+        }
+    },
+    {
+        "species": "cobblemon:sharpedo",
+        "form": "",
+        "level": 30,
+        "item": "",
+        "ivs": {
+            "atk": 27,
+            "def": 20,
+            "spa": 4,
+            "spd": 27,
+            "spe": 3,
+            "hp": 17
+        }
+    },
+    {
+        "species": "cobblemon:whiscash",
+        "form": "",
+        "level": 30,
+        "item": "",
+        "ivs": {
+            "atk": 31,
+            "def": 5,
+            "spa": 17,
+            "spd": 30,
+            "spe": 24,
+            "hp": 19
+        }
+    }
+]

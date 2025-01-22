@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:tentacool",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 25,
+            "def": 21,
+            "spa": 22,
+            "spd": 26,
+            "spe": 18,
+            "hp": 23
+        }
+    },
+    {
+        "species": "cobblemon:golduck",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 4,
+            "def": 2,
+            "spa": 24,
+            "spd": 7,
+            "spe": 5,
+            "hp": 11
+        }
+    }
+]

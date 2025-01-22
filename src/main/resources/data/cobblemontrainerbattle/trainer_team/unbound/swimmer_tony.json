@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:wailord",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 28,
+            "def": 31,
+            "spa": 20,
+            "spd": 3,
+            "spe": 12,
+            "hp": 26
+        }
+    },
+    {
+        "species": "cobblemon:wishiwashi",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 24,
+            "def": 26,
+            "spa": 6,
+            "spd": 11,
+            "spe": 28,
+            "hp": 16
+        }
+    }
+]

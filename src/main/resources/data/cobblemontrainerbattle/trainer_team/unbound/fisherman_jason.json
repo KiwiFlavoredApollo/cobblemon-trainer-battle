@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:dragalge",
+        "form": "",
+        "level": 42,
+        "item": "",
+        "ivs": {
+            "atk": 3,
+            "def": 2,
+            "spa": 23,
+            "spd": 26,
+            "spe": 4,
+            "hp": 0
+        }
+    }
+]

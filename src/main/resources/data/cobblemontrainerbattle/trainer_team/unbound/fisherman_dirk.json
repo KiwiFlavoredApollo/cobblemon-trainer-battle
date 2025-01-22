@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:cloyster",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 3,
+            "def": 23,
+            "spa": 25,
+            "spd": 22,
+            "spe": 26,
+            "hp": 22
+        }
+    },
+    {
+        "species": "cobblemon:wailord",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 7,
+            "def": 31,
+            "spa": 6,
+            "spd": 18,
+            "spe": 19,
+            "hp": 29
+        }
+    }
+]

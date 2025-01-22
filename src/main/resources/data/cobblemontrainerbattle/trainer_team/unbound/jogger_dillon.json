@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:grubbin",
+        "form": "",
+        "level": 31,
+        "item": "",
+        "ivs": {
+            "atk": 24,
+            "def": 27,
+            "spa": 17,
+            "spd": 1,
+            "spe": 12,
+            "hp": 13
+        }
+    },
+    {
+        "species": "cobblemon:araquanid",
+        "form": "",
+        "level": 32,
+        "item": "",
+        "ivs": {
+            "atk": 26,
+            "def": 26,
+            "spa": 1,
+            "spd": 7,
+            "spe": 11,
+            "hp": 9
+        }
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:escavalier",
+        "form": "",
+        "level": 49,
+        "item": "",
+        "ivs": {
+            "atk": 5,
+            "def": 18,
+            "spa": 24,
+            "spd": 3,
+            "spe": 5,
+            "hp": 9
+        }
+    }
+]

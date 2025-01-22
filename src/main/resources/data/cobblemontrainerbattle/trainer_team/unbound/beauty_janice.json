@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:kirlia",
+        "form": "",
+        "level": 20,
+        "item": "",
+        "ivs": {
+            "atk": 12,
+            "def": 11,
+            "spa": 30,
+            "spd": 5,
+            "spe": 23,
+            "hp": 25
+        }
+    },
+    {
+        "species": "cobblemon:floette",
+        "form": "",
+        "level": 19,
+        "item": "",
+        "ivs": {
+            "atk": 13,
+            "def": 17,
+            "spa": 3,
+            "spd": 22,
+            "spe": 22,
+            "hp": 21
+        }
+    }
+]

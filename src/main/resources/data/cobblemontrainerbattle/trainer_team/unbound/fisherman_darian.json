@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:gyarados",
+        "form": "",
+        "level": 43,
+        "item": "",
+        "ivs": {
+            "atk": 20,
+            "def": 23,
+            "spa": 13,
+            "spd": 0,
+            "spe": 5,
+            "hp": 14
+        }
+    },
+    {
+        "species": "cobblemon:kingdra",
+        "form": "",
+        "level": 42,
+        "item": "",
+        "ivs": {
+            "atk": 16,
+            "def": 7,
+            "spa": 19,
+            "spd": 10,
+            "spe": 6,
+            "hp": 15
+        }
+    }
+]

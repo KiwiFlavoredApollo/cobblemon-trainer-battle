@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:claydol",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 4,
+            "def": 0,
+            "spa": 28,
+            "spd": 26,
+            "spe": 31,
+            "hp": 5
+        }
+    },
+    {
+        "species": "cobblemon:lunatone",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 12,
+            "def": 9,
+            "spa": 15,
+            "spd": 12,
+            "spe": 16,
+            "hp": 6
+        }
+    },
+    {
+        "species": "cobblemon:solrock",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 12,
+            "def": 15,
+            "spa": 1,
+            "spd": 6,
+            "spe": 20,
+            "hp": 2
+        }
+    }
+]

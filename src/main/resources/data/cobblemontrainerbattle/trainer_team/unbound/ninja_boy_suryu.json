@@ -1,0 +1,58 @@
+[
+    {
+        "species": "cobblemon:dugtrio",
+        "form": "",
+        "level": 53,
+        "item": "",
+        "ivs": {
+            "atk": 18,
+            "def": 24,
+            "spa": 6,
+            "spd": 29,
+            "spe": 12,
+            "hp": 13
+        }
+    },
+    {
+        "species": "cobblemon:spinarak",
+        "form": "",
+        "level": 51,
+        "item": "",
+        "ivs": {
+            "atk": 26,
+            "def": 0,
+            "spa": 26,
+            "spd": 6,
+            "spe": 20,
+            "hp": 0
+        }
+    },
+    {
+        "species": "cobblemon:armaldo",
+        "form": "",
+        "level": 54,
+        "item": "",
+        "ivs": {
+            "atk": 17,
+            "def": 26,
+            "spa": 3,
+            "spd": 15,
+            "spe": 24,
+            "hp": 3
+        }
+    },
+    {
+        "species": "cobblemon:skuntank",
+        "form": "",
+        "level": 53,
+        "item": "",
+        "ivs": {
+            "atk": 23,
+            "def": 7,
+            "spa": 13,
+            "spd": 11,
+            "spe": 12,
+            "hp": 11
+        }
+    }
+]

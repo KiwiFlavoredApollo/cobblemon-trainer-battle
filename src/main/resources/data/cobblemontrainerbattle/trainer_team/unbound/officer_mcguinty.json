@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:noctowl",
+        "form": "",
+        "level": 49,
+        "item": "",
+        "ivs": {
+            "atk": 18,
+            "def": 16,
+            "spa": 28,
+            "spd": 31,
+            "spe": 29,
+            "hp": 23
+        }
+    },
+    {
+        "species": "cobblemon:stoutland",
+        "form": "",
+        "level": 50,
+        "item": "",
+        "ivs": {
+            "atk": 15,
+            "def": 0,
+            "spa": 13,
+            "spd": 9,
+            "spe": 11,
+            "hp": 24
+        }
+    },
+    {
+        "species": "cobblemon:machoke",
+        "form": "",
+        "level": 49,
+        "item": "",
+        "ivs": {
+            "atk": 28,
+            "def": 16,
+            "spa": 6,
+            "spd": 28,
+            "spe": 21,
+            "hp": 1
+        }
+    }
+]

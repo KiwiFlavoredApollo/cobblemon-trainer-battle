@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:machoke",
+        "form": "",
+        "level": 36,
+        "item": "Black Belt",
+        "ivs": {
+            "atk": 28,
+            "def": 15,
+            "spa": 6,
+            "spd": 20,
+            "spe": 8,
+            "hp": 11
+        }
+    },
+    {
+        "species": "cobblemon:primeape",
+        "form": "",
+        "level": 35,
+        "item": "Black Belt",
+        "ivs": {
+            "atk": 8,
+            "def": 26,
+            "spa": 28,
+            "spd": 29,
+            "spe": 2,
+            "hp": 17
+        }
+    }
+]

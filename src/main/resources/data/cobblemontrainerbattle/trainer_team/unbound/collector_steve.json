@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:togedemaru",
+        "form": "",
+        "level": 37,
+        "item": "",
+        "ivs": {
+            "atk": 29,
+            "def": 7,
+            "spa": 6,
+            "spd": 8,
+            "spe": 3,
+            "hp": 18
+        }
+    },
+    {
+        "species": "cobblemon:goomy",
+        "form": "",
+        "level": 36,
+        "item": "",
+        "ivs": {
+            "atk": 20,
+            "def": 13,
+            "spa": 6,
+            "spd": 11,
+            "spe": 17,
+            "hp": 1
+        }
+    }
+]

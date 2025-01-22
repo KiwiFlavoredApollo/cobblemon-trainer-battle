@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:swellow",
+        "form": "",
+        "level": 28,
+        "item": "",
+        "ivs": {
+            "atk": 27,
+            "def": 21,
+            "spa": 1,
+            "spd": 11,
+            "spe": 28,
+            "hp": 25
+        }
+    },
+    {
+        "species": "cobblemon:swablu",
+        "form": "",
+        "level": 27,
+        "item": "",
+        "ivs": {
+            "atk": 0,
+            "def": 10,
+            "spa": 21,
+            "spd": 21,
+            "spe": 20,
+            "hp": 1
+        }
+    }
+]

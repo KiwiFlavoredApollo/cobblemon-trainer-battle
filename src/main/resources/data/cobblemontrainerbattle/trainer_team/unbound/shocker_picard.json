@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:stunfisk",
+        "form": "",
+        "level": 33,
+        "item": "",
+        "ivs": {
+            "atk": 14,
+            "def": 19,
+            "spa": 11,
+            "spd": 9,
+            "spe": 26,
+            "hp": 26
+        }
+    },
+    {
+        "species": "cobblemon:charjabug",
+        "form": "",
+        "level": 33,
+        "item": "",
+        "ivs": {
+            "atk": 11,
+            "def": 1,
+            "spa": 29,
+            "spd": 29,
+            "spe": 12,
+            "hp": 0
+        }
+    }
+]

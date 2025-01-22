@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:politoed",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 19,
+            "def": 23,
+            "spa": 23,
+            "spd": 15,
+            "spe": 26,
+            "hp": 6
+        }
+    },
+    {
+        "species": "cobblemon:clawitzer",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 7,
+            "def": 15,
+            "spa": 31,
+            "spd": 16,
+            "spe": 28,
+            "hp": 6
+        }
+    }
+]

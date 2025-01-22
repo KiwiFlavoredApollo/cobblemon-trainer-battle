@@ -1,0 +1,58 @@
+[
+    {
+        "species": "cobblemon:manectric",
+        "form": "",
+        "level": 30,
+        "item": "",
+        "ivs": {
+            "atk": 23,
+            "def": 18,
+            "spa": 27,
+            "spd": 23,
+            "spe": 20,
+            "hp": 10
+        }
+    },
+    {
+        "species": "cobblemon:electabuzz",
+        "form": "",
+        "level": 30,
+        "item": "",
+        "ivs": {
+            "atk": 0,
+            "def": 19,
+            "spa": 12,
+            "spd": 22,
+            "spe": 6,
+            "hp": 9
+        }
+    },
+    {
+        "species": "cobblemon:ampharos",
+        "form": "",
+        "level": 30,
+        "item": "",
+        "ivs": {
+            "atk": 26,
+            "def": 21,
+            "spa": 6,
+            "spd": 26,
+            "spe": 25,
+            "hp": 4
+        }
+    },
+    {
+        "species": "cobblemon:probopass",
+        "form": "",
+        "level": 30,
+        "item": "",
+        "ivs": {
+            "atk": 27,
+            "def": 2,
+            "spa": 23,
+            "spd": 20,
+            "spe": 27,
+            "hp": 6
+        }
+    }
+]

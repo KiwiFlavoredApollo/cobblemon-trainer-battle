@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:starmie",
+        "form": "",
+        "level": 34,
+        "item": "Kasib Berry",
+        "ivs": {
+            "atk": 17,
+            "def": 19,
+            "spa": 14,
+            "spd": 19,
+            "spe": 13,
+            "hp": 21
+        }
+    },
+    {
+        "species": "cobblemon:weavile",
+        "form": "",
+        "level": 36,
+        "item": "Chople Berry",
+        "ivs": {
+            "atk": 24,
+            "def": 6,
+            "spa": 17,
+            "spd": 2,
+            "spe": 16,
+            "hp": 11
+        }
+    }
+]

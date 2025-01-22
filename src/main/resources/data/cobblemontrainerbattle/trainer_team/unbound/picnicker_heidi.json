@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:bellsprout",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 8,
+            "def": 31,
+            "spa": 16,
+            "spd": 8,
+            "spe": 8,
+            "hp": 29
+        }
+    },
+    {
+        "species": "cobblemon:psyduck",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 18,
+            "def": 13,
+            "spa": 5,
+            "spd": 22,
+            "spe": 16,
+            "hp": 15
+        }
+    }
+]

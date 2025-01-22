@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:darumaka",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 7,
+            "def": 20,
+            "spa": 22,
+            "spd": 26,
+            "spe": 0,
+            "hp": 28
+        }
+    }
+]

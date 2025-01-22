@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:seismitoad",
+        "form": "",
+        "level": 48,
+        "item": "",
+        "ivs": {
+            "atk": 14,
+            "def": 1,
+            "spa": 15,
+            "spd": 6,
+            "spe": 26,
+            "hp": 16
+        }
+    },
+    {
+        "species": "cobblemon:pancham",
+        "form": "",
+        "level": 47,
+        "item": "",
+        "ivs": {
+            "atk": 7,
+            "def": 0,
+            "spa": 10,
+            "spd": 16,
+            "spe": 14,
+            "hp": 23
+        }
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:snover",
+        "form": "",
+        "level": 26,
+        "item": "",
+        "ivs": {
+            "atk": 19,
+            "def": 31,
+            "spa": 29,
+            "spd": 20,
+            "spe": 12,
+            "hp": 25
+        }
+    }
+]

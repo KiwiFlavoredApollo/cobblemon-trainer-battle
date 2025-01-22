@@ -1,0 +1,58 @@
+[
+    {
+        "species": "cobblemon:aggron",
+        "form": "",
+        "level": 53,
+        "item": "",
+        "ivs": {
+            "atk": 8,
+            "def": 6,
+            "spa": 24,
+            "spd": 25,
+            "spe": 30,
+            "hp": 17
+        }
+    },
+    {
+        "species": "cobblemon:ferroseed",
+        "form": "",
+        "level": 51,
+        "item": "",
+        "ivs": {
+            "atk": 24,
+            "def": 8,
+            "spa": 19,
+            "spd": 17,
+            "spe": 1,
+            "hp": 18
+        }
+    },
+    {
+        "species": "cobblemon:charmander",
+        "form": "",
+        "level": 51,
+        "item": "",
+        "ivs": {
+            "atk": 26,
+            "def": 0,
+            "spa": 2,
+            "spd": 7,
+            "spe": 25,
+            "hp": 25
+        }
+    },
+    {
+        "species": "cobblemon:litten",
+        "form": "",
+        "level": 51,
+        "item": "",
+        "ivs": {
+            "atk": 29,
+            "def": 28,
+            "spa": 17,
+            "spd": 3,
+            "spe": 8,
+            "hp": 27
+        }
+    }
+]

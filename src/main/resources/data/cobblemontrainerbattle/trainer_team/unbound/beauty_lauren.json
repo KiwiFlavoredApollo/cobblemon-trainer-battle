@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:glameow",
+        "form": "",
+        "level": 31,
+        "item": "",
+        "ivs": {
+            "atk": 17,
+            "def": 18,
+            "spa": 14,
+            "spd": 11,
+            "spe": 10,
+            "hp": 25
+        }
+    },
+    {
+        "species": "cobblemon:sawsbuck",
+        "form": "",
+        "level": 31,
+        "item": "",
+        "ivs": {
+            "atk": 18,
+            "def": 30,
+            "spa": 30,
+            "spd": 9,
+            "spe": 8,
+            "hp": 13
+        }
+    },
+    {
+        "species": "cobblemon:herdier",
+        "form": "",
+        "level": 32,
+        "item": "",
+        "ivs": {
+            "atk": 11,
+            "def": 23,
+            "spa": 20,
+            "spd": 2,
+            "spe": 1,
+            "hp": 19
+        }
+    }
+]

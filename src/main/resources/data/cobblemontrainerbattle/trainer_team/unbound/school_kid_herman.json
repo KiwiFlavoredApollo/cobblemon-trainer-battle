@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:ditto",
+        "form": "",
+        "level": 30,
+        "item": "",
+        "ivs": {
+            "atk": 7,
+            "def": 11,
+            "spa": 31,
+            "spd": 24,
+            "spe": 8,
+            "hp": 22
+        }
+    },
+    {
+        "species": "cobblemon:linoone",
+        "form": "",
+        "level": 30,
+        "item": "",
+        "ivs": {
+            "atk": 18,
+            "def": 12,
+            "spa": 2,
+            "spd": 3,
+            "spe": 2,
+            "hp": 3
+        }
+    }
+]

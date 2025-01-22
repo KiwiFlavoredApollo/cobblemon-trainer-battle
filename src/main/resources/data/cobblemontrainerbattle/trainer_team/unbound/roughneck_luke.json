@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:hawlucha",
+        "form": "",
+        "level": 38,
+        "item": "",
+        "ivs": {
+            "atk": 27,
+            "def": 23,
+            "spa": 29,
+            "spd": 15,
+            "spe": 21,
+            "hp": 22
+        }
+    },
+    {
+        "species": "cobblemon:umbreon",
+        "form": "",
+        "level": 37,
+        "item": "",
+        "ivs": {
+            "atk": 9,
+            "def": 3,
+            "spa": 2,
+            "spd": 30,
+            "spe": 8,
+            "hp": 5
+        }
+    }
+]

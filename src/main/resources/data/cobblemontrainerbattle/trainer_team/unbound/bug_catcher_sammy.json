@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:ledian",
+        "form": "",
+        "level": 18,
+        "item": "",
+        "ivs": {
+            "atk": 10,
+            "def": 2,
+            "spa": 25,
+            "spd": 15,
+            "spe": 3,
+            "hp": 23
+        }
+    }
+]

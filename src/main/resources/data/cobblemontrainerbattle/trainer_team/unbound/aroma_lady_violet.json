@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:gloom",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 19,
+            "def": 20,
+            "spa": 0,
+            "spd": 24,
+            "spe": 5,
+            "hp": 8
+        }
+    },
+    {
+        "species": "cobblemon:weepinbell",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 6,
+            "def": 8,
+            "spa": 24,
+            "spd": 7,
+            "spe": 18,
+            "hp": 3
+        }
+    },
+    {
+        "species": "cobblemon:bellossom",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 31,
+            "def": 24,
+            "spa": 27,
+            "spd": 12,
+            "spe": 21,
+            "hp": 20
+        }
+    }
+]

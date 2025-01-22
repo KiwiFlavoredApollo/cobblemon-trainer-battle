@@ -1,0 +1,58 @@
+[
+    {
+        "species": "cobblemon:purugly",
+        "form": "",
+        "level": 53,
+        "item": "",
+        "ivs": {
+            "atk": 13,
+            "def": 30,
+            "spa": 12,
+            "spd": 15,
+            "spe": 2,
+            "hp": 29
+        }
+    },
+    {
+        "species": "cobblemon:jumpluff",
+        "form": "",
+        "level": 52,
+        "item": "",
+        "ivs": {
+            "atk": 23,
+            "def": 31,
+            "spa": 1,
+            "spd": 28,
+            "spe": 6,
+            "hp": 19
+        }
+    },
+    {
+        "species": "cobblemon:raichu",
+        "form": "",
+        "level": 52,
+        "item": "",
+        "ivs": {
+            "atk": 18,
+            "def": 10,
+            "spa": 4,
+            "spd": 16,
+            "spe": 25,
+            "hp": 22
+        }
+    },
+    {
+        "species": "cobblemon:blaziken",
+        "form": "",
+        "level": 54,
+        "item": "",
+        "ivs": {
+            "atk": 2,
+            "def": 23,
+            "spa": 25,
+            "spd": 25,
+            "spe": 6,
+            "hp": 22
+        }
+    }
+]

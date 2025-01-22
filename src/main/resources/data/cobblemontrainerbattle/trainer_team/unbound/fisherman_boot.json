@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:lapras",
+        "form": "",
+        "level": 51,
+        "item": "",
+        "ivs": {
+            "atk": 25,
+            "def": 6,
+            "spa": 5,
+            "spd": 9,
+            "spe": 28,
+            "hp": 21
+        }
+    },
+    {
+        "species": "cobblemon:kingdra",
+        "form": "",
+        "level": 52,
+        "item": "",
+        "ivs": {
+            "atk": 26,
+            "def": 7,
+            "spa": 2,
+            "spd": 4,
+            "spe": 20,
+            "hp": 28
+        }
+    },
+    {
+        "species": "cobblemon:gyarados",
+        "form": "",
+        "level": 52,
+        "item": "",
+        "ivs": {
+            "atk": 2,
+            "def": 6,
+            "spa": 14,
+            "spd": 11,
+            "spe": 17,
+            "hp": 3
+        }
+    }
+]

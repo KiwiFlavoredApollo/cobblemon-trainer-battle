@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:bibarel",
+        "form": "",
+        "level": 31,
+        "item": "",
+        "ivs": {
+            "atk": 21,
+            "def": 23,
+            "spa": 25,
+            "spd": 18,
+            "spe": 10,
+            "hp": 2
+        }
+    },
+    {
+        "species": "cobblemon:gumshoos",
+        "form": "",
+        "level": 32,
+        "item": "",
+        "ivs": {
+            "atk": 27,
+            "def": 0,
+            "spa": 31,
+            "spd": 15,
+            "spe": 8,
+            "hp": 0
+        }
+    },
+    {
+        "species": "cobblemon:watchog",
+        "form": "",
+        "level": 32,
+        "item": "",
+        "ivs": {
+            "atk": 6,
+            "def": 22,
+            "spa": 26,
+            "spd": 3,
+            "spe": 19,
+            "hp": 3
+        }
+    }
+]

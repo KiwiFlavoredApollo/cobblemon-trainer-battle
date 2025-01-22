@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:taillow",
+        "form": "",
+        "level": 19,
+        "item": "",
+        "ivs": {
+            "atk": 28,
+            "def": 30,
+            "spa": 21,
+            "spd": 16,
+            "spe": 0,
+            "hp": 29
+        }
+    },
+    {
+        "species": "cobblemon:taillow",
+        "form": "",
+        "level": 20,
+        "item": "",
+        "ivs": {
+            "atk": 14,
+            "def": 10,
+            "spa": 1,
+            "spd": 5,
+            "spe": 31,
+            "hp": 22
+        }
+    }
+]

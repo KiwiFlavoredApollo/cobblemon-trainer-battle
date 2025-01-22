@@ -1,0 +1,86 @@
+[
+    {
+        "species": "cobblemon:skorupi",
+        "form": "",
+        "level": 29,
+        "item": "",
+        "ivs": {
+            "atk": 16,
+            "def": 8,
+            "spa": 2,
+            "spd": 28,
+            "spe": 24,
+            "hp": 30
+        }
+    },
+    {
+        "species": "cobblemon:sunflora",
+        "form": "",
+        "level": 30,
+        "item": "",
+        "ivs": {
+            "atk": 2,
+            "def": 14,
+            "spa": 14,
+            "spd": 15,
+            "spe": 8,
+            "hp": 5
+        }
+    },
+    {
+        "species": "cobblemon:beartic",
+        "form": "",
+        "level": 30,
+        "item": "",
+        "ivs": {
+            "atk": 9,
+            "def": 17,
+            "spa": 24,
+            "spd": 21,
+            "spe": 11,
+            "hp": 25
+        }
+    },
+    {
+        "species": "cobblemon:yanma",
+        "form": "",
+        "level": 29,
+        "item": "",
+        "ivs": {
+            "atk": 24,
+            "def": 9,
+            "spa": 0,
+            "spd": 4,
+            "spe": 22,
+            "hp": 19
+        }
+    },
+    {
+        "species": "cobblemon:ludicolo",
+        "form": "",
+        "level": 30,
+        "item": "",
+        "ivs": {
+            "atk": 9,
+            "def": 31,
+            "spa": 15,
+            "spd": 22,
+            "spe": 25,
+            "hp": 27
+        }
+    },
+    {
+        "species": "cobblemon:cryogonal",
+        "form": "",
+        "level": 30,
+        "item": "",
+        "ivs": {
+            "atk": 11,
+            "def": 22,
+            "spa": 5,
+            "spd": 21,
+            "spe": 23,
+            "hp": 26
+        }
+    }
+]

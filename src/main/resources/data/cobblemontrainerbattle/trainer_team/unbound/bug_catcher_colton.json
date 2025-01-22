@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:burmy",
+        "form": "",
+        "level": 19,
+        "item": "",
+        "ivs": {
+            "atk": 2,
+            "def": 13,
+            "spa": 18,
+            "spd": 23,
+            "spe": 12,
+            "hp": 22
+        }
+    },
+    {
+        "species": "cobblemon:yanma",
+        "form": "",
+        "level": 20,
+        "item": "",
+        "ivs": {
+            "atk": 26,
+            "def": 6,
+            "spa": 18,
+            "spd": 4,
+            "spe": 13,
+            "hp": 23
+        }
+    },
+    {
+        "species": "cobblemon:combee",
+        "form": "",
+        "level": 19,
+        "item": "",
+        "ivs": {
+            "atk": 0,
+            "def": 3,
+            "spa": 10,
+            "spd": 13,
+            "spe": 22,
+            "hp": 20
+        }
+    }
+]

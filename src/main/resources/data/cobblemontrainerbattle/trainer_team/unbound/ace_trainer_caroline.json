@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:venomoth",
+        "form": "",
+        "level": 36,
+        "item": "",
+        "ivs": {
+            "atk": 27,
+            "def": 12,
+            "spa": 28,
+            "spd": 20,
+            "spe": 21,
+            "hp": 16
+        }
+    },
+    {
+        "species": "cobblemon:vespiquen",
+        "form": "",
+        "level": 36,
+        "item": "",
+        "ivs": {
+            "atk": 31,
+            "def": 28,
+            "spa": 30,
+            "spd": 26,
+            "spe": 7,
+            "hp": 5
+        }
+    }
+]

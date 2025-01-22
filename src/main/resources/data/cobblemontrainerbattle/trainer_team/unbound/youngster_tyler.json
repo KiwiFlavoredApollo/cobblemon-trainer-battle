@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:yungoos",
+        "form": "",
+        "level": 23,
+        "item": "",
+        "ivs": {
+            "atk": 27,
+            "def": 28,
+            "spa": 27,
+            "spd": 10,
+            "spe": 20,
+            "hp": 1
+        }
+    },
+    {
+        "species": "cobblemon:rattata",
+        "form": "Alolan",
+        "level": 24,
+        "item": "",
+        "ivs": {
+            "atk": 5,
+            "def": 18,
+            "spa": 10,
+            "spd": 5,
+            "spe": 19,
+            "hp": 30
+        }
+    }
+]

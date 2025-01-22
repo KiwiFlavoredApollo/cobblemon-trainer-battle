@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:throh",
+        "form": "",
+        "level": 49,
+        "item": "",
+        "ivs": {
+            "atk": 5,
+            "def": 1,
+            "spa": 26,
+            "spd": 21,
+            "spe": 9,
+            "hp": 7
+        }
+    }
+]

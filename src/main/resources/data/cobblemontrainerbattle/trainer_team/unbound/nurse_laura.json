@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:starly",
+        "form": "",
+        "level": 17,
+        "item": "",
+        "ivs": {
+            "atk": 30,
+            "def": 9,
+            "spa": 24,
+            "spd": 4,
+            "spe": 4,
+            "hp": 12
+        }
+    },
+    {
+        "species": "cobblemon:chansey",
+        "form": "",
+        "level": 18,
+        "item": "",
+        "ivs": {
+            "atk": 23,
+            "def": 15,
+            "spa": 4,
+            "spd": 28,
+            "spe": 25,
+            "hp": 2
+        }
+    }
+]

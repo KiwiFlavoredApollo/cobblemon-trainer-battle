@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:electabuzz",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 1,
+            "def": 23,
+            "spa": 24,
+            "spd": 4,
+            "spe": 7,
+            "hp": 27
+        }
+    },
+    {
+        "species": "cobblemon:luxray",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 5,
+            "def": 30,
+            "spa": 23,
+            "spd": 26,
+            "spe": 20,
+            "hp": 4
+        }
+    }
+]

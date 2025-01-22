@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:bronzor",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 14,
+            "def": 11,
+            "spa": 9,
+            "spd": 15,
+            "spe": 16,
+            "hp": 7
+        }
+    },
+    {
+        "species": "cobblemon:voltorb",
+        "form": "",
+        "level": 39,
+        "item": "",
+        "ivs": {
+            "atk": 26,
+            "def": 7,
+            "spa": 7,
+            "spd": 25,
+            "spe": 6,
+            "hp": 8
+        }
+    },
+    {
+        "species": "cobblemon:klink",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 13,
+            "def": 30,
+            "spa": 10,
+            "spd": 4,
+            "spe": 27,
+            "hp": 26
+        }
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:smeargle",
+        "form": "",
+        "level": 32,
+        "item": "Focus Sash",
+        "ivs": {
+            "atk": 4,
+            "def": 11,
+            "spa": 29,
+            "spd": 15,
+            "spe": 29,
+            "hp": 24
+        }
+    }
+]

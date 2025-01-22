@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:charjabug",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 3,
+            "def": 2,
+            "spa": 12,
+            "spd": 9,
+            "spe": 25,
+            "hp": 26
+        }
+    },
+    {
+        "species": "cobblemon:dedenne",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 20,
+            "def": 15,
+            "spa": 1,
+            "spd": 31,
+            "spe": 28,
+            "hp": 14
+        }
+    }
+]

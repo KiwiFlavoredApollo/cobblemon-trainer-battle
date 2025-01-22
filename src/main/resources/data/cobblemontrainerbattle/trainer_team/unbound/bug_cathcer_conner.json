@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:karrablast",
+        "form": "",
+        "level": 50,
+        "item": "",
+        "ivs": {
+            "atk": 13,
+            "def": 14,
+            "spa": 18,
+            "spd": 24,
+            "spe": 3,
+            "hp": 25
+        }
+    },
+    {
+        "species": "cobblemon:accelgor",
+        "form": "",
+        "level": 52,
+        "item": "",
+        "ivs": {
+            "atk": 25,
+            "def": 30,
+            "spa": 6,
+            "spd": 1,
+            "spe": 1,
+            "hp": 17
+        }
+    },
+    {
+        "species": "cobblemon:leavanny",
+        "form": "",
+        "level": 52,
+        "item": "",
+        "ivs": {
+            "atk": 8,
+            "def": 11,
+            "spa": 19,
+            "spd": 7,
+            "spe": 27,
+            "hp": 9
+        }
+    }
+]

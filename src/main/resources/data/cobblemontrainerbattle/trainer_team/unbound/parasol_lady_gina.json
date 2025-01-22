@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:surskit",
+        "form": "",
+        "level": 30,
+        "item": "",
+        "ivs": {
+            "atk": 13,
+            "def": 3,
+            "spa": 11,
+            "spd": 29,
+            "spe": 17,
+            "hp": 9
+        }
+    },
+    {
+        "species": "cobblemon:tympole",
+        "form": "",
+        "level": 31,
+        "item": "",
+        "ivs": {
+            "atk": 10,
+            "def": 27,
+            "spa": 10,
+            "spd": 31,
+            "spe": 2,
+            "hp": 29
+        }
+    }
+]

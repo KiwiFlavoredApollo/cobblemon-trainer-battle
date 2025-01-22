@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:wishiwashi",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 1,
+            "def": 3,
+            "spa": 3,
+            "spd": 26,
+            "spe": 24,
+            "hp": 26
+        }
+    },
+    {
+        "species": "cobblemon:gyarados",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 19,
+            "def": 15,
+            "spa": 27,
+            "spd": 8,
+            "spe": 22,
+            "hp": 3
+        }
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:ponyta",
+        "form": "",
+        "level": 38,
+        "item": "",
+        "ivs": {
+            "atk": 4,
+            "def": 12,
+            "spa": 15,
+            "spd": 12,
+            "spe": 3,
+            "hp": 18
+        }
+    },
+    {
+        "species": "cobblemon:fletchinder",
+        "form": "",
+        "level": 37,
+        "item": "",
+        "ivs": {
+            "atk": 19,
+            "def": 5,
+            "spa": 4,
+            "spd": 15,
+            "spe": 25,
+            "hp": 7
+        }
+    }
+]

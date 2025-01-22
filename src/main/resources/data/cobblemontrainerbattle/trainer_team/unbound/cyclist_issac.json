@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:hoothoot",
+        "form": "",
+        "level": 33,
+        "item": "",
+        "ivs": {
+            "atk": 7,
+            "def": 2,
+            "spa": 26,
+            "spd": 19,
+            "spe": 1,
+            "hp": 9
+        }
+    },
+    {
+        "species": "cobblemon:elekid",
+        "form": "",
+        "level": 32,
+        "item": "",
+        "ivs": {
+            "atk": 20,
+            "def": 15,
+            "spa": 22,
+            "spd": 26,
+            "spe": 12,
+            "hp": 21
+        }
+    },
+    {
+        "species": "cobblemon:shinx",
+        "form": "",
+        "level": 32,
+        "item": "",
+        "ivs": {
+            "atk": 11,
+            "def": 26,
+            "spa": 9,
+            "spd": 25,
+            "spe": 15,
+            "hp": 0
+        }
+    }
+]

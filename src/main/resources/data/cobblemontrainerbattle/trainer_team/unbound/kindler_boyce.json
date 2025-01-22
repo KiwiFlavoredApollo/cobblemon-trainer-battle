@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:oricorio",
+        "form": "",
+        "level": 50,
+        "item": "",
+        "ivs": {
+            "atk": 20,
+            "def": 11,
+            "spa": 22,
+            "spd": 14,
+            "spe": 26,
+            "hp": 11
+        }
+    },
+    {
+        "species": "cobblemon:heatmor",
+        "form": "",
+        "level": 52,
+        "item": "",
+        "ivs": {
+            "atk": 8,
+            "def": 16,
+            "spa": 10,
+            "spd": 15,
+            "spe": 19,
+            "hp": 28
+        }
+    }
+]

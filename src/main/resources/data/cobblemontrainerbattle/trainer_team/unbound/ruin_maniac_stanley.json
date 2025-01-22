@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:golem",
+        "form": "",
+        "level": 34,
+        "item": "",
+        "ivs": {
+            "atk": 26,
+            "def": 5,
+            "spa": 12,
+            "spd": 26,
+            "spe": 16,
+            "hp": 27
+        }
+    },
+    {
+        "species": "cobblemon:lileep",
+        "form": "",
+        "level": 32,
+        "item": "",
+        "ivs": {
+            "atk": 19,
+            "def": 10,
+            "spa": 0,
+            "spd": 18,
+            "spe": 26,
+            "hp": 9
+        }
+    },
+    {
+        "species": "cobblemon:anorith",
+        "form": "",
+        "level": 32,
+        "item": "",
+        "ivs": {
+            "atk": 5,
+            "def": 15,
+            "spa": 22,
+            "spd": 14,
+            "spe": 30,
+            "hp": 13
+        }
+    }
+]

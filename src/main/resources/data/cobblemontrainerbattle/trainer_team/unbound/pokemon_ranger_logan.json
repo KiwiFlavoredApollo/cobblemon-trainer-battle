@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:trapinch",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 4,
+            "def": 30,
+            "spa": 30,
+            "spd": 16,
+            "spe": 19,
+            "hp": 14
+        }
+    },
+    {
+        "species": "cobblemon:darmanitan",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 12,
+            "def": 20,
+            "spa": 5,
+            "spd": 23,
+            "spe": 24,
+            "hp": 7
+        }
+    }
+]

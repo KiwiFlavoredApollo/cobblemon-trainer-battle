@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:smeargle",
+        "form": "",
+        "level": 25,
+        "item": "Icy Rock",
+        "ivs": {
+            "atk": 6,
+            "def": 23,
+            "spa": 30,
+            "spd": 17,
+            "spe": 14,
+            "hp": 18
+        }
+    }
+]

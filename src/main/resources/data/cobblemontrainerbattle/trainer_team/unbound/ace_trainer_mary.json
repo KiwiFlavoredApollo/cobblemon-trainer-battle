@@ -1,0 +1,72 @@
+[
+    {
+        "species": "cobblemon:gyarados",
+        "form": "",
+        "level": 30,
+        "item": "",
+        "ivs": {
+            "atk": 6,
+            "def": 4,
+            "spa": 17,
+            "spd": 11,
+            "spe": 10,
+            "hp": 6
+        }
+    },
+    {
+        "species": "cobblemon:roserade",
+        "form": "",
+        "level": 30,
+        "item": "",
+        "ivs": {
+            "atk": 19,
+            "def": 14,
+            "spa": 5,
+            "spd": 1,
+            "spe": 7,
+            "hp": 12
+        }
+    },
+    {
+        "species": "cobblemon:nidoqueen",
+        "form": "",
+        "level": 30,
+        "item": "",
+        "ivs": {
+            "atk": 31,
+            "def": 0,
+            "spa": 2,
+            "spd": 15,
+            "spe": 19,
+            "hp": 16
+        }
+    },
+    {
+        "species": "cobblemon:steelix",
+        "form": "",
+        "level": 30,
+        "item": "",
+        "ivs": {
+            "atk": 26,
+            "def": 27,
+            "spa": 11,
+            "spd": 28,
+            "spe": 17,
+            "hp": 2
+        }
+    },
+    {
+        "species": "cobblemon:simipour",
+        "form": "",
+        "level": 30,
+        "item": "",
+        "ivs": {
+            "atk": 27,
+            "def": 28,
+            "spa": 12,
+            "spd": 4,
+            "spe": 22,
+            "hp": 23
+        }
+    }
+]

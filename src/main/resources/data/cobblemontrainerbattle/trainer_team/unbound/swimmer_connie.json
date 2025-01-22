@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:staryu",
+        "form": "",
+        "level": 39,
+        "item": "",
+        "ivs": {
+            "atk": 3,
+            "def": 11,
+            "spa": 18,
+            "spd": 1,
+            "spe": 16,
+            "hp": 29
+        }
+    },
+    {
+        "species": "cobblemon:starmie",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 20,
+            "def": 11,
+            "spa": 8,
+            "spd": 25,
+            "spe": 29,
+            "hp": 6
+        }
+    },
+    {
+        "species": "cobblemon:seel",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 25,
+            "def": 17,
+            "spa": 29,
+            "spd": 22,
+            "spe": 23,
+            "hp": 20
+        }
+    }
+]

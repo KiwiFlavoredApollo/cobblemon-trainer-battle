@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:onix",
+        "form": "",
+        "level": 29,
+        "item": "",
+        "ivs": {
+            "atk": 4,
+            "def": 0,
+            "spa": 11,
+            "spd": 12,
+            "spe": 24,
+            "hp": 30
+        }
+    },
+    {
+        "species": "cobblemon:aron",
+        "form": "",
+        "level": 30,
+        "item": "",
+        "ivs": {
+            "atk": 19,
+            "def": 15,
+            "spa": 12,
+            "spd": 6,
+            "spe": 24,
+            "hp": 10
+        }
+    },
+    {
+        "species": "cobblemon:drilbur",
+        "form": "",
+        "level": 30,
+        "item": "",
+        "ivs": {
+            "atk": 21,
+            "def": 22,
+            "spa": 6,
+            "spd": 9,
+            "spe": 20,
+            "hp": 12
+        }
+    }
+]

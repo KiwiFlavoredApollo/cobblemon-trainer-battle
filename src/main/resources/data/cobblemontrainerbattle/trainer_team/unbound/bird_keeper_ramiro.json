@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:swellow",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 4,
+            "def": 11,
+            "spa": 18,
+            "spd": 0,
+            "spe": 31,
+            "hp": 12
+        }
+    }
+]

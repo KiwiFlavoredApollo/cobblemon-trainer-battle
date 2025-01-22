@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:sandslash",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 14,
+            "def": 22,
+            "spa": 27,
+            "spd": 3,
+            "spe": 31,
+            "hp": 21
+        }
+    },
+    {
+        "species": "cobblemon:vibrava",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 12,
+            "def": 17,
+            "spa": 30,
+            "spd": 27,
+            "spe": 21,
+            "hp": 18
+        }
+    }
+]

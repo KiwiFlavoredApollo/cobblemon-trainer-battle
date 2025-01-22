@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:minun",
+        "form": "",
+        "level": 70,
+        "item": "",
+        "ivs": {
+            "atk": 6,
+            "def": 4,
+            "spa": 23,
+            "spd": 11,
+            "spe": 26,
+            "hp": 3
+        }
+    },
+    {
+        "species": "cobblemon:metang",
+        "form": "",
+        "level": 72,
+        "item": "",
+        "ivs": {
+            "atk": 20,
+            "def": 16,
+            "spa": 14,
+            "spd": 1,
+            "spe": 11,
+            "hp": 21
+        }
+    },
+    {
+        "species": "cobblemon:raichu",
+        "form": "",
+        "level": 73,
+        "item": "",
+        "ivs": {
+            "atk": 21,
+            "def": 17,
+            "spa": 10,
+            "spd": 1,
+            "spe": 26,
+            "hp": 30
+        }
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:deerling",
+        "form": "",
+        "level": 23,
+        "item": "",
+        "ivs": {
+            "atk": 21,
+            "def": 12,
+            "spa": 13,
+            "spd": 6,
+            "spe": 21,
+            "hp": 13
+        }
+    }
+]

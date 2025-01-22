@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:smeargle",
+        "form": "",
+        "level": 29,
+        "item": "Quick Claw",
+        "ivs": {
+            "atk": 28,
+            "def": 5,
+            "spa": 15,
+            "spd": 9,
+            "spe": 28,
+            "hp": 3
+        }
+    }
+]

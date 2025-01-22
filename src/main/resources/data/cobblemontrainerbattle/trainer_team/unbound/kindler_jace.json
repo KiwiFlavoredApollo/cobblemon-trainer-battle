@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:litleo",
+        "form": "",
+        "level": 18,
+        "item": "",
+        "ivs": {
+            "atk": 3,
+            "def": 29,
+            "spa": 16,
+            "spd": 10,
+            "spe": 28,
+            "hp": 30
+        }
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:gallade",
+        "form": "",
+        "level": 43,
+        "item": "",
+        "ivs": {
+            "atk": 7,
+            "def": 17,
+            "spa": 18,
+            "spd": 0,
+            "spe": 28,
+            "hp": 28
+        }
+    }
+]

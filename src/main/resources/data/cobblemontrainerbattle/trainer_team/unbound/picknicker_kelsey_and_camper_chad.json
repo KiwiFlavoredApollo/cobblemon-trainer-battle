@@ -1,0 +1,58 @@
+[
+    {
+        "species": "cobblemon:minccino",
+        "form": "",
+        "level": 11,
+        "item": "",
+        "ivs": {
+            "atk": 7,
+            "def": 13,
+            "spa": 22,
+            "spd": 1,
+            "spe": 2,
+            "hp": 19
+        }
+    },
+    {
+        "species": "cobblemon:stufful",
+        "form": "",
+        "level": 12,
+        "item": "",
+        "ivs": {
+            "atk": 27,
+            "def": 2,
+            "spa": 26,
+            "spd": 14,
+            "spe": 19,
+            "hp": 25
+        }
+    },
+    {
+        "species": "cobblemon:electrike",
+        "form": "",
+        "level": 12,
+        "item": "",
+        "ivs": {
+            "atk": 27,
+            "def": 11,
+            "spa": 9,
+            "spd": 5,
+            "spe": 28,
+            "hp": 21
+        }
+    },
+    {
+        "species": "cobblemon:inkay",
+        "form": "",
+        "level": 12,
+        "item": "",
+        "ivs": {
+            "atk": 27,
+            "def": 2,
+            "spa": 24,
+            "spd": 6,
+            "spe": 21,
+            "hp": 31
+        }
+    }
+]

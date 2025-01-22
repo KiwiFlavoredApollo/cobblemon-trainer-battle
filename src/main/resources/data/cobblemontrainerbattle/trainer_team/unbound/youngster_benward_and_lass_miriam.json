@@ -1,0 +1,58 @@
+[
+    {
+        "species": "cobblemon:raticate",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 24,
+            "def": 27,
+            "spa": 13,
+            "spd": 16,
+            "spe": 26,
+            "hp": 8
+        }
+    },
+    {
+        "species": "cobblemon:linoone",
+        "form": "",
+        "level": 39,
+        "item": "",
+        "ivs": {
+            "atk": 2,
+            "def": 6,
+            "spa": 4,
+            "spd": 29,
+            "spe": 15,
+            "hp": 10
+        }
+    },
+    {
+        "species": "cobblemon:buneary",
+        "form": "",
+        "level": 39,
+        "item": "",
+        "ivs": {
+            "atk": 22,
+            "def": 18,
+            "spa": 24,
+            "spd": 31,
+            "spe": 21,
+            "hp": 25
+        }
+    },
+    {
+        "species": "cobblemon:clefairy",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 8,
+            "def": 11,
+            "spa": 5,
+            "spd": 31,
+            "spe": 9,
+            "hp": 22
+        }
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "species": "cobblemon:pikachu",
+        "form": "",
+        "level": 54,
+        "item": "Light Ball",
+        "ivs": {
+            "atk": 3,
+            "def": 4,
+            "spa": 24,
+            "spd": 22,
+            "spe": 0,
+            "hp": 19
+        }
+    },
+    {
+        "species": "cobblemon:porygonz",
+        "form": "",
+        "level": 54,
+        "item": "",
+        "ivs": {
+            "atk": 2,
+            "def": 30,
+            "spa": 27,
+            "spd": 15,
+            "spe": 1,
+            "hp": 20
+        }
+    },
+    {
+        "species": "cobblemon:mothim",
+        "form": "",
+        "level": 51,
+        "item": "",
+        "ivs": {
+            "atk": 9,
+            "def": 31,
+            "spa": 17,
+            "spd": 9,
+            "spe": 30,
+            "hp": 12
+        }
+    },
+    {
+        "species": "cobblemon:hitmonlee",
+        "form": "",
+        "level": 53,
+        "item": "",
+        "ivs": {
+            "atk": 6,
+            "def": 14,
+            "spa": 0,
+            "spd": 21,
+            "spe": 26,
+            "hp": 1
+        }
+    }
+]

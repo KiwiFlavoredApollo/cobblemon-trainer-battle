@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:herdier",
+        "form": "",
+        "level": 30,
+        "item": "",
+        "ivs": {
+            "atk": 4,
+            "def": 11,
+            "spa": 19,
+            "spd": 23,
+            "spe": 24,
+            "hp": 7
+        }
+    },
+    {
+        "species": "cobblemon:shiftry",
+        "form": "",
+        "level": 30,
+        "item": "",
+        "ivs": {
+            "atk": 1,
+            "def": 31,
+            "spa": 17,
+            "spd": 11,
+            "spe": 16,
+            "hp": 18
+        }
+    },
+    {
+        "species": "cobblemon:machamp",
+        "form": "",
+        "level": 30,
+        "item": "",
+        "ivs": {
+            "atk": 10,
+            "def": 17,
+            "spa": 24,
+            "spd": 1,
+            "spe": 25,
+            "hp": 27
+        }
+    }
+]

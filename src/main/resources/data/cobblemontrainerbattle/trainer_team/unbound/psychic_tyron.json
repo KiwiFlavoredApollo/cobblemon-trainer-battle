@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:girafarig",
+        "form": "",
+        "level": 47,
+        "item": "",
+        "ivs": {
+            "atk": 9,
+            "def": 1,
+            "spa": 1,
+            "spd": 31,
+            "spe": 16,
+            "hp": 7
+        }
+    },
+    {
+        "species": "cobblemon:slowbro",
+        "form": "",
+        "level": 48,
+        "item": "",
+        "ivs": {
+            "atk": 30,
+            "def": 29,
+            "spa": 10,
+            "spd": 29,
+            "spe": 27,
+            "hp": 7
+        }
+    }
+]

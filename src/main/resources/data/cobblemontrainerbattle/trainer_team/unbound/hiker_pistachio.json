@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:sandslash",
+        "form": "",
+        "level": 52,
+        "item": "",
+        "ivs": {
+            "atk": 5,
+            "def": 28,
+            "spa": 27,
+            "spd": 31,
+            "spe": 22,
+            "hp": 6
+        }
+    },
+    {
+        "species": "cobblemon:flygon",
+        "form": "",
+        "level": 51,
+        "item": "",
+        "ivs": {
+            "atk": 13,
+            "def": 29,
+            "spa": 20,
+            "spd": 15,
+            "spe": 5,
+            "hp": 29
+        }
+    }
+]

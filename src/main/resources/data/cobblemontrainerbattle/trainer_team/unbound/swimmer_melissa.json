@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:finneon",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 5,
+            "def": 8,
+            "spa": 14,
+            "spd": 22,
+            "spe": 4,
+            "hp": 25
+        }
+    },
+    {
+        "species": "cobblemon:mantyke",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 28,
+            "def": 5,
+            "spa": 19,
+            "spd": 3,
+            "spe": 25,
+            "hp": 17
+        }
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:quagsire",
+        "form": "",
+        "level": 36,
+        "item": "Rindo Berry",
+        "ivs": {
+            "atk": 25,
+            "def": 17,
+            "spa": 29,
+            "spd": 9,
+            "spe": 14,
+            "hp": 21
+        }
+    },
+    {
+        "species": "cobblemon:piloswine",
+        "form": "",
+        "level": 37,
+        "item": "Passho Berry",
+        "ivs": {
+            "atk": 15,
+            "def": 19,
+            "spa": 23,
+            "spd": 20,
+            "spe": 10,
+            "hp": 8
+        }
+    }
+]

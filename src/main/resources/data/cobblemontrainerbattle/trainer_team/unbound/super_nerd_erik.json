@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:garbodor",
+        "form": "",
+        "level": 49,
+        "item": "",
+        "ivs": {
+            "atk": 24,
+            "def": 24,
+            "spa": 30,
+            "spd": 7,
+            "spe": 15,
+            "hp": 11
+        }
+    },
+    {
+        "species": "cobblemon:muk",
+        "form": "",
+        "level": 49,
+        "item": "",
+        "ivs": {
+            "atk": 22,
+            "def": 1,
+            "spa": 13,
+            "spd": 9,
+            "spe": 27,
+            "hp": 4
+        }
+    },
+    {
+        "species": "cobblemon:jolteon",
+        "form": "",
+        "level": 48,
+        "item": "",
+        "ivs": {
+            "atk": 11,
+            "def": 30,
+            "spa": 13,
+            "spd": 10,
+            "spe": 27,
+            "hp": 7
+        }
+    }
+]

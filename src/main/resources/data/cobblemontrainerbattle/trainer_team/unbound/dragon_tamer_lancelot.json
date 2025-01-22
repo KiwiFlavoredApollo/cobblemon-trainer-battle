@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:fraxure",
+        "form": "",
+        "level": 70,
+        "item": "",
+        "ivs": {
+            "atk": 16,
+            "def": 7,
+            "spa": 19,
+            "spd": 0,
+            "spe": 16,
+            "hp": 29
+        }
+    },
+    {
+        "species": "cobblemon:garchomp",
+        "form": "",
+        "level": 74,
+        "item": "",
+        "ivs": {
+            "atk": 22,
+            "def": 21,
+            "spa": 3,
+            "spd": 13,
+            "spe": 5,
+            "hp": 9
+        }
+    }
+]

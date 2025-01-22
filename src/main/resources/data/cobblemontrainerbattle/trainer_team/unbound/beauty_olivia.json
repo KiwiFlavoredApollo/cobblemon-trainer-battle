@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:flareon",
+        "form": "",
+        "level": 48,
+        "item": "",
+        "ivs": {
+            "atk": 10,
+            "def": 17,
+            "spa": 12,
+            "spd": 16,
+            "spe": 16,
+            "hp": 6
+        }
+    },
+    {
+        "species": "cobblemon:swadloon",
+        "form": "",
+        "level": 47,
+        "item": "",
+        "ivs": {
+            "atk": 27,
+            "def": 7,
+            "spa": 20,
+            "spd": 29,
+            "spe": 14,
+            "hp": 0
+        }
+    }
+]

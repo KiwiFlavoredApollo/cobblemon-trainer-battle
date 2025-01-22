@@ -1,0 +1,72 @@
+[
+    {
+        "species": "cobblemon:ferroseed",
+        "form": "",
+        "level": 51,
+        "item": "",
+        "ivs": {
+            "atk": 11,
+            "def": 7,
+            "spa": 30,
+            "spd": 31,
+            "spe": 4,
+            "hp": 18
+        }
+    },
+    {
+        "species": "cobblemon:sandshrew",
+        "form": "Alolan",
+        "level": 51,
+        "item": "",
+        "ivs": {
+            "atk": 23,
+            "def": 28,
+            "spa": 8,
+            "spd": 5,
+            "spe": 24,
+            "hp": 4
+        }
+    },
+    {
+        "species": "cobblemon:escavalier",
+        "form": "",
+        "level": 53,
+        "item": "",
+        "ivs": {
+            "atk": 5,
+            "def": 26,
+            "spa": 1,
+            "spd": 23,
+            "spe": 3,
+            "hp": 5
+        }
+    },
+    {
+        "species": "cobblemon:tentacruel",
+        "form": "",
+        "level": 53,
+        "item": "",
+        "ivs": {
+            "atk": 16,
+            "def": 25,
+            "spa": 30,
+            "spd": 25,
+            "spe": 0,
+            "hp": 21
+        }
+    },
+    {
+        "species": "cobblemon:torkoal",
+        "form": "",
+        "level": 53,
+        "item": "",
+        "ivs": {
+            "atk": 30,
+            "def": 8,
+            "spa": 21,
+            "spd": 22,
+            "spe": 7,
+            "hp": 8
+        }
+    }
+]

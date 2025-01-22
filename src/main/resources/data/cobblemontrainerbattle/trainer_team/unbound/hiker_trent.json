@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:makuhita",
+        "form": "",
+        "level": 18,
+        "item": "",
+        "ivs": {
+            "atk": 0,
+            "def": 11,
+            "spa": 29,
+            "spd": 30,
+            "spe": 30,
+            "hp": 19
+        }
+    },
+    {
+        "species": "cobblemon:roggenrola",
+        "form": "",
+        "level": 18,
+        "item": "",
+        "ivs": {
+            "atk": 29,
+            "def": 25,
+            "spa": 11,
+            "spd": 9,
+            "spe": 24,
+            "hp": 23
+        }
+    }
+]

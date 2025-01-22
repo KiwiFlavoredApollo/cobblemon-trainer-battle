@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:dusclops",
+        "form": "",
+        "level": 42,
+        "item": "",
+        "ivs": {
+            "atk": 5,
+            "def": 23,
+            "spa": 14,
+            "spd": 25,
+            "spe": 19,
+            "hp": 11
+        }
+    },
+    {
+        "species": "cobblemon:palossand",
+        "form": "",
+        "level": 42,
+        "item": "",
+        "ivs": {
+            "atk": 17,
+            "def": 9,
+            "spa": 12,
+            "spd": 18,
+            "spe": 22,
+            "hp": 31
+        }
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:minccino",
+        "form": "",
+        "level": 31,
+        "item": "",
+        "ivs": {
+            "atk": 13,
+            "def": 1,
+            "spa": 24,
+            "spd": 6,
+            "spe": 17,
+            "hp": 29
+        }
+    },
+    {
+        "species": "cobblemon:cinccino",
+        "form": "",
+        "level": 32,
+        "item": "",
+        "ivs": {
+            "atk": 9,
+            "def": 13,
+            "spa": 10,
+            "spd": 8,
+            "spe": 1,
+            "hp": 23
+        }
+    }
+]

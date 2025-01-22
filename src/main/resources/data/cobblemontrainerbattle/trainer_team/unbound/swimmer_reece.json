@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:buizel",
+        "form": "",
+        "level": 39,
+        "item": "",
+        "ivs": {
+            "atk": 17,
+            "def": 12,
+            "spa": 25,
+            "spd": 6,
+            "spe": 18,
+            "hp": 6
+        }
+    },
+    {
+        "species": "cobblemon:tentacruel",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 7,
+            "def": 22,
+            "spa": 9,
+            "spd": 30,
+            "spe": 23,
+            "hp": 9
+        }
+    },
+    {
+        "species": "cobblemon:floatzel",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 14,
+            "def": 25,
+            "spa": 9,
+            "spd": 26,
+            "spe": 3,
+            "hp": 14
+        }
+    }
+]

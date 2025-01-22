@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:gligar",
+        "form": "",
+        "level": 21,
+        "item": "",
+        "ivs": {
+            "atk": 8,
+            "def": 20,
+            "spa": 9,
+            "spd": 27,
+            "spe": 3,
+            "hp": 19
+        }
+    },
+    {
+        "species": "cobblemon:noibat",
+        "form": "",
+        "level": 22,
+        "item": "",
+        "ivs": {
+            "atk": 0,
+            "def": 14,
+            "spa": 2,
+            "spd": 22,
+            "spe": 16,
+            "hp": 2
+        }
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:clauncher",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 16,
+            "def": 25,
+            "spa": 10,
+            "spd": 25,
+            "spe": 25,
+            "hp": 16
+        }
+    },
+    {
+        "species": "cobblemon:sharpedo",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 13,
+            "def": 6,
+            "spa": 30,
+            "spd": 4,
+            "spe": 9,
+            "hp": 14
+        }
+    }
+]

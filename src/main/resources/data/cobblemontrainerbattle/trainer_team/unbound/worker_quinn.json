@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:excadrill",
+        "form": "",
+        "level": 48,
+        "item": "",
+        "ivs": {
+            "atk": 16,
+            "def": 18,
+            "spa": 15,
+            "spd": 29,
+            "spe": 20,
+            "hp": 11
+        }
+    },
+    {
+        "species": "cobblemon:electivire",
+        "form": "",
+        "level": 49,
+        "item": "",
+        "ivs": {
+            "atk": 11,
+            "def": 6,
+            "spa": 9,
+            "spd": 21,
+            "spe": 15,
+            "hp": 13
+        }
+    },
+    {
+        "species": "cobblemon:bronzong",
+        "form": "",
+        "level": 48,
+        "item": "",
+        "ivs": {
+            "atk": 19,
+            "def": 6,
+            "spa": 3,
+            "spd": 23,
+            "spe": 5,
+            "hp": 1
+        }
+    }
+]

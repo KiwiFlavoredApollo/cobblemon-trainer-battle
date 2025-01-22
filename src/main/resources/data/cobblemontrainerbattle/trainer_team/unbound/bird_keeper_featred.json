@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:talonflame",
+        "form": "",
+        "level": 38,
+        "item": "",
+        "ivs": {
+            "atk": 24,
+            "def": 28,
+            "spa": 24,
+            "spd": 10,
+            "spe": 24,
+            "hp": 30
+        }
+    },
+    {
+        "species": "cobblemon:fearow",
+        "form": "",
+        "level": 38,
+        "item": "",
+        "ivs": {
+            "atk": 1,
+            "def": 12,
+            "spa": 24,
+            "spd": 15,
+            "spe": 31,
+            "hp": 27
+        }
+    },
+    {
+        "species": "cobblemon:trumbeak",
+        "form": "",
+        "level": 38,
+        "item": "",
+        "ivs": {
+            "atk": 0,
+            "def": 2,
+            "spa": 20,
+            "spd": 16,
+            "spe": 2,
+            "hp": 8
+        }
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:rufflet",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 22,
+            "def": 3,
+            "spa": 26,
+            "spd": 31,
+            "spe": 2,
+            "hp": 23
+        }
+    },
+    {
+        "species": "cobblemon:doduo",
+        "form": "",
+        "level": 39,
+        "item": "",
+        "ivs": {
+            "atk": 3,
+            "def": 26,
+            "spa": 30,
+            "spd": 12,
+            "spe": 28,
+            "hp": 3
+        }
+    }
+]

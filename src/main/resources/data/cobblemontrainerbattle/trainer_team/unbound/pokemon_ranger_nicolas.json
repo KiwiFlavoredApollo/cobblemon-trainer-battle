@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:oricorio",
+        "form": "",
+        "level": 21,
+        "item": "",
+        "ivs": {
+            "atk": 5,
+            "def": 14,
+            "spa": 1,
+            "spd": 8,
+            "spe": 28,
+            "hp": 25
+        }
+    },
+    {
+        "species": "cobblemon:murkrow",
+        "form": "",
+        "level": 22,
+        "item": "",
+        "ivs": {
+            "atk": 11,
+            "def": 18,
+            "spa": 14,
+            "spd": 22,
+            "spe": 22,
+            "hp": 17
+        }
+    }
+]

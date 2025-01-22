@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:seedot",
+        "form": "",
+        "level": 18,
+        "item": "",
+        "ivs": {
+            "atk": 27,
+            "def": 26,
+            "spa": 15,
+            "spd": 7,
+            "spe": 13,
+            "hp": 27
+        }
+    },
+    {
+        "species": "cobblemon:budew",
+        "form": "",
+        "level": 18,
+        "item": "",
+        "ivs": {
+            "atk": 22,
+            "def": 24,
+            "spa": 1,
+            "spd": 27,
+            "spe": 30,
+            "hp": 4
+        }
+    }
+]

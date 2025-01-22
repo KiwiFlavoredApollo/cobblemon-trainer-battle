@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:dewgong",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 21,
+            "def": 20,
+            "spa": 31,
+            "spd": 15,
+            "spe": 31,
+            "hp": 2
+        }
+    },
+    {
+        "species": "cobblemon:cloyster",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 6,
+            "def": 24,
+            "spa": 30,
+            "spd": 31,
+            "spe": 18,
+            "hp": 28
+        }
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "species": "cobblemon:corsola",
+        "form": "",
+        "level": 37,
+        "item": "",
+        "ivs": {
+            "atk": 0,
+            "def": 28,
+            "spa": 28,
+            "spd": 3,
+            "spe": 26,
+            "hp": 9
+        }
+    },
+    {
+        "species": "cobblemon:barboach",
+        "form": "",
+        "level": 36,
+        "item": "",
+        "ivs": {
+            "atk": 14,
+            "def": 4,
+            "spa": 5,
+            "spd": 15,
+            "spe": 4,
+            "hp": 15
+        }
+    },
+    {
+        "species": "cobblemon:horsea",
+        "form": "",
+        "level": 36,
+        "item": "",
+        "ivs": {
+            "atk": 7,
+            "def": 11,
+            "spa": 6,
+            "spd": 1,
+            "spe": 25,
+            "hp": 17
+        }
+    },
+    {
+        "species": "cobblemon:wailmer",
+        "form": "",
+        "level": 37,
+        "item": "",
+        "ivs": {
+            "atk": 20,
+            "def": 6,
+            "spa": 16,
+            "spd": 16,
+            "spe": 28,
+            "hp": 9
+        }
+    }
+]

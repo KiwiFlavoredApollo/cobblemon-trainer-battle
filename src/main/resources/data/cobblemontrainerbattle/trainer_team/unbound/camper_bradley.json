@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:diglett",
+        "form": "Alolan",
+        "level": 52,
+        "item": "",
+        "ivs": {
+            "atk": 28,
+            "def": 6,
+            "spa": 9,
+            "spd": 6,
+            "spe": 4,
+            "hp": 28
+        }
+    },
+    {
+        "species": "cobblemon:kangaskhan",
+        "form": "",
+        "level": 54,
+        "item": "",
+        "ivs": {
+            "atk": 1,
+            "def": 5,
+            "spa": 31,
+            "spd": 1,
+            "spe": 14,
+            "hp": 13
+        }
+    }
+]

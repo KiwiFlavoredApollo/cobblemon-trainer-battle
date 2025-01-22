@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:porygon",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 30,
+            "def": 3,
+            "spa": 19,
+            "spd": 20,
+            "spe": 27,
+            "hp": 5
+        }
+    },
+    {
+        "species": "cobblemon:geodude",
+        "form": "Alolan",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 21,
+            "def": 5,
+            "spa": 4,
+            "spd": 31,
+            "spe": 0,
+            "hp": 10
+        }
+    },
+    {
+        "species": "cobblemon:slowking",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 26,
+            "def": 1,
+            "spa": 14,
+            "spd": 26,
+            "spe": 2,
+            "hp": 8
+        }
+    }
+]

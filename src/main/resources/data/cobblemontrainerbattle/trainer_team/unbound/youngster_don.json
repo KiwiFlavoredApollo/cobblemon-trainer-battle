@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:snorunt",
+        "form": "",
+        "level": 8,
+        "item": "",
+        "ivs": {
+            "atk": 15,
+            "def": 4,
+            "spa": 5,
+            "spd": 23,
+            "spe": 27,
+            "hp": 15
+        }
+    },
+    {
+        "species": "cobblemon:roggenrola",
+        "form": "",
+        "level": 8,
+        "item": "",
+        "ivs": {
+            "atk": 1,
+            "def": 21,
+            "spa": 17,
+            "spd": 5,
+            "spe": 2,
+            "hp": 17
+        }
+    }
+]

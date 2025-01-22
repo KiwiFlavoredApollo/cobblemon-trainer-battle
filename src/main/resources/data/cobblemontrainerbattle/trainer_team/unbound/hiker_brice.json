@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:roggenrola",
+        "form": "",
+        "level": 26,
+        "item": "",
+        "ivs": {
+            "atk": 4,
+            "def": 8,
+            "spa": 27,
+            "spd": 14,
+            "spe": 18,
+            "hp": 30
+        }
+    },
+    {
+        "species": "cobblemon:aron",
+        "form": "",
+        "level": 26,
+        "item": "",
+        "ivs": {
+            "atk": 0,
+            "def": 10,
+            "spa": 20,
+            "spd": 31,
+            "spe": 10,
+            "hp": 17
+        }
+    },
+    {
+        "species": "cobblemon:geodude",
+        "form": "",
+        "level": 26,
+        "item": "",
+        "ivs": {
+            "atk": 24,
+            "def": 24,
+            "spa": 27,
+            "spd": 14,
+            "spe": 19,
+            "hp": 31
+        }
+    }
+]

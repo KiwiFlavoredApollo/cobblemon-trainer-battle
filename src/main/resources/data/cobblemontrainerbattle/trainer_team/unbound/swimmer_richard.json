@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:mantine",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 0,
+            "def": 15,
+            "spa": 9,
+            "spd": 16,
+            "spe": 10,
+            "hp": 22
+        }
+    },
+    {
+        "species": "cobblemon:tentacool",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 6,
+            "def": 21,
+            "spa": 5,
+            "spd": 29,
+            "spe": 26,
+            "hp": 9
+        }
+    }
+]

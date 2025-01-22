@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:mawile",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 14,
+            "def": 9,
+            "spa": 3,
+            "spd": 17,
+            "spe": 31,
+            "hp": 31
+        }
+    },
+    {
+        "species": "cobblemon:bronzong",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 16,
+            "def": 20,
+            "spa": 5,
+            "spd": 11,
+            "spe": 3,
+            "hp": 10
+        }
+    },
+    {
+        "species": "cobblemon:vikavolt",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 21,
+            "def": 12,
+            "spa": 5,
+            "spd": 7,
+            "spe": 6,
+            "hp": 29
+        }
+    }
+]

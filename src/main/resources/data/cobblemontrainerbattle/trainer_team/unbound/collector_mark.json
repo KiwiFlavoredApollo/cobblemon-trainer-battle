@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:mawile",
+        "form": "",
+        "level": 17,
+        "item": "",
+        "ivs": {
+            "atk": 16,
+            "def": 1,
+            "spa": 13,
+            "spd": 14,
+            "spe": 1,
+            "hp": 22
+        }
+    },
+    {
+        "species": "cobblemon:comfey",
+        "form": "",
+        "level": 18,
+        "item": "",
+        "ivs": {
+            "atk": 7,
+            "def": 25,
+            "spa": 6,
+            "spd": 2,
+            "spe": 17,
+            "hp": 1
+        }
+    }
+]

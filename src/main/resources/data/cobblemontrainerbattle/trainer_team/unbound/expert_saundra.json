@@ -1,0 +1,58 @@
+[
+    {
+        "species": "cobblemon:vanilluxe",
+        "form": "",
+        "level": 52,
+        "item": "Babiri Berry",
+        "ivs": {
+            "atk": 24,
+            "def": 2,
+            "spa": 24,
+            "spd": 21,
+            "spe": 12,
+            "hp": 21
+        }
+    },
+    {
+        "species": "cobblemon:kecleon",
+        "form": "",
+        "level": 52,
+        "item": "Chople Berry",
+        "ivs": {
+            "atk": 23,
+            "def": 20,
+            "spa": 13,
+            "spd": 22,
+            "spe": 1,
+            "hp": 9
+        }
+    },
+    {
+        "species": "cobblemon:donphan",
+        "form": "",
+        "level": 51,
+        "item": "Passho Berry",
+        "ivs": {
+            "atk": 6,
+            "def": 24,
+            "spa": 14,
+            "spd": 15,
+            "spe": 3,
+            "hp": 25
+        }
+    },
+    {
+        "species": "cobblemon:gothitelle",
+        "form": "",
+        "level": 52,
+        "item": "Tanga Berry",
+        "ivs": {
+            "atk": 5,
+            "def": 28,
+            "spa": 20,
+            "spd": 16,
+            "spe": 25,
+            "hp": 29
+        }
+    }
+]

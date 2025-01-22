@@ -1,0 +1,72 @@
+[
+    {
+        "species": "cobblemon:ekans",
+        "form": "",
+        "level": 20,
+        "item": "",
+        "ivs": {
+            "atk": 15,
+            "def": 18,
+            "spa": 20,
+            "spd": 25,
+            "spe": 23,
+            "hp": 27
+        }
+    },
+    {
+        "species": "cobblemon:tepig",
+        "form": "",
+        "level": 20,
+        "item": "",
+        "ivs": {
+            "atk": 18,
+            "def": 6,
+            "spa": 29,
+            "spd": 16,
+            "spe": 3,
+            "hp": 29
+        }
+    },
+    {
+        "species": "cobblemon:numel",
+        "form": "",
+        "level": 20,
+        "item": "",
+        "ivs": {
+            "atk": 16,
+            "def": 19,
+            "spa": 18,
+            "spd": 6,
+            "spe": 13,
+            "hp": 22
+        }
+    },
+    {
+        "species": "cobblemon:trubbish",
+        "form": "",
+        "level": 20,
+        "item": "",
+        "ivs": {
+            "atk": 0,
+            "def": 13,
+            "spa": 11,
+            "spd": 4,
+            "spe": 24,
+            "hp": 18
+        }
+    },
+    {
+        "species": "cobblemon:koffing",
+        "form": "",
+        "level": 21,
+        "item": "",
+        "ivs": {
+            "atk": 14,
+            "def": 24,
+            "spa": 11,
+            "spd": 15,
+            "spe": 22,
+            "hp": 29
+        }
+    }
+]

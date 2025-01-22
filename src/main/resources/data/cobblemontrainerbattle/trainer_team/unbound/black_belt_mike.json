@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:mankey",
+        "form": "",
+        "level": 25,
+        "item": "Black Belt",
+        "ivs": {
+            "atk": 6,
+            "def": 21,
+            "spa": 11,
+            "spd": 16,
+            "spe": 31,
+            "hp": 8
+        }
+    },
+    {
+        "species": "cobblemon:machop",
+        "form": "",
+        "level": 26,
+        "item": "Black Belt",
+        "ivs": {
+            "atk": 27,
+            "def": 1,
+            "spa": 2,
+            "spd": 28,
+            "spe": 26,
+            "hp": 10
+        }
+    },
+    {
+        "species": "cobblemon:pignite",
+        "form": "",
+        "level": 26,
+        "item": "Black Belt",
+        "ivs": {
+            "atk": 3,
+            "def": 28,
+            "spa": 5,
+            "spd": 5,
+            "spe": 30,
+            "hp": 8
+        }
+    }
+]

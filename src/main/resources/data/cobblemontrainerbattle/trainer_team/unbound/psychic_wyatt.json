@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:malamar",
+        "form": "",
+        "level": 38,
+        "item": "",
+        "ivs": {
+            "atk": 2,
+            "def": 9,
+            "spa": 3,
+            "spd": 27,
+            "spe": 1,
+            "hp": 28
+        }
+    },
+    {
+        "species": "cobblemon:gardevoir",
+        "form": "",
+        "level": 38,
+        "item": "",
+        "ivs": {
+            "atk": 13,
+            "def": 28,
+            "spa": 1,
+            "spd": 20,
+            "spe": 26,
+            "hp": 25
+        }
+    },
+    {
+        "species": "cobblemon:grumpig",
+        "form": "",
+        "level": 38,
+        "item": "",
+        "ivs": {
+            "atk": 24,
+            "def": 30,
+            "spa": 28,
+            "spd": 13,
+            "spe": 8,
+            "hp": 1
+        }
+    }
+]

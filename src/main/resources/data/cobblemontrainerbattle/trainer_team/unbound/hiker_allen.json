@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:onix",
+        "form": "",
+        "level": 25,
+        "item": "",
+        "ivs": {
+            "atk": 7,
+            "def": 24,
+            "spa": 18,
+            "spd": 26,
+            "spe": 21,
+            "hp": 3
+        }
+    }
+]

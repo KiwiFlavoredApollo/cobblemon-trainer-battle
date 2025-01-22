@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:popplio",
+        "form": "",
+        "level": 54,
+        "item": "",
+        "ivs": {
+            "atk": 14,
+            "def": 29,
+            "spa": 30,
+            "spd": 25,
+            "spe": 8,
+            "hp": 27
+        }
+    },
+    {
+        "species": "cobblemon:mudkip",
+        "form": "",
+        "level": 54,
+        "item": "",
+        "ivs": {
+            "atk": 22,
+            "def": 2,
+            "spa": 5,
+            "spd": 21,
+            "spe": 12,
+            "hp": 24
+        }
+    }
+]

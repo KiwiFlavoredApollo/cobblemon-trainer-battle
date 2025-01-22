@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:cubone",
+        "form": "",
+        "level": 32,
+        "item": "",
+        "ivs": {
+            "atk": 10,
+            "def": 4,
+            "spa": 0,
+            "spd": 15,
+            "spe": 31,
+            "hp": 13
+        }
+    },
+    {
+        "species": "cobblemon:geodude",
+        "form": "Alolan",
+        "level": 33,
+        "item": "",
+        "ivs": {
+            "atk": 14,
+            "def": 17,
+            "spa": 4,
+            "spd": 8,
+            "spe": 23,
+            "hp": 27
+        }
+    }
+]

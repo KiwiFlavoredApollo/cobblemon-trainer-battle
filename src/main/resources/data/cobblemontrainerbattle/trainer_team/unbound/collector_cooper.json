@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:pignite",
+        "form": "",
+        "level": 24,
+        "item": "",
+        "ivs": {
+            "atk": 26,
+            "def": 3,
+            "spa": 3,
+            "spd": 26,
+            "spe": 20,
+            "hp": 10
+        }
+    },
+    {
+        "species": "cobblemon:dewott",
+        "form": "",
+        "level": 24,
+        "item": "",
+        "ivs": {
+            "atk": 31,
+            "def": 31,
+            "spa": 13,
+            "spd": 8,
+            "spe": 29,
+            "hp": 23
+        }
+    },
+    {
+        "species": "cobblemon:servine",
+        "form": "",
+        "level": 24,
+        "item": "",
+        "ivs": {
+            "atk": 17,
+            "def": 23,
+            "spa": 5,
+            "spd": 16,
+            "spe": 30,
+            "hp": 7
+        }
+    }
+]

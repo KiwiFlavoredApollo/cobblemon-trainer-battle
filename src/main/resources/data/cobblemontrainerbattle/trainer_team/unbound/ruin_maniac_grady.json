@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:baltoy",
+        "form": "",
+        "level": 39,
+        "item": "",
+        "ivs": {
+            "atk": 23,
+            "def": 22,
+            "spa": 15,
+            "spd": 15,
+            "spe": 24,
+            "hp": 12
+        }
+    },
+    {
+        "species": "cobblemon:sigilyph",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 20,
+            "def": 20,
+            "spa": 26,
+            "spd": 11,
+            "spe": 6,
+            "hp": 25
+        }
+    }
+]

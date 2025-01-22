@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:carvanha",
+        "form": "",
+        "level": 37,
+        "item": "",
+        "ivs": {
+            "atk": 12,
+            "def": 23,
+            "spa": 11,
+            "spd": 4,
+            "spe": 26,
+            "hp": 12
+        }
+    },
+    {
+        "species": "cobblemon:krabby",
+        "form": "",
+        "level": 37,
+        "item": "",
+        "ivs": {
+            "atk": 10,
+            "def": 16,
+            "spa": 13,
+            "spd": 9,
+            "spe": 2,
+            "hp": 31
+        }
+    }
+]

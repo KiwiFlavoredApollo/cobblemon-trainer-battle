@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:phanpy",
+        "form": "",
+        "level": 22,
+        "item": "",
+        "ivs": {
+            "atk": 1,
+            "def": 14,
+            "spa": 29,
+            "spd": 3,
+            "spe": 5,
+            "hp": 10
+        }
+    },
+    {
+        "species": "cobblemon:houndour",
+        "form": "",
+        "level": 22,
+        "item": "",
+        "ivs": {
+            "atk": 1,
+            "def": 17,
+            "spa": 28,
+            "spd": 7,
+            "spe": 2,
+            "hp": 28
+        }
+    }
+]

@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:starmie",
+        "form": "",
+        "level": 43,
+        "item": "",
+        "ivs": {
+            "atk": 17,
+            "def": 6,
+            "spa": 15,
+            "spd": 26,
+            "spe": 14,
+            "hp": 13
+        }
+    },
+    {
+        "species": "cobblemon:vaporeon",
+        "form": "",
+        "level": 42,
+        "item": "",
+        "ivs": {
+            "atk": 14,
+            "def": 17,
+            "spa": 13,
+            "spd": 29,
+            "spe": 26,
+            "hp": 26
+        }
+    },
+    {
+        "species": "cobblemon:alomomola",
+        "form": "",
+        "level": 44,
+        "item": "",
+        "ivs": {
+            "atk": 13,
+            "def": 12,
+            "spa": 19,
+            "spd": 5,
+            "spe": 30,
+            "hp": 0
+        }
+    }
+]

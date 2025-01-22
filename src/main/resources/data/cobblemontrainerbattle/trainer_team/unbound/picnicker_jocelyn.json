@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:natu",
+        "form": "",
+        "level": 52,
+        "item": "",
+        "ivs": {
+            "atk": 17,
+            "def": 30,
+            "spa": 4,
+            "spd": 10,
+            "spe": 0,
+            "hp": 7
+        }
+    },
+    {
+        "species": "cobblemon:delcatty",
+        "form": "",
+        "level": 52,
+        "item": "",
+        "ivs": {
+            "atk": 12,
+            "def": 9,
+            "spa": 30,
+            "spd": 0,
+            "spe": 31,
+            "hp": 15
+        }
+    }
+]

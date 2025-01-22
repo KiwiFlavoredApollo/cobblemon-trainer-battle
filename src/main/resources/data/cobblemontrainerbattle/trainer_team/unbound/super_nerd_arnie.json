@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:magneton",
+        "form": "",
+        "level": 34,
+        "item": "",
+        "ivs": {
+            "atk": 10,
+            "def": 19,
+            "spa": 31,
+            "spd": 13,
+            "spe": 21,
+            "hp": 5
+        }
+    },
+    {
+        "species": "cobblemon:kadabra",
+        "form": "",
+        "level": 36,
+        "item": "",
+        "ivs": {
+            "atk": 7,
+            "def": 1,
+            "spa": 8,
+            "spd": 26,
+            "spe": 5,
+            "hp": 17
+        }
+    }
+]

@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:azurill",
+        "form": "",
+        "level": 12,
+        "item": "",
+        "ivs": {
+            "atk": 23,
+            "def": 15,
+            "spa": 27,
+            "spd": 28,
+            "spe": 24,
+            "hp": 19
+        }
+    },
+    {
+        "species": "cobblemon:minccino",
+        "form": "",
+        "level": 13,
+        "item": "",
+        "ivs": {
+            "atk": 6,
+            "def": 8,
+            "spa": 5,
+            "spd": 28,
+            "spe": 6,
+            "hp": 12
+        }
+    },
+    {
+        "species": "cobblemon:pikipek",
+        "form": "",
+        "level": 12,
+        "item": "",
+        "ivs": {
+            "atk": 28,
+            "def": 9,
+            "spa": 2,
+            "spd": 19,
+            "spe": 12,
+            "hp": 14
+        }
+    }
+]

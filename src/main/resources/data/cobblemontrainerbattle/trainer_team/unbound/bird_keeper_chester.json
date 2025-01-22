@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:doduo",
+        "form": "",
+        "level": 27,
+        "item": "",
+        "ivs": {
+            "atk": 21,
+            "def": 17,
+            "spa": 24,
+            "spd": 9,
+            "spe": 25,
+            "hp": 4
+        }
+    },
+    {
+        "species": "cobblemon:oricorio",
+        "form": "",
+        "level": 27,
+        "item": "",
+        "ivs": {
+            "atk": 11,
+            "def": 10,
+            "spa": 3,
+            "spd": 4,
+            "spe": 23,
+            "hp": 31
+        }
+    },
+    {
+        "species": "cobblemon:murkrow",
+        "form": "",
+        "level": 27,
+        "item": "",
+        "ivs": {
+            "atk": 17,
+            "def": 0,
+            "spa": 7,
+            "spd": 10,
+            "spe": 1,
+            "hp": 12
+        }
+    }
+]

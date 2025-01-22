@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:abra",
+        "form": "",
+        "level": 25,
+        "item": "",
+        "ivs": {
+            "atk": 31,
+            "def": 21,
+            "spa": 26,
+            "spd": 8,
+            "spe": 11,
+            "hp": 20
+        }
+    },
+    {
+        "species": "cobblemon:cubchoo",
+        "form": "",
+        "level": 26,
+        "item": "",
+        "ivs": {
+            "atk": 16,
+            "def": 13,
+            "spa": 5,
+            "spd": 6,
+            "spe": 12,
+            "hp": 26
+        }
+    },
+    {
+        "species": "cobblemon:stantler",
+        "form": "",
+        "level": 27,
+        "item": "",
+        "ivs": {
+            "atk": 6,
+            "def": 29,
+            "spa": 14,
+            "spd": 5,
+            "spe": 7,
+            "hp": 6
+        }
+    }
+]

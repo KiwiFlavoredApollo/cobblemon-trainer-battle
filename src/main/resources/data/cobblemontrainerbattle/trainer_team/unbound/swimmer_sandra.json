@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:pyukumuku",
+        "form": "",
+        "level": 47,
+        "item": "",
+        "ivs": {
+            "atk": 6,
+            "def": 26,
+            "spa": 12,
+            "spd": 19,
+            "spe": 14,
+            "hp": 5
+        }
+    },
+    {
+        "species": "cobblemon:octillery",
+        "form": "",
+        "level": 46,
+        "item": "",
+        "ivs": {
+            "atk": 17,
+            "def": 19,
+            "spa": 14,
+            "spd": 0,
+            "spe": 15,
+            "hp": 9
+        }
+    }
+]

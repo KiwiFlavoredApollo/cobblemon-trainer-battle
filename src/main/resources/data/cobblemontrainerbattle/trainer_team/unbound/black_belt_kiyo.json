@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:binacle",
+        "form": "",
+        "level": 39,
+        "item": "",
+        "ivs": {
+            "atk": 9,
+            "def": 31,
+            "spa": 18,
+            "spd": 25,
+            "spe": 23,
+            "hp": 8
+        }
+    },
+    {
+        "species": "cobblemon:dwebble",
+        "form": "",
+        "level": 39,
+        "item": "",
+        "ivs": {
+            "atk": 14,
+            "def": 15,
+            "spa": 14,
+            "spd": 22,
+            "spe": 4,
+            "hp": 18
+        }
+    }
+]

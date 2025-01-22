@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:beheeyem",
+        "form": "",
+        "level": 52,
+        "item": "",
+        "ivs": {
+            "atk": 23,
+            "def": 28,
+            "spa": 31,
+            "spd": 23,
+            "spe": 28,
+            "hp": 16
+        }
+    },
+    {
+        "species": "cobblemon:hypno",
+        "form": "",
+        "level": 51,
+        "item": "",
+        "ivs": {
+            "atk": 23,
+            "def": 0,
+            "spa": 3,
+            "spd": 31,
+            "spe": 22,
+            "hp": 10
+        }
+    },
+    {
+        "species": "cobblemon:mr. mime",
+        "form": "",
+        "level": 51,
+        "item": "",
+        "ivs": {
+            "atk": 12,
+            "def": 23,
+            "spa": 30,
+            "spd": 27,
+            "spe": 23,
+            "hp": 2
+        }
+    }
+]

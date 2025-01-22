@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:froslass",
+        "form": "",
+        "level": 35,
+        "item": "Kasib Berry",
+        "ivs": {
+            "atk": 24,
+            "def": 26,
+            "spa": 12,
+            "spd": 25,
+            "spe": 17,
+            "hp": 13
+        }
+    },
+    {
+        "species": "cobblemon:altaria",
+        "form": "",
+        "level": 36,
+        "item": "Haban Berry",
+        "ivs": {
+            "atk": 15,
+            "def": 21,
+            "spa": 21,
+            "spd": 26,
+            "spe": 10,
+            "hp": 12
+        }
+    },
+    {
+        "species": "cobblemon:meowstic",
+        "form": "",
+        "level": 36,
+        "item": "Colbur Berry",
+        "ivs": {
+            "atk": 23,
+            "def": 16,
+            "spa": 27,
+            "spd": 12,
+            "spe": 8,
+            "hp": 25
+        }
+    }
+]

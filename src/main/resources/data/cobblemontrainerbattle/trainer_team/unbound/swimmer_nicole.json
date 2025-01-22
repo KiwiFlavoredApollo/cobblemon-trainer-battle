@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:masquerain",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 5,
+            "def": 10,
+            "spa": 19,
+            "spd": 23,
+            "spe": 16,
+            "hp": 5
+        }
+    }
+]

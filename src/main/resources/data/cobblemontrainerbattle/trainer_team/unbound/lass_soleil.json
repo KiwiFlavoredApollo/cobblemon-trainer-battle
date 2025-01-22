@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:solrock",
+        "form": "",
+        "level": 22,
+        "item": "",
+        "ivs": {
+            "atk": 26,
+            "def": 29,
+            "spa": 27,
+            "spd": 1,
+            "spe": 2,
+            "hp": 16
+        }
+    },
+    {
+        "species": "cobblemon:sunflora",
+        "form": "",
+        "level": 23,
+        "item": "",
+        "ivs": {
+            "atk": 8,
+            "def": 20,
+            "spa": 12,
+            "spd": 22,
+            "spe": 28,
+            "hp": 27
+        }
+    }
+]

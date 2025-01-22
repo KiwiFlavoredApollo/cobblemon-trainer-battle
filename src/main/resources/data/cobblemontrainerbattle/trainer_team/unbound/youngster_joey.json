@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:rattata",
+        "form": "",
+        "level": 10,
+        "item": "",
+        "ivs": {
+            "atk": 30,
+            "def": 22,
+            "spa": 3,
+            "spd": 1,
+            "spe": 14,
+            "hp": 28
+        }
+    },
+    {
+        "species": "cobblemon:sentret",
+        "form": "",
+        "level": 10,
+        "item": "",
+        "ivs": {
+            "atk": 16,
+            "def": 31,
+            "spa": 16,
+            "spd": 1,
+            "spe": 31,
+            "hp": 9
+        }
+    }
+]

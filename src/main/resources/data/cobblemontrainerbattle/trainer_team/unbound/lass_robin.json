@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:roselia",
+        "form": "",
+        "level": 20,
+        "item": "",
+        "ivs": {
+            "atk": 17,
+            "def": 4,
+            "spa": 31,
+            "spd": 7,
+            "spe": 12,
+            "hp": 15
+        }
+    }
+]

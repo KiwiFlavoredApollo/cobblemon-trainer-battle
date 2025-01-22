@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:cherubi",
+        "form": "",
+        "level": 14,
+        "item": "",
+        "ivs": {
+            "atk": 10,
+            "def": 0,
+            "spa": 13,
+            "spd": 11,
+            "spe": 6,
+            "hp": 9
+        }
+    },
+    {
+        "species": "cobblemon:oddish",
+        "form": "",
+        "level": 15,
+        "item": "",
+        "ivs": {
+            "atk": 1,
+            "def": 19,
+            "spa": 27,
+            "spd": 3,
+            "spe": 4,
+            "hp": 30
+        }
+    }
+]

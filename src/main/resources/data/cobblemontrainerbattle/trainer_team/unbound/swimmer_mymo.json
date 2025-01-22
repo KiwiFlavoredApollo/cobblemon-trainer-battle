@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:golduck",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 28,
+            "def": 22,
+            "spa": 1,
+            "spd": 31,
+            "spe": 28,
+            "hp": 8
+        }
+    },
+    {
+        "species": "cobblemon:lombre",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 20,
+            "def": 16,
+            "spa": 2,
+            "spd": 18,
+            "spe": 19,
+            "hp": 24
+        }
+    }
+]

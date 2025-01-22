@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:beautifly",
+        "form": "",
+        "level": 42,
+        "item": "",
+        "ivs": {
+            "atk": 25,
+            "def": 3,
+            "spa": 4,
+            "spd": 14,
+            "spe": 26,
+            "hp": 8
+        }
+    },
+    {
+        "species": "cobblemon:dustox",
+        "form": "",
+        "level": 42,
+        "item": "",
+        "ivs": {
+            "atk": 19,
+            "def": 27,
+            "spa": 4,
+            "spd": 2,
+            "spe": 3,
+            "hp": 24
+        }
+    },
+    {
+        "species": "cobblemon:vivillon",
+        "form": "",
+        "level": 43,
+        "item": "",
+        "ivs": {
+            "atk": 15,
+            "def": 12,
+            "spa": 8,
+            "spd": 1,
+            "spe": 1,
+            "hp": 31
+        }
+    }
+]

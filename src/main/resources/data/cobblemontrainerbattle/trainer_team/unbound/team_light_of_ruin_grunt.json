@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:floette",
+        "form": "",
+        "level": 38,
+        "item": "",
+        "ivs": {
+            "atk": 27,
+            "def": 29,
+            "spa": 18,
+            "spd": 3,
+            "spe": 31,
+            "hp": 21
+        }
+    },
+    {
+        "species": "cobblemon:ribombee",
+        "form": "",
+        "level": 38,
+        "item": "",
+        "ivs": {
+            "atk": 11,
+            "def": 10,
+            "spa": 29,
+            "spd": 9,
+            "spe": 4,
+            "hp": 17
+        }
+    },
+    {
+        "species": "cobblemon:sylveon",
+        "form": "",
+        "level": 39,
+        "item": "",
+        "ivs": {
+            "atk": 8,
+            "def": 26,
+            "spa": 31,
+            "spd": 3,
+            "spe": 18,
+            "hp": 30
+        }
+    }
+]

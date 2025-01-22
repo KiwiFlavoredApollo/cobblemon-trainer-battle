@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:starly",
+        "form": "",
+        "level": 28,
+        "item": "",
+        "ivs": {
+            "atk": 5,
+            "def": 28,
+            "spa": 24,
+            "spd": 6,
+            "spe": 9,
+            "hp": 25
+        }
+    },
+    {
+        "species": "cobblemon:spearow",
+        "form": "",
+        "level": 28,
+        "item": "",
+        "ivs": {
+            "atk": 2,
+            "def": 3,
+            "spa": 18,
+            "spd": 27,
+            "spe": 10,
+            "hp": 16
+        }
+    },
+    {
+        "species": "cobblemon:pikipek",
+        "form": "",
+        "level": 28,
+        "item": "",
+        "ivs": {
+            "atk": 23,
+            "def": 13,
+            "spa": 3,
+            "spd": 24,
+            "spe": 16,
+            "hp": 17
+        }
+    }
+]

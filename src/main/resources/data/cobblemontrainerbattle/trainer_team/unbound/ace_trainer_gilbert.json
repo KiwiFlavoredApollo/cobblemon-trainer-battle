@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:avalugg",
+        "form": "",
+        "level": 59,
+        "item": "Rocky Helmet",
+        "ivs": {
+            "atk": 13,
+            "def": 6,
+            "spa": 19,
+            "spd": 1,
+            "spe": 1,
+            "hp": 5
+        }
+    },
+    {
+        "species": "cobblemon:blissey",
+        "form": "",
+        "level": 60,
+        "item": "Leftovers",
+        "ivs": {
+            "atk": 24,
+            "def": 20,
+            "spa": 30,
+            "spd": 30,
+            "spe": 28,
+            "hp": 28
+        }
+    },
+    {
+        "species": "cobblemon:beartic",
+        "form": "",
+        "level": 61,
+        "item": "Life Orb",
+        "ivs": {
+            "atk": 31,
+            "def": 4,
+            "spa": 14,
+            "spd": 13,
+            "spe": 23,
+            "hp": 2
+        }
+    }
+]

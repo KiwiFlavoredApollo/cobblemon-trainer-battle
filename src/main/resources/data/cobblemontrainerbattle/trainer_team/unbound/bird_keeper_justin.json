@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:wingull",
+        "form": "",
+        "level": 30,
+        "item": "",
+        "ivs": {
+            "atk": 23,
+            "def": 16,
+            "spa": 19,
+            "spd": 22,
+            "spe": 5,
+            "hp": 5
+        }
+    },
+    {
+        "species": "cobblemon:spearow",
+        "form": "",
+        "level": 32,
+        "item": "",
+        "ivs": {
+            "atk": 29,
+            "def": 29,
+            "spa": 2,
+            "spd": 28,
+            "spe": 6,
+            "hp": 10
+        }
+    }
+]

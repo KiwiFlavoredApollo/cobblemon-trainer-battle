@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:pineco",
+        "form": "",
+        "level": 56,
+        "item": "",
+        "ivs": {
+            "atk": 21,
+            "def": 16,
+            "spa": 7,
+            "spd": 16,
+            "spe": 1,
+            "hp": 3
+        }
+    },
+    {
+        "species": "cobblemon:scyther",
+        "form": "",
+        "level": 57,
+        "item": "",
+        "ivs": {
+            "atk": 15,
+            "def": 11,
+            "spa": 0,
+            "spd": 0,
+            "spe": 2,
+            "hp": 4
+        }
+    }
+]

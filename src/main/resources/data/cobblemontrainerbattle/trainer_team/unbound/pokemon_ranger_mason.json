@@ -1,0 +1,58 @@
+[
+    {
+        "species": "cobblemon:golisopod",
+        "form": "",
+        "level": 53,
+        "item": "",
+        "ivs": {
+            "atk": 2,
+            "def": 30,
+            "spa": 2,
+            "spd": 10,
+            "spe": 22,
+            "hp": 24
+        }
+    },
+    {
+        "species": "cobblemon:swalot",
+        "form": "",
+        "level": 54,
+        "item": "",
+        "ivs": {
+            "atk": 3,
+            "def": 11,
+            "spa": 20,
+            "spd": 17,
+            "spe": 19,
+            "hp": 28
+        }
+    },
+    {
+        "species": "cobblemon:tauros",
+        "form": "",
+        "level": 53,
+        "item": "",
+        "ivs": {
+            "atk": 7,
+            "def": 18,
+            "spa": 5,
+            "spd": 24,
+            "spe": 8,
+            "hp": 22
+        }
+    },
+    {
+        "species": "cobblemon:rhydon",
+        "form": "",
+        "level": 53,
+        "item": "",
+        "ivs": {
+            "atk": 13,
+            "def": 29,
+            "spa": 5,
+            "spd": 26,
+            "spe": 26,
+            "hp": 21
+        }
+    }
+]

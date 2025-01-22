@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:hitmonlee",
+        "form": "",
+        "level": 41,
+        "item": "Black Belt",
+        "ivs": {
+            "atk": 18,
+            "def": 1,
+            "spa": 31,
+            "spd": 31,
+            "spe": 28,
+            "hp": 23
+        }
+    },
+    {
+        "species": "cobblemon:medicham",
+        "form": "",
+        "level": 42,
+        "item": "Black Belt",
+        "ivs": {
+            "atk": 24,
+            "def": 4,
+            "spa": 6,
+            "spd": 3,
+            "spe": 27,
+            "hp": 4
+        }
+    },
+    {
+        "species": "cobblemon:scrafty",
+        "form": "",
+        "level": 42,
+        "item": "Black Belt",
+        "ivs": {
+            "atk": 9,
+            "def": 31,
+            "spa": 28,
+            "spd": 28,
+            "spe": 29,
+            "hp": 24
+        }
+    }
+]

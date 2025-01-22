@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:phantump",
+        "form": "",
+        "level": 17,
+        "item": "",
+        "ivs": {
+            "atk": 24,
+            "def": 1,
+            "spa": 24,
+            "spd": 26,
+            "spe": 21,
+            "hp": 27
+        }
+    }
+]

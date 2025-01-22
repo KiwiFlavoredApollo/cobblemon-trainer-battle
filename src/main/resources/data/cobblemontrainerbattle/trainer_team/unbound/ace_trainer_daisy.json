@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:accelgor",
+        "form": "",
+        "level": 58,
+        "item": "",
+        "ivs": {
+            "atk": 7,
+            "def": 0,
+            "spa": 20,
+            "spd": 31,
+            "spe": 2,
+            "hp": 5
+        }
+    },
+    {
+        "species": "cobblemon:scolipede",
+        "form": "",
+        "level": 58,
+        "item": "",
+        "ivs": {
+            "atk": 13,
+            "def": 27,
+            "spa": 13,
+            "spd": 31,
+            "spe": 28,
+            "hp": 10
+        }
+    }
+]

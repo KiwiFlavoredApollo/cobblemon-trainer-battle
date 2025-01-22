@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:drowzee",
+        "form": "",
+        "level": 24,
+        "item": "",
+        "ivs": {
+            "atk": 22,
+            "def": 26,
+            "spa": 14,
+            "spd": 1,
+            "spe": 16,
+            "hp": 20
+        }
+    }
+]

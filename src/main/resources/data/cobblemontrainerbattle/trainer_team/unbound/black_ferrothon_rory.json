@@ -1,0 +1,58 @@
+[
+    {
+        "species": "cobblemon:weezing",
+        "form": "",
+        "level": 48,
+        "item": "",
+        "ivs": {
+            "atk": 30,
+            "def": 21,
+            "spa": 2,
+            "spd": 26,
+            "spe": 27,
+            "hp": 7
+        }
+    },
+    {
+        "species": "cobblemon:muk",
+        "form": "",
+        "level": 49,
+        "item": "",
+        "ivs": {
+            "atk": 15,
+            "def": 6,
+            "spa": 22,
+            "spd": 16,
+            "spe": 29,
+            "hp": 24
+        }
+    },
+    {
+        "species": "cobblemon:krokorok",
+        "form": "",
+        "level": 49,
+        "item": "",
+        "ivs": {
+            "atk": 24,
+            "def": 0,
+            "spa": 22,
+            "spd": 5,
+            "spe": 25,
+            "hp": 5
+        }
+    },
+    {
+        "species": "cobblemon:ferroseed",
+        "form": "",
+        "level": 47,
+        "item": "",
+        "ivs": {
+            "atk": 21,
+            "def": 12,
+            "spa": 19,
+            "spd": 22,
+            "spe": 17,
+            "hp": 10
+        }
+    }
+]

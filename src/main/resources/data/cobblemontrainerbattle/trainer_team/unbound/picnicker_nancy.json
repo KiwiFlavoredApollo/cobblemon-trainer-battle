@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:nidoran",
+        "form": "",
+        "level": 23,
+        "item": "",
+        "ivs": {
+            "atk": 31,
+            "def": 14,
+            "spa": 30,
+            "spd": 6,
+            "spe": 21,
+            "hp": 12
+        }
+    }
+]

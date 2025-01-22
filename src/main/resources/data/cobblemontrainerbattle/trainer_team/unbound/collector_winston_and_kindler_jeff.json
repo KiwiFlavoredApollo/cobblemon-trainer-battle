@@ -1,0 +1,58 @@
+[
+    {
+        "species": "cobblemon:banette",
+        "form": "",
+        "level": 36,
+        "item": "",
+        "ivs": {
+            "atk": 6,
+            "def": 31,
+            "spa": 9,
+            "spd": 21,
+            "spe": 22,
+            "hp": 12
+        }
+    },
+    {
+        "species": "cobblemon:gourgeist",
+        "form": "",
+        "level": 37,
+        "item": "",
+        "ivs": {
+            "atk": 14,
+            "def": 28,
+            "spa": 1,
+            "spd": 10,
+            "spe": 15,
+            "hp": 1
+        }
+    },
+    {
+        "species": "cobblemon:salazzle",
+        "form": "",
+        "level": 36,
+        "item": "",
+        "ivs": {
+            "atk": 10,
+            "def": 12,
+            "spa": 12,
+            "spd": 19,
+            "spe": 18,
+            "hp": 10
+        }
+    },
+    {
+        "species": "cobblemon:arcanine",
+        "form": "",
+        "level": 37,
+        "item": "",
+        "ivs": {
+            "atk": 0,
+            "def": 9,
+            "spa": 3,
+            "spd": 4,
+            "spe": 21,
+            "hp": 11
+        }
+    }
+]

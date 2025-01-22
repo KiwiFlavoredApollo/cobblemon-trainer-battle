@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:butterfree",
+        "form": "",
+        "level": 20,
+        "item": "",
+        "ivs": {
+            "atk": 23,
+            "def": 28,
+            "spa": 22,
+            "spd": 9,
+            "spe": 24,
+            "hp": 16
+        }
+    }
+]

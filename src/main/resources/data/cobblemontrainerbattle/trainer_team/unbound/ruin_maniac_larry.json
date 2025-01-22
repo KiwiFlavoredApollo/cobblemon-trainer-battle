@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:crustle",
+        "form": "",
+        "level": 40,
+        "item": "",
+        "ivs": {
+            "atk": 19,
+            "def": 30,
+            "spa": 6,
+            "spd": 7,
+            "spe": 15,
+            "hp": 28
+        }
+    },
+    {
+        "species": "cobblemon:hippowdon",
+        "form": "",
+        "level": 41,
+        "item": "",
+        "ivs": {
+            "atk": 10,
+            "def": 0,
+            "spa": 2,
+            "spd": 24,
+            "spe": 19,
+            "hp": 17
+        }
+    }
+]

@@ -1,0 +1,44 @@
+[
+    {
+        "species": "cobblemon:yanmega",
+        "form": "",
+        "level": 33,
+        "item": "",
+        "ivs": {
+            "atk": 16,
+            "def": 27,
+            "spa": 16,
+            "spd": 24,
+            "spe": 6,
+            "hp": 15
+        }
+    },
+    {
+        "species": "cobblemon:shuckle",
+        "form": "",
+        "level": 32,
+        "item": "",
+        "ivs": {
+            "atk": 26,
+            "def": 17,
+            "spa": 23,
+            "spd": 4,
+            "spe": 13,
+            "hp": 8
+        }
+    },
+    {
+        "species": "cobblemon:joltik",
+        "form": "",
+        "level": 33,
+        "item": "",
+        "ivs": {
+            "atk": 2,
+            "def": 27,
+            "spa": 5,
+            "spd": 4,
+            "spe": 1,
+            "hp": 17
+        }
+    }
+]

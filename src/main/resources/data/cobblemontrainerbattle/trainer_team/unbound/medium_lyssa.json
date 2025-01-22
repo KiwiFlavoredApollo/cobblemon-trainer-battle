@@ -1,0 +1,16 @@
+[
+    {
+        "species": "cobblemon:murkrow",
+        "form": "",
+        "level": 21,
+        "item": "",
+        "ivs": {
+            "atk": 3,
+            "def": 27,
+            "spa": 28,
+            "spd": 9,
+            "spe": 26,
+            "hp": 9
+        }
+    }
+]

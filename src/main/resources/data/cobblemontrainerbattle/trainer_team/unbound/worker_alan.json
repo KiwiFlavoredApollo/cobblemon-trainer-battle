@@ -1,0 +1,30 @@
+[
+    {
+        "species": "cobblemon:carbink",
+        "form": "",
+        "level": 30,
+        "item": "",
+        "ivs": {
+            "atk": 22,
+            "def": 21,
+            "spa": 22,
+            "spd": 14,
+            "spe": 6,
+            "hp": 28
+        }
+    },
+    {
+        "species": "cobblemon:probopass",
+        "form": "",
+        "level": 30,
+        "item": "",
+        "ivs": {
+            "atk": 7,
+            "def": 9,
+            "spa": 15,
+            "spd": 31,
+            "spe": 2,
+            "hp": 3
+        }
+    }
+]
