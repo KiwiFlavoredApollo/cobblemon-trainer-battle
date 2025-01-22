@@ -17,6 +17,35 @@ public class ShowdownPokemon {
     public int level;
     public List<String> moves;
 
+    public ShowdownPokemon() {
+        this.name = "";
+        this.species = "";
+        this.form = "";
+        this.shiny = false;
+        this.item = "";
+        this.ability = "";
+        this.gender = "";
+        this.nature = "";
+        this.evs = Map.of(
+                "hp", 0,
+                "atk", 0,
+                "def", 0,
+                "spa", 0,
+                "spd", 0,
+                "spe", 0
+        );
+        this.ivs = Map.of(
+                "hp", 0,
+                "atk", 0,
+                "def", 0,
+                "spa", 0,
+                "spd", 0,
+                "spe", 0
+        );
+        this.level = 10;
+        this.moves = List.of();
+    }
+    
     public ShowdownPokemon(
             String name,
             String species,
