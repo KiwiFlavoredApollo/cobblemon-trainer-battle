@@ -9,6 +9,7 @@ import net.minecraft.text.MutableText;
 import net.minecraft.util.Formatting;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 public class AbstractPlayerBattleParticipant implements PlayerBattleParticipant {
@@ -57,6 +58,10 @@ public class AbstractPlayerBattleParticipant implements PlayerBattleParticipant 
     }
 
     private List<BattlePokemon> getBattleTeam() {
-        return party.toBattleTeam(false, false, null);
+        return party.toBattleTeam(false, false, getLeadingPokemon());
+    }
+
+    private UUID getLeadingPokemon() {
+        return party.toGappyList().stream().filter(Objects::nonNull).filter(pokemon -> !pokemon.isFainted()).toList().get(0).getUuid();
     }
 }
