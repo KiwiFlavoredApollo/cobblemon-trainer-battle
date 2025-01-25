@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Buizel",
+        "level": 15,
+        "nature": "Naive",
+        "ability": "Swift Swim",
+        "moves": [
+            "Growl",
+            "Tail Whip",
+            "Quick Attack",
+            "Water Gun"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Shinx",
+        "level": 15,
+        "nature": "Docile",
+        "ability": "Intimidate",
+        "moves": [
+            "Leer",
+            "Thunder Shock",
+            "Charge",
+            "Bite"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

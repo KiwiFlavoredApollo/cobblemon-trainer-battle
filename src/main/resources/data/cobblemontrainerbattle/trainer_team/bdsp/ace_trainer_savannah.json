@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Pelipper",
+        "level": 35,
+        "nature": "Jolly",
+        "ability": "Drizzle",
+        "moves": [
+            "Tailwind",
+            "Wing Attack",
+            "Water Pulse",
+            "Ice Beam"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Golduck",
+        "level": 36,
+        "nature": "Jolly",
+        "ability": "Damp",
+        "moves": [
+            "Aqua Jet",
+            "Zen Headbutt",
+            "Ice Beam",
+            "Dig"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Steelix",
+        "level": 37,
+        "nature": "Relaxed",
+        "ability": "Sturdy",
+        "moves": [
+            "Ice Fang",
+            "Screech",
+            "Iron Tail",
+            "Bulldoze"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

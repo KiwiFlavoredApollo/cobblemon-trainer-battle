@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Sudowoodo",
+        "level": 52,
+        "nature": "Impish",
+        "ability": "Sturdy",
+        "moves": [
+            "Flail",
+            "Tearful Look",
+            "Sucker Punch",
+            "Counter"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Roselia",
+        "level": 51,
+        "nature": "Bold",
+        "ability": "Poison Point",
+        "moves": [
+            "Leech Seed",
+            "Giga Drain",
+            "Synthesis",
+            "Toxic"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Raichu",
+        "level": 53,
+        "nature": "Bold",
+        "ability": "Static",
+        "moves": [
+            "Nuzzle",
+            "Charm",
+            "Spark",
+            "Discharge"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

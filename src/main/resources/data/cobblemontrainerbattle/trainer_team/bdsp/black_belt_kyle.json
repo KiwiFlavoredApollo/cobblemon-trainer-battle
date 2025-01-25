@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Machop",
+        "level": 19,
+        "nature": "Relaxed",
+        "ability": "No Guard",
+        "moves": [
+            "Leer",
+            "Revenge",
+            "Low Sweep",
+            "Knock Off"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

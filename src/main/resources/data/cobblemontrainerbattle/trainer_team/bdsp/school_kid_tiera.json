@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Pachirisu",
+        "level": 44,
+        "nature": "Jolly",
+        "ability": "Pickup",
+        "moves": [
+            "Charm",
+            "Spark",
+            "Nuzzle",
+            "Dig"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Chinchou",
+        "level": 51,
+        "nature": "Sassy",
+        "ability": "Volt Absorb",
+        "moves": [
+            "Discharge",
+            "Aqua Ring",
+            "Hydro Pump",
+            "Thunder Wave"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Lanturn",
+        "level": 51,
+        "nature": "Sassy",
+        "ability": "Volt Absorb",
+        "moves": [
+            "Discharge",
+            "Aqua Ring",
+            "Bubble Beam",
+            "Stockpile"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

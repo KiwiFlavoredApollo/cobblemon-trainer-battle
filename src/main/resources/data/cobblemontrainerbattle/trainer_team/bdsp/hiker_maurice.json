@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Graveler",
+        "level": 30,
+        "nature": "Relaxed",
+        "ability": "Rock Head",
+        "moves": [
+            "Defense Curl",
+            "Rollout",
+            "Smack Down",
+            "Stealth Rock"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Machoke",
+        "level": 32,
+        "nature": "Relaxed",
+        "ability": "No Guard",
+        "moves": [
+            "Leer",
+            "Low Sweep",
+            "Knock Off",
+            "Strength"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

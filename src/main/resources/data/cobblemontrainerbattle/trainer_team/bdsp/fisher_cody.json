@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Barboach",
+        "level": 31,
+        "nature": "Relaxed",
+        "ability": "Oblivious",
+        "moves": [
+            "Mud-Slap",
+            "Water Pulse",
+            "Aqua Tail",
+            "Muddy Water"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Gyarados",
+        "level": 31,
+        "nature": "Sassy",
+        "ability": "Intimidate",
+        "moves": [
+            "Leer",
+            "Ice Fang",
+            "Waterfall",
+            "Crunch"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

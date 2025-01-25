@@ -1,0 +1,84 @@
+[
+    {
+        "species": "Magikarp",
+        "level": 19,
+        "nature": "Relaxed",
+        "ability": "Swift Swim",
+        "moves": [
+            "Splash",
+            "Tackle"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Remoraid",
+        "level": 19,
+        "nature": "Hardy",
+        "ability": "Hustle",
+        "moves": [
+            "Water Pulse",
+            "Focus Energy",
+            "Psybeam",
+            "Aurora Beam"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Gyarados",
+        "level": 22,
+        "nature": "Sassy",
+        "ability": "Intimidate",
+        "moves": [
+            "Leer",
+            "Twister",
+            "Ice Fang",
+            "Waterfall"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

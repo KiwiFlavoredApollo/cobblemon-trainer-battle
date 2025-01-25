@@ -1,0 +1,56 @@
+[
+    {
+        "species": "Geodude",
+        "level": 8,
+        "nature": "Impish",
+        "ability": "Rock Head",
+        "moves": [
+            "Tackle",
+            "Defense Curl"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Onix",
+        "level": 8,
+        "nature": "Impish",
+        "ability": "Rock Head",
+        "moves": [
+            "Tackle",
+            "Harden",
+            "Bind",
+            "Smack Down"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

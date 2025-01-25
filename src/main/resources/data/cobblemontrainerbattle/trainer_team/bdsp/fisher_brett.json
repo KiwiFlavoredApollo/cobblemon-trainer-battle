@@ -1,0 +1,84 @@
+[
+    {
+        "species": "Magikarp",
+        "level": 39,
+        "nature": "Relaxed",
+        "ability": "Swift Swim",
+        "moves": [
+            "Splash",
+            "Tackle",
+            "Flail"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Finneon",
+        "level": 42,
+        "nature": "Sassy",
+        "ability": "Storm Drain",
+        "moves": [
+            "Rain Dance",
+            "Aqua Ring",
+            "Whirlpool",
+            "U-turn"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Feebas",
+        "level": 39,
+        "nature": "Sassy",
+        "ability": "Oblivious",
+        "moves": [
+            "Splash",
+            "Tackle",
+            "Flail"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

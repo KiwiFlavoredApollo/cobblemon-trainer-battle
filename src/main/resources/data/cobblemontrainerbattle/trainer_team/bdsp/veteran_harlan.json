@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Loudred",
+        "level": 56,
+        "nature": "Hardy",
+        "ability": "Soundproof",
+        "moves": [
+            "Uproar",
+            "Supersonic",
+            "Roar",
+            "Stomp"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Donphan",
+        "level": 56,
+        "nature": "Relaxed",
+        "ability": "Sturdy",
+        "moves": [
+            "Earthquake",
+            "Rock Tomb",
+            "Knock Off",
+            "Rollout"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Tauros",
+        "level": 56,
+        "nature": "Hardy",
+        "ability": "Intimidate",
+        "moves": [
+            "Double-Edge",
+            "Zen Headbutt",
+            "Payback",
+            "Swagger"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

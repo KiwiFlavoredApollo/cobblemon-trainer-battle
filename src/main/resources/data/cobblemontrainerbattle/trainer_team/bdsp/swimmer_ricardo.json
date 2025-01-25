@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Tentacruel",
+        "level": 43,
+        "nature": "Sassy",
+        "ability": "Clear Body",
+        "moves": [
+            "Acid",
+            "Water Pulse",
+            "Acid Armor",
+            "Poison Jab"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

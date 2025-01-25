@@ -1,0 +1,138 @@
+[
+    {
+        "species": "Magikarp",
+        "level": 26,
+        "nature": "Relaxed",
+        "ability": "Swift Swim",
+        "moves": [
+            "Splash",
+            "Tackle",
+            "Flail"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Magikarp",
+        "level": 26,
+        "nature": "Relaxed",
+        "ability": "Swift Swim",
+        "moves": [
+            "Splash",
+            "Tackle",
+            "Flail"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Magikarp",
+        "level": 26,
+        "nature": "Relaxed",
+        "ability": "Swift Swim",
+        "moves": [
+            "Splash",
+            "Tackle",
+            "Flail"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Gyarados",
+        "level": 31,
+        "nature": "Sassy",
+        "ability": "Intimidate",
+        "moves": [
+            "Leer",
+            "Ice Fang",
+            "Waterfall",
+            "Crunch"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Magikarp",
+        "level": 26,
+        "nature": "Relaxed",
+        "ability": "Swift Swim",
+        "moves": [
+            "Splash",
+            "Tackle",
+            "Flail"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

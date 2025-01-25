@@ -1,0 +1,170 @@
+[
+    {
+        "species": "Staraptor",
+        "level": 68,
+        "nature": "Jolly",
+        "ability": "Intimidate",
+        "moves": [
+            "Close Combat",
+            "Pluck",
+            "Rain Dance",
+            "U-turn"
+        ],
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "evs": {
+            "hp": 60,
+            "atk": 132,
+            "def": 36,
+            "spa": 0,
+            "spd": 36,
+            "spe": 244
+        }
+    },
+    {
+        "species": "Roserade",
+        "level": 69,
+        "nature": "Timid",
+        "ability": "Natural Cure",
+        "moves": [
+            "Sludge Bomb",
+            "Giga Drain",
+            "Stun Spore",
+            "Shadow Ball"
+        ],
+        "ivs": {
+            "hp": 6,
+            "atk": 6,
+            "def": 6,
+            "spa": 6,
+            "spd": 6,
+            "spe": 6
+        },
+        "evs": {
+            "hp": 40,
+            "atk": 0,
+            "def": 40,
+            "spa": 136,
+            "spd": 40,
+            "spe": 248
+        }
+    },
+    {
+        "species": "Heracross",
+        "level": 70,
+        "nature": "Jolly",
+        "ability": "Swarm",
+        "moves": [
+            "Megahorn",
+            "Swords Dance",
+            "Rock Slide",
+            "Close Combat"
+        ],
+        "ivs": {
+            "hp": 9,
+            "atk": 9,
+            "def": 9,
+            "spa": 9,
+            "spd": 9,
+            "spe": 9
+        },
+        "evs": {
+            "hp": 44,
+            "atk": 124,
+            "def": 44,
+            "spa": 0,
+            "spd": 44,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Rapidash",
+        "level": 69,
+        "nature": "Jolly",
+        "ability": "Flash Fire",
+        "moves": [
+            "Smart Strike",
+            "Megahorn",
+            "Poison Jab",
+            "Flare Blitz"
+        ],
+        "ivs": {
+            "hp": 7,
+            "atk": 7,
+            "def": 7,
+            "spa": 7,
+            "spd": 7,
+            "spe": 7
+        },
+        "evs": {
+            "hp": 60,
+            "atk": 132,
+            "def": 52,
+            "spa": 0,
+            "spd": 52,
+            "spe": 212
+        }
+    },
+    {
+        "species": "Snorlax",
+        "level": 70,
+        "nature": "Adamant",
+        "ability": "Thick Fat",
+        "moves": [
+            "Covet",
+            "Yawn",
+            "Crunch",
+            "High Horsepower"
+        ],
+        "ivs": {
+            "hp": 9,
+            "atk": 9,
+            "def": 9,
+            "spa": 9,
+            "spd": 9,
+            "spe": 9
+        },
+        "evs": {
+            "hp": 100,
+            "atk": 156,
+            "def": 160,
+            "spa": 0,
+            "spd": 92,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Empoleon",
+        "level": 74,
+        "nature": "Timid",
+        "ability": "Torrent",
+        "moves": [
+            "Aqua Jet",
+            "Grass Knot",
+            "Surf",
+            "Flash Cannon"
+        ],
+        "ivs": {
+            "hp": 11,
+            "atk": 11,
+            "def": 11,
+            "spa": 11,
+            "spd": 11,
+            "spe": 11
+        },
+        "evs": {
+            "hp": 52,
+            "atk": 0,
+            "def": 52,
+            "spa": 188,
+            "spd": 52,
+            "spe": 164
+        }
+    }
+]

@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Mr. Mime",
+        "level": 33,
+        "nature": "Sassy",
+        "ability": "Filter",
+        "moves": [
+            "Copycat",
+            "Baton Pass",
+            "Encore",
+            "Psybeam"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Machoke",
+        "level": 34,
+        "nature": "Relaxed",
+        "ability": "No Guard",
+        "moves": [
+            "Leer",
+            "Low Sweep",
+            "Knock Off",
+            "Strength"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Sneasel",
+        "level": 35,
+        "nature": "Sassy",
+        "ability": "Inner Focus",
+        "moves": [
+            "Leer",
+            "Metal Claw",
+            "Icy Wind",
+            "Fury Swipes"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

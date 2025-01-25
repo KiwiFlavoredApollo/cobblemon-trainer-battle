@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Roselia",
+        "level": 60,
+        "nature": "Timid",
+        "ability": "Poison Point",
+        "moves": [
+            "Giga Drain",
+            "Toxic",
+            "Ingrain",
+            "Petal Dance"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

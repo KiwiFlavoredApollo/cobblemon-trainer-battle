@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Starly",
+        "level": 15,
+        "nature": "Quirky",
+        "ability": "Keen Eye",
+        "moves": [
+            "Tackle",
+            "Growl",
+            "Quick Attack",
+            "Wing Attack"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Ponyta",
+        "level": 15,
+        "nature": "Jolly",
+        "ability": "Run Away",
+        "moves": [
+            "Tackle",
+            "Growl",
+            "Tail Whip",
+            "Flame Charge"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

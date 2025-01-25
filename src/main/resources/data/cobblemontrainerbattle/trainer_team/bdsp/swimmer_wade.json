@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Carvanha",
+        "level": 51,
+        "nature": "Hardy",
+        "ability": "Rough Skin",
+        "moves": [
+            "Crunch",
+            "Aqua Jet",
+            "Agility",
+            "Take Down"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Carvanha",
+        "level": 51,
+        "nature": "Hardy",
+        "ability": "Rough Skin",
+        "moves": [
+            "Crunch",
+            "Aqua Jet",
+            "Agility",
+            "Take Down"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Sharpedo",
+        "level": 54,
+        "nature": "Hardy",
+        "ability": "Rough Skin",
+        "moves": [
+            "Crunch",
+            "Aqua Jet",
+            "Agility",
+            "Ice Fang"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

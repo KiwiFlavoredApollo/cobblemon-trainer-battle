@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Medicham",
+        "level": 34,
+        "nature": "Quirky",
+        "ability": "Pure Power",
+        "moves": [
+            "Thunder Punch",
+            "Ice Punch",
+            "Psybeam",
+            "Acupressure"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

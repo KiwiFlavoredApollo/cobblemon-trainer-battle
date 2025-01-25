@@ -1,0 +1,170 @@
+[
+    {
+        "species": "Gliscor",
+        "level": 68,
+        "nature": "Impish",
+        "ability": "Poison Heal",
+        "moves": [
+            "Earthquake",
+            "Acrobatics",
+            "Fling",
+            "Roost"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 6,
+            "spa": 0,
+            "spd": 252,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Cradily",
+        "level": 69,
+        "nature": "Bold",
+        "ability": "Storm Drain",
+        "moves": [
+            "Giga Drain",
+            "Leech Seed",
+            "Ingrain",
+            "Stockpile"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 128,
+            "spa": 0,
+            "spd": 128,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Glaceon",
+        "level": 70,
+        "nature": "Modest",
+        "ability": "Ice Body",
+        "moves": [
+            "Freeze-Dry",
+            "Blizzard",
+            "Hail",
+            "Water Pulse"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 6
+        }
+    },
+    {
+        "species": "Heat Rotom",
+        "level": 69,
+        "nature": "Modest",
+        "ability": "Levitate",
+        "moves": [
+            "Overheat",
+            "Thunderbolt",
+            "Volt Switch",
+            "Hex"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 6
+        }
+    },
+    {
+        "species": "Tauros",
+        "level": 70,
+        "nature": "Modest",
+        "ability": "Intimidate",
+        "moves": [
+            "Hyper Beam",
+            "Blizzard",
+            "Fire Blast",
+            "Thunder"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Empoleon",
+        "level": 74,
+        "nature": "Hardy",
+        "ability": "Torrent",
+        "moves": [
+            "Aqua Jet",
+            "Waterfall",
+            "Steel Wing",
+            "Earthquake"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 6,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

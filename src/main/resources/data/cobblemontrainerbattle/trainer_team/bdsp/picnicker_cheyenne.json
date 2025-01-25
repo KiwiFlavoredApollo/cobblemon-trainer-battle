@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Drifloon",
+        "level": 28,
+        "nature": "Calm",
+        "ability": "Aftermath",
+        "moves": [
+            "Gust",
+            "Stockpile",
+            "Swallow",
+            "Spit Up"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Misdreavus",
+        "level": 28,
+        "nature": "Modest",
+        "ability": "Levitate",
+        "moves": [
+            "Confuse Ray",
+            "Mean Look",
+            "Hex",
+            "Psybeam"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

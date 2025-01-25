@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Buizel",
+        "level": 28,
+        "nature": "Impish",
+        "ability": "Swift Swim",
+        "moves": [
+            "Tail Whip",
+            "Bite",
+            "Swift",
+            "Aqua Jet"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Medicham",
+        "level": 28,
+        "nature": "Bashful",
+        "ability": "Pure Power",
+        "moves": [
+            "Zen Headbutt",
+            "Thunder Punch",
+            "Ice Punch",
+            "Force Palm"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Seaking",
+        "level": 28,
+        "nature": "Careful",
+        "ability": "Water Veil",
+        "moves": [
+            "Peck",
+            "Water Pulse",
+            "Horn Attack",
+            "Aqua Ring"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Gyarados",
+        "level": 58,
+        "nature": "Relaxed",
+        "ability": "Intimidate",
+        "moves": [
+            "Rain Dance",
+            "Hydro Pump",
+            "Hyper Beam",
+            "Hurricane"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

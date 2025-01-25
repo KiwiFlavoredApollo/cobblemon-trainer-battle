@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Primeape",
+        "level": 57,
+        "nature": "Docile",
+        "ability": "Vital Spirit",
+        "moves": [
+            "Final Gambit",
+            "Outrage",
+            "Close Combat",
+            "Thrash"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Torkoal",
+        "level": 57,
+        "nature": "Bold",
+        "ability": "Drought",
+        "moves": [
+            "Flamethrower",
+            "Lava Plume",
+            "Clear Smog",
+            "Rapid Spin"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

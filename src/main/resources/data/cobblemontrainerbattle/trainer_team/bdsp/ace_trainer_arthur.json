@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Raichu",
+        "level": 55,
+        "nature": "Sassy",
+        "ability": "Static",
+        "moves": [
+            "Thunder Punch",
+            "Nuzzle",
+            "Light Screen",
+            "Quick Attack"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Gastrodon",
+        "level": 55,
+        "nature": "Sassy",
+        "ability": "Storm Drain",
+        "moves": [
+            "Recover",
+            "Body Slam",
+            "Muddy Water",
+            "Earth Power"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Bidoof",
+        "level": 13,
+        "nature": "Docile",
+        "ability": "Unaware",
+        "moves": [
+            "Growl",
+            "Defense Curl",
+            "Rollout",
+            "Headbutt"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Zubat",
+        "level": 14,
+        "nature": "Hasty",
+        "ability": "Inner Focus",
+        "moves": [
+            "Absorb",
+            "Supersonic",
+            "Astonish",
+            "Mean Look"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Aipom",
+        "level": 15,
+        "nature": "Docile",
+        "ability": "Run Away",
+        "moves": [
+            "Sand Attack",
+            "Astonish",
+            "Baton Pass",
+            "Tickle"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

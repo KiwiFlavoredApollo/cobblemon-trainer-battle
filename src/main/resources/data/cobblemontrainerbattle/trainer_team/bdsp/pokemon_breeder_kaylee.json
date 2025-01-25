@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Stunky",
+        "level": 21,
+        "nature": "Impish",
+        "ability": "Stench",
+        "moves": [
+            "Poison Gas",
+            "Acid Spray",
+            "Fury Swipes",
+            "Bite"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Buizel",
+        "level": 21,
+        "nature": "Impish",
+        "ability": "Swift Swim",
+        "moves": [
+            "Growl",
+            "Water Gun",
+            "Bite",
+            "Swift"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

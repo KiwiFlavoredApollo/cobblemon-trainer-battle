@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Xatu",
+        "level": 56,
+        "nature": "Calm",
+        "ability": "Synchronize",
+        "moves": [
+            "Night Shade",
+            "Psychic",
+            "Wish",
+            "Future Sight"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Mismagius",
+        "level": 58,
+        "nature": "Bold",
+        "ability": "Levitate",
+        "moves": [
+            "Mystical Fire",
+            "Perish Song",
+            "Power Gem",
+            "Magical Leaf"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

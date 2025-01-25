@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Pelipper",
+        "level": 55,
+        "nature": "Bold",
+        "ability": "Drizzle",
+        "moves": [
+            "Tailwind",
+            "Water Pulse",
+            "Roost",
+            "Hurricane"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Machamp",
+        "level": 58,
+        "nature": "Adamant",
+        "ability": "No Guard",
+        "moves": [
+            "Knock Off",
+            "Dual Chop",
+            "Bulk Up",
+            "Dynamic Punch"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Gastrodon",
+        "level": 58,
+        "nature": "Modest",
+        "ability": "Storm Drain",
+        "moves": [
+            "Recover",
+            "Ancient Power",
+            "Muddy Water",
+            "Earth Power"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

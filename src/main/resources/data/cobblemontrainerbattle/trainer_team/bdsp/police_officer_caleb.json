@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Hoothoot",
+        "level": 17,
+        "nature": "Sassy",
+        "ability": "Keen Eye",
+        "moves": [
+            "Growl",
+            "Confusion",
+            "Reflect",
+            "Psycho Shift"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Meditite",
+        "level": 19,
+        "nature": "Hardy",
+        "ability": "Pure Power",
+        "moves": [
+            "Confusion",
+            "Detect",
+            "Feint",
+            "Force Palm"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

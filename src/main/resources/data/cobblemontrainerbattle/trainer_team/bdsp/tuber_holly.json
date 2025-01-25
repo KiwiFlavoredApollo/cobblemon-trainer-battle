@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Remoraid",
+        "level": 43,
+        "nature": "Quirky",
+        "ability": "Hustle",
+        "moves": [
+            "Lock-On",
+            "Bullet Seed",
+            "Ice Beam",
+            "Hydro Pump"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

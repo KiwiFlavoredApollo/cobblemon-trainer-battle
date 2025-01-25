@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Seadra",
+        "level": 56,
+        "nature": "Sassy",
+        "ability": "Poison Point",
+        "moves": [
+            "Dragon Pulse",
+            "Hydro Pump",
+            "Agility",
+            "Focus Energy"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Gyarados",
+        "level": 56,
+        "nature": "Relaxed",
+        "ability": "Intimidate",
+        "moves": [
+            "Dragon Dance",
+            "Hyper Beam",
+            "Waterfall",
+            "Thrash"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

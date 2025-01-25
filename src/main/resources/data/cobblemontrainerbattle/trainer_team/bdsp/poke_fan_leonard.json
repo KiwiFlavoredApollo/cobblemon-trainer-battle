@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Pichu",
+        "level": 15,
+        "nature": "Sassy",
+        "ability": "Static",
+        "moves": [
+            "Thunder Shock",
+            "Tail Whip",
+            "Play Nice",
+            "Nuzzle"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Pichu",
+        "level": 15,
+        "nature": "Sassy",
+        "ability": "Static",
+        "moves": [
+            "Thunder Shock",
+            "Tail Whip",
+            "Play Nice",
+            "Nuzzle"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Pikachu",
+        "level": 18,
+        "nature": "Sassy",
+        "ability": "Static",
+        "moves": [
+            "Nuzzle",
+            "Thunder Shock",
+            "Quick Attack",
+            "Electro Ball"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

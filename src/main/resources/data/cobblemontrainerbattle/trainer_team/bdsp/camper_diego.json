@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Cascoon",
+        "level": 13,
+        "nature": "Naive",
+        "ability": "Shed Skin",
+        "moves": [
+            "Tackle",
+            "String Shot",
+            "Poison Sting",
+            "Harden"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Dustox",
+        "level": 17,
+        "nature": "Hasty",
+        "ability": "Shield Dust",
+        "moves": [
+            "Gust",
+            "Confusion",
+            "Poison Powder",
+            "Moonlight"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

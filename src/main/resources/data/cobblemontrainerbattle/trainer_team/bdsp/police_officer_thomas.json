@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Noctowl",
+        "level": 42,
+        "nature": "Sassy",
+        "ability": "Keen Eye",
+        "moves": [
+            "Peck",
+            "Reflect",
+            "Psycho Shift",
+            "Uproar"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Machoke",
+        "level": 42,
+        "nature": "Relaxed",
+        "ability": "No Guard",
+        "moves": [
+            "Low Sweep",
+            "Knock Off",
+            "Dual Chop",
+            "Bulk Up"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Golbat",
+        "level": 53,
+        "nature": "Impish",
+        "ability": "Inner Focus",
+        "moves": [
+            "Poison Fang",
+            "Mean Look",
+            "Venoshock",
+            "Air Cutter"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Xatu",
+        "level": 57,
+        "nature": "Calm",
+        "ability": "Synchronize",
+        "moves": [
+            "Future Sight",
+            "Confuse Ray",
+            "Night Shade",
+            "Wish"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

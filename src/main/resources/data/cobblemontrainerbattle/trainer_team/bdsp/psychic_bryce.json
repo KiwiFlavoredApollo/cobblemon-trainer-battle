@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Haunter",
+        "level": 43,
+        "nature": "Sassy",
+        "ability": "Levitate",
+        "moves": [
+            "Confuse Ray",
+            "Curse",
+            "Hex",
+            "Dark Pulse"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Alakazam",
+        "level": 46,
+        "nature": "Sassy",
+        "ability": "Inner Focus",
+        "moves": [
+            "Recover",
+            "Psyshock",
+            "Role Play",
+            "Future Sight"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Gengar",
+        "level": 46,
+        "nature": "Sassy",
+        "ability": "Cursed Body",
+        "moves": [
+            "Shadow Punch",
+            "Confuse Ray",
+            "Hex",
+            "Dark Pulse"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

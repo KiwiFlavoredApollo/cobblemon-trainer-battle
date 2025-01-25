@@ -1,0 +1,80 @@
+[
+    {
+        "species": "Magikarp",
+        "level": 10,
+        "nature": "Relaxed",
+        "ability": "Swift Swim",
+        "moves": [
+            "Splash"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Goldeen",
+        "level": 13,
+        "nature": "Relaxed",
+        "ability": "Water Veil",
+        "moves": [
+            "Peck",
+            "Tail Whip",
+            "Supersonic",
+            "Water Pulse"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Magikarp",
+        "level": 10,
+        "nature": "Relaxed",
+        "ability": "Swift Swim",
+        "moves": [
+            "Splash"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

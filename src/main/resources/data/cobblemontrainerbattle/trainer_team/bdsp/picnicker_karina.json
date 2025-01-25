@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Empoleon",
+        "level": 55,
+        "nature": "Hasty",
+        "ability": "Torrent",
+        "moves": [
+            "Metal Claw",
+            "Aqua Jet",
+            "Brine",
+            "Drill Peck"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,167 @@
+[
+    {
+        "species": "Jumpluff",
+        "level": 66,
+        "nature": "Timid",
+        "ability": "Chlorophyll",
+        "moves": [
+            "Giga Drain",
+            "Sleep Powder",
+            "Leech Seed",
+            "Sunny Day"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 76,
+            "atk": 0,
+            "def": 44,
+            "spa": 128,
+            "spd": 8,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Sunflora",
+        "level": 70,
+        "nature": "Timid",
+        "ability": "Solar Power",
+        "moves": [
+            "Solar Beam"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Cherrim",
+        "level": 69,
+        "nature": "Mild",
+        "ability": "Flower Gift",
+        "moves": [
+            "Petal Blizzard",
+            "Solar Beam",
+            "Growth",
+            "Sunny Day"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 6
+        }
+    },
+    {
+        "species": "Breloom",
+        "level": 68,
+        "nature": "Jolly",
+        "ability": "Poison Heal",
+        "moves": [
+            "Focus Punch",
+            "Leech Seed",
+            "Substitute",
+            "Spore"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 120,
+            "atk": 138,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Torterra",
+        "level": 68,
+        "nature": "Adamant",
+        "ability": "Overgrow",
+        "moves": [
+            "Wood Hammer",
+            "Earthquake",
+            "Stone Edge",
+            "Iron Tail"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 6
+        }
+    },
+    {
+        "species": "Roserade",
+        "level": 72,
+        "nature": "Modest",
+        "ability": "Natural Cure",
+        "moves": [
+            "Solar Beam",
+            "Sludge Bomb",
+            "Grassy Terrain",
+            "Sunny Day"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        }
+    }
+]

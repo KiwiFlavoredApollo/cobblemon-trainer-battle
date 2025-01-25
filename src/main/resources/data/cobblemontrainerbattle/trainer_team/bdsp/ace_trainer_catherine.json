@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Misdreavus",
+        "level": 30,
+        "nature": "Timid",
+        "ability": "Levitate",
+        "moves": [
+            "Growl",
+            "Confuse Ray",
+            "Hex",
+            "Trick Room"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Drifblim",
+        "level": 30,
+        "nature": "Jolly",
+        "ability": "Flare Boost",
+        "moves": [
+            "Phantom Force",
+            "Strength Sap",
+            "Minimize",
+            "Fly"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

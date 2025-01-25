@@ -1,0 +1,29 @@
+[
+    {
+        "species": "Turtwig",
+        "level": 17,
+        "nature": "Adamant",
+        "ability": "Overgrow",
+        "moves": [
+            "Tackle",
+            "Iron Tail",
+            "Bullet Seed"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

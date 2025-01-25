@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Pinsir",
+        "level": 53,
+        "nature": "Hardy",
+        "ability": "Hyper Cutter",
+        "moves": [
+            "Superpower",
+            "X-Scissor",
+            "Swords Dance",
+            "Guillotine"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Mightyena",
+        "level": 53,
+        "nature": "Hardy",
+        "ability": "Intimidate",
+        "moves": [
+            "Crunch",
+            "Sucker Punch",
+            "Headbutt",
+            "Scary Face"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

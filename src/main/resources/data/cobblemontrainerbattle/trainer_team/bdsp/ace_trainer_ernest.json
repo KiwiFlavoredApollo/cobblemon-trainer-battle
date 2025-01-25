@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Mothim",
+        "level": 25,
+        "nature": "Hardy",
+        "ability": "Swarm",
+        "moves": [
+            "Quiver Dance",
+            "Bug Bite",
+            "String Shot",
+            "Confusion"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Onix",
+        "level": 26,
+        "nature": "Relaxed",
+        "ability": "Rock Head",
+        "moves": [
+            "Harden",
+            "Smack Down",
+            "Curse",
+            "Rock Slide"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Luxio",
+        "level": 27,
+        "nature": "Hardy",
+        "ability": "Intimidate",
+        "moves": [
+            "Leer",
+            "Bite",
+            "Spark",
+            "Roar"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Exeggutor",
+        "level": 60,
+        "nature": "Modest",
+        "ability": "Chlorophyll",
+        "moves": [
+            "Worry Seed",
+            "Leech Seed",
+            "Leaf Storm",
+            "Psyshock"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Ursaring",
+        "level": 60,
+        "nature": "Adamant",
+        "ability": "Guts",
+        "moves": [
+            "Scary Face",
+            "Rest",
+            "Snore",
+            "Thrash"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

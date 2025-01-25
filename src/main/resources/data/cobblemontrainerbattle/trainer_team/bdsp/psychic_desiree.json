@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Kadabra",
+        "level": 54,
+        "nature": "Calm",
+        "ability": "Inner Focus",
+        "moves": [
+            "Ally Switch",
+            "Psyshock",
+            "Psychic",
+            "Reflect"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Kadabra",
+        "level": 54,
+        "nature": "Calm",
+        "ability": "Synchronize",
+        "moves": [
+            "Recover",
+            "Psyshock",
+            "Future Sight",
+            "Calm Mind"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

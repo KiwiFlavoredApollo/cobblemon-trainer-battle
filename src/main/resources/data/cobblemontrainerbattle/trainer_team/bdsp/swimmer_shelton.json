@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Gyarados",
+        "level": 30,
+        "nature": "Sassy",
+        "ability": "Intimidate",
+        "moves": [
+            "Leer",
+            "Twister",
+            "Whirlpool",
+            "Rain Dance"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Gyarados",
+        "level": 29,
+        "nature": "Sassy",
+        "ability": "Intimidate",
+        "moves": [
+            "Leer",
+            "Twister",
+            "Brine",
+            "Rain Dance"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Gyarados",
+        "level": 31,
+        "nature": "Sassy",
+        "ability": "Intimidate",
+        "moves": [
+            "Leer",
+            "Twister",
+            "Waterfall",
+            "Rain Dance"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

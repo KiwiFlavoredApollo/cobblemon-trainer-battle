@@ -1,0 +1,114 @@
+[
+    {
+        "species": "Zubat",
+        "level": 33,
+        "nature": "Hasty",
+        "ability": "Inner Focus",
+        "moves": [
+            "Supersonic",
+            "Poison Fang",
+            "Air Cutter",
+            "Bite"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Golbat",
+        "level": 33,
+        "nature": "Hasty",
+        "ability": "Inner Focus",
+        "moves": [
+            "Supersonic",
+            "Astonish",
+            "Poison Fang",
+            "Air Cutter"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Zubat",
+        "level": 34,
+        "nature": "Hasty",
+        "ability": "Inner Focus",
+        "moves": [
+            "Supersonic",
+            "Poison Fang",
+            "Air Cutter",
+            "Bite"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Croagunk",
+        "level": 36,
+        "nature": "Docile",
+        "ability": "Anticipation",
+        "moves": [
+            "Revenge",
+            "Venoshock",
+            "Sucker Punch",
+            "Toxic"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

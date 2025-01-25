@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Machamp",
+        "level": 49,
+        "nature": "Relaxed",
+        "ability": "No Guard",
+        "moves": [
+            "Low Sweep",
+            "Knock Off",
+            "Dual Chop",
+            "Bulk Up"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Kangaskhan",
+        "level": 57,
+        "nature": "Bashful",
+        "ability": "Scrappy",
+        "moves": [
+            "Fake Out",
+            "Sucker Punch",
+            "Outrage",
+            "Reversal"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Ursaring",
+        "level": 57,
+        "nature": "Impish",
+        "ability": "Quick Feet",
+        "moves": [
+            "Rest",
+            "Snore",
+            "Slash",
+            "Payback"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

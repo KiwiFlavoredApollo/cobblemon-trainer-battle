@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Kadabra",
+        "level": 44,
+        "nature": "Timid",
+        "ability": "Inner Focus",
+        "moves": [
+            "Reflect",
+            "Psychic",
+            "Shock Wave",
+            "Energy Ball"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Raichu",
+        "level": 44,
+        "nature": "Jolly",
+        "ability": "Static",
+        "moves": [
+            "Thunder Punch",
+            "Thunderbolt",
+            "Light Screen",
+            "Quick Attack"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

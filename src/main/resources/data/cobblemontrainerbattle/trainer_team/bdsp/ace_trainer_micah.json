@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Bibarel",
+        "level": 54,
+        "nature": "Hardy",
+        "ability": "Simple",
+        "moves": [
+            "Aqua Jet",
+            "Crunch",
+            "Swords Dance",
+            "Superpower"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Rapidash",
+        "level": 54,
+        "nature": "Sassy",
+        "ability": "Run Away",
+        "moves": [
+            "Smart Strike",
+            "Flame Wheel",
+            "Fire Spin",
+            "Inferno"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Beautifly",
+        "level": 54,
+        "nature": "Hardy",
+        "ability": "Swarm",
+        "moves": [
+            "Stun Spore",
+            "Air Cutter",
+            "Bug Buzz",
+            "Quiver Dance"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

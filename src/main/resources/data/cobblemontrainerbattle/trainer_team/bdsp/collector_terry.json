@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Gastly",
+        "level": 12,
+        "nature": "Sassy",
+        "ability": "Levitate",
+        "moves": [
+            "Lick",
+            "Confuse Ray",
+            "Mean Look",
+            "Payback"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Gastly",
+        "level": 13,
+        "nature": "Sassy",
+        "ability": "Levitate",
+        "moves": [
+            "Lick",
+            "Confuse Ray",
+            "Mean Look",
+            "Payback"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Gastly",
+        "level": 17,
+        "nature": "Sassy",
+        "ability": "Levitate",
+        "moves": [
+            "Lick",
+            "Confuse Ray",
+            "Payback",
+            "Spite"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

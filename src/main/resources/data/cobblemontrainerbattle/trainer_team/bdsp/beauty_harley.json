@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Psyduck",
+        "level": 23,
+        "nature": "Calm",
+        "ability": "Damp",
+        "moves": [
+            "Tail Whip",
+            "Fury Swipes",
+            "Water Pulse",
+            "Zen Headbutt"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

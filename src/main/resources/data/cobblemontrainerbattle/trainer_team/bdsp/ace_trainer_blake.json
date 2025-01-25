@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Ambipom",
+        "level": 35,
+        "nature": "Hardy",
+        "ability": "Pickup",
+        "moves": [
+            "Dual Chop",
+            "Baton Pass",
+            "Tickle",
+            "Double Hit"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Kadabra",
+        "level": 35,
+        "nature": "Sassy",
+        "ability": "Inner Focus",
+        "moves": [
+            "Kinesis",
+            "Recover",
+            "Psyshock",
+            "Psychic"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

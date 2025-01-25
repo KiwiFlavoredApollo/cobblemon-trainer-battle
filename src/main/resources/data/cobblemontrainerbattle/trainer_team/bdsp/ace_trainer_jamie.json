@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Metagross",
+        "level": 56,
+        "nature": "Jolly",
+        "ability": "Clear Body",
+        "moves": [
+            "Meteor Mash",
+            "Hammer Arm",
+            "Psychic",
+            "Zen Headbutt"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

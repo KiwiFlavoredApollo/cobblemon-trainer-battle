@@ -1,0 +1,80 @@
+[
+    {
+        "species": "Wurmple",
+        "level": 9,
+        "nature": "Naive",
+        "ability": "Shield Dust",
+        "moves": [
+            "Tackle",
+            "String Shot",
+            "Poison Sting"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Silcoon",
+        "level": 11,
+        "nature": "Naive",
+        "ability": "Shed Skin",
+        "moves": [
+            "Harden"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Beautifly",
+        "level": 13,
+        "nature": "Docile",
+        "ability": "Swarm",
+        "moves": [
+            "Gust",
+            "Absorb"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

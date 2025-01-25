@@ -1,0 +1,55 @@
+[
+    {
+        "species": "Burmy",
+        "level": 12,
+        "nature": "Docile",
+        "ability": "Shed Skin",
+        "moves": [
+            "Protect",
+            "Tackle"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Kricketune",
+        "level": 12,
+        "nature": "Docile",
+        "ability": "Swarm",
+        "moves": [
+            "Fury Cutter",
+            "Growl",
+            "Pound"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

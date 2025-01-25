@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Staraptor",
+        "level": 58,
+        "nature": "Jolly",
+        "ability": "Intimidate",
+        "moves": [
+            "Brave Bird",
+            "Close Combat",
+            "Quick Attack",
+            "Take Down"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Pelipper",
+        "level": 58,
+        "nature": "Modest",
+        "ability": "Drizzle",
+        "moves": [
+            "Hurricane",
+            "Roost",
+            "Water Pulse",
+            "Tailwind"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Crobat",
+        "level": 58,
+        "nature": "Jolly",
+        "ability": "--",
+        "moves": [
+            "Cross Poison",
+            "Bite",
+            "Astonish",
+            "Supersonic"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

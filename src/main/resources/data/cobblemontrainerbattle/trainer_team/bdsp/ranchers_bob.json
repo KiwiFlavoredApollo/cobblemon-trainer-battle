@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Buizel",
+        "level": 19,
+        "nature": "Relaxed",
+        "ability": "Swift Swim",
+        "moves": [
+            "Growl",
+            "Quick Attack",
+            "Water Gun",
+            "Bite"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

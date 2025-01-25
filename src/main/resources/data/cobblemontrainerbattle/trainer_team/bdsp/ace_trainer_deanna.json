@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Ampharos",
+        "level": 60,
+        "nature": "Modest",
+        "ability": "Static",
+        "moves": [
+            "Discharge",
+            "Power Gem",
+            "Thunder Wave",
+            "Fire Punch"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Tropius",
+        "level": 60,
+        "nature": "Timid",
+        "ability": "Chlorophyll",
+        "moves": [
+            "Leaf Storm",
+            "Air Slash",
+            "Sunny Day",
+            "Growth"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

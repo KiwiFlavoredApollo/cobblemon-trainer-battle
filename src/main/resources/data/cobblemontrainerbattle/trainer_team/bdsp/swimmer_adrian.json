@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Mantyke",
+        "level": 26,
+        "nature": "Sassy",
+        "ability": "Water Absorb",
+        "moves": [
+            "Tackle",
+            "Supersonic",
+            "Wing Attack",
+            "Bubble Beam"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Remoraid",
+        "level": 29,
+        "nature": "Hardy",
+        "ability": "Sniper",
+        "moves": [
+            "Focus Energy",
+            "Aurora Beam",
+            "Bubble Beam",
+            "Bullet Seed"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Tentacool",
+        "level": 29,
+        "nature": "Sassy",
+        "ability": "Clear Body",
+        "moves": [
+            "Poison Sting",
+            "Acid",
+            "Water Pulse",
+            "Hex"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

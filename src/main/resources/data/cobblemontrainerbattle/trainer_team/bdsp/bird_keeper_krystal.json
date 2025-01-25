@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Dodrio",
+        "level": 55,
+        "nature": "Impish",
+        "ability": "Early Bird",
+        "moves": [
+            "Drill Peck",
+            "Lunge",
+            "Quick Attack",
+            "Swords Dance"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Fearow",
+        "level": 55,
+        "nature": "Hardy",
+        "ability": "Keen Eye",
+        "moves": [
+            "Drill Run",
+            "Drill Peck",
+            "Roost",
+            "Assurance"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Honchkrow",
+        "level": 55,
+        "nature": "Docile",
+        "ability": "Insomnia",
+        "moves": [
+            "Night Slash",
+            "Swagger",
+            "Foul Play",
+            "Wing Attack"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

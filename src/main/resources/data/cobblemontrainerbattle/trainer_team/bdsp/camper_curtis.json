@@ -1,0 +1,29 @@
+[
+    {
+        "species": "Shinx",
+        "level": 7,
+        "nature": "Docile",
+        "ability": "Intimidate",
+        "moves": [
+            "Tackle",
+            "Leer",
+            "Thunder Shock"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

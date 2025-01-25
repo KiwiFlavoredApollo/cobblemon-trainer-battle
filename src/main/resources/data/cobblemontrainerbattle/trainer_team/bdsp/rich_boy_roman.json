@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Sudowoodo",
+        "level": 23,
+        "nature": "Naive",
+        "ability": "Sturdy",
+        "moves": [
+            "Stone Edge",
+            "Hammer Arm",
+            "Wood Hammer",
+            "Flail"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

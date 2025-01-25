@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Meditite",
+        "level": 28,
+        "nature": "Jolly",
+        "ability": "Pure Power",
+        "moves": [
+            "Low Kick",
+            "Force Palm",
+            "Mind Reader",
+            "High Jump Kick"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

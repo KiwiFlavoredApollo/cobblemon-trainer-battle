@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Budew",
+        "level": 14,
+        "nature": "Bold",
+        "ability": "Poison Point",
+        "moves": [
+            "Absorb",
+            "Stun Spore",
+            "Rest",
+            "Sleep Talk"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Budew",
+        "level": 13,
+        "nature": "Bold",
+        "ability": "Poison Point",
+        "moves": [
+            "Absorb",
+            "Stun Spore",
+            "Rest",
+            "Sleep Talk"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Budew",
+        "level": 15,
+        "nature": "Bold",
+        "ability": "Poison Point",
+        "moves": [
+            "Absorb",
+            "Stun Spore",
+            "Rest",
+            "Sleep Talk"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

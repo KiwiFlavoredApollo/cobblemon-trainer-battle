@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Kadabra",
+        "level": 18,
+        "nature": "Timid",
+        "ability": "Synchronize",
+        "moves": [
+            "Kinesis",
+            "Psybeam",
+            "Reflect",
+            "Ally Switch"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 0,
+            "spd": 31,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 172,
+            "atk": 0,
+            "def": 168,
+            "spa": 0,
+            "spd": 168,
+            "spe": 0
+        }
+    }
+]

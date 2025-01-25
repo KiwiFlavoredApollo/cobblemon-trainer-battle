@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Steelix",
+        "level": 33,
+        "nature": "Relaxed",
+        "ability": "Sturdy",
+        "moves": [
+            "Thunder Fang",
+            "Ice Fang",
+            "Iron Tail",
+            "Bulldoze"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

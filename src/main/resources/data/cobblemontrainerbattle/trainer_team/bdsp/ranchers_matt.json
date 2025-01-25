@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Glameow",
+        "level": 21,
+        "nature": "Relaxed",
+        "ability": "Limber",
+        "moves": [
+            "Fake Out",
+            "Growl",
+            "Aerial Ace",
+            "Fury Swipes"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

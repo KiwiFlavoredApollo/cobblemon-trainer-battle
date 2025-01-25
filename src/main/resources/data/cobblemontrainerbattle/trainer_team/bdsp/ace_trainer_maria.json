@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Golduck",
+        "level": 34,
+        "nature": "Calm",
+        "ability": "Damp",
+        "moves": [
+            "Aqua Jet",
+            "Fury Swipes",
+            "Zen Headbutt",
+            "Screech"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Ponyta",
+        "level": 35,
+        "nature": "Careful",
+        "ability": "Run Away",
+        "moves": [
+            "Tail Whip",
+            "Flame Wheel",
+            "Stomp",
+            "Fire Spin"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Sudowoodo",
+        "level": 33,
+        "nature": "Impish",
+        "ability": "Rock Head",
+        "moves": [
+            "Hammer Arm",
+            "Wood Hammer",
+            "Rock Tomb",
+            "Sucker Punch"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

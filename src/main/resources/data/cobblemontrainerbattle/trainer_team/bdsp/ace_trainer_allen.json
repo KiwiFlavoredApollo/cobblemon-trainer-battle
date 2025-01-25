@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Gastly",
+        "level": 26,
+        "nature": "Timid",
+        "ability": "Levitate",
+        "moves": [
+            "Mean Look",
+            "Payback",
+            "Hex",
+            "Toxic"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Haunter",
+        "level": 28,
+        "nature": "Timid",
+        "ability": "Levitate",
+        "moves": [
+            "Mean Look",
+            "Shadow Punch",
+            "Hex",
+            "Toxic"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Gengar",
+        "level": 30,
+        "nature": "Timid",
+        "ability": "Cursed Body",
+        "moves": [
+            "Mean Look",
+            "Night Shade",
+            "Hex",
+            "Toxic"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

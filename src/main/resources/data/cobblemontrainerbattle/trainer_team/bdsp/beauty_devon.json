@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Wormadam",
+        "level": 25,
+        "nature": "Calm",
+        "ability": "Anticipation",
+        "moves": [
+            "Quiver Dance",
+            "Sucker Punch",
+            "Bug Bite",
+            "Confusion"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

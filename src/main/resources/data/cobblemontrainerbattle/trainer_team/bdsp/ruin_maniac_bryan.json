@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Cranidos",
+        "level": 24,
+        "nature": "Relaxed",
+        "ability": "Mold Breaker",
+        "moves": [
+            "Headbutt",
+            "Leer",
+            "Scary Face",
+            "Assurance"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Geodude",
+        "level": 22,
+        "nature": "Relaxed",
+        "ability": "Sturdy",
+        "moves": [
+            "Sandstorm",
+            "Harden",
+            "Smack Down",
+            "Bulldoze"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Bronzor",
+        "level": 23,
+        "nature": "Hardy",
+        "ability": "Levitate",
+        "moves": [
+            "Confusion",
+            "Confuse Ray",
+            "Payback",
+            "Gyro Ball"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

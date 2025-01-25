@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Zubat",
+        "level": 25,
+        "nature": "Hasty",
+        "ability": "Inner Focus",
+        "moves": [
+            "Absorb",
+            "Astonish",
+            "Poison Fang",
+            "Air Cutter"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Skorupi",
+        "level": 25,
+        "nature": "Naive",
+        "ability": "Battle Armor",
+        "moves": [
+            "Hone Claws",
+            "Fell Stinger",
+            "Toxic Spikes",
+            "Knock Off"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

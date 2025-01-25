@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Floatzel",
+        "level": 37,
+        "nature": "Jolly",
+        "ability": "Swift Swim",
+        "moves": [
+            "Ice Fang",
+            "Crunch",
+            "Tail Whip",
+            "Aqua Jet"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Sneasel",
+        "level": 37,
+        "nature": "Jolly",
+        "ability": "Inner Focus",
+        "moves": [
+            "Metal Claw",
+            "Icy Wind",
+            "Hone Claws",
+            "Aerial Ace"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

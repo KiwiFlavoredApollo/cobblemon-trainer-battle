@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Trapinch",
+        "level": 54,
+        "nature": "Hardy",
+        "ability": "Hyper Cutter",
+        "moves": [
+            "Crunch",
+            "Sand Tomb",
+            "Dig",
+            "Sandstorm"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Vibrava",
+        "level": 56,
+        "nature": "Impish",
+        "ability": "Levitate",
+        "moves": [
+            "Supersonic",
+            "Bug Buzz",
+            "Earth Power",
+            "Dragon Breath"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Onix",
+        "level": 14,
+        "nature": "Relaxed",
+        "ability": "Sturdy",
+        "moves": [
+            "Tackle",
+            "Harden",
+            "Bind",
+            "Rock Throw"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

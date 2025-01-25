@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Remoraid",
+        "level": 29,
+        "nature": "Bashful",
+        "ability": "Hustle",
+        "moves": [
+            "Psybeam",
+            "Aurora Beam",
+            "Bubble Beam",
+            "Lock-On"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Psyduck",
+        "level": 29,
+        "nature": "Calm",
+        "ability": "Damp",
+        "moves": [
+            "Tail Whip",
+            "Fury Swipes",
+            "Zen Headbutt",
+            "Aqua Tail"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

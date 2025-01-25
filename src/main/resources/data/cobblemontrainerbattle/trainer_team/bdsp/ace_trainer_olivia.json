@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Roselia",
+        "level": 55,
+        "nature": "Calm",
+        "ability": "Poison Point",
+        "moves": [
+            "Leech Seed",
+            "Synthesis",
+            "Toxic",
+            "Ingrain"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Seaking",
+        "level": 55,
+        "nature": "Jolly",
+        "ability": "Water Veil",
+        "moves": [
+            "Peck",
+            "Flail",
+            "Waterfall",
+            "Megahorn"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Bibarel",
+        "level": 55,
+        "nature": "Jolly",
+        "ability": "Unaware",
+        "moves": [
+            "Aqua Jet",
+            "Crunch",
+            "Super Fang",
+            "Superpower"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

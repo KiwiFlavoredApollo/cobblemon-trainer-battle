@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Stantler",
+        "level": 58,
+        "nature": "Docile",
+        "ability": "Intimidate",
+        "moves": [
+            "Double-Edge",
+            "Lunge",
+            "Zen Headbutt",
+            "Hypnosis"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Carnivine",
+        "level": 58,
+        "nature": "Serious",
+        "ability": "Levitate",
+        "moves": [
+            "Power Whip",
+            "Crunch",
+            "Stockpile",
+            "Growth"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

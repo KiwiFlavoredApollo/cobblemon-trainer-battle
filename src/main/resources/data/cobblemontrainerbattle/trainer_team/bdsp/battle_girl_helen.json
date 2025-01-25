@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Medicham",
+        "level": 58,
+        "nature": "Jolly",
+        "ability": "Pure Power",
+        "moves": [
+            "Fire Punch",
+            "Thunder Punch",
+            "Ice Punch",
+            "Recover"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Machamp",
+        "level": 60,
+        "nature": "Jolly",
+        "ability": "No Guard",
+        "moves": [
+            "Knock Off",
+            "Strength",
+            "Dual Chop",
+            "Cross Chop"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

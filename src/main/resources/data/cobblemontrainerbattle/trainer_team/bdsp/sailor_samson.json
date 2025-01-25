@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Shellos",
+        "level": 24,
+        "nature": "Timid",
+        "ability": "Storm Drain",
+        "moves": [
+            "Mud-Slap",
+            "Recover",
+            "Water Pulse",
+            "Rain Dance"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Wingull",
+        "level": 24,
+        "nature": "Adamant",
+        "ability": "Hydration",
+        "moves": [
+            "Water Pulse",
+            "Rain Dance",
+            "U-turn",
+            "Roost"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Shellos (East Sea)",
+        "level": 24,
+        "nature": "Relaxed",
+        "ability": "Storm Drain",
+        "moves": [
+            "Mud-Slap",
+            "Harden",
+            "Recover",
+            "Water Pulse"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

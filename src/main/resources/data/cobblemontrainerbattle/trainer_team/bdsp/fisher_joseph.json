@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Seaking",
+        "level": 55,
+        "nature": "Jolly",
+        "ability": "Water Veil",
+        "moves": [
+            "Tail Whip",
+            "Supersonic",
+            "Horn Attack",
+            "Waterfall"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

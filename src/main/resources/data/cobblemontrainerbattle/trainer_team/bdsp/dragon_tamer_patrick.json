@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Gabite",
+        "level": 63,
+        "nature": "Jolly",
+        "ability": "Sand Veil",
+        "moves": [
+            "Bite",
+            "Dragon Claw",
+            "Dig",
+            "Sandstorm"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

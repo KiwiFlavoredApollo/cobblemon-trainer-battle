@@ -1,0 +1,57 @@
+[
+    {
+        "species": "Cherubi",
+        "level": 15,
+        "nature": "Impish",
+        "ability": "Chlorophyll",
+        "moves": [
+            "Sunny Day",
+            "Morning Sun",
+            "Growth",
+            "Leafage"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Roselia",
+        "level": 15,
+        "nature": "Timid",
+        "ability": "Leaf Guard",
+        "moves": [
+            "Stun Spore",
+            "Mega Drain",
+            "Leech Seed"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

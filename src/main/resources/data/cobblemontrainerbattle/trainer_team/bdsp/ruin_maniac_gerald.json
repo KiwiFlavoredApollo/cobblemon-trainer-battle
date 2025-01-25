@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Geodude",
+        "level": 15,
+        "nature": "Relaxed",
+        "ability": "Rock Head",
+        "moves": [
+            "Defense Curl",
+            "Sandstorm",
+            "Rock Polish",
+            "Rollout"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Bronzor",
+        "level": 17,
+        "nature": "Hardy",
+        "ability": "Levitate",
+        "moves": [
+            "Confuse Ray",
+            "Payback",
+            "Imprison",
+            "Gyro Ball"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

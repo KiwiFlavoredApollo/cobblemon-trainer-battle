@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Ponyta",
+        "level": 22,
+        "nature": "Sassy",
+        "ability": "Run Away",
+        "moves": [
+            "Growl",
+            "Tail Whip",
+            "Flame Charge",
+            "Agility"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Ponyta",
+        "level": 20,
+        "nature": "Sassy",
+        "ability": "Run Away",
+        "moves": [
+            "Tackle",
+            "Growl",
+            "Flame Charge",
+            "Agility"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Ponyta",
+        "level": 24,
+        "nature": "Sassy",
+        "ability": "Run Away",
+        "moves": [
+            "Tackle",
+            "Growl",
+            "Ember",
+            "Flame Charge"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Steelix",
+        "level": 57,
+        "nature": "Impish",
+        "ability": "Sturdy",
+        "moves": [
+            "Screech",
+            "Stealth Rock",
+            "Sandstorm",
+            "Stone Edge"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Steelix",
+        "level": 59,
+        "nature": "Jolly",
+        "ability": "Rock Head",
+        "moves": [
+            "Crunch",
+            "Dig",
+            "Stone Edge",
+            "Double-Edge"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

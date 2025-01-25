@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Murkrow",
+        "level": 53,
+        "nature": "Bashful",
+        "ability": "Insomnia",
+        "moves": [
+            "Assurance",
+            "Taunt",
+            "Air Cutter",
+            "Tailwind"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Honchkrow",
+        "level": 57,
+        "nature": "Bashful",
+        "ability": "Insomnia",
+        "moves": [
+            "Astonish",
+            "Wing Attack",
+            "Swagger",
+            "Foul Play"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

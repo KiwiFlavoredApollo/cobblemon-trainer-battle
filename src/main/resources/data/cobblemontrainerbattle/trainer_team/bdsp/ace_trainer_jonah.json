@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Ponyta",
+        "level": 31,
+        "nature": "Sassy",
+        "ability": "Run Away",
+        "moves": [
+            "Tail Whip",
+            "Agility",
+            "Flame Wheel",
+            "Stomp"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Haunter",
+        "level": 31,
+        "nature": "Sassy",
+        "ability": "Levitate",
+        "moves": [
+            "Shadow Punch",
+            "Confuse Ray",
+            "Mean Look",
+            "Payback"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Floatzel",
+        "level": 34,
+        "nature": "Relaxed",
+        "ability": "Swift Swim",
+        "moves": [
+            "Tail Whip",
+            "Bite",
+            "Swift",
+            "Aqua Jet"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

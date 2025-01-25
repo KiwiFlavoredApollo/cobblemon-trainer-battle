@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Luxio",
+        "level": 31,
+        "nature": "Docile",
+        "ability": "Intimidate",
+        "moves": [
+            "Thunder Shock",
+            "Charge",
+            "Spark",
+            "Volt Switch"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Stunky",
+        "level": 31,
+        "nature": "Naive",
+        "ability": "Stench",
+        "moves": [
+            "Focus Energy",
+            "Venoshock",
+            "Toxic",
+            "Sucker Punch"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

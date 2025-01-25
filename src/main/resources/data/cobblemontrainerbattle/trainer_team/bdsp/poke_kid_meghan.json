@@ -1,0 +1,114 @@
+[
+    {
+        "species": "Pikachu",
+        "level": 41,
+        "nature": "Jolly",
+        "ability": "Static",
+        "moves": [
+            "Nuzzle",
+            "Charm",
+            "Spark",
+            "Light Screen"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Pikachu",
+        "level": 41,
+        "nature": "Jolly",
+        "ability": "Static",
+        "moves": [
+            "Charm",
+            "Double Team",
+            "Spark",
+            "Light Screen"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Pikachu",
+        "level": 41,
+        "nature": "Timid",
+        "ability": "Static",
+        "moves": [
+            "Charm",
+            "Electro Ball",
+            "Agility",
+            "Light Screen"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Pikachu",
+        "level": 41,
+        "nature": "Timid",
+        "ability": "Static",
+        "moves": [
+            "Charm",
+            "Nasty Plot",
+            "Thunderbolt",
+            "Light Screen"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

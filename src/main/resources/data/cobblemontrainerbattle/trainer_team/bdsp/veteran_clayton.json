@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Staraptor",
+        "level": 47,
+        "nature": "Relaxed",
+        "ability": "Intimidate",
+        "moves": [
+            "Quick Attack",
+            "Endeavor",
+            "Aerial Ace",
+            "Take Down"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Hippowdon",
+        "level": 47,
+        "nature": "Relaxed",
+        "ability": "Sand Stream",
+        "moves": [
+            "Earthquake",
+            "Crunch",
+            "Ice Fang",
+            "Yawn"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

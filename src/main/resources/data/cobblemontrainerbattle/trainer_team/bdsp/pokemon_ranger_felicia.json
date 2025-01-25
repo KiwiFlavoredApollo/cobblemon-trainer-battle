@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Lickitung",
+        "level": 57,
+        "nature": "Hardy",
+        "ability": "Own Tempo",
+        "moves": [
+            "Stomp",
+            "Knock Off",
+            "Power Whip",
+            "Screech"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Vigoroth",
+        "level": 57,
+        "nature": "Relaxed",
+        "ability": "Vital Spirit",
+        "moves": [
+            "Reversal",
+            "Counter",
+            "Uproar",
+            "Encore"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

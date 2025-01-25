@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Snover",
+        "level": 39,
+        "nature": "Relaxed",
+        "ability": "Snow Warning",
+        "moves": [
+            "Ice Shard",
+            "Razor Leaf",
+            "Water Pulse",
+            "Blizzard"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Honchkrow",
+        "level": 49,
+        "nature": "Hardy",
+        "ability": "Insomnia",
+        "moves": [
+            "Astonish",
+            "Wing Attack",
+            "Swagger",
+            "Foul Play"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

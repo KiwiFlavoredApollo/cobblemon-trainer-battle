@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Wingull",
+        "level": 24,
+        "nature": "Jolly",
+        "ability": "Keen Eye",
+        "moves": [
+            "Growl",
+            "Water Pulse",
+            "Roost",
+            "Pluck"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Wingull",
+        "level": 24,
+        "nature": "Adamant",
+        "ability": "Keen Eye",
+        "moves": [
+            "Quick Attack",
+            "Water Pulse",
+            "Steel Wing",
+            "Aerial Ace"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

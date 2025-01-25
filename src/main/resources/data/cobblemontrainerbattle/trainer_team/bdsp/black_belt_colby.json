@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Machoke",
+        "level": 25,
+        "nature": "Jolly",
+        "ability": "Guts",
+        "moves": [
+            "Leer",
+            "Revenge",
+            "Knock Off",
+            "Bulldoze"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Machoke",
+        "level": 25,
+        "nature": "Impish",
+        "ability": "Guts",
+        "moves": [
+            "Leer",
+            "Revenge",
+            "Dig",
+            "Bulk Up"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Machoke",
+        "level": 25,
+        "nature": "Impish",
+        "ability": "Guts",
+        "moves": [
+            "Leer",
+            "Revenge",
+            "Earthquake",
+            "Bulk Up"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

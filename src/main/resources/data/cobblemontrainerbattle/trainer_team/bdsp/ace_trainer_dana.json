@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Mightyena",
+        "level": 55,
+        "nature": "Relaxed",
+        "ability": "Intimidate",
+        "moves": [
+            "Crunch",
+            "Sucker Punch",
+            "Thunder Fang",
+            "Scary Face"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Kirlia",
+        "level": 55,
+        "nature": "Sassy",
+        "ability": "Synchronize",
+        "moves": [
+            "Hypnosis",
+            "Psychic",
+            "Calm Mind",
+            "Dream Eater"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

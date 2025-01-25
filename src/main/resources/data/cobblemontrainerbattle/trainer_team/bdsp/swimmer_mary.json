@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Marill",
+        "level": 32,
+        "nature": "Bashful",
+        "ability": "Thick Fat",
+        "moves": [
+            "Tail Whip",
+            "Bubble Beam",
+            "Play Rough",
+            "Rain Dance"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Pelipper",
+        "level": 30,
+        "nature": "Bold",
+        "ability": "Drizzle",
+        "moves": [
+            "Air Slash",
+            "Growl",
+            "Wing Attack",
+            "Water Pulse"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Stunky",
+        "level": 16,
+        "nature": "Naive",
+        "ability": "Stench",
+        "moves": [
+            "Poison Gas",
+            "Acid Spray",
+            "Fury Swipes",
+            "Focus Energy"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Kricketune",
+        "level": 16,
+        "nature": "Docile",
+        "ability": "Swarm",
+        "moves": [
+            "Fury Cutter",
+            "Growl",
+            "Pound",
+            "Absorb"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Shellos",
+        "level": 16,
+        "nature": "Hasty",
+        "ability": "Storm Drain",
+        "moves": [
+            "Mud-Slap",
+            "Harden",
+            "Recover",
+            "Water Pulse"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

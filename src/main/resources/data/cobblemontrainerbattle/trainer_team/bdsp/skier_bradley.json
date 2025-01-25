@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Geodude",
+        "level": 35,
+        "nature": "Naive",
+        "ability": "Rock Head",
+        "moves": [
+            "Harden",
+            "Stealth Rock",
+            "Rock Blast",
+            "Earthquake"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Graveler",
+        "level": 35,
+        "nature": "Naive",
+        "ability": "Sturdy",
+        "moves": [
+            "Harden",
+            "Bulldoze",
+            "Stealth Rock",
+            "Rock Blast"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Snover",
+        "level": 35,
+        "nature": "Hasty",
+        "ability": "Snow Warning",
+        "moves": [
+            "Ice Shard",
+            "Razor Leaf",
+            "Icy Wind",
+            "Ingrain"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,114 @@
+[
+    {
+        "species": "Honchkrow",
+        "level": 45,
+        "nature": "Jolly",
+        "ability": "Super Luck",
+        "moves": [
+            "Air Cutter",
+            "Night Slash",
+            "Steel Wing",
+            "Defog"
+        ],
+        "ivs": {
+            "hp": 15,
+            "atk": 0,
+            "def": 15,
+            "spa": 0,
+            "spd": 15,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 68,
+            "atk": 0,
+            "def": 68,
+            "spa": 0,
+            "spd": 68,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Crobat",
+        "level": 46,
+        "nature": "Jolly",
+        "ability": "Infiltrator",
+        "moves": [
+            "Cross Poison",
+            "Tailwind",
+            "Air Cutter",
+            "U-turn"
+        ],
+        "ivs": {
+            "hp": 15,
+            "atk": 0,
+            "def": 15,
+            "spa": 0,
+            "spd": 15,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 68,
+            "atk": 0,
+            "def": 68,
+            "spa": 0,
+            "spd": 68,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Gyarados",
+        "level": 45,
+        "nature": "Jolly",
+        "ability": "Intimidate",
+        "moves": [
+            "Ice Fang",
+            "Waterfall",
+            "Crunch",
+            "Earthquake"
+        ],
+        "ivs": {
+            "hp": 15,
+            "atk": 0,
+            "def": 15,
+            "spa": 0,
+            "spd": 15,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 68,
+            "atk": 0,
+            "def": 68,
+            "spa": 0,
+            "spd": 68,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Weavile",
+        "level": 48,
+        "nature": "Jolly",
+        "ability": "Pickpocket",
+        "moves": [
+            "Metal Claw",
+            "Fling",
+            "Dig",
+            "Aerial Ace"
+        ],
+        "ivs": {
+            "hp": 15,
+            "atk": 0,
+            "def": 15,
+            "spa": 0,
+            "spd": 15,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 68,
+            "atk": 0,
+            "def": 68,
+            "spa": 0,
+            "spd": 68,
+            "spe": 0
+        }
+    }
+]

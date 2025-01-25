@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Golduck",
+        "level": 55,
+        "nature": "Sassy",
+        "ability": "Damp",
+        "moves": [
+            "Hydro Pump",
+            "Zen Headbutt",
+            "Screech",
+            "Disable"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Sandslash",
+        "level": 55,
+        "nature": "Relaxed",
+        "ability": "Sand Veil",
+        "moves": [
+            "Sand Tomb",
+            "Dig",
+            "Crush Claw",
+            "Slash"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Marill",
+        "level": 35,
+        "nature": "Quirky",
+        "ability": "Thick Fat",
+        "moves": [
+            "Bubble Beam",
+            "Charm",
+            "Bounce",
+            "Play Rough"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Clefairy",
+        "level": 35,
+        "nature": "Timid",
+        "ability": "Cute Charm",
+        "moves": [
+            "Charm",
+            "Moonlight",
+            "Gravity",
+            "Meteor Mash"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

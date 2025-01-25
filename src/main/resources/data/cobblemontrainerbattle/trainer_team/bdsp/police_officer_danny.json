@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Noctowl",
+        "level": 53,
+        "nature": "Timid",
+        "ability": "Keen Eye",
+        "moves": [
+            "Psycho Shift",
+            "Moonblast",
+            "Hypnosis",
+            "Dream Eater"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Machamp",
+        "level": 55,
+        "nature": "Jolly",
+        "ability": "No Guard",
+        "moves": [
+            "Leer",
+            "Knock Off",
+            "Dual Chop",
+            "Dynamic Punch"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

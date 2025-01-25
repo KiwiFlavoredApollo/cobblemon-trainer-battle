@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Skorupi",
+        "level": 27,
+        "nature": "Naive",
+        "ability": "Battle Armor",
+        "moves": [
+            "Hone Claws",
+            "Poison Fang",
+            "Bug Bite",
+            "Knock Off"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Golbat",
+        "level": 27,
+        "nature": "Hasty",
+        "ability": "Inner Focus",
+        "moves": [
+            "Screech",
+            "Absorb",
+            "Poison Fang",
+            "Air Cutter"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

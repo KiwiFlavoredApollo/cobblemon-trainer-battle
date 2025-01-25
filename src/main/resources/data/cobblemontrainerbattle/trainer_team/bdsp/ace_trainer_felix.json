@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Dusclops",
+        "level": 55,
+        "nature": "Relaxed",
+        "ability": "Pressure",
+        "moves": [
+            "Curse",
+            "Will-O-Wisp",
+            "Night Shade",
+            "Shadow Sneak"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Salamence",
+        "level": 55,
+        "nature": "Relaxed",
+        "ability": "Intimidate",
+        "moves": [
+            "Dragon Claw",
+            "Crunch",
+            "Flamethrower",
+            "Fly"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Geodude",
+        "level": 7,
+        "nature": "Quirky",
+        "ability": "Rock Head",
+        "moves": [
+            "Tackle",
+            "Defense Curl",
+            "Sandstorm",
+            "Rock Polish"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Onix",
+        "level": 7,
+        "nature": "Bold",
+        "ability": "Rock Head",
+        "moves": [
+            "Tackle",
+            "Harden",
+            "Bind",
+            "Rock Throw"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

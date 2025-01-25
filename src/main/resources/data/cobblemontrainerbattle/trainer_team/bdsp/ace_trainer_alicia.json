@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Sneasel",
+        "level": 37,
+        "nature": "Jolly",
+        "ability": "Inner Focus",
+        "moves": [
+            "Metal Claw",
+            "Icy Wind",
+            "Hone Claws",
+            "Attract"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Tentacruel",
+        "level": 37,
+        "nature": "Modest",
+        "ability": "Clear Body",
+        "moves": [
+            "Bubble Beam",
+            "Acid Armor",
+            "Ice Beam",
+            "Sludge Bomb"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

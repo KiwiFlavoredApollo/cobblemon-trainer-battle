@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Mantyke",
+        "level": 38,
+        "nature": "Sassy",
+        "ability": "Water Absorb",
+        "moves": [
+            "Supersonic",
+            "Bubble Beam",
+            "Air Slash",
+            "Aqua Ring"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Remoraid",
+        "level": 40,
+        "nature": "Hardy",
+        "ability": "Hustle",
+        "moves": [
+            "Lock-On",
+            "Bullet Seed",
+            "Ice Beam",
+            "Hydro Pump"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Mantine",
+        "level": 42,
+        "nature": "Sassy",
+        "ability": "Water Absorb",
+        "moves": [
+            "Bullet Seed",
+            "Bubble Beam",
+            "Aqua Ring",
+            "Bounce"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

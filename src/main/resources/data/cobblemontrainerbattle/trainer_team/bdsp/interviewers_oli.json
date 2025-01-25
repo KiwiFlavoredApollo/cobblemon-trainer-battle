@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Marill",
+        "level": 17,
+        "nature": "Hardy",
+        "ability": "Thick Fat",
+        "moves": [
+            "Bubble Beam",
+            "Charm",
+            "Slam",
+            "Bounce"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,29 @@
+[
+    {
+        "species": "Bidoof",
+        "level": 7,
+        "nature": "Jolly",
+        "ability": "Unaware",
+        "moves": [
+            "Tackle",
+            "Growl",
+            "Defense Curl"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

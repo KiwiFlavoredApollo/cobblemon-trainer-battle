@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Ponyta",
+        "level": 17,
+        "nature": "Hasty",
+        "ability": "Run Away",
+        "moves": [
+            "Tackle",
+            "Growl",
+            "Tail Whip",
+            "Flame Charge"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Onix",
+        "level": 29,
+        "nature": "Relaxed",
+        "ability": "Rock Head",
+        "moves": [
+            "Smack Down",
+            "Iron Tail",
+            "Sandstorm",
+            "Bulldoze"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Onix",
+        "level": 29,
+        "nature": "Relaxed",
+        "ability": "Rock Head",
+        "moves": [
+            "Rock Tomb",
+            "Rest",
+            "Sleep Talk",
+            "Iron Tail"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

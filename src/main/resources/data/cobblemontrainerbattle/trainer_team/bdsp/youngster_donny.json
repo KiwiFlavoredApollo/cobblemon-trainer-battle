@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Gastly",
+        "level": 27,
+        "nature": "Timid",
+        "ability": "Levitate",
+        "moves": [
+            "Lick",
+            "Mean Look",
+            "Payback",
+            "Hex"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Haunter",
+        "level": 29,
+        "nature": "Modest",
+        "ability": "Levitate",
+        "moves": [
+            "Shadow Punch",
+            "Lick",
+            "Mean Look",
+            "Hex"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

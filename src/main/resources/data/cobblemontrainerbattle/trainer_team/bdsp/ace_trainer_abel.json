@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Aerodactyl",
+        "level": 59,
+        "nature": "Hardy",
+        "ability": "Rock Head",
+        "moves": [
+            "Stone Edge",
+            "Take Down",
+            "Crunch",
+            "Iron Head"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

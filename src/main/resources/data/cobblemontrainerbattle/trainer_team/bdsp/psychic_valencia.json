@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Chingling",
+        "level": 44,
+        "nature": "Bashful",
+        "ability": "Levitate",
+        "moves": [
+            "Wrap",
+            "Astonish",
+            "Confusion",
+            "Yawn"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Chimecho",
+        "level": 48,
+        "nature": "Calm",
+        "ability": "Levitate",
+        "moves": [
+            "Wrap",
+            "Yawn",
+            "Extrasensory",
+            "Heal Pulse"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

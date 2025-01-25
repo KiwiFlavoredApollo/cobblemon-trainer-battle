@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Combee",
+        "level": 16,
+        "nature": "Bashful",
+        "ability": "Honey Gather",
+        "moves": [
+            "Sweet Scent",
+            "Gust",
+            "Struggle Bug",
+            "Bug Bite"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Roselia",
+        "level": 18,
+        "nature": "Calm",
+        "ability": "Poison Point",
+        "moves": [
+            "Poison Sting",
+            "Mega Drain",
+            "Leech Seed",
+            "Magical Leaf"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Azurill",
+        "level": 24,
+        "nature": "Timid",
+        "ability": "Sap Sipper",
+        "moves": [
+            "Tail Whip",
+            "Charm",
+            "Bubble Beam",
+            "Light Screen"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Marill",
+        "level": 24,
+        "nature": "Adamant",
+        "ability": "Huge Power",
+        "moves": [
+            "Aqua Tail",
+            "Play Rough",
+            "Aqua Ring",
+            "Brick Break"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

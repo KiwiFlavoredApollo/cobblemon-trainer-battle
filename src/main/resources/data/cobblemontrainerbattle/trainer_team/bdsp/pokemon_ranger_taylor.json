@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Luxio",
+        "level": 60,
+        "nature": "Jolly",
+        "ability": "Intimidate",
+        "moves": [
+            "Leer",
+            "Volt Switch",
+            "Crunch",
+            "Discharge"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Floatzel",
+        "level": 60,
+        "nature": "Jolly",
+        "ability": "Swift Swim",
+        "moves": [
+            "Ice Fang",
+            "Crunch",
+            "Aqua Jet",
+            "Waterfall"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

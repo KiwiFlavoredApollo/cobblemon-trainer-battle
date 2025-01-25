@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Baltoy",
+        "level": 54,
+        "nature": "Calm",
+        "ability": "Levitate",
+        "moves": [
+            "Earth Power",
+            "Extrasensory",
+            "Rock Tomb",
+            "Ancient Power"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Grumpig",
+        "level": 58,
+        "nature": "Bold",
+        "ability": "Thick Fat",
+        "moves": [
+            "Psychic",
+            "Power Gem",
+            "Magic Coat",
+            "Payback"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

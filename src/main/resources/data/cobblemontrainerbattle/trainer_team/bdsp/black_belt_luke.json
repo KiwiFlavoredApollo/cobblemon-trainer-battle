@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Croagunk",
+        "level": 36,
+        "nature": "Hardy",
+        "ability": "Anticipation",
+        "moves": [
+            "Revenge",
+            "Venoshock",
+            "Sucker Punch",
+            "Toxic"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Onix",
+        "level": 35,
+        "nature": "Relaxed",
+        "ability": "Sturdy",
+        "moves": [
+            "Smack Down",
+            "Curse",
+            "Sand Tomb",
+            "Stealth Rock"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Machoke",
+        "level": 37,
+        "nature": "Relaxed",
+        "ability": "No Guard",
+        "moves": [
+            "Low Sweep",
+            "Knock Off",
+            "Strength",
+            "Dual Chop"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

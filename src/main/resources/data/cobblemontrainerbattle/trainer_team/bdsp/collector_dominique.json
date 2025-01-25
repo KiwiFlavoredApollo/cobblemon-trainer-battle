@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Geodude",
+        "level": 18,
+        "nature": "Relaxed",
+        "ability": "Rock Head",
+        "moves": [
+            "Tackle",
+            "Sandstorm",
+            "Harden",
+            "Smack Down"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Geodude",
+        "level": 17,
+        "nature": "Relaxed",
+        "ability": "Rock Head",
+        "moves": [
+            "Defense Curl",
+            "Sandstorm",
+            "Rollout",
+            "Rock Throw"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Geodude",
+        "level": 19,
+        "nature": "Relaxed",
+        "ability": "Rock Head",
+        "moves": [
+            "Defense Curl",
+            "Sandstorm",
+            "Rollout",
+            "Smack Down"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

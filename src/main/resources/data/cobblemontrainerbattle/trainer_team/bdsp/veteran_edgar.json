@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Tentacruel",
+        "level": 45,
+        "nature": "Sassy",
+        "ability": "Clear Body",
+        "moves": [
+            "Reflect Type",
+            "Bubble Beam",
+            "Acid Armor",
+            "Poison Jab"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Golem",
+        "level": 45,
+        "nature": "Relaxed",
+        "ability": "Sturdy",
+        "moves": [
+            "Earthquake",
+            "Sandstorm",
+            "Smack Down",
+            "Heavy Slam"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Empoleon",
+        "level": 48,
+        "nature": "Sassy",
+        "ability": "Torrent",
+        "moves": [
+            "Brine",
+            "Aqua Jet",
+            "Metal Claw",
+            "Swords Dance"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

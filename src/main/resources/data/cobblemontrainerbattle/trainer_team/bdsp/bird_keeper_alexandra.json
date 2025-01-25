@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Hoothoot",
+        "level": 19,
+        "nature": "Calm",
+        "ability": "Keen Eye",
+        "moves": [
+            "Peck",
+            "Echoed Voice",
+            "Confusion",
+            "Air Slash"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

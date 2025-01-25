@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Loudred",
+        "level": 57,
+        "nature": "Docile",
+        "ability": "Soundproof",
+        "moves": [
+            "Hyper Voice",
+            "Roar",
+            "Rest",
+            "Sleep Talk"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Rampardos",
+        "level": 57,
+        "nature": "Relaxed",
+        "ability": "Mold Breaker",
+        "moves": [
+            "Zen Headbutt",
+            "Take Down",
+            "Assurance",
+            "Swords Dance"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

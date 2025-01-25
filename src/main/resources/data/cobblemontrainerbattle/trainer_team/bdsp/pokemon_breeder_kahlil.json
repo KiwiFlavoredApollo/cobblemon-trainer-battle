@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Pichu",
+        "level": 18,
+        "nature": "Sassy",
+        "ability": "Static",
+        "moves": [
+            "Thunder Shock",
+            "Tail Whip",
+            "Play Nice",
+            "Nuzzle"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Pikachu",
+        "level": 19,
+        "nature": "Sassy",
+        "ability": "Static",
+        "moves": [
+            "Nuzzle",
+            "Quick Attack",
+            "Double Team",
+            "Electro Ball"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Happiny",
+        "level": 17,
+        "nature": "Sassy",
+        "ability": "Serene Grace",
+        "moves": [
+            "Minimize",
+            "Sweet Kiss",
+            "Disarming Voice",
+            "Covet"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

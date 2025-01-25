@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Rapidash",
+        "level": 33,
+        "nature": "Sassy",
+        "ability": "Run Away",
+        "moves": [
+            "Smart Strike",
+            "Poison Jab",
+            "Tail Whip",
+            "Flame Wheel"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

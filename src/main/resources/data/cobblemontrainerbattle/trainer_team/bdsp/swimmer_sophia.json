@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Mantyke",
+        "level": 50,
+        "nature": "Calm",
+        "ability": "Water Absorb",
+        "moves": [
+            "Hydro Pump",
+            "Aqua Ring",
+            "Supersonic",
+            "Air Slash"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Mantine",
+        "level": 52,
+        "nature": "Calm",
+        "ability": "Water Absorb",
+        "moves": [
+            "Hydro Pump",
+            "Bounce",
+            "Aqua Ring",
+            "Air Slash"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

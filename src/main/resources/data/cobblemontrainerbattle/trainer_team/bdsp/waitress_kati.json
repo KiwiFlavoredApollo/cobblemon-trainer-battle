@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Clefairy",
+        "level": 22,
+        "nature": "Calm",
+        "ability": "Cute Charm",
+        "moves": [
+            "Sweet Kiss",
+            "Charm",
+            "Growl",
+            "Metronome"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Lopunny",
+        "level": 54,
+        "nature": "Calm",
+        "ability": "Cute Charm",
+        "moves": [
+            "Charm",
+            "Baton Pass",
+            "Headbutt",
+            "Agility"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Pelipper",
+        "level": 54,
+        "nature": "Bold",
+        "ability": "Drizzle",
+        "moves": [
+            "Tailwind",
+            "Wing Attack",
+            "Water Pulse",
+            "Mist"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Quagsire",
+        "level": 54,
+        "nature": "Impish",
+        "ability": "Water Absorb",
+        "moves": [
+            "Rain Dance",
+            "Muddy Water",
+            "Toxic",
+            "Earthquake"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

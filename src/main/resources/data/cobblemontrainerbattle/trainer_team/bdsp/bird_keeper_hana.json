@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Noctowl",
+        "level": 46,
+        "nature": "Calm",
+        "ability": "Keen Eye",
+        "moves": [
+            "Sky Attack",
+            "Take Down",
+            "Roost",
+            "Moonblast"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Staraptor",
+        "level": 48,
+        "nature": "Impish",
+        "ability": "Intimidate",
+        "moves": [
+            "Close Combat",
+            "Quick Attack",
+            "Endeavor",
+            "Aerial Ace"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

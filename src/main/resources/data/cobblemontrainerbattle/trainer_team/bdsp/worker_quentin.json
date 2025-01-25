@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Geodude",
+        "level": 27,
+        "nature": "Relaxed",
+        "ability": "Rock Head",
+        "moves": [
+            "Tackle",
+            "Sandstorm",
+            "Harden",
+            "Smack Down"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Graveler",
+        "level": 31,
+        "nature": "Relaxed",
+        "ability": "Rock Head",
+        "moves": [
+            "Sandstorm",
+            "Harden",
+            "Smack Down",
+            "Stealth Rock"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Onix",
+        "level": 31,
+        "nature": "Relaxed",
+        "ability": "Rock Head",
+        "moves": [
+            "Bind",
+            "Curse",
+            "Rock Slide",
+            "Sand Tomb"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

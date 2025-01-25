@@ -1,0 +1,167 @@
+[
+    {
+        "species": "Skarmory",
+        "level": 69,
+        "nature": "Impish",
+        "ability": "Sturdy",
+        "moves": [
+            "Steel Wing",
+            "Stealth Rock",
+            "Iron Defense",
+            "Taunt"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 252,
+            "spa": 0,
+            "spd": 0,
+            "spe": 6
+        }
+    },
+    {
+        "species": "Steelix",
+        "level": 69,
+        "nature": "Adamant",
+        "ability": "Sheer Force",
+        "moves": [
+            "Iron Tail",
+            "Earthquake",
+            "Ice Fang",
+            "Crunch"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 76,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 180,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Magnezone",
+        "level": 70,
+        "nature": "Quiet",
+        "ability": "Analytic",
+        "moves": [
+            "Thunderbolt",
+            "Flash Cannon",
+            "Light Screen",
+            "Magnet Rise"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 248,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 8,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Empoleon",
+        "level": 70,
+        "nature": "Modest",
+        "ability": "Torrent",
+        "moves": [
+            "Hydro Pump",
+            "Flash Cannon",
+            "Ice Beam",
+            "Roar"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 244,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 12,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Aggron",
+        "level": 71,
+        "nature": "Jolly",
+        "ability": "Rock Head",
+        "moves": [
+            "Head Smash"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Bastiodon",
+        "level": 72,
+        "nature": "Brave",
+        "ability": "Sturdy",
+        "moves": [
+            "Heavy Slam",
+            "Metal Burst",
+            "Roar",
+            "Stealth Rock"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 16,
+            "spa": 0,
+            "spd": 240,
+            "spe": 0
+        }
+    }
+]

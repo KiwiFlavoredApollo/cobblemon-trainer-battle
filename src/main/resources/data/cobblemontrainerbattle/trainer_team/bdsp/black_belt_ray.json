@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Tyrogue",
+        "level": 53,
+        "nature": "Serious",
+        "ability": "Steadfast",
+        "moves": [
+            "Tackle",
+            "Helping Hand",
+            "Fake Out",
+            "Focus Energy"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Marowak",
+        "level": 57,
+        "nature": "Impish",
+        "ability": "Rock Head",
+        "moves": [
+            "Bonemerang",
+            "Bone Rush",
+            "Thrash",
+            "Stomping Tantrum"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Breloom",
+        "level": 58,
+        "nature": "Jolly",
+        "ability": "Poison Heal",
+        "moves": [
+            "Spore",
+            "Drain Punch",
+            "Leech Seed",
+            "Mach Punch"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

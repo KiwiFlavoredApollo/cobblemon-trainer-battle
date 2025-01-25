@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Meditite",
+        "level": 23,
+        "nature": "Hardy",
+        "ability": "Pure Power",
+        "moves": [
+            "Detect",
+            "Feint",
+            "Force Palm",
+            "Psybeam"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Machop",
+        "level": 22,
+        "nature": "Relaxed",
+        "ability": "No Guard",
+        "moves": [
+            "Leer",
+            "Low Sweep",
+            "Knock Off",
+            "Scary Face"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Meditite",
+        "level": 21,
+        "nature": "Hardy",
+        "ability": "Pure Power",
+        "moves": [
+            "Detect",
+            "Feint",
+            "Force Palm",
+            "Psybeam"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

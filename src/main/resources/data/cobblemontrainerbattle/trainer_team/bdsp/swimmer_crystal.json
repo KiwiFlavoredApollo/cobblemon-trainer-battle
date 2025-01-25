@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Pelipper",
+        "level": 58,
+        "nature": "Timid",
+        "ability": "Drizzle",
+        "moves": [
+            "Tailwind",
+            "Growl",
+            "Water Pulse",
+            "Hurricane"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Seaking",
+        "level": 58,
+        "nature": "Adamant",
+        "ability": "Swift Swim",
+        "moves": [
+            "Peck",
+            "Waterfall",
+            "Megahorn",
+            "Horn Drill"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

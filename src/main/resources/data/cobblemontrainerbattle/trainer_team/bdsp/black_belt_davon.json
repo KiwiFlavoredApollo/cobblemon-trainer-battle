@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Primeape",
+        "level": 58,
+        "nature": "Adamant",
+        "ability": "Vital Spirit",
+        "moves": [
+            "Final Gambit",
+            "Close Combat",
+            "Thrash",
+            "Cross Chop"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Hariyama",
+        "level": 59,
+        "nature": "Adamant",
+        "ability": "Thick Fat",
+        "moves": [
+            "Fake Out",
+            "Endure",
+            "Reversal",
+            "Heavy Slam"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Hariyama",
+        "level": 60,
+        "nature": "Adamant",
+        "ability": "Guts",
+        "moves": [
+            "Fake Out",
+            "Endure",
+            "Reversal",
+            "Heavy Slam"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

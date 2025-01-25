@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Finneon",
+        "level": 41,
+        "nature": "Bashful",
+        "ability": "Storm Drain",
+        "moves": [
+            "Attract",
+            "Rain Dance",
+            "Gust",
+            "Water Pulse"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Pelipper",
+        "level": 41,
+        "nature": "Bold",
+        "ability": "Drizzle",
+        "moves": [
+            "Wing Attack",
+            "Water Pulse",
+            "Stockpile",
+            "Swallow"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

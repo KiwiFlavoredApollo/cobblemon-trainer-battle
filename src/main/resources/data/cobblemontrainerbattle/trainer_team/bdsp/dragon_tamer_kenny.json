@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Bagon",
+        "level": 57,
+        "nature": "Serious",
+        "ability": "Rock Head",
+        "moves": [
+            "Double-Edge",
+            "Outrage",
+            "Zen Headbutt",
+            "Scary Face"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Shelgon",
+        "level": 59,
+        "nature": "Relaxed",
+        "ability": "Rock Head",
+        "moves": [
+            "Dragon Claw",
+            "Headbutt",
+            "Crunch",
+            "Dragon Breath"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

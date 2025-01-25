@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Machoke",
+        "level": 26,
+        "nature": "Jolly",
+        "ability": "Guts",
+        "moves": [
+            "Leer",
+            "Low Sweep",
+            "Knock Off",
+            "Rock Tomb"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Meditite",
+        "level": 26,
+        "nature": "Adamant",
+        "ability": "Pure Power",
+        "moves": [
+            "Detect",
+            "Feint",
+            "Force Palm",
+            "Rock Slide"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

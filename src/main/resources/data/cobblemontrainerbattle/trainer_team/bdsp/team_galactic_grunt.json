@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Dustox",
+        "level": 25,
+        "nature": "Serious",
+        "ability": "Shield Dust",
+        "moves": [
+            "Gust",
+            "Poison Powder",
+            "Venoshock",
+            "Leech Life"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Croagunk",
+        "level": 25,
+        "nature": "Bashful",
+        "ability": "Anticipation",
+        "moves": [
+            "Poison Sting",
+            "Mud-Slap",
+            "Astonish",
+            "Venoshock"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

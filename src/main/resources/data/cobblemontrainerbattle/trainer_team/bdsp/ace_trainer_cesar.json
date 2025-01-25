@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Skorupi",
+        "level": 30,
+        "nature": "Relaxed",
+        "ability": "Battle Armor",
+        "moves": [
+            "Bite",
+            "Pin Missile",
+            "Toxic",
+            "Iron Tail"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Steelix",
+        "level": 32,
+        "nature": "Relaxed",
+        "ability": "Rock Head",
+        "moves": [
+            "Thunder Fang",
+            "Ice Fang",
+            "Curse",
+            "Iron Tail"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

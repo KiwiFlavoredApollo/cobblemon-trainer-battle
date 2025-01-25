@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Cleffa",
+        "level": 19,
+        "nature": "Sassy",
+        "ability": "Cute Charm",
+        "moves": [
+            "Sing",
+            "Sweet Kiss",
+            "Disarming Voice",
+            "Encore"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

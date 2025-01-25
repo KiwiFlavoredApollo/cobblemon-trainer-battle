@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Geodude",
+        "level": 23,
+        "nature": "Naive",
+        "ability": "Rock Head",
+        "moves": [
+            "Sandstorm",
+            "Rock Throw",
+            "Smack Down",
+            "Bulldoze"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Geodude",
+        "level": 23,
+        "nature": "Naive",
+        "ability": "Rock Head",
+        "moves": [
+            "Harden",
+            "Rock Throw",
+            "Smack Down",
+            "Bulldoze"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Geodude",
+        "level": 26,
+        "nature": "Naive",
+        "ability": "Rock Head",
+        "moves": [
+            "Rock Throw",
+            "Smack Down",
+            "Bulldoze",
+            "Self-Destruct"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

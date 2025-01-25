@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Seel",
+        "level": 50,
+        "nature": "Calm",
+        "ability": "Thick Fat",
+        "moves": [
+            "Take Down",
+            "Dive",
+            "Aqua Tail",
+            "Ice Beam"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Dewgong",
+        "level": 54,
+        "nature": "Calm",
+        "ability": "Thick Fat",
+        "moves": [
+            "Aqua Jet",
+            "Dive",
+            "Aqua Tail",
+            "Aurora Beam"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

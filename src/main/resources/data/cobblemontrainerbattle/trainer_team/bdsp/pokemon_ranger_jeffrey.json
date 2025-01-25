@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Prinplup",
+        "level": 21,
+        "nature": "Sassy",
+        "ability": "Torrent",
+        "moves": [
+            "Metal Claw",
+            "Charm",
+            "Peck",
+            "Bubble Beam"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Prinplup",
+        "level": 21,
+        "nature": "Sassy",
+        "ability": "Torrent",
+        "moves": [
+            "Metal Claw",
+            "Tackle",
+            "Peck",
+            "Bubble Beam"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

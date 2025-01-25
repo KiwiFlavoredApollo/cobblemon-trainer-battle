@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Lopunny",
+        "level": 22,
+        "nature": "Careful",
+        "ability": "Cute Charm",
+        "moves": [
+            "Mirror Coat",
+            "Magic Coat",
+            "Baby-Doll Eyes",
+            "Quick Attack"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Glameow",
+        "level": 20,
+        "nature": "Impish",
+        "ability": "Limber",
+        "moves": [
+            "Fake Out",
+            "Growl",
+            "Aerial Ace",
+            "Fury Swipes"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

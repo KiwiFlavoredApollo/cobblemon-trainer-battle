@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Misdreavus",
+        "level": 19,
+        "nature": "Calm",
+        "ability": "Levitate",
+        "moves": [
+            "Growl",
+            "Confusion",
+            "Astonish",
+            "Confuse Ray"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

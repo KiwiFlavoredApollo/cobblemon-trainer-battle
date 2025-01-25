@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Poliwhirl",
+        "level": 54,
+        "nature": "Relaxed",
+        "ability": "Damp",
+        "moves": [
+            "Hydro Pump",
+            "Hypnosis",
+            "Earth Power",
+            "Body Slam"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Gyarados",
+        "level": 54,
+        "nature": "Relaxed",
+        "ability": "Intimidate",
+        "moves": [
+            "Dragon Dance",
+            "Waterfall",
+            "Ice Fang",
+            "Crunch"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

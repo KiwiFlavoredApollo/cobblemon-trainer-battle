@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Noctowl",
+        "level": 60,
+        "nature": "Timid",
+        "ability": "Keen Eye",
+        "moves": [
+            "Growl",
+            "Reflect",
+            "Air Slash",
+            "Moonblast"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Noctowl",
+        "level": 60,
+        "nature": "Jolly",
+        "ability": "Keen Eye",
+        "moves": [
+            "Sky Attack",
+            "Peck",
+            "Uproar",
+            "Roost"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

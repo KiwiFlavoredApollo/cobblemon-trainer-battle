@@ -1,0 +1,113 @@
+[
+    {
+        "species": "Magikarp",
+        "level": 38,
+        "nature": "Relaxed",
+        "ability": "Swift Swim",
+        "moves": [
+            "Splash",
+            "Tackle",
+            "Flail"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Finneon",
+        "level": 40,
+        "nature": "Sassy",
+        "ability": "Storm Drain",
+        "moves": [
+            "Rain Dance",
+            "Water Pulse",
+            "Aqua Ring",
+            "Whirlpool"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Remoraid",
+        "level": 40,
+        "nature": "Hardy",
+        "ability": "Sniper",
+        "moves": [
+            "Water Pulse",
+            "Focus Energy",
+            "Psybeam",
+            "Ice Beam"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Gyarados",
+        "level": 42,
+        "nature": "Sassy",
+        "ability": "Intimidate",
+        "moves": [
+            "Whirlpool",
+            "Brine",
+            "Waterfall",
+            "Rain Dance"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

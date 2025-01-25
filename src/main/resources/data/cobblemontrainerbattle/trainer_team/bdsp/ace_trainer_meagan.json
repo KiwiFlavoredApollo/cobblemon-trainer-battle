@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Delcatty",
+        "level": 55,
+        "nature": "Hardy",
+        "ability": "Cute Charm",
+        "moves": [
+            "Double-Edge",
+            "Play Rough",
+            "Feint Attack",
+            "Attract"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Yanma",
+        "level": 55,
+        "nature": "Hardy",
+        "ability": "Compound Eyes",
+        "moves": [
+            "Air Slash",
+            "Hypnosis",
+            "Detect",
+            "Ancient Power"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

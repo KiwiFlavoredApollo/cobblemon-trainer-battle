@@ -1,0 +1,170 @@
+[
+    {
+        "species": "Spiritomb",
+        "level": 63,
+        "nature": "Quiet",
+        "ability": "Infiltrator",
+        "moves": [
+            "Shadow Ball",
+            "Dark Pulse",
+            "Will-O-Wisp",
+            "Destiny Bond"
+        ],
+        "ivs": {
+            "hp": 30,
+            "atk": 30,
+            "def": 30,
+            "spa": 30,
+            "spd": 30,
+            "spe": 30
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 6
+        }
+    },
+    {
+        "species": "Ambipom",
+        "level": 64,
+        "nature": "Jolly",
+        "ability": "Technician",
+        "moves": [
+            "Fake Out",
+            "Fling",
+            "Double Hit",
+            "Ice Punch"
+        ],
+        "ivs": {
+            "hp": 30,
+            "atk": 30,
+            "def": 30,
+            "spa": 30,
+            "spd": 30,
+            "spe": 30
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Hippowdon",
+        "level": 64,
+        "nature": "Impish",
+        "ability": "Sand Stream",
+        "moves": [
+            "Earthquake",
+            "Stealth Rock",
+            "Yawn",
+            "Rock Tomb"
+        ],
+        "ivs": {
+            "hp": 30,
+            "atk": 30,
+            "def": 30,
+            "spa": 30,
+            "spd": 30,
+            "spe": 30
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 6,
+            "def": 252,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Vaporeon",
+        "level": 65,
+        "nature": "Calm",
+        "ability": "Water Absorb",
+        "moves": [
+            "Hydro Pump",
+            "Acid Armor",
+            "Ice Beam",
+            "Quick Attack"
+        ],
+        "ivs": {
+            "hp": 30,
+            "atk": 30,
+            "def": 30,
+            "spa": 30,
+            "spd": 30,
+            "spe": 30
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 252,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Jolteon",
+        "level": 65,
+        "nature": "Timid",
+        "ability": "Volt Absorb",
+        "moves": [
+            "Thunderbolt",
+            "Shadow Ball",
+            "Thunder Wave",
+            "Volt Switch"
+        ],
+        "ivs": {
+            "hp": 30,
+            "atk": 30,
+            "def": 30,
+            "spa": 30,
+            "spd": 30,
+            "spe": 30
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Flareon",
+        "level": 65,
+        "nature": "Adamant",
+        "ability": "Flash Fire",
+        "moves": [
+            "Flare Blitz",
+            "Superpower",
+            "Quick Attack",
+            "Will-O-Wisp"
+        ],
+        "ivs": {
+            "hp": 30,
+            "atk": 30,
+            "def": 30,
+            "spa": 30,
+            "spd": 30,
+            "spe": 30
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        }
+    }
+]

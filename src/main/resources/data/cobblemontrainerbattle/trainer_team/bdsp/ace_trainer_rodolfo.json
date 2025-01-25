@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Lickitung",
+        "level": 60,
+        "nature": "Adamant",
+        "ability": "--",
+        "moves": [
+            "Belly Drum",
+            "Power Whip",
+            "Knock Off",
+            "Stomp"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Miltank",
+        "level": 60,
+        "nature": "Adamant",
+        "ability": "Scrappy",
+        "moves": [
+            "Milk Drink",
+            "Body Slam",
+            "Charm",
+            "Play Rough"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

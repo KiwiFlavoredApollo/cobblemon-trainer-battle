@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Pelipper",
+        "level": 33,
+        "nature": "Bold",
+        "ability": "Keen Eye",
+        "moves": [
+            "Air Slash",
+            "Tailwind",
+            "Water Pulse",
+            "Stockpile"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Sudowoodo",
+        "level": 33,
+        "nature": "Impish",
+        "ability": "Rock Head",
+        "moves": [
+            "Wood Hammer",
+            "Tearful Look",
+            "Sucker Punch",
+            "Rock Slide"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

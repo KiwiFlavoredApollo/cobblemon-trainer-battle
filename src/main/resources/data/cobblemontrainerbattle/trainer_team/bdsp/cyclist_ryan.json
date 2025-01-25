@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Zubat",
+        "level": 17,
+        "nature": "Hasty",
+        "ability": "Inner Focus",
+        "moves": [
+            "Absorb",
+            "Astonish",
+            "Mean Look",
+            "Poison Fang"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

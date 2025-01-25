@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Seaking",
+        "level": 56,
+        "nature": "Timid",
+        "ability": "Water Veil",
+        "moves": [
+            "Tail Whip",
+            "Supersonic",
+            "Water Pulse",
+            "Soak"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Seaking",
+        "level": 57,
+        "nature": "Jolly",
+        "ability": "Water Veil",
+        "moves": [
+            "Peck",
+            "Aqua Ring",
+            "Waterfall",
+            "Megahorn"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Seaking",
+        "level": 58,
+        "nature": "Jolly",
+        "ability": "Water Veil",
+        "moves": [
+            "Agility",
+            "Flail",
+            "Waterfall",
+            "Horn Drill"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

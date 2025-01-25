@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Onix",
+        "level": 54,
+        "nature": "Relaxed",
+        "ability": "Rock Head",
+        "moves": [
+            "Sand Tomb",
+            "Dig",
+            "Iron Tail",
+            "Stone Edge"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Machamp",
+        "level": 56,
+        "nature": "Relaxed",
+        "ability": "No Guard",
+        "moves": [
+            "Knock Off",
+            "Dual Chop",
+            "Bulk Up",
+            "Dynamic Punch"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

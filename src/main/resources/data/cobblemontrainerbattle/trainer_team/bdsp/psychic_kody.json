@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Meditite",
+        "level": 15,
+        "nature": "Hardy",
+        "ability": "Pure Power",
+        "moves": [
+            "Low Kick",
+            "Confusion",
+            "Detect",
+            "Feint"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

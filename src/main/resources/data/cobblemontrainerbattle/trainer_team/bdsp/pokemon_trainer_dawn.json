@@ -1,0 +1,167 @@
+[
+    {
+        "species": "Togekiss",
+        "level": 68,
+        "nature": "Timid",
+        "ability": "Serene Grace",
+        "moves": [
+            "Dazzling Gleam",
+            "Air Slash",
+            "Aura Sphere",
+            "Thunder Wave"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Bellossom",
+        "level": 69,
+        "nature": "Modest",
+        "ability": "Chlorophyll",
+        "moves": [
+            "Moonblast",
+            "Petal Dance",
+            "Toxic",
+            "Quiver Dance"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Mamoswine",
+        "level": 70,
+        "nature": "Adamant",
+        "ability": "Thick Fat",
+        "moves": [
+            "Ice Shard",
+            "Earthquake",
+            "Stone Edge",
+            "Avalanche"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 128,
+            "atk": 252,
+            "def": 128,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Typhlosion",
+        "level": 69,
+        "nature": "Timid",
+        "ability": "Flash Fire",
+        "moves": [
+            "Eruption"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Lopunny",
+        "level": 70,
+        "nature": "Careful",
+        "ability": "Klutz",
+        "moves": [
+            "High Jump Kick",
+            "Thunder Wave",
+            "Sweet Kiss",
+            "Switcheroo"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 6,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Empoleon",
+        "level": 74,
+        "nature": "Hardy",
+        "ability": "Torrent",
+        "moves": [
+            "Hydro Pump",
+            "Flash Cannon",
+            "Ice Beam",
+            "Grass Knot"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 6
+        }
+    }
+]

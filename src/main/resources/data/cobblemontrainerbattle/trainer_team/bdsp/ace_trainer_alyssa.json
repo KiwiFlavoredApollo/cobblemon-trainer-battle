@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Ponyta",
+        "level": 27,
+        "nature": "Careful",
+        "ability": "Run Away",
+        "moves": [
+            "Growl",
+            "Tail Whip",
+            "Ember",
+            "Flame Wheel"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Grotle",
+        "level": 27,
+        "nature": "Impish",
+        "ability": "Overgrow",
+        "moves": [
+            "Razor Leaf",
+            "Curse",
+            "Bite",
+            "Mega Drain"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Gengar",
+        "level": 58,
+        "nature": "Timid",
+        "ability": "Cursed Body",
+        "moves": [
+            "Confuse Ray",
+            "Mean Look",
+            "Curse",
+            "Destiny Bond"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Alakazam",
+        "level": 58,
+        "nature": "Timid",
+        "ability": "Synchronize",
+        "moves": [
+            "Psycho Cut",
+            "Recover",
+            "Future Sight",
+            "Calm Mind"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

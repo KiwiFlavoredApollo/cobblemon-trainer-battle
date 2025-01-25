@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Skarmory",
+        "level": 56,
+        "nature": "Relaxed",
+        "ability": "Keen Eye",
+        "moves": [
+            "Brave Bird",
+            "Steel Wing",
+            "Autotomize",
+            "Metal Sound"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,27 @@
+[
+    {
+        "species": "Abra",
+        "level": 15,
+        "nature": "Sassy",
+        "ability": "Synchronize",
+        "moves": [
+            "Energy Ball"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

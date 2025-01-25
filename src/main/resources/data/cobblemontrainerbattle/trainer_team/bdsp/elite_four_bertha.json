@@ -1,0 +1,170 @@
+[
+    {
+        "species": "Whiscash",
+        "level": 76,
+        "nature": "Brave",
+        "ability": "Hydration",
+        "moves": [
+            "Earthquake",
+            "Ice Beam",
+            "Scald",
+            "Zen Headbutt"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Gliscor",
+        "level": 79,
+        "nature": "Adamant",
+        "ability": "Hyper Cutter",
+        "moves": [
+            "Earthquake",
+            "Thunder Fang",
+            "Guillotine",
+            "X-Scissor"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 0,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Nidoking",
+        "level": 78,
+        "nature": "Modest",
+        "ability": "Sheer Force",
+        "moves": [
+            "Sludge Bomb",
+            "Earth Power",
+            "Thunderbolt",
+            "Ice Beam"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 4,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Hippowdon",
+        "level": 78,
+        "nature": "Adamant",
+        "ability": "Sand Stream",
+        "moves": [
+            "Ice Fang",
+            "Earthquake",
+            "Crunch",
+            "Rest"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 0,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Mamoswine",
+        "level": 78,
+        "nature": "Adamant",
+        "ability": "Thick Fat",
+        "moves": [
+            "Earthquake",
+            "Icicle Spear",
+            "Ice Shard",
+            "Double-Edge"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 0,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Rhyperior",
+        "level": 81,
+        "nature": "Adamant",
+        "ability": "Solid Rock",
+        "moves": [
+            "Earthquake",
+            "Rock Wrecker",
+            "Megahorn",
+            "Thunder Fang"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 0,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 6,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

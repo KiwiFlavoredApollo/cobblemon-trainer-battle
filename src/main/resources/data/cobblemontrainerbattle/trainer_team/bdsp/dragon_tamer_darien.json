@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Gyarados",
+        "level": 60,
+        "nature": "Impish",
+        "ability": "Intimidate",
+        "moves": [
+            "Dragon Dance",
+            "Waterfall",
+            "Ice Fang",
+            "Crunch"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

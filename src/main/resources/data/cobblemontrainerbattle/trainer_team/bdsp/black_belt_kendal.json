@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Croagunk",
+        "level": 35,
+        "nature": "Hardy",
+        "ability": "Anticipation",
+        "moves": [
+            "Mud-Slap",
+            "Revenge",
+            "Sucker Punch",
+            "Poison Jab"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

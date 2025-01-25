@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Chatot",
+        "level": 17,
+        "nature": "Bold",
+        "ability": "Keen Eye",
+        "moves": [
+            "Hyper Voice",
+            "Taunt",
+            "Growl",
+            "Sing"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

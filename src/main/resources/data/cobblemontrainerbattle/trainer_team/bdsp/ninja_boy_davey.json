@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Dustox",
+        "level": 27,
+        "nature": "Hasty",
+        "ability": "Shield Dust",
+        "moves": [
+            "Poison Powder",
+            "Venoshock",
+            "Leech Life",
+            "Light Screen"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

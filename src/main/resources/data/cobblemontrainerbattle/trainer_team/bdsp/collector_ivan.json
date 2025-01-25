@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Hippopotas",
+        "level": 51,
+        "nature": "Impish",
+        "ability": "Sand Stream",
+        "moves": [
+            "Yawn",
+            "Sand Tomb",
+            "Crunch",
+            "Earthquake"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Hippopotas",
+        "level": 53,
+        "nature": "Jolly",
+        "ability": "Sand Stream",
+        "moves": [
+            "Crunch",
+            "Double-Edge",
+            "Fissure",
+            "Slack Off"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Hippopotas",
+        "level": 52,
+        "nature": "Jolly",
+        "ability": "Sand Stream",
+        "moves": [
+            "Crunch",
+            "Double-Edge",
+            "Earthquake",
+            "Slack Off"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Goldeen",
+        "level": 22,
+        "nature": "Jolly",
+        "ability": "Water Veil",
+        "moves": [
+            "Peck",
+            "Water Pulse",
+            "Rain Dance",
+            "Poison Jab"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Barboach",
+        "level": 23,
+        "nature": "Adamant",
+        "ability": "Hydration",
+        "moves": [
+            "Mud-Slap",
+            "Water Pulse",
+            "Rock Tomb",
+            "Bulldoze"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Gyarados",
+        "level": 24,
+        "nature": "Timid",
+        "ability": "Intimidate",
+        "moves": [
+            "Whirlpool",
+            "Scary Face",
+            "Substitute",
+            "Scald"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

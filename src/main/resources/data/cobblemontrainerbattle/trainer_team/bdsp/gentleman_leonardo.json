@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Starly",
+        "level": 21,
+        "nature": "Hardy",
+        "ability": "Keen Eye",
+        "moves": [
+            "Growl",
+            "Quick Attack",
+            "Wing Attack",
+            "Endeavor"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Hoothoot",
+        "level": 21,
+        "nature": "Sassy",
+        "ability": "Insomnia",
+        "moves": [
+            "Reflect",
+            "Psycho Shift",
+            "Air Slash",
+            "Extrasensory"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

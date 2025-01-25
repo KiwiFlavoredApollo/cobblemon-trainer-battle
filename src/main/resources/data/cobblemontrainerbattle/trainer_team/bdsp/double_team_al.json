@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Staraptor",
+        "level": 47,
+        "nature": "Relaxed",
+        "ability": "Intimidate",
+        "moves": [
+            "Close Combat",
+            "Quick Attack",
+            "Double Team",
+            "Aerial Ace"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

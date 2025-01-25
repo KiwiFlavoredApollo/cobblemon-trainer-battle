@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Vibrava",
+        "level": 57,
+        "nature": "Bashful",
+        "ability": "Levitate",
+        "moves": [
+            "Dragon Rush",
+            "Earthquake",
+            "Superpower",
+            "Crunch"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Seadra",
+        "level": 57,
+        "nature": "Bold",
+        "ability": "Poison Point",
+        "moves": [
+            "Agility",
+            "Hydro Pump",
+            "Dragon Pulse",
+            "Twister"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Dragonair",
+        "level": 57,
+        "nature": "Serious",
+        "ability": "Shed Skin",
+        "moves": [
+            "Thunder Wave",
+            "Rain Dance",
+            "Aqua Tail",
+            "Dragon Rush"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Ambipom",
+        "level": 57,
+        "nature": "Jolly",
+        "ability": "Pickup",
+        "moves": [
+            "Sand Attack",
+            "Screech",
+            "Double Hit",
+            "Fling"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Golduck",
+        "level": 58,
+        "nature": "Hasty",
+        "ability": "Cloud Nine",
+        "moves": [
+            "Aqua Jet",
+            "Confusion",
+            "Water Pulse",
+            "Soak"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Girafarig",
+        "level": 56,
+        "nature": "Naive",
+        "ability": "Inner Focus",
+        "moves": [
+            "Growl",
+            "Stomp",
+            "Crunch",
+            "Psychic"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

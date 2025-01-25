@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Meowth",
+        "level": 56,
+        "nature": "Careful",
+        "ability": "Technician",
+        "moves": [
+            "Taunt",
+            "Play Rough",
+            "Feint",
+            "Bite"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Persian",
+        "level": 56,
+        "nature": "Careful",
+        "ability": "Technician",
+        "moves": [
+            "Fake Out",
+            "Slash",
+            "Taunt",
+            "Pay Day"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Hypno",
+        "level": 56,
+        "nature": "Calm",
+        "ability": "Insomnia",
+        "moves": [
+            "Future Sight",
+            "Psychic",
+            "Hypnosis",
+            "Disable"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

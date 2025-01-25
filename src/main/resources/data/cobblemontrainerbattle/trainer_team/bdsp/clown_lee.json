@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Mr. Mime",
+        "level": 17,
+        "nature": "Sassy",
+        "ability": "Filter",
+        "moves": [
+            "Power Swap",
+            "Pound",
+            "Encore",
+            "Confusion"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

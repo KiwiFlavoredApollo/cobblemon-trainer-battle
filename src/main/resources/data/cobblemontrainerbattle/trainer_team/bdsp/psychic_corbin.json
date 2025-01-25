@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Banette",
+        "level": 58,
+        "nature": "Adamant",
+        "ability": "Insomnia",
+        "moves": [
+            "Shadow Force",
+            "Sucker Punch",
+            "Shadow Sneak",
+            "Curse"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Dusclops",
+        "level": 60,
+        "nature": "Impish",
+        "ability": "Pressure",
+        "moves": [
+            "Curse",
+            "Will-O-Wisp",
+            "Payback",
+            "Shadow Sneak"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

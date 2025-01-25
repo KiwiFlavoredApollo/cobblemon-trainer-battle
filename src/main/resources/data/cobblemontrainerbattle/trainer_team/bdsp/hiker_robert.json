@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Geodude",
+        "level": 17,
+        "nature": "Relaxed",
+        "ability": "Rock Head",
+        "moves": [
+            "Sandstorm",
+            "Rock Polish",
+            "Harden",
+            "Rock Throw"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Geodude",
+        "level": 17,
+        "nature": "Relaxed",
+        "ability": "Rock Head",
+        "moves": [
+            "Sandstorm",
+            "Rock Polish",
+            "Harden",
+            "Rock Throw"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

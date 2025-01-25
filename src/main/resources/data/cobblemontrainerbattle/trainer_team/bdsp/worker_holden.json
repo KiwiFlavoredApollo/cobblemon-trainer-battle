@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Steelix",
+        "level": 33,
+        "nature": "Relaxed",
+        "ability": "Sturdy",
+        "moves": [
+            "Bind",
+            "Smack Down",
+            "Curse",
+            "Sand Tomb"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

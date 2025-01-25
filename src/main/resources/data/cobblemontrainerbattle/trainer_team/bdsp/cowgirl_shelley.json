@@ -1,0 +1,142 @@
+[
+    {
+        "species": "Bidoof",
+        "level": 14,
+        "nature": "Jolly",
+        "ability": "Unaware",
+        "moves": [
+            "Growl",
+            "Defense Curl",
+            "Rollout",
+            "Headbutt"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Bidoof",
+        "level": 15,
+        "nature": "Jolly",
+        "ability": "Unaware",
+        "moves": [
+            "Growl",
+            "Defense Curl",
+            "Rollout",
+            "Headbutt"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Bidoof",
+        "level": 16,
+        "nature": "Jolly",
+        "ability": "Unaware",
+        "moves": [
+            "Growl",
+            "Defense Curl",
+            "Rollout",
+            "Headbutt"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Bidoof",
+        "level": 15,
+        "nature": "Jolly",
+        "ability": "Unaware",
+        "moves": [
+            "Growl",
+            "Defense Curl",
+            "Rollout",
+            "Headbutt"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Bidoof",
+        "level": 15,
+        "nature": "Jolly",
+        "ability": "Unaware",
+        "moves": [
+            "Growl",
+            "Defense Curl",
+            "Rollout",
+            "Headbutt"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

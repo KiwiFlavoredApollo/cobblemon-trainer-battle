@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Clefairy",
+        "level": 20,
+        "nature": "Sassy",
+        "ability": "Magic Guard",
+        "moves": [
+            "Disarming Voice",
+            "Encore",
+            "Growl",
+            "Minimize"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Clefairy",
+        "level": 20,
+        "nature": "Sassy",
+        "ability": "Magic Guard",
+        "moves": [
+            "Disarming Voice",
+            "Growl",
+            "Minimize",
+            "Life Dew"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Clefairy",
+        "level": 20,
+        "nature": "Sassy",
+        "ability": "Magic Guard",
+        "moves": [
+            "Disarming Voice",
+            "Growl",
+            "Minimize",
+            "Life Dew"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

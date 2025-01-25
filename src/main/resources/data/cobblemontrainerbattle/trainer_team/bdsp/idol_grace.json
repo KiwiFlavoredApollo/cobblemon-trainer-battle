@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Pikachu",
+        "level": 15,
+        "nature": "Careful",
+        "ability": "Static",
+        "moves": [
+            "Nuzzle",
+            "Charm",
+            "Thunder Shock",
+            "Quick Attack"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Clefairy",
+        "level": 15,
+        "nature": "Calm",
+        "ability": "Cute Charm",
+        "moves": [
+            "Sing",
+            "Disarming Voice",
+            "Encore",
+            "Charm"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

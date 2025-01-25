@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Spinda",
+        "level": 55,
+        "nature": "Bashful",
+        "ability": "Own Tempo",
+        "moves": [
+            "Psych Up",
+            "Double-Edge",
+            "Flail",
+            "Thrash"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Kecleon",
+        "level": 55,
+        "nature": "Serious",
+        "ability": "Color Change",
+        "moves": [
+            "Screech",
+            "Substitute",
+            "Sucker Punch",
+            "Shadow Claw"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

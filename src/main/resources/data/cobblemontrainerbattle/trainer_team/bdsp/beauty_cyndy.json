@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Purugly",
+        "level": 60,
+        "nature": "Jolly",
+        "ability": "Own Tempo",
+        "moves": [
+            "Aerial Ace",
+            "Body Slam",
+            "Attract",
+            "Hone Claws"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

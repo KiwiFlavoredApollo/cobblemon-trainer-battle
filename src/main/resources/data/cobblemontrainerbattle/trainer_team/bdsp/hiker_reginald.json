@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Geodude",
+        "level": 15,
+        "nature": "Relaxed",
+        "ability": "Rock Head",
+        "moves": [
+            "Defense Curl",
+            "Sandstorm",
+            "Rock Polish",
+            "Rollout"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Machop",
+        "level": 15,
+        "nature": "Relaxed",
+        "ability": "No Guard",
+        "moves": [
+            "Low Kick",
+            "Leer",
+            "Revenge",
+            "Low Sweep"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

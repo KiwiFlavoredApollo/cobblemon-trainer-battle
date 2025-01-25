@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Luxio",
+        "level": 42,
+        "nature": "Jolly",
+        "ability": "Intimidate",
+        "moves": [
+            "Bite",
+            "Volt Switch",
+            "Thunder Wave",
+            "Iron Tail"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Bibarel",
+        "level": 42,
+        "nature": "Jolly",
+        "ability": "Simple",
+        "moves": [
+            "Yawn",
+            "Thunderbolt",
+            "Bulldoze",
+            "Waterfall"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

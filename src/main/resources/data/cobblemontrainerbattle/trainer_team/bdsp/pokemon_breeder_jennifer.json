@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Mr. Mime",
+        "level": 52,
+        "nature": "Timid",
+        "ability": "Filter",
+        "moves": [
+            "Reflect",
+            "Sucker Punch",
+            "Dazzling Gleam",
+            "Psychic"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Roselia",
+        "level": 51,
+        "nature": "Hasty",
+        "ability": "Poison Point",
+        "moves": [
+            "Leech Seed",
+            "Giga Drain",
+            "Toxic",
+            "Petal Blizzard"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Clefable",
+        "level": 53,
+        "nature": "Hasty",
+        "ability": "Cute Charm",
+        "moves": [
+            "Charm",
+            "Moonlight",
+            "Meteor Mash",
+            "Moonblast"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

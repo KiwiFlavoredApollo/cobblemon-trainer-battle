@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Marill",
+        "level": 21,
+        "nature": "Bashful",
+        "ability": "Thick Fat",
+        "moves": [
+            "Tail Whip",
+            "Helping Hand",
+            "Aqua Tail",
+            "Play Rough"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Aipom",
+        "level": 21,
+        "nature": "Bashful",
+        "ability": "Pickup",
+        "moves": [
+            "Tail Whip",
+            "Sand Attack",
+            "Tickle",
+            "Fury Swipes"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Clefable",
+        "level": 46,
+        "nature": "Calm",
+        "ability": "Cute Charm",
+        "moves": [
+            "Moonlight",
+            "Meteor Mash",
+            "Cosmic Power",
+            "Moonblast"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Torterra",
+        "level": 48,
+        "nature": "Impish",
+        "ability": "Overgrow",
+        "moves": [
+            "Earthquake",
+            "Wood Hammer",
+            "Crunch",
+            "Synthesis"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

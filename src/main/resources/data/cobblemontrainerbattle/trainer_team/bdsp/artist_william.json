@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Mime Jr.",
+        "level": 17,
+        "nature": "Bold",
+        "ability": "Filter",
+        "moves": [
+            "Copycat",
+            "Encore",
+            "Confusion",
+            "Role Play"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Bonsly",
+        "level": 17,
+        "nature": "Jolly",
+        "ability": "Rock Head",
+        "moves": [
+            "Fake Tears",
+            "Copycat",
+            "Flail",
+            "Mimic"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Cacturne",
+        "level": 57,
+        "nature": "Bashful",
+        "ability": "Sand Veil",
+        "moves": [
+            "Spiky Shield",
+            "Leech Seed",
+            "Sucker Punch",
+            "Pin Missile"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Machamp",
+        "level": 57,
+        "nature": "Sassy",
+        "ability": "No Guard",
+        "moves": [
+            "Dynamic Punch",
+            "Knock Off",
+            "Strength",
+            "Low Sweep"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

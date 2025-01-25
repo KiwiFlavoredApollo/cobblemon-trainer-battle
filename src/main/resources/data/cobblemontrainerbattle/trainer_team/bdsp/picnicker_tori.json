@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Silcoon",
+        "level": 15,
+        "nature": "Jolly",
+        "ability": "Shed Skin",
+        "moves": [
+            "Tackle",
+            "String Shot",
+            "Poison Sting",
+            "Harden"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Beautifly",
+        "level": 15,
+        "nature": "Timid",
+        "ability": "Swarm",
+        "moves": [
+            "String Shot",
+            "Gust",
+            "Absorb",
+            "Stun Spore"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

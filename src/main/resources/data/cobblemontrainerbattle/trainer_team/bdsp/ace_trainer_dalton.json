@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Raichu",
+        "level": 54,
+        "nature": "Timid",
+        "ability": "Static",
+        "moves": [
+            "Nuzzle",
+            "Electro Ball",
+            "Agility",
+            "Light Screen"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Pelipper",
+        "level": 54,
+        "nature": "Timid",
+        "ability": "Keen Eye",
+        "moves": [
+            "Air Slash",
+            "Tailwind",
+            "Water Pulse",
+            "Roost"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Hippopotas",
+        "level": 54,
+        "nature": "Relaxed",
+        "ability": "Sand Stream",
+        "moves": [
+            "Yawn",
+            "Crunch",
+            "Earthquake",
+            "Slack Off"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

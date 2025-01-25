@@ -1,0 +1,167 @@
+[
+    {
+        "species": "Tyranitar",
+        "level": 68,
+        "nature": "Adamant",
+        "ability": "Sand Stream",
+        "moves": [
+            "Crunch",
+            "Stone Edge",
+            "Roar",
+            "Stealth Rock"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 248,
+            "atk": 252,
+            "def": 8,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Aerodactyl",
+        "level": 66,
+        "nature": "Jolly",
+        "ability": "Unnerve",
+        "moves": [
+            "Stone Edge",
+            "Roar",
+            "Roost",
+            "Stealth Rock"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Armaldo",
+        "level": 70,
+        "nature": "Adamant",
+        "ability": "Swift Swim",
+        "moves": [
+            "Stone Edge",
+            "X-Scissor",
+            "Brine",
+            "Earthquake"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 248,
+            "atk": 252,
+            "def": 8,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Probopass",
+        "level": 68,
+        "nature": "Modest",
+        "ability": "Sand Force",
+        "moves": [
+            "Power Gem",
+            "Flash Cannon",
+            "Body Press",
+            "Discharge"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 252,
+            "spa": 252,
+            "spd": 0,
+            "spe": 4
+        }
+    },
+    {
+        "species": "Relicanth",
+        "level": 64,
+        "nature": "Adamant",
+        "ability": "Rock Head",
+        "moves": [
+            "Head Smash"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 80,
+            "spa": 0,
+            "spd": 176,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Rampardos",
+        "level": 72,
+        "nature": "Adamant",
+        "ability": "Sheer Force",
+        "moves": [
+            "Stone Edge",
+            "Iron Tail",
+            "Zen Headbutt",
+            "Head Smash"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 32,
+            "atk": 252,
+            "def": 216,
+            "spa": 0,
+            "spd": 8,
+            "spe": 0
+        }
+    }
+]

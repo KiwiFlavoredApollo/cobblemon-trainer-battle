@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Luxio",
+        "level": 21,
+        "nature": "Hardy",
+        "ability": "Intimidate",
+        "moves": [
+            "Leer",
+            "Charge",
+            "Bite",
+            "Spark"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Pikachu",
+        "level": 21,
+        "nature": "Sassy",
+        "ability": "Static",
+        "moves": [
+            "Nuzzle",
+            "Tail Whip",
+            "Growl",
+            "Spark"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

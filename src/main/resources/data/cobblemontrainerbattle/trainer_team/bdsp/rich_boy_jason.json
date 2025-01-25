@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Luxio",
+        "level": 19,
+        "nature": "Docile",
+        "ability": "Intimidate",
+        "moves": [
+            "Leer",
+            "Charge",
+            "Bite",
+            "Spark"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Gabite",
+        "level": 56,
+        "nature": "Relaxed",
+        "ability": "Sand Veil",
+        "moves": [
+            "Sand Tomb",
+            "Bite",
+            "Dragon Claw",
+            "Dig"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Gyarados",
+        "level": 56,
+        "nature": "Sassy",
+        "ability": "Intimidate",
+        "moves": [
+            "Ice Fang",
+            "Waterfall",
+            "Crunch",
+            "Dragon Dance"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]
