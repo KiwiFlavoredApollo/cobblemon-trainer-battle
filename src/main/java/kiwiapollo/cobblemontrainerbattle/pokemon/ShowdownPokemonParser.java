@@ -42,7 +42,7 @@ public class ShowdownPokemonParser {
             Identifier identifier = toSpeciesResourceIdentifier(showdownPokemon.species);
             return PokemonSpecies.INSTANCE.getByIdentifier(identifier).create(DEFAULT_LEVEL);
 
-        } catch (NullPointerException e) {
+        } catch (ClassCastException | NullPointerException e) {
             throw new PokemonParseException();
         }
     }
