@@ -4,5 +4,8 @@
   "is_spawning_allowed": false,
   "level_mode": "relative",
   "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/leader_tate_and_liza.png",
-  "battle_format": "double"
+  "battle_format": "double",
+  "on_victory_commands": [
+    "give %player% cobblemontrainerbattle:leader_tate_and_liza_token"
+  ]
 }

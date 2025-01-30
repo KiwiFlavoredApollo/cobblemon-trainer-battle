@@ -4,5 +4,8 @@
   "is_spawning_allowed": false,
   "level_mode": "relative",
   "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/leader_morty.png",
-  "battle_format": "single"
+  "battle_format": "single",
+  "on_victory_commands": [
+    "give %player% cobblemontrainerbattle:leader_morty_token"
+  ]
 }

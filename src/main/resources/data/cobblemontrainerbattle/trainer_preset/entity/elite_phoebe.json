@@ -4,5 +4,8 @@
   "is_spawning_allowed": false,
   "level_mode": "relative",
   "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/elite_phoebe.png",
-  "battle_format": "single"
+  "battle_format": "single",
+  "on_victory_commands": [
+    "give %player% cobblemontrainerbattle:elite_phoebe_token"
+  ]
 }
