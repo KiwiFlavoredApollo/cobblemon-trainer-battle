@@ -238,6 +238,9 @@
   "command.cobblemontrainerbattle.success.export": "포켓몬 내보내기를 완료했습니다 : %s",
   "command.cobblemontrainerbattle.success.reload": "설정값을 다시 읽어들였습니다.",
 
+  "command.cobblemontrainerbattle.error.trainerbattle.unknown_trainer": "알 수 없는 트레이너 : %s",
+  "command.cobblemontrainerbattle.error.rentalbattle.unknown_trainer": "알 수 없는 트레이너 : %s",
+
   "command.cobblemontrainerbattle.error.rentalbattle.trainer_minimum_party_size": "트레이너 포켓몬이 부족합니다 : %d 마리",
   "command.cobblemontrainerbattle.error.rentalbattle.player_minimum_party_size": "플레이어 포켓몬이 부족합니다 : %d 마리",
 

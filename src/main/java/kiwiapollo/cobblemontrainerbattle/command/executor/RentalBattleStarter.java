@@ -17,10 +17,16 @@ import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 
 public abstract class RentalBattleStarter implements Command<ServerCommandSource> {
     public int run(ServerPlayerEntity player, String trainer) {
         try {
+            if (!isKnownTrainer(trainer)) {
+                player.sendMessage(Text.translatable("command.cobblemontrainerbattle.error.rentalbattle.unknown_trainer", trainer).formatted(Formatting.RED));
+                return 0;
+            }
+
             if (!hasRentalBattleMinimumPartySize(player)) {
                 player.sendMessage(Text.translatable("command.cobblemontrainerbattle.error.rentalbattle.player_minimum_party_size", RentalBattlePreset.PARTY_SIZE));
                 return 0;
@@ -44,6 +50,10 @@ public abstract class RentalBattleStarter implements Command<ServerCommandSource
         } catch (BattleStartException e) {
             return 0;
         }
+    }
+
+    private boolean isKnownTrainer(String trainer) {
+        return TrainerStorage.getInstance().keySet().contains(trainer);
     }
 
     private boolean hasRentalBattleMinimumPartySize(ServerPlayerEntity player) {

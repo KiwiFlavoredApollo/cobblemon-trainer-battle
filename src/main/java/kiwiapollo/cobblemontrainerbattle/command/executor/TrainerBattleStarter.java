@@ -16,10 +16,17 @@ import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerStorage;
 import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 
 public abstract class TrainerBattleStarter implements Command<ServerCommandSource> {
     public int run(ServerPlayerEntity player, String trainer) {
         try {
+            if (!isKnownTrainer(trainer)) {
+                player.sendMessage(Text.translatable("command.cobblemontrainerbattle.error.trainerbattle.unknown_trainer", trainer).formatted(Formatting.RED));
+                return 0;
+            }
+
             TrainerBattle trainerBattle = new PlayerBackedTrainerBattle(
                     new PlayerBattleParticipantFactory(player, getLevelmode(trainer)).create(),
                     new TrainerBattleParticipantFactory(trainer).create()
@@ -33,6 +40,10 @@ public abstract class TrainerBattleStarter implements Command<ServerCommandSourc
         } catch (BattleStartException e) {
             return 0;
         }
+    }
+
+    private boolean isKnownTrainer(String trainer) {
+        return TrainerStorage.getInstance().keySet().contains(trainer);
     }
 
     private LevelMode getLevelmode(String trainer) {

@@ -238,6 +238,9 @@
   "command.cobblemontrainerbattle.success.export": "Exported Pokémon : %s",
   "command.cobblemontrainerbattle.success.reload": "Reloaded config.",
 
+  "command.cobblemontrainerbattle.error.trainerbattle.unknown_trainer": "Unknown trainer : %s",
+  "command.cobblemontrainerbattle.error.rentalbattle.unknown_trainer": "Unknown trainer : %s",
+
   "command.cobblemontrainerbattle.error.rentalbattle.trainer_minimum_party_size": "Trainer does not have enough Pokémon : %d",
   "command.cobblemontrainerbattle.error.rentalbattle.player_minimum_party_size": "Player does not have enough Pokémon : %d",
 

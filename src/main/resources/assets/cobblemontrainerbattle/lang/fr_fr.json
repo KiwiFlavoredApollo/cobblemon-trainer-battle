@@ -238,6 +238,9 @@
   "command.cobblemontrainerbattle.success.export": "Pokémon exporté(s) : %s",
   "command.cobblemontrainerbattle.success.reload": "Configuration rechargée.",
 
+  "command.cobblemontrainerbattle.error.trainerbattle.unknown_trainer": "Dresseur inconnu : %s",
+  "command.cobblemontrainerbattle.error.rentalbattle.unknown_trainer": "Dresseur inconnu : %s",
+
   "command.cobblemontrainerbattle.error.rentalbattle.trainer_minimum_party_size": "Le dresseur n'a pas assez de Pokémon : %d",
   "command.cobblemontrainerbattle.error.rentalbattle.player_minimum_party_size": "Le joueur n'a pas assez de Pokémon : %d",
 
