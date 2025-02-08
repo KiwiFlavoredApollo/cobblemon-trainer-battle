@@ -18,17 +18,24 @@ import net.minecraft.util.math.random.Random;
 
 import java.util.Set;
 
+import static net.minecraft.SharedConstants.TICKS_PER_SECOND;
+
 public class TrainerEntitySpawner implements ServerTickEvents.EndWorldTick {
     private static final int MAXIMUM_RADIUS = 30;
     private static final int MINIMUM_RADIUS = 5;
 
     @Override
     public void onEndTick(ServerWorld world) {
-        if (world.getServer().getTicks() % ConfigStorage.getInstance().getTrainerSpawnIntervalInSeconds() == 0) {
+        if (isTrainerSpawnTick(world.getServer().getTicks())) {
             for (ServerPlayerEntity player : world.getPlayers()) {
                 spawnTrainersAroundPlayer(world, player);
             }
         }
+    }
+
+    private boolean isTrainerSpawnTick(int ticks) {
+        int interval = ConfigStorage.getInstance().getTrainerSpawnIntervalInSeconds() * TICKS_PER_SECOND;
+        return ticks % interval == 0;
     }
 
     private void spawnTrainersAroundPlayer(ServerWorld world, ServerPlayerEntity player) {
