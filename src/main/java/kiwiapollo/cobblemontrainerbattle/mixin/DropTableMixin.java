@@ -36,8 +36,16 @@ public class DropTableMixin {
     }
 
     private boolean isTrainerBattle(LivingEntity entity, ServerWorld world) {
-        PokemonEntity pokemon = (PokemonEntity) entity;
+        try {
+            PokemonEntity pokemon = (PokemonEntity) entity;
+            return getTrainerBattleIds(world).contains(pokemon.getBattleId());
 
+        } catch (ClassCastException | NullPointerException e) {
+            return false;
+        }
+    }
+
+    private List<UUID> getTrainerBattleIds(ServerWorld world) {
         List<UUID> battleIds = new ArrayList<>();
 
         for (ServerPlayerEntity player : world.getPlayers()) {
@@ -50,6 +58,6 @@ public class DropTableMixin {
             }
         }
 
-        return battleIds.contains(pokemon.getBattleId());
+        return battleIds;
     }
 }
