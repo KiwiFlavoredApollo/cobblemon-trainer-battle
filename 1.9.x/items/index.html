@@ -70,6 +70,12 @@
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#trainer-spawn-egg">Trainer Spawn Egg</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#minecraft-1201">Minecraft 1.20.1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#minecraft-1211">Minecraft 1.21.1</a>
+    </li>
+        </ul>
     </li>
     </ul>
                 </li>
@@ -135,7 +141,11 @@
 <p>Tickets alone cannot spawn trainers. Players must use (right-click) VS Seeker in one hand while Ticket in the other hand. Tickets are consumed when used.</p>
 <h2 id="trainer-spawn-egg">Trainer Spawn Egg</h2>
 <p>By default, Trainer Spawn Egg spawns random trainers. However, Trainer Spawn Egg can be configured to spawn specific trainer in specific texture.</p>
+<h3 id="minecraft-1201">Minecraft 1.20.1</h3>
 <pre><code>/give @p cobblemontrainerbattle:trainer_spawn_egg{EntityTag:{Trainer:&quot;radicalred/leader_brock&quot;,Texture:&quot;minecraft:textures/entity/player/slim/steve.png&quot;}}
+</code></pre>
+<h3 id="minecraft-1211">Minecraft 1.21.1</h3>
+<pre><code>/give @p cobblemontrainerbattle:trainer_spawn_egg[entity_data={id:trainer, Trainer:&quot;radicalred/leader_brock&quot;,Texture:&quot;minecraft:textures/entity/player/slim/steve.png&quot;}]
 </code></pre>
               
             </div>
