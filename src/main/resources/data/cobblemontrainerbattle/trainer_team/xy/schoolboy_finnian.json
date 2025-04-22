@@ -1,0 +1,31 @@
+[
+    {
+        "species": "Dedenne",
+        "level": 34,
+        "ability": "Pickup",
+        "nature": "Mild",
+        "item": "",
+        "evs": {
+            "hp": 97,
+            "atk": 51,
+            "def": 45,
+            "spa": 72,
+            "spd": 57,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 20,
+            "atk": 20,
+            "def": 20,
+            "spa": 20,
+            "spd": 20,
+            "spe": 20
+        },
+        "moves": [
+            "Volt Switch",
+            "Rest",
+            "Snore",
+            "Charge Beam"
+        ]
+    }
+]

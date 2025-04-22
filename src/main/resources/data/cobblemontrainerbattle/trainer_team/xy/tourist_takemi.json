@@ -1,0 +1,22 @@
+[
+    {
+        "species": "Volbeat",
+        "level": 14,
+        "ability": "Illuminate",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Moonlight",
+            "Confuse Ray",
+            "Double Team",
+            "Tackle"
+        ]
+    }
+]

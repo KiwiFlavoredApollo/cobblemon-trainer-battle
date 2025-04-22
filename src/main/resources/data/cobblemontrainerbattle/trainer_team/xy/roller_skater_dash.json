@@ -1,0 +1,31 @@
+[
+    {
+        "species": "Heracross",
+        "level": 30,
+        "ability": "Swarm",
+        "nature": "Docile",
+        "item": "",
+        "evs": {
+            "hp": 91,
+            "atk": 83,
+            "def": 53,
+            "spa": 32,
+            "spd": 65,
+            "spe": 59
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "moves": [
+            "Chip Away",
+            "Counter",
+            "Brick Break",
+            "Take Down"
+        ]
+    }
+]

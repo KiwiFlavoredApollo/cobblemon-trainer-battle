@@ -1,0 +1,42 @@
+[
+    {
+        "species": "Houndour",
+        "level": 21,
+        "ability": "Early Bird",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Roar",
+            "Bite",
+            "Smog",
+            "Odor Sleuth"
+        ]
+    },
+    {
+        "species": "Golbat",
+        "level": 23,
+        "ability": "Inner Focus",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Confuse Ray",
+            "Wing Attack",
+            "Bite ",
+            "Astonish"
+        ]
+    }
+]

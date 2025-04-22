@@ -1,0 +1,42 @@
+[
+    {
+        "species": "Hippowdon",
+        "level": 55,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 24,
+            "atk": 24,
+            "def": 24,
+            "spa": 24,
+            "spd": 24,
+            "spe": 24
+        },
+        "moves": [
+            "Protect",
+            "Earthquake",
+            "Crunch",
+            "Yawn"
+        ]
+    },
+    {
+        "species": "Aurorus",
+        "level": 57,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 24,
+            "atk": 24,
+            "def": 24,
+            "spa": 24,
+            "spd": 24,
+            "spe": 24
+        },
+        "moves": [
+            "Protect",
+            "Ice Beam",
+            "Flash Cannon",
+            "Thunderbolt"
+        ]
+    }
+]

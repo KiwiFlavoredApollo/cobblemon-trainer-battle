@@ -1,0 +1,40 @@
+[
+    {
+        "species": "Psyduck",
+        "level": 6,
+        "ability": "Damp",
+        "nature": "",
+        "ivs": {
+            "hp": 8,
+            "atk": 8,
+            "def": 8,
+            "spa": 8,
+            "spd": 8,
+            "spe": 8
+        },
+        "moves": [
+            "Water Sport",
+            "Scratch",
+            "Tail Whip"
+        ]
+    },
+    {
+        "species": "Litleo",
+        "level": 7,
+        "ability": "Unnerve",
+        "nature": "",
+        "ivs": {
+            "hp": 8,
+            "atk": 8,
+            "def": 8,
+            "spa": 8,
+            "spd": 8,
+            "spe": 8
+        },
+        "moves": [
+            "Tackle",
+            "Leer",
+            "Ember"
+        ]
+    }
+]

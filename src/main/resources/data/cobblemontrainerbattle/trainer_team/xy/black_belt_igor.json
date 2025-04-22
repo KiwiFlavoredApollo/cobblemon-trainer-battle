@@ -1,0 +1,21 @@
+[
+    {
+        "species": "Sawk",
+        "level": 28,
+        "ability": "Sturdy",
+        "nature": "",
+        "ivs": {
+            "hp": 7,
+            "atk": 7,
+            "def": 7,
+            "spa": 7,
+            "spd": 7,
+            "spe": 7
+        },
+        "moves": [
+            "Retaliate",
+            "Double Kick",
+            "Bulldoze"
+        ]
+    }
+]

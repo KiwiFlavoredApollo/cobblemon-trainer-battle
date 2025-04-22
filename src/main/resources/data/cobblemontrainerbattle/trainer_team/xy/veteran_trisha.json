@@ -1,0 +1,22 @@
+[
+    {
+        "species": "Tyrantrum",
+        "level": 59,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 24,
+            "atk": 24,
+            "def": 24,
+            "spa": 24,
+            "spd": 24,
+            "spe": 24
+        },
+        "moves": [
+            "Crunch",
+            "Dragon Claw",
+            "Aerial Ace",
+            "Brick Break"
+        ]
+    }
+]

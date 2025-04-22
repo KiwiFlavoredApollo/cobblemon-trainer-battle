@@ -1,0 +1,22 @@
+[
+    {
+        "species": "Crobat",
+        "level": 59,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Air Slash",
+            "Cross Poison",
+            "X-Scissor",
+            "Double Team"
+        ]
+    }
+]

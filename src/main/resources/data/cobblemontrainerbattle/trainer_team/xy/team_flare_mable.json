@@ -1,0 +1,60 @@
+[
+    {
+        "species": "Houndoom",
+        "level": 46,
+        "ability": "Early Bird",
+        "nature": "Careful",
+        "item": "",
+        "evs": {
+            "hp": 125,
+            "atk": 88,
+            "def": 51,
+            "spa": 96,
+            "spd": 86,
+            "spe": 93
+        },
+        "ivs": {
+            "hp": 2,
+            "atk": 2,
+            "def": 2,
+            "spa": 2,
+            "spd": 2,
+            "spe": 2
+        },
+        "moves": [
+            "Snarl",
+            "Flamethrower",
+            "Sludge Bomb",
+            "Foul Play"
+        ]
+    },
+    {
+        "species": "Weavile",
+        "level": 48,
+        "ability": "Pressure",
+        "nature": "Timid",
+        "item": "",
+        "evs": {
+            "hp": 126,
+            "atk": 108,
+            "def": 68,
+            "spa": 49,
+            "spd": 87,
+            "spe": 137
+        },
+        "ivs": {
+            "hp": 2,
+            "atk": 2,
+            "def": 2,
+            "spa": 2,
+            "spd": 2,
+            "spe": 2
+        },
+        "moves": [
+            "Night Slash",
+            "Quick Attack",
+            "Ice Shard",
+            "Low Sweep"
+        ]
+    }
+]

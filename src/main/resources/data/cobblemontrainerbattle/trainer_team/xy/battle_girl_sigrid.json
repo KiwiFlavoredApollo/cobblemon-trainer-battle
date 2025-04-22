@@ -1,0 +1,22 @@
+[
+    {
+        "species": "Medicham",
+        "level": 60,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 28,
+            "atk": 28,
+            "def": 28,
+            "spa": 28,
+            "spd": 28,
+            "spe": 28
+        },
+        "moves": [
+            "Fire Punch",
+            "Thunder Punch",
+            "Ice Punch",
+            "Zen Headbutt"
+        ]
+    }
+]

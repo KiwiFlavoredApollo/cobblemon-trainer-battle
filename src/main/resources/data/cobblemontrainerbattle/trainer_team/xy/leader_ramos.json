@@ -1,0 +1,89 @@
+[
+    {
+        "species": "Jumpluff",
+        "level": 30,
+        "ability": "Chlorophyll",
+        "nature": "Rash",
+        "item": "",
+        "evs": {
+            "hp": 91,
+            "atk": 44,
+            "def": 53,
+            "spa": 48,
+            "spd": 61,
+            "spe": 77
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Grass Knot",
+            "Acrobatics",
+            "Leech Seed",
+            ""
+        ]
+    },
+    {
+        "species": "Weepinbell",
+        "level": 31,
+        "ability": "Chlorophyll",
+        "nature": "Mild",
+        "item": "",
+        "evs": {
+            "hp": 88,
+            "atk": 67,
+            "def": 37,
+            "spa": 70,
+            "spd": 39,
+            "spe": 45
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Grass Knot",
+            "Acid",
+            "Poison Powder",
+            "Gastro Acid"
+        ]
+    },
+    {
+        "species": "Gogoat",
+        "level": 34,
+        "ability": "Sap Sipper",
+        "nature": "Brave",
+        "item": "",
+        "evs": {
+            "hp": 135,
+            "atk": 88,
+            "def": 54,
+            "spa": 78,
+            "spd": 67,
+            "spe": 52
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Grass Knot",
+            "Bulldoze",
+            "Take Down",
+            ""
+        ]
+    }
+]

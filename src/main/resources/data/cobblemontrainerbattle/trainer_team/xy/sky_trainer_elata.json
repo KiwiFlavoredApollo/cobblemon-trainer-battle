@@ -1,0 +1,42 @@
+[
+    {
+        "species": "Fletchinder",
+        "level": 28,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Flame Charge",
+            "Acrobatics",
+            "Steel Wing",
+            "Confide"
+        ]
+    },
+    {
+        "species": "Pelipper",
+        "level": 29,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Roost",
+            "Payback",
+            "Water Pulse",
+            "Double Team"
+        ]
+    }
+]

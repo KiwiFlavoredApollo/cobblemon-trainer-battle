@@ -1,0 +1,89 @@
+[
+    {
+        "species": "Doduo",
+        "level": 24,
+        "ability": "Early Bird",
+        "nature": "Bashful",
+        "item": "",
+        "evs": {
+            "hp": 54,
+            "atk": 49,
+            "def": 30,
+            "spa": 25,
+            "spd": 25,
+            "spe": 44
+        },
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Rage",
+            "Fury Attack",
+            "Pursuit",
+            "Uproar"
+        ]
+    },
+    {
+        "species": "Granbull",
+        "level": 24,
+        "ability": "Intimidate",
+        "nature": "Relaxed",
+        "item": "",
+        "evs": {
+            "hp": 81,
+            "atk": 66,
+            "def": 48,
+            "spa": 37,
+            "spd": 37,
+            "spe": 27
+        },
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Charm",
+            "Bite",
+            "Lick",
+            "Headbutt"
+        ]
+    },
+    {
+        "species": "Helioptile",
+        "level": 25,
+        "ability": "Dry Skin",
+        "nature": "Bold",
+        "item": "",
+        "evs": {
+            "hp": 61,
+            "atk": 25,
+            "def": 27,
+            "spa": 39,
+            "spd": 30,
+            "spe": 44
+        },
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Mud-Slap",
+            "Quick Attack",
+            "Razor Wind",
+            "Parabolic Charge"
+        ]
+    }
+]

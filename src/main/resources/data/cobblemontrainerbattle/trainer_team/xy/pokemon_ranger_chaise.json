@@ -1,0 +1,31 @@
+[
+    {
+        "species": "Simisage",
+        "level": 32,
+        "ability": "Gluttony",
+        "nature": "Lonely",
+        "item": "",
+        "evs": {
+            "hp": 95,
+            "atk": 79,
+            "def": 45,
+            "spa": 72,
+            "spd": 50,
+            "spe": 74
+        },
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Leer",
+            "Lick",
+            "Fury Swipes",
+            "Seed Bomb"
+        ]
+    }
+]

@@ -1,0 +1,42 @@
+[
+    {
+        "species": "Torkoal",
+        "level": 56,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Lava Plume",
+            "Confide",
+            "Earthquake",
+            "Gyro Ball"
+        ]
+    },
+    {
+        "species": "Golem",
+        "level": 56,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Stone Edge",
+            "Steamroller",
+            "Earthquake",
+            "Heavy Slam"
+        ]
+    }
+]

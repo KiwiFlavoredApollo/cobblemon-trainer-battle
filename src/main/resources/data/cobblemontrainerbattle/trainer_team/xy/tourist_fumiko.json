@@ -1,0 +1,62 @@
+[
+    {
+        "species": "Skiploom",
+        "level": 19,
+        "ability": "Chlorophyll",
+        "nature": "Mild",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Stun Spore",
+            "Poison Powder",
+            "Sleep Powder",
+            "Fairy Wind"
+        ]
+    },
+    {
+        "species": "Dunsparce",
+        "level": 19,
+        "ability": "Run Away",
+        "nature": "Hardy",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Yawn",
+            "Ancient Power",
+            "Screech",
+            "Pursuit"
+        ]
+    },
+    {
+        "species": "Azumarill",
+        "level": 19,
+        "ability": "Thick Fat",
+        "nature": "Hasty",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Defense Curl",
+            "Bubble Beam",
+            "Rollout",
+            "Helping Hand"
+        ]
+    }
+]

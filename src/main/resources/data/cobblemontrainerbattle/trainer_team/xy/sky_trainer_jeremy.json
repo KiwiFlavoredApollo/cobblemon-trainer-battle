@@ -1,0 +1,62 @@
+[
+    {
+        "species": "Ninjask",
+        "level": 46,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Baton Pass",
+            "Protect",
+            "X-Scissor",
+            "Slash"
+        ]
+    },
+    {
+        "species": "Drifblim",
+        "level": 47,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Shadow Ball",
+            "Amnesia",
+            "Thunderbolt",
+            "Baton Pass"
+        ]
+    },
+    {
+        "species": "Flygon",
+        "level": 50,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Dragon Claw",
+            "Stone Edge",
+            "Power-Up Punch",
+            "Steel Wing"
+        ]
+    }
+]

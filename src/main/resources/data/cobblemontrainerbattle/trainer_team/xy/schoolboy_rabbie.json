@@ -1,0 +1,39 @@
+[
+    {
+        "species": "Pidgey",
+        "level": 7,
+        "ability": "Keen Eye",
+        "nature": "",
+        "ivs": {
+            "hp": 20,
+            "atk": 20,
+            "def": 20,
+            "spa": 20,
+            "spd": 20,
+            "spe": 20
+        },
+        "moves": [
+            "Gust",
+            "Tackle",
+            "Sand Attack"
+        ]
+    },
+    {
+        "species": "Metapod",
+        "level": 5,
+        "ability": "Shed Skin",
+        "nature": "",
+        "ivs": {
+            "hp": 20,
+            "atk": 20,
+            "def": 20,
+            "spa": 20,
+            "spd": 20,
+            "spe": 20
+        },
+        "moves": [
+            "Harden",
+            "Tackle"
+        ]
+    }
+]

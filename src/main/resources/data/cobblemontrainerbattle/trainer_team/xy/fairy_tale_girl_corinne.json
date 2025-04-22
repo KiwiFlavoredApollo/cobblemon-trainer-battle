@@ -1,0 +1,42 @@
+[
+    {
+        "species": "Azumarill",
+        "level": 56,
+        "ability": "Huge Power",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Aqua Tail",
+            "Play Rough",
+            "Rollout",
+            "Brick Break"
+        ]
+    },
+    {
+        "species": "Florges",
+        "level": 56,
+        "ability": "Flower Veil",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Petal Dance",
+            "Moonblast",
+            "Misty Terrain",
+            "Flash"
+        ]
+    }
+]

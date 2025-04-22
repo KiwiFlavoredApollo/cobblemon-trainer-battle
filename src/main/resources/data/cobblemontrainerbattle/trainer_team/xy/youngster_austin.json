@@ -1,0 +1,31 @@
+[
+    {
+        "species": "Zigzagoon",
+        "level": 5,
+        "ability": "Gluttony",
+        "nature": "Quirky",
+        "item": "",
+        "evs": {
+            "hp": 18,
+            "atk": 8,
+            "def": 9,
+            "spa": 8,
+            "spd": 9,
+            "spe": 11
+        },
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Tackle",
+            "Growl",
+            "Tail Whip",
+            ""
+        ]
+    }
+]

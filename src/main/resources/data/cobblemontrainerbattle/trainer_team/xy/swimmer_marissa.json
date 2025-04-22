@@ -1,0 +1,21 @@
+[
+    {
+        "species": "Masquerain",
+        "level": 22,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Gust",
+            "Quick Attack",
+            "Bubble"
+        ]
+    }
+]

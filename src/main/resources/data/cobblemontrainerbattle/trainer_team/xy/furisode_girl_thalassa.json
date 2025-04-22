@@ -1,0 +1,62 @@
+[
+    {
+        "species": "Politoed",
+        "level": 65,
+        "ability": "Drizzle",
+        "nature": "",
+        "ivs": {
+            "hp": 12,
+            "atk": 12,
+            "def": 12,
+            "spa": 12,
+            "spd": 12,
+            "spe": 12
+        },
+        "moves": [
+            "Hyper Voice",
+            "Scald",
+            "Protect",
+            "Ice Beam"
+        ]
+    },
+    {
+        "species": "Ludicolo",
+        "level": 65,
+        "ability": "Rain Dish",
+        "nature": "",
+        "ivs": {
+            "hp": 12,
+            "atk": 12,
+            "def": 12,
+            "spa": 12,
+            "spd": 12,
+            "spe": 12
+        },
+        "moves": [
+            "Giga Drain",
+            "Grass Knot",
+            "Protect",
+            "Rain Dance"
+        ]
+    },
+    {
+        "species": "Beartic",
+        "level": 65,
+        "ability": "Swift Swim",
+        "nature": "",
+        "ivs": {
+            "hp": 12,
+            "atk": 12,
+            "def": 12,
+            "spa": 12,
+            "spd": 12,
+            "spe": 12
+        },
+        "moves": [
+            "Icicle Crash",
+            "Rock Slide",
+            "Dive",
+            "Rain Dance"
+        ]
+    }
+]

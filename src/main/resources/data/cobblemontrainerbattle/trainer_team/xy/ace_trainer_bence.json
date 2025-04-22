@@ -1,0 +1,62 @@
+[
+    {
+        "species": "Steelix",
+        "level": 56,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Earthquake",
+            "Iron Tail",
+            "Thunder Fang",
+            "Ice Fang"
+        ]
+    },
+    {
+        "species": "Electrode",
+        "level": 56,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Light Screen",
+            "Thunder",
+            "Eerie Impulse",
+            "Screech"
+        ]
+    },
+    {
+        "species": "Kangaskhan",
+        "level": 57,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Dizzy Punch",
+            "Crunch",
+            "Shadow Claw",
+            "Outrage"
+        ]
+    }
+]

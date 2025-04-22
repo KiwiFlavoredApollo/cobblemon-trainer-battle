@@ -1,0 +1,60 @@
+[
+    {
+        "species": "Chimecho",
+        "level": 24,
+        "ability": "Levitate",
+        "nature": "Modest",
+        "item": "",
+        "evs": {
+            "hp": 65,
+            "atk": 26,
+            "def": 38,
+            "spa": 55,
+            "spd": 43,
+            "spe": 36
+        },
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Astonish",
+            "Confusion",
+            "Uproar",
+            "Take Down"
+        ]
+    },
+    {
+        "species": "Golett",
+        "level": 24,
+        "ability": "Klutz",
+        "nature": "Hasty",
+        "item": "",
+        "evs": {
+            "hp": 62,
+            "atk": 40,
+            "def": 26,
+            "spa": 21,
+            "spd": 29,
+            "spe": 23
+        },
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Rollout",
+            "Shadow Punch",
+            "Iron Defense",
+            "Mega Punch"
+        ]
+    }
+]

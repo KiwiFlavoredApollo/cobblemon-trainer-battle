@@ -1,0 +1,42 @@
+[
+    {
+        "species": "Medicham",
+        "level": 58,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Brick Break",
+            "Zen Headbutt",
+            "Reflect",
+            "Light Screen"
+        ]
+    },
+    {
+        "species": "Gallade",
+        "level": 60,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Leaf Blade",
+            "Night Slash",
+            "Psycho Cut",
+            "Swords Dance"
+        ]
+    }
+]

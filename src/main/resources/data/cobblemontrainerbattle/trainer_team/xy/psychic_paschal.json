@@ -1,0 +1,31 @@
+[
+    {
+        "species": "Exeggutor",
+        "level": 46,
+        "ability": "Chlorophyll",
+        "nature": "Brave",
+        "item": "",
+        "evs": {
+            "hp": 142,
+            "atk": 106,
+            "def": 87,
+            "spa": 124,
+            "spd": 69,
+            "spe": 54
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "moves": [
+            "Stomp",
+            "Psyshock",
+            "Egg Bomb",
+            "Wood Hammer"
+        ]
+    }
+]

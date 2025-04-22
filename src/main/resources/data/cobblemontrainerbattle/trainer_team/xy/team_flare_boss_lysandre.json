@@ -1,0 +1,118 @@
+[
+    {
+        "species": "Mienshao",
+        "level": 49,
+        "ability": "Inner Focus",
+        "nature": "Jolly",
+        "item": "",
+        "evs": {
+            "hp": 132,
+            "atk": 137,
+            "def": 73,
+            "spa": 96,
+            "spd": 73,
+            "spe": 128
+        },
+        "ivs": {
+            "hp": 20,
+            "atk": 20,
+            "def": 20,
+            "spa": 20,
+            "spd": 20,
+            "spe": 20
+        },
+        "moves": [
+            "Swords Dance",
+            "High Jump Kick",
+            "Acrobatics",
+            ""
+        ]
+    },
+    {
+        "species": "Honchkrow",
+        "level": 49,
+        "ability": "Super Luck",
+        "nature": "Hasty",
+        "item": "",
+        "evs": {
+            "hp": 166,
+            "atk": 137,
+            "def": 58,
+            "spa": 117,
+            "spd": 65,
+            "spe": 92
+        },
+        "ivs": {
+            "hp": 20,
+            "atk": 20,
+            "def": 20,
+            "spa": 20,
+            "spd": 20,
+            "spe": 20
+        },
+        "moves": [
+            "Night Slash",
+            "Aerial Ace",
+            "Retaliate",
+            "Steel Wing"
+        ]
+    },
+    {
+        "species": "Pyroar",
+        "level": 51,
+        "ability": "Unnerve",
+        "nature": "Modest",
+        "item": "",
+        "evs": {
+            "hp": 158,
+            "atk": 75,
+            "def": 88,
+            "spa": 138,
+            "spd": 82,
+            "spe": 123
+        },
+        "ivs": {
+            "hp": 20,
+            "atk": 20,
+            "def": 20,
+            "spa": 20,
+            "spd": 20,
+            "spe": 20
+        },
+        "moves": [
+            "Hyper Voice",
+            "Fire Blast",
+            "Dark Pulse",
+            ""
+        ]
+    },
+    {
+        "species": "Gyarados",
+        "level": 53,
+        "ability": "Mold Breaker",
+        "nature": "Adamant",
+        "item": "Gyaradosite",
+        "evs": {
+            "hp": 174,
+            "atk": 196,
+            "def": 131,
+            "spa": 80,
+            "spd": 153,
+            "spe": 101
+        },
+        "ivs": {
+            "hp": 20,
+            "atk": 20,
+            "def": 20,
+            "spa": 20,
+            "spd": 20,
+            "spe": 20
+        },
+        "moves": [
+            "Aqua Tail",
+            "Earthquake",
+            "Iron Head",
+            "Outrage"
+        ]
+    }
+]

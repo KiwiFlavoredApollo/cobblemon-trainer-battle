@@ -1,0 +1,60 @@
+[
+    {
+        "species": "Meditite",
+        "level": 28,
+        "ability": "Pure Power",
+        "nature": "Modest",
+        "item": "",
+        "evs": {
+            "hp": 57,
+            "atk": 27,
+            "def": 38,
+            "spa": 33,
+            "spd": 38,
+            "spe": 41
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "moves": [
+            "HP Fighting",
+            "Mind Reader",
+            "Feint",
+            "Calm Mind"
+        ]
+    },
+    {
+        "species": "Mienfoo",
+        "level": 28,
+        "ability": "Regenerator",
+        "nature": "Mild",
+        "item": "",
+        "evs": {
+            "hp": 66,
+            "atk": 55,
+            "def": 31,
+            "spa": 41,
+            "spd": 35,
+            "spe": 44
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "moves": [
+            "Fake Out",
+            "Double Slap",
+            "Swift",
+            "Calm Mind"
+        ]
+    }
+]

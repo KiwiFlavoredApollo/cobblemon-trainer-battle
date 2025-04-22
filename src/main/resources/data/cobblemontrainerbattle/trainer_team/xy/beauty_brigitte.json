@@ -1,0 +1,42 @@
+[
+    {
+        "species": "Espurr",
+        "level": 12,
+        "ability": "Infiltrator",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Scratch ",
+            "Leer ",
+            "Covet",
+            "Confusion"
+        ]
+    },
+    {
+        "species": "Butterfree",
+        "level": 12,
+        "ability": "Compound Eyes",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Confusion",
+            "Poison Powder",
+            "Stun Spore",
+            "Sleep Powder"
+        ]
+    }
+]

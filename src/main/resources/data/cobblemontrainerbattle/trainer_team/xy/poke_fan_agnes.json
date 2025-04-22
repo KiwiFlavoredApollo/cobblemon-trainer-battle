@@ -1,0 +1,56 @@
+[
+    {
+        "species": "Burmy",
+        "level": 7,
+        "ability": "Shed Skin",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Tackle",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Burmy",
+        "level": 7,
+        "ability": "Shed Skin",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Tackle",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Burmy",
+        "level": 7,
+        "ability": "Shed Skin",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Tackle",
+            "Protect"
+        ]
+    }
+]

@@ -1,0 +1,42 @@
+[
+    {
+        "species": "Mantyke",
+        "level": 28,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Water Pulse",
+            "Wing Attack",
+            "Headbutt",
+            "Confuse Ray"
+        ]
+    },
+    {
+        "species": "Jumpluff",
+        "level": 29,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Bullet Seed",
+            "Fairy Wind",
+            "Stun Spore",
+            "Infestation"
+        ]
+    }
+]

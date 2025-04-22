@@ -1,0 +1,53 @@
+[
+    {
+        "species": "Chatot",
+        "level": 63,
+        "ability": "Keen Eye",
+        "nature": "",
+        "ivs": {
+            "hp": 9,
+            "atk": 9,
+            "def": 9,
+            "spa": 9,
+            "spd": 9,
+            "spe": 9
+        },
+        "moves": [
+            "Echoed Voice"
+        ]
+    },
+    {
+        "species": "Exploud",
+        "level": 63,
+        "ability": "Scrappy",
+        "nature": "",
+        "ivs": {
+            "hp": 9,
+            "atk": 9,
+            "def": 9,
+            "spa": 9,
+            "spd": 9,
+            "spe": 9
+        },
+        "moves": [
+            "Echoed Voice"
+        ]
+    },
+    {
+        "species": "Aurorus",
+        "level": 63,
+        "ability": "Refrigerate",
+        "nature": "",
+        "ivs": {
+            "hp": 9,
+            "atk": 9,
+            "def": 9,
+            "spa": 9,
+            "spd": 9,
+            "spe": 9
+        },
+        "moves": [
+            "Echoed Voice"
+        ]
+    }
+]

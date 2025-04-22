@@ -1,0 +1,31 @@
+[
+    {
+        "species": "Zigzagoon",
+        "level": 7,
+        "ability": "Gluttony",
+        "nature": "Serious",
+        "item": "",
+        "evs": {
+            "hp": 22,
+            "atk": 9,
+            "def": 10,
+            "spa": 9,
+            "spd": 10,
+            "spe": 13
+        },
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Tackle",
+            "Growl",
+            "Tail Whip",
+            ""
+        ]
+    }
+]

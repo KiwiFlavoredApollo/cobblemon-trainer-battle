@@ -1,0 +1,59 @@
+[
+    {
+        "species": "Pancham",
+        "level": 15,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 8,
+            "atk": 8,
+            "def": 8,
+            "spa": 8,
+            "spd": 8,
+            "spe": 8
+        },
+        "moves": [
+            "Arm Thrust",
+            "Tackle",
+            "Leer"
+        ]
+    },
+    {
+        "species": "Skiddo",
+        "level": 16,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 8,
+            "atk": 8,
+            "def": 8,
+            "spa": 8,
+            "spd": 8,
+            "spe": 8
+        },
+        "moves": [
+            "Razor Leaf",
+            "Tackle",
+            "Growth"
+        ]
+    },
+    {
+        "species": "Goldeen",
+        "level": 17,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 8,
+            "atk": 8,
+            "def": 8,
+            "spa": 8,
+            "spd": 8,
+            "spe": 8
+        },
+        "moves": [
+            "Water Pulse",
+            "Peck",
+            "Supersonic"
+        ]
+    }
+]

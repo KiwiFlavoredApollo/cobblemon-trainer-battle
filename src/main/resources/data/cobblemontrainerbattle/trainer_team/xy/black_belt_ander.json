@@ -1,0 +1,42 @@
+[
+    {
+        "species": "Pangoro",
+        "level": 57,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 28,
+            "atk": 28,
+            "def": 28,
+            "spa": 28,
+            "spd": 28,
+            "spe": 28
+        },
+        "moves": [
+            "Hammer Arm",
+            "Crunch",
+            "Rock Slide",
+            "Shadow Claw"
+        ]
+    },
+    {
+        "species": "Heracross",
+        "level": 58,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 28,
+            "atk": 28,
+            "def": 28,
+            "spa": 28,
+            "spd": 28,
+            "spe": 28
+        },
+        "moves": [
+            "Megahorn",
+            "Close Combat",
+            "Earthquake",
+            "Stone Edge"
+        ]
+    }
+]

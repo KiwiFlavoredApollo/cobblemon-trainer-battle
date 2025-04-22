@@ -1,0 +1,89 @@
+[
+    {
+        "species": "Venusaur",
+        "level": 50,
+        "ability": "Overgrow",
+        "nature": "Adamant",
+        "item": "",
+        "evs": {
+            "hp": 151,
+            "atk": 107,
+            "def": 99,
+            "spa": 104,
+            "spd": 116,
+            "spe": 96
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Petal Dance",
+            "Worry Seed",
+            "Synthesis",
+            "Petal Blizzard"
+        ]
+    },
+    {
+        "species": "Charizard",
+        "level": 50,
+        "ability": "Blaze",
+        "nature": "Bashful",
+        "item": "",
+        "evs": {
+            "hp": 149,
+            "atk": 100,
+            "def": 94,
+            "spa": 125,
+            "spd": 101,
+            "spe": 116
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Flame Burst",
+            "Wing Attack",
+            "Slash",
+            "Flamethrower"
+        ]
+    },
+    {
+        "species": "Blastoise",
+        "level": 50,
+        "ability": "Torrent",
+        "nature": "Naughty",
+        "item": "",
+        "evs": {
+            "hp": 150,
+            "atk": 108,
+            "def": 116,
+            "spa": 101,
+            "spd": 108,
+            "spe": 94
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Water Pulse",
+            "Aqua Tail",
+            "Skull Bash",
+            "Iron Defense"
+        ]
+    }
+]

@@ -1,0 +1,42 @@
+[
+    {
+        "species": "Smeargle",
+        "level": 16,
+        "ability": "Own Tempo",
+        "nature": "",
+        "ivs": {
+            "hp": 4,
+            "atk": 4,
+            "def": 4,
+            "spa": 4,
+            "spd": 4,
+            "spe": 4
+        },
+        "moves": [
+            "Helping Hand",
+            "Pursuit",
+            "Confusion",
+            "Twister"
+        ]
+    },
+    {
+        "species": "Smeargle",
+        "level": 16,
+        "ability": "Own Tempo",
+        "nature": "",
+        "ivs": {
+            "hp": 4,
+            "atk": 4,
+            "def": 4,
+            "spa": 4,
+            "spd": 4,
+            "spe": 4
+        },
+        "moves": [
+            "Helping Hand",
+            "Metal Claw",
+            "Gust",
+            "Clear Smog"
+        ]
+    }
+]

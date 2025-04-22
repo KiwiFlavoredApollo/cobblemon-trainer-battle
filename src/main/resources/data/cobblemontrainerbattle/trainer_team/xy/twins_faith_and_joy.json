@@ -1,0 +1,42 @@
+[
+    {
+        "species": "Minun",
+        "level": 11,
+        "ability": "Minus",
+        "nature": "Relaxed",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Growl",
+            "Quick Attack",
+            "Thunder Wave",
+            "Helping Hand"
+        ]
+    },
+    {
+        "species": "Plusle",
+        "level": 11,
+        "ability": "Plus",
+        "nature": "Hardy",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Growl",
+            "Quick Attack",
+            "Thunder Wave",
+            "Helping Hand"
+        ]
+    }
+]

@@ -1,0 +1,42 @@
+[
+    {
+        "species": "Liepard",
+        "level": 46,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 13,
+            "atk": 13,
+            "def": 13,
+            "spa": 13,
+            "spd": 13,
+            "spe": 13
+        },
+        "moves": [
+            "Fake Out",
+            "Sucker Punch",
+            "Taunt",
+            "Slash"
+        ]
+    },
+    {
+        "species": "Bisharp",
+        "level": 48,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 13,
+            "atk": 13,
+            "def": 13,
+            "spa": 13,
+            "spd": 13,
+            "spe": 13
+        },
+        "moves": [
+            "Night Slash",
+            "Iron Head",
+            "X-Scissor",
+            "Shadow Claw"
+        ]
+    }
+]

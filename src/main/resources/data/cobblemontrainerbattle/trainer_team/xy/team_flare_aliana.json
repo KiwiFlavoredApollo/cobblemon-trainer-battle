@@ -1,0 +1,60 @@
+[
+    {
+        "species": "Mightyena",
+        "level": 46,
+        "ability": "Intimidate",
+        "nature": "Quirky",
+        "item": "",
+        "evs": {
+            "hp": 122,
+            "atk": 89,
+            "def": 71,
+            "spa": 62,
+            "spd": 62,
+            "spe": 71
+        },
+        "ivs": {
+            "hp": 4,
+            "atk": 4,
+            "def": 4,
+            "spa": 4,
+            "spd": 4,
+            "spe": 4
+        },
+        "moves": [
+            "Taunt",
+            "Sucker Punch",
+            "Crunch",
+            "Embargo"
+        ]
+    },
+    {
+        "species": "Druddigon",
+        "level": 48,
+        "ability": "Sheer Force",
+        "nature": "Serious",
+        "item": "",
+        "evs": {
+            "hp": 133,
+            "atk": 122,
+            "def": 93,
+            "spa": 64,
+            "spd": 93,
+            "spe": 53
+        },
+        "ivs": {
+            "hp": 4,
+            "atk": 4,
+            "def": 4,
+            "spa": 4,
+            "spd": 4,
+            "spe": 4
+        },
+        "moves": [
+            "Dragon Claw",
+            "Crunch",
+            "Shadow Claw",
+            "Surf"
+        ]
+    }
+]

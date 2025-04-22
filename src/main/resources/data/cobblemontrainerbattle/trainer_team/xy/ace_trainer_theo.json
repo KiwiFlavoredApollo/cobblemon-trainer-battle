@@ -1,0 +1,60 @@
+[
+    {
+        "species": "Beartic",
+        "level": 54,
+        "ability": "Snow Cloak",
+        "nature": "Gentle",
+        "item": "",
+        "evs": {
+            "hp": 175,
+            "atk": 132,
+            "def": 90,
+            "spa": 89,
+            "spd": 110,
+            "spe": 67
+        },
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Icicle Crash",
+            "Rest",
+            "Blizzard",
+            "Hail"
+        ]
+    },
+    {
+        "species": "Vanilluxe",
+        "level": 55,
+        "ability": "Ice Body",
+        "nature": "Lax",
+        "item": "",
+        "evs": {
+            "hp": 151,
+            "atk": 118,
+            "def": 117,
+            "spa": 134,
+            "spd": 106,
+            "spe": 100
+        },
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Acid Armor",
+            "Ice Beam",
+            "Hail",
+            "Mirror Coat"
+        ]
+    }
+]

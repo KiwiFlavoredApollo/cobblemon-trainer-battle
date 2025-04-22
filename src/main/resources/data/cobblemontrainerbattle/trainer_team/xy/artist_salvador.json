@@ -1,0 +1,22 @@
+[
+    {
+        "species": "Smeargle",
+        "level": 44,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 12,
+            "atk": 12,
+            "def": 12,
+            "spa": 12,
+            "spd": 12,
+            "spe": 12
+        },
+        "moves": [
+            "Air Slash",
+            "Power Gem",
+            "Dazzling Gleam",
+            "Flash Cannon"
+        ]
+    }
+]

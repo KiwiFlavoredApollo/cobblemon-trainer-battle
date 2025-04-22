@@ -1,0 +1,118 @@
+[
+    {
+        "species": "Dragalge",
+        "level": 63,
+        "ability": "Poison Point",
+        "nature": "Careful",
+        "item": "",
+        "evs": {
+            "hp": 168,
+            "atk": 113,
+            "def": 132,
+            "spa": 126,
+            "spd": 190,
+            "spe": 74
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Dragon Pulse",
+            "Surf",
+            "Sludge Bomb",
+            "Thunderbolt"
+        ]
+    },
+    {
+        "species": "Druddigon",
+        "level": 63,
+        "ability": "Rough Skin",
+        "nature": "Careful",
+        "item": "",
+        "evs": {
+            "hp": 183,
+            "atk": 170,
+            "def": 132,
+            "spa": 84,
+            "spd": 145,
+            "spe": 79
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Dragon Tail",
+            "Revenge",
+            "Retaliate",
+            "Chip Away"
+        ]
+    },
+    {
+        "species": "Altaria",
+        "level": 63,
+        "ability": "Natural Cure",
+        "nature": "Brave",
+        "item": "",
+        "evs": {
+            "hp": 181,
+            "atk": 117,
+            "def": 132,
+            "spa": 107,
+            "spd": 151,
+            "spe": 107
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Moonblast",
+            "Dragon Pulse",
+            "Cotton Guard",
+            "Sing"
+        ]
+    },
+    {
+        "species": "Noivern",
+        "level": 65,
+        "ability": "Frisk",
+        "nature": "Bold",
+        "item": "",
+        "evs": {
+            "hp": 199,
+            "atk": 99,
+            "def": 135,
+            "spa": 145,
+            "spd": 123,
+            "spe": 179
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Air Slash",
+            "Dragon Pulse",
+            "Flamethrower",
+            "Super Fang"
+        ]
+    }
+]

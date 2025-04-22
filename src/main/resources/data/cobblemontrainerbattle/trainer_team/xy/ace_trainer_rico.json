@@ -1,0 +1,31 @@
+[
+    {
+        "species": "Ampharos",
+        "level": 36,
+        "ability": "Static",
+        "nature": "Serious",
+        "item": "",
+        "evs": {
+            "hp": 116,
+            "atk": 64,
+            "def": 71,
+            "spa": 93,
+            "spd": 75,
+            "spe": 50
+        },
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Electro Ball",
+            "Confuse Ray",
+            "Thunder Punch",
+            "Power Gem"
+        ]
+    }
+]

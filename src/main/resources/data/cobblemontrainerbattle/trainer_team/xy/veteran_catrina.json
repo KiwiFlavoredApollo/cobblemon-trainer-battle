@@ -1,0 +1,60 @@
+[
+    {
+        "species": "Glaceon",
+        "level": 57,
+        "ability": "Snow Cloak",
+        "nature": "Mild",
+        "item": "",
+        "evs": {
+            "hp": 154,
+            "atk": 87,
+            "def": 129,
+            "spa": 182,
+            "spd": 126,
+            "spe": 92
+        },
+        "ivs": {
+            "hp": 24,
+            "atk": 24,
+            "def": 24,
+            "spa": 24,
+            "spd": 24,
+            "spe": 24
+        },
+        "moves": [
+            "Blizzard",
+            "Ice Shard",
+            "Mirror Coat",
+            "Quick Attack"
+        ]
+    },
+    {
+        "species": "Snorlax",
+        "level": 59,
+        "ability": "Thick Fat",
+        "nature": "Rash",
+        "item": "",
+        "evs": {
+            "hp": 271,
+            "atk": 148,
+            "def": 95,
+            "spa": 104,
+            "spd": 133,
+            "spe": 54
+        },
+        "ivs": {
+            "hp": 24,
+            "atk": 24,
+            "def": 24,
+            "spa": 24,
+            "spd": 24,
+            "spe": 24
+        },
+        "moves": [
+            "Crunch",
+            "Body Slam",
+            "Power-Up Punch",
+            "Earthquake"
+        ]
+    }
+]

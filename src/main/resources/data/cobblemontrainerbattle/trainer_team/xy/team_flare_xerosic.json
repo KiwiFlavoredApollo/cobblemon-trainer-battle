@@ -1,0 +1,60 @@
+[
+    {
+        "species": "Crobat",
+        "level": 46,
+        "ability": "Inner Focus",
+        "nature": "Quirky",
+        "item": "",
+        "evs": {
+            "hp": 139,
+            "atk": 93,
+            "def": 84,
+            "spa": 74,
+            "spd": 84,
+            "spe": 130
+        },
+        "ivs": {
+            "hp": 12,
+            "atk": 12,
+            "def": 12,
+            "spa": 12,
+            "spd": 12,
+            "spe": 12
+        },
+        "moves": [
+            "X-Scissor",
+            "Cross Poison",
+            "Steel Wing",
+            "Air Slash"
+        ]
+    },
+    {
+        "species": "Malamar",
+        "level": 48,
+        "ability": "Contrary",
+        "nature": "Adamant",
+        "item": "",
+        "evs": {
+            "hp": 146,
+            "atk": 108,
+            "def": 95,
+            "spa": 68,
+            "spd": 82,
+            "spe": 80
+        },
+        "ivs": {
+            "hp": 12,
+            "atk": 12,
+            "def": 12,
+            "spa": 12,
+            "spd": 12,
+            "spe": 12
+        },
+        "moves": [
+            "Superpower",
+            "Payback",
+            "Psycho Cut",
+            "Retaliate"
+        ]
+    }
+]

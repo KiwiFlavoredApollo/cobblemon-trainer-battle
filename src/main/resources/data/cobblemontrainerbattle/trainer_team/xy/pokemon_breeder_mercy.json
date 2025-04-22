@@ -1,0 +1,81 @@
+[
+    {
+        "species": "Ducklett",
+        "level": 12,
+        "ability": "Big Pecks",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Water Gun",
+            "Water Sport",
+            "Defog",
+            "Wing Attack"
+        ]
+    },
+    {
+        "species": "Litleo",
+        "level": 12,
+        "ability": "Rivalry",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Leer ",
+            "Ember",
+            "Work Up",
+            "Headbutt"
+        ]
+    },
+    {
+        "species": "Oddish",
+        "level": 12,
+        "ability": "Chlorophyll",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Absorb",
+            "Sweet Scent",
+            "Acid"
+        ]
+    },
+    {
+        "species": "Pikachu",
+        "level": 12,
+        "ability": "Static",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Thunder Shock",
+            "Growl",
+            "Play Nice",
+            "Quick Attack"
+        ]
+    }
+]

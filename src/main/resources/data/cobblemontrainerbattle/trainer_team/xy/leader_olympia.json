@@ -1,0 +1,89 @@
+[
+    {
+        "species": "Sigilyph",
+        "level": 44,
+        "ability": "Magic Guard",
+        "nature": "Careful",
+        "item": "",
+        "evs": {
+            "hp": 127,
+            "atk": 65,
+            "def": 85,
+            "spa": 94,
+            "spd": 93,
+            "spe": 100
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Psychic",
+            "Air Slash",
+            "Light Screen",
+            "Reflect"
+        ]
+    },
+    {
+        "species": "Slowking",
+        "level": 45,
+        "ability": "Oblivious",
+        "nature": "Lonely",
+        "item": "",
+        "evs": {
+            "hp": 150,
+            "atk": 90,
+            "def": 77,
+            "spa": 104,
+            "spd": 113,
+            "spe": 41
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Psychic",
+            "Calm Mind",
+            "Power Gem",
+            "Yawn"
+        ]
+    },
+    {
+        "species": "Meowstic-F",
+        "level": 48,
+        "ability": "Infiltrator",
+        "nature": "Naughty",
+        "item": "",
+        "evs": {
+            "hp": 136,
+            "atk": 63,
+            "def": 85,
+            "spa": 92,
+            "spd": 81,
+            "spe": 112
+        },
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Psychic",
+            "Calm Mind",
+            "Fake Out",
+            "Shadow Ball"
+        ]
+    }
+]

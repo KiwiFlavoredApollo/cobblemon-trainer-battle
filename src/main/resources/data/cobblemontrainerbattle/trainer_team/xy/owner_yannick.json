@@ -1,0 +1,62 @@
+[
+    {
+        "species": "Zangoose",
+        "level": 31,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 6,
+            "atk": 6,
+            "def": 6,
+            "spa": 6,
+            "spd": 6,
+            "spe": 6
+        },
+        "moves": [
+            "Thunder Punch",
+            "Quick Attack",
+            "Shadow Claw",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Zangoose",
+        "level": 31,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 6,
+            "atk": 6,
+            "def": 6,
+            "spa": 6,
+            "spd": 6,
+            "spe": 6
+        },
+        "moves": [
+            "Ice Punch",
+            "Quick Attack",
+            "X-Scissor",
+            "Poison Jab"
+        ]
+    },
+    {
+        "species": "Zangoose",
+        "level": 31,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 6,
+            "atk": 6,
+            "def": 6,
+            "spa": 6,
+            "spd": 6,
+            "spe": 6
+        },
+        "moves": [
+            "Fire Punch",
+            "Quick Attack",
+            "Brick Break",
+            "Rock Slide"
+        ]
+    }
+]

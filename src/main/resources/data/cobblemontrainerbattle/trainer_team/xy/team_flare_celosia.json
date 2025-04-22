@@ -1,0 +1,42 @@
+[
+    {
+        "species": "Manectric",
+        "level": 46,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 24,
+            "atk": 24,
+            "def": 24,
+            "spa": 24,
+            "spd": 24,
+            "spe": 24
+        },
+        "moves": [
+            "Thunderbolt",
+            "Quick Attack",
+            "Flamethrower",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Drapion",
+        "level": 48,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 24,
+            "atk": 24,
+            "def": 24,
+            "spa": 24,
+            "spd": 24,
+            "spe": 24
+        },
+        "moves": [
+            "Night Slash",
+            "X-Scissor",
+            "Poison Jab",
+            "Acupressure"
+        ]
+    }
+]

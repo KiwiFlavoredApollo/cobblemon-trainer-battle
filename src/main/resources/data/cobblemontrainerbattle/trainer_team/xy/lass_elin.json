@@ -1,0 +1,39 @@
+[
+    {
+        "species": "Goldeen",
+        "level": 6,
+        "ability": "Water Veil",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Peck",
+            "Water Sport",
+            "Tail Whip"
+        ]
+    },
+    {
+        "species": "Marill",
+        "level": 6,
+        "ability": "Huge Power",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Tackle ",
+            "Defense Curl"
+        ]
+    }
+]

@@ -1,0 +1,61 @@
+[
+    {
+        "species": "Pikachu",
+        "level": 11,
+        "ability": "Static",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Thunder Shock",
+            "Growl",
+            "Play Nice",
+            "Quick Attack"
+        ]
+    },
+    {
+        "species": "Psyduck",
+        "level": 11,
+        "ability": "Cloud Nine",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Scratch",
+            "Tail Whip",
+            "Water Gun ",
+            "Disable"
+        ]
+    },
+    {
+        "species": "Pidgey",
+        "level": 11,
+        "ability": "Keen Eye",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Tackle ",
+            "Sand Attack",
+            "Gust"
+        ]
+    }
+]

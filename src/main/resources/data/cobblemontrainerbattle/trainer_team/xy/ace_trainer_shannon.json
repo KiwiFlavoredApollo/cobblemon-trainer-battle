@@ -1,0 +1,89 @@
+[
+    {
+        "species": "Cryogonal",
+        "level": 52,
+        "ability": "Levitate",
+        "nature": "Bold",
+        "item": "",
+        "evs": {
+            "hp": 143,
+            "atk": 58,
+            "def": 48,
+            "spa": 112,
+            "spd": 153,
+            "spe": 122
+        },
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Slash",
+            "Confuse Ray",
+            "Recover",
+            "Freeze-Dry"
+        ]
+    },
+    {
+        "species": "Piloswine",
+        "level": 53,
+        "ability": "Oblivious",
+        "nature": "Sassy",
+        "item": "",
+        "evs": {
+            "hp": 177,
+            "atk": 119,
+            "def": 98,
+            "spa": 77,
+            "spd": 84,
+            "spe": 59
+        },
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Mist",
+            "Thrash",
+            "Earthquake",
+            "Blizzard"
+        ]
+    },
+    {
+        "species": "Jynx",
+        "level": 54,
+        "ability": "Oblivious",
+        "nature": "Careful",
+        "item": "",
+        "evs": {
+            "hp": 142,
+            "atk": 67,
+            "def": 51,
+            "spa": 123,
+            "spd": 127,
+            "spe": 116
+        },
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Wake-Up Slap",
+            "Avalanche",
+            "Body Slam",
+            "Wring Out"
+        ]
+    }
+]

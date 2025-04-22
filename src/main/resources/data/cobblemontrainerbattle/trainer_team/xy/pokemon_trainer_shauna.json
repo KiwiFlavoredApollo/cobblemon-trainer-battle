@@ -1,0 +1,61 @@
+[
+    {
+        "species": "Delcatty",
+        "level": 49,
+        "ability": "Cute Charm",
+        "nature": "",
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Charm",
+            "Play Rough",
+            "Feint Attack",
+            "Return"
+        ]
+    },
+    {
+        "species": "Goodra",
+        "level": 49,
+        "ability": "Sap Sipper",
+        "nature": "",
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Dragon Pulse",
+            "Sludge Wave",
+            "Body Slam",
+            "Earthquake"
+        ]
+    },
+    {
+        "species": "Delphox",
+        "level": 51,
+        "ability": "Blaze",
+        "nature": "",
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Psychic",
+            "Mystical Fire",
+            "Calm Mind"
+        ]
+    }
+]

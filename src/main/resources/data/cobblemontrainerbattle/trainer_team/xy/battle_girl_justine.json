@@ -1,0 +1,22 @@
+[
+    {
+        "species": "Mienshao",
+        "level": 52,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 7,
+            "atk": 7,
+            "def": 7,
+            "spa": 7,
+            "spd": 7,
+            "spe": 7
+        },
+        "moves": [
+            "Aura Sphere",
+            "Grass Knot",
+            "Fake Out",
+            "Bounce"
+        ]
+    }
+]

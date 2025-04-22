@@ -1,0 +1,42 @@
+[
+    {
+        "species": "Sawk",
+        "level": 43,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 7,
+            "atk": 7,
+            "def": 7,
+            "spa": 7,
+            "spd": 7,
+            "spe": 7
+        },
+        "moves": [
+            "Counter",
+            "Low Sweep",
+            "Payback",
+            "Poison Jab"
+        ]
+    },
+    {
+        "species": "Mienshao",
+        "level": 44,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 7,
+            "atk": 7,
+            "def": 7,
+            "spa": 7,
+            "spd": 7,
+            "spe": 7
+        },
+        "moves": [
+            "Drain Punch",
+            "Rock Slide",
+            "Fake Out",
+            "Retaliate"
+        ]
+    }
+]

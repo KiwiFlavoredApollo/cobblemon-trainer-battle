@@ -1,0 +1,31 @@
+[
+    {
+        "species": "Linoone",
+        "level": 26,
+        "ability": "Gluttony",
+        "nature": "Adamant",
+        "item": "",
+        "evs": {
+            "hp": 76,
+            "atk": 45,
+            "def": 36,
+            "spa": 27,
+            "spd": 36,
+            "spe": 57
+        },
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Headbutt",
+            "Sand Attack",
+            "Odor Sleuth",
+            "Mud Sport"
+        ]
+    }
+]

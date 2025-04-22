@@ -1,0 +1,42 @@
+[
+    {
+        "species": "Slowbro",
+        "level": 57,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Surf",
+            "Psychic",
+            "Flamethrower",
+            "Ice Beam"
+        ]
+    },
+    {
+        "species": "Altaria",
+        "level": 57,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Dazzling Gleam",
+            "Dragon Pulse",
+            "Roost",
+            "Sing"
+        ]
+    }
+]

@@ -1,0 +1,22 @@
+[
+    {
+        "species": "Smeargle",
+        "level": 16,
+        "ability": "Technician",
+        "nature": "",
+        "ivs": {
+            "hp": 4,
+            "atk": 4,
+            "def": 4,
+            "spa": 4,
+            "spd": 4,
+            "spe": 4
+        },
+        "moves": [
+            "Thunder Shock",
+            "Powder Snow",
+            "Rock Throw",
+            "Rock Smash"
+        ]
+    }
+]

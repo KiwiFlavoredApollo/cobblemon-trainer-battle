@@ -1,0 +1,42 @@
+[
+    {
+        "species": "Rotom",
+        "level": 42,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Discharge",
+            "Dark Pulse",
+            "Shadow Ball",
+            "Confuse Ray"
+        ]
+    },
+    {
+        "species": "Butterfree",
+        "level": 44,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Confide",
+            "Bug Buzz",
+            "Energy Ball",
+            "Psychic"
+        ]
+    }
+]

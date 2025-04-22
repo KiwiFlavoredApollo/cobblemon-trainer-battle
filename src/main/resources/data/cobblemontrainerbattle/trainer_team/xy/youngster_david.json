@@ -1,0 +1,21 @@
+[
+    {
+        "species": "Ledyba",
+        "level": 10,
+        "ability": "Swarm",
+        "nature": "",
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "moves": [
+            "Tackle",
+            "Supersonic",
+            "Comet Punch"
+        ]
+    }
+]

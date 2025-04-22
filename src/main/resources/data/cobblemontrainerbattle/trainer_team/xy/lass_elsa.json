@@ -1,0 +1,21 @@
+[
+    {
+        "species": "Flab\u00e9b\u00e9",
+        "level": 8,
+        "ability": "Flower Veil",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Tackle",
+            "Vine Whip",
+            "Fairy Wind"
+        ]
+    }
+]

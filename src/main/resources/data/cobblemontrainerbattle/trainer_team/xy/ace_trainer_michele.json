@@ -1,0 +1,42 @@
+[
+    {
+        "species": "Magcargo",
+        "level": 57,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Fire Blast",
+            "Earth Power",
+            "Ancient Power",
+            "Yawn"
+        ]
+    },
+    {
+        "species": "Scizor",
+        "level": 58,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Bullet Punch",
+            "X-Scissor",
+            "Night Slash",
+            "Swords Dance"
+        ]
+    }
+]

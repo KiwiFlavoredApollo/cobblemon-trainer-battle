@@ -1,0 +1,41 @@
+[
+    {
+        "species": "Scrafty",
+        "level": 43,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 7,
+            "atk": 7,
+            "def": 7,
+            "spa": 7,
+            "spd": 7,
+            "spe": 7
+        },
+        "moves": [
+            "High Jump Kick",
+            "Dragon Tail",
+            "Feint Attack"
+        ]
+    },
+    {
+        "species": "Throh",
+        "level": 44,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 7,
+            "atk": 7,
+            "def": 7,
+            "spa": 7,
+            "spd": 7,
+            "spe": 7
+        },
+        "moves": [
+            "Storm Throw",
+            "Revenge",
+            "Bulldoze",
+            "Rock Slide"
+        ]
+    }
+]

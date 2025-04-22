@@ -1,0 +1,60 @@
+[
+    {
+        "species": "Zigzagoon",
+        "level": 11,
+        "ability": "Gluttony",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Tackle",
+            "Tail Whip",
+            "Headbutt",
+            "Baby-Doll Eyes"
+        ]
+    },
+    {
+        "species": "Gulpin",
+        "level": 11,
+        "ability": "Liquid Ooze",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Pound",
+            "Yawn",
+            "Poison Gas"
+        ]
+    },
+    {
+        "species": "Ralts",
+        "level": 11,
+        "ability": "Synchronize",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Growl",
+            "Confusion",
+            "Double Team"
+        ]
+    }
+]

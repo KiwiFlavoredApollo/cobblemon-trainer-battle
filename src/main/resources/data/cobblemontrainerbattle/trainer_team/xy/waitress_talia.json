@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Mantine",
+        "level": 31,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 6,
+            "atk": 6,
+            "def": 6,
+            "spa": 6,
+            "spd": 6,
+            "spe": 6
+        },
+        "moves": [
+            "Air Slash",
+            "Water Pulse",
+            "Protect",
+            "Wide Guard"
+        ]
+    },
+    {
+        "species": "Emolga",
+        "level": 31,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 6,
+            "atk": 6,
+            "def": 6,
+            "spa": 6,
+            "spd": 6,
+            "spe": 6
+        },
+        "moves": [
+            "Air Slash",
+            "Spark"
+        ]
+    },
+    {
+        "species": "Sigilyph",
+        "level": 31,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 6,
+            "atk": 6,
+            "def": 6,
+            "spa": 6,
+            "spd": 6,
+            "spe": 6
+        },
+        "moves": [
+            "Air Slash",
+            "Psybeam"
+        ]
+    }
+]

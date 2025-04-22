@@ -1,0 +1,39 @@
+[
+    {
+        "species": "Sawk",
+        "level": 49,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 7,
+            "atk": 7,
+            "def": 7,
+            "spa": 7,
+            "spd": 7,
+            "spe": 7
+        },
+        "moves": [
+            "Low Sweep",
+            "Rock Slide",
+            "Poison Jab",
+            "Earthquake"
+        ]
+    },
+    {
+        "species": "Pangoro",
+        "level": 50,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 7,
+            "atk": 7,
+            "def": 7,
+            "spa": 7,
+            "spd": 7,
+            "spe": 7
+        },
+        "moves": [
+            "Power-Up Punch"
+        ]
+    }
+]

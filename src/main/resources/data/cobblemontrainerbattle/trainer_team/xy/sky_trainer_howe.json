@@ -1,0 +1,38 @@
+[
+    {
+        "species": "Drifloon",
+        "level": 15,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Ominous Wind",
+            "Gust"
+        ]
+    },
+    {
+        "species": "Pidgeotto",
+        "level": 18,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Quick Attack",
+            "Gust"
+        ]
+    }
+]

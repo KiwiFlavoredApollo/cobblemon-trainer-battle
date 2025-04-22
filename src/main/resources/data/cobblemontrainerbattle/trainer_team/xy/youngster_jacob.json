@@ -1,0 +1,40 @@
+[
+    {
+        "species": "Croagunk",
+        "level": 11,
+        "ability": "Anticipation",
+        "nature": "Lonely",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Astonish",
+            "Mud Slap",
+            "Poison Sting",
+            "Taunt"
+        ]
+    },
+    {
+        "species": "Beedrill",
+        "level": 13,
+        "ability": "Swarm",
+        "nature": "Serious",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Fury Attack",
+            "Focus Energy"
+        ]
+    }
+]

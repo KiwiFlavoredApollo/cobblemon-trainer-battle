@@ -1,0 +1,60 @@
+[
+    {
+        "species": "Trevenant",
+        "level": 57,
+        "ability": "Frisk",
+        "nature": "Naive",
+        "item": "",
+        "evs": {
+            "hp": 177,
+            "atk": 144,
+            "def": 105,
+            "spa": 92,
+            "spd": 100,
+            "spe": 90
+        },
+        "ivs": {
+            "hp": 24,
+            "atk": 24,
+            "def": 24,
+            "spa": 24,
+            "spd": 24,
+            "spe": 24
+        },
+        "moves": [
+            "Shadow Claw",
+            "Wood Hammer",
+            "Will-O-Wisp",
+            "Curse"
+        ]
+    },
+    {
+        "species": "Gigalith",
+        "level": 59,
+        "ability": "Sturdy",
+        "nature": "Calm",
+        "item": "",
+        "evs": {
+            "hp": 183,
+            "atk": 160,
+            "def": 172,
+            "spa": 89,
+            "spd": 124,
+            "spe": 48
+        },
+        "ivs": {
+            "hp": 24,
+            "atk": 24,
+            "def": 24,
+            "spa": 24,
+            "spd": 24,
+            "spe": 24
+        },
+        "moves": [
+            "Stone Edge",
+            "Earthquake",
+            "Protect",
+            "Sandstorm"
+        ]
+    }
+]

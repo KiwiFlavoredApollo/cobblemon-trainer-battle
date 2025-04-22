@@ -1,0 +1,42 @@
+[
+    {
+        "species": "Hippowdon",
+        "level": 65,
+        "ability": "Sand Stream",
+        "nature": "",
+        "ivs": {
+            "hp": 12,
+            "atk": 12,
+            "def": 12,
+            "spa": 12,
+            "spd": 12,
+            "spe": 12
+        },
+        "moves": [
+            "Fire Fang",
+            "Thunder Fang",
+            "Protect",
+            "Crunch"
+        ]
+    },
+    {
+        "species": "Gliscor",
+        "level": 65,
+        "ability": "Sand Veil",
+        "nature": "",
+        "ivs": {
+            "hp": 12,
+            "atk": 12,
+            "def": 12,
+            "spa": 12,
+            "spd": 12,
+            "spe": 12
+        },
+        "moves": [
+            "Aerial Ace",
+            "Dig",
+            "Rock Slide",
+            "Sandstorm"
+        ]
+    }
+]

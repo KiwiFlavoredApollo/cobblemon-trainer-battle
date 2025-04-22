@@ -1,0 +1,39 @@
+[
+    {
+        "species": "Weedle",
+        "level": 2,
+        "ability": "Shield Dust",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Poison Sting",
+            "String Shot"
+        ]
+    },
+    {
+        "species": "Bunnelby",
+        "level": 4,
+        "ability": "Cheek Pouch",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Tackle",
+            "Agility ",
+            "Leer"
+        ]
+    }
+]

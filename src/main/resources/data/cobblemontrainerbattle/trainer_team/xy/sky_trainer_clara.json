@@ -1,0 +1,42 @@
+[
+    {
+        "species": "Emolga",
+        "level": 38,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Volt Switch",
+            "Nuzzle",
+            "Acrobatics",
+            "U-turn"
+        ]
+    },
+    {
+        "species": "Swellow",
+        "level": 40,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Aerial Ace",
+            "Double Team",
+            "Steel Wing",
+            "Return"
+        ]
+    }
+]

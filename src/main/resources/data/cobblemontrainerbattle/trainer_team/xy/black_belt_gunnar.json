@@ -1,0 +1,42 @@
+[
+    {
+        "species": "Toxicroak",
+        "level": 49,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 7,
+            "atk": 7,
+            "def": 7,
+            "spa": 7,
+            "spd": 7,
+            "spe": 7
+        },
+        "moves": [
+            "Sludge Bomb",
+            "Focus Blast",
+            "Shadow Ball",
+            "Dark Pulse"
+        ]
+    },
+    {
+        "species": "Sawk",
+        "level": 50,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 7,
+            "atk": 7,
+            "def": 7,
+            "spa": 7,
+            "spd": 7,
+            "spe": 7
+        },
+        "moves": [
+            "Retaliate",
+            "Close Combat",
+            "Counter",
+            "Poison Jab"
+        ]
+    }
+]

@@ -1,0 +1,39 @@
+[
+    {
+        "species": "Wingull",
+        "level": 19,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Water Pulse",
+            "Supersonic",
+            "Wing Attack"
+        ]
+    },
+    {
+        "species": "Psyduck",
+        "level": 21,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Water Pulse",
+            "Confusion"
+        ]
+    }
+]

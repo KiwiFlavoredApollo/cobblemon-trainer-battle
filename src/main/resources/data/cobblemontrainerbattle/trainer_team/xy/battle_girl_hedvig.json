@@ -1,0 +1,40 @@
+[
+    {
+        "species": "Throh",
+        "level": 25,
+        "ability": "Guts",
+        "nature": "Gentle",
+        "ivs": {
+            "hp": 28,
+            "atk": 28,
+            "def": 28,
+            "spa": 28,
+            "spd": 28,
+            "spe": 28
+        },
+        "moves": [
+            "Vital Throw",
+            "Revenge",
+            "Bulldoze"
+        ]
+    },
+    {
+        "species": "Hawlucha",
+        "level": 26,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 28,
+            "atk": 28,
+            "def": 28,
+            "spa": 28,
+            "spd": 28,
+            "spe": 28
+        },
+        "moves": [
+            "Aerial Ace",
+            "Karate Chop",
+            "Rock Tomb"
+        ]
+    }
+]

@@ -1,0 +1,60 @@
+[
+    {
+        "species": "Liepard",
+        "level": 47,
+        "ability": "Limber",
+        "nature": "Lax",
+        "item": "",
+        "evs": {
+            "hp": 126,
+            "atk": 97,
+            "def": 67,
+            "spa": 97,
+            "spd": 54,
+            "spe": 114
+        },
+        "ivs": {
+            "hp": 20,
+            "atk": 20,
+            "def": 20,
+            "spa": 20,
+            "spd": 20,
+            "spe": 20
+        },
+        "moves": [
+            "Slash",
+            "Taunt",
+            "Night Slash",
+            "Snatch"
+        ]
+    },
+    {
+        "species": "Manectric",
+        "level": 48,
+        "ability": "Static",
+        "nature": "Gentle",
+        "item": "",
+        "evs": {
+            "hp": 134,
+            "atk": 86,
+            "def": 64,
+            "spa": 115,
+            "spd": 79,
+            "spe": 115
+        },
+        "ivs": {
+            "hp": 20,
+            "atk": 20,
+            "def": 20,
+            "spa": 20,
+            "spd": 20,
+            "spe": 20
+        },
+        "moves": [
+            "Odor Sleuth",
+            "Bite",
+            "Thunder Fang",
+            "Roar"
+        ]
+    }
+]

@@ -1,0 +1,40 @@
+[
+    {
+        "species": "Bidoof",
+        "level": 12,
+        "ability": "Unaware",
+        "nature": "",
+        "ivs": {
+            "hp": 8,
+            "atk": 8,
+            "def": 8,
+            "spa": 8,
+            "spd": 8,
+            "spe": 8
+        },
+        "moves": [
+            "Tackle",
+            "Growl",
+            "Defense Curl"
+        ]
+    },
+    {
+        "species": "Oddish",
+        "level": 10,
+        "ability": "Chlorophyll",
+        "nature": "",
+        "ivs": {
+            "hp": 8,
+            "atk": 8,
+            "def": 8,
+            "spa": 8,
+            "spd": 8,
+            "spe": 8
+        },
+        "moves": [
+            "Absorb",
+            "Sweet Scent",
+            "Acid"
+        ]
+    }
+]

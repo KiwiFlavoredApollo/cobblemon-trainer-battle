@@ -1,0 +1,42 @@
+[
+    {
+        "species": "Hawlucha",
+        "level": 57,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 28,
+            "atk": 28,
+            "def": 28,
+            "spa": 28,
+            "spd": 28,
+            "spe": 28
+        },
+        "moves": [
+            "Acrobatics",
+            "Steel Wing",
+            "High Jump Kick",
+            "Poison Jab"
+        ]
+    },
+    {
+        "species": "Mienshao",
+        "level": 58,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 28,
+            "atk": 28,
+            "def": 28,
+            "spa": 28,
+            "spd": 28,
+            "spe": 28
+        },
+        "moves": [
+            "High Jump Kick",
+            "U-turn",
+            "Bounce",
+            "Fake Out"
+        ]
+    }
+]

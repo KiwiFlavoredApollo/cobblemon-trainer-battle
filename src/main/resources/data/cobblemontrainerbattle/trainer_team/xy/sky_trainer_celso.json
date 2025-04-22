@@ -1,0 +1,42 @@
+[
+    {
+        "species": "Carnivine",
+        "level": 41,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Leaf Tornado",
+            "Infestation",
+            "Payback",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Swanna",
+        "level": 44,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Air Slash",
+            "Scald",
+            "Ice Beam",
+            "Aqua Ring"
+        ]
+    }
+]

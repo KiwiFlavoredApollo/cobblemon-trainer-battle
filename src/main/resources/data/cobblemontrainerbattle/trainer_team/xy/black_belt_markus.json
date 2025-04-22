@@ -1,0 +1,22 @@
+[
+    {
+        "species": "Machamp",
+        "level": 60,
+        "ability": "",
+        "nature": "plus Defense",
+        "ivs": {
+            "hp": 28,
+            "atk": 28,
+            "def": 28,
+            "spa": 28,
+            "spd": 28,
+            "spe": 28
+        },
+        "moves": [
+            "Cross Chop",
+            "Poison Jab",
+            "Earthquake",
+            "Stone Edge"
+        ]
+    }
+]

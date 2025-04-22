@@ -1,0 +1,42 @@
+[
+    {
+        "species": "Carvanha",
+        "level": 10,
+        "ability": "Rough Skin",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Leer",
+            "Bite",
+            "Focus Energy",
+            "Rage"
+        ]
+    },
+    {
+        "species": "Pancham",
+        "level": 10,
+        "ability": "Iron Fist",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Tackle",
+            "Leer",
+            "Arm Thrust",
+            "Work Up"
+        ]
+    }
+]

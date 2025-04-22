@@ -1,0 +1,119 @@
+[
+    {
+        "species": "Meowstic",
+        "level": 66,
+        "ability": "Keen Eye",
+        "nature": "",
+        "ivs": {
+            "hp": 24,
+            "atk": 24,
+            "def": 24,
+            "spa": 24,
+            "spd": 24,
+            "spe": 24
+        },
+        "moves": [
+            "Psychic",
+            "Fake Out",
+            "Disarming Voice",
+            "Shadow Ball"
+        ]
+    },
+    {
+        "species": "Vaporeon",
+        "level": 66,
+        "ability": "Water Absorb",
+        "nature": "",
+        "ivs": {
+            "hp": 24,
+            "atk": 24,
+            "def": 24,
+            "spa": 24,
+            "spd": 24,
+            "spe": 24
+        },
+        "moves": [
+            "Hydro Pump",
+            "Aurora Beam",
+            "Quick Attack"
+        ]
+    },
+    {
+        "species": "Altaria",
+        "level": 67,
+        "ability": "Natural Cure",
+        "nature": "",
+        "ivs": {
+            "hp": 24,
+            "atk": 24,
+            "def": 24,
+            "spa": 24,
+            "spd": 24,
+            "spe": 24
+        },
+        "moves": [
+            "Dragon Pulse",
+            "Dazzling Gleam",
+            "Confide"
+        ]
+    },
+    {
+        "species": "Clefable",
+        "level": 68,
+        "ability": "Magic Guard",
+        "nature": "",
+        "ivs": {
+            "hp": 24,
+            "atk": 24,
+            "def": 24,
+            "spa": 24,
+            "spd": 24,
+            "spe": 24
+        },
+        "moves": [
+            "Moonblast",
+            "Meteor Mash",
+            "Focus Blast",
+            "Sing"
+        ]
+    },
+    {
+        "species": "Absol",
+        "level": 68,
+        "ability": "Super Luck",
+        "nature": "",
+        "ivs": {
+            "hp": 24,
+            "atk": 24,
+            "def": 24,
+            "spa": 24,
+            "spd": 24,
+            "spe": 24
+        },
+        "moves": [
+            "Slash",
+            "Swords Dance",
+            "Quick Attack",
+            "Night Slash"
+        ]
+    },
+    {
+        "species": "Chesnaught",
+        "level": 70,
+        "ability": "Overgrow",
+        "nature": "",
+        "ivs": {
+            "hp": 24,
+            "atk": 24,
+            "def": 24,
+            "spa": 24,
+            "spd": 24,
+            "spe": 24
+        },
+        "moves": [
+            "Wood Hammer",
+            "Brick Break",
+            "Body Slam"
+        ]
+    }
+]

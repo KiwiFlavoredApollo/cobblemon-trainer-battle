@@ -1,0 +1,40 @@
+[
+    {
+        "species": "Skiploom",
+        "level": 19,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Fairy Wind",
+            "Stun Spore",
+            "Bullet Seed"
+        ]
+    },
+    {
+        "species": "Swoobat",
+        "level": 22,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Heart Stamp",
+            "Assurance",
+            "Air Cutter"
+        ]
+    }
+]

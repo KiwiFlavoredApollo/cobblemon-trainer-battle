@@ -1,0 +1,118 @@
+[
+    {
+        "species": "Clawitzer",
+        "level": 63,
+        "ability": "Mega Launcher",
+        "nature": "Hardy",
+        "item": "",
+        "evs": {
+            "hp": 176,
+            "atk": 110,
+            "def": 129,
+            "spa": 170,
+            "spd": 131,
+            "spe": 93
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Water Pulse",
+            "Dark Pulse",
+            "Dragon Pulse",
+            "Aura Sphere"
+        ]
+    },
+    {
+        "species": "Gyarados",
+        "level": 63,
+        "ability": "Intimidate",
+        "nature": "Impish",
+        "item": "",
+        "evs": {
+            "hp": 206,
+            "atk": 176,
+            "def": 129,
+            "spa": 84,
+            "spd": 144,
+            "spe": 120
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Waterfall",
+            "Ice Fang",
+            "Earthquake",
+            "Dragon Dance"
+        ]
+    },
+    {
+        "species": "Starmie",
+        "level": 63,
+        "ability": "Illuminate",
+        "nature": "Bold",
+        "item": "",
+        "evs": {
+            "hp": 162,
+            "atk": 101,
+            "def": 137,
+            "spa": 144,
+            "spd": 125,
+            "spe": 163
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Dazzling Gleam",
+            "Psychic",
+            "Surf",
+            "Light Screen"
+        ]
+    },
+    {
+        "species": "Barbaracle",
+        "level": 65,
+        "ability": "Tough Claws",
+        "nature": "Calm",
+        "item": "",
+        "evs": {
+            "hp": 182,
+            "atk": 139,
+            "def": 168,
+            "spa": 89,
+            "spd": 144,
+            "spe": 107
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Cross Chop",
+            "Stone Edge",
+            "Razor Shell",
+            "X-Scissor"
+        ]
+    }
+]

@@ -1,0 +1,60 @@
+[
+    {
+        "species": "Kakuna",
+        "level": 7,
+        "ability": "Shed Skin",
+        "nature": "Brave",
+        "item": "",
+        "evs": {
+            "hp": 24,
+            "atk": 9,
+            "def": 12,
+            "spa": 9,
+            "spd": 9,
+            "spe": 9
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "moves": [
+            "Harden",
+            "Poison Sting",
+            "",
+            ""
+        ]
+    },
+    {
+        "species": "Combee",
+        "level": 9,
+        "ability": "Honey Gather",
+        "nature": "Careful",
+        "item": "",
+        "evs": {
+            "hp": 25,
+            "atk": 11,
+            "def": 13,
+            "spa": 9,
+            "spd": 14,
+            "spe": 18
+        },
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "moves": [
+            "Gust",
+            "",
+            "",
+            ""
+        ]
+    }
+]

@@ -1,0 +1,42 @@
+[
+    {
+        "species": "Pansear",
+        "level": 10,
+        "ability": "Gluttony",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Play Nice",
+            "Leer",
+            "Lick",
+            "Incinerate"
+        ]
+    },
+    {
+        "species": "Panpour",
+        "level": 10,
+        "ability": "Gluttony",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Play Nice",
+            "Leer",
+            "Lick",
+            "Water Gun"
+        ]
+    }
+]

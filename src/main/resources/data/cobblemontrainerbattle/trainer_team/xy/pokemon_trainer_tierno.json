@@ -1,0 +1,89 @@
+[
+    {
+        "species": "Talonflame",
+        "level": 48,
+        "ability": "Flame Body",
+        "nature": "Lax",
+        "item": "",
+        "evs": {
+            "hp": 144,
+            "atk": 94,
+            "def": 92,
+            "spa": 87,
+            "spd": 73,
+            "spe": 137
+        },
+        "ivs": {
+            "hp": 24,
+            "atk": 24,
+            "def": 24,
+            "spa": 24,
+            "spd": 24,
+            "spe": 24
+        },
+        "moves": [
+            "Swords Dance",
+            "Acrobatics",
+            "Quick Attack",
+            ""
+        ]
+    },
+    {
+        "species": "Crawdaunt",
+        "level": 52,
+        "ability": "Shell Armor",
+        "nature": "Careful",
+        "item": "",
+        "evs": {
+            "hp": 140,
+            "atk": 142,
+            "def": 105,
+            "spa": 99,
+            "spd": 88,
+            "spe": 75
+        },
+        "ivs": {
+            "hp": 24,
+            "atk": 24,
+            "def": 24,
+            "spa": 24,
+            "spd": 24,
+            "spe": 24
+        },
+        "moves": [
+            "Swords Dance",
+            "Crabhammer",
+            "Night Slash",
+            ""
+        ]
+    },
+    {
+        "species": "Roserade",
+        "level": 49,
+        "ability": "Poison Point",
+        "nature": "Docile",
+        "item": "",
+        "evs": {
+            "hp": 129,
+            "atk": 85,
+            "def": 80,
+            "spa": 139,
+            "spd": 119,
+            "spe": 105
+        },
+        "ivs": {
+            "hp": 24,
+            "atk": 24,
+            "def": 24,
+            "spa": 24,
+            "spd": 24,
+            "spe": 24
+        },
+        "moves": [
+            "Petal Dance",
+            "",
+            "",
+            ""
+        ]
+    }
+]

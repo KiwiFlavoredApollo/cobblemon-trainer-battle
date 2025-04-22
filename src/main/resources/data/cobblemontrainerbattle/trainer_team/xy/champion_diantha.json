@@ -1,0 +1,176 @@
+[
+    {
+        "species": "Hawlucha",
+        "level": 64,
+        "ability": "Limber",
+        "nature": "Hasty",
+        "item": "",
+        "evs": {
+            "hp": 178,
+            "atk": 127,
+            "def": 95,
+            "spa": 104,
+            "spd": 90,
+            "spe": 177
+        },
+        "ivs": {
+            "hp": 8,
+            "atk": 8,
+            "def": 8,
+            "spa": 8,
+            "spd": 8,
+            "spe": 8
+        },
+        "moves": [
+            "Swords Dance",
+            "Flying Press",
+            "X-Scissor",
+            "Poison Jab"
+        ]
+    },
+    {
+        "species": "Tyrantrum",
+        "level": 65,
+        "ability": "Strong Jaw",
+        "nature": "Relaxed",
+        "item": "",
+        "evs": {
+            "hp": 186,
+            "atk": 167,
+            "def": 180,
+            "spa": 99,
+            "spd": 86,
+            "spe": 91
+        },
+        "ivs": {
+            "hp": 8,
+            "atk": 8,
+            "def": 8,
+            "spa": 8,
+            "spd": 8,
+            "spe": 8
+        },
+        "moves": [
+            "Head Smash",
+            "Earthquake",
+            "Dragon Claw",
+            "Crunch"
+        ]
+    },
+    {
+        "species": "Aurorus",
+        "level": 65,
+        "ability": "Refrigerate",
+        "nature": "Hardy",
+        "item": "",
+        "evs": {
+            "hp": 240,
+            "atk": 110,
+            "def": 103,
+            "spa": 138,
+            "spd": 129,
+            "spe": 85
+        },
+        "ivs": {
+            "hp": 8,
+            "atk": 8,
+            "def": 8,
+            "spa": 8,
+            "spd": 8,
+            "spe": 8
+        },
+        "moves": [
+            "Thunder",
+            "Blizzard",
+            "Light Screen",
+            "Reflect"
+        ]
+    },
+    {
+        "species": "Gourgeist",
+        "level": 65,
+        "ability": "Pickup",
+        "nature": "Quirky",
+        "item": "",
+        "evs": {
+            "hp": 164,
+            "atk": 127,
+            "def": 168,
+            "spa": 85,
+            "spd": 107,
+            "spe": 119
+        },
+        "ivs": {
+            "hp": 8,
+            "atk": 8,
+            "def": 8,
+            "spa": 8,
+            "spd": 8,
+            "spe": 8
+        },
+        "moves": [
+            "Trick-or-Treat",
+            "Phantom Force",
+            "Seed Bomb",
+            "Shadow Sneak"
+        ]
+    },
+    {
+        "species": "Goodra",
+        "level": 66,
+        "ability": "Sap Sipper",
+        "nature": "Impish",
+        "item": "",
+        "evs": {
+            "hp": 200,
+            "atk": 142,
+            "def": 112,
+            "spa": 139,
+            "spd": 208,
+            "spe": 115
+        },
+        "ivs": {
+            "hp": 8,
+            "atk": 8,
+            "def": 8,
+            "spa": 8,
+            "spd": 8,
+            "spe": 8
+        },
+        "moves": [
+            "Dragon Pulse",
+            "Muddy Water",
+            "Fire Blast",
+            "Focus Blast"
+        ]
+    },
+    {
+        "species": "Gardevoir",
+        "level": 68,
+        "ability": "Pixilate",
+        "nature": "Jolly",
+        "item": "Gardevoirite",
+        "evs": {
+            "hp": 175,
+            "atk": 126,
+            "def": 98,
+            "spa": 210,
+            "spd": 194,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 8,
+            "atk": 8,
+            "def": 8,
+            "spa": 8,
+            "spd": 8,
+            "spe": 8
+        },
+        "moves": [
+            "Moonblast",
+            "Psychic",
+            "Shadow Ball",
+            "Thunderbolt"
+        ]
+    }
+]

@@ -1,0 +1,62 @@
+[
+    {
+        "species": "Chimecho",
+        "level": 37,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Yawn",
+            "Psywave",
+            "Safeguard",
+            "Echoed Voice"
+        ]
+    },
+    {
+        "species": "Vibrava",
+        "level": 37,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Rock Slide",
+            "Supersonic",
+            "U-turn",
+            "Facade"
+        ]
+    },
+    {
+        "species": "Talonflame",
+        "level": 39,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Flame Charge",
+            "Aerial Ace",
+            "Swords Dance",
+            "Me First"
+        ]
+    }
+]

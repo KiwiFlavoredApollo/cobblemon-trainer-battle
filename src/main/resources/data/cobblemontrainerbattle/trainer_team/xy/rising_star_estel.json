@@ -1,0 +1,31 @@
+[
+    {
+        "species": "Raichu",
+        "level": 35,
+        "ability": "Static",
+        "nature": "Naughty",
+        "item": "",
+        "evs": {
+            "hp": 89,
+            "atk": 77,
+            "def": 46,
+            "spa": 70,
+            "spd": 56,
+            "spe": 84
+        },
+        "ivs": {
+            "hp": 8,
+            "atk": 8,
+            "def": 8,
+            "spa": 8,
+            "spd": 8,
+            "spe": 8
+        },
+        "moves": [
+            "Thunder Shock",
+            "Tail Whip",
+            "Quick Attack",
+            "Thunderbolt"
+        ]
+    }
+]

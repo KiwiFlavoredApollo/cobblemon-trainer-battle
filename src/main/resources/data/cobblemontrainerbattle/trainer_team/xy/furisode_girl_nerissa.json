@@ -1,0 +1,62 @@
+[
+    {
+        "species": "Abomasnow",
+        "level": 65,
+        "ability": "Snow Warning",
+        "nature": "",
+        "ivs": {
+            "hp": 12,
+            "atk": 12,
+            "def": 12,
+            "spa": 12,
+            "spd": 12,
+            "spe": 12
+        },
+        "moves": [
+            "Blizzard",
+            "Energy Ball",
+            "Protect",
+            "Focus Blast"
+        ]
+    },
+    {
+        "species": "Froslass",
+        "level": 65,
+        "ability": "Snow Cloak",
+        "nature": "",
+        "ivs": {
+            "hp": 12,
+            "atk": 12,
+            "def": 12,
+            "spa": 12,
+            "spd": 12,
+            "spe": 12
+        },
+        "moves": [
+            "Blizzard",
+            "Thunderbolt",
+            "Shadow Ball",
+            "Hail"
+        ]
+    },
+    {
+        "species": "Mamoswine",
+        "level": 65,
+        "ability": "Snow Cloak",
+        "nature": "",
+        "ivs": {
+            "hp": 12,
+            "atk": 12,
+            "def": 12,
+            "spa": 12,
+            "spd": 12,
+            "spe": 12
+        },
+        "moves": [
+            "Ice Fang",
+            "Stone Edge",
+            "Earthquake",
+            "Hail"
+        ]
+    }
+]

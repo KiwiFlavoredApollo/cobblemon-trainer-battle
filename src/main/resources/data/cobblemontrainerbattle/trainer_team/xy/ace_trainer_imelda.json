@@ -1,0 +1,60 @@
+[
+    {
+        "species": "Sneasel",
+        "level": 54,
+        "ability": "Inner Focus",
+        "nature": "Lax",
+        "item": "",
+        "evs": {
+            "hp": 132,
+            "atk": 116,
+            "def": 80,
+            "spa": 54,
+            "spd": 84,
+            "spe": 137
+        },
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Slash",
+            "Snatch",
+            "Punishment",
+            "Ice Shard"
+        ]
+    },
+    {
+        "species": "Cloyster",
+        "level": 55,
+        "ability": "Shell Armor",
+        "nature": "Bold",
+        "item": "",
+        "evs": {
+            "hp": 128,
+            "atk": 106,
+            "def": 232,
+            "spa": 107,
+            "spd": 63,
+            "spe": 90
+        },
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Aurora Beam",
+            "Spike Cannon",
+            "Spikes",
+            "Icicle Crash"
+        ]
+    }
+]

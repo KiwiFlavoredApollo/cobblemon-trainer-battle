@@ -1,0 +1,31 @@
+[
+    {
+        "species": "Lucario",
+        "level": 32,
+        "ability": "Steadfast",
+        "nature": "",
+        "item": "Lucarionite",
+        "evs": {
+            "hp": 93,
+            "atk": 104,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "ivs": {
+            "hp": 20,
+            "atk": 20,
+            "def": 20,
+            "spa": 20,
+            "spd": 20,
+            "spe": 20
+        },
+        "moves": [
+            "Power-Up Punch",
+            "",
+            "",
+            ""
+        ]
+    }
+]

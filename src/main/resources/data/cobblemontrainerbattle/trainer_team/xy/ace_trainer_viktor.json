@@ -1,0 +1,60 @@
+[
+    {
+        "species": "Delibird",
+        "level": 54,
+        "ability": "Hustle",
+        "nature": "Modest",
+        "item": "",
+        "evs": {
+            "hp": 121,
+            "atk": 65,
+            "def": 62,
+            "spa": 91,
+            "spd": 62,
+            "spe": 94
+        },
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Present",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "species": "Mamoswine",
+        "level": 55,
+        "ability": "Snow Cloak",
+        "nature": "Hardy",
+        "item": "",
+        "evs": {
+            "hp": 194,
+            "atk": 156,
+            "def": 101,
+            "spa": 90,
+            "spd": 79,
+            "spe": 101
+        },
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Mist",
+            "Thrash",
+            "Earthquake",
+            "Blizzard"
+        ]
+    }
+]

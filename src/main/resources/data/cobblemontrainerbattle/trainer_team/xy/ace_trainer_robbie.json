@@ -1,0 +1,89 @@
+[
+    {
+        "species": "Carbink",
+        "level": 56,
+        "ability": "Clear Body",
+        "nature": "Bold",
+        "item": "",
+        "evs": {
+            "hp": 130,
+            "atk": 62,
+            "def": 199,
+            "spa": 69,
+            "spd": 181,
+            "spe": 69
+        },
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Power Gem",
+            "Moonblast",
+            "Psychic",
+            "Stealth Rock"
+        ]
+    },
+    {
+        "species": "Raichu",
+        "level": 56,
+        "ability": "Static",
+        "nature": "Modest",
+        "item": "",
+        "evs": {
+            "hp": 142,
+            "atk": 102,
+            "def": 75,
+            "spa": 125,
+            "spd": 103,
+            "spe": 137
+        },
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Thunderbolt",
+            "Grass Knot",
+            "Quick Attack",
+            "Nuzzle"
+        ]
+    },
+    {
+        "species": "Kingdra",
+        "level": 57,
+        "ability": "Swift Swim",
+        "nature": "Impish",
+        "item": "",
+        "evs": {
+            "hp": 161,
+            "atk": 122,
+            "def": 134,
+            "spa": 109,
+            "spd": 122,
+            "spe": 111
+        },
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Scald",
+            "Dragon Pulse",
+            "Flash Cannon",
+            "Ice Beam"
+        ]
+    }
+]

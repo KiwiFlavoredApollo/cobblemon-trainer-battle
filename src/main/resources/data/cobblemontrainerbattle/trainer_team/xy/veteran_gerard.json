@@ -1,0 +1,60 @@
+[
+    {
+        "species": "Banette",
+        "level": 57,
+        "ability": "Frisk",
+        "nature": "Quirky",
+        "item": "",
+        "evs": {
+            "hp": 153,
+            "atk": 149,
+            "def": 92,
+            "spa": 113,
+            "spd": 90,
+            "spe": 92
+        },
+        "ivs": {
+            "hp": 24,
+            "atk": 24,
+            "def": 24,
+            "spa": 24,
+            "spd": 24,
+            "spe": 24
+        },
+        "moves": [
+            "Shadow Ball",
+            "Thunderbolt",
+            "Dark Pulse",
+            "Thunder Wave"
+        ]
+    },
+    {
+        "species": "Leafeon",
+        "level": 59,
+        "ability": "Leaf Guard",
+        "nature": "Quiet",
+        "item": "",
+        "evs": {
+            "hp": 159,
+            "atk": 148,
+            "def": 172,
+            "spa": 97,
+            "spd": 95,
+            "spe": 117
+        },
+        "ivs": {
+            "hp": 24,
+            "atk": 24,
+            "def": 24,
+            "spa": 24,
+            "spd": 24,
+            "spe": 24
+        },
+        "moves": [
+            "Leaf Blade",
+            "Aerial Ace",
+            "Swords Dance",
+            "Double-Edge"
+        ]
+    }
+]

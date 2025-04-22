@@ -1,0 +1,62 @@
+[
+    {
+        "species": "Weezing",
+        "level": 65,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Sludge Bomb",
+            "Dark Pulse",
+            "Shadow Ball",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Bronzong",
+        "level": 65,
+        "ability": "Levitate",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Gravity",
+            "Imprison",
+            "Psychic",
+            "Grass Knot"
+        ]
+    },
+    {
+        "species": "Eelektross",
+        "level": 66,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Gastro Acid",
+            "Thunderbolt",
+            "Flamethrower",
+            "Flash Cannon"
+        ]
+    }
+]

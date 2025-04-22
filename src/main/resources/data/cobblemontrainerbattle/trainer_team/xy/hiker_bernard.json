@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Rhyhorn",
+        "level": 21,
+        "ability": "Lightning Rod",
+        "nature": "Relaxed",
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "moves": [
+            "Rock Tomb",
+            "Stomp"
+        ]
+    },
+    {
+        "species": "Nosepass",
+        "level": 21,
+        "ability": "Sturdy",
+        "nature": "Hardy",
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "moves": [
+            "Thunder Wave",
+            "Rock Throw",
+            "Tackle"
+        ]
+    },
+    {
+        "species": "Onix",
+        "level": 21,
+        "ability": "Rock Head",
+        "nature": "Lax",
+        "ivs": {
+            "hp": 10,
+            "atk": 10,
+            "def": 10,
+            "spa": 10,
+            "spd": 10,
+            "spe": 10
+        },
+        "moves": [
+            "Rock Throw",
+            "Tackle",
+            "Bind"
+        ]
+    }
+]

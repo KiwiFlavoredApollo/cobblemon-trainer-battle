@@ -1,0 +1,22 @@
+[
+    {
+        "species": "Sigilyph",
+        "level": 31,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Psybeam",
+            "Air Cutter",
+            "Charge Beam",
+            "Thunder Wave"
+        ]
+    }
+]

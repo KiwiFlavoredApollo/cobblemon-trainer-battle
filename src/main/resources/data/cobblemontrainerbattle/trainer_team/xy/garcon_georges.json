@@ -1,0 +1,60 @@
+[
+    {
+        "species": "Shuckle",
+        "level": 31,
+        "ability": "Sturdy",
+        "nature": "",
+        "ivs": {
+            "hp": 6,
+            "atk": 6,
+            "def": 6,
+            "spa": 6,
+            "spd": 6,
+            "spe": 6
+        },
+        "moves": [
+            "Toxic",
+            "Bulldoze",
+            "Bide",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Pidgeot",
+        "level": 31,
+        "ability": "Keen Eye",
+        "nature": "",
+        "ivs": {
+            "hp": 6,
+            "atk": 6,
+            "def": 6,
+            "spa": 6,
+            "spd": 6,
+            "spe": 6
+        },
+        "moves": [
+            "Toxic",
+            "Fly",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Dugtrio",
+        "level": 31,
+        "ability": "Arena Trap",
+        "nature": "",
+        "ivs": {
+            "hp": 6,
+            "atk": 6,
+            "def": 6,
+            "spa": 6,
+            "spd": 6,
+            "spe": 6
+        },
+        "moves": [
+            "Toxic",
+            "Dig",
+            "Protect"
+        ]
+    }
+]

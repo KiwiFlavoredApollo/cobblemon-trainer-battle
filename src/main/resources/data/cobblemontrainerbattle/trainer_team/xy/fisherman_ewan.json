@@ -1,0 +1,40 @@
+[
+    {
+        "species": "Clauncher",
+        "level": 27,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Bubble Beam",
+            "Flail",
+            "Vice Grip"
+        ]
+    },
+    {
+        "species": "Carvanha",
+        "level": 29,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Aqua Jet",
+            "Crunch",
+            "Ice Fang"
+        ]
+    }
+]

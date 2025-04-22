@@ -1,0 +1,89 @@
+[
+    {
+        "species": "Skarmory",
+        "level": 55,
+        "ability": "Sturdy",
+        "nature": "Naughty",
+        "item": "",
+        "evs": {
+            "hp": 149,
+            "atk": 116,
+            "def": 172,
+            "spa": 62,
+            "spd": 85,
+            "spe": 95
+        },
+        "ivs": {
+            "hp": 24,
+            "atk": 24,
+            "def": 24,
+            "spa": 24,
+            "spd": 24,
+            "spe": 24
+        },
+        "moves": [
+            "Steel Wing",
+            "Slash",
+            "Night Slash",
+            "X-Scissor"
+        ]
+    },
+    {
+        "species": "Umbreon",
+        "level": 55,
+        "ability": "Synchronize",
+        "nature": "Lonely",
+        "item": "",
+        "evs": {
+            "hp": 182,
+            "atk": 97,
+            "def": 125,
+            "spa": 84,
+            "spd": 161,
+            "spe": 89
+        },
+        "ivs": {
+            "hp": 24,
+            "atk": 24,
+            "def": 24,
+            "spa": 24,
+            "spd": 24,
+            "spe": 24
+        },
+        "moves": [
+            "Quick Attack",
+            "Payback",
+            "Moonlight",
+            "Toxic"
+        ]
+    },
+    {
+        "species": "Alakazam",
+        "level": 57,
+        "ability": "Synchronize",
+        "nature": "Hasty ",
+        "item": "",
+        "evs": {
+            "hp": 143,
+            "atk": 75,
+            "def": 62,
+            "spa": 172,
+            "spd": 126,
+            "spe": 170
+        },
+        "ivs": {
+            "hp": 24,
+            "atk": 24,
+            "def": 24,
+            "spa": 24,
+            "spd": 24,
+            "spe": 24
+        },
+        "moves": [
+            "Psychic",
+            "Shadow Ball",
+            "Dazzling Gleam",
+            "Focus Blast"
+        ]
+    }
+]

@@ -1,0 +1,60 @@
+[
+    {
+        "species": "Gloom",
+        "level": 29,
+        "ability": "Chlorophyll",
+        "nature": "Careful",
+        "item": "",
+        "evs": {
+            "hp": 78,
+            "atk": 47,
+            "def": 50,
+            "spa": 52,
+            "spd": 58,
+            "spe": 32
+        },
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Stun Spore",
+            "Sleep Powder",
+            "Mega Drain",
+            "Lucky Chant"
+        ]
+    },
+    {
+        "species": "Exeggutor",
+        "level": 31,
+        "ability": "Chlorophyll",
+        "nature": "Hasty",
+        "item": "",
+        "evs": {
+            "hp": 104,
+            "atk": 68,
+            "def": 55,
+            "spa": 87,
+            "spd": 50,
+            "spe": 48
+        },
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Confusion",
+            "Stomp",
+            "Psyshock",
+            "Egg Bomb"
+        ]
+    }
+]

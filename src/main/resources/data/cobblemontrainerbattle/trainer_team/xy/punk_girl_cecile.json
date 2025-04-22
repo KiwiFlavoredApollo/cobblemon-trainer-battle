@@ -1,0 +1,42 @@
+[
+    {
+        "species": "Liepard",
+        "level": 40,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Assist",
+            "Fury Swipes",
+            "Torment",
+            "Sand Attack"
+        ]
+    },
+    {
+        "species": "Liepard",
+        "level": 40,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Fake Out",
+            "Pursuit",
+            "Slash",
+            "Growl"
+        ]
+    }
+]

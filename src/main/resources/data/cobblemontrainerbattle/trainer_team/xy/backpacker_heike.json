@@ -1,0 +1,22 @@
+[
+    {
+        "species": "Sentret",
+        "level": 12,
+        "ability": "Keen Eye",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Scratch",
+            "Foresight",
+            "Defense Curl",
+            "Quick Attack"
+        ]
+    }
+]

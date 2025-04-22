@@ -1,0 +1,42 @@
+[
+    {
+        "species": "Bronzong",
+        "level": 65,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 12,
+            "atk": 12,
+            "def": 12,
+            "spa": 12,
+            "spd": 12,
+            "spe": 12
+        },
+        "moves": [
+            "Trick Room",
+            "Extrasensory",
+            "Flash Cannon",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Cofagrigus",
+        "level": 65,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 12,
+            "atk": 12,
+            "def": 12,
+            "spa": 12,
+            "spd": 12,
+            "spe": 12
+        },
+        "moves": [
+            "Trick Room",
+            "Shadow Ball",
+            "Dark Pulse",
+            "Energy Ball"
+        ]
+    }
+]

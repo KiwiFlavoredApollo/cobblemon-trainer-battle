@@ -1,0 +1,22 @@
+[
+    {
+        "species": "Roselia",
+        "level": 34,
+        "ability": "Poison Point",
+        "nature": "",
+        "ivs": {
+            "hp": 8,
+            "atk": 8,
+            "def": 8,
+            "spa": 8,
+            "spd": 8,
+            "spe": 8
+        },
+        "moves": [
+            "Ingrain",
+            "Giga Drain",
+            "Leech Seed",
+            "Toxic"
+        ]
+    }
+]

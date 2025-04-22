@@ -1,0 +1,42 @@
+[
+    {
+        "species": "Noctowl",
+        "level": 50,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Extrasensory",
+            "Air Slash",
+            "Hypnosis",
+            "Reflect"
+        ]
+    },
+    {
+        "species": "Aerodactyl",
+        "level": 52,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Stone Edge",
+            "Ice Fang",
+            "Thunder Fang",
+            "Fire Fang"
+        ]
+    }
+]

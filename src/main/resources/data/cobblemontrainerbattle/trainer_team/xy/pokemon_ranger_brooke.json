@@ -1,0 +1,60 @@
+[
+    {
+        "species": "Roselia",
+        "level": 30,
+        "ability": "Poison Point",
+        "nature": "Modest",
+        "item": "",
+        "evs": {
+            "hp": 74,
+            "atk": 40,
+            "def": 36,
+            "spa": 75,
+            "spd": 57,
+            "spe": 48
+        },
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "Magical Leaf",
+            "Grass Whistle",
+            "Giga Drain",
+            "Toxic Spikes"
+        ]
+    },
+    {
+        "species": "Wormadam",
+        "level": 30,
+        "ability": "Anticipation",
+        "nature": "Hasty",
+        "item": "",
+        "evs": {
+            "hp": 80,
+            "atk": 45,
+            "def": 54,
+            "spa": 57,
+            "spd": 72,
+            "spe": 34
+        },
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 16,
+            "spa": 16,
+            "spd": 16,
+            "spe": 16
+        },
+        "moves": [
+            "HP Fighting",
+            "Confusion",
+            "Razor Leaf",
+            "Growth"
+        ]
+    }
+]

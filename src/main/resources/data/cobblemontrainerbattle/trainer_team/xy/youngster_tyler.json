@@ -1,0 +1,42 @@
+[
+    {
+        "species": "Venipede",
+        "level": 12,
+        "ability": "Swarm",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Rollout",
+            "Poison Sting",
+            "Pursuit",
+            "Screech"
+        ]
+    },
+    {
+        "species": "Scraggy",
+        "level": 12,
+        "ability": "Shed Skin",
+        "nature": "",
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "moves": [
+            "Low Kick",
+            "Sand Attack",
+            "Feint Attack",
+            "Headbutt"
+        ]
+    }
+]

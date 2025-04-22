@@ -1,0 +1,20 @@
+[
+    {
+        "species": "Bidoof",
+        "level": 6,
+        "ability": "Unaware",
+        "nature": "",
+        "ivs": {
+            "hp": 20,
+            "atk": 20,
+            "def": 20,
+            "spa": 20,
+            "spd": 20,
+            "spe": 20
+        },
+        "moves": [
+            "Tackle",
+            "Growl"
+        ]
+    }
+]

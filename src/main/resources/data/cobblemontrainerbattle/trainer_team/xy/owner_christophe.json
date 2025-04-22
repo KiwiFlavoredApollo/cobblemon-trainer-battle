@@ -1,0 +1,42 @@
+[
+    {
+        "species": "Druddigon",
+        "level": 63,
+        "ability": "Rough Skin",
+        "nature": "",
+        "ivs": {
+            "hp": 9,
+            "atk": 9,
+            "def": 9,
+            "spa": 9,
+            "spd": 9,
+            "spe": 9
+        },
+        "moves": [
+            "Dragon Claw",
+            "Revenge",
+            "Taunt",
+            "Confide"
+        ]
+    },
+    {
+        "species": "Ferrothorn",
+        "level": 63,
+        "ability": "Iron Barbs",
+        "nature": "",
+        "ivs": {
+            "hp": 9,
+            "atk": 9,
+            "def": 9,
+            "spa": 9,
+            "spd": 9,
+            "spe": 9
+        },
+        "moves": [
+            "Gyro Ball",
+            "Payback",
+            "Curse",
+            "Ingrain"
+        ]
+    }
+]

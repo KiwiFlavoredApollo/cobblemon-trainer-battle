@@ -1,0 +1,62 @@
+[
+    {
+        "species": "Shieldon",
+        "level": 63,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 9,
+            "atk": 9,
+            "def": 9,
+            "spa": 9,
+            "spd": 9,
+            "spe": 9
+        },
+        "moves": [
+            "Metal Burst",
+            "Iron Head",
+            "Taunt",
+            "Protect"
+        ]
+    },
+    {
+        "species": "Wobbuffet",
+        "level": 63,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 9,
+            "atk": 9,
+            "def": 9,
+            "spa": 9,
+            "spd": 9,
+            "spe": 9
+        },
+        "moves": [
+            "Counter",
+            "Mirror Coat",
+            "Safeguard",
+            "Destiny Bond"
+        ]
+    },
+    {
+        "species": "Milotic",
+        "level": 63,
+        "ability": "",
+        "nature": "",
+        "ivs": {
+            "hp": 9,
+            "atk": 9,
+            "def": 9,
+            "spa": 9,
+            "spd": 9,
+            "spe": 9
+        },
+        "moves": [
+            "Mirror Coat",
+            "Hydro Pump",
+            "Blizzard",
+            "Dragon Pulse"
+        ]
+    }
+]

@@ -1,0 +1,60 @@
+[
+    {
+        "species": "Amaura",
+        "level": 25,
+        "ability": "Refrigerate",
+        "nature": "Careful",
+        "item": "",
+        "evs": {
+            "hp": 79,
+            "atk": 40,
+            "def": 35,
+            "spa": 39,
+            "spd": 46,
+            "spe": 33
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Aurora Beam",
+            "Rock Tomb",
+            "Thunder Wave",
+            "Take Down"
+        ]
+    },
+    {
+        "species": "Tyrunt",
+        "level": 25,
+        "ability": "Strong Jaw",
+        "nature": "Hardy",
+        "item": "",
+        "evs": {
+            "hp": 69,
+            "atk": 55,
+            "def": 49,
+            "spa": 33,
+            "spd": 33,
+            "spe": 34
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Rock Tomb",
+            "Bite",
+            "Stomp",
+            ""
+        ]
+    }
+]

@@ -1,0 +1,59 @@
+[
+    {
+        "species": "Pansage",
+        "level": 3,
+        "ability": "Gluttony",
+        "nature": "",
+        "ivs": {
+            "hp": 20,
+            "atk": 20,
+            "def": 20,
+            "spa": 20,
+            "spd": 20,
+            "spe": 20
+        },
+        "moves": [
+            "Scratch",
+            "Play Nice",
+            "Leer"
+        ]
+    },
+    {
+        "species": "Pansear",
+        "level": 3,
+        "ability": "Gluttony",
+        "nature": "",
+        "ivs": {
+            "hp": 20,
+            "atk": 20,
+            "def": 20,
+            "spa": 20,
+            "spd": 20,
+            "spe": 20
+        },
+        "moves": [
+            "Scratch",
+            "Play Nice",
+            "Leer"
+        ]
+    },
+    {
+        "species": "Panpour",
+        "level": 3,
+        "ability": "Gluttony",
+        "nature": "",
+        "ivs": {
+            "hp": 20,
+            "atk": 20,
+            "def": 20,
+            "spa": 20,
+            "spd": 20,
+            "spe": 20
+        },
+        "moves": [
+            "Scratch",
+            "Play Nice",
+            "Leer"
+        ]
+    }
+]
