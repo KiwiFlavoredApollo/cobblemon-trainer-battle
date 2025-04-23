@@ -4,7 +4,7 @@ import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 
-public enum RadicalRedTickets {
+public enum RadicalRedTicketItems {
     LEADER_BROCK_TICKET("leader_brock_ticket", "entity/leader_brock"),
     LEADER_MISTY_TICKET("leader_misty_ticket", "entity/leader_misty"),
     LEADER_LT_SURGE_TICKET("leader_lt_surge_ticket", "entity/leader_lt_surge"),
@@ -33,7 +33,7 @@ public enum RadicalRedTickets {
     private final Identifier identifier;
     private final TrainerTicket item;
 
-    RadicalRedTickets(String path, String trainer) {
+    RadicalRedTicketItems(String path, String trainer) {
         this.identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, path);
         this.item = new TrainerTicket(new Item.Settings(), trainer);
     }

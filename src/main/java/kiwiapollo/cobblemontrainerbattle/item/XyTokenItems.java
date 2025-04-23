@@ -1,11 +1,10 @@
 package kiwiapollo.cobblemontrainerbattle.item;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 
-public enum XyTokens {
+public enum XyTokenItems {
     LEADER_VIOLA_TOKEN("leader_viola_token"),
     LEADER_GRANT_TOKEN("leader_grant_token"),
     LEADER_KORRINA_TOKEN("leader_korrina_token"),
@@ -25,7 +24,7 @@ public enum XyTokens {
     private final Identifier identifier;
     private final Item item;
 
-    XyTokens(String path) {
+    XyTokenItems(String path) {
         this.identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, path);
         this.item = new Item(new Item.Settings());
     }

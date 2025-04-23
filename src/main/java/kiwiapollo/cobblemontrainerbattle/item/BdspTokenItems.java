@@ -4,7 +4,7 @@ import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 
-public enum BdspTokens {
+public enum BdspTokenItems {
     LEADER_ROARK_TOKEN("leader_roark_token"),
     LEADER_GARDENIA_TOKEN("leader_gardenia_token"),
     LEADER_MAYLENE_TOKEN("leader_maylene_token"),
@@ -24,7 +24,7 @@ public enum BdspTokens {
     private final Identifier identifier;
     private final Item item;
 
-    BdspTokens(String path) {
+    BdspTokenItems(String path) {
         this.identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, path);
         this.item = new Item(new Item.Settings());
     }

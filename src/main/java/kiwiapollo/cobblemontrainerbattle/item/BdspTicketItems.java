@@ -4,7 +4,7 @@ import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 
-public enum BdspTickets {
+public enum BdspTicketItems {
     LEADER_ROARK_TICKET("leader_roark_ticket", "entity/leader_roark"),
     LEADER_GARDENIA_TICKET("leader_gardenia_ticket", "entity/leader_gardenia"),
     LEADER_MAYLENE_TICKET("leader_maylene_ticket", "entity/leader_maylene"),
@@ -24,7 +24,7 @@ public enum BdspTickets {
     private final Identifier identifier;
     private final TrainerTicket item;
 
-    BdspTickets(String path, String trainer) {
+    BdspTicketItems(String path, String trainer) {
         this.identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, path);
         this.item = new TrainerTicket(new Item.Settings(), trainer);
     }

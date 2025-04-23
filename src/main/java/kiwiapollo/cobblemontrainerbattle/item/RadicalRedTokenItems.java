@@ -4,7 +4,7 @@ import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 
-public enum RadicalRedTokens {
+public enum RadicalRedTokenItems {
     LEADER_BROCK_TOKEN("leader_brock_token"),
     LEADER_MISTY_TOKEN("leader_misty_token"),
     LEADER_LT_SURGE_TOKEN("leader_lt_surge_token"),
@@ -33,7 +33,7 @@ public enum RadicalRedTokens {
     private final Identifier identifier;
     private final Item item;
 
-    RadicalRedTokens(String path) {
+    RadicalRedTokenItems(String path) {
         this.identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, path);
         this.item = new Item(new Item.Settings());
     }

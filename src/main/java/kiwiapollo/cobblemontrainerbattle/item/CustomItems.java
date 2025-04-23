@@ -9,35 +9,35 @@ import java.util.Arrays;
 
 public class CustomItems {
     public static void register() {
-        Arrays.stream(InclementEmeraldTickets.values()).forEach(item -> {
+        Arrays.stream(InclementEmeraldTicketItems.values()).forEach(item -> {
             Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
         });
 
-        Arrays.stream(InclementEmeraldTokens.values()).forEach(item -> {
+        Arrays.stream(InclementEmeraldTokenItems.values()).forEach(item -> {
             Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
         });
 
-        Arrays.stream(RadicalRedTickets.values()).forEach(item -> {
+        Arrays.stream(RadicalRedTicketItems.values()).forEach(item -> {
             Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
         });
 
-        Arrays.stream(RadicalRedTokens.values()).forEach(item -> {
+        Arrays.stream(RadicalRedTokenItems.values()).forEach(item -> {
             Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
         });
 
-        Arrays.stream(XyTickets.values()).forEach(item -> {
+        Arrays.stream(XyTicketItems.values()).forEach(item -> {
             Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
         });
 
-        Arrays.stream(XyTokens.values()).forEach(item -> {
+        Arrays.stream(XyTokenItems.values()).forEach(item -> {
             Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
         });
 
-        Arrays.stream(BdspTickets.values()).forEach(item -> {
+        Arrays.stream(BdspTicketItems.values()).forEach(item -> {
             Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
         });
 
-        Arrays.stream(BdspTokens.values()).forEach(item -> {
+        Arrays.stream(BdspTokenItems.values()).forEach(item -> {
             Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
         });
 

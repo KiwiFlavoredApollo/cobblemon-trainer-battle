@@ -4,7 +4,7 @@ import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 
-public enum InclementEmeraldTokens {
+public enum InclementEmeraldTokenItems {
     LEADER_ROXANNE_TOKEN("leader_roxanne_token"),
     LEADER_BRAWLY_TOKEN("leader_brawly_token"),
     LEADER_WATTSON_TOKEN("leader_wattson_token"),
@@ -24,7 +24,7 @@ public enum InclementEmeraldTokens {
     private final Identifier identifier;
     private final Item item;
 
-    InclementEmeraldTokens(String path) {
+    InclementEmeraldTokenItems(String path) {
         this.identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, path);
         this.item = new Item(new Item.Settings());
     }

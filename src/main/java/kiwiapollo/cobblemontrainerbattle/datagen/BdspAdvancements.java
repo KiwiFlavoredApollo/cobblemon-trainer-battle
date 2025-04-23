@@ -3,7 +3,7 @@ package kiwiapollo.cobblemontrainerbattle.datagen;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.advancement.DefeatTrainerCriterion;
 import kiwiapollo.cobblemontrainerbattle.advancement.KillTrainerCriterion;
-import kiwiapollo.cobblemontrainerbattle.item.BdspTokens;
+import kiwiapollo.cobblemontrainerbattle.item.BdspTokenItems;
 import net.minecraft.advancement.Advancement;
 import net.minecraft.advancement.AdvancementFrame;
 import net.minecraft.item.Items;
@@ -15,7 +15,7 @@ public enum BdspAdvancements implements CustomAdvancements {
             .parent(DataGenerator.AdvancementProvider.ROOT)
             .criterion("defeat_leader_roark", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_roark"))
             .display(
-                    BdspTokens.LEADER_ROARK_TOKEN.getItem(),
+                    BdspTokenItems.LEADER_ROARK_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_roark.title"),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_roark.description"),
                     DataGenerator.AdvancementProvider.BACKGROUND,
@@ -30,7 +30,7 @@ public enum BdspAdvancements implements CustomAdvancements {
             .parent(BdspAdvancements.DEFEAT_ROARK.getAdvancement())
             .criterion("defeat_leader_gardenia", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_gardenia"))
             .display(
-                    BdspTokens.LEADER_GARDENIA_TOKEN.getItem(),
+                    BdspTokenItems.LEADER_GARDENIA_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_gardenia.title"),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_gardenia.description"),
                     DataGenerator.AdvancementProvider.BACKGROUND,
@@ -45,7 +45,7 @@ public enum BdspAdvancements implements CustomAdvancements {
             .parent(BdspAdvancements.DEFEAT_GARDENIA.getAdvancement())
             .criterion("defeat_leader_maylene", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_maylene"))
             .display(
-                    BdspTokens.LEADER_MAYLENE_TOKEN.getItem(),
+                    BdspTokenItems.LEADER_MAYLENE_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_maylene.title"),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_maylene.description"),
                     DataGenerator.AdvancementProvider.BACKGROUND,
@@ -60,7 +60,7 @@ public enum BdspAdvancements implements CustomAdvancements {
             .parent(BdspAdvancements.DEFEAT_MAYLENE.getAdvancement())
             .criterion("defeat_leader_crasher_wake", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_crasher_wake"))
             .display(
-                    BdspTokens.LEADER_CRASHER_WAKE_TOKEN.getItem(),
+                    BdspTokenItems.LEADER_CRASHER_WAKE_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_crasher_wake.title"),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_crasher_wake.description"),
                     DataGenerator.AdvancementProvider.BACKGROUND,
@@ -75,7 +75,7 @@ public enum BdspAdvancements implements CustomAdvancements {
             .parent(BdspAdvancements.DEFEAT_CRASHER_WAKE.getAdvancement())
             .criterion("defeat_leader_fantina", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_fantina"))
             .display(
-                    BdspTokens.LEADER_FANTINA_TOKEN.getItem(),
+                    BdspTokenItems.LEADER_FANTINA_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_fantina.title"),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_fantina.description"),
                     DataGenerator.AdvancementProvider.BACKGROUND,
@@ -90,7 +90,7 @@ public enum BdspAdvancements implements CustomAdvancements {
             .parent(BdspAdvancements.DEFEAT_FANTINA.getAdvancement())
             .criterion("defeat_leader_byron", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_byron"))
             .display(
-                    BdspTokens.LEADER_BYRON_TOKEN.getItem(),
+                    BdspTokenItems.LEADER_BYRON_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_byron.title"),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_byron.description"),
                     DataGenerator.AdvancementProvider.BACKGROUND,
@@ -105,7 +105,7 @@ public enum BdspAdvancements implements CustomAdvancements {
             .parent(BdspAdvancements.DEFEAT_BYRON.getAdvancement())
             .criterion("defeat_leader_candice", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_candice"))
             .display(
-                    BdspTokens.LEADER_CANDICE_TOKEN.getItem(),
+                    BdspTokenItems.LEADER_CANDICE_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_candice.title"),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_candice.description"),
                     DataGenerator.AdvancementProvider.BACKGROUND,
@@ -120,7 +120,7 @@ public enum BdspAdvancements implements CustomAdvancements {
             .parent(BdspAdvancements.DEFEAT_CANDICE.getAdvancement())
             .criterion("defeat_leader_volkner", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_volkner"))
             .display(
-                    BdspTokens.LEADER_VOLKNER_TOKEN.getItem(),
+                    BdspTokenItems.LEADER_VOLKNER_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_volkner.title"),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_volkner.description"),
                     DataGenerator.AdvancementProvider.BACKGROUND,
@@ -135,7 +135,7 @@ public enum BdspAdvancements implements CustomAdvancements {
             .parent(DataGenerator.AdvancementProvider.ROOT)
             .criterion("defeat_elite_aaron", new DefeatTrainerCriterion.TrainerCountConditions("entity/elite_aaron"))
             .display(
-                    BdspTokens.ELITE_AARON_TOKEN.getItem(),
+                    BdspTokenItems.ELITE_AARON_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_aaron.title"),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_aaron.description"),
                     DataGenerator.AdvancementProvider.BACKGROUND,
@@ -150,7 +150,7 @@ public enum BdspAdvancements implements CustomAdvancements {
             .parent(BdspAdvancements.DEFEAT_AARON.getAdvancement())
             .criterion("defeat_elite_bertha", new DefeatTrainerCriterion.TrainerCountConditions("entity/elite_bertha"))
             .display(
-                    BdspTokens.ELITE_BERTHA_TOKEN.getItem(),
+                    BdspTokenItems.ELITE_BERTHA_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_bertha.title"),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_bertha.description"),
                     DataGenerator.AdvancementProvider.BACKGROUND,
@@ -165,7 +165,7 @@ public enum BdspAdvancements implements CustomAdvancements {
             .parent(BdspAdvancements.DEFEAT_BERTHA.getAdvancement())
             .criterion("defeat_elite_flint", new DefeatTrainerCriterion.TrainerCountConditions("entity/elite_flint"))
             .display(
-                    BdspTokens.ELITE_FLINT_TOKEN.getItem(),
+                    BdspTokenItems.ELITE_FLINT_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_flint.title"),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_flint.description"),
                     DataGenerator.AdvancementProvider.BACKGROUND,
@@ -180,7 +180,7 @@ public enum BdspAdvancements implements CustomAdvancements {
             .parent(BdspAdvancements.DEFEAT_FLINT.getAdvancement())
             .criterion("defeat_elite_lucian", new DefeatTrainerCriterion.TrainerCountConditions("entity/elite_lucian"))
             .display(
-                    BdspTokens.ELITE_LUCIAN_TOKEN.getItem(),
+                    BdspTokenItems.ELITE_LUCIAN_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_lucian.title"),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_lucian.description"),
                     DataGenerator.AdvancementProvider.BACKGROUND,
@@ -195,7 +195,7 @@ public enum BdspAdvancements implements CustomAdvancements {
             .parent(BdspAdvancements.DEFEAT_LUCIAN.getAdvancement())
             .criterion("defeat_champion_cynthia", new DefeatTrainerCriterion.TrainerCountConditions("entity/champion_cynthia"))
             .display(
-                    BdspTokens.CHAMPION_CYNTHIA_TOKEN.getItem(),
+                    BdspTokenItems.CHAMPION_CYNTHIA_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_champion_cynthia.title"),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_champion_cynthia.description"),
                     DataGenerator.AdvancementProvider.BACKGROUND,
