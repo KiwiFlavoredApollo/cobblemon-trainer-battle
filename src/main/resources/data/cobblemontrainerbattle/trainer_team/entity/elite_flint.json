@@ -1,0 +1,170 @@
+[
+    {
+        "species": "Ninetales",
+        "level": 2,
+        "nature": "Timid",
+        "ability": "Drought",
+        "moves": [
+            "Flamethrower",
+            "Solar Beam",
+            "Hypnosis",
+            "Nasty Plot"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Houndoom",
+        "level": 2,
+        "nature": "Modest",
+        "ability": "Unnerve",
+        "moves": [
+            "Flamethrower",
+            "Dark Pulse",
+            "Destiny Bond",
+            "Nasty Plot"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Rapidash",
+        "level": 2,
+        "nature": "Jolly",
+        "ability": "Flame Body",
+        "moves": [
+            "Flare Blitz",
+            "Iron Tail",
+            "Poison Jab",
+            "Hypnosis"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 0,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Infernape",
+        "level": 2,
+        "nature": "Jolly",
+        "ability": "Iron Fist",
+        "moves": [
+            "Fire Punch",
+            "Thunder Punch",
+            "Close Combat",
+            "Mach Punch"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 0,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Arcanine",
+        "level": 2,
+        "nature": "Jolly",
+        "ability": "Intimidate",
+        "moves": [
+            "Flare Blitz",
+            "Play Rough",
+            "Close Combat",
+            "Extreme Speed"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 0,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Magmortar",
+        "level": 2,
+        "nature": "Modest",
+        "ability": "Flame Body",
+        "moves": [
+            "Fire Blast",
+            "Thunderbolt",
+            "Focus Blast",
+            "Psychic"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        }
+    }
+]

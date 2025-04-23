@@ -1,0 +1,118 @@
+[
+    {
+        "species": "Klefki",
+        "level": 2,
+        "ability": "Prankster",
+        "nature": "Bold",
+        "item": "",
+        "evs": {
+            "hp": 158,
+            "atk": 107,
+            "def": 146,
+            "spa": 119,
+            "spd": 128,
+            "spe": 113
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Dazzling Gleam",
+            "Flash Cannon",
+            "Torment",
+            "Spikes"
+        ]
+    },
+    {
+        "species": "Scizor",
+        "level": 2,
+        "ability": "Technician",
+        "nature": "Hardy",
+        "item": "",
+        "evs": {
+            "hp": 175,
+            "atk": 182,
+            "def": 144,
+            "spa": 88,
+            "spd": 119,
+            "spe": 100
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Bullet Punch",
+            "X-Scissor",
+            "Iron Head",
+            "Night Slash"
+        ]
+    },
+    {
+        "species": "Probopass",
+        "level": 2,
+        "ability": "Sturdy",
+        "nature": "Lax",
+        "item": "",
+        "evs": {
+            "hp": 162,
+            "atk": 88,
+            "def": 221,
+            "spa": 113,
+            "spd": 186,
+            "spe": 69
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Earth Power",
+            "Power Gem",
+            "Discharge",
+            "Flash Cannon"
+        ]
+    },
+    {
+        "species": "Aegislash",
+        "level": 2,
+        "ability": "Stance Change",
+        "nature": "Impish",
+        "item": "",
+        "evs": {
+            "hp": 167,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 97
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "King\u2019s Shield",
+            "Sacred Sword",
+            "Shadow Claw",
+            "Iron Head"
+        ]
+    }
+]

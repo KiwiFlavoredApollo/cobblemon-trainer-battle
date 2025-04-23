@@ -1,0 +1,11 @@
+{
+  "display_name": "trainer.cobblemontrainerbattle.leader_ramos",
+  "team": "cobblemontrainerbattle:entity/leader_ramos",
+  "is_spawning_allowed": false,
+  "level_mode": "relative",
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/leader_ramos.png",
+  "battle_format": "single",
+  "on_victory_commands": [
+    "give %player% cobblemontrainerbattle:leader_ramos_token"
+  ]
+}

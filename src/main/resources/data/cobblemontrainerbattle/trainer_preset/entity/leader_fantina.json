@@ -1,0 +1,11 @@
+{
+  "display_name": "trainer.cobblemontrainerbattle.leader_fantina",
+  "team": "cobblemontrainerbattle:entity/leader_fantina",
+  "is_spawning_allowed": false,
+  "level_mode": "relative",
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/leader_fantina.png",
+  "battle_format": "single",
+  "on_victory_commands": [
+    "give %player% cobblemontrainerbattle:leader_fantina_token"
+  ]
+}

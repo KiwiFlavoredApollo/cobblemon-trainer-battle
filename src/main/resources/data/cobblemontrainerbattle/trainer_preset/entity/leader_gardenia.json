@@ -1,0 +1,11 @@
+{
+  "display_name": "trainer.cobblemontrainerbattle.leader_gardenia",
+  "team": "cobblemontrainerbattle:entity/leader_gardenia",
+  "is_spawning_allowed": false,
+  "level_mode": "relative",
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/leader_gardenia.png",
+  "battle_format": "single",
+  "on_victory_commands": [
+    "give %player% cobblemontrainerbattle:leader_gardenia_token"
+  ]
+}

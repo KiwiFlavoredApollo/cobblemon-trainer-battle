@@ -1,0 +1,11 @@
+{
+  "display_name": "trainer.cobblemontrainerbattle.elite_wikstrom",
+  "team": "cobblemontrainerbattle:entity/elite_wikstrom",
+  "is_spawning_allowed": false,
+  "level_mode": "relative",
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/elite_wikstrom.png",
+  "battle_format": "single",
+  "on_victory_commands": [
+    "give %player% cobblemontrainerbattle:elite_wikstrom_token"
+  ]
+}

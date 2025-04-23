@@ -1,0 +1,11 @@
+{
+  "display_name": "trainer.cobblemontrainerbattle.champion_cynthia",
+  "team": "cobblemontrainerbattle:entity/champion_cynthia",
+  "is_spawning_allowed": false,
+  "level_mode": "relative",
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/champion_cynthia.png",
+  "battle_format": "single",
+  "on_victory_commands": [
+    "give %player% cobblemontrainerbattle:champion_cynthia_token"
+  ]
+}

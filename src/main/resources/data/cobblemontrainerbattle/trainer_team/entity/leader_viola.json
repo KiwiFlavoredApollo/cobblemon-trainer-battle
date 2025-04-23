@@ -1,0 +1,60 @@
+[
+    {
+        "species": "Surskit",
+        "level": 1,
+        "ability": "Swift Swim",
+        "nature": "Naive",
+        "item": "",
+        "evs": {
+            "hp": 30,
+            "atk": 13,
+            "def": 13,
+            "spa": 17,
+            "spd": 15,
+            "spe": 22
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Quick Attack",
+            "Bubble",
+            "Water Sport",
+            ""
+        ]
+    },
+    {
+        "species": "Vivillon",
+        "level": 1,
+        "ability": "Shield Dust",
+        "nature": "Calm",
+        "item": "",
+        "evs": {
+            "hp": 43,
+            "atk": 18,
+            "def": 19,
+            "spa": 29,
+            "spd": 20,
+            "spe": 29
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Harden",
+            "Infestation",
+            "Tackle",
+            ""
+        ]
+    }
+]

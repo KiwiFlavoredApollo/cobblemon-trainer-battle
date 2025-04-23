@@ -51,5 +51,17 @@ public class VsSeekerRecipeGenerator implements ItemRecipeGenerator {
                 .input(Items.PURPLE_DYE)
                 .criterion(FabricRecipeProvider.hasItem(MiscItems.BLUE_VS_SEEKER), FabricRecipeProvider.conditionsFromItem(MiscItems.BLUE_VS_SEEKER))
                 .offerTo(exporter, String.format("%s_%s", getRecipeName(MiscItems.PURPLE_VS_SEEKER), VS_SEEKER_RECIPE_SUFFIX));
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, MiscItems.PINK_VS_SEEKER)
+                .input(ItemTagRegistry.VS_SEEKERS)
+                .input(Items.PINK_DYE)
+                .criterion(FabricRecipeProvider.hasItem(MiscItems.BLUE_VS_SEEKER), FabricRecipeProvider.conditionsFromItem(MiscItems.BLUE_VS_SEEKER))
+                .offerTo(exporter, String.format("%s_%s", getRecipeName(MiscItems.PINK_VS_SEEKER), VS_SEEKER_RECIPE_SUFFIX));
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, MiscItems.YELLOW_VS_SEEKER)
+                .input(ItemTagRegistry.VS_SEEKERS)
+                .input(Items.YELLOW_DYE)
+                .criterion(FabricRecipeProvider.hasItem(MiscItems.BLUE_VS_SEEKER), FabricRecipeProvider.conditionsFromItem(MiscItems.BLUE_VS_SEEKER))
+                .offerTo(exporter, String.format("%s_%s", getRecipeName(MiscItems.YELLOW_VS_SEEKER), VS_SEEKER_RECIPE_SUFFIX));
     }
 }

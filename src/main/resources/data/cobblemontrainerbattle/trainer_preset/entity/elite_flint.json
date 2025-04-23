@@ -1,0 +1,11 @@
+{
+  "display_name": "trainer.cobblemontrainerbattle.elite_flint",
+  "team": "cobblemontrainerbattle:entity/elite_flint",
+  "is_spawning_allowed": false,
+  "level_mode": "relative",
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/elite_flint.png",
+  "battle_format": "single",
+  "on_victory_commands": [
+    "give %player% cobblemontrainerbattle:elite_flint_token"
+  ]
+}

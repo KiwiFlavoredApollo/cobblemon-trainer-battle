@@ -1,0 +1,170 @@
+[
+    {
+        "species": "Abomasnow",
+        "level": 1,
+        "nature": "Brave",
+        "ability": "Snow Warning",
+        "moves": [
+            "Wood Hammer",
+            "Ice Punch",
+            "Earthquake",
+            "Aurora Veil"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 240,
+            "atk": 252,
+            "def": 12,
+            "spa": 0,
+            "spd": 4,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Jynx",
+        "level": 1,
+        "nature": "Modest",
+        "ability": "Dry Skin",
+        "moves": [
+            "Blizzard",
+            "Focus Blast",
+            "Sweet Kiss",
+            "Lovely Kiss"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Mamoswine",
+        "level": 1,
+        "nature": "Adamant",
+        "ability": "Snow Cloak",
+        "moves": [
+            "Ice Shard",
+            "Earthquake",
+            "Stone Edge",
+            "Double Team"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Froslass",
+        "level": 1,
+        "nature": "Modest",
+        "ability": "Snow Cloak",
+        "moves": [
+            "Blizzard",
+            "Shadow Ball",
+            "Double Team",
+            "Aurora Veil"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Glaceon",
+        "level": 1,
+        "nature": "Modest",
+        "ability": "Ice Body",
+        "moves": [
+            "Blizzard",
+            "Freeze-Dry",
+            "Baby-Doll Eyes",
+            "Double Team"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 6
+        }
+    },
+    {
+        "species": "Weavile",
+        "level": 1,
+        "nature": "Adamant",
+        "ability": "Pressure",
+        "moves": [
+            "Ice Shard",
+            "Night Slash",
+            "Brick Break",
+            "X-Scissor"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        }
+    }
+]

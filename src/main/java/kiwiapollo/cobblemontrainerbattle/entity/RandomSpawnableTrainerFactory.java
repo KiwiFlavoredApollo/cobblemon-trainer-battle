@@ -71,5 +71,15 @@ public class RandomSpawnableTrainerFactory implements SimpleFactory<String> {
             trainers.add(t -> t.matches("^smogon/.+"));
             return this;
         }
+
+        public Builder addXy() {
+            trainers.add(t -> t.matches("^xy/.+"));
+            return this;
+        }
+
+        public Builder addBdsp() {
+            trainers.add(t -> t.matches("^bdsp/.+"));
+            return this;
+        }
     }
 }

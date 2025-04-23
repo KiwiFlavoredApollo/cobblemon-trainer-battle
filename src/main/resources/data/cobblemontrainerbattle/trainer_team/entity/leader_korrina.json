@@ -1,0 +1,89 @@
+[
+    {
+        "species": "Mienfoo",
+        "level": 1,
+        "ability": "Inner Focus",
+        "nature": "Sassy",
+        "item": "",
+        "evs": {
+            "hp": 71,
+            "atk": 60,
+            "def": 40,
+            "spa": 43,
+            "spd": 44,
+            "spe": 44
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Power-Up Punch",
+            "Fake Out",
+            "Double Slap",
+            ""
+        ]
+    },
+    {
+        "species": "Machoke",
+        "level": 1,
+        "ability": "Guts",
+        "nature": "Gentle",
+        "item": "",
+        "evs": {
+            "hp": 88,
+            "atk": 67,
+            "def": 45,
+            "spa": 39,
+            "spd": 48,
+            "spe": 36
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Power-Up Punch",
+            "Rock Tomb",
+            "Leer",
+            ""
+        ]
+    },
+    {
+        "species": "Hawlucha",
+        "level": 1,
+        "ability": "Unburden",
+        "nature": "Serious",
+        "item": "",
+        "evs": {
+            "hp": 98,
+            "atk": 70,
+            "def": 60,
+            "spa": 59,
+            "spd": 52,
+            "spe": 87
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Flying Press",
+            "Hone Claws",
+            "Power-Up Punch",
+            ""
+        ]
+    }
+]

@@ -81,6 +81,14 @@ public class TrainerEntitySpawner implements ServerTickEvents.EndWorldTick {
             builder = builder.addSmogon();
         }
 
+        if (inventory.containsAny(Set.of(MiscItems.PINK_VS_SEEKER))) {
+            builder = builder.addXy();
+        }
+
+        if (inventory.containsAny(Set.of(MiscItems.YELLOW_VS_SEEKER))) {
+            builder = builder.addBdsp();
+        }
+
         return builder.build();
     }
 

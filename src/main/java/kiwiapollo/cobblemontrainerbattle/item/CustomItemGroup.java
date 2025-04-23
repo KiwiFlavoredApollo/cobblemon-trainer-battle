@@ -27,6 +27,8 @@ public class CustomItemGroup {
             itemGroup.add(MiscItems.RED_VS_SEEKER);
             itemGroup.add(MiscItems.GREEN_VS_SEEKER);
             itemGroup.add(MiscItems.PURPLE_VS_SEEKER);
+            itemGroup.add(MiscItems.PINK_VS_SEEKER);
+            itemGroup.add(MiscItems.YELLOW_VS_SEEKER);
 
             itemGroup.add(MiscItems.TRAINER_TOKEN);
 
@@ -43,6 +45,22 @@ public class CustomItemGroup {
             });
 
             Arrays.stream(RadicalRedTokens.values()).forEach(item -> {
+                itemGroup.add(item.getItem());
+            });
+
+            Arrays.stream(XyTickets.values()).forEach(item -> {
+                itemGroup.add(item.getItem());
+            });
+
+            Arrays.stream(XyTokens.values()).forEach(item -> {
+                itemGroup.add(item.getItem());
+            });
+
+            Arrays.stream(BdspTickets.values()).forEach(item -> {
+                itemGroup.add(item.getItem());
+            });
+
+            Arrays.stream(BdspTokens.values()).forEach(item -> {
                 itemGroup.add(item.getItem());
             });
         });

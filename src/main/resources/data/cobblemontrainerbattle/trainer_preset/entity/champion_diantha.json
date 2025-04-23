@@ -1,0 +1,11 @@
+{
+  "display_name": "trainer.cobblemontrainerbattle.champion_diantha",
+  "team": "cobblemontrainerbattle:entity/champion_diantha",
+  "is_spawning_allowed": false,
+  "level_mode": "relative",
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/champion_diantha.png",
+  "battle_format": "single",
+  "on_victory_commands": [
+    "give %player% cobblemontrainerbattle:champion_diantha_token"
+  ]
+}

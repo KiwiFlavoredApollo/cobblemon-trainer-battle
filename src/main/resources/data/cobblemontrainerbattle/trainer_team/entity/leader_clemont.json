@@ -1,0 +1,89 @@
+[
+    {
+        "species": "Emolga",
+        "level": 1,
+        "ability": "Static",
+        "nature": "Lax",
+        "item": "",
+        "evs": {
+            "hp": 91,
+            "atk": 65,
+            "def": 59,
+            "spa": 65,
+            "spd": 48,
+            "spe": 84
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Volt Switch",
+            "Quick Attack",
+            "Aerial Ace",
+            ""
+        ]
+    },
+    {
+        "species": "Magneton",
+        "level": 1,
+        "ability": "Sturdy",
+        "nature": "Relaxed",
+        "item": "",
+        "evs": {
+            "hp": 87,
+            "atk": 54,
+            "def": 86,
+            "spa": 96,
+            "spd": 61,
+            "spe": 54
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Thunderbolt",
+            "Electric Terrain",
+            "Mirror Shot",
+            ""
+        ]
+    },
+    {
+        "species": "Heliolisk",
+        "level": 1,
+        "ability": "Dry Skin",
+        "nature": "Relaxed",
+        "item": "",
+        "evs": {
+            "hp": 101,
+            "atk": 53,
+            "def": 56,
+            "spa": 93,
+            "spd": 82,
+            "spe": 83
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Thunderbolt",
+            "Quick Attack",
+            "Grass Knot",
+            ""
+        ]
+    }
+]

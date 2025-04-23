@@ -1,0 +1,170 @@
+[
+    {
+        "species": "Politoed",
+        "level": 1,
+        "nature": "Timid",
+        "ability": "Drizzle",
+        "moves": [
+            "Surf",
+            "Ice Beam",
+            "Focus Blast",
+            "Perish Song"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Kingdra",
+        "level": 1,
+        "nature": "Timid",
+        "ability": "Swift Swim",
+        "moves": [
+            "Hydro Pump",
+            "Dragon Pulse",
+            "Ice Beam",
+            "Rest"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Ludicolo",
+        "level": 1,
+        "nature": "Modest",
+        "ability": "Swift Swim",
+        "moves": [
+            "Energy Ball",
+            "Hydro Pump",
+            "Substitute",
+            "Teeter Dance"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Huntail",
+        "level": 1,
+        "nature": "Jolly",
+        "ability": "Swift Swim",
+        "moves": [
+            "Crunch",
+            "Aqua Tail",
+            "Ice Fang",
+            "Shell Smash"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Gyarados",
+        "level": 1,
+        "nature": "Jolly",
+        "ability": "Intimidate",
+        "moves": [
+            "Aqua Tail",
+            "Stone Edge",
+            "Earthquake",
+            "Dragon Dance"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Floatzel",
+        "level": 1,
+        "nature": "Jolly",
+        "ability": "Swift Swim",
+        "moves": [
+            "Aqua Tail",
+            "Brick Break",
+            "Crunch",
+            "Ice Fang"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        }
+    }
+]

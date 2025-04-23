@@ -1,0 +1,170 @@
+[
+    {
+        "species": "Hitmontop",
+        "level": 1,
+        "nature": "Adamant",
+        "ability": "Intimidate",
+        "moves": [
+            "Close Combat",
+            "Stone Edge",
+            "Sucker Punch",
+            "Brick Break"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 6
+        }
+    },
+    {
+        "species": "Breloom",
+        "level": 1,
+        "nature": "Adamant",
+        "ability": "Technician",
+        "moves": [
+            "Bullet Seed",
+            "Mach Punch",
+            "Rock Tomb",
+            "Force Palm"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Heracross",
+        "level": 1,
+        "nature": "Jolly",
+        "ability": "Guts",
+        "moves": [
+            "Megahorn",
+            "Close Combat",
+            "Facade",
+            "Stone Edge"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Infernape",
+        "level": 1,
+        "nature": "Lonely",
+        "ability": "Blaze",
+        "moves": [
+            "Flare Blitz",
+            "Close Combat",
+            "Acrobatics",
+            "Overheat"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 6
+        }
+    },
+    {
+        "species": "Medicham",
+        "level": 1,
+        "nature": "Adamant",
+        "ability": "Pure Power",
+        "moves": [
+            "High Jump Kick",
+            "Zen Headbutt",
+            "Fire Punch",
+            "Thunder Punch"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Lucario",
+        "level": 1,
+        "nature": "Modest",
+        "ability": "Justified",
+        "moves": [
+            "Aura Sphere",
+            "Flash Cannon",
+            "Water Pulse",
+            "Vacuum Wave"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        }
+    }
+]

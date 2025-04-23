@@ -74,6 +74,8 @@ public class DataGenerator implements DataGeneratorEntrypoint {
             Arrays.stream(KillTrainerAdvancements.values()).map(CustomAdvancements::getAdvancement).forEach(consumer);
             Arrays.stream(InclementEmeraldAdvancements.values()).map(CustomAdvancements::getAdvancement).forEach(consumer);
             Arrays.stream(RadicalRedAdvancements.values()).map(CustomAdvancements::getAdvancement).forEach(consumer);
+            Arrays.stream(XyAdvancements.values()).map(CustomAdvancements::getAdvancement).forEach(consumer);
+            Arrays.stream(BdspAdvancements.values()).map(CustomAdvancements::getAdvancement).forEach(consumer);
         }
     }
 
@@ -87,6 +89,8 @@ public class DataGenerator implements DataGeneratorEntrypoint {
             new VsSeekerRecipeGenerator().generate(exporter);
             new InclementEmeraldTicketRecipeGenerator().generate(exporter);
             new RadicalRedTicketRecipeGenerator().generate(exporter);
+            new XyTicketRecipeGenerator().generate(exporter);
+            new BdspTicketRecipeGenerator().generate(exporter);
         }
     }
 
@@ -101,7 +105,9 @@ public class DataGenerator implements DataGeneratorEntrypoint {
                     .add(MiscItems.BLUE_VS_SEEKER)
                     .add(MiscItems.RED_VS_SEEKER)
                     .add(MiscItems.GREEN_VS_SEEKER)
-                    .add(MiscItems.PURPLE_VS_SEEKER);
+                    .add(MiscItems.PURPLE_VS_SEEKER)
+                    .add(MiscItems.PINK_VS_SEEKER)
+                    .add(MiscItems.YELLOW_VS_SEEKER);
         }
     }
 }

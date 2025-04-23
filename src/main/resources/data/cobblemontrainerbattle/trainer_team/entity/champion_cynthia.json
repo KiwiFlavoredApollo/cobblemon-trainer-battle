@@ -1,0 +1,170 @@
+[
+    {
+        "species": "Spiritomb",
+        "level": 3,
+        "nature": "Quiet",
+        "ability": "Pressure",
+        "moves": [
+            "Shadow Ball",
+            "Dark Pulse",
+            "Will-O-Wisp",
+            "Sucker Punch"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 6,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Porygon-Z",
+        "level": 3,
+        "nature": "Timid",
+        "ability": "Adaptability",
+        "moves": [
+            "Hyper Beam",
+            "Shadow Ball",
+            "Ice Beam",
+            "Thunderbolt"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Togekiss",
+        "level": 3,
+        "nature": "Timid",
+        "ability": "Serene Grace",
+        "moves": [
+            "Air Slash",
+            "Dazzling Gleam",
+            "Aura Sphere",
+            "Thunder Wave"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Lucario",
+        "level": 3,
+        "nature": "Jolly",
+        "ability": "Inner Focus",
+        "moves": [
+            "Close Combat",
+            "Meteor Mash",
+            "Earthquake",
+            "Extreme Speed"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 0,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Milotic",
+        "level": 3,
+        "nature": "Bold",
+        "ability": "Marvel Scale",
+        "moves": [
+            "Recover",
+            "Mirror Coat",
+            "Ice Beam",
+            "Scald"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 252,
+            "spa": 6,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Garchomp",
+        "level": 3,
+        "nature": "Jolly",
+        "ability": "Rough Skin",
+        "moves": [
+            "Dragon Claw",
+            "Earthquake",
+            "Swords Dance",
+            "Poison Jab"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 0,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        }
+    }
+]

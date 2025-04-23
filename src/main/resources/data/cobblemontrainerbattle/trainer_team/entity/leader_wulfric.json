@@ -1,0 +1,89 @@
+[
+    {
+        "species": "Abomasnow",
+        "level": 1,
+        "ability": "Snow Warning",
+        "nature": "Relaxed",
+        "item": "",
+        "evs": {
+            "hp": 179,
+            "atk": 120,
+            "def": 111,
+            "spa": 120,
+            "spd": 112,
+            "spe": 75
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Ice Beam",
+            "Ice Shard",
+            "Energy Ball",
+            ""
+        ]
+    },
+    {
+        "species": "Cryogonal",
+        "level": 1,
+        "ability": "Levitate",
+        "nature": "Impish",
+        "item": "",
+        "evs": {
+            "hp": 154,
+            "atk": 72,
+            "def": 55,
+            "spa": 108,
+            "spd": 165,
+            "spe": 132
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Ice Beam",
+            "Confuse Ray",
+            "Flash Cannon",
+            "Hail"
+        ]
+    },
+    {
+        "species": "Avalugg",
+        "level": 1,
+        "ability": "Ice Body",
+        "nature": "Quiet",
+        "item": "",
+        "evs": {
+            "hp": 194,
+            "atk": 156,
+            "def": 235,
+            "spa": 75,
+            "spd": 72,
+            "spe": 45
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Avalanche",
+            "Crunch",
+            "Curse",
+            "Gyro Ball"
+        ]
+    }
+]

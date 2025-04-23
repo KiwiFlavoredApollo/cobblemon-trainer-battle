@@ -1,0 +1,11 @@
+{
+  "display_name": "trainer.cobblemontrainerbattle.leader_wulfric",
+  "team": "cobblemontrainerbattle:entity/leader_wulfric",
+  "is_spawning_allowed": false,
+  "level_mode": "relative",
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/leader_wulfric.png",
+  "battle_format": "single",
+  "on_victory_commands": [
+    "give %player% cobblemontrainerbattle:leader_wulfric_token"
+  ]
+}

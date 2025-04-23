@@ -1,0 +1,118 @@
+[
+    {
+        "species": "Pyroar",
+        "level": 2,
+        "ability": "Rivalry",
+        "nature": "Docile",
+        "item": "",
+        "evs": {
+            "hp": 195,
+            "atk": 104,
+            "def": 109,
+            "spa": 156,
+            "spd": 102,
+            "spe": 152
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Hyper Voice",
+            "Flamethrower",
+            "Wild Charge",
+            "Noble Roar"
+        ]
+    },
+    {
+        "species": "Torkoal",
+        "level": 2,
+        "ability": "White Smoke",
+        "nature": "Hasty",
+        "item": "",
+        "evs": {
+            "hp": 175,
+            "atk": 125,
+            "def": 175,
+            "spa": 125,
+            "spd": 107,
+            "spe": 48
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Curse",
+            "Earthquake",
+            "Stone Edge",
+            "Flame Wheel"
+        ]
+    },
+    {
+        "species": "Chandelure",
+        "level": 2,
+        "ability": "Flame Body",
+        "nature": "Naive",
+        "item": "",
+        "evs": {
+            "hp": 162,
+            "atk": 88,
+            "def": 132,
+            "spa": 201,
+            "spd": 118,
+            "spe": 130
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Flamethrower",
+            "Shadow Ball",
+            "Confuse Ray",
+            "Confide"
+        ]
+    },
+    {
+        "species": "Talonflame",
+        "level": 2,
+        "ability": "Flame Body",
+        "nature": "Quirky",
+        "item": "",
+        "evs": {
+            "hp": 190,
+            "atk": 121,
+            "def": 111,
+            "spa": 115,
+            "spd": 109,
+            "spe": 183
+        },
+        "ivs": {
+            "hp": 22,
+            "atk": 22,
+            "def": 22,
+            "spa": 22,
+            "spd": 22,
+            "spe": 22
+        },
+        "moves": [
+            "Brave Bird",
+            "Quick Attack",
+            "Flare Blitz",
+            "Flail"
+        ]
+    }
+]

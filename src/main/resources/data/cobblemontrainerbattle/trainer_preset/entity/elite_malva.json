@@ -1,0 +1,11 @@
+{
+  "display_name": "trainer.cobblemontrainerbattle.elite_malva",
+  "team": "cobblemontrainerbattle:entity/elite_malva",
+  "is_spawning_allowed": false,
+  "level_mode": "relative",
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/elite_malva.png",
+  "battle_format": "single",
+  "on_victory_commands": [
+    "give %player% cobblemontrainerbattle:elite_malva_token"
+  ]
+}

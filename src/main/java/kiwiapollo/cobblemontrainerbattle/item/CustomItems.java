@@ -25,12 +25,30 @@ public class CustomItems {
             Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
         });
 
+        Arrays.stream(XyTickets.values()).forEach(item -> {
+            Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
+        });
+
+        Arrays.stream(XyTokens.values()).forEach(item -> {
+            Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
+        });
+
+        Arrays.stream(BdspTickets.values()).forEach(item -> {
+            Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
+        });
+
+        Arrays.stream(BdspTokens.values()).forEach(item -> {
+            Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
+        });
+
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "trainer_spawn_egg"), MiscItems.TRAINER_SPAWN_EGG);
 
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "blue_vs_seeker"), MiscItems.BLUE_VS_SEEKER);
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "red_vs_seeker"), MiscItems.RED_VS_SEEKER);
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "green_vs_seeker"), MiscItems.GREEN_VS_SEEKER);
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "purple_vs_seeker"), MiscItems.PURPLE_VS_SEEKER);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "pink_vs_seeker"), MiscItems.PINK_VS_SEEKER);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "yellow_vs_seeker"), MiscItems.YELLOW_VS_SEEKER);
 
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "trainer_token"), MiscItems.TRAINER_TOKEN);
     }
