@@ -39,6 +39,6 @@ Refer to [GitHub Pages](https://kiwiflavoredapollo.github.io/cobblemon-trainer-b
 ## Reference
 
 - [Pokemon Showdown Team Formats - Cobblemon Showdown](https://gitlab.com/cable-mc/cobblemon-showdown/-/blob/master/sim/TEAMS.md#packed-format)
-- [Cobblemon - Gitlab](https://gitlab.com/cable-mc/cobblemon)
-- [Cobblemon Challenge - Github](https://github.com/TurtleHoarder/Cobblemon-Challenge)
-- [CobblemonTrainers - Github](https://github.com/davo899/CobblemonTrainers/tree/main)
+- [Cobblemon - GitLab](https://gitlab.com/cable-mc/cobblemon)
+- [Cobblemon Challenge - GitHub](https://github.com/TurtleHoarder/Cobblemon-Challenge)
+- [CobblemonTrainers - GitHub](https://github.com/davo899/CobblemonTrainers/tree/main)
