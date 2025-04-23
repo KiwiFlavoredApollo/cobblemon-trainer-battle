@@ -10,14 +10,16 @@ Gym Leaders, Elite Four and Champion drop special kind of Tokens when defeated. 
 
 VS Seekers are available in various colors. However, They are not just for aesthetic purposes. VS Seekers serve two purposes.
 
-### 1. Filtering Trainer Spawning
+### 1. Periodically Spawning Trainers Around Players
 
-- Blue VS Seeker allows all trainers
-- Red VS Seeker allows Radical Red trainers
-- Green VS Seeker allows Inclement Emerald trainers
-- Purple VS Seeker allows Smogon trainers
+- Blue VS Seeker (All Trainers)
+- Red VS Seeker (Radical Red Trainers)
+- Green VS Seeker (Inclement Emerald Trainers)
+- Purple VS Seeker (Smogon Trainers)
+- Pink VS Seeker (Pokemon XY Trainers)
+- Yellow VS Seeker (Pokemon BDSP Trainers)
 
-Player can have multiple VS Seekers, allowing more than one group of trainers to spawn.
+Players can hold multiple VS Seekers in their inventories, allowing more than one group of trainers to spawn.
 
 ### 2. Spawning Gym Leaders, Elite Four and the Champion
 
