@@ -8,9 +8,7 @@ Cobblemon Trainer Battle is a side mod for Cobblemon that offers trainer battle 
 
 - Customizable Trainer Battle
 - NPC Trainers and Items
-- Inclement Emerald Progression System
-- Radical Red Progression System
-- Pokémon Unbound Trainers
+- Item Based Progression System
 
 ## Documentation
 
@@ -27,10 +25,16 @@ Refer to [GitHub Pages](https://kiwiflavoredapollo.github.io/cobblemon-trainer-b
 - [Pokémon Radical Red](https://radicalred.visualboyadvance.org/)
 - [Pokémon Inclement Emerald](https://discord.gg/SZDpCBWkfy)
 - [Pokémon Unbound](https://discord.gg/k34Jm4T)
+- Pokémon X and Y
+- Pokémon Brilliant Diamond and Shining Pearl
 
 ### Trainer Textures
 
 - [piikapiika](https://www.minecraftskins.com/profile/5894998/piikapiika)
+
+### Item Textures
+
+- [Weekly Dot - Document](https://polymart.org/product/7450/weekly-dot-document)
 
 ## Reference
 
