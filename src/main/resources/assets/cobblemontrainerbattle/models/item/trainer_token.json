@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "cobblemontrainerbattle:item/trainer_token"
+        "layer0": "cobblemontrainerbattle:item/copper_trainer_token"
     }
 }
