@@ -1,0 +1,74 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_elite_aaron_token": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "cobblemontrainerbattle:elite_aaron_token"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_elite_bertha_token": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "cobblemontrainerbattle:elite_bertha_token"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_elite_flint_token": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "cobblemontrainerbattle:elite_flint_token"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_elite_lucian_token": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "cobblemontrainerbattle:elite_lucian_token"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "cobblemontrainerbattle:champion_cynthia_ticket"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_elite_aaron_token",
+      "has_elite_bertha_token",
+      "has_elite_flint_token",
+      "has_elite_lucian_token",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "cobblemontrainerbattle:champion_cynthia_ticket"
+    ]
+  },
+  "sends_telemetry_event": false
+}

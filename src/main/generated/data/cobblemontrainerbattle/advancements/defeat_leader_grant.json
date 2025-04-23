@@ -1,0 +1,34 @@
+{
+  "parent": "cobblemontrainerbattle:defeat_leader_viola",
+  "criteria": {
+    "defeat_leader_grant": {
+      "conditions": {
+        "count": 1,
+        "trainer": "entity/leader_grant"
+      },
+      "trigger": "cobblemontrainerbattle:defeat_trainer"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_leader_grant.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "cobblemontrainerbattle:leader_grant_token"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_leader_grant.title"
+    }
+  },
+  "requirements": [
+    [
+      "defeat_leader_grant"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

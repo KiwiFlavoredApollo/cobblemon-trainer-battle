@@ -1,0 +1,34 @@
+{
+  "parent": "cobblemontrainerbattle:defeat_elite_malva",
+  "criteria": {
+    "defeat_elite_drasna": {
+      "conditions": {
+        "count": 1,
+        "trainer": "entity/elite_drasna"
+      },
+      "trigger": "cobblemontrainerbattle:defeat_trainer"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_elite_drasna.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "cobblemontrainerbattle:elite_drasna_token"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_elite_drasna.title"
+    }
+  },
+  "requirements": [
+    [
+      "defeat_elite_drasna"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

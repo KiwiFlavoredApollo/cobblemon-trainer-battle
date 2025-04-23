@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_leader_grant_token": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "cobblemontrainerbattle:leader_grant_token"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_leader_viola_token": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "cobblemontrainerbattle:leader_viola_token"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "cobblemontrainerbattle:elite_wikstrom_ticket"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_leader_viola_token",
+      "has_leader_grant_token",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "cobblemontrainerbattle:elite_wikstrom_ticket"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "cobblemontrainerbattle:elite_wikstrom_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:elite_malva_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:elite_drasna_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:elite_siebold_token"
+    },
+    {
+      "item": "minecraft:nether_star"
+    }
+  ],
+  "result": {
+    "item": "cobblemontrainerbattle:champion_diantha_ticket"
+  }
+}

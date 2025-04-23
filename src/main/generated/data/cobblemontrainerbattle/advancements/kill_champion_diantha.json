@@ -1,0 +1,35 @@
+{
+  "parent": "cobblemontrainerbattle:defeat_elite_siebold",
+  "criteria": {
+    "kill_champion_diantha": {
+      "conditions": {
+        "count": 1,
+        "trainer": "entity/champion_diantha"
+      },
+      "trigger": "cobblemontrainerbattle:kill_trainer"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.kill_champion_diantha.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:netherite_sword",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.kill_champion_diantha.title"
+    }
+  },
+  "requirements": [
+    [
+      "kill_champion_diantha"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

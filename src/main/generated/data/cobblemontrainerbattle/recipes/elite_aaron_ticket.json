@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "cobblemontrainerbattle:leader_roark_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:leader_gardenia_token"
+    },
+    {
+      "item": "cobblemon:black_glasses"
+    }
+  ],
+  "result": {
+    "item": "cobblemontrainerbattle:elite_aaron_ticket"
+  }
+}

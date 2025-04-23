@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "cobblemontrainerbattle:trainer_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:trainer_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:trainer_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:trainer_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:trainer_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:trainer_token"
+    },
+    {
+      "item": "minecraft:green_dye"
+    },
+    {
+      "item": "cobblemon:fighting_gem"
+    }
+  ],
+  "result": {
+    "item": "cobblemontrainerbattle:leader_grant_ticket"
+  }
+}

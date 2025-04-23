@@ -1,0 +1,34 @@
+{
+  "parent": "cobblemontrainerbattle:root",
+  "criteria": {
+    "defeat_leader_roark": {
+      "conditions": {
+        "count": 1,
+        "trainer": "entity/leader_roark"
+      },
+      "trigger": "cobblemontrainerbattle:defeat_trainer"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_leader_roark.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "cobblemontrainerbattle:leader_roark_token"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_leader_roark.title"
+    }
+  },
+  "requirements": [
+    [
+      "defeat_leader_roark"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

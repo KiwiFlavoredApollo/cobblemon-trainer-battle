@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "cobblemontrainerbattle:leader_olympia_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:leader_wulfric_token"
+    },
+    {
+      "item": "cobblemon:dragon_scale"
+    }
+  ],
+  "result": {
+    "item": "cobblemontrainerbattle:elite_siebold_ticket"
+  }
+}

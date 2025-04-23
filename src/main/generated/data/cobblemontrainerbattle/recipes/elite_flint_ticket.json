@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "cobblemontrainerbattle:leader_fantina_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:leader_byron_token"
+    },
+    {
+      "item": "cobblemon:never_melt_ice"
+    }
+  ],
+  "result": {
+    "item": "cobblemontrainerbattle:elite_flint_ticket"
+  }
+}

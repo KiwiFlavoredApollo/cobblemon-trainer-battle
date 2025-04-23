@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "cobblemontrainerbattle:elite_aaron_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:elite_bertha_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:elite_flint_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:elite_lucian_token"
+    },
+    {
+      "item": "minecraft:nether_star"
+    }
+  ],
+  "result": {
+    "item": "cobblemontrainerbattle:champion_cynthia_ticket"
+  }
+}

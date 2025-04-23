@@ -1,0 +1,35 @@
+{
+  "parent": "cobblemontrainerbattle:defeat_elite_lucian",
+  "criteria": {
+    "kill_champion_cynthia": {
+      "conditions": {
+        "count": 1,
+        "trainer": "entity/champion_cynthia"
+      },
+      "trigger": "cobblemontrainerbattle:kill_trainer"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.kill_champion_cynthia.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:netherite_sword",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.kill_champion_cynthia.title"
+    }
+  },
+  "requirements": [
+    [
+      "kill_champion_cynthia"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

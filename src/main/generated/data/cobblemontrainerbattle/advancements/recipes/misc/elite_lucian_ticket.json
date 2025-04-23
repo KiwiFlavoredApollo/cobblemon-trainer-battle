@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_leader_candice_token": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "cobblemontrainerbattle:leader_candice_token"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_leader_volkner_token": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "cobblemontrainerbattle:leader_volkner_token"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "cobblemontrainerbattle:elite_lucian_ticket"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_leader_candice_token",
+      "has_leader_volkner_token",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "cobblemontrainerbattle:elite_lucian_ticket"
+    ]
+  },
+  "sends_telemetry_event": false
+}

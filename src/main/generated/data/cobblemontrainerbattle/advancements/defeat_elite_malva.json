@@ -1,0 +1,34 @@
+{
+  "parent": "cobblemontrainerbattle:defeat_elite_wikstrom",
+  "criteria": {
+    "defeat_elite_malva": {
+      "conditions": {
+        "count": 1,
+        "trainer": "entity/elite_malva"
+      },
+      "trigger": "cobblemontrainerbattle:defeat_trainer"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_elite_malva.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "cobblemontrainerbattle:elite_malva_token"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_elite_malva.title"
+    }
+  },
+  "requirements": [
+    [
+      "defeat_elite_malva"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

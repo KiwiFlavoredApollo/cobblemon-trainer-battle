@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "cobblemontrainerbattle:leader_maylene_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:leader_crasher_wake_token"
+    },
+    {
+      "item": "cobblemon:reaper_cloth"
+    }
+  ],
+  "result": {
+    "item": "cobblemontrainerbattle:elite_bertha_ticket"
+  }
+}

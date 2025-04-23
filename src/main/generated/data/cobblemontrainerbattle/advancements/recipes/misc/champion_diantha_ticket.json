@@ -1,0 +1,74 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_elite_drasna_token": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "cobblemontrainerbattle:elite_drasna_token"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_elite_malva_token": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "cobblemontrainerbattle:elite_malva_token"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_elite_siebold_token": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "cobblemontrainerbattle:elite_siebold_token"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_elite_wikstrom_token": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "cobblemontrainerbattle:elite_wikstrom_token"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "cobblemontrainerbattle:champion_diantha_ticket"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_elite_wikstrom_token",
+      "has_elite_malva_token",
+      "has_elite_drasna_token",
+      "has_elite_siebold_token",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "cobblemontrainerbattle:champion_diantha_ticket"
+    ]
+  },
+  "sends_telemetry_event": false
+}

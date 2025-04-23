@@ -1,0 +1,34 @@
+{
+  "parent": "cobblemontrainerbattle:defeat_elite_flint",
+  "criteria": {
+    "defeat_elite_lucian": {
+      "conditions": {
+        "count": 1,
+        "trainer": "entity/elite_lucian"
+      },
+      "trigger": "cobblemontrainerbattle:defeat_trainer"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_elite_lucian.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "cobblemontrainerbattle:elite_lucian_token"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_elite_lucian.title"
+    }
+  },
+  "requirements": [
+    [
+      "defeat_elite_lucian"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "cobblemontrainerbattle:defeat_elite_aaron",
+  "criteria": {
+    "defeat_elite_bertha": {
+      "conditions": {
+        "count": 1,
+        "trainer": "entity/elite_bertha"
+      },
+      "trigger": "cobblemontrainerbattle:defeat_trainer"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_elite_bertha.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "cobblemontrainerbattle:elite_bertha_token"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_elite_bertha.title"
+    }
+  },
+  "requirements": [
+    [
+      "defeat_elite_bertha"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

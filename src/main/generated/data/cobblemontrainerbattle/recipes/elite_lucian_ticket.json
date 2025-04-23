@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "cobblemontrainerbattle:leader_candice_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:leader_volkner_token"
+    },
+    {
+      "item": "cobblemon:dragon_scale"
+    }
+  ],
+  "result": {
+    "item": "cobblemontrainerbattle:elite_lucian_ticket"
+  }
+}

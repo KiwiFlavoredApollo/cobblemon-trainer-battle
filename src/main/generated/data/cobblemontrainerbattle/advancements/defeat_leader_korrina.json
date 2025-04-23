@@ -1,0 +1,34 @@
+{
+  "parent": "cobblemontrainerbattle:defeat_leader_grant",
+  "criteria": {
+    "defeat_leader_korrina": {
+      "conditions": {
+        "count": 1,
+        "trainer": "entity/leader_korrina"
+      },
+      "trigger": "cobblemontrainerbattle:defeat_trainer"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_leader_korrina.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "cobblemontrainerbattle:leader_korrina_token"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_leader_korrina.title"
+    }
+  },
+  "requirements": [
+    [
+      "defeat_leader_korrina"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

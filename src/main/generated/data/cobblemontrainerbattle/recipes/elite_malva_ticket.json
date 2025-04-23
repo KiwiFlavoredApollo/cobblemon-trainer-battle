@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "cobblemontrainerbattle:leader_korrina_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:leader_ramos_token"
+    },
+    {
+      "item": "cobblemon:reaper_cloth"
+    }
+  ],
+  "result": {
+    "item": "cobblemontrainerbattle:elite_malva_ticket"
+  }
+}

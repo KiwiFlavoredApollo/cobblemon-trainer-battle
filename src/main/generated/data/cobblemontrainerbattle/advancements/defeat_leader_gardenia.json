@@ -1,0 +1,34 @@
+{
+  "parent": "cobblemontrainerbattle:defeat_leader_roark",
+  "criteria": {
+    "defeat_leader_gardenia": {
+      "conditions": {
+        "count": 1,
+        "trainer": "entity/leader_gardenia"
+      },
+      "trigger": "cobblemontrainerbattle:defeat_trainer"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_leader_gardenia.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "cobblemontrainerbattle:leader_gardenia_token"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_leader_gardenia.title"
+    }
+  },
+  "requirements": [
+    [
+      "defeat_leader_gardenia"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

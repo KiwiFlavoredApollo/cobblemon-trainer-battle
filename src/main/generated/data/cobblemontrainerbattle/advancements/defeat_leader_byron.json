@@ -1,0 +1,34 @@
+{
+  "parent": "cobblemontrainerbattle:defeat_leader_fantina",
+  "criteria": {
+    "defeat_leader_byron": {
+      "conditions": {
+        "count": 1,
+        "trainer": "entity/leader_byron"
+      },
+      "trigger": "cobblemontrainerbattle:defeat_trainer"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_leader_byron.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "cobblemontrainerbattle:leader_byron_token"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_leader_byron.title"
+    }
+  },
+  "requirements": [
+    [
+      "defeat_leader_byron"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "cobblemontrainerbattle:leader_clemont_token"
+    },
+    {
+      "item": "cobblemontrainerbattle:leader_valerie_token"
+    },
+    {
+      "item": "cobblemon:never_melt_ice"
+    }
+  ],
+  "result": {
+    "item": "cobblemontrainerbattle:elite_drasna_ticket"
+  }
+}

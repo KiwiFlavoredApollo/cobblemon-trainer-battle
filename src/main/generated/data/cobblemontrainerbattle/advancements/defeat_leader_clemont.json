@@ -1,0 +1,34 @@
+{
+  "parent": "cobblemontrainerbattle:defeat_leader_ramos",
+  "criteria": {
+    "defeat_leader_clemont": {
+      "conditions": {
+        "count": 1,
+        "trainer": "entity/leader_clemont"
+      },
+      "trigger": "cobblemontrainerbattle:defeat_trainer"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_leader_clemont.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "cobblemontrainerbattle:leader_clemont_token"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cobblemontrainerbattle.defeat_leader_clemont.title"
+    }
+  },
+  "requirements": [
+    [
+      "defeat_leader_clemont"
+    ]
+  ],
+  "sends_telemetry_event": false
+}
