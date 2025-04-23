@@ -25,8 +25,8 @@ Refer to [GitHub Pages](https://kiwiflavoredapollo.github.io/cobblemon-trainer-b
 - [Pokémon Radical Red](https://radicalred.visualboyadvance.org/)
 - [Pokémon Inclement Emerald](https://discord.gg/SZDpCBWkfy)
 - [Pokémon Unbound](https://discord.gg/k34Jm4T)
-- Pokémon X and Y
-- Pokémon Brilliant Diamond and Shining Pearl
+- Pokémon XY
+- Pokémon BDSP
 
 ### Trainer Textures
 
