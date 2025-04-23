@@ -15,22 +15,18 @@ import java.util.Arrays;
 
 public class CustomItemGroup {
     public static final RegistryKey<ItemGroup> ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(CobblemonTrainerBattle.MOD_ID, "item_group"));
-    public static final ItemGroup ITEM_GROUP = FabricItemGroup.builder().icon(() -> new ItemStack(MiscItems.BLUE_VS_SEEKER)).displayName(Text.literal("Trainers")).build();
+    public static final ItemGroup ITEM_GROUP = FabricItemGroup.builder().icon(() -> new ItemStack(VsSeekerItems.BLUE_VS_SEEKER.getItem())).displayName(Text.literal("Trainers")).build();
 
     public static void register() {
         Registry.register(Registries.ITEM_GROUP, ITEM_GROUP_KEY, ITEM_GROUP);
 
         ItemGroupEvents.modifyEntriesEvent(ITEM_GROUP_KEY).register(itemGroup -> {
             itemGroup.add(MiscItems.TRAINER_SPAWN_EGG);
-
-            itemGroup.add(MiscItems.BLUE_VS_SEEKER);
-            itemGroup.add(MiscItems.RED_VS_SEEKER);
-            itemGroup.add(MiscItems.GREEN_VS_SEEKER);
-            itemGroup.add(MiscItems.PURPLE_VS_SEEKER);
-            itemGroup.add(MiscItems.PINK_VS_SEEKER);
-            itemGroup.add(MiscItems.YELLOW_VS_SEEKER);
-
             itemGroup.add(MiscItems.TRAINER_TOKEN);
+
+            Arrays.stream(VsSeekerItems.values()).forEach(item -> {
+                itemGroup.add(item.getItem());
+            });
 
             Arrays.stream(InclementEmeraldTickets.values()).forEach(item -> {
                 itemGroup.add(item.getItem());

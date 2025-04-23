@@ -3,7 +3,7 @@ package kiwiapollo.cobblemontrainerbattle.datagen;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.entity.EntityTypes;
 import kiwiapollo.cobblemontrainerbattle.item.ItemTagRegistry;
-import kiwiapollo.cobblemontrainerbattle.item.MiscItems;
+import kiwiapollo.cobblemontrainerbattle.item.VsSeekerItems;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -101,13 +101,8 @@ public class DataGenerator implements DataGeneratorEntrypoint {
 
         @Override
         protected void configure(RegistryWrapper.WrapperLookup lookup) {
-            getOrCreateTagBuilder(ItemTagRegistry.VS_SEEKERS)
-                    .add(MiscItems.BLUE_VS_SEEKER)
-                    .add(MiscItems.RED_VS_SEEKER)
-                    .add(MiscItems.GREEN_VS_SEEKER)
-                    .add(MiscItems.PURPLE_VS_SEEKER)
-                    .add(MiscItems.PINK_VS_SEEKER)
-                    .add(MiscItems.YELLOW_VS_SEEKER);
+            Arrays.stream(VsSeekerItems.values()).map(VsSeekerItems::getItem)
+                    .forEach(item -> getOrCreateTagBuilder(ItemTagRegistry.VS_SEEKERS).add(item));
         }
     }
 }

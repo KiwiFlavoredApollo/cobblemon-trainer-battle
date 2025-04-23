@@ -7,16 +7,20 @@ import kiwiapollo.cobblemontrainerbattle.entity.RandomSpawnableTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.entity.EntityTypes;
 import kiwiapollo.cobblemontrainerbattle.entity.RandomTrainerEntityFactory;
 import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntity;
-import kiwiapollo.cobblemontrainerbattle.item.MiscItems;
+import kiwiapollo.cobblemontrainerbattle.item.VsSeeker;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.inventory.Inventory;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Predicate;
 
 import static net.minecraft.SharedConstants.TICKS_PER_SECOND;
 
@@ -40,7 +44,7 @@ public class TrainerEntitySpawner implements ServerTickEvents.EndWorldTick {
 
     private void spawnTrainersAroundPlayer(ServerWorld world, ServerPlayerEntity player) {
         try {
-            if (!hasVsSeeker(player)) {
+            if (getVsSeekers(player.getInventory()).isEmpty()) {
                 return;
             }
 
@@ -48,7 +52,8 @@ public class TrainerEntitySpawner implements ServerTickEvents.EndWorldTick {
                 return;
             }
 
-            SimpleFactory<String> trainerFactory = createRandomSpawnableTrainerFactory(player.getInventory());
+            Predicate<String> predicate = toPredicate(player.getInventory());
+            SimpleFactory<String> trainerFactory = new RandomSpawnableTrainerFactory(predicate);
             RandomTrainerEntityFactory entityFactory = new RandomTrainerEntityFactory(trainerFactory);
             TrainerEntity entity = entityFactory.create(EntityTypes.TRAINER, world);
 
@@ -63,42 +68,22 @@ public class TrainerEntitySpawner implements ServerTickEvents.EndWorldTick {
         }
     }
 
-    private RandomSpawnableTrainerFactory createRandomSpawnableTrainerFactory(Inventory inventory) {
-        RandomSpawnableTrainerFactory.Builder builder = new RandomSpawnableTrainerFactory.Builder();
-        if (inventory.containsAny(Set.of(MiscItems.BLUE_VS_SEEKER))) {
-            builder = builder.addAll();
-        }
+    private Predicate<String> toPredicate(PlayerInventory inventory) {
+        List<Predicate<String>> predicates = new ArrayList<>();
 
-        if (inventory.containsAny(Set.of(MiscItems.RED_VS_SEEKER))) {
-            builder = builder.addRadicalRed();
-        }
+        predicates.add(trainer -> false);
+        predicates.addAll(getVsSeekers(inventory));
 
-        if (inventory.containsAny(Set.of(MiscItems.GREEN_VS_SEEKER))) {
-            builder = builder.addInclementEmerald();
-        }
-
-        if (inventory.containsAny(Set.of(MiscItems.PURPLE_VS_SEEKER))) {
-            builder = builder.addSmogon();
-        }
-
-        if (inventory.containsAny(Set.of(MiscItems.PINK_VS_SEEKER))) {
-            builder = builder.addXy();
-        }
-
-        if (inventory.containsAny(Set.of(MiscItems.YELLOW_VS_SEEKER))) {
-            builder = builder.addBdsp();
-        }
-
-        return builder.build();
+        return predicates.stream().reduce(Predicate::or).orElse(t -> true);
     }
 
-    private boolean hasVsSeeker(ServerPlayerEntity player) {
-        return player.getInventory().containsAny(Set.of(
-                MiscItems.BLUE_VS_SEEKER,
-                MiscItems.RED_VS_SEEKER,
-                MiscItems.GREEN_VS_SEEKER,
-                MiscItems.PURPLE_VS_SEEKER
-        ));
+    private List<VsSeeker> getVsSeekers(PlayerInventory inventory) {
+        return inventory.combinedInventory.stream()
+                .flatMap(DefaultedList::stream)
+                .filter(stack -> !stack.isEmpty())
+                .map(ItemStack::getItem)
+                .filter(item -> item instanceof VsSeeker)
+                .map(item -> (VsSeeker) item).toList();
     }
 
     private boolean isBelowMaximumTrainerSpawnCount(ServerWorld world, PlayerEntity player) {

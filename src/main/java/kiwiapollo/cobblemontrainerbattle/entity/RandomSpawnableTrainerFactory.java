@@ -11,11 +11,7 @@ import java.util.function.Predicate;
 public class RandomSpawnableTrainerFactory implements SimpleFactory<String> {
     private final Predicate<String> predicate;
 
-    public RandomSpawnableTrainerFactory() {
-        this(t -> true);
-    }
-
-    private RandomSpawnableTrainerFactory(Predicate<String> predicate) {
+    public RandomSpawnableTrainerFactory(Predicate<String> predicate) {
         this.predicate = predicate;
     }
 
@@ -34,52 +30,6 @@ public class RandomSpawnableTrainerFactory implements SimpleFactory<String> {
 
         } catch (NullPointerException e) {
             return false;
-        }
-    }
-
-    public static class Builder {
-        private final List<Predicate<String>> trainers;
-
-        public Builder() {
-            this.trainers = new ArrayList<>(List.of(t -> false));
-        }
-
-        public RandomSpawnableTrainerFactory build() {
-            return new RandomSpawnableTrainerFactory(toPredicate());
-        }
-
-        private Predicate<String> toPredicate() {
-            return this.trainers.stream().reduce(Predicate::or).orElse(t -> true);
-        }
-
-        public Builder addAll() {
-            trainers.add(t -> true);
-            return this;
-        }
-
-        public Builder addRadicalRed() {
-            trainers.add(t -> t.matches("^radicalred/.+"));
-            return this;
-        }
-
-        public Builder addInclementEmerald() {
-            trainers.add(t -> t.matches("^inclementemerald/.+"));
-            return this;
-        }
-
-        public Builder addSmogon() {
-            trainers.add(t -> t.matches("^smogon/.+"));
-            return this;
-        }
-
-        public Builder addXy() {
-            trainers.add(t -> t.matches("^xy/.+"));
-            return this;
-        }
-
-        public Builder addBdsp() {
-            trainers.add(t -> t.matches("^bdsp/.+"));
-            return this;
         }
     }
 }

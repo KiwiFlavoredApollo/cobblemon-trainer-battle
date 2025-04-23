@@ -12,11 +12,15 @@ import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class VsSeeker extends Item {
-    public static final int MAX_COUNT = 1;
+import java.util.function.Predicate;
 
-    public VsSeeker() {
+public class VsSeeker extends Item implements Predicate<String> {
+    public static final int MAX_COUNT = 1;
+    private final Predicate<String> predicate;
+
+    public VsSeeker(Predicate<String> predicate) {
         super(new Item.Settings().maxCount(MAX_COUNT));
+        this.predicate = predicate;
     }
 
     @Override
@@ -76,5 +80,10 @@ public class VsSeeker extends Item {
 
     private Hand getOtherHand(Hand hand) {
         return hand == Hand.MAIN_HAND ? Hand.OFF_HAND : Hand.MAIN_HAND;
+    }
+
+    @Override
+    public boolean test(String trainer) {
+        return predicate.test(trainer);
     }
 }

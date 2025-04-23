@@ -2,18 +2,17 @@ package kiwiapollo.cobblemontrainerbattle.entity;
 
 import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
 import net.minecraft.entity.EntityType;
-import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 
 public class RandomTrainerEntityFactory implements EntityType.EntityFactory<TrainerEntity> {
-    private final SimpleFactory<String> trainer;
+    private final SimpleFactory<String> trainerFactory;
 
     public RandomTrainerEntityFactory() {
-        this(new RandomSpawnableTrainerFactory());
+        this(new RandomSpawnableTrainerFactory(trainer -> true));
     }
 
-    public RandomTrainerEntityFactory(SimpleFactory<String> trainer) {
-        this.trainer = trainer;
+    public RandomTrainerEntityFactory(SimpleFactory<String> trainerFactory) {
+        this.trainerFactory = trainerFactory;
     }
 
     @Override
@@ -23,7 +22,7 @@ public class RandomTrainerEntityFactory implements EntityType.EntityFactory<Trai
 
     private String createTrainer() {
         try {
-            return trainer.create();
+            return trainerFactory.create();
 
         } catch (UnsupportedOperationException | NullPointerException | IndexOutOfBoundsException e) {
             return null;
