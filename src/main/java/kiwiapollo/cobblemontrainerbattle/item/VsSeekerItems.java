@@ -7,12 +7,12 @@ import net.minecraft.util.Identifier;
 import java.util.function.Predicate;
 
 public enum VsSeekerItems {
-    BLUE_VS_SEEKER("blue_vs_seeker", new VsSeeker(trainer -> true)),
-    RED_VS_SEEKER("red_vs_seeker", new VsSeeker(new SeriesPredicate("radicalred"))),
-    GREEN_VS_SEEKER("green_vs_seeker", new VsSeeker(new SeriesPredicate("inclementemerald"))),
-    PURPLE_VS_SEEKER("purple_vs_seeker", new VsSeeker(new SeriesPredicate("smogon"))),
-    PINK_VS_SEEKER("pink_vs_seeker", new VsSeeker(new SeriesPredicate("xy"))),
-    YELLOW_VS_SEEKER("yellow_vs_seeker", new VsSeeker(new SeriesPredicate("bdsp")));
+    BLUE_VS_SEEKER("blue_vs_seeker", new VsSeeker("item.cobblemontrainerbattle.blue_vs_seeker.trainers", trainer -> true)),
+    RED_VS_SEEKER("red_vs_seeker", new VsSeeker("item.cobblemontrainerbattle.red_vs_seeker.trainers", new SeriesPredicate("radicalred"))),
+    GREEN_VS_SEEKER("green_vs_seeker", new VsSeeker("item.cobblemontrainerbattle.green_vs_seeker.trainers", new SeriesPredicate("inclementemerald"))),
+    PURPLE_VS_SEEKER("purple_vs_seeker", new VsSeeker("item.cobblemontrainerbattle.purple_vs_seeker.trainers", new SeriesPredicate("smogon"))),
+    PINK_VS_SEEKER("pink_vs_seeker", new VsSeeker("item.cobblemontrainerbattle.pink_vs_seeker.trainers", new SeriesPredicate("xy"))),
+    YELLOW_VS_SEEKER("yellow_vs_seeker", new VsSeeker("item.cobblemontrainerbattle.yellow_vs_seeker.trainers", new SeriesPredicate("bdsp")));
 
     private final Identifier identifier;
     private final Item item;

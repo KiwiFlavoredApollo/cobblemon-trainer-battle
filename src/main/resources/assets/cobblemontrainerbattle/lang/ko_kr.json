@@ -6,11 +6,17 @@
   "item.cobblemontrainerbattle.trainer_spawn_egg": "트레이너 생성 알",
 
   "item.cobblemontrainerbattle.blue_vs_seeker": "파란색 배틀서처",
+  "item.cobblemontrainerbattle.blue_vs_seeker.trainers": "모든 트레이너",
   "item.cobblemontrainerbattle.red_vs_seeker": "빨간색 배틀서처",
+  "item.cobblemontrainerbattle.red_vs_seeker.trainers": "Radical Red 트레이너",
   "item.cobblemontrainerbattle.green_vs_seeker": "초록색 배틀서처",
+  "item.cobblemontrainerbattle.green_vs_seeker.trainers": "Inclement Emerald 트레이너",
   "item.cobblemontrainerbattle.purple_vs_seeker": "보라색 배틀서처",
+  "item.cobblemontrainerbattle.purple_vs_seeker.trainers": "Smogon 트레이너",
   "item.cobblemontrainerbattle.pink_vs_seeker": "분홍색 배틀서처",
+  "item.cobblemontrainerbattle.pink_vs_seeker.trainers": "XY 트레이너",
   "item.cobblemontrainerbattle.yellow_vs_seeker": "노란색 배틀서처",
+  "item.cobblemontrainerbattle.yellow_vs_seeker.trainers": "BDSP 트레이너",
 
   "item.cobblemontrainerbattle.trainer_token": "트레이너 토큰",
 

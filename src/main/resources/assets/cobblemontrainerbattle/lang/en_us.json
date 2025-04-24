@@ -6,11 +6,17 @@
   "item.cobblemontrainerbattle.trainer_spawn_egg": "Trainer Spawn Egg",
 
   "item.cobblemontrainerbattle.blue_vs_seeker": "Blue VS Seeker",
+  "item.cobblemontrainerbattle.blue_vs_seeker.trainers": "All Trainers",
   "item.cobblemontrainerbattle.red_vs_seeker": "Red VS Seeker",
+  "item.cobblemontrainerbattle.red_vs_seeker.trainers": "Radical Red Trainers",
   "item.cobblemontrainerbattle.green_vs_seeker": "Green VS Seeker",
+  "item.cobblemontrainerbattle.green_vs_seeker.trainers": "Inclement Emerald Trainers",
   "item.cobblemontrainerbattle.purple_vs_seeker": "Purple VS Seeker",
+  "item.cobblemontrainerbattle.purple_vs_seeker.trainers": "Smogon Trainers",
   "item.cobblemontrainerbattle.pink_vs_seeker": "Pink VS Seeker",
+  "item.cobblemontrainerbattle.pink_vs_seeker.trainers": "XY Trainers",
   "item.cobblemontrainerbattle.yellow_vs_seeker": "Yellow VS Seeker",
+  "item.cobblemontrainerbattle.yellow_vs_seeker.trainers": "BDSP Trainers",
 
   "item.cobblemontrainerbattle.trainer_token": "Trainer Token",
 
