@@ -16,8 +16,10 @@ import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerStorage;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.advancement.criterion.Criteria;
+import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -35,7 +37,10 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
+import net.minecraft.world.LocalDifficulty;
+import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
@@ -228,5 +233,20 @@ public class TrainerEntity extends PathAwareEntity {
         } catch (NullPointerException e) {
             discard();
         }
+    }
+
+    /**
+     * When TrainerEntity is spawned by Mob Spawner, trainer and texture fields are not initialized.
+     * Seems like Mob Spawners do not call constructors when creating entities.
+     */
+    @Nullable
+    public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityNbt) {
+        if (spawnReason.equals(SpawnReason.SPAWNER)  && Objects.equals(trainer, "")) {
+            RandomSpawnableTrainerFactory factory = new RandomSpawnableTrainerFactory(trainer -> true);
+            this.trainer = factory.create();
+            this.texture = toTexture(trainer);
+        }
+
+        return super.initialize(world, difficulty, spawnReason, entityData, entityNbt);
     }
 }
