@@ -22,6 +22,7 @@ public class CustomItemGroup {
 
         ItemGroupEvents.modifyEntriesEvent(ITEM_GROUP_KEY).register(itemGroup -> {
             itemGroup.add(MiscItems.TRAINER_SPAWN_EGG);
+            itemGroup.add(MiscItems.ANCHOR_SPAWN_EGG);
             itemGroup.add(MiscItems.TRAINER_TOKEN);
 
             Arrays.stream(VsSeekerItems.values()).forEach(item -> {

@@ -70,6 +70,8 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
 		Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "trainer"), EntityTypes.TRAINER);
 		FabricDefaultAttributeRegistry.register(EntityTypes.TRAINER, TrainerEntity.createMobAttributes());
+		Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "anchor"), EntityTypes.ANCHOR);
+		FabricDefaultAttributeRegistry.register(EntityTypes.ANCHOR, TrainerEntity.createMobAttributes());
 
 		CobblemonEvents.BATTLE_VICTORY.subscribe(Priority.NORMAL, new BattleVictoryEventHandler());
 		CobblemonEvents.LOOT_DROPPED.subscribe(Priority.HIGHEST, new LootDroppedEventHandler());
