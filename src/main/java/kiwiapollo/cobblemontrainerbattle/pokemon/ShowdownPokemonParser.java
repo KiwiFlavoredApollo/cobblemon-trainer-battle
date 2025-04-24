@@ -39,7 +39,7 @@ public class ShowdownPokemonParser {
 
     private Pokemon createBasePokemon(ShowdownPokemon showdownPokemon) throws PokemonParseException {
         try {
-            Identifier identifier = toCobblemonDefaultedIdentifier(showdownPokemon.species);
+            Identifier identifier = toCobblemonDefaultedIdentifier(removeFormName(showdownPokemon.species));
             return PokemonSpecies.INSTANCE.getByIdentifier(identifier).create(DEFAULT_LEVEL);
 
         } catch (ClassCastException | NullPointerException e) {
@@ -184,7 +184,6 @@ public class ShowdownPokemonParser {
 
         } else {
             String path = string;
-            path = removeFormName(path);
             path = normalize(path);
             path = sanitize(path);
             return Identifier.of("cobblemon", path);
