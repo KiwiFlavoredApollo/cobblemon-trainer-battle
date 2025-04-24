@@ -30,7 +30,11 @@ public class AnchorEntity extends TrainerEntity {
 
     @Override
     public boolean damage(DamageSource source, float amount) {
-        return source.isOf(DamageTypes.GENERIC_KILL);
+        if (!source.isOf(DamageTypes.GENERIC_KILL)) {
+            return false;
+        }
+
+        return super.damage(source, amount);
     }
 
     @Override
