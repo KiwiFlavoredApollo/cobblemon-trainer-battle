@@ -40,7 +40,7 @@ public class DataGenerator implements DataGeneratorEntrypoint {
     }
 
     static class AdvancementProvider extends FabricAdvancementProvider {
-        static final Identifier BACKGROUND = new Identifier("textures/gui/advancements/backgrounds/adventure.png");
+        static final Identifier BACKGROUND = Identifier.tryParse("textures/gui/advancements/backgrounds/adventure.png");
 
         private static final PlayerInteractedWithEntityCriterion.Conditions CONDITIONS = new PlayerInteractedWithEntityCriterion.Conditions(
                 LootContextPredicate.EMPTY,

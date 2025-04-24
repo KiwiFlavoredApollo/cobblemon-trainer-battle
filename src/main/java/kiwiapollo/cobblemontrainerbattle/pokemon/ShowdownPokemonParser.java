@@ -110,7 +110,8 @@ public class ShowdownPokemonParser {
             Objects.requireNonNull(nature);
 
             if (Identifier.isValid(nature)) {
-                pokemon.setNature(Objects.requireNonNull(Natures.INSTANCE.getNature(new Identifier(nature.toLowerCase()))));
+                Identifier identifier = Identifier.tryParse(nature.toLowerCase());
+                pokemon.setNature(Objects.requireNonNull(Natures.INSTANCE.getNature(identifier)));
 
             } else {
                 Identifier identifier = Identifier.of("cobblemon", nature.toLowerCase());
