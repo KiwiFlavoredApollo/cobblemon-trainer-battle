@@ -39,7 +39,7 @@ public class ShowdownPokemonParser {
 
     private Pokemon createBasePokemon(ShowdownPokemon showdownPokemon) throws PokemonParseException {
         try {
-            Identifier identifier = toSpeciesResourceIdentifier(showdownPokemon.species);
+            Identifier identifier = toCobblemonDefaultedIdentifier(showdownPokemon.species);
             return PokemonSpecies.INSTANCE.getByIdentifier(identifier).create(DEFAULT_LEVEL);
 
         } catch (ClassCastException | NullPointerException e) {
@@ -67,8 +67,10 @@ public class ShowdownPokemonParser {
 
     private void setPokemonAbility(Pokemon pokemon, String ability) {
         try {
-            pokemon.updateAbility(Abilities.INSTANCE.getOrException(
-                    ability.replace(" ", "").toLowerCase()).create(false));
+            String id = ability;
+            id = normalize(id);
+            id = sanitize(id);
+            pokemon.updateAbility(Abilities.INSTANCE.getOrException(id).create(false));
 
         } catch (NullPointerException | IllegalArgumentException ignored) {
 
@@ -108,15 +110,8 @@ public class ShowdownPokemonParser {
     private void setPokemonNature(Pokemon pokemon, String nature) {
         try {
             Objects.requireNonNull(nature);
-
-            if (Identifier.isValid(nature)) {
-                Identifier identifier = Identifier.tryParse(nature.toLowerCase());
-                pokemon.setNature(Objects.requireNonNull(Natures.INSTANCE.getNature(identifier)));
-
-            } else {
-                Identifier identifier = Identifier.of("cobblemon", nature.toLowerCase());
-                pokemon.setNature(Objects.requireNonNull(Natures.INSTANCE.getNature(identifier)));
-            }
+            Identifier identifier = toCobblemonDefaultedIdentifier(nature);
+            pokemon.setNature(Objects.requireNonNull(Natures.INSTANCE.getNature(identifier)));
 
         } catch (NullPointerException ignored) {
 
@@ -149,15 +144,8 @@ public class ShowdownPokemonParser {
     }
 
     private ItemStack toHeldItem(String item) {
-        if (Identifier.isValid(item)) {
-            return new ItemStack(Registries.ITEM.get(Identifier.tryParse(item)));
-
-        } else {
-            String path = item;
-            path = path.toLowerCase();
-            path = removeNonLowerCaseAlphanumeric(path);
-            return new ItemStack(Registries.ITEM.get(Identifier.of("cobblemon", path)));
-        }
+        Identifier identifier = toCobblemonDefaultedIdentifier(item);
+        return new ItemStack(Registries.ITEM.get(identifier));
     }
 
     private void setPokemonMoveSet(Pokemon pokemon, List<String> moveSet) {
@@ -187,26 +175,20 @@ public class ShowdownPokemonParser {
         return moveSet == null || moveSet.isEmpty();
     }
 
-    public static Identifier toSpeciesResourceIdentifier(String species) {
-        if (Identifier.isValid(species)) {
-            return Identifier.tryParse(species);
+    public static Identifier toCobblemonDefaultedIdentifier(String string) {
+        if (string.contains(String.valueOf(Identifier.NAMESPACE_SEPARATOR))) {
+            String id = string;
+            id = normalize(id);
+            id = sanitize(id);
+            return Identifier.tryParse(id);
+
         } else {
-            return Identifier.of("cobblemon", toSpeciesResourcePath(species));
+            String path = string;
+            path = removeFormName(path);
+            path = normalize(path);
+            path = sanitize(path);
+            return Identifier.of("cobblemon", path);
         }
-    }
-
-    private static String toSpeciesResourcePath(String species) {
-        String path = species;
-
-        path = removeFormName(path);
-        path = path.toLowerCase();
-        path = removeNonLowerCaseAlphanumeric(path);
-
-        return path;
-    }
-
-    private static String removeNonLowerCaseAlphanumeric(String species) {
-        return species.replaceAll("[^a-z0-9]", "");
     }
 
     private static String removeFormName(String species) {
@@ -215,6 +197,22 @@ public class ShowdownPokemonParser {
         for (String form : FormAspectProvider.FORM_ASPECTS.keySet()) {
             s = s.replaceAll(form, "");
         }
+
+        return s;
+    }
+
+    private static String sanitize(String string) {
+        String s = string;
+
+        s = s.replaceAll("[^a-z0-9]", "");
+
+        return s;
+    }
+
+    private static String normalize(String string) {
+        String s = string;
+
+        s = s.toLowerCase();
 
         return s;
     }

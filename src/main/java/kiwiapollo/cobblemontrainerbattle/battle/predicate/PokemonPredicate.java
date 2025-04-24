@@ -25,7 +25,7 @@ public abstract class PokemonPredicate implements MessagePredicate<PlayerBattleP
     private boolean isSpeciesEqual(Pokemon party, ShowdownPokemon required) {
         try {
             Identifier p = party.getSpecies().getResourceIdentifier();
-            Identifier r = ShowdownPokemonParser.toSpeciesResourceIdentifier(required.species);
+            Identifier r = ShowdownPokemonParser.toCobblemonDefaultedIdentifier(required.species);
             return p.equals(r);
 
         } catch (NullPointerException e) {
@@ -43,7 +43,7 @@ public abstract class PokemonPredicate implements MessagePredicate<PlayerBattleP
 
     protected Text toPokemonDescriptor(ShowdownPokemon pokemon) {
         try {
-            Identifier identifier = ShowdownPokemonParser.toSpeciesResourceIdentifier(pokemon.species);
+            Identifier identifier = ShowdownPokemonParser.toCobblemonDefaultedIdentifier(pokemon.species);
             Species species = PokemonSpecies.INSTANCE.getByIdentifier(identifier);
 
             boolean isFormExist = pokemon.form != null;
@@ -56,7 +56,7 @@ public abstract class PokemonPredicate implements MessagePredicate<PlayerBattleP
             }
 
         } catch (NullPointerException e) {
-            Identifier identifier = ShowdownPokemonParser.toSpeciesResourceIdentifier(pokemon.species);
+            Identifier identifier = ShowdownPokemonParser.toCobblemonDefaultedIdentifier(pokemon.species);
             CobblemonTrainerBattle.LOGGER.error("Unknown Pokemon species: {}", identifier);
             throw new IllegalStateException(e);
         }
