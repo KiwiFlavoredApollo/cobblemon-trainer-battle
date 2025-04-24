@@ -8,11 +8,11 @@ import java.util.function.Predicate;
 
 public enum VsSeekerItems {
     BLUE_VS_SEEKER("blue_vs_seeker", new VsSeeker("item.cobblemontrainerbattle.blue_vs_seeker.trainers", trainer -> true)),
-    RED_VS_SEEKER("red_vs_seeker", new VsSeeker("item.cobblemontrainerbattle.red_vs_seeker.trainers", new SeriesPredicate("radicalred"))),
-    GREEN_VS_SEEKER("green_vs_seeker", new VsSeeker("item.cobblemontrainerbattle.green_vs_seeker.trainers", new SeriesPredicate("inclementemerald"))),
-    PURPLE_VS_SEEKER("purple_vs_seeker", new VsSeeker("item.cobblemontrainerbattle.purple_vs_seeker.trainers", new SeriesPredicate("smogon"))),
-    PINK_VS_SEEKER("pink_vs_seeker", new VsSeeker("item.cobblemontrainerbattle.pink_vs_seeker.trainers", new SeriesPredicate("xy"))),
-    YELLOW_VS_SEEKER("yellow_vs_seeker", new VsSeeker("item.cobblemontrainerbattle.yellow_vs_seeker.trainers", new SeriesPredicate("bdsp")));
+    RED_VS_SEEKER("red_vs_seeker", new VsSeeker("item.cobblemontrainerbattle.red_vs_seeker.trainers", new GroupPredicate("radicalred"))),
+    GREEN_VS_SEEKER("green_vs_seeker", new VsSeeker("item.cobblemontrainerbattle.green_vs_seeker.trainers", new GroupPredicate("inclementemerald"))),
+    PURPLE_VS_SEEKER("purple_vs_seeker", new VsSeeker("item.cobblemontrainerbattle.purple_vs_seeker.trainers", new GroupPredicate("smogon"))),
+    PINK_VS_SEEKER("pink_vs_seeker", new VsSeeker("item.cobblemontrainerbattle.pink_vs_seeker.trainers", new GroupPredicate("xy"))),
+    YELLOW_VS_SEEKER("yellow_vs_seeker", new VsSeeker("item.cobblemontrainerbattle.yellow_vs_seeker.trainers", new GroupPredicate("bdsp")));
 
     private final Identifier identifier;
     private final Item item;
@@ -30,16 +30,16 @@ public enum VsSeekerItems {
         return identifier;
     }
 
-    private static class SeriesPredicate implements Predicate<String> {
-        private final String series;
+    private static class GroupPredicate implements Predicate<String> {
+        private final String group;
 
-        SeriesPredicate(String series) {
-            this.series = series;
+        GroupPredicate(String group) {
+            this.group = group;
         }
 
         @Override
         public boolean test(String trainer) {
-            return trainer.matches(String.format("^%s/.+", series));
+            return trainer.matches(String.format("^%s/.+", group));
         }
     }
 }
