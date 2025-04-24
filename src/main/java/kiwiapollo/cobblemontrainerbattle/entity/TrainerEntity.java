@@ -239,6 +239,7 @@ public class TrainerEntity extends PathAwareEntity {
      * When TrainerEntity is spawned by Mob Spawner, trainer and texture fields are not initialized.
      * Seems like Mob Spawners do not call constructors when creating entities.
      */
+    @Override
     @Nullable
     public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityNbt) {
         if (spawnReason.equals(SpawnReason.SPAWNER)  && Objects.equals(trainer, "")) {
