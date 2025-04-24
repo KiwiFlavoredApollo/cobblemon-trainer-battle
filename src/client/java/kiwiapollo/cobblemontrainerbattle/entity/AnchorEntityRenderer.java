@@ -9,7 +9,7 @@ import net.minecraft.resource.ResourceManager;
 import net.minecraft.util.Identifier;
 
 public class AnchorEntityRenderer extends MobEntityRenderer<AnchorEntity, PlayerEntityModel<AnchorEntity>> {
-    private static final String FALLBACK_TEXTURE = "cobblemontrainerbattle:textures/entity/trainer/slim/red_piikapiika.png";
+    private static final String FALLBACK_TEXTURE = "cobblemontrainerbattle:textures/entity/trainer/slim/leaf_piikapiika.png";
 
     public AnchorEntityRenderer(EntityRendererFactory.Context context) {
         super(context, new PlayerEntityModel<>(context.getPart(EntityModelLayers.PLAYER_SLIM), false), 0.5f);
