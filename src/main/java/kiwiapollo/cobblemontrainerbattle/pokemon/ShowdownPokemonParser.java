@@ -109,8 +109,7 @@ public class ShowdownPokemonParser {
         try {
             Objects.requireNonNull(nature);
 
-            boolean isContainNamespace = nature.contains(":");
-            if (isContainNamespace) {
+            if (Identifier.isValid(nature)) {
                 pokemon.setNature(Objects.requireNonNull(Natures.INSTANCE.getNature(new Identifier(nature.toLowerCase()))));
 
             } else {
@@ -149,7 +148,7 @@ public class ShowdownPokemonParser {
     }
 
     private ItemStack toHeldItem(String item) {
-        if (item.contains(":")) {
+        if (Identifier.isValid(item)) {
             return new ItemStack(Registries.ITEM.get(Identifier.tryParse(item)));
 
         } else {
@@ -188,7 +187,7 @@ public class ShowdownPokemonParser {
     }
 
     public static Identifier toSpeciesResourceIdentifier(String species) {
-        if (species.contains(":")) {
+        if (Identifier.isValid(species)) {
             return Identifier.tryParse(species);
         } else {
             return Identifier.of("cobblemon", toSpeciesResourcePath(species));
