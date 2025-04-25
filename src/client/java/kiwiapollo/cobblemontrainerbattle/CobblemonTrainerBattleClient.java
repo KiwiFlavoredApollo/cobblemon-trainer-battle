@@ -8,6 +8,6 @@ public class CobblemonTrainerBattleClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
 		EntityRendererRegistry.register(EntityTypes.TRAINER, TrainerEntityRenderer::new);
-		EntityRendererRegistry.register(EntityTypes.ANCHOR, AnchorEntityRenderer::new);
+		EntityRendererRegistry.register(EntityTypes.STATIC_TRAINER, StaticTrainerEntityRenderer::new);
 	}
 }

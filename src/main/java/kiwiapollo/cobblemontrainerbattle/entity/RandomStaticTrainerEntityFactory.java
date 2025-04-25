@@ -4,20 +4,20 @@ import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.World;
 
-public class RandomAnchorEntityFactory implements EntityType.EntityFactory<AnchorEntity> {
+public class RandomStaticTrainerEntityFactory implements EntityType.EntityFactory<StaticTrainerEntity> {
     private final SimpleFactory<String> trainerFactory;
 
-    public RandomAnchorEntityFactory() {
+    public RandomStaticTrainerEntityFactory() {
         this(new RandomSpawnableTrainerFactory(trainer -> true));
     }
 
-    public RandomAnchorEntityFactory(SimpleFactory<String> trainerFactory) {
+    public RandomStaticTrainerEntityFactory(SimpleFactory<String> trainerFactory) {
         this.trainerFactory = trainerFactory;
     }
 
     @Override
-    public AnchorEntity create(EntityType<AnchorEntity> type, World world) {
-        return new AnchorEntity(type, world, createTrainer());
+    public StaticTrainerEntity create(EntityType<StaticTrainerEntity> type, World world) {
+        return new StaticTrainerEntity(type, world, createTrainer());
     }
 
     private String createTrainer() {

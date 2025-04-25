@@ -11,10 +11,10 @@ import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.world.World;
 
-public class AnchorEntity extends TrainerEntity {
+public class StaticTrainerEntity extends TrainerEntity {
     private static final String FALLBACK_TEXTURE = "cobblemontrainerbattle:textures/entity/trainer/slim/leaf_piikapiika.png";
 
-    public AnchorEntity(EntityType<? extends PathAwareEntity> type, World world, String trainer) {
+    public StaticTrainerEntity(EntityType<? extends PathAwareEntity> type, World world, String trainer) {
         super(type, world, trainer);
     }
 

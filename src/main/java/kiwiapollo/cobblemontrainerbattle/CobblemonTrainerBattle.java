@@ -23,7 +23,6 @@ import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextRemover;
 import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerStorage;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
@@ -70,8 +69,8 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
 		Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "trainer"), EntityTypes.TRAINER);
 		FabricDefaultAttributeRegistry.register(EntityTypes.TRAINER, TrainerEntity.createMobAttributes());
-		Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "anchor"), EntityTypes.ANCHOR);
-		FabricDefaultAttributeRegistry.register(EntityTypes.ANCHOR, TrainerEntity.createMobAttributes());
+		Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "static_trainer"), EntityTypes.STATIC_TRAINER);
+		FabricDefaultAttributeRegistry.register(EntityTypes.STATIC_TRAINER, TrainerEntity.createMobAttributes());
 
 		CobblemonEvents.BATTLE_VICTORY.subscribe(Priority.NORMAL, new BattleVictoryEventHandler());
 		CobblemonEvents.LOOT_DROPPED.subscribe(Priority.HIGHEST, new LootDroppedEventHandler());
