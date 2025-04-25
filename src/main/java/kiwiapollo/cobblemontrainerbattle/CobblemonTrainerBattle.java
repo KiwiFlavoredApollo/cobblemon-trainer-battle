@@ -86,6 +86,5 @@ public class CobblemonTrainerBattle implements ModInitializer {
 		ServerTickEvents.END_SERVER_TICK.register(new PlayerHistorySaver());
 
 		ServerTickEvents.END_WORLD_TICK.register(new TrainerEntitySpawner());
-		ServerEntityEvents.ENTITY_LOAD.register(new TrainerEntitySynchronizer());
 	}
 }

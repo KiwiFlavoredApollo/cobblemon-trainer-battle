@@ -14,7 +14,6 @@ import kiwiapollo.cobblemontrainerbattle.global.history.PlayerHistoryStorage;
 import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
 import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerStorage;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
-import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
@@ -24,6 +23,9 @@ import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.data.DataTracker;
+import net.minecraft.entity.data.TrackedData;
+import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.loot.LootTable;
@@ -46,25 +48,18 @@ import java.util.*;
 
 public class TrainerEntity extends PathAwareEntity {
     public static final int FLEE_DISTANCE = 20;
+    private static final String FALLBACK_TRAINER = "cobblemontrainerbattle:radicalred/player_red";
+    private static final String FALLBACK_TEXTURE = "cobblemontrainerbattle:textures/entity/trainer/slim/red_piikapiika.png";
+    private static final TrackedData<String> TRAINER = DataTracker.registerData(TrainerEntity.class, TrackedDataHandlerRegistry.STRING);
 
-    private String trainer;
-    private Identifier texture;
+    private final String trainer;
     private TrainerBattle trainerBattle;
 
     public TrainerEntity(EntityType<? extends PathAwareEntity> type, World world, String trainer) {
         super(type, world);
 
         this.trainer = trainer;
-        this.texture = toTexture(trainer);
         this.trainerBattle = null;
-    }
-
-    private static Identifier toTexture(String trainer) {
-        try {
-            return TrainerStorage.getInstance().get(trainer).getTexture();
-        } catch (NullPointerException e) {
-            return null;
-        }
     }
 
     public static DefaultAttributeContainer.Builder createMobAttributes() {
@@ -77,10 +72,10 @@ public class TrainerEntity extends PathAwareEntity {
     @Override
     protected void initGoals() {
         this.goalSelector.add(0, new SwimGoal(this));
-        this.goalSelector.add(3, new WanderAroundFarGoal(this, 1.0D));
-        this.goalSelector.add(3, new LookAroundGoal(this));
-        this.goalSelector.add(2, new AttackGoal(this));
         this.targetSelector.add(1, new RevengeGoal(this));
+        this.goalSelector.add(2, new AttackGoal(this));
+        this.goalSelector.add(3, new LookAroundGoal(this));
+        this.goalSelector.add(3, new WanderAroundFarGoal(this, 1.0D));
     }
 
     @Override
@@ -105,8 +100,8 @@ public class TrainerEntity extends PathAwareEntity {
             }
 
             TrainerBattle trainerBattle = new EntityBackedTrainerBattle(
-                    new PlayerBattleParticipantFactory(player, getLevelMode(trainer)).create(),
-                    new TrainerBattleParticipantFactory(trainer).create(),
+                    new PlayerBattleParticipantFactory(player, getLevelMode(getDataTracker().get(TRAINER))).create(),
+                    new TrainerBattleParticipantFactory(getDataTracker().get(TRAINER)).create(),
                     this
             );
             trainerBattle.start();
@@ -159,7 +154,7 @@ public class TrainerEntity extends PathAwareEntity {
     public void onDeath(DamageSource damageSource) {
         if (damageSource.getSource() instanceof ServerPlayerEntity player) {
             PlayerHistory history = PlayerHistoryStorage.getInstance().getOrCreate(player.getUuid());
-            EntityRecord record = (EntityRecord) history.getOrCreate(trainer);
+            EntityRecord record = (EntityRecord) history.getOrCreate(getDataTracker().get(TRAINER));
             record.setKillCount(record.getKillCount() + 1);
             CustomCriteria.KILL_TRAINER_CRITERION.trigger(player);
         }
@@ -193,42 +188,36 @@ public class TrainerEntity extends PathAwareEntity {
         lootTable.generateLoot(lootContextParameterSet, this.getLootTableSeed(), this::dropStack);
     }
 
-    public void synchronizeClient(ServerWorld world) {
+    public PacketByteBuf createPacket() {
         PacketByteBuf buf = PacketByteBufs.create();
         buf.writeInt(this.getId());
-        buf.writeString(this.trainer);
-        buf.writeIdentifier(this.texture);
-
-        for (ServerPlayerEntity player : world.getPlayers()) {
-            ServerPlayNetworking.send(player, TrainerEntityPackets.TRAINER_ENTITY_SYNC, buf);
-        }
-    }
-
-    public void setTrainer(String trainer) {
-        this.trainer = trainer;
+        buf.writeString(this.getDataTracker().get(TRAINER));
+        return buf;
     }
 
     public Identifier getTexture() {
-        return texture;
+        return getTrainerTexture(getDataTracker().get(TRAINER));
     }
 
-    public void setTexture(Identifier texture) {
-        this.texture = texture;
+    private Identifier getTrainerTexture(String trainer) {
+        try {
+            return TrainerStorage.getInstance().get(trainer).getTexture();
+        } catch (NullPointerException e) {
+            return null;
+        }
     }
 
     @Override
     public void writeCustomDataToNbt(NbtCompound nbt) {
         super.writeCustomDataToNbt(nbt);
-        nbt.putString("Trainer", trainer);
-        nbt.putString("Texture", texture.toString());
+        nbt.putString("Trainer", getDataTracker().get(TRAINER));
     }
 
     @Override
     public void readCustomDataFromNbt(NbtCompound nbt) {
         try {
             super.readCustomDataFromNbt(nbt);
-            trainer = nbt.getString("Trainer");
-            texture = Identifier.tryParse(nbt.getString("Texture"));
+            getDataTracker().set(TRAINER, nbt.getString("Trainer"));
 
         } catch (NullPointerException e) {
             discard();
@@ -244,10 +233,21 @@ public class TrainerEntity extends PathAwareEntity {
     public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityNbt) {
         if (spawnReason.equals(SpawnReason.SPAWNER)  && Objects.equals(trainer, "")) {
             RandomSpawnableTrainerFactory factory = new RandomSpawnableTrainerFactory(trainer -> true);
-            this.trainer = factory.create();
-            this.texture = toTexture(trainer);
+            getDataTracker().set(TRAINER, factory.create());
         }
 
+        this.getDataTracker().set(TRAINER, trainer);
+
         return super.initialize(world, difficulty, spawnReason, entityData, entityNbt);
+    }
+
+    @Override
+    protected void initDataTracker() {
+        super.initDataTracker();
+        this.dataTracker.startTracking(TRAINER, FALLBACK_TRAINER);
+    }
+
+    public String getFallbackTexture() {
+        return FALLBACK_TEXTURE;
     }
 }

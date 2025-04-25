@@ -12,6 +12,8 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.world.World;
 
 public class AnchorEntity extends TrainerEntity {
+    private static final String FALLBACK_TEXTURE = "cobblemontrainerbattle:textures/entity/trainer/slim/leaf_piikapiika.png";
+
     public AnchorEntity(EntityType<? extends PathAwareEntity> type, World world, String trainer) {
         super(type, world, trainer);
     }
@@ -45,5 +47,10 @@ public class AnchorEntity extends TrainerEntity {
     @Override
     public void pushAwayFrom(Entity entity) {
         
+    }
+
+    @Override
+    public String getFallbackTexture() {
+        return FALLBACK_TEXTURE;
     }
 }
