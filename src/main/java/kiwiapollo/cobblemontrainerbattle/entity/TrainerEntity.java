@@ -188,13 +188,6 @@ public class TrainerEntity extends PathAwareEntity {
         lootTable.generateLoot(lootContextParameterSet, this.getLootTableSeed(), this::dropStack);
     }
 
-    public PacketByteBuf createPacket() {
-        PacketByteBuf buf = PacketByteBufs.create();
-        buf.writeInt(this.getId());
-        buf.writeString(this.getDataTracker().get(TRAINER));
-        return buf;
-    }
-
     public Identifier getTexture() {
         return getTrainerTexture(getDataTracker().get(TRAINER));
     }
