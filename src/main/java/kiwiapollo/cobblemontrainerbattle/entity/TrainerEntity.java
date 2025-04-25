@@ -237,7 +237,7 @@ public class TrainerEntity extends PathAwareEntity {
     @Override
     protected void initDataTracker() {
         super.initDataTracker();
-        this.dataTracker.startTracking(TRAINER, FALLBACK_TRAINER);
+        this.getDataTracker().startTracking(TRAINER, FALLBACK_TRAINER);
     }
 
     public String getFallbackTexture() {
