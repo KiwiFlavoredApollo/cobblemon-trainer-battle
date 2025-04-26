@@ -1,5 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.pokemon;
 
+import java.util.List;
 import java.util.Map;
 
 public class ShowdownMoveParser {
@@ -42,7 +43,14 @@ public class ShowdownMoveParser {
             Map.entry("Steam Pump", "steameruption"),
             Map.entry("Tacke", "tackle"),
 
-            Map.entry("Aqua Fang", "aquajet")
+            Map.entry("Aqua Fang", "aquajet"),
+            Map.entry("DracoBarrage", "dragonrush")
+    );
+
+    private static final List<String> IGNORE =  List.of(
+            "None",
+            "--",
+            ""
     );
 
     public String toCobblemonMove(String move) {
@@ -54,10 +62,14 @@ public class ShowdownMoveParser {
             return "hiddenpower";
         }
 
-        return normalizeMoveName(move);
+        return normalize(move);
     }
 
-    private String normalizeMoveName(String moveName) {
+    public boolean shouldIgnore(String move) {
+        return IGNORE.contains(move);
+    }
+
+    private String normalize(String moveName) {
         return moveName.replace(" ", "")
                 .replace("-", "")
                 .replace(",", "")
