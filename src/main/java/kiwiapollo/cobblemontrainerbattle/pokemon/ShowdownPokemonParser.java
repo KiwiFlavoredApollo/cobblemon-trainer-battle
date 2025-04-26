@@ -1,7 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.pokemon;
 
 import com.cobblemon.mod.common.api.abilities.Abilities;
-import com.cobblemon.mod.common.api.moves.Move;
 import com.cobblemon.mod.common.api.moves.Moves;
 import com.cobblemon.mod.common.api.pokemon.Natures;
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
@@ -148,31 +147,26 @@ public class ShowdownPokemonParser {
         return new ItemStack(Registries.ITEM.get(identifier));
     }
 
-    private void setPokemonMoveSet(Pokemon pokemon, List<String> moveSet) {
-        if (isUseDefaultMoveSet(moveSet)) {
+    private void setPokemonMoveSet(Pokemon pokemon, List<String> moves) {
+        List<String> filtered = moves.stream().filter(move -> !new ShowdownMoveParser().shouldIgnore(move)).toList();
+
+        if (shouldUseDefaultMoveSet(filtered)) {
             return;
         }
 
         pokemon.getMoveSet().clear();
-        for (String moveName : moveSet) {
+        for (String move : filtered) {
             try {
-                Move move = Moves.INSTANCE.getByName(new ShowdownMoveParser().toCobblemonMove(moveName)).create();
-                pokemon.getMoveSet().add(move);
+                pokemon.getMoveSet().add(Moves.INSTANCE.getByName(new ShowdownMoveParser().toCobblemonMove(move)).create());
 
             } catch (NullPointerException e) {
-                List<String> ignore = List.of("None");
-
-                if (ignore.contains(moveName)) {
-                    return;
-                }
-
-                CobblemonTrainerBattle.LOGGER.error("Move not found: {}", moveName);
+                CobblemonTrainerBattle.LOGGER.error("Move not found: {}", move);
             }
         }
     }
 
-    private boolean isUseDefaultMoveSet(List<String> moveSet) {
-        return moveSet == null || moveSet.isEmpty();
+    private boolean shouldUseDefaultMoveSet(List<String> moves) {
+        return moves == null || moves.isEmpty();
     }
 
     public static Identifier toCobblemonDefaultedIdentifier(String string) {
