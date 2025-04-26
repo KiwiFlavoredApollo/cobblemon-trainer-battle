@@ -5,6 +5,10 @@ NPC trainers make Cobblemon experience more interesting. Players must have VS Se
 ```
 /summon cobblemontrainerbattle:trainer ~ ~ ~ {Trainer:"radicalred/leader_brock",Texture:"minecraft:textures/entity/player/slim/steve.png"}
 ```
+```
+/kill <uuid>
+/kill @e[type=cobblemontrainerbattle:trainer]
+```
 
 ## NPC Trainers (>=1.9.15)
 
@@ -12,4 +16,20 @@ Command no longer accept `Texture`. The texture will be set according to the Tra
 
 ```
 /summon cobblemontrainerbattle:trainer ~ ~ ~ {Trainer:"radicalred/leader_brock"}
+```
+```
+/kill <uuid>
+/kill @e[type=cobblemontrainerbattle:trainer]
+```
+
+## Static Trainers (>=1.9.15)
+
+Static Trainers are special kind of Trainers. They are persistent and can only be removed with `/kill` command while looking at the Static Trainer Entity.
+
+```
+/summon cobblemontrainerbattle:static_trainer ~ ~ ~ {Trainer:"radicalred/leader_brock"}
+```
+```
+/kill <uuid>
+/kill @e[type=cobblemontrainerbattle:static_trainer]
 ```
