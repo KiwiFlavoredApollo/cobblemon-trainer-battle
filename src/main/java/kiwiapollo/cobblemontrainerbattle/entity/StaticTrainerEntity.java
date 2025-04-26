@@ -16,6 +16,7 @@ public class StaticTrainerEntity extends TrainerEntity {
 
     public StaticTrainerEntity(EntityType<? extends PathAwareEntity> type, World world, String trainer) {
         super(type, world, trainer);
+        setPersistent();
     }
 
     public static DefaultAttributeContainer.Builder createMobAttributes() {
