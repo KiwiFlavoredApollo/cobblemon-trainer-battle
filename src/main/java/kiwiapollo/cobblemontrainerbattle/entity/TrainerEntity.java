@@ -13,7 +13,6 @@ import kiwiapollo.cobblemontrainerbattle.global.history.PlayerHistory;
 import kiwiapollo.cobblemontrainerbattle.global.history.PlayerHistoryStorage;
 import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
 import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerStorage;
-import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
@@ -33,7 +32,6 @@ import net.minecraft.loot.context.LootContextParameterSet;
 import net.minecraft.loot.context.LootContextParameters;
 import net.minecraft.loot.context.LootContextTypes;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.network.PacketByteBuf;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
@@ -48,17 +46,15 @@ import java.util.*;
 
 public class TrainerEntity extends PathAwareEntity {
     public static final int FLEE_DISTANCE = 20;
-    private static final String FALLBACK_TRAINER = "cobblemontrainerbattle:radicalred/player_red";
+    private static final String FALLBACK_TRAINER = "radicalred/player_red";
     private static final String FALLBACK_TEXTURE = "cobblemontrainerbattle:textures/entity/trainer/slim/red_piikapiika.png";
     private static final TrackedData<String> TRAINER = DataTracker.registerData(TrainerEntity.class, TrackedDataHandlerRegistry.STRING);
 
-    private final String trainer;
     private TrainerBattle trainerBattle;
 
-    public TrainerEntity(EntityType<? extends PathAwareEntity> type, World world, String trainer) {
+    public TrainerEntity(EntityType<? extends PathAwareEntity> type, World world) {
         super(type, world);
 
-        this.trainer = trainer;
         this.trainerBattle = null;
     }
 
@@ -188,6 +184,10 @@ public class TrainerEntity extends PathAwareEntity {
         lootTable.generateLoot(lootContextParameterSet, this.getLootTableSeed(), this::dropStack);
     }
 
+    public void setTrainer(String trainer) {
+        this.getDataTracker().set(TRAINER, trainer);
+    }
+
     public Identifier getTexture() {
         return getTrainerTexture(getDataTracker().get(TRAINER));
     }
@@ -224,12 +224,10 @@ public class TrainerEntity extends PathAwareEntity {
     @Override
     @Nullable
     public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityNbt) {
-        if (spawnReason.equals(SpawnReason.SPAWNER)  && Objects.equals(trainer, "")) {
+        if (spawnReason.equals(SpawnReason.SPAWNER)) {
             RandomSpawnableTrainerFactory factory = new RandomSpawnableTrainerFactory(trainer -> true);
             getDataTracker().set(TRAINER, factory.create());
         }
-
-        this.getDataTracker().set(TRAINER, trainer);
 
         return super.initialize(world, difficulty, spawnReason, entityData, entityNbt);
     }

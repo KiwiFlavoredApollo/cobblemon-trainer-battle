@@ -17,7 +17,9 @@ public class RandomTrainerEntityFactory implements EntityType.EntityFactory<Trai
 
     @Override
     public TrainerEntity create(EntityType<TrainerEntity> type, World world) {
-        return new TrainerEntity(type, world, createTrainer());
+        TrainerEntity trainer = new TrainerEntity(type, world);
+        trainer.setTrainer(createTrainer());
+        return trainer;
     }
 
     private String createTrainer() {

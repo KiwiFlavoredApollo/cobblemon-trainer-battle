@@ -58,7 +58,8 @@ public class VsSeeker extends Item implements Predicate<String> {
         ItemStack ticketStack = user.getStackInHand(getOtherHand(hand));
         TrainerTicket ticket = (TrainerTicket) ticketStack.getItem();
 
-        TrainerEntity entity = new TrainerEntity(EntityTypes.TRAINER, world, ticket.getTrainer());
+        TrainerEntity entity = new TrainerEntity(EntityTypes.TRAINER, world);
+        entity.setTrainer(ticket.getTrainer());
 
         entity.refreshPositionAndAngles(spawnPos, user.getYaw(), user.getPitch());
         world.spawnEntity(entity);

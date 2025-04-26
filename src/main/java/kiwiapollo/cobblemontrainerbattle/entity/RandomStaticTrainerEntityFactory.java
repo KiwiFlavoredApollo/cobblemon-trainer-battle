@@ -17,7 +17,9 @@ public class RandomStaticTrainerEntityFactory implements EntityType.EntityFactor
 
     @Override
     public StaticTrainerEntity create(EntityType<StaticTrainerEntity> type, World world) {
-        return new StaticTrainerEntity(type, world, createTrainer());
+        StaticTrainerEntity trainer = new StaticTrainerEntity(type, world);
+        trainer.setTrainer(createTrainer());
+        return trainer;
     }
 
     private String createTrainer() {
