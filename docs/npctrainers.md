@@ -28,10 +28,10 @@ Command no longer accept `Texture`. The texture will be set according to the Tra
 
 ### Static Trainers
 
-Static Trainers are special kind of Trainers. They are persistent and can only be removed with `/kill` command while looking at the Static Trainer Entity.
+Static Trainers are special kind of Trainers. Static Trainers can only be removed with `/kill` command. Static Trainers are persistent by default but those spawned with `/summon` command need to have `PersistenceRequired` set explicitly.
 
 ```
-/summon cobblemontrainerbattle:static_trainer ~ ~ ~ {Trainer:"radicalred/leader_brock"}
+/summon cobblemontrainerbattle:trainer ~ ~ ~ {Trainer:"radicalred/leader_brock",Texture:"minecraft:textures/entity/player/slim/steve.png", PersistenceRequired:1b}
 ```
 ```
 /kill <uuid>

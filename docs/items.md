@@ -54,6 +54,7 @@ Command no longer accept `Texture`. The texture will be set according to the Tra
 
 ```
 /give @p cobblemontrainerbattle:trainer_spawn_egg{EntityTag:{Trainer:"radicalred/leader_brock"}}
+/give @p cobblemontrainerbattle:static_trainer_spawn_egg{EntityTag:{Trainer:"radicalred/leader_brock"}}
 ```
 
 ### Minecraft 1.21.1
@@ -62,4 +63,5 @@ Command no longer accept `Texture`. The texture will be set according to the Tra
 
 ```
 /give @p cobblemontrainerbattle:trainer_spawn_egg[entity_data={id:trainer, Trainer:"radicalred/leader_brock"}]
+/give @p cobblemontrainerbattle:static_trainer_spawn_egg[entity_data={id:trainer, Trainer:"radicalred/leader_brock"}]
 ```
