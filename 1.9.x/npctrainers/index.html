@@ -132,8 +132,8 @@
 /kill @e[type=cobblemontrainerbattle:trainer]
 </code></pre>
 <h3 id="static-trainers">Static Trainers</h3>
-<p>Static Trainers are special kind of Trainers. They are persistent and can only be removed with <code>/kill</code> command while looking at the Static Trainer Entity.</p>
-<pre><code>/summon cobblemontrainerbattle:static_trainer ~ ~ ~ {Trainer:&quot;radicalred/leader_brock&quot;}
+<p>Static Trainers are special kind of Trainers. Static Trainers can only be removed with <code>/kill</code> command. Static Trainers are persistent by default but those spawned with <code>/summon</code> command need to have <code>PersistenceRequired</code> set explicitly.</p>
+<pre><code>/summon cobblemontrainerbattle:trainer ~ ~ ~ {Trainer:&quot;radicalred/leader_brock&quot;,Texture:&quot;minecraft:textures/entity/player/slim/steve.png&quot;, PersistenceRequired:1b}
 </code></pre>
 <pre><code>/kill &lt;uuid&gt;
 /kill @e[type=cobblemontrainerbattle:static_trainer]
