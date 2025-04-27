@@ -69,19 +69,25 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#trainer-spawn-egg">Trainer Spawn Egg</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#static-trainer-spawn-egg-1915">Static Trainer Spawn Egg (&gt;=1.9.15)</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#mob-spawner-integration-1915">Mob Spawner Integration (&gt;=1.9.15)</a>
+    <li class="toctree-l2"><a class="reference internal" href="#trainer-spawn-eggs">Trainer Spawn Eggs</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#minecraft-1201">Minecraft 1.20.1</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#minecraft-1201-1915">Minecraft 1.20.1 (&gt;=1.9.15)</a>
-    </li>
     <li class="toctree-l3"><a class="reference internal" href="#minecraft-1211">Minecraft 1.21.1</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#minecraft-1211-1915">Minecraft 1.21.1 (&gt;=1.9.15)</a>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#trainer-spawn-eggs-1915">Trainer Spawn Eggs (&gt;=1.9.15)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#trainer-spawn-eggs_1">Trainer Spawn Eggs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#static-trainer-spawn-eggs">Static Trainer Spawn Eggs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mob-spawner-integration">Mob Spawner Integration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#minecraft-1201_1">Minecraft 1.20.1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#minecraft-1211_1">Minecraft 1.21.1</a>
     </li>
         </ul>
     </li>
@@ -141,23 +147,26 @@
 <p>Players can hold multiple VS Seekers in their inventories, allowing more than one group of trainers to spawn.</p>
 <h3 id="2-manually-spawns-gym-leaders-elite-four-and-the-champion">2. Manually Spawns Gym Leaders, Elite Four and the Champion</h3>
 <p>Tickets alone cannot spawn trainers. While aiming at a block nearby, players must use (right-click) VS Seeker while holding a Ticket in the other hand. Tickets are consumed when used.</p>
-<h2 id="trainer-spawn-egg">Trainer Spawn Egg</h2>
-<p>By default, Trainer Spawn Egg spawns random trainers. However, Trainer Spawn Egg can be configured to spawn specific trainer in specific texture.</p>
-<h2 id="static-trainer-spawn-egg-1915">Static Trainer Spawn Egg (&gt;=1.9.15)</h2>
-<p>The trainer entities spawned from Static Trainer Spawn Eggs will not move. But they will look around like a person waiting for someone. Server admins might find these useful.</p>
-<h2 id="mob-spawner-integration-1915">Mob Spawner Integration (&gt;=1.9.15)</h2>
-<p>Spawn Eggs can be applied to Mob Spawners.</p>
+<h2 id="trainer-spawn-eggs">Trainer Spawn Eggs</h2>
+<p>By default, Trainer Spawn Eggs spawn random trainers. Trainer Spawn Eggs can be configured to spawn specific trainer in specific texture.</p>
 <h3 id="minecraft-1201">Minecraft 1.20.1</h3>
 <pre><code>/give @p cobblemontrainerbattle:trainer_spawn_egg{EntityTag:{Trainer:&quot;radicalred/leader_brock&quot;,Texture:&quot;minecraft:textures/entity/player/slim/steve.png&quot;}}
-</code></pre>
-<h3 id="minecraft-1201-1915">Minecraft 1.20.1 (&gt;=1.9.15)</h3>
-<p>Command no longer accept <code>Texture</code>. The texture will be set according to the Trainer Preset.</p>
-<pre><code>/give @p cobblemontrainerbattle:trainer_spawn_egg{EntityTag:{Trainer:&quot;radicalred/leader_brock&quot;}}
 </code></pre>
 <h3 id="minecraft-1211">Minecraft 1.21.1</h3>
 <pre><code>/give @p cobblemontrainerbattle:trainer_spawn_egg[entity_data={id:trainer, Trainer:&quot;radicalred/leader_brock&quot;,Texture:&quot;minecraft:textures/entity/player/slim/steve.png&quot;}]
 </code></pre>
-<h3 id="minecraft-1211-1915">Minecraft 1.21.1 (&gt;=1.9.15)</h3>
+<h2 id="trainer-spawn-eggs-1915">Trainer Spawn Eggs (&gt;=1.9.15)</h2>
+<h3 id="trainer-spawn-eggs_1">Trainer Spawn Eggs</h3>
+<p>Trainer Spawn Eggs spawn random trainers. Trainer Spawn Eggs can be configured to spawn specific trainer.</p>
+<h3 id="static-trainer-spawn-eggs">Static Trainer Spawn Eggs</h3>
+<p>Static Trainer Spawn Eggs spawn trainers that do not move. These trainers can only be killed with <code>/kill</code> command.</p>
+<h3 id="mob-spawner-integration">Mob Spawner Integration</h3>
+<p>Spawn Eggs can be applied to Mob Spawners.</p>
+<h3 id="minecraft-1201_1">Minecraft 1.20.1</h3>
+<p>Command no longer accept <code>Texture</code>. The texture will be set according to the Trainer Preset.</p>
+<pre><code>/give @p cobblemontrainerbattle:trainer_spawn_egg{EntityTag:{Trainer:&quot;radicalred/leader_brock&quot;}}
+</code></pre>
+<h3 id="minecraft-1211_1">Minecraft 1.21.1</h3>
 <p>Command no longer accept <code>Texture</code>. The texture will be set according to the Trainer Preset.</p>
 <pre><code>/give @p cobblemontrainerbattle:trainer_spawn_egg[entity_data={id:trainer, Trainer:&quot;radicalred/leader_brock&quot;}]
 </code></pre>

@@ -55,9 +55,15 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">NPC Trainers</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#npc-trainers-1915">NPC Trainers (&gt;=1.9.15)</a>
+    <li class="toctree-l2"><a class="reference internal" href="#trainers">Trainers</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#static-trainers-1915">Static Trainers (&gt;=1.9.15)</a>
+    <li class="toctree-l2"><a class="reference internal" href="#trainers-1915">Trainers (&gt;=1.9.15)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#trainers_1">Trainers</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#static-trainers">Static Trainers</a>
+    </li>
+        </ul>
     </li>
     </ul>
                 </li>
@@ -111,19 +117,21 @@
               
                 <h1 id="npc-trainers">NPC Trainers</h1>
 <p>NPC trainers make Cobblemon experience more interesting. Players must have VS Seeker in their inventories in order to spawn trainers around them. NPC Trainers can either be spawned with Trainer Spawn Eggs or with following commands.</p>
+<h2 id="trainers">Trainers</h2>
 <pre><code>/summon cobblemontrainerbattle:trainer ~ ~ ~ {Trainer:&quot;radicalred/leader_brock&quot;,Texture:&quot;minecraft:textures/entity/player/slim/steve.png&quot;}
 </code></pre>
 <pre><code>/kill &lt;uuid&gt;
 /kill @e[type=cobblemontrainerbattle:trainer]
 </code></pre>
-<h2 id="npc-trainers-1915">NPC Trainers (&gt;=1.9.15)</h2>
+<h2 id="trainers-1915">Trainers (&gt;=1.9.15)</h2>
+<h3 id="trainers_1">Trainers</h3>
 <p>Command no longer accept <code>Texture</code>. The texture will be set according to the Trainer Preset.</p>
 <pre><code>/summon cobblemontrainerbattle:trainer ~ ~ ~ {Trainer:&quot;radicalred/leader_brock&quot;}
 </code></pre>
 <pre><code>/kill &lt;uuid&gt;
 /kill @e[type=cobblemontrainerbattle:trainer]
 </code></pre>
-<h2 id="static-trainers-1915">Static Trainers (&gt;=1.9.15)</h2>
+<h3 id="static-trainers">Static Trainers</h3>
 <p>Static Trainers are special kind of Trainers. They are persistent and can only be removed with <code>/kill</code> command while looking at the Static Trainer Entity.</p>
 <pre><code>/summon cobblemontrainerbattle:static_trainer ~ ~ ~ {Trainer:&quot;radicalred/leader_brock&quot;}
 </code></pre>
