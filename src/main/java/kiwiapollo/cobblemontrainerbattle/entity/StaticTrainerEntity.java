@@ -67,4 +67,9 @@ public class StaticTrainerEntity extends TrainerEntity {
 
         return super.initialize(world, difficulty, spawnReason, entityData, entityNbt);
     }
+
+    @Override
+    public void onPlayerVictory() {
+
+    }
 }
