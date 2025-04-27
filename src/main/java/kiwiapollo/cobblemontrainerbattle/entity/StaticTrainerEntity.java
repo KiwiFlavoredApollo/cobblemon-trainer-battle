@@ -1,22 +1,27 @@
 package kiwiapollo.cobblemontrainerbattle.entity;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.damage.DamageTypes;
 import net.minecraft.entity.mob.PathAwareEntity;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.world.LocalDifficulty;
+import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 
 public class StaticTrainerEntity extends TrainerEntity {
     private static final String FALLBACK_TEXTURE = "cobblemontrainerbattle:textures/entity/trainer/slim/leaf_piikapiika.png";
 
     public StaticTrainerEntity(EntityType<? extends PathAwareEntity> type, World world) {
         super(type, world);
-        setPersistent();
     }
 
     public static DefaultAttributeContainer.Builder createMobAttributes() {
@@ -53,5 +58,13 @@ public class StaticTrainerEntity extends TrainerEntity {
     @Override
     public String getFallbackTexture() {
         return FALLBACK_TEXTURE;
+    }
+
+    @Override
+    @Nullable
+    public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityNbt) {
+        setPersistent();
+
+        return super.initialize(world, difficulty, spawnReason, entityData, entityNbt);
     }
 }
