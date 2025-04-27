@@ -197,7 +197,7 @@ public class ShowdownPokemonParser {
     private static String sanitize(String string) {
         String s = string;
 
-        s = s.replaceAll("[^a-z0-9]", "");
+        s = s.replaceAll("[^a-z0-9:]", "");
 
         return s;
     }
