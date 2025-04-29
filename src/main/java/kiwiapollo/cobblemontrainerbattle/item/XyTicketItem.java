@@ -5,7 +5,7 @@ import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 
-public enum XyTicketItems {
+public enum XyTicketItem {
     LEADER_VIOLA_TICKET("leader_viola_ticket", "entity/leader_viola"),
     LEADER_GRANT_TICKET("leader_grant_ticket", "entity/leader_grant"),
     LEADER_KORRINA_TICKET("leader_korrina_ticket", "entity/leader_korrina"),
@@ -25,7 +25,7 @@ public enum XyTicketItems {
     private final Identifier identifier;
     private final TrainerTicket item;
 
-    XyTicketItems(String path, String trainer) {
+    XyTicketItem(String path, String trainer) {
         this.identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, path);
         this.item = new TrainerTicket(new Item.Settings(), trainer);
     }

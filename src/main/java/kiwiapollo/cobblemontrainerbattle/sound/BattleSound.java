@@ -4,7 +4,7 @@ import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
-public enum BattleSounds {
+public enum BattleSound {
     LEADER_DEFAULT("battle.leader.default"),
     ELITE_DEFAULT("battle.elite.default"),
     CHAMPION_DEFAULT("battle.champion.default"),
@@ -181,7 +181,7 @@ public enum BattleSounds {
 
     private final Identifier identifier;
 
-    BattleSounds(String path) {
+    BattleSound(String path) {
         this.identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, path);
     }
 

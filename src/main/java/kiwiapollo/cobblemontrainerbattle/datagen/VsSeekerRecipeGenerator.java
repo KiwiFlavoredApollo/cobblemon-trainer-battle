@@ -1,7 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.datagen;
 
 import kiwiapollo.cobblemontrainerbattle.item.ItemTagRegistry;
-import kiwiapollo.cobblemontrainerbattle.item.VsSeekerItems;
+import kiwiapollo.cobblemontrainerbattle.item.VsSeekerItem;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
@@ -18,7 +18,7 @@ public class VsSeekerRecipeGenerator implements ItemRecipeGenerator {
 
     @Override
     public void generate(Consumer<RecipeJsonProvider> exporter) {
-        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, VsSeekerItems.BLUE_VS_SEEKER.getItem())
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, VsSeekerItem.BLUE_VS_SEEKER.getItem())
                 .pattern("IRI")
                 .pattern("IBI")
                 .pattern("III")
@@ -28,40 +28,40 @@ public class VsSeekerRecipeGenerator implements ItemRecipeGenerator {
                 .criterion(FabricRecipeProvider.hasItem(Items.REDSTONE_TORCH), FabricRecipeProvider.conditionsFromItem(Items.REDSTONE_TORCH))
                 .offerTo(exporter);
 
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, VsSeekerItems.BLUE_VS_SEEKER.getItem())
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, VsSeekerItem.BLUE_VS_SEEKER.getItem())
                 .input(ItemTagRegistry.VS_SEEKERS)
                 .input(Items.BLUE_DYE)
-                .criterion(FabricRecipeProvider.hasItem(VsSeekerItems.BLUE_VS_SEEKER.getItem()), FabricRecipeProvider.conditionsFromItem(VsSeekerItems.BLUE_VS_SEEKER.getItem()))
-                .offerTo(exporter, String.format("%s_%s", getRecipeName(VsSeekerItems.BLUE_VS_SEEKER.getItem()), VS_SEEKER_RECIPE_SUFFIX));
+                .criterion(FabricRecipeProvider.hasItem(VsSeekerItem.BLUE_VS_SEEKER.getItem()), FabricRecipeProvider.conditionsFromItem(VsSeekerItem.BLUE_VS_SEEKER.getItem()))
+                .offerTo(exporter, String.format("%s_%s", getRecipeName(VsSeekerItem.BLUE_VS_SEEKER.getItem()), VS_SEEKER_RECIPE_SUFFIX));
 
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, VsSeekerItems.RED_VS_SEEKER.getItem())
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, VsSeekerItem.RED_VS_SEEKER.getItem())
                 .input(ItemTagRegistry.VS_SEEKERS)
                 .input(Items.RED_DYE)
-                .criterion(FabricRecipeProvider.hasItem(VsSeekerItems.BLUE_VS_SEEKER.getItem()), FabricRecipeProvider.conditionsFromItem(VsSeekerItems.BLUE_VS_SEEKER.getItem()))
-                .offerTo(exporter, String.format("%s_%s", getRecipeName(VsSeekerItems.RED_VS_SEEKER.getItem()), VS_SEEKER_RECIPE_SUFFIX));
+                .criterion(FabricRecipeProvider.hasItem(VsSeekerItem.BLUE_VS_SEEKER.getItem()), FabricRecipeProvider.conditionsFromItem(VsSeekerItem.BLUE_VS_SEEKER.getItem()))
+                .offerTo(exporter, String.format("%s_%s", getRecipeName(VsSeekerItem.RED_VS_SEEKER.getItem()), VS_SEEKER_RECIPE_SUFFIX));
 
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, VsSeekerItems.GREEN_VS_SEEKER.getItem())
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, VsSeekerItem.GREEN_VS_SEEKER.getItem())
                 .input(ItemTagRegistry.VS_SEEKERS)
                 .input(Items.GREEN_DYE)
-                .criterion(FabricRecipeProvider.hasItem(VsSeekerItems.BLUE_VS_SEEKER.getItem()), FabricRecipeProvider.conditionsFromItem(VsSeekerItems.BLUE_VS_SEEKER.getItem()))
-                .offerTo(exporter, String.format("%s_%s", getRecipeName(VsSeekerItems.GREEN_VS_SEEKER.getItem()), VS_SEEKER_RECIPE_SUFFIX));
+                .criterion(FabricRecipeProvider.hasItem(VsSeekerItem.BLUE_VS_SEEKER.getItem()), FabricRecipeProvider.conditionsFromItem(VsSeekerItem.BLUE_VS_SEEKER.getItem()))
+                .offerTo(exporter, String.format("%s_%s", getRecipeName(VsSeekerItem.GREEN_VS_SEEKER.getItem()), VS_SEEKER_RECIPE_SUFFIX));
 
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, VsSeekerItems.PURPLE_VS_SEEKER.getItem())
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, VsSeekerItem.PURPLE_VS_SEEKER.getItem())
                 .input(ItemTagRegistry.VS_SEEKERS)
                 .input(Items.PURPLE_DYE)
-                .criterion(FabricRecipeProvider.hasItem(VsSeekerItems.BLUE_VS_SEEKER.getItem()), FabricRecipeProvider.conditionsFromItem(VsSeekerItems.BLUE_VS_SEEKER.getItem()))
-                .offerTo(exporter, String.format("%s_%s", getRecipeName(VsSeekerItems.PURPLE_VS_SEEKER.getItem()), VS_SEEKER_RECIPE_SUFFIX));
+                .criterion(FabricRecipeProvider.hasItem(VsSeekerItem.BLUE_VS_SEEKER.getItem()), FabricRecipeProvider.conditionsFromItem(VsSeekerItem.BLUE_VS_SEEKER.getItem()))
+                .offerTo(exporter, String.format("%s_%s", getRecipeName(VsSeekerItem.PURPLE_VS_SEEKER.getItem()), VS_SEEKER_RECIPE_SUFFIX));
 
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, VsSeekerItems.PINK_VS_SEEKER.getItem())
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, VsSeekerItem.PINK_VS_SEEKER.getItem())
                 .input(ItemTagRegistry.VS_SEEKERS)
                 .input(Items.PINK_DYE)
-                .criterion(FabricRecipeProvider.hasItem(VsSeekerItems.BLUE_VS_SEEKER.getItem()), FabricRecipeProvider.conditionsFromItem(VsSeekerItems.BLUE_VS_SEEKER.getItem()))
-                .offerTo(exporter, String.format("%s_%s", getRecipeName(VsSeekerItems.PINK_VS_SEEKER.getItem()), VS_SEEKER_RECIPE_SUFFIX));
+                .criterion(FabricRecipeProvider.hasItem(VsSeekerItem.BLUE_VS_SEEKER.getItem()), FabricRecipeProvider.conditionsFromItem(VsSeekerItem.BLUE_VS_SEEKER.getItem()))
+                .offerTo(exporter, String.format("%s_%s", getRecipeName(VsSeekerItem.PINK_VS_SEEKER.getItem()), VS_SEEKER_RECIPE_SUFFIX));
 
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, VsSeekerItems.YELLOW_VS_SEEKER.getItem())
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, VsSeekerItem.YELLOW_VS_SEEKER.getItem())
                 .input(ItemTagRegistry.VS_SEEKERS)
                 .input(Items.YELLOW_DYE)
-                .criterion(FabricRecipeProvider.hasItem(VsSeekerItems.BLUE_VS_SEEKER.getItem()), FabricRecipeProvider.conditionsFromItem(VsSeekerItems.BLUE_VS_SEEKER.getItem()))
-                .offerTo(exporter, String.format("%s_%s", getRecipeName(VsSeekerItems.YELLOW_VS_SEEKER.getItem()), VS_SEEKER_RECIPE_SUFFIX));
+                .criterion(FabricRecipeProvider.hasItem(VsSeekerItem.BLUE_VS_SEEKER.getItem()), FabricRecipeProvider.conditionsFromItem(VsSeekerItem.BLUE_VS_SEEKER.getItem()))
+                .offerTo(exporter, String.format("%s_%s", getRecipeName(VsSeekerItem.YELLOW_VS_SEEKER.getItem()), VS_SEEKER_RECIPE_SUFFIX));
     }
 }

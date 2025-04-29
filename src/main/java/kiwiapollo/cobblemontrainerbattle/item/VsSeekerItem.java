@@ -6,7 +6,7 @@ import net.minecraft.util.Identifier;
 
 import java.util.function.Predicate;
 
-public enum VsSeekerItems {
+public enum VsSeekerItem {
     BLUE_VS_SEEKER("blue_vs_seeker", new VsSeeker("item.cobblemontrainerbattle.blue_vs_seeker.trainers", trainer -> true)),
     RED_VS_SEEKER("red_vs_seeker", new VsSeeker("item.cobblemontrainerbattle.red_vs_seeker.trainers", new GroupPredicate("radicalred"))),
     GREEN_VS_SEEKER("green_vs_seeker", new VsSeeker("item.cobblemontrainerbattle.green_vs_seeker.trainers", new GroupPredicate("inclementemerald"))),
@@ -17,7 +17,7 @@ public enum VsSeekerItems {
     private final Identifier identifier;
     private final Item item;
 
-    VsSeekerItems(String path, Item item) {
+    VsSeekerItem(String path, Item item) {
         this.identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, path);
         this.item = item;
     }

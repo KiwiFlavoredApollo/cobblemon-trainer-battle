@@ -8,9 +8,7 @@ import net.minecraft.item.Items;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
-import java.util.List;
-
-public enum KillTrainerAdvancements implements CustomAdvancements {
+public enum KillTrainerAdvancement implements CustomAdvancement {
     KILL_FIRST(Advancement.Builder.createUntelemetered()
             .parent(DataGenerator.AdvancementProvider.ROOT)
             .criterion("kill_first_trainer", new KillTrainerCriterion.TotalCountConditions(1))
@@ -27,7 +25,7 @@ public enum KillTrainerAdvancements implements CustomAdvancements {
             .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "kill_first_trainer"))),
 
     KILL_TENTH(Advancement.Builder.createUntelemetered()
-            .parent(KillTrainerAdvancements.KILL_FIRST.getAdvancement())
+            .parent(KillTrainerAdvancement.KILL_FIRST.getAdvancement())
             .criterion("kill_tenth_trainer", new KillTrainerCriterion.TotalCountConditions(10))
             .display(
                     Items.IRON_SWORD,
@@ -43,7 +41,7 @@ public enum KillTrainerAdvancements implements CustomAdvancements {
 
     private final Advancement advancement;
 
-    KillTrainerAdvancements(Advancement advancement) {
+    KillTrainerAdvancement(Advancement advancement) {
         this.advancement = advancement;
     }
 

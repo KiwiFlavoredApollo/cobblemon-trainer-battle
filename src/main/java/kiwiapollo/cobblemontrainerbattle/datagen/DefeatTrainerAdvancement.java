@@ -8,7 +8,7 @@ import net.minecraft.advancement.AdvancementFrame;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
-public enum DefeatTrainerAdvancements implements CustomAdvancements {
+public enum DefeatTrainerAdvancement implements CustomAdvancement {
     DEFEAT_FIRST(Advancement.Builder.createUntelemetered()
             .parent(DataGenerator.AdvancementProvider.ROOT)
             .criterion("defeat_first_trainer", new DefeatTrainerCriterion.TotalCountConditions(1))
@@ -25,7 +25,7 @@ public enum DefeatTrainerAdvancements implements CustomAdvancements {
             .build(Identifier.of(CobblemonTrainerBattle.MOD_ID, "defeat_first_trainer"))),
 
     DEFEAT_TENTH(Advancement.Builder.createUntelemetered()
-            .parent(DefeatTrainerAdvancements.DEFEAT_FIRST.getAdvancement())
+            .parent(DefeatTrainerAdvancement.DEFEAT_FIRST.getAdvancement())
             .criterion("defeat_tenth_trainer", new DefeatTrainerCriterion.TotalCountConditions(10))
             .display(
                     CobblemonItems.GREAT_BALL,
@@ -41,7 +41,7 @@ public enum DefeatTrainerAdvancements implements CustomAdvancements {
 
     private final Advancement advancement;
 
-    DefeatTrainerAdvancements(Advancement advancement) {
+    DefeatTrainerAdvancement(Advancement advancement) {
         this.advancement = advancement;
     }
 

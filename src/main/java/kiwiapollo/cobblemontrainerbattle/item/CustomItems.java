@@ -9,39 +9,39 @@ import java.util.Arrays;
 
 public class CustomItems {
     public static void register() {
-        Arrays.stream(InclementEmeraldTicketItems.values()).forEach(item -> {
+        Arrays.stream(InclementEmeraldTicketItem.values()).forEach(item -> {
             Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
         });
 
-        Arrays.stream(InclementEmeraldTokenItems.values()).forEach(item -> {
+        Arrays.stream(InclementEmeraldTokenItem.values()).forEach(item -> {
             Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
         });
 
-        Arrays.stream(RadicalRedTicketItems.values()).forEach(item -> {
+        Arrays.stream(RadicalRedTicketItem.values()).forEach(item -> {
             Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
         });
 
-        Arrays.stream(RadicalRedTokenItems.values()).forEach(item -> {
+        Arrays.stream(RadicalRedTokenItem.values()).forEach(item -> {
             Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
         });
 
-        Arrays.stream(XyTicketItems.values()).forEach(item -> {
+        Arrays.stream(XyTicketItem.values()).forEach(item -> {
             Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
         });
 
-        Arrays.stream(XyTokenItems.values()).forEach(item -> {
+        Arrays.stream(XyTokenItem.values()).forEach(item -> {
             Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
         });
 
-        Arrays.stream(BdspTicketItems.values()).forEach(item -> {
+        Arrays.stream(BdspTicketItem.values()).forEach(item -> {
             Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
         });
 
-        Arrays.stream(BdspTokenItems.values()).forEach(item -> {
+        Arrays.stream(BdspTokenItem.values()).forEach(item -> {
             Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
         });
 
-        Arrays.stream(VsSeekerItems.values()).forEach(item -> {
+        Arrays.stream(VsSeekerItem.values()).forEach(item -> {
             Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
         });
 

@@ -4,7 +4,7 @@ import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 
-public enum InclementEmeraldTicketItems {
+public enum InclementEmeraldTicketItem {
     LEADER_ROXANNE_TICKET("leader_roxanne_ticket", "entity/leader_roxanne"),
     LEADER_BRAWLY_TICKET("leader_brawly_ticket", "entity/leader_brawly"),
     LEADER_WATTSON_TICKET("leader_wattson_ticket", "entity/leader_wattson"),
@@ -24,7 +24,7 @@ public enum InclementEmeraldTicketItems {
     private final Identifier identifier;
     private final TrainerTicket item;
 
-    InclementEmeraldTicketItems(String path, String trainer) {
+    InclementEmeraldTicketItem(String path, String trainer) {
         this.identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, path);
         this.item = new TrainerTicket(new Item.Settings(), trainer);
     }

@@ -3,7 +3,7 @@ package kiwiapollo.cobblemontrainerbattle.datagen;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.entity.EntityTypes;
 import kiwiapollo.cobblemontrainerbattle.item.ItemTagRegistry;
-import kiwiapollo.cobblemontrainerbattle.item.VsSeekerItems;
+import kiwiapollo.cobblemontrainerbattle.item.VsSeekerItem;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -70,12 +70,12 @@ public class DataGenerator implements DataGeneratorEntrypoint {
         public void generateAdvancement(Consumer<Advancement> consumer) {
             consumer.accept(ROOT);
 
-            Arrays.stream(DefeatTrainerAdvancements.values()).map(CustomAdvancements::getAdvancement).forEach(consumer);
-            Arrays.stream(KillTrainerAdvancements.values()).map(CustomAdvancements::getAdvancement).forEach(consumer);
-            Arrays.stream(InclementEmeraldAdvancements.values()).map(CustomAdvancements::getAdvancement).forEach(consumer);
-            Arrays.stream(RadicalRedAdvancements.values()).map(CustomAdvancements::getAdvancement).forEach(consumer);
-            Arrays.stream(XyAdvancements.values()).map(CustomAdvancements::getAdvancement).forEach(consumer);
-            Arrays.stream(BdspAdvancements.values()).map(CustomAdvancements::getAdvancement).forEach(consumer);
+            Arrays.stream(DefeatTrainerAdvancement.values()).map(CustomAdvancement::getAdvancement).forEach(consumer);
+            Arrays.stream(KillTrainerAdvancement.values()).map(CustomAdvancement::getAdvancement).forEach(consumer);
+            Arrays.stream(InclementEmeraldAdvancement.values()).map(CustomAdvancement::getAdvancement).forEach(consumer);
+            Arrays.stream(RadicalRedAdvancement.values()).map(CustomAdvancement::getAdvancement).forEach(consumer);
+            Arrays.stream(XyAdvancement.values()).map(CustomAdvancement::getAdvancement).forEach(consumer);
+            Arrays.stream(BdspAdvancement.values()).map(CustomAdvancement::getAdvancement).forEach(consumer);
         }
     }
 
@@ -101,7 +101,7 @@ public class DataGenerator implements DataGeneratorEntrypoint {
 
         @Override
         protected void configure(RegistryWrapper.WrapperLookup lookup) {
-            Arrays.stream(VsSeekerItems.values()).map(VsSeekerItems::getItem)
+            Arrays.stream(VsSeekerItem.values()).map(VsSeekerItem::getItem)
                     .forEach(item -> getOrCreateTagBuilder(ItemTagRegistry.VS_SEEKERS).add(item));
         }
     }

@@ -15,7 +15,7 @@ import java.util.Arrays;
 
 public class CustomItemGroup {
     public static final RegistryKey<ItemGroup> ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(CobblemonTrainerBattle.MOD_ID, "item_group"));
-    public static final ItemGroup ITEM_GROUP = FabricItemGroup.builder().icon(() -> new ItemStack(VsSeekerItems.BLUE_VS_SEEKER.getItem())).displayName(Text.literal("Trainers")).build();
+    public static final ItemGroup ITEM_GROUP = FabricItemGroup.builder().icon(() -> new ItemStack(VsSeekerItem.BLUE_VS_SEEKER.getItem())).displayName(Text.literal("Trainers")).build();
 
     public static void register() {
         Registry.register(Registries.ITEM_GROUP, ITEM_GROUP_KEY, ITEM_GROUP);
@@ -26,39 +26,39 @@ public class CustomItemGroup {
             itemGroup.add(MiscItems.STATIC_TRAINER_SPAWN_EGG);
             itemGroup.add(MiscItems.TRAINER_TOKEN);
 
-            Arrays.stream(VsSeekerItems.values()).forEach(item -> {
+            Arrays.stream(VsSeekerItem.values()).forEach(item -> {
                 itemGroup.add(item.getItem());
             });
 
-            Arrays.stream(InclementEmeraldTicketItems.values()).forEach(item -> {
+            Arrays.stream(InclementEmeraldTicketItem.values()).forEach(item -> {
                 itemGroup.add(item.getItem());
             });
 
-            Arrays.stream(InclementEmeraldTokenItems.values()).forEach(item -> {
+            Arrays.stream(InclementEmeraldTokenItem.values()).forEach(item -> {
                 itemGroup.add(item.getItem());
             });
 
-            Arrays.stream(RadicalRedTicketItems.values()).forEach(item -> {
+            Arrays.stream(RadicalRedTicketItem.values()).forEach(item -> {
                 itemGroup.add(item.getItem());
             });
 
-            Arrays.stream(RadicalRedTokenItems.values()).forEach(item -> {
+            Arrays.stream(RadicalRedTokenItem.values()).forEach(item -> {
                 itemGroup.add(item.getItem());
             });
 
-            Arrays.stream(XyTicketItems.values()).forEach(item -> {
+            Arrays.stream(XyTicketItem.values()).forEach(item -> {
                 itemGroup.add(item.getItem());
             });
 
-            Arrays.stream(XyTokenItems.values()).forEach(item -> {
+            Arrays.stream(XyTokenItem.values()).forEach(item -> {
                 itemGroup.add(item.getItem());
             });
 
-            Arrays.stream(BdspTicketItems.values()).forEach(item -> {
+            Arrays.stream(BdspTicketItem.values()).forEach(item -> {
                 itemGroup.add(item.getItem());
             });
 
-            Arrays.stream(BdspTokenItems.values()).forEach(item -> {
+            Arrays.stream(BdspTokenItem.values()).forEach(item -> {
                 itemGroup.add(item.getItem());
             });
         });
