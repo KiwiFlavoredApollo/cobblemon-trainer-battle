@@ -10,12 +10,12 @@ import kiwiapollo.cobblemontrainerbattle.entity.NormalTrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.entity.StaticTrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.global.config.ConfigLoader;
 import kiwiapollo.cobblemontrainerbattle.global.config.ConfigStorage;
-import kiwiapollo.cobblemontrainerbattle.sound.CustomSoundEvents;
-import kiwiapollo.cobblemontrainerbattle.entity.EntityTypes;
+import kiwiapollo.cobblemontrainerbattle.sound.CustomSoundEvent;
+import kiwiapollo.cobblemontrainerbattle.entity.EntityType;
 import kiwiapollo.cobblemontrainerbattle.event.*;
 import kiwiapollo.cobblemontrainerbattle.item.CustomItemGroup;
-import kiwiapollo.cobblemontrainerbattle.item.CustomItems;
-import kiwiapollo.cobblemontrainerbattle.loot.CustomLootConditionTypes;
+import kiwiapollo.cobblemontrainerbattle.item.CustomItem;
+import kiwiapollo.cobblemontrainerbattle.loot.CustomLootConditionType;
 import kiwiapollo.cobblemontrainerbattle.global.history.PlayerHistoryGenerator;
 import kiwiapollo.cobblemontrainerbattle.global.history.PlayerHistoryLoader;
 import kiwiapollo.cobblemontrainerbattle.global.history.PlayerHistorySaver;
@@ -50,13 +50,13 @@ public class CobblemonTrainerBattle implements ModInitializer {
 		Criteria.register(CustomCriteria.DEFEAT_TRAINER_CRITERION);
 		Criteria.register(CustomCriteria.KILL_TRAINER_CRITERION);
 
-		Registry.register(Registries.LOOT_CONDITION_TYPE, Identifier.of(MOD_ID, "defeated_in_battle"), CustomLootConditionTypes.DEFEATED_IN_BATTLE);
+		Registry.register(Registries.LOOT_CONDITION_TYPE, Identifier.of(MOD_ID, "defeated_in_battle"), CustomLootConditionType.DEFEATED_IN_BATTLE);
 
 		AspectProvider.Companion.register(new FormAspectProvider());
 
-		CustomItems.register();
+		CustomItem.register();
 		CustomItemGroup.register();
-		CustomSoundEvents.register();
+		CustomSoundEvent.register();
 
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
 			dispatcher.register(new TrainerBattleCommand());
@@ -69,12 +69,12 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
 		ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(TrainerStorage.getInstance());
 
-		Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "normal_trainer"), EntityTypes.NORMAL_TRAINER);
-		FabricDefaultAttributeRegistry.register(EntityTypes.NORMAL_TRAINER, NormalTrainerEntity.createMobAttributes());
-		Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "hostile_trainer"), EntityTypes.HOSTILE_TRAINER);
-		FabricDefaultAttributeRegistry.register(EntityTypes.HOSTILE_TRAINER, HostileTrainerEntity.createMobAttributes());
-		Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "static_trainer"), EntityTypes.STATIC_TRAINER);
-		FabricDefaultAttributeRegistry.register(EntityTypes.STATIC_TRAINER, StaticTrainerEntity.createMobAttributes());
+		Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "normal_trainer"), EntityType.NORMAL_TRAINER);
+		FabricDefaultAttributeRegistry.register(EntityType.NORMAL_TRAINER, NormalTrainerEntity.createMobAttributes());
+		Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "hostile_trainer"), EntityType.HOSTILE_TRAINER);
+		FabricDefaultAttributeRegistry.register(EntityType.HOSTILE_TRAINER, HostileTrainerEntity.createMobAttributes());
+		Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "static_trainer"), EntityType.STATIC_TRAINER);
+		FabricDefaultAttributeRegistry.register(EntityType.STATIC_TRAINER, StaticTrainerEntity.createMobAttributes());
 
 		CobblemonEvents.BATTLE_VICTORY.subscribe(Priority.NORMAL, new BattleVictoryEventHandler());
 		CobblemonEvents.LOOT_DROPPED.subscribe(Priority.HIGHEST, new LootDroppedEventHandler());

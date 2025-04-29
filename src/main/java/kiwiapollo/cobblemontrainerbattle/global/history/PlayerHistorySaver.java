@@ -16,7 +16,7 @@ public class PlayerHistorySaver implements ServerLifecycleEvents.ServerStopped, 
     private static final int SAVE_INTERVAL = 24000;
 
     private void save(MinecraftServer server) {
-        File historyPath = PlayerHistoryUtils.getHistoryPath(server);
+        File historyPath = PlayerHistoryUtil.getHistoryPath(server);
 
         if (!historyPath.exists()) {
             historyPath.mkdirs();

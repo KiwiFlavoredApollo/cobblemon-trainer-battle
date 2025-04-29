@@ -5,7 +5,7 @@ import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
 import kiwiapollo.cobblemontrainerbattle.entity.NormalTrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.global.config.ConfigStorage;
 import kiwiapollo.cobblemontrainerbattle.entity.RandomSpawnableTrainerFactory;
-import kiwiapollo.cobblemontrainerbattle.entity.EntityTypes;
+import kiwiapollo.cobblemontrainerbattle.entity.EntityType;
 import kiwiapollo.cobblemontrainerbattle.entity.RandomNormalTrainerEntityFactory;
 import kiwiapollo.cobblemontrainerbattle.item.VsSeeker;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
@@ -55,7 +55,7 @@ public class TrainerEntitySpawner implements ServerTickEvents.EndWorldTick {
             Predicate<String> predicate = toPredicate(player.getInventory());
             SimpleFactory<String> trainerFactory = new RandomSpawnableTrainerFactory(predicate);
             RandomNormalTrainerEntityFactory entityFactory = new RandomNormalTrainerEntityFactory(trainerFactory);
-            NormalTrainerEntity entity = entityFactory.create(EntityTypes.NORMAL_TRAINER, world);
+            NormalTrainerEntity entity = entityFactory.create(EntityType.NORMAL_TRAINER, world);
 
             BlockPos spawnPos = getRandomSpawnPosition(world, player);
             entity.refreshPositionAndAngles(spawnPos, player.getYaw(), player.getPitch());
@@ -87,7 +87,7 @@ public class TrainerEntitySpawner implements ServerTickEvents.EndWorldTick {
     }
 
     private boolean isBelowMaximumTrainerSpawnCount(ServerWorld world, PlayerEntity player) {
-        int count = world.getEntitiesByType(EntityTypes.NORMAL_TRAINER, player.getBoundingBox().expand(MAXIMUM_RADIUS), entity -> true).size();
+        int count = world.getEntitiesByType(EntityType.NORMAL_TRAINER, player.getBoundingBox().expand(MAXIMUM_RADIUS), entity -> true).size();
         return count < ConfigStorage.getInstance().getMaximumTrainerSpawnCount();
     }
 

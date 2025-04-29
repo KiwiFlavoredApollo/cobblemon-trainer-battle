@@ -14,7 +14,7 @@ import java.util.UUID;
 public class PlayerHistoryLoader implements ServerLifecycleEvents.ServerStarted {
     @Override
     public void onServerStarted(MinecraftServer server) {
-        File historyPath = PlayerHistoryUtils.getHistoryPath(server);
+        File historyPath = PlayerHistoryUtil.getHistoryPath(server);
 
         if (!historyPath.isDirectory()) {
             return;

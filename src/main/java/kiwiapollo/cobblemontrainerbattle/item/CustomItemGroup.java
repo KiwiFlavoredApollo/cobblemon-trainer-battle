@@ -21,10 +21,10 @@ public class CustomItemGroup {
         Registry.register(Registries.ITEM_GROUP, ITEM_GROUP_KEY, ITEM_GROUP);
 
         ItemGroupEvents.modifyEntriesEvent(ITEM_GROUP_KEY).register(itemGroup -> {
-            itemGroup.add(MiscItems.NORMAL_TRAINER_SPAWN_EGG);
-            itemGroup.add(MiscItems.HOSTILE_TRAINER_SPAWN_EGG);
-            itemGroup.add(MiscItems.STATIC_TRAINER_SPAWN_EGG);
-            itemGroup.add(MiscItems.TRAINER_TOKEN);
+            itemGroup.add(MiscItem.NORMAL_TRAINER_SPAWN_EGG);
+            itemGroup.add(MiscItem.HOSTILE_TRAINER_SPAWN_EGG);
+            itemGroup.add(MiscItem.STATIC_TRAINER_SPAWN_EGG);
+            itemGroup.add(MiscItem.TRAINER_TOKEN);
 
             Arrays.stream(VsSeekerItem.values()).forEach(item -> {
                 itemGroup.add(item.getItem());

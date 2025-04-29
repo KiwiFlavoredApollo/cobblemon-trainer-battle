@@ -14,7 +14,7 @@ import net.minecraft.util.JsonSerializer;
 public class DefeatedInBattleLootCondition implements LootCondition {
     @Override
     public LootConditionType getType() {
-        return CustomLootConditionTypes.DEFEATED_IN_BATTLE;
+        return CustomLootConditionType.DEFEATED_IN_BATTLE;
     }
 
     @Override
