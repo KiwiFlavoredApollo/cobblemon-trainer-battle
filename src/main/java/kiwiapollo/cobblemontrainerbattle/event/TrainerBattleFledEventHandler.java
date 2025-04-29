@@ -8,7 +8,6 @@ import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.EntityBackedTrainerBattleActor;
-import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.entity.HostileTrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
@@ -25,45 +24,60 @@ import java.util.stream.StreamSupport;
 public class TrainerBattleFledEventHandler implements ServerTickEvents.EndWorldTick {
     @Override
     public void onEndTick(ServerWorld world) {
-        world.getPlayers().forEach(player -> {
-            try {
-                endFledTrainerBattle(player);
-            } catch (NullPointerException ignored) {
+        List<ServerPlayerEntity> players = world.getPlayers().stream().filter(this::isFledFromTrainerBattle).toList();
 
-            }
-        });
+        players.stream().filter(player -> isHostileTrainerEntityBattle(getPokemonBattle(player))).forEach(this::setRandomPartyPokemonFaint);
+        players.stream().map(this::getPokemonBattle).map(this::getTrainerEntities).flatMap(List::stream).forEach(e -> e.setAiDisabled(false));
+        players.stream().map(this::getPokemonBattle).forEach(PokemonBattle::end);
+
+        players.forEach(player -> CobblemonTrainerBattle.LOGGER.info("Battle was fled: {}", player.getGameProfile().getName()));
     }
 
-    private void endFledTrainerBattle(ServerPlayerEntity player) {
-        TrainerBattle trainerBattle = BattleContextStorage.getInstance().getOrCreate(player.getUuid()).getTrainerBattle();
-        PokemonBattle pokemonBattle = Cobblemon.INSTANCE.getBattleRegistry().getBattle(trainerBattle.getBattleId());
-        if (!isFledBattle(pokemonBattle, player)) {
-            return;
-        }
+    private boolean isFledFromTrainerBattle(ServerPlayerEntity player) {
+        try {
+            PokemonBattle battle = getPokemonBattle(player);
+            FleeableBattleActor trainer = getFleeableBattleActors(battle).get(0);
 
-        if (isHostileTrainerEntityBattle(pokemonBattle)) {
-            setRandomPartyPokemonFaint(player);
-        }
+            Vec3d playerPos = player.getPos();
+            Vec3d trainerPos = trainer.getWorldAndPosition().getSecond();
 
-        StreamSupport.stream(pokemonBattle.getActors().spliterator(), false)
-                .filter(battleActor -> battleActor instanceof EntityBackedTrainerBattleActor)
-                .map(battleActor -> ((EntityBackedTrainerBattleActor) battleActor))
+            return playerPos.distanceTo(trainerPos) > trainer.getFleeDistance();
+
+        } catch (NullPointerException | IndexOutOfBoundsException | NoSuchElementException e) {
+            return false;
+        }
+    }
+
+    private PokemonBattle getPokemonBattle(ServerPlayerEntity player) {
+        UUID battleId = BattleContextStorage.getInstance().getOrCreate(player.getUuid()).getTrainerBattle().getBattleId();
+        return Cobblemon.INSTANCE.getBattleRegistry().getBattle(battleId);
+    }
+
+    private List<TrainerEntity> getTrainerEntities(PokemonBattle battle) {
+        return getEntityBackedTrainerBattleActors(battle).stream()
                 .map(EntityBackedTrainerBattleActor::getEntity)
                 .filter(Objects::nonNull)
                 .filter(entity -> entity instanceof TrainerEntity)
-                .forEach(entity -> ((TrainerEntity) entity).setAiDisabled(false));
+                .map(entity -> (TrainerEntity) entity)
+                .toList();
+    }
 
-        pokemonBattle.end();
+    private List<FleeableBattleActor> getFleeableBattleActors(PokemonBattle battle) {
+        return StreamSupport.stream(battle.getActors().spliterator(), false)
+                .filter(actor -> actor instanceof FleeableBattleActor)
+                .map(actor -> (FleeableBattleActor) actor)
+                .toList();
+    }
 
-        CobblemonTrainerBattle.LOGGER.info("Battle was fled: {}", player.getGameProfile().getName());
+    private List<EntityBackedTrainerBattleActor> getEntityBackedTrainerBattleActors(PokemonBattle battle) {
+        return StreamSupport.stream(battle.getActors().spliterator(), false)
+                .filter(actor -> actor instanceof EntityBackedTrainerBattleActor)
+                .map(actor -> ((EntityBackedTrainerBattleActor) actor))
+                .toList();
     }
 
     private boolean isHostileTrainerEntityBattle(PokemonBattle battle) {
-        return !StreamSupport.stream(battle.getActors().spliterator(), false)
-                .filter(battleActor -> battleActor instanceof EntityBackedTrainerBattleActor)
-                .map(battleActor -> ((EntityBackedTrainerBattleActor) battleActor))
-                .map(EntityBackedTrainerBattleActor::getEntity)
-                .filter(Objects::nonNull)
+        return !getTrainerEntities(battle).stream()
                 .filter(entity -> entity instanceof HostileTrainerEntity)
                 .toList().isEmpty();
     }
@@ -82,23 +96,6 @@ public class TrainerBattleFledEventHandler implements ServerTickEvents.EndWorldT
 
         } catch (NullPointerException | NoPokemonStoreException ignored) {
 
-        }
-    }
-
-    private boolean isFledBattle(PokemonBattle trainerBattle, ServerPlayerEntity player) {
-        try {
-            FleeableBattleActor trainerBattleActor =
-                    StreamSupport.stream(trainerBattle.getActors().spliterator(), false)
-                            .filter(battleActor -> battleActor instanceof FleeableBattleActor)
-                            .map(battleActor -> (FleeableBattleActor) battleActor).findFirst().get();
-
-            Vec3d playerPos = player.getPos();
-            Vec3d trainerPos = trainerBattleActor.getWorldAndPosition().getSecond();
-
-            return playerPos.distanceTo(trainerPos) > trainerBattleActor.getFleeDistance();
-
-        } catch (NullPointerException | NoSuchElementException | ClassCastException e) {
-            return false;
         }
     }
 }
