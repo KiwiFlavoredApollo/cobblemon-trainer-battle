@@ -1,9 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.entity;
 
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.*;
-import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.Angerable;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -36,7 +34,7 @@ public class NormalTrainerEntity extends TrainerEntity implements Angerable {
 
     @Override
     public void onPlayerVictory() {
-        dropDefeatInBattleLoot();
+        dropTrainerBattleLoot();
         discard();
     }
 
