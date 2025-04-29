@@ -4,19 +4,18 @@ import com.cobblemon.mod.common.Cobblemon;
 import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipantFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer.TrainerBattleParticipantFactory;
+import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.EntityBackedTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
-import kiwiapollo.cobblemontrainerbattle.global.history.EntityRecord;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
-import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.EntityBackedTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
+import kiwiapollo.cobblemontrainerbattle.global.history.EntityRecord;
 import kiwiapollo.cobblemontrainerbattle.global.history.PlayerHistory;
 import kiwiapollo.cobblemontrainerbattle.global.history.PlayerHistoryStorage;
-import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
 import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerStorage;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
@@ -42,12 +41,12 @@ import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.Objects;
+import java.util.UUID;
 
-public class TrainerEntity extends PathAwareEntity {
+public abstract class TrainerEntity extends PathAwareEntity implements TrainerBattleEntity {
     public static final int FLEE_DISTANCE = 20;
     private static final String FALLBACK_TRAINER = "radicalred/player_red";
-    private static final String FALLBACK_TEXTURE = "cobblemontrainerbattle:textures/entity/trainer/slim/red_piikapiika.png";
     private static final TrackedData<String> TRAINER = DataTracker.registerData(TrainerEntity.class, TrackedDataHandlerRegistry.STRING);
 
     private TrainerBattle trainerBattle;
@@ -58,20 +57,25 @@ public class TrainerEntity extends PathAwareEntity {
         this.trainerBattle = null;
     }
 
-    public static DefaultAttributeContainer.Builder createMobAttributes() {
-        return PathAwareEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 20.0)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2.0)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25D);
+    /**
+     * When TrainerEntity is spawned by Mob Spawner, trainer and texture fields are not initialized.
+     * Seems like Mob Spawners do not call constructors when creating entities.
+     */
+    @Override
+    @Nullable
+    public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityNbt) {
+        if (spawnReason.equals(SpawnReason.SPAWNER)) {
+            RandomSpawnableTrainerFactory factory = new RandomSpawnableTrainerFactory(trainer -> true);
+            getDataTracker().set(TRAINER, factory.create());
+        }
+
+        return super.initialize(world, difficulty, spawnReason, entityData, entityNbt);
     }
 
     @Override
-    protected void initGoals() {
-        this.goalSelector.add(0, new SwimGoal(this));
-        this.targetSelector.add(1, new RevengeGoal(this));
-        this.goalSelector.add(2, new AttackGoal(this));
-        this.goalSelector.add(3, new LookAroundGoal(this));
-        this.goalSelector.add(3, new WanderAroundFarGoal(this, 1.0D));
+    protected void initDataTracker() {
+        super.initDataTracker();
+        this.getDataTracker().startTracking(TRAINER, FALLBACK_TRAINER);
     }
 
     @Override
@@ -126,14 +130,7 @@ public class TrainerEntity extends PathAwareEntity {
             return false;
         }
 
-        boolean isDamaged = super.damage(source, amount);
-        boolean isLivingEntityAttacker = source.getAttacker() instanceof LivingEntity;
-
-        if (isDamaged && isLivingEntityAttacker && !source.isSourceCreativePlayer()) {
-            this.setTarget((LivingEntity) source.getAttacker());
-        }
-
-        return isDamaged;
+        return super.damage(source, amount);
     }
 
     private boolean isTrainerBattleExist() {
@@ -163,43 +160,6 @@ public class TrainerEntity extends PathAwareEntity {
         super.onDeath(damageSource);
     }
 
-    public void onPlayerDefeat() {
-        setAiDisabled(false);
-    }
-
-    public void onPlayerVictory() {
-        dropDefeatInBattleLoot();
-        discard();
-    }
-
-    private void dropDefeatInBattleLoot() {
-        Identifier identifier = this.getLootTable();
-        LootTable lootTable = this.getWorld().getServer().getLootManager().getLootTable(identifier);
-        LootContextParameterSet.Builder builder = (new LootContextParameterSet.Builder((ServerWorld)this.getWorld()))
-                .add(LootContextParameters.THIS_ENTITY, this)
-                .add(LootContextParameters.ORIGIN, this.getPos())
-                .add(LootContextParameters.DAMAGE_SOURCE, getWorld().getDamageSources().generic());
-
-        LootContextParameterSet lootContextParameterSet = builder.build(LootContextTypes.ENTITY);
-        lootTable.generateLoot(lootContextParameterSet, this.getLootTableSeed(), this::dropStack);
-    }
-
-    public void setTrainer(String trainer) {
-        this.getDataTracker().set(TRAINER, trainer);
-    }
-
-    public Identifier getTexture() {
-        return getTrainerTexture(getDataTracker().get(TRAINER));
-    }
-
-    private Identifier getTrainerTexture(String trainer) {
-        try {
-            return TrainerStorage.getInstance().get(trainer).getTexture();
-        } catch (NullPointerException e) {
-            return null;
-        }
-    }
-
     @Override
     public void writeCustomDataToNbt(NbtCompound nbt) {
         super.writeCustomDataToNbt(nbt);
@@ -217,28 +177,43 @@ public class TrainerEntity extends PathAwareEntity {
         }
     }
 
-    /**
-     * When TrainerEntity is spawned by Mob Spawner, trainer and texture fields are not initialized.
-     * Seems like Mob Spawners do not call constructors when creating entities.
-     */
     @Override
-    @Nullable
-    public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityNbt) {
-        if (spawnReason.equals(SpawnReason.SPAWNER)) {
-            RandomSpawnableTrainerFactory factory = new RandomSpawnableTrainerFactory(trainer -> true);
-            getDataTracker().set(TRAINER, factory.create());
-        }
-
-        return super.initialize(world, difficulty, spawnReason, entityData, entityNbt);
+    public void setTrainer(String trainer) {
+        this.getDataTracker().set(TRAINER, trainer);
     }
 
     @Override
-    protected void initDataTracker() {
-        super.initDataTracker();
-        this.getDataTracker().startTracking(TRAINER, FALLBACK_TRAINER);
+    public Identifier getTexture() {
+        String trainer = getDataTracker().get(TRAINER);
+        return TrainerStorage.getInstance().get(trainer).getTexture();
     }
 
-    public String getFallbackTexture() {
-        return FALLBACK_TEXTURE;
+    @Override
+    public void onPlayerVictory() {
+
+    }
+
+    @Override
+    public void onPlayerDefeat() {
+        setAiDisabled(false);
+    }
+
+    protected void dropDefeatInBattleLoot() {
+        Identifier identifier = this.getLootTable();
+        LootTable lootTable = this.getWorld().getServer().getLootManager().getLootTable(identifier);
+        LootContextParameterSet.Builder builder = (new LootContextParameterSet.Builder((ServerWorld)this.getWorld()))
+                .add(LootContextParameters.THIS_ENTITY, this)
+                .add(LootContextParameters.ORIGIN, this.getPos())
+                .add(LootContextParameters.DAMAGE_SOURCE, getWorld().getDamageSources().generic());
+
+        LootContextParameterSet lootContextParameterSet = builder.build(LootContextTypes.ENTITY);
+        lootTable.generateLoot(lootContextParameterSet, this.getLootTableSeed(), this::dropStack);
+    }
+
+    public static DefaultAttributeContainer.Builder createMobAttributes() {
+        return PathAwareEntity.createMobAttributes()
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 20.0)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2.0)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25D);
     }
 }

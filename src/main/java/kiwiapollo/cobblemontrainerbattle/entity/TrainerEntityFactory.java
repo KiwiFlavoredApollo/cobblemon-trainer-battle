@@ -1,28 +1,21 @@
 package kiwiapollo.cobblemontrainerbattle.entity;
 
 import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
-import net.minecraft.world.World;
 
-public class RandomTrainerEntityFactory implements EntityType.EntityFactory<TrainerEntity> {
+public abstract class TrainerEntityFactory<T extends TrainerEntity> implements EntityType.EntityFactory<T> {
     private final SimpleFactory<String> trainerFactory;
 
-    public RandomTrainerEntityFactory() {
+    public TrainerEntityFactory() {
         this(new RandomSpawnableTrainerFactory(trainer -> true));
     }
 
-    public RandomTrainerEntityFactory(SimpleFactory<String> trainerFactory) {
+    public TrainerEntityFactory(SimpleFactory<String> trainerFactory) {
         this.trainerFactory = trainerFactory;
     }
 
-    @Override
-    public TrainerEntity create(EntityType<TrainerEntity> type, World world) {
-        TrainerEntity trainer = new TrainerEntity(type, world);
-        trainer.setTrainer(createTrainer());
-        return trainer;
-    }
-
-    private String createTrainer() {
+    protected String createTrainer() {
         try {
             return trainerFactory.create();
 

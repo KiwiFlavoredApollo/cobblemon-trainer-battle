@@ -1,7 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.datagen;
 
 import com.cobblemon.mod.common.CobblemonItems;
-import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.entity.EntityTypes;
 import kiwiapollo.cobblemontrainerbattle.item.MiscItems;
 import kiwiapollo.cobblemontrainerbattle.loot.DefeatedInBattleLootCondition;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -14,7 +14,6 @@ import net.minecraft.loot.context.LootContextTypes;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
-import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.util.Identifier;
 
 import java.util.function.BiConsumer;
@@ -26,7 +25,22 @@ public class TrainerEntityLootTableProvider extends SimpleFabricLootTableProvide
 
     @Override
     public void accept(BiConsumer<Identifier, LootTable.Builder> exporter) {
-        exporter.accept(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entities/trainer"), LootTable.builder()
+        exporter.accept(EntityTypes.NORMAL_TRAINER.getLootTableId(), LootTable.builder()
+                .pool(LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1.0f))
+                        .with(ItemEntry.builder(MiscItems.TRAINER_TOKEN).apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1.0f))))
+                        .conditionally(new DefeatedInBattleLootCondition())
+                        .conditionally(RandomChanceLootCondition.builder(0.5f))
+                        .build())
+                .pool(LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1.0f))
+                        .with(ItemEntry.builder(CobblemonItems.POKE_BALL).apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1.0f))))
+                        .conditionally(KilledByPlayerLootCondition.builder().build())
+                        .conditionally(RandomChanceLootCondition.builder(0.5f))
+                        .build())
+        );
+
+        exporter.accept(EntityTypes.HOSTILE_TRAINER.getLootTableId(), LootTable.builder()
                 .pool(LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1.0f))
                         .with(ItemEntry.builder(MiscItems.TRAINER_TOKEN).apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1.0f))))

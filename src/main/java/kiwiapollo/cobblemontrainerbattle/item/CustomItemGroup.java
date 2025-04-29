@@ -21,7 +21,8 @@ public class CustomItemGroup {
         Registry.register(Registries.ITEM_GROUP, ITEM_GROUP_KEY, ITEM_GROUP);
 
         ItemGroupEvents.modifyEntriesEvent(ITEM_GROUP_KEY).register(itemGroup -> {
-            itemGroup.add(MiscItems.TRAINER_SPAWN_EGG);
+            itemGroup.add(MiscItems.NORMAL_TRAINER_SPAWN_EGG);
+            itemGroup.add(MiscItems.HOSTILE_TRAINER_SPAWN_EGG);
             itemGroup.add(MiscItems.STATIC_TRAINER_SPAWN_EGG);
             itemGroup.add(MiscItems.TRAINER_TOKEN);
 

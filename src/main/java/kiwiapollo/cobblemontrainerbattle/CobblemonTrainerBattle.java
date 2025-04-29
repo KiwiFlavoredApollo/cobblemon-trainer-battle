@@ -5,11 +5,13 @@ import com.cobblemon.mod.common.api.events.CobblemonEvents;
 import com.cobblemon.mod.common.api.pokemon.aspect.AspectProvider;
 import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
 import kiwiapollo.cobblemontrainerbattle.command.*;
+import kiwiapollo.cobblemontrainerbattle.entity.HostileTrainerEntity;
+import kiwiapollo.cobblemontrainerbattle.entity.NormalTrainerEntity;
+import kiwiapollo.cobblemontrainerbattle.entity.StaticTrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.global.config.ConfigLoader;
 import kiwiapollo.cobblemontrainerbattle.global.config.ConfigStorage;
 import kiwiapollo.cobblemontrainerbattle.sound.CustomSoundEvents;
 import kiwiapollo.cobblemontrainerbattle.entity.EntityTypes;
-import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.event.*;
 import kiwiapollo.cobblemontrainerbattle.item.CustomItemGroup;
 import kiwiapollo.cobblemontrainerbattle.item.CustomItems;
@@ -67,10 +69,12 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
 		ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(TrainerStorage.getInstance());
 
-		Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "trainer"), EntityTypes.TRAINER);
-		FabricDefaultAttributeRegistry.register(EntityTypes.TRAINER, TrainerEntity.createMobAttributes());
+		Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "normal_trainer"), EntityTypes.NORMAL_TRAINER);
+		FabricDefaultAttributeRegistry.register(EntityTypes.NORMAL_TRAINER, NormalTrainerEntity.createMobAttributes());
+		Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "hostile_trainer"), EntityTypes.HOSTILE_TRAINER);
+		FabricDefaultAttributeRegistry.register(EntityTypes.HOSTILE_TRAINER, HostileTrainerEntity.createMobAttributes());
 		Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "static_trainer"), EntityTypes.STATIC_TRAINER);
-		FabricDefaultAttributeRegistry.register(EntityTypes.STATIC_TRAINER, TrainerEntity.createMobAttributes());
+		FabricDefaultAttributeRegistry.register(EntityTypes.STATIC_TRAINER, StaticTrainerEntity.createMobAttributes());
 
 		CobblemonEvents.BATTLE_VICTORY.subscribe(Priority.NORMAL, new BattleVictoryEventHandler());
 		CobblemonEvents.LOOT_DROPPED.subscribe(Priority.HIGHEST, new LootDroppedEventHandler());

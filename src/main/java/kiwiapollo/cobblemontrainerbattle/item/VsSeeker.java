@@ -1,7 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.item;
 
+import kiwiapollo.cobblemontrainerbattle.entity.NormalTrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.entity.EntityTypes;
-import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntity;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -58,7 +58,7 @@ public class VsSeeker extends Item implements Predicate<String> {
         ItemStack ticketStack = user.getStackInHand(getOtherHand(hand));
         TrainerTicket ticket = (TrainerTicket) ticketStack.getItem();
 
-        TrainerEntity entity = new TrainerEntity(EntityTypes.TRAINER, world);
+        NormalTrainerEntity entity = new NormalTrainerEntity(EntityTypes.NORMAL_TRAINER, world);
         entity.setTrainer(ticket.getTrainer());
 
         entity.refreshPositionAndAngles(spawnPos, user.getYaw(), user.getPitch());

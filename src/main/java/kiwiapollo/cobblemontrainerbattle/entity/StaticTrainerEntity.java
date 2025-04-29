@@ -18,17 +18,16 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class StaticTrainerEntity extends TrainerEntity {
-    private static final String FALLBACK_TEXTURE = "cobblemontrainerbattle:textures/entity/trainer/slim/leaf_piikapiika.png";
-
     public StaticTrainerEntity(EntityType<? extends PathAwareEntity> type, World world) {
         super(type, world);
     }
 
-    public static DefaultAttributeContainer.Builder createMobAttributes() {
-        return PathAwareEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 20.0)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2.0)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25D);
+    @Override
+    @Nullable
+    public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityNbt) {
+        setPersistent();
+
+        return super.initialize(world, difficulty, spawnReason, entityData, entityNbt);
     }
 
     @Override
@@ -53,23 +52,5 @@ public class StaticTrainerEntity extends TrainerEntity {
     @Override
     public void pushAwayFrom(Entity entity) {
         
-    }
-
-    @Override
-    public String getFallbackTexture() {
-        return FALLBACK_TEXTURE;
-    }
-
-    @Override
-    @Nullable
-    public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityNbt) {
-        setPersistent();
-
-        return super.initialize(world, difficulty, spawnReason, entityData, entityNbt);
-    }
-
-    @Override
-    public void onPlayerVictory() {
-
     }
 }
