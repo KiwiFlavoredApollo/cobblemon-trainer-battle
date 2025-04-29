@@ -1,5 +1,7 @@
 {
-  "entity.cobblemontrainerbattle.trainer": "Trainer",
+  "entity.cobblemontrainerbattle.normal_trainer": "Normal Trainer",
+  "entity.cobblemontrainerbattle.hostile_trainer": "Hostile Trainer",
+  "entity.cobblemontrainerbattle.static_trainer": "Static Trainer",
 
   "tag.item.cobblemontrainerbattle.vs_seekers": "VS Seekers",
 

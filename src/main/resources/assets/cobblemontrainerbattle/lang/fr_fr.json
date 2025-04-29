@@ -1,7 +1,13 @@
 {
-  "entity.cobblemontrainerbattle.trainer": "Dresseur",
+  "entity.cobblemontrainerbattle.normal_trainer": "Dresseur Normal",
+  "entity.cobblemontrainerbattle.hostile_trainer": "Dresseur Hostile",
+  "entity.cobblemontrainerbattle.static_trainer": "Dresseur Statique",
 
   "tag.item.cobblemontrainerbattle.vs_seekers": "Cherch'Combat",
+
+  "item.cobblemontrainerbattle.normal_trainer_spawn_egg": "Œuf d’Apparition – Dresseur Normal",
+  "item.cobblemontrainerbattle.hostile_trainer_spawn_egg": "Œuf d’Apparition – Dresseur Hostile",
+  "item.cobblemontrainerbattle.static_trainer_spawn_egg": "Œuf d’Apparition – Dresseur Statique",
 
   "item.cobblemontrainerbattle.blue_vs_seeker": "Cherch'Combat Bleu",
   "item.cobblemontrainerbattle.red_vs_seeker": "Cherch'Combat Rouge",
