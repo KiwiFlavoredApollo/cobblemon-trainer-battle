@@ -34,7 +34,7 @@ public class NormalTrainerEntity extends TrainerEntity implements Angerable {
 
     @Override
     public void onPlayerVictory() {
-        dropTrainerBattleLoot();
+        dropDefeatedInBattleLoot();
         discard();
     }
 

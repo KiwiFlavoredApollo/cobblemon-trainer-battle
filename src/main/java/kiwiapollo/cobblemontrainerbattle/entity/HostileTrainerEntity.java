@@ -69,7 +69,7 @@ public class HostileTrainerEntity extends TrainerEntity {
 
     @Override
     public void onPlayerVictory() {
-        dropTrainerBattleLoot();
+        dropDefeatedInBattleLoot();
         discard();
     }
 }

@@ -197,7 +197,7 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerBe
         setAiDisabled(false);
     }
 
-    protected void dropTrainerBattleLoot() {
+    protected void dropDefeatedInBattleLoot() {
         Identifier identifier = this.getLootTable();
         LootTable lootTable = this.getWorld().getServer().getLootManager().getLootTable(identifier);
         LootContextParameterSet.Builder builder = (new LootContextParameterSet.Builder((ServerWorld)this.getWorld()))
