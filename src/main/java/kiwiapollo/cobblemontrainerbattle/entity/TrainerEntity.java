@@ -209,6 +209,10 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerBe
         lootTable.generateLoot(lootContextParameterSet, this.getLootTableSeed(), this::dropStack);
     }
 
+    protected TrainerBattle getTrainerBattle() {
+        return trainerBattle;
+    }
+
     public static DefaultAttributeContainer.Builder createMobAttributes() {
         return PathAwareEntity.createMobAttributes()
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 20.0)

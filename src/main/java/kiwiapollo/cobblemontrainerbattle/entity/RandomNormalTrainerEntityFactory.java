@@ -9,14 +9,12 @@ public class RandomNormalTrainerEntityFactory extends TrainerEntityFactory<Norma
         super();
     }
 
-    public RandomNormalTrainerEntityFactory(SimpleFactory<String> trainerFactory) {
-        super(trainerFactory);
+    public RandomNormalTrainerEntityFactory(SimpleFactory<String> trainer) {
+        super(trainer);
     }
 
     @Override
-    public NormalTrainerEntity create(EntityType<NormalTrainerEntity> type, World world) {
-        NormalTrainerEntity trainer = new NormalTrainerEntity(type, world);
-        trainer.setTrainer(createTrainer());
-        return trainer;
+    protected NormalTrainerEntity createEntity(EntityType<NormalTrainerEntity> type, World world) {
+        return new NormalTrainerEntity(type, world);
     }
 }

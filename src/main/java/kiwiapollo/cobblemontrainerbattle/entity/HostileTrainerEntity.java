@@ -37,24 +37,26 @@ public class HostileTrainerEntity extends TrainerEntity {
 
     @Override
     public boolean tryAttack(Entity target) {
+        applyRandomPersistentStatus((ServerPlayerEntity) target);
+        return super.tryAttack(target);
+    }
+
+    private void applyRandomPersistentStatus(ServerPlayerEntity player) {
         try {
-            ServerPlayerEntity player = (ServerPlayerEntity) target;
             PartyStore party = Cobblemon.INSTANCE.getStorage().getParty(player.getUuid());
             List<Pokemon> random = new ArrayList<>(party.toGappyList().stream()
                     .filter(Objects::nonNull)
                     .filter(pokemon -> !pokemon.isFainted())
-                    .filter(pokemon -> !hasPersistentStatus(pokemon))
-                    .toList());
+                    .filter(pokemon -> !hasPersistentStatus(pokemon)).toList());
             Collections.shuffle(random);
             Pokemon pokemon = random.get(0);
             PersistentStatus status = new RandomPersistentStatusFactory().create();
             pokemon.applyStatus(status);
+
             player.sendMessage(Text.translatable(status.getApplyMessage(), pokemon.getDisplayName()).formatted(Formatting.RED));
 
-            return super.tryAttack(target);
+        } catch (ClassCastException | NullPointerException | IndexOutOfBoundsException | NoPokemonStoreException ignored) {
 
-        } catch (ClassCastException | NoPokemonStoreException | NullPointerException | IndexOutOfBoundsException e) {
-            return super.tryAttack(target);
         }
     }
 
@@ -71,5 +73,29 @@ public class HostileTrainerEntity extends TrainerEntity {
     public void onPlayerVictory() {
         dropDefeatedInBattleLoot();
         discard();
+    }
+
+    @Override
+    public void onPlayerDefeat() {
+        super.onPlayerDefeat();
+
+        ServerPlayerEntity player = getTrainerBattle().getPlayer().getPlayerEntity();
+        setRandomPartyPokemonFaint(player);
+    }
+
+    private void setRandomPartyPokemonFaint(ServerPlayerEntity player) {
+        try {
+            PartyStore party = Cobblemon.INSTANCE.getStorage().getParty(player.getUuid());
+            List<Pokemon> random = new ArrayList<>(party.toGappyList().stream()
+                    .filter(Objects::nonNull)
+                    .filter(pokemon -> !pokemon.isFainted()).toList());
+            Collections.shuffle(random);
+            Pokemon pokemon = random.get(0);
+            pokemon.setCurrentHealth(0);
+            player.sendMessage(Text.translatable("cobblemon.battle.fainted", pokemon.getDisplayName()).formatted(Formatting.RED));
+
+        } catch (NullPointerException | NoPokemonStoreException ignored) {
+
+        }
     }
 }
