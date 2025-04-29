@@ -17,7 +17,6 @@ import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
-import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
@@ -44,7 +43,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Objects;
 import java.util.UUID;
 
-public abstract class TrainerEntity extends PathAwareEntity implements TrainerBattleEntity {
+public abstract class TrainerEntity extends PathAwareEntity implements TrainerBehavior {
     public static final int FLEE_DISTANCE = 20;
     private static final String FALLBACK_TRAINER = "radicalred/player_red";
     private static final TrackedData<String> TRAINER = DataTracker.registerData(TrainerEntity.class, TrackedDataHandlerRegistry.STRING);

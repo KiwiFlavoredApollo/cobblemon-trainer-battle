@@ -9,7 +9,7 @@ import kiwiapollo.cobblemontrainerbattle.battle.battleactor.EntityBackedTrainerB
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.predicate.MessagePredicate;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
-import kiwiapollo.cobblemontrainerbattle.entity.TrainerBattleEntity;
+import kiwiapollo.cobblemontrainerbattle.entity.TrainerBehavior;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
@@ -103,7 +103,7 @@ public class EntityBackedTrainer implements TrainerBattleParticipant {
 
     private void onPlayerDefeatByTrainerEntity() {
         try {
-            ((TrainerBattleEntity) entity).onPlayerDefeat();
+            ((TrainerBehavior) entity).onPlayerDefeat();
         } catch (ClassCastException ignored) {
 
         }
@@ -111,7 +111,7 @@ public class EntityBackedTrainer implements TrainerBattleParticipant {
 
     private void onPlayerVictoryOverTrainerEntity() {
         try {
-            ((TrainerBattleEntity) entity).onPlayerVictory();
+            ((TrainerBehavior) entity).onPlayerVictory();
         } catch (ClassCastException ignored) {
 
         }
