@@ -15,7 +15,7 @@ import java.util.*;
 import java.util.stream.StreamSupport;
 
 /**
- * Fleeing from Pokémon battle doesn't count as defeat.
+ * Fleeing from PokemonBattle doesn't count as defeat.
  * BATTLE_VICTORY event does not fire as well.
  */
 public class TrainerBattleFledEventHandler implements ServerTickEvents.EndWorldTick {
