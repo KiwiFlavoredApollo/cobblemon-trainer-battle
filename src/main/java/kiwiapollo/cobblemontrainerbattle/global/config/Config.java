@@ -8,4 +8,7 @@ public class Config {
 
     @SerializedName("trainer_spawn_interval_in_seconds")
     public int trainerSpawnIntervalInSeconds = 60;
+
+    @SerializedName("allow_hostile_trainer_spawn")
+    public boolean allowHostileTrainerSpawn = true;
 }

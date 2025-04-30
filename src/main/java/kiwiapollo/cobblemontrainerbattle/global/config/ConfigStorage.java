@@ -5,6 +5,7 @@ public class ConfigStorage {
 
     private int maximumTrainerSpawnCount;
     private int trainerSpawnIntervalInSeconds;
+    private boolean allowHostileTrainerSpawn;
 
     public static ConfigStorage getInstance() {
         if (instance == null) {
@@ -21,6 +22,7 @@ public class ConfigStorage {
     public void update(Config config) {
         this.maximumTrainerSpawnCount = config.maximumTrainerSpawnCount;
         this.trainerSpawnIntervalInSeconds = config.trainerSpawnIntervalInSeconds;
+        this.allowHostileTrainerSpawn = config.allowHostileTrainerSpawn;
     }
 
     public int getMaximumTrainerSpawnCount() {
@@ -29,5 +31,9 @@ public class ConfigStorage {
 
     public int getTrainerSpawnIntervalInSeconds() {
         return trainerSpawnIntervalInSeconds;
+    }
+
+    public boolean getAllowHostileTrainerSpawn() {
+        return allowHostileTrainerSpawn;
     }
 }

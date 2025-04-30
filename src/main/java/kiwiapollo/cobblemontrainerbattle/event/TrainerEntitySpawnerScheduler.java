@@ -7,6 +7,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.random.Random;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static net.minecraft.SharedConstants.TICKS_PER_SECOND;
@@ -32,7 +33,7 @@ public class TrainerEntitySpawnerScheduler implements ServerTickEvents.EndWorldT
                 continue;
             }
 
-            getRandomSpawner(SPAWNERS).spawnEntity(world, player);
+            getRandomSpawner(getSpawners()).spawnEntity(world, player);
         }
     }
 
@@ -64,5 +65,15 @@ public class TrainerEntitySpawnerScheduler implements ServerTickEvents.EndWorldT
         }
 
         throw new IllegalStateException();
+    }
+
+    private List<TrainerEntitySpawner> getSpawners() {
+        List<TrainerEntitySpawner> spawners = new ArrayList<>(SPAWNERS);
+
+        if (!ConfigStorage.getInstance().getAllowHostileTrainerSpawn()) {
+            spawners = spawners.stream().filter(spawner -> !(spawner instanceof HostileTrainerEntitySpawner)).toList();
+        }
+
+        return spawners;
     }
 }
