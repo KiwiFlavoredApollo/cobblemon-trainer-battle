@@ -7,8 +7,8 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 public class CobblemonTrainerBattleClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
-		EntityRendererRegistry.register(EntityType.NORMAL_TRAINER, NormalTrainerEntityRenderer::new);
-		EntityRendererRegistry.register(EntityType.HOSTILE_TRAINER, HostileTrainerEntityRenderer::new);
-		EntityRendererRegistry.register(EntityType.STATIC_TRAINER, StaticTrainerEntityRenderer::new);
+		EntityRendererRegistry.register(CustomEntityType.NORMAL_TRAINER, NormalTrainerEntityRenderer::new);
+		EntityRendererRegistry.register(CustomEntityType.HOSTILE_TRAINER, HostileTrainerEntityRenderer::new);
+		EntityRendererRegistry.register(CustomEntityType.STATIC_TRAINER, StaticTrainerEntityRenderer::new);
 	}
 }

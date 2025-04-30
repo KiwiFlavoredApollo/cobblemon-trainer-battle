@@ -1,7 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.datagen;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.entity.EntityType;
+import kiwiapollo.cobblemontrainerbattle.entity.CustomEntityType;
 import kiwiapollo.cobblemontrainerbattle.item.ItemTagRegistry;
 import kiwiapollo.cobblemontrainerbattle.item.VsSeekerItem;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
@@ -45,7 +45,7 @@ public class DataGenerator implements DataGeneratorEntrypoint {
         private static final PlayerInteractedWithEntityCriterion.Conditions CONDITIONS = new PlayerInteractedWithEntityCriterion.Conditions(
                 LootContextPredicate.EMPTY,
                 ItemPredicate.ANY,
-                EntityPredicate.asLootContextPredicate(EntityPredicate.Builder.create().type(EntityType.NORMAL_TRAINER).build())
+                EntityPredicate.asLootContextPredicate(EntityPredicate.Builder.create().type(CustomEntityType.NORMAL_TRAINER).build())
         );
 
         static final Advancement ROOT = Advancement.Builder.createUntelemetered()

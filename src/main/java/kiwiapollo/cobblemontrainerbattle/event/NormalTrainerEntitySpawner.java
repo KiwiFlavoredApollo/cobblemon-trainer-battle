@@ -20,7 +20,7 @@ public class NormalTrainerEntitySpawner extends TrainerEntitySpawner {
     protected TrainerEntity createTrainerEntity(ServerWorld world, ServerPlayerEntity player) {
         Predicate<String> predicate = toPredicate(player.getInventory());
         SimpleFactory<String> trainer = new RandomSpawnableTrainerFactory(predicate);
-        return new RandomNormalTrainerEntityFactory(trainer).create(EntityType.NORMAL_TRAINER, world);
+        return new RandomNormalTrainerEntityFactory(trainer).create(CustomEntityType.NORMAL_TRAINER, world);
     }
 
     @Override
@@ -31,6 +31,6 @@ public class NormalTrainerEntitySpawner extends TrainerEntitySpawner {
     @Override
     public int getEntityCount(ServerWorld world, ServerPlayerEntity player) {
         Box box = player.getBoundingBox().expand(MAXIMUM_RADIUS);
-        return world.getEntitiesByType(EntityType.NORMAL_TRAINER, box, entity -> true).size();
+        return world.getEntitiesByType(CustomEntityType.NORMAL_TRAINER, box, entity -> true).size();
     }
 }

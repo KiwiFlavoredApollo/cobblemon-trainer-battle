@@ -1,7 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.datagen;
 
 import com.cobblemon.mod.common.CobblemonItems;
-import kiwiapollo.cobblemontrainerbattle.entity.EntityType;
+import kiwiapollo.cobblemontrainerbattle.entity.CustomEntityType;
 import kiwiapollo.cobblemontrainerbattle.item.MiscItem;
 import kiwiapollo.cobblemontrainerbattle.loot.DefeatedInBattleLootCondition;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -25,7 +25,7 @@ public class TrainerEntityLootTableProvider extends SimpleFabricLootTableProvide
 
     @Override
     public void accept(BiConsumer<Identifier, LootTable.Builder> exporter) {
-        exporter.accept(EntityType.NORMAL_TRAINER.getLootTableId(), LootTable.builder()
+        exporter.accept(CustomEntityType.NORMAL_TRAINER.getLootTableId(), LootTable.builder()
                 .pool(LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1.0f))
                         .with(ItemEntry.builder(MiscItem.TRAINER_TOKEN).apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1.0f))))
@@ -40,7 +40,7 @@ public class TrainerEntityLootTableProvider extends SimpleFabricLootTableProvide
                         .build())
         );
 
-        exporter.accept(EntityType.HOSTILE_TRAINER.getLootTableId(), LootTable.builder()
+        exporter.accept(CustomEntityType.HOSTILE_TRAINER.getLootTableId(), LootTable.builder()
                 .pool(LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1.0f))
                         .with(ItemEntry.builder(MiscItem.TRAINER_TOKEN).apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1.0f))))

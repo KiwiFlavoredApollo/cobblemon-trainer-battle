@@ -19,7 +19,7 @@ public class HostileTrainerEntitySpawner extends TrainerEntitySpawner {
     protected TrainerEntity createTrainerEntity(ServerWorld world, ServerPlayerEntity player) {
         Predicate<String> predicate = toPredicate(player.getInventory());
         SimpleFactory<String> trainer = new RandomSpawnableTrainerFactory(predicate);
-        return new RandomHostileTrainerEntityFactory(trainer).create(EntityType.HOSTILE_TRAINER, world);
+        return new RandomHostileTrainerEntityFactory(trainer).create(CustomEntityType.HOSTILE_TRAINER, world);
     }
 
     @Override
@@ -30,6 +30,6 @@ public class HostileTrainerEntitySpawner extends TrainerEntitySpawner {
     @Override
     public int getEntityCount(ServerWorld world, ServerPlayerEntity player) {
         Box box = player.getBoundingBox().expand(MAXIMUM_RADIUS);
-        return world.getEntitiesByType(EntityType.HOSTILE_TRAINER, box, entity -> true).size();
+        return world.getEntitiesByType(CustomEntityType.HOSTILE_TRAINER, box, entity -> true).size();
     }
 }
