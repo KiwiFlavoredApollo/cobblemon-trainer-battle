@@ -25,6 +25,7 @@ public class CustomItemGroup {
             itemGroup.add(MiscItem.HOSTILE_TRAINER_SPAWN_EGG);
             itemGroup.add(MiscItem.STATIC_TRAINER_SPAWN_EGG);
             itemGroup.add(MiscItem.TRAINER_TOKEN);
+            itemGroup.add(MiscItem.EMPTY_POKE_BALL);
 
             Arrays.stream(VsSeekerItem.values()).forEach(item -> {
                 itemGroup.add(item.getItem());
