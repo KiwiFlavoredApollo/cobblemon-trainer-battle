@@ -1,6 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.item;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.block.CustomBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.ItemGroup;
@@ -26,6 +27,10 @@ public class CustomItemGroup {
             itemGroup.add(MiscItem.STATIC_TRAINER_SPAWN_EGG);
             itemGroup.add(MiscItem.TRAINER_TOKEN);
             itemGroup.add(MiscItem.EMPTY_POKE_BALL);
+
+            Arrays.stream(CustomBlock.values()).forEach(block -> {
+                itemGroup.add(block.getItem());
+            });
 
             Arrays.stream(VsSeekerItem.values()).forEach(item -> {
                 itemGroup.add(item.getItem());

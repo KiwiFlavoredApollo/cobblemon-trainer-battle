@@ -1,6 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.item;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.block.CustomBlock;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -9,6 +10,11 @@ import java.util.Arrays;
 
 public class CustomItem {
     public static void register() {
+        Arrays.stream(CustomBlock.values()).forEach(block -> {
+            Registry.register(Registries.BLOCK, block.getIdentifier(), block.getBlock());
+            Registry.register(Registries.ITEM, block.getIdentifier(), block.getItem());
+        });
+
         Arrays.stream(InclementEmeraldTicketItem.values()).forEach(item -> {
             Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
         });
