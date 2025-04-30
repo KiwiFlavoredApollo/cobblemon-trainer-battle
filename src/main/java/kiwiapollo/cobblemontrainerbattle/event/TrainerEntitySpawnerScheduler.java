@@ -13,8 +13,8 @@ import static net.minecraft.SharedConstants.TICKS_PER_SECOND;
 
 public class TrainerEntitySpawnerScheduler implements ServerTickEvents.EndWorldTick {
     private static final List<TrainerEntitySpawner> SPAWNERS = List.of(
-            new NormalTrainerEntitySpawner(80),
-            new HostileTrainerEntitySpawner(20)
+            new NormalTrainerEntitySpawner(90),
+            new HostileTrainerEntitySpawner(10)
     );
 
     @Override
