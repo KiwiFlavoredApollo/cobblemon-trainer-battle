@@ -5,10 +5,9 @@ import kiwiapollo.cobblemontrainerbattle.entity.*;
 import kiwiapollo.cobblemontrainerbattle.item.VsSeeker;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.collection.DefaultedList;
+import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 
@@ -16,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-public abstract class TrainerEntitySpawner implements WeightedEntitySpawner {
+public abstract class TrainerEntitySpawner implements WeightedEntitySpawner, EntityCounter {
     protected static final int MAXIMUM_RADIUS = 30;
     protected static final int MINIMUM_RADIUS = 5;
 
@@ -28,20 +27,11 @@ public abstract class TrainerEntitySpawner implements WeightedEntitySpawner {
             entity.refreshPositionAndAngles(spawnPos, player.getYaw(), player.getPitch());
             world.spawnEntity(entity);
 
-            CobblemonTrainerBattle.LOGGER.info("Spawned {} on {} {}", entity.getName(), world.getRegistryKey().getValue(), spawnPos);
+            CobblemonTrainerBattle.LOGGER.info("Spawned {} at {} {}", Text.translatable(entity.getDisplayName().getString()), world.getRegistryKey().getValue(), spawnPos);
 
         } catch (ClassCastException | IllegalStateException ignored) {
 
         }
-    }
-
-    private List<VsSeeker> getVsSeekers(PlayerInventory inventory) {
-        return inventory.combinedInventory.stream()
-                .flatMap(DefaultedList::stream)
-                .filter(stack -> !stack.isEmpty())
-                .map(ItemStack::getItem)
-                .filter(item -> item instanceof VsSeeker)
-                .map(item -> (VsSeeker) item).toList();
     }
 
     protected abstract TrainerEntity createTrainerEntity(ServerWorld world, ServerPlayerEntity player);
@@ -50,7 +40,7 @@ public abstract class TrainerEntitySpawner implements WeightedEntitySpawner {
         List<Predicate<String>> predicates = new ArrayList<>();
 
         predicates.add(trainer -> false);
-        predicates.addAll(getVsSeekers(inventory));
+        predicates.addAll(VsSeeker.getVsSeekers(inventory));
 
         return predicates.stream().reduce(Predicate::or).orElse(t -> true);
     }

@@ -4,12 +4,14 @@ import kiwiapollo.cobblemontrainerbattle.entity.NormalTrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.entity.CustomEntityType;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
+import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
@@ -98,5 +100,14 @@ public class VsSeeker extends Item implements Predicate<String> {
     @Override
     public boolean test(String trainer) {
         return predicate.test(trainer);
+    }
+
+    public static List<VsSeeker> getVsSeekers(PlayerInventory inventory) {
+        return inventory.combinedInventory.stream()
+                .flatMap(DefaultedList::stream)
+                .filter(stack -> !stack.isEmpty())
+                .map(ItemStack::getItem)
+                .filter(item -> item instanceof VsSeeker)
+                .map(item -> (VsSeeker) item).toList();
     }
 }

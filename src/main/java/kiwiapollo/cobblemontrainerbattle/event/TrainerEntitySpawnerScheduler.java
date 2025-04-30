@@ -3,11 +3,8 @@ package kiwiapollo.cobblemontrainerbattle.event;
 import kiwiapollo.cobblemontrainerbattle.global.config.ConfigStorage;
 import kiwiapollo.cobblemontrainerbattle.item.VsSeeker;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.random.Random;
 
 import java.util.List;
@@ -27,7 +24,7 @@ public class TrainerEntitySpawnerScheduler implements ServerTickEvents.EndWorldT
         }
 
         for (ServerPlayerEntity player : world.getPlayers()) {
-            if (getVsSeekers(player.getInventory()).isEmpty()) {
+            if (!hasVsSeeker(player)) {
                 continue;
             }
 
@@ -35,7 +32,7 @@ public class TrainerEntitySpawnerScheduler implements ServerTickEvents.EndWorldT
                 continue;
             }
 
-            choose(SPAWNERS).spawnEntity(world, player);
+            getRandomSpawner(SPAWNERS).spawnEntity(world, player);
         }
     }
 
@@ -44,24 +41,17 @@ public class TrainerEntitySpawnerScheduler implements ServerTickEvents.EndWorldT
         return ticks % interval == 0;
     }
 
-    private List<VsSeeker> getVsSeekers(PlayerInventory inventory) {
-        return inventory.combinedInventory.stream()
-                .flatMap(DefaultedList::stream)
-                .filter(stack -> !stack.isEmpty())
-                .map(ItemStack::getItem)
-                .filter(item -> item instanceof VsSeeker)
-                .map(item -> (VsSeeker) item).toList();
+    private boolean hasVsSeeker(ServerPlayerEntity player) {
+        return !VsSeeker.getVsSeekers(player.getInventory()).isEmpty();
     }
 
     private boolean isBelowMaximumTrainerSpawnCount(ServerWorld world, ServerPlayerEntity player) {
-        int count = SPAWNERS.stream()
-                .map(spawner -> spawner.getEntityCount(world, player))
-                .mapToInt(Integer::intValue)
-                .sum();
-        return count < ConfigStorage.getInstance().getMaximumTrainerSpawnCount();
+        int total = SPAWNERS.stream().map(spawner -> spawner.getEntityCount(world, player)).mapToInt(Integer::intValue).sum();
+        int maximum = ConfigStorage.getInstance().getMaximumTrainerSpawnCount();
+        return total < maximum;
     }
 
-    private TrainerEntitySpawner choose(List<TrainerEntitySpawner> spawners) {
+    private TrainerEntitySpawner getRandomSpawner(List<TrainerEntitySpawner> spawners) {
         int total = spawners.stream().map(TrainerEntitySpawner::getWeight).mapToInt(Integer::intValue).sum();
         int random = Random.create().nextInt(total) + 1;
 
