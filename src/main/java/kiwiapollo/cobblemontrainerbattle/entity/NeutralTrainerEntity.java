@@ -12,13 +12,13 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.UUID;
 
-public class NormalTrainerEntity extends TrainerEntity implements Angerable {
+public class NeutralTrainerEntity extends TrainerEntity implements Angerable {
     private static final UniformIntProvider ANGER_TIME_RANGE = TimeHelper.betweenSeconds(20, 39);
 
     private @Nullable UUID angryAt;
     private int angerTime;
 
-    public NormalTrainerEntity(EntityType<? extends PathAwareEntity> type, World world) {
+    public NeutralTrainerEntity(EntityType<? extends PathAwareEntity> type, World world) {
         super(type, world);
     }
 

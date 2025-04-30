@@ -8,10 +8,10 @@ import net.minecraft.util.math.Box;
 
 import java.util.function.Predicate;
 
-public class NormalTrainerEntitySpawner extends TrainerEntitySpawner {
+public class NeutralTrainerEntitySpawner extends TrainerEntitySpawner {
     private final int weight;
 
-    public NormalTrainerEntitySpawner(int weight) {
+    public NeutralTrainerEntitySpawner(int weight) {
         super();
         this.weight = weight;
     }
@@ -20,7 +20,7 @@ public class NormalTrainerEntitySpawner extends TrainerEntitySpawner {
     protected TrainerEntity createTrainerEntity(ServerWorld world, ServerPlayerEntity player) {
         Predicate<String> predicate = toPredicate(player.getInventory());
         SimpleFactory<String> trainer = new RandomSpawnableTrainerFactory(predicate);
-        return new RandomNormalTrainerEntityFactory(trainer).create(CustomEntityType.NORMAL_TRAINER, world);
+        return new RandomNeutralTrainerEntityFactory(trainer).create(CustomEntityType.NEUTRAL_TRAINER, world);
     }
 
     @Override
@@ -31,6 +31,6 @@ public class NormalTrainerEntitySpawner extends TrainerEntitySpawner {
     @Override
     public int getEntityCount(ServerWorld world, ServerPlayerEntity player) {
         Box box = player.getBoundingBox().expand(MAXIMUM_RADIUS);
-        return world.getEntitiesByType(CustomEntityType.NORMAL_TRAINER, box, entity -> true).size();
+        return world.getEntitiesByType(CustomEntityType.NEUTRAL_TRAINER, box, entity -> true).size();
     }
 }

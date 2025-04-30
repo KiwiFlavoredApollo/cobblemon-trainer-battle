@@ -1,11 +1,11 @@
 {
-  "entity.cobblemontrainerbattle.normal_trainer": "Normal Trainer",
+  "entity.cobblemontrainerbattle.neutral_trainer": "Neutral Trainer",
   "entity.cobblemontrainerbattle.hostile_trainer": "Hostile Trainer",
   "entity.cobblemontrainerbattle.static_trainer": "Static Trainer",
 
   "tag.item.cobblemontrainerbattle.vs_seekers": "VS Seekers",
 
-  "item.cobblemontrainerbattle.normal_trainer_spawn_egg": "Normal Trainer Spawn Egg",
+  "item.cobblemontrainerbattle.neutral_trainer_spawn_egg": "Neutral Trainer Spawn Egg",
   "item.cobblemontrainerbattle.hostile_trainer_spawn_egg": "Hostile Trainer Spawn Egg",
   "item.cobblemontrainerbattle.static_trainer_spawn_egg": "Static Trainer Spawn Egg",
 

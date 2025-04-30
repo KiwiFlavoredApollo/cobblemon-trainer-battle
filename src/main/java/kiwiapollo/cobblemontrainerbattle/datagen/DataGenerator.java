@@ -45,7 +45,7 @@ public class DataGenerator implements DataGeneratorEntrypoint {
         private static final PlayerInteractedWithEntityCriterion.Conditions CONDITIONS = new PlayerInteractedWithEntityCriterion.Conditions(
                 LootContextPredicate.EMPTY,
                 ItemPredicate.ANY,
-                EntityPredicate.asLootContextPredicate(EntityPredicate.Builder.create().type(CustomEntityType.NORMAL_TRAINER).build())
+                EntityPredicate.asLootContextPredicate(EntityPredicate.Builder.create().type(CustomEntityType.NEUTRAL_TRAINER).build())
         );
 
         static final Advancement ROOT = Advancement.Builder.createUntelemetered()

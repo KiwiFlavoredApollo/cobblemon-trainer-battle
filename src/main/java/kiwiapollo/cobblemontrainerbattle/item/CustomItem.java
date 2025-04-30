@@ -45,7 +45,7 @@ public class CustomItem {
             Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
         });
 
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "normal_trainer_spawn_egg"), MiscItem.NORMAL_TRAINER_SPAWN_EGG);
+        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "neutral_trainer_spawn_egg"), MiscItem.NEUTRAL_TRAINER_SPAWN_EGG);
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "hostile_trainer_spawn_egg"), MiscItem.HOSTILE_TRAINER_SPAWN_EGG);
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "static_trainer_spawn_egg"), MiscItem.STATIC_TRAINER_SPAWN_EGG);
         Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "trainer_token"), MiscItem.TRAINER_TOKEN);

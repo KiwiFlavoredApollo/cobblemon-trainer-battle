@@ -6,7 +6,7 @@ import com.cobblemon.mod.common.api.pokemon.aspect.AspectProvider;
 import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
 import kiwiapollo.cobblemontrainerbattle.command.*;
 import kiwiapollo.cobblemontrainerbattle.entity.HostileTrainerEntity;
-import kiwiapollo.cobblemontrainerbattle.entity.NormalTrainerEntity;
+import kiwiapollo.cobblemontrainerbattle.entity.NeutralTrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.entity.StaticTrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.global.config.ConfigLoader;
 import kiwiapollo.cobblemontrainerbattle.global.config.ConfigStorage;
@@ -69,8 +69,8 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
 		ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(TrainerStorage.getInstance());
 
-		Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "normal_trainer"), CustomEntityType.NORMAL_TRAINER);
-		FabricDefaultAttributeRegistry.register(CustomEntityType.NORMAL_TRAINER, NormalTrainerEntity.createMobAttributes());
+		Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "neutral_trainer"), CustomEntityType.NEUTRAL_TRAINER);
+		FabricDefaultAttributeRegistry.register(CustomEntityType.NEUTRAL_TRAINER, NeutralTrainerEntity.createMobAttributes());
 		Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "hostile_trainer"), CustomEntityType.HOSTILE_TRAINER);
 		FabricDefaultAttributeRegistry.register(CustomEntityType.HOSTILE_TRAINER, HostileTrainerEntity.createMobAttributes());
 		Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "static_trainer"), CustomEntityType.STATIC_TRAINER);

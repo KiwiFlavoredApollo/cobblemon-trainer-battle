@@ -1,11 +1,11 @@
 {
-  "entity.cobblemontrainerbattle.normal_trainer": "일반적인 트레이너",
+  "entity.cobblemontrainerbattle.neutral_trainer": "중립적인 트레이너",
   "entity.cobblemontrainerbattle.hostile_trainer": "적대적인 트레이너",
   "entity.cobblemontrainerbattle.static_trainer": "고정된 트레이너",
 
   "tag.item.cobblemontrainerbattle.vs_seekers": "배틀서처",
 
-  "item.cobblemontrainerbattle.normal_trainer_spawn_egg": "일반적인 트레이너 생성 알",
+  "item.cobblemontrainerbattle.neutral_trainer_spawn_egg": "중립적인 트레이너 생성 알",
   "item.cobblemontrainerbattle.hostile_trainer_spawn_egg": "적대적인 트레이너 생성 알",
   "item.cobblemontrainerbattle.static_trainer_spawn_egg": "고정된 트레이너 생성 알",
 

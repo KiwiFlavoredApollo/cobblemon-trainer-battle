@@ -3,10 +3,10 @@ package kiwiapollo.cobblemontrainerbattle.entity;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.util.Identifier;
 
-public class NormalTrainerEntityRenderer extends TrainerEntityRenderer<NormalTrainerEntity> {
+public class NeutralTrainerEntityRenderer extends TrainerEntityRenderer<NeutralTrainerEntity> {
     private static final TrainerTexture FALLBACK_TEXTURE = TrainerTexture.RED;
 
-    public NormalTrainerEntityRenderer(EntityRendererFactory.Context context) {
+    public NeutralTrainerEntityRenderer(EntityRendererFactory.Context context) {
         super(context);
     }
 
