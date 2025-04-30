@@ -3,7 +3,6 @@ package kiwiapollo.cobblemontrainerbattle.event;
 import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.api.battles.model.actor.FleeableBattleActor;
-import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
