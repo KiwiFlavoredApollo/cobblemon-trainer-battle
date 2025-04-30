@@ -12,6 +12,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -27,7 +28,7 @@ public abstract class TrainerEntitySpawner implements WeightedEntitySpawner, Ent
             entity.refreshPositionAndAngles(spawnPos, player.getYaw(), player.getPitch());
             world.spawnEntity(entity);
 
-            CobblemonTrainerBattle.LOGGER.info("Spawned {} at {} {}", Text.translatable(entity.getDisplayName().getString()), world.getRegistryKey().getValue(), spawnPos);
+             CobblemonTrainerBattle.LOGGER.info("Spawned {} at {} {}", entity.getDisplayName().getString(), world.getRegistryKey().getValue(), spawnPos);
 
         } catch (ClassCastException | IllegalStateException ignored) {
 
@@ -50,8 +51,8 @@ public abstract class TrainerEntitySpawner implements WeightedEntitySpawner, Ent
         final int MAXIMUM_RETRIES = 50;
 
         for (int i = 0; i < MAXIMUM_RETRIES; i++) {
-            int xOffset = Random.create().nextBetween(MINIMUM_RADIUS, MAXIMUM_RADIUS) * Random.create().nextBetween(-1, 1);
-            int zOffset = Random.create().nextBetween(MINIMUM_RADIUS, MAXIMUM_RADIUS) * Random.create().nextBetween(-1, 1);
+            int xOffset = Random.create().nextBetween(MINIMUM_RADIUS, MAXIMUM_RADIUS) * getRandomSign();
+            int zOffset = Random.create().nextBetween(MINIMUM_RADIUS, MAXIMUM_RADIUS) * getRandomSign();
             int yOffset = Random.create().nextBetween(-1 * MAXIMUM_RADIUS, MAXIMUM_RADIUS);
 
             BlockPos spawnPos = playerPos.add(xOffset, yOffset, zOffset);
@@ -64,5 +65,11 @@ public abstract class TrainerEntitySpawner implements WeightedEntitySpawner, Ent
         }
 
         throw new IllegalStateException();
+    }
+
+    private int getRandomSign() {
+        List<Integer> random = new ArrayList<>(List.of(-1, 1));
+        Collections.shuffle(random);
+        return random.get(0);
     }
 }
