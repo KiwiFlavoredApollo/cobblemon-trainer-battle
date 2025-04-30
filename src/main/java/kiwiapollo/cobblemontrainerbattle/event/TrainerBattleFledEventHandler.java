@@ -25,8 +25,6 @@ public class TrainerBattleFledEventHandler implements ServerTickEvents.EndWorldT
 
         players.stream().map(this::getTrainerBattle).forEach(TrainerBattle::onPlayerDefeat);
         players.stream().map(this::getPokemonBattle).forEach(PokemonBattle::end);
-
-        players.forEach(player -> CobblemonTrainerBattle.LOGGER.info("Battle was fled: {}", player.getGameProfile().getName()));
     }
 
     private boolean isFledFromTrainerBattle(ServerPlayerEntity player) {
