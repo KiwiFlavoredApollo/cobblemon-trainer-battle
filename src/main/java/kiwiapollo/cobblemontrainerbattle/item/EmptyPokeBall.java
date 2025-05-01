@@ -45,7 +45,7 @@ public class EmptyPokeBall extends Item implements PokemonSelectingItem {
 
     @Override
     public @Nullable TypedActionResult<ItemStack> applyToPokemon(@NotNull ServerPlayerEntity player, @NotNull ItemStack stack, @NotNull Pokemon pokemon) {
-        player.giveItemStack(toPokeBall(player, pokemon));
+        player.giveItemStack(toPokeBall(pokemon));
 
         Cobblemon.INSTANCE.getStorage().getParty(player).remove(pokemon);
 
@@ -56,7 +56,7 @@ public class EmptyPokeBall extends Item implements PokemonSelectingItem {
         return TypedActionResult.success(stack);
     }
 
-    private ItemStack toPokeBall(ServerPlayerEntity player, Pokemon pokemon) {
+    private ItemStack toPokeBall(Pokemon pokemon) {
         ItemStack occupied = MiscItem.STORED_POKE_BALL.getDefaultStack();
         occupied.getOrCreateNbt().put(PokeBallNbt.POKEMON, pokemon.saveToNBT(new NbtCompound()));
         return occupied;
