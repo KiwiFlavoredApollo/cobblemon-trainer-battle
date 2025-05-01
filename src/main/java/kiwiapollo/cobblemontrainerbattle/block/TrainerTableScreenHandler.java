@@ -8,8 +8,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 
-import java.util.Objects;
-
 public class TrainerTableScreenHandler extends ScreenHandler {
     private static final int SIZE = 9;
     private static final int SLOT_SIZE = 18;
@@ -27,12 +25,12 @@ public class TrainerTableScreenHandler extends ScreenHandler {
         this.inventory = inventory;
         inventory.onOpen(playerInventory.player);
 
-        addThisInventorySlots(inventory);
+        addContainerInventorySlots(inventory);
         addPlayerInventorySlots(playerInventory);
         addPlayerHotbarSlots(playerInventory);
     }
 
-    private void addThisInventorySlots(Inventory inventory) {
+    private void addContainerInventorySlots(Inventory inventory) {
         final int TOP_OFFSET = 17;
         final int LEFT_OFFSET = 62;
         final int ROW_COUNT = 3;
@@ -94,39 +92,50 @@ public class TrainerTableScreenHandler extends ScreenHandler {
 
     @Override
     public ItemStack quickMove(PlayerEntity player, int index) {
-        ItemStack newStack = ItemStack.EMPTY;
         Slot slot = this.slots.get(index);
 
         if (!slot.hasStack()) {
-            return newStack;
+            return ItemStack.EMPTY;
         }
 
-        ItemStack oldStack = slot.getStack();
-        newStack = oldStack.copy();
+        ItemStack original = slot.getStack();
+        ItemStack copy = original.copy();
 
-        if (isThisToPlayer(index)) {
-            if (!this.insertItem(oldStack, this.inventory.size(), this.slots.size(), true)) {
+        if (isContainerSlot(index)) {
+            if (!moveToPlayerInventory(original)) {
                 return ItemStack.EMPTY;
             }
 
         } else {
-            if (!this.insertItem(oldStack, 0, this.inventory.size(), false)) {
+            if (!moveToContainerInventory(original)) {
                 return ItemStack.EMPTY;
             }
         }
 
-        if (oldStack.isEmpty()) {
+        if (isMoveAll(original)) {
             slot.setStack(ItemStack.EMPTY);
 
         } else {
             slot.markDirty();
         }
 
-        return newStack;
+        return copy;
     }
 
-    private boolean isThisToPlayer(int index) {
+    private boolean isContainerSlot(int index) {
         return index < this.inventory.size();
+    }
+
+    private boolean moveToPlayerInventory(ItemStack stack) {
+        return this.insertItem(stack, this.inventory.size(), this.slots.size(), true);
+    }
+
+    private boolean moveToContainerInventory(ItemStack stack) {
+        return this.insertItem(stack, 0, this.inventory.size(), false);
+    }
+
+    private boolean isMoveAll(ItemStack stack) {
+        return stack.isEmpty();
     }
 
     @Override
