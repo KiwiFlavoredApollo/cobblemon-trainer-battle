@@ -64,7 +64,7 @@ public class VillagerEntityMixin {
             callbackInfo.setReturnValue(ActionResult.SUCCESS);
             callbackInfo.cancel();
 
-        } catch (ClassCastException | NoSuchElementException | BattleStartException ignored) {
+        } catch (ClassCastException | NoSuchElementException | IllegalStateException | BattleStartException ignored) {
 
         }
     }

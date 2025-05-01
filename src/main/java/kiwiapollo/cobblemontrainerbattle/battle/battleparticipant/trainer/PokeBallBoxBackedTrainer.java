@@ -30,6 +30,10 @@ public class PokeBallBoxBackedTrainer implements TrainerBattleParticipant {
     public PokeBallBoxBackedTrainer(PokeBallBoxBlockEntity block) {
         this.party = toPartyStore(getPokemon(block));
         this.uuid = UUID.randomUUID();
+
+        if (party.occupied() == 0){
+            throw new IllegalStateException();
+        }
     }
 
     private static PartyStore toPartyStore(List<Pokemon> pokemon) {
