@@ -22,14 +22,14 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.Objects;
 
-public class StoredPokeBall extends Item {
-    public StoredPokeBall() {
+public class FilledPokeBall extends Item {
+    public FilledPokeBall() {
         super(new Settings().maxCount(1));
     }
 
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         try {
-            Pokemon pokemon = StoredPokeBall.getPokemon(stack);
+            Pokemon pokemon = FilledPokeBall.getPokemon(stack);
             tooltip.add(getPokemonSpecies(pokemon).formatted(Formatting.YELLOW));
             tooltip.add(Text.literal("Ability : ").append(getPokemonAbility(pokemon)));
             tooltip.add(Text.literal("Nature : ").append(getPokemonNature(pokemon)));
@@ -100,7 +100,7 @@ public class StoredPokeBall extends Item {
 
     private boolean hasPokemon(ItemStack stack) {
         try {
-            StoredPokeBall.getPokemon(stack);
+            FilledPokeBall.getPokemon(stack);
             return true;
 
         } catch (NullPointerException | IllegalStateException ignored) {

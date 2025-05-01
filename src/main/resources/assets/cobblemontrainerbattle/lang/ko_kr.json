@@ -11,8 +11,8 @@
   "item.cobblemontrainerbattle.hostile_trainer_spawn_egg": "적대적인 트레이너 생성 알",
   "item.cobblemontrainerbattle.static_trainer_spawn_egg": "고정된 트레이너 생성 알",
 
-  "item.cobblemontrainerbattle.empty_poke_ball": "빈 몬스터볼",
-  "item.cobblemontrainerbattle.stored_poke_ball": "포켓몬",
+  "item.cobblemontrainerbattle.empty_poke_ball": "비어있는 몬스터볼",
+  "item.cobblemontrainerbattle.filled_poke_ball": "채워진 몬스터볼",
 
   "item.cobblemontrainerbattle.blue_vs_seeker": "파란색 배틀서처",
   "item.cobblemontrainerbattle.blue_vs_seeker.trainers": "모든 트레이너",

@@ -14,7 +14,7 @@ import kiwiapollo.cobblemontrainerbattle.battle.predicate.MessagePredicate;
 import kiwiapollo.cobblemontrainerbattle.block.PokeBallBoxBlockEntity;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
 import kiwiapollo.cobblemontrainerbattle.entity.TrainerTexture;
-import kiwiapollo.cobblemontrainerbattle.item.StoredPokeBall;
+import kiwiapollo.cobblemontrainerbattle.item.FilledPokeBall;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -49,9 +49,9 @@ public class PokeBallBoxBackedTrainer implements TrainerBattleParticipant {
     private static List<Pokemon> getPokemon(PokeBallBoxBlockEntity block) {
         List<Pokemon> pokemon = new ArrayList<>();
 
-        for (ItemStack stack : getStoredPokeBallItemStacks(block)) {
+        for (ItemStack stack : getFilledPokeBalls(block)) {
             try {
-                pokemon.add(StoredPokeBall.getPokemon(stack));
+                pokemon.add(FilledPokeBall.getPokemon(stack));
 
             } catch (NullPointerException | IllegalStateException ignored) {
 
@@ -61,8 +61,8 @@ public class PokeBallBoxBackedTrainer implements TrainerBattleParticipant {
         return pokemon;
     }
 
-    private static List<ItemStack> getStoredPokeBallItemStacks(PokeBallBoxBlockEntity block) {
-        return getItemStacks(block).stream().filter(stack -> stack.getItem() instanceof StoredPokeBall).toList();
+    private static List<ItemStack> getFilledPokeBalls(PokeBallBoxBlockEntity block) {
+        return getItemStacks(block).stream().filter(stack -> stack.getItem() instanceof FilledPokeBall).toList();
     }
 
     private static List<ItemStack> getItemStacks(PokeBallBoxBlockEntity block) {
