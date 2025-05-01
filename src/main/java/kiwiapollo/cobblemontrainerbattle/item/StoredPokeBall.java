@@ -33,7 +33,7 @@ public class StoredPokeBall extends Item {
             tooltip.add(getPokemonSpecies(pokemon).formatted(Formatting.YELLOW));
             tooltip.add(Text.literal("Ability : ").append(getPokemonAbility(pokemon)));
             tooltip.add(Text.literal("Nature : ").append(getPokemonNature(pokemon)));
-            tooltip.add(Text.literal("MoveSet : ").append(getPokemonMoveSet(pokemon.getMoveSet())));
+            tooltip.add(Text.literal("Moves : ").append(getPokemonMoveSet(pokemon.getMoveSet())));
             tooltip.add(Text.literal("IVs : ").append(getPokemonStats(pokemon.getIvs())));
             tooltip.add(Text.literal("EVs : ").append(getPokemonStats(pokemon.getEvs())));
         } catch (NullPointerException ignored) {
