@@ -8,6 +8,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 
+import java.util.Objects;
+
 public class TrainerTableScreenHandler extends ScreenHandler {
     private static final int SIZE = 9;
     private static final int SLOT_SIZE = 18;
@@ -91,28 +93,40 @@ public class TrainerTableScreenHandler extends ScreenHandler {
     }
 
     @Override
-    public ItemStack quickMove(PlayerEntity player, int invSlot) {
+    public ItemStack quickMove(PlayerEntity player, int index) {
         ItemStack newStack = ItemStack.EMPTY;
-        Slot slot = this.slots.get(invSlot);
-        if (slot != null && slot.hasStack()) {
-            ItemStack originalStack = slot.getStack();
-            newStack = originalStack.copy();
-            if (invSlot < this.inventory.size()) {
-                if (!this.insertItem(originalStack, this.inventory.size(), this.slots.size(), true)) {
-                    return ItemStack.EMPTY;
-                }
-            } else if (!this.insertItem(originalStack, 0, this.inventory.size(), false)) {
+        Slot slot = this.slots.get(index);
+
+        if (!slot.hasStack()) {
+            return newStack;
+        }
+
+        ItemStack oldStack = slot.getStack();
+        newStack = oldStack.copy();
+
+        if (isThisToPlayer(index)) {
+            if (!this.insertItem(oldStack, this.inventory.size(), this.slots.size(), true)) {
                 return ItemStack.EMPTY;
             }
 
-            if (originalStack.isEmpty()) {
-                slot.setStack(ItemStack.EMPTY);
-            } else {
-                slot.markDirty();
+        } else {
+            if (!this.insertItem(oldStack, 0, this.inventory.size(), false)) {
+                return ItemStack.EMPTY;
             }
         }
 
+        if (oldStack.isEmpty()) {
+            slot.setStack(ItemStack.EMPTY);
+
+        } else {
+            slot.markDirty();
+        }
+
         return newStack;
+    }
+
+    private boolean isThisToPlayer(int index) {
+        return index < this.inventory.size();
     }
 
     @Override
