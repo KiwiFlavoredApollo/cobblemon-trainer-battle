@@ -13,13 +13,13 @@ import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 
-public class TrainerTableBlockEntity extends LootableContainerBlockEntity {
+public class PokeBallBoxBlockEntity extends LootableContainerBlockEntity {
     private static final int SIZE = 9;
 
     private final DefaultedList<ItemStack> inventory;
 
-    public TrainerTableBlockEntity(BlockPos pos, BlockState state) {
-        super(CustomEntityType.TRAINER_TABLE, pos, state);
+    public PokeBallBoxBlockEntity(BlockPos pos, BlockState state) {
+        super(CustomEntityType.POKE_BALL_BOX, pos, state);
         this.inventory = DefaultedList.ofSize(SIZE, ItemStack.EMPTY);;
     }
 
@@ -40,7 +40,7 @@ public class TrainerTableBlockEntity extends LootableContainerBlockEntity {
 
     @Override
     protected ScreenHandler createScreenHandler(int syncId, PlayerInventory playerInventory) {
-        return new TrainerTableScreenHandler(syncId, playerInventory);
+        return new PokeBallBoxScreenHandler(syncId, playerInventory);
     }
 
     @Override
@@ -50,7 +50,7 @@ public class TrainerTableBlockEntity extends LootableContainerBlockEntity {
 
     @Override
     public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
-        return new TrainerTableScreenHandler(syncId, playerInventory, this);
+        return new PokeBallBoxScreenHandler(syncId, playerInventory, this);
     }
 
     @Override

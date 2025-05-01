@@ -2,7 +2,6 @@ package kiwiapollo.cobblemontrainerbattle.block;
 
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.ScreenHandler;
@@ -16,14 +15,14 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public class TrainerTableBlock extends BlockWithEntity {
-    public TrainerTableBlock() {
+public class PokeBallBox extends BlockWithEntity {
+    public PokeBallBox() {
         super(AbstractBlock.Settings.copy(Blocks.COBBLESTONE));
     }
 
     @Override
     public @Nullable BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new TrainerTableBlockEntity(pos, state);
+        return new PokeBallBoxBlockEntity(pos, state);
     }
 
     @Override
@@ -47,7 +46,7 @@ public class TrainerTableBlock extends BlockWithEntity {
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         if (state.getBlock() != newState.getBlock()) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
-            if (blockEntity instanceof TrainerTableBlockEntity entity) {
+            if (blockEntity instanceof PokeBallBoxBlockEntity entity) {
                 ItemScatterer.spawn(world, pos, entity);
                 world.updateComparators(pos,this);
             }

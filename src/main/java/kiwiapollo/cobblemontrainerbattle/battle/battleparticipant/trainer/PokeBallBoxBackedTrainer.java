@@ -11,7 +11,7 @@ import kiwiapollo.cobblemontrainerbattle.battle.battleactor.SafeCopyBattlePokemo
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.Generation5AI;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.predicate.MessagePredicate;
-import kiwiapollo.cobblemontrainerbattle.block.TrainerTableBlockEntity;
+import kiwiapollo.cobblemontrainerbattle.block.PokeBallBoxBlockEntity;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
 import kiwiapollo.cobblemontrainerbattle.entity.TrainerTexture;
 import kiwiapollo.cobblemontrainerbattle.item.StoredPokeBall;
@@ -23,11 +23,11 @@ import net.minecraft.util.Identifier;
 
 import java.util.*;
 
-public class TrainerTableBlockBackedTrainer implements TrainerBattleParticipant {
+public class PokeBallBoxBackedTrainer implements TrainerBattleParticipant {
     private final PartyStore party;
     private final UUID uuid;
 
-    public TrainerTableBlockBackedTrainer(TrainerTableBlockEntity block) {
+    public PokeBallBoxBackedTrainer(PokeBallBoxBlockEntity block) {
         this.party = toPartyStore(getPokemon(block));
         this.uuid = UUID.randomUUID();
     }
@@ -42,7 +42,7 @@ public class TrainerTableBlockBackedTrainer implements TrainerBattleParticipant 
         return party;
     }
 
-    private static List<Pokemon> getPokemon(TrainerTableBlockEntity block) {
+    private static List<Pokemon> getPokemon(PokeBallBoxBlockEntity block) {
         List<Pokemon> pokemon = new ArrayList<>();
 
         for (ItemStack stack : getStoredPokeBallItemStacks(block)) {
@@ -57,11 +57,11 @@ public class TrainerTableBlockBackedTrainer implements TrainerBattleParticipant 
         return pokemon;
     }
 
-    private static List<ItemStack> getStoredPokeBallItemStacks(TrainerTableBlockEntity block) {
+    private static List<ItemStack> getStoredPokeBallItemStacks(PokeBallBoxBlockEntity block) {
         return getItemStacks(block).stream().filter(stack -> stack.getItem() instanceof StoredPokeBall).toList();
     }
 
-    private static List<ItemStack> getItemStacks(TrainerTableBlockEntity block) {
+    private static List<ItemStack> getItemStacks(PokeBallBoxBlockEntity block) {
         List<ItemStack> itemStacks = new ArrayList<>();
 
         for (int i = 0; i < block.size(); i++) {

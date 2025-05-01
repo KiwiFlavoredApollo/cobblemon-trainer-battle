@@ -4,9 +4,9 @@ import net.minecraft.resource.featuretoggle.FeatureSet;
 import net.minecraft.screen.ScreenHandlerType;
 
 public class CustomScreenHandlerType {
-    public static final ScreenHandlerType<TrainerTableScreenHandler> TRAINER_TABLE;
+    public static final ScreenHandlerType<PokeBallBoxScreenHandler> POKE_BALL_BOX;
 
     static {
-        TRAINER_TABLE = new ScreenHandlerType<>(TrainerTableScreenHandler::new, FeatureSet.empty());
+        POKE_BALL_BOX = new ScreenHandlerType<>(PokeBallBoxScreenHandler::new, FeatureSet.empty());
     }
 }

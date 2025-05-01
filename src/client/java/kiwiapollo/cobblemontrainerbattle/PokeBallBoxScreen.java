@@ -1,7 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import kiwiapollo.cobblemontrainerbattle.block.TrainerTableScreenHandler;
+import kiwiapollo.cobblemontrainerbattle.block.PokeBallBoxScreenHandler;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.render.GameRenderer;
@@ -9,10 +9,10 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
-public class TrainerTableScreen extends HandledScreen<TrainerTableScreenHandler> {
+public class PokeBallBoxScreen extends HandledScreen<PokeBallBoxScreenHandler> {
     private static final Identifier TEXTURE = Identifier.of("minecraft", "textures/gui/container/dispenser.png");
 
-    public TrainerTableScreen(TrainerTableScreenHandler handler, PlayerInventory inventory, Text title) {
+    public PokeBallBoxScreen(PokeBallBoxScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
     }
 

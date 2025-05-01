@@ -2,13 +2,13 @@ package kiwiapollo.cobblemontrainerbattle.mixin;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.NormalLevelPlayer;
-import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer.TrainerTableBlockBackedTrainer;
+import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer.PokeBallBoxBackedTrainer;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.EntityBackedTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.block.TrainerTableBlockEntity;
+import kiwiapollo.cobblemontrainerbattle.block.PokeBallBoxBlockEntity;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
-import kiwiapollo.cobblemontrainerbattle.villager.TrainerVillager;
+import kiwiapollo.cobblemontrainerbattle.villager.PokeBallEngineerVillager;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.ai.brain.MemoryModuleType;
 import net.minecraft.entity.passive.VillagerEntity;
@@ -42,7 +42,7 @@ public class VillagerEntityMixin {
     private boolean isTrainerVillager() {
         try {
             VillagerEntity villager = (VillagerEntity) (Object) this;
-            return villager.getVillagerData().getProfession().equals(TrainerVillager.PROFESSION);
+            return villager.getVillagerData().getProfession().equals(PokeBallEngineerVillager.PROFESSION);
 
         } catch (ClassCastException e) {
             return false;
@@ -51,11 +51,11 @@ public class VillagerEntityMixin {
 
     private void startTrainerBattle(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> callbackInfo) {
         try {
-            TrainerTableBlockEntity block = getTrainerTableBlockEntity(player.getWorld());
+            PokeBallBoxBlockEntity block = getPokeBallBoxBlockEntity(player.getWorld());
 
             TrainerBattle trainerBattle = new EntityBackedTrainerBattle(
                     new NormalLevelPlayer((ServerPlayerEntity) player),
-                    new TrainerTableBlockBackedTrainer(block),
+                    new PokeBallBoxBackedTrainer(block),
                     (VillagerEntity) (Object) this
             );
             trainerBattle.start();
@@ -69,13 +69,13 @@ public class VillagerEntityMixin {
         }
     }
 
-    private TrainerTableBlockEntity getTrainerTableBlockEntity(World world) {
+    private PokeBallBoxBlockEntity getPokeBallBoxBlockEntity(World world) {
         VillagerEntity villager = (VillagerEntity) (Object) this;
 
         BlockPos pos = villager.getBrain().getOptionalMemory(MemoryModuleType.JOB_SITE).map(GlobalPos::getPos).get();
         BlockEntity entity = world.getBlockEntity(pos);
         CobblemonTrainerBattle.LOGGER.info("{} at {}", entity, pos);
 
-        return (TrainerTableBlockEntity) entity;
+        return (PokeBallBoxBlockEntity) entity;
     }
 }

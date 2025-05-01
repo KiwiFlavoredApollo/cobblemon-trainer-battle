@@ -2,7 +2,7 @@
   "replace": false,
   "values": [
     {
-      "id": "cobblemontrainerbattle:trainer_poi",
+      "id": "cobblemontrainerbattle:pokeballengineer_poi",
       "required": false
     }
   ]

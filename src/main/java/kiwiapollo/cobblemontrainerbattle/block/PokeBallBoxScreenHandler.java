@@ -8,18 +8,18 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 
-public class TrainerTableScreenHandler extends ScreenHandler {
+public class PokeBallBoxScreenHandler extends ScreenHandler {
     private static final int SIZE = 9;
     private static final int SLOT_SIZE = 18;
 
     private final Inventory inventory;
 
-    public TrainerTableScreenHandler(int syncId, PlayerInventory playerInventory) {
+    public PokeBallBoxScreenHandler(int syncId, PlayerInventory playerInventory) {
         this(syncId, playerInventory, new SimpleInventory(SIZE));
     }
 
-    public TrainerTableScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory) {
-        super(CustomScreenHandlerType.TRAINER_TABLE, syncId);
+    public PokeBallBoxScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory) {
+        super(CustomScreenHandlerType.POKE_BALL_BOX, syncId);
         checkSize(inventory, SIZE);
 
         this.inventory = inventory;

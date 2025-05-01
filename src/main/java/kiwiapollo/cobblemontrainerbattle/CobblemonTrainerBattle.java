@@ -24,7 +24,7 @@ import kiwiapollo.cobblemontrainerbattle.pokemon.FormAspectProvider;
 import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextGenerator;
 import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextRemover;
 import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerStorage;
-import kiwiapollo.cobblemontrainerbattle.villager.TrainerVillager;
+import kiwiapollo.cobblemontrainerbattle.villager.PokeBallEngineerVillager;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
@@ -60,7 +60,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 		CustomItemGroup.register();
 		CustomSoundEvent.register();
 
-		Registry.register(Registries.VILLAGER_PROFESSION, Identifier.of(CobblemonTrainerBattle.MOD_ID, TrainerVillager.PROFESSION_ID), TrainerVillager.PROFESSION);
+		Registry.register(Registries.VILLAGER_PROFESSION, Identifier.of(CobblemonTrainerBattle.MOD_ID, PokeBallEngineerVillager.PROFESSION_ID), PokeBallEngineerVillager.PROFESSION);
 
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
 			dispatcher.register(new TrainerBattleCommand());
@@ -79,9 +79,9 @@ public class CobblemonTrainerBattle implements ModInitializer {
 		FabricDefaultAttributeRegistry.register(CustomEntityType.HOSTILE_TRAINER, HostileTrainerEntity.createMobAttributes());
 		Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "static_trainer"), CustomEntityType.STATIC_TRAINER);
 		FabricDefaultAttributeRegistry.register(CustomEntityType.STATIC_TRAINER, StaticTrainerEntity.createMobAttributes());
-		Registry.register(Registries.BLOCK_ENTITY_TYPE, Identifier.of(MOD_ID, "trainer_table"), CustomEntityType.TRAINER_TABLE);
+		Registry.register(Registries.BLOCK_ENTITY_TYPE, Identifier.of(MOD_ID, "trainer_table"), CustomEntityType.POKE_BALL_BOX);
 
-		Registry.register(Registries.SCREEN_HANDLER, Identifier.of(MOD_ID, "trainer_table"), CustomScreenHandlerType.TRAINER_TABLE);
+		Registry.register(Registries.SCREEN_HANDLER, Identifier.of(MOD_ID, "poke_ball_box"), CustomScreenHandlerType.POKE_BALL_BOX);
 
 		CobblemonEvents.BATTLE_VICTORY.subscribe(Priority.NORMAL, new BattleVictoryEventHandler());
 		CobblemonEvents.LOOT_DROPPED.subscribe(Priority.HIGHEST, new LootDroppedEventHandler());
