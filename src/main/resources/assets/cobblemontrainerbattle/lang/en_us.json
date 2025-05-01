@@ -3,6 +3,8 @@
   "entity.cobblemontrainerbattle.hostile_trainer": "Hostile Trainer",
   "entity.cobblemontrainerbattle.static_trainer": "Static Trainer",
 
+  "block.cobblemontrainerbattle.poke_ball_box": "Poke Ball Box",
+
   "tag.item.cobblemontrainerbattle.vs_seekers": "VS Seekers",
 
   "item.cobblemontrainerbattle.neutral_trainer_spawn_egg": "Neutral Trainer Spawn Egg",
