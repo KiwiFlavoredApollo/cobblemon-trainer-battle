@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.api.Priority;
 import com.cobblemon.mod.common.api.events.CobblemonEvents;
 import com.cobblemon.mod.common.api.pokemon.aspect.AspectProvider;
 import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
+import kiwiapollo.cobblemontrainerbattle.block.CustomScreenHandlerType;
 import kiwiapollo.cobblemontrainerbattle.command.*;
 import kiwiapollo.cobblemontrainerbattle.entity.HostileTrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.entity.NeutralTrainerEntity;
@@ -79,6 +80,8 @@ public class CobblemonTrainerBattle implements ModInitializer {
 		Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "static_trainer"), CustomEntityType.STATIC_TRAINER);
 		FabricDefaultAttributeRegistry.register(CustomEntityType.STATIC_TRAINER, StaticTrainerEntity.createMobAttributes());
 		Registry.register(Registries.BLOCK_ENTITY_TYPE, Identifier.of(MOD_ID, "trainer_table"), CustomEntityType.TRAINER_TABLE);
+
+		Registry.register(Registries.SCREEN_HANDLER, Identifier.of(MOD_ID, "trainer_table"), CustomScreenHandlerType.TRAINER_TABLE);
 
 		CobblemonEvents.BATTLE_VICTORY.subscribe(Priority.NORMAL, new BattleVictoryEventHandler());
 		CobblemonEvents.LOOT_DROPPED.subscribe(Priority.HIGHEST, new LootDroppedEventHandler());
