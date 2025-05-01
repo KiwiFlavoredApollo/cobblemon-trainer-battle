@@ -20,8 +20,8 @@ public abstract class PokemonStatusPrinter {
             player.sendMessage(Text.literal("Ability ").append(getPokemonAbility(pokemon)));
             player.sendMessage(Text.literal("Nature ").append(getPokemonNature(pokemon)));
             player.sendMessage(Text.literal("MoveSet ").append(getPokemonMoveSet(pokemon.getMoveSet())));
-            player.sendMessage(Text.literal("EVs ").append(getPokemonStats(pokemon.getEvs())));
             player.sendMessage(Text.literal("IVs ").append(getPokemonStats(pokemon.getIvs())));
+            player.sendMessage(Text.literal("EVs ").append(getPokemonStats(pokemon.getEvs())));
         }
     }
 
