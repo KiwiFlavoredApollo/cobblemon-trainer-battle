@@ -28,13 +28,17 @@ public class StoredPokeBall extends Item {
     }
 
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        Pokemon pokemon = StoredPokeBall.getPokemon(stack);
-        tooltip.add(getPokemonSpecies(pokemon).formatted(Formatting.YELLOW));
-        tooltip.add(Text.literal("Ability : ").append(getPokemonAbility(pokemon)));
-        tooltip.add(Text.literal("Nature : ").append(getPokemonNature(pokemon)));
-        tooltip.add(Text.literal("MoveSet : ").append(getPokemonMoveSet(pokemon.getMoveSet())));
-        tooltip.add(Text.literal("IVs : ").append(getPokemonStats(pokemon.getIvs())));
-        tooltip.add(Text.literal("EVs : ").append(getPokemonStats(pokemon.getEvs())));
+        try {
+            Pokemon pokemon = StoredPokeBall.getPokemon(stack);
+            tooltip.add(getPokemonSpecies(pokemon).formatted(Formatting.YELLOW));
+            tooltip.add(Text.literal("Ability : ").append(getPokemonAbility(pokemon)));
+            tooltip.add(Text.literal("Nature : ").append(getPokemonNature(pokemon)));
+            tooltip.add(Text.literal("MoveSet : ").append(getPokemonMoveSet(pokemon.getMoveSet())));
+            tooltip.add(Text.literal("IVs : ").append(getPokemonStats(pokemon.getIvs())));
+            tooltip.add(Text.literal("EVs : ").append(getPokemonStats(pokemon.getEvs())));
+        } catch (NullPointerException ignored) {
+
+        }
     }
 
     private MutableText getPokemonSpecies(Pokemon pokemon) {
