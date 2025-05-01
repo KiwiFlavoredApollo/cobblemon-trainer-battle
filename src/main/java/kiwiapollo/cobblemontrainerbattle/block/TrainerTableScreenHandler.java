@@ -92,50 +92,57 @@ public class TrainerTableScreenHandler extends ScreenHandler {
 
     @Override
     public ItemStack quickMove(PlayerEntity player, int index) {
-        Slot slot = this.slots.get(index);
+        try {
+            if (isContainerSlot(index)) {
+                Slot slot = this.slots.get(index);
+                ItemStack stack = slot.getStack().copy();
+                quickMoveToPlayer(slot);
+                return stack;
 
-        if (!slot.hasStack()) {
+            } else {
+                Slot slot = this.slots.get(index);
+                ItemStack stack = slot.getStack().copy();
+                quickMoveToContainer(slot);
+                return stack;
+            }
+
+        } catch (NullPointerException | IllegalStateException e) {
             return ItemStack.EMPTY;
         }
+    }
 
-        ItemStack original = slot.getStack();
-        ItemStack copy = original.copy();
+    private void quickMoveToPlayer(Slot slot) {
+        ItemStack stack = slot.getStack();
 
-        if (isContainerSlot(index)) {
-            if (!moveToPlayerInventory(original)) {
-                return ItemStack.EMPTY;
-            }
-
-        } else {
-            if (!moveToContainerInventory(original)) {
-                return ItemStack.EMPTY;
-            }
+        if (!this.insertItem(stack, this.inventory.size(), this.slots.size(), true)) {
+            throw new IllegalStateException();
         }
 
-        if (isMoveAll(original)) {
+        if (stack.isEmpty()) {
             slot.setStack(ItemStack.EMPTY);
 
         } else {
             slot.markDirty();
         }
+    }
 
-        return copy;
+    private void quickMoveToContainer(Slot slot) {
+        ItemStack stack = slot.getStack();
+
+        if (!this.insertItem(stack, 0, this.inventory.size(), false)) {
+            throw new IllegalStateException();
+        }
+
+        if (stack.isEmpty()) {
+            slot.setStack(ItemStack.EMPTY);
+
+        } else {
+            slot.markDirty();
+        }
     }
 
     private boolean isContainerSlot(int index) {
         return index < this.inventory.size();
-    }
-
-    private boolean moveToPlayerInventory(ItemStack stack) {
-        return this.insertItem(stack, this.inventory.size(), this.slots.size(), true);
-    }
-
-    private boolean moveToContainerInventory(ItemStack stack) {
-        return this.insertItem(stack, 0, this.inventory.size(), false);
-    }
-
-    private boolean isMoveAll(ItemStack stack) {
-        return stack.isEmpty();
     }
 
     @Override
