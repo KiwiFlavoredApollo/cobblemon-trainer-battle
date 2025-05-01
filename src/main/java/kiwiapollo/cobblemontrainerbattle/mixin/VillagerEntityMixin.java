@@ -110,9 +110,22 @@ public class VillagerEntityMixin {
     private PartyStore toPartyStore(List<Pokemon> pokemon) {
         PartyStore party = new PartyStore(UUID.randomUUID());
 
-        pokemon.forEach(party::add);
+        List<Pokemon> random = new ArrayList<>(pokemon);
+        Collections.shuffle(random);
+        getFirstSix(pokemon).forEach(party::add);
 
         return party;
+    }
+
+    private List<Pokemon> getFirstSix(List<Pokemon> pokemon) {
+        final int MAXIMUM = 6;
+
+        if (pokemon.size() > MAXIMUM) {
+            return pokemon.subList(0, MAXIMUM);
+
+        } else {
+            return pokemon;
+        }
     }
 
     private TrainerTableBlockEntity getTrainerTableBlockEntity(World world) {
