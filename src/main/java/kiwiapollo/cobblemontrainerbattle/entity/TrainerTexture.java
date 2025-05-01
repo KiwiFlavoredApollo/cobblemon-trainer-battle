@@ -18,7 +18,7 @@ public enum TrainerTexture {
         this.path = path;
     }
     
-    Identifier getIdentifier() {
+    public Identifier getIdentifier() {
         return Identifier.of(CobblemonTrainerBattle.MOD_ID, path);
     }
 }
