@@ -11,6 +11,9 @@
   "item.cobblemontrainerbattle.hostile_trainer_spawn_egg": "Hostile Trainer Spawn Egg",
   "item.cobblemontrainerbattle.static_trainer_spawn_egg": "Static Trainer Spawn Egg",
 
+  "item.cobblemontrainerbattle.empty_poke_ball": "Empty Poke Ball",
+  "item.cobblemontrainerbattle.stored_poke_ball": "Stored Poke Ball",
+
   "item.cobblemontrainerbattle.blue_vs_seeker": "Blue VS Seeker",
   "item.cobblemontrainerbattle.blue_vs_seeker.trainers": "All Trainers",
   "item.cobblemontrainerbattle.red_vs_seeker": "Red VS Seeker",

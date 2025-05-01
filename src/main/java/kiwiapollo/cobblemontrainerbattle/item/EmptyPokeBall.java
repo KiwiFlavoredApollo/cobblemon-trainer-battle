@@ -57,7 +57,7 @@ public class EmptyPokeBall extends Item implements PokemonSelectingItem {
     }
 
     private ItemStack toPokeBall(ServerPlayerEntity player, Pokemon pokemon) {
-        ItemStack occupied = MiscItem.OCCUPIED_POKE_BALL.getDefaultStack();
+        ItemStack occupied = MiscItem.STORED_POKE_BALL.getDefaultStack();
         occupied.getOrCreateNbt().put(PokeBallNbt.POKEMON, pokemon.saveToNBT(new NbtCompound()));
         return occupied;
     }
