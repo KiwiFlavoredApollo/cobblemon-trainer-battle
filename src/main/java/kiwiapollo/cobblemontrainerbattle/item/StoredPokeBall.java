@@ -12,10 +12,8 @@ import net.minecraft.world.World;
 
 import java.util.Objects;
 
-public class OccupiedPokeBall extends Item {
-    private static final String NBT_KEY = "Pokemon";
-
-    public OccupiedPokeBall() {
+public class StoredPokeBall extends Item {
+    public StoredPokeBall() {
         super(new Settings().maxCount(1));
     }
 
@@ -31,7 +29,7 @@ public class OccupiedPokeBall extends Item {
             return TypedActionResult.pass(stack);
         }
 
-        Pokemon pokemon = toPokemon(stack);
+        Pokemon pokemon = getPokemon(stack);
 
         Cobblemon.INSTANCE.getStorage().getParty((ServerPlayerEntity) player).add(pokemon);
 
@@ -44,7 +42,7 @@ public class OccupiedPokeBall extends Item {
 
     private boolean hasPokemon(ItemStack stack) {
         try {
-            toPokemon(stack);
+            StoredPokeBall.getPokemon(stack);
             return true;
 
         } catch (NullPointerException | IllegalStateException ignored) {
@@ -52,7 +50,7 @@ public class OccupiedPokeBall extends Item {
         }
     }
 
-    private Pokemon toPokemon(ItemStack stack) {
-        return new Pokemon().loadFromNBT(Objects.requireNonNull(stack.getSubNbt(NBT_KEY))).clone(true, true);
+    public static Pokemon getPokemon(ItemStack stack) {
+        return new Pokemon().loadFromNBT(Objects.requireNonNull(stack.getSubNbt(PokeBallNbt.POKEMON))).clone(true, true);
     }
 }

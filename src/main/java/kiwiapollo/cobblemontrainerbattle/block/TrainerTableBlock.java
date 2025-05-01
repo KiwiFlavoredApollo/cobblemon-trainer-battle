@@ -2,13 +2,17 @@ package kiwiapollo.cobblemontrainerbattle.block;
 
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.screen.NamedScreenHandlerFactory;
+import net.minecraft.screen.ScreenHandler;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
@@ -49,5 +53,30 @@ public class TrainerTableBlock extends BlockWithEntity {
             }
             super.onStateReplaced(state, world, pos, newState, moved);
         }
+    }
+
+    @Override
+    public boolean hasComparatorOutput(BlockState state) {
+        return true;
+    }
+
+    @Override
+    public int getComparatorOutput(BlockState state, World world, BlockPos pos) {
+        return ScreenHandler.calculateComparatorOutput(world.getBlockEntity(pos));
+    }
+
+    @Override
+    public boolean emitsRedstonePower(BlockState state) {
+        return true;
+    }
+
+    @Override
+    public int getWeakRedstonePower(BlockState state, BlockView world, BlockPos pos, Direction direction) {
+        return 0;
+    }
+
+    @Override
+    public int getStrongRedstonePower(BlockState state, BlockView world, BlockPos pos, Direction direction) {
+        return 0;
     }
 }

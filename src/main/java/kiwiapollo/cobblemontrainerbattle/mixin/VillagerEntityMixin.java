@@ -1,25 +1,18 @@
 package kiwiapollo.cobblemontrainerbattle.mixin;
 
-import com.cobblemon.mod.common.api.storage.party.PartyStore;
-import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.NormalLevelPlayer;
-import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer.QuickTrainer;
+import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer.TrainerTableBlockBackedTrainer;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.EntityBackedTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.block.TrainerTableBlockEntity;
-import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
-import kiwiapollo.cobblemontrainerbattle.entity.RandomSpawnableTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
-import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerStorage;
-import kiwiapollo.cobblemontrainerbattle.item.OccupiedPokeBall;
 import kiwiapollo.cobblemontrainerbattle.villager.TrainerVillager;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.ai.brain.MemoryModuleType;
 import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -59,12 +52,10 @@ public class VillagerEntityMixin {
     private void startTrainerBattle(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> callbackInfo) {
         try {
             TrainerTableBlockEntity block = getTrainerTableBlockEntity(player.getWorld());
-            List<Pokemon> pokemon = getPokemon(block);
-            PartyStore party = toPartyStore(pokemon);
 
             TrainerBattle trainerBattle = new EntityBackedTrainerBattle(
                     new NormalLevelPlayer((ServerPlayerEntity) player),
-                    new QuickTrainer(party),
+                    new TrainerTableBlockBackedTrainer(block),
                     (VillagerEntity) (Object) this
             );
             trainerBattle.start();
@@ -78,56 +69,6 @@ public class VillagerEntityMixin {
         }
     }
 
-    private List<Pokemon> getPokemon(TrainerTableBlockEntity block) {
-        List<Pokemon> pokemon = new ArrayList<>();
-
-        for (ItemStack stack : getOccupiedPokeBallItemStacks(block)) {
-            try {
-                pokemon.add(toPokemon(stack));
-
-            } catch (NullPointerException | IllegalStateException ignored) {
-
-            }
-        }
-
-        return pokemon;
-    }
-
-    private List<ItemStack> getOccupiedPokeBallItemStacks(TrainerTableBlockEntity block) {
-        List<ItemStack> list = new ArrayList<>();
-
-        for (int i = 0; i < block.size(); i++) {
-            list.add(block.getStack(i));
-        }
-
-        return list.stream().filter(stack -> stack.getItem() instanceof OccupiedPokeBall).toList();
-    }
-
-    private Pokemon toPokemon(ItemStack stack) {
-        return new Pokemon().loadFromNBT(Objects.requireNonNull(stack.getSubNbt("Pokemon"))).clone(true, true);
-    }
-
-    private PartyStore toPartyStore(List<Pokemon> pokemon) {
-        PartyStore party = new PartyStore(UUID.randomUUID());
-
-        List<Pokemon> random = new ArrayList<>(pokemon);
-        Collections.shuffle(random);
-        getFirstSix(pokemon).forEach(party::add);
-
-        return party;
-    }
-
-    private List<Pokemon> getFirstSix(List<Pokemon> pokemon) {
-        final int MAXIMUM = 6;
-
-        if (pokemon.size() > MAXIMUM) {
-            return pokemon.subList(0, MAXIMUM);
-
-        } else {
-            return pokemon;
-        }
-    }
-
     private TrainerTableBlockEntity getTrainerTableBlockEntity(World world) {
         VillagerEntity villager = (VillagerEntity) (Object) this;
 
@@ -136,9 +77,5 @@ public class VillagerEntityMixin {
         CobblemonTrainerBattle.LOGGER.info("{} at {}", entity, pos);
 
         return (TrainerTableBlockEntity) entity;
-    }
-
-    private LevelMode getLevelMode(String trainer) {
-        return TrainerStorage.getInstance().get(trainer).getLevelMode();
     }
 }

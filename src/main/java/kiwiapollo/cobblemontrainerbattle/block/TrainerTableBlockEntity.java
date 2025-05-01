@@ -12,8 +12,6 @@ import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import org.jetbrains.annotations.Nullable;
 
 public class TrainerTableBlockEntity extends LootableContainerBlockEntity {
     private static final int SIZE = 9;

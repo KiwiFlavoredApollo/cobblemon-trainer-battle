@@ -18,8 +18,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class EmptyPokeBall extends Item implements PokemonSelectingItem {
-    private static final String NBT_KEY = "Pokemon";
-
     public EmptyPokeBall() {
         super(new Item.Settings());
     }
@@ -60,7 +58,7 @@ public class EmptyPokeBall extends Item implements PokemonSelectingItem {
 
     private ItemStack toPokeBall(ServerPlayerEntity player, Pokemon pokemon) {
         ItemStack occupied = MiscItem.OCCUPIED_POKE_BALL.getDefaultStack();
-        occupied.getOrCreateNbt().put(NBT_KEY, pokemon.saveToNBT(new NbtCompound()));
+        occupied.getOrCreateNbt().put(PokeBallNbt.POKEMON, pokemon.saveToNBT(new NbtCompound()));
         return occupied;
     }
 

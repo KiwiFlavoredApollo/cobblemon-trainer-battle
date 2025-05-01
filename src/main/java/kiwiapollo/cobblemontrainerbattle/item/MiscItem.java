@@ -10,5 +10,5 @@ public class MiscItem {
     public static final Item STATIC_TRAINER_SPAWN_EGG = new SpawnEggItem(CustomEntityType.STATIC_TRAINER, 0xAAAAAA, 0x55FF55, new Item.Settings().maxCount(64));
     public static final Item TRAINER_TOKEN = new Item(new Item.Settings());
     public static final Item EMPTY_POKE_BALL = new EmptyPokeBall();
-    public static final Item OCCUPIED_POKE_BALL = new OccupiedPokeBall();
+    public static final Item OCCUPIED_POKE_BALL = new StoredPokeBall();
 }

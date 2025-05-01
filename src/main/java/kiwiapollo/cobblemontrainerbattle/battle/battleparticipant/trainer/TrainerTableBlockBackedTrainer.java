@@ -4,31 +4,82 @@ import com.cobblemon.mod.common.api.battles.model.actor.AIBattleActor;
 import com.cobblemon.mod.common.api.battles.model.ai.BattleAI;
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.battles.BattleFormat;
-import com.cobblemon.mod.common.battles.ai.RandomBattleAI;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
+import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.EntityBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.SafeCopyBattlePokemonFactory;
+import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.Generation5AI;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.predicate.MessagePredicate;
+import kiwiapollo.cobblemontrainerbattle.block.TrainerTableBlockEntity;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
 import kiwiapollo.cobblemontrainerbattle.entity.TrainerTexture;
+import kiwiapollo.cobblemontrainerbattle.item.StoredPokeBall;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 
-public class QuickTrainer implements TrainerBattleParticipant {
+public class TrainerTableBlockBackedTrainer implements TrainerBattleParticipant {
     private final PartyStore party;
     private final UUID uuid;
 
-    public QuickTrainer(PartyStore party) {
-        this.party = party;
+    public TrainerTableBlockBackedTrainer(TrainerTableBlockEntity block) {
+        this.party = toPartyStore(getPokemon(block));
         this.uuid = UUID.randomUUID();
+    }
+
+    private static PartyStore toPartyStore(List<Pokemon> pokemon) {
+        PartyStore party = new PartyStore(UUID.randomUUID());
+
+        List<Pokemon> random = new ArrayList<>(pokemon);
+        Collections.shuffle(random);
+        getFirstSix(random).forEach(party::add);
+
+        return party;
+    }
+
+    private static List<Pokemon> getPokemon(TrainerTableBlockEntity block) {
+        List<Pokemon> pokemon = new ArrayList<>();
+
+        for (ItemStack stack : getStoredPokeBallItemStacks(block)) {
+            try {
+                pokemon.add(StoredPokeBall.getPokemon(stack));
+
+            } catch (NullPointerException | IllegalStateException ignored) {
+
+            }
+        }
+
+        return pokemon;
+    }
+
+    private static List<ItemStack> getStoredPokeBallItemStacks(TrainerTableBlockEntity block) {
+        return getItemStacks(block).stream().filter(stack -> stack.getItem() instanceof StoredPokeBall).toList();
+    }
+
+    private static List<ItemStack> getItemStacks(TrainerTableBlockEntity block) {
+        List<ItemStack> itemStacks = new ArrayList<>();
+
+        for (int i = 0; i < block.size(); i++) {
+            itemStacks.add(block.getStack(i));
+        }
+
+        return itemStacks;
+    }
+
+    private static List<Pokemon> getFirstSix(List<Pokemon> pokemon) {
+        final int MAXIMUM = 6;
+
+        if (pokemon.size() > MAXIMUM) {
+            return pokemon.subList(0, MAXIMUM);
+
+        } else {
+            return pokemon;
+        }
     }
 
     @Override
@@ -38,7 +89,7 @@ public class QuickTrainer implements TrainerBattleParticipant {
 
     @Override
     public BattleAI getBattleAI() {
-        return new RandomBattleAI();
+        return new Generation5AI();
     }
 
     @Override
