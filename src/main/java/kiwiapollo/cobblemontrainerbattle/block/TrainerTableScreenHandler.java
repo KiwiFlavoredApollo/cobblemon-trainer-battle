@@ -10,6 +10,7 @@ import net.minecraft.screen.slot.Slot;
 
 public class TrainerTableScreenHandler extends ScreenHandler {
     private static final int SIZE = 9;
+    private static final int SLOT_SIZE = 18;
 
     private final Inventory inventory;
 
@@ -20,24 +21,73 @@ public class TrainerTableScreenHandler extends ScreenHandler {
     public TrainerTableScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory) {
         super(CustomScreenHandlerType.TRAINER_TABLE, syncId);
         checkSize(inventory, SIZE);
+
         this.inventory = inventory;
         inventory.onOpen(playerInventory.player);
 
-        int m;
-        int l;
-        for (m = 0; m < 3; ++m) {
-            for (l = 0; l < 3; ++l) {
-                this.addSlot(new Slot(inventory, l + m * 3, 62 + l * 18, 17 + m * 18));
+        addThisInventorySlots(inventory);
+        addPlayerInventorySlots(playerInventory);
+        addPlayerHotbarSlots(playerInventory);
+    }
+
+    private void addThisInventorySlots(Inventory inventory) {
+        final int TOP_OFFSET = 17;
+        final int LEFT_OFFSET = 62;
+        final int ROW_COUNT = 3;
+        final int COL_COUNT = 3;
+
+        for (int row = 0; row < ROW_COUNT; ++row) {
+            for (int col = 0; col < COL_COUNT; ++col) {
+                int index = getIndex(row, col, 0, COL_COUNT);
+                int x = getX(col, LEFT_OFFSET);
+                int y = getY(row, TOP_OFFSET);
+
+                this.addSlot(new Slot(inventory, index, x, y));
             }
         }
-        for (m = 0; m < 3; ++m) {
-            for (l = 0; l < 9; ++l) {
-                this.addSlot(new Slot(playerInventory, l + m * 9 + 9, 8 + l * 18, 84 + m * 18));
+    }
+
+    private void addPlayerInventorySlots(Inventory inventory) {
+        final int TOP_OFFSET = 84;
+        final int LEFT_OFFSET = 8;
+        final int ROW_COUNT = 3;
+        final int COL_COUNT = 9;
+
+        for (int row = 0; row < ROW_COUNT; ++row) {
+            for (int col = 0; col < COL_COUNT; ++col) {
+                int index = getIndex(row, col, COL_COUNT, COL_COUNT);
+                int x = getX(col, LEFT_OFFSET);
+                int y = getY(row, TOP_OFFSET);
+
+                this.addSlot(new Slot(inventory, index, x, y));
             }
         }
-        for (m = 0; m < 9; ++m) {
-            this.addSlot(new Slot(playerInventory, m, 8 + m * 18, 142));
+    }
+
+    private void addPlayerHotbarSlots(Inventory inventory) {
+        final int TOP_OFFSET = 142;
+        final int LEFT_OFFSET = 8;
+        final int COL_COUNT = 9;
+
+        for (int col = 0; col < COL_COUNT; ++col) {
+            int index = getIndex(0, col, 0, 0);
+            int x = getX(col, LEFT_OFFSET);
+            int y = getY(0, TOP_OFFSET);
+
+            this.addSlot(new Slot(inventory, index, x, y));
         }
+    }
+
+    private int getIndex(int row, int col, int offset, int width) {
+        return col + row * width + offset;
+    }
+
+    private int getX(int col, int offset) {
+        return col * SLOT_SIZE + offset;
+    }
+
+    private int getY(int row, int offset) {
+        return row * SLOT_SIZE + offset;
     }
 
     @Override
