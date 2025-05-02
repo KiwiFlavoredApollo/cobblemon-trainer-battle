@@ -27,6 +27,7 @@ public class FilledPokeBall extends Item {
         super(new Settings().maxCount(1));
     }
 
+    @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         try {
             Pokemon pokemon = FilledPokeBall.getPokemon(stack);
