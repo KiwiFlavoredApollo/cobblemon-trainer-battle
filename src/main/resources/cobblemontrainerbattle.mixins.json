@@ -5,6 +5,7 @@
 	"mixins": [
 		"ExampleMixin",
 		"VillagerEntityMixin",
+		"LivingEntityMixin",
 		"DropTableMixin"
 	],
 	"injectors": {

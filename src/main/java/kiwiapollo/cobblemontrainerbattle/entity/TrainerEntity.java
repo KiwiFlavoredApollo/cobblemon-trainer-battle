@@ -43,7 +43,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Objects;
 import java.util.UUID;
 
-public abstract class TrainerEntity extends PathAwareEntity implements TrainerBehavior {
+public abstract class TrainerEntity extends PathAwareEntity implements TrainerEntityBehavior {
     public static final int FLEE_DISTANCE = 20;
     private static final String FALLBACK_TRAINER = "radicalred/player_red";
     private static final TrackedData<String> TRAINER = DataTracker.registerData(TrainerEntity.class, TrackedDataHandlerRegistry.STRING);
@@ -209,7 +209,8 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerBe
         lootTable.generateLoot(lootContextParameterSet, this.getLootTableSeed(), this::dropStack);
     }
 
-    protected TrainerBattle getTrainerBattle() {
+    @Override
+    public TrainerBattle getTrainerBattle() {
         return trainerBattle;
     }
 

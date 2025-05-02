@@ -3,7 +3,9 @@ package kiwiapollo.cobblemontrainerbattle.mixin;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.NormalLevelPlayer;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer.PokeBallEngineerBackedTrainer;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.EntityBackedTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.NullTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntityBehavior;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
 import kiwiapollo.cobblemontrainerbattle.villager.PokeBallEngineerVillager;
@@ -12,6 +14,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.Identifier;
 import org.spongepowered.asm.mixin.Debug;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -22,7 +25,13 @@ import java.util.*;
 
 @Debug(export = true)
 @Mixin(VillagerEntity.class)
-public class VillagerEntityMixin {
+public class VillagerEntityMixin implements TrainerEntityBehavior {
+    private TrainerBattle trainerBattle;
+
+    public VillagerEntityMixin() {
+        trainerBattle = new NullTrainerBattle();
+    }
+
     @Inject(method = "interactMob", at = @At("HEAD"), cancellable = true)
     public void interactTrainerVillager(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> callbackInfo) {
         if (!isPokeBallEngineer()) {
@@ -54,11 +63,47 @@ public class VillagerEntityMixin {
             trainerBattle.start();
 
             BattleContextStorage.getInstance().getOrCreate(player.getUuid()).setTrainerBattle(trainerBattle);
+            this.trainerBattle = trainerBattle;
+
+            villager.setVelocity(0, 0, 0);
+            villager.setAiDisabled(true);
+            villager.velocityDirty = true;
+
             callbackInfo.setReturnValue(ActionResult.SUCCESS);
             callbackInfo.cancel();
 
         } catch (ClassCastException | NoSuchElementException | IllegalStateException | BattleStartException ignored) {
 
         }
+    }
+
+    @Override
+    public void setTrainer(String trainer) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public Identifier getTexture() {
+        throw new NullPointerException();
+    }
+
+    @Override
+    public TrainerBattle getTrainerBattle() {
+        return trainerBattle;
+    }
+
+    @Override
+    public void onPlayerVictory() {
+        setAiEnabled();
+    }
+
+    @Override
+    public void onPlayerDefeat() {
+        setAiEnabled();
+    }
+
+    private void setAiEnabled() {
+        VillagerEntity villager = (VillagerEntity) (Object) this;
+        villager.setAiDisabled(false);
     }
 }
