@@ -74,7 +74,7 @@ public class PokeBallBoxBlock extends BlockWithEntity {
     @Deprecated
     public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         if (state.get(PokeBallBoxBlock.POWERED)) {
-            world.setBlockState(pos, state.with(PokeBallBoxBlock.POWERED, false), 1);
+            world.setBlockState(pos, state.with(PokeBallBoxBlock.POWERED, false), 3);
             world.updateNeighbor(pos, state.getBlock(), pos);
         }
     }

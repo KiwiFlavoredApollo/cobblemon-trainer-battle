@@ -18,7 +18,6 @@ import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
 import kiwiapollo.cobblemontrainerbattle.entity.TrainerTexture;
 import kiwiapollo.cobblemontrainerbattle.item.FilledPokeBall;
 import kiwiapollo.cobblemontrainerbattle.villager.PokeBallEngineerVillager;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.LivingEntity;
@@ -40,16 +39,15 @@ public class PokeBallEngineerBackedTrainer implements TrainerBattleParticipant {
     private final VillagerEntity villager;
 
     public PokeBallEngineerBackedTrainer(VillagerEntity villager) {
-        PokeBallBoxBlockEntity block = getPokeBallBoxBlockEntity(villager);
-        this.party = toPartyStore(getPokemon(block));
-        this.uuid = UUID.randomUUID();
         this.villager = villager;
+        this.party = toPartyStore(getPokemon(getPokeBallBox(villager)));
+        this.uuid = UUID.randomUUID();
 
-        if (isPartyEmpty(party)){
+        if (isPartyEmpty(this.party)){
             throw new IllegalStateException();
         }
 
-        if (!isPokeBallEngineer(villager)) {
+        if (!isPokeBallEngineer(this.villager)) {
             throw new IllegalStateException();
         }
     }
@@ -119,17 +117,20 @@ public class PokeBallEngineerBackedTrainer implements TrainerBattleParticipant {
 
     @Override
     public void onPlayerVictory(ServerPlayerEntity player) {
-        powerPokeBallBox();
+        emitRedstonePulse();
     }
 
-    private void powerPokeBallBox() {
+    private void emitRedstonePulse() {
         try {
+            final int DURATION = 20;
             World world = villager.getWorld();
             BlockPos pos = villager.getBrain().getOptionalMemory(MemoryModuleType.JOB_SITE).map(GlobalPos::getPos).get();
             BlockState state = world.getBlockState(pos);
-            world.setBlockState(pos, state.with(PokeBallBoxBlock.POWERED, true));
+
+            world.setBlockState(pos, state.with(PokeBallBoxBlock.POWERED, true), 3);
             world.updateNeighbor(pos, state.getBlock(), pos);
-            world.scheduleBlockTick(pos, state.getBlock(), 20);
+
+            world.scheduleBlockTick(pos, state.getBlock(), DURATION);
 
         } catch (NullPointerException ignored) {
 
@@ -169,12 +170,12 @@ public class PokeBallEngineerBackedTrainer implements TrainerBattleParticipant {
         }
     }
 
-    private static PokeBallBoxBlockEntity getPokeBallBoxBlockEntity(VillagerEntity villager) {
+    private static PokeBallBoxBlockEntity getPokeBallBox(VillagerEntity villager) {
         BlockPos pos = villager.getBrain().getOptionalMemory(MemoryModuleType.JOB_SITE).map(GlobalPos::getPos).get();
-        BlockEntity entity = villager.getWorld().getBlockEntity(pos);
-        CobblemonTrainerBattle.LOGGER.info("{} at {}", entity, pos);
+        BlockEntity block = villager.getWorld().getBlockEntity(pos);
+        CobblemonTrainerBattle.LOGGER.info("{} at {}", block, pos);
 
-        return (PokeBallBoxBlockEntity) entity;
+        return (PokeBallBoxBlockEntity) block;
     }
 
     private static PartyStore toPartyStore(List<Pokemon> pokemon) {
