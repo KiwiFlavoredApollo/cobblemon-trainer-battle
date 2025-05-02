@@ -7,6 +7,7 @@ import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.state.StateManager;
+import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.*;
 import net.minecraft.util.hit.BlockHitResult;
@@ -17,9 +18,18 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class PokeBallBoxBlock extends BlockWithEntity {
+    public static final BooleanProperty POWERED = BooleanProperty.of("powered");
+
     public PokeBallBoxBlock() {
         super(AbstractBlock.Settings.copy(Blocks.COBBLESTONE));
-        this.setDefaultState(getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH));
+        this.setDefaultState(createDefaultState());
+    }
+
+    private BlockState createDefaultState() {
+        BlockState state = getDefaultState();
+        state.with(Properties.HORIZONTAL_FACING, Direction.NORTH);
+        state.with(PokeBallBoxBlock.POWERED, false);
+        return state;
     }
 
     @Override
@@ -76,17 +86,18 @@ public class PokeBallBoxBlock extends BlockWithEntity {
 
     @Override
     public int getWeakRedstonePower(BlockState state, BlockView world, BlockPos pos, Direction direction) {
-        return 0;
+        return state.get(PokeBallBoxBlock.POWERED) ? 15 : 0;
     }
 
     @Override
     public int getStrongRedstonePower(BlockState state, BlockView world, BlockPos pos, Direction direction) {
-        return 0;
+        return 15;
     }
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(Properties.HORIZONTAL_FACING);
+        builder.add(PokeBallBoxBlock.POWERED);
     }
 
     @Override

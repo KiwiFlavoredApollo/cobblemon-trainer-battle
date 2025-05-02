@@ -12,11 +12,14 @@ import kiwiapollo.cobblemontrainerbattle.battle.battleactor.SafeCopyBattlePokemo
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.Generation5AI;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.predicate.MessagePredicate;
+import kiwiapollo.cobblemontrainerbattle.block.PokeBallBoxBlock;
 import kiwiapollo.cobblemontrainerbattle.block.PokeBallBoxBlockEntity;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
 import kiwiapollo.cobblemontrainerbattle.entity.TrainerTexture;
 import kiwiapollo.cobblemontrainerbattle.item.FilledPokeBall;
 import kiwiapollo.cobblemontrainerbattle.villager.PokeBallEngineerVillager;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.brain.MemoryModuleType;
@@ -27,6 +30,7 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.GlobalPos;
+import net.minecraft.world.World;
 
 import java.util.*;
 
@@ -115,7 +119,20 @@ public class PokeBallEngineerBackedTrainer implements TrainerBattleParticipant {
 
     @Override
     public void onPlayerVictory(ServerPlayerEntity player) {
+        powerPokeBallBox();
+    }
 
+    private void powerPokeBallBox() {
+        try {
+            World world = villager.getWorld();
+            BlockPos pos = villager.getBrain().getOptionalMemory(MemoryModuleType.JOB_SITE).map(GlobalPos::getPos).get();
+            BlockState state = world.getBlockState(pos);
+            world.setBlockState(pos, state.with(PokeBallBoxBlock.POWERED, true));
+            world.updateNeighbor(pos, state.getBlock(), pos);
+
+        } catch (NullPointerException ignored) {
+
+        }
     }
 
     @Override
