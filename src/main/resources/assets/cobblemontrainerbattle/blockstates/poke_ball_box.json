@@ -1,5 +1,8 @@
 {
     "variants": {
-        "": { "model": "cobblemontrainerbattle:block/poke_ball_box" }
+        "facing=north": { "model": "cobblemontrainerbattle:block/poke_ball_box"},
+        "facing=east":  { "model": "cobblemontrainerbattle:block/poke_ball_box", "y": 90},
+        "facing=south": { "model": "cobblemontrainerbattle:block/poke_ball_box", "y": 180},
+        "facing=west":  { "model": "cobblemontrainerbattle:block/poke_ball_box", "y": 270}
     }
 }
