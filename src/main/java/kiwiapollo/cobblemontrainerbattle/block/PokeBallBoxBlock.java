@@ -15,8 +15,8 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public class PokeBallBox extends BlockWithEntity {
-    public PokeBallBox() {
+public class PokeBallBoxBlock extends BlockWithEntity {
+    public PokeBallBoxBlock() {
         super(AbstractBlock.Settings.copy(Blocks.COBBLESTONE));
     }
 
