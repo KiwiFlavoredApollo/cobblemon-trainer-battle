@@ -129,6 +129,7 @@ public class PokeBallEngineerBackedTrainer implements TrainerBattleParticipant {
             BlockState state = world.getBlockState(pos);
             world.setBlockState(pos, state.with(PokeBallBoxBlock.POWERED, true));
             world.updateNeighbor(pos, state.getBlock(), pos);
+            world.scheduleBlockTick(pos, state.getBlock(), 20);
 
         } catch (NullPointerException ignored) {
 
