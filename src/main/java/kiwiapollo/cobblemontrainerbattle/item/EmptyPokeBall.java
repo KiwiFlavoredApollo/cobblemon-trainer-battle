@@ -47,7 +47,9 @@ public class EmptyPokeBall extends Item implements PokemonSelectingItem {
     public @Nullable TypedActionResult<ItemStack> applyToPokemon(@NotNull ServerPlayerEntity player, @NotNull ItemStack stack, @NotNull Pokemon pokemon) {
         player.giveItemStack(toPokeBall(pokemon));
 
-        Cobblemon.INSTANCE.getStorage().getParty(player).remove(pokemon);
+        if (!player.isCreative()) {
+            Cobblemon.INSTANCE.getStorage().getParty(player).remove(pokemon);
+        }
 
         if (!player.isCreative()) {
             stack.decrement(1);
