@@ -79,12 +79,12 @@ public class HostileTrainerEntity extends TrainerEntity {
     public void onPlayerDefeat() {
         super.onPlayerDefeat();
 
-        ServerPlayerEntity player = getTrainerBattle().getPlayer().getPlayerEntity();
-        setRandomPartyPokemonFaint(player);
+        setRandomPlayerPokemonFaint();
     }
 
-    private void setRandomPartyPokemonFaint(ServerPlayerEntity player) {
+    private void setRandomPlayerPokemonFaint() {
         try {
+            ServerPlayerEntity player = getTrainerBattle().getPlayer().getPlayerEntity();
             PartyStore party = Cobblemon.INSTANCE.getStorage().getParty(player.getUuid());
             List<Pokemon> random = new ArrayList<>(party.toGappyList().stream()
                     .filter(Objects::nonNull)
