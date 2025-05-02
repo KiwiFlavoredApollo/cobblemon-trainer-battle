@@ -6,6 +6,7 @@ import com.cobblemon.mod.common.api.item.PokemonSelectingItem;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.item.battle.BagItem;
 import com.cobblemon.mod.common.pokemon.Pokemon;
+import com.google.gson.JsonObject;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -60,7 +61,7 @@ public class EmptyPokeBall extends Item implements PokemonSelectingItem {
 
     private ItemStack toPokeBall(Pokemon pokemon) {
         ItemStack occupied = MiscItem.FILLED_POKE_BALL.getDefaultStack();
-        occupied.getOrCreateNbt().put(PokeBallNbt.POKEMON, pokemon.saveToNBT(new NbtCompound()));
+        occupied.getOrCreateNbt().putString(PokeBallNbt.POKEMON, pokemon.saveToJSON(new JsonObject()).toString());
         return occupied;
     }
 

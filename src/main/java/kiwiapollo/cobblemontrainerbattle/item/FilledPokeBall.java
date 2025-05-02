@@ -1,11 +1,14 @@
 package kiwiapollo.cobblemontrainerbattle.item;
 
 import com.cobblemon.mod.common.Cobblemon;
+import com.cobblemon.mod.common.api.abilities.Abilities;
 import com.cobblemon.mod.common.api.moves.Move;
 import com.cobblemon.mod.common.api.moves.MoveSet;
 import com.cobblemon.mod.common.api.pokemon.stats.Stats;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.cobblemon.mod.common.pokemon.PokemonStats;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -32,12 +35,13 @@ public class FilledPokeBall extends Item {
         try {
             Pokemon pokemon = FilledPokeBall.getPokemon(stack);
             tooltip.add(getPokemonSpecies(pokemon).formatted(Formatting.YELLOW));
-            tooltip.add(Text.literal("Ability : ").append(getPokemonAbility(pokemon)));
-            tooltip.add(Text.literal("Nature : ").append(getPokemonNature(pokemon)));
-            tooltip.add(Text.literal("Moves : ").append(getPokemonMoveSet(pokemon.getMoveSet())));
-            tooltip.add(Text.literal("IVs : ").append(getPokemonStats(pokemon.getIvs())));
-            tooltip.add(Text.literal("EVs : ").append(getPokemonStats(pokemon.getEvs())));
-        } catch (NullPointerException ignored) {
+            tooltip.add(Text.translatable("cobblemon.ui.info.ability").append(" : ").append(getPokemonAbility(pokemon)));
+            tooltip.add(Text.translatable("cobblemon.ui.info.nature").append(" : ").append(getPokemonNature(pokemon)));
+            tooltip.add(Text.translatable("cobblemon.ui.moves").append(" : ").append(getPokemonMoveSet(pokemon.getMoveSet())));
+            tooltip.add(Text.translatable("cobblemon.ui.stats.ivs").append(" : ").append(getPokemonStats(pokemon.getIvs())));
+            tooltip.add(Text.translatable("cobblemon.ui.stats.evs").append(" : ").append(getPokemonStats(pokemon.getEvs())));
+
+        } catch (IllegalStateException | NullPointerException ignored) {
 
         }
     }
@@ -110,6 +114,7 @@ public class FilledPokeBall extends Item {
     }
 
     public static Pokemon getPokemon(ItemStack stack) {
-        return new Pokemon().loadFromNBT(Objects.requireNonNull(stack.getSubNbt(PokeBallNbt.POKEMON))).clone(true, true);
+        JsonObject pokemon = JsonParser.parseString(stack.getOrCreateNbt().getString(PokeBallNbt.POKEMON)).getAsJsonObject();
+        return new Pokemon().loadFromJSON(pokemon).clone(true, true);
     }
 }
