@@ -1,5 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.mixin;
 
+import com.cobblemon.mod.common.Cobblemon;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.NormalLevelPlayer;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer.PokeBallEngineerBackedTrainer;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.EntityBackedTrainerBattle;
@@ -53,6 +54,10 @@ public class VillagerEntityMixin implements TrainerEntityBehavior {
 
     private void startTrainerBattle(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> callbackInfo) {
         try {
+            if (hasTrainerBattle()) {
+                return;
+            }
+
             VillagerEntity villager = (VillagerEntity) (Object) this;
 
             TrainerBattle trainerBattle = new EntityBackedTrainerBattle(
@@ -77,6 +82,16 @@ public class VillagerEntityMixin implements TrainerEntityBehavior {
         }
     }
 
+    private boolean hasTrainerBattle() {
+        try {
+            UUID battleId = trainerBattle.getBattleId();
+            return Objects.nonNull(Cobblemon.INSTANCE.getBattleRegistry().getBattle(battleId));
+
+        } catch (NullPointerException e) {
+            return false;
+        }
+    }
+
     @Override
     public void setTrainer(String trainer) {
         throw new UnsupportedOperationException();
@@ -89,6 +104,8 @@ public class VillagerEntityMixin implements TrainerEntityBehavior {
 
     @Override
     public TrainerBattle getTrainerBattle() {
+        UUID battleId = trainerBattle.getBattleId();
+        Objects.requireNonNull(Cobblemon.INSTANCE.getBattleRegistry().getBattle(battleId));
         return trainerBattle;
     }
 

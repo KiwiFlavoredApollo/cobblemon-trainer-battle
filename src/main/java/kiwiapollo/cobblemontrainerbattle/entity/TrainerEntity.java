@@ -94,7 +94,7 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
 
     private void startTrainerBattle(ServerPlayerEntity player, Hand hand) {
         try {
-            if (isTrainerBattleExist()) {
+            if (hasTrainerBattle()) {
                 return;
             }
 
@@ -125,14 +125,14 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
 
     @Override
     public boolean damage(DamageSource source, float amount) {
-        if (isTrainerBattleExist()) {
+        if (hasTrainerBattle()) {
             return false;
         }
 
         return super.damage(source, amount);
     }
 
-    private boolean isTrainerBattleExist() {
+    private boolean hasTrainerBattle() {
         try {
             UUID battleId = trainerBattle.getBattleId();
             return Objects.nonNull(Cobblemon.INSTANCE.getBattleRegistry().getBattle(battleId));
@@ -151,7 +151,7 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
             CustomCriteria.KILL_TRAINER_CRITERION.trigger(player);
         }
 
-        if(isTrainerBattleExist()) {
+        if(hasTrainerBattle()) {
             UUID battleId = trainerBattle.getBattleId();
             Cobblemon.INSTANCE.getBattleRegistry().getBattle(battleId).end();
         }
@@ -211,6 +211,8 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
 
     @Override
     public TrainerBattle getTrainerBattle() {
+        UUID battleId = trainerBattle.getBattleId();
+        Objects.requireNonNull(Cobblemon.INSTANCE.getBattleRegistry().getBattle(battleId));
         return trainerBattle;
     }
 
