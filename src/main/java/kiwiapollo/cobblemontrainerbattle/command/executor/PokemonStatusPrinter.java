@@ -17,11 +17,11 @@ public abstract class PokemonStatusPrinter {
             Pokemon pokemon = party.get(i);
 
             player.sendMessage(Text.literal("[" + (i + 1) + "] ").append(getPokemonSpecies(pokemon)).formatted(Formatting.YELLOW));
-            player.sendMessage(Text.literal("Ability : ").append(getPokemonAbility(pokemon)));
-            player.sendMessage(Text.literal("Nature : ").append(getPokemonNature(pokemon)));
-            player.sendMessage(Text.literal("Moves : ").append(getPokemonMoveSet(pokemon.getMoveSet())));
-            player.sendMessage(Text.literal("IVs : ").append(getPokemonStats(pokemon.getIvs())));
-            player.sendMessage(Text.literal("EVs : ").append(getPokemonStats(pokemon.getEvs())));
+            player.sendMessage(Text.translatable("cobblemon.ui.info.ability").append(" : ").append(getPokemonAbility(pokemon)));
+            player.sendMessage(Text.translatable("cobblemon.ui.info.nature").append(" : ").append(getPokemonNature(pokemon)));
+            player.sendMessage(Text.translatable("cobblemon.ui.moves").append(" : ").append(getPokemonMoveSet(pokemon.getMoveSet())));
+            player.sendMessage(Text.translatable("cobblemon.ui.stats.ivs").append(" : ").append(getPokemonStats(pokemon.getIvs())));
+            player.sendMessage(Text.translatable("cobblemon.ui.stats.evs").append(" : ").append(getPokemonStats(pokemon.getEvs())));
         }
     }
 

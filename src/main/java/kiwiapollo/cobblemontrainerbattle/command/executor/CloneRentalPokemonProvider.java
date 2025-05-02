@@ -56,7 +56,7 @@ public class CloneRentalPokemonProvider implements Command<ServerCommandSource> 
         PartyStore rental = new PartyStore(UUID.randomUUID());
 
         party.toGappyList().stream().filter(Objects::nonNull).toList().subList(0, RentalBattlePreset.PARTY_SIZE).forEach(rental::add);
-        rental.toGappyList().forEach(pokemon -> pokemon.setLevel(RentalBattlePreset.LEVEL));
+        rental.toGappyList().stream().filter(Objects::nonNull).forEach(pokemon -> pokemon.setLevel(RentalBattlePreset.LEVEL));
 
         return rental;
     }
