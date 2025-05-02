@@ -24,14 +24,11 @@ public class PokeBallBoxBlock extends BlockWithEntity {
 
     public PokeBallBoxBlock() {
         super(AbstractBlock.Settings.copy(Blocks.COBBLESTONE));
-        this.setDefaultState(createDefaultState());
-    }
 
-    private BlockState createDefaultState() {
         BlockState state = getDefaultState();
         state = state.with(Properties.HORIZONTAL_FACING, Direction.NORTH);
         state = state.with(PokeBallBoxBlock.POWERED, false);
-        return state;
+        this.setDefaultState(state);
     }
 
     @Override
@@ -46,13 +43,16 @@ public class PokeBallBoxBlock extends BlockWithEntity {
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if (!world.isClient) {
-            NamedScreenHandlerFactory screenHandlerFactory = state.createScreenHandlerFactory(world, pos);
-
-            if (screenHandlerFactory != null) {
-                player.openHandledScreen(screenHandlerFactory);
-            }
+        if (world.isClient) {
+            return ActionResult.SUCCESS;
         }
+
+        NamedScreenHandlerFactory screenHandlerFactory = state.createScreenHandlerFactory(world, pos);
+
+        if (screenHandlerFactory != null) {
+            player.openHandledScreen(screenHandlerFactory);
+        }
+
         return ActionResult.SUCCESS;
     }
 
@@ -112,7 +112,11 @@ public class PokeBallBoxBlock extends BlockWithEntity {
 
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return createDefaultState().with(Properties.HORIZONTAL_FACING, ctx.getHorizontalPlayerFacing().getOpposite());
+        BlockState state = super.getPlacementState(ctx);
+        state = state.with(Properties.HORIZONTAL_FACING, Direction.NORTH);
+        state = state.with(PokeBallBoxBlock.POWERED, false);
+        state = state.with(Properties.HORIZONTAL_FACING, ctx.getHorizontalPlayerFacing().getOpposite());
+        return state;
     }
 
     @Override
