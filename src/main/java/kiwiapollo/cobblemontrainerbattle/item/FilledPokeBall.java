@@ -1,7 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.item;
 
 import com.cobblemon.mod.common.Cobblemon;
-import com.cobblemon.mod.common.api.abilities.Abilities;
 import com.cobblemon.mod.common.api.moves.Move;
 import com.cobblemon.mod.common.api.moves.MoveSet;
 import com.cobblemon.mod.common.api.pokemon.stats.Stats;
@@ -23,7 +22,6 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-import java.util.Objects;
 
 public class FilledPokeBall extends Item {
     public FilledPokeBall() {
