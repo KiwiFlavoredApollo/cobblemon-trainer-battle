@@ -24,7 +24,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.*;
 
-@Debug(export = true)
 @Mixin(VillagerEntity.class)
 public class VillagerEntityMixin implements TrainerEntityBehavior {
     private TrainerBattle trainerBattle;

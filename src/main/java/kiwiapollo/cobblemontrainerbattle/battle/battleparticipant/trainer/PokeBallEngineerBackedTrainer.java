@@ -132,7 +132,7 @@ public class PokeBallEngineerBackedTrainer implements TrainerBattleParticipant {
 
             world.scheduleBlockTick(pos, state.getBlock(), DURATION);
 
-        } catch (NullPointerException ignored) {
+        } catch (NullPointerException | IllegalArgumentException ignored) {
 
         }
     }
@@ -173,7 +173,6 @@ public class PokeBallEngineerBackedTrainer implements TrainerBattleParticipant {
     private static PokeBallBoxBlockEntity getPokeBallBox(VillagerEntity villager) {
         BlockPos pos = villager.getBrain().getOptionalMemory(MemoryModuleType.JOB_SITE).map(GlobalPos::getPos).get();
         BlockEntity block = villager.getWorld().getBlockEntity(pos);
-        CobblemonTrainerBattle.LOGGER.info("{} at {}", block, pos);
 
         return (PokeBallBoxBlockEntity) block;
     }
