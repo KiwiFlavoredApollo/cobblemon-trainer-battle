@@ -37,6 +37,8 @@ public class DataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(RecipeProvider::new);
         pack.addProvider(PoiTagProvider::new);
         pack.addProvider(TagProvider::new);
+        pack.addProvider(LootTableProvider::new);
+        pack.addProvider(BlockTagProvider::new);
         pack.addProvider(TrainerEntityLootTableProvider::new);
     }
 
