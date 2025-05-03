@@ -96,6 +96,10 @@ public class FilledPokeBall extends Item {
             return TypedActionResult.pass(stack);
         }
 
+        if (isPlayerInBattle((ServerPlayerEntity) player)) {
+            return TypedActionResult.pass(stack);
+        }
+
         if (!hasPokemon(stack)) {
             return TypedActionResult.pass(stack);
         }
@@ -109,6 +113,10 @@ public class FilledPokeBall extends Item {
         }
 
         return TypedActionResult.success(stack);
+    }
+
+    private boolean isPlayerInBattle(ServerPlayerEntity player) {
+        return Cobblemon.INSTANCE.getBattleRegistry().getBattleByParticipatingPlayer(player) != null;
     }
 
     private boolean hasPokemon(ItemStack stack) {

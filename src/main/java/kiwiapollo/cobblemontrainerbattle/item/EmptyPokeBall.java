@@ -31,7 +31,15 @@ public class EmptyPokeBall extends Item implements PokemonSelectingItem {
             return TypedActionResult.pass(stack);
         }
 
+        if (isPlayerInBattle((ServerPlayerEntity) player)) {
+            return TypedActionResult.pass(stack);
+        }
+
         return use((ServerPlayerEntity) player, stack);
+    }
+
+    private boolean isPlayerInBattle(ServerPlayerEntity player) {
+        return Cobblemon.INSTANCE.getBattleRegistry().getBattleByParticipatingPlayer(player) != null;
     }
 
     @Override
