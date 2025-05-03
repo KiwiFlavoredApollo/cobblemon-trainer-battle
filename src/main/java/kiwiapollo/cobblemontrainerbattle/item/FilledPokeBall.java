@@ -34,7 +34,11 @@ public class FilledPokeBall extends Item {
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         try {
             Pokemon pokemon = FilledPokeBall.getPokemon(stack);
-            tooltip.add(getPokemonSpecies(pokemon).formatted(Formatting.YELLOW));
+
+            Text name = getPokemonSpecies(pokemon).formatted(Formatting.YELLOW);
+            Text level = Text.translatable("cobblemon.ui.lv.number", getPokemonLevel(pokemon));
+
+            tooltip.add(Text.literal("").append(name).append(" ").append(level));
             tooltip.add(Text.translatable("cobblemon.ui.info.ability").append(" : ").append(getPokemonAbility(pokemon)));
             tooltip.add(Text.translatable("cobblemon.ui.info.nature").append(" : ").append(getPokemonNature(pokemon)));
             tooltip.add(Text.translatable("cobblemon.ui.moves").append(" : ").append(getPokemonMoveSet(pokemon.getMoveSet())));
@@ -44,6 +48,10 @@ public class FilledPokeBall extends Item {
         } catch (IllegalStateException | NullPointerException ignored) {
 
         }
+    }
+
+    private int getPokemonLevel(Pokemon pokemon) {
+        return pokemon.getLevel();
     }
 
     private MutableText getPokemonSpecies(Pokemon pokemon) {
