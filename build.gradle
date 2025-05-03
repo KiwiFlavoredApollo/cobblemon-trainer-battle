@@ -75,7 +75,6 @@ dependencies {
 
 	modImplementation("net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}")
 	compileOnly("net.luckperms:api:${project.luckperms_version}")
-    compileOnly("com.epherical.octo-economy-api:OctoEconomyApi-fabric:${project.octoecon_version}")
 	modImplementation("com.google.code.gson:gson:2.8.9")
 }
 
