@@ -5,6 +5,7 @@ The file is located at `.minecraft/config/cobblemontrainerbattle/config.json`
 ```json
 {
     "maximum_trainer_spawn_count": 1,
-    "trainer_spawn_interval_in_seconds": 60
+    "trainer_spawn_interval_in_seconds": 60,
+    "allow_hostile_trainer_spawn": true
 }
 ```

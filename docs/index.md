@@ -8,3 +8,5 @@ Cobblemon Trainer Battle is a side mod for Cobblemon that offers trainer battle 
 - NPC Trainers and Items
 - Inclement Emerald Progression System
 - Radical Red Progression System
+- Pokémon BDSP Progression System
+- Pokémon XY Progression System
