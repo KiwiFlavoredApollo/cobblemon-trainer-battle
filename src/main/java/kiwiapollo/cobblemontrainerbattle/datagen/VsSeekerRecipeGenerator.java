@@ -23,7 +23,7 @@ public class VsSeekerRecipeGenerator implements ItemRecipeGenerator {
                 .pattern("IBI")
                 .pattern("III")
                 .input('I', Items.IRON_INGOT)
-                .input('R', Items.REDSTONE_TORCH)
+                .input('R', Items.REDSTONE)
                 .input('B', Items.BLUE_STAINED_GLASS)
                 .criterion(FabricRecipeProvider.hasItem(Items.REDSTONE_TORCH), FabricRecipeProvider.conditionsFromItem(Items.REDSTONE_TORCH))
                 .offerTo(exporter);
