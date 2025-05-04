@@ -87,35 +87,29 @@ public class EntityBackedTrainer implements TrainerBattleParticipant {
 
     @Override
     public void onPlayerDefeat(ServerPlayerEntity player) {
-        onPlayerDefeatByTrainerEntity();
-        trainer.onPlayerDefeat(player);
+        try {
+            ((TrainerEntityBehavior) entity).onPlayerDefeat();
+            trainer.onPlayerDefeat(player);
+
+        } catch (ClassCastException ignored) {
+
+        }
     }
 
     @Override
     public void onPlayerVictory(ServerPlayerEntity player) {
-        onPlayerVictoryOverTrainerEntity();
-        trainer.onPlayerVictory(player);
+        try {
+            ((TrainerEntityBehavior) entity).onPlayerVictory();
+            trainer.onPlayerVictory(player);
+
+        } catch (ClassCastException ignored) {
+
+        }
     }
 
     @Override
     public Identifier getTexture() {
         return trainer.getTexture();
-    }
-
-    private void onPlayerDefeatByTrainerEntity() {
-        try {
-            ((TrainerEntityBehavior) entity).onPlayerDefeat();
-        } catch (ClassCastException ignored) {
-
-        }
-    }
-
-    private void onPlayerVictoryOverTrainerEntity() {
-        try {
-            ((TrainerEntityBehavior) entity).onPlayerVictory();
-        } catch (ClassCastException ignored) {
-
-        }
     }
 
     @Override
