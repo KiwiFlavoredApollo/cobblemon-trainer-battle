@@ -35,7 +35,7 @@ public interface TrainerBattleParticipant extends BattleParticipant {
 
     AIBattleActor createBattleActor(ServerPlayerEntity player);
 
-    LivingEntity getNearAttachedLivingEntity(ServerPlayerEntity player);
+    LivingEntity getEntity(ServerPlayerEntity player);
 
     void onPlayerDefeat(ServerPlayerEntity player);
 

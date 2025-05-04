@@ -100,13 +100,13 @@ public class PokeBallEngineerBackedTrainer implements TrainerBattleParticipant {
                 getUuid(),
                 getBattleTeam(player),
                 getBattleAI(),
-                getNearAttachedLivingEntity(player)
+                getEntity(player)
         );
     }
 
     @Override
-    public LivingEntity getNearAttachedLivingEntity(ServerPlayerEntity player) {
-        throw new NullPointerException();
+    public LivingEntity getEntity(ServerPlayerEntity player) {
+        return villager;
     }
 
     @Override

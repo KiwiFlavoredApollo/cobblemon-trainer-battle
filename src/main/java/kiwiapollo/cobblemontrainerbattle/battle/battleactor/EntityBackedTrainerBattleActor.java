@@ -24,6 +24,8 @@ import java.util.UUID;
 public class EntityBackedTrainerBattleActor extends AIBattleActor implements EntityBackedBattleActor<LivingEntity>, FleeableBattleActor {
     private final String name;
     private final LivingEntity entity;
+    private final ServerWorld world;
+    private final Vec3d pos;
 
     public EntityBackedTrainerBattleActor(
             String name,
@@ -35,6 +37,8 @@ public class EntityBackedTrainerBattleActor extends AIBattleActor implements Ent
         super(uuid, pokemon, battleAI);
         this.name = name;
         this.entity = entity;
+        this.world = (ServerWorld) entity.getWorld();
+        this.pos = entity.getPos();
     }
 
     @Override
@@ -68,7 +72,6 @@ public class EntityBackedTrainerBattleActor extends AIBattleActor implements Ent
     @Nullable
     @Override
     public Pair<ServerWorld, Vec3d> getWorldAndPosition() {
-        RegistryKey<World> entityWorldRegistryKey = entity.getEntityWorld().getRegistryKey();
-        return new Pair<>(entity.getServer().getWorld(entityWorldRegistryKey), entity.getPos());
+        return new Pair<>(world, pos);
     }
 }

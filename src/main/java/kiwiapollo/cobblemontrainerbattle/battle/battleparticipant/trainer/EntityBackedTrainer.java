@@ -16,6 +16,7 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -70,13 +71,13 @@ public class EntityBackedTrainer implements TrainerBattleParticipant {
                 getUuid(),
                 getBattleTeam(player),
                 getBattleAI(),
-                entity
+                getEntity(player)
         );
     }
 
     @Override
-    public LivingEntity getNearAttachedLivingEntity(ServerPlayerEntity player) {
-        return trainer.getNearAttachedLivingEntity(player);
+    public LivingEntity getEntity(ServerPlayerEntity player) {
+        return Objects.requireNonNull(entity);
     }
 
     @Override

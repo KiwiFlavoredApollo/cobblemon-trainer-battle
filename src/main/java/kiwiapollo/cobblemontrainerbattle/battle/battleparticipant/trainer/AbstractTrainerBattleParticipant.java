@@ -7,7 +7,6 @@ import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.mojang.brigadier.CommandDispatcher;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.EntityBackedTrainerBattleActor;
-import kiwiapollo.cobblemontrainerbattle.battle.battleactor.PlayerBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.SafeCopyBattlePokemonFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.BattleAIFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.BattleFormatFactory;
@@ -16,13 +15,11 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 import java.util.*;
-import java.util.stream.StreamSupport;
 
 public abstract class AbstractTrainerBattleParticipant implements TrainerBattleParticipant {
     private static final int MINIMUM_ENTITY_DISTANCE = 10;
@@ -101,39 +98,38 @@ public abstract class AbstractTrainerBattleParticipant implements TrainerBattleP
 
     @Override
     public AIBattleActor createBattleActor(ServerPlayerEntity player) {
-        try {
-            return new EntityBackedTrainerBattleActor(
-                    getName(),
-                    getUuid(),
-                    getBattleTeam(player),
-                    getBattleAI(),
-                    getNearAttachedLivingEntity(player)
-            );
+        return new EntityBackedTrainerBattleActor(
+                getName(),
+                getUuid(),
+                getBattleTeam(player),
+                getBattleAI(),
+                getEntityOrPlayer(player)
+        );
+    }
 
-        } catch (ClassCastException | NullPointerException e) {
-            return new PlayerBackedTrainerBattleActor(
-                    getName(),
-                    getUuid(),
-                    getBattleTeam(player),
-                    getBattleAI(),
-                    player
-            );
+    private LivingEntity getEntityOrPlayer(ServerPlayerEntity player) {
+        try {
+            return getEntity(player);
+
+        } catch (NullPointerException e) {
+            return player;
         }
     }
 
     @Override
-    public LivingEntity getNearAttachedLivingEntity(ServerPlayerEntity player) {
-        for (ServerWorld world : StreamSupport.stream(player.getServer().getWorlds().spliterator(), false).toList()) {
-            LivingEntity entity = (LivingEntity) world.getEntity(entityUuid);
+    public LivingEntity getEntity(ServerPlayerEntity player) {
+        try {
+            LivingEntity entity = (LivingEntity) player.getServerWorld().getEntity(entityUuid);
 
             if (entity.distanceTo(player) > MINIMUM_ENTITY_DISTANCE) {
                 throw new NullPointerException();
             }
 
             return entity;
-        }
 
-        throw new NullPointerException();
+        } catch (ClassCastException e) {
+            throw new NullPointerException();
+        }
     }
 
     @Override
