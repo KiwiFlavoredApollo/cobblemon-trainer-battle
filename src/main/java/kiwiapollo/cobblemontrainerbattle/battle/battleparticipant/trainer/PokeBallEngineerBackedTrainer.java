@@ -6,13 +6,12 @@ import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
-import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.EntityBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.SafeCopyBattlePokemonFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.Generation5AI;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.predicate.MessagePredicate;
-import kiwiapollo.cobblemontrainerbattle.block.PokeBallBoxBlock;
+import kiwiapollo.cobblemontrainerbattle.block.PokeBallBox;
 import kiwiapollo.cobblemontrainerbattle.block.PokeBallBoxBlockEntity;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
 import kiwiapollo.cobblemontrainerbattle.entity.TrainerTexture;
@@ -127,7 +126,7 @@ public class PokeBallEngineerBackedTrainer implements TrainerBattleParticipant {
             BlockPos pos = villager.getBrain().getOptionalMemory(MemoryModuleType.JOB_SITE).map(GlobalPos::getPos).get();
             BlockState state = world.getBlockState(pos);
 
-            world.setBlockState(pos, state.with(PokeBallBoxBlock.POWERED, true), 3);
+            world.setBlockState(pos, state.with(PokeBallBox.POWERED, true), 3);
             world.updateNeighbor(pos, state.getBlock(), pos);
 
             world.scheduleBlockTick(pos, state.getBlock(), DURATION);

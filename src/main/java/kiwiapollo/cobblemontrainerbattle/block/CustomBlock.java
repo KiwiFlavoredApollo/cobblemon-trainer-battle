@@ -7,8 +7,8 @@ import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 
 public enum CustomBlock {
-//    TRAINER_CARD_READER(new TrainerCardReader(), "trainer_card_reader"),
-    POKE_BALL_BOX(new PokeBallBoxBlock(), "poke_ball_box");
+    TRAINER_CARD_READER(new TrainerCardReader(), "trainer_card_reader"),
+    POKE_BALL_BOX(new PokeBallBox(), "poke_ball_box");
 
     private final Block block;
     private final Identifier identifier;

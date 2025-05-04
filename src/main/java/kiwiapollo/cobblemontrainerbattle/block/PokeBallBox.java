@@ -19,15 +19,15 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public class PokeBallBoxBlock extends BlockWithEntity {
+public class PokeBallBox extends BlockWithEntity {
     public static final BooleanProperty POWERED = BooleanProperty.of("powered");
 
-    public PokeBallBoxBlock() {
+    public PokeBallBox() {
         super(AbstractBlock.Settings.copy(Blocks.COBBLESTONE));
 
         BlockState state = getDefaultState();
         state = state.with(Properties.HORIZONTAL_FACING, Direction.NORTH);
-        state = state.with(PokeBallBoxBlock.POWERED, false);
+        state = state.with(PokeBallBox.POWERED, false);
         this.setDefaultState(state);
     }
 
@@ -73,8 +73,8 @@ public class PokeBallBoxBlock extends BlockWithEntity {
 
     @Deprecated
     public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        if (state.get(PokeBallBoxBlock.POWERED)) {
-            world.setBlockState(pos, state.with(PokeBallBoxBlock.POWERED, false), 3);
+        if (state.get(PokeBallBox.POWERED)) {
+            world.setBlockState(pos, state.with(PokeBallBox.POWERED, false), 3);
             world.updateNeighbor(pos, state.getBlock(), pos);
         }
     }
@@ -96,25 +96,25 @@ public class PokeBallBoxBlock extends BlockWithEntity {
 
     @Override
     public int getWeakRedstonePower(BlockState state, BlockView world, BlockPos pos, Direction direction) {
-        return state.get(PokeBallBoxBlock.POWERED) ? 15 : 0;
+        return state.get(PokeBallBox.POWERED) ? 15 : 0;
     }
 
     @Override
     public int getStrongRedstonePower(BlockState state, BlockView world, BlockPos pos, Direction direction) {
-        return state.get(PokeBallBoxBlock.POWERED) ? 15 : 0;
+        return state.get(PokeBallBox.POWERED) ? 15 : 0;
     }
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(Properties.HORIZONTAL_FACING);
-        builder.add(PokeBallBoxBlock.POWERED);
+        builder.add(PokeBallBox.POWERED);
     }
 
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
         BlockState state = super.getPlacementState(ctx);
         state = state.with(Properties.HORIZONTAL_FACING, Direction.NORTH);
-        state = state.with(PokeBallBoxBlock.POWERED, false);
+        state = state.with(PokeBallBox.POWERED, false);
         state = state.with(Properties.HORIZONTAL_FACING, ctx.getHorizontalPlayerFacing().getOpposite());
         return state;
     }
