@@ -53,7 +53,7 @@ public class PokeBallEngineerBackedTrainer implements TrainerBattleParticipant {
 
     @Override
     public String getId() {
-        return "";
+        return villager.getDisplayName().getString();
     }
 
     @Override
