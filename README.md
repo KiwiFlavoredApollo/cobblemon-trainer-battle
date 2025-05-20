@@ -18,7 +18,7 @@ Refer to [GitHub Pages](https://kiwiflavoredapollo.github.io/cobblemon-trainer-b
 
 ### Translations
 
-- [Voldir Silver](https://discordapp.com/users/291233979196243968) (French)
+- [Voldir](https://discordapp.com/users/291233979196243968) (French)
 
 ### Trainer Teams
 
