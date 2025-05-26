@@ -37,7 +37,7 @@ Please refer to [Configuration](../configuration) for disabling Hostile Trainers
 Static Trainers spawned with Static Trainer Spawn Eggs are persistent by default. However, those spawned with `/summon` command need to have `PersistenceRequired` set explicitly.
 
 ```
-/summon cobblemontrainerbattle:static_trainer ~ ~ ~ {Trainer:"radicalred/leader_brock",Texture:"minecraft:textures/entity/player/slim/steve.png", PersistenceRequired:1b}
+/summon cobblemontrainerbattle:static_trainer ~ ~ ~ {Trainer:"radicalred/leader_brock", PersistenceRequired:1b}
 ```
 ```
 /kill <uuid>
