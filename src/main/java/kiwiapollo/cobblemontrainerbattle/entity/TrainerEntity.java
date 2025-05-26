@@ -5,6 +5,7 @@ import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipantFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer.TrainerBattleParticipantFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.EntityBackedTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.NullTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
@@ -45,27 +46,32 @@ import java.util.UUID;
 
 public abstract class TrainerEntity extends PathAwareEntity implements TrainerEntityBehavior {
     public static final int FLEE_DISTANCE = 20;
+
     private static final String FALLBACK_TRAINER = "radicalred/player_red";
+    private static final String FALLBACK_TEXTURE = TrainerTexture.RED.getIdentifier().toString();
+
     private static final TrackedData<String> TRAINER = DataTracker.registerData(TrainerEntity.class, TrackedDataHandlerRegistry.STRING);
+    private static final TrackedData<String> TEXTURE = DataTracker.registerData(TrainerEntity.class, TrackedDataHandlerRegistry.STRING);
+
+    private static final String TRAINER_NBT_KEY = "Trainer";
 
     private TrainerBattle trainerBattle;
 
     public TrainerEntity(EntityType<? extends PathAwareEntity> type, World world) {
         super(type, world);
 
-        this.trainerBattle = null;
+        this.trainerBattle = new NullTrainerBattle();
     }
 
     /**
-     * When TrainerEntity is spawned by Mob Spawner, trainer and texture fields are not initialized.
-     * Seems like Mob Spawners do not call constructors when creating entities.
+     * If TrainerEntity is spawned by Mob Spawner, TRAINER and TEXTURE are not initialized.
+     * EntityTag NBT of a Trainer Spawn Egg will not be passed to SpawnData NBT of a Mob Spawner.
      */
     @Override
     @Nullable
     public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityNbt) {
         if (spawnReason.equals(SpawnReason.SPAWNER)) {
-            RandomSpawnableTrainerFactory factory = new RandomSpawnableTrainerFactory(trainer -> true);
-            getDataTracker().set(TRAINER, factory.create());
+            setTrainer(new RandomSpawnableTrainerFactory(trainer -> true).create());
         }
 
         return super.initialize(world, difficulty, spawnReason, entityData, entityNbt);
@@ -75,6 +81,7 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
     protected void initDataTracker() {
         super.initDataTracker();
         this.getDataTracker().startTracking(TRAINER, FALLBACK_TRAINER);
+        this.getDataTracker().startTracking(TEXTURE, FALLBACK_TEXTURE);
     }
 
     @Override
@@ -162,14 +169,14 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
     @Override
     public void writeCustomDataToNbt(NbtCompound nbt) {
         super.writeCustomDataToNbt(nbt);
-        nbt.putString("Trainer", getDataTracker().get(TRAINER));
+        nbt.putString(TRAINER_NBT_KEY, getDataTracker().get(TRAINER));
     }
 
     @Override
     public void readCustomDataFromNbt(NbtCompound nbt) {
         try {
             super.readCustomDataFromNbt(nbt);
-            getDataTracker().set(TRAINER, nbt.getString("Trainer"));
+            setTrainer(nbt.getString(TRAINER_NBT_KEY));
 
         } catch (NullPointerException e) {
             discard();
@@ -179,12 +186,23 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
     @Override
     public void setTrainer(String trainer) {
         this.getDataTracker().set(TRAINER, trainer);
+        this.getDataTracker().set(TEXTURE, getTexture(trainer));
     }
 
     @Override
     public Identifier getTexture() {
-        String trainer = getDataTracker().get(TRAINER);
-        return TrainerStorage.getInstance().get(trainer).getTexture();
+        String texture = getDataTracker().get(TEXTURE);
+        return Identifier.tryParse(Objects.requireNonNull(texture));
+    }
+
+    @Nullable
+    private String getTexture(String trainer) {
+        try {
+            return TrainerStorage.getInstance().get(trainer).getTexture().toString();
+
+        } catch (NullPointerException e) {
+            return FALLBACK_TEXTURE;
+        }
     }
 
     @Override
