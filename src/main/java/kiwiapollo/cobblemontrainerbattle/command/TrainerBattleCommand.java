@@ -24,7 +24,7 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
                 String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), "random")
         );
 
-        this.requires(new PlayerCommandSourcePredicate(permissions.toArray(String[]::new)))
+        this.requires(new PlayerCommandSourcePredicate(permissions))
                 .then(getSelectedTrainerBattleCommand())
                 .then(getRandomTrainerBattleCommand());
     }

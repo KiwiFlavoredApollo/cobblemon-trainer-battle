@@ -24,7 +24,7 @@ public class RentalBattleOtherCommand extends LiteralArgumentBuilder<ServerComma
                 String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), "random")
         );
 
-        this.requires(new MultiCommandSourcePredicate(permissions.toArray(String[]::new)))
+        this.requires(new MultiCommandSourcePredicate(permissions))
                 .then(getSelectedTrainerBattleCommand())
                 .then(getRandomTrainerBattleCommand());
     }

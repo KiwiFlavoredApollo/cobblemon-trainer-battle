@@ -22,7 +22,7 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
                 String.format("%s.%s", getLiteral(), "export")
         );
 
-        this.requires(new MultiCommandSourcePredicate(permissions.toArray(String[]::new)))
+        this.requires(new MultiCommandSourcePredicate(permissions))
                 .then(getReloadCommand())
                 .then(getExportCommand());
     }

@@ -10,14 +10,19 @@ public class MultiCommandSourcePredicate implements Predicate<ServerCommandSourc
     private static final int OP_LEVEL = 2;
     private final List<String> permissions;
 
-    public MultiCommandSourcePredicate(String... permissions) {
-        this.permissions = Arrays.asList(permissions);
+    public MultiCommandSourcePredicate(String permission) {
+        this(List.of(permission));
+    }
+
+    public MultiCommandSourcePredicate(List<String> permissions) {
+        this.permissions = permissions;
     }
 
     @Override
     public boolean test(ServerCommandSource source) {
         if (source.isExecutedByPlayer()) {
-            return new PlayerCommandSourcePredicate(permissions.toArray(String[]::new)).test(source);
+            return new PlayerCommandSourcePredicate(permissions).test(source);
+
         } else {
             return new PermissionLevelPredicate(OP_LEVEL).test(source);
         }
