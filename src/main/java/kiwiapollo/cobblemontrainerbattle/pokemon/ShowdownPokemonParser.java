@@ -3,6 +3,7 @@ package kiwiapollo.cobblemontrainerbattle.pokemon;
 import com.cobblemon.mod.common.api.abilities.Abilities;
 import com.cobblemon.mod.common.api.moves.Moves;
 import com.cobblemon.mod.common.api.pokemon.Natures;
+import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
 import com.cobblemon.mod.common.api.pokemon.stats.Stats;
 import com.cobblemon.mod.common.pokemon.Gender;
@@ -32,7 +33,7 @@ public class ShowdownPokemonParser {
         setPokemonAbility(pokemon, showdownPokemon.ability);
         setPokemonLevel(pokemon, showdownPokemon.level);
         setPokemonNature(pokemon, showdownPokemon.nature);
-
+        setPokemonUncatchable(pokemon);
         return pokemon;
     }
 
@@ -163,6 +164,10 @@ public class ShowdownPokemonParser {
                 CobblemonTrainerBattle.LOGGER.error("Move not found: {}", move);
             }
         }
+    }
+
+    private void setPokemonUncatchable(Pokemon pokemon) {
+        PokemonProperties.Companion.parse("uncatchable=yes").apply(pokemon);
     }
 
     private boolean shouldUseDefaultMoveSet(List<String> moves) {
