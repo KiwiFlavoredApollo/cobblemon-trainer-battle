@@ -44,7 +44,8 @@ public class ShowdownMoveParser {
             Map.entry("Tacke", "tackle"),
 
             Map.entry("Aqua Fang", "aquajet"),
-            Map.entry("DracoBarrage", "dragonrush")
+            Map.entry("DracoBarrage", "dragonrush"),
+            Map.entry("HP Fighting", "hiddenpower")
     );
 
     private static final List<String> IGNORE =  List.of(
