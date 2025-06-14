@@ -202,7 +202,7 @@ public class ShowdownPokemonParser {
     private static String sanitize(String string) {
         String s = string;
 
-        s = s.replaceAll("[^a-z0-9:]", "");
+        s = s.replaceAll("[^a-z0-9_:]", "");
 
         return s;
     }
@@ -210,6 +210,7 @@ public class ShowdownPokemonParser {
     private static String normalize(String string) {
         String s = string;
 
+        s = s.replace(" ", "_");
         s = s.toLowerCase();
 
         return s;
