@@ -8,6 +8,7 @@ import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
 import com.cobblemon.mod.common.api.pokemon.stats.Stats;
 import com.cobblemon.mod.common.pokemon.Gender;
 import com.cobblemon.mod.common.pokemon.Pokemon;
+import com.cobblemon.mod.common.pokemon.Species;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
 import net.minecraft.item.ItemStack;
@@ -34,13 +35,13 @@ public class ShowdownPokemonParser {
         setPokemonLevel(pokemon, showdownPokemon.level);
         setPokemonNature(pokemon, showdownPokemon.nature);
         setPokemonUncatchable(pokemon);
+
         return pokemon;
     }
 
-    private Pokemon createBasePokemon(ShowdownPokemon showdownPokemon) throws PokemonParseException {
+    private Pokemon createBasePokemon(ShowdownPokemon pokemon) throws PokemonParseException {
         try {
-            Identifier identifier = toCobblemonDefaultedIdentifier(removeFormName(showdownPokemon.species));
-            return PokemonSpecies.INSTANCE.getByIdentifier(identifier).create(DEFAULT_LEVEL);
+            return toSpecies(pokemon).create(DEFAULT_LEVEL);
 
         } catch (ClassCastException | NullPointerException e) {
             throw new PokemonParseException();
@@ -67,10 +68,7 @@ public class ShowdownPokemonParser {
 
     private void setPokemonAbility(Pokemon pokemon, String ability) {
         try {
-            String id = ability;
-            id = normalize(id);
-            id = sanitize(id);
-            pokemon.updateAbility(Abilities.INSTANCE.getOrException(id).create(false));
+            pokemon.updateAbility(Abilities.INSTANCE.getOrException(toAbilityName(ability)).create(false));
 
         } catch (NullPointerException | IllegalArgumentException ignored) {
 
@@ -109,8 +107,7 @@ public class ShowdownPokemonParser {
 
     private void setPokemonNature(Pokemon pokemon, String nature) {
         try {
-            Objects.requireNonNull(nature);
-            Identifier identifier = toCobblemonDefaultedIdentifier(nature);
+            Identifier identifier = toNatureIdentifier(Objects.requireNonNull(nature));
             pokemon.setNature(Objects.requireNonNull(Natures.INSTANCE.getNature(identifier)));
 
         } catch (NullPointerException ignored) {
@@ -144,7 +141,7 @@ public class ShowdownPokemonParser {
     }
 
     private ItemStack toHeldItem(String item) {
-        Identifier identifier = toCobblemonDefaultedIdentifier(item);
+        Identifier identifier = toHeldItemIdentifier(item);
         return new ItemStack(Registries.ITEM.get(identifier));
     }
 
@@ -174,17 +171,51 @@ public class ShowdownPokemonParser {
         return moves == null || moves.isEmpty();
     }
 
-    public static Identifier toCobblemonDefaultedIdentifier(String string) {
+    public static Species toSpecies(ShowdownPokemon pokemon) {
+        String string = removeFormName(pokemon.species);
+        Identifier identifier = toSpeciesIdentifier(string);
+        return PokemonSpecies.INSTANCE.getByIdentifier(identifier);
+    }
+
+    private static Identifier toSpeciesIdentifier(String string) {
         if (string.contains(String.valueOf(Identifier.NAMESPACE_SEPARATOR))) {
-            String id = string;
-            id = normalize(id);
-            id = sanitize(id);
-            return Identifier.tryParse(id);
+            return Identifier.tryParse(string);
 
         } else {
             String path = string;
-            path = normalize(path);
-            path = sanitize(path);
+
+            path = path.toLowerCase();
+            path = path.replaceAll("[^a-z0-9_:]", "");
+
+            return Identifier.of("cobblemon", path);
+        }
+    }
+
+    private static Identifier toNatureIdentifier(String string) {
+        if (string.contains(String.valueOf(Identifier.NAMESPACE_SEPARATOR))) {
+            return Identifier.tryParse(string);
+
+        } else {
+            String path = string;
+
+            path = path.toLowerCase();
+            path = path.replaceAll("[^a-z0-9_:]", "");
+
+            return Identifier.of("cobblemon", path);
+        }
+    }
+
+    private static Identifier toHeldItemIdentifier(String string) {
+        if (string.contains(String.valueOf(Identifier.NAMESPACE_SEPARATOR))) {
+            return Identifier.tryParse(string);
+
+        } else {
+            String path = string;
+
+            path = path.toLowerCase();
+            path = path.replace(" ", "_");
+            path = path.replaceAll("[^a-z0-9_:]", "");
+
             return Identifier.of("cobblemon", path);
         }
     }
@@ -199,20 +230,12 @@ public class ShowdownPokemonParser {
         return s;
     }
 
-    private static String sanitize(String string) {
-        String s = string;
+    private static String toAbilityName(String ability) {
+        String name = ability;
 
-        s = s.replaceAll("[^a-z0-9_:]", "");
+        name = name.toLowerCase();
+        name = name.replaceAll("[^a-z0-9_:]", "");
 
-        return s;
-    }
-
-    private static String normalize(String string) {
-        String s = string;
-
-        s = s.replace(" ", "_");
-        s = s.toLowerCase();
-
-        return s;
+        return name;
     }
 }

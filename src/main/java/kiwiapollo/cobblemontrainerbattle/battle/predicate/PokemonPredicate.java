@@ -1,6 +1,5 @@
 package kiwiapollo.cobblemontrainerbattle.battle.predicate;
 
-import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.cobblemon.mod.common.pokemon.Species;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
@@ -25,7 +24,7 @@ public abstract class PokemonPredicate implements MessagePredicate<PlayerBattleP
     private boolean isSpeciesEqual(Pokemon party, ShowdownPokemon required) {
         try {
             Identifier p = party.getSpecies().getResourceIdentifier();
-            Identifier r = ShowdownPokemonParser.toCobblemonDefaultedIdentifier(required.species);
+            Identifier r = ShowdownPokemonParser.toSpecies(required).getResourceIdentifier();
             return p.equals(r);
 
         } catch (NullPointerException e) {
@@ -43,21 +42,18 @@ public abstract class PokemonPredicate implements MessagePredicate<PlayerBattleP
 
     protected Text toPokemonDescriptor(ShowdownPokemon pokemon) {
         try {
-            Identifier identifier = ShowdownPokemonParser.toCobblemonDefaultedIdentifier(pokemon.species);
-            Species species = PokemonSpecies.INSTANCE.getByIdentifier(identifier);
-
-            boolean isFormExist = pokemon.form != null;
-
-            if (isFormExist) {
-                return species.getTranslatedName().append(" ").append(pokemon.form);
+            if (pokemon.form == null) {
+                Species species = ShowdownPokemonParser.toSpecies(pokemon);
+                return species.getTranslatedName();
 
             } else {
-                return species.getTranslatedName();
+                Species species = ShowdownPokemonParser.toSpecies(pokemon);
+                return species.getTranslatedName().append(" ").append(pokemon.form);
             }
 
         } catch (NullPointerException e) {
-            Identifier identifier = ShowdownPokemonParser.toCobblemonDefaultedIdentifier(pokemon.species);
-            CobblemonTrainerBattle.LOGGER.error("Unknown Pokemon species: {}", identifier);
+            Species species = ShowdownPokemonParser.toSpecies(pokemon);
+            CobblemonTrainerBattle.LOGGER.error("Unknown Pokemon species: {}", species.getResourceIdentifier());
             throw new IllegalStateException(e);
         }
     }
