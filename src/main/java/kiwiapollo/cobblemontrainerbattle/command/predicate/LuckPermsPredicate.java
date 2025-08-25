@@ -1,6 +1,5 @@
 package kiwiapollo.cobblemontrainerbattle.command.predicate;
 
-import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.fabricmc.loader.api.FabricLoader;
 import net.luckperms.api.LuckPermsProvider;
 import net.luckperms.api.cacheddata.CachedPermissionData;
@@ -29,10 +28,18 @@ public class LuckPermsPredicate implements Predicate<ServerCommandSource> {
             return false;
         }
 
-        ServerPlayerEntity player = source.getPlayer();
-        User user = LuckPermsProvider.get().getUserManager().getUser(player.getUuid());
-        CachedPermissionData userCachedPermissionData = user.getCachedData().getPermissionData();
+        return hasPermission(source.getPlayer());
+    }
 
-        return permissions.stream().map(userCachedPermissionData::checkPermission).anyMatch(Tristate::asBoolean);
+    private boolean hasPermission(ServerPlayerEntity player) {
+        try {
+            User user = LuckPermsProvider.get().getUserManager().getUser(player.getUuid());
+            CachedPermissionData cachedPermissionData = user.getCachedData().getPermissionData();
+
+            return permissions.stream().map(cachedPermissionData::checkPermission).anyMatch(Tristate::asBoolean);
+
+        } catch (NullPointerException e) {
+            return false;
+        }
     }
 }
