@@ -6,8 +6,7 @@ import com.cobblemon.mod.common.api.battles.model.actor.EntityBackedBattleActor;
 import com.cobblemon.mod.common.api.battles.model.actor.FleeableBattleActor;
 import com.cobblemon.mod.common.api.battles.model.ai.BattleAI;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
-import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntity;
+import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
 import kotlin.Pair;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.world.ServerWorld;
@@ -69,7 +68,7 @@ public class CustomTrainerBattleActor extends AIBattleActor implements EntityBac
 
     @Override
     public float getFleeDistance() {
-        return TrainerEntity.FLEE_DISTANCE;
+        return world.getGameRules().getInt(CustomGameRule.TRAINER_FLEE_DISTANCE_IN_BLOCKS);
     }
 
     @Nullable

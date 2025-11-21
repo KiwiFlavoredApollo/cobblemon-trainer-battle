@@ -55,8 +55,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.*;
 
 public abstract class TrainerEntity extends PathAwareEntity implements TrainerEntityBehavior {
-    public static final int FLEE_DISTANCE = 20;
-
     private static final String FALLBACK_TRAINER = "radicalred/player_red";
     private static final String FALLBACK_TEXTURE = TrainerTexture.RED.getIdentifier().toString();
 
