@@ -4,7 +4,7 @@
     "defeat_leader_wattson": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/leader_wattson"
+        "trainer": "cobblemontrainerbattle:entity/leader_wattson"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

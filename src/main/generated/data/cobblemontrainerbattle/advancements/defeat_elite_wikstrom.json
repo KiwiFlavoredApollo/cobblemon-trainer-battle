@@ -4,7 +4,7 @@
     "defeat_elite_wikstrom": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/elite_wikstrom"
+        "trainer": "cobblemontrainerbattle:entity/elite_wikstrom"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

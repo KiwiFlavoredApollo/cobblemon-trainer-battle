@@ -4,7 +4,7 @@
     "defeat_leader_chuck": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/leader_chuck"
+        "trainer": "cobblemontrainerbattle:entity/leader_chuck"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

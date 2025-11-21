@@ -4,7 +4,7 @@
     "defeat_elite_aaron": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/elite_aaron"
+        "trainer": "cobblemontrainerbattle:entity/elite_aaron"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

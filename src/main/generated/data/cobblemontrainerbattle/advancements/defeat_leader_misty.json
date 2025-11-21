@@ -4,7 +4,7 @@
     "defeat_leader_misty": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/leader_misty"
+        "trainer": "cobblemontrainerbattle:entity/leader_misty"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

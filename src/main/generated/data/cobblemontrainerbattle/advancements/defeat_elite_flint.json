@@ -4,7 +4,7 @@
     "defeat_elite_flint": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/elite_flint"
+        "trainer": "cobblemontrainerbattle:entity/elite_flint"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

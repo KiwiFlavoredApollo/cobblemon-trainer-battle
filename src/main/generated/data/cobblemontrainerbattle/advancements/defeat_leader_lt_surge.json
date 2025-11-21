@@ -4,7 +4,7 @@
     "defeat_leader_lt_surge": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/leader_lt_surge"
+        "trainer": "cobblemontrainerbattle:entity/leader_lt_surge"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

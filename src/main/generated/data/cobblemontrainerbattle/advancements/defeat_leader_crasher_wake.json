@@ -4,7 +4,7 @@
     "defeat_leader_crasher_wake": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/leader_crasher_wake"
+        "trainer": "cobblemontrainerbattle:entity/leader_crasher_wake"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

@@ -4,7 +4,7 @@
     "defeat_leader_pryce": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/leader_pryce"
+        "trainer": "cobblemontrainerbattle:entity/leader_pryce"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

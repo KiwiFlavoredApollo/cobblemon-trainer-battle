@@ -4,7 +4,7 @@
     "defeat_leader_ramos": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/leader_ramos"
+        "trainer": "cobblemontrainerbattle:entity/leader_ramos"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

@@ -4,7 +4,7 @@
     "defeat_elite_sidney": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/elite_sidney"
+        "trainer": "cobblemontrainerbattle:entity/elite_sidney"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

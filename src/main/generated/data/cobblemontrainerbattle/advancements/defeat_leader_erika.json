@@ -4,7 +4,7 @@
     "defeat_leader_erika": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/leader_erika"
+        "trainer": "cobblemontrainerbattle:entity/leader_erika"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

@@ -4,7 +4,7 @@
     "defeat_leader_wulfric": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/leader_wulfric"
+        "trainer": "cobblemontrainerbattle:entity/leader_wulfric"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

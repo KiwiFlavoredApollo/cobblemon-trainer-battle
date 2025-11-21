@@ -4,7 +4,7 @@
     "defeat_leader_maylene": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/leader_maylene"
+        "trainer": "cobblemontrainerbattle:entity/leader_maylene"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

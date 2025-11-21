@@ -4,7 +4,7 @@
     "defeat_elite_bruno": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/elite_bruno"
+        "trainer": "cobblemontrainerbattle:entity/elite_bruno"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

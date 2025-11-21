@@ -4,7 +4,7 @@
     "kill_champion_cynthia": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/champion_cynthia"
+        "trainer": "cobblemontrainerbattle:entity/champion_cynthia"
       },
       "trigger": "cobblemontrainerbattle:kill_trainer"
     }

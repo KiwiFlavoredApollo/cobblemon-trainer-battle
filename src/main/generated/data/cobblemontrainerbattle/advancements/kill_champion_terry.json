@@ -4,7 +4,7 @@
     "kill_champion_terry": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/champion_terry"
+        "trainer": "cobblemontrainerbattle:entity/champion_terry"
       },
       "trigger": "cobblemontrainerbattle:kill_trainer"
     }

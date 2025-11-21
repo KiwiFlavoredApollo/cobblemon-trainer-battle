@@ -4,7 +4,7 @@
     "defeat_leader_morty": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/leader_morty"
+        "trainer": "cobblemontrainerbattle:entity/leader_morty"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

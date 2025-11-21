@@ -4,7 +4,7 @@
     "defeat_leader_clemont": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/leader_clemont"
+        "trainer": "cobblemontrainerbattle:entity/leader_clemont"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

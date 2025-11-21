@@ -4,7 +4,7 @@
     "defeat_champion_wallace": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/champion_wallace"
+        "trainer": "cobblemontrainerbattle:entity/champion_wallace"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

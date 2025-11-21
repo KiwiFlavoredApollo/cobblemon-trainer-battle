@@ -4,7 +4,7 @@
     "defeat_elite_lance": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/elite_lance"
+        "trainer": "cobblemontrainerbattle:entity/elite_lance"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

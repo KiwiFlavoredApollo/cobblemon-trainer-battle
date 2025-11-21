@@ -4,7 +4,7 @@
     "defeat_leader_viola": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/leader_viola"
+        "trainer": "cobblemontrainerbattle:entity/leader_viola"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

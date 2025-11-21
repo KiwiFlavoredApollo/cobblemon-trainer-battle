@@ -4,7 +4,7 @@
     "defeat_leader_roark": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/leader_roark"
+        "trainer": "cobblemontrainerbattle:entity/leader_roark"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

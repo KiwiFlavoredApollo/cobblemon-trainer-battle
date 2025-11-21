@@ -4,7 +4,7 @@
     "defeat_leader_fantina": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/leader_fantina"
+        "trainer": "cobblemontrainerbattle:entity/leader_fantina"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

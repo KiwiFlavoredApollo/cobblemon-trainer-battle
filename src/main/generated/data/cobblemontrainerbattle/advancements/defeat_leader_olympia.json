@@ -4,7 +4,7 @@
     "defeat_leader_olympia": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/leader_olympia"
+        "trainer": "cobblemontrainerbattle:entity/leader_olympia"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

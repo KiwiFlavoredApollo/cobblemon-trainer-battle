@@ -4,7 +4,7 @@
     "defeat_elite_lucian": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/elite_lucian"
+        "trainer": "cobblemontrainerbattle:entity/elite_lucian"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

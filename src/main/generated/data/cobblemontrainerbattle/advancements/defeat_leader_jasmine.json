@@ -4,7 +4,7 @@
     "defeat_leader_jasmine": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/leader_jasmine"
+        "trainer": "cobblemontrainerbattle:entity/leader_jasmine"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

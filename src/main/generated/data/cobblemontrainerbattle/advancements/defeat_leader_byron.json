@@ -4,7 +4,7 @@
     "defeat_leader_byron": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/leader_byron"
+        "trainer": "cobblemontrainerbattle:entity/leader_byron"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

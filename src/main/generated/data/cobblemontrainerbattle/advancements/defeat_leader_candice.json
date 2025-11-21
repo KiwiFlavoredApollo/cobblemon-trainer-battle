@@ -4,7 +4,7 @@
     "defeat_leader_candice": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/leader_candice"
+        "trainer": "cobblemontrainerbattle:entity/leader_candice"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

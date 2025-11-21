@@ -4,7 +4,7 @@
     "defeat_leader_korrina": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/leader_korrina"
+        "trainer": "cobblemontrainerbattle:entity/leader_korrina"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

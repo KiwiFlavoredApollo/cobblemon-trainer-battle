@@ -4,7 +4,7 @@
     "defeat_leader_grant": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/leader_grant"
+        "trainer": "cobblemontrainerbattle:entity/leader_grant"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

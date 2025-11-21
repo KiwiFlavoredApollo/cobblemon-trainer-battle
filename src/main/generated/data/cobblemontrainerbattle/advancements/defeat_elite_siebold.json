@@ -4,7 +4,7 @@
     "defeat_elite_siebold": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/elite_siebold"
+        "trainer": "cobblemontrainerbattle:entity/elite_siebold"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

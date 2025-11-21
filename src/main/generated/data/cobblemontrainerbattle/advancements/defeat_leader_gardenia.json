@@ -4,7 +4,7 @@
     "defeat_leader_gardenia": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/leader_gardenia"
+        "trainer": "cobblemontrainerbattle:entity/leader_gardenia"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

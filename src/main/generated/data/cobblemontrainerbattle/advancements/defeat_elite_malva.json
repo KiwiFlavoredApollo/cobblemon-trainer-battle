@@ -4,7 +4,7 @@
     "defeat_elite_malva": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/elite_malva"
+        "trainer": "cobblemontrainerbattle:entity/elite_malva"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

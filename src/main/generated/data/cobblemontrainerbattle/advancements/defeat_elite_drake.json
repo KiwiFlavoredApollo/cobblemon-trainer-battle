@@ -4,7 +4,7 @@
     "defeat_elite_drake": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/elite_drake"
+        "trainer": "cobblemontrainerbattle:entity/elite_drake"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

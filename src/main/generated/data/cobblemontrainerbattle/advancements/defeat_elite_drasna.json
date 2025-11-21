@@ -4,7 +4,7 @@
     "defeat_elite_drasna": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/elite_drasna"
+        "trainer": "cobblemontrainerbattle:entity/elite_drasna"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

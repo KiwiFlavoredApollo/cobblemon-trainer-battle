@@ -4,7 +4,7 @@
     "defeat_champion_diantha": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/champion_diantha"
+        "trainer": "cobblemontrainerbattle:entity/champion_diantha"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

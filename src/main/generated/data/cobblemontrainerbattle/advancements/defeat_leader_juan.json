@@ -4,7 +4,7 @@
     "defeat_leader_juan": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/leader_juan"
+        "trainer": "cobblemontrainerbattle:entity/leader_juan"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

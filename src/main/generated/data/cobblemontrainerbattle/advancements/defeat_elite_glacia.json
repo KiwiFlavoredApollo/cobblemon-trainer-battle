@@ -4,7 +4,7 @@
     "defeat_elite_glacia": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/elite_glacia"
+        "trainer": "cobblemontrainerbattle:entity/elite_glacia"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

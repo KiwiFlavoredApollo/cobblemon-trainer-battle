@@ -4,7 +4,7 @@
     "defeat_leader_tate_and_liza": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/leader_tate_and_liza"
+        "trainer": "cobblemontrainerbattle:entity/leader_tate_and_liza"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

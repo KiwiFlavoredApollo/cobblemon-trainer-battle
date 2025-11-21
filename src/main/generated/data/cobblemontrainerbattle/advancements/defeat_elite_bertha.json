@@ -4,7 +4,7 @@
     "defeat_elite_bertha": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/elite_bertha"
+        "trainer": "cobblemontrainerbattle:entity/elite_bertha"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

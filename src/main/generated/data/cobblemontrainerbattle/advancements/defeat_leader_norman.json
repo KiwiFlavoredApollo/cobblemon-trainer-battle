@@ -4,7 +4,7 @@
     "defeat_leader_norman": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/leader_norman"
+        "trainer": "cobblemontrainerbattle:entity/leader_norman"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }

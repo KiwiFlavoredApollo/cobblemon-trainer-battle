@@ -4,7 +4,7 @@
     "defeat_leader_whitney": {
       "conditions": {
         "count": 1,
-        "trainer": "entity/leader_whitney"
+        "trainer": "cobblemontrainerbattle:entity/leader_whitney"
       },
       "trigger": "cobblemontrainerbattle:defeat_trainer"
     }
