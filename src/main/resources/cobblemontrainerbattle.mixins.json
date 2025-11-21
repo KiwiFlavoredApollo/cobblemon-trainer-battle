@@ -6,7 +6,8 @@
 		"ExampleMixin",
 		"VillagerEntityMixin",
 		"LivingEntityMixin",
-		"DropTableMixin"
+		"DropTableMixin",
+		"IdentifierArgumentTypeMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

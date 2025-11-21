@@ -1,7 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.command.executor;
 
 import com.mojang.brigadier.Command;
-import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.RentalBattlePlayer;
@@ -10,11 +9,11 @@ import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.PlayerBackedTraine
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.random.RandomRentalBattleTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.preset.RentalBattlePreset;
-import kiwiapollo.cobblemontrainerbattle.command.CustomIdentifierArgumentType;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
 import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerTemplateStorage;
 import net.minecraft.command.argument.EntityArgumentType;
+import net.minecraft.command.argument.IdentifierArgumentType;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
@@ -70,7 +69,7 @@ public abstract class RentalBattleStarter implements Command<ServerCommandSource
         @Override
         public int run(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
             ServerPlayerEntity player = context.getSource().getPlayerOrThrow();
-            Identifier trainer = CustomIdentifierArgumentType.getIdentifier(context, "trainer");
+            Identifier trainer = IdentifierArgumentType.getIdentifier(context, "trainer");
 
             return super.run(player, trainer);
         }
@@ -90,7 +89,7 @@ public abstract class RentalBattleStarter implements Command<ServerCommandSource
         @Override
         public int run(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
             ServerPlayerEntity player = EntityArgumentType.getPlayer(context, "player");
-            Identifier trainer = CustomIdentifierArgumentType.getIdentifier(context, "trainer");
+            Identifier trainer = IdentifierArgumentType.getIdentifier(context, "trainer");
 
             return super.run(player, trainer);
         }

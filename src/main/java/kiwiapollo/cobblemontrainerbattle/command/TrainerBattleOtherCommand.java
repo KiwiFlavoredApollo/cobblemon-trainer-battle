@@ -1,6 +1,5 @@
 package kiwiapollo.cobblemontrainerbattle.command;
 
-import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
@@ -34,7 +33,7 @@ public class TrainerBattleOtherCommand extends LiteralArgumentBuilder<ServerComm
         String permission = String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), "trainer");
         return RequiredArgumentBuilder.<ServerCommandSource, EntitySelector>argument("player", EntityArgumentType.player())
                 .requires(new MultiCommandSourcePredicate(permission))
-                .then(RequiredArgumentBuilder.<ServerCommandSource, Identifier>argument("trainer", CustomIdentifierArgumentType.identifier())
+                .then(RequiredArgumentBuilder.<ServerCommandSource, Identifier>argument("trainer", IdentifierArgumentType.identifier())
                         .suggests(new TrainerSuggestionProvider())
                         .executes(new TrainerBattleStarter.BetweenOtherPlayerAndSelectedTrainer()));
     }

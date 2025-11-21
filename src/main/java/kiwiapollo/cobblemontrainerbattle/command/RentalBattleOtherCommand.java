@@ -34,7 +34,7 @@ public class RentalBattleOtherCommand extends LiteralArgumentBuilder<ServerComma
         String permission = String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), "trainer");
         return RequiredArgumentBuilder.<ServerCommandSource, EntitySelector>argument("player", EntityArgumentType.player())
                 .requires(new MultiCommandSourcePredicate(permission))
-                .then(RequiredArgumentBuilder.<ServerCommandSource, Identifier>argument("trainer", CustomIdentifierArgumentType.identifier())
+                .then(RequiredArgumentBuilder.<ServerCommandSource, Identifier>argument("trainer", IdentifierArgumentType.identifier())
                         .suggests(new TrainerSuggestionProvider())
                         .executes(new RentalBattleStarter.BetweenOtherPlayerAndSelectedTrainer()));
     }

@@ -1,14 +1,12 @@
 package kiwiapollo.cobblemontrainerbattle.command.executor;
 
 import com.mojang.brigadier.Command;
-import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipantFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer.TrainerBattleParticipantFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.PlayerBackedTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.command.CustomIdentifierArgumentType;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
 import kiwiapollo.cobblemontrainerbattle.battle.random.RandomTrainerBattleTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
@@ -57,7 +55,7 @@ public abstract class TrainerBattleStarter implements Command<ServerCommandSourc
         @Override
         public int run(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
             ServerPlayerEntity player = context.getSource().getPlayerOrThrow();
-            Identifier trainer = CustomIdentifierArgumentType.getIdentifier(context, "trainer");
+            Identifier trainer = IdentifierArgumentType.getIdentifier(context, "trainer");
 
             return super.run(player, trainer);
         }
@@ -77,7 +75,7 @@ public abstract class TrainerBattleStarter implements Command<ServerCommandSourc
         @Override
         public int run(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
             ServerPlayerEntity player = EntityArgumentType.getPlayer(context, "player");
-            Identifier trainer = CustomIdentifierArgumentType.getIdentifier(context, "trainer");
+            Identifier trainer = IdentifierArgumentType.getIdentifier(context, "trainer");
 
             return super.run(player, trainer);
         }

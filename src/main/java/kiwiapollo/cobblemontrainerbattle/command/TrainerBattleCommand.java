@@ -29,7 +29,7 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
 
     private ArgumentBuilder<ServerCommandSource, ?> getSelectedTrainerBattleCommand() {
         String permission = String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), "trainer");
-        return RequiredArgumentBuilder.<ServerCommandSource, Identifier>argument("trainer", CustomIdentifierArgumentType.identifier())
+        return RequiredArgumentBuilder.<ServerCommandSource, Identifier>argument("trainer", IdentifierArgumentType.identifier())
                 .requires(new PlayerCommandSourcePredicate(permission))
                 .suggests(new TrainerSuggestionProvider())
                 .executes(new TrainerBattleStarter.BetweenThisPlayerAndSelectedTrainer());

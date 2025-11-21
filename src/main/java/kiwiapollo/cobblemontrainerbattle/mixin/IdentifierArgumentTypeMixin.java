@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.command;
+package kiwiapollo.cobblemontrainerbattle.mixin;
 
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
@@ -8,13 +8,29 @@ import net.minecraft.command.argument.IdentifierArgumentType;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.InvalidIdentifierException;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-/**
- * @see Identifier#fromCommandInput(StringReader)
- */
-public class CustomIdentifierArgumentType extends IdentifierArgumentType {
-    @Override
-    public Identifier parse(StringReader reader) throws CommandSyntaxException {
+@Mixin(IdentifierArgumentType.class)
+public class IdentifierArgumentTypeMixin {
+    @Inject(method = "parse", at = @At("HEAD"), cancellable = true)
+    public void parseTrainerBattleCommandIdentifierArgument(StringReader reader, CallbackInfoReturnable<Identifier> info) throws CommandSyntaxException {
+        if (!isTrainerBattleCommand(reader)) {
+            return;
+        }
+
+        Identifier identifier = parseDefaultedIdentifierArgument(reader);
+        info.setReturnValue(identifier);
+        info.cancel();
+    }
+
+    private boolean isTrainerBattleCommand(StringReader reader) {
+        return reader.getString().matches("^(trainerbattle|rentalbattle) .+");
+    }
+
+    private Identifier parseDefaultedIdentifierArgument(StringReader reader) throws CommandSyntaxException {
         int i = reader.getCursor();
 
         while(reader.canRead() && Identifier.isCharValid(reader.peek())) {
