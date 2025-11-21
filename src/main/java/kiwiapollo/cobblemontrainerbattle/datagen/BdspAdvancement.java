@@ -13,7 +13,7 @@ import net.minecraft.util.Identifier;
 public enum BdspAdvancement implements CustomAdvancement {
     DEFEAT_ROARK(Advancement.Builder.createUntelemetered()
             .parent(DataGenerator.AdvancementProvider.ROOT)
-            .criterion("defeat_leader_roark", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_roark"))
+            .criterion("defeat_leader_roark", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_roark")))
             .display(
                     BdspTokenItem.LEADER_ROARK_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_roark.title"),
@@ -28,7 +28,7 @@ public enum BdspAdvancement implements CustomAdvancement {
 
     DEFEAT_GARDENIA(Advancement.Builder.createUntelemetered()
             .parent(BdspAdvancement.DEFEAT_ROARK.getAdvancement())
-            .criterion("defeat_leader_gardenia", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_gardenia"))
+            .criterion("defeat_leader_gardenia", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_gardenia")))
             .display(
                     BdspTokenItem.LEADER_GARDENIA_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_gardenia.title"),
@@ -43,7 +43,7 @@ public enum BdspAdvancement implements CustomAdvancement {
 
     DEFEAT_MAYLENE(Advancement.Builder.createUntelemetered()
             .parent(BdspAdvancement.DEFEAT_GARDENIA.getAdvancement())
-            .criterion("defeat_leader_maylene", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_maylene"))
+            .criterion("defeat_leader_maylene", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_maylene")))
             .display(
                     BdspTokenItem.LEADER_MAYLENE_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_maylene.title"),
@@ -58,7 +58,7 @@ public enum BdspAdvancement implements CustomAdvancement {
 
     DEFEAT_CRASHER_WAKE(Advancement.Builder.createUntelemetered()
             .parent(BdspAdvancement.DEFEAT_MAYLENE.getAdvancement())
-            .criterion("defeat_leader_crasher_wake", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_crasher_wake"))
+            .criterion("defeat_leader_crasher_wake", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_crasher_wake")))
             .display(
                     BdspTokenItem.LEADER_CRASHER_WAKE_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_crasher_wake.title"),
@@ -73,7 +73,7 @@ public enum BdspAdvancement implements CustomAdvancement {
 
     DEFEAT_FANTINA(Advancement.Builder.createUntelemetered()
             .parent(BdspAdvancement.DEFEAT_CRASHER_WAKE.getAdvancement())
-            .criterion("defeat_leader_fantina", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_fantina"))
+            .criterion("defeat_leader_fantina", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_fantina")))
             .display(
                     BdspTokenItem.LEADER_FANTINA_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_fantina.title"),
@@ -88,7 +88,7 @@ public enum BdspAdvancement implements CustomAdvancement {
 
     DEFEAT_BYRON(Advancement.Builder.createUntelemetered()
             .parent(BdspAdvancement.DEFEAT_FANTINA.getAdvancement())
-            .criterion("defeat_leader_byron", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_byron"))
+            .criterion("defeat_leader_byron", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_byron")))
             .display(
                     BdspTokenItem.LEADER_BYRON_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_byron.title"),
@@ -103,7 +103,7 @@ public enum BdspAdvancement implements CustomAdvancement {
 
     DEFEAT_CANDICE(Advancement.Builder.createUntelemetered()
             .parent(BdspAdvancement.DEFEAT_BYRON.getAdvancement())
-            .criterion("defeat_leader_candice", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_candice"))
+            .criterion("defeat_leader_candice", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_candice")))
             .display(
                     BdspTokenItem.LEADER_CANDICE_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_candice.title"),
@@ -118,7 +118,7 @@ public enum BdspAdvancement implements CustomAdvancement {
 
     DEFEAT_VOLKNER(Advancement.Builder.createUntelemetered()
             .parent(BdspAdvancement.DEFEAT_CANDICE.getAdvancement())
-            .criterion("defeat_leader_volkner", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_volkner"))
+            .criterion("defeat_leader_volkner", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_volkner")))
             .display(
                     BdspTokenItem.LEADER_VOLKNER_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_volkner.title"),
@@ -133,7 +133,7 @@ public enum BdspAdvancement implements CustomAdvancement {
 
     DEFEAT_AARON(Advancement.Builder.createUntelemetered()
             .parent(DataGenerator.AdvancementProvider.ROOT)
-            .criterion("defeat_elite_aaron", new DefeatTrainerCriterion.TrainerCountConditions("entity/elite_aaron"))
+            .criterion("defeat_elite_aaron", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/elite_aaron")))
             .display(
                     BdspTokenItem.ELITE_AARON_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_aaron.title"),
@@ -148,7 +148,7 @@ public enum BdspAdvancement implements CustomAdvancement {
 
     DEFEAT_BERTHA(Advancement.Builder.createUntelemetered()
             .parent(BdspAdvancement.DEFEAT_AARON.getAdvancement())
-            .criterion("defeat_elite_bertha", new DefeatTrainerCriterion.TrainerCountConditions("entity/elite_bertha"))
+            .criterion("defeat_elite_bertha", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/elite_bertha")))
             .display(
                     BdspTokenItem.ELITE_BERTHA_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_bertha.title"),
@@ -163,7 +163,7 @@ public enum BdspAdvancement implements CustomAdvancement {
 
     DEFEAT_FLINT(Advancement.Builder.createUntelemetered()
             .parent(BdspAdvancement.DEFEAT_BERTHA.getAdvancement())
-            .criterion("defeat_elite_flint", new DefeatTrainerCriterion.TrainerCountConditions("entity/elite_flint"))
+            .criterion("defeat_elite_flint", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/elite_flint")))
             .display(
                     BdspTokenItem.ELITE_FLINT_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_flint.title"),
@@ -178,7 +178,7 @@ public enum BdspAdvancement implements CustomAdvancement {
 
     DEFEAT_LUCIAN(Advancement.Builder.createUntelemetered()
             .parent(BdspAdvancement.DEFEAT_FLINT.getAdvancement())
-            .criterion("defeat_elite_lucian", new DefeatTrainerCriterion.TrainerCountConditions("entity/elite_lucian"))
+            .criterion("defeat_elite_lucian", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/elite_lucian")))
             .display(
                     BdspTokenItem.ELITE_LUCIAN_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_lucian.title"),
@@ -193,7 +193,7 @@ public enum BdspAdvancement implements CustomAdvancement {
 
     DEFEAT_CYNTHIA(Advancement.Builder.createUntelemetered()
             .parent(BdspAdvancement.DEFEAT_LUCIAN.getAdvancement())
-            .criterion("defeat_champion_cynthia", new DefeatTrainerCriterion.TrainerCountConditions("entity/champion_cynthia"))
+            .criterion("defeat_champion_cynthia", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/champion_cynthia")))
             .display(
                     BdspTokenItem.CHAMPION_CYNTHIA_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_champion_cynthia.title"),
@@ -208,7 +208,7 @@ public enum BdspAdvancement implements CustomAdvancement {
 
     KILL_CYNTHIA(Advancement.Builder.createUntelemetered()
             .parent(BdspAdvancement.DEFEAT_LUCIAN.getAdvancement())
-            .criterion("kill_champion_cynthia", new KillTrainerCriterion.TrainerCountConditions("entity/champion_cynthia"))
+            .criterion("kill_champion_cynthia", new KillTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/champion_cynthia")))
             .display(
                     Items.NETHERITE_SWORD,
                     Text.translatable("advancement.cobblemontrainerbattle.kill_champion_cynthia.title"),

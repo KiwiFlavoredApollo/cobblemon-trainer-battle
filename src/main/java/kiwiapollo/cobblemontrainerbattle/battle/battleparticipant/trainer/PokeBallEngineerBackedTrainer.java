@@ -6,6 +6,7 @@ import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
+import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.EntityBackedTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.SafeCopyBattlePokemonFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.Generation5AI;
@@ -25,6 +26,7 @@ import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.GlobalPos;
@@ -52,8 +54,8 @@ public class PokeBallEngineerBackedTrainer implements TrainerBattleParticipant {
     }
 
     @Override
-    public String getId() {
-        return villager.getDisplayName().getString();
+    public Identifier getIdentifier() {
+        return Identifier.of(CobblemonTrainerBattle.MOD_ID, villager.getDisplayName().getString()); // TODO
     }
 
     @Override
@@ -142,8 +144,8 @@ public class PokeBallEngineerBackedTrainer implements TrainerBattleParticipant {
     }
 
     @Override
-    public String getName() {
-        return villager.getDisplayName().getString();
+    public Text getName() {
+        return villager.getDisplayName();
     }
 
     @Override

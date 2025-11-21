@@ -6,6 +6,7 @@ import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.MutableText;
+import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 
 import java.util.List;
@@ -35,8 +36,8 @@ public class AbstractPlayerBattleParticipant implements PlayerBattleParticipant 
     }
 
     @Override
-    public String getName() {
-        return player.getGameProfile().getName();
+    public Text getName() {
+        return Text.literal(player.getGameProfile().getName());
     }
 
     @Override

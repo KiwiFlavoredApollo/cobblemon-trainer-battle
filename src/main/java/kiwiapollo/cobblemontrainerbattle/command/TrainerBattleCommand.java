@@ -1,6 +1,5 @@
 package kiwiapollo.cobblemontrainerbattle.command;
 
-import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
@@ -8,11 +7,10 @@ import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.command.executor.TrainerBattleStarter;
 import kiwiapollo.cobblemontrainerbattle.command.predicate.PlayerCommandSourcePredicate;
 import kiwiapollo.cobblemontrainerbattle.command.suggestion.TrainerSuggestionProvider;
-import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerStorage;
+import net.minecraft.command.argument.IdentifierArgumentType;
 import net.minecraft.server.command.ServerCommandSource;
+import net.minecraft.util.Identifier;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSource> {
@@ -31,7 +29,7 @@ public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSo
 
     private ArgumentBuilder<ServerCommandSource, ?> getSelectedTrainerBattleCommand() {
         String permission = String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), "trainer");
-        return RequiredArgumentBuilder.<ServerCommandSource, String>argument("trainer", StringArgumentType.greedyString())
+        return RequiredArgumentBuilder.<ServerCommandSource, Identifier>argument("trainer", CustomIdentifierArgumentType.identifier())
                 .requires(new PlayerCommandSourcePredicate(permission))
                 .suggests(new TrainerSuggestionProvider())
                 .executes(new TrainerBattleStarter.BetweenThisPlayerAndSelectedTrainer());

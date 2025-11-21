@@ -8,6 +8,7 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 
@@ -37,8 +38,8 @@ public abstract class TrainerEntitySpawner implements WeightedEntitySpawner, Ent
 
     protected abstract TrainerEntity createTrainerEntity(ServerWorld world, ServerPlayerEntity player);
 
-    protected Predicate<String> toPredicate(PlayerInventory inventory) {
-        List<Predicate<String>> predicates = new ArrayList<>();
+    protected Predicate<Identifier> toPredicate(PlayerInventory inventory) {
+        List<Predicate<Identifier>> predicates = new ArrayList<>();
 
         predicates.add(trainer -> false);
         predicates.addAll(VsSeeker.getVsSeekers(inventory));

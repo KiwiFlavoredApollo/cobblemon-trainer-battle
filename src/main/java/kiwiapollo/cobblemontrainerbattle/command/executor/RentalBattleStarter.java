@@ -10,17 +10,19 @@ import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.PlayerBackedTraine
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.random.RandomRentalBattleTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.preset.RentalBattlePreset;
+import kiwiapollo.cobblemontrainerbattle.command.CustomIdentifierArgumentType;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
-import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerStorage;
+import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerTemplateStorage;
 import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
+import net.minecraft.util.Identifier;
 
 public abstract class RentalBattleStarter implements Command<ServerCommandSource> {
-    public int run(ServerPlayerEntity player, String trainer) {
+    public int run(ServerPlayerEntity player, Identifier trainer) {
         try {
             if (!isKnownTrainer(trainer)) {
                 player.sendMessage(Text.translatable("command.cobblemontrainerbattle.error.rentalbattle.unknown_trainer", trainer).formatted(Formatting.RED));
@@ -52,23 +54,23 @@ public abstract class RentalBattleStarter implements Command<ServerCommandSource
         }
     }
 
-    private boolean isKnownTrainer(String trainer) {
-        return TrainerStorage.getInstance().keySet().contains(trainer);
+    private boolean isKnownTrainer(Identifier trainer) {
+        return TrainerTemplateStorage.getInstance().keySet().contains(trainer);
     }
 
     private boolean hasRentalBattleMinimumPartySize(ServerPlayerEntity player) {
         return BattleContextStorage.getInstance().getOrCreate(player.getUuid()).getRentalPokemon().occupied() >= RentalBattlePreset.PARTY_SIZE;
     }
 
-    private boolean hasRentalBattleMinimumPartySize(String trainer) {
-        return TrainerStorage.getInstance().get(trainer).getParty().occupied() >= RentalBattlePreset.PARTY_SIZE;
+    private boolean hasRentalBattleMinimumPartySize(Identifier trainer) {
+        return TrainerTemplateStorage.getInstance().get(trainer).getTeam().size() >= RentalBattlePreset.PARTY_SIZE;
     }
 
     public static class BetweenThisPlayerAndSelectedTrainer extends RentalBattleStarter {
         @Override
         public int run(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
             ServerPlayerEntity player = context.getSource().getPlayerOrThrow();
-            String trainer = StringArgumentType.getString(context, "trainer");
+            Identifier trainer = CustomIdentifierArgumentType.getIdentifier(context, "trainer");
 
             return super.run(player, trainer);
         }
@@ -78,7 +80,7 @@ public abstract class RentalBattleStarter implements Command<ServerCommandSource
         @Override
         public int run(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
             ServerPlayerEntity player = context.getSource().getPlayerOrThrow();
-            String trainer = new RandomRentalBattleTrainerFactory().create();
+            Identifier trainer = new RandomRentalBattleTrainerFactory().create();
 
             return super.run(player, trainer);
         }
@@ -88,7 +90,7 @@ public abstract class RentalBattleStarter implements Command<ServerCommandSource
         @Override
         public int run(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
             ServerPlayerEntity player = EntityArgumentType.getPlayer(context, "player");
-            String trainer = StringArgumentType.getString(context, "trainer");
+            Identifier trainer = CustomIdentifierArgumentType.getIdentifier(context, "trainer");
 
             return super.run(player, trainer);
         }
@@ -98,7 +100,7 @@ public abstract class RentalBattleStarter implements Command<ServerCommandSource
         @Override
         public int run(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
             ServerPlayerEntity player = EntityArgumentType.getPlayer(context, "player");
-            String trainer = new RandomRentalBattleTrainerFactory().create();
+            Identifier trainer = new RandomRentalBattleTrainerFactory().create();
 
             return super.run(player, trainer);
         }

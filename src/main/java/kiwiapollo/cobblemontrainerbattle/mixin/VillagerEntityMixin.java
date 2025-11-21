@@ -92,7 +92,7 @@ public class VillagerEntityMixin implements TrainerEntityBehavior {
     }
 
     @Override
-    public void setTrainer(String trainer) {
+    public void setTrainer(Identifier trainer) {
         throw new UnsupportedOperationException();
     }
 

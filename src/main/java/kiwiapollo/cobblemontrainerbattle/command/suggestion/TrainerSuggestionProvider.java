@@ -5,8 +5,9 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
 import com.mojang.brigadier.suggestion.Suggestions;
 import com.mojang.brigadier.suggestion.SuggestionsBuilder;
-import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerStorage;
+import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerTemplateStorage;
 import net.minecraft.server.command.ServerCommandSource;
+import net.minecraft.util.Identifier;
 
 import java.util.Arrays;
 import java.util.List;
@@ -16,7 +17,7 @@ public class TrainerSuggestionProvider implements SuggestionProvider<ServerComma
     @Override
     public CompletableFuture<Suggestions> getSuggestions(CommandContext<ServerCommandSource> context, SuggestionsBuilder builder) throws CommandSyntaxException {
         String input = getIncompleteInput(context);
-        TrainerStorage.getInstance().keySet().stream().filter(s -> s.startsWith(input)).forEach(builder::suggest);
+        TrainerTemplateStorage.getInstance().keySet().stream().filter(identifier -> identifier.getPath().startsWith(input)).map(Identifier::toString).forEach(builder::suggest);
         return builder.buildFuture();
     }
 

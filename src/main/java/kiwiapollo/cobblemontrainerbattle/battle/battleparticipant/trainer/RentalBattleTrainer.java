@@ -12,10 +12,11 @@ import kiwiapollo.cobblemontrainerbattle.battle.predicate.*;
 import kiwiapollo.cobblemontrainerbattle.battle.preset.RentalBattlePreset;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
 import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
-import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerStorage;
+import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerTemplateStorage;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 import java.util.*;
@@ -23,8 +24,8 @@ import java.util.*;
 public class RentalBattleTrainer implements TrainerBattleParticipant {
     private final TrainerBattleParticipant trainer;
 
-    public RentalBattleTrainer(String trainer) {
-        this.trainer = TrainerStorage.getInstance().get(trainer);
+    public RentalBattleTrainer(Identifier trainer) {
+        this.trainer = new TrainerBattleParticipantFactory(trainer).create();
     }
 
     @Override
@@ -91,8 +92,8 @@ public class RentalBattleTrainer implements TrainerBattleParticipant {
     }
 
     @Override
-    public String getId() {
-        return trainer.getId();
+    public Identifier getIdentifier() {
+        return trainer.getIdentifier();
     }
 
     @Override
@@ -121,7 +122,7 @@ public class RentalBattleTrainer implements TrainerBattleParticipant {
     }
 
     @Override
-    public String getName() {
+    public Text getName() {
         return trainer.getName();
     }
 

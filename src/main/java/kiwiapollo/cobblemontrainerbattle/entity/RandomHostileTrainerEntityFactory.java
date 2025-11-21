@@ -2,6 +2,7 @@ package kiwiapollo.cobblemontrainerbattle.entity;
 
 import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 
 public class RandomHostileTrainerEntityFactory extends TrainerEntityFactory<HostileTrainerEntity> {
@@ -9,7 +10,7 @@ public class RandomHostileTrainerEntityFactory extends TrainerEntityFactory<Host
         super();
     }
 
-    public RandomHostileTrainerEntityFactory(SimpleFactory<String> trainer) {
+    public RandomHostileTrainerEntityFactory(SimpleFactory<Identifier> trainer) {
         super(trainer);
     }
 

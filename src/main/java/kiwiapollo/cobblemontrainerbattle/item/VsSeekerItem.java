@@ -30,7 +30,7 @@ public enum VsSeekerItem {
         return identifier;
     }
 
-    private static class GroupPredicate implements Predicate<String> {
+    private static class GroupPredicate implements Predicate<Identifier> {
         private final String group;
 
         GroupPredicate(String group) {
@@ -38,8 +38,8 @@ public enum VsSeekerItem {
         }
 
         @Override
-        public boolean test(String trainer) {
-            return trainer.matches(String.format("^%s/.+", group));
+        public boolean test(Identifier trainer) {
+            return trainer.getPath().matches(String.format("^%s/.+", group));
         }
     }
 }

@@ -39,8 +39,8 @@ public class DefeatTrainerCriterion extends AbstractCriterion<DefeatTrainerCrite
         return obj.has("trainer");
     }
 
-    private String getTrainerCondition(JsonObject obj) {
-        return obj.get("trainer").getAsString();
+    private Identifier getTrainerCondition(JsonObject obj) {
+        return Identifier.tryParse(obj.get("trainer").getAsString());
     }
 
     private int getCountCondition(JsonObject obj) {
@@ -75,14 +75,14 @@ public class DefeatTrainerCriterion extends AbstractCriterion<DefeatTrainerCrite
     }
 
     public static class TrainerCountConditions extends DefeatTrainerCriterion.Conditions {
-        private final String trainer;
+        private final Identifier trainer;
         private final int count;
 
-        public TrainerCountConditions(String trainer) {
+        public TrainerCountConditions(Identifier trainer) {
             this(trainer, ONE);
         }
 
-        public TrainerCountConditions(String trainer, int count) {
+        public TrainerCountConditions(Identifier trainer, int count) {
             super(ID, LootContextPredicate.EMPTY);
             this.trainer = trainer;
             this.count = count;

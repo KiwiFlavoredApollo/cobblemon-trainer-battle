@@ -1,13 +1,10 @@
 package kiwiapollo.cobblemontrainerbattle.entity;
 
-import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerStorage;
 import net.minecraft.client.render.entity.BipedEntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.model.EntityModelLayers;
 import net.minecraft.client.render.entity.model.PlayerEntityModel;
 import net.minecraft.util.Identifier;
-
-import java.util.Optional;
 
 public class TrainerEntityRenderer<T extends TrainerEntity> extends BipedEntityRenderer<T, PlayerEntityModel<T>> {
     private static final TrainerTexture FALLBACK_TEXTURE = TrainerTexture.RED;

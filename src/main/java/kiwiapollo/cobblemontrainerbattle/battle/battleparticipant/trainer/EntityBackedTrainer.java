@@ -13,6 +13,7 @@ import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntityBehavior;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
@@ -30,8 +31,8 @@ public class EntityBackedTrainer implements TrainerBattleParticipant {
     }
 
     @Override
-    public String getId() {
-        return trainer.getId();
+    public Identifier getIdentifier() {
+        return trainer.getIdentifier();
     }
 
     @Override
@@ -113,7 +114,7 @@ public class EntityBackedTrainer implements TrainerBattleParticipant {
     }
 
     @Override
-    public String getName() {
+    public Text getName() {
         return trainer.getName();
     }
 

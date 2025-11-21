@@ -4,17 +4,18 @@ import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerB
 import kiwiapollo.cobblemontrainerbattle.global.history.PlayerHistoryStorage;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
 
 import java.time.Duration;
 import java.time.Instant;
 
 public class CooldownElapsedPredicate implements MessagePredicate<PlayerBattleParticipant> {
-    private final String trainer;
+    private final Identifier trainer;
     private final long cooldown;
 
     private long remains;
 
-    public CooldownElapsedPredicate(String trainer, long cooldown) {
+    public CooldownElapsedPredicate(Identifier trainer, long cooldown) {
         this.trainer = trainer;
         this.cooldown = cooldown;
     }

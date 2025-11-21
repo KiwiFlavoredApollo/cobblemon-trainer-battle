@@ -4,7 +4,7 @@ import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
 import net.minecraft.util.Identifier;
 
 public interface TrainerEntityBehavior {
-    void setTrainer(String trainer);
+    void setTrainer(Identifier trainer);
 
     Identifier getTexture();
 

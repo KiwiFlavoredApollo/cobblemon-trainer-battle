@@ -13,7 +13,7 @@ import net.minecraft.util.Identifier;
 public enum XyAdvancement implements CustomAdvancement {
     DEFEAT_VIOLA(Advancement.Builder.createUntelemetered()
             .parent(DataGenerator.AdvancementProvider.ROOT)
-            .criterion("defeat_leader_viola", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_viola"))
+            .criterion("defeat_leader_viola", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_viola")))
             .display(
                     XyTokenItem.LEADER_VIOLA_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_viola.title"),
@@ -28,7 +28,7 @@ public enum XyAdvancement implements CustomAdvancement {
 
     DEFEAT_GRANT(Advancement.Builder.createUntelemetered()
             .parent(XyAdvancement.DEFEAT_VIOLA.getAdvancement())
-            .criterion("defeat_leader_grant", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_grant"))
+            .criterion("defeat_leader_grant", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_grant")))
             .display(
                     XyTokenItem.LEADER_GRANT_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_grant.title"),
@@ -43,7 +43,7 @@ public enum XyAdvancement implements CustomAdvancement {
 
     DEFEAT_KORRINA(Advancement.Builder.createUntelemetered()
             .parent(XyAdvancement.DEFEAT_GRANT.getAdvancement())
-            .criterion("defeat_leader_korrina", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_korrina"))
+            .criterion("defeat_leader_korrina", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_korrina")))
             .display(
                     XyTokenItem.LEADER_KORRINA_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_korrina.title"),
@@ -58,7 +58,7 @@ public enum XyAdvancement implements CustomAdvancement {
 
     DEFEAT_RAMOS(Advancement.Builder.createUntelemetered()
             .parent(XyAdvancement.DEFEAT_KORRINA.getAdvancement())
-            .criterion("defeat_leader_ramos", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_ramos"))
+            .criterion("defeat_leader_ramos", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_ramos")))
             .display(
                     XyTokenItem.LEADER_RAMOS_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_ramos.title"),
@@ -73,7 +73,7 @@ public enum XyAdvancement implements CustomAdvancement {
 
     DEFEAT_CLEMONT(Advancement.Builder.createUntelemetered()
             .parent(XyAdvancement.DEFEAT_RAMOS.getAdvancement())
-            .criterion("defeat_leader_clemont", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_clemont"))
+            .criterion("defeat_leader_clemont", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_clemont")))
             .display(
                     XyTokenItem.LEADER_CLEMONT_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_clemont.title"),
@@ -88,7 +88,7 @@ public enum XyAdvancement implements CustomAdvancement {
 
     DEFEAT_VALERIE(Advancement.Builder.createUntelemetered()
             .parent(XyAdvancement.DEFEAT_CLEMONT.getAdvancement())
-            .criterion("defeat_leader_valerie", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_valerie"))
+            .criterion("defeat_leader_valerie", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_valerie")))
             .display(
                     XyTokenItem.LEADER_VALERIE_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_valerie.title"),
@@ -103,7 +103,7 @@ public enum XyAdvancement implements CustomAdvancement {
 
     DEFEAT_OLYMPIA(Advancement.Builder.createUntelemetered()
             .parent(XyAdvancement.DEFEAT_VALERIE.getAdvancement())
-            .criterion("defeat_leader_olympia", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_olympia"))
+            .criterion("defeat_leader_olympia", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_olympia")))
             .display(
                     XyTokenItem.LEADER_OLYMPIA_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_olympia.title"),
@@ -118,7 +118,7 @@ public enum XyAdvancement implements CustomAdvancement {
 
     DEFEAT_WULFRIC(Advancement.Builder.createUntelemetered()
             .parent(XyAdvancement.DEFEAT_OLYMPIA.getAdvancement())
-            .criterion("defeat_leader_wulfric", new DefeatTrainerCriterion.TrainerCountConditions("entity/leader_wulfric"))
+            .criterion("defeat_leader_wulfric", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_wulfric")))
             .display(
                     XyTokenItem.LEADER_WULFRIC_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_wulfric.title"),
@@ -133,7 +133,7 @@ public enum XyAdvancement implements CustomAdvancement {
 
     DEFEAT_WIKSTROM(Advancement.Builder.createUntelemetered()
             .parent(DataGenerator.AdvancementProvider.ROOT)
-            .criterion("defeat_elite_wikstrom", new DefeatTrainerCriterion.TrainerCountConditions("entity/elite_wikstrom"))
+            .criterion("defeat_elite_wikstrom", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/elite_wikstrom")))
             .display(
                     XyTokenItem.ELITE_WIKSTROM_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_wikstrom.title"),
@@ -148,7 +148,7 @@ public enum XyAdvancement implements CustomAdvancement {
 
     DEFEAT_MALVA(Advancement.Builder.createUntelemetered()
             .parent(XyAdvancement.DEFEAT_WIKSTROM.getAdvancement())
-            .criterion("defeat_elite_malva", new DefeatTrainerCriterion.TrainerCountConditions("entity/elite_malva"))
+            .criterion("defeat_elite_malva", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/elite_malva")))
             .display(
                     XyTokenItem.ELITE_MALVA_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_malva.title"),
@@ -163,7 +163,7 @@ public enum XyAdvancement implements CustomAdvancement {
 
     DEFEAT_DRASNA(Advancement.Builder.createUntelemetered()
             .parent(XyAdvancement.DEFEAT_MALVA.getAdvancement())
-            .criterion("defeat_elite_drasna", new DefeatTrainerCriterion.TrainerCountConditions("entity/elite_drasna"))
+            .criterion("defeat_elite_drasna", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/elite_drasna")))
             .display(
                     XyTokenItem.ELITE_DRASNA_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_drasna.title"),
@@ -178,7 +178,7 @@ public enum XyAdvancement implements CustomAdvancement {
 
     DEFEAT_SIEBOLD(Advancement.Builder.createUntelemetered()
             .parent(XyAdvancement.DEFEAT_DRASNA.getAdvancement())
-            .criterion("defeat_elite_siebold", new DefeatTrainerCriterion.TrainerCountConditions("entity/elite_siebold"))
+            .criterion("defeat_elite_siebold", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/elite_siebold")))
             .display(
                     XyTokenItem.ELITE_SIEBOLD_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_siebold.title"),
@@ -193,7 +193,7 @@ public enum XyAdvancement implements CustomAdvancement {
 
     DEFEAT_DIANTHA(Advancement.Builder.createUntelemetered()
             .parent(XyAdvancement.DEFEAT_SIEBOLD.getAdvancement())
-            .criterion("defeat_champion_diantha", new DefeatTrainerCriterion.TrainerCountConditions("entity/champion_diantha"))
+            .criterion("defeat_champion_diantha", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/champion_diantha")))
             .display(
                     XyTokenItem.CHAMPION_DIANTHA_TOKEN.getItem(),
                     Text.translatable("advancement.cobblemontrainerbattle.defeat_champion_diantha.title"),
@@ -208,7 +208,7 @@ public enum XyAdvancement implements CustomAdvancement {
 
     KILL_DIANTHA(Advancement.Builder.createUntelemetered()
             .parent(XyAdvancement.DEFEAT_SIEBOLD.getAdvancement())
-            .criterion("kill_champion_diantha", new KillTrainerCriterion.TrainerCountConditions("entity/champion_diantha"))
+            .criterion("kill_champion_diantha", new KillTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/champion_diantha")))
             .display(
                     Items.NETHERITE_SWORD,
                     Text.translatable("advancement.cobblemontrainerbattle.kill_champion_diantha.title"),

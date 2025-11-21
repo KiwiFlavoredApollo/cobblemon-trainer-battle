@@ -26,7 +26,7 @@ public enum BdspTicketItem {
 
     BdspTicketItem(String path, String trainer) {
         this.identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, path);
-        this.item = new TrainerTicket(new Item.Settings(), trainer);
+        this.item = new TrainerTicket(new Item.Settings(), Identifier.of(CobblemonTrainerBattle.MOD_ID, trainer));
     }
 
     public Item getItem() {

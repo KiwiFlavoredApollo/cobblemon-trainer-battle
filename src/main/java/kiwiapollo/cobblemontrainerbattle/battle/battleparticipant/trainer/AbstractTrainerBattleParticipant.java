@@ -11,6 +11,7 @@ import kiwiapollo.cobblemontrainerbattle.battle.battleactor.SafeCopyBattlePokemo
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.BattleAIFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.BattleFormatFactory;
 import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerPreset;
+import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerTemplate;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
@@ -24,9 +25,9 @@ import java.util.*;
 public abstract class AbstractTrainerBattleParticipant implements TrainerBattleParticipant {
     private static final int MINIMUM_ENTITY_DISTANCE = 10;
 
-    private final String id;
+    private final Identifier identifier;
     private final UUID uuid;
-    private final String name;
+    private final Text name;
     private final PartyStore party;
     private final BattleFormat battleFormat;
     private final BattleAI battleAI;
@@ -37,32 +38,23 @@ public abstract class AbstractTrainerBattleParticipant implements TrainerBattleP
     private final List<String> onVictoryCommands;
     private final List<String> onDefeatCommands;
 
-    public AbstractTrainerBattleParticipant(String id, TrainerPreset preset, PartyStore party) {
-        this.id = id;
+    public AbstractTrainerBattleParticipant(TrainerTemplate template, PartyStore party) {
+        this.identifier = template.getIdentifier();
         this.uuid = UUID.randomUUID();
-        this.name = Text.translatable(Optional.ofNullable(preset.displayName).orElse(id)).getString();
+        this.name = template.getDisplayName();
         this.party = party;
-        this.battleFormat = new BattleFormatFactory(preset.battleFormat).create();
-        this.battleAI = new BattleAIFactory(preset.battleFormat, preset.battleAI).create();
-        this.battleTheme = SoundEvent.of(Identifier.tryParse(preset.battleTheme));
-        this.entityUuid = toUUID(preset.entityUuid);
-        this.texture = Identifier.tryParse(preset.texture);
-        this.isSpawningAllowed = preset.isSpawningAllowed;
-        this.onVictoryCommands = preset.onVictoryCommands;
-        this.onDefeatCommands = preset.onDefeatCommands;
-    }
-
-    private static UUID toUUID(String uuid) {
-        try {
-            return UUID.fromString(Objects.requireNonNull(uuid));
-
-        } catch (NullPointerException | IllegalArgumentException e) {
-            return UUID.randomUUID();
-        }
+        this.battleFormat = template.getBattleFormat();
+        this.battleAI = template.getBattleAI();
+        this.battleTheme = template.getBattleTheme();
+        this.entityUuid = template.getEntityUuid();
+        this.texture = template.getTexture();
+        this.isSpawningAllowed = template.isSpawningAllowed();
+        this.onVictoryCommands = template.getOnVictoryCommands();
+        this.onDefeatCommands = template.getOnDefeatCommands();
     }
 
     @Override
-    public String getName() {
+    public Text getName() {
         return name;
     }
 
@@ -72,8 +64,8 @@ public abstract class AbstractTrainerBattleParticipant implements TrainerBattleP
     }
 
     @Override
-    public String getId() {
-        return id;
+    public Identifier getIdentifier() {
+        return identifier;
     }
 
     @Override

@@ -23,7 +23,7 @@ import kiwiapollo.cobblemontrainerbattle.global.history.PlayerHistorySaver;
 import kiwiapollo.cobblemontrainerbattle.pokemon.FormAspectProvider;
 import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextGenerator;
 import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextRemover;
-import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerStorage;
+import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerTemplateStorage;
 import kiwiapollo.cobblemontrainerbattle.villager.PokeBallEngineerVillager;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
@@ -71,7 +71,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 			dispatcher.register(new CobblemonTrainerBattleCommand());
 		});
 
-		ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(TrainerStorage.getInstance());
+		ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(TrainerTemplateStorage.getInstance());
 
 		Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "neutral_trainer"), CustomEntityType.NEUTRAL_TRAINER);
 		FabricDefaultAttributeRegistry.register(CustomEntityType.NEUTRAL_TRAINER, NeutralTrainerEntity.createMobAttributes());

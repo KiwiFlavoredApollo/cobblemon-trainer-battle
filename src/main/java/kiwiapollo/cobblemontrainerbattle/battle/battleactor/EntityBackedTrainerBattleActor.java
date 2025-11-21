@@ -22,13 +22,13 @@ import java.util.List;
 import java.util.UUID;
 
 public class EntityBackedTrainerBattleActor extends AIBattleActor implements EntityBackedBattleActor<LivingEntity>, FleeableBattleActor {
-    private final String name;
+    private final Text name;
     private final LivingEntity entity;
     private final ServerWorld world;
     private final Vec3d pos;
 
     public EntityBackedTrainerBattleActor(
-            String name,
+            Text name,
             UUID uuid,
             List<BattlePokemon> pokemon,
             BattleAI battleAI,
@@ -55,7 +55,7 @@ public class EntityBackedTrainerBattleActor extends AIBattleActor implements Ent
     @NotNull
     @Override
     public MutableText getName() {
-        return Text.literal(this.name);
+        return this.name.copy();
     }
 
     @NotNull

@@ -1,19 +1,21 @@
 package kiwiapollo.cobblemontrainerbattle.global.history;
 
+import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.common.LazyMap;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.util.Identifier;
 
 import java.util.*;
 
-public class PlayerHistory implements NbtConvertible, RecordStatisticsProvider, LazyMap<String, TrainerRecord> {
-    private final Map<String, TrainerRecord> records;
+public class PlayerHistory implements NbtConvertible, RecordStatisticsProvider, LazyMap<Identifier, TrainerRecord> {
+    private final Map<Identifier, TrainerRecord> records;
 
     public PlayerHistory() {
         this.records = new HashMap<>();
     }
 
     @Override
-    public TrainerRecord getOrCreate(String trainer) {
+    public TrainerRecord getOrCreate(Identifier trainer) {
         if (!records.containsKey(trainer)) {
             records.put(trainer, new TrainerRecord());
         }
@@ -22,7 +24,7 @@ public class PlayerHistory implements NbtConvertible, RecordStatisticsProvider, 
     }
 
     @Override
-    public void put(String trainer, TrainerRecord record) {
+    public void put(Identifier trainer, TrainerRecord record) {
         records.put(trainer, record);
     }
 
@@ -32,12 +34,12 @@ public class PlayerHistory implements NbtConvertible, RecordStatisticsProvider, 
     }
 
     @Override
-    public void remove(String trainer) {
+    public void remove(Identifier trainer) {
         records.remove(trainer);
     }
 
     @Override
-    public Iterable<? extends Map.Entry<String, TrainerRecord>> entrySet() {
+    public Iterable<? extends Map.Entry<Identifier, TrainerRecord>> entrySet() {
         return records.entrySet();
     }
 
@@ -67,7 +69,7 @@ public class PlayerHistory implements NbtConvertible, RecordStatisticsProvider, 
             try {
                 TrainerRecord record = new TrainerRecord();
                 record.readFromNbt(nbt.getCompound(trainer));
-                records.put(toNonLegacyTrainer(trainer), record);
+                records.put(toDefaultedIdentifier(trainer), record);
 
             } catch (NullPointerException | IllegalArgumentException ignored) {
 
@@ -75,13 +77,9 @@ public class PlayerHistory implements NbtConvertible, RecordStatisticsProvider, 
         }
     }
 
-    private String toNonLegacyTrainer(String trainer) {
-        return trainer.replace("^trainer:", "");
-    }
-
     @Override
     public NbtCompound writeToNbt(NbtCompound nbt) {
-        records.forEach((identifier, record) -> nbt.put(identifier, toNbtCompound(record)));
+        records.forEach((identifier, record) -> nbt.put(identifier.toString(), toNbtCompound(record)));
         return nbt;
     }
 
@@ -89,5 +87,14 @@ public class PlayerHistory implements NbtConvertible, RecordStatisticsProvider, 
         NbtCompound nbt = new NbtCompound();
         record.writeToNbt(nbt);
         return nbt;
+    }
+
+    private Identifier toDefaultedIdentifier(String string) {
+        if (string.contains(String.valueOf(Identifier.NAMESPACE_SEPARATOR))) {
+            return Identifier.tryParse(string);
+
+        } else {
+            return Identifier.of(CobblemonTrainerBattle.MOD_ID, string);
+        }
     }
 }

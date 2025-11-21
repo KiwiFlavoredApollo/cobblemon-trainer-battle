@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface TrainerBattleParticipant extends BattleParticipant {
-    String getId();
+    Identifier getIdentifier();
 
     BattleAI getBattleAI();
 

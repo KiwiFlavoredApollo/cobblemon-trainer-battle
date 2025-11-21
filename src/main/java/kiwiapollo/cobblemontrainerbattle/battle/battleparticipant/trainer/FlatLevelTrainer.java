@@ -1,13 +1,13 @@
 package kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer;
 
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
+import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.predicate.*;
-import kiwiapollo.cobblemontrainerbattle.pokemon.FlatLevelShowdownPokemonParser;
+import kiwiapollo.cobblemontrainerbattle.battle.preset.FlatLevelBattlePreset;
+import kiwiapollo.cobblemontrainerbattle.global.preset.PokemonLevelPair;
+import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerTemplate;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
-import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerPreset;
-import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
-import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemon;
 
 import java.util.List;
 import java.util.UUID;
@@ -15,37 +15,36 @@ import java.util.UUID;
 public class FlatLevelTrainer extends AbstractTrainerBattleParticipant {
     private final List<MessagePredicate<PlayerBattleParticipant>> predicates;
 
-    public FlatLevelTrainer(String id, TrainerPreset preset, List<ShowdownPokemon> team) {
-        super(id, preset, toPartyStore(team));
+    public FlatLevelTrainer(TrainerTemplate template) {
+        super(template, toPartyStore(template.getTeam()));
         this.predicates = List.of(
-                new RematchAllowedPredicate(id, preset.isRematchAllowed),
-                new CooldownElapsedPredicate(id, preset.cooldownInSeconds),
+                template.getRematchAllowedPredicate(),
+                template.getCooldownElapsedPredicate(),
 
-                new MaximumPartySizePredicate.PlayerPredicate(preset.maximumPartySize),
-                new MinimumPartySizePredicate.PlayerPredicate(preset.minimumPartySize),
+                template.getMaximumPartySizePredicate(),
+                template.getMinimumPartySizePredicate(),
 
-                new RequiredLabelPredicate(preset.requiredLabel),
-                new RequiredPokemonPredicate(preset.requiredPokemon),
-                new RequiredHeldItemPredicate(preset.requiredHeldItem),
-                new RequiredAbilityPredicate(preset.requiredAbility),
-                new RequiredMovePredicate(preset.requiredMove),
+                template.getRequiredLabelPredicate(),
+                template.getRequiredPokemonPredicate(),
+                template.getRequiredHeldItemPredicate(),
+                template.getRequiredAbilityPredicate(),
+                template.getRequiredMovePredicate(),
 
-                new ForbiddenLabelPredicate(preset.forbiddenLabel),
-                new ForbiddenPokemonPredicate(preset.forbiddenPokemon),
-                new ForbiddenHeldItemPredicate(preset.forbiddenHeldItem),
-                new ForbiddenAbilityPredicate(preset.forbiddenAbility),
-                new ForbiddenMovePredicate(preset.forbiddenMove)
+                template.getForbiddenLabelPredicate(),
+                template.getForbiddenPokemonPredicate(),
+                template.getForbiddenHeldItemPredicate(),
+                template.getForbiddenAbilityPredicate(),
+                template.getForbiddenMovePredicate()
         );
     }
 
-    private static PartyStore toPartyStore(List<ShowdownPokemon> team) {
+    private static PartyStore toPartyStore(List<PokemonLevelPair> team) {
         PartyStore party = new PartyStore(UUID.randomUUID());
-        for (ShowdownPokemon showdownPokemon : team) {
-            try {
-                party.add(new FlatLevelShowdownPokemonParser().toCobblemonPokemon(showdownPokemon));
-            } catch (PokemonParseException ignored) {
 
-            }
+        for (PokemonLevelPair pair : team) {
+            Pokemon pokemon = pair.getPokemon().clone(true, true);
+            pokemon.setLevel(FlatLevelBattlePreset.LEVEL);
+            party.add(pokemon);
         }
 
         return party;

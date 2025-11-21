@@ -1,9 +1,13 @@
 package kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer;
 
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
+import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.predicate.*;
+import kiwiapollo.cobblemontrainerbattle.battle.preset.RelativeLevelBattlePreset;
 import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
+import kiwiapollo.cobblemontrainerbattle.global.preset.PokemonLevelPair;
+import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerTemplate;
 import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemon;
 import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemonParser;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
@@ -14,40 +18,40 @@ import java.util.*;
 public class NormalLevelTrainer extends AbstractTrainerBattleParticipant {
     private final List<MessagePredicate<PlayerBattleParticipant>> predicates;
 
-    public NormalLevelTrainer(String id, TrainerPreset preset, List<ShowdownPokemon> team) {
-        super(id, preset, toPartyStore(team));
+    public NormalLevelTrainer(TrainerTemplate template) {
+        super(template, toPartyStore(template.getTeam()));
         this.predicates = List.of(
-                new RematchAllowedPredicate(id, preset.isRematchAllowed),
-                new CooldownElapsedPredicate(id, preset.cooldownInSeconds),
+                template.getRematchAllowedPredicate(),
+                template.getCooldownElapsedPredicate(),
 
-                new MaximumPartySizePredicate.PlayerPredicate(preset.maximumPartySize),
-                new MinimumPartySizePredicate.PlayerPredicate(preset.minimumPartySize),
+                template.getMaximumPartySizePredicate(),
+                template.getMinimumPartySizePredicate(),
 
-                new MaximumPartyLevelPredicate(preset.maximumPartyLevel),
-                new MinimumPartyLevelPredicate(preset.minimumPartyLevel),
+                template.getMaximumPartyLevelPredicate(),
+                template.getMinimumPartyLevelPredicate(),
 
-                new RequiredLabelPredicate(preset.requiredLabel),
-                new RequiredPokemonPredicate(preset.requiredPokemon),
-                new RequiredHeldItemPredicate(preset.requiredHeldItem),
-                new RequiredAbilityPredicate(preset.requiredAbility),
-                new RequiredMovePredicate(preset.requiredMove),
+                template.getRequiredLabelPredicate(),
+                template.getRequiredPokemonPredicate(),
+                template.getRequiredHeldItemPredicate(),
+                template.getRequiredAbilityPredicate(),
+                template.getRequiredMovePredicate(),
 
-                new ForbiddenLabelPredicate(preset.forbiddenLabel),
-                new ForbiddenPokemonPredicate(preset.forbiddenPokemon),
-                new ForbiddenHeldItemPredicate(preset.forbiddenHeldItem),
-                new ForbiddenAbilityPredicate(preset.forbiddenAbility),
-                new ForbiddenMovePredicate(preset.forbiddenMove)
+                template.getForbiddenLabelPredicate(),
+                template.getForbiddenPokemonPredicate(),
+                template.getForbiddenHeldItemPredicate(),
+                template.getForbiddenAbilityPredicate(),
+                template.getForbiddenMovePredicate()
         );
     }
 
-    private static PartyStore toPartyStore(List<ShowdownPokemon> team) {
+    private static PartyStore toPartyStore(List<PokemonLevelPair> team) {
         PartyStore party = new PartyStore(UUID.randomUUID());
-        for (ShowdownPokemon showdownPokemon : team) {
-            try {
-                party.add(new ShowdownPokemonParser().toCobblemonPokemon(showdownPokemon));
-            } catch (PokemonParseException ignored) {
 
-            }
+        for (PokemonLevelPair pair : team) {
+            Pokemon pokemon = pair.getPokemon().clone(true, true);
+            int level = pair.getLevel();
+            pokemon.setLevel(level);
+            party.add(pokemon);
         }
 
         return party;

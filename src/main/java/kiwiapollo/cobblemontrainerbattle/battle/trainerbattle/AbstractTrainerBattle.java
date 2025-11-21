@@ -63,8 +63,8 @@ public class AbstractTrainerBattle implements TrainerBattle {
             SoundEvent battleTheme = trainer.getBattleTheme().orElse(CobblemonSounds.PVN_BATTLE);
             actor.setBattleTheme(battleTheme);
 
-            player.sendInfoMessage(Text.translatable("command.cobblemontrainerbattle.success.trainerbattle", trainer.getName()));
-            CobblemonTrainerBattle.LOGGER.info("Started trainer battle : {} versus {}", player.getName(), trainer.getId());
+            player.sendInfoMessage(Text.translatable("command.cobblemontrainerbattle.success.trainerbattle", trainer.getName().getString()));
+            CobblemonTrainerBattle.LOGGER.info("Started trainer battle : {} versus {}", player.getName().getString(), trainer.getIdentifier());
 
             return Unit.INSTANCE;
         });
@@ -113,7 +113,7 @@ public class AbstractTrainerBattle implements TrainerBattle {
     }
 
     private BattleRecord getBattleRecord() {
-        return (BattleRecord) PlayerHistoryStorage.getInstance().getOrCreate(getPlayer().getUuid()).getOrCreate(getTrainer().getId());
+        return (BattleRecord) PlayerHistoryStorage.getInstance().getOrCreate(getPlayer().getUuid()).getOrCreate(getTrainer().getIdentifier());
     }
 
     private void updateVictoryRecord() {

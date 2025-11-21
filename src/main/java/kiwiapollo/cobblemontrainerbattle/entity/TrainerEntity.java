@@ -1,6 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.entity;
 
 import com.cobblemon.mod.common.Cobblemon;
+import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipantFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer.TrainerBattleParticipantFactory;
@@ -13,7 +14,7 @@ import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
 import kiwiapollo.cobblemontrainerbattle.global.history.EntityRecord;
 import kiwiapollo.cobblemontrainerbattle.global.history.PlayerHistory;
 import kiwiapollo.cobblemontrainerbattle.global.history.PlayerHistoryStorage;
-import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerStorage;
+import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerTemplateStorage;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
@@ -106,8 +107,8 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
             }
 
             TrainerBattle trainerBattle = new EntityBackedTrainerBattle(
-                    new PlayerBattleParticipantFactory(player, getLevelMode(getDataTracker().get(TRAINER))).create(),
-                    new TrainerBattleParticipantFactory(getDataTracker().get(TRAINER)).create(),
+                    new PlayerBattleParticipantFactory(player, getLevelMode(toDefaultedIdentifier(getDataTracker().get(TRAINER)))).create(),
+                    new TrainerBattleParticipantFactory(toDefaultedIdentifier(getDataTracker().get(TRAINER))).create(),
                     this
             );
             trainerBattle.start();
@@ -126,8 +127,8 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
         }
     }
 
-    private LevelMode getLevelMode(String trainer) {
-        return TrainerStorage.getInstance().get(trainer).getLevelMode();
+    private LevelMode getLevelMode(Identifier trainer) {
+        return TrainerTemplateStorage.getInstance().get(trainer).getLevelMode();
     }
 
     @Override
@@ -153,7 +154,7 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
     public void onDeath(DamageSource damageSource) {
         if (damageSource.getSource() instanceof ServerPlayerEntity player) {
             PlayerHistory history = PlayerHistoryStorage.getInstance().getOrCreate(player.getUuid());
-            EntityRecord record = (EntityRecord) history.getOrCreate(getDataTracker().get(TRAINER));
+            EntityRecord record = (EntityRecord) history.getOrCreate(toDefaultedIdentifier(getDataTracker().get(TRAINER)));
             record.setKillCount(record.getKillCount() + 1);
             CustomCriteria.KILL_TRAINER_CRITERION.trigger(player);
         }
@@ -176,7 +177,7 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
     public void readCustomDataFromNbt(NbtCompound nbt) {
         try {
             super.readCustomDataFromNbt(nbt);
-            setTrainer(nbt.getString(TRAINER_NBT_KEY));
+            setTrainer(toDefaultedIdentifier(nbt.getString(TRAINER_NBT_KEY)));
 
         } catch (NullPointerException e) {
             discard();
@@ -184,8 +185,8 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
     }
 
     @Override
-    public void setTrainer(String trainer) {
-        this.getDataTracker().set(TRAINER, trainer);
+    public void setTrainer(Identifier trainer) {
+        this.getDataTracker().set(TRAINER, trainer.toString());
         this.getDataTracker().set(TEXTURE, getTexture(trainer));
     }
 
@@ -196,9 +197,9 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
     }
 
     @Nullable
-    private String getTexture(String trainer) {
+    private String getTexture(Identifier trainer) {
         try {
-            return TrainerStorage.getInstance().get(trainer).getTexture().toString();
+            return TrainerTemplateStorage.getInstance().get(trainer).getTexture().toString();
 
         } catch (NullPointerException e) {
             return FALLBACK_TEXTURE;
@@ -239,5 +240,14 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 20.0)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2.0)
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25D);
+    }
+
+    private Identifier toDefaultedIdentifier(String string) {
+        if (string.contains(String.valueOf(Identifier.NAMESPACE_SEPARATOR))) {
+            return Identifier.tryParse(string);
+
+        } else {
+            return Identifier.of(CobblemonTrainerBattle.MOD_ID, string);
+        }
     }
 }
