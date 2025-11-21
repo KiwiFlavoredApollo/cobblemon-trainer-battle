@@ -9,8 +9,8 @@ import kiwiapollo.cobblemontrainerbattle.command.*;
 import kiwiapollo.cobblemontrainerbattle.entity.HostileTrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.entity.NeutralTrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.entity.StaticTrainerEntity;
-import kiwiapollo.cobblemontrainerbattle.global.config.ConfigLoader;
-import kiwiapollo.cobblemontrainerbattle.global.config.ConfigStorage;
+import kiwiapollo.cobblemontrainerbattle.gamerule.ModGameRule;
+import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerTemplateStorage;
 import kiwiapollo.cobblemontrainerbattle.sound.CustomSoundEvent;
 import kiwiapollo.cobblemontrainerbattle.entity.CustomEntityType;
 import kiwiapollo.cobblemontrainerbattle.event.*;
@@ -23,7 +23,6 @@ import kiwiapollo.cobblemontrainerbattle.global.history.PlayerHistorySaver;
 import kiwiapollo.cobblemontrainerbattle.pokemon.FormAspectProvider;
 import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextGenerator;
 import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextRemover;
-import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerTemplateStorage;
 import kiwiapollo.cobblemontrainerbattle.villager.PokeBallEngineerVillager;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
@@ -46,8 +45,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
     @Override
 	public void onInitialize() {
-		ConfigStorage.getInstance().update(new ConfigLoader().load());
-		CobblemonTrainerBattle.LOGGER.info("Loaded configuration");
+		ModGameRule.register();
 
 		Criteria.register(CustomCriteria.DEFEAT_TRAINER_CRITERION);
 		Criteria.register(CustomCriteria.KILL_TRAINER_CRITERION);

@@ -4,7 +4,6 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.command.predicate.MultiCommandSourcePredicate;
-import kiwiapollo.cobblemontrainerbattle.global.config.ConfigLoader;
 import kiwiapollo.cobblemontrainerbattle.command.executor.ShowdownPokemonExporter;
 import net.minecraft.command.EntitySelector;
 import net.minecraft.command.argument.EntityArgumentType;
@@ -23,15 +22,7 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
         );
 
         this.requires(new MultiCommandSourcePredicate(permissions))
-                .then(getReloadCommand())
                 .then(getExportCommand());
-    }
-
-    private LiteralArgumentBuilder<ServerCommandSource> getReloadCommand() {
-        String permission = String.format("%s.%s", getLiteral(), "reload");
-        return LiteralArgumentBuilder.<ServerCommandSource>literal("reload")
-                .requires(new MultiCommandSourcePredicate(permission))
-                .executes(new ConfigLoader());
     }
 
     private LiteralArgumentBuilder<ServerCommandSource> getExportCommand() {

@@ -1,8 +1,9 @@
 package kiwiapollo.cobblemontrainerbattle.event;
 
-import kiwiapollo.cobblemontrainerbattle.global.config.ConfigStorage;
+import kiwiapollo.cobblemontrainerbattle.gamerule.ModGameRule;
 import kiwiapollo.cobblemontrainerbattle.item.VsSeeker;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.random.Random;
@@ -20,7 +21,7 @@ public class TrainerEntitySpawnerScheduler implements ServerTickEvents.EndWorldT
 
     @Override
     public void onEndTick(ServerWorld world) {
-        if (!isTrainerSpawnTick(world.getServer().getTicks())) {
+        if (!isTrainerSpawnTick(world.getServer())) {
             return;
         }
 
@@ -33,13 +34,13 @@ public class TrainerEntitySpawnerScheduler implements ServerTickEvents.EndWorldT
                 continue;
             }
 
-            getRandomSpawner(getSpawners()).spawnEntity(world, player);
+            getRandomSpawner(getSpawners(world)).spawnEntity(world, player);
         }
     }
 
-    private boolean isTrainerSpawnTick(int ticks) {
-        int interval = ConfigStorage.getInstance().getTrainerSpawnIntervalInSeconds() * TICKS_PER_SECOND;
-        return ticks % interval == 0;
+    private boolean isTrainerSpawnTick(MinecraftServer server) {
+        int interval = server.getGameRules().get(ModGameRule.TRAINER_SPAWN_INTERVAL_IN_SECONDS).get() * TICKS_PER_SECOND;
+        return server.getTicks() % interval == 0;
     }
 
     private boolean hasVsSeeker(ServerPlayerEntity player) {
@@ -48,7 +49,7 @@ public class TrainerEntitySpawnerScheduler implements ServerTickEvents.EndWorldT
 
     private boolean isBelowMaximumTrainerSpawnCount(ServerWorld world, ServerPlayerEntity player) {
         int total = SPAWNERS.stream().map(spawner -> spawner.getEntityCount(world, player)).mapToInt(Integer::intValue).sum();
-        int maximum = ConfigStorage.getInstance().getMaximumTrainerSpawnCount();
+        int maximum = world.getServer().getGameRules().get(ModGameRule.MAXIMUM_TRAINER_SPAWN_COUNT).get();
         return total < maximum;
     }
 
@@ -67,10 +68,10 @@ public class TrainerEntitySpawnerScheduler implements ServerTickEvents.EndWorldT
         throw new IllegalStateException();
     }
 
-    private List<TrainerEntitySpawner> getSpawners() {
+    private List<TrainerEntitySpawner> getSpawners(ServerWorld world) {
         List<TrainerEntitySpawner> spawners = new ArrayList<>(SPAWNERS);
 
-        if (!ConfigStorage.getInstance().getAllowHostileTrainerSpawn()) {
+        if (!world.getGameRules().get(ModGameRule.ALLOW_HOSTILE_TRAINER_SPAWN).get()) {
             spawners = spawners.stream().filter(spawner -> !(spawner instanceof HostileTrainerEntitySpawner)).toList();
         }
 
