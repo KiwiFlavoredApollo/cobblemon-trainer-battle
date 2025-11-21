@@ -8,7 +8,7 @@ import kiwiapollo.cobblemontrainerbattle.block.CustomScreenHandlerType;
 import kiwiapollo.cobblemontrainerbattle.command.*;
 import kiwiapollo.cobblemontrainerbattle.entity.NeutralTrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.entity.StaticTrainerEntity;
-import kiwiapollo.cobblemontrainerbattle.gamerule.ModGameRule;
+import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
 import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerTemplateStorage;
 import kiwiapollo.cobblemontrainerbattle.sound.CustomSoundEvent;
 import kiwiapollo.cobblemontrainerbattle.entity.CustomEntityType;
@@ -44,7 +44,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
     @Override
 	public void onInitialize() {
-		ModGameRule.register();
+		CustomGameRule.register();
 
 		Criteria.register(CustomCriteria.DEFEAT_TRAINER_CRITERION);
 		Criteria.register(CustomCriteria.KILL_TRAINER_CRITERION);

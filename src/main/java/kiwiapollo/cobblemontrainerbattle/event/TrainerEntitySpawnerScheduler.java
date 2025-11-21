@@ -1,6 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.event;
 
-import kiwiapollo.cobblemontrainerbattle.gamerule.ModGameRule;
+import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
 import kiwiapollo.cobblemontrainerbattle.item.VsSeeker;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.server.MinecraftServer;
@@ -37,7 +37,7 @@ public class TrainerEntitySpawnerScheduler implements ServerTickEvents.EndWorldT
     }
 
     private boolean isTrainerSpawnTick(MinecraftServer server) {
-        int interval = server.getGameRules().get(ModGameRule.TRAINER_SPAWN_INTERVAL_IN_SECONDS).get() * TICKS_PER_SECOND;
+        int interval = server.getGameRules().get(CustomGameRule.TRAINER_SPAWN_INTERVAL_IN_SECONDS).get() * TICKS_PER_SECOND;
         return server.getTicks() % interval == 0;
     }
 
@@ -47,7 +47,7 @@ public class TrainerEntitySpawnerScheduler implements ServerTickEvents.EndWorldT
 
     private boolean isBelowMaximumTrainerSpawnCount(ServerWorld world, ServerPlayerEntity player) {
         int total = SPAWNERS.stream().map(spawner -> spawner.getEntityCount(world, player)).mapToInt(Integer::intValue).sum();
-        int maximum = world.getServer().getGameRules().get(ModGameRule.MAXIMUM_TRAINER_SPAWN_COUNT).get();
+        int maximum = world.getServer().getGameRules().get(CustomGameRule.MAXIMUM_PER_TRAINER_SPAWN_COUNT).get();
         return total < maximum;
     }
 
