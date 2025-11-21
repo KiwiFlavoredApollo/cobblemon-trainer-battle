@@ -79,7 +79,17 @@ public class PlayerHistory implements NbtConvertible, RecordStatisticsProvider, 
 
     @Override
     public NbtCompound writeToNbt(NbtCompound nbt) {
-        records.forEach((identifier, record) -> nbt.put(identifier.toString(), toNbtCompound(record)));
+        for (Map.Entry<Identifier, TrainerRecord> entry : records.entrySet()) {
+            try {
+                Identifier identifier = entry.getKey();
+                TrainerRecord record = entry.getValue();
+                nbt.put(identifier.toString(), toNbtCompound(record));
+
+            } catch (NullPointerException ignored) {
+
+            }
+        }
+
         return nbt;
     }
 
