@@ -6,11 +6,8 @@ import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.mojang.brigadier.CommandDispatcher;
-import kiwiapollo.cobblemontrainerbattle.battle.battleactor.EntityBackedTrainerBattleActor;
+import kiwiapollo.cobblemontrainerbattle.battle.battleactor.CustomTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.SafeCopyBattlePokemonFactory;
-import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.BattleAIFactory;
-import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.BattleFormatFactory;
-import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerPreset;
 import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerTemplate;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.MinecraftServer;
@@ -90,12 +87,13 @@ public abstract class AbstractTrainerBattleParticipant implements TrainerBattleP
 
     @Override
     public AIBattleActor createBattleActor(ServerPlayerEntity player) {
-        return new EntityBackedTrainerBattleActor(
+        return new CustomTrainerBattleActor(
                 getName(),
-                getUuid(),
                 getBattleTeam(player),
                 getBattleAI(),
-                getEntityOrPlayer(player)
+                getEntityOrPlayer(player),
+                () -> onVictoryCommands.forEach(command -> executeCommand(command, player)),
+                () -> onDefeatCommands.forEach(command -> executeCommand(command, player))
         );
     }
 

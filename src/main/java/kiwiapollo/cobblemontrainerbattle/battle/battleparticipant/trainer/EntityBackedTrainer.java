@@ -5,7 +5,7 @@ import com.cobblemon.mod.common.api.battles.model.ai.BattleAI;
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
-import kiwiapollo.cobblemontrainerbattle.battle.battleactor.EntityBackedTrainerBattleActor;
+import kiwiapollo.cobblemontrainerbattle.battle.battleactor.CustomTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
 import kiwiapollo.cobblemontrainerbattle.battle.predicate.MessagePredicate;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
@@ -67,12 +67,13 @@ public class EntityBackedTrainer implements TrainerBattleParticipant {
 
     @Override
     public AIBattleActor createBattleActor(ServerPlayerEntity player) {
-        return new EntityBackedTrainerBattleActor(
+        return new CustomTrainerBattleActor(
                 getName(),
-                getUuid(),
                 getBattleTeam(player),
                 getBattleAI(),
-                getEntity(player)
+                getEntity(player),
+                () -> onPlayerVictory(player),
+                () -> onPlayerDefeat(player)
         );
     }
 
