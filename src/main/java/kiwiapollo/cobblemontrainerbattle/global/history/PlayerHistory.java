@@ -46,17 +46,13 @@ public class PlayerHistory implements NbtConvertible, RecordStatisticsProvider, 
     @Override
     public int getTotalTrainerVictoryCount() {
         return records.values().stream()
-                .filter(record -> record instanceof TrainerRecord)
-                .map(record -> (TrainerRecord) record)
-                .map(TrainerRecord::getVictoryCount)
+                .map(BattleRecord::getVictoryCount)
                 .reduce(Integer::sum).orElse(0);
     }
 
     @Override
     public int getTotalTrainerKillCount() {
         return records.values().stream()
-                .filter(record -> record instanceof EntityRecord)
-                .map(record -> (EntityRecord) record)
                 .map(EntityRecord::getKillCount)
                 .reduce(Integer::sum).orElse(0);
     }
