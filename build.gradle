@@ -36,7 +36,6 @@ repositories {
 		name = "Cobblemon"
 		url = "https://maven.impactdev.net/repository/development/"
 	}
-    maven { url "https://maven.epherical.com/releases" }
 }
 
 loom {
