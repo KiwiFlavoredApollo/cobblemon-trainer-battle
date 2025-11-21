@@ -23,7 +23,6 @@ public class CustomItemGroup {
 
         ItemGroupEvents.modifyEntriesEvent(ITEM_GROUP_KEY).register(itemGroup -> {
             itemGroup.add(MiscItem.NEUTRAL_TRAINER_SPAWN_EGG);
-            itemGroup.add(MiscItem.HOSTILE_TRAINER_SPAWN_EGG);
             itemGroup.add(MiscItem.STATIC_TRAINER_SPAWN_EGG);
             itemGroup.add(MiscItem.TRAINER_TOKEN);
             itemGroup.add(MiscItem.EMPTY_POKE_BALL);

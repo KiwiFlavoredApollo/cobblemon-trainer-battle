@@ -39,20 +39,5 @@ public class TrainerEntityLootTableProvider extends SimpleFabricLootTableProvide
                         .conditionally(RandomChanceLootCondition.builder(0.5f))
                         .build())
         );
-
-        exporter.accept(CustomEntityType.HOSTILE_TRAINER.getLootTableId(), LootTable.builder()
-                .pool(LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1.0f))
-                        .with(ItemEntry.builder(MiscItem.TRAINER_TOKEN).apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1.0f))))
-                        .conditionally(new DefeatedInBattleLootCondition())
-                        .conditionally(RandomChanceLootCondition.builder(0.5f))
-                        .build())
-                .pool(LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1.0f))
-                        .with(ItemEntry.builder(CobblemonItems.POKE_BALL).apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1.0f))))
-                        .conditionally(KilledByPlayerLootCondition.builder().build())
-                        .conditionally(RandomChanceLootCondition.builder(0.5f))
-                        .build())
-        );
     }
 }

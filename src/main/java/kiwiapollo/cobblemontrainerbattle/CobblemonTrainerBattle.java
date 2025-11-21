@@ -6,7 +6,6 @@ import com.cobblemon.mod.common.api.pokemon.aspect.AspectProvider;
 import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
 import kiwiapollo.cobblemontrainerbattle.block.CustomScreenHandlerType;
 import kiwiapollo.cobblemontrainerbattle.command.*;
-import kiwiapollo.cobblemontrainerbattle.entity.HostileTrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.entity.NeutralTrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.entity.StaticTrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.gamerule.ModGameRule;
@@ -73,8 +72,6 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
 		Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "neutral_trainer"), CustomEntityType.NEUTRAL_TRAINER);
 		FabricDefaultAttributeRegistry.register(CustomEntityType.NEUTRAL_TRAINER, NeutralTrainerEntity.createMobAttributes());
-		Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "hostile_trainer"), CustomEntityType.HOSTILE_TRAINER);
-		FabricDefaultAttributeRegistry.register(CustomEntityType.HOSTILE_TRAINER, HostileTrainerEntity.createMobAttributes());
 		Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "static_trainer"), CustomEntityType.STATIC_TRAINER);
 		FabricDefaultAttributeRegistry.register(CustomEntityType.STATIC_TRAINER, StaticTrainerEntity.createMobAttributes());
 		Registry.register(Registries.BLOCK_ENTITY_TYPE, Identifier.of(MOD_ID, "trainer_table"), CustomEntityType.POKE_BALL_BOX);

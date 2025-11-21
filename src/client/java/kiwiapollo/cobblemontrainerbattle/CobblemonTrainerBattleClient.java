@@ -10,7 +10,6 @@ public class CobblemonTrainerBattleClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
 		EntityRendererRegistry.register(CustomEntityType.NEUTRAL_TRAINER, NeutralTrainerEntityRenderer::new);
-		EntityRendererRegistry.register(CustomEntityType.HOSTILE_TRAINER, HostileTrainerEntityRenderer::new);
 		EntityRendererRegistry.register(CustomEntityType.STATIC_TRAINER, StaticTrainerEntityRenderer::new);
 		HandledScreens.register(CustomScreenHandlerType.POKE_BALL_BOX, PokeBallBoxScreen::new);
 	}
