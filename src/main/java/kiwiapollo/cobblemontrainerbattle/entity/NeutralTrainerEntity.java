@@ -10,7 +10,7 @@ import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.UUID;
+import java.util.*;
 
 public class NeutralTrainerEntity extends TrainerEntity implements Angerable {
     private static final UniformIntProvider ANGER_TIME_RANGE = TimeHelper.betweenSeconds(20, 39);

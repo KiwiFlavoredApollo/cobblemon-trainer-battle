@@ -1,6 +1,11 @@
 package kiwiapollo.cobblemontrainerbattle.entity;
 
 import com.cobblemon.mod.common.Cobblemon;
+import com.cobblemon.mod.common.api.storage.NoPokemonStoreException;
+import com.cobblemon.mod.common.api.storage.party.PartyStore;
+import com.cobblemon.mod.common.pokemon.Pokemon;
+import com.cobblemon.mod.common.pokemon.status.PersistentStatus;
+import com.cobblemon.mod.common.pokemon.status.statuses.persistent.*;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipantFactory;
@@ -10,12 +15,14 @@ import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.NullTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
+import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
 import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
 import kiwiapollo.cobblemontrainerbattle.global.history.EntityRecord;
 import kiwiapollo.cobblemontrainerbattle.global.history.PlayerHistory;
 import kiwiapollo.cobblemontrainerbattle.global.history.PlayerHistoryStorage;
 import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerTemplateStorage;
 import net.minecraft.advancement.criterion.Criteria;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
@@ -32,9 +39,12 @@ import net.minecraft.loot.context.LootContextParameterSet;
 import net.minecraft.loot.context.LootContextParameters;
 import net.minecraft.loot.context.LootContextTypes;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.LocalDifficulty;
@@ -42,8 +52,7 @@ import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Objects;
-import java.util.UUID;
+import java.util.*;
 
 public abstract class TrainerEntity extends PathAwareEntity implements TrainerEntityBehavior {
     public static final int FLEE_DISTANCE = 20;
@@ -249,5 +258,81 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
         } else {
             return Identifier.of(CobblemonTrainerBattle.MOD_ID, string);
         }
+    }
+
+    @Override
+    public boolean tryAttack(Entity target) {
+        if (!(target instanceof ServerPlayerEntity player)) {
+            return super.tryAttack(target);
+        }
+
+        if (isBusyWithPokemonBattle(player)) {
+            return super.tryAttack(target);
+        }
+
+        if (!doTrainerApplyStatusCondition(player.getServer())) {
+            return super.tryAttack(target);
+        }
+
+        applyRandomStatusConditionToRandomPokemon(player);
+        return super.tryAttack(target);
+    }
+
+    private boolean isBusyWithPokemonBattle(ServerPlayerEntity player) {
+        return Cobblemon.INSTANCE.getBattleRegistry().getBattleByParticipatingPlayer(player) != null;
+    }
+
+    private boolean doTrainerApplyStatusCondition(MinecraftServer server) {
+        return server.getGameRules().getBoolean(CustomGameRule.DO_TRAINER_APPLY_STATUS_CONDITION);
+    }
+
+    private void applyRandomStatusConditionToRandomPokemon(ServerPlayerEntity player) {
+        try {
+            Pokemon pokemon = selectRandomPokemon(player);
+            PersistentStatus status = selectRandomStatus();
+            pokemon.applyStatus(status);
+
+            player.sendMessage(Text.translatable(status.getApplyMessage(), pokemon.getDisplayName()).formatted(Formatting.RED));
+
+        } catch (NoPokemonStoreException | IndexOutOfBoundsException ignored) {
+
+        }
+    }
+
+    private Pokemon selectRandomPokemon(ServerPlayerEntity player) throws NoPokemonStoreException {
+        PartyStore party = Cobblemon.INSTANCE.getStorage().getParty(player.getUuid());
+        List<Pokemon> random = new ArrayList<>(party.toGappyList().stream().filter(this::canApplyStatusCondition).toList());
+        Collections.shuffle(random);
+        return random.get(0);
+    }
+
+    private boolean canApplyStatusCondition(Pokemon pokemon) {
+        return !Objects.isNull(pokemon) && !isFainted(pokemon) && !hasStatusCondition(pokemon);
+    }
+
+    private boolean isFainted(Pokemon pokemon) {
+        return pokemon.isFainted();
+    }
+
+    private boolean hasStatusCondition(Pokemon pokemon) {
+        try {
+            return !pokemon.getStatus().isExpired();
+
+        } catch (NullPointerException e) {
+            return false;
+        }
+    }
+
+    private PersistentStatus selectRandomStatus() {
+        List<PersistentStatus> random = new ArrayList<>(List.of(
+                new ParalysisStatus(),
+                new BurnStatus(),
+                new FrozenStatus(),
+                new SleepStatus(),
+                new PoisonStatus(),
+                new PoisonBadlyStatus()
+        ));
+        Collections.shuffle(random);
+        return random.get(0);
     }
 }

@@ -47,7 +47,7 @@ public class TrainerEntitySpawnerScheduler implements ServerTickEvents.EndWorldT
 
     private boolean isBelowMaximumTrainerSpawnCount(ServerWorld world, ServerPlayerEntity player) {
         int total = SPAWNERS.stream().map(spawner -> spawner.getEntityCount(world, player)).mapToInt(Integer::intValue).sum();
-        int maximum = world.getServer().getGameRules().get(CustomGameRule.MAXIMUM_PER_TRAINER_SPAWN_COUNT).get();
+        int maximum = world.getServer().getGameRules().get(CustomGameRule.MAXIMUM_PER_PLAYER_TRAINER_COUNT).get();
         return total < maximum;
     }
 
