@@ -9,6 +9,7 @@ import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
 import kotlin.Pair;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
@@ -17,6 +18,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.UUID;
 
 public class CustomTrainerBattleActor extends AIBattleActor implements EntityBackedBattleActor<LivingEntity>, FleeableBattleActor, BattleResultHandler {
     private final Text name;
@@ -34,13 +36,21 @@ public class CustomTrainerBattleActor extends AIBattleActor implements EntityBac
             Runnable onPlayerVictory,
             Runnable onPlayerDefeat
     ) {
-        super(entity.getUuid(), pokemon, battleAI);
+        super(getUuid(entity), pokemon, battleAI);
         this.name = name;
         this.entity = entity;
         this.world = (ServerWorld) entity.getWorld();
         this.position = entity.getPos();
         this.onPlayerVictory = onPlayerVictory;
         this.onPlayerDefeat = onPlayerDefeat;
+    }
+
+    private static UUID getUuid(LivingEntity entity) {
+        if (entity instanceof ServerPlayerEntity) {
+            return UUID.randomUUID();
+        } else {
+            return entity.getUuid();
+        }
     }
 
     @Override
