@@ -47,8 +47,6 @@ public abstract class RentalBattleStarter implements Command<ServerCommandSource
             );
             trainerBattle.start();
 
-            BattleContextStorage.getInstance().getOrCreate(player.getUuid()).setTrainerBattle(trainerBattle);
-
             return Command.SINGLE_SUCCESS;
 
         } catch (BattleStartException e) {

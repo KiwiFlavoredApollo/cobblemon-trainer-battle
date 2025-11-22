@@ -6,8 +6,11 @@ import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.mojang.brigadier.CommandDispatcher;
+import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.CustomTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.SafeCopyBattlePokemonFactory;
+import kiwiapollo.cobblemontrainerbattle.global.history.BattleRecord;
+import kiwiapollo.cobblemontrainerbattle.global.history.PlayerHistoryStorage;
 import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerTemplate;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.MinecraftServer;
@@ -92,9 +95,20 @@ public abstract class AbstractTrainerBattleParticipant implements TrainerBattleP
                 getBattleTeam(player),
                 getBattleAI(),
                 getEntityOrPlayer(player),
-                () -> onVictoryCommands.forEach(command -> executeCommand(command, player)),
-                () -> onDefeatCommands.forEach(command -> executeCommand(command, player))
+                () -> {
+                    onVictoryCommands.forEach(command -> executeCommand(command, player));
+                    getBattleRecord(player).setVictoryCount(getBattleRecord(player).getVictoryCount() + 1);
+                    CustomCriteria.DEFEAT_TRAINER_CRITERION.trigger(player);
+                },
+                () -> {
+                    onDefeatCommands.forEach(command -> executeCommand(command, player));
+                    getBattleRecord(player).setDefeatCount(getBattleRecord(player).getDefeatCount() + 1);
+                }
         );
+    }
+
+    private BattleRecord getBattleRecord(ServerPlayerEntity player) {
+        return PlayerHistoryStorage.getInstance().getOrCreate(player.getUuid()).getOrCreate(identifier);
     }
 
     private LivingEntity getEntityOrPlayer(ServerPlayerEntity player) {

@@ -1,6 +1,8 @@
 package kiwiapollo.cobblemontrainerbattle.event;
 
+import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.api.events.battles.BattleVictoryEvent;
+import kiwiapollo.cobblemontrainerbattle.battle.battleactor.CustomTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
@@ -14,50 +16,16 @@ public class BattleVictoryEventHandler implements Function1<BattleVictoryEvent, 
      */
     @Override
     public Unit invoke(BattleVictoryEvent event) {
-        if (!isTrainerBattle(event)) {
-            return Unit.INSTANCE;
-        }
+        event.getWinners().stream()
+                .filter(actor -> actor instanceof CustomTrainerBattleActor)
+                .map(actor -> (CustomTrainerBattleActor) actor)
+                .forEach(CustomTrainerBattleActor::onPlayerDefeat);
 
-        if (isPlayerVictory(event)) {
-            onPlayerVictory(event);
-
-        } else {
-            onPlayerDefeat(event);
-        }
+        event.getLosers().stream()
+                .filter(actor -> actor instanceof CustomTrainerBattleActor)
+                .map(actor -> (CustomTrainerBattleActor) actor)
+                .forEach(CustomTrainerBattleActor::onPlayerVictory);
 
         return Unit.INSTANCE;
-    }
-
-    private boolean isTrainerBattle(BattleVictoryEvent event) {
-        try {
-            ServerPlayerEntity player = event.getBattle().getPlayers().get(0);
-            UUID battleId = BattleContextStorage.getInstance().getOrCreate(player.getUuid()).getTrainerBattle().getBattleId();
-
-            return battleId.equals(event.getBattle().getBattleId());
-
-        } catch (NullPointerException e) {
-            return false;
-        }
-    }
-
-    private boolean isPlayerVictory(BattleVictoryEvent event) {
-        ServerPlayerEntity player = event.getBattle().getPlayers().get(0);
-        return event.getWinners().stream().anyMatch(battleActor -> battleActor.isForPlayer(player));
-    }
-
-    private void onPlayerVictory(BattleVictoryEvent event) {
-        ServerPlayerEntity player = event.getBattle().getPlayers().get(0);
-
-        BattleContextStorage.getInstance().getOrCreate(player.getUuid()).getTrainerBattle().onPlayerVictory();
-
-        BattleContextStorage.getInstance().getOrCreate(player.getUuid()).clearTrainerBattle();
-    }
-
-    private void onPlayerDefeat(BattleVictoryEvent event) {
-        ServerPlayerEntity player = event.getBattle().getPlayers().get(0);
-
-        BattleContextStorage.getInstance().getOrCreate(player.getUuid()).getTrainerBattle().onPlayerDefeat();
-
-        BattleContextStorage.getInstance().getOrCreate(player.getUuid()).clearTrainerBattle();
     }
 }

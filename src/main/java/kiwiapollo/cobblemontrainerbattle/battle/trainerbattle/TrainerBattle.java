@@ -9,10 +9,6 @@ import java.util.UUID;
 public interface TrainerBattle {
     void start() throws BattleStartException;
 
-    void onPlayerVictory();
-
-    void onPlayerDefeat();
-
     UUID getBattleId();
 
     PlayerBattleParticipant getPlayer();

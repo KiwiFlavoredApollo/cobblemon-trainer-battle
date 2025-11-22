@@ -66,7 +66,6 @@ public class VillagerEntityMixin implements TrainerEntityBehavior {
             );
             trainerBattle.start();
 
-            BattleContextStorage.getInstance().getOrCreate(player.getUuid()).setTrainerBattle(trainerBattle);
             this.trainerBattle = trainerBattle;
 
             villager.setVelocity(0, 0, 0);

@@ -85,19 +85,6 @@ public class AbstractTrainerBattle implements TrainerBattle {
     }
 
     @Override
-    public void onPlayerVictory() {
-        trainer.onPlayerVictory(player.getPlayerEntity());
-        updateVictoryRecord();
-        CustomCriteria.DEFEAT_TRAINER_CRITERION.trigger(player.getPlayerEntity());
-    }
-
-    @Override
-    public void onPlayerDefeat() {
-        trainer.onPlayerDefeat(player.getPlayerEntity());
-        updateDefeatRecord();
-    }
-
-    @Override
     public UUID getBattleId() {
         return battleId;
     }

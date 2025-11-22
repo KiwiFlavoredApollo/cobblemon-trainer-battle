@@ -1,8 +1,12 @@
 package kiwiapollo.cobblemontrainerbattle.event;
 
+import com.cobblemon.mod.common.Cobblemon;
+import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
+import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import com.cobblemon.mod.common.api.events.drops.LootDroppedEvent;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.battle.battleactor.CustomTrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.global.context.BattleContext;
 import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
 import kotlin.Unit;
@@ -12,6 +16,7 @@ import net.minecraft.server.MinecraftServer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.StreamSupport;
 
 public class LootDroppedEventHandler implements Function1<LootDroppedEvent, Unit> {
     /**
@@ -21,30 +26,22 @@ public class LootDroppedEventHandler implements Function1<LootDroppedEvent, Unit
      */
     @Override
     public Unit invoke(LootDroppedEvent event) {
-        if (!(event.getEntity() instanceof PokemonEntity pokemon)) {
-            return null;
-        }
-
-        if (isTrainerBattle(pokemon.getServer(), pokemon.getBattleId())) {
+        if (isTrainerBattle(event)) {
             event.cancel();
-            CobblemonTrainerBattle.LOGGER.info("Cancelled LOOT_DROPPED event");
         }
 
         return Unit.INSTANCE;
     }
 
-    private boolean isTrainerBattle(MinecraftServer server, UUID battleId) {
-        List<UUID> battleIds = new ArrayList<>();
+    private boolean isTrainerBattle(LootDroppedEvent event) {
+        try {
+            UUID battleId = ((PokemonEntity) event.getEntity()).getBattleId();
+            PokemonBattle battle = Cobblemon.INSTANCE.getBattleRegistry().getBattle(battleId);
+            List<BattleActor> actors = StreamSupport.stream(battle.getActors().spliterator(), false).toList();
+            return actors.stream().anyMatch(actor -> actor instanceof CustomTrainerBattleActor);
 
-        server.getPlayerManager().getPlayerList().forEach(player -> {
-            try {
-                BattleContext context = BattleContextStorage.getInstance().getOrCreate(player.getUuid());
-                battleIds.add(context.getTrainerBattle().getBattleId());
-            } catch (NullPointerException ignored) {
-
-            }
-        });
-
-        return battleIds.contains(battleId);
+        } catch (ClassCastException | NullPointerException e) {
+            return false;
+        }
     }
 }

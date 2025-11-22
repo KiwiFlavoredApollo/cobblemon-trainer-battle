@@ -1,9 +1,11 @@
 package kiwiapollo.cobblemontrainerbattle.mixin;
 
+import com.cobblemon.mod.common.Cobblemon;
+import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
+import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import com.cobblemon.mod.common.api.drop.DropTable;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
-import kiwiapollo.cobblemontrainerbattle.global.context.BattleContext;
-import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
+import kiwiapollo.cobblemontrainerbattle.battle.battleactor.CustomTrainerBattleActor;
 import kotlin.ranges.IntRange;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -14,9 +16,9 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.StreamSupport;
 
 @SuppressWarnings("unused")
 @Mixin(DropTable.class)
@@ -37,27 +39,13 @@ public class DropTableMixin {
 
     private boolean isTrainerBattle(LivingEntity entity, ServerWorld world) {
         try {
-            PokemonEntity pokemon = (PokemonEntity) entity;
-            return getTrainerBattleIds(world).contains(pokemon.getBattleId());
+            UUID battleId = ((PokemonEntity) entity).getBattleId();
+            PokemonBattle battle = Cobblemon.INSTANCE.getBattleRegistry().getBattle(battleId);
+            List<BattleActor> actors = StreamSupport.stream(battle.getActors().spliterator(), false).toList();
+            return actors.stream().anyMatch(actor -> actor instanceof CustomTrainerBattleActor);
 
         } catch (ClassCastException | NullPointerException e) {
             return false;
         }
-    }
-
-    private List<UUID> getTrainerBattleIds(ServerWorld world) {
-        List<UUID> battleIds = new ArrayList<>();
-
-        for (ServerPlayerEntity player : world.getPlayers()) {
-            try {
-                BattleContext context = BattleContextStorage.getInstance().getOrCreate(player.getUuid());
-                battleIds.add(context.getTrainerBattle().getBattleId());
-
-            } catch (NullPointerException ignored) {
-
-            }
-        }
-
-        return battleIds;
     }
 }

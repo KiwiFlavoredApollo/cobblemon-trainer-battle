@@ -13,16 +13,6 @@ public class NullTrainerBattle implements TrainerBattle {
     }
 
     @Override
-    public void onPlayerVictory() {
-
-    }
-
-    @Override
-    public void onPlayerDefeat() {
-
-    }
-
-    @Override
     public UUID getBattleId() {
         throw new NullPointerException();
     }

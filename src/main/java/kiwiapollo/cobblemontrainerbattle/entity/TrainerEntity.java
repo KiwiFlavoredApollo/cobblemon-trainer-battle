@@ -120,7 +120,6 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
             );
             trainerBattle.start();
 
-            BattleContextStorage.getInstance().getOrCreate(player.getUuid()).setTrainerBattle(trainerBattle);
             this.trainerBattle = trainerBattle;
 
             this.setVelocity(0, 0, 0);
