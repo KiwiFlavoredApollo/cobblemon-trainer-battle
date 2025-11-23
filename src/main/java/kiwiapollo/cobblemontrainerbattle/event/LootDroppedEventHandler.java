@@ -5,15 +5,10 @@ import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import com.cobblemon.mod.common.api.events.drops.LootDroppedEvent;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
-import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.CustomTrainerBattleActor;
-import kiwiapollo.cobblemontrainerbattle.global.context.BattleContext;
-import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
-import net.minecraft.server.MinecraftServer;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.StreamSupport;

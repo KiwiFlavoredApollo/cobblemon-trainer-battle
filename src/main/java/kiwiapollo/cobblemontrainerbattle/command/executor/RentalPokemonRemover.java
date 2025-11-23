@@ -3,7 +3,7 @@ package kiwiapollo.cobblemontrainerbattle.command.executor;
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
+import kiwiapollo.cobblemontrainerbattle.global.context.RentalPokemonStorage;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 
@@ -13,7 +13,7 @@ public class RentalPokemonRemover implements Command<ServerCommandSource> {
         try {
             ServerPlayerEntity player = context.getSource().getPlayerOrThrow();
 
-            BattleContextStorage.getInstance().getOrCreate(player.getUuid()).clearRentalPokemon();
+            RentalPokemonStorage.getInstance().get(player).clear();
 
             return Command.SINGLE_SUCCESS;
 

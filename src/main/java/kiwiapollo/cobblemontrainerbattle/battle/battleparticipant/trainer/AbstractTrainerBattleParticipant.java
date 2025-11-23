@@ -95,15 +95,8 @@ public abstract class AbstractTrainerBattleParticipant implements TrainerBattleP
                 getBattleTeam(player),
                 getBattleAI(),
                 getEntityOrPlayer(player),
-                () -> {
-                    onVictoryCommands.forEach(command -> executeCommand(command, player));
-                    getBattleRecord(player).setVictoryCount(getBattleRecord(player).getVictoryCount() + 1);
-                    CustomCriteria.DEFEAT_TRAINER_CRITERION.trigger(player);
-                },
-                () -> {
-                    onDefeatCommands.forEach(command -> executeCommand(command, player));
-                    getBattleRecord(player).setDefeatCount(getBattleRecord(player).getDefeatCount() + 1);
-                }
+                () -> onPlayerVictory(player),
+                () -> onPlayerDefeat(player)
         );
     }
 
@@ -139,11 +132,14 @@ public abstract class AbstractTrainerBattleParticipant implements TrainerBattleP
     @Override
     public void onPlayerVictory(ServerPlayerEntity player) {
         onVictoryCommands.forEach(command -> executeCommand(command, player));
+        getBattleRecord(player).setVictoryCount(getBattleRecord(player).getVictoryCount() + 1);
+        CustomCriteria.DEFEAT_TRAINER_CRITERION.trigger(player);
     }
 
     @Override
     public void onPlayerDefeat(ServerPlayerEntity player) {
         onDefeatCommands.forEach(command -> executeCommand(command, player));
+        getBattleRecord(player).setDefeatCount(getBattleRecord(player).getDefeatCount() + 1);
     }
 
     @Override

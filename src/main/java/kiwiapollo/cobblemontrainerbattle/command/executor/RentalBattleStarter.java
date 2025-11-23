@@ -9,7 +9,7 @@ import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.PlayerBackedTraine
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.preset.RentalBattlePreset;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
-import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
+import kiwiapollo.cobblemontrainerbattle.global.context.RentalPokemonStorage;
 import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerTemplateStorage;
 import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.command.argument.IdentifierArgumentType;
@@ -59,7 +59,7 @@ public abstract class RentalBattleStarter implements Command<ServerCommandSource
     }
 
     private boolean hasRentalBattleMinimumPartySize(ServerPlayerEntity player) {
-        return BattleContextStorage.getInstance().getOrCreate(player.getUuid()).getRentalPokemon().occupied() >= RentalBattlePreset.PARTY_SIZE;
+        return RentalPokemonStorage.getInstance().get(player).occupied() >= RentalBattlePreset.PARTY_SIZE;
     }
 
     private boolean hasRentalBattleMinimumPartySize(Identifier trainer) {

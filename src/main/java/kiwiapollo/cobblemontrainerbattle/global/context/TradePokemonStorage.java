@@ -6,27 +6,27 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-public class RentalPokemonStorage {
-    private static RentalPokemonStorage instance;
+public class TradePokemonStorage {
+    private static TradePokemonStorage instance;
 
-    private final Map<UUID, RentalPokemon> storage;
+    private final Map<UUID, TradePokemon> storage;
 
-    private RentalPokemonStorage() {
+    private TradePokemonStorage() {
         instance = null;
         storage = new HashMap<>();
     }
 
-    public static RentalPokemonStorage getInstance() {
+    public static TradePokemonStorage getInstance() {
         if (instance == null) {
-            instance = new RentalPokemonStorage();
+            instance = new TradePokemonStorage();
         }
 
         return instance;
     }
 
-    public RentalPokemon get(ServerPlayerEntity player) {
+    public TradePokemon get(ServerPlayerEntity player) {
         if (!storage.containsKey(player.getUuid())) {
-            storage.put(player.getUuid(), new RentalPokemon());
+            storage.put(player.getUuid(), new TradePokemon());
         }
 
         return storage.get(player.getUuid());

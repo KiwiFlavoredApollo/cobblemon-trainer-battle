@@ -20,8 +20,6 @@ import kiwiapollo.cobblemontrainerbattle.global.history.PlayerHistoryGenerator;
 import kiwiapollo.cobblemontrainerbattle.global.history.PlayerHistoryLoader;
 import kiwiapollo.cobblemontrainerbattle.global.history.PlayerHistorySaver;
 import kiwiapollo.cobblemontrainerbattle.pokemon.FormAspectProvider;
-import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextGenerator;
-import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextRemover;
 import kiwiapollo.cobblemontrainerbattle.villager.PokeBallEngineerVillager;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
@@ -81,9 +79,6 @@ public class CobblemonTrainerBattle implements ModInitializer {
 		CobblemonEvents.BATTLE_VICTORY.subscribe(Priority.NORMAL, new BattleVictoryEventHandler());
 		CobblemonEvents.LOOT_DROPPED.subscribe(Priority.HIGHEST, new LootDroppedEventHandler());
 		ServerTickEvents.END_WORLD_TICK.register(new TrainerBattleFledEventHandler());
-
-		ServerPlayConnectionEvents.JOIN.register(new BattleContextGenerator());
-		ServerPlayConnectionEvents.DISCONNECT.register(new BattleContextRemover());
 
 		ServerPlayConnectionEvents.JOIN.register(new PlayerHistoryGenerator());
 		ServerLifecycleEvents.SERVER_STARTED.register(new PlayerHistoryLoader());

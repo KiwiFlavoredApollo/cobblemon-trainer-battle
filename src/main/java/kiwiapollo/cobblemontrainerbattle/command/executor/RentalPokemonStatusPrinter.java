@@ -4,7 +4,8 @@ import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
+import kiwiapollo.cobblemontrainerbattle.global.context.RentalPokemon;
+import kiwiapollo.cobblemontrainerbattle.global.context.RentalPokemonStorage;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
@@ -14,15 +15,23 @@ public class RentalPokemonStatusPrinter extends PokemonStatusPrinter implements 
     @Override
     public int run(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
         ServerPlayerEntity player = context.getSource().getPlayerOrThrow();
-        PartyStore pokemon = BattleContextStorage.getInstance().getOrCreate(player.getUuid()).getRentalPokemon();
+        PartyStore rental = getRentalPokemon(player);
 
-        if (pokemon.occupied() == 0) {
+        if (rental.occupied() == 0) {
             player.sendMessage(Text.translatable("command.cobblemontrainerbattle.error.rentalpokemon.rental_pokemon_not_exist").formatted(Formatting.RED));
             return 0;
         }
 
-        printPokemonStatus(pokemon, player);
+        printPokemonStatus(rental, player);
 
         return Command.SINGLE_SUCCESS;
+    }
+
+    private static PartyStore getRentalPokemon(ServerPlayerEntity player) {
+        RentalPokemon rental = RentalPokemonStorage.getInstance().get(player);
+        PartyStore party = new PartyStore(player.getUuid());
+        rental.stream().forEach(party::add);
+
+        return party;
     }
 }

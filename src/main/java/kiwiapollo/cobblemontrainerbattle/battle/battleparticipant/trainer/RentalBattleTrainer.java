@@ -11,7 +11,7 @@ import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerB
 import kiwiapollo.cobblemontrainerbattle.battle.predicate.*;
 import kiwiapollo.cobblemontrainerbattle.battle.preset.RentalBattlePreset;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
-import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
+import kiwiapollo.cobblemontrainerbattle.global.context.TradePokemonStorage;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
@@ -77,7 +77,9 @@ public class RentalBattleTrainer implements TrainerBattleParticipant {
     @Override
     public void onPlayerVictory(ServerPlayerEntity player) {
         trainer.onPlayerVictory(player);
-        BattleContextStorage.getInstance().getOrCreate(player.getUuid()).setTradablePokemon(toClone(getParty()));
+        TradePokemonStorage.getInstance().get(player).setFirst(getParty().get(1));
+        TradePokemonStorage.getInstance().get(player).setSecond(getParty().get(2));
+        TradePokemonStorage.getInstance().get(player).setThird(getParty().get(3));
     }
 
     @Override

@@ -16,7 +16,6 @@ import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
-import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
 import kiwiapollo.cobblemontrainerbattle.global.history.EntityRecord;
 import kiwiapollo.cobblemontrainerbattle.global.history.PlayerHistory;
 import kiwiapollo.cobblemontrainerbattle.global.history.PlayerHistoryStorage;

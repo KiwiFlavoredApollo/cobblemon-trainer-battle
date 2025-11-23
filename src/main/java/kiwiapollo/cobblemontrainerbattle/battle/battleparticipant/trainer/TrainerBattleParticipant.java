@@ -37,8 +37,10 @@ public interface TrainerBattleParticipant extends BattleParticipant {
 
     LivingEntity getEntity(ServerPlayerEntity player);
 
+    @Deprecated
     void onPlayerDefeat(ServerPlayerEntity player);
 
+    @Deprecated
     void onPlayerVictory(ServerPlayerEntity player);
 
     Identifier getTexture();

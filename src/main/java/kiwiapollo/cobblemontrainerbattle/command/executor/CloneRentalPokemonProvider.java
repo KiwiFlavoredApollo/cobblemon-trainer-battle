@@ -8,14 +8,12 @@ import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import kiwiapollo.cobblemontrainerbattle.battle.predicate.MinimumPartySizePredicate;
 import kiwiapollo.cobblemontrainerbattle.battle.preset.RentalBattlePreset;
-import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
+import kiwiapollo.cobblemontrainerbattle.global.context.RentalPokemonStorage;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 
-import java.util.Objects;
-import java.util.UUID;
 import java.util.function.Predicate;
 
 public class CloneRentalPokemonProvider implements Command<ServerCommandSource> {
@@ -30,10 +28,9 @@ public class CloneRentalPokemonProvider implements Command<ServerCommandSource> 
             }
 
             PartyStore original = Cobblemon.INSTANCE.getStorage().getParty(player);
-            PartyStore clone = toClone(original);
-            PartyStore rental = toRental(clone);
-
-            BattleContextStorage.getInstance().getOrCreate(player.getUuid()).setRentalPokemon(rental);
+            RentalPokemonStorage.getInstance().get(player).setFirst(original.get(1));
+            RentalPokemonStorage.getInstance().get(player).setSecond(original.get(2));
+            RentalPokemonStorage.getInstance().get(player).setThird(original.get(3));
 
             new RentalPokemonStatusPrinter().run(context);
 
@@ -42,23 +39,6 @@ public class CloneRentalPokemonProvider implements Command<ServerCommandSource> 
         } catch (CommandSyntaxException e) {
             return 0;
         }
-    }
-
-    private PartyStore toClone(PartyStore party) {
-        PartyStore clone = new PartyStore(UUID.randomUUID());
-
-        party.toGappyList().stream().filter(Objects::nonNull).forEach(pokemon -> clone.add(pokemon.clone(true, true)));
-
-        return clone;
-    }
-
-    private PartyStore toRental(PartyStore party) {
-        PartyStore rental = new PartyStore(UUID.randomUUID());
-
-        party.toGappyList().stream().filter(Objects::nonNull).toList().subList(0, RentalBattlePreset.PARTY_SIZE).forEach(rental::add);
-        rental.toGappyList().stream().filter(Objects::nonNull).forEach(pokemon -> pokemon.setLevel(RentalBattlePreset.LEVEL));
-
-        return rental;
     }
 
     private boolean hasMinimumPartySize(ServerPlayerEntity player) {

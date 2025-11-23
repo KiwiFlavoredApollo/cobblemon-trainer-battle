@@ -6,8 +6,8 @@ import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.global.context.BattleContext;
-import kiwiapollo.cobblemontrainerbattle.global.context.BattleContextStorage;
+import kiwiapollo.cobblemontrainerbattle.global.context.RentalPokemonStorage;
+import kiwiapollo.cobblemontrainerbattle.global.context.TradePokemonStorage;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
@@ -50,32 +50,26 @@ public class RentalPokemonTrader implements Command<ServerCommandSource> {
     }
 
     private boolean isRentalPokemonExist(ServerPlayerEntity player) {
-        BattleContext context = BattleContextStorage.getInstance().getOrCreate(player.getUuid());
-        return context.getRentalPokemon().occupied() != 0;
+        return RentalPokemonStorage.getInstance().get(player).occupied() != 0;
     }
 
     private void clearTradablePokemon(ServerPlayerEntity player) {
-        BattleContext context = BattleContextStorage.getInstance().getOrCreate(player.getUuid());
-        context.clearTradablePokemon();
+        TradePokemonStorage.getInstance().get(player).clear();
     }
 
     private boolean isTradablePokemonExist(ServerPlayerEntity player) {
-        BattleContext context = BattleContextStorage.getInstance().getOrCreate(player.getUuid());
-        return context.getTradablePokemon().occupied() != 0;
+        return TradePokemonStorage.getInstance().get(player).occupied() != 0;
     }
 
-    private void setRentalPokemon(ServerPlayerEntity player, int slot, Pokemon trainerPokemon) {
-        BattleContext context = BattleContextStorage.getInstance().getOrCreate(player.getUuid());
-        context.getRentalPokemon().set(slot, trainerPokemon);
+    private void setRentalPokemon(ServerPlayerEntity player, int slot, Pokemon pokemon) {
+        RentalPokemonStorage.getInstance().get(player).set(slot, pokemon);
     }
 
     private Pokemon getPlayerPokemon(ServerPlayerEntity player, int slot) {
-        BattleContext context = BattleContextStorage.getInstance().getOrCreate(player.getUuid());
-        return context.getRentalPokemon().get(slot);
+        return RentalPokemonStorage.getInstance().get(player).get(slot);
     }
 
     private Pokemon getTrainerPokemon(ServerPlayerEntity player, int slot) {
-        BattleContext context = BattleContextStorage.getInstance().getOrCreate(player.getUuid());
-        return context.getTradablePokemon().get(slot);
+        return TradePokemonStorage.getInstance().get(player).get(slot);
     }
 }
