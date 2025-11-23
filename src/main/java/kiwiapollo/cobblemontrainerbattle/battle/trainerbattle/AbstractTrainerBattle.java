@@ -88,26 +88,4 @@ public class AbstractTrainerBattle implements TrainerBattle {
     public UUID getBattleId() {
         return battleId;
     }
-
-    @Override
-    public PlayerBattleParticipant getPlayer() {
-        return player;
-    }
-
-    @Override
-    public TrainerBattleParticipant getTrainer() {
-        return trainer;
-    }
-
-    private BattleRecord getBattleRecord() {
-        return (BattleRecord) PlayerHistoryStorage.getInstance().getOrCreate(getPlayer().getUuid()).getOrCreate(getTrainer().getIdentifier());
-    }
-
-    private void updateVictoryRecord() {
-        getBattleRecord().setVictoryCount(getBattleRecord().getVictoryCount() + 1);
-    }
-
-    private void updateDefeatRecord() {
-        getBattleRecord().setDefeatCount(getBattleRecord().getDefeatCount() + 1);
-    }
 }
