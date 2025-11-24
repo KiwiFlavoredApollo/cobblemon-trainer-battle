@@ -4,22 +4,21 @@ import com.cobblemon.mod.common.api.battles.model.ai.BattleAI;
 import com.cobblemon.mod.common.battles.ai.RandomBattleAI;
 import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
 import kiwiapollo.cobblemontrainerbattle.common.StrongBattleAI;
+import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerTemplate;
 
 import java.util.Objects;
 
 public class BattleAIFactory implements SimpleFactory<BattleAI> {
-    private final String battleFormat;
-    private final String battleAI;
+    private final TrainerTemplate trainer;
 
-    public BattleAIFactory(String battleFormat, String battleAI) {
-        this.battleFormat = battleFormat;
-        this.battleAI = battleAI;
+    public BattleAIFactory(TrainerTemplate trainer) {
+        this.trainer = trainer;
     }
 
     @Override
     public BattleAI create() {
         // StrongBattleAI have issues with Double/Triple battles
-        if (Objects.equals(battleFormat, "single")) {
+        if (Objects.equals(trainer.getBattleAI(), "single")) {
             return new SingleBattleAIFactory().create();
         } else {
             return new NonSingleBattleAIFactory().create();
@@ -29,7 +28,7 @@ public class BattleAIFactory implements SimpleFactory<BattleAI> {
     private class SingleBattleAIFactory implements SimpleFactory<BattleAI> {
         @Override
         public BattleAI create() {
-            return switch (battleAI) {
+            return switch (trainer.getBattleAI()) {
                 case "random" -> new RandomBattleAI();
                 case "generation5" -> new Generation5AI();
                 case "strong0" -> new StrongBattleAI(0);
@@ -46,7 +45,7 @@ public class BattleAIFactory implements SimpleFactory<BattleAI> {
     private class NonSingleBattleAIFactory implements SimpleFactory<BattleAI> {
         @Override
         public BattleAI create() {
-            return switch (battleAI) {
+            return switch (trainer.getBattleAI()) {
                 case "random" -> new RandomBattleAI();
                 case "generation5" -> new Generation5AI();
                 default -> new Generation5AI();

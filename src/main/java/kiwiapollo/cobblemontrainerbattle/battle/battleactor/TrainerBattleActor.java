@@ -4,9 +4,9 @@ import com.cobblemon.mod.common.api.battles.model.actor.AIBattleActor;
 import com.cobblemon.mod.common.api.battles.model.actor.ActorType;
 import com.cobblemon.mod.common.api.battles.model.actor.EntityBackedBattleActor;
 import com.cobblemon.mod.common.api.battles.model.actor.FleeableBattleActor;
-import com.cobblemon.mod.common.api.battles.model.ai.BattleAI;
 import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
+import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.BattleAIFactory;
 import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntityBehavior;
 import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
 import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerTemplate;
@@ -14,9 +14,7 @@ import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemon;
 import kotlin.Pair;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.Item;
-import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
-import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.text.MutableText;
@@ -45,7 +43,7 @@ public class TrainerBattleActor extends AIBattleActor implements EntityBackedBat
             Runnable onPlayerVictory,
             Runnable onPlayerDefeat
     ) {
-        super(uuid, pokemon, template.getBattleAI());
+        super(uuid, pokemon, new BattleAIFactory(template).create());
         this.template = template;
         this.entity = entity;
         this.world = (ServerWorld) entity.getWorld();
@@ -68,7 +66,13 @@ public class TrainerBattleActor extends AIBattleActor implements EntityBackedBat
     @NotNull
     @Override
     public MutableText getName() {
-        return this.template.getDisplayName().copy();
+        String name = template.getDisplayName();
+
+        if (name == null) {
+            name = template.getIdentifier().toString();
+        }
+
+        return Text.translatable(name);
     }
 
     @NotNull

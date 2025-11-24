@@ -1,10 +1,8 @@
 package kiwiapollo.cobblemontrainerbattle.global.preset;
 
-import com.cobblemon.mod.common.api.battles.model.ai.BattleAI;
 import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.BattleAIFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.BattleFormatFactory;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
 import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
@@ -12,12 +10,10 @@ import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
 import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemon;
 import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemonParser;
 import net.minecraft.sound.SoundEvent;
-import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.UUID;
 
 public class TrainerTemplateFactory implements SimpleFactory<TrainerTemplate> {
@@ -37,10 +33,10 @@ public class TrainerTemplateFactory implements SimpleFactory<TrainerTemplate> {
                 toPokemonLevelPair(team),
 
                 toIdentifier(identifier),
-                toDisplayName(preset.displayName, identifier),
+                toDisplayName(preset.displayName),
                 toLevelMode(preset.levelMode),
                 toBattleFormat(preset.battleFormat),
-                toBattleAI(preset.battleFormat, preset.battleAI),
+                toBattleAI(preset.battleAI),
                 toBattleTheme(preset.battleTheme),
                 toTexture(preset.texture),
                 toEntityUuid(preset.entityUuid),
@@ -95,21 +91,16 @@ public class TrainerTemplateFactory implements SimpleFactory<TrainerTemplate> {
         return identifier;
     }
 
-    private Text toDisplayName(String displayName, Identifier identifier) {
-        try {
-            return Text.translatable(Objects.requireNonNull(displayName));
-
-        } catch (NullPointerException e) {
-            return Text.translatable(identifier.toString());
-        }
+    private String toDisplayName(String displayName) {
+        return displayName;
     }
 
     private LevelMode toLevelMode(String levelMode) {
         return new LevelMode.Factory(levelMode).create();
     }
 
-    private BattleAI toBattleAI(String battleFormat, String battleAI) {
-        return new BattleAIFactory(battleFormat, battleAI).create();
+    private String toBattleAI(String battleAI) {
+        return battleAI;
     }
 
     private BattleFormat toBattleFormat(String battleFormat) {

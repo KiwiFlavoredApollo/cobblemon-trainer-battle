@@ -1,11 +1,9 @@
 package kiwiapollo.cobblemontrainerbattle.global.preset;
 
-import com.cobblemon.mod.common.api.battles.model.ai.BattleAI;
 import com.cobblemon.mod.common.battles.BattleFormat;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
 import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemon;
 import net.minecraft.sound.SoundEvent;
-import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
@@ -15,10 +13,10 @@ public class TrainerTemplate {
     private final List<PokemonLevelPair> team;
 
     private final Identifier identifier;
-    private final Text displayName;
+    private final String displayName;
     private final LevelMode levelMode;
     private final BattleFormat battleFormat;
-    private final BattleAI battleAI;
+    private final String battleAI;
     private final SoundEvent battleTheme;
     private final Identifier texture;
     private final UUID entityUuid;
@@ -52,10 +50,10 @@ public class TrainerTemplate {
             List<PokemonLevelPair> team,
 
             Identifier identifier,
-            Text displayName,
+            String displayName,
             LevelMode levelMode,
             BattleFormat battleFormat,
-            BattleAI battleAI,
+            String battleAI,
             SoundEvent battleTheme,
             Identifier texture, UUID entityUuid,
 
@@ -129,7 +127,7 @@ public class TrainerTemplate {
         return identifier;
     }
 
-    public Text getDisplayName() {
+    public String getDisplayName() {
         return displayName;
     }
 
@@ -141,7 +139,7 @@ public class TrainerTemplate {
         return battleFormat;
     }
 
-    public BattleAI getBattleAI() {
+    public String getBattleAI() {
         return battleAI;
     }
 

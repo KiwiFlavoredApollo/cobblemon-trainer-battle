@@ -239,8 +239,8 @@ public class VillagerEntityMixin implements TrainerEntityBehavior {
             return Identifier.of(CobblemonTrainerBattle.MOD_ID, "poke_ball_engineer");
         }
 
-        private Text createDisplayName(VillagerEntity villager) {
-            return villager.getDisplayName();
+        private String createDisplayName(VillagerEntity villager) {
+            return villager.getDisplayName().getString();
         }
 
         private LevelMode createLevelMode() {
@@ -251,8 +251,8 @@ public class VillagerEntityMixin implements TrainerEntityBehavior {
             return BattleFormat.Companion.getGEN_9_SINGLES();
         }
 
-        private BattleAI createBattleAI() {
-            return new Generation5AI();
+        private String createBattleAI() {
+            return "generation5";
         }
 
         private SoundEvent createBattleTheme() {
