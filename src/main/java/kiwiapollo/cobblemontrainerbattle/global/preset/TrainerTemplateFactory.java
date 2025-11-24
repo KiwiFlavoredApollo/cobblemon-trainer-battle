@@ -6,7 +6,6 @@ import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.BattleAIFactory;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.BattleFormatFactory;
-import kiwiapollo.cobblemontrainerbattle.battle.predicate.*;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
 import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
 import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
@@ -49,27 +48,26 @@ public class TrainerTemplateFactory implements SimpleFactory<TrainerTemplate> {
                 toOnVictoryCommands(preset.onVictoryCommands),
                 toOnDefeatCommands(preset.onDefeatCommands),
 
+                toCooldownInSeconds(preset.cooldownInSeconds),
                 toIsSpawningAllowed(preset.isSpawningAllowed),
+                toIsRematchAllowed(preset.isRematchAllowed),
 
-                toCooldownElapsedPredicate(identifier, preset.cooldownInSeconds),
-                toRematchAllowedPredicate(identifier, preset.isRematchAllowed),
+                toMaximumPartySize(preset.maximumPartySize),
+                toMinimumPartySize(preset.minimumPartySize),
+                toMaximumPartyLevel(preset.maximumPartyLevel),
+                toMinimumPartyLevel(preset.minimumPartyLevel),
 
-                toMaximumPartySizePredicate(preset.maximumPartySize),
-                toMinimumPartySizePredicate(preset.minimumPartySize),
-                toMaximumPartyLevelPredicate(preset.maximumPartyLevel),
-                toMinimumPartyLevelPredicate(preset.minimumPartyLevel),
+                toRequiredLabel(preset.requiredLabel),
+                toRequiredPokemon(preset.requiredPokemon),
+                toRequiredHeldItem(preset.requiredHeldItem),
+                toRequiredAbility(preset.requiredAbility),
+                toRequiredMove(preset.requiredMove),
 
-                toRequiredLabelPredicate(preset.requiredLabel),
-                toRequiredPokemonPredicate(preset.requiredPokemon),
-                toRequiredHeldItemPredicate(preset.requiredHeldItem),
-                toRequiredAbilityPredicate(preset.requiredAbility),
-                toRequiredMovePredicate(preset.requiredMove),
-
-                toForbiddenLabelPredicate(preset.forbiddenLabel),
-                toForbiddenPokemonPredicate(preset.forbiddenPokemon),
-                toForbiddenHeldItemPredicate(preset.forbiddenHeldItem),
-                toForbiddenAbilityPredicate(preset.forbiddenAbility),
-                toForbiddenMovePredicate(preset.forbiddenMove)
+                toForbiddenLabel(preset.forbiddenLabel),
+                toForbiddenPokemon(preset.forbiddenPokemon),
+                toForbiddenHeldItem(preset.forbiddenHeldItem),
+                toForbiddenAbility(preset.forbiddenAbility),
+                toForbiddenMove(preset.forbiddenMove)
         );
     }
 
@@ -152,71 +150,72 @@ public class TrainerTemplateFactory implements SimpleFactory<TrainerTemplate> {
         return onDefeatCommands;
     }
 
+    private long toCooldownInSeconds(long cooldownInSeconds) {
+        return cooldownInSeconds;
+    }
+
     private boolean toIsSpawningAllowed(boolean isSpawningAllowed) {
         return isSpawningAllowed;
     }
 
-    private CooldownElapsedPredicate toCooldownElapsedPredicate(Identifier trainer, long cooldownInSeconds) {
-        return new CooldownElapsedPredicate(trainer, cooldownInSeconds);
+    private boolean toIsRematchAllowed(boolean isRematchAllowed) {
+        return isRematchAllowed;
     }
 
-    private RematchAllowedPredicate toRematchAllowedPredicate(Identifier trainer, boolean isRematchAllowed) {
-        return new RematchAllowedPredicate(trainer, isRematchAllowed);
+
+    private int toMaximumPartySize(int maximumPartySize) {
+        return maximumPartySize;
     }
 
-    private MaximumPartySizePredicate.PlayerPredicate toMaximumPartySizePredicate(int size) {
-        return new MaximumPartySizePredicate.PlayerPredicate(size);
+    private int toMinimumPartySize(int minimumPartySize) {
+        return minimumPartySize;
     }
 
-    private MinimumPartySizePredicate.PlayerPredicate toMinimumPartySizePredicate(int size) {
-        return new MinimumPartySizePredicate.PlayerPredicate(size);
+    private int toMaximumPartyLevel(int maximumPartyLevel) {
+        return maximumPartyLevel;
     }
 
-    private MaximumPartyLevelPredicate toMaximumPartyLevelPredicate(int level) {
-        return new MaximumPartyLevelPredicate(level);
+    private int toMinimumPartyLevel(int minimumPartyLevel) {
+        return minimumPartyLevel;
     }
 
-    private MinimumPartyLevelPredicate toMinimumPartyLevelPredicate(int level) {
-        return new MinimumPartyLevelPredicate(level);
+    private List<String> toRequiredLabel(List<String> requiredLabel) {
+        return requiredLabel;
     }
 
-    private RequiredLabelPredicate toRequiredLabelPredicate(List<String> label) {
-        return new RequiredLabelPredicate(label);
+    private List<ShowdownPokemon> toRequiredPokemon(List<ShowdownPokemon> requiredPokemon) {
+        return requiredPokemon;
     }
 
-    private RequiredPokemonPredicate toRequiredPokemonPredicate(List<ShowdownPokemon> pokemon) {
-        return new RequiredPokemonPredicate(pokemon);
+    private List<String> toRequiredHeldItem(List<String> requiredHeldItem) {
+        return requiredHeldItem;
     }
 
-    private RequiredHeldItemPredicate toRequiredHeldItemPredicate(List<String> item) {
-        return new RequiredHeldItemPredicate(item);
+    private List<String> toRequiredAbility(List<String> requiredAbility) {
+        return requiredAbility;
     }
 
-    private RequiredAbilityPredicate toRequiredAbilityPredicate(List<String> ability) {
-        return new RequiredAbilityPredicate(ability);
+    private List<String> toRequiredMove(List<String> requiredMove) {
+        return requiredMove;
     }
 
-    private RequiredMovePredicate toRequiredMovePredicate(List<String> move) {
-        return new RequiredMovePredicate(move);
+    private List<String> toForbiddenLabel(List<String> forbiddenLabel) {
+        return forbiddenLabel;
     }
 
-    private ForbiddenLabelPredicate toForbiddenLabelPredicate(List<String> label) {
-        return new ForbiddenLabelPredicate(label);
+    private List<ShowdownPokemon> toForbiddenPokemon(List<ShowdownPokemon> forbiddenPokemon) {
+        return forbiddenPokemon;
     }
 
-    private ForbiddenPokemonPredicate toForbiddenPokemonPredicate(List<ShowdownPokemon> pokemon) {
-        return new ForbiddenPokemonPredicate(pokemon);
+    private List<String> toForbiddenHeldItem(List<String> forbiddenHeldItem) {
+        return forbiddenHeldItem;
     }
 
-    private ForbiddenHeldItemPredicate toForbiddenHeldItemPredicate(List<String> item) {
-        return new ForbiddenHeldItemPredicate(item);
+    private List<String> toForbiddenAbility(List<String> forbiddenAbility) {
+        return forbiddenAbility;
     }
 
-    private ForbiddenAbilityPredicate toForbiddenAbilityPredicate(List<String> ability) {
-        return new ForbiddenAbilityPredicate(ability);
-    }
-
-    private ForbiddenMovePredicate toForbiddenMovePredicate(List<String> move) {
-        return new ForbiddenMovePredicate(move);
+    private List<String> toForbiddenMove(List<String> forbiddenMove) {
+        return forbiddenMove;
     }
 }

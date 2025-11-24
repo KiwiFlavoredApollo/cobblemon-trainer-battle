@@ -7,7 +7,6 @@ import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.command.executor.*;
 import kiwiapollo.cobblemontrainerbattle.command.predicate.PlayerCommandSourcePredicate;
-import kiwiapollo.cobblemontrainerbattle.battle.preset.RentalBattlePreset;
 import net.minecraft.server.command.ServerCommandSource;
 
 public class RentalPokemonCommand extends LiteralArgumentBuilder<ServerCommandSource> {
@@ -42,9 +41,9 @@ public class RentalPokemonCommand extends LiteralArgumentBuilder<ServerCommandSo
         return LiteralArgumentBuilder.<ServerCommandSource>literal(subcommand)
                 .requires(new PlayerCommandSourcePredicate(String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), subcommand)))
                 .then(RequiredArgumentBuilder
-                        .<ServerCommandSource, Integer>argument("playerslot", IntegerArgumentType.integer(1, RentalBattlePreset.PARTY_SIZE))
+                        .<ServerCommandSource, Integer>argument("playerslot", IntegerArgumentType.integer(1, 3))
                         .then(RequiredArgumentBuilder
-                                .<ServerCommandSource, Integer>argument("trainerslot", IntegerArgumentType.integer(1, RentalBattlePreset.PARTY_SIZE))
+                                .<ServerCommandSource, Integer>argument("trainerslot", IntegerArgumentType.integer(1, 3))
                                 .executes(new RentalPokemonTrader())));
     }
 

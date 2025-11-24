@@ -53,4 +53,14 @@ public class StaticTrainerEntity extends TrainerEntity {
     public void pushAwayFrom(Entity entity) {
         
     }
+
+    @Override
+    public void onPlayerVictory() {
+
+    }
+
+    @Override
+    public void onPlayerDefeat() {
+        setAiDisabled(false);
+    }
 }

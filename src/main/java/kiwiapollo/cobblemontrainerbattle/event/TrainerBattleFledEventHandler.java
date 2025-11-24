@@ -2,7 +2,7 @@ package kiwiapollo.cobblemontrainerbattle.event;
 
 import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
-import kiwiapollo.cobblemontrainerbattle.battle.battleactor.CustomTrainerBattleActor;
+import kiwiapollo.cobblemontrainerbattle.battle.battleactor.TrainerBattleActor;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
@@ -27,7 +27,7 @@ public class TrainerBattleFledEventHandler implements ServerTickEvents.EndWorldT
                     return;
                 }
 
-                CustomTrainerBattleActor trainer = getCustomTrainerBattleActor(battle);
+                TrainerBattleActor trainer = getCustomTrainerBattleActor(battle);
 
                 Vec3d playerPos = player.getPos();
                 Vec3d trainerPos = trainer.getWorldAndPosition().getSecond();
@@ -50,15 +50,15 @@ public class TrainerBattleFledEventHandler implements ServerTickEvents.EndWorldT
         return Cobblemon.INSTANCE.getBattleRegistry().getBattleByParticipatingPlayer(player);
     }
 
-    private CustomTrainerBattleActor getCustomTrainerBattleActor(PokemonBattle battle) {
+    private TrainerBattleActor getCustomTrainerBattleActor(PokemonBattle battle) {
         return StreamSupport.stream(battle.getActors().spliterator(), false)
-                .filter(actor -> actor instanceof CustomTrainerBattleActor)
-                .map(actor -> (CustomTrainerBattleActor) actor).toList()
+                .filter(actor -> actor instanceof TrainerBattleActor)
+                .map(actor -> (TrainerBattleActor) actor).toList()
                 .get(0);
     }
 
     private boolean isTrainerBattle(PokemonBattle battle) {
         return StreamSupport.stream(battle.getActors().spliterator(), false)
-                .anyMatch(actor -> actor instanceof CustomTrainerBattleActor);
+                .anyMatch(actor -> actor instanceof TrainerBattleActor);
     }
 }

@@ -22,7 +22,7 @@ public class LivingEntityMixin {
             return;
         }
 
-        if (hasTrainerBattle()) {
+        if (isBusyWithPokemonBattle()) {
             callbackInfo.setReturnValue(false);
             callbackInfo.cancel();
         }
@@ -38,11 +38,10 @@ public class LivingEntityMixin {
         }
     }
 
-    private boolean hasTrainerBattle() {
+    private boolean isBusyWithPokemonBattle() {
         try {
             TrainerEntityBehavior villager = (TrainerEntityBehavior) this;
-            UUID battleId = villager.getTrainerBattle().getBattleId();
-            return Objects.nonNull(Cobblemon.INSTANCE.getBattleRegistry().getBattle(battleId));
+            return Objects.nonNull(Cobblemon.INSTANCE.getBattleRegistry().getBattle(villager.getBattleId()));
 
         } catch (ClassCastException | NullPointerException e) {
             return false;

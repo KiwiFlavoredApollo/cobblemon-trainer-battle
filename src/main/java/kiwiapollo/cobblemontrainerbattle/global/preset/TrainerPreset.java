@@ -19,8 +19,6 @@ public class TrainerPreset {
     public final String battleAI;
     @SerializedName("battle_theme")
     public final String battleTheme;
-    @SerializedName("cooldown_in_seconds")
-    public final long cooldownInSeconds;
     @SerializedName("entity_uuid")
     public final String entityUuid;
     @SerializedName("texture")
@@ -31,6 +29,8 @@ public class TrainerPreset {
     @SerializedName("on_defeat_commands")
     public final List<String> onDefeatCommands;
 
+    @SerializedName("cooldown_in_seconds")
+    public final long cooldownInSeconds;
     @SerializedName("is_spawning_allowed")
     public final boolean isSpawningAllowed;
     @SerializedName("is_rematch_allowed")

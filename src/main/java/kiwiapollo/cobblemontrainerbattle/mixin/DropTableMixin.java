@@ -5,7 +5,7 @@ import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import com.cobblemon.mod.common.api.drop.DropTable;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
-import kiwiapollo.cobblemontrainerbattle.battle.battleactor.CustomTrainerBattleActor;
+import kiwiapollo.cobblemontrainerbattle.battle.battleactor.TrainerBattleActor;
 import kotlin.ranges.IntRange;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -42,7 +42,7 @@ public class DropTableMixin {
             UUID battleId = ((PokemonEntity) entity).getBattleId();
             PokemonBattle battle = Cobblemon.INSTANCE.getBattleRegistry().getBattle(battleId);
             List<BattleActor> actors = StreamSupport.stream(battle.getActors().spliterator(), false).toList();
-            return actors.stream().anyMatch(actor -> actor instanceof CustomTrainerBattleActor);
+            return actors.stream().anyMatch(actor -> actor instanceof TrainerBattleActor);
 
         } catch (ClassCastException | NullPointerException e) {
             return false;

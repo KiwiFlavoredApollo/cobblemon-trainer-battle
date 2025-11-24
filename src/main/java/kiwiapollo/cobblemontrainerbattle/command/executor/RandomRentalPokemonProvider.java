@@ -4,7 +4,6 @@ import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import kiwiapollo.cobblemontrainerbattle.battle.preset.RentalBattlePreset;
 import kiwiapollo.cobblemontrainerbattle.global.context.RentalPokemonStorage;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -15,9 +14,10 @@ public class RandomRentalPokemonProvider implements Command<ServerCommandSource>
         try {
             ServerPlayerEntity player = context.getSource().getPlayerOrThrow();
 
-            RentalPokemonStorage.getInstance().get(player).setFirst(PokemonSpecies.INSTANCE.random().create(RentalBattlePreset.LEVEL));
-            RentalPokemonStorage.getInstance().get(player).setSecond(PokemonSpecies.INSTANCE.random().create(RentalBattlePreset.LEVEL));
-            RentalPokemonStorage.getInstance().get(player).setThird(PokemonSpecies.INSTANCE.random().create(RentalBattlePreset.LEVEL));
+            // TODO
+            RentalPokemonStorage.getInstance().get(player).setFirst(PokemonSpecies.INSTANCE.random().create(50));
+            RentalPokemonStorage.getInstance().get(player).setSecond(PokemonSpecies.INSTANCE.random().create(50));
+            RentalPokemonStorage.getInstance().get(player).setThird(PokemonSpecies.INSTANCE.random().create(50));
 
             new RentalPokemonStatusPrinter().run(context);
 

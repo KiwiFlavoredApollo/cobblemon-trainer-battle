@@ -39,6 +39,11 @@ public class NeutralTrainerEntity extends TrainerEntity implements Angerable {
     }
 
     @Override
+    public void onPlayerDefeat() {
+        setAiDisabled(false);
+    }
+
+    @Override
     public int getAngerTime() {
         return angerTime;
     }

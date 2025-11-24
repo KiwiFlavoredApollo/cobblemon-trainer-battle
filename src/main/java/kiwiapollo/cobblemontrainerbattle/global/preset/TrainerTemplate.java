@@ -2,8 +2,8 @@ package kiwiapollo.cobblemontrainerbattle.global.preset;
 
 import com.cobblemon.mod.common.api.battles.model.ai.BattleAI;
 import com.cobblemon.mod.common.battles.BattleFormat;
-import kiwiapollo.cobblemontrainerbattle.battle.predicate.*;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
+import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemon;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
@@ -26,28 +26,27 @@ public class TrainerTemplate {
     private final List<String> onVictoryCommands;
     private final List<String> onDefeatCommands;
 
+    private final long cooldownInSeconds;
     private final boolean isSpawningAllowed;
+    private final boolean isRematchAllowed;
 
-    private final CooldownElapsedPredicate cooldownElapsedPredicate;
-    private final RematchAllowedPredicate rematchAllowedPredicate;
+    private final int maximumPartySize;
+    private final int minimumPartySize;
 
-    private final MaximumPartySizePredicate.PlayerPredicate maximumPartySizePredicate;
-    private final MinimumPartySizePredicate.PlayerPredicate minimumPartySizePredicate;
+    private final int maximumPartyLevel;
+    private final int minimumPartyLevel;
 
-    private final MaximumPartyLevelPredicate maximumPartyLevelPredicate;
-    private final MinimumPartyLevelPredicate minimumPartyLevelPredicate;
+    private final List<String> requiredLabel;
+    private final List<ShowdownPokemon> requiredPokemon;
+    private final List<String> requiredHeldItem;
+    private final List<String> requiredAbility;
+    private final List<String> requiredMove;
 
-    private final RequiredLabelPredicate requiredLabelPredicate;
-    private final RequiredPokemonPredicate requiredPokemonPredicate;
-    private final RequiredHeldItemPredicate requiredHeldItemPredicate;
-    private final RequiredAbilityPredicate requiredAbilityPredicate;
-    private final RequiredMovePredicate requiredMovePredicate;
-
-    private final ForbiddenLabelPredicate forbiddenLabelPredicate;
-    private final ForbiddenPokemonPredicate forbiddenPokemonPredicate;
-    private final ForbiddenHeldItemPredicate forbiddenHeldItemPredicate;
-    private final ForbiddenAbilityPredicate forbiddenAbilityPredicate;
-    private final ForbiddenMovePredicate forbiddenMovePredicate;
+    private final List<String> forbiddenLabel;
+    private final List<ShowdownPokemon> forbiddenPokemon;
+    private final List<String> forbiddenHeldItem;
+    private final List<String> forbiddenAbility;
+    private final List<String> forbiddenMove;
 
     public TrainerTemplate(
             List<PokemonLevelPair> team,
@@ -63,28 +62,27 @@ public class TrainerTemplate {
             List<String> onVictoryCommands,
             List<String> onDefeatCommands,
 
+            long cooldownInSeconds,
             boolean isSpawningAllowed,
+            boolean isRematchAllowed,
 
-            CooldownElapsedPredicate cooldownElapsedPredicate,
-            RematchAllowedPredicate rematchAllowedPredicate,
+            int maximumPartySize,
+            int minimumPartySize,
 
-            MaximumPartySizePredicate.PlayerPredicate maximumPartySizePredicate,
-            MinimumPartySizePredicate.PlayerPredicate minimumPartySizePredicate,
+            int maximumPartyLevel,
+            int minimumPartyLevel,
 
-            MaximumPartyLevelPredicate maximumPartyLevelPredicate,
-            MinimumPartyLevelPredicate minimumPartyLevelPredicate,
+            List<String> requiredLabel,
+            List<ShowdownPokemon> requiredPokemon,
+            List<String> requiredHeldItem,
+            List<String> requiredAbility,
+            List<String> requiredMove,
 
-            RequiredLabelPredicate requiredLabelPredicate,
-            RequiredPokemonPredicate requiredPokemonPredicate,
-            RequiredHeldItemPredicate requiredHeldItemPredicate,
-            RequiredAbilityPredicate requiredAbilityPredicate,
-            RequiredMovePredicate requiredMovePredicate,
-
-            ForbiddenLabelPredicate forbiddenLabelPredicate,
-            ForbiddenPokemonPredicate forbiddenPokemonPredicate,
-            ForbiddenHeldItemPredicate forbiddenHeldItemPredicate,
-            ForbiddenAbilityPredicate forbiddenAbilityPredicate,
-            ForbiddenMovePredicate forbiddenMovePredicate
+            List<String> forbiddenLabel,
+            List<ShowdownPokemon> forbiddenPokemon,
+            List<String> forbiddenHeldItem,
+            List<String> forbiddenAbility,
+            List<String> forbiddenMove
     ) {
         this.team = team;
 
@@ -100,27 +98,27 @@ public class TrainerTemplate {
         this.onVictoryCommands = onVictoryCommands;
         this.onDefeatCommands = onDefeatCommands;
 
+        this.cooldownInSeconds = cooldownInSeconds;
         this.isSpawningAllowed = isSpawningAllowed;
+        this.isRematchAllowed = isRematchAllowed;
 
-        this.cooldownElapsedPredicate = cooldownElapsedPredicate;
-        this.rematchAllowedPredicate = rematchAllowedPredicate;
+        this.maximumPartySize = maximumPartySize;
+        this.minimumPartySize = minimumPartySize;
 
-        this.maximumPartySizePredicate = maximumPartySizePredicate;
-        this.minimumPartySizePredicate = minimumPartySizePredicate;
-        this.maximumPartyLevelPredicate = maximumPartyLevelPredicate;
-        this.minimumPartyLevelPredicate = minimumPartyLevelPredicate;
+        this.maximumPartyLevel = maximumPartyLevel;
+        this.minimumPartyLevel = minimumPartyLevel;
 
-        this.requiredLabelPredicate = requiredLabelPredicate;
-        this.requiredPokemonPredicate = requiredPokemonPredicate;
-        this.requiredHeldItemPredicate = requiredHeldItemPredicate;
-        this.requiredAbilityPredicate = requiredAbilityPredicate;
-        this.requiredMovePredicate = requiredMovePredicate;
+        this.requiredLabel = requiredLabel;
+        this.requiredPokemon = requiredPokemon;
+        this.requiredHeldItem = requiredHeldItem;
+        this.requiredAbility = requiredAbility;
+        this.requiredMove = requiredMove;
 
-        this.forbiddenLabelPredicate = forbiddenLabelPredicate;
-        this.forbiddenPokemonPredicate = forbiddenPokemonPredicate;
-        this.forbiddenHeldItemPredicate = forbiddenHeldItemPredicate;
-        this.forbiddenAbilityPredicate = forbiddenAbilityPredicate;
-        this.forbiddenMovePredicate = forbiddenMovePredicate;
+        this.forbiddenLabel = forbiddenLabel;
+        this.forbiddenPokemon = forbiddenPokemon;
+        this.forbiddenHeldItem = forbiddenHeldItem;
+        this.forbiddenAbility = forbiddenAbility;
+        this.forbiddenMove = forbiddenMove;
     }
 
     public List<PokemonLevelPair> getTeam() {
@@ -167,72 +165,71 @@ public class TrainerTemplate {
         return onDefeatCommands;
     }
 
-    // TODO rename to isSpawnAllowed
+    public long getCooldownInSeconds() {
+        return cooldownInSeconds;
+    }
+
     public boolean isSpawningAllowed() {
         return isSpawningAllowed;
     }
 
-    public CooldownElapsedPredicate getCooldownElapsedPredicate() {
-        return cooldownElapsedPredicate;
+    public boolean isRematchAllowed() {
+        return isRematchAllowed;
     }
 
-    public RematchAllowedPredicate getRematchAllowedPredicate() {
-        return rematchAllowedPredicate;
+    public int getMaximumPartySize() {
+        return maximumPartySize;
     }
 
-    public MaximumPartySizePredicate.PlayerPredicate getMaximumPartySizePredicate() {
-        return maximumPartySizePredicate;
+    public int getMinimumPartySize() {
+        return minimumPartySize;
     }
 
-    public MinimumPartySizePredicate.PlayerPredicate getMinimumPartySizePredicate() {
-        return minimumPartySizePredicate;
+    public int getMaximumPartyLevel() {
+        return maximumPartyLevel;
     }
 
-    public MaximumPartyLevelPredicate getMaximumPartyLevelPredicate() {
-        return maximumPartyLevelPredicate;
+    public int getMinimumPartyLevel() {
+        return minimumPartyLevel;
     }
 
-    public MinimumPartyLevelPredicate getMinimumPartyLevelPredicate() {
-        return minimumPartyLevelPredicate;
+    public List<String> getRequiredLabel() {
+        return requiredLabel;
     }
 
-    public RequiredLabelPredicate getRequiredLabelPredicate() {
-        return requiredLabelPredicate;
+    public List<ShowdownPokemon> getRequiredPokemon() {
+        return requiredPokemon;
     }
 
-    public RequiredPokemonPredicate getRequiredPokemonPredicate() {
-        return requiredPokemonPredicate;
+    public List<String> getRequiredHeldItem() {
+        return requiredHeldItem;
     }
 
-    public RequiredHeldItemPredicate getRequiredHeldItemPredicate() {
-        return requiredHeldItemPredicate;
+    public List<String> getRequiredAbility() {
+        return requiredAbility;
     }
 
-    public RequiredAbilityPredicate getRequiredAbilityPredicate() {
-        return requiredAbilityPredicate;
+    public List<String> getRequiredMove() {
+        return requiredMove;
     }
 
-    public RequiredMovePredicate getRequiredMovePredicate() {
-        return requiredMovePredicate;
+    public List<String> getForbiddenLabel() {
+        return forbiddenLabel;
     }
 
-    public ForbiddenLabelPredicate getForbiddenLabelPredicate() {
-        return forbiddenLabelPredicate;
+    public List<ShowdownPokemon> getForbiddenPokemon() {
+        return forbiddenPokemon;
     }
 
-    public ForbiddenPokemonPredicate getForbiddenPokemonPredicate() {
-        return forbiddenPokemonPredicate;
+    public List<String> getForbiddenHeldItem() {
+        return forbiddenHeldItem;
     }
 
-    public ForbiddenHeldItemPredicate getForbiddenHeldItemPredicate() {
-        return forbiddenHeldItemPredicate;
+    public List<String> getForbiddenAbility() {
+        return forbiddenAbility;
     }
 
-    public ForbiddenAbilityPredicate getForbiddenAbilityPredicate() {
-        return forbiddenAbilityPredicate;
-    }
-
-    public ForbiddenMovePredicate getForbiddenMovePredicate() {
-        return forbiddenMovePredicate;
+    public List<String> getForbiddenMove() {
+        return forbiddenMove;
     }
 }

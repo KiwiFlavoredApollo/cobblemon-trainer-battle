@@ -1,7 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.event;
 
 import com.cobblemon.mod.common.api.events.battles.BattleVictoryEvent;
-import kiwiapollo.cobblemontrainerbattle.battle.battleactor.CustomTrainerBattleActor;
+import kiwiapollo.cobblemontrainerbattle.battle.battleactor.TrainerBattleActor;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 
@@ -12,14 +12,14 @@ public class BattleVictoryEventHandler implements Function1<BattleVictoryEvent, 
     @Override
     public Unit invoke(BattleVictoryEvent event) {
         event.getWinners().stream()
-                .filter(actor -> actor instanceof CustomTrainerBattleActor)
-                .map(actor -> (CustomTrainerBattleActor) actor)
-                .forEach(CustomTrainerBattleActor::onPlayerDefeat);
+                .filter(actor -> actor instanceof TrainerBattleActor)
+                .map(actor -> (TrainerBattleActor) actor)
+                .forEach(TrainerBattleActor::onPlayerDefeat);
 
         event.getLosers().stream()
-                .filter(actor -> actor instanceof CustomTrainerBattleActor)
-                .map(actor -> (CustomTrainerBattleActor) actor)
-                .forEach(CustomTrainerBattleActor::onPlayerVictory);
+                .filter(actor -> actor instanceof TrainerBattleActor)
+                .map(actor -> (TrainerBattleActor) actor)
+                .forEach(TrainerBattleActor::onPlayerVictory);
 
         return Unit.INSTANCE;
     }

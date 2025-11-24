@@ -1,15 +1,12 @@
 package kiwiapollo.cobblemontrainerbattle.command.executor;
 
+import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.google.gson.*;
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.NormalLevelPlayer;
-import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipant;
-import kiwiapollo.cobblemontrainerbattle.battle.predicate.MessagePredicate;
-import kiwiapollo.cobblemontrainerbattle.battle.predicate.PlayerPartyNotEmptyPredicate;
 import kiwiapollo.cobblemontrainerbattle.pokemon.CobblemonPokemonParser;
 import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemon;
 import net.minecraft.command.argument.EntityArgumentType;
@@ -35,9 +32,8 @@ public class ShowdownPokemonExporter implements Command<ServerCommandSource> {
         try {
             ServerPlayerEntity player = EntityArgumentType.getPlayer(context, "player");
 
-            MessagePredicate<PlayerBattleParticipant> predicate = new PlayerPartyNotEmptyPredicate();
-            if (!predicate.test(new NormalLevelPlayer(player))) {
-                player.sendMessage(predicate.getErrorMessage());
+            // TODO
+            if (!hasPokemonInParty(player)) {
                 return 0;
             }
 
@@ -58,6 +54,10 @@ public class ShowdownPokemonExporter implements Command<ServerCommandSource> {
             CobblemonTrainerBattle.LOGGER.error("Error occurred while exporting trainer file");
             return 0;
         }
+    }
+
+    private boolean hasPokemonInParty(ServerPlayerEntity player) {
+        return Cobblemon.INSTANCE.getStorage().getParty(player).occupied() != 0;
     }
 
     private File getExportPath(MinecraftServer server) {

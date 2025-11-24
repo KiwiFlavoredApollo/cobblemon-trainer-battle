@@ -8,17 +8,15 @@ import com.cobblemon.mod.common.pokemon.status.PersistentStatus;
 import com.cobblemon.mod.common.pokemon.status.statuses.persistent.*;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
-import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.player.PlayerBattleParticipantFactory;
-import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.trainer.TrainerBattleParticipantFactory;
-import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.EntityBackedTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.NullTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.PokemonBattleBehavior;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
 import kiwiapollo.cobblemontrainerbattle.global.history.EntityRecord;
 import kiwiapollo.cobblemontrainerbattle.global.history.PlayerHistory;
 import kiwiapollo.cobblemontrainerbattle.global.history.PlayerHistoryStorage;
+import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerTemplate;
 import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerTemplateStorage;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.entity.Entity;
@@ -62,7 +60,9 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
 
     private static final String TRAINER_NBT_KEY = "Trainer";
 
-    private TrainerBattle trainerBattle;
+    @Deprecated
+    private PokemonBattleBehavior trainerBattle;
+    private UUID battleId;
 
     public TrainerEntity(EntityType<? extends PathAwareEntity> type, World world) {
         super(type, world);
@@ -108,18 +108,14 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
 
     private void startTrainerBattle(ServerPlayerEntity player, Hand hand) {
         try {
-            if (hasTrainerBattle()) {
+            if (isBusyWithPokemonBattle()) {
                 return;
             }
 
-            TrainerBattle trainerBattle = new EntityBackedTrainerBattle(
-                    new PlayerBattleParticipantFactory(player, getLevelMode(toDefaultedIdentifier(getDataTracker().get(TRAINER)))).create(),
-                    new TrainerBattleParticipantFactory(toDefaultedIdentifier(getDataTracker().get(TRAINER))).create(),
-                    this
-            );
-            trainerBattle.start();
-
-            this.trainerBattle = trainerBattle;
+            TrainerTemplate trainer = getTrainerTemplate();
+            TrainerBattle battle = new TrainerBattle(player, trainer);
+            battle.start();
+            this.battleId = battle.getBattleId();
 
             this.setVelocity(0, 0, 0);
             this.setAiDisabled(true);
@@ -132,20 +128,26 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
         }
     }
 
-    private LevelMode getLevelMode(Identifier trainer) {
-        return TrainerTemplateStorage.getInstance().get(trainer).getLevelMode();
+    @Override
+    public UUID getBattleId() {
+        return battleId;
+    }
+
+    private TrainerTemplate getTrainerTemplate() {
+        Identifier identifier = toDefaultedIdentifier(getDataTracker().get(TRAINER));
+        return TrainerTemplateStorage.getInstance().get(identifier);
     }
 
     @Override
     public boolean damage(DamageSource source, float amount) {
-        if (hasTrainerBattle()) {
+        if (isBusyWithPokemonBattle()) {
             return false;
         }
 
         return super.damage(source, amount);
     }
 
-    private boolean hasTrainerBattle() {
+    private boolean isBusyWithPokemonBattle() {
         try {
             UUID battleId = trainerBattle.getBattleId();
             return Objects.nonNull(Cobblemon.INSTANCE.getBattleRegistry().getBattle(battleId));
@@ -164,7 +166,7 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
             CustomCriteria.KILL_TRAINER_CRITERION.trigger(player);
         }
 
-        if(hasTrainerBattle()) {
+        if(isBusyWithPokemonBattle()) {
             UUID battleId = trainerBattle.getBattleId();
             Cobblemon.INSTANCE.getBattleRegistry().getBattle(battleId).end();
         }
@@ -211,16 +213,6 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
         }
     }
 
-    @Override
-    public void onPlayerVictory() {
-
-    }
-
-    @Override
-    public void onPlayerDefeat() {
-        setAiDisabled(false);
-    }
-
     protected void dropDefeatedInBattleLoot() {
         Identifier identifier = this.getLootTable();
         LootTable lootTable = this.getWorld().getServer().getLootManager().getLootTable(identifier);
@@ -231,13 +223,6 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
 
         LootContextParameterSet lootContextParameterSet = builder.build(LootContextTypes.ENTITY);
         lootTable.generateLoot(lootContextParameterSet, this.getLootTableSeed(), this::dropStack);
-    }
-
-    @Override
-    public TrainerBattle getTrainerBattle() {
-        UUID battleId = trainerBattle.getBattleId();
-        Objects.requireNonNull(Cobblemon.INSTANCE.getBattleRegistry().getBattle(battleId));
-        return trainerBattle;
     }
 
     public static DefaultAttributeContainer.Builder createMobAttributes() {
