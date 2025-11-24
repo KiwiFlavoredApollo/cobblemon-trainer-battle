@@ -17,6 +17,7 @@ public class TrainerSuggestionProvider implements SuggestionProvider<ServerComma
     @Override
     public CompletableFuture<Suggestions> getSuggestions(CommandContext<ServerCommandSource> context, SuggestionsBuilder builder) throws CommandSyntaxException {
         String input = getIncompleteInput(context);
+        TrainerTemplateStorage.getInstance().keySet().stream().filter(identifier -> identifier.toString().startsWith(input)).map(Identifier::toString).forEach(builder::suggest);
         TrainerTemplateStorage.getInstance().keySet().stream().filter(identifier -> identifier.getPath().startsWith(input)).map(Identifier::toString).forEach(builder::suggest);
         return builder.buildFuture();
     }
