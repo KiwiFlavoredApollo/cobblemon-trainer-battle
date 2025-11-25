@@ -32,18 +32,25 @@ public class ShowdownPokemonExporter implements Command<ServerCommandSource> {
         try {
             ServerPlayerEntity player = EntityArgumentType.getPlayer(context, "player");
 
-            if (hasEmptyParty(player)) {
-                player.sendMessage(getEmptyPartyErrorMessage());
+            if (Cobblemon.INSTANCE.getStorage().getParty(player).occupied() == 0) {
+                player.sendMessage(Text.translatable("command.cobblemontrainerbattle.error.export.player_empty_party"));
                 return 0;
             }
 
-            File exportPath = getExportPath(player.getServer());
+            File directory = getExportDirectory(player.getServer());
+            String filename = getExportFilename(player);
 
-            if (!exportPath.exists()) {
-                exportPath.mkdirs();
+            if (!directory.exists()) {
+                directory.mkdirs();
             }
 
-            writeJsonFile(player);
+            List<ShowdownPokemon> pokemon = getShowdownPokemon(player);
+            File file = new File(directory, filename);
+
+            try (FileWriter fileWriter = new FileWriter(file)) {
+                Gson gson = new GsonBuilder().setPrettyPrinting().create();
+                gson.toJson(new Gson().toJsonTree(pokemon), fileWriter);
+            }
 
             player.sendMessage(Text.translatable("command.cobblemontrainerbattle.success.export", player.getGameProfile().getName()));
             CobblemonTrainerBattle.LOGGER.error("Exported Pokémon : {}", player.getGameProfile().getName());
@@ -56,29 +63,13 @@ public class ShowdownPokemonExporter implements Command<ServerCommandSource> {
         }
     }
 
-    // TODO
-    private Text getEmptyPartyErrorMessage() {
-        return Text.translatable("");
-    }
-
-    private boolean hasEmptyParty(ServerPlayerEntity player) {
-        return Cobblemon.INSTANCE.getStorage().getParty(player).occupied() == 0;
-    }
-
-    private File getExportPath(MinecraftServer server) {
+    private File getExportDirectory(MinecraftServer server) {
         final String exportDir = "export";
 
         File worldDir = server.getSavePath(WorldSavePath.ROOT).toFile();
         String exportPath = CobblemonTrainerBattle.MOD_ID + "/" + exportDir;
 
         return new File(worldDir, exportPath);
-    }
-
-    private void writeJsonFile(ServerPlayerEntity player) throws IOException {
-        try (FileWriter fileWriter = new FileWriter(getExportFile(player))) {
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            gson.toJson(new Gson().toJsonTree(getShowdownPokemon(player)), fileWriter);
-        }
     }
 
     private List<ShowdownPokemon> getShowdownPokemon(ServerPlayerEntity player) {
@@ -89,11 +80,10 @@ public class ShowdownPokemonExporter implements Command<ServerCommandSource> {
         return pokemon.stream().map(new CobblemonPokemonParser()::toShowdownPokemon).toList();
     }
 
-    private File getExportFile(ServerPlayerEntity player) {
+    private String getExportFilename(ServerPlayerEntity player) {
         LocalDateTime dateTime = LocalDateTime.ofInstant(Instant.now(), ZoneId.systemDefault());
         String timestamp = dateTime.format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
 
-        String exportFileName = String.format("%s_%s.json", player.getGameProfile().getName().toLowerCase(), timestamp);
-        return new File(getExportPath(player.getServer()), exportFileName);
+        return String.format("%s_%s.json", player.getGameProfile().getName().toLowerCase(), timestamp);
     }
 }
