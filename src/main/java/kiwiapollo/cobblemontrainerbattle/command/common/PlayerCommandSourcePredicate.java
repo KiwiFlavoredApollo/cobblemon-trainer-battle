@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.command;
+package kiwiapollo.cobblemontrainerbattle.command.common;
 
 import net.minecraft.server.command.ServerCommandSource;
 

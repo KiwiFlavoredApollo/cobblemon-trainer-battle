@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.command;
+package kiwiapollo.cobblemontrainerbattle.command.rentalpokemon;
 
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.mojang.brigadier.Command;
@@ -27,6 +27,10 @@ public class RentalPokemonStatusPrinter extends PokemonStatusPrinter implements 
         return Command.SINGLE_SUCCESS;
     }
 
+    /** TODO
+     * why static,
+     * @see TradePokemonStatusPrinter
+     */
     private static PartyStore getRentalPokemon(ServerPlayerEntity player) {
         RentalPokemon rental = RentalPokemonStorage.getInstance().get(player);
         PartyStore party = new PartyStore(player.getUuid());

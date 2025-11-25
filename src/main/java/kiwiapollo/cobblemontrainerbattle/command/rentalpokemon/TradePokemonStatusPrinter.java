@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.command;
+package kiwiapollo.cobblemontrainerbattle.command.rentalpokemon;
 
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.mojang.brigadier.Command;
@@ -10,7 +10,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 
-public class TradablePokemonStatusPrinter extends PokemonStatusPrinter implements Command<ServerCommandSource> {
+public class TradePokemonStatusPrinter extends PokemonStatusPrinter implements Command<ServerCommandSource> {
     @Override
     public int run(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
         ServerPlayerEntity player = context.getSource().getPlayerOrThrow();

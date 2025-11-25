@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.command;
+package kiwiapollo.cobblemontrainerbattle.command.common;
 
 import net.fabricmc.loader.api.FabricLoader;
 import net.luckperms.api.LuckPermsProvider;

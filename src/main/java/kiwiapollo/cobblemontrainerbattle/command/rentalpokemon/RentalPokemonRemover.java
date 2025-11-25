@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.command;
+package kiwiapollo.cobblemontrainerbattle.command.rentalpokemon;
 
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.context.CommandContext;

@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.command;
+package kiwiapollo.cobblemontrainerbattle.command.rentalpokemon;
 
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
 import com.mojang.brigadier.Command;

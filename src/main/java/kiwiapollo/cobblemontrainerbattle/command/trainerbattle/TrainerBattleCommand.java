@@ -1,18 +1,20 @@
-package kiwiapollo.cobblemontrainerbattle.command;
+package kiwiapollo.cobblemontrainerbattle.command.trainerbattle;
 
 import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.command.common.PlayerCommandSourcePredicate;
+import kiwiapollo.cobblemontrainerbattle.command.common.TrainerSuggestionProvider;
 import net.minecraft.command.argument.IdentifierArgumentType;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
 
-public class RentalBattleCommand extends LiteralArgumentBuilder<ServerCommandSource> {
-    public RentalBattleCommand() {
-        super("rentalbattle");
+public class TrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSource> {
+    public TrainerBattleCommand() {
+        super("trainerbattle");
 
         List<String> permissions = List.of(
                 String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), "trainer"),
@@ -29,13 +31,13 @@ public class RentalBattleCommand extends LiteralArgumentBuilder<ServerCommandSou
         return RequiredArgumentBuilder.<ServerCommandSource, Identifier>argument("trainer", IdentifierArgumentType.identifier())
                 .requires(new PlayerCommandSourcePredicate(permission))
                 .suggests(new TrainerSuggestionProvider())
-                .executes(new RentalBattleStarter.BetweenThisPlayerAndSelectedTrainer());
+                .executes(new TrainerBattleStarter.BetweenThisPlayerAndSelectedTrainer());
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getRandomTrainerBattleCommand() {
         String permission = String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), "random");
         return LiteralArgumentBuilder.<ServerCommandSource>literal("random")
                 .requires(new PlayerCommandSourcePredicate(permission))
-                .executes(new RentalBattleStarter.BetweenThisPlayerAndRandomTrainer());
+                .executes(new TrainerBattleStarter.BetweenThisPlayerAndRandomTrainer());
     }
 }

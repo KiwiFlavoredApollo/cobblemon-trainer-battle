@@ -1,9 +1,9 @@
-package kiwiapollo.cobblemontrainerbattle.command;
+package kiwiapollo.cobblemontrainerbattle.command.trainerbattle;
 
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import kiwiapollo.cobblemontrainerbattle.battle.RentalBattle;
+import kiwiapollo.cobblemontrainerbattle.battle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.preset.TrainerTemplate;
 import kiwiapollo.cobblemontrainerbattle.preset.TrainerTemplateStorage;
@@ -13,14 +13,12 @@ import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
-public abstract class RentalBattleStarter implements Command<ServerCommandSource> {
+public abstract class TrainerBattleStarter implements Command<ServerCommandSource> {
     public int run(ServerPlayerEntity player, TrainerTemplate trainer) {
         try {
-            new RentalBattle(player, trainer).start();
+            new TrainerBattle(player, trainer).start();
 
             return Command.SINGLE_SUCCESS;
 
@@ -49,28 +47,28 @@ public abstract class RentalBattleStarter implements Command<ServerCommandSource
         return TrainerTemplateStorage.getInstance().get(trainer);
     }
 
-    public static class BetweenThisPlayerAndSelectedTrainer extends RentalBattleStarter {
+    public static class BetweenThisPlayerAndSelectedTrainer extends TrainerBattleStarter {
         @Override
         public int run(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
             return super.run(getThisPlayer(context), getSelectedTrainer(context));
         }
     }
 
-    public static class BetweenThisPlayerAndRandomTrainer extends RentalBattleStarter {
+    public static class BetweenThisPlayerAndRandomTrainer extends TrainerBattleStarter {
         @Override
         public int run(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
             return super.run(getThisPlayer(context), getRandomTrainer(context));
         }
     }
 
-    public static class BetweenOtherPlayerAndSelectedTrainer extends RentalBattleStarter {
+    public static class BetweenOtherPlayerAndSelectedTrainer extends TrainerBattleStarter {
         @Override
         public int run(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
             return super.run(getOtherPlayer(context), getSelectedTrainer(context));
         }
     }
 
-    public static class BetweenOtherPlayerAndRandomTrainer extends RentalBattleStarter {
+    public static class BetweenOtherPlayerAndRandomTrainer extends TrainerBattleStarter {
         @Override
         public int run(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
             return super.run(getOtherPlayer(context), getRandomTrainer(context));

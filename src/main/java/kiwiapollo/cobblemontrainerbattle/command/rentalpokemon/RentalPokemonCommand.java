@@ -1,10 +1,11 @@
-package kiwiapollo.cobblemontrainerbattle.command;
+package kiwiapollo.cobblemontrainerbattle.command.rentalpokemon;
 
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.command.common.PlayerCommandSourcePredicate;
 import net.minecraft.server.command.ServerCommandSource;
 
 public class RentalPokemonCommand extends LiteralArgumentBuilder<ServerCommandSource> {
@@ -56,7 +57,7 @@ public class RentalPokemonCommand extends LiteralArgumentBuilder<ServerCommandSo
         String subcommand = "showtrade";
         return LiteralArgumentBuilder.<ServerCommandSource>literal(subcommand)
                 .requires(new PlayerCommandSourcePredicate(String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), subcommand)))
-                .executes(new TradablePokemonStatusPrinter());
+                .executes(new TradePokemonStatusPrinter());
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getClearRentalPokemonCommand() {
