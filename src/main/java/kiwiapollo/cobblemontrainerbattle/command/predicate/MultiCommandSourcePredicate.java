@@ -2,7 +2,6 @@ package kiwiapollo.cobblemontrainerbattle.command.predicate;
 
 import net.minecraft.server.command.ServerCommandSource;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
 

@@ -1,7 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.command.executor;
 
 import com.cobblemon.mod.common.Cobblemon;
-import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.context.CommandContext;

@@ -2,7 +2,6 @@ package kiwiapollo.cobblemontrainerbattle.block;
 
 import kiwiapollo.cobblemontrainerbattle.entity.CustomEntityType;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.LootableContainerBlockEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
