@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.preset;
+package kiwiapollo.cobblemontrainerbattle.template;
 
 import com.cobblemon.mod.common.battles.BattleFormat;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;

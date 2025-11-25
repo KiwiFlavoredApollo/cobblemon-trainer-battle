@@ -136,6 +136,7 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
         }
     }
 
+    // TODO
     protected Text toPokemonDescriptor(ShowdownPokemon pokemon) {
         try {
             if (pokemon.form == null) {
@@ -330,7 +331,7 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
         return true;
     }
 
-    protected boolean isBusyWithPokemonBattle() {
+    protected boolean isPlayerBusyWithPokemonBattle() {
         return Cobblemon.INSTANCE.getBattleRegistry().getBattleByParticipatingPlayer(player.getEntity()) != null;
     }
 

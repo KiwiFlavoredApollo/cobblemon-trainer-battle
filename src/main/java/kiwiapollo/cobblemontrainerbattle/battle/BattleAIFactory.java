@@ -4,7 +4,7 @@ import com.cobblemon.mod.common.api.battles.model.ai.BattleAI;
 import com.cobblemon.mod.common.battles.ai.RandomBattleAI;
 import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
 import kiwiapollo.cobblemontrainerbattle.common.StrongBattleAI;
-import kiwiapollo.cobblemontrainerbattle.preset.TrainerTemplate;
+import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplate;
 
 import java.util.Objects;
 

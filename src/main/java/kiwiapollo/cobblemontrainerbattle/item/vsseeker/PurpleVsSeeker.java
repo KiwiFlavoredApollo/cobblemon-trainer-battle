@@ -1,7 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.item.vsseeker;
 
 import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
-import kiwiapollo.cobblemontrainerbattle.entity.RandomTrainerIdentifierFactory;
+import kiwiapollo.cobblemontrainerbattle.template.RandomTrainerFactory;
 import net.minecraft.util.Identifier;
 
 public class PurpleVsSeeker extends VsSeeker {
@@ -12,7 +12,7 @@ public class PurpleVsSeeker extends VsSeeker {
     private static class Factory implements SimpleFactory<Identifier> {
         @Override
         public Identifier create() {
-            return new RandomTrainerIdentifierFactory(template -> template.getIdentifier().getPath().matches("smogon/.+")).create();
+            return new RandomTrainerFactory(template -> template.getIdentifier().getPath().matches("smogon/.+")).create();
         }
     }
 }

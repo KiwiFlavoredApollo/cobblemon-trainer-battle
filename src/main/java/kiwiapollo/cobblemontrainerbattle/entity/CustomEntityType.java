@@ -14,8 +14,8 @@ public class CustomEntityType {
     public static final BlockEntityType<PokeBallBoxBlockEntity> POKE_BALL_BOX;
 
     static {
-        NEUTRAL_TRAINER = EntityType.Builder.create(new RandomNeutralTrainerEntityFactory(), SpawnGroup.CREATURE).setDimensions(0.6f, 1.8f).build("neutral_trainer");
-        STATIC_TRAINER = EntityType.Builder.create(new RandomStaticTrainerEntityFactory(), SpawnGroup.CREATURE).setDimensions(0.6f, 1.8f).build("static_trainer");
+        NEUTRAL_TRAINER = EntityType.Builder.create(new NeutralTrainerEntity.Factory(), SpawnGroup.CREATURE).setDimensions(0.6f, 1.8f).build("neutral_trainer");
+        STATIC_TRAINER = EntityType.Builder.create(new StaticTrainerEntity.Factory(), SpawnGroup.CREATURE).setDimensions(0.6f, 1.8f).build("static_trainer");
         POKE_BALL_BOX = BlockEntityType.Builder.create(PokeBallBoxBlockEntity::new, CustomBlock.POKE_BALL_BOX.getBlock()).build(Util.getChoiceType(TypeReferences.BLOCK_ENTITY, "poke_ball_box"));
     }
 }

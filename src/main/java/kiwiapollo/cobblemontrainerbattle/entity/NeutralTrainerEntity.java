@@ -1,5 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.entity;
 
+import kiwiapollo.cobblemontrainerbattle.template.RandomTrainerFactory;
+import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplate;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.mob.Angerable;
@@ -66,5 +68,20 @@ public class NeutralTrainerEntity extends TrainerEntity implements Angerable {
     @Override
     public void chooseRandomAngerTime() {
         this.setAngerTime(ANGER_TIME_RANGE.get(this.random));
+    }
+
+    public static class Factory implements EntityType.EntityFactory<NeutralTrainerEntity> {
+        private final RandomTrainerFactory identifier;
+
+        public Factory() {
+            this.identifier = new RandomTrainerFactory(TrainerTemplate::isSpawningAllowed);
+        }
+
+        @Override
+        public NeutralTrainerEntity create(EntityType<NeutralTrainerEntity> type, World world) {
+            NeutralTrainerEntity entity = new NeutralTrainerEntity(type, world);
+            entity.setTrainer(identifier.create());
+            return entity;
+        }
     }
 }

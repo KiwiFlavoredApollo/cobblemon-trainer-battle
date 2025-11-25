@@ -1,6 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.entity;
 
 import com.cobblemon.mod.common.Cobblemon;
+import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.api.storage.NoPokemonStoreException;
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.pokemon.Pokemon;
@@ -9,13 +10,15 @@ import com.cobblemon.mod.common.pokemon.status.statuses.persistent.*;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
 import kiwiapollo.cobblemontrainerbattle.battle.TrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
+import kiwiapollo.cobblemontrainerbattle.template.RandomTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
 import kiwiapollo.cobblemontrainerbattle.history.EntityRecord;
 import kiwiapollo.cobblemontrainerbattle.history.PlayerHistory;
 import kiwiapollo.cobblemontrainerbattle.history.PlayerHistoryStorage;
-import kiwiapollo.cobblemontrainerbattle.preset.TrainerTemplate;
-import kiwiapollo.cobblemontrainerbattle.preset.TrainerTemplateStorage;
+import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplate;
+import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplateStorage;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityData;
@@ -48,6 +51,7 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
+import java.util.function.Predicate;
 
 public abstract class TrainerEntity extends PathAwareEntity implements TrainerEntityBehavior {
     private static final String FALLBACK_TRAINER = "radicalred/player_red";
@@ -72,7 +76,7 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
     @Nullable
     public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityNbt) {
         if (spawnReason.equals(SpawnReason.SPAWNER)) {
-            setTrainer(new RandomTrainerIdentifierFactory(TrainerTemplate::isSpawningAllowed).create());
+            setTrainer(new RandomTrainerFactory(TrainerTemplate::isSpawningAllowed).create());
         }
 
         return super.initialize(world, difficulty, spawnReason, entityData, entityNbt);
@@ -106,7 +110,7 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
                 return;
             }
 
-            TrainerTemplate trainer = getTrainerTemplate();
+            TrainerTemplate trainer = createTrainerTemplate();
             TrainerBattle battle = new TrainerBattle(player, trainer);
             battle.start();
             this.battleId = battle.getBattleId();
@@ -127,9 +131,10 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
         return battleId;
     }
 
-    private TrainerTemplate getTrainerTemplate() {
+    private TrainerTemplate createTrainerTemplate() {
         Identifier identifier = toDefaultedIdentifier(getDataTracker().get(TRAINER));
-        return TrainerTemplateStorage.getInstance().get(identifier);
+        TrainerTemplate template = TrainerTemplateStorage.getInstance().get(identifier);
+        return new TrainerTemplateFactory(template, this).create();
     }
 
     @Override
@@ -143,7 +148,7 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
 
     private boolean isBusyWithPokemonBattle() {
         try {
-            return Objects.nonNull(Cobblemon.INSTANCE.getBattleRegistry().getBattle(getBattleId()));
+            return Objects.nonNull(Cobblemon.INSTANCE.getBattleRegistry().getBattle(battleId));
 
         } catch (NullPointerException e) {
             return false;
@@ -151,21 +156,34 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
     }
 
     @Override
-    public void onDeath(DamageSource damageSource) {
-        if (damageSource.getSource() instanceof ServerPlayerEntity player) {
-            PlayerHistory history = PlayerHistoryStorage.getInstance().getOrCreate(player.getUuid());
-            EntityRecord record = (EntityRecord) history.getOrCreate(toDefaultedIdentifier(getDataTracker().get(TRAINER)));
+    public void onDeath(DamageSource source) {
+        if (source.getSource() instanceof ServerPlayerEntity player) {
+            EntityRecord record = getEntityRecord(player);
             record.setKillCount(record.getKillCount() + 1);
+
             CustomCriteria.KILL_TRAINER_CRITERION.trigger(player);
         }
 
+        stopBattle();
+
+        super.onDeath(source);
+    }
+
+    private EntityRecord getEntityRecord(ServerPlayerEntity player) {
+        PlayerHistory history = PlayerHistoryStorage.getInstance().getOrCreate(player.getUuid());
+        return history.getOrCreate(toDefaultedIdentifier(getDataTracker().get(TRAINER)));
+    }
+
+    private void stopBattle() {
         try {
-            Cobblemon.INSTANCE.getBattleRegistry().getBattle(getBattleId()).end();
+            PokemonBattle battle = Cobblemon.INSTANCE.getBattleRegistry().getBattle(battleId);
+            ServerPlayerEntity player = battle.getPlayers().get(0);
+            battle.writeShowdownAction(String.format(">forcelose %s", battle.getActor(player).showdownId));
+            battle.end();
+
         } catch (NullPointerException ignored) {
 
         }
-
-        super.onDeath(damageSource);
     }
 
     @Override
@@ -237,53 +255,32 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
 
     @Override
     public boolean tryAttack(Entity target) {
-        if (!(target instanceof ServerPlayerEntity player)) {
-            return super.tryAttack(target);
+        if (target instanceof ServerPlayerEntity player) {
+            try {
+                Pokemon pokemon = getRandomPokemon(player, this::canApplyStatusCondition);
+                PersistentStatus status = createRandomStatusCondition();
+                pokemon.applyStatus(status);
+
+            } catch (IndexOutOfBoundsException ignored) {
+
+            }
         }
 
-        if (isBusyWithPokemonBattle(player)) {
-            return super.tryAttack(target);
-        }
-
-        if (!doTrainerApplyStatusCondition(player.getServer())) {
-            return super.tryAttack(target);
-        }
-
-        applyRandomStatusConditionToRandomPokemon(player);
         return super.tryAttack(target);
     }
 
-    // TODO
-    private boolean isBusyWithPokemonBattle(ServerPlayerEntity player) {
-        return Cobblemon.INSTANCE.getBattleRegistry().getBattleByParticipatingPlayer(player) != null;
-    }
-
-    private boolean doTrainerApplyStatusCondition(MinecraftServer server) {
-        return server.getGameRules().getBoolean(CustomGameRule.DO_TRAINER_APPLY_STATUS_CONDITION);
-    }
-
-    private void applyRandomStatusConditionToRandomPokemon(ServerPlayerEntity player) {
-        try {
-            Pokemon pokemon = selectRandomPokemon(player);
-            PersistentStatus status = selectRandomStatus();
-            pokemon.applyStatus(status);
-
-            player.sendMessage(Text.translatable(status.getApplyMessage(), pokemon.getDisplayName()).formatted(Formatting.RED));
-
-        } catch (NoPokemonStoreException | IndexOutOfBoundsException ignored) {
-
-        }
-    }
-
-    private Pokemon selectRandomPokemon(ServerPlayerEntity player) throws NoPokemonStoreException {
-        PartyStore party = Cobblemon.INSTANCE.getStorage().getParty(player.getUuid());
-        List<Pokemon> random = new ArrayList<>(party.toGappyList().stream().filter(this::canApplyStatusCondition).toList());
+    private Pokemon getRandomPokemon(ServerPlayerEntity player, Predicate<Pokemon> predicate) {
+        List<Pokemon> random = new ArrayList<>(Cobblemon.INSTANCE.getStorage()
+                .getParty(player).toGappyList().stream()
+                .filter(Objects::nonNull)
+                .filter(predicate)
+                .toList());
         Collections.shuffle(random);
         return random.get(0);
     }
 
     private boolean canApplyStatusCondition(Pokemon pokemon) {
-        return !Objects.isNull(pokemon) && !isFainted(pokemon) && !hasStatusCondition(pokemon);
+        return !isFainted(pokemon) && !hasStatusCondition(pokemon);
     }
 
     private boolean isFainted(Pokemon pokemon) {
@@ -299,7 +296,7 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
         }
     }
 
-    private PersistentStatus selectRandomStatus() {
+    private PersistentStatus createRandomStatusCondition() {
         List<PersistentStatus> random = new ArrayList<>(List.of(
                 new ParalysisStatus(),
                 new BurnStatus(),
@@ -310,5 +307,55 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
         ));
         Collections.shuffle(random);
         return random.get(0);
+    }
+
+    private static class TrainerTemplateFactory implements SimpleFactory<TrainerTemplate> {
+        private final TrainerTemplate template;
+        private final TrainerEntity entity;
+
+        TrainerTemplateFactory(TrainerTemplate template, TrainerEntity entity) {
+            this.template = template;
+            this.entity = entity;
+        }
+
+        @Override
+        public TrainerTemplate create() {
+            return new TrainerTemplate(
+                    template.getTeam(),
+
+                    template.getIdentifier(),
+                    template.getDisplayName(),
+                    template.getLevelMode(),
+                    template.getBattleFormat(),
+                    template.getBattleAI(),
+                    template.getBattleTheme(),
+                    template.getTexture(),
+                    entity.getUuid(),
+
+                    template.getOnVictoryCommands(),
+                    template.getOnDefeatCommands(),
+
+                    template.getCooldownInSeconds(),
+                    template.isSpawningAllowed(),
+                    template.isRematchAllowed(),
+
+                    template.getMaximumPartySize(),
+                    template.getMinimumPartySize(),
+                    template.getMaximumPartyLevel(),
+                    template.getMinimumPartyLevel(),
+
+                    template.getRequiredLabel(),
+                    template.getRequiredPokemon(),
+                    template.getRequiredHeldItem(),
+                    template.getRequiredAbility(),
+                    template.getRequiredMove(),
+
+                    template.getForbiddenLabel(),
+                    template.getForbiddenPokemon(),
+                    template.getForbiddenHeldItem(),
+                    template.getForbiddenAbility(),
+                    template.getForbiddenMove()
+            );
+        }
     }
 }

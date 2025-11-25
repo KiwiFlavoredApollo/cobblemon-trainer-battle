@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.context;
+package kiwiapollo.cobblemontrainerbattle.battle;
 
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.common.Triple;

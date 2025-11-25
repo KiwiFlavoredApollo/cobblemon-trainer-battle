@@ -15,8 +15,9 @@ import java.util.stream.StreamSupport;
  * BATTLE_VICTORY event does not fire as well.
  * @see PokemonBattle#checkFlee()
  * @see PokemonBattle#tick()
+ * @see PokemonBattle#checkForfeit()
  */
-public class TrainerBattleFledEventHandler implements ServerTickEvents.EndWorldTick {
+public class BattleFledEventHandler implements ServerTickEvents.EndWorldTick {
     @Override
     public void onEndTick(ServerWorld world) {
         for (ServerPlayerEntity player : world.getPlayers()) {
@@ -27,7 +28,7 @@ public class TrainerBattleFledEventHandler implements ServerTickEvents.EndWorldT
                     return;
                 }
 
-                TrainerBattleActor trainer = getCustomTrainerBattleActor(battle);
+                TrainerBattleActor trainer = getTrainerBattleActor(battle);
 
                 Vec3d playerPos = player.getPos();
                 Vec3d trainerPos = trainer.getWorldAndPosition().getSecond();
@@ -50,7 +51,7 @@ public class TrainerBattleFledEventHandler implements ServerTickEvents.EndWorldT
         return Cobblemon.INSTANCE.getBattleRegistry().getBattleByParticipatingPlayer(player);
     }
 
-    private TrainerBattleActor getCustomTrainerBattleActor(PokemonBattle battle) {
+    private TrainerBattleActor getTrainerBattleActor(PokemonBattle battle) {
         return StreamSupport.stream(battle.getActors().spliterator(), false)
                 .filter(actor -> actor instanceof TrainerBattleActor)
                 .map(actor -> (TrainerBattleActor) actor).toList()

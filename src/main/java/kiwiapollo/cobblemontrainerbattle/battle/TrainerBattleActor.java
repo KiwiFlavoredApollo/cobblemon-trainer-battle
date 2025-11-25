@@ -7,7 +7,7 @@ import com.cobblemon.mod.common.api.battles.model.actor.FleeableBattleActor;
 import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
-import kiwiapollo.cobblemontrainerbattle.preset.TrainerTemplate;
+import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplate;
 import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemon;
 import kotlin.Pair;
 import net.minecraft.entity.LivingEntity;

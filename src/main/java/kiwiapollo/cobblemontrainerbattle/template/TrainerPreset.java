@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.preset;
+package kiwiapollo.cobblemontrainerbattle.template;
 
 import com.google.gson.annotations.SerializedName;
 import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemon;

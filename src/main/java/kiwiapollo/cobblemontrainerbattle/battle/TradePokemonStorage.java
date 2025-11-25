@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.context;
+package kiwiapollo.cobblemontrainerbattle.battle;
 
 import net.minecraft.server.network.ServerPlayerEntity;
 

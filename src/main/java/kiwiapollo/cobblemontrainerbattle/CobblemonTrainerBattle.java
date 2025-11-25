@@ -26,7 +26,7 @@ import kiwiapollo.cobblemontrainerbattle.item.token.InclementEmeraldTokenItem;
 import kiwiapollo.cobblemontrainerbattle.item.token.RadicalRedTokenItem;
 import kiwiapollo.cobblemontrainerbattle.item.token.XyTokenItem;
 import kiwiapollo.cobblemontrainerbattle.item.vsseeker.VsSeekerItem;
-import kiwiapollo.cobblemontrainerbattle.preset.TrainerTemplateStorage;
+import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplateStorage;
 import kiwiapollo.cobblemontrainerbattle.entity.CustomEntityType;
 import kiwiapollo.cobblemontrainerbattle.event.*;
 import kiwiapollo.cobblemontrainerbattle.loot.CustomLootConditionType;
@@ -128,7 +128,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
     private void registerEvent() {
         CobblemonEvents.BATTLE_VICTORY.subscribe(Priority.NORMAL, new BattleVictoryEventHandler());
         CobblemonEvents.LOOT_DROPPED.subscribe(Priority.HIGHEST, new LootDroppedEventHandler());
-        ServerTickEvents.END_WORLD_TICK.register(new TrainerBattleFledEventHandler());
+        ServerTickEvents.END_WORLD_TICK.register(new BattleFledEventHandler());
 
         ServerPlayConnectionEvents.JOIN.register(new PlayerHistoryGenerator());
         ServerLifecycleEvents.SERVER_STARTED.register(new PlayerHistoryLoader());

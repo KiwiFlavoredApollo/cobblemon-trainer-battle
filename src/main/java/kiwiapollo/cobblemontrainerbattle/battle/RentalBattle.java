@@ -1,5 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.battle;
 
+import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
@@ -7,10 +8,8 @@ import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
 import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntityBehavior;
 import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
-import kiwiapollo.cobblemontrainerbattle.context.RentalPokemonStorage;
-import kiwiapollo.cobblemontrainerbattle.context.TradePokemonStorage;
-import kiwiapollo.cobblemontrainerbattle.preset.PokemonLevelPair;
-import kiwiapollo.cobblemontrainerbattle.preset.TrainerTemplate;
+import kiwiapollo.cobblemontrainerbattle.template.PokemonLevelPair;
+import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplate;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
@@ -68,9 +67,10 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
         }
 
         private Pokemon toRentalPokemon(Pokemon pokemon) {
-            Pokemon clone = pokemon.clone(true, true);
-            clone.heal();
-            return clone;
+            Pokemon rental = pokemon.clone(true, true);
+            rental.heal();
+            PokemonProperties.Companion.parse("uncatchable=yes").apply(rental);
+            return rental;
         }
     }
 
@@ -150,6 +150,7 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
             Pokemon pokemon = pair.getPokemon().clone(true, true);
             pokemon.setLevel(RentalBattle.LEVEL);
             pokemon.heal();
+            PokemonProperties.Companion.parse("uncatchable=yes").apply(pokemon);
             return pokemon;
         }
 

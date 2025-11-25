@@ -1,8 +1,6 @@
-package kiwiapollo.cobblemontrainerbattle.entity;
+package kiwiapollo.cobblemontrainerbattle.template;
 
 import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
-import kiwiapollo.cobblemontrainerbattle.preset.TrainerTemplate;
-import kiwiapollo.cobblemontrainerbattle.preset.TrainerTemplateStorage;
 import net.minecraft.util.Identifier;
 
 import java.util.ArrayList;
@@ -10,10 +8,10 @@ import java.util.Collections;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class RandomTrainerIdentifierFactory implements SimpleFactory<Identifier> {
+public class RandomTrainerFactory implements SimpleFactory<Identifier> {
     private final Predicate<TrainerTemplate> predicate;
 
-    public RandomTrainerIdentifierFactory(Predicate<TrainerTemplate> predicate) {
+    public RandomTrainerFactory(Predicate<TrainerTemplate> predicate) {
         this.predicate = predicate;
     }
 

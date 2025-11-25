@@ -1,6 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.battle;
 
 import com.cobblemon.mod.common.Cobblemon;
+import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
@@ -13,8 +14,8 @@ import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
 import kiwiapollo.cobblemontrainerbattle.history.BattleRecord;
 import kiwiapollo.cobblemontrainerbattle.history.PlayerHistoryStorage;
-import kiwiapollo.cobblemontrainerbattle.preset.PokemonLevelPair;
-import kiwiapollo.cobblemontrainerbattle.preset.TrainerTemplate;
+import kiwiapollo.cobblemontrainerbattle.template.PokemonLevelPair;
+import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplate;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
@@ -40,7 +41,7 @@ public class NormalLevelBattle extends CustomPokemonBattle {
     
     @Override
     public void start() throws BattleStartException {
-        if (isBusyWithPokemonBattle()) {
+        if (isPlayerBusyWithPokemonBattle()) {
             player.sendMessage(getPlayerBusyErrorMessage());
             throw new BattleStartException();
         }
@@ -230,6 +231,7 @@ public class NormalLevelBattle extends CustomPokemonBattle {
             Pokemon pokemon = pair.getPokemon().clone(true, true);
             pokemon.setLevel(pair.getLevel());
             pokemon.heal();
+            PokemonProperties.Companion.parse("uncatchable=yes").apply(pokemon);
             return pokemon;
         }
 

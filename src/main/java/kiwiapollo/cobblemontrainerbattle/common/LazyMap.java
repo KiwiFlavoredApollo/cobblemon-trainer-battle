@@ -2,6 +2,7 @@ package kiwiapollo.cobblemontrainerbattle.common;
 
 import java.util.Map;
 
+// TODO do I need this
 public interface LazyMap<K, V> {
     V getOrCreate(K key);
 

@@ -1,14 +1,19 @@
 package kiwiapollo.cobblemontrainerbattle.mixin;
 
 import com.cobblemon.mod.common.Cobblemon;
+import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntityBehavior;
 import kiwiapollo.cobblemontrainerbattle.villager.PokeBallEngineerVillager;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.passive.VillagerEntity;
+import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.util.ActionResult;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.Objects;
@@ -27,6 +32,7 @@ public class LivingEntityMixin {
         }
     }
 
+    @Unique
     private boolean isPokeBallEngineer() {
         try {
             VillagerEntity villager = (VillagerEntity) (Object) this;
@@ -37,6 +43,7 @@ public class LivingEntityMixin {
         }
     }
 
+    @Unique
     private boolean isBusyWithPokemonBattle() {
         try {
             TrainerEntityBehavior villager = (TrainerEntityBehavior) this;
@@ -44,6 +51,29 @@ public class LivingEntityMixin {
 
         } catch (ClassCastException | NullPointerException e) {
             return false;
+        }
+    }
+
+    @Inject(method = "onDeath", at = @At("HEAD"), cancellable = true)
+    public void onDeath(DamageSource source, CallbackInfo callbackInfo) {
+        if (!isPokeBallEngineer()) {
+            return;
+        }
+
+        stopBattle();
+    }
+
+    @Unique
+    private void stopBattle() {
+        try {
+            TrainerEntityBehavior villager = (TrainerEntityBehavior) this;
+            PokemonBattle battle = Cobblemon.INSTANCE.getBattleRegistry().getBattle(villager.getBattleId());
+            ServerPlayerEntity player = battle.getPlayers().get(0);
+            battle.writeShowdownAction(String.format(">forcelose %s", battle.getActor(player).showdownId));
+            battle.end();
+
+        } catch (ClassCastException | NullPointerException ignored) {
+
         }
     }
 }

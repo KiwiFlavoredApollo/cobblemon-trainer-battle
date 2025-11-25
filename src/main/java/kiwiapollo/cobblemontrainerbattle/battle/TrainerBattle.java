@@ -1,7 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.battle;
 
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
-import kiwiapollo.cobblemontrainerbattle.preset.TrainerTemplate;
+import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplate;
 import net.minecraft.server.network.ServerPlayerEntity;
 
 import java.util.UUID;

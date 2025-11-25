@@ -1,5 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.entity;
 
+import kiwiapollo.cobblemontrainerbattle.template.RandomTrainerFactory;
+import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplate;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
@@ -60,5 +62,20 @@ public class StaticTrainerEntity extends TrainerEntity {
     @Override
     public void onPlayerDefeat() {
         setAiDisabled(false);
+    }
+
+    public static class Factory implements EntityType.EntityFactory<StaticTrainerEntity>  {
+        private final RandomTrainerFactory identifier;
+
+        public Factory() {
+            this.identifier = new RandomTrainerFactory(TrainerTemplate::isSpawningAllowed);
+        }
+
+        @Override
+        public StaticTrainerEntity create(EntityType<StaticTrainerEntity> type, World world) {
+            StaticTrainerEntity entity = new StaticTrainerEntity(type, world);
+            entity.setTrainer(identifier.create());
+            return entity;
+        }
     }
 }

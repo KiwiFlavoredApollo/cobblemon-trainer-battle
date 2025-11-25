@@ -1,6 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.battle;
 
 import com.cobblemon.mod.common.Cobblemon;
+import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.api.storage.party.PlayerPartyStore;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
@@ -14,8 +15,8 @@ import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
 import kiwiapollo.cobblemontrainerbattle.history.BattleRecord;
 import kiwiapollo.cobblemontrainerbattle.history.PlayerHistoryStorage;
-import kiwiapollo.cobblemontrainerbattle.preset.PokemonLevelPair;
-import kiwiapollo.cobblemontrainerbattle.preset.TrainerTemplate;
+import kiwiapollo.cobblemontrainerbattle.template.PokemonLevelPair;
+import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplate;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
@@ -40,7 +41,7 @@ public class FlatLevelBattle extends CustomPokemonBattle {
 
     @Override
     public void start() throws BattleStartException {
-        if (isBusyWithPokemonBattle()) {
+        if (isPlayerBusyWithPokemonBattle()) {
             player.sendMessage(getPlayerBusyErrorMessage());
             throw new BattleStartException();
         }
@@ -140,10 +141,10 @@ public class FlatLevelBattle extends CustomPokemonBattle {
         }
 
         private List<? extends BattlePokemon> getBattleTeam() {
-            return toFlatLevelParty(Cobblemon.INSTANCE.getStorage().getParty(player)).toBattleTeam(true, false, null);
+            return toPartyStore(Cobblemon.INSTANCE.getStorage().getParty(player)).toBattleTeam(true, false, null);
         }
 
-        private PartyStore toFlatLevelParty(PlayerPartyStore party) {
+        private PartyStore toPartyStore(PlayerPartyStore party) {
             PartyStore clone = new PartyStore(player.getUuid());
 
             for (Pokemon pokemon : party) {
@@ -156,6 +157,7 @@ public class FlatLevelBattle extends CustomPokemonBattle {
         private Pokemon toFlatLevelPokemon(Pokemon pokemon) {
             Pokemon clone = pokemon.clone(true, true);
             clone.setLevel(FlatLevelBattle.LEVEL);
+            PokemonProperties.Companion.parse("uncatchable=yes").apply(clone);
             return clone;
         }
     }
@@ -236,6 +238,7 @@ public class FlatLevelBattle extends CustomPokemonBattle {
             Pokemon pokemon = pair.getPokemon().clone(true, true);
             pokemon.setLevel(FlatLevelBattle.LEVEL);
             pokemon.heal();
+            PokemonProperties.Companion.parse("uncatchable=yes").apply(pokemon);
             return pokemon;
         }
 

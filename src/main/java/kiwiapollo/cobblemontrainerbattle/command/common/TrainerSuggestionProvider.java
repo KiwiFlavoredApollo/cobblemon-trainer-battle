@@ -6,7 +6,7 @@ import com.mojang.brigadier.suggestion.SuggestionProvider;
 import com.mojang.brigadier.suggestion.Suggestions;
 import com.mojang.brigadier.suggestion.SuggestionsBuilder;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.preset.TrainerTemplateStorage;
+import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplateStorage;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.util.Identifier;
 

@@ -1,14 +1,17 @@
 package kiwiapollo.cobblemontrainerbattle.battle;
 
 import com.cobblemon.mod.common.Cobblemon;
+import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.block.PokeBallBox;
 import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
-import kiwiapollo.cobblemontrainerbattle.preset.PokemonLevelPair;
-import kiwiapollo.cobblemontrainerbattle.preset.TrainerTemplate;
+import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntityBehavior;
+import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
+import kiwiapollo.cobblemontrainerbattle.template.PokemonLevelPair;
+import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplate;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.brain.MemoryModuleType;
@@ -22,8 +25,30 @@ import java.util.List;
 import java.util.UUID;
 
 public class PokeBallEngineerBattle extends CustomPokemonBattle {
+    private final ServerPlayerEntity player;
+    private final TrainerTemplate trainer;
+
     public PokeBallEngineerBattle(ServerPlayerEntity player, TrainerTemplate trainer) {
         super(new PlayerBattleActorFactory(player, trainer).create(), new TrainerBattleActorFactory(player, trainer).create());
+
+        this.player = player;
+        this.trainer = trainer;
+    }
+
+    // TODO
+    @Override
+    public void start() throws BattleStartException {
+        if (isPlayerBusyWithPokemonBattle()) {
+            player.sendMessage(getPlayerBusyErrorMessage());
+            throw new BattleStartException();
+        }
+
+        if (!isEqualToOrGreaterThanMinimumPartySize()) {
+            player.sendMessage(getMinimumPartySizeErrorMessage());
+            throw new BattleStartException();
+        }
+
+        super.start();
     }
 
     private static class PlayerBattleActorFactory implements SimpleFactory<PlayerBattleActor> {
@@ -99,6 +124,7 @@ public class PokeBallEngineerBattle extends CustomPokemonBattle {
             Pokemon pokemon = pair.getPokemon().clone(true, true);
             pokemon.setLevel(pair.getLevel());
             pokemon.heal();
+            PokemonProperties.Companion.parse("uncatchable=yes").apply(pokemon);
             return pokemon;
         }
 
@@ -109,12 +135,13 @@ public class PokeBallEngineerBattle extends CustomPokemonBattle {
         private Runnable getOnPlayerVictoryHandler() {
             return () -> {
                 emitRedstonePulse();
+                runEntityLevelPlayerVictoryHandler();
             };
         }
 
         private Runnable getOnPlayerDefeatHandler() {
             return () -> {
-
+                runEntityLevelPlayerDefeatHandler();
             };
         }
 
@@ -130,6 +157,24 @@ public class PokeBallEngineerBattle extends CustomPokemonBattle {
                 world.scheduleBlockTick(pos, state.getBlock(), 20);
 
             } catch (NullPointerException | ClassCastException | IllegalArgumentException ignored) {
+
+            }
+        }
+
+        private void runEntityLevelPlayerVictoryHandler() {
+            try {
+                ((TrainerEntityBehavior) getEntity()).onPlayerVictory();
+
+            } catch (ClassCastException ignored) {
+
+            }
+        }
+
+        private void runEntityLevelPlayerDefeatHandler() {
+            try {
+                ((TrainerEntityBehavior) getEntity()).onPlayerDefeat();
+
+            } catch (ClassCastException ignored) {
 
             }
         }
