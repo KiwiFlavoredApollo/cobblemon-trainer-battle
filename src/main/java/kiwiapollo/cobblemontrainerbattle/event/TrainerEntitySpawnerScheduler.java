@@ -1,7 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.event;
 
 import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
-import kiwiapollo.cobblemontrainerbattle.item.VsSeeker;
+import kiwiapollo.cobblemontrainerbattle.item.vsseeker.VsSeeker;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;

@@ -2,6 +2,16 @@ package kiwiapollo.cobblemontrainerbattle.item;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.block.CustomBlock;
+import kiwiapollo.cobblemontrainerbattle.item.misc.MiscItem;
+import kiwiapollo.cobblemontrainerbattle.item.ticket.BdspTicketItem;
+import kiwiapollo.cobblemontrainerbattle.item.ticket.InclementEmeraldTicketItem;
+import kiwiapollo.cobblemontrainerbattle.item.ticket.RadicalRedTicketItem;
+import kiwiapollo.cobblemontrainerbattle.item.ticket.XyTicketItem;
+import kiwiapollo.cobblemontrainerbattle.item.token.BdspTokenItem;
+import kiwiapollo.cobblemontrainerbattle.item.token.InclementEmeraldTokenItem;
+import kiwiapollo.cobblemontrainerbattle.item.token.RadicalRedTokenItem;
+import kiwiapollo.cobblemontrainerbattle.item.token.XyTokenItem;
+import kiwiapollo.cobblemontrainerbattle.item.vsseeker.VsSeekerItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -10,6 +20,10 @@ import java.util.Arrays;
 
 public class CustomItem {
     public static void register() {
+        Arrays.stream(MiscItem.values()).forEach(item -> {
+            Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
+        });
+
         Arrays.stream(CustomBlock.values()).forEach(block -> {
             Registry.register(Registries.BLOCK, block.getIdentifier(), block.getBlock());
             Registry.register(Registries.ITEM, block.getIdentifier(), block.getItem());
@@ -50,11 +64,5 @@ public class CustomItem {
         Arrays.stream(VsSeekerItem.values()).forEach(item -> {
             Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
         });
-
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "neutral_trainer_spawn_egg"), MiscItem.NEUTRAL_TRAINER_SPAWN_EGG);
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "static_trainer_spawn_egg"), MiscItem.STATIC_TRAINER_SPAWN_EGG);
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "trainer_token"), MiscItem.TRAINER_TOKEN);
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "empty_poke_ball"), MiscItem.EMPTY_POKE_BALL);
-        Registry.register(Registries.ITEM, Identifier.of(CobblemonTrainerBattle.MOD_ID, "filled_poke_ball"), MiscItem.FILLED_POKE_BALL);
     }
 }

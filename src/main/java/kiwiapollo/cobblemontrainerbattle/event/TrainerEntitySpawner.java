@@ -2,7 +2,7 @@ package kiwiapollo.cobblemontrainerbattle.event;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.entity.*;
-import kiwiapollo.cobblemontrainerbattle.item.VsSeeker;
+import kiwiapollo.cobblemontrainerbattle.item.vsseeker.VsSeeker;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.server.network.ServerPlayerEntity;

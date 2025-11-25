@@ -13,7 +13,7 @@ import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntityBehavior;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.preset.PokemonLevelPair;
 import kiwiapollo.cobblemontrainerbattle.preset.TrainerTemplate;
-import kiwiapollo.cobblemontrainerbattle.item.FilledPokeBall;
+import kiwiapollo.cobblemontrainerbattle.item.misc.FilledPokeBall;
 import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemon;
 import kiwiapollo.cobblemontrainerbattle.villager.PokeBallEngineerVillager;
 import net.minecraft.block.entity.BlockEntity;

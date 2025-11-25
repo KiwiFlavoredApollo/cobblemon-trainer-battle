@@ -2,6 +2,16 @@ package kiwiapollo.cobblemontrainerbattle.item;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.block.CustomBlock;
+import kiwiapollo.cobblemontrainerbattle.item.misc.MiscItem;
+import kiwiapollo.cobblemontrainerbattle.item.ticket.BdspTicketItem;
+import kiwiapollo.cobblemontrainerbattle.item.ticket.InclementEmeraldTicketItem;
+import kiwiapollo.cobblemontrainerbattle.item.ticket.RadicalRedTicketItem;
+import kiwiapollo.cobblemontrainerbattle.item.ticket.XyTicketItem;
+import kiwiapollo.cobblemontrainerbattle.item.token.BdspTokenItem;
+import kiwiapollo.cobblemontrainerbattle.item.token.InclementEmeraldTokenItem;
+import kiwiapollo.cobblemontrainerbattle.item.token.RadicalRedTokenItem;
+import kiwiapollo.cobblemontrainerbattle.item.token.XyTokenItem;
+import kiwiapollo.cobblemontrainerbattle.item.vsseeker.VsSeekerItem;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.ItemGroup;
@@ -22,10 +32,9 @@ public class CustomItemGroup {
         Registry.register(Registries.ITEM_GROUP, ITEM_GROUP_KEY, ITEM_GROUP);
 
         ItemGroupEvents.modifyEntriesEvent(ITEM_GROUP_KEY).register(itemGroup -> {
-            itemGroup.add(MiscItem.NEUTRAL_TRAINER_SPAWN_EGG);
-            itemGroup.add(MiscItem.STATIC_TRAINER_SPAWN_EGG);
-            itemGroup.add(MiscItem.TRAINER_TOKEN);
-            itemGroup.add(MiscItem.EMPTY_POKE_BALL);
+            Arrays.stream(MiscItem.values()).forEach(item -> {
+                itemGroup.add(item.getItem());
+            });
 
             Arrays.stream(CustomBlock.values()).forEach(block -> {
                 itemGroup.add(block.getItem());
