@@ -28,7 +28,7 @@ public abstract class TrainerEntitySpawner implements WeightedEntitySpawner, Ent
             entity.refreshPositionAndAngles(spawnPos, player.getYaw(), player.getPitch());
             world.spawnEntity(entity);
 
-             CobblemonTrainerBattle.LOGGER.info("Spawned {} at {} {}", entity.getDisplayName().getString(), world.getRegistryKey().getValue(), spawnPos);
+            CobblemonTrainerBattle.LOGGER.info("Spawned {} at {} {}", entity.getDisplayName().getString(), world.getRegistryKey().getValue(), spawnPos);
 
         } catch (ClassCastException | IllegalStateException ignored) {
 
