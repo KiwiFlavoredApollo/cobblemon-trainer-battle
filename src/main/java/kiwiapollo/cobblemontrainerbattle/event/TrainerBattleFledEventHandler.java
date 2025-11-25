@@ -2,7 +2,7 @@ package kiwiapollo.cobblemontrainerbattle.event;
 
 import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
-import kiwiapollo.cobblemontrainerbattle.battle.battleactor.TrainerBattleActor;
+import kiwiapollo.cobblemontrainerbattle.battle.TrainerBattleActor;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;

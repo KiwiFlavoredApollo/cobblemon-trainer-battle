@@ -1,7 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.event;
 
 import com.cobblemon.mod.common.api.events.battles.BattleVictoryEvent;
-import kiwiapollo.cobblemontrainerbattle.battle.battleactor.TrainerBattleActor;
+import kiwiapollo.cobblemontrainerbattle.battle.TrainerBattleActor;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 

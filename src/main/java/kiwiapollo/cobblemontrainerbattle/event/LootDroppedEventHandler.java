@@ -5,7 +5,7 @@ import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import com.cobblemon.mod.common.api.events.drops.LootDroppedEvent;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
-import kiwiapollo.cobblemontrainerbattle.battle.battleactor.TrainerBattleActor;
+import kiwiapollo.cobblemontrainerbattle.battle.TrainerBattleActor;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 

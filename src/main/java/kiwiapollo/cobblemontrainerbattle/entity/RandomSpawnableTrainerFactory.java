@@ -1,7 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.entity;
 
 import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
-import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerTemplateStorage;
+import kiwiapollo.cobblemontrainerbattle.preset.TrainerTemplateStorage;
 import net.minecraft.util.Identifier;
 
 import java.util.ArrayList;

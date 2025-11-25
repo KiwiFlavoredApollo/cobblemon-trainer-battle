@@ -5,8 +5,6 @@ import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.command.executor.*;
-import kiwiapollo.cobblemontrainerbattle.command.predicate.PlayerCommandSourcePredicate;
 import net.minecraft.server.command.ServerCommandSource;
 
 public class RentalPokemonCommand extends LiteralArgumentBuilder<ServerCommandSource> {
