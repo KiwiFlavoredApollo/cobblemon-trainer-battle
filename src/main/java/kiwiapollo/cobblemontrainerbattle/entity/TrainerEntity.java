@@ -2,8 +2,6 @@ package kiwiapollo.cobblemontrainerbattle.entity;
 
 import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
-import com.cobblemon.mod.common.api.storage.NoPokemonStoreException;
-import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.cobblemon.mod.common.pokemon.status.PersistentStatus;
 import com.cobblemon.mod.common.pokemon.status.statuses.persistent.*;
@@ -13,7 +11,6 @@ import kiwiapollo.cobblemontrainerbattle.battle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
 import kiwiapollo.cobblemontrainerbattle.template.RandomTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
-import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
 import kiwiapollo.cobblemontrainerbattle.history.EntityRecord;
 import kiwiapollo.cobblemontrainerbattle.history.PlayerHistory;
 import kiwiapollo.cobblemontrainerbattle.history.PlayerHistoryStorage;
@@ -37,12 +34,9 @@ import net.minecraft.loot.context.LootContextParameterSet;
 import net.minecraft.loot.context.LootContextParameters;
 import net.minecraft.loot.context.LootContextTypes;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.LocalDifficulty;
@@ -170,8 +164,8 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
     }
 
     private EntityRecord getEntityRecord(ServerPlayerEntity player) {
-        PlayerHistory history = PlayerHistoryStorage.getInstance().getOrCreate(player.getUuid());
-        return history.getOrCreate(toDefaultedIdentifier(getDataTracker().get(TRAINER)));
+        PlayerHistory history = PlayerHistoryStorage.getInstance().get(player);
+        return history.get(toDefaultedIdentifier(getDataTracker().get(TRAINER)));
     }
 
     private void stopBattle() {

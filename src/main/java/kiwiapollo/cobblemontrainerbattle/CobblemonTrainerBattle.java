@@ -15,6 +15,7 @@ import kiwiapollo.cobblemontrainerbattle.command.trainerbattle.TrainerBattleOthe
 import kiwiapollo.cobblemontrainerbattle.entity.NeutralTrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.entity.StaticTrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
+import kiwiapollo.cobblemontrainerbattle.history.PlayerHistoryStorage;
 import kiwiapollo.cobblemontrainerbattle.item.CustomItemGroup;
 import kiwiapollo.cobblemontrainerbattle.item.misc.MiscItem;
 import kiwiapollo.cobblemontrainerbattle.item.ticket.BdspTicketItem;
@@ -30,9 +31,6 @@ import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplateStorage;
 import kiwiapollo.cobblemontrainerbattle.entity.CustomEntityType;
 import kiwiapollo.cobblemontrainerbattle.event.*;
 import kiwiapollo.cobblemontrainerbattle.loot.CustomLootConditionType;
-import kiwiapollo.cobblemontrainerbattle.history.PlayerHistoryGenerator;
-import kiwiapollo.cobblemontrainerbattle.history.PlayerHistoryLoader;
-import kiwiapollo.cobblemontrainerbattle.history.PlayerHistorySaver;
 import kiwiapollo.cobblemontrainerbattle.pokemon.FormAspectProvider;
 import kiwiapollo.cobblemontrainerbattle.sound.*;
 import kiwiapollo.cobblemontrainerbattle.villager.PokeBallEngineerVillager;
@@ -41,7 +39,6 @@ import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.minecraft.advancement.criterion.Criteria;
@@ -130,10 +127,9 @@ public class CobblemonTrainerBattle implements ModInitializer {
         CobblemonEvents.LOOT_DROPPED.subscribe(Priority.HIGHEST, new LootDroppedEventHandler());
         ServerTickEvents.END_WORLD_TICK.register(new BattleFledEventHandler());
 
-        ServerPlayConnectionEvents.JOIN.register(new PlayerHistoryGenerator());
-        ServerLifecycleEvents.SERVER_STARTED.register(new PlayerHistoryLoader());
-        ServerLifecycleEvents.SERVER_STOPPED.register(new PlayerHistorySaver());
-        ServerTickEvents.END_SERVER_TICK.register(new PlayerHistorySaver());
+        ServerLifecycleEvents.SERVER_STARTED.register(PlayerHistoryStorage.getInstance());
+        ServerLifecycleEvents.SERVER_STOPPED.register(PlayerHistoryStorage.getInstance());
+        ServerTickEvents.END_SERVER_TICK.register(PlayerHistoryStorage.getInstance());
 
         ServerTickEvents.END_WORLD_TICK.register(new NeutralTrainerEntitySpawner());
     }

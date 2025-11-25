@@ -293,7 +293,7 @@ public class RelativeLevelBattle extends CustomPokemonBattle {
         }
 
         private BattleRecord getBattleRecord(ServerPlayerEntity player) {
-            return PlayerHistoryStorage.getInstance().getOrCreate(player.getUuid()).getOrCreate(trainer.getIdentifier());
+            return PlayerHistoryStorage.getInstance().get(player).get(trainer.getIdentifier());
         }
 
         private void execute(String command, ServerPlayerEntity player) {

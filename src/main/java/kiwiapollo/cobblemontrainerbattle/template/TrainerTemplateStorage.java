@@ -4,7 +4,6 @@ import com.cobblemon.mod.common.Cobblemon;
 import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.common.ImmutableMap;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
 import net.minecraft.resource.Resource;
 import net.minecraft.resource.ResourceManager;
@@ -13,7 +12,7 @@ import net.minecraft.util.Identifier;
 import java.io.*;
 import java.util.*;
 
-public class TrainerTemplateStorage implements SimpleSynchronousResourceReloadListener, ImmutableMap<Identifier, TrainerTemplate> {
+public class TrainerTemplateStorage implements SimpleSynchronousResourceReloadListener {
     private static final String TEAM_DIR = "trainer_team";
     private static final String PRESET_DIR = "trainer_preset";
 
@@ -33,12 +32,10 @@ public class TrainerTemplateStorage implements SimpleSynchronousResourceReloadLi
         return instance;
     }
 
-    @Override
     public TrainerTemplate get(Identifier trainer) {
         return storage.get(trainer);
     }
 
-    @Override
     public Set<Identifier> keySet() {
         return storage.keySet();
     }

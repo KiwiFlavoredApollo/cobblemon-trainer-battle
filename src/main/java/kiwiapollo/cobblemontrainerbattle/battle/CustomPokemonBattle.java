@@ -340,7 +340,7 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
     }
 
     protected long getRemainingCooldownInSeconds() {
-        Instant timestamp = PlayerHistoryStorage.getInstance().getOrCreate(player.getUuid()).getOrCreate(trainer.getIdentifier()).getTimestamp();
+        Instant timestamp = PlayerHistoryStorage.getInstance().get(player.getEntity()).get(trainer.getIdentifier()).getTimestamp();
         long remains = trainer.getCooldownInSeconds() - Duration.between(timestamp, Instant.now()).toSeconds();
 
         if (remains > 0) {

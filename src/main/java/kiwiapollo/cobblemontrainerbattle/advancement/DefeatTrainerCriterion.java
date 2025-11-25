@@ -69,7 +69,7 @@ public class DefeatTrainerCriterion extends AbstractCriterion<DefeatTrainerCrite
         }
 
         boolean test(ServerPlayerEntity player) {
-            int total = PlayerHistoryStorage.getInstance().getOrCreate(player.getUuid()).getTotalTrainerVictoryCount();
+            int total = PlayerHistoryStorage.getInstance().get(player).getTotalTrainerVictoryCount();
             return total >= count;
         }
     }
@@ -99,7 +99,7 @@ public class DefeatTrainerCriterion extends AbstractCriterion<DefeatTrainerCrite
         }
 
         boolean test(ServerPlayerEntity player) {
-            int record = ((BattleRecord) PlayerHistoryStorage.getInstance().getOrCreate(player.getUuid()).getOrCreate(trainer)).getVictoryCount();
+            int record = ((BattleRecord) PlayerHistoryStorage.getInstance().get(player).get(trainer)).getVictoryCount();
             return record >= count;
         }
     }
