@@ -8,8 +8,6 @@ import com.cobblemon.mod.common.pokemon.status.PersistentStatus;
 import com.cobblemon.mod.common.pokemon.status.statuses.persistent.*;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
-import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.NullTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.PokemonBattleBehavior;
 import kiwiapollo.cobblemontrainerbattle.battle.trainerbattle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
@@ -60,14 +58,10 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
 
     private static final String TRAINER_NBT_KEY = "Trainer";
 
-    @Deprecated
-    private PokemonBattleBehavior trainerBattle;
     private UUID battleId;
 
     public TrainerEntity(EntityType<? extends PathAwareEntity> type, World world) {
         super(type, world);
-
-        this.trainerBattle = new NullTrainerBattle();
     }
 
     /**
@@ -149,8 +143,7 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
 
     private boolean isBusyWithPokemonBattle() {
         try {
-            UUID battleId = trainerBattle.getBattleId();
-            return Objects.nonNull(Cobblemon.INSTANCE.getBattleRegistry().getBattle(battleId));
+            return Objects.nonNull(Cobblemon.INSTANCE.getBattleRegistry().getBattle(getBattleId()));
 
         } catch (NullPointerException e) {
             return false;
@@ -166,9 +159,10 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
             CustomCriteria.KILL_TRAINER_CRITERION.trigger(player);
         }
 
-        if(isBusyWithPokemonBattle()) {
-            UUID battleId = trainerBattle.getBattleId();
-            Cobblemon.INSTANCE.getBattleRegistry().getBattle(battleId).end();
+        try {
+            Cobblemon.INSTANCE.getBattleRegistry().getBattle(getBattleId()).end();
+        } catch (NullPointerException ignored) {
+
         }
 
         super.onDeath(damageSource);
@@ -259,6 +253,7 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
         return super.tryAttack(target);
     }
 
+    // TODO
     private boolean isBusyWithPokemonBattle(ServerPlayerEntity player) {
         return Cobblemon.INSTANCE.getBattleRegistry().getBattleByParticipatingPlayer(player) != null;
     }
