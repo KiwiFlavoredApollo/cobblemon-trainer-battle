@@ -16,7 +16,6 @@ public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<Server
         super(CobblemonTrainerBattle.MOD_ID);
 
         List<String> permissions = List.of(
-                String.format("%s.%s", getLiteral(), "reload"),
                 String.format("%s.%s", getLiteral(), "export")
         );
 
