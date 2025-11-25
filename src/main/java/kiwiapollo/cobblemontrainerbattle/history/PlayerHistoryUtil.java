@@ -6,6 +6,7 @@ import net.minecraft.util.WorldSavePath;
 
 import java.io.File;
 
+// TODO merge to PlayerHistoryStorage
 public class PlayerHistoryUtil {
     public static File getHistoryPath(MinecraftServer server) {
         final String historyDir = "history";

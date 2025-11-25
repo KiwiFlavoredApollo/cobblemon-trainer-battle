@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.UUID;
 
+// TODO merge to PlayerHistoryStorage
 public class PlayerHistorySaver implements ServerLifecycleEvents.ServerStopped, ServerTickEvents.EndTick {
     private static final int SAVE_INTERVAL = 24000;
 

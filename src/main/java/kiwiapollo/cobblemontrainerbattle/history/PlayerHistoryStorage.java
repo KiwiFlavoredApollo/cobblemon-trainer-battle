@@ -4,6 +4,7 @@ import kiwiapollo.cobblemontrainerbattle.common.LazyMap;
 
 import java.util.*;
 
+// TODO merge to PlayerHistoryStorage, should I?
 public class PlayerHistoryStorage implements LazyMap<UUID, PlayerHistory> {
     private static PlayerHistoryStorage instance;
     private static Map<UUID, PlayerHistory> storage;
