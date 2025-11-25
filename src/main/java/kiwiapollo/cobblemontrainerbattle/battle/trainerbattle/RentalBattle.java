@@ -20,7 +20,8 @@ import java.util.List;
 import java.util.UUID;
 
 public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBehavior {
-    private static final int LEVEL = 50;
+    public static final int LEVEL = 50;
+    public static final int PARTY_SIZE = 3;
 
     private final ServerPlayerEntity player;
     private final TrainerTemplate trainer;

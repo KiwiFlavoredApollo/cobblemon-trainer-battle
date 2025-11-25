@@ -32,8 +32,8 @@ public class ShowdownPokemonExporter implements Command<ServerCommandSource> {
         try {
             ServerPlayerEntity player = EntityArgumentType.getPlayer(context, "player");
 
-            // TODO
-            if (!hasPokemonInParty(player)) {
+            if (hasEmptyParty(player)) {
+                player.sendMessage(getEmptyPartyErrorMessage());
                 return 0;
             }
 
@@ -56,8 +56,13 @@ public class ShowdownPokemonExporter implements Command<ServerCommandSource> {
         }
     }
 
-    private boolean hasPokemonInParty(ServerPlayerEntity player) {
-        return Cobblemon.INSTANCE.getStorage().getParty(player).occupied() != 0;
+    // TODO
+    private Text getEmptyPartyErrorMessage() {
+        return Text.translatable("");
+    }
+
+    private boolean hasEmptyParty(ServerPlayerEntity player) {
+        return Cobblemon.INSTANCE.getStorage().getParty(player).occupied() == 0;
     }
 
     private File getExportPath(MinecraftServer server) {
@@ -77,11 +82,11 @@ public class ShowdownPokemonExporter implements Command<ServerCommandSource> {
     }
 
     private List<ShowdownPokemon> getShowdownPokemon(ServerPlayerEntity player) {
-        List<Pokemon> pokemons = com.cobblemon.mod.common.Cobblemon.INSTANCE.getStorage()
+        List<Pokemon> pokemon = com.cobblemon.mod.common.Cobblemon.INSTANCE.getStorage()
                 .getParty(player).toGappyList().stream()
                 .filter(Objects::nonNull).toList();
 
-        return pokemons.stream().map(new CobblemonPokemonParser()::toShowdownPokemon).toList();
+        return pokemon.stream().map(new CobblemonPokemonParser()::toShowdownPokemon).toList();
     }
 
     private File getExportFile(ServerPlayerEntity player) {
