@@ -1,21 +1,20 @@
 package kiwiapollo.cobblemontrainerbattle.entity;
 
-import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
+import kiwiapollo.cobblemontrainerbattle.preset.TrainerTemplate;
 import net.minecraft.entity.EntityType;
-import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 
-public class RandomNeutralTrainerEntityFactory extends TrainerEntityFactory<NeutralTrainerEntity> {
-    public RandomNeutralTrainerEntityFactory() {
-        super();
-    }
+public class RandomNeutralTrainerEntityFactory implements EntityType.EntityFactory<NeutralTrainerEntity> {
+    private final RandomTrainerIdentifierFactory identifier;
 
-    public RandomNeutralTrainerEntityFactory(SimpleFactory<Identifier> trainer) {
-        super(trainer);
+    public RandomNeutralTrainerEntityFactory() {
+        this.identifier = new RandomTrainerIdentifierFactory(TrainerTemplate::isSpawningAllowed);
     }
 
     @Override
-    protected NeutralTrainerEntity createEntity(EntityType<NeutralTrainerEntity> type, World world) {
-        return new NeutralTrainerEntity(type, world);
+    public NeutralTrainerEntity create(EntityType<NeutralTrainerEntity> type, World world) {
+        NeutralTrainerEntity entity = new NeutralTrainerEntity(type, world);
+        entity.setTrainer(identifier.create());
+        return entity;
     }
 }
