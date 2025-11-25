@@ -6,6 +6,7 @@ import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.TrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
+import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntityBehavior;
 import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
 import kiwiapollo.cobblemontrainerbattle.global.context.RentalPokemonStorage;
 import kiwiapollo.cobblemontrainerbattle.global.context.TradePokemonStorage;
@@ -77,19 +78,37 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
         private final ServerPlayerEntity player;
         private final TrainerTemplate trainer;
         private final UUID uuid;
+        private final LivingEntity entity;
 
         public TrainerBattleSideFactory(ServerPlayerEntity player, TrainerTemplate trainer) {
             this.player = player;
             this.trainer = trainer;
-            this.uuid = getOrCreateUuid(trainer);
+            this.uuid = getUuidOrCreateRandom(trainer);
+            this.entity = getEntityOrFallBackToPlayer(trainer, player);
         }
 
-        private UUID getOrCreateUuid(TrainerTemplate trainer) {
+        private UUID getUuidOrCreateRandom(TrainerTemplate trainer) {
             if (trainer.getEntityUuid() != null) {
                 return trainer.getEntityUuid();
 
             } else {
                 return UUID.randomUUID();
+            }
+        }
+
+        private LivingEntity getEntityOrFallBackToPlayer(TrainerTemplate trainer, ServerPlayerEntity player) {
+            try {
+                ServerWorld world = player.getServerWorld();
+                LivingEntity entity = (LivingEntity) world.getEntity(trainer.getEntityUuid());
+
+                if (entity.distanceTo(player) < getMaximumEntityDistance(world)) {
+                    return entity;
+                } else {
+                    return player;
+                }
+
+            } catch (ClassCastException | NullPointerException e) {
+                return player;
             }
         }
 
@@ -111,18 +130,6 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
 
         private UUID getUuid() {
             return uuid;
-        }
-
-        private Runnable getPlayerVictoryHandler() {
-            return () -> {
-                setTradePokemon(toPokemon(trainer.getTeam()));
-            };
-        }
-
-        private Runnable getPlayerDefeatHandler() {
-            return () -> {
-                
-            };
         }
 
         private List<BattlePokemon> getBattleTeam() {
@@ -147,23 +154,42 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
         }
 
         private LivingEntity getEntity() {
-            try {
-                ServerWorld world = player.getServerWorld();
-                LivingEntity entity = (LivingEntity) world.getEntity(uuid);
-
-                if (entity.distanceTo(player) < getMaximumEntityDistance(world)) {
-                    return entity;
-                } else {
-                    return player;
-                }
-
-            } catch (ClassCastException | NullPointerException e) {
-                return player;
-            }
+            return entity;
         }
 
         private int getMaximumEntityDistance(ServerWorld world) {
             return world.getGameRules().get(CustomGameRule.TRAINER_FLEE_DISTANCE_IN_BLOCKS).get();
+        }
+
+        private Runnable getPlayerVictoryHandler() {
+            return () -> {
+                setTradePokemon(toPokemon(trainer.getTeam()));
+                runEntityLevelPlayerVictoryHandler();
+            };
+        }
+
+        private Runnable getPlayerDefeatHandler() {
+            return () -> {
+                runEntityLevelPlayerDefeatHandler();
+            };
+        }
+
+        private void runEntityLevelPlayerVictoryHandler() {
+            try {
+                ((TrainerEntityBehavior) entity).onPlayerVictory();
+
+            } catch (ClassCastException ignored) {
+
+            }
+        }
+
+        private void runEntityLevelPlayerDefeatHandler() {
+            try {
+                ((TrainerEntityBehavior) entity).onPlayerDefeat();
+
+            } catch (ClassCastException ignored) {
+
+            }
         }
 
         private void setTradePokemon(List<Pokemon> pokemon) {

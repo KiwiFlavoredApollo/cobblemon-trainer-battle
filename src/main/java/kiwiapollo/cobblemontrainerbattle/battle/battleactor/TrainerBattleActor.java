@@ -7,7 +7,6 @@ import com.cobblemon.mod.common.api.battles.model.actor.FleeableBattleActor;
 import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import kiwiapollo.cobblemontrainerbattle.battle.battleparticipant.BattleAIFactory;
-import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntityBehavior;
 import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
 import kiwiapollo.cobblemontrainerbattle.global.preset.TrainerTemplate;
 import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemon;
@@ -31,8 +30,8 @@ public class TrainerBattleActor extends AIBattleActor implements EntityBackedBat
     private final LivingEntity entity;
     private final ServerWorld world;
     private final Vec3d position;
-    private final Runnable onPlayerVictory;
-    private final Runnable onPlayerDefeat;
+    private final Runnable playerVictoryHandler;
+    private final Runnable playerDefeatHandler;
     private final TrainerTemplate template;
 
     public TrainerBattleActor(
@@ -40,16 +39,16 @@ public class TrainerBattleActor extends AIBattleActor implements EntityBackedBat
             UUID uuid,
             List<BattlePokemon> pokemon,
             LivingEntity entity,
-            Runnable onPlayerVictory,
-            Runnable onPlayerDefeat
+            Runnable playerVictoryHandler,
+            Runnable playerDefeatHandler
     ) {
         super(uuid, pokemon, new BattleAIFactory(template).create());
         this.template = template;
         this.entity = entity;
         this.world = (ServerWorld) entity.getWorld();
         this.position = entity.getPos();
-        this.onPlayerVictory = onPlayerVictory;
-        this.onPlayerDefeat = onPlayerDefeat;
+        this.playerVictoryHandler = playerVictoryHandler;
+        this.playerDefeatHandler = playerDefeatHandler;
     }
 
     @Override
@@ -92,27 +91,14 @@ public class TrainerBattleActor extends AIBattleActor implements EntityBackedBat
         return new Pair<>(world, position);
     }
 
-    // TODO
     @Override
     public void onPlayerVictory() {
-        onPlayerVictory.run();
-        try {
-            ((TrainerEntityBehavior) entity).onPlayerVictory();
-
-        } catch (ClassCastException ignored) {
-
-        }
+        playerVictoryHandler.run();
     }
 
     @Override
     public void onPlayerDefeat() {
-        onPlayerDefeat.run();
-        try {
-            ((TrainerEntityBehavior) entity).onPlayerDefeat();
-
-        } catch (ClassCastException ignored) {
-
-        }
+        playerDefeatHandler.run();
     }
 
     public SoundEvent getBattleTheme() {

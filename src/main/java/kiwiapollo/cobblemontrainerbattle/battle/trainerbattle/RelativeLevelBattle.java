@@ -9,6 +9,7 @@ import com.mojang.brigadier.CommandDispatcher;
 import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
 import kiwiapollo.cobblemontrainerbattle.battle.battleactor.TrainerBattleActor;
 import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
+import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntityBehavior;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
 import kiwiapollo.cobblemontrainerbattle.global.history.BattleRecord;
@@ -155,20 +156,38 @@ public class RelativeLevelBattle extends CustomPokemonBattle {
     private static class TrainerBattleActorFactory implements SimpleFactory<TrainerBattleActor> {
         private final ServerPlayerEntity player;
         private final TrainerTemplate trainer;
-        private UUID uuid;
+        private final UUID uuid;
+        private final LivingEntity entity;
 
         public TrainerBattleActorFactory(ServerPlayerEntity player, TrainerTemplate trainer) {
             this.player = player;
             this.trainer = trainer;
-            this.uuid = getOrCreateUuid(trainer);
+            this.uuid = getUuidOrCreateRandom(trainer);
+            this.entity = getEntityOrFallBackToPlayer(trainer, player);
         }
 
-        private UUID getOrCreateUuid(TrainerTemplate trainer) {
+        private UUID getUuidOrCreateRandom(TrainerTemplate trainer) {
             if (trainer.getEntityUuid() != null) {
                 return trainer.getEntityUuid();
 
             } else {
                 return UUID.randomUUID();
+            }
+        }
+
+        private LivingEntity getEntityOrFallBackToPlayer(TrainerTemplate trainer, ServerPlayerEntity player) {
+            try {
+                ServerWorld world = player.getServerWorld();
+                LivingEntity entity = (LivingEntity) world.getEntity(trainer.getEntityUuid());
+
+                if (entity.distanceTo(player) < getMaximumEntityDistance(world)) {
+                    return entity;
+                } else {
+                    return player;
+                }
+
+            } catch (ClassCastException | NullPointerException e) {
+                return player;
             }
         }
 
@@ -179,8 +198,8 @@ public class RelativeLevelBattle extends CustomPokemonBattle {
                     getUuid(),
                     getBattleTeam(),
                     getEntity(),
-                    getOnPlayerVictoryHandler(),
-                    getOnPlayerDefeatHandler()
+                    getPlayerVictoryHandler(),
+                    getPlayerDefeatHandler()
             );
         }
 
@@ -237,19 +256,39 @@ public class RelativeLevelBattle extends CustomPokemonBattle {
             return world.getGameRules().get(CustomGameRule.TRAINER_FLEE_DISTANCE_IN_BLOCKS).get();
         }
 
-        private Runnable getOnPlayerVictoryHandler() {
+        private Runnable getPlayerVictoryHandler() {
             return () -> {
                 trainer.getOnVictoryCommands().forEach(command -> execute(command, player));
+                runEntityLevelPlayerVictoryHandler();
                 getBattleRecord(player).setVictoryCount(getBattleRecord(player).getVictoryCount() + 1);
                 CustomCriteria.DEFEAT_TRAINER_CRITERION.trigger(player);
             };
         }
 
-        private Runnable getOnPlayerDefeatHandler() {
+        private Runnable getPlayerDefeatHandler() {
             return () -> {
                 trainer.getOnDefeatCommands().forEach(command -> execute(command, player));
+                runEntityLevelPlayerDefeatHandler();
                 getBattleRecord(player).setDefeatCount(getBattleRecord(player).getDefeatCount() + 1);
             };
+        }
+
+        private void runEntityLevelPlayerVictoryHandler() {
+            try {
+                ((TrainerEntityBehavior) entity).onPlayerVictory();
+
+            } catch (ClassCastException ignored) {
+
+            }
+        }
+
+        private void runEntityLevelPlayerDefeatHandler() {
+            try {
+                ((TrainerEntityBehavior) entity).onPlayerDefeat();
+
+            } catch (ClassCastException ignored) {
+
+            }
         }
 
         private BattleRecord getBattleRecord(ServerPlayerEntity player) {
