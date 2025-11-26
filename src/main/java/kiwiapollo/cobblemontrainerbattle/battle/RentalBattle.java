@@ -21,10 +21,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBehavior {
     public static final int LEVEL = 50;
@@ -227,7 +224,7 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
 
         private Runnable getPlayerVictoryHandler() {
             return () -> {
-                setTradePokemon(toPokemon(trainer.getTeam()));
+                setTradePokemon(pokemon);
                 runEntityLevelPlayerVictoryHandler();
                 trainer.getOnVictoryCommands().forEach(command -> execute(command, player));
             };

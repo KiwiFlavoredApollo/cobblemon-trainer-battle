@@ -23,6 +23,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 public class NormalLevelBattle extends CustomPokemonBattle {
@@ -161,7 +162,21 @@ public class NormalLevelBattle extends CustomPokemonBattle {
         }
 
         private List<? extends BattlePokemon> getBattleTeam() {
-            return Cobblemon.INSTANCE.getStorage().getParty(player).toBattleTeam(false, false, null);
+            return Cobblemon.INSTANCE.getStorage().getParty(player).toBattleTeam(false, false, getLeadingPokemonUuid());
+        }
+
+        private UUID getLeadingPokemonUuid() {
+            try {
+                Pokemon pokemon = Cobblemon.INSTANCE.getStorage().getParty(player).toGappyList().stream()
+                        .filter(Objects::nonNull)
+                        .filter(p -> !p.isFainted()).toList()
+                        .get(0);
+
+                return pokemon.getUuid();
+
+            } catch (IndexOutOfBoundsException e) {
+                return null;
+            }
         }
     }
 
