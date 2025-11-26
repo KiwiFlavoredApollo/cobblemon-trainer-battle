@@ -11,16 +11,11 @@ import net.minecraft.server.command.ServerCommandSource;
 import java.util.List;
 
 public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSource> {
-
+    // TODO change command name
     public CobblemonTrainerBattleCommand() {
         super(CobblemonTrainerBattle.MOD_ID);
 
-        List<String> permissions = List.of(
-                String.format("%s.%s", getLiteral(), "export")
-        );
-
-        this.requires(new MultiCommandSourcePredicate(permissions))
-                .then(getExportCommand());
+        this.then(getExportCommand());
     }
 
     private LiteralArgumentBuilder<ServerCommandSource> getExportCommand() {

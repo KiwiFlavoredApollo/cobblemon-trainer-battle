@@ -62,14 +62,18 @@ public class RentalPokemonTrader implements Command<ServerCommandSource> {
     }
 
     private void setRentalPokemon(ServerPlayerEntity player, int slot, Pokemon pokemon) {
-        RentalPokemonStorage.getInstance().get(player).set(slot, pokemon);
+        RentalPokemonStorage.getInstance().get(player).set(toIndex(slot), pokemon);
     }
 
     private Pokemon getPlayerPokemon(ServerPlayerEntity player, int slot) {
-        return RentalPokemonStorage.getInstance().get(player).get(slot);
+        return RentalPokemonStorage.getInstance().get(player).get(toIndex(slot));
     }
 
     private Pokemon getTrainerPokemon(ServerPlayerEntity player, int slot) {
-        return TradePokemonStorage.getInstance().get(player).get(slot);
+        return TradePokemonStorage.getInstance().get(player).get(toIndex(slot));
+    }
+
+    private int toIndex(int slot) {
+        return slot - 1;
     }
 }

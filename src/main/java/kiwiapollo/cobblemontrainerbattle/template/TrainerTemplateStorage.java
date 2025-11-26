@@ -73,6 +73,7 @@ public class TrainerTemplateStorage implements SimpleSynchronousResourceReloadLi
                 storage.put(identifier, template);
 
             } catch (NullPointerException | IllegalArgumentException e) {
+                // TODO better name
                 CobblemonTrainerBattle.LOGGER.error("Error parsing trainer preset: {}", entry.getKey());
             }
         }
@@ -90,6 +91,7 @@ public class TrainerTemplateStorage implements SimpleSynchronousResourceReloadLi
                 teams.put(identifier, team);
 
             } catch (IOException | JsonParseException e) {
+                // TODO better name
                 CobblemonTrainerBattle.LOGGER.error("Error loading file: {}", entry.getKey());
             }
         }
@@ -109,6 +111,7 @@ public class TrainerTemplateStorage implements SimpleSynchronousResourceReloadLi
                 presets.put(identifier, preset);
 
             } catch (IOException | JsonParseException e) {
+                // TODO better name
                 CobblemonTrainerBattle.LOGGER.error("Error loading file: {}", entry.getKey());
             }
         }
@@ -147,5 +150,9 @@ public class TrainerTemplateStorage implements SimpleSynchronousResourceReloadLi
         } else {
             return Identifier.of(CobblemonTrainerBattle.MOD_ID, string);
         }
+    }
+
+    public Collection<TrainerTemplate> values() {
+        return storage.values();
     }
 }

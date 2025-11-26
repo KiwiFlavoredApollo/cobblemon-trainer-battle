@@ -46,72 +46,77 @@ public class FlatLevelBattle extends CustomPokemonBattle {
             throw new BattleStartException();
         }
 
-        if (!isRematchAllowed()) {
-            player.sendMessage(getRematchErrorMessage());
+        if (!isTrainerRematchAllowed()) {
+            player.sendMessage(getRematchNotAllowedErrorMessage());
             throw new BattleStartException();
         }
 
-        if (!isCooldownElapsed()) {
-            player.sendMessage(getCooldownErrorMessage());
+        if (!isTrainerCooldownElapsed()) {
+            player.sendMessage(getCooldownNotElapsedErrorMessage());
             throw new BattleStartException();
         }
 
-        if (!isEqualToOrLessThanMaximumPartySize()) {
+        if (!isPlayerPokemonReady()) {
+            player.sendMessage(getPlayerPokemonNotReadyErrorMessage());
+            throw new BattleStartException();
+        }
+
+        if (!isAtMostMaximumPartySize()) {
             player.sendMessage(getMaximumPartySizeErrorMessage());
             throw new BattleStartException();
         }
 
-        if (!isEqualToOrGreaterThanMinimumPartySize()) {
+        if (!isAtLeastMinimumPartySize()) {
             player.sendMessage(getMinimumPartySizeErrorMessage());
             throw new BattleStartException();
         }
 
-        if (!hasRequiredAbility()) {
+        if (!hasAllRequiredAbility()) {
             player.sendMessage(getRequiredAbilityErrorMessage());
             throw new BattleStartException();
         }
 
-        if (!hasRequiredHeldItem()) {
+        if (!hasAllRequiredHeldItem()) {
             player.sendMessage(getRequiredHeldItemErrorMessage());
             throw new BattleStartException();
         }
 
-        if(!hasRequiredLabel()) {
+        if(!hasAllRequiredLabel()) {
             player.sendMessage(getRequiredLabelErrorMessage());
             throw new BattleStartException();
         }
 
-        if (!hasRequiredMove()) {
+        if (!hasAllRequiredMove()) {
             player.sendMessage(getRequiredMoveErrorMessage());
             throw new BattleStartException();
         }
 
-        if (!hasRequiredPokemon()) {
+        if (!hasAllRequiredPokemon()) {
             player.sendMessage(getRequiredPokemonErrorMessage());
             throw new BattleStartException();
         }
 
-        if (!hasForbiddenAbility()) {
+        if (hasAnyForbiddenAbility()) {
             player.sendMessage(getForbiddenAbilityErrorMessage());
             throw new BattleStartException();
         }
 
-        if (!hasForbiddenHeldItem()) {
+        if (hasAnyForbiddenHeldItem()) {
             player.sendMessage(getForbiddenHeldItemErrorMessage());
             throw new BattleStartException();
         }
 
-        if(!hasForbiddenLabel()) {
+        if(hasAnyForbiddenLabel()) {
             player.sendMessage(getForbiddenLabelErrorMessage());
             throw new BattleStartException();
         }
 
-        if (!hasForbiddenMove()) {
+        if (hasAnyForbiddenMove()) {
             player.sendMessage(getForbiddenMoveErrorMessage());
             throw new BattleStartException();
         }
 
-        if (!hasForbiddenPokemon()) {
+        if (hasAnyForbiddenPokemon()) {
             player.sendMessage(getForbiddenPokemonErrorMessage());
             throw new BattleStartException();
         }
@@ -224,10 +229,10 @@ public class FlatLevelBattle extends CustomPokemonBattle {
             return toPartyStore(trainer.getTeam()).toBattleTeam(true, true, null);
         }
 
-        private PartyStore toPartyStore(List<PokemonLevelPair> list) {
+        private PartyStore toPartyStore(List<PokemonLevelPair> team) {
             PartyStore store = new PartyStore(uuid);
 
-            for (PokemonLevelPair pair : list) {
+            for (PokemonLevelPair pair : team) {
                 store.add(toPokemon(pair));
             }
 

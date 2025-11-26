@@ -1,25 +1,33 @@
 package kiwiapollo.cobblemontrainerbattle.battle;
 
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
+import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
+import com.mojang.brigadier.CommandDispatcher;
 import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
 import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntityBehavior;
+import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
 import kiwiapollo.cobblemontrainerbattle.template.PokemonLevelPair;
 import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplate;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBehavior {
     public static final int LEVEL = 50;
-    public static final int PARTY_SIZE = 3;
+    public static final int POKEMON_COUNT = 3;
 
     private final ServerPlayerEntity player;
     private final TrainerTemplate trainer;
@@ -29,6 +37,29 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
 
         this.player = player;
         this.trainer = trainer;
+    }
+
+    @Override
+    public void start() throws BattleStartException {
+        if (!isPlayerPokemonCount(RentalBattle.POKEMON_COUNT)) {
+            player.sendMessage(getRentalPlayerPokemonNotReadyErrorMessage());
+            throw new BattleStartException();
+        }
+
+        if (!isTrainerPokemonCount(RentalBattle.POKEMON_COUNT)) {
+            player.sendMessage(getRentalTrainerPokemonNotReadyErrorMessage());
+            throw new BattleStartException();
+        }
+
+        super.start();
+    }
+
+    private Text getRentalPlayerPokemonNotReadyErrorMessage() {
+        return Text.translatable("command.cobblemontrainerbattle.error.rentalpokemon.rental_pokemon_not_exist").formatted(Formatting.RED);
+    }
+
+    private Text getRentalTrainerPokemonNotReadyErrorMessage() {
+        return Text.translatable("command.cobblemontrainerbattle.error.rentalbattle.trainer_minimum_party_size").formatted(Formatting.RED);
     }
 
     private static class PlayerBattleSideFactory implements SimpleFactory<PlayerBattleActor> {
@@ -136,10 +167,18 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
             return toPartyStore(trainer.getTeam()).toBattleTeam(true, true, null);
         }
 
-        private PartyStore toPartyStore(List<PokemonLevelPair> list) {
+        // TODO Side Effect?
+        // 부족한 만큼 추가하는게 부가효과면 잘라내는 것도 부가효과이지 않은가
+        private PartyStore toPartyStore(List<PokemonLevelPair> team) {
             PartyStore store = new PartyStore(getEntity().getUuid());
 
-            for (PokemonLevelPair pair : list) {
+            List<PokemonLevelPair> pokemon = new ArrayList<>(team);
+
+            if (pokemon.size() > RentalBattle.POKEMON_COUNT) {
+                pokemon = pokemon.subList(0, RentalBattle.POKEMON_COUNT);
+            }
+
+            for (PokemonLevelPair pair : pokemon) {
                 store.add(toPokemon(pair));
             }
 
@@ -166,12 +205,14 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
             return () -> {
                 setTradePokemon(toPokemon(trainer.getTeam()));
                 runEntityLevelPlayerVictoryHandler();
+                trainer.getOnVictoryCommands().forEach(command -> execute(command, player));
             };
         }
 
         private Runnable getPlayerDefeatHandler() {
             return () -> {
                 runEntityLevelPlayerDefeatHandler();
+                trainer.getOnDefeatCommands().forEach(command -> execute(command, player));
             };
         }
 
@@ -206,6 +247,15 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
             clone.forEach(Pokemon::heal);
 
             return clone;
+        }
+
+        private void execute(String command, ServerPlayerEntity player) {
+            command = command.replace("%player%", player.getGameProfile().getName());
+
+            MinecraftServer server = player.getCommandSource().getServer();
+            CommandDispatcher<ServerCommandSource> dispatcher = server.getCommandManager().getDispatcher();
+
+            server.getCommandManager().execute(dispatcher.parse(command, server.getCommandSource()), command);
         }
     }
 }

@@ -6,7 +6,7 @@ import java.util.*;
 import java.util.stream.Stream;
 
 public class Triple<T> implements Iterable<T> {
-    private static final int SIZE = 3;
+    public static final int SIZE = 3;
 
     private T first;
     private T second;
@@ -57,7 +57,7 @@ public class Triple<T> implements Iterable<T> {
             setThird(element);
 
         } else {
-            throw new IllegalArgumentException();
+            throw new IndexOutOfBoundsException();
         }
     }
 
@@ -72,7 +72,7 @@ public class Triple<T> implements Iterable<T> {
             return getThird();
 
         } else {
-            throw new IllegalArgumentException();
+            throw new IndexOutOfBoundsException();
         }
     }
 
@@ -96,6 +96,11 @@ public class Triple<T> implements Iterable<T> {
     }
 
     private List<T> getAsList() {
-        return List.of(first, second, third);
+        try {
+            return List.of(first, second, third);
+
+        } catch (NullPointerException e) {
+            return List.of();
+        }
     }
 }

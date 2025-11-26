@@ -45,10 +45,10 @@ public class CloneRentalPokemonProvider implements Command<ServerCommandSource> 
     }
 
     private boolean hasMinimumPartySize(ServerPlayerEntity player) {
-        return Cobblemon.INSTANCE.getStorage().getParty(player).occupied() >= RentalBattle.PARTY_SIZE;
+        return Cobblemon.INSTANCE.getStorage().getParty(player).occupied() >= RentalBattle.POKEMON_COUNT;
     }
 
     private MutableText getMinimumPartySizeErrorMessage() {
-        return Text.translatable("command.cobblemontrainerbattle.error.rentalpokemon.player_minimum_party_size", RentalBattle.PARTY_SIZE);
+        return Text.translatable("command.cobblemontrainerbattle.error.rentalpokemon.player_minimum_party_size", RentalBattle.POKEMON_COUNT);
     }
 }

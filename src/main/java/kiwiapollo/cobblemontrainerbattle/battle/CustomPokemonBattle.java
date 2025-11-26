@@ -18,14 +18,12 @@ import kotlin.Unit;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 
 import java.time.Duration;
 import java.time.Instant;
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
@@ -72,7 +70,38 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
                 .forEach(Pokemon::recall);
     }
 
-    protected boolean isEqualToOrLessThanMaximumPartyLevel() {
+    protected boolean isPlayerBusyWithPokemonBattle() {
+        return Cobblemon.INSTANCE.getBattleRegistry().getBattleByParticipatingPlayer(player.getEntity()) != null;
+    }
+
+    protected boolean isTrainerRematchAllowed() {
+        return trainer.isRematchAllowed();
+    }
+
+    protected boolean isTrainerCooldownElapsed() {
+        return getRemainingCooldownInSeconds() == 0;
+    }
+
+    protected long getRemainingCooldownInSeconds() {
+        Instant timestamp = PlayerHistoryStorage.getInstance().get(player.getEntity()).get(trainer.getIdentifier()).getTimestamp();
+        long remains = trainer.getCooldownInSeconds() - Duration.between(timestamp, Instant.now()).toSeconds();
+
+        if (remains > 0) {
+            return remains;
+
+        } else {
+            return 0;
+        }
+    }
+
+    protected boolean isPlayerPokemonReady() {
+        return !Cobblemon.INSTANCE.getStorage().getParty(player.getEntity()).toGappyList().stream()
+                .filter(Objects::nonNull)
+                .filter(pokemon -> !pokemon.isFainted()).toList()
+                .isEmpty();
+    }
+
+    protected boolean isAtMostMaximumPartyLevel() {
         int maximum = trainer.getMaximumPartyLevel();
         int player = this.player.getPokemonList().stream()
                 .filter(Objects::nonNull)
@@ -83,7 +112,7 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
         return player <= maximum;
     }
 
-    protected boolean isEqualToOrGreaterThanMinimumPartyLevel() {
+    protected boolean isAtLeastMinimumPartyLevel() {
         int minimum = trainer.getMinimumPartyLevel();
         int player = this.player.getPokemonList().stream()
                 .filter(Objects::nonNull)
@@ -94,33 +123,24 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
         return player >= minimum;
     }
     
-    protected boolean isEqualToOrLessThanMaximumPartySize() {
+    protected boolean isAtMostMaximumPartySize() {
         int maximum = trainer.getMaximumPartySize();
         int player = this.player.getPokemonList().size();
 
         return player <= maximum;
     }
     
-    protected boolean isEqualToOrGreaterThanMinimumPartySize() {
+    protected boolean isAtLeastMinimumPartySize() {
         int minimum = trainer.getMinimumPartySize();
         int player = this.player.getPokemonList().size();
 
         return player >= minimum;
     }
 
-    private boolean hasPokemon(List<Pokemon> pokemon, ShowdownPokemon required) {
-        for (Pokemon p : pokemon) {
-            if (isSpeciesEqual(p, required) && isFormEqual(p, required)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private boolean isSpeciesEqual(Pokemon party, ShowdownPokemon required) {
+    private boolean isEqualSpecies(Pokemon party, ShowdownPokemon showdown) {
         try {
             Identifier p = party.getSpecies().getResourceIdentifier();
-            Identifier r = ShowdownPokemonParser.toSpecies(required).getResourceIdentifier();
+            Identifier r = ShowdownPokemonParser.toSpecies(showdown).getResourceIdentifier();
             return p.equals(r);
 
         } catch (NullPointerException e) {
@@ -128,15 +148,19 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
         }
     }
 
-    private boolean isFormEqual(Pokemon party, ShowdownPokemon required) {
-        if (required.form == null) {
+    private boolean isEqualForm(Pokemon party, ShowdownPokemon showdown) {
+        if (showdown.form == null) {
             return true;
         } else {
-            return party.getForm().getName().equals(required.form);
+            return party.getForm().getName().equals(showdown.form);
         }
     }
 
-    // TODO
+    private boolean isEqualPokemon(Pokemon pokemon, ShowdownPokemon showdown) {
+        return isEqualSpecies(pokemon, showdown) && isEqualForm(pokemon, showdown);
+    }
+
+    // TODO better name
     protected Text toPokemonDescriptor(ShowdownPokemon pokemon) {
         try {
             if (pokemon.form == null) {
@@ -149,28 +173,30 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
             }
 
         } catch (NullPointerException e) {
-            Species species = ShowdownPokemonParser.toSpecies(pokemon);
-            CobblemonTrainerBattle.LOGGER.error("Unknown Pokemon species: {}", species.getResourceIdentifier());
-            throw new IllegalStateException(e);
+            CobblemonTrainerBattle.LOGGER.error("Unknown Pokemon species: {}", pokemon);
+            throw new IllegalArgumentException(e);
         }
     }
 
-    protected boolean hasRequiredPokemon(){
+    protected boolean hasAllRequiredPokemon(){
         List<ShowdownPokemon> required = trainer.getRequiredPokemon();
         List<Pokemon> pokemon = player.getPokemonList().stream()
                 .filter(Objects::nonNull)
                 .map(BattlePokemon::getEffectedPokemon)
                 .toList();
 
-        for (ShowdownPokemon p : required) {
-            if (!hasPokemon(pokemon, p)) {
-                return false;
+        for (ShowdownPokemon s : required) {
+            for (Pokemon p : pokemon) {
+                if (!isEqualPokemon(p, s)) {
+                    return false;
+                }
             }
         }
+
         return true;
     }
-    
-    protected boolean hasRequiredLabel(){
+
+    protected boolean hasAllRequiredLabel(){
         Set<String> required = trainer.getRequiredLabel();
         Set<String> labels = player.getPokemonList().stream()
                 .filter(Objects::nonNull)
@@ -185,10 +211,11 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
                 return false;
             }
         }
+
         return true;
     }
 
-    protected boolean hasRequiredMove(){
+    protected boolean hasAllRequiredMove(){
         Set<String> required = trainer.getRequiredMove();
         Set<String> moves = player.getPokemonList().stream()
                 .filter(Objects::nonNull)
@@ -204,10 +231,11 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
                 return false;
             }
         }
+
         return true;
     }
 
-    protected boolean hasRequiredHeldItem(){
+    protected boolean hasAllRequiredHeldItem(){
         Set<Item> required = trainer.getRequiredHeldItem();
         Set<Item> items = player.getPokemonList().stream()
                 .filter(Objects::nonNull)
@@ -225,7 +253,7 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
         return true;
     }
 
-    protected boolean hasRequiredAbility(){
+    protected boolean hasAllRequiredAbility(){
         Set<String> required = trainer.getRequiredAbility();
         Set<String> abilities = player.getPokemonList().stream()
                 .filter(Objects::nonNull)
@@ -243,22 +271,25 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
         return true;
     }
 
-    protected boolean hasForbiddenPokemon(){
+    protected boolean hasAnyForbiddenPokemon(){
         List<ShowdownPokemon> forbidden = trainer.getForbiddenPokemon();
         List<Pokemon> pokemon = player.getPokemonList().stream()
                 .filter(Objects::nonNull)
                 .map(BattlePokemon::getEffectedPokemon)
                 .toList();
 
-        for (ShowdownPokemon p : forbidden) {
-            if (!hasPokemon(pokemon, p)) {
-                return false;
+        for (ShowdownPokemon s : forbidden) {
+            for (Pokemon p : pokemon) {
+                if (isEqualPokemon(p, s)) {
+                    return true;
+                }
             }
         }
-        return true;
+
+        return false;
     }
 
-    protected boolean hasForbiddenLabel(){
+    protected boolean hasAnyForbiddenLabel(){
         Set<String> forbidden = trainer.getForbiddenLabel();
         Set<String> labels = player.getPokemonList().stream()
                 .filter(Objects::nonNull)
@@ -269,14 +300,15 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
                 .collect(Collectors.toSet());
 
         for (String b : forbidden) {
-            if (!labels.contains(b)) {
-                return false;
+            if (labels.contains(b)) {
+                return true;
             }
         }
-        return true;
+
+        return false;
     }
 
-    protected boolean hasForbiddenMove(){
+    protected boolean hasAnyForbiddenMove(){
         Set<String> forbidden = trainer.getForbiddenMove();
         Set<String> moves = player.getPokemonList().stream()
                 .filter(Objects::nonNull)
@@ -288,14 +320,15 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
                 .collect(Collectors.toSet());
 
         for (String m : forbidden) {
-            if (!moves.contains(m)) {
-                return false;
+            if (moves.contains(m)) {
+                return true;
             }
         }
-        return true;
+
+        return false;
     }
 
-    protected boolean hasForbiddenHeldItem(){
+    protected boolean hasAnyForbiddenHeldItem(){
         Set<Item> forbidden = trainer.getForbiddenHeldItem();
         Set<Item> items = player.getPokemonList().stream()
                 .filter(Objects::nonNull)
@@ -305,15 +338,15 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
                 .collect(Collectors.toSet());
 
         for (Item i : forbidden) {
-            if (!items.contains(i)) {
-                return false;
+            if (items.contains(i)) {
+                return true;
             }
         }
 
-        return true;
+        return false;
     }
 
-    protected boolean hasForbiddenAbility(){
+    protected boolean hasAnyForbiddenAbility(){
         Set<String> forbidden = trainer.getForbiddenAbility();
         Set<String> abilities = player.getPokemonList().stream()
                 .filter(Objects::nonNull)
@@ -323,103 +356,127 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
                 .collect(Collectors.toSet());
 
         for (String a : forbidden) {
-            if (!abilities.contains(a)) {
-                return false;
+            if (abilities.contains(a)) {
+                return true;
             }
         }
 
-        return true;
+        return false;
     }
 
-    protected boolean isPlayerBusyWithPokemonBattle() {
-        return Cobblemon.INSTANCE.getBattleRegistry().getBattleByParticipatingPlayer(player.getEntity()) != null;
+    protected Text getPlayerBusyErrorMessage() {
+        return Text.translatable("predicate.cobblemontrainerbattle.error.player_not_busy").formatted(Formatting.RED);
     }
 
-    protected boolean isCooldownElapsed() {
-        return getRemainingCooldownInSeconds() == 0;
+    protected Text getRematchNotAllowedErrorMessage() {
+        return Text.translatable("predicate.cobblemontrainerbattle.error.is_rematch_allowed").formatted(Formatting.RED);
     }
 
-    protected long getRemainingCooldownInSeconds() {
-        Instant timestamp = PlayerHistoryStorage.getInstance().get(player.getEntity()).get(trainer.getIdentifier()).getTimestamp();
-        long remains = trainer.getCooldownInSeconds() - Duration.between(timestamp, Instant.now()).toSeconds();
-
-        if (remains > 0) {
-            return remains;
-
-        } else {
-            return 0;
-        }
+    protected Text getCooldownNotElapsedErrorMessage() {
+        return Text.translatable("predicate.cobblemontrainerbattle.error.cooldown_elapsed", getRemainingCooldownInSeconds()).formatted(Formatting.RED);
     }
 
-    protected boolean isRematchAllowed() {
-        return trainer.isRematchAllowed();
+    protected Text getPlayerPokemonNotReadyErrorMessage() {
+        return Text.translatable("predicate.cobblemontrainerbattle.error.player_party_not_empty").formatted(Formatting.RED);
     }
 
     protected Text getMaximumPartyLevelErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.maximum_party_level", trainer.getMaximumPartyLevel());
+        return Text.translatable("predicate.cobblemontrainerbattle.error.maximum_party_level", trainer.getMaximumPartyLevel()).formatted(Formatting.RED);
     }
 
     protected Text getMinimumPartyLevelErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.minimum_party_level", trainer.getMinimumPartyLevel());
+        return Text.translatable("predicate.cobblemontrainerbattle.error.minimum_party_level", trainer.getMinimumPartyLevel()).formatted(Formatting.RED);
     }
 
     protected Text getMaximumPartySizeErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.maximum_party_size", trainer.getMaximumPartySize());
+        return Text.translatable("predicate.cobblemontrainerbattle.error.maximum_party_size", trainer.getMaximumPartySize()).formatted(Formatting.RED);
     }
 
     protected Text getMinimumPartySizeErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.minimum_party_size", trainer.getMinimumPartySize());
-    }
-    
-    protected Text getPlayerBusyErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.player_not_busy");
-    }
-    
-    protected Text getRematchErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.is_rematch_allowed");
-    }
-    
-    protected Text getCooldownErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.cooldown_elapsed", getRemainingCooldownInSeconds());
+        return Text.translatable("predicate.cobblemontrainerbattle.error.minimum_party_size", trainer.getMinimumPartySize()).formatted(Formatting.RED);
     }
     
     protected Text getRequiredAbilityErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.required_ability", trainer.getRequiredAbility());
+        return Text.translatable("predicate.cobblemontrainerbattle.error.required_ability", trainer.getRequiredAbility()).formatted(Formatting.RED);
     }
 
     protected Text getRequiredHeldItemErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.required_held_item", trainer.getRequiredHeldItem());
+        return Text.translatable("predicate.cobblemontrainerbattle.error.required_held_item", trainer.getRequiredHeldItem()).formatted(Formatting.RED);
     }
 
     protected Text getRequiredLabelErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.required_label", trainer.getRequiredLabel());
+        return Text.translatable("predicate.cobblemontrainerbattle.error.required_label", trainer.getRequiredLabel()).formatted(Formatting.RED);
     }
 
     protected Text getRequiredMoveErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.required_move", trainer.getRequiredMove());
+        return Text.translatable("predicate.cobblemontrainerbattle.error.required_move", trainer.getRequiredMove()).formatted(Formatting.RED);
     }
 
     protected Text getRequiredPokemonErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.required_pokemon", trainer.getRequiredPokemon());
+        return Text.translatable("predicate.cobblemontrainerbattle.error.required_pokemon", toPokemonDescriptor(getMissingRequiredPokemon())).formatted(Formatting.RED);
+    }
+
+    private ShowdownPokemon getMissingRequiredPokemon() {
+        List<ShowdownPokemon> required = trainer.getRequiredPokemon();
+        List<Pokemon> pokemon = player.getPokemonList().stream()
+                .filter(Objects::nonNull)
+                .map(BattlePokemon::getEffectedPokemon)
+                .toList();
+
+        for (ShowdownPokemon s : required) {
+            for (Pokemon p : pokemon) {
+                if (!isEqualPokemon(p, s)) {
+                    return s;
+                }
+            }
+        }
+
+        throw new NoSuchElementException();
     }
 
     protected Text getForbiddenAbilityErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.forbidden_ability", trainer.getForbiddenAbility());
+        return Text.translatable("predicate.cobblemontrainerbattle.error.forbidden_ability", trainer.getForbiddenAbility()).formatted(Formatting.RED);
     }
 
     protected Text getForbiddenHeldItemErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.forbidden_held_item", trainer.getForbiddenHeldItem());
+        return Text.translatable("predicate.cobblemontrainerbattle.error.forbidden_held_item", trainer.getForbiddenHeldItem()).formatted(Formatting.RED);
     }
 
     protected Text getForbiddenLabelErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.forbidden_label", trainer.getForbiddenLabel());
+        return Text.translatable("predicate.cobblemontrainerbattle.error.forbidden_label", trainer.getForbiddenLabel()).formatted(Formatting.RED);
     }
 
     protected Text getForbiddenMoveErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.forbidden_move", trainer.getForbiddenMove());
+        return Text.translatable("predicate.cobblemontrainerbattle.error.forbidden_move", trainer.getForbiddenMove()).formatted(Formatting.RED);
     }
 
     protected Text getForbiddenPokemonErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.forbidden_pokemon", trainer.getForbiddenPokemon());
+        return Text.translatable("predicate.cobblemontrainerbattle.error.forbidden_pokemon", toPokemonDescriptor(getExistingForbiddenPokemon())).formatted(Formatting.RED);
+    }
+
+    private ShowdownPokemon getExistingForbiddenPokemon() {
+        List<ShowdownPokemon> forbidden = trainer.getForbiddenPokemon();
+        List<Pokemon> pokemon = player.getPokemonList().stream()
+                .filter(Objects::nonNull)
+                .map(BattlePokemon::getEffectedPokemon)
+                .toList();
+
+        for (ShowdownPokemon s : forbidden) {
+            for (Pokemon p : pokemon) {
+                if (isEqualPokemon(p, s)) {
+                    return s;
+                }
+            }
+        }
+
+        throw new NoSuchElementException();
+    }
+
+    protected boolean isPlayerPokemonCount(int count) {
+        return player.getPokemonList().size() == count;
+    }
+
+    protected boolean isTrainerPokemonCount(int count) {
+        return trainer.getPokemonList().size() == count;
     }
 }

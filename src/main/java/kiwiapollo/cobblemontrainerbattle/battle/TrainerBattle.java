@@ -3,13 +3,14 @@ package kiwiapollo.cobblemontrainerbattle.battle;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplate;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.text.Text;
 
 import java.util.UUID;
 
 public class TrainerBattle implements PokemonBattleBehavior {
     private final CustomPokemonBattle battle;
 
-    public TrainerBattle(ServerPlayerEntity player, TrainerTemplate trainer) {
+    public TrainerBattle(ServerPlayerEntity player, TrainerTemplate trainer) throws BattleStartException {
         this.battle = createTrainerBattle(player, trainer);
     }
 

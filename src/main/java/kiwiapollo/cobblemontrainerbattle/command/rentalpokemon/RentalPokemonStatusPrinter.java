@@ -15,27 +15,15 @@ public class RentalPokemonStatusPrinter extends PokemonStatusPrinter implements 
     @Override
     public int run(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
         ServerPlayerEntity player = context.getSource().getPlayerOrThrow();
-        PartyStore rental = getRentalPokemon(player);
+        RentalPokemon pokemon = RentalPokemonStorage.getInstance().get(player);
 
-        if (rental.occupied() == 0) {
+        if (pokemon.occupied() == 0) {
             player.sendMessage(Text.translatable("command.cobblemontrainerbattle.error.rentalpokemon.rental_pokemon_not_exist").formatted(Formatting.RED));
             return 0;
         }
 
-        printPokemonStatus(rental, player);
+        printPokemonStatus(pokemon, player);
 
         return Command.SINGLE_SUCCESS;
-    }
-
-    /** TODO
-     * why static,
-     * @see TradePokemonStatusPrinter
-     */
-    private static PartyStore getRentalPokemon(ServerPlayerEntity player) {
-        RentalPokemon rental = RentalPokemonStorage.getInstance().get(player);
-        PartyStore party = new PartyStore(player.getUuid());
-        rental.stream().forEach(party::add);
-
-        return party;
     }
 }

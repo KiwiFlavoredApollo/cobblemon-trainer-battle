@@ -6,22 +6,25 @@ import com.cobblemon.mod.common.api.pokemon.stats.Stats;
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.cobblemon.mod.common.pokemon.PokemonStats;
+import kiwiapollo.cobblemontrainerbattle.common.Triple;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 
-public abstract class PokemonStatusPrinter {
-    protected void printPokemonStatus(PartyStore party, ServerPlayerEntity player) {
-        for (int i = 0; i < party.occupied(); i++) {
-            Pokemon pokemon = party.get(i);
+import java.util.List;
 
-            player.sendMessage(Text.literal("[" + (i + 1) + "] ").append(getPokemonSpecies(pokemon)).formatted(Formatting.YELLOW));
-            player.sendMessage(Text.translatable("cobblemon.ui.info.ability").append(" : ").append(getPokemonAbility(pokemon)));
-            player.sendMessage(Text.translatable("cobblemon.ui.info.nature").append(" : ").append(getPokemonNature(pokemon)));
-            player.sendMessage(Text.translatable("cobblemon.ui.moves").append(" : ").append(getPokemonMoveSet(pokemon.getMoveSet())));
-            player.sendMessage(Text.translatable("cobblemon.ui.stats.ivs").append(" : ").append(getPokemonStats(pokemon.getIvs())));
-            player.sendMessage(Text.translatable("cobblemon.ui.stats.evs").append(" : ").append(getPokemonStats(pokemon.getEvs())));
+public abstract class PokemonStatusPrinter {
+    protected void printPokemonStatus(Triple<Pokemon> pokemon, ServerPlayerEntity player) {
+        for (int i = 0; i < Triple.SIZE; i++) {
+            Pokemon p = pokemon.get(i);
+
+            player.sendMessage(Text.literal("[" + (i + 1) + "] ").append(getPokemonSpecies(p)).formatted(Formatting.YELLOW));
+            player.sendMessage(Text.translatable("cobblemon.ui.info.ability").append(" : ").append(getPokemonAbility(p)));
+            player.sendMessage(Text.translatable("cobblemon.ui.info.nature").append(" : ").append(getPokemonNature(p)));
+            player.sendMessage(Text.translatable("cobblemon.ui.moves").append(" : ").append(getPokemonMoveSet(p.getMoveSet())));
+            player.sendMessage(Text.translatable("cobblemon.ui.stats.ivs").append(" : ").append(getPokemonStats(p.getIvs())));
+            player.sendMessage(Text.translatable("cobblemon.ui.stats.evs").append(" : ").append(getPokemonStats(p.getEvs())));
         }
     }
 

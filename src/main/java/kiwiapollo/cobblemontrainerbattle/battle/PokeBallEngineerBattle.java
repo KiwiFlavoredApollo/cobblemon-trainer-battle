@@ -35,7 +35,6 @@ public class PokeBallEngineerBattle extends CustomPokemonBattle {
         this.trainer = trainer;
     }
 
-    // TODO
     @Override
     public void start() throws BattleStartException {
         if (isPlayerBusyWithPokemonBattle()) {
@@ -43,8 +42,8 @@ public class PokeBallEngineerBattle extends CustomPokemonBattle {
             throw new BattleStartException();
         }
 
-        if (!isEqualToOrGreaterThanMinimumPartySize()) {
-            player.sendMessage(getMinimumPartySizeErrorMessage());
+        if (!isPlayerPokemonReady()) {
+            player.sendMessage(getPlayerPokemonNotReadyErrorMessage());
             throw new BattleStartException();
         }
 
@@ -110,10 +109,10 @@ public class PokeBallEngineerBattle extends CustomPokemonBattle {
             return toPartyStore(trainer.getTeam()).toBattleTeam(true, true, null);
         }
 
-        private PartyStore toPartyStore(List<PokemonLevelPair> list) {
+        private PartyStore toPartyStore(List<PokemonLevelPair> team) {
             PartyStore store = new PartyStore(trainer.getEntityUuid());
 
-            for (PokemonLevelPair pair : list) {
+            for (PokemonLevelPair pair : team) {
                 store.add(toPokemon(pair));
             }
 

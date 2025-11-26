@@ -5,12 +5,15 @@ import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import kiwiapollo.cobblemontrainerbattle.battle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
+import kiwiapollo.cobblemontrainerbattle.template.RandomTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplate;
 import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplateStorage;
 import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.command.argument.IdentifierArgumentType;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 
 import java.util.*;
@@ -18,6 +21,11 @@ import java.util.*;
 public abstract class TrainerBattleStarter implements Command<ServerCommandSource> {
     public int run(ServerPlayerEntity player, TrainerTemplate trainer) {
         try {
+            if (trainer == null) {
+                player.sendMessage(getNoSuchTrainerExistErrorMessage());
+                return 0;
+            }
+
             new TrainerBattle(player, trainer).start();
 
             return Command.SINGLE_SUCCESS;
@@ -25,6 +33,10 @@ public abstract class TrainerBattleStarter implements Command<ServerCommandSourc
         } catch (BattleStartException e) {
             return 0;
         }
+    }
+
+    private Text getNoSuchTrainerExistErrorMessage() {
+        return Text.translatable("command.cobblemontrainerbattle.error.trainerbattle.unknown_trainer").formatted(Formatting.RED);
     }
 
     protected ServerPlayerEntity getThisPlayer(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
@@ -41,9 +53,7 @@ public abstract class TrainerBattleStarter implements Command<ServerCommandSourc
     }
 
     protected TrainerTemplate getRandomTrainer(CommandContext<ServerCommandSource> context) {
-        List<Identifier> random = new ArrayList<>(TrainerTemplateStorage.getInstance().keySet());
-        Collections.shuffle(random);
-        Identifier trainer = random.get(0);
+        Identifier trainer = new RandomTrainerFactory(t -> true).create();
         return TrainerTemplateStorage.getInstance().get(trainer);
     }
 
