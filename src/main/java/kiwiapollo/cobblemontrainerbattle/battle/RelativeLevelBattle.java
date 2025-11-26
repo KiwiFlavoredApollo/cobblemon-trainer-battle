@@ -172,16 +172,16 @@ public class RelativeLevelBattle extends CustomPokemonBattle {
         public TrainerBattleActorFactory(ServerPlayerEntity player, TrainerTemplate trainer) {
             this.player = player;
             this.trainer = trainer;
-            this.uuid = getUuidOrCreateRandom(trainer);
+            this.uuid = getUuidOrElse(trainer, UUID.randomUUID());
             this.entity = getEntityOrFallBackToPlayer(trainer, player);
         }
 
-        private UUID getUuidOrCreateRandom(TrainerTemplate trainer) {
+        private UUID getUuidOrElse(TrainerTemplate trainer, UUID uuid) {
             if (trainer.getEntityUuid() != null) {
                 return trainer.getEntityUuid();
 
             } else {
-                return UUID.randomUUID();
+                return uuid;
             }
         }
 

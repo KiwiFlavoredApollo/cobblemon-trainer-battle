@@ -22,6 +22,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
@@ -115,20 +116,22 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
         private final TrainerTemplate trainer;
         private final UUID uuid;
         private final LivingEntity entity;
+        private final List<Pokemon> pokemon;
 
         public TrainerBattleSideFactory(ServerPlayerEntity player, TrainerTemplate trainer) {
             this.player = player;
             this.trainer = trainer;
-            this.uuid = getUuidOrCreateRandom(trainer);
+            this.uuid = getUuidOrElse(trainer, UUID.randomUUID());
             this.entity = getEntityOrFallBackToPlayer(trainer, player);
+            this.pokemon = getRentalPokemon(trainer);
         }
 
-        private UUID getUuidOrCreateRandom(TrainerTemplate trainer) {
+        private UUID getUuidOrElse(TrainerTemplate trainer, UUID uuid) {
             if (trainer.getEntityUuid() != null) {
                 return trainer.getEntityUuid();
 
             } else {
-                return UUID.randomUUID();
+                return uuid;
             }
         }
 
@@ -146,6 +149,22 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
             } catch (ClassCastException | NullPointerException e) {
                 return player;
             }
+        }
+
+        private List<Pokemon> getRentalPokemon(TrainerTemplate trainer) {
+            List<Pokemon> pokemon = new ArrayList<>(trainer.getTeam().stream().map(this::toPokemon).toList());
+
+            if (pokemon.size() > RentalBattle.POKEMON_COUNT) {
+                List<Pokemon> random = new ArrayList<>(pokemon);
+                Collections.shuffle(random);
+                pokemon = random.subList(0, RentalBattle.POKEMON_COUNT);
+            }
+
+            while (pokemon.size() < RentalBattle.POKEMON_COUNT) {
+                pokemon.add(PokemonSpecies.INSTANCE.random().create(RentalBattle.LEVEL));
+            }
+
+            return pokemon;
         }
 
         @Override
@@ -169,19 +188,8 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
         }
 
         private List<BattlePokemon> getBattleTeam() {
-            List<Pokemon> pokemon = new ArrayList<>(trainer.getTeam().stream().map(this::toPokemon).toList());
-
-            if (pokemon.size() > RentalBattle.POKEMON_COUNT) {
-                pokemon = pokemon.subList(0, RentalBattle.POKEMON_COUNT);
-            }
-
-            while (pokemon.size() < RentalBattle.POKEMON_COUNT) {
-                pokemon.add(PokemonSpecies.INSTANCE.random().create(RentalBattle.LEVEL));
-            }
-
             List<Pokemon> rental = pokemon.stream().map(this::applyPokemonProperty).toList();
-            return toPartyStore(rental).toBattleTeam(true, true, null);
-        }
+            return toPartyStore(rental).toBattleTeam(true, true, null);        }
 
         private Pokemon applyPokemonProperty(Pokemon pokemon) {
             Pokemon clone = pokemon.clone(true, true);
