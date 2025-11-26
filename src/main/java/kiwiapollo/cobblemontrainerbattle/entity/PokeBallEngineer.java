@@ -86,6 +86,7 @@ public class PokeBallEngineer {
             return getFirstSix(getPokemon(getPokeBallBoxBlockEntity(villager)));
         }
 
+        // TODO better name
         private List<Pokemon> getFirstSix(List<Pokemon> pokemon) {
             final int MAXIMUM = 6;
 

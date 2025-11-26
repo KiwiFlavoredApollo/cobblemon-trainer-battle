@@ -12,7 +12,13 @@ public class BlueVsSeeker extends VsSeeker {
     private static class Factory implements SimpleFactory<Identifier> {
         @Override
         public Identifier create() {
-            return new RandomTrainerFactory(template -> true).create();
+            return new RandomTrainerFactory(template -> {
+                boolean result = true;
+
+                result &= !template.getTeam().isEmpty();
+
+                return result;
+            }).create();
         }
     }
 }

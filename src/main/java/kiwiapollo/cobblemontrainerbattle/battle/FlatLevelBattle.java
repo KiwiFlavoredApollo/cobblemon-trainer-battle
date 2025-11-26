@@ -3,7 +3,6 @@ package kiwiapollo.cobblemontrainerbattle.battle;
 import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
-import com.cobblemon.mod.common.api.storage.party.PlayerPartyStore;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
@@ -24,6 +23,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 public class FlatLevelBattle extends CustomPokemonBattle {
@@ -58,6 +58,11 @@ public class FlatLevelBattle extends CustomPokemonBattle {
 
         if (!isPlayerPokemonReady()) {
             player.sendMessage(getPlayerPokemonNotReadyErrorMessage());
+            throw new BattleStartException();
+        }
+
+        if (!isTrainerPokemonReady()) {
+            player.sendMessage(getTrainerPokemonNotReadyErrorMessage());
             throw new BattleStartException();
         }
 
@@ -146,23 +151,28 @@ public class FlatLevelBattle extends CustomPokemonBattle {
         }
 
         private List<? extends BattlePokemon> getBattleTeam() {
-            return toPartyStore(Cobblemon.INSTANCE.getStorage().getParty(player)).toBattleTeam(true, false, null);
+            List<Pokemon> pokemon = Cobblemon.INSTANCE.getStorage().getParty(player).toGappyList().stream().filter(Objects::nonNull).toList();
+            List<Pokemon> flat = pokemon.stream().map(this::applyPokemonProperty).toList();
+            return toPartyStore(flat).toBattleTeam(true, false, null);
         }
 
-        private PartyStore toPartyStore(PlayerPartyStore party) {
-            PartyStore clone = new PartyStore(player.getUuid());
+        private PartyStore toPartyStore(List<Pokemon> pokemon) {
+            PartyStore party = new PartyStore(player.getUuid());
 
-            for (Pokemon pokemon : party) {
-                clone.add(toFlatLevelPokemon(pokemon));
+            for (Pokemon p : pokemon) {
+                party.add(p);
             }
 
-            return clone;
+            return party;
         }
 
-        private Pokemon toFlatLevelPokemon(Pokemon pokemon) {
+        private Pokemon applyPokemonProperty(Pokemon pokemon) {
             Pokemon clone = pokemon.clone(true, true);
+
             clone.setLevel(FlatLevelBattle.LEVEL);
+            clone.heal();
             PokemonProperties.Companion.parse("uncatchable=yes").apply(clone);
+
             return clone;
         }
     }
@@ -226,14 +236,26 @@ public class FlatLevelBattle extends CustomPokemonBattle {
         }
 
         private List<BattlePokemon> getBattleTeam() {
-            return toPartyStore(trainer.getTeam()).toBattleTeam(true, true, null);
+            List<Pokemon> pokemon = trainer.getTeam().stream().map(this::toPokemon).toList();
+            List<Pokemon> flat = pokemon.stream().map(this::applyPokemonProperty).toList();
+            return toPartyStore(flat).toBattleTeam(true, true, null);
         }
 
-        private PartyStore toPartyStore(List<PokemonLevelPair> team) {
+        private Pokemon applyPokemonProperty(Pokemon pokemon) {
+            Pokemon clone = pokemon.clone(true, true);
+
+            clone.setLevel(FlatLevelBattle.LEVEL);
+            clone.heal();
+            PokemonProperties.Companion.parse("uncatchable=yes").apply(clone);
+
+            return clone;
+        }
+
+        private PartyStore toPartyStore(List<Pokemon> pokemon) {
             PartyStore store = new PartyStore(uuid);
 
-            for (PokemonLevelPair pair : team) {
-                store.add(toPokemon(pair));
+            for (Pokemon p : pokemon) {
+                store.add(p);
             }
 
             return store;
@@ -241,9 +263,7 @@ public class FlatLevelBattle extends CustomPokemonBattle {
 
         private Pokemon toPokemon(PokemonLevelPair pair) {
             Pokemon pokemon = pair.getPokemon().clone(true, true);
-            pokemon.setLevel(FlatLevelBattle.LEVEL);
-            pokemon.heal();
-            PokemonProperties.Companion.parse("uncatchable=yes").apply(pokemon);
+            pokemon.setLevel(pair.getLevel());
             return pokemon;
         }
 

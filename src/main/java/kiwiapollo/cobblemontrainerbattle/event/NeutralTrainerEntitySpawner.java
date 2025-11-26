@@ -43,11 +43,11 @@ public class NeutralTrainerEntitySpawner implements ServerTickEvents.EndWorldTic
                 return;
             }
 
-            spawnEntity(world, player);
+            trySpawnEntity(world, player);
         }
     }
 
-    private void spawnEntity(ServerWorld world, ServerPlayerEntity player) {
+    private void trySpawnEntity(ServerWorld world, ServerPlayerEntity player) {
         try {
             TrainerEntity entity = new NeutralTrainerEntity(CustomEntityType.NEUTRAL_TRAINER, world);
             Identifier trainer = selectRandomVsSeeker(player).create();

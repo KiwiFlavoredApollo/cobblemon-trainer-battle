@@ -80,10 +80,6 @@ public class TrainerTemplateFactory implements SimpleFactory<TrainerTemplate> {
             }
         }
 
-        if (pair.isEmpty()) {
-            throw new IllegalArgumentException();
-        }
-
         return pair;
     }
 

@@ -16,10 +16,6 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 public abstract class RentalBattleStarter implements Command<ServerCommandSource> {
     public int run(ServerPlayerEntity player, TrainerTemplate trainer) {
         try {
@@ -54,18 +50,9 @@ public abstract class RentalBattleStarter implements Command<ServerCommandSource
         return TrainerTemplateStorage.getInstance().get(trainer);
     }
 
-    /**
-     * TODO
-     * @see RentalBattle.TrainerBattleSideFactory#toPartyStore(List)
-     */
     protected TrainerTemplate getRandomTrainer(CommandContext<ServerCommandSource> context) {
-        Identifier trainer = new RandomTrainerFactory(this::isReadyForRentalBattle).create();
+        Identifier trainer = new RandomTrainerFactory().create();
         return TrainerTemplateStorage.getInstance().get(trainer);
-    }
-
-    private boolean isReadyForRentalBattle(TrainerTemplate trainer) {
-//        return trainer.getTeam().size() >= RentalBattle.POKEMON_COUNT;
-        return trainer.getTeam().size() == RentalBattle.POKEMON_COUNT;
     }
 
     public static class BetweenThisPlayerAndSelectedTrainer extends RentalBattleStarter {

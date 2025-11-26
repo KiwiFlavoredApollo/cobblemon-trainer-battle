@@ -15,6 +15,10 @@ public class RandomTrainerFactory implements SimpleFactory<Identifier> {
         this.predicate = predicate;
     }
 
+    public RandomTrainerFactory() {
+        this(template -> true);
+    }
+
     @Override
     public Identifier create() {
         List<Identifier> trainers = TrainerTemplateStorage.getInstance().keySet().stream().filter(this::test).toList();

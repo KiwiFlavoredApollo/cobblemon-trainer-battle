@@ -59,6 +59,11 @@ public class RelativeLevelBattle extends CustomPokemonBattle {
             throw new BattleStartException();
         }
 
+        if (!isTrainerPokemonReady()) {
+            player.sendMessage(getTrainerPokemonNotReadyErrorMessage());
+            throw new BattleStartException();
+        }
+
         if (!isAtMostMaximumPartyLevel()) {
             player.sendMessage(getMaximumPartyLevelErrorMessage());
             throw new BattleStartException();
@@ -217,25 +222,35 @@ public class RelativeLevelBattle extends CustomPokemonBattle {
         }
 
         private List<BattlePokemon> getBattleTeam() {
-            return toPartyStore(trainer.getTeam()).toBattleTeam(true, true, null);
+            List<Pokemon> pokemon = trainer.getTeam().stream().map(this::toPokemon).toList();
+            List<Pokemon> relative = pokemon.stream().map(this::applyPokemonProperty).toList();
+            return toPartyStore(relative).toBattleTeam(true, true, null);
         }
 
-        private PartyStore toPartyStore(List<PokemonLevelPair> team) {
-            PartyStore store = new PartyStore(uuid);
+        private PartyStore toPartyStore(List<Pokemon> pokemon) {
+            PartyStore party = new PartyStore(uuid);
 
-            for (PokemonLevelPair pair : team) {
-                store.add(toPokemon(pair));
+            for (Pokemon p : pokemon) {
+                party.add(p);
             }
 
-            return store;
+            return party;
         }
 
         private Pokemon toPokemon(PokemonLevelPair pair) {
             Pokemon pokemon = pair.getPokemon().clone(true, true);
-            pokemon.setLevel(getPivotLevel() + pair.getLevel());
-            pokemon.heal();
-            PokemonProperties.Companion.parse("uncatchable=yes").apply(pokemon);
+            pokemon.setLevel(pair.getLevel());
             return pokemon;
+        }
+
+        private Pokemon applyPokemonProperty(Pokemon pokemon) {
+            Pokemon clone = pokemon.clone(true, true);
+
+            clone.setLevel(getPivotLevel() + clone.getLevel());
+            clone.heal();
+            PokemonProperties.Companion.parse("uncatchable=yes").apply(clone);
+
+            return clone;
         }
 
         private int getPivotLevel() {

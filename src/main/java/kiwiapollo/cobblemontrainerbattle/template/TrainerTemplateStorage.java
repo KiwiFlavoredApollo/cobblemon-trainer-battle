@@ -18,10 +18,14 @@ public class TrainerTemplateStorage implements SimpleSynchronousResourceReloadLi
 
     private static TrainerTemplateStorage instance;
 
-    private final Map<Identifier, TrainerTemplate> storage;
+    private final Map<Identifier, TrainerTemplate> template;
+    private final Map<Identifier, TrainerTeam> team;
+    private final Map<Identifier, TrainerPreset> preset;
 
     private TrainerTemplateStorage() {
-        this.storage = new HashMap<>();
+        this.template = new HashMap<>();
+        this.team = new HashMap<>();
+        this.preset = new HashMap<>();
     }
 
     public static TrainerTemplateStorage getInstance() {
@@ -33,11 +37,11 @@ public class TrainerTemplateStorage implements SimpleSynchronousResourceReloadLi
     }
 
     public TrainerTemplate get(Identifier trainer) {
-        return storage.get(trainer);
+        return template.get(trainer);
     }
 
     public Set<Identifier> keySet() {
-        return storage.keySet();
+        return template.keySet();
     }
 
     @Override
@@ -58,89 +62,47 @@ public class TrainerTemplateStorage implements SimpleSynchronousResourceReloadLi
 
     @Override
     public void reload(ResourceManager manager) {
-        Map<Identifier, TrainerTeam> teams = reloadTrainerTeam(manager);
-        Map<Identifier, TrainerPreset> presets = reloadTrainerPreset(manager);
+        reloadTrainerTeam(manager);
+        reloadTrainerPreset(manager);
+        reloadTrainerTemplate(manager);
+    }
 
-        storage.clear();
+    private void reloadTrainerTemplate(ResourceManager manager) {
+        this.template.clear();
 
-        for (Map.Entry<Identifier, TrainerPreset> entry : presets.entrySet()) {
+        for (Map.Entry<Identifier, TrainerPreset> entry : this.preset.entrySet()) {
             try {
-                Identifier identifier = toTrainerTemplateIdentifier(entry.getKey());
-                TrainerPreset preset = entry.getValue();
-                TrainerTeam team = teams.get(toDefaultedIdentifier(preset.team));
+                Identifier identifier = getTrainerTemplateIdentifier(entry);
+                TrainerPreset preset = getTrainerPreset(entry);
+                TrainerTeam team = getTrainerTeam(entry);
                 TrainerTemplate template = new TrainerTemplateFactory(identifier, preset, team).create();
 
-                storage.put(identifier, template);
+                this.template.put(identifier, template);
 
-            } catch (NullPointerException | IllegalArgumentException e) {
+            } catch (NullPointerException e) {
                 // TODO better name
                 CobblemonTrainerBattle.LOGGER.error("Error parsing trainer preset: {}", entry.getKey());
             }
         }
     }
 
-    private Map<Identifier, TrainerTeam> reloadTrainerTeam(ResourceManager manager) {
-        Map<Identifier, TrainerTeam> teams = new HashMap<>();
+    private Identifier getTrainerTemplateIdentifier(Map.Entry<Identifier, TrainerPreset> entry) {
+        return entry.getKey();
+    }
 
-        Map<Identifier, Resource> resources = manager.findResources(TEAM_DIR, identifier -> identifier.toString().endsWith(".json"));
-        for (Map.Entry<Identifier, Resource> entry: resources.entrySet()) {
-            try (BufferedReader reader = entry.getValue().getReader()) {
-                Identifier identifier = toTrainerTeamIdentifier(entry.getKey());
-                TrainerTeam team = new Gson().fromJson(reader, TrainerTeam.class);
+    private TrainerPreset getTrainerPreset(Map.Entry<Identifier, TrainerPreset> entry) {
+        return entry.getValue();
+    }
 
-                teams.put(identifier, team);
+    private TrainerTeam getTrainerTeam(Map.Entry<Identifier, TrainerPreset> entry) {
+        try {
+            TrainerPreset preset = entry.getValue();
+            Identifier identifier = Objects.requireNonNull(toDefaultedIdentifier(preset.team));
+            return this.team.get(identifier);
 
-            } catch (IOException | JsonParseException e) {
-                // TODO better name
-                CobblemonTrainerBattle.LOGGER.error("Error loading file: {}", entry.getKey());
-            }
+        } catch (NullPointerException e) {
+            return new TrainerTeam();
         }
-
-        return teams;
-    }
-
-    private Map<Identifier, TrainerPreset> reloadTrainerPreset(ResourceManager manager) {
-        Map<Identifier, TrainerPreset> presets = new HashMap<>();
-
-        Map<Identifier, Resource> resources = manager.findResources(PRESET_DIR, identifier -> identifier.toString().endsWith(".json"));
-        for (Map.Entry<Identifier, Resource> entry: resources.entrySet()) {
-            try (BufferedReader reader = entry.getValue().getReader()) {
-                Identifier identifier = toTrainerPresetIdentifier(entry.getKey());
-                TrainerPreset preset = new Gson().fromJson(reader, TrainerPreset.class);
-
-                presets.put(identifier, preset);
-
-            } catch (IOException | JsonParseException e) {
-                // TODO better name
-                CobblemonTrainerBattle.LOGGER.error("Error loading file: {}", entry.getKey());
-            }
-        }
-
-        return presets;
-    }
-
-    private Identifier toTrainerTemplateIdentifier(Identifier preset) {
-        return preset;
-    }
-
-    private Identifier toTrainerTeamIdentifier(Identifier resource) {
-        String namespace = resource.getNamespace();
-        String path = resource.getPath();
-
-        path = path.replace(TEAM_DIR + "/", "");
-        path = path.replace(".json", "");
-
-        return Identifier.of(namespace, path);
-    }
-
-    private Identifier toTrainerPresetIdentifier(Identifier resource) {
-        String namespace = resource.getNamespace();
-        String path = resource.getPath();
-
-        path = path.replace(PRESET_DIR + "/", "");
-        path = path.replace(".json", "");
-
-        return Identifier.of(namespace, path);
     }
 
     private Identifier toDefaultedIdentifier(String string) {
@@ -152,7 +114,51 @@ public class TrainerTemplateStorage implements SimpleSynchronousResourceReloadLi
         }
     }
 
-    public Collection<TrainerTemplate> values() {
-        return storage.values();
+    private void reloadTrainerTeam(ResourceManager manager) {
+        this.team.clear();
+
+        Map<Identifier, Resource> resources = manager.findResources(TEAM_DIR, identifier -> identifier.toString().endsWith(".json"));
+        for (Map.Entry<Identifier, Resource> entry: resources.entrySet()) {
+            try (BufferedReader reader = entry.getValue().getReader()) {
+                String namespace = entry.getKey().getNamespace();
+                String path = entry.getKey().getPath();
+
+                path = path.replace(TEAM_DIR + "/", "");
+                path = path.replace(".json", "");
+
+                Identifier identifier = Identifier.of(namespace, path);
+                TrainerTeam team = new Gson().fromJson(reader, TrainerTeam.class);
+
+                this.team.put(identifier, team);
+
+            } catch (IOException | JsonParseException e) {
+                // TODO better name
+                CobblemonTrainerBattle.LOGGER.error("Error loading file: {}", entry.getKey());
+            }
+        }
+    }
+
+    private void reloadTrainerPreset(ResourceManager manager) {
+        this.preset.clear();
+
+        Map<Identifier, Resource> resources = manager.findResources(PRESET_DIR, identifier -> identifier.toString().endsWith(".json"));
+        for (Map.Entry<Identifier, Resource> entry: resources.entrySet()) {
+            try (BufferedReader reader = entry.getValue().getReader()) {
+                String namespace = entry.getKey().getNamespace();
+                String path = entry.getKey().getPath();
+
+                path = path.replace(PRESET_DIR + "/", "");
+                path = path.replace(".json", "");
+
+                Identifier identifier = Identifier.of(namespace, path);
+                TrainerPreset preset = new Gson().fromJson(reader, TrainerPreset.class);
+
+                this.preset.put(identifier, preset);
+
+            } catch (IOException | JsonParseException e) {
+                // TODO better name
+                CobblemonTrainerBattle.LOGGER.error("Error loading file: {}", entry.getKey());
+            }
+        }
     }
 }

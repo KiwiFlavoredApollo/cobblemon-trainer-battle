@@ -38,7 +38,7 @@ public class NormalLevelBattle extends CustomPokemonBattle {
         this.player = player;
         this.trainer = trainer;
     }
-    
+
     @Override
     public void start() throws BattleStartException {
         if (isPlayerBusyWithPokemonBattle()) {
@@ -58,6 +58,11 @@ public class NormalLevelBattle extends CustomPokemonBattle {
 
         if (!isPlayerPokemonReady()) {
             player.sendMessage(getPlayerPokemonNotReadyErrorMessage());
+            throw new BattleStartException();
+        }
+
+        if (!isTrainerPokemonReady()) {
+            player.sendMessage(getTrainerPokemonNotReadyErrorMessage());
             throw new BattleStartException();
         }
 
@@ -219,24 +224,33 @@ public class NormalLevelBattle extends CustomPokemonBattle {
         }
 
         private List<BattlePokemon> getBattleTeam() {
-            return toPartyStore(trainer.getTeam()).toBattleTeam(true, true, null);
+            List<Pokemon> pokemon = trainer.getTeam().stream().map(this::toPokemon).toList();
+            List<Pokemon> normal = pokemon.stream().map(this::applyPokemonProperty).toList();
+            return toPartyStore(normal).toBattleTeam(true, true, null);
         }
 
-        private PartyStore toPartyStore(List<PokemonLevelPair> team) {
-            PartyStore store = new PartyStore(uuid);
+        private PartyStore toPartyStore(List<Pokemon> pokemon) {
+            PartyStore party = new PartyStore(uuid);
 
-            for (PokemonLevelPair pair : team) {
-                store.add(toPokemon(pair));
+            for (Pokemon p : pokemon) {
+                party.add(p);
             }
 
-            return store;
+            return party;
+        }
+
+        private Pokemon applyPokemonProperty(Pokemon pokemon) {
+            Pokemon clone = pokemon.clone(true, true);
+
+            clone.heal();
+            PokemonProperties.Companion.parse("uncatchable=yes").apply(clone);
+
+            return pokemon;
         }
 
         private Pokemon toPokemon(PokemonLevelPair pair) {
             Pokemon pokemon = pair.getPokemon().clone(true, true);
             pokemon.setLevel(pair.getLevel());
-            pokemon.heal();
-            PokemonProperties.Companion.parse("uncatchable=yes").apply(pokemon);
             return pokemon;
         }
 

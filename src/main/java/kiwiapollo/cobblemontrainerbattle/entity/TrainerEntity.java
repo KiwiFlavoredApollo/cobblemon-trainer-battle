@@ -70,7 +70,14 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
     @Nullable
     public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityNbt) {
         if (spawnReason.equals(SpawnReason.SPAWNER)) {
-            setTrainer(new RandomTrainerFactory(TrainerTemplate::isSpawningAllowed).create());
+            setTrainer(new RandomTrainerFactory(template -> {
+                boolean result = true;
+
+                result &= template.isSpawningAllowed();
+                result &= template.getTeam().isEmpty();
+
+                return result;
+            }).create());
         }
 
         return super.initialize(world, difficulty, spawnReason, entityData, entityNbt);

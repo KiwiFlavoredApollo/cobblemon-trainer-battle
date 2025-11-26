@@ -68,7 +68,14 @@ public class StaticTrainerEntity extends TrainerEntity {
         private final RandomTrainerFactory identifier;
 
         public Factory() {
-            this.identifier = new RandomTrainerFactory(TrainerTemplate::isSpawningAllowed);
+            this.identifier = new RandomTrainerFactory(template -> {
+                boolean result = true;
+
+                result &= template.isSpawningAllowed();
+                result &= template.getTeam().isEmpty();
+
+                return result;
+            });
         }
 
         @Override

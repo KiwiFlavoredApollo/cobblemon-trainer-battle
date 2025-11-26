@@ -47,6 +47,11 @@ public class PokeBallEngineerBattle extends CustomPokemonBattle {
             throw new BattleStartException();
         }
 
+        if (!isTrainerPokemonReady()) {
+            player.sendMessage(getTrainerPokemonNotReadyErrorMessage());
+            throw new BattleStartException();
+        }
+
         super.start();
     }
 
@@ -106,14 +111,23 @@ public class PokeBallEngineerBattle extends CustomPokemonBattle {
         }
 
         private List<BattlePokemon> getBattleTeam() {
-            return toPartyStore(trainer.getTeam()).toBattleTeam(true, true, null);
+            List<Pokemon> pokemon = trainer.getTeam().stream().map(this::toPokemon).toList();
+            List<Pokemon> engineer = pokemon.stream().map(this::applyPokemonProperty).toList();
+            return toPartyStore(engineer).toBattleTeam(true, true, null);
         }
 
-        private PartyStore toPartyStore(List<PokemonLevelPair> team) {
+        private Pokemon applyPokemonProperty(Pokemon pokemon) {
+            Pokemon clone = pokemon.clone(true, true);
+            clone.heal();
+            PokemonProperties.Companion.parse("uncatchable=yes").apply(clone);
+            return clone;
+        }
+
+        private PartyStore toPartyStore(List<Pokemon> pokemon) {
             PartyStore store = new PartyStore(trainer.getEntityUuid());
 
-            for (PokemonLevelPair pair : team) {
-                store.add(toPokemon(pair));
+            for (Pokemon p : pokemon) {
+                store.add(p);
             }
 
             return store;
@@ -122,8 +136,6 @@ public class PokeBallEngineerBattle extends CustomPokemonBattle {
         private Pokemon toPokemon(PokemonLevelPair pair) {
             Pokemon pokemon = pair.getPokemon().clone(true, true);
             pokemon.setLevel(pair.getLevel());
-            pokemon.heal();
-            PokemonProperties.Companion.parse("uncatchable=yes").apply(pokemon);
             return pokemon;
         }
 

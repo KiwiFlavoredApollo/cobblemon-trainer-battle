@@ -84,24 +84,29 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
         }
 
         private List<? extends BattlePokemon> getBattleTeam() {
-            return toPartyStore(RentalPokemonStorage.getInstance().get(player).stream().toList()).toBattleTeam(true, false, null);
+            List<Pokemon> pokemon = RentalPokemonStorage.getInstance().get(player).stream().toList();
+            List<Pokemon> rental = pokemon.stream().map(this::applyPokemonProperty).toList();
+            return toPartyStore(rental).toBattleTeam(true, false, null);
         }
 
-        private PartyStore toPartyStore(List<Pokemon> team) {
+        private PartyStore toPartyStore(List<Pokemon> pokemon) {
             PartyStore party = new PartyStore(player.getUuid());
 
-            for (Pokemon pokemon : team) {
-                party.add(toRentalPokemon(pokemon));
+            for (Pokemon p : pokemon) {
+                party.add(p);
             }
 
             return party;
         }
 
-        private Pokemon toRentalPokemon(Pokemon pokemon) {
-            Pokemon rental = pokemon.clone(true, true);
-            rental.heal();
-            PokemonProperties.Companion.parse("uncatchable=yes").apply(rental);
-            return rental;
+        private Pokemon applyPokemonProperty(Pokemon pokemon) {
+            Pokemon clone = pokemon.clone(true, true);
+
+            clone.setLevel(RentalBattle.LEVEL);
+            clone.heal();
+            PokemonProperties.Companion.parse("uncatchable=yes").apply(clone);
+
+            return clone;
         }
     }
 
@@ -164,32 +169,43 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
         }
 
         private List<BattlePokemon> getBattleTeam() {
-            return toPartyStore(trainer.getTeam()).toBattleTeam(true, true, null);
-        }
-
-        // TODO Side Effect?
-        // 부족한 만큼 추가하는게 부가효과면 잘라내는 것도 부가효과이지 않은가
-        private PartyStore toPartyStore(List<PokemonLevelPair> team) {
-            PartyStore store = new PartyStore(getEntity().getUuid());
-
-            List<PokemonLevelPair> pokemon = new ArrayList<>(team);
+            List<Pokemon> pokemon = new ArrayList<>(trainer.getTeam().stream().map(this::toPokemon).toList());
 
             if (pokemon.size() > RentalBattle.POKEMON_COUNT) {
                 pokemon = pokemon.subList(0, RentalBattle.POKEMON_COUNT);
             }
 
-            for (PokemonLevelPair pair : pokemon) {
-                store.add(toPokemon(pair));
+            while (pokemon.size() < RentalBattle.POKEMON_COUNT) {
+                pokemon.add(PokemonSpecies.INSTANCE.random().create(RentalBattle.LEVEL));
             }
 
-            return store;
+            List<Pokemon> rental = pokemon.stream().map(this::applyPokemonProperty).toList();
+            return toPartyStore(rental).toBattleTeam(true, true, null);
+        }
+
+        private Pokemon applyPokemonProperty(Pokemon pokemon) {
+            Pokemon clone = pokemon.clone(true, true);
+
+            clone.setLevel(RentalBattle.LEVEL);
+            clone.heal();
+            PokemonProperties.Companion.parse("uncatchable=yes").apply(clone);
+
+            return clone;
+        }
+
+        private PartyStore toPartyStore(List<Pokemon> pokemon) {
+            PartyStore party = new PartyStore(getEntity().getUuid());
+
+            for (Pokemon p : pokemon) {
+                party.add(p);
+            }
+
+            return party;
         }
 
         private Pokemon toPokemon(PokemonLevelPair pair) {
             Pokemon pokemon = pair.getPokemon().clone(true, true);
-            pokemon.setLevel(RentalBattle.LEVEL);
-            pokemon.heal();
-            PokemonProperties.Companion.parse("uncatchable=yes").apply(pokemon);
+            pokemon.setLevel(pair.getLevel());
             return pokemon;
         }
 

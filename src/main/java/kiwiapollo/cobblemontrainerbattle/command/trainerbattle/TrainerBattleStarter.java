@@ -53,7 +53,7 @@ public abstract class TrainerBattleStarter implements Command<ServerCommandSourc
     }
 
     protected TrainerTemplate getRandomTrainer(CommandContext<ServerCommandSource> context) {
-        Identifier trainer = new RandomTrainerFactory(t -> true).create();
+        Identifier trainer = new RandomTrainerFactory().create();
         return TrainerTemplateStorage.getInstance().get(trainer);
     }
 

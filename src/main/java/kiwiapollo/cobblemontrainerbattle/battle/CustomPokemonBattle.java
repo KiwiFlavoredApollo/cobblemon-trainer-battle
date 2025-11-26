@@ -95,8 +95,15 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
     }
 
     protected boolean isPlayerPokemonReady() {
-        return !Cobblemon.INSTANCE.getStorage().getParty(player.getEntity()).toGappyList().stream()
-                .filter(Objects::nonNull)
+        return !player.getPokemonList().stream()
+                .map(BattlePokemon::getEffectedPokemon)
+                .filter(pokemon -> !pokemon.isFainted()).toList()
+                .isEmpty();
+    }
+
+    protected boolean isTrainerPokemonReady() {
+        return !trainer.getPokemonList().stream()
+                .map(BattlePokemon::getEffectedPokemon)
                 .filter(pokemon -> !pokemon.isFainted()).toList()
                 .isEmpty();
     }
@@ -378,6 +385,10 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
 
     protected Text getPlayerPokemonNotReadyErrorMessage() {
         return Text.translatable("predicate.cobblemontrainerbattle.error.player_party_not_empty").formatted(Formatting.RED);
+    }
+
+    protected Text getTrainerPokemonNotReadyErrorMessage() {
+        return Text.translatable("predicate.cobblemontrainerbattle.error.trainer_party_not_empty").formatted(Formatting.RED);
     }
 
     protected Text getMaximumPartyLevelErrorMessage() {
