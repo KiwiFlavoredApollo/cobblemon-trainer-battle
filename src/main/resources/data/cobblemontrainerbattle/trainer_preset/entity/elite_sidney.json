@@ -1,7 +1,7 @@
 {
   "display_name": "trainer.cobblemontrainerbattle.elite_sidney",
   "team": "cobblemontrainerbattle:entity/elite_sidney",
-  "is_spawning_allowed": false,
+  "is_spawn_allowed": false,
   "level_mode": "relative",
   "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/elite_sidney.png",
   "battle_format": "single",

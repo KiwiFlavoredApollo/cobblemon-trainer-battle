@@ -1,5 +1,6 @@
 {
   "team": "cobblemontrainerbattle:inclementemerald/jazmyn",
+  "is_spawn_allowed": true,
   "level_mode": "relative",
   "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/leaf_piikapiika.png",
   "battle_format": "single"

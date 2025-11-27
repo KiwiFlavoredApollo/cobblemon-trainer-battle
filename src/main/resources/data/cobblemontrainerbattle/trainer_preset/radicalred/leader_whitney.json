@@ -1,5 +1,6 @@
 {
   "team": "cobblemontrainerbattle:radicalred/leader_whitney",
+  "is_spawn_allowed": true,
   "level_mode": "relative",
   "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/red_piikapiika.png",
   "battle_format": "single"

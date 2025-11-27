@@ -1,5 +1,6 @@
 {
   "team": "cobblemontrainerbattle:unbound/kindler_elmer_and_bug_maniac_webster",
+  "is_spawn_allowed": true,
   "level_mode": "normal",
   "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/alola_leaf_piikapiika.png",
   "battle_format": "double"

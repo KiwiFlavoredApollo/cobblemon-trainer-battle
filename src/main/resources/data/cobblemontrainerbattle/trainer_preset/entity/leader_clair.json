@@ -1,7 +1,7 @@
 {
   "display_name": "trainer.cobblemontrainerbattle.leader_clair",
   "team": "cobblemontrainerbattle:entity/leader_clair",
-  "is_spawning_allowed": false,
+  "is_spawn_allowed": false,
   "level_mode": "relative",
   "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/leader_clair.png",
   "battle_format": "single",

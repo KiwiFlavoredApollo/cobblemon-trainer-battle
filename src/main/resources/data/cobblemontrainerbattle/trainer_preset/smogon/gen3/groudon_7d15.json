@@ -1,5 +1,6 @@
 {
   "team": "cobblemontrainerbattle:smogon/gen3/groudon_7d15",
+  "is_spawn_allowed": true,
   "level_mode": "relative",
   "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/silver_piikapiika.png",
   "battle_format": "single"

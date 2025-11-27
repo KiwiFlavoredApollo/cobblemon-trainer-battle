@@ -1,5 +1,6 @@
 {
   "team": "cobblemontrainerbattle:inclementemerald/tate_and_liza_2",
+  "is_spawn_allowed": true,
   "level_mode": "relative",
   "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/leaf_piikapiika.png",
   "battle_format": "double"

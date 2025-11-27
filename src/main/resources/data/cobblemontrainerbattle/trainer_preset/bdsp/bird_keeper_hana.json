@@ -1,5 +1,6 @@
 {
   "team": "cobblemontrainerbattle:bdsp/bird_keeper_hana",
+  "is_spawn_allowed": true,
   "level_mode": "normal",
   "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/green_piikapiika.png",
   "battle_format": "single"

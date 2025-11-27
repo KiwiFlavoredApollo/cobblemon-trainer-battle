@@ -1,5 +1,6 @@
 {
   "team": "cobblemontrainerbattle:smogon/gen6/dwebble_a3f9",
+  "is_spawn_allowed": true,
   "level_mode": "relative",
   "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/silver_piikapiika.png",
   "battle_format": "single"

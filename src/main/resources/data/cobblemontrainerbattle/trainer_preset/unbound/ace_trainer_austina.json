@@ -1,5 +1,6 @@
 {
   "team": "cobblemontrainerbattle:unbound/ace_trainer_austina",
+  "is_spawn_allowed": true,
   "level_mode": "normal",
   "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/alola_leaf_piikapiika.png",
   "battle_format": "single"
