@@ -132,10 +132,15 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
         return battleId;
     }
 
-    private TrainerTemplate createTrainerTemplate() {
-        Identifier identifier = toDefaultedIdentifier(getDataTracker().get(TRAINER));
-        TrainerTemplate template = TrainerTemplateStorage.getInstance().get(identifier);
-        return new TrainerTemplateFactory(template, this).create();
+    private TrainerTemplate createTrainerTemplate() throws BattleStartException {
+        try {
+            Identifier identifier = toDefaultedIdentifier(getDataTracker().get(TRAINER));
+            TrainerTemplate template = TrainerTemplateStorage.getInstance().get(identifier);
+            return new TrainerTemplateFactory(template, this).create();
+
+        } catch (NullPointerException e) {
+            throw new BattleStartException();
+        }
     }
 
     @Override
