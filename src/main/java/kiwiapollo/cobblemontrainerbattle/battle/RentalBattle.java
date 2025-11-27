@@ -40,24 +40,24 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
     @Override
     public void start() throws BattleStartException {
         if (!isPlayerPokemonCount(RentalBattle.POKEMON_COUNT)) {
-            player.sendMessage(getPlayerRentalPokemonNotReadyErrorMessage());
+            player.sendMessage(getNoPlayerRentalPokemonErrorMessage());
             throw new BattleStartException();
         }
 
         if (!isTrainerPokemonCount(RentalBattle.POKEMON_COUNT)) {
-            player.sendMessage(getTrainerRentalPokemonNotReadyErrorMessage());
+            player.sendMessage(getNoTrainerRentalPokemonErrorMessage());
             throw new BattleStartException();
         }
 
         super.start();
     }
 
-    private Text getPlayerRentalPokemonNotReadyErrorMessage() {
-        return Text.translatable("commands.cobblemontrainerbattle.rentalbattle.failed.player_pokemon_not_ready").formatted(Formatting.RED);
+    private Text getNoPlayerRentalPokemonErrorMessage() {
+        return Text.translatable("commands.cobblemontrainerbattle.rentalbattle.failed.no_player_pokemon").formatted(Formatting.RED);
     }
 
-    private Text getTrainerRentalPokemonNotReadyErrorMessage() {
-        return Text.translatable("commands.cobblemontrainerbattle.rentalbattle.failed.trainer_pokemon_not_ready").formatted(Formatting.RED);
+    private Text getNoTrainerRentalPokemonErrorMessage() {
+        return Text.translatable("commands.cobblemontrainerbattle.rentalbattle.failed.no_trainer_pokemon").formatted(Formatting.RED);
     }
 
     private static class PlayerBattleSideFactory implements SimpleFactory<PlayerBattleActor> {

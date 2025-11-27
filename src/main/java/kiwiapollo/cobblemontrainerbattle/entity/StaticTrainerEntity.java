@@ -71,7 +71,7 @@ public class StaticTrainerEntity extends TrainerEntity {
                 boolean result = true;
 
                 result &= template.isSpawnAllowed();
-                result &= template.getTeam().isEmpty();
+                result &= !template.getTeam().isEmpty();
 
                 return result;
             });

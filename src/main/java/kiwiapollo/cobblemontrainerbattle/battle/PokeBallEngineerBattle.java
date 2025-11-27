@@ -43,13 +43,13 @@ public class PokeBallEngineerBattle extends CustomPokemonBattle {
             throw new BattleStartException();
         }
 
-        if (!isPlayerPokemonReady()) {
-            player.sendMessage(getPlayerPokemonNotReadyErrorMessage());
+        if (!isPlayerPokemonExist()) {
+            player.sendMessage(getNoPlayerPokemonErrorMessage());
             throw new BattleStartException();
         }
 
-        if (!isTrainerPokemonReady()) {
-            player.sendMessage(getTrainerPokemonNotReadyErrorMessage());
+        if (!isTrainerPokemonExist()) {
+            player.sendMessage(getNoTrainerPokemonErrorMessage());
             throw new BattleStartException();
         }
 

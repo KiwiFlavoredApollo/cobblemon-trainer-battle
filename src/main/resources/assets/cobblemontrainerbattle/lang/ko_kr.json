@@ -371,8 +371,8 @@
   "advancements.cobblemontrainerbattle.kill_champion_diantha.title": "헐 너무해",
   "advancements.cobblemontrainerbattle.kill_champion_diantha.description": "카르네를 죽이세요",
 
-  "commands.cobblemontrainerbattle.trainerbattle.failed.player_not_busy": "배틀 중에는 진행할 수 없습니다.",
-  "commands.cobblemontrainerbattle.trainerbattle.failed.player_pokemon_not_ready": "지닌 포켓몬이 없기 때문에 진행할 수 없습니다.",
+  "commands.cobblemontrainerbattle.trainerbattle.failed.player_busy": "배틀 중에는 진행할 수 없습니다.",
+  "commands.cobblemontrainerbattle.trainerbattle.failed.no_player_pokemon": "지닌 포켓몬이 없기 때문에 진행할 수 없습니다.",
   "predicate.cobblemontrainerbattle.error.player_party_not_fainted": "지닌 포켓몬이 모두 기절했기 때문에 진행할 수 없습니다.",
 
   "commands.cobblemontrainerbattle.trainerbattle.failed.rematch_not_allowed": "이 상대와는 다시 배틀할 수 없습니다.",
@@ -407,7 +407,7 @@
   "command.cobblemontrainerbattle.error.rentalbattle.player_minimum_party_size": "플레이어 포켓몬이 부족합니다 : %d 마리",
 
   "command.cobblemontrainerbattle.error.rentalpokemon.trainer_minimum_party_size": "트레이너 포켓몬이 부족합니다 : %d 마리",
-  "commands.cobblemontrainerbattle.rentalpokemon.clone.failed.minimum_party_size": "플레이어 포켓몬이 부족합니다 : %d 마리",
+  "commands.cobblemontrainerbattle.rentalpokemon.clone.failed.not_enough_pokemon": "플레이어 포켓몬이 부족합니다 : %d 마리",
 
   "commands.cobblemontrainerbattle.rentalpokemon.showrental.failed.no_rental_pokemon": "가지고 있는 렌탈 포켓몬이 없습니다.",
   "commands.cobblemontrainerbattle.rentalpokemon.trade.failed.no_tradable_pokemon": "교환할 수 있는 포켓몬이 없습니다."

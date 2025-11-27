@@ -371,8 +371,8 @@
   "advancements.cobblemontrainerbattle.kill_champion_diantha.title": "Comment Oses-Tu ?",
   "advancements.cobblemontrainerbattle.kill_champion_diantha.description": "Tue Dianthéa",
 
-  "commands.cobblemontrainerbattle.trainerbattle.failed.player_not_busy": "Impossible. Déjà dans un combat.",
-  "commands.cobblemontrainerbattle.trainerbattle.failed.player_pokemon_not_ready": "Impossible. Votre équipe est vide.",
+  "commands.cobblemontrainerbattle.trainerbattle.failed.player_busy": "Impossible. Déjà dans un combat.",
+  "commands.cobblemontrainerbattle.trainerbattle.failed.no_player_pokemon": "Impossible. Votre équipe est vide.",
   "predicate.cobblemontrainerbattle.error.player_party_not_fainted": "Impossible. Votre équipe est K.O.",
 
   "commands.cobblemontrainerbattle.trainerbattle.failed.rematch_not_allowed": "Re-combattre ce Dreseur n'est pas autorisé.",
@@ -407,7 +407,7 @@
   "command.cobblemontrainerbattle.error.rentalbattle.player_minimum_party_size": "Le joueur n'a pas assez de Pokémon : %d",
 
   "command.cobblemontrainerbattle.error.rentalpokemon.trainer_minimum_party_size": "Le dresseur n'a pas assez de Pokémon : %d",
-  "commands.cobblemontrainerbattle.rentalpokemon.clone.failed.minimum_party_size": "Le joueur n'a pas assez de Pokémon : %d",
+  "commands.cobblemontrainerbattle.rentalpokemon.clone.failed.not_enough_pokemon": "Le joueur n'a pas assez de Pokémon : %d",
 
   "commands.cobblemontrainerbattle.rentalpokemon.showrental.failed.no_rental_pokemon": "Le joueur n'a pas de Pokémon de location.",
   "commands.cobblemontrainerbattle.rentalpokemon.trade.failed.no_tradable_pokemon": "Le joueur n'a pas de Pokémon échangeables."

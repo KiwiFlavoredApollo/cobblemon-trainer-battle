@@ -93,14 +93,14 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
         }
     }
 
-    protected boolean isPlayerPokemonReady() {
+    protected boolean isPlayerPokemonExist() {
         return !player.getPokemonList().stream()
                 .map(BattlePokemon::getEffectedPokemon)
                 .filter(pokemon -> !pokemon.isFainted()).toList()
                 .isEmpty();
     }
 
-    protected boolean isTrainerPokemonReady() {
+    protected boolean isTrainerPokemonExist() {
         return !trainer.getPokemonList().stream()
                 .map(BattlePokemon::getEffectedPokemon)
                 .filter(pokemon -> !pokemon.isFainted()).toList()
@@ -371,7 +371,7 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
     }
 
     protected Text getPlayerBusyErrorMessage() {
-        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.player_not_busy").formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.player_busy").formatted(Formatting.RED);
     }
 
     protected Text getRematchNotAllowedErrorMessage() {
@@ -382,12 +382,12 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
         return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.cooldown_not_elapsed", getRemainingCooldownInSeconds()).formatted(Formatting.RED);
     }
 
-    protected Text getPlayerPokemonNotReadyErrorMessage() {
-        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.player_pokemon_not_ready").formatted(Formatting.RED);
+    protected Text getNoPlayerPokemonErrorMessage() {
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.no_player_pokemon").formatted(Formatting.RED);
     }
 
-    protected Text getTrainerPokemonNotReadyErrorMessage() {
-        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.trainer_pokemon_not_ready").formatted(Formatting.RED);
+    protected Text getNoTrainerPokemonErrorMessage() {
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.no_trainer_pokemon").formatted(Formatting.RED);
     }
 
     protected Text getMaximumPartyLevelErrorMessage() {
