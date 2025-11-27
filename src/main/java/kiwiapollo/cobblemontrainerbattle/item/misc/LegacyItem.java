@@ -7,17 +7,14 @@ import net.minecraft.item.Item;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.util.Identifier;
 
-public enum MiscItem {
-    DRIFTER_SPAWN_EGG("drifter_spawn_egg", new SpawnEggItem(CustomEntityType.DRIFTER, 0xAAAAAA, 0xFF5555, new Item.Settings().maxCount(64))),
-    CAMPER_SPAWN_EGG("camper_spawn_egg", new SpawnEggItem(CustomEntityType.CAMPER, 0xAAAAAA, 0x55FF55, new Item.Settings().maxCount(64))),
-    TRAINER_TOKEN("trainer_token", new TrainerToken()),
-    EMPTY_POKE_BALL("empty_poke_ball", new EmptyPokeBall()),
-    FILLED_POKE_BALL("filled_poke_ball", new FilledPokeBall());
+public enum LegacyItem {
+    NEUTRAL_TRAINER_SPAWN_EGG("neutral_trainer_spawn_egg", new SpawnEggItem(CustomEntityType.NEUTRAL_TRAINER, 0xAAAAAA, 0xFF5555, new Item.Settings().maxCount(64))),
+    STATIC_TRAINER_SPAWN_EGG("static_trainer_spawn_egg", new SpawnEggItem(CustomEntityType.STATIC_TRAINER, 0xAAAAAA, 0x55FF55, new Item.Settings().maxCount(64)));
 
     private final Identifier identifier;
     private final Item item;
 
-    MiscItem(String path, Item item) {
+    LegacyItem(String path, Item item) {
         this.identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, path);
         this.item = item;
     }

@@ -1,6 +1,8 @@
 {
   "entity.cobblemontrainerbattle.neutral_trainer": "Neutral Trainer",
   "entity.cobblemontrainerbattle.static_trainer": "Static Trainer",
+  "entity.cobblemontrainerbattle.drifter": "Drifter",
+  "entity.cobblemontrainerbattle.camper": "Camper",
   "entity.minecraft.villager.pokeballengineer": "Poke Ball Engineer",
 
   "block.cobblemontrainerbattle.poke_ball_box": "Poke Ball Box",
@@ -11,6 +13,8 @@
 
   "item.cobblemontrainerbattle.neutral_trainer_spawn_egg": "Neutral Trainer Spawn Egg",
   "item.cobblemontrainerbattle.static_trainer_spawn_egg": "Static Trainer Spawn Egg",
+  "item.cobblemontrainerbattle.drifter_spawn_egg": "Drifter Spawn Egg",
+  "item.cobblemontrainerbattle.camper_spawn_egg": "Camper Spawn Egg",
 
   "item.cobblemontrainerbattle.empty_poke_ball": "Empty Poké Ball",
   "item.cobblemontrainerbattle.filled_poke_ball": "Filled Poké Ball",

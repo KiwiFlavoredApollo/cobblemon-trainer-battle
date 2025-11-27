@@ -12,11 +12,11 @@ import kiwiapollo.cobblemontrainerbattle.command.rentalbattle.RentalBattleOtherC
 import kiwiapollo.cobblemontrainerbattle.command.rentalpokemon.RentalPokemonCommand;
 import kiwiapollo.cobblemontrainerbattle.command.trainerbattle.TrainerBattleCommand;
 import kiwiapollo.cobblemontrainerbattle.command.trainerbattle.TrainerBattleOtherCommand;
-import kiwiapollo.cobblemontrainerbattle.entity.NeutralTrainerEntity;
-import kiwiapollo.cobblemontrainerbattle.entity.StaticTrainerEntity;
+import kiwiapollo.cobblemontrainerbattle.entity.*;
 import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
 import kiwiapollo.cobblemontrainerbattle.history.PlayerHistoryStorage;
 import kiwiapollo.cobblemontrainerbattle.item.CustomItemGroup;
+import kiwiapollo.cobblemontrainerbattle.item.misc.LegacyItem;
 import kiwiapollo.cobblemontrainerbattle.item.misc.MiscItem;
 import kiwiapollo.cobblemontrainerbattle.item.ticket.BdspTicketItem;
 import kiwiapollo.cobblemontrainerbattle.item.ticket.InclementEmeraldTicketItem;
@@ -28,7 +28,6 @@ import kiwiapollo.cobblemontrainerbattle.item.token.RadicalRedTokenItem;
 import kiwiapollo.cobblemontrainerbattle.item.token.XyTokenItem;
 import kiwiapollo.cobblemontrainerbattle.item.vsseeker.VsSeekerItem;
 import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplateStorage;
-import kiwiapollo.cobblemontrainerbattle.entity.CustomEntityType;
 import kiwiapollo.cobblemontrainerbattle.event.*;
 import kiwiapollo.cobblemontrainerbattle.loot.CustomLootConditionType;
 import kiwiapollo.cobblemontrainerbattle.pokemon.FormAspectProvider;
@@ -36,9 +35,12 @@ import kiwiapollo.cobblemontrainerbattle.sound.*;
 import kiwiapollo.cobblemontrainerbattle.villager.PokeBallEngineerVillager;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.minecraft.advancement.criterion.Criteria;
@@ -96,6 +98,12 @@ public class CobblemonTrainerBattle implements ModInitializer {
         Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "static_trainer"), CustomEntityType.STATIC_TRAINER);
         FabricDefaultAttributeRegistry.register(CustomEntityType.STATIC_TRAINER, StaticTrainerEntity.createMobAttributes());
 
+        Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "drifter"), CustomEntityType.DRIFTER);
+        FabricDefaultAttributeRegistry.register(CustomEntityType.DRIFTER, DrifterEntity.createMobAttributes());
+
+        Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "camper"), CustomEntityType.CAMPER);
+        FabricDefaultAttributeRegistry.register(CustomEntityType.CAMPER, CamperEntity.createMobAttributes());
+
         Registry.register(Registries.BLOCK_ENTITY_TYPE, Identifier.of(MOD_ID, "trainer_table"), CustomEntityType.POKE_BALL_BOX);
     }
 
@@ -131,10 +139,18 @@ public class CobblemonTrainerBattle implements ModInitializer {
         ServerLifecycleEvents.SERVER_STOPPED.register(PlayerHistoryStorage.getInstance());
         ServerTickEvents.END_SERVER_TICK.register(PlayerHistoryStorage.getInstance());
 
-        ServerTickEvents.END_WORLD_TICK.register(new NeutralTrainerEntitySpawner());
+        ServerTickEvents.END_WORLD_TICK.register(new DrifterEntitySpawner());
+
+        ServerEntityEvents.ENTITY_LOAD.register(new LegacyEntityMigrator());
+        ServerPlayConnectionEvents.JOIN.register(new LegacyItemMigrator());
+        UseBlockCallback.EVENT.register(new LegacyItemMigrator());
     }
 
     private void registerItem() {
+        Arrays.stream(LegacyItem.values()).forEach(item -> {
+            Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
+        });
+
         Arrays.stream(MiscItem.values()).forEach(item -> {
             Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
         });

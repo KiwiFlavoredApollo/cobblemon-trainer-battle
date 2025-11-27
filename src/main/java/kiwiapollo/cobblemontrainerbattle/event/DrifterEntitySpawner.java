@@ -1,7 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.event;
 
 import kiwiapollo.cobblemontrainerbattle.entity.CustomEntityType;
-import kiwiapollo.cobblemontrainerbattle.entity.NeutralTrainerEntity;
+import kiwiapollo.cobblemontrainerbattle.entity.DrifterEntity;
 import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
 import kiwiapollo.cobblemontrainerbattle.item.vsseeker.VsSeeker;
@@ -24,7 +24,7 @@ import java.util.List;
 
 import static net.minecraft.SharedConstants.TICKS_PER_SECOND;
 
-public class NeutralTrainerEntitySpawner implements ServerTickEvents.EndWorldTick {
+public class DrifterEntitySpawner implements ServerTickEvents.EndWorldTick {
     private static final int MAXIMUM_RADIUS = 30;
     private static final int MINIMUM_RADIUS = 5;
 
@@ -49,7 +49,7 @@ public class NeutralTrainerEntitySpawner implements ServerTickEvents.EndWorldTic
 
     private void trySpawnEntity(ServerWorld world, ServerPlayerEntity player) {
         try {
-            TrainerEntity entity = new NeutralTrainerEntity(CustomEntityType.NEUTRAL_TRAINER, world);
+            TrainerEntity entity = new DrifterEntity(CustomEntityType.DRIFTER, world);
             Identifier trainer = selectRandomVsSeeker(player).create();
             entity.setTrainer(trainer);
 
@@ -78,7 +78,7 @@ public class NeutralTrainerEntitySpawner implements ServerTickEvents.EndWorldTic
 
     public int getEntityCount(ServerWorld world, ServerPlayerEntity player) {
         Box box = player.getBoundingBox().expand(MAXIMUM_RADIUS);
-        return world.getEntitiesByType(CustomEntityType.NEUTRAL_TRAINER, box, entity -> true).size();
+        return world.getEntitiesByType(CustomEntityType.DRIFTER, box, entity -> true).size();
     }
 
     private boolean hasVsSeeker(ServerPlayerEntity player) {
