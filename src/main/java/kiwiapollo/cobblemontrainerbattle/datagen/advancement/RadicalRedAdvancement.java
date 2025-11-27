@@ -16,8 +16,8 @@ public enum RadicalRedAdvancement implements CustomAdvancement {
             .criterion("defeat_leader_brock", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_brock")))
             .display(
                     RadicalRedTokenItem.LEADER_BROCK_TOKEN.getItem(),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_brock.title"),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_brock.description"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_brock.title"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_brock.description"),
                     AdvancementProvider.BACKGROUND,
                     AdvancementFrame.TASK,
                     true,
@@ -31,8 +31,8 @@ public enum RadicalRedAdvancement implements CustomAdvancement {
             .criterion("defeat_leader_misty", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_misty")))
             .display(
                     RadicalRedTokenItem.LEADER_MISTY_TOKEN.getItem(),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_misty.title"),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_misty.description"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_misty.title"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_misty.description"),
                     AdvancementProvider.BACKGROUND,
                     AdvancementFrame.TASK,
                     true,
@@ -46,8 +46,8 @@ public enum RadicalRedAdvancement implements CustomAdvancement {
             .criterion("defeat_leader_lt_surge", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_lt_surge")))
             .display(
                     RadicalRedTokenItem.LEADER_LT_SURGE_TOKEN.getItem(),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_lt_surge.title"),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_lt_surge.description"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_lt_surge.title"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_lt_surge.description"),
                     AdvancementProvider.BACKGROUND,
                     AdvancementFrame.TASK,
                     true,
@@ -61,8 +61,8 @@ public enum RadicalRedAdvancement implements CustomAdvancement {
             .criterion("defeat_leader_erika", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_erika")))
             .display(
                     RadicalRedTokenItem.LEADER_ERIKA_TOKEN.getItem(),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_erika.title"),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_erika.description"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_erika.title"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_erika.description"),
                     AdvancementProvider.BACKGROUND,
                     AdvancementFrame.TASK,
                     true,
@@ -76,8 +76,8 @@ public enum RadicalRedAdvancement implements CustomAdvancement {
             .criterion("defeat_leader_koga", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_koga")))
             .display(
                     RadicalRedTokenItem.LEADER_KOGA_TOKEN.getItem(),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_koga.title"),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_koga.description"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_koga.title"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_koga.description"),
                     AdvancementProvider.BACKGROUND,
                     AdvancementFrame.TASK,
                     true,
@@ -91,8 +91,8 @@ public enum RadicalRedAdvancement implements CustomAdvancement {
             .criterion("defeat_leader_sabrina", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_sabrina")))
             .display(
                     RadicalRedTokenItem.LEADER_SABRINA_TOKEN.getItem(),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_sabrina.title"),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_sabrina.description"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_sabrina.title"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_sabrina.description"),
                     AdvancementProvider.BACKGROUND,
                     AdvancementFrame.TASK,
                     true,
@@ -106,8 +106,8 @@ public enum RadicalRedAdvancement implements CustomAdvancement {
             .criterion("defeat_leader_blaine", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_blaine")))
             .display(
                     RadicalRedTokenItem.LEADER_BLAINE_TOKEN.getItem(),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_blaine.title"),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_blaine.description"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_blaine.title"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_blaine.description"),
                     AdvancementProvider.BACKGROUND,
                     AdvancementFrame.TASK,
                     true,
@@ -121,8 +121,8 @@ public enum RadicalRedAdvancement implements CustomAdvancement {
             .criterion("defeat_leader_giovanni", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_giovanni")))
             .display(
                     RadicalRedTokenItem.LEADER_GIOVANNI_TOKEN.getItem(),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_giovanni.title"),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_giovanni.description"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_giovanni.title"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_giovanni.description"),
                     AdvancementProvider.BACKGROUND,
                     AdvancementFrame.TASK,
                     true,
@@ -136,8 +136,8 @@ public enum RadicalRedAdvancement implements CustomAdvancement {
             .criterion("defeat_leader_falkner", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_falkner")))
             .display(
                     RadicalRedTokenItem.LEADER_FALKNER_TOKEN.getItem(),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_falkner.title"),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_falkner.description"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_falkner.title"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_falkner.description"),
                     AdvancementProvider.BACKGROUND,
                     AdvancementFrame.TASK,
                     true,
@@ -151,8 +151,8 @@ public enum RadicalRedAdvancement implements CustomAdvancement {
             .criterion("defeat_leader_bugsy", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_bugsy")))
             .display(
                     RadicalRedTokenItem.LEADER_BUGSY_TOKEN.getItem(),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_bugsy.title"),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_bugsy.description"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_bugsy.title"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_bugsy.description"),
                     AdvancementProvider.BACKGROUND,
                     AdvancementFrame.TASK,
                     true,
@@ -166,8 +166,8 @@ public enum RadicalRedAdvancement implements CustomAdvancement {
             .criterion("defeat_leader_whitney", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_whitney")))
             .display(
                     RadicalRedTokenItem.LEADER_WHITNEY_TOKEN.getItem(),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_whitney.title"),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_whitney.description"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_whitney.title"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_whitney.description"),
                     AdvancementProvider.BACKGROUND,
                     AdvancementFrame.TASK,
                     true,
@@ -181,8 +181,8 @@ public enum RadicalRedAdvancement implements CustomAdvancement {
             .criterion("defeat_leader_morty", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_morty")))
             .display(
                     RadicalRedTokenItem.LEADER_MORTY_TOKEN.getItem(),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_morty.title"),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_morty.description"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_morty.title"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_morty.description"),
                     AdvancementProvider.BACKGROUND,
                     AdvancementFrame.TASK,
                     true,
@@ -196,8 +196,8 @@ public enum RadicalRedAdvancement implements CustomAdvancement {
             .criterion("defeat_leader_chuck", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_chuck")))
             .display(
                     RadicalRedTokenItem.LEADER_CHUCK_TOKEN.getItem(),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_chuck.title"),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_chuck.description"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_chuck.title"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_chuck.description"),
                     AdvancementProvider.BACKGROUND,
                     AdvancementFrame.TASK,
                     true,
@@ -211,8 +211,8 @@ public enum RadicalRedAdvancement implements CustomAdvancement {
             .criterion("defeat_leader_jasmine", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_jasmine")))
             .display(
                     RadicalRedTokenItem.LEADER_JASMINE_TOKEN.getItem(),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_jasmine.title"),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_jasmine.description"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_jasmine.title"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_jasmine.description"),
                     AdvancementProvider.BACKGROUND,
                     AdvancementFrame.TASK,
                     true,
@@ -226,8 +226,8 @@ public enum RadicalRedAdvancement implements CustomAdvancement {
             .criterion("defeat_leader_pryce", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_pryce")))
             .display(
                     RadicalRedTokenItem.LEADER_PRYCE_TOKEN.getItem(),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_pryce.title"),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_pryce.description"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_pryce.title"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_pryce.description"),
                     AdvancementProvider.BACKGROUND,
                     AdvancementFrame.TASK,
                     true,
@@ -241,8 +241,8 @@ public enum RadicalRedAdvancement implements CustomAdvancement {
             .criterion("defeat_leader_clair", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_clair")))
             .display(
                     RadicalRedTokenItem.LEADER_CLAIR_TOKEN.getItem(),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_clair.title"),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_leader_clair.description"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_clair.title"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_clair.description"),
                     AdvancementProvider.BACKGROUND,
                     AdvancementFrame.TASK,
                     true,
@@ -256,8 +256,8 @@ public enum RadicalRedAdvancement implements CustomAdvancement {
             .criterion("defeat_elite_lorelei", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/elite_lorelei")))
             .display(
                     RadicalRedTokenItem.ELITE_LORELEI_TOKEN.getItem(),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_lorelei.title"),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_lorelei.description"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_elite_lorelei.title"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_elite_lorelei.description"),
                     AdvancementProvider.BACKGROUND,
                     AdvancementFrame.CHALLENGE,
                     true,
@@ -271,8 +271,8 @@ public enum RadicalRedAdvancement implements CustomAdvancement {
             .criterion("defeat_elite_bruno", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/elite_bruno")))
             .display(
                     RadicalRedTokenItem.ELITE_BRUNO_TOKEN.getItem(),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_bruno.title"),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_bruno.description"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_elite_bruno.title"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_elite_bruno.description"),
                     AdvancementProvider.BACKGROUND,
                     AdvancementFrame.CHALLENGE,
                     true,
@@ -286,8 +286,8 @@ public enum RadicalRedAdvancement implements CustomAdvancement {
             .criterion("defeat_elite_agatha", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/elite_agatha")))
             .display(
                     RadicalRedTokenItem.ELITE_AGATHA_TOKEN.getItem(),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_agatha.title"),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_agatha.description"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_elite_agatha.title"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_elite_agatha.description"),
                     AdvancementProvider.BACKGROUND,
                     AdvancementFrame.CHALLENGE,
                     true,
@@ -301,8 +301,8 @@ public enum RadicalRedAdvancement implements CustomAdvancement {
             .criterion("defeat_elite_lance", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/elite_lance")))
             .display(
                     RadicalRedTokenItem.ELITE_LANCE_TOKEN.getItem(),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_lance.title"),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_elite_lance.description"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_elite_lance.title"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_elite_lance.description"),
                     AdvancementProvider.BACKGROUND,
                     AdvancementFrame.CHALLENGE,
                     true,
@@ -316,8 +316,8 @@ public enum RadicalRedAdvancement implements CustomAdvancement {
             .criterion("defeat_champion_terry", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/champion_terry")))
             .display(
                     RadicalRedTokenItem.CHAMPION_TERRY_TOKEN.getItem(),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_champion_terry.title"),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_champion_terry.description"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_champion_terry.title"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_champion_terry.description"),
                     AdvancementProvider.BACKGROUND,
                     AdvancementFrame.GOAL,
                     true,
@@ -331,8 +331,8 @@ public enum RadicalRedAdvancement implements CustomAdvancement {
             .criterion("kill_champion_terry", new KillTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/champion_terry")))
             .display(
                     Items.NETHERITE_SWORD,
-                    Text.translatable("advancement.cobblemontrainerbattle.kill_champion_terry.title"),
-                    Text.translatable("advancement.cobblemontrainerbattle.kill_champion_terry.description"),
+                    Text.translatable("advancements.cobblemontrainerbattle.kill_champion_terry.title"),
+                    Text.translatable("advancements.cobblemontrainerbattle.kill_champion_terry.description"),
                     AdvancementProvider.BACKGROUND,
                     AdvancementFrame.TASK,
                     true,

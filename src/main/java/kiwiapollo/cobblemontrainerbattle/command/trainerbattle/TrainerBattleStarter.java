@@ -16,8 +16,6 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 
-import java.util.*;
-
 public abstract class TrainerBattleStarter implements Command<ServerCommandSource> {
     public int run(ServerPlayerEntity player, TrainerTemplate trainer) {
         try {
@@ -36,7 +34,7 @@ public abstract class TrainerBattleStarter implements Command<ServerCommandSourc
     }
 
     private Text getNoSuchTrainerExistErrorMessage() {
-        return Text.translatable("command.cobblemontrainerbattle.error.trainerbattle.unknown_trainer").formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.no_such_trainer").formatted(Formatting.RED);
     }
 
     protected ServerPlayerEntity getThisPlayer(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {

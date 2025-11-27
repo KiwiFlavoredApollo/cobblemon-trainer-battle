@@ -14,8 +14,8 @@ public enum DefeatTrainerAdvancement implements CustomAdvancement {
             .criterion("defeat_first_trainer", new DefeatTrainerCriterion.TotalCountConditions(1))
             .display(
                     CobblemonItems.POKE_BALL,
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_trainer.first.title"),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_trainer.first.description"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_trainer.first.title"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_trainer.first.description"),
                     AdvancementProvider.BACKGROUND,
                     AdvancementFrame.TASK,
                     true,
@@ -29,8 +29,8 @@ public enum DefeatTrainerAdvancement implements CustomAdvancement {
             .criterion("defeat_tenth_trainer", new DefeatTrainerCriterion.TotalCountConditions(10))
             .display(
                     CobblemonItems.GREAT_BALL,
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_trainer.tenth.title"),
-                    Text.translatable("advancement.cobblemontrainerbattle.defeat_trainer.tenth.description"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_trainer.tenth.title"),
+                    Text.translatable("advancements.cobblemontrainerbattle.defeat_trainer.tenth.description"),
                     AdvancementProvider.BACKGROUND,
                     AdvancementFrame.TASK,
                     true,

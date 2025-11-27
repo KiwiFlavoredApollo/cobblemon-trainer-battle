@@ -14,8 +14,8 @@ public enum KillTrainerAdvancement implements CustomAdvancement {
             .criterion("kill_first_trainer", new KillTrainerCriterion.TotalCountConditions(1))
             .display(
                     Items.STONE_SWORD,
-                    Text.translatable("advancement.cobblemontrainerbattle.kill_trainer.first.title"),
-                    Text.translatable("advancement.cobblemontrainerbattle.kill_trainer.first.description"),
+                    Text.translatable("advancements.cobblemontrainerbattle.kill_trainer.first.title"),
+                    Text.translatable("advancements.cobblemontrainerbattle.kill_trainer.first.description"),
                     AdvancementProvider.BACKGROUND,
                     AdvancementFrame.TASK,
                     true,
@@ -29,8 +29,8 @@ public enum KillTrainerAdvancement implements CustomAdvancement {
             .criterion("kill_tenth_trainer", new KillTrainerCriterion.TotalCountConditions(10))
             .display(
                     Items.IRON_SWORD,
-                    Text.translatable("advancement.cobblemontrainerbattle.kill_trainer.tenth.title"),
-                    Text.translatable("advancement.cobblemontrainerbattle.kill_trainer.tenth.description"),
+                    Text.translatable("advancements.cobblemontrainerbattle.kill_trainer.tenth.title"),
+                    Text.translatable("advancements.cobblemontrainerbattle.kill_trainer.tenth.description"),
                     AdvancementProvider.BACKGROUND,
                     AdvancementFrame.TASK,
                     true,

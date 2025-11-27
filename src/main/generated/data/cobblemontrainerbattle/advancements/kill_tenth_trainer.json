@@ -12,7 +12,7 @@
     "announce_to_chat": true,
     "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
     "description": {
-      "translate": "advancement.cobblemontrainerbattle.kill_trainer.tenth.description"
+      "translate": "advancements.cobblemontrainerbattle.kill_trainer.tenth.description"
     },
     "frame": "task",
     "hidden": false,
@@ -22,7 +22,7 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.cobblemontrainerbattle.kill_trainer.tenth.title"
+      "translate": "advancements.cobblemontrainerbattle.kill_trainer.tenth.title"
     }
   },
   "requirements": [

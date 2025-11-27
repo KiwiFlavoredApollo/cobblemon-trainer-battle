@@ -1,6 +1,5 @@
 package kiwiapollo.cobblemontrainerbattle.command.rentalpokemon;
 
-import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
@@ -18,11 +17,11 @@ public class RentalPokemonStatusPrinter extends PokemonStatusPrinter implements 
         RentalPokemon pokemon = RentalPokemonStorage.getInstance().get(player);
 
         if (pokemon.occupied() == 0) {
-            player.sendMessage(Text.translatable("command.cobblemontrainerbattle.error.rentalpokemon.rental_pokemon_not_exist").formatted(Formatting.RED));
+            player.sendMessage(Text.translatable("commands.cobblemontrainerbattle.rentalpokemon.showrental.failed.rental_pokemon_not_exist").formatted(Formatting.RED));
             return 0;
         }
 
-        printPokemonStatus(pokemon, player);
+        print(pokemon, player);
 
         return Command.SINGLE_SUCCESS;
     }

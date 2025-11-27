@@ -40,24 +40,24 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
     @Override
     public void start() throws BattleStartException {
         if (!isPlayerPokemonCount(RentalBattle.POKEMON_COUNT)) {
-            player.sendMessage(getRentalPlayerPokemonNotReadyErrorMessage());
+            player.sendMessage(getPlayerRentalPokemonNotReadyErrorMessage());
             throw new BattleStartException();
         }
 
         if (!isTrainerPokemonCount(RentalBattle.POKEMON_COUNT)) {
-            player.sendMessage(getRentalTrainerPokemonNotReadyErrorMessage());
+            player.sendMessage(getTrainerRentalPokemonNotReadyErrorMessage());
             throw new BattleStartException();
         }
 
         super.start();
     }
 
-    private Text getRentalPlayerPokemonNotReadyErrorMessage() {
-        return Text.translatable("command.cobblemontrainerbattle.error.rentalpokemon.rental_pokemon_not_exist").formatted(Formatting.RED);
+    private Text getPlayerRentalPokemonNotReadyErrorMessage() {
+        return Text.translatable("commands.cobblemontrainerbattle.rentalbattle.failed.player_pokemon_not_ready").formatted(Formatting.RED);
     }
 
-    private Text getRentalTrainerPokemonNotReadyErrorMessage() {
-        return Text.translatable("command.cobblemontrainerbattle.error.rentalbattle.trainer_minimum_party_size").formatted(Formatting.RED);
+    private Text getTrainerRentalPokemonNotReadyErrorMessage() {
+        return Text.translatable("commands.cobblemontrainerbattle.rentalbattle.failed.trainer_pokemon_not_ready").formatted(Formatting.RED);
     }
 
     private static class PlayerBattleSideFactory implements SimpleFactory<PlayerBattleActor> {
@@ -224,7 +224,7 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
 
         private Runnable getPlayerVictoryHandler() {
             return () -> {
-                setTradePokemon(pokemon);
+                setTradablePokemon(pokemon);
                 runEntityLevelPlayerVictoryHandler();
                 trainer.getOnVictoryCommands().forEach(command -> execute(command, player));
             };
@@ -255,10 +255,10 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
             }
         }
 
-        private void setTradePokemon(List<Pokemon> pokemon) {
-            TradePokemonStorage.getInstance().get(player).setFirst(pokemon.get(0));
-            TradePokemonStorage.getInstance().get(player).setSecond(pokemon.get(1));
-            TradePokemonStorage.getInstance().get(player).setThird(pokemon.get(2));
+        private void setTradablePokemon(List<Pokemon> pokemon) {
+            TradablePokemonStorage.getInstance().get(player).setFirst(pokemon.get(0));
+            TradablePokemonStorage.getInstance().get(player).setSecond(pokemon.get(1));
+            TradablePokemonStorage.getInstance().get(player).setThird(pokemon.get(2));
         }
 
         private List<Pokemon> toPokemon(List<PokemonLevelPair> pair) {

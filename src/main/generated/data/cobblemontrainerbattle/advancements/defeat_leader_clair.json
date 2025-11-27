@@ -13,7 +13,7 @@
     "announce_to_chat": true,
     "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
     "description": {
-      "translate": "advancement.cobblemontrainerbattle.defeat_leader_clair.description"
+      "translate": "advancements.cobblemontrainerbattle.defeat_leader_clair.description"
     },
     "frame": "task",
     "hidden": false,
@@ -22,7 +22,7 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.cobblemontrainerbattle.defeat_leader_clair.title"
+      "translate": "advancements.cobblemontrainerbattle.defeat_leader_clair.title"
     }
   },
   "requirements": [

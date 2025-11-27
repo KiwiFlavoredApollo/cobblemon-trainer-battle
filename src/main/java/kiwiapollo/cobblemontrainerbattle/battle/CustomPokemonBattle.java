@@ -51,7 +51,6 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
             this.battleId = battle.getBattleId();
             player.setBattleTheme(trainer.getBattleTheme());
 
-            player.sendMessage(Text.translatable("command.cobblemontrainerbattle.success.trainerbattle", trainer.getName()));
             CobblemonTrainerBattle.LOGGER.info("Started trainer battle : {} versus {}", player.getName().getString(), trainer.getIdentifier());
 
             return Unit.INSTANCE;
@@ -372,59 +371,59 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
     }
 
     protected Text getPlayerBusyErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.player_not_busy").formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.player_not_busy").formatted(Formatting.RED);
     }
 
     protected Text getRematchNotAllowedErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.is_rematch_allowed").formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.rematch_not_allowed").formatted(Formatting.RED);
     }
 
     protected Text getCooldownNotElapsedErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.cooldown_elapsed", getRemainingCooldownInSeconds()).formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.cooldown_not_elapsed", getRemainingCooldownInSeconds()).formatted(Formatting.RED);
     }
 
     protected Text getPlayerPokemonNotReadyErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.player_party_not_empty").formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.player_pokemon_not_ready").formatted(Formatting.RED);
     }
 
     protected Text getTrainerPokemonNotReadyErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.trainer_party_not_empty").formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.trainer_pokemon_not_ready").formatted(Formatting.RED);
     }
 
     protected Text getMaximumPartyLevelErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.maximum_party_level", trainer.getMaximumPartyLevel()).formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.maximum_party_level", trainer.getMaximumPartyLevel()).formatted(Formatting.RED);
     }
 
     protected Text getMinimumPartyLevelErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.minimum_party_level", trainer.getMinimumPartyLevel()).formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.minimum_party_level", trainer.getMinimumPartyLevel()).formatted(Formatting.RED);
     }
 
     protected Text getMaximumPartySizeErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.maximum_party_size", trainer.getMaximumPartySize()).formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.maximum_party_size", trainer.getMaximumPartySize()).formatted(Formatting.RED);
     }
 
     protected Text getMinimumPartySizeErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.minimum_party_size", trainer.getMinimumPartySize()).formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.minimum_party_size", trainer.getMinimumPartySize()).formatted(Formatting.RED);
     }
     
     protected Text getRequiredAbilityErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.required_ability", trainer.getRequiredAbility()).formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.required_ability", trainer.getRequiredAbility()).formatted(Formatting.RED);
     }
 
     protected Text getRequiredHeldItemErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.required_held_item", trainer.getRequiredHeldItem()).formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.required_held_item", trainer.getRequiredHeldItem()).formatted(Formatting.RED);
     }
 
     protected Text getRequiredLabelErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.required_label", trainer.getRequiredLabel()).formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.required_label", trainer.getRequiredLabel()).formatted(Formatting.RED);
     }
 
     protected Text getRequiredMoveErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.required_move", trainer.getRequiredMove()).formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.required_move", trainer.getRequiredMove()).formatted(Formatting.RED);
     }
 
     protected Text getRequiredPokemonErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.required_pokemon", toPokemonDescriptor(getMissingRequiredPokemon())).formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.required_pokemon", toPokemonDescriptor(getMissingRequiredPokemon())).formatted(Formatting.RED);
     }
 
     private ShowdownPokemon getMissingRequiredPokemon() {
@@ -446,23 +445,23 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
     }
 
     protected Text getForbiddenAbilityErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.forbidden_ability", trainer.getForbiddenAbility()).formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.forbidden_ability", trainer.getForbiddenAbility()).formatted(Formatting.RED);
     }
 
     protected Text getForbiddenHeldItemErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.forbidden_held_item", trainer.getForbiddenHeldItem()).formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.forbidden_held_item", trainer.getForbiddenHeldItem()).formatted(Formatting.RED);
     }
 
     protected Text getForbiddenLabelErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.forbidden_label", trainer.getForbiddenLabel()).formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.forbidden_label", trainer.getForbiddenLabel()).formatted(Formatting.RED);
     }
 
     protected Text getForbiddenMoveErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.forbidden_move", trainer.getForbiddenMove()).formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.forbidden_move", trainer.getForbiddenMove()).formatted(Formatting.RED);
     }
 
     protected Text getForbiddenPokemonErrorMessage() {
-        return Text.translatable("predicate.cobblemontrainerbattle.error.forbidden_pokemon", toPokemonDescriptor(getExistingForbiddenPokemon())).formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.forbidden_pokemon", toPokemonDescriptor(getExistingForbiddenPokemon())).formatted(Formatting.RED);
     }
 
     private ShowdownPokemon getExistingForbiddenPokemon() {

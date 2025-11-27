@@ -2,11 +2,12 @@ package kiwiapollo.cobblemontrainerbattle.item.vsseeker;
 
 import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
 import kiwiapollo.cobblemontrainerbattle.template.RandomTrainerFactory;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class GreenVsSeeker extends VsSeeker {
     public GreenVsSeeker() {
-        super("item.cobblemontrainerbattle.green_vs_seeker.trainers", new Factory());
+        super(Text.translatable("trainer_group.cobblemontrainerbattle.inclementemerald"), new Factory());
     }
 
     private static class Factory implements SimpleFactory<Identifier> {

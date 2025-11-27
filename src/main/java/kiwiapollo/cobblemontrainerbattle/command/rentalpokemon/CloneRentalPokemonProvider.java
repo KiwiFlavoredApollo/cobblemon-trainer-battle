@@ -22,18 +22,18 @@ public class CloneRentalPokemonProvider implements Command<ServerCommandSource> 
         try {
             ServerPlayerEntity player = context.getSource().getPlayerOrThrow();
 
-            if (!hasMinimumPartySize(player)) {
-                player.sendMessage(getMinimumPartySizeErrorMessage().formatted(Formatting.RED));
+            if (!isAtLeastMinimumPartySize(player)) {
+                player.sendMessage(getMinimumPartySizeErrorMessage());
                 return 0;
             }
 
-            List<Pokemon> original = Cobblemon.INSTANCE.getStorage().getParty(player).toGappyList().stream()
+            List<Pokemon> clone = Cobblemon.INSTANCE.getStorage().getParty(player).toGappyList().stream()
                     .filter(Objects::nonNull)
                     .map(pokemon -> pokemon.clone(true, true)).toList();
 
-            RentalPokemonStorage.getInstance().get(player).setFirst(original.get(0));
-            RentalPokemonStorage.getInstance().get(player).setSecond(original.get(1));
-            RentalPokemonStorage.getInstance().get(player).setThird(original.get(2));
+            RentalPokemonStorage.getInstance().get(player).setFirst(clone.get(0));
+            RentalPokemonStorage.getInstance().get(player).setSecond(clone.get(1));
+            RentalPokemonStorage.getInstance().get(player).setThird(clone.get(2));
 
             new RentalPokemonStatusPrinter().run(context);
 
@@ -44,11 +44,11 @@ public class CloneRentalPokemonProvider implements Command<ServerCommandSource> 
         }
     }
 
-    private boolean hasMinimumPartySize(ServerPlayerEntity player) {
+    private boolean isAtLeastMinimumPartySize(ServerPlayerEntity player) {
         return Cobblemon.INSTANCE.getStorage().getParty(player).occupied() >= RentalBattle.POKEMON_COUNT;
     }
 
     private MutableText getMinimumPartySizeErrorMessage() {
-        return Text.translatable("command.cobblemontrainerbattle.error.rentalpokemon.player_minimum_party_size", RentalBattle.POKEMON_COUNT);
+        return Text.translatable("commands.cobblemontrainerbattle.rentalpokemon.clone.failed.minimum_party_size", RentalBattle.POKEMON_COUNT).formatted(Formatting.RED);
     }
 }

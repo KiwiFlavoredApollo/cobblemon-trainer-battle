@@ -28,8 +28,8 @@ public class AdvancementProvider extends FabricAdvancementProvider {
             .criterion("root", AdvancementProvider.CONDITIONS)
             .display(
                     Registries.ITEM.get(Identifier.of("cobblemon", "link_cable")),
-                    Text.translatable("advancement.cobblemontrainerbattle.root.title"),
-                    Text.translatable("advancement.cobblemontrainerbattle.root.description"),
+                    Text.translatable("advancements.cobblemontrainerbattle.root.title"),
+                    Text.translatable("advancements.cobblemontrainerbattle.root.description"),
                     AdvancementProvider.BACKGROUND,
                     AdvancementFrame.TASK,
                     true,

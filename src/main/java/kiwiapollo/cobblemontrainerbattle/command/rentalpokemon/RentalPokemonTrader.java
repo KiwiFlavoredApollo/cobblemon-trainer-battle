@@ -7,7 +7,7 @@ import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.RentalPokemonStorage;
-import kiwiapollo.cobblemontrainerbattle.battle.TradePokemonStorage;
+import kiwiapollo.cobblemontrainerbattle.battle.TradablePokemonStorage;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
@@ -20,12 +20,12 @@ public class RentalPokemonTrader implements Command<ServerCommandSource> {
             ServerPlayerEntity player = context.getSource().getPlayerOrThrow();
 
             if (!isRentalPokemonExist(player)) {
-                player.sendMessage(Text.translatable("command.cobblemontrainerbattle.error.rentalpokemon.rental_pokemon_not_exist").formatted(Formatting.RED));
+                player.sendMessage(Text.translatable("commands.cobblemontrainerbattle.rentalpokemon.trade.failed.rental_pokemon_not_exist").formatted(Formatting.RED));
                 return 0;
             }
 
             if (!isTradablePokemonExist(player)) {
-                player.sendMessage(Text.translatable("command.cobblemontrainerbattle.error.rentalpokemon.tradable_pokemon_not_exist").formatted(Formatting.RED));
+                player.sendMessage(Text.translatable("commands.cobblemontrainerbattle.rentalpokemon.trade.failed.tradable_pokemon_not_exist").formatted(Formatting.RED));
                 return 0;
             }
 
@@ -39,7 +39,7 @@ public class RentalPokemonTrader implements Command<ServerCommandSource> {
 
             clearTradablePokemon(player);
 
-            player.sendMessage(Text.translatable("command.cobblemontrainerbattle.success.rentalpokemon.trade", playerPokemon.getDisplayName(), trainerPokemon.getDisplayName()));
+            player.sendMessage(Text.translatable("commands.cobblemontrainerbattle.rentalpokemon.trade.success", playerPokemon.getDisplayName(), trainerPokemon.getDisplayName()));
             CobblemonTrainerBattle.LOGGER.info("{} traded {} for {}", player.getName(), playerPokemon.getDisplayName(), trainerPokemon.getDisplayName());
 
             return Command.SINGLE_SUCCESS;
@@ -54,11 +54,11 @@ public class RentalPokemonTrader implements Command<ServerCommandSource> {
     }
 
     private void clearTradablePokemon(ServerPlayerEntity player) {
-        TradePokemonStorage.getInstance().get(player).clear();
+        TradablePokemonStorage.getInstance().get(player).clear();
     }
 
     private boolean isTradablePokemonExist(ServerPlayerEntity player) {
-        return TradePokemonStorage.getInstance().get(player).occupied() != 0;
+        return TradablePokemonStorage.getInstance().get(player).occupied() != 0;
     }
 
     private void setRentalPokemon(ServerPlayerEntity player, int slot, Pokemon pokemon) {
@@ -70,7 +70,7 @@ public class RentalPokemonTrader implements Command<ServerCommandSource> {
     }
 
     private Pokemon getTrainerPokemon(ServerPlayerEntity player, int slot) {
-        return TradePokemonStorage.getInstance().get(player).get(toIndex(slot));
+        return TradablePokemonStorage.getInstance().get(player).get(toIndex(slot));
     }
 
     private int toIndex(int slot) {

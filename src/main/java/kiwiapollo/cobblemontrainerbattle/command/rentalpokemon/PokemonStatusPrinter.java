@@ -3,7 +3,6 @@ package kiwiapollo.cobblemontrainerbattle.command.rentalpokemon;
 import com.cobblemon.mod.common.api.moves.Move;
 import com.cobblemon.mod.common.api.moves.MoveSet;
 import com.cobblemon.mod.common.api.pokemon.stats.Stats;
-import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.cobblemon.mod.common.pokemon.PokemonStats;
 import kiwiapollo.cobblemontrainerbattle.common.Triple;
@@ -12,10 +11,8 @@ import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 
-import java.util.List;
-
 public abstract class PokemonStatusPrinter {
-    protected void printPokemonStatus(Triple<Pokemon> pokemon, ServerPlayerEntity player) {
+    protected void print(Triple<Pokemon> pokemon, ServerPlayerEntity player) {
         for (int i = 0; i < Triple.SIZE; i++) {
             Pokemon p = pokemon.get(i);
 

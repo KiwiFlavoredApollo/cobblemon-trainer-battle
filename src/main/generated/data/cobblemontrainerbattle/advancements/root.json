@@ -19,7 +19,7 @@
     "announce_to_chat": true,
     "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
     "description": {
-      "translate": "advancement.cobblemontrainerbattle.root.description"
+      "translate": "advancements.cobblemontrainerbattle.root.description"
     },
     "frame": "task",
     "hidden": false,
@@ -28,7 +28,7 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.cobblemontrainerbattle.root.title"
+      "translate": "advancements.cobblemontrainerbattle.root.title"
     }
   },
   "requirements": [

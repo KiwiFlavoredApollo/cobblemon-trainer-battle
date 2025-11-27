@@ -54,10 +54,10 @@ public class RentalPokemonCommand extends LiteralArgumentBuilder<ServerCommandSo
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getShowTradablePokemonCommand() {
-        String subcommand = "showtrade";
+        String subcommand = "showtradable";
         return LiteralArgumentBuilder.<ServerCommandSource>literal(subcommand)
                 .requires(new PlayerCommandSourcePredicate(String.format("%s.%s.%s", CobblemonTrainerBattle.MOD_ID, getLiteral(), subcommand)))
-                .executes(new TradePokemonStatusPrinter());
+                .executes(new TradablePokemonStatusPrinter());
     }
 
     private ArgumentBuilder<ServerCommandSource, ?> getClearRentalPokemonCommand() {

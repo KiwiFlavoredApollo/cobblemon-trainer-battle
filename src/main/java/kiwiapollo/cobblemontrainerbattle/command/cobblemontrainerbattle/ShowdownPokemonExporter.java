@@ -33,7 +33,7 @@ public class ShowdownPokemonExporter implements Command<ServerCommandSource> {
             ServerPlayerEntity player = EntityArgumentType.getPlayer(context, "player");
 
             if (Cobblemon.INSTANCE.getStorage().getParty(player).occupied() == 0) {
-                player.sendMessage(Text.translatable("command.cobblemontrainerbattle.error.export.player_empty_party"));
+                player.sendMessage(Text.translatable("commands.cobblemontrainerbattle.cobblemontrainerbattle.export.failed.player_pokemon_not_exist"));
                 return 0;
             }
 
@@ -52,7 +52,7 @@ public class ShowdownPokemonExporter implements Command<ServerCommandSource> {
                 gson.toJson(new Gson().toJsonTree(pokemon), fileWriter);
             }
 
-            player.sendMessage(Text.translatable("command.cobblemontrainerbattle.success.export", player.getGameProfile().getName()));
+            player.sendMessage(Text.translatable("commands.cobblemontrainerbattle.cobblemontrainerbattle.export.success", player.getGameProfile().getName()));
             CobblemonTrainerBattle.LOGGER.error("Exported Pokémon : {}", player.getGameProfile().getName());
 
             return Command.SINGLE_SUCCESS;

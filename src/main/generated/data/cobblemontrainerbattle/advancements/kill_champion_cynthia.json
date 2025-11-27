@@ -13,7 +13,7 @@
     "announce_to_chat": true,
     "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
     "description": {
-      "translate": "advancement.cobblemontrainerbattle.kill_champion_cynthia.description"
+      "translate": "advancements.cobblemontrainerbattle.kill_champion_cynthia.description"
     },
     "frame": "task",
     "hidden": false,
@@ -23,7 +23,7 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.cobblemontrainerbattle.kill_champion_cynthia.title"
+      "translate": "advancements.cobblemontrainerbattle.kill_champion_cynthia.title"
     }
   },
   "requirements": [
