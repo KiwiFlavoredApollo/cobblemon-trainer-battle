@@ -400,8 +400,8 @@
   "commands.cobblemontrainerbattle.rentalpokemon.trade.success": "%s échangé pour %s.",
   "commands.cobblemontrainerbattle.cobblemontrainerbattle.export.success": "Pokémon exporté(s) : %s",
 
-  "commands.cobblemontrainerbattle.trainerbattle.failed.no_such_trainer": "Dresseur inconnu : %s",
-  "commands.cobblemontrainerbattle.rentalbattle.failed.no_such_trainer": "Dresseur inconnu : %s",
+  "commands.cobblemontrainerbattle.trainerbattle.failed.no_trainer": "Dresseur inconnu : %s",
+  "commands.cobblemontrainerbattle.rentalbattle.failed.no_trainer": "Dresseur inconnu : %s",
 
   "command.cobblemontrainerbattle.error.rentalbattle.trainer_minimum_party_size": "Le dresseur n'a pas assez de Pokémon : %d",
   "command.cobblemontrainerbattle.error.rentalbattle.player_minimum_party_size": "Le joueur n'a pas assez de Pokémon : %d",
@@ -409,6 +409,6 @@
   "command.cobblemontrainerbattle.error.rentalpokemon.trainer_minimum_party_size": "Le dresseur n'a pas assez de Pokémon : %d",
   "commands.cobblemontrainerbattle.rentalpokemon.clone.failed.minimum_party_size": "Le joueur n'a pas assez de Pokémon : %d",
 
-  "commands.cobblemontrainerbattle.rentalpokemon.showrental.failed.rental_pokemon_not_exist": "Le joueur n'a pas de Pokémon de location.",
-  "commands.cobblemontrainerbattle.rentalpokemon.trade.failed.tradable_pokemon_not_exist": "Le joueur n'a pas de Pokémon échangeables."
+  "commands.cobblemontrainerbattle.rentalpokemon.showrental.failed.no_rental_pokemon": "Le joueur n'a pas de Pokémon de location.",
+  "commands.cobblemontrainerbattle.rentalpokemon.trade.failed.no_tradable_pokemon": "Le joueur n'a pas de Pokémon échangeables."
 }

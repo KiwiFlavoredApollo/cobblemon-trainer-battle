@@ -400,8 +400,8 @@
   "commands.cobblemontrainerbattle.rentalpokemon.trade.success": "%s와 %s를 교환했습니다.",
   "commands.cobblemontrainerbattle.cobblemontrainerbattle.export.success": "포켓몬 내보내기를 완료했습니다 : %s",
 
-  "commands.cobblemontrainerbattle.trainerbattle.failed.no_such_trainer": "알 수 없는 트레이너 : %s",
-  "commands.cobblemontrainerbattle.rentalbattle.failed.no_such_trainer": "알 수 없는 트레이너 : %s",
+  "commands.cobblemontrainerbattle.trainerbattle.failed.no_trainer": "알 수 없는 트레이너 : %s",
+  "commands.cobblemontrainerbattle.rentalbattle.failed.no_trainer": "알 수 없는 트레이너 : %s",
 
   "command.cobblemontrainerbattle.error.rentalbattle.trainer_minimum_party_size": "트레이너 포켓몬이 부족합니다 : %d 마리",
   "command.cobblemontrainerbattle.error.rentalbattle.player_minimum_party_size": "플레이어 포켓몬이 부족합니다 : %d 마리",
@@ -409,6 +409,6 @@
   "command.cobblemontrainerbattle.error.rentalpokemon.trainer_minimum_party_size": "트레이너 포켓몬이 부족합니다 : %d 마리",
   "commands.cobblemontrainerbattle.rentalpokemon.clone.failed.minimum_party_size": "플레이어 포켓몬이 부족합니다 : %d 마리",
 
-  "commands.cobblemontrainerbattle.rentalpokemon.showrental.failed.rental_pokemon_not_exist": "가지고 있는 렌탈 포켓몬이 없습니다.",
-  "commands.cobblemontrainerbattle.rentalpokemon.trade.failed.tradable_pokemon_not_exist": "교환할 수 있는 포켓몬이 없습니다."
+  "commands.cobblemontrainerbattle.rentalpokemon.showrental.failed.no_rental_pokemon": "가지고 있는 렌탈 포켓몬이 없습니다.",
+  "commands.cobblemontrainerbattle.rentalpokemon.trade.failed.no_tradable_pokemon": "교환할 수 있는 포켓몬이 없습니다."
 }

@@ -73,7 +73,7 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
             setTrainer(new RandomTrainerFactory(template -> {
                 boolean result = true;
 
-                result &= template.isSpawningAllowed();
+                result &= template.isSpawnAllowed();
                 result &= template.getTeam().isEmpty();
 
                 return result;
@@ -337,7 +337,7 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
                     template.getOnDefeatCommands(),
 
                     template.getCooldownInSeconds(),
-                    template.isSpawningAllowed(),
+                    template.isSpawnAllowed(),
                     template.isRematchAllowed(),
 
                     template.getMaximumPartySize(),

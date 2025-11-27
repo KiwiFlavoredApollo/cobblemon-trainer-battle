@@ -31,8 +31,8 @@ public class TrainerPreset {
 
     @SerializedName("cooldown_in_seconds")
     public final long cooldownInSeconds;
-    @SerializedName("is_spawning_allowed")
-    public final boolean isSpawningAllowed;
+    @SerializedName(value = "is_spawn_allowed", alternate = {"is_spawning_allowed"})
+    public final boolean isSpawnAllowed;
     @SerializedName("is_rematch_allowed")
     public final boolean isRematchAllowed;
 
@@ -80,7 +80,7 @@ public class TrainerPreset {
         this.entityUuid = null;
         this.texture = "cobblemontrainerbattle:textures/entity/trainer/slim/red_piikapiika.png";
 
-        this.isSpawningAllowed = true;
+        this.isSpawnAllowed = false;
         this.isRematchAllowed = true;
 
         this.maximumPartySize = 6;

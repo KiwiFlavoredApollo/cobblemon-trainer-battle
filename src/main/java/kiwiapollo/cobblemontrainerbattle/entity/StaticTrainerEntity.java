@@ -1,7 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.entity;
 
 import kiwiapollo.cobblemontrainerbattle.template.RandomTrainerFactory;
-import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplate;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
@@ -71,7 +70,7 @@ public class StaticTrainerEntity extends TrainerEntity {
             this.identifier = new RandomTrainerFactory(template -> {
                 boolean result = true;
 
-                result &= template.isSpawningAllowed();
+                result &= template.isSpawnAllowed();
                 result &= template.getTeam().isEmpty();
 
                 return result;

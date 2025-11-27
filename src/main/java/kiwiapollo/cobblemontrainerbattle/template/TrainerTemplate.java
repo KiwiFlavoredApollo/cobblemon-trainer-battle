@@ -25,7 +25,7 @@ public class TrainerTemplate {
     private final List<String> onDefeatCommands;
 
     private final long cooldownInSeconds;
-    private final boolean isSpawningAllowed;
+    private final boolean isSpawnAllowed;
     private final boolean isRematchAllowed;
 
     private final int maximumPartySize;
@@ -61,7 +61,7 @@ public class TrainerTemplate {
             List<String> onDefeatCommands,
 
             long cooldownInSeconds,
-            boolean isSpawningAllowed,
+            boolean isSpawnAllowed,
             boolean isRematchAllowed,
 
             int maximumPartySize,
@@ -97,7 +97,7 @@ public class TrainerTemplate {
         this.onDefeatCommands = onDefeatCommands;
 
         this.cooldownInSeconds = cooldownInSeconds;
-        this.isSpawningAllowed = isSpawningAllowed;
+        this.isSpawnAllowed = isSpawnAllowed;
         this.isRematchAllowed = isRematchAllowed;
 
         this.maximumPartySize = maximumPartySize;
@@ -167,8 +167,8 @@ public class TrainerTemplate {
         return cooldownInSeconds;
     }
 
-    public boolean isSpawningAllowed() {
-        return isSpawningAllowed;
+    public boolean isSpawnAllowed() {
+        return isSpawnAllowed;
     }
 
     public boolean isRematchAllowed() {

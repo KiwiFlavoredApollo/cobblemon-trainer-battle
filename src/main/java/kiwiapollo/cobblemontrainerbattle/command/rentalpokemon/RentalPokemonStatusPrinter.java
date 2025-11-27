@@ -16,13 +16,21 @@ public class RentalPokemonStatusPrinter extends PokemonStatusPrinter implements 
         ServerPlayerEntity player = context.getSource().getPlayerOrThrow();
         RentalPokemon pokemon = RentalPokemonStorage.getInstance().get(player);
 
-        if (pokemon.occupied() == 0) {
-            player.sendMessage(Text.translatable("commands.cobblemontrainerbattle.rentalpokemon.showrental.failed.rental_pokemon_not_exist").formatted(Formatting.RED));
+        if (!isRentalPokemonExist(pokemon)) {
+            player.sendMessage(getNoRentalPokemonErrorMessage());
             return 0;
         }
 
         print(pokemon, player);
 
         return Command.SINGLE_SUCCESS;
+    }
+
+    private boolean isRentalPokemonExist(RentalPokemon pokemon) {
+        return pokemon.occupied() != 0;
+    }
+
+    private Text getNoRentalPokemonErrorMessage() {
+        return Text.translatable("commands.cobblemontrainerbattle.rentalpokemon.showrental.failed.no_rental_pokemon").formatted(Formatting.RED);
     }
 }

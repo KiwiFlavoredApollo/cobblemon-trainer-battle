@@ -1,7 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.entity;
 
 import kiwiapollo.cobblemontrainerbattle.template.RandomTrainerFactory;
-import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplate;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.mob.Angerable;
@@ -77,7 +76,7 @@ public class NeutralTrainerEntity extends TrainerEntity implements Angerable {
             this.identifier = new RandomTrainerFactory(template -> {
                 boolean result = true;
 
-                result &= template.isSpawningAllowed();
+                result &= template.isSpawnAllowed();
                 result &= template.getTeam().isEmpty();
 
                 return result;

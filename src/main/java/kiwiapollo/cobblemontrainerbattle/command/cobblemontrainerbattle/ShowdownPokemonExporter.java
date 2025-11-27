@@ -14,6 +14,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.WorldSavePath;
 
 import java.io.File;
@@ -32,8 +33,8 @@ public class ShowdownPokemonExporter implements Command<ServerCommandSource> {
         try {
             ServerPlayerEntity player = EntityArgumentType.getPlayer(context, "player");
 
-            if (Cobblemon.INSTANCE.getStorage().getParty(player).occupied() == 0) {
-                player.sendMessage(Text.translatable("commands.cobblemontrainerbattle.cobblemontrainerbattle.export.failed.player_pokemon_not_exist"));
+            if (!isPlayerPokemonExist(player)) {
+                player.sendMessage(getNoPlayerPokemonErrorMessage());
                 return 0;
             }
 
@@ -52,7 +53,7 @@ public class ShowdownPokemonExporter implements Command<ServerCommandSource> {
                 gson.toJson(new Gson().toJsonTree(pokemon), fileWriter);
             }
 
-            player.sendMessage(Text.translatable("commands.cobblemontrainerbattle.cobblemontrainerbattle.export.success", player.getGameProfile().getName()));
+            player.sendMessage(getPlayerPokemonExportSuccessMessage(player));
             CobblemonTrainerBattle.LOGGER.error("Exported Pokémon : {}", player.getGameProfile().getName());
 
             return Command.SINGLE_SUCCESS;
@@ -61,6 +62,18 @@ public class ShowdownPokemonExporter implements Command<ServerCommandSource> {
             CobblemonTrainerBattle.LOGGER.error("Error occurred while exporting trainer file");
             return 0;
         }
+    }
+
+    private boolean isPlayerPokemonExist(ServerPlayerEntity player) {
+        return Cobblemon.INSTANCE.getStorage().getParty(player).occupied() == 0;
+    }
+
+    private Text getNoPlayerPokemonErrorMessage() {
+        return Text.translatable("commands.cobblemontrainerbattle.cobblemontrainerbattle.export.failed.no_player_pokemon").formatted(Formatting.RED);
+    }
+
+    private Text getPlayerPokemonExportSuccessMessage(ServerPlayerEntity player) {
+        return Text.translatable("commands.cobblemontrainerbattle.cobblemontrainerbattle.export.success", player.getGameProfile().getName());
     }
 
     private File getExportDirectory(MinecraftServer server) {

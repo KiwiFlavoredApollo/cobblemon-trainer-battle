@@ -6,7 +6,9 @@ import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.battle.RentalPokemon;
 import kiwiapollo.cobblemontrainerbattle.battle.RentalPokemonStorage;
+import kiwiapollo.cobblemontrainerbattle.battle.TradablePokemon;
 import kiwiapollo.cobblemontrainerbattle.battle.TradablePokemonStorage;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -20,26 +22,25 @@ public class RentalPokemonTrader implements Command<ServerCommandSource> {
             ServerPlayerEntity player = context.getSource().getPlayerOrThrow();
 
             if (!isRentalPokemonExist(player)) {
-                player.sendMessage(Text.translatable("commands.cobblemontrainerbattle.rentalpokemon.trade.failed.rental_pokemon_not_exist").formatted(Formatting.RED));
+                player.sendMessage(getNoRentalPokemonErrorMessage());
                 return 0;
             }
 
             if (!isTradablePokemonExist(player)) {
-                player.sendMessage(Text.translatable("commands.cobblemontrainerbattle.rentalpokemon.trade.failed.tradable_pokemon_not_exist").formatted(Formatting.RED));
+                player.sendMessage(getNoTradablePokemonErrorMessage());
                 return 0;
             }
 
-            int playerslot = IntegerArgumentType.getInteger(context, "playerslot");
-            int trainerslot = IntegerArgumentType.getInteger(context, "trainerslot");
+            int playerSlot = IntegerArgumentType.getInteger(context, "playerslot");
+            int trainerSlot = IntegerArgumentType.getInteger(context, "trainerslot");
 
-            Pokemon playerPokemon = getPlayerPokemon(player, playerslot);
-            Pokemon trainerPokemon = getTrainerPokemon(player, trainerslot);
+            Pokemon playerPokemon = RentalPokemonStorage.getInstance().get(player).get(toIndex(playerSlot));
+            Pokemon trainerPokemon = TradablePokemonStorage.getInstance().get(player).get(toIndex(trainerSlot));
 
-            setRentalPokemon(player, playerslot, trainerPokemon);
+            RentalPokemonStorage.getInstance().get(player).set(toIndex(playerSlot), trainerPokemon);
+            TradablePokemonStorage.getInstance().get(player).clear();
 
-            clearTradablePokemon(player);
-
-            player.sendMessage(Text.translatable("commands.cobblemontrainerbattle.rentalpokemon.trade.success", playerPokemon.getDisplayName(), trainerPokemon.getDisplayName()));
+            player.sendMessage(getRentalPokemonTradeSuccessMessage(playerPokemon, trainerPokemon));
             CobblemonTrainerBattle.LOGGER.info("{} traded {} for {}", player.getName(), playerPokemon.getDisplayName(), trainerPokemon.getDisplayName());
 
             return Command.SINGLE_SUCCESS;
@@ -53,27 +54,23 @@ public class RentalPokemonTrader implements Command<ServerCommandSource> {
         return RentalPokemonStorage.getInstance().get(player).occupied() != 0;
     }
 
-    private void clearTradablePokemon(ServerPlayerEntity player) {
-        TradablePokemonStorage.getInstance().get(player).clear();
+    private Text getNoRentalPokemonErrorMessage() {
+        return Text.translatable("commands.cobblemontrainerbattle.rentalpokemon.trade.failed.no_rental_pokemon").formatted(Formatting.RED);
     }
 
     private boolean isTradablePokemonExist(ServerPlayerEntity player) {
         return TradablePokemonStorage.getInstance().get(player).occupied() != 0;
     }
 
-    private void setRentalPokemon(ServerPlayerEntity player, int slot, Pokemon pokemon) {
-        RentalPokemonStorage.getInstance().get(player).set(toIndex(slot), pokemon);
-    }
-
-    private Pokemon getPlayerPokemon(ServerPlayerEntity player, int slot) {
-        return RentalPokemonStorage.getInstance().get(player).get(toIndex(slot));
-    }
-
-    private Pokemon getTrainerPokemon(ServerPlayerEntity player, int slot) {
-        return TradablePokemonStorage.getInstance().get(player).get(toIndex(slot));
+    private Text getNoTradablePokemonErrorMessage() {
+        return Text.translatable("commands.cobblemontrainerbattle.rentalpokemon.trade.failed.no_tradable_pokemon").formatted(Formatting.RED);
     }
 
     private int toIndex(int slot) {
         return slot - 1;
+    }
+
+    private Text getRentalPokemonTradeSuccessMessage(Pokemon playerPokemon, Pokemon trainerPokemon) {
+        return Text.translatable("commands.cobblemontrainerbattle.rentalpokemon.trade.success", playerPokemon.getDisplayName(), trainerPokemon.getDisplayName());
     }
 }

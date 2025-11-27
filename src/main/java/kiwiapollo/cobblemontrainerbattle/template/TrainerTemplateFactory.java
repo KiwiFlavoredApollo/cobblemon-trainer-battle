@@ -45,7 +45,7 @@ public class TrainerTemplateFactory implements SimpleFactory<TrainerTemplate> {
                 toOnDefeatCommands(preset.onDefeatCommands),
 
                 toCooldownInSeconds(preset.cooldownInSeconds),
-                toIsSpawningAllowed(preset.isSpawningAllowed),
+                toIsSpawnAllowed(preset.isSpawnAllowed),
                 toIsRematchAllowed(preset.isRematchAllowed),
 
                 toMaximumPartySize(preset.maximumPartySize),
@@ -141,8 +141,8 @@ public class TrainerTemplateFactory implements SimpleFactory<TrainerTemplate> {
         return cooldownInSeconds;
     }
 
-    private boolean toIsSpawningAllowed(boolean isSpawningAllowed) {
-        return isSpawningAllowed;
+    private boolean toIsSpawnAllowed(boolean isSpawnAllowed) {
+        return isSpawnAllowed;
     }
 
     private boolean toIsRematchAllowed(boolean isRematchAllowed) {

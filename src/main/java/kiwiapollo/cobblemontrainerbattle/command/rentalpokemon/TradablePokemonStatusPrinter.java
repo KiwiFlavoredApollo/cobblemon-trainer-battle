@@ -16,13 +16,21 @@ public class TradablePokemonStatusPrinter extends PokemonStatusPrinter implement
         ServerPlayerEntity player = context.getSource().getPlayerOrThrow();
         TradablePokemon pokemon = TradablePokemonStorage.getInstance().get(player);
 
-        if (pokemon.occupied() == 0) {
-            player.sendMessage(Text.translatable("commands.cobblemontrainerbattle.rentalpokemon.showtradable.failed.tradable_pokemon_not_exist").formatted(Formatting.RED));
+        if (!isTradablePokemonExist(pokemon)) {
+            player.sendMessage(getNoTradablePokemonErrorMessage());
             return 0;
         }
 
         print(pokemon, player);
 
         return Command.SINGLE_SUCCESS;
+    }
+
+    private boolean isTradablePokemonExist(TradablePokemon pokemon) {
+        return pokemon.occupied() != 0;
+    }
+
+    private Text getNoTradablePokemonErrorMessage() {
+        return Text.translatable("commands.cobblemontrainerbattle.rentalpokemon.showtradable.failed.no_tradable_pokemon").formatted(Formatting.RED);
     }
 }

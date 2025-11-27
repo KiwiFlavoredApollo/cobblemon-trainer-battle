@@ -19,8 +19,8 @@ import net.minecraft.util.Identifier;
 public abstract class TrainerBattleStarter implements Command<ServerCommandSource> {
     public int run(ServerPlayerEntity player, TrainerTemplate trainer) {
         try {
-            if (trainer == null) {
-                player.sendMessage(getNoSuchTrainerExistErrorMessage());
+            if (isTrainerExist(trainer)) {
+                player.sendMessage(getNoTrainerErrorMessage());
                 return 0;
             }
 
@@ -33,8 +33,12 @@ public abstract class TrainerBattleStarter implements Command<ServerCommandSourc
         }
     }
 
-    private Text getNoSuchTrainerExistErrorMessage() {
-        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.no_such_trainer").formatted(Formatting.RED);
+    private boolean isTrainerExist(TrainerTemplate trainer) {
+        return trainer == null;
+    }
+
+    private Text getNoTrainerErrorMessage() {
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.no_trainer").formatted(Formatting.RED);
     }
 
     protected ServerPlayerEntity getThisPlayer(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
