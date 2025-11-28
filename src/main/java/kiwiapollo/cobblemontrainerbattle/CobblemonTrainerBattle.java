@@ -47,6 +47,8 @@ import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.resource.ResourceType;
+import net.minecraft.screen.PlayerScreenHandler;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -133,17 +135,13 @@ public class CobblemonTrainerBattle implements ModInitializer {
     private void registerEvent() {
         CobblemonEvents.BATTLE_VICTORY.subscribe(Priority.NORMAL, new BattleVictoryEventHandler());
         CobblemonEvents.LOOT_DROPPED.subscribe(Priority.HIGHEST, new LootDroppedEventHandler());
-        ServerTickEvents.END_WORLD_TICK.register(new BattleFledEventHandler());
-
         ServerLifecycleEvents.SERVER_STARTED.register(PlayerHistoryStorage.getInstance());
         ServerLifecycleEvents.SERVER_STOPPED.register(PlayerHistoryStorage.getInstance());
         ServerTickEvents.END_SERVER_TICK.register(PlayerHistoryStorage.getInstance());
-
+        ServerTickEvents.END_WORLD_TICK.register(new BattleFledEventHandler());
         ServerTickEvents.END_WORLD_TICK.register(new DrifterEntitySpawner());
 
         ServerEntityEvents.ENTITY_LOAD.register(new LegacyEntityMigrator());
-        ServerPlayConnectionEvents.JOIN.register(new LegacyItemMigrator());
-        UseBlockCallback.EVENT.register(new LegacyItemMigrator());
     }
 
     private void registerItem() {

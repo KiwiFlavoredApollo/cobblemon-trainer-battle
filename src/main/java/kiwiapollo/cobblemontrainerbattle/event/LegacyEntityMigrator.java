@@ -18,14 +18,16 @@ public class LegacyEntityMigrator implements ServerEntityEvents.Load {
 
     @Override
     public void onLoad(Entity entity, ServerWorld world) {
-        ENTITY.forEach((oldEntityType, newEntityType) -> {
+        for (Map.Entry<EntityType<? extends LivingEntity>, EntityType<? extends LivingEntity>> entry : ENTITY.entrySet()) {
+            EntityType<? extends LivingEntity> oldEntityType = entry.getKey();
+            EntityType<? extends LivingEntity> newEntityType = entry.getValue();
             try {
                 if (world.isClient()) {
-                    return;
+                    continue;
                 }
 
                 if (entity.getType() != oldEntityType) {
-                    return;
+                    continue;
                 }
 
                 LivingEntity newEntity = newEntityType.create(world);
@@ -46,6 +48,6 @@ public class LegacyEntityMigrator implements ServerEntityEvents.Load {
             } catch (Exception ignored) {
 
             }
-        });
+        }
     }
 }
