@@ -3,7 +3,7 @@ package kiwiapollo.cobblemontrainerbattle.event;
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import kiwiapollo.cobblemontrainerbattle.item.misc.LegacyItem;
+import kiwiapollo.cobblemontrainerbattle.item.misc.DeprecatedItem;
 import kiwiapollo.cobblemontrainerbattle.item.misc.MiscItem;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.Item;
@@ -15,8 +15,8 @@ import java.util.Map;
 
 public class LegacyItemMigrator implements Command<ServerCommandSource> {
     private static final Map<Item, Item> ITEM = Map.ofEntries(
-            Map.entry(LegacyItem.STATIC_TRAINER_SPAWN_EGG.getItem(), MiscItem.CAMPER_SPAWN_EGG.getItem()),
-            Map.entry(LegacyItem.NEUTRAL_TRAINER_SPAWN_EGG.getItem(), MiscItem.DRIFTER_SPAWN_EGG.getItem())
+            Map.entry(DeprecatedItem.STATIC_TRAINER_SPAWN_EGG.getItem(), MiscItem.CAMPER_SPAWN_EGG.getItem()),
+            Map.entry(DeprecatedItem.NEUTRAL_TRAINER_SPAWN_EGG.getItem(), MiscItem.DRIFTER_SPAWN_EGG.getItem())
     );
 
     @Override

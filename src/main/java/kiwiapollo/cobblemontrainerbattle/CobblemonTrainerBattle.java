@@ -16,7 +16,7 @@ import kiwiapollo.cobblemontrainerbattle.entity.*;
 import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
 import kiwiapollo.cobblemontrainerbattle.history.PlayerHistoryStorage;
 import kiwiapollo.cobblemontrainerbattle.item.CustomItemGroup;
-import kiwiapollo.cobblemontrainerbattle.item.misc.LegacyItem;
+import kiwiapollo.cobblemontrainerbattle.item.misc.DeprecatedItem;
 import kiwiapollo.cobblemontrainerbattle.item.misc.MiscItem;
 import kiwiapollo.cobblemontrainerbattle.item.ticket.BdspTicketItem;
 import kiwiapollo.cobblemontrainerbattle.item.ticket.InclementEmeraldTicketItem;
@@ -38,17 +38,13 @@ import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
-import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.resource.ResourceType;
-import net.minecraft.screen.PlayerScreenHandler;
-import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -140,11 +136,11 @@ public class CobblemonTrainerBattle implements ModInitializer {
         ServerTickEvents.END_SERVER_TICK.register(PlayerHistoryStorage.getInstance());
         ServerTickEvents.END_WORLD_TICK.register(new BattleFledEventHandler());
         ServerTickEvents.END_WORLD_TICK.register(new DrifterEntitySpawner());
-        ServerEntityEvents.ENTITY_LOAD.register(new LegacyEntityMigrator());
+        ServerEntityEvents.ENTITY_LOAD.register(new DeprecatedEntityMigrator());
     }
 
     private void registerItem() {
-        Arrays.stream(LegacyItem.values()).forEach(item -> {
+        Arrays.stream(DeprecatedItem.values()).forEach(item -> {
             Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
         });
 

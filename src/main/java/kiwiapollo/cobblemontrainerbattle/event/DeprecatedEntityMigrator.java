@@ -10,7 +10,7 @@ import net.minecraft.server.world.ServerWorld;
 
 import java.util.Map;
 
-public class LegacyEntityMigrator implements ServerEntityEvents.Load {
+public class DeprecatedEntityMigrator implements ServerEntityEvents.Load {
     private static final Map<EntityType<? extends LivingEntity>, EntityType<? extends LivingEntity>> ENTITY = Map.ofEntries(
             Map.entry(CustomEntityType.STATIC_TRAINER, CustomEntityType.CAMPER),
             Map.entry(CustomEntityType.NEUTRAL_TRAINER, CustomEntityType.DRIFTER)
