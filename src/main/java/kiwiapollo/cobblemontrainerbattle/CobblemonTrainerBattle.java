@@ -140,7 +140,6 @@ public class CobblemonTrainerBattle implements ModInitializer {
         ServerTickEvents.END_SERVER_TICK.register(PlayerHistoryStorage.getInstance());
         ServerTickEvents.END_WORLD_TICK.register(new BattleFledEventHandler());
         ServerTickEvents.END_WORLD_TICK.register(new DrifterEntitySpawner());
-
         ServerEntityEvents.ENTITY_LOAD.register(new LegacyEntityMigrator());
     }
 

@@ -36,11 +36,11 @@ public class DrifterEntitySpawner implements ServerTickEvents.EndWorldTick {
 
         for (ServerPlayerEntity player : world.getPlayers()) {
             if (!isLessThanMaximumPerPlayerTrainerCount(world, player)) {
-                return;
+                continue;
             }
 
             if (!hasVsSeeker(player)) {
-                return;
+                continue;
             }
 
             trySpawnEntity(world, player);
