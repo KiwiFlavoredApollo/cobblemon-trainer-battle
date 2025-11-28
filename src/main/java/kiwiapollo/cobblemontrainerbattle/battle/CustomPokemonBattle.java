@@ -606,14 +606,16 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
     }
 
     protected boolean hasPerPokemonRequiredHeldItem() {
-        Item required = trainer.getPerPokemonRequiredHeldItem();
+        Set<Item> required = trainer.getPerPokemonRequiredHeldItem();
         List<Pokemon> pokemon = player.getPokemonList().stream()
                 .filter(Objects::nonNull)
                 .map(BattlePokemon::getEffectedPokemon).toList();
 
         for (Pokemon p : pokemon) {
-            if (p.heldItem().getItem() != required) {
-                return false;
+            for (Item r : required) {
+                if (p.heldItem().getItem() != r) {
+                    return false;
+                }
             }
         }
 
@@ -621,14 +623,16 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
     }
 
     protected boolean hasPerPokemonRequiredAbility() {
-        String required = trainer.getPerPokemonRequiredAbility();
+        Set<String> required = trainer.getPerPokemonRequiredAbility();
         List<Pokemon> pokemon = player.getPokemonList().stream()
                 .filter(Objects::nonNull)
                 .map(BattlePokemon::getEffectedPokemon).toList();
 
         for (Pokemon p : pokemon) {
-            if (!p.getAbility().getName().equals(required)) {
-                return false;
+            for (String r : required) {
+                if (!p.getAbility().getName().equals(r)) {
+                    return false;
+                }
             }
         }
 

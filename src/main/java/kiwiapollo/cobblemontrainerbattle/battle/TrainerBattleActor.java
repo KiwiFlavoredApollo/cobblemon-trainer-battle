@@ -128,6 +128,10 @@ public class TrainerBattleActor extends AIBattleActor implements EntityBackedBat
         return template.getMinimumPartySize();
     }
 
+    public Set<String> getRequiredType() {
+        return new HashSet<>(template.getRequiredType());
+    }
+
     public List<ShowdownPokemon> getRequiredPokemon() {
         return template.getRequiredPokemon();
     }
@@ -150,6 +154,10 @@ public class TrainerBattleActor extends AIBattleActor implements EntityBackedBat
 
     public Set<String> getRequiredAbility() {
         return new HashSet<>(template.getRequiredAbility());
+    }
+
+    public Set<String> getForbiddenType() {
+        return new HashSet<>(template.getForbiddenType());
     }
 
     public List<ShowdownPokemon> getForbiddenPokemon() {
@@ -182,5 +190,57 @@ public class TrainerBattleActor extends AIBattleActor implements EntityBackedBat
 
     public boolean isRematchAllowed() {
         return template.isRematchAllowed();
+    }
+
+    public Set<String> getAllowedType() {
+        return new HashSet<>(template.getAllowedType());
+    }
+
+    public List<ShowdownPokemon> getAllowedPokemon() {
+        return template.getAllowedPokemon();
+    }
+
+    public Set<String> getAllowedLabel() {
+        return new HashSet<>(template.getAllowedLabel());
+    }
+
+    public Set<String> getAllowedMove() {
+        return new HashSet<>(template.getAllowedMove());
+    }
+
+    public Set<Item> getAllowedHeldItem() {
+        return template.getAllowedHeldItem().stream()
+                .map(Identifier::tryParse)
+                .filter(Objects::nonNull)
+                .map(Registries.ITEM::get)
+                .collect(Collectors.toSet());
+    }
+
+    public Set<String> getAllowedAbility() {
+        return new HashSet<>(template.getAllowedAbility());
+    }
+
+    public Set<String> getPerPokemonRequiredType() {
+        return new HashSet<>(template.getPerPokemonRequiredType());
+    }
+
+    public Set<String> getPerPokemonRequiredLabel() {
+        return new HashSet<>(template.getPerPokemonRequiredLabel());
+    }
+
+    public Set<String> getPerPokemonRequiredMove() {
+        return new HashSet<>(template.getPerPokemonRequiredMove());
+    }
+
+    public Set<Item> getPerPokemonRequiredHeldItem() {
+        return template.getPerPokemonRequiredHeldItem().stream()
+                .map(Identifier::tryParse)
+                .filter(Objects::nonNull)
+                .map(Registries.ITEM::get)
+                .collect(Collectors.toSet());
+    }
+
+    public Set<String> getPerPokemonRequiredAbility() {
+        return new HashSet<>(template.getPerPokemonRequiredAbility());
     }
 }

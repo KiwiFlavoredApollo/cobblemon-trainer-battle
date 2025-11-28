@@ -58,17 +58,32 @@ public class PokeBallEngineer {
                     createMaximumPartyLevel(),
                     createMinimumPartyLevel(),
 
+                    createRequiredType(),
                     createRequiredLabel(),
                     createRequiredPokemon(),
                     createRequiredHeldItem(),
                     createRequiredAbility(),
                     createRequiredMove(),
 
+                    createForbiddenType(),
                     createForbiddenLabel(),
                     createForbiddenPokemon(),
                     createForbiddenHeldItem(),
                     createForbiddenAbility(),
-                    createForbiddenMove()
+                    createForbiddenMove(),
+
+                    createAllowedType(),
+                    createAllowedLabel(),
+                    createAllowedPokemon(),
+                    createAllowedHeldItem(),
+                    createAllowedAbility(),
+                    createAllowedMove(),
+
+                    createPerPokemonRequiredType(),
+                    createPerPokemonRequiredLabel(),
+                    createPerPokemonRequiredHeldItem(),
+                    createPerPokemonRequiredAbility(),
+                    createPerPokemonRequiredMove()
             );
         }
 
@@ -202,6 +217,10 @@ public class PokeBallEngineer {
             return 1;
         }
 
+        private List<String> createRequiredType() {
+            return List.of();
+        }
+        
         private List<String> createRequiredLabel() {
             return List.of();
         }
@@ -225,6 +244,10 @@ public class PokeBallEngineer {
             return List.of();
         }
 
+        private List<String> createForbiddenType() {
+            return List.of();
+        }
+        
         private List<String> createForbiddenLabel() {
             return List.of();
         }
@@ -245,6 +268,55 @@ public class PokeBallEngineer {
         }
 
         private List<String> createForbiddenMove() {
+            return List.of();
+        }
+
+        private List<String> createAllowedType() {
+            return List.of();
+        }
+
+        private List<String> createAllowedLabel() {
+            return List.of();
+        }
+
+        private List<ShowdownPokemon> createAllowedPokemon() {
+            return List.of();
+
+        }
+
+        private List<String> createAllowedHeldItem() {
+            return List.of();
+
+        }
+
+        private List<String> createAllowedAbility() {
+            return List.of();
+
+        }
+
+        private List<String> createAllowedMove() {
+            return List.of();
+        }
+
+        private List<String> createPerPokemonRequiredType() {
+            return List.of();
+        }
+
+        private List<String> createPerPokemonRequiredLabel() {
+            return List.of();
+        }
+
+        private List<String> createPerPokemonRequiredHeldItem() {
+            return List.of();
+
+        }
+
+        private List<String> createPerPokemonRequiredAbility() {
+            return List.of();
+
+        }
+
+        private List<String> createPerPokemonRequiredMove() {
             return List.of();
         }
     }

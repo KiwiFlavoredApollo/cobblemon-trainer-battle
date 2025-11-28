@@ -46,6 +46,8 @@ public class TrainerPreset {
     @SerializedName("minimum_party_level")
     public final int minimumPartyLevel;
 
+    @SerializedName("required_type")
+    public final List<String> requiredType;
     @SerializedName("required_label")
     public final List<String> requiredLabel;
     @SerializedName("required_pokemon")
@@ -57,6 +59,8 @@ public class TrainerPreset {
     @SerializedName("required_move")
     public final List<String> requiredMove;
 
+    @SerializedName("forbidden_type")
+    public final List<String> forbiddenType;
     @SerializedName("forbidden_label")
     public final List<String> forbiddenLabel;
     @SerializedName("forbidden_pokemon")
@@ -67,6 +71,30 @@ public class TrainerPreset {
     public final List<String> forbiddenAbility;
     @SerializedName("forbidden_move")
     public final List<String> forbiddenMove;
+
+    @SerializedName("allowed_type")
+    public final List<String> allowedType;
+    @SerializedName("allowed_label")
+    public final List<String> allowedLabel;
+    @SerializedName("allowed_pokemon")
+    public final List<ShowdownPokemon> allowedPokemon;
+    @SerializedName("allowed_held_item")
+    public final List<String> allowedHeldItem;
+    @SerializedName("allowed_ability")
+    public final List<String> allowedAbility;
+    @SerializedName("allowed_move")
+    public final List<String> allowedMove;
+
+    @SerializedName("per_pokemon_required_type")
+    public final List<String> perPokemonRequiredType;
+    @SerializedName("per_pokemon_required_label")
+    public final List<String> perPokemonRequiredLabel;
+    @SerializedName("per_pokemon_required_pokemon")
+    public final List<String> perPokemonRequiredHeldItem;
+    @SerializedName("per_pokemon_required_ability")
+    public final List<String> perPokemonRequiredAbility;
+    @SerializedName("per_pokemon_required_move")
+    public final List<String> perPokemonRequiredMove;
 
     public TrainerPreset() {
         this.team = null;
@@ -89,17 +117,32 @@ public class TrainerPreset {
         this.maximumPartyLevel = 100;
         this.minimumPartyLevel = 1;
 
+        this.requiredType = List.of();
         this.requiredLabel = List.of();
         this.requiredPokemon = List.of();
         this.requiredHeldItem = List.of();
         this.requiredAbility = List.of();
         this.requiredMove = List.of();
 
+        this.forbiddenType = List.of();
         this.forbiddenLabel = List.of();
         this.forbiddenPokemon = List.of();
         this.forbiddenHeldItem = List.of();
         this.forbiddenAbility = List.of();
         this.forbiddenMove = List.of();
+
+        this.allowedType = List.of();
+        this.allowedLabel = List.of();
+        this.allowedPokemon = List.of();
+        this.allowedHeldItem = List.of();
+        this.allowedAbility = List.of();
+        this.allowedMove = List.of();
+
+        this.perPokemonRequiredType = List.of();
+        this.perPokemonRequiredLabel = List.of();
+        this.perPokemonRequiredHeldItem = List.of();
+        this.perPokemonRequiredAbility = List.of();
+        this.perPokemonRequiredMove = List.of();
 
         this.onVictoryCommands = List.of();
         this.onDefeatCommands = List.of();

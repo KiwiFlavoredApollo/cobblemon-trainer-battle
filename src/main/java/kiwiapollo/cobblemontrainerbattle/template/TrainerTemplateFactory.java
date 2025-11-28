@@ -53,17 +53,32 @@ public class TrainerTemplateFactory implements SimpleFactory<TrainerTemplate> {
                 toMaximumPartyLevel(preset.maximumPartyLevel),
                 toMinimumPartyLevel(preset.minimumPartyLevel),
 
+                toRequiredType(preset.requiredType),
                 toRequiredLabel(preset.requiredLabel),
                 toRequiredPokemon(preset.requiredPokemon),
                 toRequiredHeldItem(preset.requiredHeldItem),
                 toRequiredAbility(preset.requiredAbility),
                 toRequiredMove(preset.requiredMove),
 
+                toForbiddenType(preset.forbiddenType),
                 toForbiddenLabel(preset.forbiddenLabel),
                 toForbiddenPokemon(preset.forbiddenPokemon),
                 toForbiddenHeldItem(preset.forbiddenHeldItem),
                 toForbiddenAbility(preset.forbiddenAbility),
-                toForbiddenMove(preset.forbiddenMove)
+                toForbiddenMove(preset.forbiddenMove),
+
+                toAllowedType(preset.allowedType),
+                toAllowedLabel(preset.allowedLabel),
+                toAllowedPokemon(preset.allowedPokemon),
+                toAllowedHeldItem(preset.allowedHeldItem),
+                toAllowedAbility(preset.allowedAbility),
+                toAllowedMove(preset.allowedMove),
+
+                toPerPokemonRequiredType(preset.perPokemonRequiredType),
+                toPerPokemonRequiredLabel(preset.perPokemonRequiredLabel),
+                toPerPokemonRequiredHeldItem(preset.perPokemonRequiredHeldItem),
+                toPerPokemonRequiredAbility(preset.perPokemonRequiredAbility),
+                toPerPokemonRequiredMove(preset.perPokemonRequiredMove)
         );
     }
 
@@ -166,6 +181,10 @@ public class TrainerTemplateFactory implements SimpleFactory<TrainerTemplate> {
         return minimumPartyLevel;
     }
 
+    private List<String> toRequiredType(List<String> requiredType) {
+        return requiredType;
+    }
+    
     private List<String> toRequiredLabel(List<String> requiredLabel) {
         return requiredLabel;
     }
@@ -186,6 +205,10 @@ public class TrainerTemplateFactory implements SimpleFactory<TrainerTemplate> {
         return requiredMove;
     }
 
+    private List<String> toForbiddenType(List<String> forbiddenType) {
+        return forbiddenType;
+    }
+    
     private List<String> toForbiddenLabel(List<String> forbiddenLabel) {
         return forbiddenLabel;
     }
@@ -204,5 +227,49 @@ public class TrainerTemplateFactory implements SimpleFactory<TrainerTemplate> {
 
     private List<String> toForbiddenMove(List<String> forbiddenMove) {
         return forbiddenMove;
+    }
+
+    private List<String> toAllowedType(List<String> allowedType) {
+        return allowedType;
+    }
+
+    private List<String> toAllowedLabel(List<String> allowedLabel) {
+        return allowedLabel;
+    }
+
+    private List<ShowdownPokemon> toAllowedPokemon(List<ShowdownPokemon> allowedPokemon) {
+        return allowedPokemon;
+    }
+
+    private List<String> toAllowedHeldItem(List<String> allowedHeldItem) {
+        return allowedHeldItem;
+    }
+
+    private List<String> toAllowedAbility(List<String> allowedAbility) {
+        return allowedAbility;
+    }
+
+    private List<String> toAllowedMove(List<String> allowedMove) {
+        return allowedMove;
+    }
+
+    private List<String> toPerPokemonRequiredType(List<String> perPokemonRequiredType) {
+        return perPokemonRequiredType;
+    }
+
+    private List<String> toPerPokemonRequiredLabel(List<String> perPokemonRequiredLabel) {
+        return perPokemonRequiredLabel;
+    }
+
+    private List<String> toPerPokemonRequiredHeldItem(List<String> perPokemonRequiredHeldItem) {
+        return perPokemonRequiredHeldItem;
+    }
+
+    private List<String> toPerPokemonRequiredAbility(List<String> perPokemonRequiredAbility) {
+        return perPokemonRequiredAbility;
+    }
+
+    private List<String> toPerPokemonRequiredMove(List<String> perPokemonRequiredMove) {
+        return perPokemonRequiredMove;
     }
 }
