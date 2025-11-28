@@ -24,12 +24,12 @@ public class TrainerTicket extends Item {
         PlayerEntity player = context.getPlayer();
         World world = context.getWorld();
         ItemStack itemStack = context.getStack();
-        BlockPos pos = context.getBlockPos();
+        BlockPos pos = context.getBlockPos().up();
 
         NeutralTrainerEntity entity = new NeutralTrainerEntity(CustomEntityType.NEUTRAL_TRAINER, world);
         entity.setTrainer(trainer);
 
-        entity.refreshPositionAndAngles(pos.up(), player.getYaw(), player.getPitch());
+        entity.refreshPositionAndAngles(pos, player.getYaw(), player.getPitch());
         world.spawnEntity(entity);
 
         if (!player.isCreative()) {
