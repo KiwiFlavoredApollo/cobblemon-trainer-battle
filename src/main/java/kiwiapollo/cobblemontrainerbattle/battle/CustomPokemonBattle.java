@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.abilities.Ability;
 import com.cobblemon.mod.common.api.moves.Move;
 import com.cobblemon.mod.common.api.moves.MoveSet;
+import com.cobblemon.mod.common.api.types.ElementalType;
 import com.cobblemon.mod.common.battles.BattleSide;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
@@ -25,6 +26,7 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
     private final PlayerBattleActor player;
@@ -184,6 +186,28 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
         }
     }
 
+    protected boolean hasAllRequiredType(){
+        Set<ElementalType> required = trainer.getRequiredType();
+        Set<ElementalType> types = player.getPokemonList().stream()
+                .filter(Objects::nonNull)
+                .map(BattlePokemon::getEffectedPokemon)
+                .map(Pokemon::getTypes)
+                .flatMap(i -> StreamSupport.stream(i.spliterator(), false))
+                .collect(Collectors.toSet());
+
+        for (ElementalType r : required) {
+            if (!types.contains(r)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    private List<ElementalType> getTypes(Pokemon pokemon) {
+        return StreamSupport.stream(pokemon.getTypes().spliterator(), false).toList();
+    }
+
     protected boolean hasAllRequiredPokemon(){
         List<ShowdownPokemon> required = trainer.getRequiredPokemon();
         List<Pokemon> pokemon = player.getPokemonList().stream()
@@ -275,6 +299,24 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
         return true;
     }
 
+    protected boolean hasAnyForbiddenType(){
+        Set<ElementalType> forbidden = trainer.getForbiddenType();
+        Set<ElementalType> types = player.getPokemonList().stream()
+                .filter(Objects::nonNull)
+                .map(BattlePokemon::getEffectedPokemon)
+                .map(Pokemon::getTypes)
+                .flatMap(i -> StreamSupport.stream(i.spliterator(), false))
+                .collect(Collectors.toSet());
+
+        for (ElementalType f : forbidden) {
+            if (types.contains(f)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     protected boolean hasAnyForbiddenPokemon(){
         List<ShowdownPokemon> forbidden = trainer.getForbiddenPokemon();
         List<Pokemon> pokemon = player.getPokemonList().stream()
@@ -364,6 +406,24 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
         }
 
         return false;
+    }
+
+    protected boolean hasOnlyAllowedType(){
+        Set<ElementalType> allowed = trainer.getAllowedType();
+        Set<ElementalType> types = player.getPokemonList().stream()
+                .filter(Objects::nonNull)
+                .map(BattlePokemon::getEffectedPokemon)
+                .map(Pokemon::getTypes)
+                .flatMap(i -> StreamSupport.stream(i.spliterator(), false))
+                .collect(Collectors.toSet());
+
+        for (ElementalType t : types) {
+            if (!allowed.contains(t)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     protected boolean hasOnlyAllowedPokemon(){
