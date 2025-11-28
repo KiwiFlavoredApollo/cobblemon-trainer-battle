@@ -191,11 +191,9 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
                 .map(BattlePokemon::getEffectedPokemon)
                 .toList();
 
-        for (ShowdownPokemon s : required) {
-            for (Pokemon p : pokemon) {
-                if (!isEqualPokemon(p, s)) {
-                    return false;
-                }
+        for (ShowdownPokemon r : required) {
+            if (pokemon.stream().noneMatch(p -> isEqualPokemon(p, r))) {
+                return false;
             }
         }
 
@@ -212,8 +210,8 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
                 .flatMap(Set::stream)
                 .collect(Collectors.toSet());
 
-        for (String b : required) {
-            if (!labels.contains(b)) {
+        for (String r : required) {
+            if (!labels.contains(r)) {
                 return false;
             }
         }
@@ -232,8 +230,8 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
                 .map(Move::getName)
                 .collect(Collectors.toSet());
 
-        for (String m : required) {
-            if (!moves.contains(m)) {
+        for (String r : required) {
+            if (!moves.contains(r)) {
                 return false;
             }
         }
@@ -250,8 +248,8 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
                 .map(ItemStack::getItem)
                 .collect(Collectors.toSet());
 
-        for (Item i : required) {
-            if (!items.contains(i)) {
+        for (Item r : required) {
+            if (!items.contains(r)) {
                 return false;
             }
         }
@@ -268,8 +266,8 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
                 .map(Ability::getName)
                 .collect(Collectors.toSet());
 
-        for (String a : required) {
-            if (!abilities.contains(a)) {
+        for (String r : required) {
+            if (!abilities.contains(r)) {
                 return false;
             }
         }
@@ -284,11 +282,9 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
                 .map(BattlePokemon::getEffectedPokemon)
                 .toList();
 
-        for (ShowdownPokemon s : forbidden) {
-            for (Pokemon p : pokemon) {
-                if (isEqualPokemon(p, s)) {
-                    return true;
-                }
+        for (ShowdownPokemon f : forbidden) {
+            if (pokemon.stream().anyMatch(p -> isEqualPokemon(p, f))) {
+                return true;
             }
         }
 
@@ -305,8 +301,8 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
                 .flatMap(Set::stream)
                 .collect(Collectors.toSet());
 
-        for (String b : forbidden) {
-            if (labels.contains(b)) {
+        for (String f : forbidden) {
+            if (labels.contains(f)) {
                 return true;
             }
         }
@@ -325,8 +321,8 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
                 .map(Move::getName)
                 .collect(Collectors.toSet());
 
-        for (String m : forbidden) {
-            if (moves.contains(m)) {
+        for (String f : forbidden) {
+            if (moves.contains(f)) {
                 return true;
             }
         }
@@ -343,8 +339,8 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
                 .map(ItemStack::getItem)
                 .collect(Collectors.toSet());
 
-        for (Item i : forbidden) {
-            if (items.contains(i)) {
+        for (Item f : forbidden) {
+            if (items.contains(f)) {
                 return true;
             }
         }
@@ -361,13 +357,104 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
                 .map(Ability::getName)
                 .collect(Collectors.toSet());
 
-        for (String a : forbidden) {
-            if (abilities.contains(a)) {
+        for (String f : forbidden) {
+            if (abilities.contains(f)) {
                 return true;
             }
         }
 
         return false;
+    }
+
+    protected boolean hasOnlyAllowedPokemon(){
+        List<ShowdownPokemon> allowed = trainer.getAllowedPokemon();
+        List<Pokemon> pokemon = player.getPokemonList().stream()
+                .filter(Objects::nonNull)
+                .map(BattlePokemon::getEffectedPokemon)
+                .toList();
+
+        for (Pokemon p : pokemon) {
+            if (allowed.stream().noneMatch(a -> isEqualPokemon(p, a))) {
+                return false;
+            };
+        }
+
+        return true;
+    }
+
+    protected boolean hasOnlyAllowedLabel() {
+        Set<String> allowed = trainer.getAllowedLabel();
+        Set<String> labels = player.getPokemonList().stream()
+                .filter(Objects::nonNull)
+                .map(BattlePokemon::getEffectedPokemon)
+                .map(Pokemon::getSpecies)
+                .map(Species::getLabels)
+                .flatMap(Set::stream)
+                .collect(Collectors.toSet());
+
+        for (String b : labels) {
+            if (!allowed.contains(b)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    protected boolean hasOnlyAllowedMove(){
+        Set<String> allowed = trainer.getAllowedMove();
+        Set<String> moves = player.getPokemonList().stream()
+                .filter(Objects::nonNull)
+                .map(BattlePokemon::getEffectedPokemon)
+                .map(Pokemon::getMoveSet)
+                .map(MoveSet::getMoves)
+                .flatMap(List::stream)
+                .map(Move::getName)
+                .collect(Collectors.toSet());
+
+        for (String m : moves) {
+            if (!allowed.contains(m)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    protected boolean hasOnlyAllowedHeldItem(){
+        Set<Item> allowed = trainer.getAllowedHeldItem();
+        Set<Item> items = player.getPokemonList().stream()
+                .filter(Objects::nonNull)
+                .map(BattlePokemon::getEffectedPokemon)
+                .map(Pokemon::heldItem)
+                .map(ItemStack::getItem)
+                .collect(Collectors.toSet());
+
+        for (Item i : items) {
+            if (!allowed.contains(i)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    protected boolean hasOnlyAllowedAbility(){
+        Set<String> allowed = trainer.getAllowedAbility();
+        Set<String> abilities = player.getPokemonList().stream()
+                .filter(Objects::nonNull)
+                .map(BattlePokemon::getEffectedPokemon)
+                .map(Pokemon::getAbility)
+                .map(Ability::getName)
+                .collect(Collectors.toSet());
+
+        for (String a : abilities) {
+            if (!allowed.contains(a)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     protected Text getPlayerBusyErrorMessage() {
