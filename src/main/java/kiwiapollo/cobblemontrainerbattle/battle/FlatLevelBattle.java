@@ -76,6 +76,11 @@ public class FlatLevelBattle extends CustomPokemonBattle {
             throw new BattleStartException();
         }
 
+        if (!hasAllRequiredType()) {
+            player.sendMessage(getRequiredTypeErrorMessage());
+            throw new BattleStartException();
+        }
+
         if (!hasAllRequiredAbility()) {
             player.sendMessage(getRequiredAbilityErrorMessage());
             throw new BattleStartException();
@@ -86,7 +91,7 @@ public class FlatLevelBattle extends CustomPokemonBattle {
             throw new BattleStartException();
         }
 
-        if(!hasAllRequiredLabel()) {
+        if (!hasAllRequiredLabel()) {
             player.sendMessage(getRequiredLabelErrorMessage());
             throw new BattleStartException();
         }
@@ -101,6 +106,11 @@ public class FlatLevelBattle extends CustomPokemonBattle {
             throw new BattleStartException();
         }
 
+        if (hasAnyForbiddenType()) {
+            player.sendMessage(getForbiddenTypeErrorMessage());
+            throw new BattleStartException();
+        }
+
         if (hasAnyForbiddenAbility()) {
             player.sendMessage(getForbiddenAbilityErrorMessage());
             throw new BattleStartException();
@@ -111,7 +121,7 @@ public class FlatLevelBattle extends CustomPokemonBattle {
             throw new BattleStartException();
         }
 
-        if(hasAnyForbiddenLabel()) {
+        if (hasAnyForbiddenLabel()) {
             player.sendMessage(getForbiddenLabelErrorMessage());
             throw new BattleStartException();
         }
@@ -123,6 +133,61 @@ public class FlatLevelBattle extends CustomPokemonBattle {
 
         if (hasAnyForbiddenPokemon()) {
             player.sendMessage(getForbiddenPokemonErrorMessage());
+            throw new BattleStartException();
+        }
+
+        if (!hasOnlyAllowedType()) {
+            player.sendMessage(getAllowedTypeErrorMessage());
+            throw new BattleStartException();
+        }
+
+        if (!hasOnlyAllowedAbility()) {
+            player.sendMessage(getAllowedAbilityErrorMessage());
+            throw new BattleStartException();
+        }
+
+        if (!hasOnlyAllowedHeldItem()) {
+            player.sendMessage(getAllowedHeldItemErrorMessage());
+            throw new BattleStartException();
+        }
+
+        if (!hasOnlyAllowedLabel()) {
+            player.sendMessage(getAllowedLabelErrorMessage());
+            throw new BattleStartException();
+        }
+
+        if (!hasOnlyAllowedMove()) {
+            player.sendMessage(getAllowedMoveErrorMessage());
+            throw new BattleStartException();
+        }
+
+        if (!hasOnlyAllowedPokemon()) {
+            player.sendMessage(getAllowedPokemonErrorMessage());
+            throw new BattleStartException();
+        }
+
+        if (!hasPerPokemonRequiredType()) {
+            player.sendMessage(getPerPokemonRequiredTypeErrorMessage());
+            throw new BattleStartException();
+        }
+
+        if (!hasPerPokemonRequiredAbility()) {
+            player.sendMessage(getPerPokemonRequiredAbilityErrorMessage());
+            throw new BattleStartException();
+        }
+
+        if (!hasPerPokemonRequiredHeldItem()) {
+            player.sendMessage(getPerPokemonRequiredHeldItemErrorMessage());
+            throw new BattleStartException();
+        }
+
+        if (!hasPerPokemonRequiredLabel()) {
+            player.sendMessage(getPerPokemonRequiredLabelErrorMessage());
+            throw new BattleStartException();
+        }
+
+        if (!hasPerPokemonRequiredMove()) {
+            player.sendMessage(getPerPokemonRequiredMoveErrorMessage());
             throw new BattleStartException();
         }
 

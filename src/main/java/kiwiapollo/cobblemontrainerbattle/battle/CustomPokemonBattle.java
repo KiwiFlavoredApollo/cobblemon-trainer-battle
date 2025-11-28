@@ -675,6 +675,10 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
         return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.minimum_party_size", trainer.getMinimumPartySize()).formatted(Formatting.RED);
     }
     
+    protected Text getRequiredTypeErrorMessage() {
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.required_type", trainer.getRequiredType()).formatted(Formatting.RED);
+    }
+    
     protected Text getRequiredAbilityErrorMessage() {
         return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.required_ability", trainer.getRequiredAbility()).formatted(Formatting.RED);
     }
@@ -702,17 +706,19 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
                 .map(BattlePokemon::getEffectedPokemon)
                 .toList();
 
-        for (ShowdownPokemon s : required) {
-            for (Pokemon p : pokemon) {
-                if (!isEqualPokemon(p, s)) {
-                    return s;
-                }
+        for (ShowdownPokemon r : required) {
+            if (pokemon.stream().noneMatch(p -> isEqualPokemon(p, r))) {
+                return r;
             }
         }
 
         throw new NoSuchElementException();
     }
 
+    protected Text getForbiddenTypeErrorMessage() {
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.forbidden_type", trainer.getForbiddenType()).formatted(Formatting.RED);
+    }
+    
     protected Text getForbiddenAbilityErrorMessage() {
         return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.forbidden_ability", trainer.getForbiddenAbility()).formatted(Formatting.RED);
     }
@@ -740,15 +746,73 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
                 .map(BattlePokemon::getEffectedPokemon)
                 .toList();
 
-        for (ShowdownPokemon s : forbidden) {
-            for (Pokemon p : pokemon) {
-                if (isEqualPokemon(p, s)) {
-                    return s;
-                }
+        for (ShowdownPokemon f : forbidden) {
+            if (pokemon.stream().anyMatch(p -> isEqualPokemon(p, f))) {
+                return f;
             }
         }
 
         throw new NoSuchElementException();
+    }
+
+    protected Text getAllowedTypeErrorMessage() {
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.allowed_type", trainer.getAllowedType()).formatted(Formatting.RED);
+    }
+
+    protected Text getAllowedAbilityErrorMessage() {
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.allowed_ability", trainer.getAllowedAbility()).formatted(Formatting.RED);
+    }
+
+    protected Text getAllowedHeldItemErrorMessage() {
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.allowed_held_item", trainer.getAllowedHeldItem()).formatted(Formatting.RED);
+    }
+
+    protected Text getAllowedLabelErrorMessage() {
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.allowed_label", trainer.getAllowedLabel()).formatted(Formatting.RED);
+    }
+
+    protected Text getAllowedMoveErrorMessage() {
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.allowed_move", trainer.getAllowedMove()).formatted(Formatting.RED);
+    }
+
+    protected Text getAllowedPokemonErrorMessage() {
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.allowed_pokemon", getExistingNonAllowedPokemon().getDisplayName()).formatted(Formatting.RED);
+    }
+
+    private Pokemon getExistingNonAllowedPokemon() {
+        List<ShowdownPokemon> allowed = trainer.getAllowedPokemon();
+        List<Pokemon> pokemon = player.getPokemonList().stream()
+                .filter(Objects::nonNull)
+                .map(BattlePokemon::getEffectedPokemon)
+                .toList();
+
+        for (Pokemon p : pokemon) {
+            if (allowed.stream().noneMatch(a -> isEqualPokemon(p, a))) {
+                return p;
+            };
+        }
+
+        throw new NoSuchElementException();
+    }
+
+    protected Text getPerPokemonRequiredTypeErrorMessage() {
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.per_pokemon_required_type", trainer.getPerPokemonRequiredType()).formatted(Formatting.RED);
+    }
+
+    protected Text getPerPokemonRequiredAbilityErrorMessage() {
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.per_pokemon_required_ability", trainer.getPerPokemonRequiredAbility()).formatted(Formatting.RED);
+    }
+
+    protected Text getPerPokemonRequiredHeldItemErrorMessage() {
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.per_pokemon_required_held_item", trainer.getPerPokemonRequiredHeldItem()).formatted(Formatting.RED);
+    }
+
+    protected Text getPerPokemonRequiredLabelErrorMessage() {
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.per_pokemon_required_label", trainer.getPerPokemonRequiredLabel()).formatted(Formatting.RED);
+    }
+
+    protected Text getPerPokemonRequiredMoveErrorMessage() {
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.per_pokemon_required_move", trainer.getPerPokemonRequiredMove()).formatted(Formatting.RED);
     }
 
     protected boolean isPlayerPokemonCount(int count) {
