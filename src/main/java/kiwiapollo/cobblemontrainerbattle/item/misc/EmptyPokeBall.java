@@ -67,7 +67,7 @@ public class EmptyPokeBall extends Item implements PokemonSelectingItem {
     }
 
     private ItemStack toPokeBall(Pokemon pokemon) {
-        ItemStack occupied = MiscItem.FILLED_POKE_BALL.getItem().getDefaultStack();
+        ItemStack occupied = LegacyItem.FILLED_POKE_BALL.getItem().getDefaultStack();
         occupied.getOrCreateNbt().putString(PokeBallNbt.POKEMON, pokemon.saveToJSON(new JsonObject()).toString());
         return occupied;
     }

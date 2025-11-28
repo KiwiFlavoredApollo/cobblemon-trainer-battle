@@ -202,10 +202,6 @@ public class CobblemonTrainerBattle implements ModInitializer {
                 itemGroup.add(item.getItem());
             });
 
-            Arrays.stream(CustomBlock.values()).forEach(block -> {
-                itemGroup.add(block.getItem());
-            });
-
             Arrays.stream(VsSeekerItem.values()).forEach(item -> {
                 itemGroup.add(item.getItem());
             });

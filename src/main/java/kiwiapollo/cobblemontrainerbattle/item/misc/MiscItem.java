@@ -10,9 +10,7 @@ import net.minecraft.util.Identifier;
 public enum MiscItem {
     DRIFTER_SPAWN_EGG("drifter_spawn_egg", new SpawnEggItem(CustomEntityType.DRIFTER, 0xAAAAAA, 0xFF5555, new Item.Settings().maxCount(64))),
     CAMPER_SPAWN_EGG("camper_spawn_egg", new SpawnEggItem(CustomEntityType.CAMPER, 0xAAAAAA, 0x55FF55, new Item.Settings().maxCount(64))),
-    TRAINER_TOKEN("trainer_token", new TrainerToken()),
-    EMPTY_POKE_BALL("empty_poke_ball", new EmptyPokeBall()),
-    FILLED_POKE_BALL("filled_poke_ball", new FilledPokeBall());
+    TRAINER_TOKEN("trainer_token", new TrainerToken());
 
     private final Identifier identifier;
     private final Item item;
