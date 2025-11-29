@@ -166,31 +166,6 @@ public class FlatLevelBattle extends CustomPokemonBattle {
             throw new BattleStartException();
         }
 
-        if (!hasPerPokemonRequiredType()) {
-            player.sendMessage(getPerPokemonRequiredTypeErrorMessage());
-            throw new BattleStartException();
-        }
-
-        if (!hasPerPokemonRequiredAbility()) {
-            player.sendMessage(getPerPokemonRequiredAbilityErrorMessage());
-            throw new BattleStartException();
-        }
-
-        if (!hasPerPokemonRequiredHeldItem()) {
-            player.sendMessage(getPerPokemonRequiredHeldItemErrorMessage());
-            throw new BattleStartException();
-        }
-
-        if (!hasPerPokemonRequiredLabel()) {
-            player.sendMessage(getPerPokemonRequiredLabelErrorMessage());
-            throw new BattleStartException();
-        }
-
-        if (!hasPerPokemonRequiredMove()) {
-            player.sendMessage(getPerPokemonRequiredMoveErrorMessage());
-            throw new BattleStartException();
-        }
-
         super.start();
     }
 

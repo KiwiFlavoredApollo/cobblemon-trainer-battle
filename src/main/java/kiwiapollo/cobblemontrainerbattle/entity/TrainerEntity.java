@@ -369,13 +369,7 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
                     template.getAllowedPokemon(),
                     template.getAllowedHeldItem(),
                     template.getAllowedAbility(),
-                    template.getAllowedMove(),
-
-                    template.getPerPokemonRequiredType(),
-                    template.getPerPokemonRequiredLabel(),
-                    template.getPerPokemonRequiredHeldItem(),
-                    template.getPerPokemonRequiredAbility(),
-                    template.getPerPokemonRequiredMove()
+                    template.getAllowedMove()
             );
         }
     }

@@ -10,6 +10,7 @@ import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
 import kiwiapollo.cobblemontrainerbattle.item.misc.FilledPokeBall;
 import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemon;
 import kiwiapollo.cobblemontrainerbattle.template.PokemonLevelPair;
+import kiwiapollo.cobblemontrainerbattle.template.PokemonType;
 import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplate;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.ai.brain.MemoryModuleType;
@@ -77,13 +78,7 @@ public class PokeBallEngineer {
                     createAllowedPokemon(),
                     createAllowedHeldItem(),
                     createAllowedAbility(),
-                    createAllowedMove(),
-
-                    createPerPokemonRequiredType(),
-                    createPerPokemonRequiredLabel(),
-                    createPerPokemonRequiredHeldItem(),
-                    createPerPokemonRequiredAbility(),
-                    createPerPokemonRequiredMove()
+                    createAllowedMove()
             );
         }
 
@@ -217,7 +212,7 @@ public class PokeBallEngineer {
             return 1;
         }
 
-        private List<String> createRequiredType() {
+        private List<PokemonType> createRequiredType() {
             return List.of();
         }
         
@@ -244,7 +239,7 @@ public class PokeBallEngineer {
             return List.of();
         }
 
-        private List<String> createForbiddenType() {
+        private List<PokemonType> createForbiddenType() {
             return List.of();
         }
         
@@ -271,7 +266,7 @@ public class PokeBallEngineer {
             return List.of();
         }
 
-        private List<String> createAllowedType() {
+        private List<PokemonType> createAllowedType() {
             return List.of();
         }
 
@@ -295,28 +290,6 @@ public class PokeBallEngineer {
         }
 
         private List<String> createAllowedMove() {
-            return List.of();
-        }
-
-        private List<String> createPerPokemonRequiredType() {
-            return List.of();
-        }
-
-        private List<String> createPerPokemonRequiredLabel() {
-            return List.of();
-        }
-
-        private List<String> createPerPokemonRequiredHeldItem() {
-            return List.of();
-
-        }
-
-        private List<String> createPerPokemonRequiredAbility() {
-            return List.of();
-
-        }
-
-        private List<String> createPerPokemonRequiredMove() {
             return List.of();
         }
     }

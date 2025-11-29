@@ -4,9 +4,12 @@ import com.cobblemon.mod.common.api.battles.model.actor.AIBattleActor;
 import com.cobblemon.mod.common.api.battles.model.actor.ActorType;
 import com.cobblemon.mod.common.api.battles.model.actor.EntityBackedBattleActor;
 import com.cobblemon.mod.common.api.battles.model.actor.FleeableBattleActor;
+import com.cobblemon.mod.common.api.types.ElementalType;
+import com.cobblemon.mod.common.api.types.ElementalTypes;
 import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
+import kiwiapollo.cobblemontrainerbattle.template.PokemonType;
 import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplate;
 import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemon;
 import kotlin.Pair;
@@ -128,8 +131,8 @@ public class TrainerBattleActor extends AIBattleActor implements EntityBackedBat
         return template.getMinimumPartySize();
     }
 
-    public Set<String> getRequiredType() {
-        return new HashSet<>(template.getRequiredType());
+    public Set<PokemonType> getRequiredType() {
+        return new HashSet<>(template.getRequiredType().stream().toList());
     }
 
     public List<ShowdownPokemon> getRequiredPokemon() {
@@ -156,8 +159,8 @@ public class TrainerBattleActor extends AIBattleActor implements EntityBackedBat
         return new HashSet<>(template.getRequiredAbility());
     }
 
-    public Set<String> getForbiddenType() {
-        return new HashSet<>(template.getForbiddenType());
+    public Set<PokemonType> getForbiddenType() {
+        return new HashSet<>(template.getForbiddenType().stream().toList());
     }
 
     public List<ShowdownPokemon> getForbiddenPokemon() {
@@ -192,8 +195,8 @@ public class TrainerBattleActor extends AIBattleActor implements EntityBackedBat
         return template.isRematchAllowed();
     }
 
-    public Set<String> getAllowedType() {
-        return new HashSet<>(template.getAllowedType());
+    public Set<PokemonType> getAllowedType() {
+        return new HashSet<>(template.getAllowedType().stream().toList());
     }
 
     public List<ShowdownPokemon> getAllowedPokemon() {
@@ -218,29 +221,5 @@ public class TrainerBattleActor extends AIBattleActor implements EntityBackedBat
 
     public Set<String> getAllowedAbility() {
         return new HashSet<>(template.getAllowedAbility());
-    }
-
-    public Set<String> getPerPokemonRequiredType() {
-        return new HashSet<>(template.getPerPokemonRequiredType());
-    }
-
-    public Set<String> getPerPokemonRequiredLabel() {
-        return new HashSet<>(template.getPerPokemonRequiredLabel());
-    }
-
-    public Set<String> getPerPokemonRequiredMove() {
-        return new HashSet<>(template.getPerPokemonRequiredMove());
-    }
-
-    public Set<Item> getPerPokemonRequiredHeldItem() {
-        return template.getPerPokemonRequiredHeldItem().stream()
-                .map(Identifier::tryParse)
-                .filter(Objects::nonNull)
-                .map(Registries.ITEM::get)
-                .collect(Collectors.toSet());
-    }
-
-    public Set<String> getPerPokemonRequiredAbility() {
-        return new HashSet<>(template.getPerPokemonRequiredAbility());
     }
 }

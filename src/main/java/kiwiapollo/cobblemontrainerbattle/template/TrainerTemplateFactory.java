@@ -72,13 +72,7 @@ public class TrainerTemplateFactory implements SimpleFactory<TrainerTemplate> {
                 toAllowedPokemon(preset.allowedPokemon),
                 toAllowedHeldItem(preset.allowedHeldItem),
                 toAllowedAbility(preset.allowedAbility),
-                toAllowedMove(preset.allowedMove),
-
-                toPerPokemonRequiredType(preset.perPokemonRequiredType),
-                toPerPokemonRequiredLabel(preset.perPokemonRequiredLabel),
-                toPerPokemonRequiredHeldItem(preset.perPokemonRequiredHeldItem),
-                toPerPokemonRequiredAbility(preset.perPokemonRequiredAbility),
-                toPerPokemonRequiredMove(preset.perPokemonRequiredMove)
+                toAllowedMove(preset.allowedMove)
         );
     }
 
@@ -181,10 +175,10 @@ public class TrainerTemplateFactory implements SimpleFactory<TrainerTemplate> {
         return minimumPartyLevel;
     }
 
-    private List<String> toRequiredType(List<String> requiredType) {
-        return requiredType;
+    private List<PokemonType> toRequiredType(List<List<String>> requiredType) {
+        return requiredType.stream().map(PokemonType::new).toList();
     }
-    
+
     private List<String> toRequiredLabel(List<String> requiredLabel) {
         return requiredLabel;
     }
@@ -205,8 +199,8 @@ public class TrainerTemplateFactory implements SimpleFactory<TrainerTemplate> {
         return requiredMove;
     }
 
-    private List<String> toForbiddenType(List<String> forbiddenType) {
-        return forbiddenType;
+    private List<PokemonType> toForbiddenType(List<List<String>> forbiddenType) {
+        return forbiddenType.stream().map(PokemonType::new).toList();
     }
     
     private List<String> toForbiddenLabel(List<String> forbiddenLabel) {
@@ -229,8 +223,8 @@ public class TrainerTemplateFactory implements SimpleFactory<TrainerTemplate> {
         return forbiddenMove;
     }
 
-    private List<String> toAllowedType(List<String> allowedType) {
-        return allowedType;
+    private List<PokemonType> toAllowedType(List<List<String>> allowedType) {
+        return allowedType.stream().map(PokemonType::new).toList();
     }
 
     private List<String> toAllowedLabel(List<String> allowedLabel) {
@@ -251,25 +245,5 @@ public class TrainerTemplateFactory implements SimpleFactory<TrainerTemplate> {
 
     private List<String> toAllowedMove(List<String> allowedMove) {
         return allowedMove;
-    }
-
-    private List<String> toPerPokemonRequiredType(List<String> perPokemonRequiredType) {
-        return perPokemonRequiredType;
-    }
-
-    private List<String> toPerPokemonRequiredLabel(List<String> perPokemonRequiredLabel) {
-        return perPokemonRequiredLabel;
-    }
-
-    private List<String> toPerPokemonRequiredHeldItem(List<String> perPokemonRequiredHeldItem) {
-        return perPokemonRequiredHeldItem;
-    }
-
-    private List<String> toPerPokemonRequiredAbility(List<String> perPokemonRequiredAbility) {
-        return perPokemonRequiredAbility;
-    }
-
-    private List<String> toPerPokemonRequiredMove(List<String> perPokemonRequiredMove) {
-        return perPokemonRequiredMove;
     }
 }

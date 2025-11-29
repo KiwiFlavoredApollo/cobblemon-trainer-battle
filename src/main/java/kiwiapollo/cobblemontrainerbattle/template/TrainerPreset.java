@@ -47,7 +47,7 @@ public class TrainerPreset {
     public final int minimumPartyLevel;
 
     @SerializedName("required_type")
-    public final List<String> requiredType;
+    public final List<List<String>> requiredType;
     @SerializedName("required_label")
     public final List<String> requiredLabel;
     @SerializedName("required_pokemon")
@@ -60,7 +60,7 @@ public class TrainerPreset {
     public final List<String> requiredMove;
 
     @SerializedName("forbidden_type")
-    public final List<String> forbiddenType;
+    public final List<List<String>> forbiddenType;
     @SerializedName("forbidden_label")
     public final List<String> forbiddenLabel;
     @SerializedName("forbidden_pokemon")
@@ -73,7 +73,7 @@ public class TrainerPreset {
     public final List<String> forbiddenMove;
 
     @SerializedName("allowed_type")
-    public final List<String> allowedType;
+    public final List<List<String>> allowedType;
     @SerializedName("allowed_label")
     public final List<String> allowedLabel;
     @SerializedName("allowed_pokemon")
@@ -84,17 +84,6 @@ public class TrainerPreset {
     public final List<String> allowedAbility;
     @SerializedName("allowed_move")
     public final List<String> allowedMove;
-
-    @SerializedName("per_pokemon_required_type")
-    public final List<String> perPokemonRequiredType;
-    @SerializedName("per_pokemon_required_label")
-    public final List<String> perPokemonRequiredLabel;
-    @SerializedName("per_pokemon_required_pokemon")
-    public final List<String> perPokemonRequiredHeldItem;
-    @SerializedName("per_pokemon_required_ability")
-    public final List<String> perPokemonRequiredAbility;
-    @SerializedName("per_pokemon_required_move")
-    public final List<String> perPokemonRequiredMove;
 
     public TrainerPreset() {
         this.team = null;
@@ -137,12 +126,6 @@ public class TrainerPreset {
         this.allowedHeldItem = List.of();
         this.allowedAbility = List.of();
         this.allowedMove = List.of();
-
-        this.perPokemonRequiredType = List.of();
-        this.perPokemonRequiredLabel = List.of();
-        this.perPokemonRequiredHeldItem = List.of();
-        this.perPokemonRequiredAbility = List.of();
-        this.perPokemonRequiredMove = List.of();
 
         this.onVictoryCommands = List.of();
         this.onDefeatCommands = List.of();

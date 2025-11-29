@@ -36,32 +36,26 @@ public class TrainerTemplate {
     private final int maximumPartyLevel;
     private final int minimumPartyLevel;
 
-    private final List<String> requiredType;
+    private final List<PokemonType> requiredType;
     private final List<String> requiredLabel;
     private final List<ShowdownPokemon> requiredPokemon;
     private final List<String> requiredHeldItem;
     private final List<String> requiredAbility;
     private final List<String> requiredMove;
 
-    private final List<String> forbiddenType;
+    private final List<PokemonType> forbiddenType;
     private final List<String> forbiddenLabel;
     private final List<ShowdownPokemon> forbiddenPokemon;
     private final List<String> forbiddenHeldItem;
     private final List<String> forbiddenAbility;
     private final List<String> forbiddenMove;
 
-    private final List<String> allowedType;
+    private final List<PokemonType> allowedType;
     private final List<String> allowedLabel;
     private final List<ShowdownPokemon> allowedPokemon;
     private final List<String> allowedHeldItem;
     private final List<String> allowedAbility;
     private final List<String> allowedMove;
-
-    private final List<String> perPokemonRequiredType;
-    private final List<String> perPokemonRequiredLabel;
-    private final List<String> perPokemonRequiredHeldItem;
-    private final List<String> perPokemonRequiredAbility;
-    private final List<String> perPokemonRequiredMove;
 
     public TrainerTemplate(
             List<PokemonLevelPair> team,
@@ -87,32 +81,26 @@ public class TrainerTemplate {
             int maximumPartyLevel,
             int minimumPartyLevel,
 
-            List<String> requiredType,
+            List<PokemonType> requiredType,
             List<String> requiredLabel,
             List<ShowdownPokemon> requiredPokemon,
             List<String> requiredHeldItem,
             List<String> requiredAbility,
             List<String> requiredMove,
 
-            List<String> forbiddenType,
+            List<PokemonType> forbiddenType,
             List<String> forbiddenLabel,
             List<ShowdownPokemon> forbiddenPokemon,
             List<String> forbiddenHeldItem,
             List<String> forbiddenAbility,
             List<String> forbiddenMove,
 
-            List<String> allowedType,
+            List<PokemonType> allowedType,
             List<String> allowedLabel,
             List<ShowdownPokemon> allowedPokemon,
             List<String> allowedHeldItem,
             List<String> allowedAbility,
-            List<String> allowedMove,
-
-            List<String> perPokemonRequiredType,
-            List<String> perPokemonRequiredLabel,
-            List<String> perPokemonRequiredHeldItem,
-            List<String> perPokemonRequiredAbility,
-            List<String> perPokemonRequiredMove
+            List<String> allowedMove
     ) {
         this.team = team;
 
@@ -158,12 +146,6 @@ public class TrainerTemplate {
         this.allowedHeldItem = allowedHeldItem;
         this.allowedAbility = allowedAbility;
         this.allowedMove = allowedMove;
-
-        this.perPokemonRequiredType = perPokemonRequiredType;
-        this.perPokemonRequiredLabel = perPokemonRequiredLabel;
-        this.perPokemonRequiredHeldItem = perPokemonRequiredHeldItem;
-        this.perPokemonRequiredAbility = perPokemonRequiredAbility;
-        this.perPokemonRequiredMove = perPokemonRequiredMove;
     }
 
     public List<PokemonLevelPair> getTeam() {
@@ -258,7 +240,7 @@ public class TrainerTemplate {
         return requiredMove;
     }
 
-    public List<String> getRequiredType() {
+    public List<PokemonType> getRequiredType() {
         return requiredType;
     }
     
@@ -282,7 +264,7 @@ public class TrainerTemplate {
         return forbiddenMove;
     }
 
-    public List<String> getForbiddenType() {
+    public List<PokemonType> getForbiddenType() {
         return forbiddenType;
     }
 
@@ -306,27 +288,7 @@ public class TrainerTemplate {
         return allowedMove;
     }
 
-    public List<String> getAllowedType() {
+    public List<PokemonType> getAllowedType() {
         return allowedType;
-    }
-
-    public List<String> getPerPokemonRequiredLabel() {
-        return perPokemonRequiredLabel;
-    }
-
-    public List<String> getPerPokemonRequiredHeldItem() {
-        return perPokemonRequiredHeldItem;
-    }
-
-    public List<String> getPerPokemonRequiredAbility() {
-        return perPokemonRequiredAbility;
-    }
-
-    public List<String> getPerPokemonRequiredMove() {
-        return perPokemonRequiredMove;
-    }
-
-    public List<String> getPerPokemonRequiredType() {
-        return perPokemonRequiredType;
     }
 }
