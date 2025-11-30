@@ -1,6 +1,7 @@
 package kiwiapollo.cobblemontrainerbattle.battle;
 
 import com.cobblemon.mod.common.Cobblemon;
+import com.cobblemon.mod.common.api.abilities.Abilities;
 import com.cobblemon.mod.common.api.abilities.Ability;
 import com.cobblemon.mod.common.api.moves.Move;
 import com.cobblemon.mod.common.api.moves.MoveSet;
@@ -197,7 +198,7 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
                 .collect(Collectors.toSet());
 
         for (PokemonType r : required) {
-            if (!types.stream().anyMatch(r::equals)) {
+            if (types.stream().noneMatch(r::equals)) {
                 return false;
             }
         }
@@ -206,9 +207,18 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
     }
 
     private PokemonType toPokemonType(Iterable<ElementalType> iterable) {
-        List<String> types = StreamSupport.stream(iterable.spliterator(), false)
+        List<String> type = StreamSupport.stream(iterable.spliterator(), false)
                 .map(ElementalType::getName).toList();
-        return new PokemonType(types);
+
+        if (type.size() == 2) {
+            return new PokemonType(type.get(0), type.get(1));
+        }
+
+        if (type.size() == 1) {
+            return new PokemonType(type.get(0));
+        }
+
+        throw new IllegalStateException();
     }
 
     protected boolean hasAllRequiredPokemon(){
@@ -425,7 +435,7 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
         }
 
         for (PokemonType t : types) {
-            if (!allowed.contains(t)) {
+            if (allowed.stream().noneMatch(t::equals)) {
                 return false;
             }
         }
@@ -581,9 +591,27 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
     }
     
     protected Text getRequiredTypeErrorMessage() {
-        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.required_type", trainer.getRequiredType()).formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.required_type", getMissingRequiredType().getString()).formatted(Formatting.RED);
     }
-    
+
+    private PokemonType getMissingRequiredType() {
+        Set<PokemonType> required = trainer.getRequiredType();
+        Set<PokemonType> types = player.getPokemonList().stream()
+                .filter(Objects::nonNull)
+                .map(BattlePokemon::getEffectedPokemon)
+                .map(Pokemon::getTypes)
+                .map(this::toPokemonType)
+                .collect(Collectors.toSet());
+
+        for (PokemonType r : required) {
+            if (types.stream().noneMatch(r::equals)) {
+                return r;
+            }
+        }
+
+        throw new NoSuchElementException();
+    }
+
     protected Text getRequiredAbilityErrorMessage() {
         return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.required_ability", trainer.getRequiredAbility()).formatted(Formatting.RED);
     }
@@ -678,31 +706,144 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
         throw new NoSuchElementException();
     }
 
-    protected Text getAllowedTypeErrorMessage() {
-        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.allowed_type", trainer.getAllowedType()).formatted(Formatting.RED);
+    protected Text getNotAllowedTypeErrorMessage() {
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.not_allowed_type", getExistingNotAllowedType().getString()).formatted(Formatting.RED);
     }
 
-    protected Text getAllowedAbilityErrorMessage() {
-        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.allowed_ability", trainer.getAllowedAbility()).formatted(Formatting.RED);
+    protected PokemonType getExistingNotAllowedType(){
+        Set<PokemonType> allowed = trainer.getAllowedType();
+        Set<PokemonType> types = player.getPokemonList().stream()
+                .filter(Objects::nonNull)
+                .map(BattlePokemon::getEffectedPokemon)
+                .map(Pokemon::getTypes)
+                .map(this::toPokemonType)
+                .collect(Collectors.toSet());
+
+        if (allowed.isEmpty()) {
+            throw new IllegalStateException();
+        }
+
+        for (PokemonType t : types) {
+            if (allowed.stream().noneMatch(t::equals)) {
+                return t;
+            }
+        }
+
+        throw new IllegalStateException();
     }
 
-    protected Text getAllowedHeldItemErrorMessage() {
-        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.allowed_held_item", trainer.getAllowedHeldItem()).formatted(Formatting.RED);
+    protected Text getNotAllowedAbilityErrorMessage() {
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.not_allowed_ability", getExistingNotAllowedAbility()).formatted(Formatting.RED);
     }
 
-    protected Text getAllowedLabelErrorMessage() {
-        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.allowed_label", trainer.getAllowedLabel()).formatted(Formatting.RED);
+    private String getExistingNotAllowedAbility() {
+        Set<String> allowed = trainer.getAllowedAbility();
+        Set<String> abilities = player.getPokemonList().stream()
+                .filter(Objects::nonNull)
+                .map(BattlePokemon::getEffectedPokemon)
+                .map(Pokemon::getAbility)
+                .map(Ability::getName)
+                .collect(Collectors.toSet());
+
+        if (allowed.isEmpty()) {
+            throw new IllegalStateException();
+        }
+
+        for (String a : abilities) {
+            if (!allowed.contains(a)) {
+                return Abilities.INSTANCE.get(a).getDisplayName();
+            }
+        }
+
+        throw new IllegalStateException();
     }
 
-    protected Text getAllowedMoveErrorMessage() {
-        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.allowed_move", trainer.getAllowedMove()).formatted(Formatting.RED);
+    protected Text getNotAllowedHeldItemErrorMessage() {
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.not_allowed_held_item", getExistingNotAllowedHeldItem()).formatted(Formatting.RED);
     }
 
-    protected Text getAllowedPokemonErrorMessage() {
-        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.allowed_pokemon", getExistingNonAllowedPokemon().getDisplayName()).formatted(Formatting.RED);
+    private String getExistingNotAllowedHeldItem() {
+        Set<Item> allowed = trainer.getAllowedHeldItem();
+        Set<Item> items = player.getPokemonList().stream()
+                .filter(Objects::nonNull)
+                .map(BattlePokemon::getEffectedPokemon)
+                .map(Pokemon::heldItem)
+                .map(ItemStack::getItem)
+                .collect(Collectors.toSet());
+
+        if (allowed.isEmpty()) {
+            throw new IllegalStateException();
+        }
+
+        for (Item i : items) {
+            if (!allowed.contains(i)) {
+                return i.getName().getString();
+            }
+        }
+
+        throw new IllegalStateException();
     }
 
-    private Pokemon getExistingNonAllowedPokemon() {
+    protected Text getNotAllowedLabelErrorMessage() {
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.not_allowed_label", getExistingNotAllowedLabel()).formatted(Formatting.RED);
+    }
+
+    private String getExistingNotAllowedLabel() {
+        Set<String> allowed = trainer.getAllowedLabel();
+        Set<String> labels = player.getPokemonList().stream()
+                .filter(Objects::nonNull)
+                .map(BattlePokemon::getEffectedPokemon)
+                .map(Pokemon::getSpecies)
+                .map(Species::getLabels)
+                .flatMap(Set::stream)
+                .collect(Collectors.toSet());
+
+        if (allowed.isEmpty()) {
+            throw new IllegalStateException();
+        }
+
+        for (String b : labels) {
+            if (!allowed.contains(b)) {
+                return b;
+            }
+        }
+
+        throw new IllegalStateException();
+    }
+
+    protected Text getNotAllowedMoveErrorMessage() {
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.not_allowed_move", getExistingNotAllowedMove()).formatted(Formatting.RED);
+    }
+
+    private String getExistingNotAllowedMove() {
+        Set<String> allowed = trainer.getAllowedMove();
+        Set<String> moves = player.getPokemonList().stream()
+                .filter(Objects::nonNull)
+                .map(BattlePokemon::getEffectedPokemon)
+                .map(Pokemon::getMoveSet)
+                .map(MoveSet::getMoves)
+                .flatMap(List::stream)
+                .map(Move::getName)
+                .collect(Collectors.toSet());
+
+        if (allowed.isEmpty()) {
+            throw new IllegalStateException();
+        }
+
+        for (String m : moves) {
+            if (!allowed.contains(m)) {
+                return m;
+            }
+        }
+
+        throw new IllegalStateException();
+    }
+
+    protected Text getNotAllowedPokemonErrorMessage() {
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.failed.not_allowed_pokemon", getExistingNotAllowedPokemon().getDisplayName()).formatted(Formatting.RED);
+    }
+
+    private Pokemon getExistingNotAllowedPokemon() {
         List<ShowdownPokemon> allowed = trainer.getAllowedPokemon();
         List<Pokemon> pokemon = player.getPokemonList().stream()
                 .filter(Objects::nonNull)

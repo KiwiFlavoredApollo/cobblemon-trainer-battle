@@ -79,7 +79,7 @@ public class TrainerTemplateStorage implements SimpleSynchronousResourceReloadLi
 
                 this.template.put(identifier, template);
 
-            } catch (NullPointerException e) {
+            } catch (NullPointerException | IllegalArgumentException e) {
                 // TODO better name
                 CobblemonTrainerBattle.LOGGER.error("Error parsing trainer preset: {}", entry.getKey());
             }

@@ -132,7 +132,7 @@ public class TrainerBattleActor extends AIBattleActor implements EntityBackedBat
     }
 
     public Set<PokemonType> getRequiredType() {
-        return new HashSet<>(template.getRequiredType().stream().toList());
+        return new HashSet<>(template.getRequiredType());
     }
 
     public List<ShowdownPokemon> getRequiredPokemon() {
@@ -160,7 +160,7 @@ public class TrainerBattleActor extends AIBattleActor implements EntityBackedBat
     }
 
     public Set<PokemonType> getForbiddenType() {
-        return new HashSet<>(template.getForbiddenType().stream().toList());
+        return new HashSet<>(template.getForbiddenType());
     }
 
     public List<ShowdownPokemon> getForbiddenPokemon() {
@@ -196,7 +196,7 @@ public class TrainerBattleActor extends AIBattleActor implements EntityBackedBat
     }
 
     public Set<PokemonType> getAllowedType() {
-        return new HashSet<>(template.getAllowedType().stream().toList());
+        return new HashSet<>(template.getAllowedType());
     }
 
     public List<ShowdownPokemon> getAllowedPokemon() {

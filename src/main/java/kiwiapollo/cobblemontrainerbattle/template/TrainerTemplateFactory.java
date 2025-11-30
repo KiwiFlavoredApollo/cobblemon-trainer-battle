@@ -176,7 +176,19 @@ public class TrainerTemplateFactory implements SimpleFactory<TrainerTemplate> {
     }
 
     private List<PokemonType> toRequiredType(List<List<String>> requiredType) {
-        return requiredType.stream().map(PokemonType::new).toList();
+        return requiredType.stream().map(this::toPokemonType).toList();
+    }
+
+    private PokemonType toPokemonType(List<String> type) {
+        if (type.size() == 2) {
+            return new PokemonType(type.get(0), type.get(1));
+        }
+
+        if (type.size() == 1) {
+            return new PokemonType(type.get(0));
+        }
+
+        throw new IllegalArgumentException();
     }
 
     private List<String> toRequiredLabel(List<String> requiredLabel) {
@@ -200,7 +212,7 @@ public class TrainerTemplateFactory implements SimpleFactory<TrainerTemplate> {
     }
 
     private List<PokemonType> toForbiddenType(List<List<String>> forbiddenType) {
-        return forbiddenType.stream().map(PokemonType::new).toList();
+        return forbiddenType.stream().map(this::toPokemonType).toList();
     }
     
     private List<String> toForbiddenLabel(List<String> forbiddenLabel) {
@@ -224,7 +236,7 @@ public class TrainerTemplateFactory implements SimpleFactory<TrainerTemplate> {
     }
 
     private List<PokemonType> toAllowedType(List<List<String>> allowedType) {
-        return allowedType.stream().map(PokemonType::new).toList();
+        return allowedType.stream().map(this::toPokemonType).toList();
     }
 
     private List<String> toAllowedLabel(List<String> allowedLabel) {

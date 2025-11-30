@@ -137,32 +137,32 @@ public class FlatLevelBattle extends CustomPokemonBattle {
         }
 
         if (!hasOnlyAllowedType()) {
-            player.sendMessage(getAllowedTypeErrorMessage());
+            player.sendMessage(getNotAllowedTypeErrorMessage());
             throw new BattleStartException();
         }
 
         if (!hasOnlyAllowedAbility()) {
-            player.sendMessage(getAllowedAbilityErrorMessage());
+            player.sendMessage(getNotAllowedAbilityErrorMessage());
             throw new BattleStartException();
         }
 
         if (!hasOnlyAllowedHeldItem()) {
-            player.sendMessage(getAllowedHeldItemErrorMessage());
+            player.sendMessage(getNotAllowedHeldItemErrorMessage());
             throw new BattleStartException();
         }
 
         if (!hasOnlyAllowedLabel()) {
-            player.sendMessage(getAllowedLabelErrorMessage());
+            player.sendMessage(getNotAllowedLabelErrorMessage());
             throw new BattleStartException();
         }
 
         if (!hasOnlyAllowedMove()) {
-            player.sendMessage(getAllowedMoveErrorMessage());
+            player.sendMessage(getNotAllowedMoveErrorMessage());
             throw new BattleStartException();
         }
 
         if (!hasOnlyAllowedPokemon()) {
-            player.sendMessage(getAllowedPokemonErrorMessage());
+            player.sendMessage(getNotAllowedPokemonErrorMessage());
             throw new BattleStartException();
         }
 

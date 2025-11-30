@@ -6,130 +6,32 @@ import com.cobblemon.mod.common.api.types.ElementalTypes;
 import java.util.*;
 
 public class PokemonType {
-    private final Set<Set<String>> types;
     private final String first;
     private final String second;
 
-    public PokemonType(List<String> type) {
-        this.first = toFirst(type);
-        this.second = toSecond(type);
-        this.types = createTypes(first, second);
-    }
-
-    private String toFirst(List<String> type) {
-        if (type.size() < 1) {
-            return null;
-        } else {
-            return type.get(0);
-        }
-    }
-
-    private String toSecond(List<String> type) {
-        if (type.size() < 2) {
-            return null;
-        } else {
-            return type.get(1);
-        }
-    }
-
-    private Set<Set<String>> createTypes(String first, String second) {
-        if (!isWildcard(first) && !isWildcard(second)) {
-            return createLiteralType(first, second);
-
-        } else if (isWildcard(first) && isWildcard(second)) {
-            return createAllTypes();
-
-        } else if (isAsterisk(first)) {
-            return createSingleAndDualTypes(second);
-
-        } else if (isPlusSign(first)) {
-            return createDualTypes(second);
-
-        } else if (isAsterisk(second)) {
-            return createSingleAndDualTypes(first);
-
-        } else if (isPlusSign(second)) {
-            return createDualTypes(first);
-
-        } else {
-            throw new IllegalStateException();
-        }
-    }
-
-    private boolean isPlusSign(String string) {
-        return Objects.equals(string, "+");
-    }
-
-    private boolean isAsterisk(String string) {
-        return Objects.equals(string, "*");
-    }
-
-    private boolean isWildcard(String string) {
-        return isAsterisk(string) || isPlusSign(string);
-    }
-
-    private Set<Set<String>> createLiteralType(String first, String second) {
-        if (first != null && second != null) {
-            return Set.of(Set.of(first, second));
-
-        } else if (first == null) {
-            return Set.of(Set.of(second));
-
-        } else if (second == null) {
-            return Set.of(Set.of(first));
+    public PokemonType(String first, String second) {
+        if (first == null && second == null) {
+            throw new IllegalArgumentException();
         }
 
-        throw new IllegalStateException();
+        if (!isValidType(first)) {
+            throw new IllegalArgumentException();
+        }
+
+        if (!isValidType(second)) {
+            throw new IllegalArgumentException();
+        }
+
+        this.first = first;
+        this.second = second;
     }
 
-    private Set<Set<String>> createSingleAndDualTypes(String pivot) {
-        Set<Set<String>> types = new HashSet<>();
-
-        for (ElementalType t : ElementalTypes.INSTANCE.all()) {
-            if (t.getName().equals(pivot)) {
-                continue;
-            }
-
-            types.add(Set.of(pivot, t.getName()));
-        }
-
-        types.add(Set.of(pivot));
-
-        return types;
+    public PokemonType(String type) {
+        this(type, null);
     }
 
-    private Set<Set<String>> createDualTypes(String pivot) {
-        Set<Set<String>> types = new HashSet<>();
-
-        for (ElementalType t : ElementalTypes.INSTANCE.all()) {
-            if (t.getName().equals(pivot)) {
-                continue;
-            }
-
-            types.add(Set.of(pivot, t.getName()));
-        }
-
-        return types;
-    }
-
-    private Set<Set<String>> createAllTypes() {
-        Set<Set<String>> types = new HashSet<>();
-
-        for (ElementalType first : ElementalTypes.INSTANCE.all()) {
-            for (ElementalType second : ElementalTypes.INSTANCE.all()) {
-                if (first.getName().equals(second.getName())) {
-                    continue;
-                }
-
-                types.add(Set.of(first.getName(), second.getName()));
-            }
-        }
-
-        for (ElementalType single : ElementalTypes.INSTANCE.all()) {
-            types.add(Set.of(single.getName()));
-        }
-
-        return types;
+    private boolean isValidType(String type) {
+        return type == null || List.of("*", "+").contains(type) || ElementalTypes.INSTANCE.all().stream().map(ElementalType::getName).toList().contains(type);
     }
 
     @Override
@@ -142,31 +44,191 @@ public class PokemonType {
             return false;
         }
 
-        if (this.types.size() != 1 && other.types.size() != 1) {
+        List<Set<String>> thisGroup = this.createTypeGroup();
+        List<Set<String>> otherGroup = other.createTypeGroup();
+
+        if (thisGroup.size() != 1 && otherGroup.size() != 1) {
             return false;
+        }
 
-        } else if (this.types.size() == 1 && other.types.size() == 1) {
-            Set<String> thisType = new ArrayList<>(this.types).get(0);
-            Set<String> otherType = new ArrayList<>(other.types).get(0);
-            return thisType.equals(otherType);
+        if (thisGroup.size() == 1 && otherGroup.size() == 1) {
+            return thisGroup.get(0).equals(otherGroup.get(0));
+        }
 
-        } else if (this.types.size() == 1) {
-            return other.types.contains(new ArrayList<>(this.types).get(0));
+        if (thisGroup.size() == 1 && otherGroup.size() != 1) {
+            return otherGroup.contains(thisGroup.get(0));
+        }
 
-        } else if (other.types.size() == 1) {
-            return this.types.contains(new ArrayList<>(other.types).get(0));
+        if (thisGroup.size() != 1 && otherGroup.size() == 1) {
+            return thisGroup.contains(otherGroup.get(0));
         }
 
         throw new IllegalStateException();
+    }
 
+    private List<Set<String>> createTypeGroup() {
+        if (first != null && second != null) {
+            return createDualTypeGroup(first, second);
+        }
+
+        if (first != null && second == null) {
+            return createSingleTypeGroup(first);
+        }
+
+        if (first == null && second != null) {
+            return createSingleTypeGroup(second);
+        }
+
+        throw new IllegalStateException();
+    }
+
+    private List<Set<String>> createSingleTypeGroup(String type) {
+        if (type == null) {
+            throw new IllegalArgumentException();
+        }
+
+        if (isWildcard(type)) {
+            return createAllSingleTypeGroup();
+        }
+
+        if (!isWildcard(type)) {
+            return createLiteralSingleTypeGroup(type);
+        }
+
+        throw new IllegalStateException();
+    }
+
+    private List<Set<String>> createAllSingleTypeGroup() {
+        return ElementalTypes.INSTANCE.all().stream().map(ElementalType::getName).map(Set::of).toList();
+    }
+
+    private List<Set<String>> createLiteralSingleTypeGroup(String type) {
+        return List.of(Set.of(type));
+    }
+
+    private List<Set<String>> createDualTypeGroup(String first, String second) {
+        if (first == null) {
+            throw new IllegalArgumentException();
+        }
+
+        if (second == null) {
+            throw new IllegalArgumentException();
+        }
+
+        if (isWildcard(first) && isWildcard(second)) {
+            return createAllDualTypeGroup();
+        }
+
+        if (!isWildcard(first) && !isWildcard(second)) {
+            return createLiteralDualTypeGroup(first, second);
+        }
+
+        if (!isWildcard(first) && isAsterisk(second)) {
+            List<Set<String>> dual = createDualTypeGroupIncluding(first);
+            List<Set<String>> single = createLiteralSingleTypeGroup(first);
+
+            List<Set<String>> group = new ArrayList<>();
+            group.addAll(dual);
+            group.addAll(single);
+
+            return group;
+        }
+
+        if (!isWildcard(first) && isPlusSign(second)) {
+            return createDualTypeGroupIncluding(first);
+        }
+
+        if (isAsterisk(first) && !isWildcard(second)) {
+            List<Set<String>> dual = createDualTypeGroupIncluding(second);
+            List<Set<String>> single = createLiteralSingleTypeGroup(second);
+
+            List<Set<String>> group = new ArrayList<>();
+            group.addAll(dual);
+            group.addAll(single);
+
+            return group;
+        }
+
+        if (isPlusSign(first) && !isWildcard(second)) {
+            return createDualTypeGroupIncluding(second);
+        }
+
+        throw new IllegalStateException();
+    }
+
+    private List<Set<String>> createAllDualTypeGroup() {
+        List<Set<String>> types = new ArrayList<>();
+
+        for (ElementalType first : ElementalTypes.INSTANCE.all()) {
+            for (ElementalType second : ElementalTypes.INSTANCE.all()) {
+                if (first.equals(second)) {
+                    continue;
+                }
+
+                types.add(Set.of(first.getName(), second.getName()));
+            }
+        }
+
+        return types;
+    }
+
+    private List<Set<String>> createLiteralDualTypeGroup(String first, String second) {
+        return List.of(Set.of(first, second));
+    }
+
+    private List<Set<String>> createDualTypeGroupIncluding(String first) {
+        List<Set<String>> types = new ArrayList<>();
+
+        for (String second : ElementalTypes.INSTANCE.all().stream().map(ElementalType::getName).toList()) {
+            if (first.equals(second)) {
+                continue;
+            }
+
+            types.add(Set.of(first, second));
+        }
+
+        return types;
+    }
+
+    private boolean isWildcard(String string) {
+        return isAsterisk(string) || isPlusSign(string);
+    }
+
+    private boolean isAsterisk(String string) {
+        return Objects.equals(string, "*");
+    }
+
+    private boolean isPlusSign(String string) {
+        return Objects.equals(string, "+");
     }
 
     public String getString() {
-        if (second == null) {
-            return String.format("%s", ElementalTypes.INSTANCE.get(first).getDisplayName().getString());
-
-        } else {
-            return String.format("%s/%s", ElementalTypes.INSTANCE.get(first).getDisplayName().getString(), ElementalTypes.INSTANCE.get(second).getDisplayName().getString());
+        if (first != null && second != null) {
+            return String.format("%s/%s", getDisplayName(first), getDisplayName(second));
+            // Water, +
+            // Fire, Rock
+            // Electric, Flying
         }
+
+        if (first != null && second == null) {
+            return String.format("%s", getDisplayName(first));
+        }
+        if (first == null && second != null) {
+            return String.format("%s", getDisplayName(second));
+        }
+
+        throw new IllegalStateException();
+    }
+
+    private String getDisplayName(String type) {
+        if (List.of("*", "+").contains(type)) {
+            return type;
+        }
+
+        if (ElementalTypes.INSTANCE.all().stream().map(ElementalType::getName).toList().contains(type)) {
+            return ElementalTypes.INSTANCE.get(type).getDisplayName().getString();
+        }
+
+        throw new IllegalArgumentException();
     }
 }
