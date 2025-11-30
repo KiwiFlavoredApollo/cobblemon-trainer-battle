@@ -205,6 +205,7 @@ public class PokemonType {
     public String getString() {
         if (first != null && second != null) {
             return String.format("%s/%s", getDisplayName(first), getDisplayName(second));
+            // Water / +
             // Water, +
             // Fire, Rock
             // Electric, Flying
@@ -221,8 +222,16 @@ public class PokemonType {
     }
 
     private String getDisplayName(String type) {
-        if (List.of("*", "+").contains(type)) {
-            return type;
+//        if (List.of("*", "+").contains(type)) {
+//            return type;
+//        }
+
+        if (Objects.equals(type, "*")) {
+            return "ANY*";
+        }
+
+        if (Objects.equals(type, "+")) {
+            return "ANY+";
         }
 
         if (ElementalTypes.INSTANCE.all().stream().map(ElementalType::getName).toList().contains(type)) {

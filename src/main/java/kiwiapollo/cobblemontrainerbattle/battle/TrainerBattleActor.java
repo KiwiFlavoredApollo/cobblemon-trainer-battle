@@ -15,6 +15,7 @@ import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemon;
 import kotlin.Pair;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
@@ -152,6 +153,7 @@ public class TrainerBattleActor extends AIBattleActor implements EntityBackedBat
                 .map(Identifier::tryParse)
                 .filter(Objects::nonNull)
                 .map(Registries.ITEM::get)
+                .filter(i -> !i.equals(Items.AIR))
                 .collect(Collectors.toSet());
     }
 
@@ -180,6 +182,7 @@ public class TrainerBattleActor extends AIBattleActor implements EntityBackedBat
                 .map(Identifier::tryParse)
                 .filter(Objects::nonNull)
                 .map(Registries.ITEM::get)
+                .filter(i -> !i.equals(Items.AIR))
                 .collect(Collectors.toSet());
     }
 
@@ -216,6 +219,7 @@ public class TrainerBattleActor extends AIBattleActor implements EntityBackedBat
                 .map(Identifier::tryParse)
                 .filter(Objects::nonNull)
                 .map(Registries.ITEM::get)
+                .filter(i -> !i.equals(Items.AIR))
                 .collect(Collectors.toSet());
     }
 
