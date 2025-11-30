@@ -10,10 +10,7 @@ import net.minecraft.command.EntitySelector;
 import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.server.command.ServerCommandSource;
 
-import java.util.List;
-
 public class CobblemonTrainerBattleCommand extends LiteralArgumentBuilder<ServerCommandSource> {
-    // TODO change command name
     public CobblemonTrainerBattleCommand() {
         super(CobblemonTrainerBattle.MOD_ID);
 
