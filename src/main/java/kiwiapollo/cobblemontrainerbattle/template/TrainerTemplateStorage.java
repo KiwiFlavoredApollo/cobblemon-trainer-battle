@@ -68,6 +68,8 @@ public class TrainerTemplateStorage implements SimpleSynchronousResourceReloadLi
     }
 
     private void reloadTrainerTemplate(ResourceManager manager) {
+        CobblemonTrainerBattle.LOGGER.info("Creating trainer templates...");
+
         this.template.clear();
 
         for (Map.Entry<Identifier, TrainerPreset> entry : this.preset.entrySet()) {
@@ -80,10 +82,11 @@ public class TrainerTemplateStorage implements SimpleSynchronousResourceReloadLi
                 this.template.put(identifier, template);
 
             } catch (NullPointerException | IllegalArgumentException e) {
-                // TODO better name
-                CobblemonTrainerBattle.LOGGER.error("Error parsing trainer preset: {}", entry.getKey());
+                CobblemonTrainerBattle.LOGGER.error("Creating trainer template failed: {}", entry.getKey());
             }
         }
+
+        CobblemonTrainerBattle.LOGGER.info("Created {} trainer templates", this.template.size());
     }
 
     private Identifier getTrainerTemplateIdentifier(Map.Entry<Identifier, TrainerPreset> entry) {
@@ -115,6 +118,8 @@ public class TrainerTemplateStorage implements SimpleSynchronousResourceReloadLi
     }
 
     private void reloadTrainerTeam(ResourceManager manager) {
+        CobblemonTrainerBattle.LOGGER.info("Loading trainer teams...");
+
         this.team.clear();
 
         Map<Identifier, Resource> resources = manager.findResources(TEAM_DIR, identifier -> identifier.toString().endsWith(".json"));
@@ -132,13 +137,16 @@ public class TrainerTemplateStorage implements SimpleSynchronousResourceReloadLi
                 this.team.put(identifier, team);
 
             } catch (IOException | JsonParseException e) {
-                // TODO better name
-                CobblemonTrainerBattle.LOGGER.error("Error loading file: {}", entry.getKey());
+                CobblemonTrainerBattle.LOGGER.error("Loading trainer team failed: {}", entry.getKey());
             }
         }
+
+        CobblemonTrainerBattle.LOGGER.info("Loaded {} trainer teams", this.team.size());
     }
 
     private void reloadTrainerPreset(ResourceManager manager) {
+        CobblemonTrainerBattle.LOGGER.info("Loading trainer presets...");
+
         this.preset.clear();
 
         Map<Identifier, Resource> resources = manager.findResources(PRESET_DIR, identifier -> identifier.toString().endsWith(".json"));
@@ -156,9 +164,10 @@ public class TrainerTemplateStorage implements SimpleSynchronousResourceReloadLi
                 this.preset.put(identifier, preset);
 
             } catch (IOException | JsonParseException e) {
-                // TODO better name
-                CobblemonTrainerBattle.LOGGER.error("Error loading file: {}", entry.getKey());
+                CobblemonTrainerBattle.LOGGER.error("Loading trainer preset failed: {}", entry.getKey());
             }
         }
+
+        CobblemonTrainerBattle.LOGGER.info("Loaded {} trainer presets", this.preset.size());
     }
 }
