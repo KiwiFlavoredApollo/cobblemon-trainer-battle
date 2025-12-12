@@ -63,9 +63,9 @@ public class BattleHistoryStorage implements ServerLifecycleEvents.ServerStarted
     public void readFromNbt(UUID uuid, NbtCompound nbt) {
         for (String trainer : nbt.getKeys()) {
             try {
-                BattleHistory record = new BattleHistory();
-                record.readFromNbt(nbt.getCompound(trainer));
-                storage.get(uuid).put(toDefaultedIdentifier(trainer), record);
+                BattleHistory history = new BattleHistory();
+                history.readFromNbt(nbt.getCompound(trainer));
+                storage.get(uuid).put(toDefaultedIdentifier(trainer), history);
 
             } catch (NullPointerException | IllegalArgumentException ignored) {
 
@@ -73,14 +73,12 @@ public class BattleHistoryStorage implements ServerLifecycleEvents.ServerStarted
         }
     }
 
-    // TODO
-    // record 검색해서 변수이름 수정하기
     public NbtCompound writeToNbt(UUID uuid, NbtCompound nbt) {
         for (Map.Entry<Identifier, BattleHistory> entry : storage.get(uuid).entrySet()) {
             try {
                 Identifier identifier = entry.getKey();
-                BattleHistory record = entry.getValue();
-                nbt.put(identifier.toString(), toNbtCompound(record));
+                BattleHistory history = entry.getValue();
+                nbt.put(identifier.toString(), toNbtCompound(history));
 
             } catch (NullPointerException ignored) {
 
@@ -90,9 +88,9 @@ public class BattleHistoryStorage implements ServerLifecycleEvents.ServerStarted
         return nbt;
     }
 
-    private NbtCompound toNbtCompound(BattleHistory record) {
+    private NbtCompound toNbtCompound(BattleHistory history) {
         NbtCompound nbt = new NbtCompound();
-        record.writeToNbt(nbt);
+        history.writeToNbt(nbt);
         return nbt;
     }
 

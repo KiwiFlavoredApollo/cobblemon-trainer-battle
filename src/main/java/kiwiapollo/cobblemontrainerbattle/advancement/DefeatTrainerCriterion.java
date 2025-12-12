@@ -98,8 +98,8 @@ public class DefeatTrainerCriterion extends AbstractCriterion<DefeatTrainerCrite
         }
 
         boolean test(ServerPlayerEntity player) {
-            int record = BattleHistoryStorage.getInstance().get(player, trainer).getVictoryCount();
-            return record >= count;
+            int history = BattleHistoryStorage.getInstance().get(player, trainer).getVictoryCount();
+            return history >= count;
         }
     }
 

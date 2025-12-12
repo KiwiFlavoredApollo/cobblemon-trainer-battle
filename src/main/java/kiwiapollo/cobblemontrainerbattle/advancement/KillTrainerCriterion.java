@@ -98,8 +98,8 @@ public class KillTrainerCriterion extends AbstractCriterion<KillTrainerCriterion
         }
 
         boolean test(ServerPlayerEntity player) {
-            int record = BattleHistoryStorage.getInstance().get(player, trainer).getKillCount();
-            return record >= count;
+            int history = BattleHistoryStorage.getInstance().get(player, trainer).getKillCount();
+            return history >= count;
         }
     }
 
