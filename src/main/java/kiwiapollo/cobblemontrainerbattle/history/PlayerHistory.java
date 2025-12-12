@@ -6,7 +6,7 @@ import net.minecraft.util.Identifier;
 
 import java.util.*;
 
-public class PlayerHistory implements NbtConvertible, RecordStatisticsProvider {
+public class PlayerHistory {
     private final Map<Identifier, TrainerRecord> records;
 
     public PlayerHistory() {
@@ -21,21 +21,18 @@ public class PlayerHistory implements NbtConvertible, RecordStatisticsProvider {
         return records.get(trainer);
     }
 
-    @Override
     public int getTotalTrainerVictoryCount() {
         return records.values().stream()
-                .map(BattleRecord::getVictoryCount)
+                .map(TrainerRecord::getVictoryCount)
                 .reduce(Integer::sum).orElse(0);
     }
 
-    @Override
     public int getTotalTrainerKillCount() {
         return records.values().stream()
-                .map(EntityRecord::getKillCount)
+                .map(TrainerRecord::getKillCount)
                 .reduce(Integer::sum).orElse(0);
     }
 
-    @Override
     public void readFromNbt(NbtCompound nbt) {
         records.clear();
 
@@ -51,7 +48,6 @@ public class PlayerHistory implements NbtConvertible, RecordStatisticsProvider {
         }
     }
 
-    @Override
     public NbtCompound writeToNbt(NbtCompound nbt) {
         for (Map.Entry<Identifier, TrainerRecord> entry : records.entrySet()) {
             try {
@@ -67,7 +63,7 @@ public class PlayerHistory implements NbtConvertible, RecordStatisticsProvider {
         return nbt;
     }
 
-    private NbtCompound toNbtCompound(NbtConvertible record) {
+    private NbtCompound toNbtCompound(TrainerRecord record) {
         NbtCompound nbt = new NbtCompound();
         record.writeToNbt(nbt);
         return nbt;

@@ -2,7 +2,6 @@ package kiwiapollo.cobblemontrainerbattle.advancement;
 
 import com.google.gson.JsonObject;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.history.EntityRecord;
 import kiwiapollo.cobblemontrainerbattle.history.PlayerHistoryStorage;
 import net.minecraft.advancement.criterion.AbstractCriterion;
 import net.minecraft.advancement.criterion.AbstractCriterionConditions;
@@ -99,7 +98,7 @@ public class KillTrainerCriterion extends AbstractCriterion<KillTrainerCriterion
         }
 
         boolean test(ServerPlayerEntity player) {
-            int record = ((EntityRecord) PlayerHistoryStorage.getInstance().get(player).get(trainer)).getKillCount();
+            int record = PlayerHistoryStorage.getInstance().get(player).get(trainer).getKillCount();
             return record >= count;
         }
     }

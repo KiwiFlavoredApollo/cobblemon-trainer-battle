@@ -2,7 +2,6 @@ package kiwiapollo.cobblemontrainerbattle.advancement;
 
 import com.google.gson.JsonObject;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.history.BattleRecord;
 import kiwiapollo.cobblemontrainerbattle.history.PlayerHistoryStorage;
 import net.minecraft.advancement.criterion.AbstractCriterion;
 import net.minecraft.advancement.criterion.AbstractCriterionConditions;
@@ -99,7 +98,7 @@ public class DefeatTrainerCriterion extends AbstractCriterion<DefeatTrainerCrite
         }
 
         boolean test(ServerPlayerEntity player) {
-            int record = ((BattleRecord) PlayerHistoryStorage.getInstance().get(player).get(trainer)).getVictoryCount();
+            int record = PlayerHistoryStorage.getInstance().get(player).get(trainer).getVictoryCount();
             return record >= count;
         }
     }

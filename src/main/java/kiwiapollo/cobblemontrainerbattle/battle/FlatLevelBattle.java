@@ -12,8 +12,8 @@ import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
 import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntityBehavior;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
-import kiwiapollo.cobblemontrainerbattle.history.BattleRecord;
 import kiwiapollo.cobblemontrainerbattle.history.PlayerHistoryStorage;
+import kiwiapollo.cobblemontrainerbattle.history.TrainerRecord;
 import kiwiapollo.cobblemontrainerbattle.template.PokemonLevelPair;
 import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplate;
 import net.minecraft.entity.LivingEntity;
@@ -350,7 +350,7 @@ public class FlatLevelBattle extends CustomPokemonBattle {
             }
         }
 
-        private BattleRecord getBattleRecord(ServerPlayerEntity player) {
+        private TrainerRecord getBattleRecord(ServerPlayerEntity player) {
             return PlayerHistoryStorage.getInstance().get(player).get(trainer.getIdentifier());
         }
 
