@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.history;
+package kiwiapollo.cobblemontrainerbattle.battle;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
@@ -8,36 +8,101 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtIo;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.WorldSavePath;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Instant;
 import java.util.*;
 
-public class PlayerHistoryStorage implements ServerLifecycleEvents.ServerStarted, ServerLifecycleEvents.ServerStopped, ServerTickEvents.EndTick {
+public class BattleHistoryStorage implements ServerLifecycleEvents.ServerStarted, ServerLifecycleEvents.ServerStopped, ServerTickEvents.EndTick {
     private static final int SAVE_INTERVAL_IN_MINUTES = 20;
 
-    private static PlayerHistoryStorage instance;
-    private static Map<UUID, PlayerHistory> storage;
+    private static BattleHistoryStorage instance;
+    private static Map<UUID, Map<Identifier, BattleHistory>> storage;
 
-    private PlayerHistoryStorage() {
+    private BattleHistoryStorage() {
         storage = new HashMap<>();
     }
 
-    public static PlayerHistoryStorage getInstance() {
+    public static BattleHistoryStorage getInstance() {
         if (instance == null) {
-            instance = new PlayerHistoryStorage();
+            instance = new BattleHistoryStorage();
         }
 
         return instance;
     }
 
-    public PlayerHistory get(ServerPlayerEntity player) {
+    public BattleHistory get(ServerPlayerEntity player, Identifier trainer) {
         if (!storage.containsKey(player.getUuid())) {
-            storage.put(player.getUuid(), new PlayerHistory());
+            storage.put(player.getUuid(), new HashMap<>());
+        }
+        
+        if (!storage.get(player.getUuid()).containsKey(trainer)) {
+            storage.get(player.getUuid()).put(trainer, new BattleHistory());
         }
 
-        return storage.get(player.getUuid());
+        return storage.get(player.getUuid()).get(trainer);
+    }
+
+    public int getTotalTrainerVictoryCount(ServerPlayerEntity player) {
+        return storage.get(player.getUuid()).values().stream()
+                .map(BattleHistory::getVictoryCount)
+                .reduce(Integer::sum).orElse(0);
+    }
+
+    public int getTotalTrainerKillCount(ServerPlayerEntity player) {
+        return storage.get(player.getUuid()).values().stream()
+                .map(BattleHistory::getKillCount)
+                .reduce(Integer::sum).orElse(0);
+    }
+
+    // TODO
+    // 매개변수 이렇게 하는 것이 맞는지 고민해보기
+    public void readFromNbt(UUID uuid, NbtCompound nbt) {
+        for (String trainer : nbt.getKeys()) {
+            try {
+                BattleHistory record = new BattleHistory();
+                record.readFromNbt(nbt.getCompound(trainer));
+                storage.get(uuid).put(toDefaultedIdentifier(trainer), record);
+
+            } catch (NullPointerException | IllegalArgumentException ignored) {
+
+            }
+        }
+    }
+
+    // TODO
+    // record 검색해서 변수이름 수정하기
+    public NbtCompound writeToNbt(UUID uuid, NbtCompound nbt) {
+        for (Map.Entry<Identifier, BattleHistory> entry : storage.get(uuid).entrySet()) {
+            try {
+                Identifier identifier = entry.getKey();
+                BattleHistory record = entry.getValue();
+                nbt.put(identifier.toString(), toNbtCompound(record));
+
+            } catch (NullPointerException ignored) {
+
+            }
+        }
+
+        return nbt;
+    }
+
+    private NbtCompound toNbtCompound(BattleHistory record) {
+        NbtCompound nbt = new NbtCompound();
+        record.writeToNbt(nbt);
+        return nbt;
+    }
+
+    private Identifier toDefaultedIdentifier(String string) {
+        if (string.contains(String.valueOf(Identifier.NAMESPACE_SEPARATOR))) {
+            return Identifier.tryParse(string);
+
+        } else {
+            return Identifier.of(CobblemonTrainerBattle.MOD_ID, string);
+        }
     }
 
     @Override
@@ -90,19 +155,15 @@ public class PlayerHistoryStorage implements ServerLifecycleEvents.ServerStarted
             try {
                 UUID uuid = UUID.fromString(file.getName().replace(".dat", ""));
 
-                PlayerHistory history = new PlayerHistory();
-                history.readFromNbt(NbtIo.readCompressed(file));
-
-                storage.put(uuid, history);
+                readFromNbt(uuid, NbtIo.readCompressed(file));
 
             } catch (NullPointerException | IOException e) {
                 UUID uuid = UUID.fromString(file.getName().replace(".dat", ""));
 
                 File backup = new File(historyPath, String.format("%s.dat_bak", uuid));
                 file.renameTo(backup);
-                PlayerHistory history = new PlayerHistory();
 
-                storage.put(uuid, history);
+                storage.put(uuid, new HashMap<>());
 
                 CobblemonTrainerBattle.LOGGER.error("Error occurred while loading {}", file.getName());
                 CobblemonTrainerBattle.LOGGER.error("Created backup : {}", backup.getName());
@@ -119,10 +180,9 @@ public class PlayerHistoryStorage implements ServerLifecycleEvents.ServerStarted
             historyPath.mkdirs();
         }
 
-        for (Map.Entry<UUID, PlayerHistory> entry: storage.entrySet()) {
+        for (Map.Entry<UUID, Map<Identifier, BattleHistory>> entry: storage.entrySet()) {
             try {
                 UUID uuid = entry.getKey();
-                PlayerHistory history = entry.getValue();
 
                 File newHistory = new File(historyPath, String.format("%s.dat", uuid));
                 File oldHistory = new File(historyPath, String.format("%s.dat_old", uuid));
@@ -131,7 +191,7 @@ public class PlayerHistoryStorage implements ServerLifecycleEvents.ServerStarted
                     newHistory.renameTo(oldHistory);
                 }
 
-                NbtIo.writeCompressed(history.writeToNbt(new NbtCompound()), newHistory);
+                NbtIo.writeCompressed(writeToNbt(uuid, new NbtCompound()), newHistory);
 
             } catch (IOException e) {
                 UUID uuid = entry.getKey();

@@ -12,8 +12,6 @@ import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
 import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntityBehavior;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
-import kiwiapollo.cobblemontrainerbattle.history.PlayerHistoryStorage;
-import kiwiapollo.cobblemontrainerbattle.history.TrainerRecord;
 import kiwiapollo.cobblemontrainerbattle.template.PokemonLevelPair;
 import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplate;
 import net.minecraft.entity.LivingEntity;
@@ -319,7 +317,7 @@ public class FlatLevelBattle extends CustomPokemonBattle {
             return () -> {
                 trainer.getOnVictoryCommands().forEach(command -> execute(command, player));
                 runEntityLevelPlayerVictoryHandler();
-                getBattleRecord(player).setVictoryCount(getBattleRecord(player).getVictoryCount() + 1);
+                getBattleHistory(player, trainer).setVictoryCount(getBattleHistory(player, trainer).getVictoryCount() + 1);
                 CustomCriteria.DEFEAT_TRAINER_CRITERION.trigger(player);
             };
         }
@@ -328,7 +326,7 @@ public class FlatLevelBattle extends CustomPokemonBattle {
             return () -> {
                 trainer.getOnDefeatCommands().forEach(command -> execute(command, player));
                 runEntityLevelPlayerDefeatHandler();
-                getBattleRecord(player).setDefeatCount(getBattleRecord(player).getDefeatCount() + 1);
+                getBattleHistory(player, trainer).setDefeatCount(getBattleHistory(player, trainer).getDefeatCount() + 1);
             };
         }
 
@@ -350,8 +348,8 @@ public class FlatLevelBattle extends CustomPokemonBattle {
             }
         }
 
-        private TrainerRecord getBattleRecord(ServerPlayerEntity player) {
-            return PlayerHistoryStorage.getInstance().get(player).get(trainer.getIdentifier());
+        private BattleHistory getBattleHistory(ServerPlayerEntity player, TrainerTemplate trainer) {
+            return BattleHistoryStorage.getInstance().get(player, trainer.getIdentifier());
         }
 
         private void execute(String command, ServerPlayerEntity player) {

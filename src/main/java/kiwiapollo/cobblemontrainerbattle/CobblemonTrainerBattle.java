@@ -14,7 +14,7 @@ import kiwiapollo.cobblemontrainerbattle.command.trainerbattle.TrainerBattleComm
 import kiwiapollo.cobblemontrainerbattle.command.trainerbattle.TrainerBattleOtherCommand;
 import kiwiapollo.cobblemontrainerbattle.entity.*;
 import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
-import kiwiapollo.cobblemontrainerbattle.history.PlayerHistoryStorage;
+import kiwiapollo.cobblemontrainerbattle.battle.BattleHistoryStorage;
 import kiwiapollo.cobblemontrainerbattle.item.CustomItemGroup;
 import kiwiapollo.cobblemontrainerbattle.item.misc.DeprecatedItem;
 import kiwiapollo.cobblemontrainerbattle.item.misc.MiscItem;
@@ -131,9 +131,9 @@ public class CobblemonTrainerBattle implements ModInitializer {
     private void registerEvent() {
         CobblemonEvents.BATTLE_VICTORY.subscribe(Priority.NORMAL, new BattleVictoryEventHandler());
         CobblemonEvents.LOOT_DROPPED.subscribe(Priority.HIGHEST, new LootDroppedEventHandler());
-        ServerLifecycleEvents.SERVER_STARTED.register(PlayerHistoryStorage.getInstance());
-        ServerLifecycleEvents.SERVER_STOPPED.register(PlayerHistoryStorage.getInstance());
-        ServerTickEvents.END_SERVER_TICK.register(PlayerHistoryStorage.getInstance());
+        ServerLifecycleEvents.SERVER_STARTED.register(BattleHistoryStorage.getInstance());
+        ServerLifecycleEvents.SERVER_STOPPED.register(BattleHistoryStorage.getInstance());
+        ServerTickEvents.END_SERVER_TICK.register(BattleHistoryStorage.getInstance());
         ServerTickEvents.END_WORLD_TICK.register(new BattleFledEventHandler());
         ServerTickEvents.END_WORLD_TICK.register(new DrifterEntitySpawner());
         ServerEntityEvents.ENTITY_LOAD.register(new DeprecatedEntityMigrator());

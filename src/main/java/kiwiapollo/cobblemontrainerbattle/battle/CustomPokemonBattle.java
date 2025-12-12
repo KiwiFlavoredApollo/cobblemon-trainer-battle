@@ -13,7 +13,6 @@ import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.cobblemon.mod.common.pokemon.Species;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
-import kiwiapollo.cobblemontrainerbattle.history.PlayerHistoryStorage;
 import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemon;
 import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemonParser;
 import kiwiapollo.cobblemontrainerbattle.template.PokemonType;
@@ -87,7 +86,7 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
     }
 
     protected long getRemainingCooldownInSeconds() {
-        Instant timestamp = PlayerHistoryStorage.getInstance().get(player.getEntity()).get(trainer.getIdentifier()).getTimestamp();
+        Instant timestamp = BattleHistoryStorage.getInstance().get(player.getEntity(), trainer.getIdentifier()).getTimestamp();
         long remains = trainer.getCooldownInSeconds() - Duration.between(timestamp, Instant.now()).toSeconds();
 
         if (remains > 0) {

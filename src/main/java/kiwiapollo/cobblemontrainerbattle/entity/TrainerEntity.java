@@ -7,13 +7,12 @@ import com.cobblemon.mod.common.pokemon.status.PersistentStatus;
 import com.cobblemon.mod.common.pokemon.status.statuses.persistent.*;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
+import kiwiapollo.cobblemontrainerbattle.battle.BattleHistory;
 import kiwiapollo.cobblemontrainerbattle.battle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
-import kiwiapollo.cobblemontrainerbattle.history.TrainerRecord;
 import kiwiapollo.cobblemontrainerbattle.template.RandomTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
-import kiwiapollo.cobblemontrainerbattle.history.PlayerHistory;
-import kiwiapollo.cobblemontrainerbattle.history.PlayerHistoryStorage;
+import kiwiapollo.cobblemontrainerbattle.battle.BattleHistoryStorage;
 import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplate;
 import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplateStorage;
 import net.minecraft.advancement.criterion.Criteria;
@@ -164,8 +163,8 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
     @Override
     public void onDeath(DamageSource source) {
         if (source.getSource() instanceof ServerPlayerEntity player) {
-            TrainerRecord record = getEntityRecord(player);
-            record.setKillCount(record.getKillCount() + 1);
+            Identifier trainer = toDefaultedIdentifier(getDataTracker().get(TRAINER));
+            getBattleHistory(player, trainer).setKillCount(getBattleHistory(player, trainer).getKillCount() + 1);
 
             CustomCriteria.KILL_TRAINER_CRITERION.trigger(player);
         }
@@ -175,9 +174,8 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
         super.onDeath(source);
     }
 
-    private TrainerRecord getEntityRecord(ServerPlayerEntity player) {
-        PlayerHistory history = PlayerHistoryStorage.getInstance().get(player);
-        return history.get(toDefaultedIdentifier(getDataTracker().get(TRAINER)));
+    private BattleHistory getBattleHistory(ServerPlayerEntity player, Identifier trainer) {
+        return BattleHistoryStorage.getInstance().get(player, trainer);
     }
 
     private void stopBattle() {

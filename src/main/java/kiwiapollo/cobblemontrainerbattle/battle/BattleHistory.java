@@ -1,16 +1,16 @@
-package kiwiapollo.cobblemontrainerbattle.history;
+package kiwiapollo.cobblemontrainerbattle.battle;
 
 import net.minecraft.nbt.NbtCompound;
 
 import java.time.Instant;
 
-public class TrainerRecord {
+public class BattleHistory {
     private Instant timestamp;
     private int victory;
     private int defeat;
     private int kill;
 
-    public TrainerRecord() {
+    public BattleHistory() {
         this.timestamp = Instant.EPOCH;
         this.victory = 0;
         this.defeat = 0;
