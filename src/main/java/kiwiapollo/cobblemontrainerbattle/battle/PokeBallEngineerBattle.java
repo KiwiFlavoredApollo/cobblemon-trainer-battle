@@ -7,7 +7,6 @@ import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.block.PokeBallBox;
-import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
 import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntityBehavior;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.template.PokemonLevelPair;
@@ -56,7 +55,7 @@ public class PokeBallEngineerBattle extends CustomPokemonBattle {
         super.start();
     }
 
-    private static class PlayerBattleActorFactory implements SimpleFactory<PlayerBattleActor> {
+    private static class PlayerBattleActorFactory {
         private final ServerPlayerEntity player;
         private final TrainerTemplate trainer;
 
@@ -65,7 +64,6 @@ public class PokeBallEngineerBattle extends CustomPokemonBattle {
             this.trainer = trainer;
         }
 
-        @Override
         public PlayerBattleActor create() {
             return new PlayerBattleActor(
                     getUuid(),
@@ -96,7 +94,7 @@ public class PokeBallEngineerBattle extends CustomPokemonBattle {
         }
     }
 
-    private static class TrainerBattleActorFactory implements SimpleFactory<TrainerBattleActor> {
+    private static class TrainerBattleActorFactory {
         private final ServerPlayerEntity player;
         private final TrainerTemplate trainer;
 
@@ -105,7 +103,6 @@ public class PokeBallEngineerBattle extends CustomPokemonBattle {
             this.trainer = trainer;
         }
 
-        @Override
         public TrainerBattleActor create() {
             return new TrainerBattleActor(
                     getTrainerTemplate(),

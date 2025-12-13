@@ -8,7 +8,6 @@ import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.mojang.brigadier.CommandDispatcher;
 import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
-import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
 import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntityBehavior;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
@@ -178,7 +177,7 @@ public class NormalLevelBattle extends CustomPokemonBattle {
         super.start();
     }
     
-    private static class PlayerBattleActorFactory implements SimpleFactory<PlayerBattleActor> {
+    private static class PlayerBattleActorFactory {
         private final ServerPlayerEntity player;
         private final TrainerTemplate trainer;
 
@@ -187,7 +186,6 @@ public class NormalLevelBattle extends CustomPokemonBattle {
             this.trainer = trainer;
         }
 
-        @Override
         public PlayerBattleActor create() {
             return new PlayerBattleActor(
                     getUuid(),
@@ -218,7 +216,7 @@ public class NormalLevelBattle extends CustomPokemonBattle {
         }
     }
 
-    private static class TrainerBattleActorFactory implements SimpleFactory<TrainerBattleActor> {
+    private static class TrainerBattleActorFactory {
         private final ServerPlayerEntity player;
         private final TrainerTemplate trainer;
         private final UUID uuid;
@@ -256,7 +254,6 @@ public class NormalLevelBattle extends CustomPokemonBattle {
             }
         }
 
-        @Override
         public TrainerBattleActor create() {
             return new TrainerBattleActor(
                     getTrainerTemplate(),
@@ -358,7 +355,7 @@ public class NormalLevelBattle extends CustomPokemonBattle {
         }
 
         private BattleHistory getBattleHistory(ServerPlayerEntity player, TrainerTemplate trainer) {
-            return BattleHistoryStorage.getInstance().get(player, trainer.getIdentifier());
+            return BattleHistoryStorage.getInstance().get(player.getUuid(), trainer.getIdentifier());
         }
 
         private void triggerDefeatTrainerCriterion() {

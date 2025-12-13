@@ -1,6 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.item.vsseeker;
 
-import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
+import kiwiapollo.cobblemontrainerbattle.common.TrainerFactory;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -13,11 +13,11 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class VsSeeker extends Item implements SimpleFactory<Identifier> {
+public class VsSeeker extends Item implements TrainerFactory {
     private final MutableText group;
-    private final SimpleFactory<Identifier> factory;
+    private final TrainerFactory factory;
 
-    public VsSeeker(MutableText group, SimpleFactory<Identifier> factory) {
+    public VsSeeker(MutableText group, TrainerFactory factory) {
         super(new Item.Settings());
 
         this.group = group;

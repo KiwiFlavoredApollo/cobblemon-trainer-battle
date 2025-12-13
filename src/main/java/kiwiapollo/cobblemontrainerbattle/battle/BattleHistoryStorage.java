@@ -7,16 +7,16 @@ import net.minecraft.SharedConstants;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtIo;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.WorldSavePath;
 
 import java.io.File;
+import java.io.FileFilter;
 import java.io.IOException;
-import java.time.Instant;
 import java.util.*;
 
 public class BattleHistoryStorage implements ServerLifecycleEvents.ServerStarted, ServerLifecycleEvents.ServerStopped, ServerTickEvents.EndTick {
+    private static final String BATTLE_HISTORY = "history";
     private static final int SAVE_INTERVAL_IN_MINUTES = 20;
 
     private static BattleHistoryStorage instance;
@@ -32,75 +32,6 @@ public class BattleHistoryStorage implements ServerLifecycleEvents.ServerStarted
         }
 
         return instance;
-    }
-
-    public BattleHistory get(ServerPlayerEntity player, Identifier trainer) {
-        if (!storage.containsKey(player.getUuid())) {
-            storage.put(player.getUuid(), new HashMap<>());
-        }
-        
-        if (!storage.get(player.getUuid()).containsKey(trainer)) {
-            storage.get(player.getUuid()).put(trainer, new BattleHistory());
-        }
-
-        return storage.get(player.getUuid()).get(trainer);
-    }
-
-    public int getTotalTrainerVictoryCount(ServerPlayerEntity player) {
-        return storage.get(player.getUuid()).values().stream()
-                .map(BattleHistory::getVictoryCount)
-                .reduce(Integer::sum).orElse(0);
-    }
-
-    public int getTotalTrainerKillCount(ServerPlayerEntity player) {
-        return storage.get(player.getUuid()).values().stream()
-                .map(BattleHistory::getKillCount)
-                .reduce(Integer::sum).orElse(0);
-    }
-
-    // TODO
-    // 매개변수 이렇게 하는 것이 맞는지 고민해보기
-    public void readFromNbt(UUID uuid, NbtCompound nbt) {
-        for (String trainer : nbt.getKeys()) {
-            try {
-                BattleHistory history = new BattleHistory();
-                history.readFromNbt(nbt.getCompound(trainer));
-                storage.get(uuid).put(toDefaultedIdentifier(trainer), history);
-
-            } catch (NullPointerException | IllegalArgumentException ignored) {
-
-            }
-        }
-    }
-
-    public NbtCompound writeToNbt(UUID uuid, NbtCompound nbt) {
-        for (Map.Entry<Identifier, BattleHistory> entry : storage.get(uuid).entrySet()) {
-            try {
-                Identifier identifier = entry.getKey();
-                BattleHistory history = entry.getValue();
-                nbt.put(identifier.toString(), toNbtCompound(history));
-
-            } catch (NullPointerException ignored) {
-
-            }
-        }
-
-        return nbt;
-    }
-
-    private NbtCompound toNbtCompound(BattleHistory history) {
-        NbtCompound nbt = new NbtCompound();
-        history.writeToNbt(nbt);
-        return nbt;
-    }
-
-    private Identifier toDefaultedIdentifier(String string) {
-        if (string.contains(String.valueOf(Identifier.NAMESPACE_SEPARATOR))) {
-            return Identifier.tryParse(string);
-
-        } else {
-            return Identifier.of(CobblemonTrainerBattle.MOD_ID, string);
-        }
     }
 
     @Override
@@ -120,84 +51,156 @@ public class BattleHistoryStorage implements ServerLifecycleEvents.ServerStarted
         }
     }
 
-    private boolean isDatFile(File file) {
-        return file.getName().endsWith(".dat");
-    }
-
     private int getSaveIntervalInTicks() {
         return SAVE_INTERVAL_IN_MINUTES * SharedConstants.TICKS_PER_MINUTE;
     }
 
-    // TODO: is this right place
-    public File getHistoryPath(MinecraftServer server) {
-        final String historyDir = "history";
+    public BattleHistory get(UUID player, Identifier trainer) {
+        if (!storage.containsKey(player)) {
+            storage.put(player, new HashMap<>());
+        }
+        
+        if (!storage.get(player).containsKey(trainer)) {
+            storage.get(player).put(trainer, new BattleHistory());
+        }
 
-        File worldDir = server.getSavePath(WorldSavePath.ROOT).toFile();
-        String historyPath = CobblemonTrainerBattle.MOD_ID + "/" + historyDir;
+        return storage.get(player).get(trainer);
+    }
 
-        return new File(worldDir, historyPath);
+    public int getTotalTrainerVictoryCount(UUID player) {
+        return storage.get(player).values().stream()
+                .map(BattleHistory::getVictoryCount)
+                .reduce(Integer::sum).orElse(0);
+    }
+
+    public int getTotalTrainerKillCount(UUID player) {
+        return storage.get(player).values().stream()
+                .map(BattleHistory::getKillCount)
+                .reduce(Integer::sum).orElse(0);
     }
 
     private void load(MinecraftServer server) {
-        File historyPath = getHistoryPath(server);
-
-        if (!historyPath.isDirectory()) {
-            return;
-        }
+        CobblemonTrainerBattle.LOGGER.info("Loading battle histories...");
 
         storage.clear();
 
-        List<File> datFileList = Arrays.stream(historyPath.listFiles()).filter(this::isDatFile).toList();
-
-        for (File file : datFileList) {
+        for (File file : getBattleHistoryFiles(server)) {
             try {
                 UUID uuid = UUID.fromString(file.getName().replace(".dat", ""));
-
-                readFromNbt(uuid, NbtIo.readCompressed(file));
+                storage.put(uuid, toMap(NbtIo.readCompressed(file)));
 
             } catch (NullPointerException | IOException e) {
                 UUID uuid = UUID.fromString(file.getName().replace(".dat", ""));
-
-                File backup = new File(historyPath, String.format("%s.dat_bak", uuid));
+                File backup = new File(getBattleHistoryDirectory(server), uuid + ".dat_bak");
                 file.renameTo(backup);
 
-                storage.put(uuid, new HashMap<>());
-
-                CobblemonTrainerBattle.LOGGER.error("Error occurred while loading {}", file.getName());
-                CobblemonTrainerBattle.LOGGER.error("Created backup : {}", backup.getName());
+                CobblemonTrainerBattle.LOGGER.error("Failed to load battle history: {}", file.getName());
+                CobblemonTrainerBattle.LOGGER.info("Backup created: {}", backup.getName());
             }
         }
 
-        CobblemonTrainerBattle.LOGGER.info("Loaded player histories");
+        CobblemonTrainerBattle.LOGGER.info("Loaded battle histories");
+    }
+
+    private List<File> getBattleHistoryFiles(MinecraftServer server) {
+        try {
+            File[] files = getBattleHistoryDirectory(server).listFiles(new DatFileFilter());
+            return List.of(Objects.requireNonNull(files));
+
+        } catch (NullPointerException e) {
+            return List.of();
+        }
+    }
+
+    private Map<Identifier, BattleHistory> toMap(NbtCompound nbt) {
+        Map<Identifier, BattleHistory> map = new HashMap<>();
+
+        for (String trainer : nbt.getKeys()) {
+            try {
+                BattleHistory history = new BattleHistory();
+                history.readFromNbt(nbt.getCompound(trainer));
+
+                map.put(toDefaultedIdentifier(trainer), history);
+
+            } catch (NullPointerException | IllegalArgumentException ignored) {
+
+            }
+        }
+
+        return map;
+    }
+
+    private Identifier toDefaultedIdentifier(String string) {
+        if (string.contains(String.valueOf(Identifier.NAMESPACE_SEPARATOR))) {
+            return Identifier.tryParse(string);
+
+        } else {
+            return Identifier.of(CobblemonTrainerBattle.MOD_ID, string);
+        }
     }
 
     private void save(MinecraftServer server) {
-        File historyPath = getHistoryPath(server);
-
-        if (!historyPath.exists()) {
-            historyPath.mkdirs();
-        }
+        CobblemonTrainerBattle.LOGGER.info("Saving battle histories...");
 
         for (Map.Entry<UUID, Map<Identifier, BattleHistory>> entry: storage.entrySet()) {
             try {
                 UUID uuid = entry.getKey();
+                Map<Identifier, BattleHistory> map = entry.getValue();
 
-                File newHistory = new File(historyPath, String.format("%s.dat", uuid));
-                File oldHistory = new File(historyPath, String.format("%s.dat_old", uuid));
+                File newFile = new File(getBattleHistoryDirectory(server), uuid + ".dat");
+                File oldFile = new File(getBattleHistoryDirectory(server), uuid + ".dat_old");
 
-                if (newHistory.exists()) {
-                    newHistory.renameTo(oldHistory);
+                if (newFile.exists()) {
+                    newFile.renameTo(oldFile);
                 }
 
-                NbtIo.writeCompressed(writeToNbt(uuid, new NbtCompound()), newHistory);
+                NbtIo.writeCompressed(toNbtCompound(map), newFile);
 
             } catch (IOException e) {
                 UUID uuid = entry.getKey();
-                File file = new File(historyPath, String.format("%s.dat", uuid));
-                CobblemonTrainerBattle.LOGGER.error("Error occurred while saving {}", file.getName());
+
+                File file = new File(getBattleHistoryDirectory(server), uuid + ".dat");
+                CobblemonTrainerBattle.LOGGER.error("Failed to save battle history: {}", file.getName());
             }
         }
 
-        CobblemonTrainerBattle.LOGGER.info("Saved player histories");
+        CobblemonTrainerBattle.LOGGER.info("Saved battle histories");
+    }
+
+    private NbtCompound toNbtCompound(Map<Identifier, BattleHistory> map) {
+        NbtCompound nbt = new NbtCompound();
+
+        for (Map.Entry<Identifier, BattleHistory> entry : map.entrySet()) {
+            try {
+                Identifier trainer = entry.getKey();
+                BattleHistory history = entry.getValue();
+
+                nbt.put(trainer.toString(), history.writeToNbt(new NbtCompound()));
+
+            } catch (NullPointerException ignored) {
+
+            }
+        }
+
+        return nbt;
+    }
+
+    private File getBattleHistoryDirectory(MinecraftServer server) {
+        File parent = server.getSavePath(WorldSavePath.ROOT).toFile();
+        String child = CobblemonTrainerBattle.MOD_ID + "/" + BATTLE_HISTORY;
+        File file = new File(parent, child);
+
+        if (!file.isDirectory()) {
+            throw new IllegalStateException();
+        }
+
+        return file;
+    }
+
+    private static class DatFileFilter implements FileFilter {
+        @Override
+        public boolean accept(File file) {
+            return file.getName().endsWith(".dat");
+        }
     }
 }

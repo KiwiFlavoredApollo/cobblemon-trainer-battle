@@ -68,7 +68,7 @@ public class KillTrainerCriterion extends AbstractCriterion<KillTrainerCriterion
         }
 
         boolean test(ServerPlayerEntity player) {
-            int total = BattleHistoryStorage.getInstance().getTotalTrainerKillCount(player);
+            int total = BattleHistoryStorage.getInstance().getTotalTrainerKillCount(player.getUuid());
             return total >= count;
         }
     }
@@ -98,7 +98,7 @@ public class KillTrainerCriterion extends AbstractCriterion<KillTrainerCriterion
         }
 
         boolean test(ServerPlayerEntity player) {
-            int history = BattleHistoryStorage.getInstance().get(player, trainer).getKillCount();
+            int history = BattleHistoryStorage.getInstance().get(player.getUuid(), trainer).getKillCount();
             return history >= count;
         }
     }

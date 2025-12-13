@@ -7,7 +7,6 @@ import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.mojang.brigadier.CommandDispatcher;
-import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
 import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntityBehavior;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
@@ -60,7 +59,7 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
         return Text.translatable("commands.cobblemontrainerbattle.rentalbattle.failed.no_trainer_pokemon").formatted(Formatting.RED);
     }
 
-    private static class PlayerBattleSideFactory implements SimpleFactory<PlayerBattleActor> {
+    private static class PlayerBattleSideFactory {
         private final ServerPlayerEntity player;
         private final TrainerTemplate trainer;
 
@@ -69,7 +68,6 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
             this.trainer = trainer;
         }
 
-        @Override
         public PlayerBattleActor create() {
             return new PlayerBattleActor(
                     getUuid(),
@@ -108,7 +106,7 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
         }
     }
 
-    private static class TrainerBattleSideFactory implements SimpleFactory<TrainerBattleActor> {
+    private static class TrainerBattleSideFactory {
         private final ServerPlayerEntity player;
         private final TrainerTemplate trainer;
         private final UUID uuid;
@@ -164,7 +162,6 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
             return pokemon;
         }
 
-        @Override
         public TrainerBattleActor create() {
             return new TrainerBattleActor(
                     getTrainerTemplate(),

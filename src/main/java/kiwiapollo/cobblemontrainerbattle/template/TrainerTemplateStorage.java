@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.resource.Resource;
 import net.minecraft.resource.ResourceManager;
 import net.minecraft.util.Identifier;
@@ -13,8 +14,8 @@ import java.io.*;
 import java.util.*;
 
 public class TrainerTemplateStorage implements SimpleSynchronousResourceReloadListener {
-    private static final String TEAM_DIR = "trainer_team";
-    private static final String PRESET_DIR = "trainer_preset";
+    private static final String TRAINER_TEAM = "trainer_team";
+    private static final String TRAINER_PRESET = "trainer_preset";
 
     private static TrainerTemplateStorage instance;
 
@@ -49,9 +50,26 @@ public class TrainerTemplateStorage implements SimpleSynchronousResourceReloadLi
         return Identifier.of(CobblemonTrainerBattle.MOD_ID, "trainer_storage");
     }
 
+    /**
+     * Added dependency to Cobblemon resource reloader
+     * @see com.cobblemon.mod.common.data.CobblemonDataProvider
+     */
     @Override
     public Collection<Identifier> getFabricDependencies() {
-        return List.of();
+        if (isSinytraConnectorLoaded()) {
+            return List.of(
+
+            );
+
+        } else {
+            return List.of(
+                    Identifier.of(Cobblemon.MODID, "data_resources")
+            );
+        }
+    }
+
+    private boolean isSinytraConnectorLoaded() {
+        return FabricLoader.getInstance().isModLoaded("connector");
     }
 
     @Override
@@ -76,7 +94,7 @@ public class TrainerTemplateStorage implements SimpleSynchronousResourceReloadLi
                 this.template.put(identifier, template);
 
             } catch (NullPointerException | IllegalArgumentException e) {
-                CobblemonTrainerBattle.LOGGER.error("Creating trainer template failed: {}", entry.getKey());
+                CobblemonTrainerBattle.LOGGER.error("Failed to create trainer template: {}", entry.getKey());
             }
         }
 
@@ -116,13 +134,13 @@ public class TrainerTemplateStorage implements SimpleSynchronousResourceReloadLi
 
         this.team.clear();
 
-        Map<Identifier, Resource> resources = manager.findResources(TEAM_DIR, identifier -> identifier.toString().endsWith(".json"));
+        Map<Identifier, Resource> resources = manager.findResources(TRAINER_TEAM, this::isJsonFile);
         for (Map.Entry<Identifier, Resource> entry: resources.entrySet()) {
             try (BufferedReader reader = entry.getValue().getReader()) {
                 String namespace = entry.getKey().getNamespace();
                 String path = entry.getKey().getPath();
 
-                path = path.replace(TEAM_DIR + "/", "");
+                path = path.replace(TRAINER_TEAM + "/", "");
                 path = path.replace(".json", "");
 
                 Identifier identifier = Identifier.of(namespace, path);
@@ -131,7 +149,7 @@ public class TrainerTemplateStorage implements SimpleSynchronousResourceReloadLi
                 this.team.put(identifier, team);
 
             } catch (IOException | JsonParseException e) {
-                CobblemonTrainerBattle.LOGGER.error("Loading trainer team failed: {}", entry.getKey());
+                CobblemonTrainerBattle.LOGGER.error("Failed to load trainer team: {}", entry.getKey());
             }
         }
 
@@ -143,13 +161,13 @@ public class TrainerTemplateStorage implements SimpleSynchronousResourceReloadLi
 
         this.preset.clear();
 
-        Map<Identifier, Resource> resources = manager.findResources(PRESET_DIR, identifier -> identifier.toString().endsWith(".json"));
+        Map<Identifier, Resource> resources = manager.findResources(TRAINER_PRESET, this::isJsonFile);
         for (Map.Entry<Identifier, Resource> entry: resources.entrySet()) {
             try (BufferedReader reader = entry.getValue().getReader()) {
                 String namespace = entry.getKey().getNamespace();
                 String path = entry.getKey().getPath();
 
-                path = path.replace(PRESET_DIR + "/", "");
+                path = path.replace(TRAINER_PRESET + "/", "");
                 path = path.replace(".json", "");
 
                 Identifier identifier = Identifier.of(namespace, path);
@@ -158,10 +176,14 @@ public class TrainerTemplateStorage implements SimpleSynchronousResourceReloadLi
                 this.preset.put(identifier, preset);
 
             } catch (IOException | JsonParseException e) {
-                CobblemonTrainerBattle.LOGGER.error("Loading trainer preset failed: {}", entry.getKey());
+                CobblemonTrainerBattle.LOGGER.error("Failed to load trainer preset: {}", entry.getKey());
             }
         }
 
         CobblemonTrainerBattle.LOGGER.info("Loaded {} trainer presets", this.preset.size());
+    }
+
+    private boolean isJsonFile(Identifier resource) {
+        return resource.toString().endsWith(".json");
     }
 }

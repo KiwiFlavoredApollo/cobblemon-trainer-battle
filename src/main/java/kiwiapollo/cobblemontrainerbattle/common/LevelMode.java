@@ -9,14 +9,13 @@ public enum LevelMode {
 
     }
 
-    public static class Factory implements SimpleFactory<LevelMode> {
+    public static class Factory {
         private final String levelMode;
 
         public Factory(String levelMode) {
             this.levelMode = levelMode;
         }
 
-        @Override
         public LevelMode create() {
             return switch (levelMode) {
                 case "normal" -> LevelMode.NORMAL;

@@ -6,7 +6,6 @@ import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.block.PokeBallBoxBlockEntity;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
-import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
 import kiwiapollo.cobblemontrainerbattle.item.misc.FilledPokeBall;
 import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemon;
 import kiwiapollo.cobblemontrainerbattle.template.PokemonLevelPair;
@@ -26,14 +25,13 @@ import java.util.List;
 import java.util.UUID;
 
 public class PokeBallEngineer {
-    public static class TrainerTemplateFactory implements SimpleFactory<TrainerTemplate> {
+    public static class TrainerTemplateFactory {
         private final VillagerEntity villager;
 
         public TrainerTemplateFactory(VillagerEntity villager) {
             this.villager = villager;
         }
 
-        @Override
         public TrainerTemplate create() {
             return new TrainerTemplate(
                     createTeam(),

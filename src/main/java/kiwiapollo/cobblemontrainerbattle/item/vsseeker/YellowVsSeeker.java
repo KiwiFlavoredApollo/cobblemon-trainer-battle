@@ -1,6 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.item.vsseeker;
 
-import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
+import kiwiapollo.cobblemontrainerbattle.common.TrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.template.RandomTrainerFactory;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
@@ -10,7 +10,7 @@ public class YellowVsSeeker extends VsSeeker {
         super(Text.translatable("trainer_group.cobblemontrainerbattle.bdsp"), new Factory());
     }
 
-    private static class Factory implements SimpleFactory<Identifier> {
+    private static class Factory implements TrainerFactory {
         @Override
         public Identifier create() {
             return new RandomTrainerFactory(template -> {

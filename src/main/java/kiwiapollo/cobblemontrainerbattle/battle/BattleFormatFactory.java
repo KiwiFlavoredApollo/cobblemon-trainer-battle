@@ -1,9 +1,8 @@
 package kiwiapollo.cobblemontrainerbattle.battle;
 
 import com.cobblemon.mod.common.battles.BattleFormat;
-import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
 
-public class BattleFormatFactory implements SimpleFactory<BattleFormat> {
+public class BattleFormatFactory {
     private final String format;
 
     public BattleFormatFactory(String format) {

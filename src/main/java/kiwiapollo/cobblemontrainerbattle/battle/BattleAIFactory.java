@@ -2,20 +2,18 @@ package kiwiapollo.cobblemontrainerbattle.battle;
 
 import com.cobblemon.mod.common.api.battles.model.ai.BattleAI;
 import com.cobblemon.mod.common.battles.ai.RandomBattleAI;
-import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
 import kiwiapollo.cobblemontrainerbattle.common.StrongBattleAI;
 import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplate;
 
 import java.util.Objects;
 
-public class BattleAIFactory implements SimpleFactory<BattleAI> {
+public class BattleAIFactory {
     private final TrainerTemplate trainer;
 
     public BattleAIFactory(TrainerTemplate trainer) {
         this.trainer = trainer;
     }
 
-    @Override
     public BattleAI create() {
         // StrongBattleAI have issues with Double/Triple battles
         if (Objects.equals(trainer.getBattleAI(), "single")) {
@@ -25,8 +23,7 @@ public class BattleAIFactory implements SimpleFactory<BattleAI> {
         }
     }
 
-    private class SingleBattleAIFactory implements SimpleFactory<BattleAI> {
-        @Override
+    private class SingleBattleAIFactory {
         public BattleAI create() {
             return switch (trainer.getBattleAI()) {
                 case "random" -> new RandomBattleAI();
@@ -42,8 +39,7 @@ public class BattleAIFactory implements SimpleFactory<BattleAI> {
         }
     }
 
-    private class NonSingleBattleAIFactory implements SimpleFactory<BattleAI> {
-        @Override
+    private class NonSingleBattleAIFactory {
         public BattleAI create() {
             return switch (trainer.getBattleAI()) {
                 case "random" -> new RandomBattleAI();

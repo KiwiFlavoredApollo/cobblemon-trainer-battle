@@ -5,7 +5,6 @@ import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.BattleFormatFactory;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
-import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
 import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
 import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemon;
 import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemonParser;
@@ -16,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class TrainerTemplateFactory implements SimpleFactory<TrainerTemplate> {
+public class TrainerTemplateFactory {
     private final Identifier identifier;
     private final TrainerPreset preset;
     private final TrainerTeam team;
@@ -27,7 +26,6 @@ public class TrainerTemplateFactory implements SimpleFactory<TrainerTemplate> {
         this.team = team;
     }
 
-    @Override
     public TrainerTemplate create() {
         return new TrainerTemplate(
                 toPokemonLevelPair(team),

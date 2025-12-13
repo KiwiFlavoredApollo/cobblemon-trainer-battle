@@ -53,7 +53,7 @@ import java.util.Arrays;
 
 public class CobblemonTrainerBattle implements ModInitializer {
 	public static final String MOD_ID = "cobblemontrainerbattle";
-	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+	public static final Logger LOGGER = LoggerFactory.getLogger("CobblemonTrainerBattle");
 
     @Override
 	public void onInitialize() {

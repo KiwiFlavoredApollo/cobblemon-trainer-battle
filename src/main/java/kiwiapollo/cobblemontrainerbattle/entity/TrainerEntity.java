@@ -9,7 +9,6 @@ import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
 import kiwiapollo.cobblemontrainerbattle.battle.BattleHistory;
 import kiwiapollo.cobblemontrainerbattle.battle.TrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.common.SimpleFactory;
 import kiwiapollo.cobblemontrainerbattle.template.RandomTrainerFactory;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.battle.BattleHistoryStorage;
@@ -175,7 +174,7 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
     }
 
     private BattleHistory getBattleHistory(ServerPlayerEntity player, Identifier trainer) {
-        return BattleHistoryStorage.getInstance().get(player, trainer);
+        return BattleHistoryStorage.getInstance().get(player.getUuid(), trainer);
     }
 
     private void stopBattle() {
@@ -313,7 +312,7 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
         return random.get(0);
     }
 
-    private static class TrainerTemplateFactory implements SimpleFactory<TrainerTemplate> {
+    private static class TrainerTemplateFactory {
         private final TrainerTemplate template;
         private final TrainerEntity entity;
 
@@ -322,7 +321,6 @@ public abstract class TrainerEntity extends PathAwareEntity implements TrainerEn
             this.entity = entity;
         }
 
-        @Override
         public TrainerTemplate create() {
             return new TrainerTemplate(
                     template.getTeam(),
