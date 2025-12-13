@@ -224,16 +224,16 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
 
         private Runnable getPlayerVictoryHandler() {
             return () -> {
-                setTradablePokemon(pokemon);
+                updateTradablePokemon();
+                runPlayerVictoryCommands();
                 runEntityLevelPlayerVictoryHandler();
-                trainer.getOnVictoryCommands().forEach(command -> execute(command, player));
             };
         }
 
         private Runnable getPlayerDefeatHandler() {
             return () -> {
+                runPlayerDefeatCommands();
                 runEntityLevelPlayerDefeatHandler();
-                trainer.getOnDefeatCommands().forEach(command -> execute(command, player));
             };
         }
 
@@ -246,6 +246,23 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
             }
         }
 
+        private void runPlayerVictoryCommands() {
+            trainer.getOnVictoryCommands().forEach(command -> execute(command, player));
+        }
+
+        private void runPlayerDefeatCommands() {
+            trainer.getOnDefeatCommands().forEach(command -> execute(command, player));
+        }
+
+        private void execute(String command, ServerPlayerEntity player) {
+            command = command.replace("%player%", player.getGameProfile().getName());
+
+            MinecraftServer server = player.getCommandSource().getServer();
+            CommandDispatcher<ServerCommandSource> dispatcher = server.getCommandManager().getDispatcher();
+
+            server.getCommandManager().execute(dispatcher.parse(command, server.getCommandSource()), command);
+        }
+
         private void runEntityLevelPlayerDefeatHandler() {
             try {
                 ((TrainerEntityBehavior) entity).onPlayerDefeat();
@@ -255,7 +272,7 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
             }
         }
 
-        private void setTradablePokemon(List<Pokemon> pokemon) {
+        private void updateTradablePokemon() {
             TradablePokemonStorage.getInstance().get(player).setFirst(pokemon.get(0));
             TradablePokemonStorage.getInstance().get(player).setSecond(pokemon.get(1));
             TradablePokemonStorage.getInstance().get(player).setThird(pokemon.get(2));
@@ -268,15 +285,6 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
             clone.forEach(Pokemon::heal);
 
             return clone;
-        }
-
-        private void execute(String command, ServerPlayerEntity player) {
-            command = command.replace("%player%", player.getGameProfile().getName());
-
-            MinecraftServer server = player.getCommandSource().getServer();
-            CommandDispatcher<ServerCommandSource> dispatcher = server.getCommandManager().getDispatcher();
-
-            server.getCommandManager().execute(dispatcher.parse(command, server.getCommandSource()), command);
         }
     }
 }

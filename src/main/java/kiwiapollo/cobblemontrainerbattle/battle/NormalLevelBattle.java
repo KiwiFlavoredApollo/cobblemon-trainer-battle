@@ -315,22 +315,54 @@ public class NormalLevelBattle extends CustomPokemonBattle {
             return world.getGameRules().get(CustomGameRule.TRAINER_FLEE_DISTANCE_IN_BLOCKS).get();
         }
 
-        // TODO 추상화 수준 통일하기
         private Runnable getPlayerVictoryHandler() {
             return () -> {
-                trainer.getOnVictoryCommands().forEach(command -> execute(command, player));
+                runPlayerVictoryCommands();
+                incrementPlayerVictoryCount();
+                triggerDefeatTrainerCriterion();
                 runEntityLevelPlayerVictoryHandler();
-                getBattleHistory(player, trainer).setVictoryCount(getBattleHistory(player, trainer).getVictoryCount() + 1);
-                CustomCriteria.DEFEAT_TRAINER_CRITERION.trigger(player);
             };
         }
 
         private Runnable getPlayerDefeatHandler() {
             return () -> {
-                trainer.getOnDefeatCommands().forEach(command -> execute(command, player));
+                runPlayerDefeatCommands();
+                incrementPlayerDefeatCount();
                 runEntityLevelPlayerDefeatHandler();
-                getBattleHistory(player, trainer).setDefeatCount(getBattleHistory(player, trainer).getDefeatCount() + 1);
             };
+        }
+
+        private void runPlayerVictoryCommands() {
+            trainer.getOnVictoryCommands().forEach(command -> execute(command, player));
+        }
+
+        private void runPlayerDefeatCommands() {
+            trainer.getOnDefeatCommands().forEach(command -> execute(command, player));
+        }
+
+        private void execute(String command, ServerPlayerEntity player) {
+            command = command.replace("%player%", player.getGameProfile().getName());
+
+            MinecraftServer server = player.getCommandSource().getServer();
+            CommandDispatcher<ServerCommandSource> dispatcher = server.getCommandManager().getDispatcher();
+
+            server.getCommandManager().execute(dispatcher.parse(command, server.getCommandSource()), command);
+        }
+
+        private void incrementPlayerVictoryCount() {
+            getBattleHistory(player, trainer).setVictoryCount(getBattleHistory(player, trainer).getVictoryCount() + 1);
+        }
+
+        private void incrementPlayerDefeatCount() {
+            getBattleHistory(player, trainer).setDefeatCount(getBattleHistory(player, trainer).getDefeatCount() + 1);
+        }
+
+        private BattleHistory getBattleHistory(ServerPlayerEntity player, TrainerTemplate trainer) {
+            return BattleHistoryStorage.getInstance().get(player, trainer.getIdentifier());
+        }
+
+        private void triggerDefeatTrainerCriterion() {
+            CustomCriteria.DEFEAT_TRAINER_CRITERION.trigger(player);
         }
 
         private void runEntityLevelPlayerVictoryHandler() {
@@ -349,19 +381,6 @@ public class NormalLevelBattle extends CustomPokemonBattle {
             } catch (ClassCastException ignored) {
 
             }
-        }
-
-        private BattleHistory getBattleHistory(ServerPlayerEntity player, TrainerTemplate trainer) {
-            return BattleHistoryStorage.getInstance().get(player, trainer.getIdentifier());
-        }
-
-        private void execute(String command, ServerPlayerEntity player) {
-            command = command.replace("%player%", player.getGameProfile().getName());
-
-            MinecraftServer server = player.getCommandSource().getServer();
-            CommandDispatcher<ServerCommandSource> dispatcher = server.getCommandManager().getDispatcher();
-
-            server.getCommandManager().execute(dispatcher.parse(command, server.getCommandSource()), command);
         }
     }
 }
