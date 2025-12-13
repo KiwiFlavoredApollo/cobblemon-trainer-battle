@@ -13,10 +13,11 @@ import net.minecraft.util.WorldSavePath;
 import java.io.File;
 import java.io.FileFilter;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.*;
 
 public class BattleHistoryStorage implements ServerLifecycleEvents.ServerStarted, ServerLifecycleEvents.ServerStopped, ServerTickEvents.EndTick {
-    private static final String BATTLE_HISTORY = "history";
+    private static final String BATTLE_HISTORY = "battle_history";
     private static final int SAVE_INTERVAL_IN_MINUTES = 20;
 
     private static BattleHistoryStorage instance;
@@ -36,7 +37,32 @@ public class BattleHistoryStorage implements ServerLifecycleEvents.ServerStarted
 
     @Override
     public void onServerStarted(MinecraftServer server) {
+        renameBattleHistoryDirectory(server);
+
         load(server);
+    }
+
+    private void renameBattleHistoryDirectory(MinecraftServer server) {
+        File oldDirectory = getOldBattleHistoryDirectory(server);
+        File newDirectory = getNewBattleHistoryDirectory(server);
+
+        oldDirectory.renameTo(newDirectory);
+    }
+
+    private File getOldBattleHistoryDirectory(MinecraftServer server) {
+        final String OLD_BATTLE_HISTORY = "history";
+        File parent = server.getSavePath(WorldSavePath.ROOT).toFile();
+        String child = CobblemonTrainerBattle.MOD_ID + "/" + OLD_BATTLE_HISTORY;
+
+        return new File(parent, child);
+    }
+
+    private File getNewBattleHistoryDirectory(MinecraftServer server) {
+        final String NEW_BATTLE_HISTORY = BATTLE_HISTORY;
+        File parent = server.getSavePath(WorldSavePath.ROOT).toFile();
+        String child = CobblemonTrainerBattle.MOD_ID + "/" + NEW_BATTLE_HISTORY;
+
+        return new File(parent, child);
     }
 
     @Override
@@ -104,8 +130,7 @@ public class BattleHistoryStorage implements ServerLifecycleEvents.ServerStarted
 
     private List<File> getBattleHistoryFiles(MinecraftServer server) {
         try {
-            File[] files = getBattleHistoryDirectory(server).listFiles(new DatFileFilter());
-            return List.of(Objects.requireNonNull(files));
+            return List.of(getBattleHistoryDirectory(server).listFiles(new DatFileFilter()));
 
         } catch (NullPointerException e) {
             return List.of();
@@ -146,6 +171,8 @@ public class BattleHistoryStorage implements ServerLifecycleEvents.ServerStarted
             try {
                 UUID uuid = entry.getKey();
                 Map<Identifier, BattleHistory> map = entry.getValue();
+
+                Files.createDirectories(getBattleHistoryDirectory(server).toPath());
 
                 File newFile = new File(getBattleHistoryDirectory(server), uuid + ".dat");
                 File oldFile = new File(getBattleHistoryDirectory(server), uuid + ".dat_old");
@@ -188,13 +215,8 @@ public class BattleHistoryStorage implements ServerLifecycleEvents.ServerStarted
     private File getBattleHistoryDirectory(MinecraftServer server) {
         File parent = server.getSavePath(WorldSavePath.ROOT).toFile();
         String child = CobblemonTrainerBattle.MOD_ID + "/" + BATTLE_HISTORY;
-        File file = new File(parent, child);
 
-        if (!file.isDirectory()) {
-            throw new IllegalStateException();
-        }
-
-        return file;
+        return new File(parent, child);
     }
 
     private static class DatFileFilter implements FileFilter {
