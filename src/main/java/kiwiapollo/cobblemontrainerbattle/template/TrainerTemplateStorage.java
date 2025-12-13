@@ -49,15 +49,9 @@ public class TrainerTemplateStorage implements SimpleSynchronousResourceReloadLi
         return Identifier.of(CobblemonTrainerBattle.MOD_ID, "trainer_storage");
     }
 
-    /**
-     * Added dependency to Cobblemon resource reloader
-     * @see com.cobblemon.mod.common.data.CobblemonDataProvider
-     */
     @Override
     public Collection<Identifier> getFabricDependencies() {
-        return List.of(
-                Identifier.of(Cobblemon.MODID, "data_resources")
-        );
+        return List.of();
     }
 
     @Override
