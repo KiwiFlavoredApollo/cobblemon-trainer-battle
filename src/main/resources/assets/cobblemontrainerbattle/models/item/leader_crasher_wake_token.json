@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "cobblemontrainerbattle:item/iron_trainer_token"
+        "layer0": "cobblemontrainerbattle:item/leader_crasher_wake_token"
     }
 }
