@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "cobblemontrainerbattle:item/iron_trainer_ticket"
+        "layer0": "cobblemontrainerbattle:item/leader_winona_ticket"
     }
 }
