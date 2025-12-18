@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "cobblemontrainerbattle:item/gold_trainer_token"
+        "layer0": "cobblemontrainerbattle:item/elite_bruno_token"
     }
 }
