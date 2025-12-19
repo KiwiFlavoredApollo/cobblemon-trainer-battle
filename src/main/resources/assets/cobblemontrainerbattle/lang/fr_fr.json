@@ -398,7 +398,7 @@
 
   "commands.cobblemontrainerbattle.trainerbattle.success": "Le combat a commencé contre %s.",
   "commands.cobblemontrainerbattle.rentalpokemon.trade.success": "%s échangé pour %s.",
-  "commands.cobblemontrainerbattle.cobblemontrainerbattle.export.success": "Pokémon exporté(s) : %s",
+  "commands.cobblemontrainerbattle.exportpokemon.success": "Pokémon exporté(s) : %s",
 
   "commands.cobblemontrainerbattle.trainerbattle.failed.no_trainer": "Dresseur inconnu : %s",
   "commands.cobblemontrainerbattle.rentalbattle.failed.no_trainer": "Dresseur inconnu : %s",

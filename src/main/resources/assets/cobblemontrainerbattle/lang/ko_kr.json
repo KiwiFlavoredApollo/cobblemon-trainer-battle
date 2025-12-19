@@ -398,7 +398,7 @@
 
   "commands.cobblemontrainerbattle.trainerbattle.success": "%s와(과)의 배틀이 시작되었습니다.",
   "commands.cobblemontrainerbattle.rentalpokemon.trade.success": "%s와 %s를 교환했습니다.",
-  "commands.cobblemontrainerbattle.cobblemontrainerbattle.export.success": "포켓몬 내보내기를 완료했습니다 : %s",
+  "commands.cobblemontrainerbattle.exportpokemon.success": "포켓몬 내보내기를 완료했습니다 : %s",
 
   "commands.cobblemontrainerbattle.trainerbattle.failed.no_trainer": "알 수 없는 트레이너 : %s",
   "commands.cobblemontrainerbattle.rentalbattle.failed.no_trainer": "알 수 없는 트레이너 : %s",

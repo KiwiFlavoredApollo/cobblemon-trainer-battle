@@ -10,6 +10,10 @@
   "tag.item.cobblemontrainerbattle.vs_seekers": "VS Seekers",
 
   "item_group.cobblemontrainerbattle.cobblemontrainerbattle": "Cobblemon Trainer Battle",
+  "item_group.cobblemontrainerbattle.radicalred": "Radical Red",
+  "item_group.cobblemontrainerbattle.inclementemerald": "Inclement Emerald",
+  "item_group.cobblemontrainerbattle.xy": "XY",
+  "item_group.cobblemontrainerbattle.bdsp": "BDSP",
 
   "item.cobblemontrainerbattle.neutral_trainer_spawn_egg": "Neutral Trainer Spawn Egg",
   "item.cobblemontrainerbattle.static_trainer_spawn_egg": "Static Trainer Spawn Egg",
@@ -413,6 +417,6 @@
   "commands.cobblemontrainerbattle.rentalpokemon.trade.failed.no_rental_pokemon": "You have no rental Pokémon.",
   "commands.cobblemontrainerbattle.rentalpokemon.trade.failed.no_tradable_pokemon": "You have no tradable Pokémon.",
 
-  "commands.cobblemontrainerbattle.cobblemontrainerbattle.export.success": "Exported Pokémon: %s",
-  "commands.cobblemontrainerbattle.cobblemontrainerbattle.export.failed.no_player_pokemon": "The player has no Pokémon."
+  "commands.cobblemontrainerbattle.exportpokemon.success": "Exported %s's Pokémon.",
+  "commands.cobblemontrainerbattle.exportpokemon.failed": "Failed to export %s's Pokémon."
 }
