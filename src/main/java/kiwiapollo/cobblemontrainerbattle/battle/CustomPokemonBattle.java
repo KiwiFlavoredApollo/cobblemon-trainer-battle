@@ -55,7 +55,7 @@ public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
             this.battleId = battle.getBattleId();
             player.setBattleTheme(trainer.getBattleTheme());
 
-            CobblemonTrainerBattle.LOGGER.info("Started trainer battle : {} versus {}", player.getName().getString(), trainer.getIdentifier());
+            CobblemonTrainerBattle.LOGGER.info("Started trainer battle: {} versus {}", player.getName().getString(), trainer.getIdentifier());
 
             return Unit.INSTANCE;
         });
