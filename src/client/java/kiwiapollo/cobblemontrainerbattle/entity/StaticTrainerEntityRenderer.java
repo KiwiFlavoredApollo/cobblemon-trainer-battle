@@ -1,17 +1,24 @@
 package kiwiapollo.cobblemontrainerbattle.entity;
 
+import net.minecraft.client.render.entity.BipedEntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
+import net.minecraft.client.render.entity.model.EntityModelLayers;
+import net.minecraft.client.render.entity.model.PlayerEntityModel;
 import net.minecraft.util.Identifier;
 
-public class StaticTrainerEntityRenderer extends BattleEntityRenderer<StaticTrainerEntity> {
+public class StaticTrainerEntityRenderer extends BipedEntityRenderer<StaticTrainerEntity, PlayerEntityModel<StaticTrainerEntity>> {
     private static final TrainerTexture FALLBACK_TEXTURE = TrainerTexture.LEAF;
 
     public StaticTrainerEntityRenderer(EntityRendererFactory.Context context) {
-        super(context);
+        super(context, new PlayerEntityModel<>(context.getPart(EntityModelLayers.PLAYER_SLIM), false), 0.5f);
     }
 
-    @Override
-    protected Identifier getFallbackTexture() {
-        return FALLBACK_TEXTURE.getIdentifier();
+    public Identifier getTexture(StaticTrainerEntity entity) {
+        try {
+            return entity.getTexture();
+
+        } catch (NullPointerException e) {
+            return FALLBACK_TEXTURE.getIdentifier();
+        }
     }
 }
