@@ -37,32 +37,7 @@ public class BattleHistoryStorage implements ServerLifecycleEvents.ServerStarted
 
     @Override
     public void onServerStarted(MinecraftServer server) {
-        renameBattleHistoryDirectory(server);
-
         load(server);
-    }
-
-    private void renameBattleHistoryDirectory(MinecraftServer server) {
-        File oldDirectory = getOldBattleHistoryDirectory(server);
-        File newDirectory = getNewBattleHistoryDirectory(server);
-
-        oldDirectory.renameTo(newDirectory);
-    }
-
-    private File getOldBattleHistoryDirectory(MinecraftServer server) {
-        final String OLD_BATTLE_HISTORY = "history";
-        File parent = server.getSavePath(WorldSavePath.ROOT).toFile();
-        String child = CobblemonTrainerBattle.MOD_ID + "/" + OLD_BATTLE_HISTORY;
-
-        return new File(parent, child);
-    }
-
-    private File getNewBattleHistoryDirectory(MinecraftServer server) {
-        final String NEW_BATTLE_HISTORY = BATTLE_HISTORY;
-        File parent = server.getSavePath(WorldSavePath.ROOT).toFile();
-        String child = CobblemonTrainerBattle.MOD_ID + "/" + NEW_BATTLE_HISTORY;
-
-        return new File(parent, child);
     }
 
     @Override
@@ -223,6 +198,32 @@ public class BattleHistoryStorage implements ServerLifecycleEvents.ServerStarted
         @Override
         public boolean accept(File file) {
             return file.getName().endsWith(".dat");
+        }
+    }
+
+    public static class Renamer implements ServerLifecycleEvents.ServerStarted {
+        @Override
+        public void onServerStarted(MinecraftServer server) {
+            File oldDirectory = getOldBattleHistoryDirectory(server);
+            File newDirectory = getNewBattleHistoryDirectory(server);
+
+            oldDirectory.renameTo(newDirectory);
+        }
+
+        private File getOldBattleHistoryDirectory(MinecraftServer server) {
+            final String OLD_BATTLE_HISTORY = "history";
+            File parent = server.getSavePath(WorldSavePath.ROOT).toFile();
+            String child = CobblemonTrainerBattle.MOD_ID + "/" + OLD_BATTLE_HISTORY;
+
+            return new File(parent, child);
+        }
+
+        private File getNewBattleHistoryDirectory(MinecraftServer server) {
+            final String NEW_BATTLE_HISTORY = BATTLE_HISTORY;
+            File parent = server.getSavePath(WorldSavePath.ROOT).toFile();
+            String child = CobblemonTrainerBattle.MOD_ID + "/" + NEW_BATTLE_HISTORY;
+
+            return new File(parent, child);
         }
     }
 }
