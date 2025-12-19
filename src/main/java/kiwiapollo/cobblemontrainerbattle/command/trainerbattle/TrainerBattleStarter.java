@@ -19,7 +19,7 @@ import net.minecraft.util.Identifier;
 public abstract class TrainerBattleStarter implements Command<ServerCommandSource> {
     public int run(ServerPlayerEntity player, TrainerTemplate trainer) {
         try {
-            if (isTrainerExist(trainer)) {
+            if (!isTrainerExist(trainer)) {
                 player.sendMessage(getNoTrainerErrorMessage());
                 return 0;
             }
@@ -34,7 +34,7 @@ public abstract class TrainerBattleStarter implements Command<ServerCommandSourc
     }
 
     private boolean isTrainerExist(TrainerTemplate trainer) {
-        return trainer == null;
+        return trainer != null;
     }
 
     private Text getNoTrainerErrorMessage() {
