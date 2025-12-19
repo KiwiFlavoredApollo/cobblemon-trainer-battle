@@ -7,6 +7,9 @@ import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
 import kiwiapollo.cobblemontrainerbattle.block.CustomBlock;
 import kiwiapollo.cobblemontrainerbattle.block.CustomScreenHandlerType;
 import kiwiapollo.cobblemontrainerbattle.command.cobblemontrainerbattle.CobblemonTrainerBattleCommand;
+import kiwiapollo.cobblemontrainerbattle.command.exportpokemon.ExportPokemonCommand;
+import kiwiapollo.cobblemontrainerbattle.command.exportpokemon.ExportPokemonOtherCommand;
+import kiwiapollo.cobblemontrainerbattle.command.exportpokemon.ShowdownTeamExporter;
 import kiwiapollo.cobblemontrainerbattle.command.rentalbattle.RentalBattleCommand;
 import kiwiapollo.cobblemontrainerbattle.command.rentalbattle.RentalBattleOtherCommand;
 import kiwiapollo.cobblemontrainerbattle.command.rentalpokemon.RentalPokemonCommand;
@@ -15,7 +18,7 @@ import kiwiapollo.cobblemontrainerbattle.command.trainerbattle.TrainerBattleOthe
 import kiwiapollo.cobblemontrainerbattle.entity.*;
 import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
 import kiwiapollo.cobblemontrainerbattle.battle.BattleHistoryStorage;
-import kiwiapollo.cobblemontrainerbattle.item.CustomItemGroup;
+import kiwiapollo.cobblemontrainerbattle.item.*;
 import kiwiapollo.cobblemontrainerbattle.item.misc.DeprecatedItem;
 import kiwiapollo.cobblemontrainerbattle.item.misc.MiscItem;
 import kiwiapollo.cobblemontrainerbattle.item.ticket.BdspTicketItem;
@@ -70,6 +73,11 @@ public class CobblemonTrainerBattle implements ModInitializer {
         registerScreenHandler();
         registerReloadListener();
         registerEvent();
+
+        RadicalRedItemGroup.initialize();
+        InclementEmeraldItemGroup.initialize();
+        XyItemGroup.initialize();
+        BdspItemGroup.initialize();
 	}
 
     private void registerGameRule() {
@@ -116,6 +124,8 @@ public class CobblemonTrainerBattle implements ModInitializer {
             dispatcher.register(new RentalBattleCommand());
             dispatcher.register(new RentalBattleOtherCommand());
             dispatcher.register(new RentalPokemonCommand());
+            dispatcher.register(new ExportPokemonCommand());
+            dispatcher.register(new ExportPokemonOtherCommand());
             dispatcher.register(new CobblemonTrainerBattleCommand());
         });
     }
@@ -131,6 +141,8 @@ public class CobblemonTrainerBattle implements ModInitializer {
     private void registerEvent() {
         CobblemonEvents.BATTLE_VICTORY.subscribe(Priority.NORMAL, new BattleVictoryEventHandler());
         CobblemonEvents.LOOT_DROPPED.subscribe(Priority.HIGHEST, new LootDroppedEventHandler());
+        ServerLifecycleEvents.SERVER_STARTED.register(new ShowdownTeamExporter.Renamer());
+        ServerLifecycleEvents.SERVER_STARTED.register(new BattleHistoryStorage.Renamer());
         ServerLifecycleEvents.SERVER_STARTED.register(BattleHistoryStorage.getInstance());
         ServerLifecycleEvents.SERVER_STOPPED.register(BattleHistoryStorage.getInstance());
         ServerTickEvents.END_SERVER_TICK.register(BattleHistoryStorage.getInstance());
