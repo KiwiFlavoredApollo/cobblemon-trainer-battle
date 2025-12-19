@@ -3,7 +3,7 @@ package kiwiapollo.cobblemontrainerbattle.mixin;
 import com.cobblemon.mod.common.Cobblemon;
 import kiwiapollo.cobblemontrainerbattle.battle.PokeBallEngineerBattle;
 import kiwiapollo.cobblemontrainerbattle.entity.PokeBallEngineer;
-import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntityBehavior;
+import kiwiapollo.cobblemontrainerbattle.entity.BattleEntityBehavior;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplate;
 import kiwiapollo.cobblemontrainerbattle.villager.PokeBallEngineerVillager;
@@ -23,7 +23,7 @@ import java.util.*;
 
 @SuppressWarnings("unused")
 @Mixin(VillagerEntity.class)
-public class VillagerEntityMixin implements TrainerEntityBehavior {
+public class VillagerEntityMixin implements BattleEntityBehavior {
     private UUID battleId;
 
     public VillagerEntityMixin() {

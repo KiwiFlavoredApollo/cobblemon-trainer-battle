@@ -16,8 +16,8 @@ import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public class CamperEntity extends TrainerEntity {
-    public CamperEntity(EntityType<? extends PathAwareEntity> type, World world) {
+public class MannequinEntity extends BattleEntity {
+    public MannequinEntity(EntityType<? extends PathAwareEntity> type, World world) {
         super(type, world);
     }
 
@@ -63,7 +63,7 @@ public class CamperEntity extends TrainerEntity {
         setAiDisabled(false);
     }
 
-    public static class Factory implements EntityType.EntityFactory<CamperEntity>  {
+    public static class Factory implements EntityType.EntityFactory<MannequinEntity>  {
         private final RandomTrainerFactory identifier;
 
         public Factory() {
@@ -78,8 +78,8 @@ public class CamperEntity extends TrainerEntity {
         }
 
         @Override
-        public CamperEntity create(EntityType<CamperEntity> type, World world) {
-            CamperEntity entity = new CamperEntity(type, world);
+        public MannequinEntity create(EntityType<MannequinEntity> type, World world) {
+            MannequinEntity entity = new MannequinEntity(type, world);
             entity.setTrainer(identifier.create());
             return entity;
         }

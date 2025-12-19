@@ -104,11 +104,11 @@ public class CobblemonTrainerBattle implements ModInitializer {
         Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "static_trainer"), CustomEntityType.STATIC_TRAINER);
         FabricDefaultAttributeRegistry.register(CustomEntityType.STATIC_TRAINER, StaticTrainerEntity.createMobAttributes());
 
-        Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "drifter"), CustomEntityType.DRIFTER);
-        FabricDefaultAttributeRegistry.register(CustomEntityType.DRIFTER, DrifterEntity.createMobAttributes());
+        Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "trainer"), CustomEntityType.TRAINER);
+        FabricDefaultAttributeRegistry.register(CustomEntityType.TRAINER, TrainerEntity.createMobAttributes());
 
-        Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "camper"), CustomEntityType.CAMPER);
-        FabricDefaultAttributeRegistry.register(CustomEntityType.CAMPER, CamperEntity.createMobAttributes());
+        Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "mannequin"), CustomEntityType.MANNEQUIN);
+        FabricDefaultAttributeRegistry.register(CustomEntityType.MANNEQUIN, MannequinEntity.createMobAttributes());
 
         Registry.register(Registries.BLOCK_ENTITY_TYPE, Identifier.of(MOD_ID, "trainer_table"), CustomEntityType.POKE_BALL_BOX);
     }
@@ -147,7 +147,7 @@ public class CobblemonTrainerBattle implements ModInitializer {
         ServerLifecycleEvents.SERVER_STOPPED.register(BattleHistoryStorage.getInstance());
         ServerTickEvents.END_SERVER_TICK.register(BattleHistoryStorage.getInstance());
         ServerTickEvents.END_WORLD_TICK.register(new BattleFledEventHandler());
-        ServerTickEvents.END_WORLD_TICK.register(new DrifterEntitySpawner());
+        ServerTickEvents.END_WORLD_TICK.register(new TrainerEntitySpawner());
         ServerEntityEvents.ENTITY_LOAD.register(new DeprecatedEntityMigrator());
     }
 

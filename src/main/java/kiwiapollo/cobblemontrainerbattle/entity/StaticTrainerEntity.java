@@ -16,7 +16,7 @@ import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public class StaticTrainerEntity extends TrainerEntity {
+public class StaticTrainerEntity extends BattleEntity {
     public StaticTrainerEntity(EntityType<? extends PathAwareEntity> type, World world) {
         super(type, world);
     }

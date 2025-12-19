@@ -7,7 +7,7 @@ import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.mojang.brigadier.CommandDispatcher;
-import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntityBehavior;
+import kiwiapollo.cobblemontrainerbattle.entity.BattleEntityBehavior;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
 import kiwiapollo.cobblemontrainerbattle.template.PokemonLevelPair;
@@ -236,7 +236,7 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
 
         private void runEntityLevelPlayerVictoryHandler() {
             try {
-                ((TrainerEntityBehavior) entity).onPlayerVictory();
+                ((BattleEntityBehavior) entity).onPlayerVictory();
 
             } catch (ClassCastException ignored) {
 
@@ -262,7 +262,7 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
 
         private void runEntityLevelPlayerDefeatHandler() {
             try {
-                ((TrainerEntityBehavior) entity).onPlayerDefeat();
+                ((BattleEntityBehavior) entity).onPlayerDefeat();
 
             } catch (ClassCastException ignored) {
 

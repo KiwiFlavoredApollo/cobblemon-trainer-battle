@@ -4,7 +4,7 @@ import net.minecraft.util.Identifier;
 
 import java.util.UUID;
 
-public interface TrainerEntityBehavior {
+public interface BattleEntityBehavior {
     void setTrainer(Identifier trainer);
 
     Identifier getTexture();

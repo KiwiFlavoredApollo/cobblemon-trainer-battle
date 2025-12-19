@@ -1,6 +1,5 @@
 {
   "entity.cobblemontrainerbattle.neutral_trainer": "Dresseur Neutre",
-  "entity.cobblemontrainerbattle.hostile_trainer": "Dresseur Hostile",
   "entity.cobblemontrainerbattle.static_trainer": "Dresseur Statique",
 
   "entity.minecraft.villager.pokeballengineer": "Fabricant de Poké Ball",
@@ -12,7 +11,6 @@
   "item_group.cobblemontrainerbattle.cobblemontrainerbattle": "Cobblemon Trainer Battle",
 
   "item.cobblemontrainerbattle.neutral_trainer_spawn_egg": "Œuf d’Apparition – Dresseur Neutre",
-  "item.cobblemontrainerbattle.hostile_trainer_spawn_egg": "Œuf d’Apparition – Dresseur Hostile",
   "item.cobblemontrainerbattle.static_trainer_spawn_egg": "Œuf d’Apparition – Dresseur Statique",
 
   "item.cobblemontrainerbattle.empty_poke_ball": "Boîte Ball (vide)",

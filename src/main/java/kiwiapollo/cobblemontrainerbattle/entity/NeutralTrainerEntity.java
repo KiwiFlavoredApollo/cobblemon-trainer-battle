@@ -13,7 +13,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-public class NeutralTrainerEntity extends TrainerEntity implements Angerable {
+public class NeutralTrainerEntity extends BattleEntity implements Angerable {
     private static final UniformIntProvider ANGER_TIME_RANGE = TimeHelper.betweenSeconds(20, 39);
 
     private @Nullable UUID angryAt;

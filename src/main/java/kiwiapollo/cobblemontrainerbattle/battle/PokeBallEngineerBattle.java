@@ -7,7 +7,7 @@ import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.block.PokeBallBox;
-import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntityBehavior;
+import kiwiapollo.cobblemontrainerbattle.entity.BattleEntityBehavior;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.template.PokemonLevelPair;
 import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplate;
@@ -186,7 +186,7 @@ public class PokeBallEngineerBattle extends CustomPokemonBattle {
 
         private void runEntityLevelPlayerVictoryHandler() {
             try {
-                ((TrainerEntityBehavior) getEntity()).onPlayerVictory();
+                ((BattleEntityBehavior) getEntity()).onPlayerVictory();
 
             } catch (ClassCastException ignored) {
 
@@ -195,7 +195,7 @@ public class PokeBallEngineerBattle extends CustomPokemonBattle {
 
         private void runEntityLevelPlayerDefeatHandler() {
             try {
-                ((TrainerEntityBehavior) getEntity()).onPlayerDefeat();
+                ((BattleEntityBehavior) getEntity()).onPlayerDefeat();
 
             } catch (ClassCastException ignored) {
 

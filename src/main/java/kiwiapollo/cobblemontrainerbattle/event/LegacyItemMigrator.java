@@ -15,8 +15,8 @@ import java.util.Map;
 
 public class LegacyItemMigrator implements Command<ServerCommandSource> {
     private static final Map<Item, Item> ITEM = Map.ofEntries(
-            Map.entry(DeprecatedItem.STATIC_TRAINER_SPAWN_EGG.getItem(), MiscItem.CAMPER_SPAWN_EGG.getItem()),
-            Map.entry(DeprecatedItem.NEUTRAL_TRAINER_SPAWN_EGG.getItem(), MiscItem.DRIFTER_SPAWN_EGG.getItem())
+            Map.entry(DeprecatedItem.STATIC_TRAINER_SPAWN_EGG.getItem(), MiscItem.MANNEQUIN_SPAWN_EGG.getItem()),
+            Map.entry(DeprecatedItem.NEUTRAL_TRAINER_SPAWN_EGG.getItem(), MiscItem.TRAINER_SPAWN_EGG.getItem())
     );
 
     @Override

@@ -2,13 +2,12 @@ package kiwiapollo.cobblemontrainerbattle.mixin;
 
 import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
-import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntityBehavior;
+import kiwiapollo.cobblemontrainerbattle.entity.BattleEntityBehavior;
 import kiwiapollo.cobblemontrainerbattle.villager.PokeBallEngineerVillager;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.util.ActionResult;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -46,7 +45,7 @@ public class LivingEntityMixin {
     @Unique
     private boolean isBusyWithPokemonBattle() {
         try {
-            TrainerEntityBehavior villager = (TrainerEntityBehavior) this;
+            BattleEntityBehavior villager = (BattleEntityBehavior) this;
             return Objects.nonNull(Cobblemon.INSTANCE.getBattleRegistry().getBattle(villager.getBattleId()));
 
         } catch (ClassCastException | NullPointerException e) {
@@ -66,7 +65,7 @@ public class LivingEntityMixin {
     @Unique
     private void stopBattle() {
         try {
-            TrainerEntityBehavior villager = (TrainerEntityBehavior) this;
+            BattleEntityBehavior villager = (BattleEntityBehavior) this;
             PokemonBattle battle = Cobblemon.INSTANCE.getBattleRegistry().getBattle(villager.getBattleId());
             ServerPlayerEntity player = battle.getPlayers().get(0);
             battle.writeShowdownAction(String.format(">forcelose %s", battle.getActor(player).showdownId));

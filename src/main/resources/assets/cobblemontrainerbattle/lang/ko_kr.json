@@ -1,6 +1,5 @@
 {
   "entity.cobblemontrainerbattle.neutral_trainer": "중립적인 트레이너",
-  "entity.cobblemontrainerbattle.hostile_trainer": "적대적인 트레이너",
   "entity.cobblemontrainerbattle.static_trainer": "고정된 트레이너",
 
   "entity.minecraft.villager.pokeballengineer": "몬스터볼 기술자",
@@ -12,7 +11,6 @@
   "item_group.cobblemontrainerbattle.cobblemontrainerbattle": "코블몬 트레이너 배틀",
 
   "item.cobblemontrainerbattle.neutral_trainer_spawn_egg": "중립적인 트레이너 생성 알",
-  "item.cobblemontrainerbattle.hostile_trainer_spawn_egg": "적대적인 트레이너 생성 알",
   "item.cobblemontrainerbattle.static_trainer_spawn_egg": "고정된 트레이너 생성 알",
 
   "item.cobblemontrainerbattle.empty_poke_ball": "비어있는 몬스터볼",
