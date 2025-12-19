@@ -16,130 +16,130 @@ public class RadicalRedTicketRecipeProvider implements RecipeProviderBehavior {
     @Override
     public void generate(Consumer<RecipeJsonProvider> exporter) {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, RadicalRedTicketItem.LEADER_BROCK_TICKET.getItem())
-                .input(MiscItem.TRAINER_TOKEN.getItem(), 6)
+                .input(MiscItem.TRAINER_TOKEN, 6)
                 .input(Items.RED_DYE)
                 .input(CobblemonItems.ROCK_GEM)
-                .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN.getItem()), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN.getItem()))
+                .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN))
                 .criterion(FabricRecipeProvider.hasItem(CobblemonItems.ROCK_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.ROCK_GEM))
                 .offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, RadicalRedTicketItem.LEADER_MISTY_TICKET.getItem())
-                .input(MiscItem.TRAINER_TOKEN.getItem(), 6)
+                .input(MiscItem.TRAINER_TOKEN, 6)
                 .input(Items.RED_DYE)
                 .input(CobblemonItems.WATER_GEM)
-                .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN.getItem()), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN.getItem()))
+                .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN))
                 .criterion(FabricRecipeProvider.hasItem(CobblemonItems.WATER_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.WATER_GEM))
                 .offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, RadicalRedTicketItem.LEADER_LT_SURGE_TICKET.getItem())
-                .input(MiscItem.TRAINER_TOKEN.getItem(), 6)
+                .input(MiscItem.TRAINER_TOKEN, 6)
                 .input(Items.RED_DYE)
                 .input(CobblemonItems.ELECTRIC_GEM)
-                .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN.getItem()), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN.getItem()))
+                .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN))
                 .criterion(FabricRecipeProvider.hasItem(CobblemonItems.ELECTRIC_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.ELECTRIC_GEM))
                 .offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, RadicalRedTicketItem.LEADER_ERIKA_TICKET.getItem())
-                .input(MiscItem.TRAINER_TOKEN.getItem(), 6)
+                .input(MiscItem.TRAINER_TOKEN, 6)
                 .input(Items.RED_DYE)
                 .input(CobblemonItems.GRASS_GEM)
-                .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN.getItem()), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN.getItem()))
+                .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN))
                 .criterion(FabricRecipeProvider.hasItem(CobblemonItems.GRASS_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.GRASS_GEM))
                 .offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, RadicalRedTicketItem.LEADER_KOGA_TICKET.getItem())
-                .input(MiscItem.TRAINER_TOKEN.getItem(), 6)
+                .input(MiscItem.TRAINER_TOKEN, 6)
                 .input(Items.RED_DYE)
                 .input(CobblemonItems.POISON_GEM)
-                .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN.getItem()), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN.getItem()))
+                .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN))
                 .criterion(FabricRecipeProvider.hasItem(CobblemonItems.POISON_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.POISON_GEM))
                 .offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, RadicalRedTicketItem.LEADER_SABRINA_TICKET.getItem())
-                .input(MiscItem.TRAINER_TOKEN.getItem(), 6)
+                .input(MiscItem.TRAINER_TOKEN, 6)
                 .input(Items.RED_DYE)
                 .input(CobblemonItems.PSYCHIC_GEM)
-                .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN.getItem()), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN.getItem()))
+                .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN))
                 .criterion(FabricRecipeProvider.hasItem(CobblemonItems.PSYCHIC_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.PSYCHIC_GEM))
                 .offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, RadicalRedTicketItem.LEADER_BLAINE_TICKET.getItem())
-                .input(MiscItem.TRAINER_TOKEN.getItem(), 6)
+                .input(MiscItem.TRAINER_TOKEN, 6)
                 .input(Items.RED_DYE)
                 .input(CobblemonItems.FIRE_GEM)
-                .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN.getItem()), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN.getItem()))
+                .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN))
                 .criterion(FabricRecipeProvider.hasItem(CobblemonItems.FIRE_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.FIRE_GEM))
                 .offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, RadicalRedTicketItem.LEADER_GIOVANNI_TICKET.getItem())
-                .input(MiscItem.TRAINER_TOKEN.getItem(), 6)
+                .input(MiscItem.TRAINER_TOKEN, 6)
                 .input(Items.RED_DYE)
                 .input(CobblemonItems.GROUND_GEM)
-                .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN.getItem()), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN.getItem()))
+                .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN))
                 .criterion(FabricRecipeProvider.hasItem(CobblemonItems.GROUND_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.GROUND_GEM))
                 .offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, RadicalRedTicketItem.LEADER_FALKNER_TICKET.getItem())
-                .input(MiscItem.TRAINER_TOKEN.getItem(), 6)
+                .input(MiscItem.TRAINER_TOKEN, 6)
                 .input(Items.RED_DYE)
                 .input(CobblemonItems.FLYING_GEM)
-                .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN.getItem()), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN.getItem()))
+                .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN))
                 .criterion(FabricRecipeProvider.hasItem(CobblemonItems.FLYING_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.FLYING_GEM))
                 .offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, RadicalRedTicketItem.LEADER_BUGSY_TICKET.getItem())
-                .input(MiscItem.TRAINER_TOKEN.getItem(), 6)
+                .input(MiscItem.TRAINER_TOKEN, 6)
                 .input(Items.RED_DYE)
                 .input(CobblemonItems.BUG_GEM)
-                .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN.getItem()), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN.getItem()))
+                .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN))
                 .criterion(FabricRecipeProvider.hasItem(CobblemonItems.BUG_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.BUG_GEM))
                 .offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, RadicalRedTicketItem.LEADER_WHITNEY_TICKET.getItem())
-                .input(MiscItem.TRAINER_TOKEN.getItem(), 6)
+                .input(MiscItem.TRAINER_TOKEN, 6)
                 .input(Items.RED_DYE)
                 .input(CobblemonItems.NORMAL_GEM)
-                .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN.getItem()), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN.getItem()))
+                .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN))
                 .criterion(FabricRecipeProvider.hasItem(CobblemonItems.NORMAL_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.NORMAL_GEM))
                 .offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, RadicalRedTicketItem.LEADER_MORTY_TICKET.getItem())
-                .input(MiscItem.TRAINER_TOKEN.getItem(), 6)
+                .input(MiscItem.TRAINER_TOKEN, 6)
                 .input(Items.RED_DYE)
                 .input(CobblemonItems.GHOST_GEM)
-                .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN.getItem()), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN.getItem()))
+                .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN))
                 .criterion(FabricRecipeProvider.hasItem(CobblemonItems.GHOST_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.GHOST_GEM))
                 .offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, RadicalRedTicketItem.LEADER_CHUCK_TICKET.getItem())
-                .input(MiscItem.TRAINER_TOKEN.getItem(), 6)
+                .input(MiscItem.TRAINER_TOKEN, 6)
                 .input(Items.RED_DYE)
                 .input(CobblemonItems.FIGHTING_GEM)
-                .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN.getItem()), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN.getItem()))
+                .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN))
                 .criterion(FabricRecipeProvider.hasItem(CobblemonItems.FIGHTING_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.FIGHTING_GEM))
                 .offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, RadicalRedTicketItem.LEADER_JASMINE_TICKET.getItem())
-                .input(MiscItem.TRAINER_TOKEN.getItem(), 6)
+                .input(MiscItem.TRAINER_TOKEN, 6)
                 .input(Items.RED_DYE)
                 .input(CobblemonItems.STEEL_GEM)
-                .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN.getItem()), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN.getItem()))
+                .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN))
                 .criterion(FabricRecipeProvider.hasItem(CobblemonItems.STEEL_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.STEEL_GEM))
                 .offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, RadicalRedTicketItem.LEADER_PRYCE_TICKET.getItem())
-                .input(MiscItem.TRAINER_TOKEN.getItem(), 6)
+                .input(MiscItem.TRAINER_TOKEN, 6)
                 .input(Items.RED_DYE)
                 .input(CobblemonItems.ICE_GEM)
-                .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN.getItem()), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN.getItem()))
+                .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN))
                 .criterion(FabricRecipeProvider.hasItem(CobblemonItems.ICE_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.ICE_GEM))
                 .offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, RadicalRedTicketItem.LEADER_CLAIR_TICKET.getItem())
-                .input(MiscItem.TRAINER_TOKEN.getItem(), 6)
+                .input(MiscItem.TRAINER_TOKEN, 6)
                 .input(Items.RED_DYE)
                 .input(CobblemonItems.DRAGON_GEM)
-                .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN.getItem()), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN.getItem()))
+                .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN))
                 .criterion(FabricRecipeProvider.hasItem(CobblemonItems.DRAGON_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.DRAGON_GEM))
                 .offerTo(exporter);
 

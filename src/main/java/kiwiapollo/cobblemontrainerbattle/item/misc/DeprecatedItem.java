@@ -4,27 +4,34 @@ import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.entity.CustomEntityType;
 import net.minecraft.item.Item;
 import net.minecraft.item.SpawnEggItem;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
-public enum DeprecatedItem {
-    NEUTRAL_TRAINER_SPAWN_EGG("neutral_trainer_spawn_egg", new SpawnEggItem(CustomEntityType.NEUTRAL_TRAINER, 0xAAAAAA, 0xFF5555, new Item.Settings().maxCount(64))),
-    STATIC_TRAINER_SPAWN_EGG("static_trainer_spawn_egg", new SpawnEggItem(CustomEntityType.STATIC_TRAINER, 0xAAAAAA, 0x55FF55, new Item.Settings().maxCount(64))),
-    EMPTY_POKE_BALL("empty_poke_ball", new EmptyPokeBall()),
-    FILLED_POKE_BALL("filled_poke_ball", new FilledPokeBall());
+import java.util.ArrayList;
+import java.util.List;
 
-    private final Identifier identifier;
-    private final Item item;
+public class DeprecatedItem {
+    public static final List<Item> all = new ArrayList<>();
 
-    DeprecatedItem(String path, Item item) {
-        this.identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, path);
-        this.item = item;
+    public static final Item NEUTRAL_TRAINER_SPAWN_EGG = register("neutral_trainer_spawn_egg", new SpawnEggItem(CustomEntityType.NEUTRAL_TRAINER, 0xAAAAAA, 0xFF5555, new Item.Settings().maxCount(64)));
+    public static final Item STATIC_TRAINER_SPAWN_EGG = register("static_trainer_spawn_egg", new SpawnEggItem(CustomEntityType.STATIC_TRAINER, 0xAAAAAA, 0x55FF55, new Item.Settings().maxCount(64)));
+    public static final Item EMPTY_POKE_BALL = register("empty_poke_ball", new EmptyPokeBall());
+    public static final Item FILLED_POKE_BALL = register("filled_poke_ball", new FilledPokeBall());
+
+    public static void initialize() {
+
     }
 
-    public Identifier getIdentifier() {
-        return identifier;
+    private static Item register(String name, Item item) {
+        Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
+        Item registered = Registry.register(Registries.ITEM, identifier, item);
+        all.add(registered);
+
+        return registered;
     }
 
-    public Item getItem() {
-        return item;
+    public static List<Item> getAll() {
+        return new ArrayList<>(all);
     }
 }

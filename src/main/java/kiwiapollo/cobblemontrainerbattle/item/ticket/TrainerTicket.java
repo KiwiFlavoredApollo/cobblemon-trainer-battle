@@ -36,6 +36,6 @@ public class TrainerTicket extends Item {
             itemStack.decrement(1);
         }
 
-        return ActionResult.PASS;
+        return ActionResult.SUCCESS;
     }
 }

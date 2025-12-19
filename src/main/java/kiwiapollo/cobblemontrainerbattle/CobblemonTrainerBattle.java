@@ -41,10 +41,8 @@ import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
-import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.resource.ResourceType;
@@ -73,24 +71,18 @@ public class CobblemonTrainerBattle implements ModInitializer {
         registerScreenHandler();
         registerReloadListener();
         registerEvent();
-
-        RadicalRedItemGroup.initialize();
-        InclementEmeraldItemGroup.initialize();
-        XyItemGroup.initialize();
-        BdspItemGroup.initialize();
 	}
 
     private void registerGameRule() {
-        CustomGameRule.register();
+        CustomGameRule.initialize();
     }
 
     private void registerCriteria() {
-        Criteria.register(CustomCriteria.DEFEAT_TRAINER_CRITERION);
-        Criteria.register(CustomCriteria.KILL_TRAINER_CRITERION);
+        CustomCriteria.initialize();
     }
 
     private void registerConditionType() {
-        Registry.register(Registries.LOOT_CONDITION_TYPE, Identifier.of(MOD_ID, "defeated_in_battle"), CustomLootConditionType.DEFEATED_IN_BATTLE);
+        CustomLootConditionType.initialize();
     }
 
     private void registerFormAspect() {
@@ -152,18 +144,11 @@ public class CobblemonTrainerBattle implements ModInitializer {
     }
 
     private void registerItem() {
-        Arrays.stream(DeprecatedItem.values()).forEach(item -> {
-            Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
-        });
+        DeprecatedItem.initialize();
 
-        Arrays.stream(MiscItem.values()).forEach(item -> {
-            Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
-        });
+        MiscItem.initialize();
 
-        Arrays.stream(CustomBlock.values()).forEach(block -> {
-            Registry.register(Registries.BLOCK, block.getIdentifier(), block.getBlock());
-            Registry.register(Registries.ITEM, block.getIdentifier(), block.getItem());
-        });
+        CustomBlock.initialize();
 
         Arrays.stream(InclementEmeraldTicketItem.values()).forEach(item -> {
             Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
@@ -197,55 +182,11 @@ public class CobblemonTrainerBattle implements ModInitializer {
             Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
         });
 
-        Arrays.stream(VsSeekerItem.values()).forEach(item -> {
-            Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
-        });
+        VsSeekerItem.initialize();
     }
 
     private void registerItemGroup() {
-        Registry.register(Registries.ITEM_GROUP, CustomItemGroup.ITEM_GROUP_KEY, CustomItemGroup.ITEM_GROUP);
-
-        ItemGroupEvents.modifyEntriesEvent(CustomItemGroup.ITEM_GROUP_KEY).register(itemGroup -> {
-            Arrays.stream(MiscItem.values()).forEach(item -> {
-                itemGroup.add(item.getItem());
-            });
-
-            Arrays.stream(VsSeekerItem.values()).forEach(item -> {
-                itemGroup.add(item.getItem());
-            });
-
-            Arrays.stream(InclementEmeraldTicketItem.values()).forEach(item -> {
-                itemGroup.add(item.getItem());
-            });
-
-            Arrays.stream(InclementEmeraldTokenItem.values()).forEach(item -> {
-                itemGroup.add(item.getItem());
-            });
-
-            Arrays.stream(RadicalRedTicketItem.values()).forEach(item -> {
-                itemGroup.add(item.getItem());
-            });
-
-            Arrays.stream(RadicalRedTokenItem.values()).forEach(item -> {
-                itemGroup.add(item.getItem());
-            });
-
-            Arrays.stream(XyTicketItem.values()).forEach(item -> {
-                itemGroup.add(item.getItem());
-            });
-
-            Arrays.stream(XyTokenItem.values()).forEach(item -> {
-                itemGroup.add(item.getItem());
-            });
-
-            Arrays.stream(BdspTicketItem.values()).forEach(item -> {
-                itemGroup.add(item.getItem());
-            });
-
-            Arrays.stream(BdspTokenItem.values()).forEach(item -> {
-                itemGroup.add(item.getItem());
-            });
-        });
+        CustomItemGroup.initialize();
     }
 
     private void registerSoundEvent() {

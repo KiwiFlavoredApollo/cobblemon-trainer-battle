@@ -15,7 +15,7 @@ public class PokeBallEngineerVillager {
     public static final String PROFESSION_ID = "pokeballengineer";
 
     public static final RegistryKey<PointOfInterestType> POI_KEY = RegistryKey.of(RegistryKeys.POINT_OF_INTEREST_TYPE, Identifier.of(CobblemonTrainerBattle.MOD_ID, PokeBallEngineerVillager.POI_ID));
-    public static final PointOfInterestType POI_TYPE = PointOfInterestHelper.register(Identifier.of(CobblemonTrainerBattle.MOD_ID, POI_ID), 1, 1, CustomBlock.POKE_BALL_BOX.getBlock());
+    public static final PointOfInterestType POI_TYPE = PointOfInterestHelper.register(Identifier.of(CobblemonTrainerBattle.MOD_ID, POI_ID), 1, 1, CustomBlock.POKE_BALL_BOX);
     public static final VillagerProfession PROFESSION = new VillagerProfession(
             PROFESSION_ID,
             entry -> entry.matchesKey(POI_KEY),

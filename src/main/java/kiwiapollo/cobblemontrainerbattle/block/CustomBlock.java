@@ -4,30 +4,32 @@ import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
-public enum CustomBlock {
-    POKE_BALL_BOX(new PokeBallBox(), "poke_ball_box");
+import java.util.ArrayList;
+import java.util.List;
 
-    private final Block block;
-    private final Identifier identifier;
-    private final BlockItem item;
+public class CustomBlock {
+    public static final List<Block> all = new ArrayList<>();
 
-    CustomBlock(Block block, String id) {
-        this.block = block;
-        this.item = new BlockItem(block, new Item.Settings());
-        this.identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, id);
+    public static final Block POKE_BALL_BOX = register("poke_ball_box", new PokeBallBox());
+
+    public static void initialize() {
+
     }
 
-    public Block getBlock() {
-        return block;
+    private static Block register(String name, Block block) {
+        Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
+        Block registered = Registry.register(Registries.BLOCK, identifier, block);
+        Registry.register(Registries.ITEM, identifier, new BlockItem(block, new Item.Settings()));
+        all.add(registered);
+
+        return registered;
     }
 
-    public Identifier getIdentifier() {
-        return identifier;
-    }
-
-    public BlockItem getItem() {
-        return item;
+    public static List<Block> getAll() {
+        return new ArrayList<>(all);
     }
 }

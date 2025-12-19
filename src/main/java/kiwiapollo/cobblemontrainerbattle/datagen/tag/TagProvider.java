@@ -17,7 +17,6 @@ public class TagProvider extends FabricTagProvider<Item> {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup lookup) {
-        Arrays.stream(VsSeekerItem.values()).map(VsSeekerItem::getItem)
-                .forEach(item -> getOrCreateTagBuilder(ItemTagRegistry.VS_SEEKERS).add(item));
+        VsSeekerItem.getAll().forEach(getOrCreateTagBuilder(ItemTagRegistry.VS_SEEKERS)::add);
     }
 }

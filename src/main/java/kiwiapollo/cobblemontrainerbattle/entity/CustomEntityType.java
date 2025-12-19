@@ -20,6 +20,6 @@ public class CustomEntityType {
         STATIC_TRAINER = EntityType.Builder.create(new StaticTrainerEntity.Factory(), SpawnGroup.CREATURE).setDimensions(0.6f, 1.8f).build("static_trainer");
         TRAINER = EntityType.Builder.create(new TrainerEntity.Factory(), SpawnGroup.CREATURE).setDimensions(0.6f, 1.8f).build("trainer");
         MANNEQUIN = EntityType.Builder.create(new MannequinEntity.Factory(), SpawnGroup.CREATURE).setDimensions(0.6f, 1.8f).build("mannequin");
-        POKE_BALL_BOX = BlockEntityType.Builder.create(PokeBallBoxBlockEntity::new, CustomBlock.POKE_BALL_BOX.getBlock()).build(Util.getChoiceType(TypeReferences.BLOCK_ENTITY, "poke_ball_box"));
+        POKE_BALL_BOX = BlockEntityType.Builder.create(PokeBallBoxBlockEntity::new, CustomBlock.POKE_BALL_BOX).build(Util.getChoiceType(TypeReferences.BLOCK_ENTITY, "poke_ball_box"));
     }
 }

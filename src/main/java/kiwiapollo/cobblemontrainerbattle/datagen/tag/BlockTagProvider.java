@@ -15,6 +15,6 @@ public class BlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup lookup) {
-        this.getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE).add(CustomBlock.POKE_BALL_BOX.getBlock()).setReplace(false);
+        this.getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE).add(CustomBlock.POKE_BALL_BOX).setReplace(false);
     }
 }

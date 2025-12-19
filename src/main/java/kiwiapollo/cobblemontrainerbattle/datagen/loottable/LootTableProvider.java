@@ -11,6 +11,6 @@ public class LootTableProvider extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
-        addDrop(CustomBlock.POKE_BALL_BOX.getBlock(), drops(CustomBlock.POKE_BALL_BOX.getItem()));
+        addDrop(CustomBlock.POKE_BALL_BOX, drops(CustomBlock.POKE_BALL_BOX));
     }
 }

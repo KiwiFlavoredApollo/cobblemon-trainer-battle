@@ -28,7 +28,7 @@ public class TrainerEntityLootTableProvider extends SimpleFabricLootTableProvide
         exporter.accept(CustomEntityType.NEUTRAL_TRAINER.getLootTableId(), LootTable.builder()
                 .pool(LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1.0f))
-                        .with(ItemEntry.builder(MiscItem.TRAINER_TOKEN.getItem()).apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1.0f))))
+                        .with(ItemEntry.builder(MiscItem.TRAINER_TOKEN).apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1.0f))))
                         .conditionally(new DefeatedInBattleLootCondition())
                         .conditionally(RandomChanceLootCondition.builder(0.5f))
                         .build())

@@ -72,7 +72,7 @@ public class TrainerEntitySpawner implements ServerTickEvents.EndWorldTick {
 
     private boolean isLessThanMaximumPerPlayerTrainerCount(ServerWorld world, ServerPlayerEntity player) {
         int count = getEntityCount(world, player);
-        int maximum = world.getServer().getGameRules().get(CustomGameRule.MAXIMUM_PER_PLAYER_TRAINER_COUNT).get();
+        int maximum = world.getServer().getGameRules().get(CustomGameRule.MAXIMUM_TRAINER_COUNT_PER_PLAYER).get();
         return count < maximum;
     }
 
