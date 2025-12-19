@@ -7,7 +7,7 @@ import net.minecraft.client.render.entity.model.PlayerEntityModel;
 import net.minecraft.util.Identifier;
 
 public class TrainerEntityRenderer extends BipedEntityRenderer<TrainerEntity, PlayerEntityModel<TrainerEntity>> {
-    private static final TrainerTexture FALLBACK_TEXTURE = TrainerTexture.RED;
+    private static final Identifier FALLBACK_TEXTURE = TrainerTexture.RED;
 
     public TrainerEntityRenderer(EntityRendererFactory.Context context) {
         super(context, new PlayerEntityModel<>(context.getPart(EntityModelLayers.PLAYER_SLIM), false), 0.5f);
@@ -18,7 +18,7 @@ public class TrainerEntityRenderer extends BipedEntityRenderer<TrainerEntity, Pl
             return entity.getTexture();
 
         } catch (NullPointerException e) {
-            return FALLBACK_TEXTURE.getIdentifier();
+            return FALLBACK_TEXTURE;
         }
     }
 }

@@ -3,22 +3,12 @@ package kiwiapollo.cobblemontrainerbattle.entity;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import net.minecraft.util.Identifier;
 
-public enum TrainerTexture {
-    RED("textures/entity/trainer/slim/red_piikapiika.png"),
-    GREEN("textures/entity/trainer/slim/green_piikapiika.png"),
-    LEAF("textures/entity/trainer/slim/leaf_piikapiika.png"),
-    ALOLA_LEAF("textures/entity/trainer/slim/alola_leaf_piikapiika.png"),
-    SILVER("textures/entity/trainer/slim/silver_piikapiika.png"),
-    BLACK_HILBERT("textures/entity/trainer/slim/black_hilbert_piikapiika.png"),
-    WHITE_HILDA("textures/entity/trainer/slim/white_hilda_piikapiika.png");
-
-    private final String path;
-
-    TrainerTexture(String path) {
-        this.path = path;
-    }
-    
-    public Identifier getIdentifier() {
-        return Identifier.of(CobblemonTrainerBattle.MOD_ID, path);
-    }
+public class TrainerTexture {
+    public static final Identifier RED = Identifier.of(CobblemonTrainerBattle.MOD_ID, "textures/entity/trainer/slim/red_piikapiika.png");
+    public static final Identifier GREEN = Identifier.of(CobblemonTrainerBattle.MOD_ID, "textures/entity/trainer/slim/green_piikapiika.png");
+    public static final Identifier LEAF = Identifier.of(CobblemonTrainerBattle.MOD_ID, "textures/entity/trainer/slim/leaf_piikapiika.png");
+    public static final Identifier ALOLA_LEAF = Identifier.of(CobblemonTrainerBattle.MOD_ID, "textures/entity/trainer/slim/alola_leaf_piikapiika.png");
+    public static final Identifier SILVER = Identifier.of(CobblemonTrainerBattle.MOD_ID, "textures/entity/trainer/slim/silver_piikapiika.png");
+    public static final Identifier BLACK_HILBERT = Identifier.of(CobblemonTrainerBattle.MOD_ID, "textures/entity/trainer/slim/black_hilbert_piikapiika.png");
+    public static final Identifier WHITE_HILDA = Identifier.of(CobblemonTrainerBattle.MOD_ID, "textures/entity/trainer/slim/white_hilda_piikapiika.png");
 }

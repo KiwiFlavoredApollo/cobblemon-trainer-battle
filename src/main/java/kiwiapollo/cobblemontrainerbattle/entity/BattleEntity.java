@@ -47,7 +47,7 @@ import java.util.function.Predicate;
 
 public abstract class BattleEntity extends PathAwareEntity implements BattleEntityBehavior {
     private static final String FALLBACK_TRAINER = "cobblemontrainerbattle:radicalred/player_red";
-    private static final String FALLBACK_TEXTURE = TrainerTexture.RED.getIdentifier().toString();
+    private static final String FALLBACK_TEXTURE = "cobblemontrainerbattle:textures/entity/trainer/slim/red_piikapiika.png";
 
     private static final TrackedData<String> TRAINER = DataTracker.registerData(BattleEntity.class, TrackedDataHandlerRegistry.STRING);
     private static final TrackedData<String> TEXTURE = DataTracker.registerData(BattleEntity.class, TrackedDataHandlerRegistry.STRING);
