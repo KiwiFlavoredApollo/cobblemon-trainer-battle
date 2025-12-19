@@ -66,7 +66,7 @@ public abstract class ShowdownTeamExporter implements Command<ServerCommandSourc
     }
 
     private Text getExportPokemonErrorMessage(ServerPlayerEntity player) {
-        return Text.translatable("commands.cobblemontrainerbattle.exportpokemon.failed", player.getGameProfile().getName()).formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.exportpokemon.error", player.getGameProfile().getName()).formatted(Formatting.RED);
     }
 
     private List<ShowdownPokemon> getShowdownPokemon(ServerPlayerEntity player) {

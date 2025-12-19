@@ -49,6 +49,6 @@ public class CloneRentalPokemonProvider implements Command<ServerCommandSource> 
     }
 
     private MutableText getNotEnoughPokemonErrorMessage() {
-        return Text.translatable("commands.cobblemontrainerbattle.rentalpokemon.clone.failed.not_enough_pokemon", RentalBattle.POKEMON_COUNT).formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.rentalpokemon.clone.error.not_enough_pokemon", RentalBattle.POKEMON_COUNT).formatted(Formatting.RED);
     }
 }

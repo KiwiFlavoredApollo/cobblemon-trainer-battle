@@ -38,7 +38,7 @@ public abstract class RentalBattleStarter implements Command<ServerCommandSource
     }
 
     private Text getNoTrainerErrorMessage() {
-        return Text.translatable("commands.cobblemontrainerbattle.rentalbattle.failed.no_trainer").formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.rentalbattle.error.no_trainer").formatted(Formatting.RED);
     }
 
     protected ServerPlayerEntity getThisPlayer(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {

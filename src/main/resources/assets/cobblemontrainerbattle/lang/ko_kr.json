@@ -371,44 +371,44 @@
   "advancements.cobblemontrainerbattle.kill_champion_diantha.title": "헐 너무해",
   "advancements.cobblemontrainerbattle.kill_champion_diantha.description": "카르네를 죽이세요",
 
-  "commands.cobblemontrainerbattle.trainerbattle.failed.player_busy": "배틀 중에는 진행할 수 없습니다.",
-  "commands.cobblemontrainerbattle.trainerbattle.failed.no_player_pokemon": "지닌 포켓몬이 없기 때문에 진행할 수 없습니다.",
+  "commands.cobblemontrainerbattle.trainerbattle.error.player_busy": "배틀 중에는 진행할 수 없습니다.",
+  "commands.cobblemontrainerbattle.trainerbattle.error.no_player_pokemon": "지닌 포켓몬이 없기 때문에 진행할 수 없습니다.",
   "predicate.cobblemontrainerbattle.error.player_party_not_fainted": "지닌 포켓몬이 모두 기절했기 때문에 진행할 수 없습니다.",
 
-  "commands.cobblemontrainerbattle.trainerbattle.failed.rematch_not_allowed": "이 상대와는 다시 배틀할 수 없습니다.",
-  "commands.cobblemontrainerbattle.trainerbattle.failed.cooldown_not_elapsed": "남아있는 쿨다운 : %d 초",
+  "commands.cobblemontrainerbattle.trainerbattle.error.rematch_not_allowed": "이 상대와는 다시 배틀할 수 없습니다.",
+  "commands.cobblemontrainerbattle.trainerbattle.error.cooldown_not_elapsed": "남아있는 쿨다운 : %d 초",
 
-  "commands.cobblemontrainerbattle.trainerbattle.failed.maximum_party_size": "필요한 최대 포켓몬 마릿 수 : %d",
-  "commands.cobblemontrainerbattle.trainerbattle.failed.minimum_party_size": "필요한 최소 포켓몬 마릿 수 : %d",
+  "commands.cobblemontrainerbattle.trainerbattle.error.maximum_party_size": "필요한 최대 포켓몬 마릿 수 : %d",
+  "commands.cobblemontrainerbattle.trainerbattle.error.minimum_party_size": "필요한 최소 포켓몬 마릿 수 : %d",
 
-  "commands.cobblemontrainerbattle.trainerbattle.failed.maximum_party_level": "필요한 최대 포켓몬 레벨 : %d",
-  "commands.cobblemontrainerbattle.trainerbattle.failed.minimum_party_level": "필요한 최소 포켓몬 레벨 : %d",
+  "commands.cobblemontrainerbattle.trainerbattle.error.maximum_party_level": "필요한 최대 포켓몬 레벨 : %d",
+  "commands.cobblemontrainerbattle.trainerbattle.error.minimum_party_level": "필요한 최소 포켓몬 레벨 : %d",
 
-  "commands.cobblemontrainerbattle.trainerbattle.failed.required_label": "필요한 레이블 : %s",
-  "commands.cobblemontrainerbattle.trainerbattle.failed.required_pokemon": "필요한 포켓몬 : %s",
-  "commands.cobblemontrainerbattle.trainerbattle.failed.required_held_item": "필요한 지닌물건 : %s",
-  "commands.cobblemontrainerbattle.trainerbattle.failed.required_ability": "필요한 특성 : %s",
-  "commands.cobblemontrainerbattle.trainerbattle.failed.required_move": "필요한 기술 : %s",
+  "commands.cobblemontrainerbattle.trainerbattle.error.required_label": "필요한 레이블 : %s",
+  "commands.cobblemontrainerbattle.trainerbattle.error.required_pokemon": "필요한 포켓몬 : %s",
+  "commands.cobblemontrainerbattle.trainerbattle.error.required_held_item": "필요한 지닌물건 : %s",
+  "commands.cobblemontrainerbattle.trainerbattle.error.required_ability": "필요한 특성 : %s",
+  "commands.cobblemontrainerbattle.trainerbattle.error.required_move": "필요한 기술 : %s",
 
-  "commands.cobblemontrainerbattle.trainerbattle.failed.forbidden_label": "금지된 레이블 : %s",
-  "commands.cobblemontrainerbattle.trainerbattle.failed.forbidden_pokemon": "금지된 포켓몬 : %s",
-  "commands.cobblemontrainerbattle.trainerbattle.failed.forbidden_held_item": "금지된 지닌물건 : %s",
-  "commands.cobblemontrainerbattle.trainerbattle.failed.forbidden_ability": "금지된 특성 : %s",
-  "commands.cobblemontrainerbattle.trainerbattle.failed.forbidden_move": "금지된 기술 : %s",
+  "commands.cobblemontrainerbattle.trainerbattle.error.forbidden_label": "금지된 레이블 : %s",
+  "commands.cobblemontrainerbattle.trainerbattle.error.forbidden_pokemon": "금지된 포켓몬 : %s",
+  "commands.cobblemontrainerbattle.trainerbattle.error.forbidden_held_item": "금지된 지닌물건 : %s",
+  "commands.cobblemontrainerbattle.trainerbattle.error.forbidden_ability": "금지된 특성 : %s",
+  "commands.cobblemontrainerbattle.trainerbattle.error.forbidden_move": "금지된 기술 : %s",
 
   "commands.cobblemontrainerbattle.trainerbattle.success": "%s와(과)의 배틀이 시작되었습니다.",
   "commands.cobblemontrainerbattle.rentalpokemon.trade.success": "%s와 %s를 교환했습니다.",
   "commands.cobblemontrainerbattle.exportpokemon.success": "포켓몬 내보내기를 완료했습니다 : %s",
 
-  "commands.cobblemontrainerbattle.trainerbattle.failed.no_trainer": "알 수 없는 트레이너 : %s",
-  "commands.cobblemontrainerbattle.rentalbattle.failed.no_trainer": "알 수 없는 트레이너 : %s",
+  "commands.cobblemontrainerbattle.trainerbattle.error.no_trainer": "알 수 없는 트레이너 : %s",
+  "commands.cobblemontrainerbattle.rentalbattle.error.no_trainer": "알 수 없는 트레이너 : %s",
 
   "command.cobblemontrainerbattle.error.rentalbattle.trainer_minimum_party_size": "트레이너 포켓몬이 부족합니다 : %d 마리",
   "command.cobblemontrainerbattle.error.rentalbattle.player_minimum_party_size": "플레이어 포켓몬이 부족합니다 : %d 마리",
 
   "command.cobblemontrainerbattle.error.rentalpokemon.trainer_minimum_party_size": "트레이너 포켓몬이 부족합니다 : %d 마리",
-  "commands.cobblemontrainerbattle.rentalpokemon.clone.failed.not_enough_pokemon": "플레이어 포켓몬이 부족합니다 : %d 마리",
+  "commands.cobblemontrainerbattle.rentalpokemon.clone.error.not_enough_pokemon": "플레이어 포켓몬이 부족합니다 : %d 마리",
 
-  "commands.cobblemontrainerbattle.rentalpokemon.showrental.failed.no_rental_pokemon": "가지고 있는 렌탈 포켓몬이 없습니다.",
-  "commands.cobblemontrainerbattle.rentalpokemon.trade.failed.no_tradable_pokemon": "교환할 수 있는 포켓몬이 없습니다."
+  "commands.cobblemontrainerbattle.rentalpokemon.showrental.error.no_rental_pokemon": "가지고 있는 렌탈 포켓몬이 없습니다.",
+  "commands.cobblemontrainerbattle.rentalpokemon.trade.error.no_tradable_pokemon": "교환할 수 있는 포켓몬이 없습니다."
 }

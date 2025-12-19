@@ -55,7 +55,7 @@ public class RentalPokemonTrader implements Command<ServerCommandSource> {
     }
 
     private Text getNoRentalPokemonErrorMessage() {
-        return Text.translatable("commands.cobblemontrainerbattle.rentalpokemon.trade.failed.no_rental_pokemon").formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.rentalpokemon.trade.error.no_rental_pokemon").formatted(Formatting.RED);
     }
 
     private boolean isTradablePokemonExist(ServerPlayerEntity player) {
@@ -63,7 +63,7 @@ public class RentalPokemonTrader implements Command<ServerCommandSource> {
     }
 
     private Text getNoTradablePokemonErrorMessage() {
-        return Text.translatable("commands.cobblemontrainerbattle.rentalpokemon.trade.failed.no_tradable_pokemon").formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.rentalpokemon.trade.error.no_tradable_pokemon").formatted(Formatting.RED);
     }
 
     private int toIndex(int slot) {

@@ -52,11 +52,11 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
     }
 
     private Text getNoPlayerRentalPokemonErrorMessage() {
-        return Text.translatable("commands.cobblemontrainerbattle.rentalbattle.failed.no_player_pokemon").formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.rentalbattle.error.no_player_pokemon").formatted(Formatting.RED);
     }
 
     private Text getNoTrainerRentalPokemonErrorMessage() {
-        return Text.translatable("commands.cobblemontrainerbattle.rentalbattle.failed.no_trainer_pokemon").formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.rentalbattle.error.no_trainer_pokemon").formatted(Formatting.RED);
     }
 
     private static class PlayerBattleSideFactory {

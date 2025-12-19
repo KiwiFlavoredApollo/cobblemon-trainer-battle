@@ -31,6 +31,6 @@ public class TradablePokemonStatusPrinter extends PokemonStatusPrinter implement
     }
 
     private Text getNoTradablePokemonErrorMessage() {
-        return Text.translatable("commands.cobblemontrainerbattle.rentalpokemon.showtradable.failed.no_tradable_pokemon").formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.rentalpokemon.showtradable.error.no_tradable_pokemon").formatted(Formatting.RED);
     }
 }

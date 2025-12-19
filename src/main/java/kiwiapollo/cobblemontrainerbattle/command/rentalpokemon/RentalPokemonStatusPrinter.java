@@ -31,6 +31,6 @@ public class RentalPokemonStatusPrinter extends PokemonStatusPrinter implements 
     }
 
     private Text getNoRentalPokemonErrorMessage() {
-        return Text.translatable("commands.cobblemontrainerbattle.rentalpokemon.showrental.failed.no_rental_pokemon").formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.rentalpokemon.showrental.error.no_rental_pokemon").formatted(Formatting.RED);
     }
 }
