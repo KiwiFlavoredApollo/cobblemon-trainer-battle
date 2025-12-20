@@ -150,37 +150,17 @@ public class CobblemonTrainerBattle implements ModInitializer {
 
         CustomBlock.initialize();
 
-        Arrays.stream(InclementEmeraldTicketItem.values()).forEach(item -> {
-            Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
-        });
+        InclementEmeraldTicketItem.initialize();
+        InclementEmeraldTokenItem.initialize();
 
-        Arrays.stream(InclementEmeraldTokenItem.values()).forEach(item -> {
-            Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
-        });
+        RadicalRedTicketItem.initialize();
+        RadicalRedTokenItem.initialize();
 
-        Arrays.stream(RadicalRedTicketItem.values()).forEach(item -> {
-            Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
-        });
+        XyTicketItem.initialize();
+        XyTokenItem.initialize();
 
-        Arrays.stream(RadicalRedTokenItem.values()).forEach(item -> {
-            Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
-        });
-
-        Arrays.stream(XyTicketItem.values()).forEach(item -> {
-            Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
-        });
-
-        Arrays.stream(XyTokenItem.values()).forEach(item -> {
-            Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
-        });
-
-        Arrays.stream(BdspTicketItem.values()).forEach(item -> {
-            Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
-        });
-
-        Arrays.stream(BdspTokenItem.values()).forEach(item -> {
-            Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
-        });
+        BdspTicketItem.initialize();
+        BdspTokenItem.initialize();
 
         VsSeekerItem.initialize();
     }

@@ -1,7 +1,8 @@
 package kiwiapollo.cobblemontrainerbattle.item.ticket;
 
 import kiwiapollo.cobblemontrainerbattle.entity.CustomEntityType;
-import kiwiapollo.cobblemontrainerbattle.entity.NeutralTrainerEntity;
+import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -14,8 +15,8 @@ import net.minecraft.world.World;
 public class TrainerTicket extends Item {
     private final Identifier trainer;
 
-    public TrainerTicket(Settings settings, Identifier trainer) {
-        super(settings);
+    public TrainerTicket(Identifier trainer) {
+        super(new Item.Settings());
         this.trainer = trainer;
     }
 
@@ -26,7 +27,7 @@ public class TrainerTicket extends Item {
         ItemStack itemStack = context.getStack();
         BlockPos pos = context.getBlockPos().up();
 
-        NeutralTrainerEntity entity = new NeutralTrainerEntity(CustomEntityType.NEUTRAL_TRAINER, world);
+        TrainerEntity entity = new TrainerEntity(CustomEntityType.NEUTRAL_TRAINER, world);
         entity.setTrainer(trainer);
 
         entity.refreshPositionAndAngles(pos, player.getYaw(), player.getPitch());

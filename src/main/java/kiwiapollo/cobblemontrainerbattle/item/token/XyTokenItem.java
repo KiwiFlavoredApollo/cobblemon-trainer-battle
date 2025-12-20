@@ -2,38 +2,43 @@ package kiwiapollo.cobblemontrainerbattle.item.token;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import net.minecraft.item.Item;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
-public enum XyTokenItem {
-    LEADER_VIOLA_TOKEN("leader_viola_token"),
-    LEADER_GRANT_TOKEN("leader_grant_token"),
-    LEADER_KORRINA_TOKEN("leader_korrina_token"),
-    LEADER_RAMOS_TOKEN("leader_ramos_token"),
-    LEADER_CLEMONT_TOKEN("leader_clemont_token"),
-    LEADER_VALERIE_TOKEN("leader_valerie_token"),
-    LEADER_OLYMPIA_TOKEN("leader_olympia_token"),
-    LEADER_WULFRIC_TOKEN("leader_wulfric_token"),
+import java.util.ArrayList;
+import java.util.List;
 
-    ELITE_WIKSTROM_TOKEN("elite_wikstrom_token"),
-    ELITE_MALVA_TOKEN("elite_malva_token"),
-    ELITE_DRASNA_TOKEN("elite_drasna_token"),
-    ELITE_SIEBOLD_TOKEN("elite_siebold_token"),
+public class XyTokenItem {
+    public static final List<Item> all = new ArrayList<>();
 
-    CHAMPION_DIANTHA_TOKEN("champion_diantha_token");
+    public static final Item LEADER_VIOLA_TOKEN = register("leader_viola_token", new TrainerToken());
+    public static final Item LEADER_GRANT_TOKEN = register("leader_grant_token", new TrainerToken());
+    public static final Item LEADER_KORRINA_TOKEN = register("leader_korrina_token", new TrainerToken());
+    public static final Item LEADER_RAMOS_TOKEN = register("leader_ramos_token", new TrainerToken());
+    public static final Item LEADER_CLEMONT_TOKEN = register("leader_clemont_token", new TrainerToken());
+    public static final Item LEADER_VALERIE_TOKEN = register("leader_valerie_token", new TrainerToken());
+    public static final Item LEADER_OLYMPIA_TOKEN = register("leader_olympia_token", new TrainerToken());
+    public static final Item LEADER_WULFRIC_TOKEN = register("leader_wulfric_token", new TrainerToken());
+    public static final Item ELITE_WIKSTROM_TOKEN = register("elite_wikstrom_token", new TrainerToken());
+    public static final Item ELITE_MALVA_TOKEN = register("elite_malva_token", new TrainerToken());
+    public static final Item ELITE_DRASNA_TOKEN = register("elite_drasna_token", new TrainerToken());
+    public static final Item ELITE_SIEBOLD_TOKEN = register("elite_siebold_token", new TrainerToken());
+    public static final Item CHAMPION_DIANTHA_TOKEN = register("champion_diantha_token", new TrainerToken());
 
-    private final Identifier identifier;
-    private final Item item;
+    public static void initialize() {
 
-    XyTokenItem(String path) {
-        this.identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, path);
-        this.item = new TrainerToken();
     }
 
-    public Item getItem() {
-        return item;
+    private static Item register(String name, Item item) {
+        Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
+        Item registered = Registry.register(Registries.ITEM, identifier, item);
+        all.add(registered);
+
+        return registered;
     }
 
-    public Identifier getIdentifier() {
-        return identifier;
+    public static List<Item> getAll() {
+        return new ArrayList<>(all);
     }
 }

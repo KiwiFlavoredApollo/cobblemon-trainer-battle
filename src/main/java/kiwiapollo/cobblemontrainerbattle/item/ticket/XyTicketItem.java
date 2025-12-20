@@ -3,38 +3,43 @@ package kiwiapollo.cobblemontrainerbattle.item.ticket;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import net.minecraft.item.Item;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
-public enum XyTicketItem {
-    LEADER_VIOLA_TICKET("leader_viola_ticket", "entity/leader_viola"),
-    LEADER_GRANT_TICKET("leader_grant_ticket", "entity/leader_grant"),
-    LEADER_KORRINA_TICKET("leader_korrina_ticket", "entity/leader_korrina"),
-    LEADER_RAMOS_TICKET("leader_ramos_ticket", "entity/leader_ramos"),
-    LEADER_CLEMONT_TICKET("leader_clemont_ticket", "entity/leader_clemont"),
-    LEADER_VALERIE_TICKET("leader_valerie_ticket", "entity/leader_valerie"),
-    LEADER_OLYMPIA_TICKET("leader_olympia_ticket", "entity/leader_olympia"),
-    LEADER_WULFRIC_TICKET("leader_wulfric_ticket", "entity/leader_wulfric"),
+import java.util.ArrayList;
+import java.util.List;
 
-    ELITE_WIKSTROM_TICKET("elite_wikstrom_ticket", "entity/elite_wikstrom"),
-    ELITE_MALVA_TICKET("elite_malva_ticket", "entity/elite_malva"),
-    ELITE_DRASNA_TICKET("elite_drasna_ticket", "entity/elite_drasna"),
-    ELITE_SIEBOLD_TICKET("elite_siebold_ticket", "entity/elite_siebold"),
+public class XyTicketItem {
+    public static final List<Item> all = new ArrayList<>();
 
-    CHAMPION_DIANTHA_TICKET("champion_diantha_ticket", "entity/champion_diantha");
+    public static final Item LEADER_VIOLA_TICKET = register("leader_viola_ticket", new TrainerTicket(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_viola")));
+    public static final Item LEADER_GRANT_TICKET = register("leader_grant_ticket", new TrainerTicket(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_grant")));
+    public static final Item LEADER_KORRINA_TICKET = register("leader_korrina_ticket", new TrainerTicket(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_korrina")));
+    public static final Item LEADER_RAMOS_TICKET = register("leader_ramos_ticket", new TrainerTicket(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_ramos")));
+    public static final Item LEADER_CLEMONT_TICKET = register("leader_clemont_ticket", new TrainerTicket(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_clemont")));
+    public static final Item LEADER_VALERIE_TICKET = register("leader_valerie_ticket", new TrainerTicket(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_valerie")));
+    public static final Item LEADER_OLYMPIA_TICKET = register("leader_olympia_ticket", new TrainerTicket(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_olympia")));
+    public static final Item LEADER_WULFRIC_TICKET = register("leader_wulfric_ticket", new TrainerTicket(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_wulfric")));
+    public static final Item ELITE_WIKSTROM_TICKET = register("elite_wikstrom_ticket", new TrainerTicket(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/elite_wikstrom")));
+    public static final Item ELITE_MALVA_TICKET = register("elite_malva_ticket", new TrainerTicket(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/elite_malva")));
+    public static final Item ELITE_DRASNA_TICKET = register("elite_drasna_ticket", new TrainerTicket(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/elite_drasna")));
+    public static final Item ELITE_SIEBOLD_TICKET = register("elite_siebold_ticket", new TrainerTicket(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/elite_siebold")));
+    public static final Item CHAMPION_DIANTHA_TICKET = register("champion_diantha_ticket", new TrainerTicket(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/champion_diantha")));
 
-    private final Identifier identifier;
-    private final TrainerTicket item;
+    public static void initialize() {
 
-    XyTicketItem(String path, String trainer) {
-        this.identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, path);
-        this.item = new TrainerTicket(new Item.Settings(), Identifier.of(CobblemonTrainerBattle.MOD_ID, trainer));
     }
 
-    public Item getItem() {
-        return item;
+    private static Item register(String name, Item item) {
+        Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
+        Item registered = Registry.register(Registries.ITEM, identifier, item);
+        all.add(registered);
+
+        return registered;
     }
 
-    public Identifier getIdentifier() {
-        return identifier;
+    public static List<Item> getAll() {
+        return new ArrayList<>(all);
     }
 }

@@ -15,7 +15,7 @@ public enum InclementEmeraldAdvancement implements CustomAdvancement {
             .parent(AdvancementProvider.ROOT)
             .criterion("defeat_leader_roxanne", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_roxanne")))
             .display(
-                    InclementEmeraldTokenItem.LEADER_ROXANNE_TOKEN.getItem(),
+                    InclementEmeraldTokenItem.LEADER_ROXANNE_TOKEN,
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_roxanne.title"),
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_roxanne.description"),
                     AdvancementProvider.BACKGROUND,
@@ -30,7 +30,7 @@ public enum InclementEmeraldAdvancement implements CustomAdvancement {
             .parent(InclementEmeraldAdvancement.DEFEAT_ROXANNE.getAdvancement())
             .criterion("defeat_leader_brawly", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_brawly")))
             .display(
-                    InclementEmeraldTokenItem.LEADER_BRAWLY_TOKEN.getItem(),
+                    InclementEmeraldTokenItem.LEADER_BRAWLY_TOKEN,
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_brawly.title"),
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_brawly.description"),
                     AdvancementProvider.BACKGROUND,
@@ -45,7 +45,7 @@ public enum InclementEmeraldAdvancement implements CustomAdvancement {
             .parent(InclementEmeraldAdvancement.DEFEAT_BRAWLY.getAdvancement())
             .criterion("defeat_leader_wattson", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_wattson")))
             .display(
-                    InclementEmeraldTokenItem.LEADER_WATTSON_TOKEN.getItem(),
+                    InclementEmeraldTokenItem.LEADER_WATTSON_TOKEN,
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_wattson.title"),
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_wattson.description"),
                     AdvancementProvider.BACKGROUND,
@@ -60,7 +60,7 @@ public enum InclementEmeraldAdvancement implements CustomAdvancement {
             .parent(InclementEmeraldAdvancement.DEFEAT_WATTSON.getAdvancement())
             .criterion("defeat_leader_flannery", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_flannery")))
             .display(
-                    InclementEmeraldTokenItem.LEADER_FLANNERY_TOKEN.getItem(),
+                    InclementEmeraldTokenItem.LEADER_FLANNERY_TOKEN,
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_flannery.title"),
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_flannery.description"),
                     AdvancementProvider.BACKGROUND,
@@ -75,7 +75,7 @@ public enum InclementEmeraldAdvancement implements CustomAdvancement {
             .parent(InclementEmeraldAdvancement.DEFEAT_FLANNERY.getAdvancement())
             .criterion("defeat_leader_norman", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_norman")))
             .display(
-                    InclementEmeraldTokenItem.LEADER_NORMAN_TOKEN.getItem(),
+                    InclementEmeraldTokenItem.LEADER_NORMAN_TOKEN,
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_norman.title"),
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_norman.description"),
                     AdvancementProvider.BACKGROUND,
@@ -90,7 +90,7 @@ public enum InclementEmeraldAdvancement implements CustomAdvancement {
             .parent(InclementEmeraldAdvancement.DEFEAT_NORMAN.getAdvancement())
             .criterion("defeat_leader_winona", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_winona")))
             .display(
-                    InclementEmeraldTokenItem.LEADER_WINONA_TOKEN.getItem(),
+                    InclementEmeraldTokenItem.LEADER_WINONA_TOKEN,
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_winona.title"),
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_winona.description"),
                     AdvancementProvider.BACKGROUND,
@@ -105,7 +105,7 @@ public enum InclementEmeraldAdvancement implements CustomAdvancement {
             .parent(InclementEmeraldAdvancement.DEFEAT_WINONA.getAdvancement())
             .criterion("defeat_leader_tate_and_liza", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_tate_and_liza")))
             .display(
-                    InclementEmeraldTokenItem.LEADER_TATE_AND_LIZA_TOKEN.getItem(),
+                    InclementEmeraldTokenItem.LEADER_TATE_AND_LIZA_TOKEN,
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_tate_and_liza.title"),
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_tate_and_liza.description"),
                     AdvancementProvider.BACKGROUND,
@@ -120,7 +120,7 @@ public enum InclementEmeraldAdvancement implements CustomAdvancement {
             .parent(InclementEmeraldAdvancement.DEFEAT_TATE_AND_LIZA.getAdvancement())
             .criterion("defeat_leader_juan", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_juan")))
             .display(
-                    InclementEmeraldTokenItem.LEADER_JUAN_TOKEN.getItem(),
+                    InclementEmeraldTokenItem.LEADER_JUAN_TOKEN,
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_juan.title"),
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_juan.description"),
                     AdvancementProvider.BACKGROUND,
@@ -135,7 +135,7 @@ public enum InclementEmeraldAdvancement implements CustomAdvancement {
             .parent(AdvancementProvider.ROOT)
             .criterion("defeat_elite_sidney", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/elite_sidney")))
             .display(
-                    InclementEmeraldTokenItem.ELITE_SIDNEY_TOKEN.getItem(),
+                    InclementEmeraldTokenItem.ELITE_SIDNEY_TOKEN,
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_elite_sidney.title"),
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_elite_sidney.description"),
                     AdvancementProvider.BACKGROUND,
@@ -150,7 +150,7 @@ public enum InclementEmeraldAdvancement implements CustomAdvancement {
             .parent(InclementEmeraldAdvancement.DEFEAT_SIDNEY.getAdvancement())
             .criterion("defeat_elite_phoebe", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/elite_phoebe")))
             .display(
-                    InclementEmeraldTokenItem.ELITE_PHOEBE_TOKEN.getItem(),
+                    InclementEmeraldTokenItem.ELITE_PHOEBE_TOKEN,
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_elite_phoebe.title"),
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_elite_phoebe.description"),
                     AdvancementProvider.BACKGROUND,
@@ -165,7 +165,7 @@ public enum InclementEmeraldAdvancement implements CustomAdvancement {
             .parent(InclementEmeraldAdvancement.DEFEAT_PHOEBE.getAdvancement())
             .criterion("defeat_elite_glacia", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/elite_glacia")))
             .display(
-                    InclementEmeraldTokenItem.ELITE_GLACIA_TOKEN.getItem(),
+                    InclementEmeraldTokenItem.ELITE_GLACIA_TOKEN,
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_elite_glacia.title"),
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_elite_glacia.description"),
                     AdvancementProvider.BACKGROUND,
@@ -180,7 +180,7 @@ public enum InclementEmeraldAdvancement implements CustomAdvancement {
             .parent(InclementEmeraldAdvancement.DEFEAT_GLACIA.getAdvancement())
             .criterion("defeat_elite_drake", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/elite_drake")))
             .display(
-                    InclementEmeraldTokenItem.ELITE_DRAKE_TOKEN.getItem(),
+                    InclementEmeraldTokenItem.ELITE_DRAKE_TOKEN,
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_elite_drake.title"),
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_elite_drake.description"),
                     AdvancementProvider.BACKGROUND,
@@ -195,7 +195,7 @@ public enum InclementEmeraldAdvancement implements CustomAdvancement {
             .parent(InclementEmeraldAdvancement.DEFEAT_DRAKE.getAdvancement())
             .criterion("defeat_champion_wallace", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/champion_wallace")))
             .display(
-                    InclementEmeraldTokenItem.CHAMPION_WALLACE_TOKEN.getItem(),
+                    InclementEmeraldTokenItem.CHAMPION_WALLACE_TOKEN,
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_champion_wallace.title"),
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_champion_wallace.description"),
                     AdvancementProvider.BACKGROUND,

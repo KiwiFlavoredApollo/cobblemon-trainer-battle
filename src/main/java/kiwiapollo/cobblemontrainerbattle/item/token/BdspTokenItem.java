@@ -2,38 +2,43 @@ package kiwiapollo.cobblemontrainerbattle.item.token;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import net.minecraft.item.Item;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
-public enum BdspTokenItem {
-    LEADER_ROARK_TOKEN("leader_roark_token"),
-    LEADER_GARDENIA_TOKEN("leader_gardenia_token"),
-    LEADER_MAYLENE_TOKEN("leader_maylene_token"),
-    LEADER_CRASHER_WAKE_TOKEN("leader_crasher_wake_token"),
-    LEADER_FANTINA_TOKEN("leader_fantina_token"),
-    LEADER_BYRON_TOKEN("leader_byron_token"),
-    LEADER_CANDICE_TOKEN("leader_candice_token"),
-    LEADER_VOLKNER_TOKEN("leader_volkner_token"),
+import java.util.ArrayList;
+import java.util.List;
 
-    ELITE_AARON_TOKEN("elite_aaron_token"),
-    ELITE_BERTHA_TOKEN("elite_bertha_token"),
-    ELITE_FLINT_TOKEN("elite_flint_token"),
-    ELITE_LUCIAN_TOKEN("elite_lucian_token"),
+public class BdspTokenItem {
+    public static final List<Item> all = new ArrayList<>();
 
-    CHAMPION_CYNTHIA_TOKEN("champion_cynthia_token");
+    public static final Item LEADER_ROARK_TOKEN = register("leader_roark_token", new TrainerToken());
+    public static final Item LEADER_GARDENIA_TOKEN = register("leader_gardenia_token", new TrainerToken());
+    public static final Item LEADER_MAYLENE_TOKEN = register("leader_maylene_token", new TrainerToken());
+    public static final Item LEADER_CRASHER_WAKE_TOKEN = register("leader_crasher_wake_token", new TrainerToken());
+    public static final Item LEADER_FANTINA_TOKEN = register("leader_fantina_token", new TrainerToken());
+    public static final Item LEADER_BYRON_TOKEN = register("leader_byron_token", new TrainerToken());
+    public static final Item LEADER_CANDICE_TOKEN = register("leader_candice_token", new TrainerToken());
+    public static final Item LEADER_VOLKNER_TOKEN = register("leader_volkner_token", new TrainerToken());
+    public static final Item ELITE_AARON_TOKEN = register("elite_aaron_token", new TrainerToken());
+    public static final Item ELITE_BERTHA_TOKEN = register("elite_bertha_token", new TrainerToken());
+    public static final Item ELITE_FLINT_TOKEN = register("elite_flint_token", new TrainerToken());
+    public static final Item ELITE_LUCIAN_TOKEN = register("elite_lucian_token", new TrainerToken());
+    public static final Item CHAMPION_CYNTHIA_TOKEN = register("champion_cynthia_token", new TrainerToken());
 
-    private final Identifier identifier;
-    private final Item item;
+    public static void initialize() {
 
-    BdspTokenItem(String path) {
-        this.identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, path);
-        this.item = new TrainerToken();
     }
 
-    public Item getItem() {
-        return item;
+    private static Item register(String name, Item item) {
+        Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
+        Item registered = Registry.register(Registries.ITEM, identifier, item);
+        all.add(registered);
+
+        return registered;
     }
 
-    public Identifier getIdentifier() {
-        return identifier;
+    public static List<Item> getAll() {
+        return new ArrayList<>(all);
     }
 }

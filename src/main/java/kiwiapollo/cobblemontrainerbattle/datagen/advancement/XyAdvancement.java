@@ -15,7 +15,7 @@ public enum XyAdvancement implements CustomAdvancement {
             .parent(AdvancementProvider.ROOT)
             .criterion("defeat_leader_viola", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_viola")))
             .display(
-                    XyTokenItem.LEADER_VIOLA_TOKEN.getItem(),
+                    XyTokenItem.LEADER_VIOLA_TOKEN,
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_viola.title"),
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_viola.description"),
                     AdvancementProvider.BACKGROUND,
@@ -30,7 +30,7 @@ public enum XyAdvancement implements CustomAdvancement {
             .parent(XyAdvancement.DEFEAT_VIOLA.getAdvancement())
             .criterion("defeat_leader_grant", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_grant")))
             .display(
-                    XyTokenItem.LEADER_GRANT_TOKEN.getItem(),
+                    XyTokenItem.LEADER_GRANT_TOKEN,
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_grant.title"),
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_grant.description"),
                     AdvancementProvider.BACKGROUND,
@@ -45,7 +45,7 @@ public enum XyAdvancement implements CustomAdvancement {
             .parent(XyAdvancement.DEFEAT_GRANT.getAdvancement())
             .criterion("defeat_leader_korrina", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_korrina")))
             .display(
-                    XyTokenItem.LEADER_KORRINA_TOKEN.getItem(),
+                    XyTokenItem.LEADER_KORRINA_TOKEN,
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_korrina.title"),
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_korrina.description"),
                     AdvancementProvider.BACKGROUND,
@@ -60,7 +60,7 @@ public enum XyAdvancement implements CustomAdvancement {
             .parent(XyAdvancement.DEFEAT_KORRINA.getAdvancement())
             .criterion("defeat_leader_ramos", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_ramos")))
             .display(
-                    XyTokenItem.LEADER_RAMOS_TOKEN.getItem(),
+                    XyTokenItem.LEADER_RAMOS_TOKEN,
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_ramos.title"),
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_ramos.description"),
                     AdvancementProvider.BACKGROUND,
@@ -75,7 +75,7 @@ public enum XyAdvancement implements CustomAdvancement {
             .parent(XyAdvancement.DEFEAT_RAMOS.getAdvancement())
             .criterion("defeat_leader_clemont", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_clemont")))
             .display(
-                    XyTokenItem.LEADER_CLEMONT_TOKEN.getItem(),
+                    XyTokenItem.LEADER_CLEMONT_TOKEN,
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_clemont.title"),
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_clemont.description"),
                     AdvancementProvider.BACKGROUND,
@@ -90,7 +90,7 @@ public enum XyAdvancement implements CustomAdvancement {
             .parent(XyAdvancement.DEFEAT_CLEMONT.getAdvancement())
             .criterion("defeat_leader_valerie", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_valerie")))
             .display(
-                    XyTokenItem.LEADER_VALERIE_TOKEN.getItem(),
+                    XyTokenItem.LEADER_VALERIE_TOKEN,
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_valerie.title"),
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_valerie.description"),
                     AdvancementProvider.BACKGROUND,
@@ -105,7 +105,7 @@ public enum XyAdvancement implements CustomAdvancement {
             .parent(XyAdvancement.DEFEAT_VALERIE.getAdvancement())
             .criterion("defeat_leader_olympia", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_olympia")))
             .display(
-                    XyTokenItem.LEADER_OLYMPIA_TOKEN.getItem(),
+                    XyTokenItem.LEADER_OLYMPIA_TOKEN,
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_olympia.title"),
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_olympia.description"),
                     AdvancementProvider.BACKGROUND,
@@ -120,7 +120,7 @@ public enum XyAdvancement implements CustomAdvancement {
             .parent(XyAdvancement.DEFEAT_OLYMPIA.getAdvancement())
             .criterion("defeat_leader_wulfric", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/leader_wulfric")))
             .display(
-                    XyTokenItem.LEADER_WULFRIC_TOKEN.getItem(),
+                    XyTokenItem.LEADER_WULFRIC_TOKEN,
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_wulfric.title"),
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_leader_wulfric.description"),
                     AdvancementProvider.BACKGROUND,
@@ -135,7 +135,7 @@ public enum XyAdvancement implements CustomAdvancement {
             .parent(AdvancementProvider.ROOT)
             .criterion("defeat_elite_wikstrom", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/elite_wikstrom")))
             .display(
-                    XyTokenItem.ELITE_WIKSTROM_TOKEN.getItem(),
+                    XyTokenItem.ELITE_WIKSTROM_TOKEN,
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_elite_wikstrom.title"),
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_elite_wikstrom.description"),
                     AdvancementProvider.BACKGROUND,
@@ -150,7 +150,7 @@ public enum XyAdvancement implements CustomAdvancement {
             .parent(XyAdvancement.DEFEAT_WIKSTROM.getAdvancement())
             .criterion("defeat_elite_malva", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/elite_malva")))
             .display(
-                    XyTokenItem.ELITE_MALVA_TOKEN.getItem(),
+                    XyTokenItem.ELITE_MALVA_TOKEN,
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_elite_malva.title"),
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_elite_malva.description"),
                     AdvancementProvider.BACKGROUND,
@@ -165,7 +165,7 @@ public enum XyAdvancement implements CustomAdvancement {
             .parent(XyAdvancement.DEFEAT_MALVA.getAdvancement())
             .criterion("defeat_elite_drasna", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/elite_drasna")))
             .display(
-                    XyTokenItem.ELITE_DRASNA_TOKEN.getItem(),
+                    XyTokenItem.ELITE_DRASNA_TOKEN,
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_elite_drasna.title"),
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_elite_drasna.description"),
                     AdvancementProvider.BACKGROUND,
@@ -180,7 +180,7 @@ public enum XyAdvancement implements CustomAdvancement {
             .parent(XyAdvancement.DEFEAT_DRASNA.getAdvancement())
             .criterion("defeat_elite_siebold", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/elite_siebold")))
             .display(
-                    XyTokenItem.ELITE_SIEBOLD_TOKEN.getItem(),
+                    XyTokenItem.ELITE_SIEBOLD_TOKEN,
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_elite_siebold.title"),
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_elite_siebold.description"),
                     AdvancementProvider.BACKGROUND,
@@ -195,7 +195,7 @@ public enum XyAdvancement implements CustomAdvancement {
             .parent(XyAdvancement.DEFEAT_SIEBOLD.getAdvancement())
             .criterion("defeat_champion_diantha", new DefeatTrainerCriterion.TrainerCountConditions(Identifier.of(CobblemonTrainerBattle.MOD_ID, "entity/champion_diantha")))
             .display(
-                    XyTokenItem.CHAMPION_DIANTHA_TOKEN.getItem(),
+                    XyTokenItem.CHAMPION_DIANTHA_TOKEN,
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_champion_diantha.title"),
                     Text.translatable("advancements.cobblemontrainerbattle.defeat_champion_diantha.description"),
                     AdvancementProvider.BACKGROUND,

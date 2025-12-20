@@ -34,17 +34,17 @@ public class CustomItemGroup {
             MiscItem.getAll().forEach(group::add);
             VsSeekerItem.getAll().forEach(group::add);
 
-            Arrays.stream(InclementEmeraldTicketItem.values()).map(InclementEmeraldTicketItem::getItem).forEach(group::add);
-            Arrays.stream(InclementEmeraldTokenItem.values()).map(InclementEmeraldTokenItem::getItem).forEach(group::add);
+            InclementEmeraldTicketItem.getAll().forEach(group::add);
+            InclementEmeraldTokenItem.getAll().forEach(group::add);
 
-            Arrays.stream(RadicalRedTicketItem.values()).map(RadicalRedTicketItem::getItem).forEach(group::add);
-            Arrays.stream(RadicalRedTokenItem.values()).map(RadicalRedTokenItem::getItem).forEach(group::add);
+            RadicalRedTicketItem.getAll().forEach(group::add);
+            RadicalRedTokenItem.getAll().forEach(group::add);
 
-            Arrays.stream(XyTicketItem.values()).map(XyTicketItem::getItem).forEach(group::add);
-            Arrays.stream(XyTokenItem.values()).map(XyTokenItem::getItem).forEach(group::add);
+            XyTicketItem.getAll().forEach(group::add);
+            XyTokenItem.getAll().forEach(group::add);
 
-            Arrays.stream(BdspTicketItem.values()).map(BdspTicketItem::getItem).forEach(group::add);
-            Arrays.stream(BdspTokenItem.values()).map(BdspTokenItem::getItem).forEach(group::add);
+            BdspTicketItem.getAll().forEach(group::add);
+            BdspTokenItem.getAll().forEach(group::add);
         });
     }
 }
