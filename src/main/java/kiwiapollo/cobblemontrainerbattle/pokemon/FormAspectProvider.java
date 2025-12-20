@@ -33,6 +33,10 @@ public class FormAspectProvider implements AspectProvider {
             Map.entry("Galar-Zen", Set.of("galarian", "zen_mode"))
     );
 
+    public static void initialize() {
+        AspectProvider.Companion.register(new FormAspectProvider());
+    }
+
     @Override
     public @NotNull Set<String> provide(@NotNull PokemonProperties pokemonProperties) {
         return Set.of();

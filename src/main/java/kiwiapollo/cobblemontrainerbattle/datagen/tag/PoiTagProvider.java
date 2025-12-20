@@ -1,13 +1,11 @@
 package kiwiapollo.cobblemontrainerbattle.datagen.tag;
 
-import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.villager.PokeBallEngineerVillager;
+import kiwiapollo.cobblemontrainerbattle.villager.CustomPointOfInterestType;
 import net.minecraft.data.DataOutput;
 import net.minecraft.data.server.tag.TagProvider;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.PointOfInterestTypeTags;
-import net.minecraft.util.Identifier;
 import net.minecraft.world.poi.PointOfInterestType;
 
 import java.util.concurrent.CompletableFuture;
@@ -19,6 +17,6 @@ public class PoiTagProvider extends TagProvider<PointOfInterestType>  {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup lookup) {
-        this.getOrCreateTagBuilder(PointOfInterestTypeTags.ACQUIRABLE_JOB_SITE).addOptional(Identifier.of(CobblemonTrainerBattle.MOD_ID, PokeBallEngineerVillager.POI_ID));
+        this.getOrCreateTagBuilder(PointOfInterestTypeTags.ACQUIRABLE_JOB_SITE).addOptional(CustomPointOfInterestType.POKE_BALL_ENGINEER.getValue());
     }
 }

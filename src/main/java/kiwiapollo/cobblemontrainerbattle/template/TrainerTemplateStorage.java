@@ -4,10 +4,12 @@ import com.cobblemon.mod.common.Cobblemon;
 import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.resource.Resource;
 import net.minecraft.resource.ResourceManager;
+import net.minecraft.resource.ResourceType;
 import net.minecraft.util.Identifier;
 
 import java.io.*;
@@ -35,6 +37,10 @@ public class TrainerTemplateStorage implements SimpleSynchronousResourceReloadLi
         }
 
         return instance;
+    }
+
+    public static void initialize() {
+        ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(TrainerTemplateStorage.getInstance());
     }
 
     public TrainerTemplate get(Identifier trainer) {

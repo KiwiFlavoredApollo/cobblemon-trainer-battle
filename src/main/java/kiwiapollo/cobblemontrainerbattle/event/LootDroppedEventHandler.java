@@ -1,8 +1,10 @@
 package kiwiapollo.cobblemontrainerbattle.event;
 
 import com.cobblemon.mod.common.Cobblemon;
+import com.cobblemon.mod.common.api.Priority;
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
+import com.cobblemon.mod.common.api.events.CobblemonEvents;
 import com.cobblemon.mod.common.api.events.drops.LootDroppedEvent;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import kiwiapollo.cobblemontrainerbattle.battle.TrainerBattleActor;
@@ -14,6 +16,10 @@ import java.util.UUID;
 import java.util.stream.StreamSupport;
 
 public class LootDroppedEventHandler implements Function1<LootDroppedEvent, Unit> {
+    public static void initialize() {
+        CobblemonEvents.LOOT_DROPPED.subscribe(Priority.HIGHEST, new LootDroppedEventHandler());
+    }
+
     /**
      * LOOT_DROPPED event fires before BATTLE_VICTORY event.
      * Cobblemon Discord, Hiroku said: It's only used if the player kills the pokemon by hand, not by battle.

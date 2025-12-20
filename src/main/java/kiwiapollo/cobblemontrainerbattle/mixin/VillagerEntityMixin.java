@@ -2,11 +2,11 @@ package kiwiapollo.cobblemontrainerbattle.mixin;
 
 import com.cobblemon.mod.common.Cobblemon;
 import kiwiapollo.cobblemontrainerbattle.battle.PokeBallEngineerBattle;
-import kiwiapollo.cobblemontrainerbattle.entity.PokeBallEngineer;
 import kiwiapollo.cobblemontrainerbattle.entity.BattleEntityBehavior;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplate;
-import kiwiapollo.cobblemontrainerbattle.villager.PokeBallEngineerVillager;
+import kiwiapollo.cobblemontrainerbattle.villager.CustomVillagerProfession;
+import kiwiapollo.cobblemontrainerbattle.villager.PokeBallEngineer;
 import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -47,7 +47,7 @@ public class VillagerEntityMixin implements BattleEntityBehavior {
     private boolean isPokeBallEngineer() {
         try {
             VillagerEntity villager = (VillagerEntity) (Object) this;
-            return villager.getVillagerData().getProfession().equals(PokeBallEngineerVillager.PROFESSION);
+            return villager.getVillagerData().getProfession().equals(CustomVillagerProfession.POKE_BALL_ENGINEER);
 
         } catch (ClassCastException e) {
             return false;

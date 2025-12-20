@@ -33,6 +33,10 @@ import java.util.Objects;
 public abstract class ShowdownTeamExporter implements Command<ServerCommandSource> {
     private static final String SHOWDOWN_TEAM = "showdown_team";
 
+    public static void initialize() {
+        ServerLifecycleEvents.SERVER_STARTED.register(new ShowdownTeamExporter.Renamer());
+    }
+
     protected int run(ServerPlayerEntity player) {
         try {
             List<ShowdownPokemon> pokemon = getShowdownPokemon(player);

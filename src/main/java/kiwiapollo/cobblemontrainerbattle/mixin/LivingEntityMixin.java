@@ -3,7 +3,7 @@ package kiwiapollo.cobblemontrainerbattle.mixin;
 import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import kiwiapollo.cobblemontrainerbattle.entity.BattleEntityBehavior;
-import kiwiapollo.cobblemontrainerbattle.villager.PokeBallEngineerVillager;
+import kiwiapollo.cobblemontrainerbattle.villager.CustomVillagerProfession;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.passive.VillagerEntity;
@@ -35,7 +35,7 @@ public class LivingEntityMixin {
     private boolean isPokeBallEngineer() {
         try {
             VillagerEntity villager = (VillagerEntity) (Object) this;
-            return villager.getVillagerData().getProfession().equals(PokeBallEngineerVillager.PROFESSION);
+            return villager.getVillagerData().getProfession().equals(CustomVillagerProfession.POKE_BALL_ENGINEER);
 
         } catch (ClassCastException e) {
             return false;

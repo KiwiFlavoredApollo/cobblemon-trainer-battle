@@ -1,9 +1,11 @@
-package kiwiapollo.cobblemontrainerbattle.entity;
+package kiwiapollo.cobblemontrainerbattle.villager;
 
 import com.cobblemon.mod.common.CobblemonSounds;
 import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.pokemon.Pokemon;
+import com.google.common.collect.ImmutableSet;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.block.CustomBlock;
 import kiwiapollo.cobblemontrainerbattle.block.PokeBallBoxBlockEntity;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
 import kiwiapollo.cobblemontrainerbattle.item.misc.FilledPokeBall;
@@ -11,20 +13,27 @@ import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemon;
 import kiwiapollo.cobblemontrainerbattle.template.PokemonLevelPair;
 import kiwiapollo.cobblemontrainerbattle.template.PokemonType;
 import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplate;
+import net.fabricmc.fabric.api.object.builder.v1.world.poi.PointOfInterestHelper;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.ai.brain.MemoryModuleType;
 import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.GlobalPos;
+import net.minecraft.village.VillagerProfession;
+import net.minecraft.world.poi.PointOfInterestType;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 public class PokeBallEngineer {
+    public static final String NAME = "pokeballengineer";
+
     public static class TrainerTemplateFactory {
         private final VillagerEntity villager;
 
@@ -213,7 +222,7 @@ public class PokeBallEngineer {
         private List<PokemonType> createRequiredType() {
             return List.of();
         }
-        
+
         private List<String> createRequiredLabel() {
             return List.of();
         }
@@ -240,7 +249,7 @@ public class PokeBallEngineer {
         private List<PokemonType> createForbiddenType() {
             return List.of();
         }
-        
+
         private List<String> createForbiddenLabel() {
             return List.of();
         }
