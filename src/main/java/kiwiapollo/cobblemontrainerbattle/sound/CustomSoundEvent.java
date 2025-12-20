@@ -7,8 +7,7 @@ public class CustomSoundEvent {
         JohtoSoundEvent.initialize();
         HoenSoundEvent.initialize();
         SinohSoundEvent.initialize();
-        UnovaBlackSoundEvent.initialize();
-        UnovaWhiteSoundEvent.initialize();
+        UnovaSoundEvent.initialize();
         KalosSoundEvent.initialize();
         AlolaSoundEvent.initialize();
         GalarSoundEvent.initialize();
