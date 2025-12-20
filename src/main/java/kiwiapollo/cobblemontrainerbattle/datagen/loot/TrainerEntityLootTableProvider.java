@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.datagen.loottable;
+package kiwiapollo.cobblemontrainerbattle.datagen.loot;
 
 import com.cobblemon.mod.common.CobblemonItems;
 import kiwiapollo.cobblemontrainerbattle.entity.CustomEntityType;

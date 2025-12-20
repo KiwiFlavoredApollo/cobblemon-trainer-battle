@@ -1,8 +1,8 @@
 package kiwiapollo.cobblemontrainerbattle.datagen;
 
 import kiwiapollo.cobblemontrainerbattle.datagen.advancement.AdvancementProvider;
-import kiwiapollo.cobblemontrainerbattle.datagen.loottable.BlockLootTableProvider;
-import kiwiapollo.cobblemontrainerbattle.datagen.loottable.TrainerEntityLootTableProvider;
+import kiwiapollo.cobblemontrainerbattle.datagen.loot.BlockLootTableProvider;
+import kiwiapollo.cobblemontrainerbattle.datagen.loot.TrainerEntityLootTableProvider;
 import kiwiapollo.cobblemontrainerbattle.datagen.recipe.RecipeProvider;
 import kiwiapollo.cobblemontrainerbattle.datagen.tag.BlockTagProvider;
 import kiwiapollo.cobblemontrainerbattle.datagen.tag.PoiTagProvider;

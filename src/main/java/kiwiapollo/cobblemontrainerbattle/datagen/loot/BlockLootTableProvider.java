@@ -1,4 +1,4 @@
-package kiwiapollo.cobblemontrainerbattle.datagen.loottable;
+package kiwiapollo.cobblemontrainerbattle.datagen.loot;
 
 import kiwiapollo.cobblemontrainerbattle.block.CustomBlock;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
