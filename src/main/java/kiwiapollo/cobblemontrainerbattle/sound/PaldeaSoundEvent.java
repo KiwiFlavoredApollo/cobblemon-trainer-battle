@@ -1,43 +1,49 @@
 package kiwiapollo.cobblemontrainerbattle.sound;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import net.minecraft.registry.Registries;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
-public enum PaldeaSoundEvent {
-    PALDEA_DEFAULT("battle.paldea.default"),
+import java.util.ArrayList;
+import java.util.List;
 
-    LEADER_KATY("battle.leader.katy"),
-    LEADER_BRASSIUS("battle.leader.brassius"),
-    LEADER_IONO("battle.leader.iono"),
-    LEADER_KOFU("battle.leader.kofu"),
-    LEADER_LARRY("battle.leader.larry"),
-    LEADER_RYME("battle.leader.ryme"),
-    LEADER_TULIP("battle.leader.tulip"),
-    LEADER_GRUSHA("battle.leader.grusha"),
-    ELITE_RIKA("battle.elite.rika"),
-    ELITE_POPPY("battle.elite.poppy"),
-    ELITE_LARRY("battle.elite.larry"),
-    ELITE_HASSEL("battle.elite.hassel"),
-    CHAMPION_GEETA("battle.champion.geeta"),
+public class PaldeaSoundEvent {
+    public static final List<SoundEvent> all = new ArrayList<>();
 
-    ELITE_CRISPIN("battle.elite.crispin"),
-    ELITE_AMARYS("battle.elite.amarys"),
-    ELITE_LACEY("battle.elite.lacey"),
-    ELITE_DRAYTON("battle.elite.drayton"),
-    CHAMPION_KIERAN("battle.champion.kieran");
+    public static final SoundEvent PALDEA_DEFAULT = register("battle.paldea.default");
+    public static final SoundEvent LEADER_KATY = register("battle.leader.katy");
+    public static final SoundEvent LEADER_BRASSIUS = register("battle.leader.brassius");
+    public static final SoundEvent LEADER_IONO = register("battle.leader.iono");
+    public static final SoundEvent LEADER_KOFU = register("battle.leader.kofu");
+    public static final SoundEvent LEADER_LARRY = register("battle.leader.larry");
+    public static final SoundEvent LEADER_RYME = register("battle.leader.ryme");
+    public static final SoundEvent LEADER_TULIP = register("battle.leader.tulip");
+    public static final SoundEvent LEADER_GRUSHA = register("battle.leader.grusha");
+    public static final SoundEvent ELITE_RIKA = register("battle.elite.rika");
+    public static final SoundEvent ELITE_POPPY = register("battle.elite.poppy");
+    public static final SoundEvent ELITE_LARRY = register("battle.elite.larry");
+    public static final SoundEvent ELITE_HASSEL = register("battle.elite.hassel");
+    public static final SoundEvent CHAMPION_GEETA = register("battle.champion.geeta");
+    public static final SoundEvent ELITE_CRISPIN = register("battle.elite.crispin");
+    public static final SoundEvent ELITE_AMARYS = register("battle.elite.amarys");
+    public static final SoundEvent ELITE_LACEY = register("battle.elite.lacey");
+    public static final SoundEvent ELITE_DRAYTON = register("battle.elite.drayton");
+    public static final SoundEvent CHAMPION_KIERAN = register("battle.champion.kieran");
 
-    private final Identifier identifier;
+    public static void initialize() {
 
-    PaldeaSoundEvent(String path) {
-        this.identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, path);
     }
 
-    public SoundEvent getSoundEvent() {
-        return SoundEvent.of(identifier);
+    private static SoundEvent register(String name) {
+        Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
+        SoundEvent registered = FailSafeRegistry.register(Registries.SOUND_EVENT, identifier, SoundEvent.of(identifier));
+        all.add(registered);
+
+        return registered;
     }
 
-    public Identifier getIdentifier() {
-        return identifier;
+    public static List<SoundEvent> getAll() {
+        return new ArrayList<>(all);
     }
 }

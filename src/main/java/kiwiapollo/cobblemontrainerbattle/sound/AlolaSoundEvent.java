@@ -1,36 +1,43 @@
 package kiwiapollo.cobblemontrainerbattle.sound;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import net.minecraft.registry.Registries;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
-public enum AlolaSoundEvent {
-    ALOLA_DEFAULT("battle.alola.default"),
+import java.util.ArrayList;
+import java.util.List;
 
-    LEADER_ILIMA("battle.leader.ilima"),
-    LEADER_LANA("battle.leader.lana"),
-    LEADER_KIAWE("battle.leader.kiawe"),
-    LEADER_MALLOW("battle.leader.mallow"),
-    LEADER_SOPHOCLES("battle.leader.sophocles"),
-    LEADER_MINA("battle.leader.mina"),
-    LEADER_ACEROLA("battle.leader.acerola"),
-    ELITE_HALA("battle.elite.hala"),
-    ELITE_ACEROLA("battle.elite.acerola"),
-    ELITE_KAHILI("battle.elite.kahili"),
-    ELITE_MOLAYNE("battle.elite.molayne"),
-    CHAMPION_KUKUI("battle.champion.kukui");
+public class AlolaSoundEvent {
+    public static final List<SoundEvent> all = new ArrayList<>();
 
-    private final Identifier identifier;
+    public static final SoundEvent ALOLA_DEFAULT = register("battle.alola.default");
+    public static final SoundEvent LEADER_ILIMA = register("battle.leader.ilima");
+    public static final SoundEvent LEADER_LANA = register("battle.leader.lana");
+    public static final SoundEvent LEADER_KIAWE = register("battle.leader.kiawe");
+    public static final SoundEvent LEADER_MALLOW = register("battle.leader.mallow");
+    public static final SoundEvent LEADER_SOPHOCLES = register("battle.leader.sophocles");
+    public static final SoundEvent LEADER_MINA = register("battle.leader.mina");
+    public static final SoundEvent LEADER_ACEROLA = register("battle.leader.acerola");
+    public static final SoundEvent ELITE_HALA = register("battle.elite.hala");
+    public static final SoundEvent ELITE_ACEROLA = register("battle.elite.acerola");
+    public static final SoundEvent ELITE_KAHILI = register("battle.elite.kahili");
+    public static final SoundEvent ELITE_MOLAYNE = register("battle.elite.molayne");
+    public static final SoundEvent CHAMPION_KUKUI = register("battle.champion.kukui");
 
-    AlolaSoundEvent(String path) {
-        this.identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, path);
+    public static void initialize() {
+
     }
 
-    public SoundEvent getSoundEvent() {
-        return SoundEvent.of(identifier);
+    private static SoundEvent register(String name) {
+        Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
+        SoundEvent registered = FailSafeRegistry.register(Registries.SOUND_EVENT, identifier, SoundEvent.of(identifier));
+        all.add(registered);
+
+        return registered;
     }
 
-    public Identifier getIdentifier() {
-        return identifier;
+    public static List<SoundEvent> getAll() {
+        return new ArrayList<>(all);
     }
 }

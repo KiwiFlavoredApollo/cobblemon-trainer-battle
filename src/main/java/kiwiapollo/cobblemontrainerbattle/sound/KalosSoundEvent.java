@@ -1,37 +1,44 @@
 package kiwiapollo.cobblemontrainerbattle.sound;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import net.minecraft.registry.Registries;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
-public enum KalosSoundEvent {
-    KALOS_DEFAULT("battle.kalos.default"),
+import java.util.ArrayList;
+import java.util.List;
 
-    LEADER_VIOLA("battle.leader.viola"),
-    LEADER_GRANT("battle.leader.grant"),
-    LEADER_KORRINA("battle.leader.korrina"),
-    LEADER_RAMOS("battle.leader.ramos"),
-    LEADER_CLEMONT("battle.leader.clemont"),
-    LEADER_VALERIE("battle.leader.valerie"),
-    LEADER_OLYMPIA("battle.leader.olympia"),
-    LEADER_WULFRIC("battle.leader.wulfric"),
-    ELITE_MALVA("battle.elite.malva"),
-    ELITE_SIEBOLD("battle.elite.siebold"),
-    ELITE_WIKSTROM("battle.elite.wikstrom"),
-    ELITE_DRASNA("battle.elite.drasna"),
-    CHAMPION_DIANTHA("battle.champion.diantha");
+public class KalosSoundEvent {
+    public static final List<SoundEvent> all = new ArrayList<>();
 
-    private final Identifier identifier;
+    public static final SoundEvent KALOS_DEFAULT = register("battle.kalos.default");
+    public static final SoundEvent LEADER_VIOLA = register("battle.leader.viola");
+    public static final SoundEvent LEADER_GRANT = register("battle.leader.grant");
+    public static final SoundEvent LEADER_KORRINA = register("battle.leader.korrina");
+    public static final SoundEvent LEADER_RAMOS = register("battle.leader.ramos");
+    public static final SoundEvent LEADER_CLEMONT = register("battle.leader.clemont");
+    public static final SoundEvent LEADER_VALERIE = register("battle.leader.valerie");
+    public static final SoundEvent LEADER_OLYMPIA = register("battle.leader.olympia");
+    public static final SoundEvent LEADER_WULFRIC = register("battle.leader.wulfric");
+    public static final SoundEvent ELITE_MALVA = register("battle.elite.malva");
+    public static final SoundEvent ELITE_SIEBOLD = register("battle.elite.siebold");
+    public static final SoundEvent ELITE_WIKSTROM = register("battle.elite.wikstrom");
+    public static final SoundEvent ELITE_DRASNA = register("battle.elite.drasna");
+    public static final SoundEvent CHAMPION_DIANTHA = register("battle.champion.diantha");
 
-    KalosSoundEvent(String path) {
-        this.identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, path);
+    public static void initialize() {
+
     }
 
-    public SoundEvent getSoundEvent() {
-        return SoundEvent.of(identifier);
+    private static SoundEvent register(String name) {
+        Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
+        SoundEvent registered = FailSafeRegistry.register(Registries.SOUND_EVENT, identifier, SoundEvent.of(identifier));
+        all.add(registered);
+
+        return registered;
     }
 
-    public Identifier getIdentifier() {
-        return identifier;
+    public static List<SoundEvent> getAll() {
+        return new ArrayList<>(all);
     }
 }

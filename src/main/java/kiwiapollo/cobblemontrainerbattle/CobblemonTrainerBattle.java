@@ -170,61 +170,17 @@ public class CobblemonTrainerBattle implements ModInitializer {
     }
 
     private void registerSoundEvent() {
-        Arrays.stream(MiscSoundEvent.values()).forEach(sound -> {
-            tryRegister(Registries.SOUND_EVENT, sound.getIdentifier(), sound.getSoundEvent());
-        });
-
-        Arrays.stream(KantoSoundEvent.values()).forEach(sound -> {
-            tryRegister(Registries.SOUND_EVENT, sound.getIdentifier(), sound.getSoundEvent());
-        });
-
-        Arrays.stream(JohtoSoundEvent.values()).forEach(sound -> {
-            tryRegister(Registries.SOUND_EVENT, sound.getIdentifier(), sound.getSoundEvent());
-        });
-
-        Arrays.stream(HoenSoundEvent.values()).forEach(sound -> {
-            tryRegister(Registries.SOUND_EVENT, sound.getIdentifier(), sound.getSoundEvent());
-        });
-
-        Arrays.stream(SinohSoundEvent.values()).forEach(sound -> {
-            tryRegister(Registries.SOUND_EVENT, sound.getIdentifier(), sound.getSoundEvent());
-        });
-
-        Arrays.stream(UnovaBlackSoundEvent.values()).forEach(sound -> {
-            tryRegister(Registries.SOUND_EVENT, sound.getIdentifier(), sound.getSoundEvent());
-        });
-
-        Arrays.stream(UnovaWhiteSoundEvent.values()).forEach(sound -> {
-            tryRegister(Registries.SOUND_EVENT, sound.getIdentifier(), sound.getSoundEvent());
-        });
-
-        Arrays.stream(KalosSoundEvent.values()).forEach(sound -> {
-            tryRegister(Registries.SOUND_EVENT, sound.getIdentifier(), sound.getSoundEvent());
-        });
-
-        Arrays.stream(AlolaSoundEvent.values()).forEach(sound -> {
-            tryRegister(Registries.SOUND_EVENT, sound.getIdentifier(), sound.getSoundEvent());
-        });
-
-        Arrays.stream(GalarSoundEvent.values()).forEach(sound -> {
-            tryRegister(Registries.SOUND_EVENT, sound.getIdentifier(), sound.getSoundEvent());
-        });
-
-        Arrays.stream(HisuiSoundEvent.values()).forEach(sound -> {
-            tryRegister(Registries.SOUND_EVENT, sound.getIdentifier(), sound.getSoundEvent());
-        });
-
-        Arrays.stream(PaldeaSoundEvent.values()).forEach(sound -> {
-            tryRegister(Registries.SOUND_EVENT, sound.getIdentifier(), sound.getSoundEvent());
-        });
-    }
-
-    private <T> void tryRegister(Registry<T> registry, Identifier id, T entry) {
-        try {
-            Registry.register(registry, id, entry);
-
-        } catch (RuntimeException ignored) {
-
-        }
+        MiscSoundEvent.initialize();
+        KantoSoundEvent.initialize();
+        JohtoSoundEvent.initialize();
+        HoenSoundEvent.initialize();
+        SinohSoundEvent.initialize();
+        UnovaBlackSoundEvent.initialize();
+        UnovaWhiteSoundEvent.initialize();
+        KalosSoundEvent.initialize();
+        AlolaSoundEvent.initialize();
+        GalarSoundEvent.initialize();
+        HisuiSoundEvent.initialize();
+        PaldeaSoundEvent.initialize();
     }
 }

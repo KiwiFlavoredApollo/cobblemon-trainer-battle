@@ -1,40 +1,46 @@
 package kiwiapollo.cobblemontrainerbattle.sound;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import net.minecraft.registry.Registries;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
-public enum JohtoSoundEvent {
-    JOHTO_DEFAULT("battle.johto.default"),
+import java.util.ArrayList;
+import java.util.List;
 
-    TRAINER_EUSINE("battle.trainer.eusine"),
-    TRAINER_SILVER("battle.trainer.silver"),
+public class JohtoSoundEvent {
+    public static final List<SoundEvent> all = new ArrayList<>();
 
-    LEADER_FALKNER("battle.leader.falkner"),
-    LEADER_BUGSY("battle.leader.bugsy"),
-    LEADER_WHITNEY("battle.leader.whitney"),
-    LEADER_MORTY("battle.leader.morty"),
-    LEADER_CHUCK("battle.leader.chuck"),
-    LEADER_JASMINE("battle.leader.jasmine"),
-    LEADER_PRYCE("battle.leader.pryce"),
-    LEADER_CLAIR("battle.leader.clair"),
-    ELITE_WILL("battle.elite.will"),
-    ELITE_KOGA("battle.elite.koga"),
-    ELITE_BRUNO("battle.elite.bruno"),
-    ELITE_KAREN("battle.elite.karen"),
-    CHAMPION_LANCE("battle.champion.lance");
+    public static SoundEvent JOHTO_DEFAULT = register("battle.johto.default");
+    public static SoundEvent TRAINER_EUSINE = register("battle.trainer.eusine");
+    public static SoundEvent TRAINER_SILVER = register("battle.trainer.silver");
+    public static SoundEvent LEADER_FALKNER = register("battle.leader.falkner");
+    public static SoundEvent LEADER_BUGSY = register("battle.leader.bugsy");
+    public static SoundEvent LEADER_WHITNEY = register("battle.leader.whitney");
+    public static SoundEvent LEADER_MORTY = register("battle.leader.morty");
+    public static SoundEvent LEADER_CHUCK = register("battle.leader.chuck");
+    public static SoundEvent LEADER_JASMINE = register("battle.leader.jasmine");
+    public static SoundEvent LEADER_PRYCE = register("battle.leader.pryce");
+    public static SoundEvent LEADER_CLAIR = register("battle.leader.clair");
+    public static SoundEvent ELITE_WILL = register("battle.elite.will");
+    public static SoundEvent ELITE_KOGA = register("battle.elite.koga");
+    public static SoundEvent ELITE_BRUNO = register("battle.elite.bruno");
+    public static SoundEvent ELITE_KAREN = register("battle.elite.karen");
+    public static SoundEvent CHAMPION_LANCE = register("battle.champion.lance");
 
-    private final Identifier identifier;
+    public static void initialize() {
 
-    JohtoSoundEvent(String path) {
-        this.identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, path);
     }
 
-    public SoundEvent getSoundEvent() {
-        return SoundEvent.of(identifier);
+    private static SoundEvent register(String name) {
+        Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
+        SoundEvent registered = FailSafeRegistry.register(Registries.SOUND_EVENT, identifier, SoundEvent.of(identifier));
+        all.add(registered);
+
+        return registered;
     }
 
-    public Identifier getIdentifier() {
-        return identifier;
+    public static List<SoundEvent> getAll() {
+        return new ArrayList<>(all);
     }
 }

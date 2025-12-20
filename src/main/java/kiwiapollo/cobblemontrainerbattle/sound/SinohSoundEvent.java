@@ -1,37 +1,44 @@
 package kiwiapollo.cobblemontrainerbattle.sound;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import net.minecraft.registry.Registries;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
-public enum SinohSoundEvent {
-    SINNOH_DEFAULT("battle.sinnoh.default"),
+import java.util.ArrayList;
+import java.util.List;
 
-    LEADER_ROARK("battle.leader.roark"),
-    LEADER_GARDENIA("battle.leader.gardenia"),
-    LEADER_MAYLENE("battle.leader.maylene"),
-    LEADER_CRASHER_WAKE("battle.leader.crasher_wake"),
-    LEADER_FANTINA("battle.leader.fantina"),
-    LEADER_BYRON("battle.leader.byron"),
-    LEADER_CANDICE("battle.leader.candice"),
-    LEADER_VOLKNER("battle.leader.volkner"),
-    ELITE_AARON("battle.elite.aaron"),
-    ELITE_BERTHA("battle.elite.bertha"),
-    ELITE_FLINT("battle.elite.flint"),
-    ELITE_LUCIAN("battle.elite.lucian"),
-    CHAMPION_CYNTHIA("battle.champion.cynthia");
+public class SinohSoundEvent {
+    public static final List<SoundEvent> all = new ArrayList<>();
 
-    private final Identifier identifier;
+    public static final SoundEvent SINNOH_DEFAULT = register("battle.sinnoh.default");
+    public static final SoundEvent LEADER_ROARK = register("battle.leader.roark");
+    public static final SoundEvent LEADER_GARDENIA = register("battle.leader.gardenia");
+    public static final SoundEvent LEADER_MAYLENE = register("battle.leader.maylene");
+    public static final SoundEvent LEADER_CRASHER_WAKE = register("battle.leader.crasher_wake");
+    public static final SoundEvent LEADER_FANTINA = register("battle.leader.fantina");
+    public static final SoundEvent LEADER_BYRON = register("battle.leader.byron");
+    public static final SoundEvent LEADER_CANDICE = register("battle.leader.candice");
+    public static final SoundEvent LEADER_VOLKNER = register("battle.leader.volkner");
+    public static final SoundEvent ELITE_AARON = register("battle.elite.aaron");
+    public static final SoundEvent ELITE_BERTHA = register("battle.elite.bertha");
+    public static final SoundEvent ELITE_FLINT = register("battle.elite.flint");
+    public static final SoundEvent ELITE_LUCIAN = register("battle.elite.lucian");
+    public static final SoundEvent CHAMPION_CYNTHIA = register("battle.champion.cynthia");
 
-    SinohSoundEvent(String path) {
-        this.identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, path);
+    public static void initialize() {
+
     }
 
-    public SoundEvent getSoundEvent() {
-        return SoundEvent.of(identifier);
+    private static SoundEvent register(String name) {
+        Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
+        SoundEvent registered = FailSafeRegistry.register(Registries.SOUND_EVENT, identifier, SoundEvent.of(identifier));
+        all.add(registered);
+
+        return registered;
     }
 
-    public Identifier getIdentifier() {
-        return identifier;
+    public static List<SoundEvent> getAll() {
+        return new ArrayList<>(all);
     }
 }

@@ -1,35 +1,42 @@
 package kiwiapollo.cobblemontrainerbattle.sound;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import net.minecraft.registry.Registries;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
-public enum GalarSoundEvent {
-    GALAR_DEFAULT("battle.galar.default"),
+import java.util.ArrayList;
+import java.util.List;
 
-    LEADER_MILO("battle.leader.milo"),
-    LEADER_NESSA("battle.leader.nessa"),
-    LEADER_KABU("battle.leader.kabu"),
-    LEADER_BEA("battle.leader.bea"),
-    LEADER_ALLISTER("battle.leader.allister"),
-    LEADER_OPAL("battle.leader.opal"),
-    LEADER_GORDIE("battle.leader.gordie"),
-    LEADER_MELONY("battle.leader.melony"),
-    LEADER_PIERS("battle.leader.piers"),
-    LEADER_RAIHAN("battle.leader.raihan"),
-    CHAMPION_LEON("battle.champion.leon");
+public class GalarSoundEvent {
+    public static final List<SoundEvent> all = new ArrayList<>();
 
-    private final Identifier identifier;
+    public static final SoundEvent GALAR_DEFAULT = register("battle.galar.default");
+    public static final SoundEvent LEADER_MILO = register("battle.leader.milo");
+    public static final SoundEvent LEADER_NESSA = register("battle.leader.nessa");
+    public static final SoundEvent LEADER_KABU = register("battle.leader.kabu");
+    public static final SoundEvent LEADER_BEA = register("battle.leader.bea");
+    public static final SoundEvent LEADER_ALLISTER = register("battle.leader.allister");
+    public static final SoundEvent LEADER_OPAL = register("battle.leader.opal");
+    public static final SoundEvent LEADER_GORDIE = register("battle.leader.gordie");
+    public static final SoundEvent LEADER_MELONY = register("battle.leader.melony");
+    public static final SoundEvent LEADER_PIERS = register("battle.leader.piers");
+    public static final SoundEvent LEADER_RAIHAN = register("battle.leader.raihan");
+    public static final SoundEvent CHAMPION_LEON = register("battle.champion.leon");
 
-    GalarSoundEvent(String path) {
-        this.identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, path);
+    public static void initialize() {
+
     }
 
-    public SoundEvent getSoundEvent() {
-        return SoundEvent.of(identifier);
+    private static SoundEvent register(String name) {
+        Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
+        SoundEvent registered = FailSafeRegistry.register(Registries.SOUND_EVENT, identifier, SoundEvent.of(identifier));
+        all.add(registered);
+
+        return registered;
     }
 
-    public Identifier getIdentifier() {
-        return identifier;
+    public static List<SoundEvent> getAll() {
+        return new ArrayList<>(all);
     }
 }

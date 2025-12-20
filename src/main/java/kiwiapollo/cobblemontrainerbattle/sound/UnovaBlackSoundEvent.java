@@ -1,40 +1,47 @@
 package kiwiapollo.cobblemontrainerbattle.sound;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import net.minecraft.registry.Registries;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
-public enum UnovaBlackSoundEvent {
-    UNOVA_DEFAULT("battle.unova.default"),
+import java.util.ArrayList;
+import java.util.List;
 
-    LEADER_CILAN("battle.leader.cilan"),
-    LEADER_CHILI("battle.leader.chili"),
-    LEADER_CRESS("battle.leader.cress"),
-    LEADER_LENORA("battle.leader.lenora"),
-    LEADER_BURGH("battle.leader.burgh"),
-    LEADER_ELESA("battle.leader.elesa"),
-    LEADER_CLAY("battle.leader.clay"),
-    LEADER_SKYLA("battle.leader.skyla"),
-    LEADER_BRYCEN("battle.leader.brycen"),
-    LEADER_DRAYDEN("battle.leader.drayden"),
-    LEADER_IRIS("battle.leader.iris"),
-    ELITE_SHAUNTAL("battle.elite.shauntal"),
-    ELITE_MARSHAL("battle.elite.marshal"),
-    ELITE_GRIMSLEY("battle.elite.grimsley"),
-    ELITE_CAITLIN("battle.elite.caitlin"),
-    CHAMPION_ALDER("battle.champion.alder");
+public class UnovaBlackSoundEvent {
+    public static final List<SoundEvent> all = new ArrayList<>();
 
-    private final Identifier identifier;
+    public static final SoundEvent UNOVA_DEFAULT = register("battle.unova.default");
+    public static final SoundEvent LEADER_CILAN = register("battle.leader.cilan");
+    public static final SoundEvent LEADER_CHILI = register("battle.leader.chili");
+    public static final SoundEvent LEADER_CRESS = register("battle.leader.cress");
+    public static final SoundEvent LEADER_LENORA = register("battle.leader.lenora");
+    public static final SoundEvent LEADER_BURGH = register("battle.leader.burgh");
+    public static final SoundEvent LEADER_ELESA = register("battle.leader.elesa");
+    public static final SoundEvent LEADER_CLAY = register("battle.leader.clay");
+    public static final SoundEvent LEADER_SKYLA = register("battle.leader.skyla");
+    public static final SoundEvent LEADER_BRYCEN = register("battle.leader.brycen");
+    public static final SoundEvent LEADER_DRAYDEN = register("battle.leader.drayden");
+    public static final SoundEvent LEADER_IRIS = register("battle.leader.iris");
+    public static final SoundEvent ELITE_SHAUNTAL = register("battle.elite.shauntal");
+    public static final SoundEvent ELITE_MARSHAL = register("battle.elite.marshal");
+    public static final SoundEvent ELITE_GRIMSLEY = register("battle.elite.grimsley");
+    public static final SoundEvent ELITE_CAITLIN = register("battle.elite.caitlin");
+    public static final SoundEvent CHAMPION_ALDER = register("battle.champion.alder");
 
-    UnovaBlackSoundEvent(String path) {
-        this.identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, path);
+    public static void initialize() {
+
     }
 
-    public SoundEvent getSoundEvent() {
-        return SoundEvent.of(identifier);
+    private static SoundEvent register(String name) {
+        Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
+        SoundEvent registered = FailSafeRegistry.register(Registries.SOUND_EVENT, identifier, SoundEvent.of(identifier));
+        all.add(registered);
+
+        return registered;
     }
 
-    public Identifier getIdentifier() {
-        return identifier;
+    public static List<SoundEvent> getAll() {
+        return new ArrayList<>(all);
     }
 }

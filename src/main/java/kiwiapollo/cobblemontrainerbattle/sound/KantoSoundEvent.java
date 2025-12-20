@@ -1,40 +1,46 @@
 package kiwiapollo.cobblemontrainerbattle.sound;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import net.minecraft.registry.Registries;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
-public enum KantoSoundEvent {
-    KANTO_DEFAULT("battle.kanto.default"),
+import java.util.ArrayList;
+import java.util.List;
 
-    TRAINER_RED("battle.trainer.red"),
-    TRAINER_LEAF("battle.trainer.leaf"),
+public class KantoSoundEvent {
+    public static final List<SoundEvent> all = new ArrayList<>();
 
-    LEADER_BROCK("battle.leader.brock"),
-    LEADER_MISTY("battle.leader.misty"),
-    LEADER_LT_SURGE("battle.leader.lt_surge"),
-    LEADER_ERIKA("battle.leader.erika"),
-    LEADER_KOGA("battle.leader.koga"),
-    LEADER_SABRINA("battle.leader.sabrina"),
-    LEADER_BLAINE("battle.leader.blaine"),
-    LEADER_GIOVANNI("battle.leader.giovanni"),
-    ELITE_LORELEI("battle.elite.lorelei"),
-    ELITE_BRUNO("battle.elite.bruno"),
-    ELITE_AGATHA("battle.elite.agatha"),
-    ELITE_LANCE("battle.elite.lance"),
-    CHAMPION_TERRY("battle.champion.terry");
+    public static final SoundEvent KANTO_DEFAULT = register("battle.kanto.default");
+    public static final SoundEvent TRAINER_RED = register("battle.trainer.red");
+    public static final SoundEvent TRAINER_LEAF = register("battle.trainer.leaf");
+    public static final SoundEvent LEADER_BROCK = register("battle.leader.brock");
+    public static final SoundEvent LEADER_MISTY = register("battle.leader.misty");
+    public static final SoundEvent LEADER_LT_SURGE = register("battle.leader.lt_surge");
+    public static final SoundEvent LEADER_ERIKA = register("battle.leader.erika");
+    public static final SoundEvent LEADER_KOGA = register("battle.leader.koga");
+    public static final SoundEvent LEADER_SABRINA = register("battle.leader.sabrina");
+    public static final SoundEvent LEADER_BLAINE = register("battle.leader.blaine");
+    public static final SoundEvent LEADER_GIOVANNI = register("battle.leader.giovanni");
+    public static final SoundEvent ELITE_LORELEI = register("battle.elite.lorelei");
+    public static final SoundEvent ELITE_BRUNO = register("battle.elite.bruno");
+    public static final SoundEvent ELITE_AGATHA = register("battle.elite.agatha");
+    public static final SoundEvent ELITE_LANCE = register("battle.elite.lance");
+    public static final SoundEvent CHAMPION_TERRY = register("battle.champion.terry");
 
-    private final Identifier identifier;
+    public static void initialize() {
 
-    KantoSoundEvent(String path) {
-        this.identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, path);
     }
 
-    public SoundEvent getSoundEvent() {
-        return SoundEvent.of(identifier);
+    private static SoundEvent register(String name) {
+        Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
+        SoundEvent registered = FailSafeRegistry.register(Registries.SOUND_EVENT, identifier, SoundEvent.of(identifier));
+        all.add(registered);
+
+        return registered;
     }
 
-    public Identifier getIdentifier() {
-        return identifier;
+    public static List<SoundEvent> getAll() {
+        return new ArrayList<>(all);
     }
 }
