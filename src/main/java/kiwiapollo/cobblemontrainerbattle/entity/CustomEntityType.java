@@ -35,7 +35,7 @@ public class CustomEntityType {
     // Poke Ball Box is messed up. It will be removed along with Poke Ball Engineer in the future.
     private static <T extends BlockEntity> BlockEntityType<T> register(String name, BlockEntityType.Builder<T> type) {
         Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, "trainer_table");
-        return Registry.register(Registries.BLOCK_ENTITY_TYPE, identifier, type.build(Util.getChoiceType(TypeReferences.BLOCK_ENTITY, "poke_ball_box")));
+        return Registry.register(Registries.BLOCK_ENTITY_TYPE, identifier, type.build(Util.getChoiceType(TypeReferences.BLOCK_ENTITY, Identifier.of(CobblemonTrainerBattle.MOD_ID, "poke_ball_box").toString())));
     }
 
     static {
