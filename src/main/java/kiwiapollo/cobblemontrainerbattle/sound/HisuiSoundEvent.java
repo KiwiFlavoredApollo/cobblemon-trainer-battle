@@ -19,11 +19,20 @@ public class HisuiSoundEvent {
     }
 
     private static SoundEvent register(String name) {
-        Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
-        SoundEvent registered = FailSafeRegistry.register(Registries.SOUND_EVENT, identifier, SoundEvent.of(identifier));
-        all.add(registered);
+        try {
+            Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
+            SoundEvent registered = Registry.register(Registries.SOUND_EVENT, identifier, SoundEvent.of(identifier));
+            all.add(registered);
 
-        return registered;
+            return registered;
+            
+        } catch (RuntimeException e) {
+            Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
+            SoundEvent sound = SoundEvent.of(identifier);
+            all.add(sound);
+
+            return sound;
+        }
     }
 
     public static List<SoundEvent> getAll() {

@@ -2,6 +2,7 @@ package kiwiapollo.cobblemontrainerbattle.sound;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
@@ -36,11 +37,20 @@ public class PaldeaSoundEvent {
     }
 
     private static SoundEvent register(String name) {
-        Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
-        SoundEvent registered = FailSafeRegistry.register(Registries.SOUND_EVENT, identifier, SoundEvent.of(identifier));
-        all.add(registered);
+        try {
+            Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
+            SoundEvent registered = Registry.register(Registries.SOUND_EVENT, identifier, SoundEvent.of(identifier));
+            all.add(registered);
 
-        return registered;
+            return registered;
+            
+        } catch (RuntimeException e) {
+            Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
+            SoundEvent sound = SoundEvent.of(identifier);
+            all.add(sound);
+
+            return sound;
+        }
     }
 
     public static List<SoundEvent> getAll() {
