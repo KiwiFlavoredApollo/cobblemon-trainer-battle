@@ -226,15 +226,15 @@
   "advancements.cobblemontrainerbattle.root.title": "La sociabilité !",
   "advancements.cobblemontrainerbattle.root.description": "Interagit avec un Dresseur",
 
-  "advancements.cobblemontrainerbattle.defeat_trainer.first.title": "La première d'une longue série",
-  "advancements.cobblemontrainerbattle.defeat_trainer.first.description": "Gagne contre un Dresseur",
-  "advancements.cobblemontrainerbattle.defeat_trainer.tenth.title": "Plus proche de la gloire",
-  "advancements.cobblemontrainerbattle.defeat_trainer.tenth.description": "Gagne contre 10 Dresseurs",
+  "advancements.cobblemontrainerbattle.defeat_first_trainer.title": "La première d'une longue série",
+  "advancements.cobblemontrainerbattle.defeat_first_trainer.description": "Gagne contre un Dresseur",
+  "advancements.cobblemontrainerbattle.defeat_tenth_trainer.title": "Plus proche de la gloire",
+  "advancements.cobblemontrainerbattle.defeat_tenth_trainer.description": "Gagne contre 10 Dresseurs",
 
-  "advancements.cobblemontrainerbattle.kill_trainer.first.title": "Pas de raccourci !",
-  "advancements.cobblemontrainerbattle.kill_trainer.first.description": "Tue un Dresseur",
-  "advancements.cobblemontrainerbattle.kill_trainer.tenth.title": "Rageux",
-  "advancements.cobblemontrainerbattle.kill_trainer.tenth.description": "Tue 10 Dresseurs",
+  "advancements.cobblemontrainerbattle.kill_first_trainer.title": "Pas de raccourci !",
+  "advancements.cobblemontrainerbattle.kill_first_trainer.description": "Tue un Dresseur",
+  "advancements.cobblemontrainerbattle.kill_tenth_trainer.title": "Rageux",
+  "advancements.cobblemontrainerbattle.kill_tenth_trainer.description": "Tue 10 Dresseurs",
 
   "advancements.cobblemontrainerbattle.defeat_leader_brock.title": "La Base",
   "advancements.cobblemontrainerbattle.defeat_leader_brock.description": "Gagne contre Pierre",

@@ -230,15 +230,15 @@
   "advancements.cobblemontrainerbattle.root.title": "Trainers",
   "advancements.cobblemontrainerbattle.root.description": "Interact with a trainer",
 
-  "advancements.cobblemontrainerbattle.defeat_trainer.first.title": "The First Victory",
-  "advancements.cobblemontrainerbattle.defeat_trainer.first.description": "Defeat a trainer in a Pokémon battle",
-  "advancements.cobblemontrainerbattle.defeat_trainer.tenth.title": "Amateur Trainer",
-  "advancements.cobblemontrainerbattle.defeat_trainer.tenth.description": "Defeat 10 trainers in a Pokémon battle",
+  "advancements.cobblemontrainerbattle.defeat_first_trainer.title": "The First Victory",
+  "advancements.cobblemontrainerbattle.defeat_first_trainer.description": "Defeat a trainer in a Pokémon battle",
+  "advancements.cobblemontrainerbattle.defeat_tenth_trainer.title": "Amateur Trainer",
+  "advancements.cobblemontrainerbattle.defeat_tenth_trainer.description": "Defeat 10 trainers in a Pokémon battle",
 
-  "advancements.cobblemontrainerbattle.kill_trainer.first.title": "You, Murderer!",
-  "advancements.cobblemontrainerbattle.kill_trainer.first.description": "Kill a trainer",
-  "advancements.cobblemontrainerbattle.kill_trainer.tenth.title": "Unstoppable",
-  "advancements.cobblemontrainerbattle.kill_trainer.tenth.description": "Kill 10 trainers",
+  "advancements.cobblemontrainerbattle.kill_first_trainer.title": "You, Murderer!",
+  "advancements.cobblemontrainerbattle.kill_first_trainer.description": "Kill a trainer",
+  "advancements.cobblemontrainerbattle.kill_tenth_trainer.title": "Unstoppable",
+  "advancements.cobblemontrainerbattle.kill_tenth_trainer.description": "Kill 10 trainers",
 
   "advancements.cobblemontrainerbattle.defeat_leader_brock.title": "So Classic",
   "advancements.cobblemontrainerbattle.defeat_leader_brock.description": "Defeat Brock",

@@ -226,15 +226,15 @@
   "advancements.cobblemontrainerbattle.root.title": "트레이너",
   "advancements.cobblemontrainerbattle.root.description": "트레이너와 상호작용 해보세요",
 
-  "advancements.cobblemontrainerbattle.defeat_trainer.first.title": "첫 승리",
-  "advancements.cobblemontrainerbattle.defeat_trainer.first.description": "트레이너 배틀에서 이기세요",
-  "advancements.cobblemontrainerbattle.defeat_trainer.tenth.title": "아마추어 트레이너",
-  "advancements.cobblemontrainerbattle.defeat_trainer.tenth.description": "트레이너 10명을 배틀에서 이기세요",
+  "advancements.cobblemontrainerbattle.defeat_first_trainer.title": "첫 승리",
+  "advancements.cobblemontrainerbattle.defeat_first_trainer.description": "트레이너 배틀에서 이기세요",
+  "advancements.cobblemontrainerbattle.defeat_tenth_trainer.title": "아마추어 트레이너",
+  "advancements.cobblemontrainerbattle.defeat_tenth_trainer.description": "트레이너 10명을 배틀에서 이기세요",
 
-  "advancements.cobblemontrainerbattle.kill_trainer.first.title": "이 더러운 살인자!",
-  "advancements.cobblemontrainerbattle.kill_trainer.first.description": "트레이너를 죽이세요",
-  "advancements.cobblemontrainerbattle.kill_trainer.tenth.title": "미쳐 날뛰고 있습니다",
-  "advancements.cobblemontrainerbattle.kill_trainer.tenth.description": "트레이너 10명을 죽이세요",
+  "advancements.cobblemontrainerbattle.kill_first_trainer.title": "이 더러운 살인자!",
+  "advancements.cobblemontrainerbattle.kill_first_trainer.description": "트레이너를 죽이세요",
+  "advancements.cobblemontrainerbattle.kill_tenth_trainer.title": "미쳐 날뛰고 있습니다",
+  "advancements.cobblemontrainerbattle.kill_tenth_trainer.description": "트레이너 10명을 죽이세요",
 
   "advancements.cobblemontrainerbattle.defeat_leader_brock.title": "웅이는 늘 밥을 해줬어",
   "advancements.cobblemontrainerbattle.defeat_leader_brock.description": "웅이를 이기세요",

@@ -27,7 +27,7 @@ public class TrainerTicket extends Item {
         ItemStack itemStack = context.getStack();
         BlockPos pos = context.getBlockPos().up();
 
-        TrainerEntity entity = new TrainerEntity(CustomEntityType.NEUTRAL_TRAINER, world);
+        TrainerEntity entity = new TrainerEntity(CustomEntityType.TRAINER, world);
         entity.setTrainer(trainer);
 
         entity.refreshPositionAndAngles(pos, player.getYaw(), player.getPitch());

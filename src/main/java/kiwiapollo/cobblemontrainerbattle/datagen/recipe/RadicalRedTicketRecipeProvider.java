@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.CobblemonItems;
 import kiwiapollo.cobblemontrainerbattle.item.misc.MiscItem;
 import kiwiapollo.cobblemontrainerbattle.item.ticket.RadicalRedTicketItem;
 import kiwiapollo.cobblemontrainerbattle.item.token.RadicalRedTokenItem;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
@@ -12,7 +13,11 @@ import net.minecraft.recipe.book.RecipeCategory;
 
 import java.util.function.Consumer;
 
-public class RadicalRedTicketRecipeProvider implements RecipeProviderBehavior {
+public class RadicalRedTicketRecipeProvider extends FabricRecipeProvider {
+    public RadicalRedTicketRecipeProvider(FabricDataOutput output) {
+        super(output);
+    }
+
     @Override
     public void generate(Consumer<RecipeJsonProvider> exporter) {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, RadicalRedTicketItem.LEADER_BROCK_TICKET)

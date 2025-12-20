@@ -13,10 +13,10 @@ public class RecipeProvider extends FabricRecipeProvider {
 
     @Override
     public void generate(Consumer<RecipeJsonProvider> exporter) {
-        new VsSeekerRecipeProvider().generate(exporter);
-        new InclementEmeraldTicketRecipeProvider().generate(exporter);
-        new RadicalRedTicketRecipeProvider().generate(exporter);
-        new XyTicketRecipeProvider().generate(exporter);
-        new BdspTicketRecipeProvider().generate(exporter);
+        new VsSeekerRecipeProvider(output).generate(exporter);
+        new InclementEmeraldTicketRecipeProvider(output).generate(exporter);
+        new RadicalRedTicketRecipeProvider(output).generate(exporter);
+        new XyTicketRecipeProvider(output).generate(exporter);
+        new BdspTicketRecipeProvider(output).generate(exporter);
     }
 }

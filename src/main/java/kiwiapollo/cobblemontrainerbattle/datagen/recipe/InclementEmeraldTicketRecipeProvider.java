@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.CobblemonItems;
 import kiwiapollo.cobblemontrainerbattle.item.ticket.InclementEmeraldTicketItem;
 import kiwiapollo.cobblemontrainerbattle.item.token.InclementEmeraldTokenItem;
 import kiwiapollo.cobblemontrainerbattle.item.misc.MiscItem;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
@@ -12,7 +13,11 @@ import net.minecraft.recipe.book.RecipeCategory;
 
 import java.util.function.Consumer;
 
-public class InclementEmeraldTicketRecipeProvider implements RecipeProviderBehavior {
+public class InclementEmeraldTicketRecipeProvider extends FabricRecipeProvider {
+    public InclementEmeraldTicketRecipeProvider(FabricDataOutput output) {
+        super(output);
+    }
+
     @Override
     public void generate(Consumer<RecipeJsonProvider> exporter) {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, InclementEmeraldTicketItem.LEADER_ROXANNE_TICKET)

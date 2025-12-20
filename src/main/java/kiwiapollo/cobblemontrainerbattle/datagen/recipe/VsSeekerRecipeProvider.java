@@ -2,6 +2,7 @@ package kiwiapollo.cobblemontrainerbattle.datagen.recipe;
 
 import kiwiapollo.cobblemontrainerbattle.datagen.tag.ItemTagRegistry;
 import kiwiapollo.cobblemontrainerbattle.item.vsseeker.VsSeekerItem;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
@@ -13,8 +14,12 @@ import java.util.function.Consumer;
 
 import static net.minecraft.data.server.recipe.RecipeProvider.getRecipeName;
 
-public class VsSeekerRecipeProvider implements RecipeProviderBehavior {
+public class VsSeekerRecipeProvider extends FabricRecipeProvider {
     private static final String VS_SEEKER_RECIPE_SUFFIX = "from_vs_seeker";
+
+    public VsSeekerRecipeProvider(FabricDataOutput output) {
+        super(output);
+    }
 
     @Override
     public void generate(Consumer<RecipeJsonProvider> exporter) {

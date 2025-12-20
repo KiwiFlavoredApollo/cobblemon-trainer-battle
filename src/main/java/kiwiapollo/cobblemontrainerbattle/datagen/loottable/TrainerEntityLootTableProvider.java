@@ -25,7 +25,7 @@ public class TrainerEntityLootTableProvider extends SimpleFabricLootTableProvide
 
     @Override
     public void accept(BiConsumer<Identifier, LootTable.Builder> exporter) {
-        exporter.accept(CustomEntityType.NEUTRAL_TRAINER.getLootTableId(), LootTable.builder()
+        exporter.accept(CustomEntityType.TRAINER.getLootTableId(), LootTable.builder()
                 .pool(LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1.0f))
                         .with(ItemEntry.builder(MiscItem.TRAINER_TOKEN).apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1.0f))))
