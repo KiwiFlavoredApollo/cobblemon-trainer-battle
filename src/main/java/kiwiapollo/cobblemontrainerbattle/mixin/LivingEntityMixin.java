@@ -2,7 +2,7 @@ package kiwiapollo.cobblemontrainerbattle.mixin;
 
 import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
-import kiwiapollo.cobblemontrainerbattle.entity.BattleEntityBehavior;
+import kiwiapollo.cobblemontrainerbattle.entity.PokemonTrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.villager.CustomVillagerProfession;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
@@ -45,7 +45,7 @@ public class LivingEntityMixin {
     @Unique
     private boolean isBusyWithPokemonBattle() {
         try {
-            BattleEntityBehavior villager = (BattleEntityBehavior) this;
+            PokemonTrainerEntity villager = (PokemonTrainerEntity) this;
             return Objects.nonNull(Cobblemon.INSTANCE.getBattleRegistry().getBattle(villager.getBattleId()));
 
         } catch (ClassCastException | NullPointerException e) {
@@ -65,7 +65,7 @@ public class LivingEntityMixin {
     @Unique
     private void stopBattle() {
         try {
-            BattleEntityBehavior villager = (BattleEntityBehavior) this;
+            PokemonTrainerEntity villager = (PokemonTrainerEntity) this;
             PokemonBattle battle = Cobblemon.INSTANCE.getBattleRegistry().getBattle(villager.getBattleId());
             ServerPlayerEntity player = battle.getPlayers().get(0);
             battle.writeShowdownAction(String.format(">forcelose %s", battle.getActor(player).showdownId));

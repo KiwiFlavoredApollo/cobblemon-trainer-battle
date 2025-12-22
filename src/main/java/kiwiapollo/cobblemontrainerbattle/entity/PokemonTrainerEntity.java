@@ -4,7 +4,9 @@ import net.minecraft.util.Identifier;
 
 import java.util.UUID;
 
-public interface BattleEntityBehavior {
+public interface PokemonTrainerEntity {
+    Identifier getTrainer();
+
     void setTrainer(Identifier trainer);
 
     Identifier getTexture();

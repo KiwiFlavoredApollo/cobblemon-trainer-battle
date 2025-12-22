@@ -3,7 +3,7 @@ package kiwiapollo.cobblemontrainerbattle.loot;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
-import kiwiapollo.cobblemontrainerbattle.entity.BattleEntity;
+import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.loot.condition.LootCondition;
 import net.minecraft.loot.condition.LootConditionType;
@@ -22,7 +22,7 @@ public class DefeatedInBattleLootCondition implements LootCondition {
         try {
             DamageSource generic = lootContext.getWorld().getDamageSources().generic();
             boolean isGenericDamageSource = lootContext.get(LootContextParameters.DAMAGE_SOURCE).getType().equals(generic.getType());
-            boolean isTrainerEntity = lootContext.get(LootContextParameters.THIS_ENTITY) instanceof BattleEntity;
+            boolean isTrainerEntity = lootContext.get(LootContextParameters.THIS_ENTITY) instanceof TrainerEntity;
 
             return isGenericDamageSource && isTrainerEntity;
 

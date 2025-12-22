@@ -7,7 +7,7 @@ import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.mojang.brigadier.CommandDispatcher;
-import kiwiapollo.cobblemontrainerbattle.entity.BattleEntityBehavior;
+import kiwiapollo.cobblemontrainerbattle.entity.PokemonTrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
 import kiwiapollo.cobblemontrainerbattle.template.PokemonLevelPair;
@@ -22,7 +22,7 @@ import net.minecraft.util.Formatting;
 
 import java.util.*;
 
-public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBehavior {
+public class RentalBattle extends AbstractPokemonBattle implements PokemonBattle {
     public static final int LEVEL = 50;
     public static final int POKEMON_COUNT = 3;
 
@@ -135,7 +135,7 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
                 ServerWorld world = player.getServerWorld();
                 LivingEntity entity = (LivingEntity) world.getEntity(trainer.getEntityUuid());
 
-                if (entity.distanceTo(player) < getMaximumEntityDistance(world)) {
+                if (entity.distanceTo(player) < TrainerBattleActor.FLEE_DISTANCE_IN_BLOCKS) {
                     return entity;
                 } else {
                     return player;
@@ -215,10 +215,6 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
             return entity;
         }
 
-        private int getMaximumEntityDistance(ServerWorld world) {
-            return world.getGameRules().get(CustomGameRule.TRAINER_FLEE_DISTANCE_IN_BLOCKS).get();
-        }
-
         private Runnable getPlayerVictoryHandler() {
             return () -> {
                 updateTradablePokemon();
@@ -236,7 +232,7 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
 
         private void runEntityLevelPlayerVictoryHandler() {
             try {
-                ((BattleEntityBehavior) entity).onPlayerVictory();
+                ((PokemonTrainerEntity) entity).onPlayerVictory();
 
             } catch (ClassCastException ignored) {
 
@@ -262,7 +258,7 @@ public class RentalBattle extends CustomPokemonBattle implements PokemonBattleBe
 
         private void runEntityLevelPlayerDefeatHandler() {
             try {
-                ((BattleEntityBehavior) entity).onPlayerDefeat();
+                ((PokemonTrainerEntity) entity).onPlayerDefeat();
 
             } catch (ClassCastException ignored) {
 

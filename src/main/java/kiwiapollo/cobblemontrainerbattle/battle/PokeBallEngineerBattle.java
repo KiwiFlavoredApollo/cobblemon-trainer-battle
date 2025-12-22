@@ -7,7 +7,7 @@ import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.block.PokeBallBox;
-import kiwiapollo.cobblemontrainerbattle.entity.BattleEntityBehavior;
+import kiwiapollo.cobblemontrainerbattle.entity.PokemonTrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.template.PokemonLevelPair;
 import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplate;
@@ -24,7 +24,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
-public class PokeBallEngineerBattle extends CustomPokemonBattle {
+public class PokeBallEngineerBattle extends AbstractPokemonBattle {
     private final ServerPlayerEntity player;
     private final TrainerTemplate trainer;
 
@@ -186,7 +186,7 @@ public class PokeBallEngineerBattle extends CustomPokemonBattle {
 
         private void runEntityLevelPlayerVictoryHandler() {
             try {
-                ((BattleEntityBehavior) getEntity()).onPlayerVictory();
+                ((PokemonTrainerEntity) getEntity()).onPlayerVictory();
 
             } catch (ClassCastException ignored) {
 
@@ -195,7 +195,7 @@ public class PokeBallEngineerBattle extends CustomPokemonBattle {
 
         private void runEntityLevelPlayerDefeatHandler() {
             try {
-                ((BattleEntityBehavior) getEntity()).onPlayerDefeat();
+                ((PokemonTrainerEntity) getEntity()).onPlayerDefeat();
 
             } catch (ClassCastException ignored) {
 

@@ -2,7 +2,7 @@ package kiwiapollo.cobblemontrainerbattle.mixin;
 
 import com.cobblemon.mod.common.Cobblemon;
 import kiwiapollo.cobblemontrainerbattle.battle.PokeBallEngineerBattle;
-import kiwiapollo.cobblemontrainerbattle.entity.BattleEntityBehavior;
+import kiwiapollo.cobblemontrainerbattle.entity.PokemonTrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplate;
 import kiwiapollo.cobblemontrainerbattle.villager.CustomVillagerProfession;
@@ -23,7 +23,7 @@ import java.util.*;
 
 @SuppressWarnings("unused")
 @Mixin(VillagerEntity.class)
-public class VillagerEntityMixin implements BattleEntityBehavior {
+public class VillagerEntityMixin implements PokemonTrainerEntity {
     private UUID battleId;
 
     public VillagerEntityMixin() {
@@ -89,6 +89,11 @@ public class VillagerEntityMixin implements BattleEntityBehavior {
     @Override
     public UUID getBattleId() {
         return battleId;
+    }
+
+    @Override
+    public Identifier getTrainer() {
+        throw new NullPointerException();
     }
 
     @Override

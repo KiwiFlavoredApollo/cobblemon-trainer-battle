@@ -7,18 +7,11 @@ import net.minecraft.client.render.entity.model.PlayerEntityModel;
 import net.minecraft.util.Identifier;
 
 public class StaticTrainerEntityRenderer extends BipedEntityRenderer<StaticTrainerEntity, PlayerEntityModel<StaticTrainerEntity>> {
-    private static final Identifier FALLBACK_TEXTURE = TrainerTexture.LEAF;
-
     public StaticTrainerEntityRenderer(EntityRendererFactory.Context context) {
         super(context, new PlayerEntityModel<>(context.getPart(EntityModelLayers.PLAYER_SLIM), false), 0.5f);
     }
 
     public Identifier getTexture(StaticTrainerEntity entity) {
-        try {
-            return entity.getTexture();
-
-        } catch (NullPointerException e) {
-            return FALLBACK_TEXTURE;
-        }
+        return entity.getTexture();
     }
 }

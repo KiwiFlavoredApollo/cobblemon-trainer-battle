@@ -1,6 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.template;
 
-import kiwiapollo.cobblemontrainerbattle.common.TrainerFactory;
+import kiwiapollo.cobblemontrainerbattle.common.TrainerSelector;
 import net.minecraft.util.Identifier;
 
 import java.util.ArrayList;
@@ -8,19 +8,19 @@ import java.util.Collections;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class RandomTrainerFactory implements TrainerFactory {
+public class RandomTrainerSelector implements TrainerSelector {
     private final Predicate<TrainerTemplate> predicate;
 
-    public RandomTrainerFactory(Predicate<TrainerTemplate> predicate) {
+    public RandomTrainerSelector(Predicate<TrainerTemplate> predicate) {
         this.predicate = predicate;
     }
 
-    public RandomTrainerFactory() {
+    public RandomTrainerSelector() {
         this(template -> true);
     }
 
     @Override
-    public Identifier create() {
+    public Identifier select() {
         List<Identifier> trainers = TrainerTemplateStorage.getInstance().keySet().stream().filter(this::test).toList();
         List<Identifier> random = new ArrayList<>(trainers);
         Collections.shuffle(random);

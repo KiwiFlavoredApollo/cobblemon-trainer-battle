@@ -1,8 +1,8 @@
 package kiwiapollo.cobblemontrainerbattle.event;
 
+import kiwiapollo.cobblemontrainerbattle.common.TrainerSelector;
 import kiwiapollo.cobblemontrainerbattle.entity.CustomEntityType;
 import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntity;
-import kiwiapollo.cobblemontrainerbattle.entity.BattleEntity;
 import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
 import kiwiapollo.cobblemontrainerbattle.item.vsseeker.VsSeeker;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
@@ -49,8 +49,8 @@ public class TrainerEntitySpawner implements ServerTickEvents.EndWorldTick {
 
     private void trySpawnEntity(ServerWorld world, ServerPlayerEntity player) {
         try {
-            BattleEntity entity = new TrainerEntity(CustomEntityType.TRAINER, world);
-            Identifier trainer = selectRandomVsSeeker(player).create();
+            TrainerEntity entity = new TrainerEntity(CustomEntityType.TRAINER, world);
+            Identifier trainer = ((TrainerSelector) selectRandomVsSeeker(player)).select();
             entity.setTrainer(trainer);
 
             BlockPos pos = getRandomSpawnPosition(world, player);

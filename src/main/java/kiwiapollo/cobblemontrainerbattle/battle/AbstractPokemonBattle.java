@@ -30,12 +30,12 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-public abstract class CustomPokemonBattle implements PokemonBattleBehavior {
+public abstract class AbstractPokemonBattle implements PokemonBattle {
     private final PlayerBattleActor player;
     private final TrainerBattleActor trainer;
     private UUID battleId;
 
-    public CustomPokemonBattle(PlayerBattleActor player, TrainerBattleActor trainer) {
+    public AbstractPokemonBattle(PlayerBattleActor player, TrainerBattleActor trainer) {
         this.player = player;
         this.trainer = trainer;
         this.battleId = null;

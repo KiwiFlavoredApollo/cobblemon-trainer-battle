@@ -16,10 +16,10 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.Util;
 
 public class CustomEntityType {
-    public static final EntityType<NeutralTrainerEntity> NEUTRAL_TRAINER = register("neutral_trainer", EntityType.Builder.create(new NeutralTrainerEntity.Factory(), SpawnGroup.CREATURE).setDimensions(0.6f, 1.8f));
-    public static final EntityType<StaticTrainerEntity> STATIC_TRAINER = register("static_trainer", EntityType.Builder.create(new StaticTrainerEntity.Factory(), SpawnGroup.CREATURE).setDimensions(0.6f, 1.8f));
-    public static final EntityType<TrainerEntity> TRAINER = register("trainer", EntityType.Builder.create(new TrainerEntity.Factory(), SpawnGroup.CREATURE).setDimensions(0.6f, 1.8f));
-    public static final EntityType<MannequinEntity> MANNEQUIN = register("mannequin", EntityType.Builder.create(new MannequinEntity.Factory(), SpawnGroup.CREATURE).setDimensions(0.6f, 1.8f));
+    public static final EntityType<NeutralTrainerEntity> NEUTRAL_TRAINER = register("neutral_trainer", EntityType.Builder.create(NeutralTrainerEntity::new, SpawnGroup.CREATURE).setDimensions(0.6f, 1.8f));
+    public static final EntityType<StaticTrainerEntity> STATIC_TRAINER = register("static_trainer", EntityType.Builder.create(StaticTrainerEntity::new, SpawnGroup.CREATURE).setDimensions(0.6f, 1.8f));
+    public static final EntityType<TrainerEntity> TRAINER = register("trainer", EntityType.Builder.create(TrainerEntity::new, SpawnGroup.CREATURE).setDimensions(0.6f, 1.8f));
+    public static final EntityType<MannequinEntity> MANNEQUIN = register("mannequin", EntityType.Builder.create(MannequinEntity::new, SpawnGroup.CREATURE).setDimensions(0.6f, 1.8f));
     public static final BlockEntityType<PokeBallBoxBlockEntity> POKE_BALL_BOX = register("poke_ball_box", BlockEntityType.Builder.create(PokeBallBoxBlockEntity::new, CustomBlock.POKE_BALL_BOX));
 
     public static void initialize() {
@@ -32,7 +32,7 @@ public class CustomEntityType {
     }
 
     @Deprecated
-    // Poke Ball Box is messed up. It will be removed along with Poke Ball Engineer in the future.
+    // Poke Ball Box is messed up. It will be removed with Poke Ball Engineer in the future.
     private static <T extends BlockEntity> BlockEntityType<T> register(String name, BlockEntityType.Builder<T> type) {
         Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, "trainer_table");
         return Registry.register(Registries.BLOCK_ENTITY_TYPE, identifier, type.build(Util.getChoiceType(TypeReferences.BLOCK_ENTITY, Identifier.of(CobblemonTrainerBattle.MOD_ID, "poke_ball_box").toString())));

@@ -8,7 +8,7 @@ import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.mojang.brigadier.CommandDispatcher;
 import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
-import kiwiapollo.cobblemontrainerbattle.entity.BattleEntityBehavior;
+import kiwiapollo.cobblemontrainerbattle.entity.PokemonTrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
 import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
 import kiwiapollo.cobblemontrainerbattle.template.PokemonLevelPair;
@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
-public class RelativeLevelBattle extends CustomPokemonBattle {
+public class RelativeLevelBattle extends AbstractPokemonBattle {
     private final ServerPlayerEntity player;
     private final TrainerTemplate trainer;
 
@@ -240,7 +240,7 @@ public class RelativeLevelBattle extends CustomPokemonBattle {
                 ServerWorld world = player.getServerWorld();
                 LivingEntity entity = (LivingEntity) world.getEntity(trainer.getEntityUuid());
 
-                if (entity.distanceTo(player) < getMaximumEntityDistance(world)) {
+                if (entity.distanceTo(player) < TrainerBattleActor.FLEE_DISTANCE_IN_BLOCKS) {
                     return entity;
                 } else {
                     return player;
@@ -311,23 +311,7 @@ public class RelativeLevelBattle extends CustomPokemonBattle {
         }
 
         private LivingEntity getEntity() {
-            try {
-                ServerWorld world = player.getServerWorld();
-                LivingEntity entity = (LivingEntity) world.getEntity(uuid);
-
-                if (entity.distanceTo(player) < getMaximumEntityDistance(world)) {
-                    return entity;
-                } else {
-                    return player;
-                }
-
-            } catch (ClassCastException | NullPointerException e) {
-                return player;
-            }
-        }
-
-        private int getMaximumEntityDistance(ServerWorld world) {
-            return world.getGameRules().get(CustomGameRule.TRAINER_FLEE_DISTANCE_IN_BLOCKS).get();
+            return entity;
         }
 
         private Runnable getPlayerVictoryHandler() {
@@ -365,11 +349,13 @@ public class RelativeLevelBattle extends CustomPokemonBattle {
         }
 
         private void incrementPlayerVictoryCount() {
-            getBattleHistory(player, trainer).setVictoryCount(getBattleHistory(player, trainer).getVictoryCount() + 1);
+            BattleHistory history = getBattleHistory(player, trainer);
+            history.setVictoryCount(history.getVictoryCount() + 1);
         }
 
         private void incrementPlayerDefeatCount() {
-            getBattleHistory(player, trainer).setDefeatCount(getBattleHistory(player, trainer).getDefeatCount() + 1);
+            BattleHistory history = getBattleHistory(player, trainer);
+            history.setDefeatCount(history.getDefeatCount() + 1);
         }
 
         private BattleHistory getBattleHistory(ServerPlayerEntity player, TrainerTemplate trainer) {
@@ -382,7 +368,7 @@ public class RelativeLevelBattle extends CustomPokemonBattle {
 
         private void runEntityLevelPlayerVictoryHandler() {
             try {
-                ((BattleEntityBehavior) entity).onPlayerVictory();
+                ((PokemonTrainerEntity) entity).onPlayerVictory();
 
             } catch (ClassCastException ignored) {
 
@@ -391,7 +377,7 @@ public class RelativeLevelBattle extends CustomPokemonBattle {
 
         private void runEntityLevelPlayerDefeatHandler() {
             try {
-                ((BattleEntityBehavior) entity).onPlayerDefeat();
+                ((PokemonTrainerEntity) entity).onPlayerDefeat();
 
             } catch (ClassCastException ignored) {
 

@@ -5,7 +5,7 @@ import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import kiwiapollo.cobblemontrainerbattle.battle.TrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
-import kiwiapollo.cobblemontrainerbattle.template.RandomTrainerFactory;
+import kiwiapollo.cobblemontrainerbattle.template.RandomTrainerSelector;
 import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplate;
 import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplateStorage;
 import net.minecraft.command.argument.EntityArgumentType;
@@ -55,7 +55,7 @@ public abstract class TrainerBattleStarter implements Command<ServerCommandSourc
     }
 
     protected TrainerTemplate getRandomTrainer(CommandContext<ServerCommandSource> context) {
-        Identifier trainer = new RandomTrainerFactory().create();
+        Identifier trainer = new RandomTrainerSelector(template -> !template.getTeam().isEmpty()).select();
         return TrainerTemplateStorage.getInstance().get(trainer);
     }
 

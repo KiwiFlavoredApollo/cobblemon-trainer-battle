@@ -1,6 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.item.vsseeker;
 
-import kiwiapollo.cobblemontrainerbattle.common.TrainerFactory;
+import kiwiapollo.cobblemontrainerbattle.common.TrainerSelector;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -13,15 +13,15 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class VsSeeker extends Item implements TrainerFactory {
+public class VsSeeker extends Item implements TrainerSelector {
     private final MutableText group;
-    private final TrainerFactory factory;
+    private final TrainerSelector selector;
 
-    public VsSeeker(MutableText group, TrainerFactory factory) {
+    public VsSeeker(MutableText group, TrainerSelector selector) {
         super(new Item.Settings());
 
         this.group = group;
-        this.factory = factory;
+        this.selector = selector;
     }
 
     @Override
@@ -30,7 +30,7 @@ public class VsSeeker extends Item implements TrainerFactory {
     }
 
     @Override
-    public Identifier create() {
-        return factory.create();
+    public Identifier select() {
+        return selector.select();
     }
 }

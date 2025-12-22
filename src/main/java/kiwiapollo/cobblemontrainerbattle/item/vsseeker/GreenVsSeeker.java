@@ -1,26 +1,21 @@
 package kiwiapollo.cobblemontrainerbattle.item.vsseeker;
 
-import kiwiapollo.cobblemontrainerbattle.common.TrainerFactory;
-import kiwiapollo.cobblemontrainerbattle.template.RandomTrainerFactory;
+import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.common.TrainerSelector;
+import kiwiapollo.cobblemontrainerbattle.template.RandomTrainerSelector;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class GreenVsSeeker extends VsSeeker {
     public GreenVsSeeker() {
-        super(Text.translatable("trainer_group.cobblemontrainerbattle.inclementemerald"), new Factory());
-    }
+        super(Text.translatable("trainer_group.cobblemontrainerbattle.inclementemerald"), new RandomTrainerSelector(template -> {
+            boolean result = true;
 
-    private static class Factory implements TrainerFactory {
-        @Override
-        public Identifier create() {
-            return new RandomTrainerFactory(template -> {
-                boolean result = true;
+            result &= !template.getTeam().isEmpty();
+            result &= template.getIdentifier().getNamespace().equals(CobblemonTrainerBattle.MOD_ID);
+            result &= template.getIdentifier().getPath().matches("inclementemerald/.+");
 
-                result &= !template.getTeam().isEmpty();
-                result &= template.getIdentifier().getPath().matches("inclementemerald/.+");
-
-                return result;
-            }).create();
-        }
+            return result;
+        }));
     }
 }

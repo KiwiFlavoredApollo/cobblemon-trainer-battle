@@ -1,29 +1,71 @@
 package kiwiapollo.cobblemontrainerbattle.entity;
 
-import kiwiapollo.cobblemontrainerbattle.template.RandomTrainerFactory;
+import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
+import kiwiapollo.cobblemontrainerbattle.template.RandomTrainerSelector;
+import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplateStorage;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.goal.LookAtEntityGoal;
+import net.minecraft.entity.attribute.DefaultAttributeContainer;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.damage.DamageTypes;
+import net.minecraft.entity.data.DataTracker;
+import net.minecraft.entity.data.TrackedData;
+import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.util.Identifier;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public class MannequinEntity extends BattleEntity {
+import java.util.Objects;
+
+public class MannequinEntity extends AbstractPokemonTrainerEntity {
+    private static final String TRAINER_NBT_KEY = "Trainer";
+
+    private static final TrackedData<String> TEXTURE = DataTracker.registerData(MannequinEntity.class, TrackedDataHandlerRegistry.STRING);
+
+    private Identifier trainer;
+
     public MannequinEntity(EntityType<? extends PathAwareEntity> type, World world) {
         super(type, world);
+
+        this.trainer = TrainerTemplate.PLAYER_LEAF;
+    }
+
+    @Override
+    protected void initDataTracker() {
+        super.initDataTracker();
+
+        this.getDataTracker().startTracking(TEXTURE, TrainerTexture.LEAF.toString());
     }
 
     @Override
     @Nullable
-    public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityNbt) {
+    public EntityData initialize(
+            ServerWorldAccess world,
+            LocalDifficulty difficulty,
+            SpawnReason spawnReason,
+            @Nullable EntityData entityData,
+            @Nullable NbtCompound entityNbt
+    ) {
+        if (spawnReason.equals(SpawnReason.SPAWNER)) {
+            setTrainer(new RandomTrainerSelector(template -> {
+                boolean result = true;
+
+                result &= template.isSpawnAllowed();
+                result &= !template.getTeam().isEmpty();
+
+                return result;
+            }).select());
+        }
+
         setPersistent();
 
         return super.initialize(world, difficulty, spawnReason, entityData, entityNbt);
@@ -54,6 +96,59 @@ public class MannequinEntity extends BattleEntity {
     }
 
     @Override
+    public void writeCustomDataToNbt(NbtCompound nbt) {
+        super.writeCustomDataToNbt(nbt);
+        nbt.putString(TRAINER_NBT_KEY, trainer.toString());
+    }
+
+    @Override
+    public void readCustomDataFromNbt(NbtCompound nbt) {
+        try {
+            super.readCustomDataFromNbt(nbt);
+            setTrainer(toDefaultedIdentifier(nbt.getString(TRAINER_NBT_KEY)));
+
+        } catch (NullPointerException e) {
+            discard();
+        }
+    }
+
+    private Identifier toDefaultedIdentifier(String string) {
+        if (string.contains(String.valueOf(Identifier.NAMESPACE_SEPARATOR))) {
+            return Identifier.tryParse(string);
+
+        } else {
+            return Identifier.of(CobblemonTrainerBattle.MOD_ID, string);
+        }
+    }
+
+    @Override
+    public Identifier getTrainer() {
+        return trainer;
+    }
+
+    @Override
+    public void setTrainer(Identifier trainer) {
+        this.trainer = trainer;
+        this.getDataTracker().set(TEXTURE, getTexture(trainer).toString());
+    }
+
+    @Override
+    public Identifier getTexture() {
+        String texture = getDataTracker().get(TEXTURE);
+        return Identifier.tryParse(Objects.requireNonNull(texture));
+    }
+
+    @Nullable
+    private Identifier getTexture(Identifier trainer) {
+        try {
+            return TrainerTemplateStorage.getInstance().get(trainer).getTexture();
+
+        } catch (NullPointerException e) {
+            return TrainerTexture.LEAF;
+        }
+    }
+
+    @Override
     public void onPlayerVictory() {
 
     }
@@ -63,25 +158,10 @@ public class MannequinEntity extends BattleEntity {
         setAiDisabled(false);
     }
 
-    public static class Factory implements EntityType.EntityFactory<MannequinEntity>  {
-        private final RandomTrainerFactory identifier;
-
-        public Factory() {
-            this.identifier = new RandomTrainerFactory(template -> {
-                boolean result = true;
-
-                result &= template.isSpawnAllowed();
-                result &= !template.getTeam().isEmpty();
-
-                return result;
-            });
-        }
-
-        @Override
-        public MannequinEntity create(EntityType<MannequinEntity> type, World world) {
-            MannequinEntity entity = new MannequinEntity(type, world);
-            entity.setTrainer(identifier.create());
-            return entity;
-        }
+    public static DefaultAttributeContainer.Builder createMobAttributes() {
+        return PathAwareEntity.createMobAttributes()
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 20.0)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2.0)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25D);
     }
 }

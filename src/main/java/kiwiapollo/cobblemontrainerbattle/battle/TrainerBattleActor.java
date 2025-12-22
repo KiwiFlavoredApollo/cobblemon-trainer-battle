@@ -4,11 +4,8 @@ import com.cobblemon.mod.common.api.battles.model.actor.AIBattleActor;
 import com.cobblemon.mod.common.api.battles.model.actor.ActorType;
 import com.cobblemon.mod.common.api.battles.model.actor.EntityBackedBattleActor;
 import com.cobblemon.mod.common.api.battles.model.actor.FleeableBattleActor;
-import com.cobblemon.mod.common.api.types.ElementalType;
-import com.cobblemon.mod.common.api.types.ElementalTypes;
 import com.cobblemon.mod.common.battles.BattleFormat;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
-import kiwiapollo.cobblemontrainerbattle.gamerule.CustomGameRule;
 import kiwiapollo.cobblemontrainerbattle.template.PokemonType;
 import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplate;
 import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemon;
@@ -30,6 +27,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class TrainerBattleActor extends AIBattleActor implements EntityBackedBattleActor<LivingEntity>, FleeableBattleActor, BattleResultHandler {
+    public static final int FLEE_DISTANCE_IN_BLOCKS = 128;
+
     private final LivingEntity entity;
     private final ServerWorld world;
     private final Vec3d position;
@@ -85,7 +84,7 @@ public class TrainerBattleActor extends AIBattleActor implements EntityBackedBat
 
     @Override
     public float getFleeDistance() {
-        return world.getGameRules().getInt(CustomGameRule.TRAINER_FLEE_DISTANCE_IN_BLOCKS);
+        return FLEE_DISTANCE_IN_BLOCKS;
     }
 
     @Nullable
