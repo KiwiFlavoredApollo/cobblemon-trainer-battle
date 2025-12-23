@@ -5,6 +5,10 @@
   "entity.cobblemontrainerbattle.mannequin": "Mannequin",
   "entity.minecraft.villager.pokeballengineer": "Poke Ball Engineer",
 
+  "gamerule.maximumTrainerCountPerPlayer": "Maximum number of trainers around a player",
+  "gamerule.trainerSpawnIntervalInSeconds": "Trainer spawn interval in seconds",
+  "gamerule.doTrainerApplyStatusCondition": "Trainer attacks apply status condition on player Pokémon",
+
   "block.cobblemontrainerbattle.poke_ball_box": "Poke Ball Box",
 
   "tag.item.cobblemontrainerbattle.vs_seekers": "VS Seekers",
