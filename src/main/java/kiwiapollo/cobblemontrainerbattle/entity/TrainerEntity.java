@@ -69,16 +69,14 @@ public class TrainerEntity extends AbstractPokemonTrainerEntity implements Anger
             @Nullable EntityData entityData,
             @Nullable NbtCompound entityNbt
     ) {
-        if (spawnReason.equals(SpawnReason.SPAWNER)) {
-            setTrainer(new RandomTrainerSelector(template -> {
-                boolean result = true;
+        setTrainer(new RandomTrainerSelector(template -> {
+            boolean result = true;
 
-                result &= template.isSpawnAllowed();
-                result &= !template.getTeam().isEmpty();
+            result &= template.isSpawnAllowed();
+            result &= !template.getTeam().isEmpty();
 
-                return result;
-            }).select());
-        }
+            return result;
+        }).select());
 
         return super.initialize(world, difficulty, spawnReason, entityData, entityNbt);
     }
@@ -235,12 +233,6 @@ public class TrainerEntity extends AbstractPokemonTrainerEntity implements Anger
         this.getDataTracker().set(TEXTURE, getTexture(trainer).toString());
     }
 
-    @Override
-    public Identifier getTexture() {
-        String texture = getDataTracker().get(TEXTURE);
-        return Identifier.tryParse(Objects.requireNonNull(texture));
-    }
-
     @Nullable
     private Identifier getTexture(Identifier trainer) {
         try {
@@ -249,6 +241,11 @@ public class TrainerEntity extends AbstractPokemonTrainerEntity implements Anger
         } catch (NullPointerException e) {
             return TrainerTexture.RED;
         }
+    }
+
+    @Override
+    public Identifier getTexture() {
+        return Identifier.tryParse(getDataTracker().get(TEXTURE));
     }
 
     @Override

@@ -24,8 +24,6 @@ import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Objects;
-
 public class MannequinEntity extends AbstractPokemonTrainerEntity {
     private static final String TRAINER_NBT_KEY = "Trainer";
 
@@ -55,16 +53,14 @@ public class MannequinEntity extends AbstractPokemonTrainerEntity {
             @Nullable EntityData entityData,
             @Nullable NbtCompound entityNbt
     ) {
-        if (spawnReason.equals(SpawnReason.SPAWNER)) {
-            setTrainer(new RandomTrainerSelector(template -> {
-                boolean result = true;
+        setTrainer(new RandomTrainerSelector(template -> {
+            boolean result = true;
 
-                result &= template.isSpawnAllowed();
-                result &= !template.getTeam().isEmpty();
+            result &= template.isSpawnAllowed();
+            result &= !template.getTeam().isEmpty();
 
-                return result;
-            }).select());
-        }
+            return result;
+        }).select());
 
         setPersistent();
 
@@ -132,12 +128,6 @@ public class MannequinEntity extends AbstractPokemonTrainerEntity {
         this.getDataTracker().set(TEXTURE, getTexture(trainer).toString());
     }
 
-    @Override
-    public Identifier getTexture() {
-        String texture = getDataTracker().get(TEXTURE);
-        return Identifier.tryParse(Objects.requireNonNull(texture));
-    }
-
     @Nullable
     private Identifier getTexture(Identifier trainer) {
         try {
@@ -146,6 +136,11 @@ public class MannequinEntity extends AbstractPokemonTrainerEntity {
         } catch (NullPointerException e) {
             return TrainerTexture.LEAF;
         }
+    }
+
+    @Override
+    public Identifier getTexture() {
+        return Identifier.tryParse(getDataTracker().get(TEXTURE));
     }
 
     @Override
