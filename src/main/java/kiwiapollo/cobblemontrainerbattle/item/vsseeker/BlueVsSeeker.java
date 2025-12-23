@@ -10,6 +10,7 @@ public class BlueVsSeeker extends VsSeeker {
         super(Text.translatable("trainer_group.cobblemontrainerbattle.all"), new RandomTrainerSelector(template -> {
             boolean result = true;
 
+            result &= template.isSpawnAllowed();
             result &= !template.getTeam().isEmpty();
 
             return result;

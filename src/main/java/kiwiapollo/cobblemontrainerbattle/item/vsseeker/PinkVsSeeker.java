@@ -9,6 +9,7 @@ public class PinkVsSeeker extends VsSeeker {
         super(Text.translatable("trainer_group.cobblemontrainerbattle.xy"), new RandomTrainerSelector(template -> {
             boolean result = true;
 
+            result &= template.isSpawnAllowed();
             result &= !template.getTeam().isEmpty();
             result &= template.getIdentifier().getNamespace().equals(CobblemonTrainerBattle.MOD_ID);
             result &= template.getIdentifier().getPath().matches("xy/.+");
