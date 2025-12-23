@@ -71,12 +71,12 @@ public class TrainerEntitySpawner implements ServerTickEvents.EndWorldTick {
     }
 
     private boolean isLessThanMaximumPerPlayerTrainerCount(ServerWorld world, ServerPlayerEntity player) {
-        int count = getEntityCount(world, player);
+        int count = getTrainerEntityCount(world, player);
         int maximum = world.getServer().getGameRules().get(CustomGameRule.MAXIMUM_TRAINER_COUNT_PER_PLAYER).get();
         return count < maximum;
     }
 
-    public int getEntityCount(ServerWorld world, ServerPlayerEntity player) {
+    public int getTrainerEntityCount(ServerWorld world, ServerPlayerEntity player) {
         Box box = player.getBoundingBox().expand(MAXIMUM_RADIUS);
         return world.getEntitiesByType(CustomEntityType.TRAINER, box, entity -> true).size();
     }
