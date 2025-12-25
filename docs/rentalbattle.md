@@ -2,13 +2,11 @@
 
 Rental Battle replaces Battle Factory from the previous versions. It basically let players battle trainers with rental Pokémon. Rental Battles can be initiated with `/rentalbattle <trainer>` and `/rentalbattleother <trainer>`.
 
-## Rules
-
-Rental Battle is 3 on 3 battle. Rental Battle does not start if either player or the trainer does not have three or more Pokémon.  
-
 ## Rental Pokemon
 
-Before starting Rental Battle, player must receive rental Pokémon. Rental Pokémon are volatile, and they are removed when player disconnects from the server. Rental Pokémon can also be removed by running `/rentalpokemon clear`.
+Before starting Rental Battle, player must receive rental Pokémon. Rental Pokémon can also be removed by running `/rentalpokemon clear`.
+
+Trainers with empty team can be used for Rental Battle. Those trainers will receive random Pokémon.
 
 ### Random
 
@@ -31,7 +29,7 @@ When players defeat trainers on Rental Battle, they can trade their Pokémon wit
 Prints status of rental Pokémon.
 
 ```
-/rentalpokemon showtrade
+/rentalpokemon showtradable
 ```
 
 Prints status of tradable Pokémon.

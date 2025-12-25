@@ -17,7 +17,7 @@ Trainer preset is the most important part of the mod as it allows data pack auth
   "entity_uuid": "d8f7f037-33fe-4f55-8670-67b1494b7896",
   "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/red_piikapiika.png",
     
-  "is_spawning_allowed": true,
+  "is_spawn_allowed": true,
   "is_rematch_allowed": true,
     
   "maximum_party_size": 6,
@@ -38,12 +38,23 @@ Trainer preset is the most important part of the mod as it allows data pack auth
   ],
   "required_ability": ["pressure", "static"],
   "required_move": ["tackle", "ember"],
+  "required_type": [
+    ["water", "*"]
+  ],
     
   "forbidden_label": [],
   "forbidden_pokemon": [],
   "forbidden_held_item": [],
   "forbidden_ability": [],
   "forbidden_move": [],
+  "forbidden_type": [],
+
+  "allowed_label": [],
+  "allowed_pokemon": [],
+  "allowed_held_item": [],
+  "allowed_ability": [],
+  "allowed_move": [],
+  "allowed_type": [],
     
   "on_victory_commands": [
     "give %player% minecraft:diamond"
@@ -74,7 +85,7 @@ Trainer preset is the most important part of the mod as it allows data pack auth
 - `double`
 - `triple`
 
-> For `1.9.x+1.5.2`, only `single` is available
+> For Cobblemon 1.5.2, only `single` is available
 
 ## `battle_ai`
 
@@ -94,6 +105,80 @@ If not set, both player and trainer Poké Balls are thrown from the player. When
 ## `texture`
 
 If set, the trainer entity spawns with specified texture. You can also use textures provided by other mods and resource packs.
+
+## Required Conditions
+
+Any Pokémon in the party should satisfy required conditions. For example, if all Pokémon does not have required label, the trainer will refuse to battle.
+
+## Forbidden Conditions
+
+Each Pokémon in the party should satisfy forbidden conditions. For example, if any Pokémon have forbidden held item, the trainer will refuse to battle.
+
+## Allowed Conditions
+
+Each Pokémon in the party should satisfy allowed conditions. For example, if any Pokémon have allowed
+
+## Pokémon Type Condition
+
+It takes lowercase type names like `water`, `fire` and `grass`. `*` and `+` can be used for specifying multiple types.
+
+### Example 1
+
+```
+"required_type": [
+  ["water"]
+]
+```
+
+Requires Water single-type Pokémon.
+
+### Example 2
+
+```
+"required_type": [
+  ["water", "*"]
+]
+```
+
+Requires Water single-type or Water dual-type Pokémon.
+
+### Example 3
+
+```
+"required_type": [
+  ["water", "+"]
+]
+```
+
+Requires Water dual-type Pokémon.
+
+### Example 4
+
+```
+"required_type": [
+  ["*"]
+]
+```
+
+Requires any single-type Pokémon.
+
+### Example 5
+
+```
+"required_type": [
+  ["*", "*"]
+]
+
+"required_type": [
+  ["+", "+"]
+]
+
+"required_type": [
+  ["*", "+"]
+]
+```
+
+Requires any dual-type Pokémon.
 
 ## Commands
 

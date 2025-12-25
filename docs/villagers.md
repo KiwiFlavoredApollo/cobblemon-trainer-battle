@@ -1,6 +1,6 @@
 # Villagers
 
-## Poke Ball Engineer
+## Poke Ball Engineer (deprecated)
 
 Poke Ball Engineers provide command-free way of creating custom trainers.
 
@@ -14,7 +14,7 @@ Poke Ball Engineers provide command-free way of creating custom trainers.
 
 Filled Poke Balls inside Poke Ball Box define which Pokémon that Poke Ball Engineers can use. Poke Ball Engineer will randomly select 6 Pokémon from Poke Ball Box.
 
-## Poke Ball Box
+## Poke Ball Box (deprecated)
 
 > Recipes for Poke Ball Box will not be provided.
 

@@ -2,32 +2,31 @@
 
 ## Utility Commands
 
-### Reload
-
-```
-/cobblemontrainerbattle reload
-```
-```
-cobblemontrainerbattle.reload
-```
-
-Reloads configuration file located at `.minecraft/config/cobblemontrainerbattle/config.json`
-
 ### Export
 
 ```
-/cobblemontrainerbattle export <player>
+/exportpokemon
+/exportpokemonother <player>
 ```
 ```
-cobblemontrainerbattle.export
+cobblemontrainerbattle.exportpokemon
+cobblemontrainerbattle.exportpokemonother
 ```
 
-Exported to either:
+JSON file will be exported to `<world>/cobblemontrainerbattle/showdown_team`. While it's not strictly formatted like the Showdown team JSON format, it can be used for adding custom trainers.
 
-- Single Player World `.minecraft/saves/your_world_name/cobblemontrainerbattle/export`
-- Dedicated Server `.minecraft/world/cobblemontrainerbattle/export`
+## Migrate Items
 
-While it's not strictly formatted like the Showdown team JSON format, it can be used for adding custom trainers.
+```
+/cobblemontrainerbattle migrateitem
+```
+```
+cobblemontrainerbattle.migrateitem
+```
+
+Following items in the inventory will be migrated:
+- Neutral Trainer Spawn Egg to Trainer Spawn Egg
+- Static Trainer Spawn Egg to Mannequin Spawn Egg
 
 ## Trainer Battle
 
@@ -84,7 +83,7 @@ cobblemontrainerbattle.rentalbattleother.trainer
 /rentalpokemon clone
 /rentalpokemon trade <playerslot> <trainerslot>
 /rentalpokemon showrental
-/rentalpokemon showtrade
+/rentalpokemon showtradable
 /rentalpokemon clear
 ```
 

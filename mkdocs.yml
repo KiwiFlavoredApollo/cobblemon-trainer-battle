@@ -1,7 +1,8 @@
 site_name: Cobblemon Trainer Battle
 nav:
   - Home: index.md
-  - Configuration: configuration.md
+  - FAQ: faq.md
+  - Deprecated: deprecated.md
   - Commands: commands.md
   - NPC Trainers: npctrainers.md
   - Villagers: villagers.md

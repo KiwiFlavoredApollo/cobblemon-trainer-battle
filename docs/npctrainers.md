@@ -2,44 +2,30 @@
 
 NPC trainers make Cobblemon experience more interesting. Players must have VS Seeker in their inventories in order to spawn trainers around them. NPC Trainers can either be spawned with Trainer Spawn Eggs or with following commands.
 
-## Neutral Trainers
+## Trainers
+
+- Replaces Neutral Trainers
 
 ```
-/summon cobblemontrainerbattle:neutral_trainer ~ ~ ~ {Trainer:"radicalred/leader_brock"}
+/summon cobblemontrainerbattle:trainer ~ ~ ~ {Trainer:"radicalred/leader_brock"}
 ```
 ```
 /kill <uuid>
-/kill @e[type=cobblemontrainerbattle:neutral_trainer]
+/kill @e[type=cobblemontrainerbattle:trainer]
 ```
 
-## Hostile Trainers
+## Mannequins
 
-- Require VS Seekers
-- 10% Chance of Spawning
-- Give Status Conditions When Hit
-- Faint Player Pokémon When Forfeit
-
-Please refer to [Configuration](../configuration) for disabling Hostile Trainers.
-
-```
-/summon cobblemontrainerbattle:hostile_trainer ~ ~ ~ {Trainer:"radicalred/leader_brock"}
-```
-```
-/kill <uuid>
-/kill @e[type=cobblemontrainerbattle:hostile_trainer]
-```
-
-## Static Trainers
-
+- Replaces Static Trainers
 - Invincible, Except `/kill` Command
 - Persistent Entities
 
-Static Trainers spawned with Static Trainer Spawn Eggs are persistent by default. However, those spawned with `/summon` command need to have `PersistenceRequired` set explicitly.
+Mannequins spawned with Spawn Eggs are persistent by default. However, those spawned with `/summon` command need to have `PersistenceRequired` set explicitly.
 
 ```
-/summon cobblemontrainerbattle:static_trainer ~ ~ ~ {Trainer:"radicalred/leader_brock", PersistenceRequired:1b}
+/summon cobblemontrainerbattle:mannequin ~ ~ ~ {Trainer:"radicalred/leader_brock", PersistenceRequired:1b}
 ```
 ```
 /kill <uuid>
-/kill @e[type=cobblemontrainerbattle:static_trainer]
+/kill @e[type=cobblemontrainerbattle:mannequin]
 ```

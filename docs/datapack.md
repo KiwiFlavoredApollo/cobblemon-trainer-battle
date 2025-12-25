@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Data pack authors can use [cobblemon-trainer-battle-data-pack](https://github.com/KiwiFlavoredApollo/cobblemon-trainer-battle-data-pack) as template.
+[Cobblemon Trainer Battle Data Pack](https://github.com/KiwiFlavoredApollo/cobblemon-trainer-battle-data-pack) can be used as a template.
 
 ## Data Pack Structure
 
@@ -70,51 +70,5 @@ Cobblemon Trainer Battle offers a custom loot condition `cobblemontrainerbattle:
       ]
     }
   ]
-}
-```
-
-## Advancement
-
-Cobblemon Trainer Battle offers custom advancement criteria. Please refer to [GitHub repository](https://github.com/KiwiFlavoredApollo/CobblemonTrainerBattle/tree/master/src/main/generated/data/cobblemontrainerbattle/advancements) for specific usages.
-
-```
-cobblemontrainerbattle:defeat_trainer
-cobblemontrainerbattle:kill_trainer
-```
-
-```
-{
-  "parent": "cobblemontrainerbattle:defeat_elite_drake",
-  "criteria": {
-    "defeat_champion_wallace": {
-      "conditions": {
-        "count": 1,
-        "trainer": "trainer:entity/champion_wallace"
-      },
-      "trigger": "cobblemontrainerbattle:defeat_trainer"
-    }
-  },
-  "display": {
-    "announce_to_chat": true,
-    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
-    "description": {
-      "translate": "advancement.cobblemontrainerbattle.defeat_champion_wallace.description"
-    },
-    "frame": "goal",
-    "hidden": false,
-    "icon": {
-      "item": "cobblemontrainerbattle:champion_wallace_token"
-    },
-    "show_toast": true,
-    "title": {
-      "translate": "advancement.cobblemontrainerbattle.defeat_champion_wallace.title"
-    }
-  },
-  "requirements": [
-    [
-      "defeat_champion_wallace"
-    ]
-  ],
-  "sends_telemetry_event": false
 }
 ```
