@@ -16,6 +16,10 @@ public class DeprecatedEntityMigrator implements ServerEntityEvents.Load {
             Map.entry(CustomEntityType.NEUTRAL_TRAINER, CustomEntityType.TRAINER)
     );
 
+    public static void initialize() {
+        ServerEntityEvents.ENTITY_LOAD.register(new DeprecatedEntityMigrator());
+    }
+
     @Override
     public void onLoad(Entity entity, ServerWorld world) {
         for (Map.Entry<EntityType<? extends LivingEntity>, EntityType<? extends LivingEntity>> entry : ENTITY.entrySet()) {

@@ -35,6 +35,12 @@ public class BattleHistoryStorage implements ServerLifecycleEvents.ServerStarted
         return instance;
     }
 
+    public static void initialize() {
+        ServerLifecycleEvents.SERVER_STARTED.register(BattleHistoryStorage.getInstance());
+        ServerLifecycleEvents.SERVER_STOPPED.register(BattleHistoryStorage.getInstance());
+        ServerTickEvents.END_SERVER_TICK.register(BattleHistoryStorage.getInstance());
+    }
+
     @Override
     public void onServerStarted(MinecraftServer server) {
         load(server);
@@ -202,6 +208,10 @@ public class BattleHistoryStorage implements ServerLifecycleEvents.ServerStarted
     }
 
     public static class Renamer implements ServerLifecycleEvents.ServerStarted {
+        public static void initialize() {
+            ServerLifecycleEvents.SERVER_STARTED.register(new BattleHistoryStorage.Renamer());
+        }
+
         @Override
         public void onServerStarted(MinecraftServer server) {
             File oldDirectory = getOldBattleHistoryDirectory(server);

@@ -3,6 +3,7 @@ package kiwiapollo.cobblemontrainerbattle.event;
 import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.TrainerBattleActor;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
@@ -18,6 +19,10 @@ import java.util.stream.StreamSupport;
  * @see PokemonBattle#checkForfeit()
  */
 public class BattleFledEventHandler implements ServerTickEvents.EndWorldTick {
+    public static void initialize() {
+        ServerTickEvents.END_WORLD_TICK.register(new BattleFledEventHandler());
+    }
+
     @Override
     public void onEndTick(ServerWorld world) {
         for (ServerPlayerEntity player : world.getPlayers()) {

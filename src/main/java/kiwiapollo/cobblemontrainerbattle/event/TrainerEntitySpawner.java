@@ -28,6 +28,10 @@ public class TrainerEntitySpawner implements ServerTickEvents.EndWorldTick {
     private static final int MAXIMUM_RADIUS = 30;
     private static final int MINIMUM_RADIUS = 5;
 
+    public static void initialize() {
+        ServerTickEvents.END_WORLD_TICK.register(new TrainerEntitySpawner());
+    }
+
     @Override
     public void onEndTick(ServerWorld world) {
         if (!isEntitySpawnTick(world.getServer())) {

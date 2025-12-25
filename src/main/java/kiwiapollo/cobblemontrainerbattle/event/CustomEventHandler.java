@@ -9,15 +9,19 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 public class CustomEventHandler {
     public static void initialize() {
         BattleVictoryEventHandler.initialize();
-        LootDroppedEventHandler.initialize();
-        ShowdownTeamExporter.initialize();
 
-        ServerLifecycleEvents.SERVER_STARTED.register(new BattleHistoryStorage.Renamer());
-        ServerLifecycleEvents.SERVER_STARTED.register(BattleHistoryStorage.getInstance());
-        ServerLifecycleEvents.SERVER_STOPPED.register(BattleHistoryStorage.getInstance());
-        ServerTickEvents.END_SERVER_TICK.register(BattleHistoryStorage.getInstance());
-        ServerTickEvents.END_WORLD_TICK.register(new BattleFledEventHandler());
-        ServerTickEvents.END_WORLD_TICK.register(new TrainerEntitySpawner());
-        ServerEntityEvents.ENTITY_LOAD.register(new DeprecatedEntityMigrator());
+        LootDroppedEventHandler.initialize();
+
+        ShowdownTeamExporter.Renamer.initialize();
+
+        BattleHistoryStorage.initialize();
+
+        BattleHistoryStorage.Renamer.initialize();
+
+        BattleFledEventHandler.initialize();
+
+        TrainerEntitySpawner.initialize();
+
+        DeprecatedEntityMigrator.initialize();
     }
 }
