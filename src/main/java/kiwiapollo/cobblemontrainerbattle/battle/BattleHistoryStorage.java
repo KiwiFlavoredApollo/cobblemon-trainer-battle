@@ -8,6 +8,7 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtIo;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.InvalidIdentifierException;
 import net.minecraft.util.WorldSavePath;
 
 import java.io.File;
@@ -128,7 +129,7 @@ public class BattleHistoryStorage implements ServerLifecycleEvents.ServerStarted
 
                 map.put(toDefaultedIdentifier(trainer), history);
 
-            } catch (NullPointerException | IllegalArgumentException ignored) {
+            } catch (InvalidIdentifierException | NullPointerException | IllegalArgumentException ignored) {
 
             }
         }
