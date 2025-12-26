@@ -106,17 +106,21 @@ If not set, both player and trainer Poké Balls are thrown from the player. When
 
 If set, the trainer entity spawns with specified texture. You can also use textures provided by other mods and resource packs.
 
+## `is_spawn_allowed`
+
+Replaces `is_spawning_allowed`. For the time being, `is_spawning_allowed` works. However, it is recommended to migrate to `is_spawn_allowed`.
+
 ## Required Conditions
 
-Any Pokémon in the party should satisfy required conditions. For example, if all Pokémon does not have required label, the trainer will refuse to battle.
+At least one Pokémon in the party should satisfy required conditions. For example, if all Pokémon does not have required type, the trainer will refuse to battle.
 
 ## Forbidden Conditions
 
-Each Pokémon in the party should satisfy forbidden conditions. For example, if any Pokémon have forbidden held item, the trainer will refuse to battle.
+All Pokémon in the party should satisfy forbidden conditions. For example, if any Pokémon have forbidden held item, the trainer will refuse to battle.
 
 ## Allowed Conditions
 
-Each Pokémon in the party should satisfy allowed conditions. For example, if any Pokémon have allowed
+All Pokémon in the party should satisfy allowed conditions. For example, if any Pokémon have moves other than those that are allowed, the trainer will refuse to battle.
 
 ## Pokémon Type Condition
 
@@ -136,13 +140,37 @@ Requires Water single-type Pokémon.
 
 ```
 "required_type": [
+  ["*"]
+]
+
+"required_type": [
+  ["+"]
+]
+```
+
+Requires any single-type Pokémon.
+
+### Example 3
+
+```
+"required_type": [
+  ["water", "grass"]
+]
+```
+
+Requires Water and Grass dual-type Pokémon.
+
+### Example 4
+
+```
+"required_type": [
   ["water", "*"]
 ]
 ```
 
 Requires Water single-type or Water dual-type Pokémon.
 
-### Example 3
+### Example 5
 
 ```
 "required_type": [
@@ -152,17 +180,7 @@ Requires Water single-type or Water dual-type Pokémon.
 
 Requires Water dual-type Pokémon.
 
-### Example 4
-
-```
-"required_type": [
-  ["*"]
-]
-```
-
-Requires any single-type Pokémon.
-
-### Example 5
+### Example 6
 
 ```
 "required_type": [

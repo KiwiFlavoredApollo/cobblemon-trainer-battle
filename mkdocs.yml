@@ -3,6 +3,7 @@ nav:
   - Home: index.md
   - FAQ: faq.md
   - Deprecated: deprecated.md
+  - Game Rules: gamerules.md
   - Commands: commands.md
   - NPC Trainers: npctrainers.md
   - Villagers: villagers.md

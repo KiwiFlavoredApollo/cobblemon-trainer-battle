@@ -18,3 +18,7 @@ Following will be removed:
 - Poke Ball Box
 - Filled Poke Ball
 - Empty Poke Ball
+
+## Config
+
+Config file is deprecated. Server admins can safely remove `config/cobblemontrainerbattle/config.json`
