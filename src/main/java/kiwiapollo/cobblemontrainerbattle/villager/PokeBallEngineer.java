@@ -26,6 +26,7 @@ import java.util.UUID;
 
 public class PokeBallEngineer {
     public static final String NAME = "pokeballengineer";
+    private static final int MAXIMUM_PARTY_SIZE = 6;
 
     public static class TrainerTemplateFactory {
         private final VillagerEntity villager;
@@ -85,31 +86,16 @@ public class PokeBallEngineer {
         private List<PokemonLevelPair> createTeam() {
             List<PokemonLevelPair> pair = new ArrayList<>();
 
-            for (Pokemon pokemon : getTeam(villager)) {
+            for (Pokemon pokemon : getPokemon(villager)) {
                 pair.add(new PokemonLevelPair(pokemon, pokemon.getLevel()));
             }
 
             return pair;
         }
 
-        private List<Pokemon> getTeam(VillagerEntity villager) {
-            return getFirstSix(getPokemon(getPokeBallBoxBlockEntity(villager)));
-        }
-
-        // TODO better name
-        private List<Pokemon> getFirstSix(List<Pokemon> pokemon) {
-            final int MAXIMUM = 6;
-
-            if (pokemon.size() > MAXIMUM) {
-                return pokemon.subList(0, MAXIMUM);
-
-            } else {
-                return pokemon;
-            }
-        }
-
-        private List<Pokemon> getPokemon(PokeBallBoxBlockEntity block) {
+        private List<Pokemon> getPokemon(VillagerEntity villager) {
             List<Pokemon> pokemon = new ArrayList<>();
+            PokeBallBoxBlockEntity block = getPokeBallBoxBlockEntity(villager);
 
             for (ItemStack stack : getFilledPokeBalls(block)) {
                 try {
@@ -118,6 +104,10 @@ public class PokeBallEngineer {
                 } catch (NullPointerException | IllegalStateException ignored) {
 
                 }
+            }
+
+            if (pokemon.size() > MAXIMUM_PARTY_SIZE) {
+                return pokemon.subList(0, MAXIMUM_PARTY_SIZE);
             }
 
             return pokemon;

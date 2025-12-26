@@ -26,7 +26,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class TrainerBattleActor extends AIBattleActor implements EntityBackedBattleActor<LivingEntity>, FleeableBattleActor, BattleResultHandler {
+public class TrainerBattleActor extends AIBattleActor implements EntityBackedBattleActor<LivingEntity>, FleeableBattleActor {
     public static final int FLEE_DISTANCE_IN_BLOCKS = 128;
 
     private final LivingEntity entity;
@@ -93,12 +93,10 @@ public class TrainerBattleActor extends AIBattleActor implements EntityBackedBat
         return new Pair<>(world, position);
     }
 
-    @Override
     public void onPlayerVictory() {
         playerVictoryHandler.run();
     }
 
-    @Override
     public void onPlayerDefeat() {
         playerDefeatHandler.run();
     }
