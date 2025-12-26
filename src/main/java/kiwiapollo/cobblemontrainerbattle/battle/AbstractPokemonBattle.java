@@ -861,7 +861,7 @@ public abstract class AbstractPokemonBattle implements PokemonBattle {
     }
 
     protected Text getNotAllowedTypeErrorMessage() {
-        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.error.not_allowed_type", getExistingNotAllowedType()).formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.error.allowed_type", getExistingNotAllowedType()).formatted(Formatting.RED);
     }
 
     protected String getExistingNotAllowedType(){
@@ -887,7 +887,7 @@ public abstract class AbstractPokemonBattle implements PokemonBattle {
     }
 
     protected Text getNotAllowedAbilityErrorMessage() {
-        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.error.not_allowed_ability", getExistingNotAllowedAbility()).formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.error.allowed_ability", getExistingNotAllowedAbility()).formatted(Formatting.RED);
     }
 
     private String getExistingNotAllowedAbility() {
@@ -913,7 +913,7 @@ public abstract class AbstractPokemonBattle implements PokemonBattle {
     }
 
     protected Text getNotAllowedHeldItemErrorMessage() {
-        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.error.not_allowed_held_item", getExistingNotAllowedHeldItem()).formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.error.allowed_held_item", getExistingNotAllowedHeldItem()).formatted(Formatting.RED);
     }
 
     private String getExistingNotAllowedHeldItem() {
@@ -940,7 +940,7 @@ public abstract class AbstractPokemonBattle implements PokemonBattle {
     }
 
     protected Text getNotAllowedLabelErrorMessage() {
-        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.error.not_allowed_label", getExistingNotAllowedLabel()).formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.error.allowed_label", getExistingNotAllowedLabel()).formatted(Formatting.RED);
     }
 
     private String getExistingNotAllowedLabel() {
@@ -967,7 +967,7 @@ public abstract class AbstractPokemonBattle implements PokemonBattle {
     }
 
     protected Text getNotAllowedMoveErrorMessage() {
-        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.error.not_allowed_move", getExistingNotAllowedMove()).formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.error.allowed_move", getExistingNotAllowedMove()).formatted(Formatting.RED);
     }
 
     private String getExistingNotAllowedMove() {
@@ -995,7 +995,7 @@ public abstract class AbstractPokemonBattle implements PokemonBattle {
     }
 
     protected Text getNotAllowedPokemonErrorMessage() {
-        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.error.not_allowed_pokemon", getExistingNotAllowedPokemon()).formatted(Formatting.RED);
+        return Text.translatable("commands.cobblemontrainerbattle.trainerbattle.error.allowed_pokemon", getExistingNotAllowedPokemon()).formatted(Formatting.RED);
     }
 
     private String getExistingNotAllowedPokemon() {
