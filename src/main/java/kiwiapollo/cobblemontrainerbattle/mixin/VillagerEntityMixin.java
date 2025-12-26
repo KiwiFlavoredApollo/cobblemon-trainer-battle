@@ -32,6 +32,10 @@ public class VillagerEntityMixin implements PokemonTrainerEntity {
 
     @Inject(method = "interactMob", at = @At("HEAD"), cancellable = true)
     public void interactMob(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> callbackInfo) {
+        if (!hand.equals(Hand.MAIN_HAND)) {
+            return;
+        }
+
         if (!isPokeBallEngineer()) {
             return;
         }

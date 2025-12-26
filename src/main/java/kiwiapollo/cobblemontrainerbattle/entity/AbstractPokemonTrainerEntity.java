@@ -42,6 +42,10 @@ public abstract class AbstractPokemonTrainerEntity extends PathAwareEntity imple
             return ActionResult.FAIL;
         }
 
+        if (!hand.equals(Hand.MAIN_HAND)) {
+            return ActionResult.PASS;
+        }
+
         if (isBusyWithPokemonBattle()) {
             return ActionResult.FAIL;
         }
