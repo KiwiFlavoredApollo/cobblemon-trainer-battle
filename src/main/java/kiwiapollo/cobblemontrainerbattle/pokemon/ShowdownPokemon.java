@@ -4,18 +4,18 @@ import java.util.List;
 import java.util.Map;
 
 public class ShowdownPokemon {
-    public String name;
-    public String species;
-    public String form;
-    public boolean shiny;
-    public String item;
-    public String ability;
-    public String gender;
-    public String nature;
-    public Map<String, Integer> evs;
-    public Map<String, Integer> ivs;
-    public int level;
-    public List<String> moves;
+    public final String name;
+    public final String species;
+    public final String form;
+    public final boolean shiny;
+    public final String item;
+    public final String ability;
+    public final String gender;
+    public final String nature;
+    public final Map<String, Integer> evs;
+    public final Map<String, Integer> ivs;
+    public final int level;
+    public final List<String> moves;
 
     public ShowdownPokemon() {
         this.name = "";

@@ -2,7 +2,6 @@ package kiwiapollo.cobblemontrainerbattle.item.ticket;
 
 import kiwiapollo.cobblemontrainerbattle.entity.CustomEntityType;
 import kiwiapollo.cobblemontrainerbattle.entity.TrainerEntity;
-import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

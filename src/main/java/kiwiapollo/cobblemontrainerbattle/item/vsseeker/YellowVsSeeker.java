@@ -1,10 +1,8 @@
 package kiwiapollo.cobblemontrainerbattle.item.vsseeker;
 
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
-import kiwiapollo.cobblemontrainerbattle.common.TrainerSelector;
 import kiwiapollo.cobblemontrainerbattle.template.RandomTrainerSelector;
 import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
 
 public class YellowVsSeeker extends VsSeeker {
     public YellowVsSeeker() {

@@ -20,7 +20,7 @@ public class PokeBallBoxBlockEntity extends LootableContainerBlockEntity {
 
     public PokeBallBoxBlockEntity(BlockPos pos, BlockState state) {
         super(CustomEntityType.POKE_BALL_BOX, pos, state);
-        this.inventory = DefaultedList.ofSize(SIZE, ItemStack.EMPTY);;
+        this.inventory = DefaultedList.ofSize(SIZE, ItemStack.EMPTY);
     }
 
     @Override

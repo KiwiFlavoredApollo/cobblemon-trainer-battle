@@ -133,7 +133,7 @@ public class TrainerEntity extends AbstractPokemonTrainerEntity implements Anger
 
         } catch (IndexOutOfBoundsException ignored) {
 
-        };
+        }
 
         return super.tryAttack(target);
     }

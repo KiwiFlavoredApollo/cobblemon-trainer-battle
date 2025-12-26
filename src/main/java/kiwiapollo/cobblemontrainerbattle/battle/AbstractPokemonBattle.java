@@ -458,7 +458,7 @@ public abstract class AbstractPokemonBattle implements PokemonBattle {
         for (Pokemon p : pokemon) {
             if (allowed.stream().noneMatch(a -> isEqualPokemon(p, a))) {
                 return false;
-            };
+            }
         }
 
         return true;
@@ -1008,7 +1008,7 @@ public abstract class AbstractPokemonBattle implements PokemonBattle {
         for (Pokemon p : pokemon) {
             if (allowed.stream().noneMatch(a -> isEqualPokemon(p, a))) {
                 return p.getDisplayName().getString();
-            };
+            }
         }
 
         throw new NoSuchElementException();

@@ -8,7 +8,6 @@ import net.minecraft.util.Identifier;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Predicate;
 
 public class VsSeekerItem {
     public static final List<Item> all = new ArrayList<>();

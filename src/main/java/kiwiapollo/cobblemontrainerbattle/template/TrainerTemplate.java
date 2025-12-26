@@ -3,12 +3,10 @@ package kiwiapollo.cobblemontrainerbattle.template;
 import com.cobblemon.mod.common.battles.BattleFormat;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
 import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemon;
-import net.minecraft.item.Item;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
-import java.util.Set;
 import java.util.UUID;
 
 public class TrainerTemplate {
