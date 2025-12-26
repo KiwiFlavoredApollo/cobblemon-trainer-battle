@@ -1,8 +1,13 @@
 {
   "entity.cobblemontrainerbattle.neutral_trainer": "Dresseur Neutre",
   "entity.cobblemontrainerbattle.static_trainer": "Dresseur Statique",
-
+  "entity.cobblemontrainerbattle.trainer": "Dresseur",
+  "entity.cobblemontrainerbattle.mannequin": "Mannequin",
   "entity.minecraft.villager.pokeballengineer": "Fabricant de Poké Ball",
+
+  "gamerule.maximumTrainerCountPerPlayer": "Nombre maximal de dresseurs autour d’un joueur",
+  "gamerule.trainerSpawnIntervalInSeconds": "Intervalle d’apparition des dresseurs en secondes",
+  "gamerule.doTrainerApplyStatusCondition": "Les attaques des dresseurs appliquent des altérations d’état aux Pokémon du joueur",
 
   "block.cobblemontrainerbattle.poke_ball_box": "Boîte à Poké Ball",
 
@@ -12,22 +17,18 @@
 
   "item.cobblemontrainerbattle.neutral_trainer_spawn_egg": "Œuf d’Apparition – Dresseur Neutre",
   "item.cobblemontrainerbattle.static_trainer_spawn_egg": "Œuf d’Apparition – Dresseur Statique",
+  "item.cobblemontrainerbattle.trainer_spawn_egg": "Œuf d’Apparition – Dresseur",
+  "item.cobblemontrainerbattle.mannequin_spawn_egg": "Œuf d’Apparition – Mannequin",
 
   "item.cobblemontrainerbattle.empty_poke_ball": "Boîte Ball (vide)",
   "item.cobblemontrainerbattle.filled_poke_ball": "Boîte Ball (remplie)",
 
   "item.cobblemontrainerbattle.blue_vs_seeker": "Cherch'Combat Bleu",
-  "trainer_group.cobblemontrainerbattle.all": "Tous les Dresseurs",
   "item.cobblemontrainerbattle.red_vs_seeker": "Cherch'Combat Rouge",
-  "trainer_group.cobblemontrainerbattle.radicalred": "Dresseurs Radical Red",
   "item.cobblemontrainerbattle.green_vs_seeker": "Cherch'Combat Vert",
-  "trainer_group.cobblemontrainerbattle.inclementemerald": "Dresseurs Inclement Emerald",
   "item.cobblemontrainerbattle.purple_vs_seeker": "Cherch'Combat Violet",
-  "trainer_group.cobblemontrainerbattle.smogon": "Dresseurs Smogon",
-  "item.cobblemontrainerbattle.pink_vs_seeker": "Pink VS Seeker",
-  "trainer_group.cobblemontrainerbattle.xy": "Dresseurs XY",
-  "item.cobblemontrainerbattle.yellow_vs_seeker": "Yellow VS Seeker",
-  "trainer_group.cobblemontrainerbattle.bdsp": "Dresseurs DEPE",
+  "item.cobblemontrainerbattle.pink_vs_seeker": "Cherch'Combat Rose",
+  "item.cobblemontrainerbattle.yellow_vs_seeker": "Cherch'Combat Jaune",
 
   "item.cobblemontrainerbattle.trainer_token": "Jeton de Dresseur",
 
@@ -158,6 +159,13 @@
   "item.cobblemontrainerbattle.elite_drasna_ticket": "Ticket de Dracéna",
   "item.cobblemontrainerbattle.elite_siebold_ticket": "Ticket de Narcisse",
   "item.cobblemontrainerbattle.champion_diantha_ticket": "Ticket de Dianthéa",
+
+  "trainer_group.cobblemontrainerbattle.all": "Tous les Dresseurs",
+  "trainer_group.cobblemontrainerbattle.radicalred": "Dresseurs Radical Red",
+  "trainer_group.cobblemontrainerbattle.inclementemerald": "Dresseurs Inclement Emerald",
+  "trainer_group.cobblemontrainerbattle.smogon": "Dresseurs Smogon",
+  "trainer_group.cobblemontrainerbattle.xy": "Dresseurs XY",
+  "trainer_group.cobblemontrainerbattle.bdsp": "Dresseurs DEPE",
 
   "trainer.cobblemontrainerbattle.leader_brock": "Pierre",
   "trainer.cobblemontrainerbattle.leader_misty": "Ondine",
@@ -369,44 +377,46 @@
   "advancements.cobblemontrainerbattle.kill_champion_diantha.title": "Comment Oses-Tu ?",
   "advancements.cobblemontrainerbattle.kill_champion_diantha.description": "Tue Dianthéa",
 
-  "commands.cobblemontrainerbattle.trainerbattle.error.player_busy": "Impossible. Déjà dans un combat.",
-  "commands.cobblemontrainerbattle.trainerbattle.error.no_player_pokemon": "Impossible. Votre équipe est vide.",
-  "predicate.cobblemontrainerbattle.error.player_party_not_fainted": "Impossible. Votre équipe est K.O.",
-
+  "commands.cobblemontrainerbattle.trainerbattle.error.no_trainer": "Dresseur inconnu : %s",
+  "commands.cobblemontrainerbattle.trainerbattle.error.player_busy": "Vous êtes déjà engagé dans un autre combat Pokémon.",
+  "commands.cobblemontrainerbattle.trainerbattle.error.no_player_pokemon": "Vous n'avez aucun Pokémon prêt au combat.",
+  "commands.cobblemontrainerbattle.trainerbattle.error.no_trainer_pokemon": "Le dresseur n'a aucun Pokémon prêt au combat.",
   "commands.cobblemontrainerbattle.trainerbattle.error.rematch_not_allowed": "Re-combattre ce Dreseur n'est pas autorisé.",
   "commands.cobblemontrainerbattle.trainerbattle.error.cooldown_not_elapsed": "Temps de recharge restant : %d secondes",
-
   "commands.cobblemontrainerbattle.trainerbattle.error.maximum_party_size": "Taille maximale de l'équipe requise : %d",
   "commands.cobblemontrainerbattle.trainerbattle.error.minimum_party_size": "Taille minimale de l'équipe requise : %d",
-
   "commands.cobblemontrainerbattle.trainerbattle.error.maximum_party_level": "Niveau maximum de l'équipe requis : %d",
   "commands.cobblemontrainerbattle.trainerbattle.error.minimum_party_level": "Niveau minimum de l'équipe requis : %d",
-
+  "commands.cobblemontrainerbattle.trainerbattle.error.required_type": "Type requis : %s",
   "commands.cobblemontrainerbattle.trainerbattle.error.required_label": "Texte requis : %s",
   "commands.cobblemontrainerbattle.trainerbattle.error.required_pokemon": "Pokémon requis : %s",
   "commands.cobblemontrainerbattle.trainerbattle.error.required_held_item": "Objet tenu requis : %s",
   "commands.cobblemontrainerbattle.trainerbattle.error.required_ability": "Talent Requis : %s",
   "commands.cobblemontrainerbattle.trainerbattle.error.required_move": "Attaque Requise : %s",
-
+  "commands.cobblemontrainerbattle.trainerbattle.error.forbidden_type": "Type interdit : %s",
   "commands.cobblemontrainerbattle.trainerbattle.error.forbidden_label": "Texte interdit : %s",
   "commands.cobblemontrainerbattle.trainerbattle.error.forbidden_pokemon": "Pokémon interdit : %s",
   "commands.cobblemontrainerbattle.trainerbattle.error.forbidden_held_item": "Objet tenu interdit : %s",
   "commands.cobblemontrainerbattle.trainerbattle.error.forbidden_ability": "Talent interdit : %s",
   "commands.cobblemontrainerbattle.trainerbattle.error.forbidden_move": "Attaque interdite : %s",
+  "commands.cobblemontrainerbattle.trainerbattle.error.allowed_type": "Type non autorisé : %s",
+  "commands.cobblemontrainerbattle.trainerbattle.error.allowed_label": "Étiquette non autorisée : %s",
+  "commands.cobblemontrainerbattle.trainerbattle.error.allowed_pokemon": "Pokémon non autorisé : %s",
+  "commands.cobblemontrainerbattle.trainerbattle.error.allowed_held_item": "Objet tenu non autorisé : %s",
+  "commands.cobblemontrainerbattle.trainerbattle.error.allowed_ability": "Talent non autorisé : %s",
+  "commands.cobblemontrainerbattle.trainerbattle.error.allowed_move": "Attaque non autorisée : %s",
 
-  "commands.cobblemontrainerbattle.trainerbattle.success": "Le combat a commencé contre %s.",
-  "commands.cobblemontrainerbattle.rentalpokemon.trade.success": "%s échangé pour %s.",
-  "commands.cobblemontrainerbattle.exportpokemon.success": "Pokémon exporté(s) : %s",
-
-  "commands.cobblemontrainerbattle.trainerbattle.error.no_trainer": "Dresseur inconnu : %s",
   "commands.cobblemontrainerbattle.rentalbattle.error.no_trainer": "Dresseur inconnu : %s",
+  "commands.cobblemontrainerbattle.rentalbattle.error.no_player_pokemon": "Vous n'avez aucun Pokémon de location.",
+  "commands.cobblemontrainerbattle.rentalbattle.error.no_trainer_pokemon": "Le dresseur n'a aucun Pokémon de location.",
 
-  "command.cobblemontrainerbattle.error.rentalbattle.trainer_minimum_party_size": "Le dresseur n'a pas assez de Pokémon : %d",
-  "command.cobblemontrainerbattle.error.rentalbattle.player_minimum_party_size": "Le joueur n'a pas assez de Pokémon : %d",
+  "commands.cobblemontrainerbattle.rentalpokemon.clone.error.not_enough_pokemon": "Un minimum de %d Pokémon est requis.",
+  "commands.cobblemontrainerbattle.rentalpokemon.showrental.error.no_rental_pokemon": "Vous n’avez aucun Pokémon de location.",
+  "commands.cobblemontrainerbattle.rentalpokemon.showtradable.error.no_tradable_pokemon": "Vous n’avez aucun Pokémon échangeable.",
+  "commands.cobblemontrainerbattle.rentalpokemon.trade.success": "%s échangé contre %s.",
+  "commands.cobblemontrainerbattle.rentalpokemon.trade.error.no_rental_pokemon": "Vous n’avez aucun Pokémon de location.",
+  "commands.cobblemontrainerbattle.rentalpokemon.trade.error.no_tradable_pokemon": "Vous n’avez aucun Pokémon échangeable.",
 
-  "command.cobblemontrainerbattle.error.rentalpokemon.trainer_minimum_party_size": "Le dresseur n'a pas assez de Pokémon : %d",
-  "commands.cobblemontrainerbattle.rentalpokemon.clone.error.not_enough_pokemon": "Le joueur n'a pas assez de Pokémon : %d",
-
-  "commands.cobblemontrainerbattle.rentalpokemon.showrental.error.no_rental_pokemon": "Le joueur n'a pas de Pokémon de location.",
-  "commands.cobblemontrainerbattle.rentalpokemon.trade.error.no_tradable_pokemon": "Le joueur n'a pas de Pokémon échangeables."
+  "commands.cobblemontrainerbattle.exportpokemon.success": "Pokémon de %s exporté(s).",
+  "commands.cobblemontrainerbattle.exportpokemon.error": "Échec de l'exportation des Pokémon de %s."
 }
