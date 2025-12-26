@@ -19,8 +19,8 @@ import net.minecraft.util.Identifier;
 public abstract class RentalBattleStarter implements Command<ServerCommandSource> {
     public int run(ServerPlayerEntity player, TrainerTemplate trainer) {
         try {
-            if (!isTrainerExist(trainer)) {
-                player.sendMessage(getNoTrainerErrorMessage());
+            if (trainer == null) {
+                player.sendMessage(getUnknownTrainerErrorMessage());
                 return 0;
             }
 
@@ -33,12 +33,8 @@ public abstract class RentalBattleStarter implements Command<ServerCommandSource
         }
     }
 
-    private boolean isTrainerExist(TrainerTemplate trainer) {
-        return trainer != null;
-    }
-
-    private Text getNoTrainerErrorMessage() {
-        return Text.translatable("commands.cobblemontrainerbattle.rentalbattle.error.no_trainer").formatted(Formatting.RED);
+    private Text getUnknownTrainerErrorMessage() {
+        return Text.translatable("commands.cobblemontrainerbattle.rentalbattle.error.unknown_trainer").formatted(Formatting.RED);
     }
 
     protected ServerPlayerEntity getThisPlayer(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {

@@ -377,7 +377,7 @@
   "advancements.cobblemontrainerbattle.kill_champion_diantha.title": "How Could You?",
   "advancements.cobblemontrainerbattle.kill_champion_diantha.description": "Kill Diantha",
 
-  "commands.cobblemontrainerbattle.trainerbattle.error.no_trainer": "Trainer not found: %s",
+  "commands.cobblemontrainerbattle.trainerbattle.error.unknown_trainer": "Unknown trainer",
   "commands.cobblemontrainerbattle.trainerbattle.error.player_busy": "You are already in another Pokémon battle.",
   "commands.cobblemontrainerbattle.trainerbattle.error.no_player_pokemon": "You have no Pokémon ready for battle.",
   "commands.cobblemontrainerbattle.trainerbattle.error.no_trainer_pokemon": "The trainer has no Pokémon ready for battle.",
@@ -406,7 +406,7 @@
   "commands.cobblemontrainerbattle.trainerbattle.error.allowed_ability": "Not allowed ability: %s",
   "commands.cobblemontrainerbattle.trainerbattle.error.allowed_move": "Not allowed move: %s",
 
-  "commands.cobblemontrainerbattle.rentalbattle.error.no_trainer": "Trainer not found: %s",
+  "commands.cobblemontrainerbattle.rentalbattle.error.unknown_trainer": "Unknown trainer",
   "commands.cobblemontrainerbattle.rentalbattle.error.no_player_pokemon": "You have no rental Pokémon.",
   "commands.cobblemontrainerbattle.rentalbattle.error.no_trainer_pokemon": "The trainer has no rental Pokémon.",
 

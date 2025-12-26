@@ -377,7 +377,7 @@
   "advancements.cobblemontrainerbattle.kill_champion_diantha.title": "Comment Oses-Tu ?",
   "advancements.cobblemontrainerbattle.kill_champion_diantha.description": "Tue Dianthéa",
 
-  "commands.cobblemontrainerbattle.trainerbattle.error.no_trainer": "Dresseur inconnu : %s",
+  "commands.cobblemontrainerbattle.trainerbattle.error.unknown_trainer": "Dresseur inconnu",
   "commands.cobblemontrainerbattle.trainerbattle.error.player_busy": "Vous êtes déjà engagé dans un autre combat Pokémon.",
   "commands.cobblemontrainerbattle.trainerbattle.error.no_player_pokemon": "Vous n'avez aucun Pokémon prêt au combat.",
   "commands.cobblemontrainerbattle.trainerbattle.error.no_trainer_pokemon": "Le dresseur n'a aucun Pokémon prêt au combat.",
@@ -406,7 +406,7 @@
   "commands.cobblemontrainerbattle.trainerbattle.error.allowed_ability": "Talent non autorisé : %s",
   "commands.cobblemontrainerbattle.trainerbattle.error.allowed_move": "Attaque non autorisée : %s",
 
-  "commands.cobblemontrainerbattle.rentalbattle.error.no_trainer": "Dresseur inconnu : %s",
+  "commands.cobblemontrainerbattle.rentalbattle.error.unknown_trainer": "Dresseur inconnu",
   "commands.cobblemontrainerbattle.rentalbattle.error.no_player_pokemon": "Vous n'avez aucun Pokémon de location.",
   "commands.cobblemontrainerbattle.rentalbattle.error.no_trainer_pokemon": "Le dresseur n'a aucun Pokémon de location.",
 
