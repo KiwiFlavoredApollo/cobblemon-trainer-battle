@@ -8,6 +8,7 @@ import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.cobblemon.mod.common.pokemon.PokemonStats;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import kiwiapollo.cobblemontrainerbattle.item.CustomItemNbt;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -128,7 +129,7 @@ public class FilledPokeBall extends Item {
     }
 
     public static Pokemon getPokemon(ItemStack stack) {
-        JsonObject pokemon = JsonParser.parseString(stack.getOrCreateNbt().getString(PokeBallNbt.POKEMON)).getAsJsonObject();
+        JsonObject pokemon = JsonParser.parseString(stack.getOrCreateNbt().getString(CustomItemNbt.POKEMON)).getAsJsonObject();
         return new Pokemon().loadFromJSON(pokemon).clone(true, true);
     }
 }
