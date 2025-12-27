@@ -22,13 +22,13 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class CustomItemGroup {
-    private static final RegistryKey<ItemGroup> ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(CobblemonTrainerBattle.MOD_ID, "item_group"));
+    private static final RegistryKey<ItemGroup> ITEM_GROUP_REGISTRY_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(CobblemonTrainerBattle.MOD_ID, "item_group"));
     private static final ItemGroup ITEM_GROUP = FabricItemGroup.builder().icon(() -> new ItemStack(VsSeekerItem.BLUE_VS_SEEKER)).displayName(Text.translatable("item_group.cobblemontrainerbattle.cobblemontrainerbattle")).build();
 
     public static void initialize() {
-        Registry.register(Registries.ITEM_GROUP, ITEM_GROUP_KEY, ITEM_GROUP);
+        Registry.register(Registries.ITEM_GROUP, ITEM_GROUP_REGISTRY_KEY, ITEM_GROUP);
 
-        ItemGroupEvents.modifyEntriesEvent(ITEM_GROUP_KEY).register(group -> {
+        ItemGroupEvents.modifyEntriesEvent(ITEM_GROUP_REGISTRY_KEY).register(group -> {
             MiscItem.getAll().forEach(group::add);
             VsSeekerItem.getAll().forEach(group::add);
 
