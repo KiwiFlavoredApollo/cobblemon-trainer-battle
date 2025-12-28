@@ -51,7 +51,7 @@ public abstract class RentalBattleStarter implements Command<ServerCommandSource
     }
 
     protected TrainerTemplate getRandomTrainer(CommandContext<ServerCommandSource> context) {
-        Identifier trainer = new RandomTrainerSelector().select();
+        Identifier trainer = new RandomTrainerSelector(template -> template.getTeam().size() == RentalBattle.POKEMON_COUNT).select();
         return TrainerTemplateStorage.getInstance().get(trainer);
     }
 

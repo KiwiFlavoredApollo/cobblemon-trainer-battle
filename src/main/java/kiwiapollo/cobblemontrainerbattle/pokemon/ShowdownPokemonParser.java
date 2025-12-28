@@ -19,7 +19,7 @@ import java.util.*;
 import java.util.function.BiConsumer;
 
 public class ShowdownPokemonParser {
-    public static final int DEFAULT_LEVEL = 50;
+    private static final int DEFAULT_LEVEL = 50;
 
     public Pokemon toCobblemonPokemon(ShowdownPokemon showdownPokemon) throws PokemonParseException {
         Pokemon pokemon = createBasePokemon(showdownPokemon);
@@ -172,9 +172,14 @@ public class ShowdownPokemonParser {
     }
 
     public static Species toSpecies(ShowdownPokemon pokemon) {
-        String string = removeFormName(pokemon.species);
-        Identifier identifier = toSpeciesIdentifier(string);
-        return PokemonSpecies.INSTANCE.getByIdentifier(identifier);
+        if (Objects.equals(pokemon.species, "cobblemontrainerbattle:random")) {
+            return PokemonSpecies.INSTANCE.random();
+
+        } else {
+            String string = removeFormName(pokemon.species);
+            Identifier identifier = toSpeciesIdentifier(string);
+            return PokemonSpecies.INSTANCE.getByIdentifier(identifier);
+        }
     }
 
     private static Identifier toSpeciesIdentifier(String string) {

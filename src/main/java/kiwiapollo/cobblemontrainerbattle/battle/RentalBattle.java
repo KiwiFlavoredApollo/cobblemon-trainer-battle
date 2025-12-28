@@ -146,19 +146,7 @@ public class RentalBattle extends AbstractPokemonBattle implements PokemonBattle
         }
 
         private List<Pokemon> getRentalPokemon(TrainerTemplate trainer) {
-            List<Pokemon> pokemon = new ArrayList<>(trainer.getTeam().stream().map(this::toPokemon).toList());
-
-            if (pokemon.size() > RentalBattle.POKEMON_COUNT) {
-                List<Pokemon> random = new ArrayList<>(pokemon);
-                Collections.shuffle(random);
-                pokemon = random.subList(0, RentalBattle.POKEMON_COUNT);
-            }
-
-            while (pokemon.size() < RentalBattle.POKEMON_COUNT) {
-                pokemon.add(PokemonSpecies.INSTANCE.random().create(RentalBattle.LEVEL));
-            }
-
-            return pokemon;
+            return new ArrayList<>(trainer.getTeam().stream().map(this::toPokemon).toList());
         }
 
         public TrainerBattleActor create() {
@@ -182,7 +170,8 @@ public class RentalBattle extends AbstractPokemonBattle implements PokemonBattle
 
         private List<BattlePokemon> getBattleTeam() {
             List<Pokemon> rental = pokemon.stream().map(this::applyPokemonProperty).toList();
-            return toPartyStore(rental).toBattleTeam(true, true, null);        }
+            return toPartyStore(rental).toBattleTeam(true, true, null);
+        }
 
         private Pokemon applyPokemonProperty(Pokemon pokemon) {
             Pokemon clone = pokemon.clone(true, true);
