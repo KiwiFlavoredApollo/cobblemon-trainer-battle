@@ -18,43 +18,58 @@ public class UnovaSoundEvent {
     private static class DiscOne {
         public static final List<SoundEvent> all = new ArrayList<>();
 
-        public static final SoundEvent UNOVA_DEFAULT = register("battle.unova.default");
-        public static final SoundEvent LEADER_CILAN = register("battle.leader.cilan");
-        public static final SoundEvent LEADER_CHILI = register("battle.leader.chili");
-        public static final SoundEvent LEADER_CRESS = register("battle.leader.cress");
-        public static final SoundEvent LEADER_LENORA = register("battle.leader.lenora");
-        public static final SoundEvent LEADER_BURGH = register("battle.leader.burgh");
-        public static final SoundEvent LEADER_ELESA = register("battle.leader.elesa");
-        public static final SoundEvent LEADER_CLAY = register("battle.leader.clay");
-        public static final SoundEvent LEADER_SKYLA = register("battle.leader.skyla");
-        public static final SoundEvent LEADER_BRYCEN = register("battle.leader.brycen");
-        public static final SoundEvent LEADER_DRAYDEN = register("battle.leader.drayden");
-        public static final SoundEvent LEADER_IRIS = register("battle.leader.iris");
-        public static final SoundEvent ELITE_SHAUNTAL = register("battle.elite.shauntal");
-        public static final SoundEvent ELITE_MARSHAL = register("battle.elite.marshal");
-        public static final SoundEvent ELITE_GRIMSLEY = register("battle.elite.grimsley");
-        public static final SoundEvent ELITE_CAITLIN = register("battle.elite.caitlin");
-        public static final SoundEvent CHAMPION_ALDER = register("battle.champion.alder");
+        public static final SoundEvent UNOVA_DEFAULT = registerOrIgnore("battle.unova.default");
+        public static final SoundEvent LEADER_CILAN = registerOrIgnore("battle.leader.cilan");
+        public static final SoundEvent LEADER_CHILI = registerOrIgnore("battle.leader.chili");
+        public static final SoundEvent LEADER_CRESS = registerOrIgnore("battle.leader.cress");
+        public static final SoundEvent LEADER_LENORA = registerOrIgnore("battle.leader.lenora");
+        public static final SoundEvent LEADER_BURGH = registerOrIgnore("battle.leader.burgh");
+        public static final SoundEvent LEADER_ELESA = registerOrIgnore("battle.leader.elesa");
+        public static final SoundEvent LEADER_CLAY = registerOrIgnore("battle.leader.clay");
+        public static final SoundEvent LEADER_SKYLA = registerOrIgnore("battle.leader.skyla");
+        public static final SoundEvent LEADER_BRYCEN = registerOrIgnore("battle.leader.brycen");
+        public static final SoundEvent LEADER_DRAYDEN = registerOrIgnore("battle.leader.drayden");
+        public static final SoundEvent LEADER_IRIS = registerOrIgnore("battle.leader.iris");
+        public static final SoundEvent ELITE_SHAUNTAL = registerOrIgnore("battle.elite.shauntal");
+        public static final SoundEvent ELITE_MARSHAL = registerOrIgnore("battle.elite.marshal");
+        public static final SoundEvent ELITE_GRIMSLEY = registerOrIgnore("battle.elite.grimsley");
+        public static final SoundEvent ELITE_CAITLIN = registerOrIgnore("battle.elite.caitlin");
+        public static final SoundEvent CHAMPION_ALDER = registerOrIgnore("battle.champion.alder");
 
         public static void initialize() {
 
         }
 
-        private static SoundEvent register(String name) {
-            try {
-                Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
-                SoundEvent registered = Registry.register(Registries.SOUND_EVENT, identifier, SoundEvent.of(identifier));
-                all.add(registered);
+        private static SoundEvent registerOrIgnore(String name) {
+            if (!isRegistered(name)) {
+                return register(name);
 
-                return registered;
-
-            } catch (RuntimeException e) {
-                Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
-                SoundEvent sound = SoundEvent.of(identifier);
-                all.add(sound);
-
-                return sound;
+            } else {
+                return ignore(name);
             }
+        }
+
+        private static SoundEvent register(String name) {
+            Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
+            SoundEvent sound = SoundEvent.of(identifier);
+
+            Registry.register(Registries.SOUND_EVENT, identifier, sound);
+            all.add(sound);
+
+            return sound;
+        }
+
+        private static SoundEvent ignore(String name) {
+            Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
+            SoundEvent sound = SoundEvent.of(identifier);
+
+            all.add(sound);
+
+            return sound;
+        }
+
+        private static boolean isRegistered(String name) {
+            return Registries.SOUND_EVENT.containsId(Identifier.of(CobblemonTrainerBattle.MOD_ID, name));
         }
 
         public static List<SoundEvent> getAll() {
@@ -65,40 +80,55 @@ public class UnovaSoundEvent {
     private static class DiscTwo {
         public static final List<SoundEvent> all = new ArrayList<>();
 
-        public static final SoundEvent UNOVA_DEFAULT = register("battle.unova.default");
-        public static final SoundEvent LEADER_CHEREN = register("battle.leader.cheren");
-        public static final SoundEvent LEADER_ROXIE = register("battle.leader.roxie");
-        public static final SoundEvent LEADER_BURGH = register("battle.leader.burgh");
-        public static final SoundEvent LEADER_ELESA = register("battle.leader.elesa");
-        public static final SoundEvent LEADER_CLAY = register("battle.leader.clay");
-        public static final SoundEvent LEADER_SKYLA = register("battle.leader.skyla");
-        public static final SoundEvent LEADER_DRAYDEN = register("battle.leader.drayden");
-        public static final SoundEvent LEADER_MARLON = register("battle.leader.marlon");
-        public static final SoundEvent ELITE_SHAUNTAL = register("battle.elite.shauntal");
-        public static final SoundEvent ELITE_MARSHAL = register("battle.elite.marshal");
-        public static final SoundEvent ELITE_GRIMSLEY = register("battle.elite.grimsley");
-        public static final SoundEvent ELITE_CAITLIN = register("battle.elite.caitlin");
-        public static final SoundEvent CHAMPION_IRIS = register("battle.champion.iris");
+        public static final SoundEvent UNOVA_DEFAULT = registerOrIgnore("battle.unova.default");
+        public static final SoundEvent LEADER_CHEREN = registerOrIgnore("battle.leader.cheren");
+        public static final SoundEvent LEADER_ROXIE = registerOrIgnore("battle.leader.roxie");
+        public static final SoundEvent LEADER_BURGH = registerOrIgnore("battle.leader.burgh");
+        public static final SoundEvent LEADER_ELESA = registerOrIgnore("battle.leader.elesa");
+        public static final SoundEvent LEADER_CLAY = registerOrIgnore("battle.leader.clay");
+        public static final SoundEvent LEADER_SKYLA = registerOrIgnore("battle.leader.skyla");
+        public static final SoundEvent LEADER_DRAYDEN = registerOrIgnore("battle.leader.drayden");
+        public static final SoundEvent LEADER_MARLON = registerOrIgnore("battle.leader.marlon");
+        public static final SoundEvent ELITE_SHAUNTAL = registerOrIgnore("battle.elite.shauntal");
+        public static final SoundEvent ELITE_MARSHAL = registerOrIgnore("battle.elite.marshal");
+        public static final SoundEvent ELITE_GRIMSLEY = registerOrIgnore("battle.elite.grimsley");
+        public static final SoundEvent ELITE_CAITLIN = registerOrIgnore("battle.elite.caitlin");
+        public static final SoundEvent CHAMPION_IRIS = registerOrIgnore("battle.champion.iris");
 
         public static void initialize() {
 
         }
 
-        private static SoundEvent register(String name) {
-            try {
-                Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
-                SoundEvent registered = Registry.register(Registries.SOUND_EVENT, identifier, SoundEvent.of(identifier));
-                all.add(registered);
+        private static SoundEvent registerOrIgnore(String name) {
+            if (!isRegistered(name)) {
+                return register(name);
 
-                return registered;
-
-            } catch (RuntimeException e) {
-                Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
-                SoundEvent sound = SoundEvent.of(identifier);
-                all.add(sound);
-
-                return sound;
+            } else {
+                return ignore(name);
             }
+        }
+
+        private static SoundEvent register(String name) {
+            Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
+            SoundEvent sound = SoundEvent.of(identifier);
+
+            Registry.register(Registries.SOUND_EVENT, identifier, sound);
+            all.add(sound);
+
+            return sound;
+        }
+
+        private static SoundEvent ignore(String name) {
+            Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
+            SoundEvent sound = SoundEvent.of(identifier);
+
+            all.add(sound);
+
+            return sound;
+        }
+
+        private static boolean isRegistered(String name) {
+            return Registries.SOUND_EVENT.containsId(Identifier.of(CobblemonTrainerBattle.MOD_ID, name));
         }
 
         public static List<SoundEvent> getAll() {

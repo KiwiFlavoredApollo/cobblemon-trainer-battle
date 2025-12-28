@@ -12,42 +12,57 @@ import java.util.List;
 public class KantoSoundEvent {
     public static final List<SoundEvent> all = new ArrayList<>();
 
-    public static final SoundEvent KANTO_DEFAULT = register("battle.kanto.default");
-    public static final SoundEvent TRAINER_RED = register("battle.trainer.red");
-    public static final SoundEvent TRAINER_LEAF = register("battle.trainer.leaf");
-    public static final SoundEvent LEADER_BROCK = register("battle.leader.brock");
-    public static final SoundEvent LEADER_MISTY = register("battle.leader.misty");
-    public static final SoundEvent LEADER_LT_SURGE = register("battle.leader.lt_surge");
-    public static final SoundEvent LEADER_ERIKA = register("battle.leader.erika");
-    public static final SoundEvent LEADER_KOGA = register("battle.leader.koga");
-    public static final SoundEvent LEADER_SABRINA = register("battle.leader.sabrina");
-    public static final SoundEvent LEADER_BLAINE = register("battle.leader.blaine");
-    public static final SoundEvent LEADER_GIOVANNI = register("battle.leader.giovanni");
-    public static final SoundEvent ELITE_LORELEI = register("battle.elite.lorelei");
-    public static final SoundEvent ELITE_BRUNO = register("battle.elite.bruno");
-    public static final SoundEvent ELITE_AGATHA = register("battle.elite.agatha");
-    public static final SoundEvent ELITE_LANCE = register("battle.elite.lance");
-    public static final SoundEvent CHAMPION_TERRY = register("battle.champion.terry");
+    public static final SoundEvent KANTO_DEFAULT = registerOrIgnore("battle.kanto.default");
+    public static final SoundEvent TRAINER_RED = registerOrIgnore("battle.trainer.red");
+    public static final SoundEvent TRAINER_LEAF = registerOrIgnore("battle.trainer.leaf");
+    public static final SoundEvent LEADER_BROCK = registerOrIgnore("battle.leader.brock");
+    public static final SoundEvent LEADER_MISTY = registerOrIgnore("battle.leader.misty");
+    public static final SoundEvent LEADER_LT_SURGE = registerOrIgnore("battle.leader.lt_surge");
+    public static final SoundEvent LEADER_ERIKA = registerOrIgnore("battle.leader.erika");
+    public static final SoundEvent LEADER_KOGA = registerOrIgnore("battle.leader.koga");
+    public static final SoundEvent LEADER_SABRINA = registerOrIgnore("battle.leader.sabrina");
+    public static final SoundEvent LEADER_BLAINE = registerOrIgnore("battle.leader.blaine");
+    public static final SoundEvent LEADER_GIOVANNI = registerOrIgnore("battle.leader.giovanni");
+    public static final SoundEvent ELITE_LORELEI = registerOrIgnore("battle.elite.lorelei");
+    public static final SoundEvent ELITE_BRUNO = registerOrIgnore("battle.elite.bruno");
+    public static final SoundEvent ELITE_AGATHA = registerOrIgnore("battle.elite.agatha");
+    public static final SoundEvent ELITE_LANCE = registerOrIgnore("battle.elite.lance");
+    public static final SoundEvent CHAMPION_TERRY = registerOrIgnore("battle.champion.terry");
 
     public static void initialize() {
 
     }
 
-    private static SoundEvent register(String name) {
-        try {
-            Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
-            SoundEvent registered = Registry.register(Registries.SOUND_EVENT, identifier, SoundEvent.of(identifier));
-            all.add(registered);
+    private static SoundEvent registerOrIgnore(String name) {
+        if (!isRegistered(name)) {
+            return register(name);
 
-            return registered;
-            
-        } catch (RuntimeException e) {
-            Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
-            SoundEvent sound = SoundEvent.of(identifier);
-            all.add(sound);
-
-            return sound;
+        } else {
+            return ignore(name);
         }
+    }
+
+    private static SoundEvent register(String name) {
+        Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
+        SoundEvent sound = SoundEvent.of(identifier);
+
+        Registry.register(Registries.SOUND_EVENT, identifier, sound);
+        all.add(sound);
+
+        return sound;
+    }
+
+    private static SoundEvent ignore(String name) {
+        Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
+        SoundEvent sound = SoundEvent.of(identifier);
+
+        all.add(sound);
+
+        return sound;
+    }
+
+    private static boolean isRegistered(String name) {
+        return Registries.SOUND_EVENT.containsId(Identifier.of(CobblemonTrainerBattle.MOD_ID, name));
     }
 
     public static List<SoundEvent> getAll() {

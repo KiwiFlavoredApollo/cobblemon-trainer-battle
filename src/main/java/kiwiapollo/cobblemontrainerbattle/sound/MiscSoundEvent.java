@@ -12,29 +12,41 @@ import java.util.List;
 public class MiscSoundEvent {
     public static final List<SoundEvent> all = new ArrayList<>();
 
-    public static final SoundEvent LEADER_DEFAULT = register("battle.leader.default");
-    public static final SoundEvent ELITE_DEFAULT = register("battle.elite.default");
-    public static final SoundEvent CHAMPION_DEFAULT = register("battle.champion.default");
+    public static final SoundEvent LEADER_DEFAULT = registerOrIgnore("battle.leader.default");
+    public static final SoundEvent ELITE_DEFAULT = registerOrIgnore("battle.elite.default");
+    public static final SoundEvent CHAMPION_DEFAULT = registerOrIgnore("battle.champion.default");
 
     public static void initialize() {
 
     }
 
-    private static SoundEvent register(String name) {
-        try {
-            Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
-            SoundEvent registered = Registry.register(Registries.SOUND_EVENT, identifier, SoundEvent.of(identifier));
-            all.add(registered);
-
-            return registered;
-            
-        } catch (RuntimeException e) {
-            Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
-            SoundEvent sound = SoundEvent.of(identifier);
-            all.add(sound);
-
-            return sound;
+    private static SoundEvent registerOrIgnore(String name) {
+        if (!isRegistered(name)) {
+            return register(name);
+        } else {
+            return ignore(name);
         }
+    }
+
+    private static boolean isRegistered(String name) {
+        return Registries.SOUND_EVENT.containsId(Identifier.of(CobblemonTrainerBattle.MOD_ID, name));
+    }
+
+    private static SoundEvent register(String name) {
+        Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
+        SoundEvent sound = SoundEvent.of(identifier);
+        Registry.register(Registries.SOUND_EVENT, identifier, sound);
+        all.add(sound);
+
+        return sound;
+    }
+
+    private static SoundEvent ignore(String name) {
+        Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
+        SoundEvent sound = SoundEvent.of(identifier);
+        all.add(sound);
+
+        return sound;
     }
 
     public static List<SoundEvent> getAll() {

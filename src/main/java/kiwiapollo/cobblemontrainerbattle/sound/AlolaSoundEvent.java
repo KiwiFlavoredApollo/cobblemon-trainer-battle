@@ -12,39 +12,54 @@ import java.util.List;
 public class AlolaSoundEvent {
     public static final List<SoundEvent> all = new ArrayList<>();
 
-    public static final SoundEvent ALOLA_DEFAULT = register("battle.alola.default");
-    public static final SoundEvent LEADER_ILIMA = register("battle.leader.ilima");
-    public static final SoundEvent LEADER_LANA = register("battle.leader.lana");
-    public static final SoundEvent LEADER_KIAWE = register("battle.leader.kiawe");
-    public static final SoundEvent LEADER_MALLOW = register("battle.leader.mallow");
-    public static final SoundEvent LEADER_SOPHOCLES = register("battle.leader.sophocles");
-    public static final SoundEvent LEADER_MINA = register("battle.leader.mina");
-    public static final SoundEvent LEADER_ACEROLA = register("battle.leader.acerola");
-    public static final SoundEvent ELITE_HALA = register("battle.elite.hala");
-    public static final SoundEvent ELITE_ACEROLA = register("battle.elite.acerola");
-    public static final SoundEvent ELITE_KAHILI = register("battle.elite.kahili");
-    public static final SoundEvent ELITE_MOLAYNE = register("battle.elite.molayne");
-    public static final SoundEvent CHAMPION_KUKUI = register("battle.champion.kukui");
+    public static final SoundEvent ALOLA_DEFAULT = registerOrIgnore("battle.alola.default");
+    public static final SoundEvent LEADER_ILIMA = registerOrIgnore("battle.leader.ilima");
+    public static final SoundEvent LEADER_LANA = registerOrIgnore("battle.leader.lana");
+    public static final SoundEvent LEADER_KIAWE = registerOrIgnore("battle.leader.kiawe");
+    public static final SoundEvent LEADER_MALLOW = registerOrIgnore("battle.leader.mallow");
+    public static final SoundEvent LEADER_SOPHOCLES = registerOrIgnore("battle.leader.sophocles");
+    public static final SoundEvent LEADER_MINA = registerOrIgnore("battle.leader.mina");
+    public static final SoundEvent LEADER_ACEROLA = registerOrIgnore("battle.leader.acerola");
+    public static final SoundEvent ELITE_HALA = registerOrIgnore("battle.elite.hala");
+    public static final SoundEvent ELITE_ACEROLA = registerOrIgnore("battle.elite.acerola");
+    public static final SoundEvent ELITE_KAHILI = registerOrIgnore("battle.elite.kahili");
+    public static final SoundEvent ELITE_MOLAYNE = registerOrIgnore("battle.elite.molayne");
+    public static final SoundEvent CHAMPION_KUKUI = registerOrIgnore("battle.champion.kukui");
 
     public static void initialize() {
 
     }
 
-    private static SoundEvent register(String name) {
-        try {
-            Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
-            SoundEvent registered = Registry.register(Registries.SOUND_EVENT, identifier, SoundEvent.of(identifier));
-            all.add(registered);
+    private static SoundEvent registerOrIgnore(String name) {
+        if (!isRegistered(name)) {
+            return register(name);
 
-            return registered;
-
-        } catch (RuntimeException e) {
-            Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
-            SoundEvent sound = SoundEvent.of(identifier);
-            all.add(sound);
-
-            return sound;
+        } else {
+            return ignore(name);
         }
+    }
+
+    private static SoundEvent register(String name) {
+        Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
+        SoundEvent sound = SoundEvent.of(identifier);
+
+        Registry.register(Registries.SOUND_EVENT, identifier, sound);
+        all.add(sound);
+
+        return sound;
+    }
+
+    private static SoundEvent ignore(String name) {
+        Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
+        SoundEvent sound = SoundEvent.of(identifier);
+
+        all.add(sound);
+
+        return sound;
+    }
+
+    private static boolean isRegistered(String name) {
+        return Registries.SOUND_EVENT.containsId(Identifier.of(CobblemonTrainerBattle.MOD_ID, name));
     }
 
     public static List<SoundEvent> getAll() {

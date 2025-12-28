@@ -12,27 +12,42 @@ import java.util.List;
 public class HisuiSoundEvent {
     public static final List<SoundEvent> all = new ArrayList<>();
 
-    public static final SoundEvent HISUI_DEFAULT = register("battle.hisui.default");
+    public static final SoundEvent HISUI_DEFAULT = registerOrIgnore("battle.hisui.default");
 
     public static void initialize() {
 
     }
 
-    private static SoundEvent register(String name) {
-        try {
-            Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
-            SoundEvent registered = Registry.register(Registries.SOUND_EVENT, identifier, SoundEvent.of(identifier));
-            all.add(registered);
+    private static SoundEvent registerOrIgnore(String name) {
+        if (!isRegistered(name)) {
+            return register(name);
 
-            return registered;
-            
-        } catch (RuntimeException e) {
-            Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
-            SoundEvent sound = SoundEvent.of(identifier);
-            all.add(sound);
-
-            return sound;
+        } else {
+            return ignore(name);
         }
+    }
+
+    private static SoundEvent register(String name) {
+        Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
+        SoundEvent sound = SoundEvent.of(identifier);
+
+        Registry.register(Registries.SOUND_EVENT, identifier, sound);
+        all.add(sound);
+
+        return sound;
+    }
+
+    private static SoundEvent ignore(String name) {
+        Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
+        SoundEvent sound = SoundEvent.of(identifier);
+
+        all.add(sound);
+
+        return sound;
+    }
+
+    private static boolean isRegistered(String name) {
+        return Registries.SOUND_EVENT.containsId(Identifier.of(CobblemonTrainerBattle.MOD_ID, name));
     }
 
     public static List<SoundEvent> getAll() {

@@ -12,38 +12,53 @@ import java.util.List;
 public class GalarSoundEvent {
     public static final List<SoundEvent> all = new ArrayList<>();
 
-    public static final SoundEvent GALAR_DEFAULT = register("battle.galar.default");
-    public static final SoundEvent LEADER_MILO = register("battle.leader.milo");
-    public static final SoundEvent LEADER_NESSA = register("battle.leader.nessa");
-    public static final SoundEvent LEADER_KABU = register("battle.leader.kabu");
-    public static final SoundEvent LEADER_BEA = register("battle.leader.bea");
-    public static final SoundEvent LEADER_ALLISTER = register("battle.leader.allister");
-    public static final SoundEvent LEADER_OPAL = register("battle.leader.opal");
-    public static final SoundEvent LEADER_GORDIE = register("battle.leader.gordie");
-    public static final SoundEvent LEADER_MELONY = register("battle.leader.melony");
-    public static final SoundEvent LEADER_PIERS = register("battle.leader.piers");
-    public static final SoundEvent LEADER_RAIHAN = register("battle.leader.raihan");
-    public static final SoundEvent CHAMPION_LEON = register("battle.champion.leon");
+    public static final SoundEvent GALAR_DEFAULT = registerOrIgnore("battle.galar.default");
+    public static final SoundEvent LEADER_MILO = registerOrIgnore("battle.leader.milo");
+    public static final SoundEvent LEADER_NESSA = registerOrIgnore("battle.leader.nessa");
+    public static final SoundEvent LEADER_KABU = registerOrIgnore("battle.leader.kabu");
+    public static final SoundEvent LEADER_BEA = registerOrIgnore("battle.leader.bea");
+    public static final SoundEvent LEADER_ALLISTER = registerOrIgnore("battle.leader.allister");
+    public static final SoundEvent LEADER_OPAL = registerOrIgnore("battle.leader.opal");
+    public static final SoundEvent LEADER_GORDIE = registerOrIgnore("battle.leader.gordie");
+    public static final SoundEvent LEADER_MELONY = registerOrIgnore("battle.leader.melony");
+    public static final SoundEvent LEADER_PIERS = registerOrIgnore("battle.leader.piers");
+    public static final SoundEvent LEADER_RAIHAN = registerOrIgnore("battle.leader.raihan");
+    public static final SoundEvent CHAMPION_LEON = registerOrIgnore("battle.champion.leon");
 
     public static void initialize() {
 
     }
 
-    private static SoundEvent register(String name) {
-        try {
-            Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
-            SoundEvent registered = Registry.register(Registries.SOUND_EVENT, identifier, SoundEvent.of(identifier));
-            all.add(registered);
+    private static SoundEvent registerOrIgnore(String name) {
+        if (!isRegistered(name)) {
+            return register(name);
 
-            return registered;
-            
-        } catch (RuntimeException e) {
-            Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
-            SoundEvent sound = SoundEvent.of(identifier);
-            all.add(sound);
-
-            return sound;
+        } else {
+            return ignore(name);
         }
+    }
+
+    private static SoundEvent register(String name) {
+        Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
+        SoundEvent sound = SoundEvent.of(identifier);
+
+        Registry.register(Registries.SOUND_EVENT, identifier, sound);
+        all.add(sound);
+
+        return sound;
+    }
+
+    private static SoundEvent ignore(String name) {
+        Identifier identifier = Identifier.of(CobblemonTrainerBattle.MOD_ID, name);
+        SoundEvent sound = SoundEvent.of(identifier);
+
+        all.add(sound);
+
+        return sound;
+    }
+
+    private static boolean isRegistered(String name) {
+        return Registries.SOUND_EVENT.containsId(Identifier.of(CobblemonTrainerBattle.MOD_ID, name));
     }
 
     public static List<SoundEvent> getAll() {
