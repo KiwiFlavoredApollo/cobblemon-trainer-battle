@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Dustox",
+        "level": 38,
+        "nature": "Quirky",
+        "ability": "Shield Dust",
+        "moves": [
+            "Light Screen",
+            "Toxic",
+            "Bug Buzz",
+            "Protect"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Croagunk",
+        "level": 38,
+        "nature": "Hardy",
+        "ability": "Anticipation",
+        "moves": [
+            "Revenge",
+            "Venoshock",
+            "Sucker Punch",
+            "Toxic"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

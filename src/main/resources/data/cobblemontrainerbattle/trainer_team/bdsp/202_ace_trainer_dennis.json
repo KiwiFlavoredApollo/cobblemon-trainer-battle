@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Monferno",
+        "level": 23,
+        "nature": "Jolly",
+        "ability": "Blaze",
+        "moves": [
+            "Leer",
+            "Taunt",
+            "Fury Swipes",
+            "Flame Wheel"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Gyarados",
+        "level": 23,
+        "nature": "Hasty",
+        "ability": "Intimidate",
+        "moves": [
+            "Bite",
+            "Leer",
+            "Ice Fang",
+            "Waterfall"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Beautifly",
+        "level": 25,
+        "nature": "Hardy",
+        "ability": "Swarm",
+        "moves": [
+            "Gust",
+            "Air Cutter",
+            "Mega Drain",
+            "Leech Life"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Stunky",
+        "level": 25,
+        "nature": "Docile",
+        "ability": "Stench",
+        "moves": [
+            "Poison Gas",
+            "Fury Swipes",
+            "Focus Energy",
+            "Bite"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

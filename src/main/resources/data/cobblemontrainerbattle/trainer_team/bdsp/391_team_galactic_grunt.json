@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Croagunk",
+        "level": 35,
+        "nature": "Bashful",
+        "ability": "Anticipation",
+        "moves": [
+            "Taunt",
+            "Revenge",
+            "Sucker Punch",
+            "Poison Jab"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Stunky",
+        "level": 38,
+        "nature": "Hardy",
+        "ability": "Aftermath",
+        "moves": [
+            "Venoshock",
+            "Screech",
+            "Toxic",
+            "Night Slash"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Croagunk",
+        "level": 38,
+        "nature": "Quirky",
+        "ability": "Anticipation",
+        "moves": [
+            "Revenge",
+            "Venoshock",
+            "Sucker Punch",
+            "Toxic"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

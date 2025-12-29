@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Snover",
+        "level": 37,
+        "nature": "Sassy",
+        "ability": "Snow Warning",
+        "moves": [
+            "Ice Shard",
+            "Razor Leaf",
+            "Icy Wind",
+            "Ingrain"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

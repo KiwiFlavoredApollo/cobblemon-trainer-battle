@@ -1,0 +1,142 @@
+[
+    {
+        "species": "Quagsire",
+        "level": 55,
+        "nature": "Impish",
+        "ability": "Water Absorb",
+        "moves": [
+            "Recover",
+            "Toxic",
+            "Earthquake",
+            "Surf"
+        ],
+        "ivs": {
+            "hp": 23,
+            "atk": 31,
+            "def": 31,
+            "spa": 0,
+            "spd": 13,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 12,
+            "atk": 0,
+            "def": 252,
+            "spa": 12,
+            "spd": 12,
+            "spe": 12
+        }
+    },
+    {
+        "species": "Sudowoodo",
+        "level": 56,
+        "nature": "Adamant",
+        "ability": "Rock Head",
+        "moves": [
+            "Double-Edge",
+            "Head Smash",
+            "Sucker Punch",
+            "Low Kick"
+        ],
+        "ivs": {
+            "hp": 21,
+            "atk": 31,
+            "def": 31,
+            "spa": 0,
+            "spd": 11,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 12,
+            "spa": 0,
+            "spd": 12,
+            "spe": 12
+        }
+    },
+    {
+        "species": "Golem",
+        "level": 56,
+        "nature": "Jolly",
+        "ability": "Sturdy",
+        "moves": [
+            "Rock Polish",
+            "Heavy Slam",
+            "Earthquake",
+            "Stone Edge"
+        ],
+        "ivs": {
+            "hp": 21,
+            "atk": 31,
+            "def": 21,
+            "spa": 0,
+            "spd": 21,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 12,
+            "atk": 60,
+            "def": 12,
+            "spa": 0,
+            "spd": 12,
+            "spe": 204
+        }
+    },
+    {
+        "species": "Whiscash",
+        "level": 55,
+        "nature": "Modest",
+        "ability": "Hydration",
+        "moves": [
+            "Bulldoze",
+            "Ice Beam",
+            "Belch",
+            "Hydro Pump"
+        ],
+        "ivs": {
+            "hp": 21,
+            "atk": 31,
+            "def": 21,
+            "spa": 31,
+            "spd": 21,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 12,
+            "atk": 12,
+            "def": 12,
+            "spa": 252,
+            "spd": 12,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Hippowdon",
+        "level": 59,
+        "nature": "Adamant",
+        "ability": "Sand Stream",
+        "moves": [
+            "Ice Fang",
+            "Earthquake",
+            "Crunch",
+            "Rest"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 0,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 12,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

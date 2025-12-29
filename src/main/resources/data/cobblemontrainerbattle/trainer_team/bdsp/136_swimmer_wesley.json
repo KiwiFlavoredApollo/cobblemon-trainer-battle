@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Buizel",
+        "level": 41,
+        "nature": "Jolly",
+        "ability": "Swift Swim",
+        "moves": [
+            "Bite",
+            "Swift",
+            "Aqua Jet",
+            "Waterfall"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Tentacruel",
+        "level": 41,
+        "nature": "Timid",
+        "ability": "Liquid Ooze",
+        "moves": [
+            "Supersonic",
+            "Bubble Beam",
+            "Acid Armor",
+            "Poison Jab"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

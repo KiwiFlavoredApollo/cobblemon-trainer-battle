@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Croagunk",
+        "level": 34,
+        "nature": "Hardy",
+        "ability": "Anticipation",
+        "moves": [
+            "Taunt",
+            "Revenge",
+            "Sucker Punch",
+            "Poison Jab"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Dustox",
+        "level": 31,
+        "nature": "Docile",
+        "ability": "Shield Dust",
+        "moves": [
+            "Poison Powder",
+            "Venoshock",
+            "Leech Life",
+            "Light Screen"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Beautifly",
+        "level": 31,
+        "nature": "Serious",
+        "ability": "Swarm",
+        "moves": [
+            "Air Cutter",
+            "Mega Drain",
+            "Leech Life",
+            "Attract"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

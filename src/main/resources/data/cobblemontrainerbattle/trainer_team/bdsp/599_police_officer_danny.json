@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Noctowl",
+        "level": 38,
+        "nature": "Timid",
+        "ability": "Keen Eye",
+        "moves": [
+            "Psycho Shift",
+            "Air Slash",
+            "Extrasensory",
+            "Roost"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Machoke",
+        "level": 40,
+        "nature": "Jolly",
+        "ability": "No Guard",
+        "moves": [
+            "Leer",
+            "Low Sweep",
+            "Knock Off",
+            "Dual Chop"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

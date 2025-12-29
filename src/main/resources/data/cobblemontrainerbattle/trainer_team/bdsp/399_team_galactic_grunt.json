@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Golbat",
+        "level": 37,
+        "nature": "Serious",
+        "ability": "Inner Focus",
+        "moves": [
+            "Screech",
+            "Astonish",
+            "Poison Fang",
+            "Bite"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Glameow",
+        "level": 37,
+        "nature": "Bashful",
+        "ability": "Own Tempo",
+        "moves": [
+            "Fake Out",
+            "Hypnosis",
+            "Aerial Ace",
+            "Retaliate"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Bronzor",
+        "level": 37,
+        "nature": "Quirky",
+        "ability": "Levitate",
+        "moves": [
+            "Confuse Ray",
+            "Extrasensory",
+            "Heavy Slam",
+            "Iron Defense"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Zubat",
+        "level": 31,
+        "nature": "Serious",
+        "ability": "Inner Focus",
+        "moves": [
+            "Supersonic",
+            "Poison Fang",
+            "Air Cutter",
+            "Bite"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Zubat",
+        "level": 31,
+        "nature": "Bashful",
+        "ability": "Inner Focus",
+        "moves": [
+            "Poison Fang",
+            "Quick Guard",
+            "Air Cutter",
+            "Bite"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Golbat",
+        "level": 34,
+        "nature": "Quirky",
+        "ability": "Inner Focus",
+        "moves": [
+            "Screech",
+            "Poison Fang",
+            "Air Cutter",
+            "Bite"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

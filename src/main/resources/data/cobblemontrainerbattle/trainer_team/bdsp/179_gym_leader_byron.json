@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Bronzor",
+        "level": 36,
+        "nature": "Relaxed",
+        "ability": "Levitate",
+        "moves": [
+            "Confuse Ray",
+            "Sandstorm",
+            "Trick Room",
+            "Flash Cannon"
+        ],
+        "ivs": {
+            "hp": 17,
+            "atk": 0,
+            "def": 17,
+            "spa": 17,
+            "spd": 17,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 68,
+            "atk": 0,
+            "def": 68,
+            "spa": 44,
+            "spd": 68,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Steelix",
+        "level": 36,
+        "nature": "Brave",
+        "ability": "Sturdy",
+        "moves": [
+            "Thunder Fang",
+            "Earthquake",
+            "Sandstorm",
+            "Gyro Ball"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 23,
+            "def": 17,
+            "spa": 0,
+            "spd": 17,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 100,
+            "def": 68,
+            "spa": 0,
+            "spd": 68,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Bastiodon",
+        "level": 39,
+        "nature": "Relaxed",
+        "ability": "Sturdy",
+        "moves": [
+            "Iron Defense",
+            "Thunderbolt",
+            "Stone Edge",
+            "Flash Cannon"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 17,
+            "spa": 23,
+            "spd": 17,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 68,
+            "spa": 100,
+            "spd": 68,
+            "spe": 0
+        }
+    }
+]

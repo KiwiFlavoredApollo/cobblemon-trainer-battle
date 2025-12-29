@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Drifblim",
+        "level": 32,
+        "nature": "Timid",
+        "ability": "Aftermath",
+        "moves": [
+            "Strength Sap",
+            "Hex",
+            "Fly",
+            "Will-O-Wisp"
+        ],
+        "ivs": {
+            "hp": 19,
+            "atk": 0,
+            "def": 5,
+            "spa": 19,
+            "spd": 5,
+            "spe": 19
+        },
+        "evs": {
+            "hp": 52,
+            "atk": 0,
+            "def": 4,
+            "spa": 68,
+            "spd": 4,
+            "spe": 52
+        }
+    },
+    {
+        "species": "Gengar",
+        "level": 34,
+        "nature": "Timid",
+        "ability": "Cursed Body",
+        "moves": [
+            "Shadow Claw",
+            "Confuse Ray",
+            "Sludge Bomb",
+            "Dazzling Gleam"
+        ],
+        "ivs": {
+            "hp": 19,
+            "atk": 0,
+            "def": 5,
+            "spa": 19,
+            "spd": 5,
+            "spe": 19
+        },
+        "evs": {
+            "hp": 52,
+            "atk": 0,
+            "def": 4,
+            "spa": 76,
+            "spd": 4,
+            "spe": 68
+        }
+    },
+    {
+        "species": "Mismagius",
+        "level": 36,
+        "nature": "Timid",
+        "ability": "Levitate",
+        "moves": [
+            "Confuse Ray",
+            "Phantom Force",
+            "Magical Leaf",
+            "Dazzling Gleam"
+        ],
+        "ivs": {
+            "hp": 19,
+            "atk": 0,
+            "def": 5,
+            "spa": 19,
+            "spd": 5,
+            "spe": 19
+        },
+        "evs": {
+            "hp": 44,
+            "atk": 0,
+            "def": 4,
+            "spa": 92,
+            "spd": 4,
+            "spe": 68
+        }
+    }
+]

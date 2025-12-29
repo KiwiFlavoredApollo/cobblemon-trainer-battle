@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Bonsly",
+        "level": 16,
+        "nature": "Impish",
+        "ability": "Sturdy",
+        "moves": [
+            "Copycat",
+            "Flail",
+            "Rock Throw",
+            "Mimic"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Budew",
+        "level": 15,
+        "nature": "Bold",
+        "ability": "Poison Point",
+        "moves": [
+            "Absorb",
+            "Growth",
+            "Stun Spore",
+            "Worry Seed"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Pichu",
+        "level": 17,
+        "nature": "Bold",
+        "ability": "Static",
+        "moves": [
+            "Thunder Shock",
+            "Tail Whip",
+            "Play Nice",
+            "Nuzzle"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

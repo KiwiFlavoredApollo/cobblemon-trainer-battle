@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Golbat",
+        "level": 36,
+        "nature": "Serious",
+        "ability": "Inner Focus",
+        "moves": [
+            "Screech",
+            "Poison Fang",
+            "Air Cutter",
+            "Bite"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Golbat",
+        "level": 36,
+        "nature": "Bashful",
+        "ability": "Inner Focus",
+        "moves": [
+            "Screech",
+            "Poison Fang",
+            "Air Cutter",
+            "Bite"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

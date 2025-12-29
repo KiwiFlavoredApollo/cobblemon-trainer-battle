@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Cherrim",
+        "level": 30,
+        "nature": "Timid",
+        "ability": "Flower Gift",
+        "moves": [
+            "Morning Sun",
+            "Growth",
+            "Magical Leaf",
+            "Leech Seed"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Marill",
+        "level": 32,
+        "nature": "Adamant",
+        "ability": "Huge Power",
+        "moves": [
+            "Slam",
+            "Bounce",
+            "Aqua Tail",
+            "Play Rough"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Lopunny",
+        "level": 34,
+        "nature": "Jolly",
+        "ability": "Cute Charm",
+        "moves": [
+            "Mirror Coat",
+            "Double Kick",
+            "Charm",
+            "Headbutt"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

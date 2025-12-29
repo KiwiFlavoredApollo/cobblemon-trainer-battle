@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Zubat",
+        "level": 11,
+        "nature": "Quirky",
+        "ability": "Inner Focus",
+        "moves": [
+            "Absorb",
+            "Supersonic",
+            "Astonish",
+            "Mean Look"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

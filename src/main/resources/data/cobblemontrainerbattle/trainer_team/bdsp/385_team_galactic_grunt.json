@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Bronzor",
+        "level": 36,
+        "nature": "Hardy",
+        "ability": "Heatproof",
+        "moves": [
+            "Confuse Ray",
+            "Gyro Ball",
+            "Extrasensory",
+            "Iron Defense"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Stunky",
+        "level": 36,
+        "nature": "Docile",
+        "ability": "Aftermath",
+        "moves": [
+            "Bite",
+            "Venoshock",
+            "Toxic",
+            "Night Slash"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

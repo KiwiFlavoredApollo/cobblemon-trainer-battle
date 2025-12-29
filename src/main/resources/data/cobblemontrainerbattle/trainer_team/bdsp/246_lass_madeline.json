@@ -1,0 +1,56 @@
+[
+    {
+        "species": "Starly",
+        "level": 5,
+        "nature": "Jolly",
+        "ability": "Keen Eye",
+        "moves": [
+            "Tackle",
+            "Growl",
+            "Quick Attack"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Bidoof",
+        "level": 5,
+        "nature": "Jolly",
+        "ability": "Unaware",
+        "moves": [
+            "Tackle",
+            "Growl",
+            "Defense Curl"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

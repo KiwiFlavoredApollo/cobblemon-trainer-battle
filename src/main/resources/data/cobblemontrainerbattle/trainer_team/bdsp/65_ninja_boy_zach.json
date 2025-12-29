@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Zubat",
+        "level": 13,
+        "nature": "Jolly",
+        "ability": "Inner Focus",
+        "moves": [
+            "Absorb",
+            "Supersonic",
+            "Astonish",
+            "Mean Look"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Zubat",
+        "level": 14,
+        "nature": "Jolly",
+        "ability": "Inner Focus",
+        "moves": [
+            "Absorb",
+            "Supersonic",
+            "Astonish",
+            "Mean Look"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Zubat",
+        "level": 15,
+        "nature": "Timid",
+        "ability": "Inner Focus",
+        "moves": [
+            "Absorb",
+            "Mean Look",
+            "Astonish",
+            "Poison Fang"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

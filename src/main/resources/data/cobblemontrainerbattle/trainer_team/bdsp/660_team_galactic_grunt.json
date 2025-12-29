@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Zubat",
+        "level": 28,
+        "nature": "Serious",
+        "ability": "Inner Focus",
+        "moves": [
+            "Astonish",
+            "Mean Look",
+            "Poison Fang",
+            "Air Cutter"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Stunky",
+        "level": 28,
+        "nature": "Bashful",
+        "ability": "Stench",
+        "moves": [
+            "Poison Gas",
+            "Smokescreen",
+            "Bite",
+            "Venoshock"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Croagunk",
+        "level": 28,
+        "nature": "Quirky",
+        "ability": "Anticipation",
+        "moves": [
+            "Poison Sting",
+            "Mud-Slap",
+            "Flatter",
+            "Venoshock"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

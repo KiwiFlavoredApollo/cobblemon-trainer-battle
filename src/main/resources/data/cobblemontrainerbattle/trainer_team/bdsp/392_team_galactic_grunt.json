@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Golbat",
+        "level": 40,
+        "nature": "Docile",
+        "ability": "Inner Focus",
+        "moves": [
+            "Absorb",
+            "Poison Fang",
+            "Air Cutter",
+            "Bite"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

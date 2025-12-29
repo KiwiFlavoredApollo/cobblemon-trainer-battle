@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Hoothoot",
+        "level": 28,
+        "nature": "Timid",
+        "ability": "Keen Eye",
+        "moves": [
+            "Growl",
+            "Psycho Shift",
+            "Air Slash",
+            "Extrasensory"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Machoke",
+        "level": 30,
+        "nature": "Jolly",
+        "ability": "No Guard",
+        "moves": [
+            "Low Kick",
+            "Leer",
+            "Low Sweep",
+            "Knock Off"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

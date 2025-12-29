@@ -1,0 +1,170 @@
+[
+    {
+        "species": "Spiritomb",
+        "level": 74,
+        "nature": "Quiet",
+        "ability": "Pressure",
+        "moves": [
+            "Shadow Ball",
+            "Dark Pulse",
+            "Will-O-Wisp",
+            "Sucker Punch"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 6,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Roserade",
+        "level": 74,
+        "nature": "Timid",
+        "ability": "Poison Point",
+        "moves": [
+            "Dazzling Gleam",
+            "Shadow Ball",
+            "Sludge Bomb",
+            "Energy Ball"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 52,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 204
+        }
+    },
+    {
+        "species": "Togekiss",
+        "level": 76,
+        "nature": "Timid",
+        "ability": "Serene Grace",
+        "moves": [
+            "Air Slash",
+            "Dazzling Gleam",
+            "Aura Sphere",
+            "Thunder Wave"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 52,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 204
+        }
+    },
+    {
+        "species": "Lucario",
+        "level": 76,
+        "nature": "Timid",
+        "ability": "Inner Focus",
+        "moves": [
+            "Aura Sphere",
+            "Dragon Pulse",
+            "Flash Cannon",
+            "Psychic"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 52,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 204
+        }
+    },
+    {
+        "species": "Milotic",
+        "level": 74,
+        "nature": "Bold",
+        "ability": "Marvel Scale",
+        "moves": [
+            "Recover",
+            "Mirror Coat",
+            "Ice Beam",
+            "Scald"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 252,
+            "spa": 6,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Garchomp",
+        "level": 78,
+        "nature": "Jolly",
+        "ability": "Rough Skin",
+        "moves": [
+            "Dragon Claw",
+            "Earthquake",
+            "Swords Dance",
+            "Poison Jab"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 0,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 52,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 204
+        }
+    }
+]

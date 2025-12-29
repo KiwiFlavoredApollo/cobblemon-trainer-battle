@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Clefairy",
+        "level": 25,
+        "nature": "Quiet",
+        "ability": "Cute Charm",
+        "moves": [
+            "Sing",
+            "Disarming Voice",
+            "Growl",
+            "Life Dew"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 0,
+            "spd": 31,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 172,
+            "atk": 0,
+            "def": 168,
+            "spa": 0,
+            "spd": 168,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Kadabra",
+        "level": 25,
+        "nature": "Modest",
+        "ability": "Synchronize",
+        "moves": [
+            "Kinesis",
+            "Psybeam",
+            "Reflect",
+            "Ally Switch"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 0,
+            "spd": 31,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 172,
+            "atk": 0,
+            "def": 168,
+            "spa": 0,
+            "spd": 168,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Monferno",
+        "level": 28,
+        "nature": "Jolly",
+        "ability": "Blaze",
+        "moves": [
+            "Mach Punch",
+            "Leer",
+            "Taunt",
+            "Flame Wheel"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 0,
+            "spd": 31,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 172,
+            "atk": 0,
+            "def": 168,
+            "spa": 0,
+            "spd": 168,
+            "spe": 0
+        }
+    }
+]

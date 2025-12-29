@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Budew",
+        "level": 19,
+        "nature": "Calm",
+        "ability": "Poison Point",
+        "moves": [
+            "Absorb",
+            "Growth",
+            "Stun Spore",
+            "Worry Seed"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

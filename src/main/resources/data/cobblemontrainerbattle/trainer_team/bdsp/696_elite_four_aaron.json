@@ -1,0 +1,142 @@
+[
+    {
+        "species": "Yanmega",
+        "level": 65,
+        "nature": "Timid",
+        "ability": "Speed Boost",
+        "moves": [
+            "Bug Buzz",
+            "Air Slash",
+            "Detect",
+            "Ancient Power"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 52,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 204
+        }
+    },
+    {
+        "species": "Scizor",
+        "level": 65,
+        "nature": "Adamant",
+        "ability": "Technician",
+        "moves": [
+            "Bullet Punch",
+            "X-Scissor",
+            "Night Slash",
+            "Swords Dance"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 0,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Vespiquen",
+        "level": 66,
+        "nature": "Adamant",
+        "ability": "Unnerve",
+        "moves": [
+            "Power Gem",
+            "Attack Order",
+            "Aerial Ace",
+            "Defend Order"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 0,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Heracross",
+        "level": 67,
+        "nature": "Jolly",
+        "ability": "Guts",
+        "moves": [
+            "Earthquake",
+            "Rock Slide",
+            "Facade",
+            "Close Combat"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 0,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 52,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 204
+        }
+    },
+    {
+        "species": "Drapion",
+        "level": 69,
+        "nature": "Jolly",
+        "ability": "Sniper",
+        "moves": [
+            "Cross Poison",
+            "Night Slash",
+            "Earthquake",
+            "X-Scissor"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 0,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 52,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 204
+        }
+    }
+]

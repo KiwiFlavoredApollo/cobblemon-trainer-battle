@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Shellos (East Sea)",
+        "level": 19,
+        "nature": "Calm",
+        "ability": "Storm Drain",
+        "moves": [
+            "Mud-Slap",
+            "Harden",
+            "Recover",
+            "Water Pulse"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Shellos (East Sea)",
+        "level": 21,
+        "nature": "Calm",
+        "ability": "Storm Drain",
+        "moves": [
+            "Harden",
+            "Recover",
+            "Water Pulse",
+            "Ancient Power"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Shellos",
+        "level": 20,
+        "nature": "Calm",
+        "ability": "Storm Drain",
+        "moves": [
+            "Harden",
+            "Recover",
+            "Water Pulse",
+            "Ancient Power"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

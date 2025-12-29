@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Zubat",
+        "level": 26,
+        "nature": "Jolly",
+        "ability": "Inner Focus",
+        "moves": [
+            "Absorb",
+            "Astonish",
+            "Poison Fang",
+            "Air Cutter"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Golbat",
+        "level": 29,
+        "nature": "Jolly",
+        "ability": "Inner Focus",
+        "moves": [
+            "Screech",
+            "Astonish",
+            "Poison Fang",
+            "Air Cutter"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Golbat",
+        "level": 29,
+        "nature": "Timid",
+        "ability": "Inner Focus",
+        "moves": [
+            "Screech",
+            "Astonish",
+            "Poison Fang",
+            "Air Cutter"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

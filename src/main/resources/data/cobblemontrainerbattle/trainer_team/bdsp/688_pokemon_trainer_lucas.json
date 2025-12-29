@@ -1,0 +1,170 @@
+[
+    {
+        "species": "Absol",
+        "level": 68,
+        "nature": "Jolly",
+        "ability": "Super Luck",
+        "moves": [
+            "Megahorn",
+            "Psycho Cut",
+            "Stone Edge",
+            "Night Slash"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Kabutops",
+        "level": 69,
+        "nature": "Adamant",
+        "ability": "Weak Armor",
+        "moves": [
+            "Rock Slide",
+            "Liquidation",
+            "Leech Life",
+            "Swords Dance"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Espeon",
+        "level": 70,
+        "nature": "Modest",
+        "ability": "Magic Bounce",
+        "moves": [
+            "Psychic",
+            "Psyshock",
+            "Grass Knot",
+            "Dazzling Gleam"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Mow Rotom",
+        "level": 69,
+        "nature": "Modest",
+        "ability": "Levitate",
+        "moves": [
+            "Leaf Storm",
+            "Thunderbolt",
+            "Volt Switch",
+            "Hex"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Porygon-Z",
+        "level": 70,
+        "nature": "Modest",
+        "ability": "Adaptability",
+        "moves": [
+            "Tri Attack",
+            "Hyper Beam",
+            "Thunder Wave",
+            "Dark Pulse"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Infernape",
+        "level": 74,
+        "nature": "Jolly",
+        "ability": "Blaze",
+        "moves": [
+            "Earthquake",
+            "Close Combat",
+            "Flare Blitz",
+            "Acrobatics"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        }
+    }
+]

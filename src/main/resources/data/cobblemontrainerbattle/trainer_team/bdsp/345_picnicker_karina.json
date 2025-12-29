@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Piplup",
+        "level": 14,
+        "nature": "Hasty",
+        "ability": "Torrent",
+        "moves": [
+            "Pound",
+            "Growl",
+            "Water Gun",
+            "Charm"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Kricketune",
+        "level": 19,
+        "nature": "Jolly",
+        "ability": "Swarm",
+        "moves": [
+            "Growl",
+            "Bug Bite",
+            "Struggle Bug",
+            "Fury Cutter"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

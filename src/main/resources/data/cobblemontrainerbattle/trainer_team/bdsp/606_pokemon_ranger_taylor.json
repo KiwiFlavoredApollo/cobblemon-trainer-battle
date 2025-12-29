@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Luxio",
+        "level": 31,
+        "nature": "Jolly",
+        "ability": "Intimidate",
+        "moves": [
+            "Leer",
+            "Bite",
+            "Spark",
+            "Volt Switch"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Buizel",
+        "level": 31,
+        "nature": "Jolly",
+        "ability": "Swift Swim",
+        "moves": [
+            "Bite",
+            "Swift",
+            "Aqua Jet",
+            "Whirlpool"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

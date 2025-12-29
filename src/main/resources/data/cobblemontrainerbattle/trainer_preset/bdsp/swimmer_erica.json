@@ -1,7 +1,0 @@
-{
-  "team": "cobblemontrainerbattle:bdsp/swimmer_erica",
-  "is_spawn_allowed": true,
-  "level_mode": "normal",
-  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/green_piikapiika.png",
-  "battle_format": "single"
-}

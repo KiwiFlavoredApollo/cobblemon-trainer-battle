@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Onix",
+        "level": 37,
+        "nature": "Impish",
+        "ability": "Sturdy",
+        "moves": [
+            "Smack Down",
+            "Curse",
+            "Screech",
+            "Stealth Rock"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Steelix",
+        "level": 39,
+        "nature": "Jolly",
+        "ability": "Rock Head",
+        "moves": [
+            "Tackle",
+            "Smack Down",
+            "Curse",
+            "Crunch"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

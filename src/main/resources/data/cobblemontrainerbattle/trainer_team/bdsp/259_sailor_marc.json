@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Mantyke",
+        "level": 43,
+        "nature": "Calm",
+        "ability": "Water Absorb",
+        "moves": [
+            "Supersonic",
+            "Bubble Beam",
+            "Air Slash",
+            "Aqua Ring"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

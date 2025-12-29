@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Glameow",
+        "level": 40,
+        "nature": "Jolly",
+        "ability": "Own Tempo",
+        "moves": [
+            "Growl",
+            "Aerial Ace",
+            "Retaliate",
+            "Slash"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Kadabra",
+        "level": 40,
+        "nature": "Timid",
+        "ability": "Synchronize",
+        "moves": [
+            "Reflect",
+            "Ally Switch",
+            "Recover",
+            "Psyshock"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

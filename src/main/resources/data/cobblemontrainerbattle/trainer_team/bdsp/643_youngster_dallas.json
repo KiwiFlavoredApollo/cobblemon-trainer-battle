@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Kricketune",
+        "level": 31,
+        "nature": "Jolly",
+        "ability": "Swarm",
+        "moves": [
+            "Fury Cutter",
+            "Focus Energy",
+            "Slash",
+            "X-Scissor"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

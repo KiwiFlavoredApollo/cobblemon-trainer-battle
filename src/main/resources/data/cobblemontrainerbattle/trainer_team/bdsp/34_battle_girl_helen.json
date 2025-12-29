@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Meditite",
+        "level": 18,
+        "nature": "Jolly",
+        "ability": "Pure Power",
+        "moves": [
+            "Pound",
+            "Low Kick",
+            "Confusion",
+            "Force Palm"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Machop",
+        "level": 18,
+        "nature": "Jolly",
+        "ability": "No Guard",
+        "moves": [
+            "Low Kick",
+            "Leer",
+            "Low Sweep",
+            "Knock Off"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

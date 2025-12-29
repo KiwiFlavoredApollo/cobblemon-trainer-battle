@@ -1,0 +1,170 @@
+[
+    {
+        "species": "Mothim",
+        "level": 58,
+        "nature": "Timid",
+        "ability": "Tinted Lens",
+        "moves": [
+            "Bug Buzz",
+            "Air Slash",
+            "Energy Ball",
+            "Quiver Dance"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Magmortar",
+        "level": 59,
+        "nature": "Modest",
+        "ability": "Vital Spirit",
+        "moves": [
+            "Fire Blast",
+            "Thunderbolt",
+            "Focus Blast",
+            "Will-O-Wisp"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Gallade",
+        "level": 63,
+        "nature": "Adamant",
+        "ability": "Justified",
+        "moves": [
+            "Psycho Cut",
+            "Close Combat",
+            "Stone Edge",
+            "Swords Dance"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Tangrowth",
+        "level": 59,
+        "nature": "Adamant",
+        "ability": "Regenerator",
+        "moves": [
+            "Power Whip",
+            "Earthquake",
+            "Rock Slide",
+            "Brick Break"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 6
+        }
+    },
+    {
+        "species": "Clefable",
+        "level": 60,
+        "nature": "Timid",
+        "ability": "Unaware",
+        "moves": [
+            "Moonblast",
+            "Calm Mind",
+            "Moonlight",
+            "Minimize"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Empoleon",
+        "level": 64,
+        "nature": "Hardy",
+        "ability": "Torrent",
+        "moves": [
+            "Aqua Jet",
+            "Waterfall",
+            "Steel Wing",
+            "Earthquake"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 6,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

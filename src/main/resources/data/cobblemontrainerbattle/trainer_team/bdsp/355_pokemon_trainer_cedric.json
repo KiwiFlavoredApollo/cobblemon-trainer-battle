@@ -1,0 +1,114 @@
+[
+    {
+        "species": "Starly",
+        "level": 26,
+        "nature": "Jolly",
+        "ability": "Keen Eye",
+        "moves": [
+            "Quick Attack",
+            "Double Team",
+            "Endeavor",
+            "Pluck"
+        ],
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "evs": {
+            "hp": 28,
+            "atk": 52,
+            "def": 12,
+            "spa": 0,
+            "spd": 12,
+            "spe": 52
+        }
+    },
+    {
+        "species": "Buizel",
+        "level": 26,
+        "nature": "Jolly",
+        "ability": "Swift Swim",
+        "moves": [
+            "Tail Whip",
+            "Bite",
+            "Swift",
+            "Aqua Jet"
+        ],
+        "ivs": {
+            "hp": 6,
+            "atk": 6,
+            "def": 6,
+            "spa": 6,
+            "spd": 6,
+            "spe": 6
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 44,
+            "def": 12,
+            "spa": 0,
+            "spd": 12,
+            "spe": 36
+        }
+    },
+    {
+        "species": "Roselia",
+        "level": 27,
+        "nature": "Timid",
+        "ability": "Poison Point",
+        "moves": [
+            "Poison Sting",
+            "Mega Drain",
+            "Sweet Scent",
+            "Grass Knot"
+        ],
+        "ivs": {
+            "hp": 7,
+            "atk": 7,
+            "def": 7,
+            "spa": 7,
+            "spd": 7,
+            "spe": 7
+        },
+        "evs": {
+            "hp": 4,
+            "atk": 0,
+            "def": 12,
+            "spa": 44,
+            "spd": 12,
+            "spe": 12
+        }
+    },
+    {
+        "species": "Monferno",
+        "level": 31,
+        "nature": "Jolly",
+        "ability": "Blaze",
+        "moves": [
+            "Mach Punch",
+            "Leer",
+            "Power-Up Punch",
+            "Flame Wheel"
+        ],
+        "ivs": {
+            "hp": 11,
+            "atk": 11,
+            "def": 11,
+            "spa": 11,
+            "spd": 11,
+            "spe": 11
+        },
+        "evs": {
+            "hp": 36,
+            "atk": 52,
+            "def": 12,
+            "spa": 0,
+            "spd": 12,
+            "spe": 52
+        }
+    }
+]

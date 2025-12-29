@@ -1,0 +1,142 @@
+[
+    {
+        "species": "Mr. Mime",
+        "level": 69,
+        "nature": "Bold",
+        "ability": "Filter",
+        "moves": [
+            "Light Screen",
+            "Reflect",
+            "Psychic",
+            "Dazzling Gleam"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 52,
+            "spd": 0,
+            "spe": 204
+        }
+    },
+    {
+        "species": "Espeon",
+        "level": 71,
+        "nature": "Timid",
+        "ability": "Magic Bounce",
+        "moves": [
+            "Psychic",
+            "Dazzling Gleam",
+            "Shadow Ball",
+            "Light Screen"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 52,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 204
+        }
+    },
+    {
+        "species": "Bronzong",
+        "level": 70,
+        "nature": "Brave",
+        "ability": "Levitate",
+        "moves": [
+            "Gyro Ball",
+            "Earthquake",
+            "Payback",
+            "Rock Slide"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 0,
+            "spd": 31,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Alakazam",
+        "level": 72,
+        "nature": "Timid",
+        "ability": "Magic Guard",
+        "moves": [
+            "Nasty Plot",
+            "Psychic",
+            "Dazzling Gleam",
+            "Shock Wave"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 52,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 204
+        }
+    },
+    {
+        "species": "Gallade",
+        "level": 75,
+        "nature": "Jolly",
+        "ability": "Justified",
+        "moves": [
+            "Close Combat",
+            "Psycho Cut",
+            "Poison Jab",
+            "Shadow Sneak"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 0,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 52,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 204
+        }
+    }
+]

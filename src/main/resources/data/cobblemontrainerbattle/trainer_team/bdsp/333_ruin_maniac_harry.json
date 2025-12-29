@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Bronzor",
+        "level": 30,
+        "nature": "Relaxed",
+        "ability": "Heatproof",
+        "moves": [
+            "Confuse Ray",
+            "Payback",
+            "Gyro Ball",
+            "Safeguard"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

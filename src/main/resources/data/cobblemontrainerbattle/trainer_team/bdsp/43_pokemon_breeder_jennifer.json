@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Mime Jr.",
+        "level": 16,
+        "nature": "Timid",
+        "ability": "Filter",
+        "moves": [
+            "Pound",
+            "Copycat",
+            "Encore",
+            "Confusion"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Budew",
+        "level": 15,
+        "nature": "Hasty",
+        "ability": "Poison Point",
+        "moves": [
+            "Absorb",
+            "Growth",
+            "Stun Spore",
+            "Worry Seed"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Cleffa",
+        "level": 17,
+        "nature": "Hasty",
+        "ability": "Cute Charm",
+        "moves": [
+            "Pound",
+            "Sing",
+            "Sweet Kiss",
+            "Disarming Voice"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

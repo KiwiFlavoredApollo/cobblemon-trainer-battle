@@ -1,0 +1,170 @@
+[
+    {
+        "species": "Wormadam",
+        "level": 58,
+        "nature": "Modest",
+        "ability": "Overcoat",
+        "moves": [
+            "Leaf Storm",
+            "Bug Buzz",
+            "Psychic",
+            "Quiver Dance"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 6
+        }
+    },
+    {
+        "species": "Tangrowth",
+        "level": 59,
+        "nature": "Modest",
+        "ability": "Regenerator",
+        "moves": [
+            "Energy Ball",
+            "Sludge Bomb",
+            "Focus Blast",
+            "Hyper Beam"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 6
+        }
+    },
+    {
+        "species": "Froslass",
+        "level": 60,
+        "nature": "Timid",
+        "ability": "Cursed Body",
+        "moves": [
+            "Hex",
+            "Frost Breath",
+            "Thunderbolt",
+            "Will-O-Wisp"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Magmortar",
+        "level": 59,
+        "nature": "Modest",
+        "ability": "Vital Spirit",
+        "moves": [
+            "Fire Blast",
+            "Focus Blast",
+            "Thunderbolt",
+            "Will-O-Wisp"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 6
+        }
+    },
+    {
+        "species": "Clefable",
+        "level": 60,
+        "nature": "Timid",
+        "ability": "Unaware",
+        "moves": [
+            "Moonblast",
+            "Calm Mind",
+            "Moonlight",
+            "Minimize"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Empoleon",
+        "level": 64,
+        "nature": "Hardy",
+        "ability": "Torrent",
+        "moves": [
+            "Hydro Pump",
+            "Flash Cannon",
+            "Ice Beam",
+            "Grass Knot"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 6
+        }
+    }
+]

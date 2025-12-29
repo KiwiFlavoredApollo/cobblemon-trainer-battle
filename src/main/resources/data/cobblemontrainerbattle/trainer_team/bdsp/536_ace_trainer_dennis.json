@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Monferno",
+        "level": 39,
+        "nature": "Jolly",
+        "ability": "Blaze",
+        "moves": [
+            "Leer",
+            "Flame Wheel",
+            "Torment",
+            "Close Combat"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Luxio",
+        "level": 39,
+        "nature": "Jolly",
+        "ability": "Intimidate",
+        "moves": [
+            "Leer",
+            "Bite",
+            "Spark",
+            "Scary Face"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Gyarados",
+        "level": 39,
+        "nature": "Hasty",
+        "ability": "Intimidate",
+        "moves": [
+            "Leer",
+            "Brine",
+            "Rain Dance",
+            "Aqua Tail"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,114 @@
+[
+    {
+        "species": "Starly",
+        "level": 19,
+        "nature": "Jolly",
+        "ability": "Keen Eye",
+        "moves": [
+            "Quick Attack",
+            "Double Team",
+            "Endeavor",
+            "Pluck"
+        ],
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "evs": {
+            "hp": 12,
+            "atk": 28,
+            "def": 4,
+            "spa": 0,
+            "spd": 4,
+            "spe": 12
+        }
+    },
+    {
+        "species": "Roselia",
+        "level": 20,
+        "nature": "Timid",
+        "ability": "Natural Cure",
+        "moves": [
+            "Growth",
+            "Stun Spore",
+            "Leech Seed",
+            "Magical Leaf"
+        ],
+        "ivs": {
+            "hp": 6,
+            "atk": 6,
+            "def": 6,
+            "spa": 6,
+            "spd": 6,
+            "spe": 6
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 4,
+            "spa": 28,
+            "spd": 4,
+            "spe": 12
+        }
+    },
+    {
+        "species": "Ponyta",
+        "level": 20,
+        "nature": "Jolly",
+        "ability": "Flash Fire",
+        "moves": [
+            "Tackle",
+            "Growl",
+            "Flame Charge",
+            "Agility"
+        ],
+        "ivs": {
+            "hp": 7,
+            "atk": 7,
+            "def": 7,
+            "spa": 7,
+            "spd": 7,
+            "spe": 7
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 28,
+            "def": 4,
+            "spa": 0,
+            "spd": 4,
+            "spe": 12
+        }
+    },
+    {
+        "species": "Prinplup",
+        "level": 21,
+        "nature": "Timid",
+        "ability": "Torrent",
+        "moves": [
+            "Metal Claw",
+            "Bubble Beam",
+            "Stealth Rock",
+            "Grass Knot"
+        ],
+        "ivs": {
+            "hp": 11,
+            "atk": 11,
+            "def": 11,
+            "spa": 11,
+            "spd": 11,
+            "spe": 11
+        },
+        "evs": {
+            "hp": 12,
+            "atk": 0,
+            "def": 4,
+            "spa": 36,
+            "spd": 4,
+            "spe": 36
+        }
+    }
+]

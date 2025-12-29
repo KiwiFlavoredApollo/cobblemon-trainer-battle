@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Mantine",
+        "level": 54,
+        "nature": "Calm",
+        "ability": "Water Absorb",
+        "moves": [
+            "Roost",
+            "Air Slash",
+            "Aqua Ring",
+            "Hydro Pump"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Pelipper",
+        "level": 52,
+        "nature": "Bold",
+        "ability": "Drizzle",
+        "moves": [
+            "Air Slash",
+            "Water Pulse",
+            "Stockpile",
+            "Roost"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

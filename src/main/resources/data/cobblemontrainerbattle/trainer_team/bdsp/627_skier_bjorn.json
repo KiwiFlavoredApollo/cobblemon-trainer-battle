@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Mantine",
+        "level": 37,
+        "nature": "Timid",
+        "ability": "Water Absorb",
+        "moves": [
+            "Psybeam",
+            "Roost",
+            "Bubble Beam",
+            "Air Slash"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Sneasel",
+        "level": 39,
+        "nature": "Jolly",
+        "ability": "Inner Focus",
+        "moves": [
+            "Metal Claw",
+            "Icy Wind",
+            "Fury Swipes",
+            "Hone Claws"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

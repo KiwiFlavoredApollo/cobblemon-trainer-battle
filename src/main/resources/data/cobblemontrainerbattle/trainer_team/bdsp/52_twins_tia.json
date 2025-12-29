@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Clefairy",
+        "level": 21,
+        "nature": "Timid",
+        "ability": "Magic Guard",
+        "moves": [
+            "Disarming Voice",
+            "Encore",
+            "Defense Curl",
+            "Life Dew"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

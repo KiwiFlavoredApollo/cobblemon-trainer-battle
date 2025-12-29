@@ -1,0 +1,54 @@
+[
+    {
+        "species": "Wurmple",
+        "level": 9,
+        "nature": "Serious",
+        "ability": "Shield Dust",
+        "moves": [
+            "Tackle",
+            "String Shot",
+            "Poison Sting"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Silcoon",
+        "level": 9,
+        "nature": "Bashful",
+        "ability": "Shed Skin",
+        "moves": [
+            "Harden"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

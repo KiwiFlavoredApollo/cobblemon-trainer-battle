@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Mantyke",
+        "level": 36,
+        "nature": "Timid",
+        "ability": "Water Absorb",
+        "moves": [
+            "Supersonic",
+            "Bubble Beam",
+            "Headbutt",
+            "Air Slash"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Sneasel",
+        "level": 38,
+        "nature": "Jolly",
+        "ability": "Inner Focus",
+        "moves": [
+            "Quick Attack",
+            "Metal Claw",
+            "Icy Wind",
+            "Hone Claws"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

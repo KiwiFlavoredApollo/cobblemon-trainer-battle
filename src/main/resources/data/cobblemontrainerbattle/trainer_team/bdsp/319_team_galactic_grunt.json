@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Beautifly",
+        "level": 25,
+        "nature": "Hardy",
+        "ability": "Swarm",
+        "moves": [
+            "Gust",
+            "Stun Spore",
+            "Air Cutter",
+            "Leech Life"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Croagunk",
+        "level": 27,
+        "nature": "Docile",
+        "ability": "Anticipation",
+        "moves": [
+            "Mud-Slap",
+            "Taunt",
+            "Revenge",
+            "Sucker Punch"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

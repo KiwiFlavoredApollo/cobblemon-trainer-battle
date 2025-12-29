@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Bibarel",
+        "level": 23,
+        "nature": "Jolly",
+        "ability": "Unaware",
+        "moves": [
+            "Water Gun",
+            "Aqua Jet",
+            "Tackle",
+            "Headbutt"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

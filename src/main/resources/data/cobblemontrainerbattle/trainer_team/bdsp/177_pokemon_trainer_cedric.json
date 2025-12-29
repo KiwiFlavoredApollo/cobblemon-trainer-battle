@@ -1,0 +1,55 @@
+[
+    {
+        "species": "Starly",
+        "level": 7,
+        "nature": "Jolly",
+        "ability": "Keen Eye",
+        "moves": [
+            "Tackle",
+            "Quick Attack",
+            "Growl"
+        ],
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Chimchar",
+        "level": 9,
+        "nature": "Jolly",
+        "ability": "Blaze",
+        "moves": [
+            "Scratch",
+            "Leer"
+        ],
+        "ivs": {
+            "hp": 11,
+            "atk": 11,
+            "def": 11,
+            "spa": 11,
+            "spd": 11,
+            "spe": 11
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

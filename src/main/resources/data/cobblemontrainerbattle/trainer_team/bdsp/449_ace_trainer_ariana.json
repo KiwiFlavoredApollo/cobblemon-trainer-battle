@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Ambipom",
+        "level": 54,
+        "nature": "Jolly",
+        "ability": "Technician",
+        "moves": [
+            "Double Hit",
+            "Astonish",
+            "Agility",
+            "Baton Pass"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Rapidash",
+        "level": 54,
+        "nature": "Adamant",
+        "ability": "Flash Fire",
+        "moves": [
+            "Flame Wheel",
+            "Poison Jab",
+            "Smart Strike",
+            "Flame Charge"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Chansey",
+        "level": 54,
+        "nature": "Bold",
+        "ability": "Natural Cure",
+        "moves": [
+            "Charm",
+            "Soft-Boiled",
+            "Disarming Voice",
+            "Covet"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,7 @@
+{
+  "team": "cobblemontrainerbattle:bdsp/168_double_team_jo",
+  "is_spawn_allowed": true,
+  "level_mode": "normal",
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/green_piikapiika.png",
+  "battle_format": "double"
+}

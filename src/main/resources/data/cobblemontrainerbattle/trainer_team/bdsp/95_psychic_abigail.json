@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Gastly",
+        "level": 22,
+        "nature": "Timid",
+        "ability": "Levitate",
+        "moves": [
+            "Lick",
+            "Confuse Ray",
+            "Payback",
+            "Curse"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Misdreavus",
+        "level": 23,
+        "nature": "Timid",
+        "ability": "Levitate",
+        "moves": [
+            "Confusion",
+            "Astonish",
+            "Confuse Ray",
+            "Hex"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Kadabra",
+        "level": 24,
+        "nature": "Timid",
+        "ability": "Synchronize",
+        "moves": [
+            "Kinesis",
+            "Disable",
+            "Psybeam",
+            "Psycho Cut"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

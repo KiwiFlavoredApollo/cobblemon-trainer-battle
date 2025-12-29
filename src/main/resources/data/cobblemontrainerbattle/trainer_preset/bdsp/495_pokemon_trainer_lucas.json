@@ -1,0 +1,7 @@
+{
+  "team": "cobblemontrainerbattle:bdsp/495_pokemon_trainer_lucas",
+  "is_spawn_allowed": true,
+  "level_mode": "normal",
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/green_piikapiika.png",
+  "battle_format": "single"
+}

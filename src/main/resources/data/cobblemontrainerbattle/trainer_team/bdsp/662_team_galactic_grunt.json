@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Glameow",
+        "level": 32,
+        "nature": "Hardy",
+        "ability": "Limber",
+        "moves": [
+            "Growl",
+            "Aerial Ace",
+            "Fury Swipes",
+            "Retaliate"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Stunky",
+        "level": 32,
+        "nature": "Serious",
+        "ability": "Aftermath",
+        "moves": [
+            "Poison Gas",
+            "Bite",
+            "Venoshock",
+            "Toxic"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Croagunk",
+        "level": 32,
+        "nature": "Docile",
+        "ability": "Anticipation",
+        "moves": [
+            "Taunt",
+            "Venoshock",
+            "Sucker Punch",
+            "Poison Jab"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

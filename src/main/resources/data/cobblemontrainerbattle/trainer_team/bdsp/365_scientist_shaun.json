@@ -1,0 +1,56 @@
+[
+    {
+        "species": "Abra",
+        "level": 19,
+        "nature": "Timid",
+        "ability": "Inner Focus",
+        "moves": [
+            "Teleport",
+            "Energy Ball"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Kadabra",
+        "level": 19,
+        "nature": "Timid",
+        "ability": "Synchronize",
+        "moves": [
+            "Kinesis",
+            "Disable",
+            "Psybeam",
+            "Reflect"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

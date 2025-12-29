@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Buneary",
+        "level": 19,
+        "nature": "Jolly",
+        "ability": "Klutz",
+        "moves": [
+            "Pound",
+            "Defense Curl",
+            "Baby-Doll Eyes",
+            "Quick Attack"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

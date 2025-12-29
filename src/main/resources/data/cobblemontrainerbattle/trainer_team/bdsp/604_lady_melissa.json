@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Lopunny",
+        "level": 40,
+        "nature": "Jolly",
+        "ability": "Klutz",
+        "moves": [
+            "Quick Attack",
+            "Double Kick",
+            "Headbutt",
+            "Entrainment"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

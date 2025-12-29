@@ -1,0 +1,56 @@
+[
+    {
+        "species": "Kricketot",
+        "level": 7,
+        "nature": "Timid",
+        "ability": "Shed Skin",
+        "moves": [
+            "Growl",
+            "Pound",
+            "Struggle Bug"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Wurmple",
+        "level": 7,
+        "nature": "Timid",
+        "ability": "Shield Dust",
+        "moves": [
+            "Tackle",
+            "String Shot",
+            "Poison Sting"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Wurmple",
+        "level": 32,
+        "nature": "Serious",
+        "ability": "Shield Dust",
+        "moves": [
+            "Tackle",
+            "String Shot",
+            "Poison Sting",
+            "Bug Bite"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Cascoon",
+        "level": 34,
+        "nature": "Bashful",
+        "ability": "Shed Skin",
+        "moves": [
+            "String Shot",
+            "Poison Sting",
+            "Bug Bite",
+            "Harden"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Dustox",
+        "level": 36,
+        "nature": "Quirky",
+        "ability": "Shield Dust",
+        "moves": [
+            "Psybeam",
+            "Leech Life",
+            "Toxic",
+            "Bug Buzz"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

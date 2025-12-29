@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Luvdisc",
+        "level": 50,
+        "nature": "Calm",
+        "ability": "Swift Swim",
+        "moves": [
+            "Aqua Ring",
+            "Flail",
+            "Brine",
+            "Attract"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Lapras",
+        "level": 54,
+        "nature": "Modest",
+        "ability": "Water Absorb",
+        "moves": [
+            "Ice Beam",
+            "Brine",
+            "Confuse Ray",
+            "Ice Shard"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

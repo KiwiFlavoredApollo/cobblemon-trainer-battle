@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Medicham",
+        "level": 38,
+        "nature": "Jolly",
+        "ability": "Pure Power",
+        "moves": [
+            "Fire Punch",
+            "Thunder Punch",
+            "Ice Punch",
+            "Low Kick"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Machoke",
+        "level": 40,
+        "nature": "Jolly",
+        "ability": "No Guard",
+        "moves": [
+            "Low Sweep",
+            "Knock Off",
+            "Strength",
+            "Dual Chop"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

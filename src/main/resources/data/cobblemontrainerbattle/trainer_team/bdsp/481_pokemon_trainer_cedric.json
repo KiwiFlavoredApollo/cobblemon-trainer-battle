@@ -1,0 +1,170 @@
+[
+    {
+        "species": "Munchlax",
+        "level": 42,
+        "nature": "Adamant",
+        "ability": "Thick Fat",
+        "moves": [
+            "Lick",
+            "Covet",
+            "Bite",
+            "Body Slam"
+        ],
+        "ivs": {
+            "hp": 9,
+            "atk": 9,
+            "def": 9,
+            "spa": 9,
+            "spd": 9,
+            "spe": 9
+        },
+        "evs": {
+            "hp": 96,
+            "atk": 96,
+            "def": 56,
+            "spa": 0,
+            "spd": 88,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Staraptor",
+        "level": 41,
+        "nature": "Jolly",
+        "ability": "Intimidate",
+        "moves": [
+            "Close Combat",
+            "Quick Attack",
+            "Double Team",
+            "Pluck"
+        ],
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "evs": {
+            "hp": 56,
+            "atk": 104,
+            "def": 32,
+            "spa": 0,
+            "spd": 32,
+            "spe": 104
+        }
+    },
+    {
+        "species": "Buizel",
+        "level": 42,
+        "nature": "Jolly",
+        "ability": "Swift Swim",
+        "moves": [
+            "Tail Whip",
+            "Bite",
+            "Swift",
+            "Brine"
+        ],
+        "ivs": {
+            "hp": 6,
+            "atk": 6,
+            "def": 6,
+            "spa": 6,
+            "spd": 6,
+            "spe": 6
+        },
+        "evs": {
+            "hp": 40,
+            "atk": 96,
+            "def": 40,
+            "spa": 0,
+            "spd": 40,
+            "spe": 96
+        }
+    },
+    {
+        "species": "Heracross",
+        "level": 43,
+        "nature": "Jolly",
+        "ability": "Swarm",
+        "moves": [
+            "Leer",
+            "Brick Break",
+            "Pin Missile",
+            "Thief"
+        ],
+        "ivs": {
+            "hp": 9,
+            "atk": 9,
+            "def": 9,
+            "spa": 9,
+            "spd": 9,
+            "spe": 9
+        },
+        "evs": {
+            "hp": 40,
+            "atk": 104,
+            "def": 40,
+            "spa": 0,
+            "spd": 40,
+            "spe": 96
+        }
+    },
+    {
+        "species": "Ponyta",
+        "level": 42,
+        "nature": "Jolly",
+        "ability": "Flash Fire",
+        "moves": [
+            "Tail Whip",
+            "Agility",
+            "Flame Wheel",
+            "Stomp"
+        ],
+        "ivs": {
+            "hp": 7,
+            "atk": 7,
+            "def": 7,
+            "spa": 7,
+            "spd": 7,
+            "spe": 7
+        },
+        "evs": {
+            "hp": 40,
+            "atk": 64,
+            "def": 16,
+            "spa": 0,
+            "spd": 16,
+            "spe": 64
+        }
+    },
+    {
+        "species": "Torterra",
+        "level": 45,
+        "nature": "Careful",
+        "ability": "Overgrow",
+        "moves": [
+            "Razor Leaf",
+            "Bite",
+            "Leech Seed",
+            "Stealth Rock"
+        ],
+        "ivs": {
+            "hp": 11,
+            "atk": 11,
+            "def": 11,
+            "spa": 11,
+            "spd": 11,
+            "spe": 11
+        },
+        "evs": {
+            "hp": 164,
+            "atk": 52,
+            "def": 52,
+            "spa": 52,
+            "spd": 124,
+            "spe": 0
+        }
+    }
+]

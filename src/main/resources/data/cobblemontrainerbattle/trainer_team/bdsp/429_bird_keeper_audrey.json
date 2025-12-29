@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Farfetch'd",
+        "level": 52,
+        "nature": "Jolly",
+        "ability": "Inner Focus",
+        "moves": [
+            "Slash",
+            "False Swipe",
+            "Knock Off",
+            "Aerial Ace"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Swellow",
+        "level": 54,
+        "nature": "Jolly",
+        "ability": "Guts",
+        "moves": [
+            "Quick Attack",
+            "Endeavor",
+            "Brave Bird",
+            "Agility"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

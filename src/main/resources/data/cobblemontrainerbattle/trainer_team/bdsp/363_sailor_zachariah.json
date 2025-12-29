@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Pelipper",
+        "level": 38,
+        "nature": "Bold",
+        "ability": "Drizzle",
+        "moves": [
+            "Air Slash",
+            "Tailwind",
+            "Water Pulse",
+            "Stockpile"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Machoke",
+        "level": 38,
+        "nature": "Adamant",
+        "ability": "No Guard",
+        "moves": [
+            "Leer",
+            "Low Sweep",
+            "Knock Off",
+            "Dual Chop"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Gastrodon",
+        "level": 44,
+        "nature": "Modest",
+        "ability": "Storm Drain",
+        "moves": [
+            "Recover",
+            "Ancient Power",
+            "Muddy Water",
+            "Earth Power"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

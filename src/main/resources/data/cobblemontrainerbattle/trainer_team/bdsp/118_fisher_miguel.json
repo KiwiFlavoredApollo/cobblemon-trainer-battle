@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Gyarados",
+        "level": 29,
+        "nature": "Timid",
+        "ability": "Intimidate",
+        "moves": [
+            "Leer",
+            "Twister",
+            "Brine",
+            "Rain Dance"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Gyarados",
+        "level": 29,
+        "nature": "Adamant",
+        "ability": "Intimidate",
+        "moves": [
+            "Flail",
+            "Ice Fang",
+            "Waterfall",
+            "Crunch"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

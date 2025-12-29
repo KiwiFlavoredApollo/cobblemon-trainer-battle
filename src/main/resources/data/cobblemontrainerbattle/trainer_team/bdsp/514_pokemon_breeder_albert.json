@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Sudowoodo",
+        "level": 37,
+        "nature": "Impish",
+        "ability": "Sturdy",
+        "moves": [
+            "Flail",
+            "Tearful Look",
+            "Sucker Punch",
+            "Low Kick"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Roselia",
+        "level": 38,
+        "nature": "Bold",
+        "ability": "Poison Point",
+        "moves": [
+            "Leech Seed",
+            "Magical Leaf",
+            "Giga Drain",
+            "Synthesis"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Pikachu",
+        "level": 36,
+        "nature": "Bold",
+        "ability": "Static",
+        "moves": [
+            "Nuzzle",
+            "Charm",
+            "Spark",
+            "Discharge"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

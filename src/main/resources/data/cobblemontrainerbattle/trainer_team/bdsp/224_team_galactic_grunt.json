@@ -1,0 +1,56 @@
+[
+    {
+        "species": "Wurmple",
+        "level": 10,
+        "nature": "Docile",
+        "ability": "Shield Dust",
+        "moves": [
+            "Tackle",
+            "String Shot",
+            "Poison Sting"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Glameow",
+        "level": 10,
+        "nature": "Serious",
+        "ability": "Limber",
+        "moves": [
+            "Fake Out",
+            "Scratch",
+            "Growl"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

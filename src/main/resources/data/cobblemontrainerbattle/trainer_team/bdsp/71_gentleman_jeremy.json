@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Chatot",
+        "level": 19,
+        "nature": "Timid",
+        "ability": "Tangled Feet",
+        "moves": [
+            "Hyper Voice",
+            "Chatter",
+            "Confide",
+            "Growl"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

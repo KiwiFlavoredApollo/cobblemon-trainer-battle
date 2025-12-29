@@ -1,0 +1,7 @@
+{
+  "team": "cobblemontrainerbattle:bdsp/414_collector_eugene",
+  "is_spawn_allowed": true,
+  "level_mode": "normal",
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/green_piikapiika.png",
+  "battle_format": "single"
+}

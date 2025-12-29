@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Onix",
+        "level": 15,
+        "nature": "Impish",
+        "ability": "Sturdy",
+        "moves": [
+            "Tackle",
+            "Harden",
+            "Bind",
+            "Smack Down"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Onix",
+        "level": 15,
+        "nature": "Jolly",
+        "ability": "Rock Head",
+        "moves": [
+            "Tackle",
+            "Harden",
+            "Bind",
+            "Smack Down"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

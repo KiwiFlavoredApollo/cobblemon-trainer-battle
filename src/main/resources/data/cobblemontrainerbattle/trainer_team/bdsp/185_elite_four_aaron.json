@@ -1,0 +1,142 @@
+[
+    {
+        "species": "Dustox",
+        "level": 53,
+        "nature": "Bold",
+        "ability": "Shield Dust",
+        "moves": [
+            "Toxic",
+            "Bug Buzz",
+            "Moonlight",
+            "Light Screen"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 21,
+            "spa": 21,
+            "spd": 21,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 12,
+            "spa": 12,
+            "spd": 12,
+            "spe": 12
+        }
+    },
+    {
+        "species": "Beautifly",
+        "level": 53,
+        "nature": "Modest",
+        "ability": "Swarm",
+        "moves": [
+            "Bug Buzz",
+            "Shadow Ball",
+            "Psychic",
+            "Quiver Dance"
+        ],
+        "ivs": {
+            "hp": 21,
+            "atk": 0,
+            "def": 21,
+            "spa": 31,
+            "spd": 21,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 12,
+            "atk": 0,
+            "def": 12,
+            "spa": 60,
+            "spd": 12,
+            "spe": 204
+        }
+    },
+    {
+        "species": "Vespiquen",
+        "level": 54,
+        "nature": "Adamant",
+        "ability": "Unnerve",
+        "moves": [
+            "Acrobatics",
+            "Attack Order",
+            "Aerial Ace",
+            "Defend Order"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 0,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Heracross",
+        "level": 54,
+        "nature": "Jolly",
+        "ability": "Guts",
+        "moves": [
+            "Earthquake",
+            "Rock Slide",
+            "Facade",
+            "Brick Break"
+        ],
+        "ivs": {
+            "hp": 21,
+            "atk": 31,
+            "def": 21,
+            "spa": 0,
+            "spd": 21,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 12,
+            "atk": 60,
+            "def": 12,
+            "spa": 0,
+            "spd": 12,
+            "spe": 204
+        }
+    },
+    {
+        "species": "Drapion",
+        "level": 57,
+        "nature": "Jolly",
+        "ability": "Sniper",
+        "moves": [
+            "Cross Poison",
+            "Night Slash",
+            "Earthquake",
+            "X-Scissor"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 0,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 12,
+            "atk": 60,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 204
+        }
+    }
+]

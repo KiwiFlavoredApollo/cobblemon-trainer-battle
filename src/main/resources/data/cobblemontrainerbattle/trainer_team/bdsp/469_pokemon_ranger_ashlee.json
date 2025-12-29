@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Zigzagoon",
+        "level": 50,
+        "nature": "Jolly",
+        "ability": "Pickup",
+        "moves": [
+            "Flail",
+            "Rest",
+            "Belly Drum",
+            "Headbutt"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Skarmory",
+        "level": 56,
+        "nature": "Impish",
+        "ability": "Keen Eye",
+        "moves": [
+            "Steel Wing",
+            "Brave Bird",
+            "Slash",
+            "Iron Defense"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Stunky",
+        "level": 37,
+        "nature": "Docile",
+        "ability": "Aftermath",
+        "moves": [
+            "Smokescreen",
+            "Venoshock",
+            "Toxic",
+            "Night Slash"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

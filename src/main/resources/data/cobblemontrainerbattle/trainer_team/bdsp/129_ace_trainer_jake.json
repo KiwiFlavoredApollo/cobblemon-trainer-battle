@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Staravia",
+        "level": 33,
+        "nature": "Impish",
+        "ability": "Intimidate",
+        "moves": [
+            "Double Team",
+            "Endeavor",
+            "Whirlwind",
+            "Aerial Ace"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Girafarig",
+        "level": 33,
+        "nature": "Timid",
+        "ability": "Inner Focus",
+        "moves": [
+            "Assurance",
+            "Stomp",
+            "Psybeam",
+            "Agility"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

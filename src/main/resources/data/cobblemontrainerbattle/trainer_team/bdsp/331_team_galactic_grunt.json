@@ -1,0 +1,57 @@
+[
+    {
+        "species": "Golbat",
+        "level": 36,
+        "nature": "Serious",
+        "ability": "Inner Focus",
+        "moves": [
+            "Poison Fang",
+            "Quick Guard",
+            "Air Cutter",
+            "Bite"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Silcoon",
+        "level": 34,
+        "nature": "Bashful",
+        "ability": "Shed Skin",
+        "moves": [
+            "Tackle",
+            "Poison Sting",
+            "Harden"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

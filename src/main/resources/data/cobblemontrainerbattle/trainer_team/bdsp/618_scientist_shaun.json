@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Kadabra",
+        "level": 40,
+        "nature": "Timid",
+        "ability": "Inner Focus",
+        "moves": [
+            "Kinesis",
+            "Teleport",
+            "Reflect",
+            "Psychic"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Kadabra",
+        "level": 36,
+        "nature": "Timid",
+        "ability": "Synchronize",
+        "moves": [
+            "Disable",
+            "Recover",
+            "Psyshock",
+            "Psychic"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

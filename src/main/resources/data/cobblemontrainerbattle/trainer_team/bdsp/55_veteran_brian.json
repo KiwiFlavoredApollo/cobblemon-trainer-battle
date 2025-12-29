@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Buizel",
+        "level": 26,
+        "nature": "Jolly",
+        "ability": "Swift Swim",
+        "moves": [
+            "Growl",
+            "Tail Whip",
+            "Bite",
+            "Aqua Jet"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Girafarig",
+        "level": 26,
+        "nature": "Timid",
+        "ability": "Inner Focus",
+        "moves": [
+            "Astonish",
+            "Assurance",
+            "Stomp",
+            "Psybeam"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Machoke",
+        "level": 26,
+        "nature": "Jolly",
+        "ability": "Guts",
+        "moves": [
+            "Focus Energy",
+            "Revenge",
+            "Low Sweep",
+            "Knock Off"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

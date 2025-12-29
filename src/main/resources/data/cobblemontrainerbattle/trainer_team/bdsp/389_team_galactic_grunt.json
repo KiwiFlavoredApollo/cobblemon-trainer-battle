@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Dustox",
+        "level": 35,
+        "nature": "Bashful",
+        "ability": "Shield Dust",
+        "moves": [
+            "Psybeam",
+            "Light Screen",
+            "Toxic",
+            "Bug Buzz"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Golbat",
+        "level": 38,
+        "nature": "Hardy",
+        "ability": "Inner Focus",
+        "moves": [
+            "Supersonic",
+            "Poison Fang",
+            "Air Cutter",
+            "Bite"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Dustox",
+        "level": 35,
+        "nature": "Quirky",
+        "ability": "Shield Dust",
+        "moves": [
+            "Psybeam",
+            "Leech Life",
+            "Toxic",
+            "Bug Buzz"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

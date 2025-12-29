@@ -1,0 +1,170 @@
+[
+    {
+        "species": "Crobat",
+        "level": 68,
+        "nature": "Jolly",
+        "ability": "Inner Focus",
+        "moves": [
+            "Cross Poison",
+            "U-turn",
+            "Super Fang",
+            "Tailwind"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 128,
+            "atk": 0,
+            "def": 128,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Arcanine",
+        "level": 69,
+        "nature": "Adamant",
+        "ability": "Intimidate",
+        "moves": [
+            "Flare Blitz",
+            "Play Rough",
+            "Extreme Speed",
+            "Reversal"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Mr. Mime",
+        "level": 70,
+        "nature": "Timid",
+        "ability": "Filter",
+        "moves": [
+            "Psychic",
+            "Power Whip",
+            "Reflect",
+            "Light Screen"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 6,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Blastoise",
+        "level": 69,
+        "nature": "Modest",
+        "ability": "Torrent",
+        "moves": [
+            "Hydro Pump",
+            "Ice Beam",
+            "Focus Blast",
+            "Shell Smash"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Lickilicky",
+        "level": 70,
+        "nature": "Modest",
+        "ability": "Own Tempo",
+        "moves": [
+            "Focus Blast",
+            "Ice Beam",
+            "Fire Blast",
+            "Shadow Ball"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 6
+        }
+    },
+    {
+        "species": "Torterra",
+        "level": 74,
+        "nature": "Brave",
+        "ability": "Overgrow",
+        "moves": [
+            "Wood Hammer",
+            "Earthquake",
+            "Stone Edge",
+            "Curse"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 128,
+            "atk": 252,
+            "def": 128,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,29 @@
+[
+    {
+        "species": "Zubat",
+        "level": 9,
+        "nature": "Hardy",
+        "ability": "Inner Focus",
+        "moves": [
+            "Absorb",
+            "Supersonic",
+            "Astonish"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

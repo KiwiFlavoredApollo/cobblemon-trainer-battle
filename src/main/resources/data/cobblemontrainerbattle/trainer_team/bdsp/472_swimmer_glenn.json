@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Seel",
+        "level": 51,
+        "nature": "Calm",
+        "ability": "Thick Fat",
+        "moves": [
+            "Dive",
+            "Aqua Tail",
+            "Ice Beam",
+            "Safeguard"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Starmie",
+        "level": 51,
+        "nature": "Timid",
+        "ability": "Natural Cure",
+        "moves": [
+            "Hydro Pump",
+            "Psychic",
+            "Swift",
+            "Recover"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

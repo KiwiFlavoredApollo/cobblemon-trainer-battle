@@ -1,0 +1,7 @@
+{
+  "team": "cobblemontrainerbattle:bdsp/50_pokemon_breeder_amber",
+  "is_spawn_allowed": true,
+  "level_mode": "normal",
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/green_piikapiika.png",
+  "battle_format": "single"
+}

@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Misdreavus",
+        "level": 52,
+        "nature": "Calm",
+        "ability": "Levitate",
+        "moves": [
+            "Mean Look",
+            "Perish Song",
+            "Shadow Ball",
+            "Pain Split"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Haunter",
+        "level": 54,
+        "nature": "Timid",
+        "ability": "Levitate",
+        "moves": [
+            "Shadow Ball",
+            "Dark Pulse",
+            "Destiny Bond",
+            "Curse"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Kadabra",
+        "level": 35,
+        "nature": "Timid",
+        "ability": "Inner Focus",
+        "moves": [
+            "Kinesis",
+            "Reflect",
+            "Psychic",
+            "Rain Dance"
+        ],
+        "ivs": {
+            "hp": 15,
+            "atk": 0,
+            "def": 15,
+            "spa": 0,
+            "spd": 15,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 68,
+            "atk": 0,
+            "def": 68,
+            "spa": 0,
+            "spd": 68,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Bronzor",
+        "level": 35,
+        "nature": "Relaxed",
+        "ability": "Levitate",
+        "moves": [
+            "Confuse Ray",
+            "Payback",
+            "Gyro Ball",
+            "Extrasensory"
+        ],
+        "ivs": {
+            "hp": 15,
+            "atk": 0,
+            "def": 15,
+            "spa": 0,
+            "spd": 15,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 68,
+            "atk": 0,
+            "def": 68,
+            "spa": 0,
+            "spd": 68,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Toxicroak",
+        "level": 37,
+        "nature": "Jolly",
+        "ability": "Dry Skin",
+        "moves": [
+            "Mud-Slap",
+            "Revenge",
+            "Toxic",
+            "Thief"
+        ],
+        "ivs": {
+            "hp": 15,
+            "atk": 0,
+            "def": 15,
+            "spa": 0,
+            "spd": 15,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 68,
+            "atk": 0,
+            "def": 68,
+            "spa": 0,
+            "spd": 68,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,85 @@
+[
+    {
+        "species": "Silcoon",
+        "level": 32,
+        "nature": "Bashful",
+        "ability": "Shed Skin",
+        "moves": [
+            "Tackle",
+            "Poison Sting",
+            "Harden"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Golbat",
+        "level": 32,
+        "nature": "Quirky",
+        "ability": "Inner Focus",
+        "moves": [
+            "Screech",
+            "Poison Fang",
+            "Quick Guard",
+            "Air Cutter"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Glameow",
+        "level": 32,
+        "nature": "Hardy",
+        "ability": "Own Tempo",
+        "moves": [
+            "Growl",
+            "Aerial Ace",
+            "Fury Swipes",
+            "Retaliate"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

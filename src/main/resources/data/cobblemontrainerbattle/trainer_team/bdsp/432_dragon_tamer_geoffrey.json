@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Dratini",
+        "level": 53,
+        "nature": "Adamant",
+        "ability": "Shed Skin",
+        "moves": [
+            "Dragon Rush",
+            "Dragon Dance",
+            "Outrage",
+            "Safeguard"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Dragonair",
+        "level": 55,
+        "nature": "Jolly",
+        "ability": "Shed Skin",
+        "moves": [
+            "Dragon Rush",
+            "Dragon Dance",
+            "Aqua Tail",
+            "Safeguard"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

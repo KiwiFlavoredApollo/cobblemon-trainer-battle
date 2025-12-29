@@ -1,0 +1,114 @@
+[
+    {
+        "species": "Raichu",
+        "level": 46,
+        "nature": "Timid",
+        "ability": "Static",
+        "moves": [
+            "Nuzzle",
+            "Volt Switch",
+            "Surf",
+            "Charge Beam"
+        ],
+        "ivs": {
+            "hp": 11,
+            "atk": 0,
+            "def": 11,
+            "spa": 28,
+            "spd": 11,
+            "spe": 28
+        },
+        "evs": {
+            "hp": 12,
+            "atk": 0,
+            "def": 12,
+            "spa": 160,
+            "spd": 12,
+            "spe": 160
+        }
+    },
+    {
+        "species": "Ambipom",
+        "level": 47,
+        "nature": "Naive",
+        "ability": "Technician",
+        "moves": [
+            "Fake Out",
+            "Thunderbolt",
+            "Double Hit",
+            "Last Resort"
+        ],
+        "ivs": {
+            "hp": 11,
+            "atk": 20,
+            "def": 11,
+            "spa": 20,
+            "spd": 11,
+            "spe": 28
+        },
+        "evs": {
+            "hp": 12,
+            "atk": 80,
+            "def": 12,
+            "spa": 80,
+            "spd": 12,
+            "spe": 160
+        }
+    },
+    {
+        "species": "Octillery",
+        "level": 47,
+        "nature": "Modest",
+        "ability": "Sniper",
+        "moves": [
+            "Octazooka",
+            "Focus Energy",
+            "Aurora Beam",
+            "Charge Beam"
+        ],
+        "ivs": {
+            "hp": 11,
+            "atk": 0,
+            "def": 11,
+            "spa": 28,
+            "spd": 11,
+            "spe": 28
+        },
+        "evs": {
+            "hp": 12,
+            "atk": 0,
+            "def": 12,
+            "spa": 160,
+            "spd": 12,
+            "spe": 160
+        }
+    },
+    {
+        "species": "Luxray",
+        "level": 49,
+        "nature": "Jolly",
+        "ability": "Intimidate",
+        "moves": [
+            "Thunder Fang",
+            "Ice Fang",
+            "Crunch",
+            "Iron Tail"
+        ],
+        "ivs": {
+            "hp": 15,
+            "atk": 28,
+            "def": 15,
+            "spa": 0,
+            "spd": 0,
+            "spe": 30
+        },
+        "evs": {
+            "hp": 28,
+            "atk": 160,
+            "def": 28,
+            "spa": 0,
+            "spd": 0,
+            "spe": 200
+        }
+    }
+]

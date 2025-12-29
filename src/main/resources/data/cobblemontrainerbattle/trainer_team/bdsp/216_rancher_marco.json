@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Aipom",
+        "level": 18,
+        "nature": "Jolly",
+        "ability": "Pickup",
+        "moves": [
+            "Sand Attack",
+            "Astonish",
+            "Tickle",
+            "Fury Swipes"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Psyduck",
+        "level": 19,
+        "nature": "Hasty",
+        "ability": "Cloud Nine",
+        "moves": [
+            "Scratch",
+            "Tail Whip",
+            "Confusion",
+            "Water Pulse"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Girafarig",
+        "level": 17,
+        "nature": "Naive",
+        "ability": "Inner Focus",
+        "moves": [
+            "Growl",
+            "Confusion",
+            "Assurance",
+            "Stomp"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Staravia",
+        "level": 37,
+        "nature": "Jolly",
+        "ability": "Intimidate",
+        "moves": [
+            "Growl",
+            "Double Team",
+            "Aerial Ace",
+            "Take Down"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Staravia",
+        "level": 39,
+        "nature": "Jolly",
+        "ability": "Intimidate",
+        "moves": [
+            "Quick Attack",
+            "Double Team",
+            "Aerial Ace",
+            "Take Down"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

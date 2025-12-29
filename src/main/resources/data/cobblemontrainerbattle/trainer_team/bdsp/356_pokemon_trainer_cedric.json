@@ -1,0 +1,114 @@
+[
+    {
+        "species": "Starly",
+        "level": 26,
+        "nature": "Jolly",
+        "ability": "Keen Eye",
+        "moves": [
+            "Quick Attack",
+            "Double Team",
+            "Endeavor",
+            "Pluck"
+        ],
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "evs": {
+            "hp": 28,
+            "atk": 52,
+            "def": 12,
+            "spa": 0,
+            "spd": 12,
+            "spe": 52
+        }
+    },
+    {
+        "species": "Roselia",
+        "level": 26,
+        "nature": "Timid",
+        "ability": "Natural Cure",
+        "moves": [
+            "Growth",
+            "Stun Spore",
+            "Leech Seed",
+            "Magical Leaf"
+        ],
+        "ivs": {
+            "hp": 6,
+            "atk": 6,
+            "def": 6,
+            "spa": 6,
+            "spd": 6,
+            "spe": 6
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 12,
+            "spa": 44,
+            "spd": 12,
+            "spe": 36
+        }
+    },
+    {
+        "species": "Ponyta",
+        "level": 27,
+        "nature": "Jolly",
+        "ability": "Flash Fire",
+        "moves": [
+            "Tackle",
+            "Growl",
+            "Agility",
+            "Flame Wheel"
+        ],
+        "ivs": {
+            "hp": 7,
+            "atk": 7,
+            "def": 7,
+            "spa": 7,
+            "spd": 7,
+            "spe": 7
+        },
+        "evs": {
+            "hp": 4,
+            "atk": 44,
+            "def": 12,
+            "spa": 0,
+            "spd": 12,
+            "spe": 12
+        }
+    },
+    {
+        "species": "Prinplup",
+        "level": 31,
+        "nature": "Timid",
+        "ability": "Torrent",
+        "moves": [
+            "Metal Claw",
+            "Charm",
+            "Bubble Beam",
+            "Grass Knot"
+        ],
+        "ivs": {
+            "hp": 11,
+            "atk": 11,
+            "def": 11,
+            "spa": 11,
+            "spd": 11,
+            "spe": 11
+        },
+        "evs": {
+            "hp": 36,
+            "atk": 0,
+            "def": 12,
+            "spa": 52,
+            "spd": 12,
+            "spe": 52
+        }
+    }
+]

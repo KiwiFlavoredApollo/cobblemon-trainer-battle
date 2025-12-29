@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Meditite",
+        "level": 27,
+        "nature": "Naive",
+        "ability": "Pure Power",
+        "moves": [
+            "Drain Punch",
+            "Light Screen",
+            "Flash",
+            "Bulk Up"
+        ],
+        "ivs": {
+            "hp": 15,
+            "atk": 15,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 15
+        },
+        "evs": {
+            "hp": 36,
+            "atk": 52,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 36
+        }
+    },
+    {
+        "species": "Machoke",
+        "level": 27,
+        "nature": "Adamant",
+        "ability": "Guts",
+        "moves": [
+            "Low Sweep",
+            "Knock Off",
+            "Rock Tomb",
+            "Bulldoze"
+        ],
+        "ivs": {
+            "hp": 15,
+            "atk": 15,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 15
+        },
+        "evs": {
+            "hp": 36,
+            "atk": 52,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 36
+        }
+    },
+    {
+        "species": "Lucario",
+        "level": 30,
+        "nature": "Adamant",
+        "ability": "Steadfast",
+        "moves": [
+            "Drain Punch",
+            "Screech",
+            "Metal Claw",
+            "Bulk Up"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 15,
+            "def": 15,
+            "spa": 0,
+            "spd": 0,
+            "spe": 15
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 68,
+            "def": 68,
+            "spa": 0,
+            "spd": 0,
+            "spe": 68
+        }
+    }
+]

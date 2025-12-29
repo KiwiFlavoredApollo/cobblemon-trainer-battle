@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Zubat",
+        "level": 14,
+        "nature": "Bashful",
+        "ability": "Inner Focus",
+        "moves": [
+            "Absorb",
+            "Supersonic",
+            "Astonish",
+            "Mean Look"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Glameow",
+        "level": 14,
+        "nature": "Quirky",
+        "ability": "Own Tempo",
+        "moves": [
+            "Fake Out",
+            "Scratch",
+            "Growl",
+            "Hypnosis"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

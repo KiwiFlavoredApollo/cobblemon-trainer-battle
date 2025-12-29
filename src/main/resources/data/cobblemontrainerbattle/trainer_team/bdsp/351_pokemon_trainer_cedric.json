@@ -1,0 +1,114 @@
+[
+    {
+        "species": "Starly",
+        "level": 19,
+        "nature": "Jolly",
+        "ability": "Keen Eye",
+        "moves": [
+            "Quick Attack",
+            "Double Team",
+            "Endeavor",
+            "Pluck"
+        ],
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "evs": {
+            "hp": 12,
+            "atk": 28,
+            "def": 4,
+            "spa": 0,
+            "spd": 4,
+            "spe": 12
+        }
+    },
+    {
+        "species": "Buizel",
+        "level": 20,
+        "nature": "Jolly",
+        "ability": "Swift Swim",
+        "moves": [
+            "Tail Whip",
+            "Quick Attack",
+            "Water Gun",
+            "Bite"
+        ],
+        "ivs": {
+            "hp": 6,
+            "atk": 6,
+            "def": 6,
+            "spa": 6,
+            "spd": 6,
+            "spe": 6
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 28,
+            "def": 4,
+            "spa": 0,
+            "spd": 4,
+            "spe": 12
+        }
+    },
+    {
+        "species": "Ponyta",
+        "level": 20,
+        "nature": "Jolly",
+        "ability": "Flash Fire",
+        "moves": [
+            "Tackle",
+            "Tail Whip",
+            "Flame Charge",
+            "Agility"
+        ],
+        "ivs": {
+            "hp": 7,
+            "atk": 7,
+            "def": 7,
+            "spa": 7,
+            "spd": 7,
+            "spe": 7
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 28,
+            "def": 4,
+            "spa": 0,
+            "spd": 4,
+            "spe": 12
+        }
+    },
+    {
+        "species": "Grotle",
+        "level": 21,
+        "nature": "Careful",
+        "ability": "Overgrow",
+        "moves": [
+            "Absorb",
+            "Razor Leaf",
+            "Curse",
+            "Stealth Rock"
+        ],
+        "ivs": {
+            "hp": 11,
+            "atk": 11,
+            "def": 11,
+            "spa": 11,
+            "spd": 11,
+            "spe": 11
+        },
+        "evs": {
+            "hp": 36,
+            "atk": 4,
+            "def": 12,
+            "spa": 4,
+            "spd": 36,
+            "spe": 0
+        }
+    }
+]

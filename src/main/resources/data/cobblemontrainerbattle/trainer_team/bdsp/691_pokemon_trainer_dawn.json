@@ -1,0 +1,170 @@
+[
+    {
+        "species": "Wormadam (Sandy Cloak)",
+        "level": 58,
+        "nature": "Adamant",
+        "ability": "Anticipation",
+        "moves": [
+            "Bug Bite",
+            "Fissure",
+            "Earthquake",
+            "Double Team"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 6
+        }
+    },
+    {
+        "species": "Milotic",
+        "level": 59,
+        "nature": "Modest",
+        "ability": "Competitive",
+        "moves": [
+            "Hydro Pump",
+            "Ice Beam",
+            "Hyper Beam",
+            "Recover"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Froslass",
+        "level": 60,
+        "nature": "Timid",
+        "ability": "Cursed Body",
+        "moves": [
+            "Hex",
+            "Frost Breath",
+            "Thunderbolt",
+            "Will-O-Wisp"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Tangrowth",
+        "level": 59,
+        "nature": "Modest",
+        "ability": "Regenerator",
+        "moves": [
+            "Energy Ball",
+            "Sludge Bomb",
+            "Focus Blast",
+            "Hyper Beam"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 6
+        }
+    },
+    {
+        "species": "Clefable",
+        "level": 60,
+        "nature": "Timid",
+        "ability": "Unaware",
+        "moves": [
+            "Moonblast",
+            "Calm Mind",
+            "Moonlight",
+            "Minimize"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Infernape",
+        "level": 64,
+        "nature": "Jolly",
+        "ability": "Blaze",
+        "moves": [
+            "Flare Blitz",
+            "Close Combat",
+            "Earthquake",
+            "U-turn"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        }
+    }
+]

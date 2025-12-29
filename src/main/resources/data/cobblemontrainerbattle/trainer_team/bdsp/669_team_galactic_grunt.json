@@ -1,0 +1,29 @@
+[
+    {
+        "species": "Glameow",
+        "level": 11,
+        "nature": "Bashful",
+        "ability": "Limber",
+        "moves": [
+            "Fake Out",
+            "Scratch",
+            "Growl"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

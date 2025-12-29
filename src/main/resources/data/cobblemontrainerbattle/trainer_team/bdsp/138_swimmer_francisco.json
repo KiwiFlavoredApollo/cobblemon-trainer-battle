@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Tentacool",
+        "level": 40,
+        "nature": "Timid",
+        "ability": "Clear Body",
+        "moves": [
+            "Water Pulse",
+            "Hex",
+            "Acid Armor",
+            "Poison Jab"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Golduck",
+        "level": 42,
+        "nature": "Jolly",
+        "ability": "Damp",
+        "moves": [
+            "Fury Swipes",
+            "Zen Headbutt",
+            "Aqua Tail",
+            "Psych Up"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

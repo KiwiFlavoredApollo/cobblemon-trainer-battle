@@ -1,0 +1,170 @@
+[
+    {
+        "species": "Honchkrow",
+        "level": 68,
+        "nature": "Jolly",
+        "ability": "Super Luck",
+        "moves": [
+            "Sucker Punch",
+            "Night Slash",
+            "Taunt",
+            "Roost"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Gorebyss",
+        "level": 69,
+        "nature": "Modest",
+        "ability": "Swift Swim",
+        "moves": [
+            "Hydro Pump",
+            "Ice Beam",
+            "Baton Pass",
+            "Shell Smash"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 6
+        }
+    },
+    {
+        "species": "Froslass",
+        "level": 70,
+        "nature": "Timid",
+        "ability": "Cursed Body",
+        "moves": [
+            "Hex",
+            "Frost Breath",
+            "Thunderbolt",
+            "Will-O-Wisp"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 0,
+            "def": 0,
+            "spa": 252,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Sceptile",
+        "level": 69,
+        "nature": "Lonely",
+        "ability": "Unburden",
+        "moves": [
+            "Leaf Blade",
+            "Earthquake",
+            "Leaf Storm",
+            "Brick Break"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 6
+        }
+    },
+    {
+        "species": "Ambipom",
+        "level": 70,
+        "nature": "Jolly",
+        "ability": "Technician",
+        "moves": [
+            "Double Hit",
+            "Fake Out",
+            "Dual Chop",
+            "U-turn"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Infernape",
+        "level": 74,
+        "nature": "Jolly",
+        "ability": "Blaze",
+        "moves": [
+            "Flare Blitz",
+            "Close Combat",
+            "Earthquake",
+            "U-turn"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 6,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        }
+    }
+]

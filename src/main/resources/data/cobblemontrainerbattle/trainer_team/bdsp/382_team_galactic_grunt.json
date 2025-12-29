@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Dustox",
+        "level": 35,
+        "nature": "Quirky",
+        "ability": "Shield Dust",
+        "moves": [
+            "Venoshock",
+            "Leech Life",
+            "Toxic",
+            "Bug Buzz"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Bronzor",
+        "level": 35,
+        "nature": "Hardy",
+        "ability": "Heatproof",
+        "moves": [
+            "Confuse Ray",
+            "Payback",
+            "Extrasensory",
+            "Heavy Slam"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

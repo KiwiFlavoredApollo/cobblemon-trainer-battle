@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Stunky",
+        "level": 38,
+        "nature": "Docile",
+        "ability": "Aftermath",
+        "moves": [
+            "Venoshock",
+            "Toxic",
+            "Memento",
+            "Night Slash"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Golbat",
+        "level": 38,
+        "nature": "Serious",
+        "ability": "Inner Focus",
+        "moves": [
+            "Screech",
+            "Astonish",
+            "Poison Fang",
+            "Bite"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

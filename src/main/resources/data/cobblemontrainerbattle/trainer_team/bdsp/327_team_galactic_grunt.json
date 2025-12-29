@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Glameow",
+        "level": 33,
+        "nature": "Bashful",
+        "ability": "Own Tempo",
+        "moves": [
+            "Aerial Ace",
+            "Fury Swipes",
+            "Charm",
+            "Taunt"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Croagunk",
+        "level": 33,
+        "nature": "Quirky",
+        "ability": "Anticipation",
+        "moves": [
+            "Taunt",
+            "Revenge",
+            "Sucker Punch",
+            "Poison Jab"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

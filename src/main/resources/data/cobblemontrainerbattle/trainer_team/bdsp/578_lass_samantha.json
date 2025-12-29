@@ -1,0 +1,29 @@
+[
+    {
+        "species": "Roselia",
+        "level": 31,
+        "nature": "Timid",
+        "ability": "Poison Point",
+        "moves": [
+            "Poison Sting",
+            "Magical Leaf",
+            "Giga Drain"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

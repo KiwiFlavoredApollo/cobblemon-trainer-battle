@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Gyarados",
+        "level": 27,
+        "nature": "Jolly",
+        "ability": "Intimidate",
+        "moves": [
+            "Brine",
+            "Ice Fang",
+            "Crunch",
+            "Flail"
+        ],
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 16
+        },
+        "evs": {
+            "hp": 40,
+            "atk": 56,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 40
+        }
+    },
+    {
+        "species": "Quagsire",
+        "level": 27,
+        "nature": "Quiet",
+        "ability": "Damp",
+        "moves": [
+            "Rain Dance",
+            "Haze",
+            "Mud Shot",
+            "Scald"
+        ],
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 5,
+            "spa": 16,
+            "spd": 5,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 40,
+            "atk": 40,
+            "def": 4,
+            "spa": 56,
+            "spd": 4,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Floatzel",
+        "level": 30,
+        "nature": "Adamant",
+        "ability": "Swift Swim",
+        "moves": [
+            "Brine",
+            "Ice Fang",
+            "Bite",
+            "Aqua Jet"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 17,
+            "def": 0,
+            "spa": 17,
+            "spd": 0,
+            "spe": 17
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 84,
+            "def": 0,
+            "spa": 20,
+            "spd": 0,
+            "spe": 84
+        }
+    }
+]

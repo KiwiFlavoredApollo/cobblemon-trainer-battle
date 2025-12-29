@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Haunter",
+        "level": 38,
+        "nature": "Timid",
+        "ability": "Levitate",
+        "moves": [
+            "Confuse Ray",
+            "Mean Look",
+            "Curse",
+            "Hex"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Kadabra",
+        "level": 42,
+        "nature": "Timid",
+        "ability": "Synchronize",
+        "moves": [
+            "Reflect",
+            "Psycho Cut",
+            "Recover",
+            "Psychic"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

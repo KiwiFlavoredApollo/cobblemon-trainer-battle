@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Sneasel",
+        "level": 40,
+        "nature": "Jolly",
+        "ability": "Inner Focus",
+        "moves": [
+            "Leer",
+            "Icy Wind",
+            "Fury Swipes",
+            "Hone Claws"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

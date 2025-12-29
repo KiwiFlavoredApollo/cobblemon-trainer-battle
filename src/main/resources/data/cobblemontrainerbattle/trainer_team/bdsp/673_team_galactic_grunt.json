@@ -1,0 +1,30 @@
+[
+    {
+        "species": "Glameow",
+        "level": 25,
+        "nature": "Quirky",
+        "ability": "Limber",
+        "moves": [
+            "Hypnosis",
+            "Aerial Ace",
+            "Fury Swipes",
+            "Charm"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

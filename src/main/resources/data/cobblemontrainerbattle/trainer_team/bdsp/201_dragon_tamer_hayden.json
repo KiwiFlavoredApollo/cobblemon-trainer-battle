@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Swablu",
+        "level": 53,
+        "nature": "Modest",
+        "ability": "Natural Cure",
+        "moves": [
+            "Dragon Breath",
+            "Moonblast",
+            "Round",
+            "Perish Song"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Altaria",
+        "level": 57,
+        "nature": "Adamant",
+        "ability": "Natural Cure",
+        "moves": [
+            "Dragon Dance",
+            "Sky Attack",
+            "Take Down",
+            "Pluck"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Shuppet",
+        "level": 53,
+        "nature": "Adamant",
+        "ability": "Insomnia",
+        "moves": [
+            "Knock Off",
+            "Sucker Punch",
+            "Shadow Sneak",
+            "Curse"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Duskull",
+        "level": 55,
+        "nature": "Impish",
+        "ability": "Levitate",
+        "moves": [
+            "Curse",
+            "Will-O-Wisp",
+            "Payback",
+            "Shadow Sneak"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

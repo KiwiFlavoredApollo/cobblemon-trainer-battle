@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Beautifly",
+        "level": 31,
+        "nature": "Docile",
+        "ability": "Swarm",
+        "moves": [
+            "Stun Spore",
+            "Air Cutter",
+            "Leech Life",
+            "Attract"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Glameow",
+        "level": 33,
+        "nature": "Serious",
+        "ability": "Own Tempo",
+        "moves": [
+            "Aerial Ace",
+            "Charm",
+            "Taunt",
+            "Retaliate"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

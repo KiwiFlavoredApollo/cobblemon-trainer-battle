@@ -1,0 +1,142 @@
+[
+    {
+        "species": "Mr. Mime",
+        "level": 59,
+        "nature": "Bold",
+        "ability": "Filter",
+        "moves": [
+            "Light Screen",
+            "Reflect",
+            "Psychic",
+            "Dazzling Gleam"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 12,
+            "spa": 12,
+            "spd": 12,
+            "spe": 12
+        }
+    },
+    {
+        "species": "Girafarig",
+        "level": 59,
+        "nature": "Calm",
+        "ability": "Sap Sipper",
+        "moves": [
+            "Light Screen",
+            "Psychic",
+            "Thunderbolt",
+            "Trick Room"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 12,
+            "spa": 12,
+            "spd": 12,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Medicham",
+        "level": 60,
+        "nature": "Brave",
+        "ability": "Pure Power",
+        "moves": [
+            "Zen Headbutt",
+            "High Jump Kick",
+            "Thunder Punch",
+            "Ice Punch"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 0,
+            "spd": 31,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Alakazam",
+        "level": 60,
+        "nature": "Timid",
+        "ability": "Magic Guard",
+        "moves": [
+            "Nasty Plot",
+            "Psychic",
+            "Future Sight",
+            "Shock Wave"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Bronzong",
+        "level": 63,
+        "nature": "Brave",
+        "ability": "Levitate",
+        "moves": [
+            "Gyro Ball",
+            "Earthquake",
+            "Payback",
+            "Trick Room"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 0,
+            "spd": 31,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 12,
+            "atk": 252,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

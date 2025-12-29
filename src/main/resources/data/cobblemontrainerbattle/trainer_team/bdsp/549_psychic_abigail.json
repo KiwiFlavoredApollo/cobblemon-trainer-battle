@@ -1,0 +1,86 @@
+[
+    {
+        "species": "Haunter",
+        "level": 37,
+        "nature": "Timid",
+        "ability": "Levitate",
+        "moves": [
+            "Confuse Ray",
+            "Payback",
+            "Hex",
+            "Night Shade"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Misdreavus",
+        "level": 39,
+        "nature": "Timid",
+        "ability": "Levitate",
+        "moves": [
+            "Confuse Ray",
+            "Hex",
+            "Psybeam",
+            "Payback"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Kadabra",
+        "level": 38,
+        "nature": "Timid",
+        "ability": "Synchronize",
+        "moves": [
+            "Psycho Cut",
+            "Recover",
+            "Psyshock",
+            "Psychic"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

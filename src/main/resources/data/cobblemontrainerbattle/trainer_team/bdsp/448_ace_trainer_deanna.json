@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Flaaffy",
+        "level": 53,
+        "nature": "Modest",
+        "ability": "Static",
+        "moves": [
+            "Discharge",
+            "Power Gem",
+            "Thunder Wave",
+            "Light Screen"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Tropius",
+        "level": 53,
+        "nature": "Timid",
+        "ability": "Chlorophyll",
+        "moves": [
+            "Solar Beam",
+            "Air Slash",
+            "Synthesis",
+            "Sunny Day"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "species": "Slowpoke",
+        "level": 51,
+        "nature": "Bold",
+        "ability": "Own Tempo",
+        "moves": [
+            "Psychic",
+            "Amnesia",
+            "Slack Off",
+            "Yawn"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Slowbro",
+        "level": 55,
+        "nature": "Modest",
+        "ability": "Oblivious",
+        "moves": [
+            "Psychic",
+            "Amnesia",
+            "Slack Off",
+            "Surf"
+        ],
+        "ivs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+        }
+    }
+]

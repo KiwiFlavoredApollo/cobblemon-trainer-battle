@@ -1,0 +1,7 @@
+{
+  "team": "cobblemontrainerbattle:bdsp/63_double_team_jen",
+  "is_spawn_allowed": true,
+  "level_mode": "normal",
+  "texture": "cobblemontrainerbattle:textures/entity/trainer/slim/green_piikapiika.png",
+  "battle_format": "double"
+}

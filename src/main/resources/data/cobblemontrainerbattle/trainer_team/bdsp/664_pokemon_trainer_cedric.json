@@ -1,0 +1,170 @@
+[
+    {
+        "species": "Staraptor",
+        "level": 58,
+        "nature": "Jolly",
+        "ability": "Intimidate",
+        "moves": [
+            "Close Combat",
+            "Pluck",
+            "Steel Wing",
+            "U-turn"
+        ],
+        "ivs": {
+            "hp": 5,
+            "atk": 5,
+            "def": 5,
+            "spa": 5,
+            "spd": 5,
+            "spe": 5
+        },
+        "evs": {
+            "hp": 60,
+            "atk": 132,
+            "def": 36,
+            "spa": 0,
+            "spd": 36,
+            "spe": 244
+        }
+    },
+    {
+        "species": "Floatzel",
+        "level": 59,
+        "nature": "Jolly",
+        "ability": "Swift Swim",
+        "moves": [
+            "Ice Fang",
+            "Crunch",
+            "Swift",
+            "Waterfall"
+        ],
+        "ivs": {
+            "hp": 6,
+            "atk": 6,
+            "def": 6,
+            "spa": 6,
+            "spd": 6,
+            "spe": 6
+        },
+        "evs": {
+            "hp": 40,
+            "atk": 136,
+            "def": 40,
+            "spa": 0,
+            "spd": 40,
+            "spe": 248
+        }
+    },
+    {
+        "species": "Heracross",
+        "level": 60,
+        "nature": "Jolly",
+        "ability": "Swarm",
+        "moves": [
+            "Megahorn",
+            "Swords Dance",
+            "Rock Slide",
+            "Close Combat"
+        ],
+        "ivs": {
+            "hp": 9,
+            "atk": 9,
+            "def": 9,
+            "spa": 9,
+            "spd": 9,
+            "spe": 9
+        },
+        "evs": {
+            "hp": 44,
+            "atk": 124,
+            "def": 44,
+            "spa": 0,
+            "spd": 44,
+            "spe": 252
+        }
+    },
+    {
+        "species": "Roserade",
+        "level": 59,
+        "nature": "Timid",
+        "ability": "Poison Point",
+        "moves": [
+            "Grassy Terrain",
+            "Giga Drain",
+            "Toxic",
+            "Sludge Bomb"
+        ],
+        "ivs": {
+            "hp": 7,
+            "atk": 7,
+            "def": 7,
+            "spa": 7,
+            "spd": 7,
+            "spe": 7
+        },
+        "evs": {
+            "hp": 60,
+            "atk": 0,
+            "def": 52,
+            "spa": 132,
+            "spd": 52,
+            "spe": 212
+        }
+    },
+    {
+        "species": "Snorlax",
+        "level": 60,
+        "nature": "Adamant",
+        "ability": "Thick Fat",
+        "moves": [
+            "Covet",
+            "Yawn",
+            "Crunch",
+            "Hammer Arm"
+        ],
+        "ivs": {
+            "hp": 9,
+            "atk": 9,
+            "def": 9,
+            "spa": 9,
+            "spd": 9,
+            "spe": 9
+        },
+        "evs": {
+            "hp": 100,
+            "atk": 156,
+            "def": 160,
+            "spa": 0,
+            "spd": 92,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Infernape",
+        "level": 64,
+        "nature": "Jolly",
+        "ability": "Blaze",
+        "moves": [
+            "Close Combat",
+            "Flare Blitz",
+            "U-turn",
+            "Shadow Claw"
+        ],
+        "ivs": {
+            "hp": 11,
+            "atk": 11,
+            "def": 11,
+            "spa": 11,
+            "spd": 11,
+            "spe": 11
+        },
+        "evs": {
+            "hp": 52,
+            "atk": 188,
+            "def": 52,
+            "spa": 0,
+            "spd": 52,
+            "spe": 164
+        }
+    }
+]
