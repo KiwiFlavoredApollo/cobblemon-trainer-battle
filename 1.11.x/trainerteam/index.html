@@ -93,7 +93,21 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#example">Example</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#species">Species</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#random-pokemon">Random Pokemon</a>
+    </li>
+        </ul>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#relative-level">Relative Level</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#example-1">Example 1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-2">Example 2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-3">Example 3</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#form-names">Form Names</a>
     </li>
@@ -124,7 +138,7 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="trainer-team">Trainer Team</h1>
-<p>Trainer team files follow Showdown team JSON format. Additional attributes are available. Few attributes can be set Minecraft-friendly. Manually writing trainer team files can be quite painful, please consider using <code>/cobblemontrainerbattle export &lt;player&gt;</code> command to facilitate the process.</p>
+<p>Trainer team files follow Showdown team JSON format. Additional attributes are available. Few attributes can be set Minecraft-friendly. Manually writing trainer team files can be quite painful, please consider using <code>/exportpokemon</code> command to facilitate the process.</p>
 <h2 id="example">Example</h2>
 <pre><code class="language-json">[
   {
@@ -154,14 +168,46 @@
   }
 ]
 </code></pre>
+<h2 id="species">Species</h2>
+<h3 id="random-pokemon">Random Pokemon</h3>
+<pre><code>[
+  {
+    &quot;species&quot;: &quot;cobblemontrainerbattle:random&quot;
+  }
+]
+</code></pre>
 <h2 id="relative-level">Relative Level</h2>
 <ul>
 <li>You need to set <code>level_mode</code> to <code>relative</code> in trainer preset file</li>
 <li>Sets the trainer Pokémon level relative to player's maximum party level</li>
-<li>If you set to <code>"level": 0</code>, then Pokémon will have same level as the player's maximum party level </li>
-<li>If you set to <code>"level": 2</code>, then Pokémon will have two levels above the player's maximum party level</li>
-<li>If you set to <code>"level": -2</code>, then Pokémon will have two levels below the player's maximum party level</li>
 </ul>
+<h3 id="example-1">Example 1</h3>
+<p>Pokémon will have same level as the player's maximum party level.</p>
+<pre><code>[
+  {
+    &quot;species&quot;: &quot;cobblemon:bulbasaur&quot;,
+    &quot;level&quot;: 0
+  }
+]
+</code></pre>
+<h3 id="example-2">Example 2</h3>
+<p>Pokémon will have two levels above the player's maximum party level.</p>
+<pre><code>[
+  {
+    &quot;species&quot;: &quot;cobblemon:bulbasaur&quot;,
+    &quot;level&quot;: 2
+  }
+]
+</code></pre>
+<h3 id="example-3">Example 3</h3>
+<p>Pokémon will have two levels below the player's maximum party level.</p>
+<pre><code>[
+  {
+    &quot;species&quot;: &quot;cobblemon:bulbasaur&quot;,
+    &quot;level&quot;: -2
+  }
+]
+</code></pre>
 <h2 id="form-names">Form Names</h2>
 <p>Few other options for form names are <code>Hisui</code>, <code>Therian</code>, <code>Paldea-Combat</code> and <code>Galar-Zen</code>. Form names for a Pokémon can be found in <a href="https://gitlab.com/cable-mc/cobblemon/-/tree/main/common/src/main/resources/data/cobblemon/species?ref_type=heads">Cobblemon species file</a>.</p>
 <pre><code class="language-json">{
