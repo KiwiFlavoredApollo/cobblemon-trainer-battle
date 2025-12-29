@@ -80,9 +80,23 @@ public class RentalBattle extends AbstractPokemonBattle implements PokemonBattle
         }
 
         private List<? extends BattlePokemon> getBattleTeam() {
-            List<Pokemon> pokemon = RentalPokemonStorage.getInstance().get(player).stream().toList();
-            List<Pokemon> rental = pokemon.stream().map(this::applyPokemonProperty).toList();
-            return toPartyStore(rental).toBattleTeam(true, false, null);
+            List<Pokemon> pokemon = toPokemon(RentalPokemonStorage.getInstance().get(player));
+            return toPartyStore(pokemon).toBattleTeam(true, false, null);
+        }
+
+        private List<Pokemon> toPokemon(RentalPokemon rental) {
+            List<Pokemon> list = new ArrayList<>();
+
+            for (Pokemon pokemon : rental) {
+                Pokemon clone = pokemon.clone(true, true);
+                clone.setLevel(RentalBattle.LEVEL);
+                clone.heal();
+                PokemonProperties.Companion.parse("uncatchable=yes").apply(clone);
+
+                list.add(clone);
+            }
+
+            return list;
         }
 
         private PartyStore toPartyStore(List<Pokemon> pokemon) {
@@ -93,16 +107,6 @@ public class RentalBattle extends AbstractPokemonBattle implements PokemonBattle
             }
 
             return party;
-        }
-
-        private Pokemon applyPokemonProperty(Pokemon pokemon) {
-            Pokemon clone = pokemon.clone(true, true);
-
-            clone.setLevel(RentalBattle.LEVEL);
-            clone.heal();
-            PokemonProperties.Companion.parse("uncatchable=yes").apply(clone);
-
-            return clone;
         }
     }
 
