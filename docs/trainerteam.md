@@ -1,6 +1,6 @@
 # Trainer Team
 
-Trainer team files follow Showdown team JSON format. Additional attributes are available. Few attributes can be set Minecraft-friendly. Manually writing trainer team files can be quite painful, please consider using `/cobblemontrainerbattle export <player>` command to facilitate the process.
+Trainer team files follow Showdown team JSON format. Additional attributes are available. Few attributes can be set Minecraft-friendly. Manually writing trainer team files can be quite painful, please consider using `/exportpokemon` command to facilitate the process.
 
 ## Example
 
@@ -34,13 +34,61 @@ Trainer team files follow Showdown team JSON format. Additional attributes are a
 ]
 ```
 
+## Species
+
+### Random Pokemon
+
+```
+[
+  {
+    "species": "cobblemontrainerbattle:random"
+  }
+]
+```
+
 ## Relative Level
 
 - You need to set `level_mode` to `relative` in trainer preset file
 - Sets the trainer Pokémon level relative to player's maximum party level
-- If you set to `"level": 0`, then Pokémon will have same level as the player's maximum party level 
-- If you set to `"level": 2`, then Pokémon will have two levels above the player's maximum party level
-- If you set to `"level": -2`, then Pokémon will have two levels below the player's maximum party level
+
+### Example 1
+
+Pokémon will have same level as the player's maximum party level.
+
+```
+[
+  {
+    "species": "cobblemon:bulbasaur",
+    "level": 0
+  }
+]
+```
+
+### Example 2
+
+Pokémon will have two levels above the player's maximum party level.
+
+```
+[
+  {
+    "species": "cobblemon:bulbasaur",
+    "level": 2
+  }
+]
+```
+
+### Example 3
+
+Pokémon will have two levels below the player's maximum party level.
+
+```
+[
+  {
+    "species": "cobblemon:bulbasaur",
+    "level": -2
+  }
+]
+```
 
 ## Form Names
 
