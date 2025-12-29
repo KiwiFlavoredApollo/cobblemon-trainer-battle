@@ -1,167 +1,86 @@
 [
     {
-        "species": "Jumpluff",
+        "species": "Cherubi",
         "level": 1,
         "nature": "Timid",
         "ability": "Chlorophyll",
         "moves": [
-            "Giga Drain",
-            "Sleep Powder",
-            "Leech Seed",
-            "Sunny Day"
+            "Grass Knot",
+            "Growth",
+            "Dazzling Gleam",
+            "Safeguard"
         ],
         "ivs": {
-            "hp": 31,
-            "atk": 31,
-            "def": 31,
-            "spa": 31,
-            "spd": 31,
-            "spe": 31
-        },
-        "evs": {
-            "hp": 76,
-            "atk": 0,
-            "def": 44,
-            "spa": 128,
-            "spd": 8,
-            "spe": 252
-        }
-    },
-    {
-        "species": "Sunflora",
-        "level": 1,
-        "nature": "Timid",
-        "ability": "Solar Power",
-        "moves": [
-            "Solar Beam"
-        ],
-        "ivs": {
-            "hp": 31,
-            "atk": 31,
-            "def": 31,
-            "spa": 31,
-            "spd": 31,
-            "spe": 31
-        },
-        "evs": {
-            "hp": 6,
+            "hp": 0,
             "atk": 0,
             "def": 0,
-            "spa": 252,
+            "spa": 0,
             "spd": 0,
-            "spe": 252
-        }
-    },
-    {
-        "species": "Cherrim",
-        "level": 1,
-        "nature": "Mild",
-        "ability": "Flower Gift",
-        "moves": [
-            "Petal Blizzard",
-            "Solar Beam",
-            "Growth",
-            "Sunny Day"
-        ],
-        "ivs": {
-            "hp": 31,
-            "atk": 31,
-            "def": 31,
-            "spa": 31,
-            "spd": 31,
-            "spe": 31
+            "spe": 0
         },
         "evs": {
             "hp": 0,
-            "atk": 252,
-            "def": 0,
-            "spa": 252,
-            "spd": 0,
-            "spe": 6
-        }
-    },
-    {
-        "species": "Breloom",
-        "level": 1,
-        "nature": "Jolly",
-        "ability": "Poison Heal",
-        "moves": [
-            "Focus Punch",
-            "Leech Seed",
-            "Substitute",
-            "Spore"
-        ],
-        "ivs": {
-            "hp": 31,
-            "atk": 31,
-            "def": 31,
-            "spa": 31,
-            "spd": 31,
-            "spe": 31
-        },
-        "evs": {
-            "hp": 120,
-            "atk": 138,
+            "atk": 0,
             "def": 0,
             "spa": 0,
             "spd": 0,
-            "spe": 252
+            "spe": 0
         }
     },
     {
-        "species": "Torterra",
+        "species": "Turtwig",
         "level": 1,
-        "nature": "Adamant",
-        "ability": "Overgrow",
+        "nature": "Relaxed",
+        "ability": "Shell Armor",
         "moves": [
-            "Wood Hammer",
-            "Earthquake",
-            "Stone Edge",
-            "Iron Tail"
+            "Grass Knot",
+            "Razor Leaf",
+            "Reflect",
+            "Work Up"
         ],
         "ivs": {
-            "hp": 31,
-            "atk": 31,
-            "def": 31,
-            "spa": 31,
-            "spd": 31,
-            "spe": 31
-        },
-        "evs": {
-            "hp": 252,
-            "atk": 252,
+            "hp": 0,
+            "atk": 0,
             "def": 0,
             "spa": 0,
             "spd": 0,
-            "spe": 6
+            "spe": 0
+        },
+        "evs": {
+            "hp": 0,
+            "atk": 0,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
         }
     },
     {
         "species": "Roserade",
         "level": 1,
-        "nature": "Modest",
-        "ability": "Natural Cure",
+        "nature": "Timid",
+        "ability": "Technician",
         "moves": [
-            "Solar Beam",
-            "Sludge Bomb",
-            "Grassy Terrain",
-            "Sunny Day"
+            "Grass Knot",
+            "Petal Blizzard",
+            "Poison Sting",
+            "Stun Spore"
         ],
         "ivs": {
-            "hp": 31,
-            "atk": 31,
-            "def": 31,
-            "spa": 31,
-            "spd": 31,
-            "spe": 31
+            "hp": 0,
+            "atk": 15,
+            "def": 0,
+            "spa": 15,
+            "spd": 0,
+            "spe": 15
         },
         "evs": {
-            "hp": 6,
-            "atk": 0,
+            "hp": 0,
+            "atk": 36,
             "def": 0,
-            "spa": 252,
+            "spa": 36,
             "spd": 0,
-            "spe": 252
+            "spe": 36
         }
     }
 ]

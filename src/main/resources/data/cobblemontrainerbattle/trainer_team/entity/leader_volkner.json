@@ -1,170 +1,114 @@
 [
     {
-        "species": "Pelipper",
-        "level": 1,
-        "nature": "Modest",
-        "ability": "Drizzle",
-        "moves": [
-            "Hydro Pump",
-            "Hurricane",
-            "Ice Beam",
-            "U-turn"
-        ],
-        "ivs": {
-            "hp": 31,
-            "atk": 31,
-            "def": 31,
-            "spa": 31,
-            "spd": 31,
-            "spe": 31
-        },
-        "evs": {
-            "hp": 220,
-            "atk": 0,
-            "def": 0,
-            "spa": 252,
-            "spd": 36,
-            "spe": 0
-        }
-    },
-    {
         "species": "Raichu",
         "level": 1,
         "nature": "Timid",
-        "ability": "Lightning Rod",
+        "ability": "Static",
         "moves": [
-            "Thunder",
+            "Nuzzle",
+            "Volt Switch",
             "Surf",
-            "Focus Blast",
-            "Volt Switch"
+            "Charge Beam"
         ],
         "ivs": {
-            "hp": 31,
-            "atk": 31,
-            "def": 31,
-            "spa": 31,
-            "spd": 31,
-            "spe": 31
+            "hp": 11,
+            "atk": 0,
+            "def": 11,
+            "spa": 28,
+            "spd": 11,
+            "spe": 28
         },
         "evs": {
-            "hp": 6,
+            "hp": 12,
             "atk": 0,
-            "def": 0,
-            "spa": 252,
-            "spd": 0,
-            "spe": 252
+            "def": 12,
+            "spa": 160,
+            "spd": 12,
+            "spe": 160
+        }
+    },
+    {
+        "species": "Ambipom",
+        "level": 1,
+        "nature": "Naive",
+        "ability": "Technician",
+        "moves": [
+            "Fake Out",
+            "Thunderbolt",
+            "Double Hit",
+            "Last Resort"
+        ],
+        "ivs": {
+            "hp": 11,
+            "atk": 20,
+            "def": 11,
+            "spa": 20,
+            "spd": 11,
+            "spe": 28
+        },
+        "evs": {
+            "hp": 12,
+            "atk": 80,
+            "def": 12,
+            "spa": 80,
+            "spd": 12,
+            "spe": 160
+        }
+    },
+    {
+        "species": "Octillery",
+        "level": 1,
+        "nature": "Modest",
+        "ability": "Sniper",
+        "moves": [
+            "Octazooka",
+            "Focus Energy",
+            "Aurora Beam",
+            "Charge Beam"
+        ],
+        "ivs": {
+            "hp": 11,
+            "atk": 0,
+            "def": 11,
+            "spa": 28,
+            "spd": 11,
+            "spe": 28
+        },
+        "evs": {
+            "hp": 12,
+            "atk": 0,
+            "def": 12,
+            "spa": 160,
+            "spd": 12,
+            "spe": 160
         }
     },
     {
         "species": "Luxray",
         "level": 1,
-        "nature": "Adamant",
+        "nature": "Jolly",
         "ability": "Intimidate",
         "moves": [
+            "Thunder Fang",
             "Ice Fang",
-            "Play Rough",
-            "Volt Switch",
-            "Electric Terrain"
+            "Crunch",
+            "Iron Tail"
         ],
         "ivs": {
-            "hp": 31,
-            "atk": 31,
-            "def": 31,
-            "spa": 31,
-            "spd": 31,
-            "spe": 31
-        },
-        "evs": {
-            "hp": 6,
-            "atk": 252,
-            "def": 0,
+            "hp": 15,
+            "atk": 28,
+            "def": 15,
             "spa": 0,
             "spd": 0,
-            "spe": 252
-        }
-    },
-    {
-        "species": "Lanturn",
-        "level": 1,
-        "nature": "Modest",
-        "ability": "Volt Absorb",
-        "moves": [
-            "Thunder",
-            "Surf",
-            "Ice Beam",
-            "Volt Switch"
-        ],
-        "ivs": {
-            "hp": 31,
-            "atk": 31,
-            "def": 31,
-            "spa": 31,
-            "spd": 31,
-            "spe": 31
+            "spe": 30
         },
         "evs": {
-            "hp": 252,
-            "atk": 0,
-            "def": 0,
-            "spa": 252,
+            "hp": 28,
+            "atk": 160,
+            "def": 28,
+            "spa": 0,
             "spd": 0,
-            "spe": 6
-        }
-    },
-    {
-        "species": "Jolteon",
-        "level": 1,
-        "nature": "Modest",
-        "ability": "Quick Feet",
-        "moves": [
-            "Thunder",
-            "Reflect",
-            "Shadow Ball",
-            "Volt Switch"
-        ],
-        "ivs": {
-            "hp": 31,
-            "atk": 31,
-            "def": 31,
-            "spa": 31,
-            "spd": 31,
-            "spe": 31
-        },
-        "evs": {
-            "hp": 6,
-            "atk": 0,
-            "def": 0,
-            "spa": 252,
-            "spd": 0,
-            "spe": 252
-        }
-    },
-    {
-        "species": "Electivire",
-        "level": 1,
-        "nature": "Mild",
-        "ability": "Motor Drive",
-        "moves": [
-            "Thunder",
-            "Flamethrower",
-            "Cross Chop",
-            "Earthquake"
-        ],
-        "ivs": {
-            "hp": 31,
-            "atk": 31,
-            "def": 31,
-            "spa": 31,
-            "spd": 31,
-            "spe": 31
-        },
-        "evs": {
-            "hp": 6,
-            "atk": 252,
-            "def": 0,
-            "spa": 252,
-            "spd": 0,
-            "spe": 0
+            "spe": 200
         }
     }
 ]

@@ -1,70 +1,42 @@
 [
     {
-        "species": "Ninetales",
-        "level": 2,
-        "nature": "Timid",
-        "ability": "Drought",
-        "moves": [
-            "Flamethrower",
-            "Solar Beam",
-            "Hypnosis",
-            "Nasty Plot"
-        ],
-        "ivs": {
-            "hp": 31,
-            "atk": 0,
-            "def": 31,
-            "spa": 31,
-            "spd": 31,
-            "spe": 31
-        },
-        "evs": {
-            "hp": 0,
-            "atk": 0,
-            "def": 0,
-            "spa": 252,
-            "spd": 0,
-            "spe": 252
-        }
-    },
-    {
-        "species": "Houndoom",
-        "level": 2,
-        "nature": "Modest",
-        "ability": "Unnerve",
-        "moves": [
-            "Flamethrower",
-            "Dark Pulse",
-            "Destiny Bond",
-            "Nasty Plot"
-        ],
-        "ivs": {
-            "hp": 31,
-            "atk": 0,
-            "def": 31,
-            "spa": 31,
-            "spd": 31,
-            "spe": 31
-        },
-        "evs": {
-            "hp": 0,
-            "atk": 0,
-            "def": 0,
-            "spa": 252,
-            "spd": 0,
-            "spe": 252
-        }
-    },
-    {
         "species": "Rapidash",
         "level": 2,
         "nature": "Jolly",
         "ability": "Flame Body",
         "moves": [
-            "Flare Blitz",
+            "Flame Charge",
             "Iron Tail",
             "Poison Jab",
             "Hypnosis"
+        ],
+        "ivs": {
+            "hp": 25,
+            "atk": 31,
+            "def": 25,
+            "spa": 0,
+            "spd": 25,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 12,
+            "atk": 60,
+            "def": 12,
+            "spa": 0,
+            "spd": 12,
+            "spe": 204
+        }
+    },
+    {
+        "species": "Steelix",
+        "level": 2,
+        "nature": "Adamant",
+        "ability": "Sheer Force",
+        "moves": [
+            "Thunder Fang",
+            "Fire Fang",
+            "Iron Tail",
+            "Crunch"
         ],
         "ivs": {
             "hp": 31,
@@ -75,12 +47,68 @@
             "spe": 31
         },
         "evs": {
-            "hp": 0,
+            "hp": 12,
             "atk": 252,
+            "def": 0,
+            "spa": 12,
+            "spd": 12,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Drifblim",
+        "level": 2,
+        "nature": "Timid",
+        "ability": "Unburden",
+        "moves": [
+            "Strength Sap",
+            "Minimize",
+            "Baton Pass",
+            "Will-O-Wisp"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 0,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 12,
+            "atk": 60,
+            "def": 12,
+            "spa": 0,
+            "spd": 12,
+            "spe": 204
+        }
+    },
+    {
+        "species": "Lopunny",
+        "level": 2,
+        "nature": "Jolly",
+        "ability": "Cute Charm",
+        "moves": [
+            "Mirror Coat",
+            "High Jump Kick",
+            "Quick Attack",
+            "Fire Punch"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 31,
+            "def": 31,
+            "spa": 0,
+            "spd": 31,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 0,
             "def": 0,
             "spa": 0,
             "spd": 0,
-            "spe": 252
+            "spe": 0
         }
     },
     {
@@ -103,68 +131,12 @@
             "spe": 31
         },
         "evs": {
-            "hp": 0,
-            "atk": 252,
+            "hp": 12,
+            "atk": 60,
             "def": 0,
             "spa": 0,
             "spd": 0,
-            "spe": 252
-        }
-    },
-    {
-        "species": "Arcanine",
-        "level": 2,
-        "nature": "Jolly",
-        "ability": "Intimidate",
-        "moves": [
-            "Flare Blitz",
-            "Play Rough",
-            "Close Combat",
-            "Extreme Speed"
-        ],
-        "ivs": {
-            "hp": 31,
-            "atk": 31,
-            "def": 31,
-            "spa": 0,
-            "spd": 31,
-            "spe": 31
-        },
-        "evs": {
-            "hp": 6,
-            "atk": 252,
-            "def": 0,
-            "spa": 0,
-            "spd": 0,
-            "spe": 252
-        }
-    },
-    {
-        "species": "Magmortar",
-        "level": 2,
-        "nature": "Modest",
-        "ability": "Flame Body",
-        "moves": [
-            "Fire Blast",
-            "Thunderbolt",
-            "Focus Blast",
-            "Psychic"
-        ],
-        "ivs": {
-            "hp": 31,
-            "atk": 0,
-            "def": 31,
-            "spa": 31,
-            "spd": 31,
-            "spe": 31
-        },
-        "evs": {
-            "hp": 0,
-            "atk": 0,
-            "def": 0,
-            "spa": 252,
-            "spd": 0,
-            "spe": 252
+            "spe": 204
         }
     }
 ]

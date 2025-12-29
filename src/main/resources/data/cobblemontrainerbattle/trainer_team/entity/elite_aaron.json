@@ -1,58 +1,58 @@
 [
     {
-        "species": "Yanmega",
+        "species": "Dustox",
         "level": 2,
-        "nature": "Timid",
-        "ability": "Speed Boost",
+        "nature": "Bold",
+        "ability": "Shield Dust",
         "moves": [
+            "Toxic",
             "Bug Buzz",
-            "Air Slash",
-            "Detect",
-            "Ancient Power"
+            "Moonlight",
+            "Light Screen"
         ],
         "ivs": {
             "hp": 31,
             "atk": 0,
-            "def": 31,
-            "spa": 31,
-            "spd": 31,
-            "spe": 31
-        },
-        "evs": {
-            "hp": 0,
-            "atk": 0,
-            "def": 0,
-            "spa": 252,
-            "spd": 0,
-            "spe": 252
-        }
-    },
-    {
-        "species": "Scizor",
-        "level": 2,
-        "nature": "Adamant",
-        "ability": "Technician",
-        "moves": [
-            "Bullet Punch",
-            "X-Scissor",
-            "Night Slash",
-            "Swords Dance"
-        ],
-        "ivs": {
-            "hp": 31,
-            "atk": 31,
-            "def": 31,
-            "spa": 0,
-            "spd": 31,
+            "def": 21,
+            "spa": 21,
+            "spd": 21,
             "spe": 31
         },
         "evs": {
             "hp": 252,
-            "atk": 252,
-            "def": 0,
-            "spa": 0,
-            "spd": 0,
-            "spe": 0
+            "atk": 0,
+            "def": 12,
+            "spa": 12,
+            "spd": 12,
+            "spe": 12
+        }
+    },
+    {
+        "species": "Beautifly",
+        "level": 2,
+        "nature": "Modest",
+        "ability": "Swarm",
+        "moves": [
+            "Bug Buzz",
+            "Shadow Ball",
+            "Psychic",
+            "Quiver Dance"
+        ],
+        "ivs": {
+            "hp": 21,
+            "atk": 0,
+            "def": 21,
+            "spa": 31,
+            "spd": 21,
+            "spe": 31
+        },
+        "evs": {
+            "hp": 12,
+            "atk": 0,
+            "def": 12,
+            "spa": 60,
+            "spd": 12,
+            "spe": 204
         }
     },
     {
@@ -61,7 +61,7 @@
         "nature": "Adamant",
         "ability": "Unnerve",
         "moves": [
-            "Power Gem",
+            "Acrobatics",
             "Attack Order",
             "Aerial Ace",
             "Defend Order"
@@ -76,7 +76,7 @@
         },
         "evs": {
             "hp": 252,
-            "atk": 252,
+            "atk": 0,
             "def": 0,
             "spa": 0,
             "spd": 0,
@@ -92,51 +92,23 @@
             "Earthquake",
             "Rock Slide",
             "Facade",
-            "Close Combat"
+            "Brick Break"
         ],
         "ivs": {
-            "hp": 31,
+            "hp": 21,
             "atk": 31,
-            "def": 31,
+            "def": 21,
             "spa": 0,
-            "spd": 31,
+            "spd": 21,
             "spe": 31
         },
         "evs": {
-            "hp": 0,
-            "atk": 252,
-            "def": 0,
+            "hp": 12,
+            "atk": 60,
+            "def": 12,
             "spa": 0,
-            "spd": 0,
-            "spe": 252
-        }
-    },
-    {
-        "species": "Flygon",
-        "level": 2,
-        "nature": "Modest",
-        "ability": "Levitate",
-        "moves": [
-            "Dragon Pulse",
-            "Earth Power",
-            "Boomburst",
-            "Bug Buzz"
-        ],
-        "ivs": {
-            "hp": 31,
-            "atk": 0,
-            "def": 31,
-            "spa": 31,
-            "spd": 31,
-            "spe": 31
-        },
-        "evs": {
-            "hp": 6,
-            "atk": 0,
-            "def": 0,
-            "spa": 252,
-            "spd": 0,
-            "spe": 252
+            "spd": 12,
+            "spe": 204
         }
     },
     {
@@ -159,12 +131,12 @@
             "spe": 31
         },
         "evs": {
-            "hp": 6,
-            "atk": 252,
+            "hp": 12,
+            "atk": 60,
             "def": 0,
             "spa": 0,
             "spd": 0,
-            "spe": 252
+            "spe": 204
         }
     }
 ]

@@ -21,22 +21,22 @@
         "evs": {
             "hp": 252,
             "atk": 0,
-            "def": 0,
-            "spa": 0,
-            "spd": 0,
-            "spe": 252
+            "def": 12,
+            "spa": 12,
+            "spd": 12,
+            "spe": 12
         }
     },
     {
-        "species": "Espeon",
+        "species": "Girafarig",
         "level": 2,
-        "nature": "Timid",
-        "ability": "Magic Bounce",
+        "nature": "Calm",
+        "ability": "Sap Sipper",
         "moves": [
+            "Light Screen",
             "Psychic",
-            "Dazzling Gleam",
-            "Shadow Ball",
-            "Light Screen"
+            "Thunderbolt",
+            "Trick Room"
         ],
         "ivs": {
             "hp": 31,
@@ -44,27 +44,27 @@
             "def": 31,
             "spa": 31,
             "spd": 31,
-            "spe": 31
+            "spe": 0
         },
         "evs": {
-            "hp": 0,
+            "hp": 252,
             "atk": 0,
-            "def": 0,
-            "spa": 252,
-            "spd": 0,
-            "spe": 252
+            "def": 12,
+            "spa": 12,
+            "spd": 12,
+            "spe": 0
         }
     },
     {
-        "species": "Bronzong",
+        "species": "Medicham",
         "level": 2,
         "nature": "Brave",
-        "ability": "Levitate",
+        "ability": "Pure Power",
         "moves": [
-            "Gyro Ball",
-            "Earthquake",
-            "Payback",
-            "Rock Slide"
+            "Zen Headbutt",
+            "High Jump Kick",
+            "Thunder Punch",
+            "Ice Punch"
         ],
         "ivs": {
             "hp": 31,
@@ -75,7 +75,7 @@
             "spe": 0
         },
         "evs": {
-            "hp": 252,
+            "hp": 0,
             "atk": 252,
             "def": 0,
             "spa": 0,
@@ -91,7 +91,7 @@
         "moves": [
             "Nasty Plot",
             "Psychic",
-            "Dazzling Gleam",
+            "Future Sight",
             "Shock Wave"
         ],
         "ivs": {
@@ -106,49 +106,21 @@
             "hp": 0,
             "atk": 0,
             "def": 0,
-            "spa": 252,
+            "spa": 0,
             "spd": 0,
             "spe": 252
         }
     },
     {
-        "species": "Slowbro",
+        "species": "Bronzong",
         "level": 2,
-        "nature": "Bold",
-        "ability": "Regenerator",
+        "nature": "Brave",
+        "ability": "Levitate",
         "moves": [
-            "Scald",
-            "Psychic",
-            "Flamethrower",
-            "Slack Off"
-        ],
-        "ivs": {
-            "hp": 31,
-            "atk": 0,
-            "def": 31,
-            "spa": 31,
-            "spd": 31,
-            "spe": 0
-        },
-        "evs": {
-            "hp": 252,
-            "atk": 0,
-            "def": 252,
-            "spa": 6,
-            "spd": 0,
-            "spe": 0
-        }
-    },
-    {
-        "species": "Gallade",
-        "level": 2,
-        "nature": "Jolly",
-        "ability": "Justified",
-        "moves": [
-            "Close Combat",
-            "Psycho Cut",
-            "Poison Jab",
-            "Shadow Sneak"
+            "Gyro Ball",
+            "Earthquake",
+            "Payback",
+            "Trick Room"
         ],
         "ivs": {
             "hp": 31,
@@ -156,15 +128,15 @@
             "def": 31,
             "spa": 0,
             "spd": 31,
-            "spe": 31
+            "spe": 0
         },
         "evs": {
-            "hp": 6,
+            "hp": 12,
             "atk": 252,
             "def": 0,
             "spa": 0,
             "spd": 0,
-            "spe": 252
+            "spe": 0
         }
     }
 ]

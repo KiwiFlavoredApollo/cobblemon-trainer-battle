@@ -7,7 +7,7 @@
         "moves": [
             "Shadow Ball",
             "Dark Pulse",
-            "Will-O-Wisp",
+            "Psychic",
             "Sucker Punch"
         ],
         "ivs": {
@@ -28,43 +28,15 @@
         }
     },
     {
-        "species": "Porygon-Z",
+        "species": "Roserade",
         "level": 3,
         "nature": "Timid",
-        "ability": "Adaptability",
+        "ability": "Poison Point",
         "moves": [
-            "Hyper Beam",
-            "Shadow Ball",
-            "Ice Beam",
-            "Thunderbolt"
-        ],
-        "ivs": {
-            "hp": 31,
-            "atk": 0,
-            "def": 31,
-            "spa": 31,
-            "spd": 31,
-            "spe": 31
-        },
-        "evs": {
-            "hp": 6,
-            "atk": 0,
-            "def": 0,
-            "spa": 252,
-            "spd": 0,
-            "spe": 252
-        }
-    },
-    {
-        "species": "Togekiss",
-        "level": 3,
-        "nature": "Timid",
-        "ability": "Serene Grace",
-        "moves": [
-            "Air Slash",
             "Dazzling Gleam",
-            "Aura Sphere",
-            "Thunder Wave"
+            "Shadow Ball",
+            "Sludge Bomb",
+            "Energy Ball"
         ],
         "ivs": {
             "hp": 31,
@@ -75,40 +47,68 @@
             "spe": 31
         },
         "evs": {
-            "hp": 6,
+            "hp": 52,
             "atk": 0,
             "def": 0,
             "spa": 252,
             "spd": 0,
-            "spe": 252
+            "spe": 204
         }
     },
     {
-        "species": "Lucario",
+        "species": "Gastrodon",
         "level": 3,
-        "nature": "Jolly",
-        "ability": "Inner Focus",
+        "nature": "Relaxed",
+        "ability": "Storm Drain",
         "moves": [
-            "Close Combat",
-            "Meteor Mash",
+            "Scald",
             "Earthquake",
-            "Extreme Speed"
+            "Sludge Bomb",
+            "Rock Tomb"
         ],
         "ivs": {
             "hp": 31,
             "atk": 31,
             "def": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 252,
+            "atk": 0,
+            "def": 252,
             "spa": 0,
+            "spd": 6,
+            "spe": 0
+        }
+    },
+    {
+        "species": "Lucario",
+        "level": 3,
+        "nature": "Timid",
+        "ability": "Inner Focus",
+        "moves": [
+            "Aura Sphere",
+            "Dragon Pulse",
+            "Flash Cannon",
+            "Nasty Plot"
+        ],
+        "ivs": {
+            "hp": 31,
+            "atk": 0,
+            "def": 31,
+            "spa": 31,
             "spd": 31,
             "spe": 31
         },
         "evs": {
-            "hp": 6,
-            "atk": 252,
+            "hp": 52,
+            "atk": 0,
             "def": 0,
-            "spa": 0,
+            "spa": 252,
             "spd": 0,
-            "spe": 252
+            "spe": 204
         }
     },
     {
@@ -159,12 +159,12 @@
             "spe": 31
         },
         "evs": {
-            "hp": 6,
+            "hp": 52,
             "atk": 252,
             "def": 0,
             "spa": 0,
             "spd": 0,
-            "spe": 252
+            "spe": 204
         }
     }
 ]

@@ -1,170 +1,86 @@
 [
     {
-        "species": "Politoed",
-        "level": 1,
-        "nature": "Timid",
-        "ability": "Drizzle",
-        "moves": [
-            "Surf",
-            "Ice Beam",
-            "Focus Blast",
-            "Perish Song"
-        ],
-        "ivs": {
-            "hp": 31,
-            "atk": 31,
-            "def": 31,
-            "spa": 31,
-            "spd": 31,
-            "spe": 31
-        },
-        "evs": {
-            "hp": 6,
-            "atk": 0,
-            "def": 0,
-            "spa": 252,
-            "spd": 0,
-            "spe": 252
-        }
-    },
-    {
-        "species": "Kingdra",
-        "level": 1,
-        "nature": "Timid",
-        "ability": "Swift Swim",
-        "moves": [
-            "Hydro Pump",
-            "Dragon Pulse",
-            "Ice Beam",
-            "Rest"
-        ],
-        "ivs": {
-            "hp": 31,
-            "atk": 31,
-            "def": 31,
-            "spa": 31,
-            "spd": 31,
-            "spe": 31
-        },
-        "evs": {
-            "hp": 6,
-            "atk": 0,
-            "def": 0,
-            "spa": 252,
-            "spd": 0,
-            "spe": 252
-        }
-    },
-    {
-        "species": "Ludicolo",
-        "level": 1,
-        "nature": "Modest",
-        "ability": "Swift Swim",
-        "moves": [
-            "Energy Ball",
-            "Hydro Pump",
-            "Substitute",
-            "Teeter Dance"
-        ],
-        "ivs": {
-            "hp": 31,
-            "atk": 31,
-            "def": 31,
-            "spa": 31,
-            "spd": 31,
-            "spe": 31
-        },
-        "evs": {
-            "hp": 6,
-            "atk": 0,
-            "def": 0,
-            "spa": 252,
-            "spd": 0,
-            "spe": 252
-        }
-    },
-    {
-        "species": "Huntail",
-        "level": 1,
-        "nature": "Jolly",
-        "ability": "Swift Swim",
-        "moves": [
-            "Crunch",
-            "Aqua Tail",
-            "Ice Fang",
-            "Shell Smash"
-        ],
-        "ivs": {
-            "hp": 31,
-            "atk": 31,
-            "def": 31,
-            "spa": 31,
-            "spd": 31,
-            "spe": 31
-        },
-        "evs": {
-            "hp": 6,
-            "atk": 252,
-            "def": 0,
-            "spa": 0,
-            "spd": 0,
-            "spe": 252
-        }
-    },
-    {
         "species": "Gyarados",
         "level": 1,
         "nature": "Jolly",
         "ability": "Intimidate",
         "moves": [
-            "Aqua Tail",
-            "Stone Edge",
-            "Earthquake",
-            "Dragon Dance"
+            "Brine",
+            "Ice Fang",
+            "Crunch",
+            "Flail"
         ],
         "ivs": {
-            "hp": 31,
-            "atk": 31,
-            "def": 31,
-            "spa": 31,
-            "spd": 31,
-            "spe": 31
-        },
-        "evs": {
-            "hp": 6,
-            "atk": 252,
+            "hp": 16,
+            "atk": 16,
             "def": 0,
             "spa": 0,
             "spd": 0,
-            "spe": 252
+            "spe": 16
+        },
+        "evs": {
+            "hp": 40,
+            "atk": 56,
+            "def": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 40
+        }
+    },
+    {
+        "species": "Quagsire",
+        "level": 1,
+        "nature": "Quiet",
+        "ability": "Damp",
+        "moves": [
+            "Rain Dance",
+            "Haze",
+            "Mud Shot",
+            "Scald"
+        ],
+        "ivs": {
+            "hp": 16,
+            "atk": 16,
+            "def": 5,
+            "spa": 16,
+            "spd": 5,
+            "spe": 0
+        },
+        "evs": {
+            "hp": 40,
+            "atk": 40,
+            "def": 4,
+            "spa": 56,
+            "spd": 4,
+            "spe": 0
         }
     },
     {
         "species": "Floatzel",
         "level": 1,
-        "nature": "Jolly",
+        "nature": "Adamant",
         "ability": "Swift Swim",
         "moves": [
-            "Aqua Tail",
-            "Brick Break",
-            "Crunch",
-            "Ice Fang"
+            "Brine",
+            "Ice Fang",
+            "Bite",
+            "Aqua Jet"
         ],
         "ivs": {
-            "hp": 31,
-            "atk": 31,
-            "def": 31,
-            "spa": 31,
-            "spd": 31,
-            "spe": 31
+            "hp": 0,
+            "atk": 17,
+            "def": 0,
+            "spa": 17,
+            "spd": 0,
+            "spe": 17
         },
         "evs": {
-            "hp": 6,
-            "atk": 252,
+            "hp": 0,
+            "atk": 84,
             "def": 0,
-            "spa": 0,
+            "spa": 20,
             "spd": 0,
-            "spe": 252
+            "spe": 84
         }
     }
 ]

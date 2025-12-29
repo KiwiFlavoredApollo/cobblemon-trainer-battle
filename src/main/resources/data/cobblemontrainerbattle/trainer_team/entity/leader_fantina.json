@@ -2,141 +2,29 @@
     {
         "species": "Drifblim",
         "level": 1,
-        "nature": "Modest",
-        "ability": "Flare Boost",
-        "moves": [
-            "Shadow Ball",
-            "Thunderbolt",
-            "Psychic",
-            "Strength Sap"
-        ],
-        "ivs": {
-            "hp": 31,
-            "atk": 31,
-            "def": 31,
-            "spa": 31,
-            "spd": 31,
-            "spe": 31
-        },
-        "evs": {
-            "hp": 6,
-            "atk": 0,
-            "def": 0,
-            "spa": 252,
-            "spd": 0,
-            "spe": 252
-        }
-    },
-    {
-        "species": "Banette",
-        "level": 1,
-        "nature": "Adamant",
-        "ability": "Cursed Body",
-        "moves": [
-            "Shadow Sneak",
-            "Sucker Punch",
-            "Snatch",
-            "Trick"
-        ],
-        "ivs": {
-            "hp": 31,
-            "atk": 31,
-            "def": 31,
-            "spa": 31,
-            "spd": 31,
-            "spe": 31
-        },
-        "evs": {
-            "hp": 244,
-            "atk": 252,
-            "def": 0,
-            "spa": 0,
-            "spd": 0,
-            "spe": 12
-        }
-    },
-    {
-        "species": "Dusknoir",
-        "level": 1,
-        "nature": "Adamant",
-        "ability": "Pressure",
-        "moves": [
-            "Shadow Sneak",
-            "Earthquake",
-            "Will-O-Wisp",
-            "Confuse Ray"
-        ],
-        "ivs": {
-            "hp": 31,
-            "atk": 31,
-            "def": 31,
-            "spa": 31,
-            "spd": 31,
-            "spe": 31
-        },
-        "evs": {
-            "hp": 248,
-            "atk": 252,
-            "def": 4,
-            "spa": 0,
-            "spd": 4,
-            "spe": 0
-        }
-    },
-    {
-        "species": "Mismagius",
-        "level": 1,
         "nature": "Timid",
-        "ability": "Levitate",
+        "ability": "Aftermath",
         "moves": [
-            "Shadow Ball",
-            "Energy Ball",
-            "Mystical Fire",
-            "Dazzling Gleam"
-        ],
-        "ivs": {
-            "hp": 31,
-            "atk": 31,
-            "def": 31,
-            "spa": 31,
-            "spd": 31,
-            "spe": 31
-        },
-        "evs": {
-            "hp": 6,
-            "atk": 0,
-            "def": 0,
-            "spa": 252,
-            "spd": 0,
-            "spe": 252
-        }
-    },
-    {
-        "species": "Froslass",
-        "level": 1,
-        "nature": "Timid",
-        "ability": "Cursed Body",
-        "moves": [
+            "Strength Sap",
             "Hex",
-            "Frost Breath",
-            "Will-O-Wisp",
-            "Destiny Bond"
+            "Fly",
+            "Will-O-Wisp"
         ],
         "ivs": {
-            "hp": 31,
-            "atk": 31,
-            "def": 31,
-            "spa": 31,
-            "spd": 31,
-            "spe": 31
+            "hp": 19,
+            "atk": 0,
+            "def": 5,
+            "spa": 19,
+            "spd": 5,
+            "spe": 19
         },
         "evs": {
-            "hp": 6,
+            "hp": 52,
             "atk": 0,
-            "def": 0,
-            "spa": 252,
-            "spd": 0,
-            "spe": 252
+            "def": 4,
+            "spa": 68,
+            "spd": 4,
+            "spe": 52
         }
     },
     {
@@ -145,26 +33,54 @@
         "nature": "Timid",
         "ability": "Cursed Body",
         "moves": [
-            "Hex",
+            "Shadow Claw",
+            "Confuse Ray",
             "Sludge Bomb",
-            "Focus Blast",
-            "Toxic"
+            "Dazzling Gleam"
         ],
         "ivs": {
-            "hp": 31,
-            "atk": 31,
-            "def": 31,
-            "spa": 31,
-            "spd": 31,
-            "spe": 31
+            "hp": 19,
+            "atk": 0,
+            "def": 5,
+            "spa": 19,
+            "spd": 5,
+            "spe": 19
         },
         "evs": {
-            "hp": 6,
+            "hp": 52,
             "atk": 0,
-            "def": 0,
-            "spa": 252,
-            "spd": 0,
-            "spe": 252
+            "def": 4,
+            "spa": 76,
+            "spd": 4,
+            "spe": 68
+        }
+    },
+    {
+        "species": "Mismagius",
+        "level": 1,
+        "nature": "Timid",
+        "ability": "Levitate",
+        "moves": [
+            "Confuse Ray",
+            "Phantom Force",
+            "Magical Leaf",
+            "Dazzling Gleam"
+        ],
+        "ivs": {
+            "hp": 19,
+            "atk": 0,
+            "def": 5,
+            "spa": 19,
+            "spd": 5,
+            "spe": 19
+        },
+        "evs": {
+            "hp": 44,
+            "atk": 0,
+            "def": 4,
+            "spa": 92,
+            "spd": 4,
+            "spe": 68
         }
     }
 ]
