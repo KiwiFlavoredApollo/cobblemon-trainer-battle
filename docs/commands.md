@@ -24,9 +24,10 @@ JSON file will be exported to `<world>/cobblemontrainerbattle/showdown_team`. Wh
 cobblemontrainerbattle.migrateitem
 ```
 
-Following items in the inventory will be migrated:
-- Neutral Trainer Spawn Egg to Trainer Spawn Egg
-- Static Trainer Spawn Egg to Mannequin Spawn Egg
+Migrates items in the inventory.
+
+- to Trainer Spawn Egg from Neutral Trainer Spawn Egg
+- to Mannequin Spawn Egg from Static Trainer Spawn Egg
 
 ## Trainer Battle
 
