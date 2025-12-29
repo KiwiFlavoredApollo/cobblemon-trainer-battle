@@ -150,7 +150,7 @@ public abstract class AbstractPokemonBattle implements PokemonBattle {
     private boolean isEqualSpecies(Pokemon party, ShowdownPokemon showdown) {
         try {
             Identifier p = party.getSpecies().getResourceIdentifier();
-            Identifier r = ShowdownPokemonParser.toSpecies(showdown).getResourceIdentifier();
+            Identifier r = ShowdownPokemonParser.toSpecies(showdown.species).getResourceIdentifier();
             return p.equals(r);
 
         } catch (NullPointerException e) {
@@ -173,11 +173,11 @@ public abstract class AbstractPokemonBattle implements PokemonBattle {
     private String toPokemonSpecies(ShowdownPokemon pokemon) {
         try {
             if (pokemon.form == null) {
-                Species species = ShowdownPokemonParser.toSpecies(pokemon);
+                Species species = ShowdownPokemonParser.toSpecies(pokemon.species);
                 return species.getTranslatedName().getString();
 
             } else {
-                Species species = ShowdownPokemonParser.toSpecies(pokemon);
+                Species species = ShowdownPokemonParser.toSpecies(pokemon.species);
                 return species.getTranslatedName().append(" ").append(pokemon.form).getString();
             }
 

@@ -118,8 +118,8 @@ public class TrainerTemplateStorage implements SimpleSynchronousResourceReloadLi
     private TrainerTeam getTrainerTeam(Map.Entry<Identifier, TrainerPreset> entry) {
         try {
             TrainerPreset preset = entry.getValue();
-            Identifier identifier = Objects.requireNonNull(toDefaultedIdentifier(preset.team));
-            return this.team.get(identifier);
+            Identifier identifier = toDefaultedIdentifier(preset.team);
+            return Objects.requireNonNull(this.team.get(identifier));
 
         } catch (NullPointerException e) {
             return new TrainerTeam();

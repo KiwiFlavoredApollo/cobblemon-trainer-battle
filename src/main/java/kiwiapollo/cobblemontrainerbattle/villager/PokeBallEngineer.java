@@ -7,8 +7,8 @@ import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.block.PokeBallBoxBlockEntity;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
 import kiwiapollo.cobblemontrainerbattle.item.misc.FilledPokeBall;
+import kiwiapollo.cobblemontrainerbattle.pokemon.CobblemonPokemonParser;
 import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemon;
-import kiwiapollo.cobblemontrainerbattle.template.PokemonLevelPair;
 import kiwiapollo.cobblemontrainerbattle.template.PokemonType;
 import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplate;
 import net.minecraft.block.entity.BlockEntity;
@@ -37,7 +37,7 @@ public class PokeBallEngineer {
 
         public TrainerTemplate create() {
             return new TrainerTemplate(
-                    createTeam(),
+                    createTrainerTeam(),
 
                     createIdentifier(),
                     createDisplayName(),
@@ -83,14 +83,14 @@ public class PokeBallEngineer {
             );
         }
 
-        private List<PokemonLevelPair> createTeam() {
-            List<PokemonLevelPair> pair = new ArrayList<>();
+        private List<ShowdownPokemon> createTrainerTeam() {
+            List<ShowdownPokemon> team = new ArrayList<>();
 
             for (Pokemon pokemon : getPokemon(villager)) {
-                pair.add(new PokemonLevelPair(pokemon, pokemon.getLevel()));
+                team.add(new CobblemonPokemonParser().toShowdownPokemon(pokemon));
             }
 
-            return pair;
+            return team;
         }
 
         private List<Pokemon> getPokemon(VillagerEntity villager) {

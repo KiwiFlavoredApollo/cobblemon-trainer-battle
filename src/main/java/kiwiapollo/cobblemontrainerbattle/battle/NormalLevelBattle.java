@@ -10,7 +10,9 @@ import com.mojang.brigadier.CommandDispatcher;
 import kiwiapollo.cobblemontrainerbattle.advancement.CustomCriteria;
 import kiwiapollo.cobblemontrainerbattle.entity.PokemonTrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
-import kiwiapollo.cobblemontrainerbattle.template.PokemonLevelPair;
+import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
+import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemon;
+import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemonParser;
 import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplate;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.MinecraftServer;
@@ -18,6 +20,7 @@ import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
@@ -273,9 +276,28 @@ public class NormalLevelBattle extends AbstractPokemonBattle {
         }
 
         private List<BattlePokemon> getBattleTeam() {
-            List<Pokemon> pokemon = trainer.getTeam().stream().map(this::toPokemon).toList();
-            List<Pokemon> normal = pokemon.stream().map(this::applyPokemonProperty).toList();
-            return toPartyStore(normal).toBattleTeam(true, true, null);
+            List<Pokemon> pokemon = toPokemon(trainer.getTeam());
+            return toPartyStore(pokemon).toBattleTeam(true, true, null);
+        }
+
+        private List<Pokemon> toPokemon(List<ShowdownPokemon> team) {
+            List<Pokemon> list = new ArrayList<>();
+
+            for (ShowdownPokemon showdown : team) {
+                try {
+                    Pokemon pokemon = new ShowdownPokemonParser().toCobblemonPokemon(showdown);
+                    pokemon.setLevel(showdown.level);
+                    pokemon.heal();
+                    PokemonProperties.Companion.parse("uncatchable=yes").apply(pokemon);
+
+                    list.add(pokemon);
+
+                } catch (PokemonParseException ignored) {
+
+                }
+            }
+
+            return list;
         }
 
         private PartyStore toPartyStore(List<Pokemon> pokemon) {
@@ -286,21 +308,6 @@ public class NormalLevelBattle extends AbstractPokemonBattle {
             }
 
             return party;
-        }
-
-        private Pokemon applyPokemonProperty(Pokemon pokemon) {
-            Pokemon clone = pokemon.clone(true, true);
-
-            clone.heal();
-            PokemonProperties.Companion.parse("uncatchable=yes").apply(clone);
-
-            return pokemon;
-        }
-
-        private Pokemon toPokemon(PokemonLevelPair pair) {
-            Pokemon pokemon = pair.getPokemon().clone(true, true);
-            pokemon.setLevel(pair.getLevel());
-            return pokemon;
         }
 
         private LivingEntity getEntity() {

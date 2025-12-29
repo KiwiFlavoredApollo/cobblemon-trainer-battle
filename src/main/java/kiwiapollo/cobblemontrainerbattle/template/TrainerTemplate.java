@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.UUID;
 
 public class TrainerTemplate {
-    private final List<PokemonLevelPair> team;
+    private final List<ShowdownPokemon> team;
 
     private final Identifier identifier;
     private final String displayName;
@@ -56,7 +56,7 @@ public class TrainerTemplate {
     private final List<String> allowedMove;
 
     public TrainerTemplate(
-            List<PokemonLevelPair> team,
+            List<ShowdownPokemon> team,
 
             Identifier identifier,
             String displayName,
@@ -146,7 +146,7 @@ public class TrainerTemplate {
         this.allowedMove = allowedMove;
     }
 
-    public List<PokemonLevelPair> getTeam() {
+    public List<ShowdownPokemon> getTeam() {
         return team;
     }
 

@@ -21,27 +21,27 @@ import java.util.function.BiConsumer;
 public class ShowdownPokemonParser {
     private static final int DEFAULT_LEVEL = 50;
 
-    public Pokemon toCobblemonPokemon(ShowdownPokemon showdownPokemon) throws PokemonParseException {
-        Pokemon pokemon = createBasePokemon(showdownPokemon);
+    public Pokemon toCobblemonPokemon(ShowdownPokemon showdown) throws PokemonParseException {
+        Pokemon cobblemon = createPokemon(showdown.species);
 
-        setPokemonForm(pokemon, getFormName(showdownPokemon.species, showdownPokemon.form));
-        setPokemonShiny(pokemon, showdownPokemon.shiny);
-        setPokemonStats(pokemon::setEV, showdownPokemon.evs);
-        setPokemonStats(pokemon::setIV, showdownPokemon.ivs);
-        setPokemonGender(pokemon, showdownPokemon.gender);
-        setPokemonMoveSet(pokemon, showdownPokemon.moves);
-        setPokemonHeldItem(pokemon, showdownPokemon.item);
-        setPokemonAbility(pokemon, showdownPokemon.ability);
-        setPokemonLevel(pokemon, showdownPokemon.level);
-        setPokemonNature(pokemon, showdownPokemon.nature);
-        setPokemonUncatchable(pokemon);
+        setPokemonForm(cobblemon, getFormName(showdown.species, showdown.form));
+        setPokemonShiny(cobblemon, showdown.shiny);
+        setPokemonStats(cobblemon::setEV, showdown.evs);
+        setPokemonStats(cobblemon::setIV, showdown.ivs);
+        setPokemonGender(cobblemon, showdown.gender);
+        setPokemonMoveSet(cobblemon, showdown.moves);
+        setPokemonHeldItem(cobblemon, showdown.item);
+        setPokemonAbility(cobblemon, showdown.ability);
+        setPokemonLevel(cobblemon, showdown.level);
+        setPokemonNature(cobblemon, showdown.nature);
+        setPokemonUncatchable(cobblemon);
 
-        return pokemon;
+        return cobblemon;
     }
 
-    private Pokemon createBasePokemon(ShowdownPokemon pokemon) throws PokemonParseException {
+    private Pokemon createPokemon(String species) throws PokemonParseException {
         try {
-            return toSpecies(pokemon).create(DEFAULT_LEVEL);
+            return ShowdownPokemonParser.toSpecies(species).create(DEFAULT_LEVEL);
 
         } catch (ClassCastException | NullPointerException e) {
             throw new PokemonParseException();
@@ -171,15 +171,19 @@ public class ShowdownPokemonParser {
         return moves == null || moves.isEmpty();
     }
 
-    public static Species toSpecies(ShowdownPokemon pokemon) {
-        if (Objects.equals(pokemon.species, "cobblemontrainerbattle:random")) {
+    public static Species toSpecies(String species) {
+        if (isRandomSpecies(species)) {
             return PokemonSpecies.INSTANCE.random();
 
         } else {
-            String string = removeFormName(pokemon.species);
+            String string = removeFormName(species);
             Identifier identifier = toSpeciesIdentifier(string);
             return PokemonSpecies.INSTANCE.getByIdentifier(identifier);
         }
+    }
+
+    private static boolean isRandomSpecies(String species) {
+        return species.equals(Identifier.of(CobblemonTrainerBattle.MOD_ID, "random").toString());
     }
 
     private static Identifier toSpeciesIdentifier(String string) {

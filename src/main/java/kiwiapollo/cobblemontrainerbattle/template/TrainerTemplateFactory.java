@@ -1,17 +1,13 @@
 package kiwiapollo.cobblemontrainerbattle.template;
 
 import com.cobblemon.mod.common.battles.BattleFormat;
-import com.cobblemon.mod.common.pokemon.Pokemon;
 import kiwiapollo.cobblemontrainerbattle.CobblemonTrainerBattle;
 import kiwiapollo.cobblemontrainerbattle.battle.BattleFormatFactory;
 import kiwiapollo.cobblemontrainerbattle.common.LevelMode;
-import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
 import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemon;
-import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemonParser;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -28,7 +24,7 @@ public class TrainerTemplateFactory {
 
     public TrainerTemplate create() {
         return new TrainerTemplate(
-                toPokemonLevelPair(team),
+                toTrainerTeam(team),
 
                 toIdentifier(identifier),
                 toDisplayName(preset.displayName),
@@ -74,20 +70,8 @@ public class TrainerTemplateFactory {
         );
     }
 
-    private List<PokemonLevelPair> toPokemonLevelPair(TrainerTeam team) {
-        List<PokemonLevelPair> pair = new ArrayList<>();
-
-        for (ShowdownPokemon showdown : team) {
-            try {
-                Pokemon pokemon = new ShowdownPokemonParser().toCobblemonPokemon(showdown);
-                pair.add(new PokemonLevelPair(pokemon, showdown.level));
-
-            } catch (PokemonParseException ignored) {
-
-            }
-        }
-
-        return pair;
+    private List<ShowdownPokemon> toTrainerTeam(TrainerTeam team) {
+        return team;
     }
 
     private Identifier toIdentifier(Identifier identifier) {

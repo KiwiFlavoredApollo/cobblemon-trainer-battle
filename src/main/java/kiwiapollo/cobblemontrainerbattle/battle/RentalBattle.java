@@ -1,7 +1,6 @@
 package kiwiapollo.cobblemontrainerbattle.battle;
 
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
-import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
 import com.cobblemon.mod.common.api.storage.party.PartyStore;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
@@ -9,7 +8,9 @@ import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.mojang.brigadier.CommandDispatcher;
 import kiwiapollo.cobblemontrainerbattle.entity.PokemonTrainerEntity;
 import kiwiapollo.cobblemontrainerbattle.exception.BattleStartException;
-import kiwiapollo.cobblemontrainerbattle.template.PokemonLevelPair;
+import kiwiapollo.cobblemontrainerbattle.exception.PokemonParseException;
+import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemon;
+import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemonParser;
 import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplate;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.MinecraftServer;
@@ -146,7 +147,7 @@ public class RentalBattle extends AbstractPokemonBattle implements PokemonBattle
         }
 
         private List<Pokemon> getRentalPokemon(TrainerTemplate trainer) {
-            return new ArrayList<>(trainer.getTeam().stream().map(this::toPokemon).toList());
+            return toPokemon(trainer.getTeam());
         }
 
         public TrainerBattleActor create() {
@@ -169,18 +170,27 @@ public class RentalBattle extends AbstractPokemonBattle implements PokemonBattle
         }
 
         private List<BattlePokemon> getBattleTeam() {
-            List<Pokemon> rental = pokemon.stream().map(this::applyPokemonProperty).toList();
-            return toPartyStore(rental).toBattleTeam(true, true, null);
+            return toPartyStore(pokemon).toBattleTeam(true, true, null);
         }
 
-        private Pokemon applyPokemonProperty(Pokemon pokemon) {
-            Pokemon clone = pokemon.clone(true, true);
+        private List<Pokemon> toPokemon(List<ShowdownPokemon> team) {
+            List<Pokemon> list = new ArrayList<>();
 
-            clone.setLevel(RentalBattle.LEVEL);
-            clone.heal();
-            PokemonProperties.Companion.parse("uncatchable=yes").apply(clone);
+            for (ShowdownPokemon showdown : team) {
+                try {
+                    Pokemon pokemon = new ShowdownPokemonParser().toCobblemonPokemon(showdown);
+                    pokemon.setLevel(RentalBattle.LEVEL);
+                    pokemon.heal();
+                    PokemonProperties.Companion.parse("uncatchable=yes").apply(pokemon);
 
-            return clone;
+                    list.add(pokemon);
+
+                } catch (PokemonParseException ignored) {
+
+                }
+            }
+
+            return list;
         }
 
         private PartyStore toPartyStore(List<Pokemon> pokemon) {
@@ -191,12 +201,6 @@ public class RentalBattle extends AbstractPokemonBattle implements PokemonBattle
             }
 
             return party;
-        }
-
-        private Pokemon toPokemon(PokemonLevelPair pair) {
-            Pokemon pokemon = pair.getPokemon().clone(true, true);
-            pokemon.setLevel(pair.getLevel());
-            return pokemon;
         }
 
         private LivingEntity getEntity() {
@@ -257,15 +261,6 @@ public class RentalBattle extends AbstractPokemonBattle implements PokemonBattle
             TradablePokemonStorage.getInstance().get(player).setFirst(pokemon.get(0));
             TradablePokemonStorage.getInstance().get(player).setSecond(pokemon.get(1));
             TradablePokemonStorage.getInstance().get(player).setThird(pokemon.get(2));
-        }
-
-        private List<Pokemon> toPokemon(List<PokemonLevelPair> pair) {
-            List<Pokemon> clone = pair.stream().map(p -> p.getPokemon().clone(true, true)).toList();
-
-            clone.forEach(p -> p.setLevel(RentalBattle.LEVEL));
-            clone.forEach(Pokemon::heal);
-
-            return clone;
         }
     }
 }
