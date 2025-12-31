@@ -14,7 +14,8 @@ Followings will be removed in the future. These can still be used in 1.11.x but 
 
 ## Poke Ball Engineer
 
-Following will be removed:
+The following will be removed:
+
 - Poke Ball Box
 - Filled Poke Ball
 - Empty Poke Ball
