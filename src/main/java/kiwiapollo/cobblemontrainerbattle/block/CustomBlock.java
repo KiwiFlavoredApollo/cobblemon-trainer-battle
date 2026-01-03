@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomBlock {
-    public static final List<Block> all = new ArrayList<>();
+    private static final List<Block> all = new ArrayList<>();
 
     public static final Block POKE_BALL_BOX = register("poke_ball_box", new PokeBallBox());
 
