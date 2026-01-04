@@ -38,6 +38,7 @@ public abstract class ShowdownTeamExporter implements Command<ServerCommandSourc
             List<ShowdownPokemon> pokemon = getShowdownPokemon(player);
             File file = getShowdownTeamFile(player);
 
+            Files.createDirectories(file.getParentFile().toPath());
             writeShowdownTeamFile(pokemon, file);
 
             player.sendMessage(getExportPokemonSuccessMessage(player));
@@ -54,8 +55,6 @@ public abstract class ShowdownTeamExporter implements Command<ServerCommandSourc
 
     private void writeShowdownTeamFile(List<ShowdownPokemon> pokemon, File file) throws IOException {
         try (FileWriter writer = new FileWriter(file)) {
-            Files.createDirectories(file.getParentFile().toPath());
-
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             gson.toJson(gson.toJsonTree(pokemon), writer);
         }
