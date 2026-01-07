@@ -13,6 +13,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import java.util.List;
+
 @Mixin(IdentifierArgumentType.class)
 public class IdentifierArgumentTypeMixin {
     @Inject(method = "parse", at = @At("HEAD"), cancellable = true)
@@ -27,7 +29,14 @@ public class IdentifierArgumentTypeMixin {
     }
 
     private boolean isTrainerBattleCommand(StringReader reader) {
-        return reader.getString().matches("^(trainerbattle|rentalbattle) .+");
+        List<String> commands = List.of(
+                "^trainerbattle .+",
+                "^trainerbattleother .+",
+                "^rentalbattle .+",
+                "^rentalbattleother .+"
+        );
+
+        return commands.stream().anyMatch(reader.getString()::matches);
     }
 
     private Identifier parseDefaultedIdentifierArgument(StringReader reader) throws CommandSyntaxException {
