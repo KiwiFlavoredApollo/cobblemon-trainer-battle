@@ -78,7 +78,15 @@ public abstract class AbstractPokemonBattle implements PokemonBattle {
     }
 
     protected boolean isTrainerRematchAllowed() {
+        return isTrainerRematchAllowed(trainer) || !isTrainerDefeatedByPlayer(trainer, player);
+    }
+
+    private boolean isTrainerRematchAllowed(TrainerBattleActor trainer) {
         return trainer.isRematchAllowed();
+    }
+
+    private boolean isTrainerDefeatedByPlayer(TrainerBattleActor trainer, PlayerBattleActor player) {
+        return BattleHistoryStorage.getInstance().get(player.getUuid(), trainer.getIdentifier()).getVictoryCount() != 0;
     }
 
     protected boolean isTrainerCooldownElapsed() {
