@@ -9,7 +9,6 @@ import kiwiapollo.cobblemontrainerbattle.item.*;
 import kiwiapollo.cobblemontrainerbattle.template.TrainerTemplateStorage;
 import kiwiapollo.cobblemontrainerbattle.event.*;
 import kiwiapollo.cobblemontrainerbattle.loot.CustomLootConditionType;
-import kiwiapollo.cobblemontrainerbattle.pokemon.FormAspectProvider;
 import kiwiapollo.cobblemontrainerbattle.sound.*;
 import kiwiapollo.cobblemontrainerbattle.villager.CustomVillagerProfession;
 import net.fabricmc.api.ModInitializer;
@@ -43,8 +42,6 @@ public class CobblemonTrainerBattle implements ModInitializer {
         CustomScreenHandlerType.initialize();
 
         CustomEventHandler.initialize();
-
-        FormAspectProvider.initialize();
 
         TrainerTemplateStorage.initialize();
 	}

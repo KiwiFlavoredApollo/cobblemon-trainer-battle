@@ -21,6 +21,29 @@ import java.util.function.BiConsumer;
 public class ShowdownPokemonParser {
     private static final int DEFAULT_LEVEL = 50;
 
+    private static final Map<String, Set<String>> FORMS = Map.ofEntries(
+            Map.entry("Alola", Set.of("alolan=true")),
+            Map.entry("Alola Bias", Set.of("region_bias=alola")),
+
+            Map.entry("Galar", Set.of("galarian=true")),
+            Map.entry("Galar Bias", Set.of("region_bias=galar")),
+
+            Map.entry("Hisui", Set.of("hisuian=true")),
+            Map.entry("Hisui Bias", Set.of("region_bias=hisui")),
+
+            Map.entry("Paldea", Set.of("paldean=true")),
+            Map.entry("Paldea Bias", Set.of("region_bias=paldea")),
+
+            Map.entry("Paldea-Aqua", Set.of("paldean_breed=aqua")),
+            Map.entry("Paldea-Blaze", Set.of("paldean_breed=blaze")),
+            Map.entry("Paldea-Combat", Set.of("paldean_breed=combat")),
+
+            Map.entry("Therian", Set.of("therian=true")),
+
+            Map.entry("Zen", Set.of("zen_mode=true")),
+            Map.entry("Galar-Zen", Set.of("galarian=true", "zen_mode=true"))
+    );
+
     public Pokemon toCobblemonPokemon(ShowdownPokemon showdown) throws PokemonParseException {
         Pokemon cobblemon = createPokemon(showdown.species);
 
@@ -51,11 +74,13 @@ public class ShowdownPokemonParser {
     private void setPokemonForm(Pokemon pokemon, String form) {
         pokemon.getSpecies().getForms().stream()
                 .filter(formData -> formData.getName().equals(form)).findFirst()
-                .ifPresent(pokemon::setForm);
+                .ifPresent(formData -> FORMS.get(formData.getName()).stream()
+                        .map(PokemonProperties.Companion::parse)
+                        .forEach(property -> property.apply(pokemon)));
     }
 
     private String getFormName(String species, String form) {
-        return FormAspectProvider.FORM_ASPECTS.keySet().stream().filter(species::contains).findFirst().orElse(form);
+        return FORMS.keySet().stream().filter(species::contains).findFirst().orElse(form);
     }
 
     private void setPokemonShiny(Pokemon pokemon, boolean shiny) {
@@ -232,7 +257,7 @@ public class ShowdownPokemonParser {
     private static String removeFormName(String species) {
         String s = species;
 
-        for (String form : FormAspectProvider.FORM_ASPECTS.keySet()) {
+        for (String form : FORMS.keySet()) {
             s = s.replaceAll(form, "");
         }
 
