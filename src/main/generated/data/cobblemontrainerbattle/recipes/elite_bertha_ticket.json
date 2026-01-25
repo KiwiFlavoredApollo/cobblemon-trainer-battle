@@ -9,7 +9,13 @@
       "item": "cobblemontrainerbattle:leader_crasher_wake_token"
     },
     {
-      "item": "cobblemon:reaper_cloth"
+      "item": "minecraft:cobblestone"
+    },
+    {
+      "item": "minecraft:end_stone"
+    },
+    {
+      "item": "minecraft:netherrack"
     }
   ],
   "result": {
