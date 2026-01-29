@@ -22,7 +22,7 @@ public class BdspTicketRecipeProvider extends FabricRecipeProvider {
     public void generate(Consumer<RecipeJsonProvider> exporter) {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, BdspTicketItem.LEADER_ROARK_TICKET)
                 .input(MiscItem.TRAINER_TOKEN, 6)
-                .input(Items.GREEN_DYE)
+                .input(Items.YELLOW_DYE)
                 .input(CobblemonItems.ROCK_GEM)
                 .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN))
                 .criterion(FabricRecipeProvider.hasItem(CobblemonItems.ROCK_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.ROCK_GEM))
@@ -30,7 +30,7 @@ public class BdspTicketRecipeProvider extends FabricRecipeProvider {
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, BdspTicketItem.LEADER_GARDENIA_TICKET)
                 .input(MiscItem.TRAINER_TOKEN, 6)
-                .input(Items.GREEN_DYE)
+                .input(Items.YELLOW_DYE)
                 .input(CobblemonItems.GRASS_GEM)
                 .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN))
                 .criterion(FabricRecipeProvider.hasItem(CobblemonItems.FIGHTING_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.FIGHTING_GEM))
@@ -38,7 +38,7 @@ public class BdspTicketRecipeProvider extends FabricRecipeProvider {
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, BdspTicketItem.LEADER_MAYLENE_TICKET)
                 .input(MiscItem.TRAINER_TOKEN, 6)
-                .input(Items.GREEN_DYE)
+                .input(Items.YELLOW_DYE)
                 .input(CobblemonItems.FIGHTING_GEM)
                 .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN))
                 .criterion(FabricRecipeProvider.hasItem(CobblemonItems.ELECTRIC_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.ELECTRIC_GEM))
@@ -46,7 +46,7 @@ public class BdspTicketRecipeProvider extends FabricRecipeProvider {
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, BdspTicketItem.LEADER_CRASHER_WAKE_TICKET)
                 .input(MiscItem.TRAINER_TOKEN, 6)
-                .input(Items.GREEN_DYE)
+                .input(Items.YELLOW_DYE)
                 .input(CobblemonItems.WATER_GEM)
                 .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN))
                 .criterion(FabricRecipeProvider.hasItem(CobblemonItems.FIRE_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.FIRE_GEM))
@@ -54,7 +54,7 @@ public class BdspTicketRecipeProvider extends FabricRecipeProvider {
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, BdspTicketItem.LEADER_FANTINA_TICKET)
                 .input(MiscItem.TRAINER_TOKEN, 6)
-                .input(Items.GREEN_DYE)
+                .input(Items.YELLOW_DYE)
                 .input(CobblemonItems.GHOST_GEM)
                 .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN))
                 .criterion(FabricRecipeProvider.hasItem(CobblemonItems.NORMAL_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.NORMAL_GEM))
@@ -62,7 +62,7 @@ public class BdspTicketRecipeProvider extends FabricRecipeProvider {
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, BdspTicketItem.LEADER_BYRON_TICKET)
                 .input(MiscItem.TRAINER_TOKEN, 6)
-                .input(Items.GREEN_DYE)
+                .input(Items.YELLOW_DYE)
                 .input(CobblemonItems.STEEL_GEM)
                 .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN))
                 .criterion(FabricRecipeProvider.hasItem(CobblemonItems.FLYING_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.FLYING_GEM))
@@ -70,7 +70,7 @@ public class BdspTicketRecipeProvider extends FabricRecipeProvider {
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, BdspTicketItem.LEADER_CANDICE_TICKET)
                 .input(MiscItem.TRAINER_TOKEN, 6)
-                .input(Items.GREEN_DYE)
+                .input(Items.YELLOW_DYE)
                 .input(CobblemonItems.ICE_GEM)
                 .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN))
                 .criterion(FabricRecipeProvider.hasItem(CobblemonItems.PSYCHIC_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.PSYCHIC_GEM))
@@ -78,7 +78,7 @@ public class BdspTicketRecipeProvider extends FabricRecipeProvider {
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, BdspTicketItem.LEADER_VOLKNER_TICKET)
                 .input(MiscItem.TRAINER_TOKEN, 6)
-                .input(Items.GREEN_DYE)
+                .input(Items.YELLOW_DYE)
                 .input(CobblemonItems.ELECTRIC_GEM)
                 .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN))
                 .criterion(FabricRecipeProvider.hasItem(CobblemonItems.WATER_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.WATER_GEM))

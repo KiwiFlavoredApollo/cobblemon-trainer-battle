@@ -22,7 +22,7 @@ public class XyTicketRecipeProvider extends FabricRecipeProvider {
     public void generate(Consumer<RecipeJsonProvider> exporter) {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, XyTicketItem.LEADER_VIOLA_TICKET)
                 .input(MiscItem.TRAINER_TOKEN, 6)
-                .input(Items.GREEN_DYE)
+                .input(Items.PINK_DYE)
                 .input(CobblemonItems.BUG_GEM)
                 .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN))
                 .criterion(FabricRecipeProvider.hasItem(CobblemonItems.ROCK_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.ROCK_GEM))
@@ -30,7 +30,7 @@ public class XyTicketRecipeProvider extends FabricRecipeProvider {
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, XyTicketItem.LEADER_GRANT_TICKET)
                 .input(MiscItem.TRAINER_TOKEN, 6)
-                .input(Items.GREEN_DYE)
+                .input(Items.PINK_DYE)
                 .input(CobblemonItems.ROCK_GEM)
                 .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN))
                 .criterion(FabricRecipeProvider.hasItem(CobblemonItems.FIGHTING_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.FIGHTING_GEM))
@@ -38,7 +38,7 @@ public class XyTicketRecipeProvider extends FabricRecipeProvider {
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, XyTicketItem.LEADER_KORRINA_TICKET)
                 .input(MiscItem.TRAINER_TOKEN, 6)
-                .input(Items.GREEN_DYE)
+                .input(Items.PINK_DYE)
                 .input(CobblemonItems.FIGHTING_GEM)
                 .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN))
                 .criterion(FabricRecipeProvider.hasItem(CobblemonItems.ELECTRIC_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.ELECTRIC_GEM))
@@ -46,7 +46,7 @@ public class XyTicketRecipeProvider extends FabricRecipeProvider {
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, XyTicketItem.LEADER_RAMOS_TICKET)
                 .input(MiscItem.TRAINER_TOKEN, 6)
-                .input(Items.GREEN_DYE)
+                .input(Items.PINK_DYE)
                 .input(CobblemonItems.GRASS_GEM)
                 .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN))
                 .criterion(FabricRecipeProvider.hasItem(CobblemonItems.FIRE_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.FIRE_GEM))
@@ -54,7 +54,7 @@ public class XyTicketRecipeProvider extends FabricRecipeProvider {
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, XyTicketItem.LEADER_CLEMONT_TICKET)
                 .input(MiscItem.TRAINER_TOKEN, 6)
-                .input(Items.GREEN_DYE)
+                .input(Items.PINK_DYE)
                 .input(CobblemonItems.ELECTRIC_GEM)
                 .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN))
                 .criterion(FabricRecipeProvider.hasItem(CobblemonItems.NORMAL_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.NORMAL_GEM))
@@ -62,7 +62,7 @@ public class XyTicketRecipeProvider extends FabricRecipeProvider {
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, XyTicketItem.LEADER_VALERIE_TICKET)
                 .input(MiscItem.TRAINER_TOKEN, 6)
-                .input(Items.GREEN_DYE)
+                .input(Items.PINK_DYE)
                 .input(CobblemonItems.FAIRY_GEM)
                 .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN))
                 .criterion(FabricRecipeProvider.hasItem(CobblemonItems.FLYING_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.FLYING_GEM))
@@ -70,7 +70,7 @@ public class XyTicketRecipeProvider extends FabricRecipeProvider {
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, XyTicketItem.LEADER_OLYMPIA_TICKET)
                 .input(MiscItem.TRAINER_TOKEN, 6)
-                .input(Items.GREEN_DYE)
+                .input(Items.PINK_DYE)
                 .input(CobblemonItems.PSYCHIC_GEM)
                 .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN))
                 .criterion(FabricRecipeProvider.hasItem(CobblemonItems.PSYCHIC_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.PSYCHIC_GEM))
@@ -78,7 +78,7 @@ public class XyTicketRecipeProvider extends FabricRecipeProvider {
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, XyTicketItem.LEADER_WULFRIC_TICKET)
                 .input(MiscItem.TRAINER_TOKEN, 6)
-                .input(Items.GREEN_DYE)
+                .input(Items.PINK_DYE)
                 .input(CobblemonItems.ICE_GEM)
                 .criterion(FabricRecipeProvider.hasItem(MiscItem.TRAINER_TOKEN), FabricRecipeProvider.conditionsFromItem(MiscItem.TRAINER_TOKEN))
                 .criterion(FabricRecipeProvider.hasItem(CobblemonItems.WATER_GEM), FabricRecipeProvider.conditionsFromItem(CobblemonItems.WATER_GEM))
