@@ -74,7 +74,7 @@ public class ShowdownPokemonParser {
     private void setPokemonForm(Pokemon pokemon, String form) {
         pokemon.getSpecies().getForms().stream()
                 .filter(formData -> formData.getName().equals(form)).findFirst()
-                .ifPresent(formData -> FORMS.get(formData.getName()).stream()
+                .ifPresent(formData -> FORMS.getOrDefault(formData.getName(), Set.of()).stream()
                         .map(PokemonProperties.Companion::parse)
                         .forEach(property -> property.apply(pokemon)));
     }
