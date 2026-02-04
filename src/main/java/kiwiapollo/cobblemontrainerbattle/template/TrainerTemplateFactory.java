@@ -163,13 +163,13 @@ public class TrainerTemplateFactory {
 
     private PokemonType toPokemonType(List<String> type) {
         if (type.size() == 2) {
-            String first = type.get(0);
-            String second = type.get(1);
+            String first = type.get(0).toLowerCase();
+            String second = type.get(1).toLowerCase();
             return new PokemonType(first, second);
         }
 
         if (type.size() == 1) {
-            String first = type.get(0);
+            String first = type.get(0).toLowerCase();
             return new PokemonType(first);
         }
 
