@@ -17,6 +17,7 @@ import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemon;
 import kiwiapollo.cobblemontrainerbattle.pokemon.ShowdownPokemonParser;
 import kiwiapollo.cobblemontrainerbattle.template.PokemonType;
 import kotlin.Unit;
+import net.fabricmc.loader.impl.util.StringUtil;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -218,11 +219,14 @@ public abstract class AbstractPokemonBattle implements PokemonBattle {
                 .map(ElementalType::getName).toList();
 
         if (type.size() == 2) {
-            return new PokemonType(type.get(0), type.get(1));
+            String first = type.get(0);
+            String second = type.get(1);
+            return new PokemonType(first, second);
         }
 
         if (type.size() == 1) {
-            return new PokemonType(type.get(0));
+            String first = type.get(0);
+            return new PokemonType(first);
         }
 
         throw new IllegalStateException();
