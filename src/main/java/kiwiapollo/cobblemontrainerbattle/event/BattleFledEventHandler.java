@@ -8,6 +8,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.Vec3d;
 
+import java.util.List;
 import java.util.stream.StreamSupport;
 
 /**
@@ -24,7 +25,7 @@ public class BattleFledEventHandler implements ServerTickEvents.EndWorldTick {
 
     @Override
     public void onEndTick(ServerWorld world) {
-        for (ServerPlayerEntity player : world.getPlayers()) {
+        for (ServerPlayerEntity player : List.copyOf(world.getPlayers())) {
             try {
                 PokemonBattle battle = getPokemonBattle(player);
 
