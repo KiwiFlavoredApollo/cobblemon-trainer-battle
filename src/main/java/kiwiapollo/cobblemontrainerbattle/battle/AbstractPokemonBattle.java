@@ -219,14 +219,11 @@ public abstract class AbstractPokemonBattle implements PokemonBattle {
                 .map(ElementalType::getName).toList();
 
         if (type.size() == 2) {
-            String first = type.get(0).toLowerCase();
-            String second = type.get(1).toLowerCase();
-            return new PokemonType(first, second);
+            return new PokemonType(type.get(0), type.get(1));
         }
 
         if (type.size() == 1) {
-            String first = type.get(0).toLowerCase();
-            return new PokemonType(first);
+            return new PokemonType(type.get(0));
         }
 
         throw new IllegalStateException();

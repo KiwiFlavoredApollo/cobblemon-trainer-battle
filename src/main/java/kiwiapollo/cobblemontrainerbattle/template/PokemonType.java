@@ -31,16 +31,32 @@ public class PokemonType {
     }
 
     private boolean isValidType(String type) {
-        return type == null || List.of("*", "+").contains(type) || ElementalTypes.INSTANCE.all().stream().map(ElementalType::getName).toList().contains(type);
+        return type == null || isWildcard(type) || isElementalType(type);
+    }
+
+    private boolean isWildcard(String string) {
+        return isAsterisk(string) || isPlusSign(string);
+    }
+
+    private boolean isAsterisk(String string) {
+        return Objects.equals(string, "*");
+    }
+
+    private boolean isPlusSign(String string) {
+        return Objects.equals(string, "+");
+    }
+
+    private boolean isElementalType(String type) {
+        return ElementalTypes.INSTANCE.all().contains(ElementalTypes.INSTANCE.get(type));
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
+    public boolean equals(Object object) {
+        if (this == object) {
             return true;
         }
 
-        if (!(obj instanceof PokemonType other)) {
+        if (!(object instanceof PokemonType other)) {
             return false;
         }
 
@@ -157,7 +173,7 @@ public class PokemonType {
     }
 
     private List<Set<String>> createAllDualTypeGroup() {
-        List<Set<String>> types = new ArrayList<>();
+        List<Set<String>> group = new ArrayList<>();
 
         for (ElementalType first : ElementalTypes.INSTANCE.all()) {
             for (ElementalType second : ElementalTypes.INSTANCE.all()) {
@@ -165,41 +181,31 @@ public class PokemonType {
                     continue;
                 }
 
-                types.add(Set.of(first.getName(), second.getName()));
+                group.add(Set.of(first.getName(), second.getName()));
             }
         }
 
-        return types;
+        return group;
     }
 
     private List<Set<String>> createLiteralDualTypeGroup(String first, String second) {
         return List.of(Set.of(first, second));
     }
 
-    private List<Set<String>> createDualTypeGroupIncluding(String first) {
-        List<Set<String>> types = new ArrayList<>();
+    private List<Set<String>> createDualTypeGroupIncluding(String type) {
+        List<Set<String>> group = new ArrayList<>();
 
-        for (String second : ElementalTypes.INSTANCE.all().stream().map(ElementalType::getName).toList()) {
-            if (first.equals(second)) {
+        ElementalType first = ElementalTypes.INSTANCE.get(type);
+
+        for (ElementalType second : ElementalTypes.INSTANCE.all()) {
+            if (Objects.equals(first, second)) {
                 continue;
             }
 
-            types.add(Set.of(first, second));
+            group.add(Set.of(first.getName(), second.getName()));
         }
 
-        return types;
-    }
-
-    private boolean isWildcard(String string) {
-        return isAsterisk(string) || isPlusSign(string);
-    }
-
-    private boolean isAsterisk(String string) {
-        return Objects.equals(string, "*");
-    }
-
-    private boolean isPlusSign(String string) {
-        return Objects.equals(string, "+");
+        return group;
     }
 
     public String getString() {
@@ -210,6 +216,7 @@ public class PokemonType {
         if (first != null && second == null) {
             return String.format("%s", getDisplayName(first));
         }
+
         if (first == null && second != null) {
             return String.format("%s", getDisplayName(second));
         }
@@ -226,7 +233,7 @@ public class PokemonType {
             return "ANY+";
         }
 
-        if (ElementalTypes.INSTANCE.all().stream().map(ElementalType::getName).toList().contains(type)) {
+        if (ElementalTypes.INSTANCE.all().contains(ElementalTypes.INSTANCE.get(type))) {
             return ElementalTypes.INSTANCE.get(type).getDisplayName().getString();
         }
 
