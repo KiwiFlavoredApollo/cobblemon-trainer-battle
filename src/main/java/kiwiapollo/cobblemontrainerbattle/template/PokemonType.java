@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.api.types.ElementalType;
 import com.cobblemon.mod.common.api.types.ElementalTypes;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class PokemonType {
     private final String first;
@@ -14,11 +15,11 @@ public class PokemonType {
             throw new IllegalArgumentException();
         }
 
-        if (!isValidType(first)) {
+        if (first != null && !isWildcard(first) && !isElementalType(first)) {
             throw new IllegalArgumentException();
         }
 
-        if (!isValidType(second)) {
+        if (second != null && !isWildcard(second) && !isElementalType(second)) {
             throw new IllegalArgumentException();
         }
 
@@ -28,10 +29,6 @@ public class PokemonType {
 
     public PokemonType(String type) {
         this(type, null);
-    }
-
-    private boolean isValidType(String type) {
-        return type == null || isWildcard(type) || isElementalType(type);
     }
 
     private boolean isWildcard(String string) {
@@ -60,29 +57,14 @@ public class PokemonType {
             return false;
         }
 
-        List<Set<String>> thisGroup = this.createTypeGroup();
-        List<Set<String>> otherGroup = other.createTypeGroup();
-
-        if (thisGroup.size() != 1 && otherGroup.size() != 1) {
-            return false;
-        }
-
-        if (thisGroup.size() == 1 && otherGroup.size() == 1) {
-            return thisGroup.get(0).equals(otherGroup.get(0));
-        }
-
-        if (thisGroup.size() == 1 && otherGroup.size() != 1) {
-            return otherGroup.contains(thisGroup.get(0));
-        }
-
-        if (thisGroup.size() != 1 && otherGroup.size() == 1) {
-            return thisGroup.contains(otherGroup.get(0));
-        }
-
-        throw new IllegalStateException();
+        return this.contains(other) || other.contains(this);
     }
 
-    private List<Set<String>> createTypeGroup() {
+    private boolean contains(PokemonType other) {
+        return this.createTypeGroup().containsAll(other.createTypeGroup());
+    }
+
+    private Set<Set<String>> createTypeGroup() {
         if (first != null && second != null) {
             return createDualTypeGroup(first, second);
         }
@@ -98,114 +80,52 @@ public class PokemonType {
         throw new IllegalStateException();
     }
 
-    private List<Set<String>> createSingleTypeGroup(String type) {
+    private Set<Set<String>> createDualTypeGroup(String first, String second) {
+        if (first == null || second == null) {
+            throw new IllegalArgumentException();
+        }
+
+        if (isWildcard(first) && isWildcard(second)) {
+            return new DualTypeGroupFactory.All().create();
+        }
+
+        if (!isWildcard(first) && !isWildcard(second)) {
+            return new DualTypeGroupFactory.Literal(first, second).create();
+        }
+
+        if (!isWildcard(first) && isPlusSign(second)) {
+            return new DualTypeGroupFactory.PlusSign(first).create();
+        }
+
+        if (!isWildcard(first) && isAsterisk(second)) {
+            return new DualTypeGroupFactory.Asterisk(first).create();
+        }
+
+        if (isPlusSign(first) && !isWildcard(second)) {
+            return new DualTypeGroupFactory.PlusSign(second).create();
+        }
+
+        if (isAsterisk(first) && !isWildcard(second)) {
+            return new DualTypeGroupFactory.Asterisk(second).create();
+        }
+
+        throw new IllegalStateException();
+    }
+
+    private Set<Set<String>> createSingleTypeGroup(String type) {
         if (type == null) {
             throw new IllegalArgumentException();
         }
 
         if (isWildcard(type)) {
-            return createAllSingleTypeGroup();
+            return new SingleTypeGroupFactory.All().create();
         }
 
         if (!isWildcard(type)) {
-            return createLiteralSingleTypeGroup(type);
+            return new SingleTypeGroupFactory.Literal(type).create();
         }
 
         throw new IllegalStateException();
-    }
-
-    private List<Set<String>> createAllSingleTypeGroup() {
-        return ElementalTypes.INSTANCE.all().stream().map(ElementalType::getName).map(Set::of).toList();
-    }
-
-    private List<Set<String>> createLiteralSingleTypeGroup(String type) {
-        return List.of(Set.of(type));
-    }
-
-    private List<Set<String>> createDualTypeGroup(String first, String second) {
-        if (first == null) {
-            throw new IllegalArgumentException();
-        }
-
-        if (second == null) {
-            throw new IllegalArgumentException();
-        }
-
-        if (isWildcard(first) && isWildcard(second)) {
-            return createAllDualTypeGroup();
-        }
-
-        if (!isWildcard(first) && !isWildcard(second)) {
-            return createLiteralDualTypeGroup(first, second);
-        }
-
-        if (!isWildcard(first) && isAsterisk(second)) {
-            List<Set<String>> dual = createDualTypeGroupIncluding(first);
-            List<Set<String>> single = createLiteralSingleTypeGroup(first);
-
-            List<Set<String>> group = new ArrayList<>();
-            group.addAll(dual);
-            group.addAll(single);
-
-            return group;
-        }
-
-        if (!isWildcard(first) && isPlusSign(second)) {
-            return createDualTypeGroupIncluding(first);
-        }
-
-        if (isAsterisk(first) && !isWildcard(second)) {
-            List<Set<String>> dual = createDualTypeGroupIncluding(second);
-            List<Set<String>> single = createLiteralSingleTypeGroup(second);
-
-            List<Set<String>> group = new ArrayList<>();
-            group.addAll(dual);
-            group.addAll(single);
-
-            return group;
-        }
-
-        if (isPlusSign(first) && !isWildcard(second)) {
-            return createDualTypeGroupIncluding(second);
-        }
-
-        throw new IllegalStateException();
-    }
-
-    private List<Set<String>> createAllDualTypeGroup() {
-        List<Set<String>> group = new ArrayList<>();
-
-        for (ElementalType first : ElementalTypes.INSTANCE.all()) {
-            for (ElementalType second : ElementalTypes.INSTANCE.all()) {
-                if (first.equals(second)) {
-                    continue;
-                }
-
-                group.add(Set.of(first.getName(), second.getName()));
-            }
-        }
-
-        return group;
-    }
-
-    private List<Set<String>> createLiteralDualTypeGroup(String first, String second) {
-        return List.of(Set.of(first, second));
-    }
-
-    private List<Set<String>> createDualTypeGroupIncluding(String type) {
-        List<Set<String>> group = new ArrayList<>();
-
-        ElementalType first = ElementalTypes.INSTANCE.get(type);
-
-        for (ElementalType second : ElementalTypes.INSTANCE.all()) {
-            if (Objects.equals(first, second)) {
-                continue;
-            }
-
-            group.add(Set.of(first.getName(), second.getName()));
-        }
-
-        return group;
     }
 
     public String getString() {
@@ -238,5 +158,100 @@ public class PokemonType {
         }
 
         throw new IllegalArgumentException();
+    }
+
+    private static class SingleTypeGroupFactory {
+        private static class All {
+            private Set<Set<String>> create() {
+                return ElementalTypes.INSTANCE.all().stream().map(ElementalType::getName).map(Set::of).collect(Collectors.toSet());
+            }
+        }
+
+        private static class Literal {
+            private final String type;
+
+            private Literal(String type) {
+                this.type = type;
+            }
+
+            private Set<Set<String>> create() {
+                return Set.of(Set.of(type));
+            }
+        }
+    }
+
+    private static class DualTypeGroupFactory {
+        private static class All {
+            private Set<Set<String>> create() {
+                Set<Set<String>> group = new HashSet<>();
+
+                for (ElementalType first : ElementalTypes.INSTANCE.all()) {
+                    for (ElementalType second : ElementalTypes.INSTANCE.all()) {
+                        if (Objects.equals(first, second)) {
+                            continue;
+                        }
+
+                        group.add(Set.of(first.getName(), second.getName()));
+                    }
+                }
+
+                return group;
+            }
+        }
+
+        private static class Literal {
+            private final String first;
+            private final String second;
+
+            private Literal(String first, String second) {
+                this.first = first;
+                this.second = second;
+            }
+
+            private Set<Set<String>> create() {
+                return Set.of(Set.of(first, second));
+            }
+        }
+
+        private static class PlusSign {
+            private final String type;
+
+            private PlusSign(String type) {
+                this.type = type;
+            }
+
+            private Set<Set<String>> create() {
+                Set<Set<String>> group = new HashSet<>();
+
+                ElementalType first = ElementalTypes.INSTANCE.getOrException(type);
+
+                for (ElementalType second : ElementalTypes.INSTANCE.all()) {
+                    if (Objects.equals(first, second)) {
+                        continue;
+                    }
+
+                    group.add(Set.of(first.getName(), second.getName()));
+                }
+
+                return group;
+            }
+        }
+
+        private static class Asterisk {
+            private final String type;
+
+            private Asterisk(String type) {
+                this.type = type;
+            }
+
+            private Set<Set<String>> create() {
+                Set<Set<String>> group = new HashSet<>();
+
+                group.addAll(new DualTypeGroupFactory.PlusSign(type).create());
+                group.addAll(new SingleTypeGroupFactory.Literal(type).create());
+
+                return group;
+            }
+        }
     }
 }
