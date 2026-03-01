@@ -244,12 +244,17 @@ public class RentalBattle extends AbstractPokemonBattle implements PokemonBattle
         }
 
         private void execute(String command, ServerPlayerEntity player) {
-            command = command.replace("%player%", player.getGameProfile().getName());
+            try {
+                command = command.replace("%player%", player.getGameProfile().getName());
 
-            MinecraftServer server = player.getCommandSource().getServer();
-            CommandDispatcher<ServerCommandSource> dispatcher = server.getCommandManager().getDispatcher();
+                MinecraftServer server = player.getCommandSource().getServer();
+                CommandDispatcher<ServerCommandSource> dispatcher = server.getCommandManager().getDispatcher();
 
-            server.getCommandManager().execute(dispatcher.parse(command, server.getCommandSource()), command);
+                server.getCommandManager().execute(dispatcher.parse(command, server.getCommandSource()), command);
+
+            } catch (NullPointerException ignored) {
+
+            }
         }
 
         private void runEntityLevelPlayerDefeatHandler() {
