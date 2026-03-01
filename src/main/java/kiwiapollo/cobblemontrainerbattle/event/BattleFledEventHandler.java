@@ -43,8 +43,8 @@ public class BattleFledEventHandler implements ServerTickEvents.EndWorldTick {
                 }
 
                 trainer.onPlayerDefeat();
-                battle.writeShowdownAction(String.format(">forcelose %s", battle.getActor(player).showdownId));
                 battle.end();
+                battle.writeShowdownAction(String.format(">forcelose %s", battle.getActor(player).showdownId));
 
             } catch (ClassCastException | NullPointerException | IndexOutOfBoundsException ignored) {
 

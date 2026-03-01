@@ -107,8 +107,8 @@ public abstract class AbstractPokemonTrainerEntity extends PathAwareEntity imple
         try {
             PokemonBattle battle = Cobblemon.INSTANCE.getBattleRegistry().getBattle(battleId);
             ServerPlayerEntity player = battle.getPlayers().get(0);
-            battle.writeShowdownAction(String.format(">forcelose %s", battle.getActor(player).showdownId));
             battle.end();
+            battle.writeShowdownAction(String.format(">forcelose %s", battle.getActor(player).showdownId));
 
         } catch (NullPointerException ignored) {
 

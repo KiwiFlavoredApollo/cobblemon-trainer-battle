@@ -68,8 +68,8 @@ public class LivingEntityMixin {
             PokemonTrainerEntity villager = (PokemonTrainerEntity) this;
             PokemonBattle battle = Cobblemon.INSTANCE.getBattleRegistry().getBattle(villager.getBattleId());
             ServerPlayerEntity player = battle.getPlayers().get(0);
-            battle.writeShowdownAction(String.format(">forcelose %s", battle.getActor(player).showdownId));
             battle.end();
+            battle.writeShowdownAction(String.format(">forcelose %s", battle.getActor(player).showdownId));
 
         } catch (ClassCastException | NullPointerException ignored) {
 
