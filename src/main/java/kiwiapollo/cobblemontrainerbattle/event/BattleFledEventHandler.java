@@ -25,7 +25,7 @@ public class BattleFledEventHandler implements ServerTickEvents.EndWorldTick {
 
     @Override
     public void onEndTick(ServerWorld world) {
-        for (ServerPlayerEntity player : List.copyOf(world.getPlayers())) {
+        for (ServerPlayerEntity player : world.getPlayers()) {
             try {
                 PokemonBattle battle = getPokemonBattle(player);
 
