@@ -30,7 +30,7 @@ public class BattleFledEventHandler implements ServerTickEvents.EndWorldTick {
                 PokemonBattle battle = getPokemonBattle(player);
 
                 if (!isTrainerBattle(battle)) {
-                    return;
+                    continue;
                 }
 
                 TrainerBattleActor trainer = getTrainerBattleActor(battle);
@@ -39,7 +39,7 @@ public class BattleFledEventHandler implements ServerTickEvents.EndWorldTick {
                 Vec3d trainerPos = trainer.getWorldAndPosition().getSecond();
 
                 if (playerPos.distanceTo(trainerPos) < trainer.getFleeDistance()) {
-                    return;
+                    continue;
                 }
 
                 trainer.onPlayerDefeat();
