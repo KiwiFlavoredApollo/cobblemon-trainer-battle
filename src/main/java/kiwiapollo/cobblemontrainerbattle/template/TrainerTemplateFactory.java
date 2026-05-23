@@ -112,11 +112,11 @@ public class TrainerTemplateFactory {
     }
 
     private UUID toEntityUuid(String uuid) {
-        if (uuid == null) {
-            return null;
-
-        } else {
+        try {
             return UUID.fromString(uuid);
+
+        } catch (IllegalArgumentException | NullPointerException e) {
+            return null;
         }
     }
 
