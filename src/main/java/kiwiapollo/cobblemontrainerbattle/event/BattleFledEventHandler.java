@@ -25,31 +25,61 @@ public class BattleFledEventHandler implements ServerTickEvents.EndWorldTick {
 
     @Override
     public void onEndTick(ServerWorld world) {
-        for (ServerPlayerEntity player : world.getPlayers()) {
-            try {
-                PokemonBattle battle = getPokemonBattle(player);
-
-                if (!isTrainerBattle(battle)) {
-                    continue;
-                }
-
-                TrainerBattleActor trainer = getTrainerBattleActor(battle);
-
-                Vec3d playerPos = player.getPos();
-                Vec3d trainerPos = trainer.getWorldAndPosition().getSecond();
-
-                if (playerPos.distanceTo(trainerPos) < trainer.getFleeDistance()) {
-                    continue;
-                }
-
-                trainer.onPlayerDefeat();
-                battle.writeShowdownAction(String.format(">forcelose %s", battle.getActor(player).showdownId));
-                battle.end();
-
-            } catch (ClassCastException | NullPointerException | IndexOutOfBoundsException ignored) {
-
+        for (ServerPlayerEntity player : getPlayers(world)) {
+            if (!isPlayerFledFromTrainerBattle(player)) {
+                continue;
             }
+
+            PokemonBattle battle = getPokemonBattle(player);
+            TrainerBattleActor trainer = getTrainerBattleActor(battle);
+
+            trainer.onPlayerDefeat();
+            battle.writeShowdownAction(String.format(">forcelose %s", battle.getActor(player).showdownId));
+            battle.end();
         }
+    }
+
+    private boolean isPlayerFledFromTrainerBattle(ServerPlayerEntity player) {
+        try {
+            PokemonBattle battle = getPokemonBattle(player);
+
+            if (!isTrainerBattle(battle)) {
+                return false;
+            }
+
+            TrainerBattleActor trainer = getTrainerBattleActor(battle);
+
+            if (!isPlayerFled(player, trainer)) {
+                return false;
+            }
+
+            return true;
+
+        } catch (ClassCastException | NullPointerException | IndexOutOfBoundsException ignored) {
+            return false;
+        }
+    }
+
+    private List<ServerPlayerEntity> getPlayers(ServerWorld world) {
+        return List.copyOf(world.getPlayers());
+    }
+
+    private boolean isPlayerFled(ServerPlayerEntity player, TrainerBattleActor trainer) {
+        return !isSameWorld(player, trainer) || isFarAway(player, trainer);
+    }
+
+    private boolean isSameWorld(ServerPlayerEntity player, TrainerBattleActor trainer) {
+        ServerWorld playerWorld = player.getServerWorld();
+        ServerWorld trainerWorld = trainer.getWorldAndPosition().getFirst();
+
+        return playerWorld == trainerWorld;
+    }
+
+    private boolean isFarAway(ServerPlayerEntity player, TrainerBattleActor trainer) {
+        Vec3d playerPos = player.getPos();
+        Vec3d trainerPos = trainer.getWorldAndPosition().getSecond();
+
+        return playerPos.distanceTo(trainerPos) > trainer.getFleeDistance();
     }
 
     private PokemonBattle getPokemonBattle(ServerPlayerEntity player) {
